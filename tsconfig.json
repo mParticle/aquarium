@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    
+    //for absolute imports
+    "baseUrl": ".",
+    //for absolute imports
+    "paths": {
+      "src/*": ["./src/*"],
+    },
+
+
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "target": "es2015",
+    
+    "noImplicitAny": true,
+    
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "jsx": "react",
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true
+  }
+}
