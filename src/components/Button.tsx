@@ -1,5 +1,10 @@
-import React from "react"
+import React from "react";
+import { Button as AntButton, ButtonProps as AntButtonProps } from "antd";
 
-export function Button() {
-  return <button> hello world! </button>
+interface IButtonProps extends AntButtonProps{
+  copy: string;
+}
+
+export function Button(props: IButtonProps) {
+  return <AntButton {...props}>{props.copy}</AntButton>;
 }
