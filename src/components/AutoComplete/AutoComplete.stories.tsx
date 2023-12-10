@@ -1,16 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import { AutoComplete } from "src/components/AutoComplete/AutoComplete";
+import { IAutoCompleteProps } from "src/components/AutoComplete/AutoComplete";
 import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";
-
-let baseOptions = [
-  { label: "The quick brown fox jumps over the lazy dog" },
-  { label: "Waxy and quivering, jocks fumble the pizza" },
-  { label: "When zombies arrive, quickly fax judge Pat" },
-  { label: "Pack my red box with five dozen quality jugs" },
-  { label: "The quick onyx goblin jumps over the lazy dwarf" },
-];
 
 const meta: Meta<typeof AutoComplete> = {
   title: "Example/AutoComplete",
@@ -21,7 +14,8 @@ const meta: Meta<typeof AutoComplete> = {
   tags: ["autodocs"],
 
   args: {
-    placeholder: "input here",
+    style: { width: 200 },
+    placeholder: "Search AutoComplete",
   },
 
   argTypes: {},
@@ -31,40 +25,44 @@ export default meta;
 type Story = StoryObj<typeof AutoComplete>
 
 
-const mockVal = (str: string, repeat = 1) => ({
-  value: str.repeat(repeat),
-});
+const Template = (args: IAutoCompleteProps) => {
+
+  const baseOptions = [
+    { label: "The quick brown fox jumps over the lazy dog", value: 1 },
+    { label: "Waxy and quivering, jocks fumble the pizza", value: 2 },
+    { label: "When zombies arrive, quickly fax judge Pat", value: 3 },
+    { label: "Pack my red box with five dozen quality jugs", value: 4 },
+    { label: "The quick onyx goblin jumps over the lazy dwarf", value: 5 },
+  ];
 
 
-const Template = () => {
-  const [value, setValue] = useState("");
-  const [anotherOptions, setAnotherOptions] = useState<any>([]);
+  const [value, setValue] = useState<IAutoCompleteProps["value"]>("");
+  const [options, setOptions] = useState<IAutoCompleteProps["options"]>([]);
 
-  const getPanelValue = (searchText: string) =>
-    !searchText ? [] : [mockVal(searchText), mockVal(searchText, 2), mockVal(searchText, 3)];
+  let onSearch = (text: string) => setOptions(getPanelValue(text));
+  const onSelect = (value: string) => { alert("you selected value: " + value); };
 
-  const onSelect = (data: string) => { alert("onSelect: " + data); };
+  const getPanelValue = (searchText: string): IAutoCompleteProps["options"] => {
+    if (!searchText) return [];
+    return baseOptions.filter(o => o.label.toLowerCase().includes(searchText.toLowerCase()));
+  };
 
-  return (
-    <>
-      <AutoComplete
-        value={value}
-        options={anotherOptions}
-        style={{ width: 200 }}
-        onSelect={onSelect}
-        onSearch={(text) => setAnotherOptions(getPanelValue(text))}
-        onChange={setValue}
-        placeholder="control mode"
-      />
-    </>
-  );
+
+  return (<>
+    <AutoComplete
+      {...args}
+      value={value}
+      options={options}
+      onSelect={onSelect}
+      onSearch={onSearch}
+      onChange={setValue}/>
+  </>);
 };
 
 
-export const Default = Template.bind({});
-// Default.args = {};
+export const Default = Template.bind(undefined);
+Default.args = {};
 
 
-// export const Wide = Template.bind({});
-// Wide.args = { style: { width: 350 } };
-// export const Wide: Story = { args: {} };
+export const Wide = Template.bind(undefined);
+Wide.args = { style: { width: 350 } };
