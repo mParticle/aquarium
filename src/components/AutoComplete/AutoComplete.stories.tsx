@@ -8,9 +8,6 @@ import { StoryObj } from "@storybook/react";
 const meta: Meta<typeof AutoComplete> = {
   title: 'Aquarium/Data Entry/AutoComplete',
   component: AutoComplete,
-  parameters: {
-    layout: "centered",
-  },
 
   args: {
     style: { width: 200 },

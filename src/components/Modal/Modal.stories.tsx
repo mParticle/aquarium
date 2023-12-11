@@ -9,9 +9,6 @@ import { Button } from "src/components/Button/Button";
 const meta: Meta<typeof Modal> = {
   title: "Aquarium/Feedback/Modal",
   component: Modal,
-  parameters: {
-    layout: "centered",
-  },
 
   args: {},
 

@@ -5,9 +5,6 @@ import { StoryObj } from "@storybook/react";
 const meta: Meta<typeof Button> = {
   title: "Aquarium/General/Button",
   component: Button,
-  parameters: {
-    layout: "centered",
-  },
 
   args: {
     copy: "Button Copy",

@@ -5,9 +5,6 @@ import { StoryObj } from "@storybook/react";
 const meta: Meta<typeof Input> = {
   title: "Aquarium/Data Entry/Input",
   component: Input,
-  parameters: {
-    layout: "centered",
-  },
 
   args: {
     placeholder: "Input Placeholder",
