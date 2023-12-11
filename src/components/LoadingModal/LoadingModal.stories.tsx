@@ -8,7 +8,7 @@ import { Button } from "src/components/Button/Button";
 import { LoadingModal } from "src/components/LoadingModal/LoadingModal";
 
 const meta: Meta<typeof Modal> = {
-  title: "Aquarium/Feedback/LoadingModal",
+  title: "Aquarium/Feedback/Loading Modal",
   component: Modal,
 
   args: {},

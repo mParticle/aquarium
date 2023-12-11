@@ -12,19 +12,19 @@ export interface ILoadingModalProps<Data> extends Omit<IModalProps, "children"> 
 
 export function LoadingModal<Data>(props: ILoadingModalProps<Data>) {
   const [isInitLoading, isInitError, initData] = useInitData(props.fetchData);
+  if (initData) debugger;
 
   return <>
     <Modal {...props}>
 
       {isInitLoading && <Skeleton/>}
 
+      {isInitError &&
+       <Result status="error"
+               title="Error Loading"/>}
+
       {!isInitLoading && !isInitError &&
        props.children(initData)}
-
-      {isInitError &&
-       <Result
-         status="error"
-         title="Error Loading"/>}
 
     </Modal>
   </>;
