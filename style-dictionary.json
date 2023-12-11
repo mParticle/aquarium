@@ -8,7 +8,10 @@
       "files": [
         {
           "destination": "src/styles/_variables.css",
-          "format": "css/variables"
+          "format": "css/variables",
+          "options": {
+            "showFileHeader": false
+          }
         }
       ]
     }
