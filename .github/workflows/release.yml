@@ -15,12 +15,12 @@ jobs:
         needs: confirm-public-repo-master-branch
         steps:
             - name: Checkout
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
               with:
                   ref: main
 
             - name: NPM install
-              uses: actions/setup-node@v3
+              uses: actions/setup-node@v4
               with:
                   node-version: 16.x
 
@@ -52,7 +52,7 @@ jobs:
 
         steps:
             - name: Checkout public master branch
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
               with:
                   fetch-depth: 0
                   ref: main
@@ -66,9 +66,9 @@ jobs:
                   git_commit_gpgsign: true
 
             - name: Setup Node.js
-              uses: actions/setup-node@v3
+              uses: actions/setup-node@v4
               with:
-                  node-version: 16.x
+                  node-version: 20.10.x
 
             - name: Install dependencies
               run: npm ci
@@ -78,7 +78,7 @@ jobs:
                   npx semantic-release
 
             - name: Archive npm failure logs
-              uses: actions/upload-artifact@v3
+              uses: actions/upload-artifact@v4
               if: failure()
               with:
                   name: npm-logs
