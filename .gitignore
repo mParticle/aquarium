@@ -128,3 +128,13 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Standard Ignores
+.DS_Store
+node_modules/
+.vscode/
+out/
+test/reports
+test/test-bundle.js.map
+test/stub/test-stub-bundle.js
+**/dist
