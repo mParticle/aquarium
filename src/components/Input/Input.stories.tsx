@@ -10,7 +10,6 @@ const meta: Meta<typeof Input> = {
     placeholder: "Input Placeholder",
   },
 
-  argTypes: {},
 };
 
 export default meta;
@@ -18,9 +17,7 @@ export default meta;
 type Story = StoryObj<typeof Input>
 
 
-export const Primary: Story = {
-  args: {},
-};
+export const Primary: Story = {};
 
 export const Large: Story = {
   args: {

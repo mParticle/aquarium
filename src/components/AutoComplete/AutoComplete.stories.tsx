@@ -6,7 +6,7 @@ import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof AutoComplete> = {
-  title: 'Aquarium/Data Entry/AutoComplete',
+  title: "Aquarium/Data Entry/AutoComplete",
   component: AutoComplete,
 
   args: {
@@ -55,10 +55,12 @@ const PrimaryTemplate = (args: IAutoCompleteProps) => {
   </>);
 };
 
+export const Primary: Story = {
+  render: PrimaryTemplate,
+};
 
-export const Primary = PrimaryTemplate.bind(undefined);
-Primary.args = {};
 
-
-export const Wide = PrimaryTemplate.bind(undefined);
-Wide.args = { style: { width: 350 } };
+export const Wide: Story = {
+  args: { style: { width: 350 } },
+  render: PrimaryTemplate,
+};

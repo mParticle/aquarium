@@ -32,7 +32,6 @@ const PrimaryTemplate = (args: IModalProps) => {
     <Button copy="Open Modal"
             type="primary"
             onClick={showModal}/>
-
     <Modal title="Basic Modal"
            open={isModalOpen}
            onOk={handleOk}
@@ -45,5 +44,6 @@ const PrimaryTemplate = (args: IModalProps) => {
 };
 
 
-export const Primary = PrimaryTemplate.bind(undefined);
-Primary.args = {};
+export const Primary: Story = {
+  render: PrimaryTemplate,
+}; 

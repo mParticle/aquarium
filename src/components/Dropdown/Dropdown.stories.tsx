@@ -62,7 +62,6 @@ export const Primary: Story = {
           label: "a danger item",
         },
       ],
-
     },
   },
 };
