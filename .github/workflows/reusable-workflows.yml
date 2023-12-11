@@ -17,4 +17,4 @@ jobs:
     name: Security Lint Checks
     uses: mparticle/mparticle-workflows/.github/workflows/security-checks.yml@stable
     with:
-      base_branch: "development"
+      base_branch: "main"
