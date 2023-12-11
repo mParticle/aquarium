@@ -11,13 +11,11 @@ const meta: Meta<typeof Modal> = {
   component: Modal,
 
   args: {},
-
-  argTypes: {},
 };
 export default meta;
 
-type Story = StoryObj<typeof Modal>
 
+type Story = StoryObj<typeof Modal>
 
 const PrimaryTemplate = (args: IModalProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);

@@ -9,11 +9,9 @@ const meta: Meta<typeof Button> = {
   args: {
     copy: "Button Copy",
   },
-
-  argTypes: {},
 };
-
 export default meta;
+
 
 type Story = StoryObj<typeof Button>
 

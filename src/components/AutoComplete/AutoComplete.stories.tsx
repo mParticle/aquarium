@@ -13,13 +13,11 @@ const meta: Meta<typeof AutoComplete> = {
     style: { width: 200 },
     placeholder: "Search AutoComplete",
   },
-
-  argTypes: {},
 };
 export default meta;
 
-type Story = StoryObj<typeof AutoComplete>
 
+type Story = StoryObj<typeof AutoComplete>
 
 const PrimaryTemplate = (args: IAutoCompleteProps) => {
 
