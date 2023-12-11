@@ -5,4 +5,4 @@ on: workflow_dispatch
 jobs:
   automerge-dependabot:
     name: "Automerge Dependabot PR"
-    uses: mParticle/mparticle-workflows/.github/workflows/dependabot-automerge.yml@main
+    uses: mParticle/mparticle-workflows/.github/workflows/dependabot-automerge.yml@stable

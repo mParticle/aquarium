@@ -9,5 +9,5 @@ on:
 jobs:
   rebase-branch:
     name: "Rebase Development onto Dependabot Branch"
-    uses: mParticle/mparticle-workflows/.github/workflows/dependabot-rebase-main.yml@main
+    uses: mParticle/mparticle-workflows/.github/workflows/dependabot-rebase-main.yml@stable
     secrets: inherit
