@@ -9,8 +9,6 @@ const meta: Meta<typeof Button> = {
     layout: "centered",
   },
 
-  tags: ["autodocs"],
-
   args: {
     copy: "Button Copy",
   },

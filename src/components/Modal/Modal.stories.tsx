@@ -12,7 +12,6 @@ const meta: Meta<typeof Modal> = {
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"],
 
   args: {},
 

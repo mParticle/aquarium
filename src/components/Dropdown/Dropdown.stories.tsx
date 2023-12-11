@@ -11,7 +11,6 @@ const meta: Meta<typeof Dropdown> = {
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"],
 
   args: {
     dropdownButton: "normal",

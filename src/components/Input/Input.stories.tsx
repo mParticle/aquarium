@@ -9,8 +9,6 @@ const meta: Meta<typeof Input> = {
     layout: "centered",
   },
 
-  tags: ["autodocs"],
-
   args: {
     placeholder: "Input Placeholder",
   },

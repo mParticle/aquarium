@@ -11,7 +11,6 @@ const meta: Meta<typeof AutoComplete> = {
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"],
 
   args: {
     style: { width: 200 },
