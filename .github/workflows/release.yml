@@ -17,7 +17,7 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v3
               with:
-                  ref: development
+                  ref: main
 
             - name: NPM install
               uses: actions/setup-node@v3
@@ -55,7 +55,7 @@ jobs:
               uses: actions/checkout@v3
               with:
                   fetch-depth: 0
-                  ref: master
+                  ref: main
 
             - name: Import GPG Key
               uses: crazy-max/ghaction-import-gpg@v4
