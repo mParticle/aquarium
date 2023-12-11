@@ -6,7 +6,7 @@ import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof AutoComplete> = {
-  title: "Example/AutoComplete",
+  title: 'Aquarium/Data Entry/AutoComplete',
   component: AutoComplete,
   parameters: {
     layout: "centered",
@@ -25,7 +25,7 @@ export default meta;
 type Story = StoryObj<typeof AutoComplete>
 
 
-const Template = (args: IAutoCompleteProps) => {
+const PrimaryTemplate = (args: IAutoCompleteProps) => {
 
   const baseOptions = [
     { label: "The quick brown fox jumps over the lazy dog", value: 1 },
@@ -60,9 +60,9 @@ const Template = (args: IAutoCompleteProps) => {
 };
 
 
-export const Default = Template.bind(undefined);
-Default.args = {};
+export const Primary = PrimaryTemplate.bind(undefined);
+Primary.args = {};
 
 
-export const Wide = Template.bind(undefined);
+export const Wide = PrimaryTemplate.bind(undefined);
 Wide.args = { style: { width: 350 } };

@@ -6,7 +6,7 @@ import { SmileOutlined } from "@ant-design/icons";
 import { Button } from "src/components/Button/Button";
 
 const meta: Meta<typeof Dropdown> = {
-  title: "Example/Dropdown",
+  title: "Aquarium/Navigation/Dropdown",
   component: Dropdown,
   parameters: {
     layout: "centered",

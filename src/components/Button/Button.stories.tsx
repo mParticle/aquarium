@@ -3,7 +3,7 @@ import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Button> = {
-  title: "Example/Button",
+  title: "Aquarium/General/Button",
   component: Button,
   parameters: {
     layout: "centered",
