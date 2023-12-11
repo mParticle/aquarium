@@ -7,8 +7,6 @@ export function useInitData<T>(fetchData: () => Promise<T>): [boolean, boolean, 
   const [resolveData, setResolveData] = useState<T>(undefined as T);
 
   useMount(() => {
-    debugger
-    
     fetchData()
       .then(data => { setResolveData(data); })
       .catch(() => { setIsError(true); })
