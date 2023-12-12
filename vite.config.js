@@ -7,7 +7,7 @@ export default defineConfig(
   {
     build: {
       lib: {
-        entry: resolve(__dirname, 'src/components/Button.tsx'),
+        entry: resolve(__dirname, 'src/components/Button/Button.tsx'),
         name: 'Button',
         fileName: 'button-dist'
       }
