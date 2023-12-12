@@ -1,4 +1,4 @@
-import { DatePicker } from "src/components/DatePicker/DatePicker";
+import { DatePicker } from "src/components/data-entry/DatePicker/DatePicker";
 import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";
 
