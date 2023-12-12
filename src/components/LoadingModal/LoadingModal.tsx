@@ -1,9 +1,9 @@
 import React from "react";
 import { useInitData } from "src/hooks/useInitData";
-import { Modal } from "src/components/Modal/Modal";
-import { IModalProps } from "src/components/Modal/Modal";
-import { Result } from "src/components/Result/Result";
-import { Skeleton } from "src/components/Skeleton/Skeleton";
+import { IModalProps } from "src/components/feedback/Modal/Modal";
+import { Skeleton } from "src/components/feedback/Skeleton/Skeleton";
+import { Modal } from "src/components/feedback/Modal/Modal";
+import { Result } from "src/components/feedback/Result/Result";
 
 export interface ILoadingModalProps<Data> extends Omit<IModalProps, "children"> {
   fetchData(): Promise<Data>;

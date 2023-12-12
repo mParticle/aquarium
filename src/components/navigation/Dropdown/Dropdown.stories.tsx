@@ -1,9 +1,9 @@
 import React from "react";
-import { Dropdown } from "src/components/Dropdown/Dropdown";
+import { Dropdown } from "src/components/navigation/Dropdown/Dropdown";
 import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";
 import { SmileOutlined } from "@ant-design/icons";
-import { Button } from "src/components/Button/Button";
+import { Button } from "src/components/general/Button/Button";
 
 const meta: Meta<typeof Dropdown> = {
   title: "Aquarium/Navigation/Dropdown",

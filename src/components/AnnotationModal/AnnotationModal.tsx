@@ -1,11 +1,12 @@
 import React from "react";
 import { LoadingModal } from "../LoadingModal/LoadingModal";
 import { ILoadingModalProps } from "../LoadingModal/LoadingModal";
-import { Input } from "src/components/Input/Input";
-import { Dropdown } from "src/components/Dropdown/Dropdown";
-import { Button } from "src/components/Button/Button";
+import { DatePicker } from "src/components/data-entry/DatePicker/DatePicker";
+import { Dropdown } from "src/components/navigation/Dropdown/Dropdown";
+import { Input } from "src/components/data-entry/Input/Input";
+import { Flex } from "src/components/layout/Flex/Flex";
+import { Button } from "src/components/general/Button/Button";
 import { ItemType } from "antd/es/menu/hooks/useItems";
-import { DatePicker } from "src/components/DatePicker/DatePicker";
 
 export interface IAnnotationModalProps extends Omit<ILoadingModalProps<iAnnotationModel>, "fetchData" | "children"> {
 }
@@ -35,22 +36,19 @@ export function AnnotationModal(props: IAnnotationModalProps) {
                                     fetchData={fetchAnnotations}>
 
       {initData => <>
+        <Flex vertical gap={'middle'}>
+          
         <Input placeholder="title"></Input>
 
-        <br/><br/>
 
         <Input placeholder="description"></Input>
 
-        <br/><br/>
-
         <DatePicker size={"large"}></DatePicker>
-
-        <br/><br/>
 
         <Dropdown dropdownButton={<Button copy="Events Dropdown"/>}
                   menu={{ items: initData.events.map(event => ({ value: event.name, label: event.name, type: "group" } as ItemType)) }}>
         </Dropdown>
-
+        </Flex>
       </>}
 
     </LoadingModal>

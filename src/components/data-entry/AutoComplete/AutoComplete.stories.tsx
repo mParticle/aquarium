@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import { AutoComplete } from "src/components/AutoComplete/AutoComplete";
-import { IAutoCompleteProps } from "src/components/AutoComplete/AutoComplete";
+import { AutoComplete } from "src/components/data-entry/AutoComplete/AutoComplete";
+import { IAutoCompleteProps } from "src/components/data-entry/AutoComplete/AutoComplete";
 import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";
 
@@ -34,7 +34,7 @@ const PrimaryTemplate = (args: IAutoCompleteProps) => {
   const [options, setOptions] = useState<IAutoCompleteProps["options"]>([]);
 
   let onSearch = (text: string) => setOptions(getPanelValue(text));
-  const onSelect = (value: string) => { alert("you selected value: " + value); };
+  const onSelect = (value: string) => { console.log("you selected value: " + value); };
 
   const getPanelValue = (searchText: string): IAutoCompleteProps["options"] => {
     if (!searchText) return [];

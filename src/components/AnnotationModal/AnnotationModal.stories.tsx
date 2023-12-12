@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";
-import { Button } from "src/components/Button/Button";
+import { Button } from "src/components/general/Button/Button";
 import { AnnotationModal } from "src/components/AnnotationModal/AnnotationModal";
 
 const meta: Meta<typeof AnnotationModal> = {

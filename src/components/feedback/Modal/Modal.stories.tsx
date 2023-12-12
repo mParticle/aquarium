@@ -1,10 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import { Modal } from "src/components/Modal/Modal";
-import { IModalProps } from "src/components/Modal/Modal";
+import { Modal } from "src/components/feedback/Modal/Modal";
+import { IModalProps } from "src/components/feedback/Modal/Modal";
 import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";
-import { Button } from "src/components/Button/Button";
+import { Button } from "src/components/general/Button/Button";
 
 const meta: Meta<typeof Modal> = {
   title: "Aquarium/Feedback/Modal",
