@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";
-import { Button } from "src/components/Button/Button";
+import { Button } from "src/components/general/Button/Button";
 import { LoadingModal } from "src/components/LoadingModal/LoadingModal";
 import { ILoadingModalProps } from "src/components/LoadingModal/LoadingModal";
 
