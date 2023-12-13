@@ -7,7 +7,7 @@ import { LoadingModal } from "src/components/LoadingModal/LoadingModal";
 import { ILoadingModalProps } from "src/components/LoadingModal/LoadingModal";
 
 const meta: Meta<typeof LoadingModal> = {
-  title: "Aquarium/Feedback/Loading Modal",
+  title: "Aquarium/Unknown/Loading Modal",
   component: LoadingModal,
 
   args: {},

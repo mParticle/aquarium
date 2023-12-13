@@ -3,7 +3,7 @@ import { StoryObj } from "@storybook/react";
 import { Space } from "src/components/layout/Space/Space";
 
 const meta: Meta<typeof Space> = {
-  title: "Aquarium/Feedback/Space",
+  title: "Aquarium/Layout/Space",
   component: Space,
 
   args: {},
