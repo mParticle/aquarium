@@ -6,7 +6,7 @@ import { Button } from "src/components/general/Button/Button";
 import { AnnotationModal } from "src/components/AnnotationModal/AnnotationModal";
 
 const meta: Meta<typeof AnnotationModal> = {
-  title: "Aquarium/Feedback/Annotations Modal",
+  title: "Aquarium/Unknown/Annotations Modal",
   component: AnnotationModal,
 
   args: {},
