@@ -1,0 +1,1016 @@
+{
+  "Colors": {
+    "Blue": {
+      "1": {
+        "name": "Colors/Blue/1",
+        "description": "",
+        "type": "color",
+        "value": "#afe1fa"
+      },
+      "2": {
+        "name": "Colors/Blue/2",
+        "description": "",
+        "type": "color",
+        "value": "#7dd0fa"
+      },
+      "3": {
+        "name": "Colors/Blue/3",
+        "description": "",
+        "type": "color",
+        "value": "#32b7fa"
+      },
+      "4": {
+        "name": "Colors/Blue/4",
+        "description": "",
+        "type": "color",
+        "value": "#009be8"
+      },
+      "5": {
+        "name": "Colors/Blue/5",
+        "description": "",
+        "type": "color",
+        "value": "#0079b5"
+      },
+      "6": {
+        "name": "Colors/Blue/6",
+        "description": "",
+        "type": "color",
+        "value": "#005782"
+      },
+      "7": {
+        "name": "Colors/Blue/7",
+        "description": "",
+        "type": "color",
+        "value": "#004669"
+      },
+      "8": {
+        "name": "Colors/Blue/8",
+        "description": "",
+        "type": "color",
+        "value": "#00354f"
+      },
+      "9": {
+        "name": "Colors/Blue/9",
+        "description": "",
+        "type": "color",
+        "value": "#002436"
+      },
+      "10": {
+        "name": "Colors/Blue/10",
+        "description": "",
+        "type": "color",
+        "value": "#00131c"
+      }
+    },
+    "Teal": {
+      "1": {
+        "name": "Colors/Teal/1",
+        "description": "",
+        "type": "color",
+        "value": "#dffef3"
+      },
+      "2": {
+        "name": "Colors/Teal/2",
+        "description": "",
+        "type": "color",
+        "value": "#97f7df"
+      },
+      "3": {
+        "name": "Colors/Teal/3",
+        "description": "",
+        "type": "color",
+        "value": "#7ef7d9"
+      },
+      "4": {
+        "name": "Colors/Teal/4",
+        "description": "",
+        "type": "color",
+        "value": "#05ffc5"
+      },
+      "5": {
+        "name": "Colors/Teal/5",
+        "description": "",
+        "type": "color",
+        "value": "#04ce9f"
+      },
+      "6": {
+        "name": "Colors/Teal/6",
+        "description": "",
+        "type": "color",
+        "value": "#00966c"
+      },
+      "7": {
+        "name": "Colors/Teal/7",
+        "description": "",
+        "type": "color",
+        "value": "#007558"
+      },
+      "8": {
+        "name": "Colors/Teal/8",
+        "description": "",
+        "type": "color",
+        "value": "#005c45"
+      },
+      "9": {
+        "name": "Colors/Teal/9",
+        "description": "",
+        "type": "color",
+        "value": "#004232"
+      },
+      "10": {
+        "name": "Colors/Teal/10",
+        "description": "",
+        "type": "color",
+        "value": "#00291f"
+      }
+    },
+    "Green": {
+      "1": {
+        "name": "Colors/Green/1",
+        "description": "",
+        "type": "color",
+        "value": "#f6ffed"
+      },
+      "2": {
+        "name": "Colors/Green/2",
+        "description": "",
+        "type": "color",
+        "value": "#d9f7be"
+      },
+      "3": {
+        "name": "Colors/Green/3",
+        "description": "",
+        "type": "color",
+        "value": "#b7eb8f"
+      },
+      "4": {
+        "name": "Colors/Green/4",
+        "description": "",
+        "type": "color",
+        "value": "#95de64"
+      },
+      "5": {
+        "name": "Colors/Green/5",
+        "description": "",
+        "type": "color",
+        "value": "#73d13d"
+      },
+      "6": {
+        "name": "Colors/Green/6",
+        "description": "",
+        "type": "color",
+        "value": "#52c41a"
+      },
+      "7": {
+        "name": "Colors/Green/7",
+        "description": "",
+        "type": "color",
+        "value": "#389e0d"
+      },
+      "8": {
+        "name": "Colors/Green/8",
+        "description": "",
+        "type": "color",
+        "value": "#237804"
+      },
+      "9": {
+        "name": "Colors/Green/9",
+        "description": "",
+        "type": "color",
+        "value": "#135200"
+      },
+      "10": {
+        "name": "Colors/Green/10",
+        "description": "",
+        "type": "color",
+        "value": "#092b00"
+      }
+    },
+    "Yellow": {
+      "1": {
+        "name": "Colors/Yellow/1",
+        "description": "",
+        "type": "color",
+        "value": "#f4e8c3"
+      },
+      "2": {
+        "name": "Colors/Yellow/2",
+        "description": "",
+        "type": "color",
+        "value": "#f4dd92"
+      },
+      "3": {
+        "name": "Colors/Yellow/3",
+        "description": "",
+        "type": "color",
+        "value": "#f4d162"
+      },
+      "4": {
+        "name": "Colors/Yellow/4",
+        "description": "",
+        "type": "color",
+        "value": "#f4c631"
+      },
+      "5": {
+        "name": "Colors/Yellow/5",
+        "description": "",
+        "type": "color",
+        "value": "#f4ba00"
+      },
+      "6": {
+        "name": "Colors/Yellow/6",
+        "description": "",
+        "type": "color",
+        "value": "#dba700"
+      },
+      "7": {
+        "name": "Colors/Yellow/7",
+        "description": "",
+        "type": "color",
+        "value": "#a88000"
+      },
+      "8": {
+        "name": "Colors/Yellow/8",
+        "description": "",
+        "type": "color",
+        "value": "#755900"
+      },
+      "9": {
+        "name": "Colors/Yellow/9",
+        "description": "",
+        "type": "color",
+        "value": "#5c4600"
+      },
+      "10": {
+        "name": "Colors/Yellow/10",
+        "description": "",
+        "type": "color",
+        "value": "#423300"
+      }
+    },
+    "Orange": {
+      "1": {
+        "name": "Colors/Orange/1",
+        "description": "",
+        "type": "color",
+        "value": "#ffb085"
+      },
+      "2": {
+        "name": "Colors/Orange/2",
+        "description": "",
+        "type": "color",
+        "value": "#ff8039"
+      },
+      "3": {
+        "name": "Colors/Orange/3",
+        "description": "",
+        "type": "color",
+        "value": "#ff6633"
+      },
+      "4": {
+        "name": "Colors/Orange/4",
+        "description": "",
+        "type": "color",
+        "value": "#ff531a"
+      },
+      "5": {
+        "name": "Colors/Orange/5",
+        "description": "",
+        "type": "color",
+        "value": "#ff4000"
+      },
+      "6": {
+        "name": "Colors/Orange/6",
+        "description": "",
+        "type": "color",
+        "value": "#d23703"
+      },
+      "7": {
+        "name": "Colors/Orange/7",
+        "description": "",
+        "type": "color",
+        "value": "#9e2902"
+      },
+      "8": {
+        "name": "Colors/Orange/8",
+        "description": "",
+        "type": "color",
+        "value": "#852202"
+      },
+      "9": {
+        "name": "Colors/Orange/9",
+        "description": "",
+        "type": "color",
+        "value": "#6b1c01"
+      },
+      "10": {
+        "name": "Colors/Orange/10",
+        "description": "",
+        "type": "color",
+        "value": "#521501"
+      }
+    },
+    "Red": {
+      "1": {
+        "name": "Colors/Red/1",
+        "description": "",
+        "type": "color",
+        "value": "#fceded"
+      },
+      "2": {
+        "name": "Colors/Red/2",
+        "description": "",
+        "type": "color",
+        "value": "#f3839e"
+      },
+      "3": {
+        "name": "Colors/Red/3",
+        "description": "",
+        "type": "color",
+        "value": "#f33a66"
+      },
+      "4": {
+        "name": "Colors/Red/4",
+        "description": "",
+        "type": "color",
+        "value": "#cf1943"
+      },
+      "5": {
+        "name": "Colors/Red/5",
+        "description": "",
+        "type": "color",
+        "value": "#b5163b"
+      },
+      "6": {
+        "name": "Colors/Red/6",
+        "description": "",
+        "type": "color",
+        "value": "#9c1332"
+      },
+      "7": {
+        "name": "Colors/Red/7",
+        "description": "",
+        "type": "color",
+        "value": "#82102a"
+      },
+      "8": {
+        "name": "Colors/Red/8",
+        "description": "",
+        "type": "color",
+        "value": "#690d22"
+      },
+      "9": {
+        "name": "Colors/Red/9",
+        "description": "",
+        "type": "color",
+        "value": "#4f0a1a"
+      },
+      "10": {
+        "name": "Colors/Red/10",
+        "description": "",
+        "type": "color",
+        "value": "#360611"
+      }
+    },
+    "Purple": {
+      "1": {
+        "name": "Colors/Purple/1",
+        "description": "",
+        "type": "color",
+        "value": "#bdbeff"
+      },
+      "2": {
+        "name": "Colors/Purple/2",
+        "description": "",
+        "type": "color",
+        "value": "#7074ff"
+      },
+      "3": {
+        "name": "Colors/Purple/3",
+        "description": "",
+        "type": "color",
+        "value": "#575cff"
+      },
+      "4": {
+        "name": "Colors/Purple/4",
+        "description": "",
+        "type": "color",
+        "value": "#5239d3"
+      },
+      "5": {
+        "name": "Colors/Purple/5",
+        "description": "",
+        "type": "color",
+        "value": "#4832ba"
+      },
+      "6": {
+        "name": "Colors/Purple/6",
+        "description": "",
+        "type": "color",
+        "value": "#3e2ba1"
+      },
+      "7": {
+        "name": "Colors/Purple/7",
+        "description": "",
+        "type": "color",
+        "value": "#352587"
+      },
+      "8": {
+        "name": "Colors/Purple/8",
+        "description": "",
+        "type": "color",
+        "value": "#2b1e6e"
+      },
+      "9": {
+        "name": "Colors/Purple/9",
+        "description": "",
+        "type": "color",
+        "value": "#211754"
+      },
+      "10": {
+        "name": "Colors/Purple/10",
+        "description": "",
+        "type": "color",
+        "value": "#17103b"
+      }
+    },
+    "Gray": {
+      "1": {
+        "name": "Colors/Gray/1",
+        "description": "",
+        "type": "color",
+        "value": "#ffffff"
+      },
+      "2": {
+        "name": "Colors/Gray/2",
+        "description": "",
+        "type": "color",
+        "value": "#faf9f8"
+      },
+      "3": {
+        "name": "Colors/Gray/3",
+        "description": "",
+        "type": "color",
+        "value": "#eceae9"
+      },
+      "4": {
+        "name": "Colors/Gray/4",
+        "description": "",
+        "type": "color",
+        "value": "#d3d1d0"
+      },
+      "5": {
+        "name": "Colors/Gray/5",
+        "description": "",
+        "type": "color",
+        "value": "#b2b1b1"
+      },
+      "6": {
+        "name": "Colors/Gray/6",
+        "description": "",
+        "type": "color",
+        "value": "#767575"
+      },
+      "7": {
+        "name": "Colors/Gray/7",
+        "description": "",
+        "type": "color",
+        "value": "#525151"
+      },
+      "8": {
+        "name": "Colors/Gray/8",
+        "description": "",
+        "type": "color",
+        "value": "#2d2c2c"
+      },
+      "9": {
+        "name": "Colors/Gray/9",
+        "description": "",
+        "type": "color",
+        "value": "#212020"
+      },
+      "10": {
+        "name": "Colors/Gray/10",
+        "description": "",
+        "type": "color",
+        "value": "#0f0e0e"
+      }
+    },
+    "WhiteAlpha": {
+      "1": {
+        "name": "Colors/WhiteAlpha/1",
+        "description": "",
+        "type": "color",
+        "value": "rgba(1,1,1,0.04)"
+      },
+      "2": {
+        "name": "Colors/WhiteAlpha/2",
+        "description": "",
+        "type": "color",
+        "value": "rgba(1,1,1,0.08)"
+      },
+      "3": {
+        "name": "Colors/WhiteAlpha/3",
+        "description": "",
+        "type": "color",
+        "value": "rgba(1,1,1,0.12)"
+      },
+      "4": {
+        "name": "Colors/WhiteAlpha/4",
+        "description": "",
+        "type": "color",
+        "value": "rgba(1,1,1,0.16)"
+      },
+      "5": {
+        "name": "Colors/WhiteAlpha/5",
+        "description": "",
+        "type": "color",
+        "value": "rgba(1,1,1,0.24)"
+      },
+      "6": {
+        "name": "Colors/WhiteAlpha/6",
+        "description": "",
+        "type": "color",
+        "value": "rgba(1,1,1,0.32)"
+      },
+      "7": {
+        "name": "Colors/WhiteAlpha/7",
+        "description": "",
+        "type": "color",
+        "value": "rgba(1,1,1,0.48)"
+      },
+      "8": {
+        "name": "Colors/WhiteAlpha/8",
+        "description": "",
+        "type": "color",
+        "value": "rgba(1,1,1,0.64)"
+      },
+      "9": {
+        "name": "Colors/WhiteAlpha/9",
+        "description": "",
+        "type": "color",
+        "value": "rgba(1,1,1,0.72)"
+      },
+      "10": {
+        "name": "Colors/WhiteAlpha/10",
+        "description": "",
+        "type": "color",
+        "value": "rgba(1,1,1,0.88)"
+      }
+    },
+    "BlackAlpha": {
+      "1": {
+        "name": "Colors/BlackAlpha/1",
+        "description": "",
+        "type": "color",
+        "value": "rgba(0,0,0,0.04)"
+      },
+      "2": {
+        "name": "Colors/BlackAlpha/2",
+        "description": "",
+        "type": "color",
+        "value": "rgba(0,0,0,0.08)"
+      },
+      "3": {
+        "name": "Colors/BlackAlpha/3",
+        "description": "",
+        "type": "color",
+        "value": "rgba(0,0,0,0.12)"
+      },
+      "4": {
+        "name": "Colors/BlackAlpha/4",
+        "description": "",
+        "type": "color",
+        "value": "rgba(0,0,0,0.16)"
+      },
+      "5": {
+        "name": "Colors/BlackAlpha/5",
+        "description": "",
+        "type": "color",
+        "value": "rgba(0,0,0,0.24)"
+      },
+      "6": {
+        "name": "Colors/BlackAlpha/6",
+        "description": "",
+        "type": "color",
+        "value": "rgba(0,0,0,0.32)"
+      },
+      "7": {
+        "name": "Colors/BlackAlpha/7",
+        "description": "",
+        "type": "color",
+        "value": "rgba(0,0,0,0.48)"
+      },
+      "8": {
+        "name": "Colors/BlackAlpha/8",
+        "description": "",
+        "type": "color",
+        "value": "rgba(0,0,0,0.64)"
+      },
+      "9": {
+        "name": "Colors/BlackAlpha/9",
+        "description": "",
+        "type": "color",
+        "value": "rgba(0,0,0,0.72)"
+      },
+      "10": {
+        "name": "Colors/BlackAlpha/10",
+        "description": "",
+        "type": "color",
+        "value": "rgba(0,0,0,0.88)"
+      }
+    }
+  },
+  "Typography": {
+    "fontWeightStrong": {
+      "name": "Typography/fontWeightStrong",
+      "description": "",
+      "type": "float",
+      "value": 600
+    },
+    "Font Family": {
+      "fontFamily": {
+        "name": "Typography/Font Family/fontFamily",
+        "description": "",
+        "type": "string",
+        "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"
+      },
+      "fontFamilyCode": {
+        "name": "Typography/Font Family/fontFamilyCode",
+        "description": "",
+        "type": "string",
+        "value": "'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace"
+      }
+    },
+    "Font Size": {
+      "fontSizeSM": {
+        "name": "Typography/Font Size/fontSizeSM",
+        "description": "",
+        "type": "float",
+        "value": 12
+      },
+      "fontSizeMD": {
+        "name": "Typography/Font Size/fontSizeMD",
+        "description": "",
+        "type": "float",
+        "value": 14
+      },
+      "fontSizeLG": {
+        "name": "Typography/Font Size/fontSizeLG",
+        "description": "",
+        "type": "float",
+        "value": 16
+      },
+      "fontSizeXL": {
+        "name": "Typography/Font Size/fontSizeXL",
+        "description": "",
+        "type": "float",
+        "value": 20
+      },
+      "fontSize-H1": {
+        "name": "Typography/Font Size/fontSize-H1",
+        "description": "",
+        "type": "float",
+        "value": 38
+      },
+      "fontSize-H2": {
+        "name": "Typography/Font Size/fontSize-H2",
+        "description": "",
+        "type": "float",
+        "value": 30
+      },
+      "fontSize-H3": {
+        "name": "Typography/Font Size/fontSize-H3",
+        "description": "",
+        "type": "float",
+        "value": 24
+      },
+      "fontSize-H4": {
+        "name": "Typography/Font Size/fontSize-H4",
+        "description": "",
+        "type": "float",
+        "value": 20
+      },
+      "fontSize-H5": {
+        "name": "Typography/Font Size/fontSize-H5",
+        "description": "",
+        "type": "float",
+        "value": 16
+      },
+      "fontSize-Icon": {
+        "name": "Typography/Font Size/fontSize-Icon",
+        "description": "",
+        "type": "float",
+        "value": 12
+      }
+    },
+    "Line Height": {
+      "lineHeightSM": {
+        "name": "Typography/Line Height/lineHeightSM",
+        "description": "",
+        "type": "float",
+        "value": 1.6699999570846558
+      },
+      "lineHeightMD": {
+        "name": "Typography/Line Height/lineHeightMD",
+        "description": "",
+        "type": "float",
+        "value": 1.5700000524520874
+      },
+      "lineHeightLG": {
+        "name": "Typography/Line Height/lineHeightLG",
+        "description": "",
+        "type": "float",
+        "value": 1.5
+      },
+      "lineHeightH1": {
+        "name": "Typography/Line Height/lineHeightH1",
+        "description": "",
+        "type": "float",
+        "value": 1.2100000381469727
+      },
+      "lineHeightH2": {
+        "name": "Typography/Line Height/lineHeightH2",
+        "description": "",
+        "type": "float",
+        "value": 1.2699999809265137
+      },
+      "lineHeightH3": {
+        "name": "Typography/Line Height/lineHeightH3",
+        "description": "",
+        "type": "float",
+        "value": 1.3300000429153442
+      },
+      "lineHeightH4": {
+        "name": "Typography/Line Height/lineHeightH4",
+        "description": "",
+        "type": "float",
+        "value": 1.399999976158142
+      },
+      "lineHeightH5": {
+        "name": "Typography/Line Height/lineHeightH5",
+        "description": "",
+        "type": "float",
+        "value": 1.5
+      }
+    }
+  },
+  "Size": {
+    "Base": {
+      "XXS": {
+        "name": "Size/Base/XXS",
+        "description": "",
+        "type": "float",
+        "value": 4
+      },
+      "XS": {
+        "name": "Size/Base/XS",
+        "description": "",
+        "type": "float",
+        "value": 8
+      },
+      "SM": {
+        "name": "Size/Base/SM",
+        "description": "",
+        "type": "float",
+        "value": 12
+      },
+      "MS": {
+        "name": "Size/Base/MS",
+        "description": "",
+        "type": "float",
+        "value": 16
+      },
+      "MD": {
+        "name": "Size/Base/MD",
+        "description": "",
+        "type": "float",
+        "value": 20
+      },
+      "LG": {
+        "name": "Size/Base/LG",
+        "description": "",
+        "type": "float",
+        "value": 24
+      },
+      "XL": {
+        "name": "Size/Base/XL",
+        "description": "",
+        "type": "float",
+        "value": 32
+      },
+      "XXL": {
+        "name": "Size/Base/XXL",
+        "description": "",
+        "type": "float",
+        "value": 48
+      }
+    },
+    "sizeStep": {
+      "name": "Size/sizeStep",
+      "description": "",
+      "type": "float",
+      "value": 4
+    },
+    "Height": {
+      "controlHeightXS": {
+        "name": "Size/Height/controlHeightXS",
+        "description": "",
+        "type": "float",
+        "value": 16
+      },
+      "controlHeightSM": {
+        "name": "Size/Height/controlHeightSM",
+        "description": "",
+        "type": "float",
+        "value": 24
+      },
+      "controlHeightMD": {
+        "name": "Size/Height/controlHeightMD",
+        "description": "",
+        "type": "float",
+        "value": 32
+      },
+      "controlHeightLG": {
+        "name": "Size/Height/controlHeightLG",
+        "description": "",
+        "type": "float",
+        "value": 40
+      }
+    },
+    "Screen Size": {
+      "screenXS": {
+        "name": "Size/Screen Size/screenXS",
+        "description": "",
+        "type": "float",
+        "value": 480
+      },
+      "screenXSMax": {
+        "name": "Size/Screen Size/screenXSMax",
+        "description": "",
+        "type": "float",
+        "value": 575
+      },
+      "screenXSMin": {
+        "name": "Size/Screen Size/screenXSMin",
+        "description": "",
+        "type": "float",
+        "value": "{Size.Screen Size.screenXS}"
+      },
+      "screenSM": {
+        "name": "Size/Screen Size/screenSM",
+        "description": "",
+        "type": "float",
+        "value": 576
+      },
+      "screenSMMax": {
+        "name": "Size/Screen Size/screenSMMax",
+        "description": "",
+        "type": "float",
+        "value": 767
+      },
+      "screenSMMin": {
+        "name": "Size/Screen Size/screenSMMin",
+        "description": "",
+        "type": "float",
+        "value": "{Size.Screen Size.screenSM}"
+      },
+      "screenMD": {
+        "name": "Size/Screen Size/screenMD",
+        "description": "",
+        "type": "float",
+        "value": 768
+      },
+      "screenMDMax": {
+        "name": "Size/Screen Size/screenMDMax",
+        "description": "",
+        "type": "float",
+        "value": 991
+      },
+      "screenMDMin": {
+        "name": "Size/Screen Size/screenMDMin",
+        "description": "",
+        "type": "float",
+        "value": "{Size.Screen Size.screenMD}"
+      },
+      "screenLG": {
+        "name": "Size/Screen Size/screenLG",
+        "description": "",
+        "type": "float",
+        "value": 992
+      },
+      "screenLGMax": {
+        "name": "Size/Screen Size/screenLGMax",
+        "description": "",
+        "type": "float",
+        "value": 1199
+      },
+      "screenLGMin": {
+        "name": "Size/Screen Size/screenLGMin",
+        "description": "",
+        "type": "float",
+        "value": "{Size.Screen Size.screenLG}"
+      },
+      "screenXL": {
+        "name": "Size/Screen Size/screenXL",
+        "description": "",
+        "type": "float",
+        "value": 1200
+      },
+      "screenXLMax": {
+        "name": "Size/Screen Size/screenXLMax",
+        "description": "",
+        "type": "float",
+        "value": 1599
+      },
+      "screenXLMin": {
+        "name": "Size/Screen Size/screenXLMin",
+        "description": "",
+        "type": "float",
+        "value": "{Size.Screen Size.screenXL}"
+      },
+      "screenXXL": {
+        "name": "Size/Screen Size/screenXXL",
+        "description": "",
+        "type": "float",
+        "value": 1600
+      },
+      "screenXXLMin": {
+        "name": "Size/Screen Size/screenXXLMin",
+        "description": "",
+        "type": "float",
+        "value": "{Size.Screen Size.screenXXL}"
+      }
+    },
+    "sizeUnit": {
+      "name": "Size/sizeUnit",
+      "description": "",
+      "type": "float",
+      "value": 4
+    },
+    "Line Width": {
+      "lineWidth": {
+        "name": "Size/Line Width/lineWidth",
+        "description": "",
+        "type": "float",
+        "value": 1
+      },
+      "lineWidthBold": {
+        "name": "Size/Line Width/lineWidthBold",
+        "description": "",
+        "type": "float",
+        "value": 2
+      },
+      "lineWidthFocus": {
+        "name": "Size/Line Width/lineWidthFocus",
+        "description": "",
+        "type": "float",
+        "value": 4
+      },
+      "controlOutlineWidth": {
+        "name": "Size/Line Width/controlOutlineWidth",
+        "description": "",
+        "type": "float",
+        "value": 2
+      }
+    },
+    "controlInteractiveSize": {
+      "name": "Size/controlInteractiveSize",
+      "description": "",
+      "type": "float",
+      "value": 16
+    },
+    "sizePopupArrow": {
+      "name": "Size/sizePopupArrow",
+      "description": "",
+      "type": "float",
+      "value": 16
+    }
+  },
+  "Border Radius": {
+    "borderRadiusXS": {
+      "name": "Border Radius/borderRadiusXS",
+      "description": "",
+      "type": "float",
+      "value": 2
+    },
+    "borderRadiusSM": {
+      "name": "Border Radius/borderRadiusSM",
+      "description": "",
+      "type": "float",
+      "value": 4
+    },
+    "borderRadiusMD": {
+      "name": "Border Radius/borderRadiusMD",
+      "description": "",
+      "type": "float",
+      "value": 6
+    },
+    "borderRadiusLG": {
+      "name": "Border Radius/borderRadiusLG",
+      "description": "",
+      "type": "float",
+      "value": 8
+    }
+  }
+}
