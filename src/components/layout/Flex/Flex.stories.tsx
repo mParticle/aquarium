@@ -3,7 +3,7 @@ import { StoryObj } from "@storybook/react";
 import { Flex } from "src/components/layout/Flex/Flex";
 
 const meta: Meta<typeof Flex> = {
-  title: "Aquarium/Feedback/Flex",
+  title: "Aquarium/Layout/Flex",
   component: Flex,
 
   args: {},

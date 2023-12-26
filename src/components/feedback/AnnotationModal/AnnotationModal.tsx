@@ -1,6 +1,6 @@
 import React from "react";
-import { LoadingModal } from "../LoadingModal/LoadingModal";
-import { ILoadingModalProps } from "../LoadingModal/LoadingModal";
+import { LoadingModal } from "src/components/feedback/LoadingModal/LoadingModal";
+import { ILoadingModalProps } from "src/components/feedback/LoadingModal/LoadingModal";
 import { DatePicker } from "src/components/data-entry/DatePicker/DatePicker";
 import { Dropdown } from "src/components/navigation/Dropdown/Dropdown";
 import { Input } from "src/components/data-entry/Input/Input";

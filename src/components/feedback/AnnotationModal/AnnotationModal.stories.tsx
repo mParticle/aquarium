@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";
 import { Button } from "src/components/general/Button/Button";
-import { AnnotationModal } from "src/components/AnnotationModal/AnnotationModal";
+import { AnnotationModal } from "src/components/feedback/AnnotationModal/AnnotationModal";
 
 const meta: Meta<typeof AnnotationModal> = {
   title: "Aquarium/Feedback/Annotations Modal",
