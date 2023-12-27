@@ -22,9 +22,10 @@ const BaseTemplate = () => {
   const showModal = () => { setIsModalOpen(true); };
 
   return <>
-    <Button copy="Open Annotation Modal"
-            type="primary"
-            onClick={showModal}/>
+    <Button type="primary"
+            onClick={showModal}>
+      Open Annotation Modal
+    </Button>
 
     {isModalOpen &&
      <AnnotationModal/>}

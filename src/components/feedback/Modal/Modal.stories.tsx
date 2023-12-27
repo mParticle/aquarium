@@ -27,9 +27,11 @@ const PrimaryTemplate = (args: IModalProps) => {
   const handleCancel = () => { setIsModalOpen(false); };
 
   return (<>
-    <Button copy="Open Modal"
-            type="primary"
-            onClick={showModal}/>
+    <Button type="primary"
+            onClick={showModal}>
+      Open Modal
+    </Button>
+    
     <Modal title="Basic Modal"
            open={isModalOpen}
            onOk={handleOk}

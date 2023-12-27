@@ -45,7 +45,7 @@ export function AnnotationModal(props: IAnnotationModalProps) {
 
         <DatePicker size={"large"}></DatePicker>
 
-        <Dropdown dropdownButton={<Button copy="Events Dropdown"/>}
+          <Dropdown dropdownButton={<Button>Events Dropdown</Button>}
                   menu={{ items: initData.events.map(event => ({ value: event.name, label: event.name, type: "group" } as ItemType)) }}>
         </Dropdown>
         </Flex>

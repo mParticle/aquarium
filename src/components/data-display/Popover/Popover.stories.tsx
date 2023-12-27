@@ -25,7 +25,7 @@ const PrimaryTemplate = (args: IPopoverProps) => {
 
   return <>
     <Popover content={content} title="Title" trigger={args.trigger}>
-      <Button copy={args.children + ""}/>
+      <Button>{args.children}</Button>
     </Popover>
   </>;
 };
