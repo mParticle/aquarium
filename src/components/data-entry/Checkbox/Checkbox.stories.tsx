@@ -1,12 +1,18 @@
-import {Meta} from "@storybook/react";
-import {StoryObj} from "@storybook/react";
-import {Checkbox} from "src/components/data-entry/Checkbox/Checkbox";
+import { Meta } from "@storybook/react";
+import { StoryObj } from "@storybook/react";
+import { Checkbox } from "src/components/data-entry/Checkbox/Checkbox";
 
 const meta: Meta<typeof Checkbox> = {
-    title: "Aquarium/Data Entry/Checkbox",
-    component: Checkbox,
+  title: "Aquarium/Data Entry/Checkbox",
+  component: Checkbox,
 
-    args: {},
+  args: {
+    autoFocus: false,
+    checked: false,
+    defaultChecked: false,
+    disabled: false,
+    indeterminate: false,
+  },
 };
 export default meta;
 
@@ -19,72 +25,41 @@ type Story = StoryObj<typeof Checkbox>
 */
 
 export const Primary: Story = {
-    args: {
-        autoFocus: false,
-        checked: false,
-        defaultChecked: false,
-        disabled: false,
-        indeterminate: false,
-    },
+  args: {},
 };
 
 export const WithAutoFocus: Story = {
-    args: {
-        autoFocus: true,
-        checked: false,
-        defaultChecked: false,
-        disabled: false,
-        indeterminate: false,
-    },
+  args: {
+    autoFocus: true,
+  },
 };
 
 export const Checked: Story = {
-    args: {
-        autoFocus: false,
-        checked: true,
-        defaultChecked: false,
-        disabled: false,
-        indeterminate: false,
-    },
+  args: {
+    checked: true,
+  },
 };
 
 export const DefaultChecked: Story = {
-    args: {
-        autoFocus: false,
-        checked: false,
-        defaultChecked: true,
-        disabled: false,
-        indeterminate: false,
-    },
+  args: {
+    defaultChecked: true,
+  },
 };
 
 export const Disabled: Story = {
-    args: {
-        autoFocus: false,
-        checked: false,
-        defaultChecked: false,
-        disabled: true,
-        indeterminate: false,
-    },
+  args: {
+    disabled: true,
+  },
 };
 
 export const Indeterminate: Story = {
-    args: {
-        autoFocus: false,
-        checked: false,
-        defaultChecked: false,
-        disabled: false,
-        indeterminate: true,
-    },
+  args: {
+    indeterminate: true,
+  },
 };
 
 export const WithOnChange: Story = {
-    args: {
-        autoFocus: false,
-        checked: false,
-        defaultChecked: false,
-        disabled: false,
-        indeterminate: false,
-        onChange: (e) => alert('Checkbox Changed'),
-    },
+  args: {
+    onChange: (e) => alert("Checkbox Changed"),
+  },
 };
