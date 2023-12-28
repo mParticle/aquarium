@@ -1,12 +1,20 @@
 import React from "react";
-import { Message as AntMessage } from "antd";
-import { MessageProps as AntMessageProps } from "antd";
+import { message } from "antd";
+import { MessageArgsProps as AntMessageArgsProps } from "antd";
 
-export interface IMessageProps extends AntMessageProps {
+export interface IMessageProps extends AntMessageArgsProps {
+  children: React.ReactNode;
 }
 
 export const Message = (props: IMessageProps) => {
+  const [messageApi, contextHolder] = message.useMessage();
+
+  const open = (): void => {
+    messageApi.open({ ...props });
+  };
+
   return <>
-    <AntMessage {...props}/>
+    {contextHolder}
+    <span onClick={open}>{props.children}</span>
   </>;
 };

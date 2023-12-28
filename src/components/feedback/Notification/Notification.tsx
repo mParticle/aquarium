@@ -9,20 +9,14 @@ export interface INotificationProps extends NotificationArgsProps {
 export const Notification = (props: INotificationProps) => {
   const [notificationApi, contextHolder] = notification.useNotification();
 
-  const openNotification = () => {
-    notificationApi.open({
-                           ...props,
-                           message: props.message,
-                           description: props.description,
-                           duration: props.duration ?? 0,
-                         });
+  const open = (): void => {
+    notificationApi.open({ ...props });
   };
 
   return (<>
     {contextHolder}
-    <span onClick={openNotification}>
+    <span onClick={open}>
       {props.children}
     </span>
   </>);
-
 };
