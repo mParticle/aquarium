@@ -1,12 +1,28 @@
 import React from "react";
-import { Notification as AntNotification } from "antd";
-import { NotificationProps as AntNotificationProps } from "antd";
+import { notification } from "antd";
+import { NotificationArgsProps } from "antd";
 
-export interface INotificationProps extends AntNotificationProps {
+export interface INotificationProps extends NotificationArgsProps {
+  children: React.ReactNode;
 }
 
 export const Notification = (props: INotificationProps) => {
-  return <>
-    <AntNotification {...props}/>
-  </>;
+  const [notificationApi, contextHolder] = notification.useNotification();
+
+  const openNotification = () => {
+    notificationApi.open({
+                           ...props,
+                           message: props.message,
+                           description: props.description,
+                           duration: props.duration ?? 0,
+                         });
+  };
+
+  return (<>
+    {contextHolder}
+    <span onClick={openNotification}>
+      {props.children}
+    </span>
+  </>);
+
 };
