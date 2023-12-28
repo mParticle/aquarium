@@ -56,10 +56,7 @@ type Story = StoryObj<typeof InputNumber>
   Customize the stories based on specific requirements.
 */
 
-export const Primary: Story = {
-  args: {},
-};
-
+export const Primary: Story = {};
 
 export const Small: Story = {
   args: {

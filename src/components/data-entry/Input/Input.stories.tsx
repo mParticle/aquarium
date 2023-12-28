@@ -83,9 +83,7 @@ export const Small: Story = {
   },
 };
 
-export const Primary: Story = {
-  args: {},
-};
+export const Primary: Story = {};
 
 export const WithHttpsBefore: Story = {
   args: {

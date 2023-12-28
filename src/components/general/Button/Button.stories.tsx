@@ -49,9 +49,7 @@ type Story = StoryObj<typeof Button>
   Customize the stories based on specific requirements.
 */
 
-export const Primary: Story = {
-  args: {},
-};
+export const Primary: Story = {};
 
 export const Default: Story = {
   args: {
