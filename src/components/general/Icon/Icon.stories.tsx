@@ -1,6 +1,6 @@
 import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";
-import { Icon } from "src/components/data-display/Icon/Icon";
+import { Icon } from "src/components/general/Icon/Icon";
 
 const meta: Meta<typeof Icon> = {
   title: "Aquarium/General/Icon",
