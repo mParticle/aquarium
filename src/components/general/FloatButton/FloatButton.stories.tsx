@@ -17,6 +17,17 @@ const meta: Meta<typeof FloatButton> = {
     badge: undefined,
     onClick: (event) => alert("Float Button Clicked!"),
   },
+
+  argTypes: {
+    shape: {
+      control: "select",
+      options: ["circle", "square"],
+    },
+    type: {
+      control: "select",
+      options: ["default", "primary"],
+    },
+  },
 };
 export default meta;
 

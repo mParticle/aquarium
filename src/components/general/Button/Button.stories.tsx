@@ -22,6 +22,21 @@ const meta: Meta<typeof Button> = {
     type: "primary",
     onClick: undefined,
   },
+
+  argTypes: {
+    shape: {
+      control: "select",
+      options: ["default", "circle", "round"],
+    },
+    size: {
+      control: "select",
+      options: ["small", "medium", "large"],
+    },
+    type: {
+      control: "select",
+      options: ["primary", "dashed", "link", "text", "default"],
+    },
+  },
 };
 export default meta;
 

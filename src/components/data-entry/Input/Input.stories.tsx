@@ -29,6 +29,17 @@ const meta: Meta<typeof Input> = {
     onChange: (e) => console.log('Input changed: '+ e.target.value),
     onPressEnter: (e) => console.log('Enter key pressed: '+ e),
   },
+  
+  argTypes:{
+    status:{
+      control: "select",
+      options: ["warning", "error"],
+    },
+    size: {
+      control: "select",
+      options: ["small", "medium", "large"],
+    },
+  },
 };
 export default meta;
 

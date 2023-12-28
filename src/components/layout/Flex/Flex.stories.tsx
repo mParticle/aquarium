@@ -6,14 +6,14 @@ import { Flex } from "src/components/layout/Flex/Flex";
 const meta: Meta<typeof Flex> = {
   title: "Aquarium/Layout/Flex",
   component: props => <>
-    <Flex {...props} style={{
+    <Flex {...props}  style={{
       width: 200,
       height: 108,
       borderRadius: 6,
       border: "1px solid #40a9ff",
     }}>
       {Array.from({ length: 4 }).map((_, i) => (
-        <div key={i} style={{ width: '25%', height: 54, backgroundColor: i % 2 ? "#1677ff" : "#1677ffbf" }}/>
+        <div key={i} style={{ width: 20, height: 54, backgroundColor: i % 2 ? "#1677ff" : "#1677ffbf" }}/>
       ))}
     </Flex>
   </>,
@@ -21,12 +21,28 @@ const meta: Meta<typeof Flex> = {
   args: {
     vertical: false,
     wrap: "nowrap",
-    justify: "normal",
+    justify: "stretch",
     align: "normal",
-    flex: "normal",
+    flex: "0 1 auto",
     gap: "middle",
     component: "div",
   },
+
+  argTypes: {
+    wrap: {
+      control: "select",
+      options: ["nowrap", "wrap", "wrap-reverse", "initial", "revert", "revert-layer", "unset"],
+    },
+    justify: {
+      control: "select",
+      options: ["flex-start", "center", "flex-end", "space-between", "space-around", "space-evenly", "stretch"],
+    },
+    align: {
+      control: "select",
+      options: ["normal", "stretch", "center", "flex-start", "flex-end", "self-start", "self-end", "baseline"],
+    },
+  },
+
 };
 export default meta;
 

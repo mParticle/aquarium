@@ -21,6 +21,17 @@ const meta: Meta<typeof Divider> = {
     style: undefined,
     type: "horizontal",
   },
+
+  argTypes: {
+    orientation: {
+      control: "select",
+      options: ["left", "right", "center"],
+    },
+    type: {
+      control: "select",
+      options: ["vertical", "horizontal"],
+    },
+  },
 };
 export default meta;
 
