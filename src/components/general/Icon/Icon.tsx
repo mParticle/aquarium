@@ -1,12 +1,13 @@
 import React from "react";
-// import { Icon as AntIcon } from "antd";
-// import { IconProps as AntIconProps } from "antd";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
-export interface IIconProps /*extends AntIconProps*/ {
+export interface IIconProps {
+  icon: IconProp;
 }
 
 export const Icon = (props: IIconProps) => {
   return <>
-    {/*<AntIcon {...props}/>*/}
+    <FontAwesomeIcon {...props}></FontAwesomeIcon>
   </>;
 };
