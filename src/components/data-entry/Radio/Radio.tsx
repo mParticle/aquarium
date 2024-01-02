@@ -10,3 +10,6 @@ export const Radio = (props: IRadioProps) => {
     <AntRadio {...props}/>
   </>;
 };
+
+Radio.Group = AntRadio.Group;
+Radio.Button = AntRadio.Button;
