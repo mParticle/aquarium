@@ -18,7 +18,7 @@
   },
   "scripts": {
     "storybook": "storybook dev -p 6006",
-    "build-dist": "vite build",
+    "build-dist": "sh ./scripts/build-dist.sh",
     "build-storybook": "storybook build",
     "tokens-to-css": "npx style-dictionary build --config ./style-dictionary.json"
   },
