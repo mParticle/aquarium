@@ -3,8 +3,8 @@ import { useState } from "react";
 import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";
 import { Button } from "src/components/general/Button/Button";
-import { LoadingModal } from "src/components/LoadingModal/LoadingModal";
-import { ILoadingModalProps } from "src/components/LoadingModal/LoadingModal";
+import { LoadingModal } from "src/components/feedback/LoadingModal/LoadingModal";
+import { ILoadingModalProps } from "src/components/feedback/LoadingModal/LoadingModal";
 
 const meta: Meta<typeof LoadingModal> = {
   title: "Aquarium/Unknown/Loading Modal",
@@ -25,9 +25,10 @@ const BaseTemplate = (args: ILoadingModalProps<unknown>, fetchData: () => Promis
   const handleCancel = () => { setIsModalOpen(false); };
 
   return <>
-    <Button copy="Open Loading Modal"
-            type="primary"
-            onClick={showModal}/>
+    <Button type="primary"
+            onClick={showModal}>
+      Open Loading Modal
+    </Button>
 
     {isModalOpen &&
      <LoadingModal<boolean>

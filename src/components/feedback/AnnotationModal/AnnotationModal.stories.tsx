@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";
 import { Button } from "src/components/general/Button/Button";
-import { AnnotationModal } from "src/components/AnnotationModal/AnnotationModal";
+import { AnnotationModal } from "src/components/feedback/AnnotationModal/AnnotationModal";
 
 const meta: Meta<typeof AnnotationModal> = {
   title: "Aquarium/Unknown/Annotations Modal",
@@ -22,9 +22,10 @@ const BaseTemplate = () => {
   const showModal = () => { setIsModalOpen(true); };
 
   return <>
-    <Button copy="Open Annotation Modal"
-            type="primary"
-            onClick={showModal}/>
+    <Button type="primary"
+            onClick={showModal}>
+      Open Annotation Modal
+    </Button>
 
     {isModalOpen &&
      <AnnotationModal/>}

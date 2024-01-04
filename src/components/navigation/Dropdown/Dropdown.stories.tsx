@@ -18,7 +18,7 @@ const meta: Meta<typeof Dropdown> = {
       options: ["normal"],
 
       mapping: {
-        normal: <Button copy="Dropdown Copy"></Button>,
+        normal: <Button>Dropdown Copy</Button>,
       },
     },
   },
