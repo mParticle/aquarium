@@ -1,4 +1,10 @@
 {
+  "name": "@mparticle/aquarium",
+  "version": "1.0.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@storybook/addon-essentials": "7.6.2",
     "@storybook/addon-interactions": "7.6.2",
@@ -8,21 +14,20 @@
     "@storybook/react": "7.6.2",
     "@storybook/react-vite": "7.6.2",
     "@storybook/test": "7.6.2",
-    "antd": "5.12.1",
-    "react": "18.2.0",
-    "typescript": "5.3.2",
-    "react-dom": "18.2.0",
     "storybook": "7.6.2"
   },
   "scripts": {
     "storybook": "storybook dev -p 6006",
-    "build-dist": "vite build",
+    "build-dist": "sh ./scripts/build-dist.sh",
     "build-storybook": "storybook build",
     "tokens-to-css": "npx style-dictionary build --config ./style-dictionary.json"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "6.5.1",
     "@fortawesome/free-solid-svg-icons": "6.5.1",
-    "@fortawesome/react-fontawesome": "0.2.0"
+    "@fortawesome/react-fontawesome": "0.2.0",
+    "antd": "5.12.1",
+    "react": "18.2.0",
+    "typescript": "5.3.2"
   }
 }
