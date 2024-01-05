@@ -36,18 +36,19 @@ export function AnnotationModal(props: IAnnotationModalProps) {
                                     fetchData={fetchAnnotations}>
 
       {initData => <>
-        <Flex vertical gap={'middle'}>
+        <Flex vertical gap={"middle"}>
+
+          <Input placeholder="title"></Input>
+
+
+          <Input placeholder="description"></Input>
+
+          <DatePicker size={"large"}></DatePicker>
+
+          <Dropdown menu={{ items: initData.events.map(event => ({ value: event.name, label: event.name, type: "group" } as ItemType)) }}>
+            <Button>Events Dropdown</Button>
+          </Dropdown>
           
-        <Input placeholder="title"></Input>
-
-
-        <Input placeholder="description"></Input>
-
-        <DatePicker size={"large"}></DatePicker>
-
-          <Dropdown dropdownButton={<Button>Events Dropdown</Button>}
-                  menu={{ items: initData.events.map(event => ({ value: event.name, label: event.name, type: "group" } as ItemType)) }}>
-        </Dropdown>
         </Flex>
       </>}
 
