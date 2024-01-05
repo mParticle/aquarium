@@ -1,7 +1,11 @@
 // Replace your-framework with the framework you are using (e.g., react-webpack5, vue3-vite)
 import type { StorybookConfig } from "@storybook/react-vite";
+import react from '@vitejs/plugin-react'
+import { PluginOption } from "vite";
 
-const config: StorybookConfig = {
+type StorybookVitePlugins = { plugins: PluginOption[][] }
+
+const config: StorybookConfig & StorybookVitePlugins = {
   framework: "@storybook/react-vite",
 
   stories: [
@@ -20,6 +24,7 @@ const config: StorybookConfig = {
     defaultName: "Documentation",
   },
 
+  plugins: [react()],
 };
 
 export default config;
