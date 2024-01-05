@@ -11,13 +11,18 @@
     "@storybook/addon-links": "7.6.2",
     "@storybook/addon-onboarding": "1.0.8",
     "@storybook/blocks": "7.6.2",
+    "@storybook/jest": "0.2.3",
     "@storybook/react": "7.6.2",
     "@storybook/react-vite": "7.6.2",
     "@storybook/test": "7.6.2",
+    "@storybook/test-runner": "0.16.0",
+    "@storybook/testing-library": "0.2.2",
+    "react": "18.2.0",
     "storybook": "7.6.2",
     "vite": "4.5.1"
   },
   "scripts": {
+    "test-storybook": "test-storybook",
     "storybook": "storybook dev -p 6006",
     "build-dist": "sh ./scripts/build-dist.sh",
     "build-storybook": "storybook build",
