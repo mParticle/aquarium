@@ -1,7 +1,7 @@
 {
   "name": "@mparticle/aquarium",
   "version": "1.0.0",
-  "type": "module",
+  "main": "dist/aquarium.js",
   "files": [
     "dist"
   ],
