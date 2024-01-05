@@ -1,4 +1,4 @@
-export { Button } from "./general/Button/Button";
+export {Button} from "./general/Button/Button";
 export {FloatButton} from "./general/FloatButton/FloatButton"
 export {Rate} from "./data-entry/Rate/Rate"
 export {Form} from "./data-entry/Form/Form"
