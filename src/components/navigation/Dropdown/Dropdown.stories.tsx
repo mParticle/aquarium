@@ -45,7 +45,7 @@ const meta: Meta<typeof Dropdown> = {
   component: Dropdown,
 
   args: {
-    dropdownButton: "normal",
+    children: "normal",
     menu,
 
     arrow: false,
@@ -61,7 +61,7 @@ const meta: Meta<typeof Dropdown> = {
   },
 
   argTypes: {
-    dropdownButton: {
+    children: {
       options: ["normal"],
 
       mapping: {
