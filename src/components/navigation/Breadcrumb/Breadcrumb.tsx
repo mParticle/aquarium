@@ -10,3 +10,5 @@ export const Breadcrumb = (props: IBreadcrumbProps) => {
     <AntBreadcrumb {...props}/>
   </>;
 };
+
+Breadcrumb.Item = AntBreadcrumb.Item

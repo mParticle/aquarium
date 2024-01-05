@@ -10,3 +10,8 @@ export const Layout = (props: ILayoutProps) => {
     <AntLayout {...props}/>
   </>;
 };
+
+Layout.Header = AntLayout.Header
+Layout.Sider = AntLayout.Sider
+Layout.Content = AntLayout.Content
+Layout.Footer = AntLayout.Footer
