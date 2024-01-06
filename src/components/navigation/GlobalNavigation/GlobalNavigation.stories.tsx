@@ -33,6 +33,12 @@ import { Badge } from "src/components/data-display/Badge/Badge";
 import { IGlobalNavigationTool } from "src/components/navigation/GlobalNavigation/GlobalNavigation";
 import { IGlobalNavigationManagement } from "src/components/navigation/GlobalNavigation/GlobalNavigation";
 import { IGlobalNavigationLogo } from "src/components/navigation/GlobalNavigation/GlobalNavigation";
+import { Icon } from "src/components/general/Icon/Icon";
+import { faDashboard } from "@fortawesome/free-solid-svg-icons";
+import { faUserGraduate } from "@fortawesome/free-solid-svg-icons";
+import { faFunnelDollar } from "@fortawesome/free-solid-svg-icons";
+import { faCogs } from "@fortawesome/free-solid-svg-icons";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 
 const defaultLogo: IGlobalNavigationLogo = {
@@ -93,7 +99,7 @@ const meta: Meta<typeof GlobalNavigation> = {
     tools: defaultTools,
     management: defaultManagement,
     canSearch: false,
-    canCreate: false,
+    createOptions: { canCreate: false, createItems: [] },
   },
 };
 export default meta;
@@ -263,9 +269,130 @@ const indManagement: IGlobalNavigationManagement[] = [
     type: "link",
   },
 ];
+const indCreateItems = [
+  {
+    label: "Dashboards",
+    key: "Dashboards",
+    type: "group",
+  },
+  {
+    label: "Dashboards",
+    key: "Dashboards",
+    icon: <Icon icon={faDashboard}/>,
+  },
+
+  {
+    label: "Segmentation",
+    key: "Segmentation",
+    type: "group",
+  },
+  {
+    label: "Event Segmentation",
+    key: "Event Segmentation",
+    icon: <Icon icon={faUserGraduate}/>,
+  },
+  {
+    label: "User Segmentation",
+    key: "User Segmentation",
+    icon: <Icon icon={faUserGraduate}/>,
+  },
+  {
+    label: "Revenue Analysis",
+    key: "Revenue Analysis",
+    icon: <Icon icon={faUserGraduate}/>,
+  },
+  {
+    label: "Frequency",
+    key: "Frequency",
+    icon: <Icon icon={faUserGraduate}/>,
+  },
+
+  {
+    label: "Funnel",
+    key: "Funnel",
+    type: "group",
+  },
+  {
+    label: "Conversion and Drop Off",
+    key: "Conversion and Drop Off",
+    icon: <Icon icon={faFunnelDollar}/>,
+  },
+  {
+    label: "Multipath Funnel",
+    key: "Multipath Funnel",
+    icon: <Icon icon={faFunnelDollar}/>,
+  },
+  {
+    label: "Conversion Over Time",
+    key: "Conversion Over Time",
+    icon: <Icon icon={faFunnelDollar}/>,
+  },
+  {
+    label: "Contribution",
+    key: "Contribution",
+    icon: <Icon icon={faFunnelDollar}/>,
+  },
+
+  {
+    label: "Journeys",
+    key: "Journeys",
+    type: "group",
+  },
+  {
+    label: "Journeys From an Event",
+    key: "Journeys From an Event",
+    icon: <Icon icon={faJournalWhills}/>,
+  },
+  {
+    label: "Journeys To an Event",
+    key: "Journeys To an Event",
+    icon: <Icon icon={faJournalWhills}/>,
+  },
+
+  {
+    label: "Cohort",
+    key: "Cohort",
+    type: "group",
+  },
+  {
+    label: "Retention",
+    key: "Retention",
+    icon: <Icon icon={faCogs}/>,
+  },
+  {
+    label: "Activation",
+    key: "Activation",
+    icon: <Icon icon={faCogs}/>,
+  },
+
+  {
+    label: "Users",
+    key: "Users",
+    type: "group",
+  },
+  {
+    label: "User Lookup by ID",
+    key: "User Lookup by ID",
+    icon: <Icon icon={faUser}/>,
+  },
+  {
+    label: "User Lookup by Event",
+    key: "User Lookup by Event",
+    icon: <Icon icon={faUser}/>,
+  },
+  {
+    label: "User Lookup by Segment",
+    key: "User Lookup by Segment",
+    icon: <Icon icon={faUser}/>,
+  },
+];
+
 export const Indicative: Story = {
   args: {
-    canCreate: true,
+    createOptions: {
+      canCreate: true,
+      createItems: indCreateItems,
+    },
     logo: indLogo,
     tools: indTools,
     management: indManagement,

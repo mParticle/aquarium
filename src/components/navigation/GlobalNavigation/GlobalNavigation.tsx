@@ -36,8 +36,13 @@ export interface IGlobalNavigationProps {
   tools: IGlobalNavigationTool[];
   management: IGlobalNavigationManagement[];
   canSearch: boolean;
-  canCreate: boolean;
+
+  createOptions: {
+    canCreate: boolean;
+    createItems: (MenuItemType | MenuItemGroupType)[];
+  };
 }
+
 
 const NavItemHeight = "42px" as const;
 
@@ -65,8 +70,8 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
           {props.canSearch &&
            <NavigationSearch/>}
 
-          {props.canCreate &&
-           <NavigationCreate/>}
+          {props.createOptions?.canCreate && props.createOptions?.createItems &&
+           <NavigationCreate createItems={props.createOptions.createItems}/>}
 
 
           <NavigationList items={props.tools}/>
@@ -117,18 +122,27 @@ function NavigationSearch() {
 }
 
 function NavigationIcon({ icon }: { icon: IconDefinition }): React.JSX.Element {
-  return <Icon icon={icon} color="gray" border style={{
-    borderRadius: "50%",
-    padding: "6px",
-    backgroundColor: "antiquewhite",
-    cursor: "pointer",
-  }}/>;
+  return <>
+    <Icon icon={icon} color="gray" border style={{
+      borderRadius: "50%",
+      padding: "6px",
+      backgroundColor: "antiquewhite",
+      cursor: "pointer",
+    }}/>
+  </>;
 }
 
-function NavigationCreate() {
+function NavigationCreate({ createItems }: { createItems: (MenuItemType | MenuItemGroupType)[] }) {
   return <>
     <Center style={{ height: NavItemHeight }}>
-      <Icon icon={faPlus} color="gray" size="2x"/>
+
+      <Menu items={[{
+        icon: <Icon icon={faPlus} color="gray" size="2x"/>,
+        label: "label",
+        key: "NavigationCreate",
+        children: createItems,
+      }]}/>
+
     </Center>
     <hr/>
   </>;
@@ -150,7 +164,6 @@ function NavigationList({ items }: { items: (IGlobalNavigationManagement | IGlob
 
 
 function generateMenuItem(item: IGlobalNavigationManagement | IGlobalNavigationTool, i: number) {
-
   const children: (MenuItemType | MenuItemGroupType)[] = item.children.map((child, j) => ({
     key: `${child.label}${j}`,
     ...child,
