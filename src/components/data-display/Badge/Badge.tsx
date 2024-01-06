@@ -10,3 +10,5 @@ export const Badge = (props: IBadgeProps) => {
     <AntBadge {...props}/>
   </>;
 };
+
+Badge.Ribbon = AntBadge.Ribbon
