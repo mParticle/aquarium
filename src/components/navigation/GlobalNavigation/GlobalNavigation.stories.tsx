@@ -10,8 +10,6 @@ import {
   faFishFins,
   faDatabase,
   faPeopleGroup,
-  faCircle,
-  faSquare,
   faDiagramPredecessor,
   faPizzaSlice,
   faPingPongPaddleBall,
@@ -20,9 +18,12 @@ import {
   faUsers,
   faChartSimple,
   faUserCog,
-  faTriangleCircleSquare,
 } from "@fortawesome/free-solid-svg-icons";
 import { faBlenderPhone } from "@fortawesome/free-solid-svg-icons";
+import { faArrowsToDot } from "@fortawesome/free-solid-svg-icons";
+import { faKitchenSet } from "@fortawesome/free-solid-svg-icons";
+import { faBoxes } from "@fortawesome/free-solid-svg-icons";
+import { faShapes } from "@fortawesome/free-solid-svg-icons";
 import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";
 import { GlobalNavigation } from "src/components";
@@ -32,7 +33,6 @@ import { Badge } from "src/components/data-display/Badge/Badge";
 import { IGlobalNavigationTool } from "src/components/navigation/GlobalNavigation/GlobalNavigation";
 import { IGlobalNavigationManagement } from "src/components/navigation/GlobalNavigation/GlobalNavigation";
 import { IGlobalNavigationLogo } from "src/components/navigation/GlobalNavigation/GlobalNavigation";
-import { Center } from "src/components";
 
 
 const defaultLogo: IGlobalNavigationLogo = {
@@ -43,39 +43,43 @@ const defaultTools: IGlobalNavigationTool[] = [
   {
     label: "Tool 1",
     icon: faTools,
+    type: "menu",
     children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
   },
   {
     label: "Tool 2",
     icon: faPersonWalkingDashedLineArrowRight,
+    type: "menu",
     children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
   },
   {
     label: "Tool 3",
     icon: faAudioDescription,
-    children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
+    type: "link",
   },
 ];
 const defaultManagement: IGlobalNavigationManagement[] = [
   {
-    label: "Notification",
+    label: "Notifications",
     icon: faBell,
-    children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
+    type: "link",
   },
   {
     label: "Support",
     icon: faLifeRing,
+    type: "menu",
     children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
   },
   {
     label: "Settings",
     icon: faGear,
+    type: "menu",
     children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
   },
   {
     label: "Account",
     icon: faGuitar,
-    children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
+    type: "link",
   },
 ];
 
@@ -102,50 +106,101 @@ export const Primary: Story = {};
 
 const mpLogo: IGlobalNavigationLogo = {
   label: "mP",
-  icon: faCircle,
+  icon: faShapes,
 };
+
+function Beta(label: string) {
+  return <Space>{label}<Badge color="blue" count="Beta"/></Space>;
+}
+
+
 const mpTools: IGlobalNavigationTool[] = [
   {
     label: "Activity",
     icon: faBlenderPhone,
+    type: "menu",
     children: [
       { label: "Platform Trends" },
       { label: <Space>System Alerts<Badge color="red"/></Space> },
       { label: "Event Forwarding" },
-      { label: <Space>Observability<Badge color="blue" count="Beta"/></Space> },
+      { label: Beta("Observability") },
     ],
   },
   {
     label: "Data Master",
     icon: faDatabase,
-    children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
+    type: "menu",
+    children: [
+      { label: "Catalog" },
+      { label: "Plans" },
+      { label: "Live Stream" },
+      { label: Beta("User Groups") },
+      { label: "Calculated Attributes" },
+      { label: "Rules" },
+    ],
   },
   {
     label: "Audiences",
     icon: faPeopleGroup,
-    children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
+    type: "menu",
+    children: [
+      { label: "Real-time" },
+      { label: "Standard" },
+      { label: "Journeys" },
+    ],
+  },
+  {
+    label: "Connections",
+    icon: faArrowsToDot,
+    type: "menu",
+    children: [
+      { label: "Connect" },
+      {
+        label: "Filter", children: [{ label: "Platforms" }, { label: "Feeds" }],
+      },
+    ],
+  },
+  {
+    label: "Setup",
+    icon: faKitchenSet,
+    type: "menu",
+    children: [
+      { label: "Inputs" },
+      { label: "Outputs" },
+      { label: "Data Warehouse" },
+      { label: "CRM" },
+    ],
+  },
+  {
+    label: "Directory",
+    icon: faBoxes,
+    type: "link",
   },
 ];
+
+
 const mpManagement: IGlobalNavigationManagement[] = [
   {
     label: "Notification",
     icon: faBell,
-    children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
+    type: "link",
   },
   {
     label: "Support",
     icon: faLifeRing,
+    type: "menu",
     children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
   },
   {
     label: "Settings",
     icon: faGear,
+    type: "menu",
     children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
   },
   {
     label: "Account",
     icon: faGuitar,
-    children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
+    type: "link",
   },
 ];
 export const MP: Story = {
@@ -160,50 +215,52 @@ export const MP: Story = {
 
 const indLogo: IGlobalNavigationLogo = {
   label: "Ind",
-  icon: faSquare,
+  icon: faShapes,
 };
 const indTools: IGlobalNavigationTool[] = [
   {
     label: "Segmentation",
     icon: faChartSimple,
-    children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
+    type: "link",
   },
   {
     label: "Funnel",
     icon: faChartBar,
-    children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
+    type: "link",
   },
   {
     label: "Journeys",
     icon: faJournalWhills,
-    children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
+    type: "link",
   },
   {
     label: "Cohort",
     icon: faUserCog,
-    children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
+    type: "link",
   },
   {
     label: "Users",
     icon: faUsers,
-    children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
+    type: "link",
   },
 ];
 const indManagement: IGlobalNavigationManagement[] = [
   {
     label: "Support",
     icon: faLifeRing,
+    type: "menu",
     children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
   },
   {
     label: "Settings",
     icon: faGear,
+    type: "menu",
     children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
   },
   {
     label: "Account",
     icon: faGuitar,
-    children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
+    type: "link",
   },
 ];
 export const Indicative: Story = {
@@ -218,40 +275,42 @@ export const Indicative: Story = {
 
 const cortexLogo: IGlobalNavigationLogo = {
   label: "Cortex",
-  icon: faTriangleCircleSquare,
+  icon: faShapes,
 };
 const cortexTools: IGlobalNavigationTool[] = [
   {
     label: "Predict",
     icon: faDiagramPredecessor,
-    children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
+    type: "link",
   },
   {
     label: "Pipelines",
     icon: faPizzaSlice,
-    children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
+    type: "link",
   },
   {
     label: "Explore",
     icon: faPingPongPaddleBall,
-    children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
+    type: "link",
   },
 ];
 const cortexManagement: IGlobalNavigationManagement[] = [
   {
     label: "Support",
     icon: faLifeRing,
+    type: "menu",
     children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
   },
   {
     label: "Settings",
     icon: faGear,
+    type: "menu",
     children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
   },
   {
     label: "Account",
     icon: faGuitar,
-    children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
+    type: "link",
   },
 ];
 export const Cortex: Story = {

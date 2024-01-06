@@ -7,9 +7,9 @@ import { Menu, Tooltip } from "src/components";
 import { Layout } from "src/components";
 import { Flex } from "src/components";
 import { Space } from "src/components";
+import { Center } from "src/components";
 import { Icon } from "src/components/general/Icon/Icon";
 import { MenuItemType } from "antd/es/menu/hooks/useItems";
-import { Center } from "src/components";
 import { MenuItemGroupType } from "antd/es/menu/hooks/useItems";
 
 export interface IBaseGlobalNavigationItem {
@@ -21,11 +21,13 @@ export interface IGlobalNavigationLogo extends IBaseGlobalNavigationItem {
 }
 
 export interface IGlobalNavigationTool extends IBaseGlobalNavigationItem {
-  children: Omit<MenuItemType, "key">[];
+  type: "menu" | "link";
+  children?;//: Omit<MenuItemType, "key">[];
 }
 
 export interface IGlobalNavigationManagement extends IBaseGlobalNavigationItem {
-  children: Omit<MenuItemType, "key">[];
+  type: "menu" | "link";
+  children?;//: Omit<MenuItemType, "key">[];
 }
 
 
@@ -38,6 +40,7 @@ export interface IGlobalNavigationProps {
 }
 
 const NavItemHeight = "42px" as const;
+
 
 export const GlobalNavigation = (props: IGlobalNavigationProps) => {
   const [collapsed, setCollapsed] = useState(true);
@@ -65,32 +68,16 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
           {props.canCreate &&
            <NavigationCreate/>}
 
-          <Menu items={props.tools.map(generateMenuItem)}/>
+
+          <NavigationList items={props.tools}/>
+
         </div>
 
 
-        <Menu items={props.management.map(generateMenuItem)}/>
+        <NavigationList items={props.management}/>
       </Flex>
 
     </Layout.Sider>);
-
-
-  function generateMenuItem(item: IGlobalNavigationManagement | IGlobalNavigationTool, i: number) {
-    const children: (MenuItemType | MenuItemGroupType)[] = item.children.map((child, j) => ({
-      label: child.label,
-      key: `${child.label}${j}`,
-    }));
-
-    children.unshift({ label: item.label, type: "group", key: item.label + "_groupTitle" });
-
-    return {
-      label: item.label,
-      key: `${item.label}${i}`,
-      icon: <Icon icon={item.icon} color="gray" border style={{ borderRadius: "50%", padding: "6px", backgroundColor: "antiquewhite" }}/>,
-      className: "globalNavigation__item",
-      children,
-    };
-  }
 };
 
 
@@ -109,7 +96,7 @@ function SuiteLogo(props: IGlobalNavigationLogo) {
       }}>
         <Space>
           {props.label}
-          <Icon icon={props.icon}/>
+          <NavigationIcon icon={props.icon}/>
         </Space>
       </div>
     </Center>
@@ -129,6 +116,15 @@ function NavigationSearch() {
   </>;
 }
 
+function NavigationIcon({ icon }: { icon: IconDefinition }): React.JSX.Element {
+  return <Icon icon={icon} color="gray" border style={{
+    borderRadius: "50%",
+    padding: "6px",
+    backgroundColor: "antiquewhite",
+    cursor: "pointer",
+  }}/>;
+}
+
 function NavigationCreate() {
   return <>
     <Center style={{ height: NavItemHeight }}>
@@ -136,4 +132,38 @@ function NavigationCreate() {
     </Center>
     <hr/>
   </>;
+}
+
+
+function NavigationList({ items }: { items: (IGlobalNavigationManagement | IGlobalNavigationTool)[]; }) {
+  return <>
+    <span>
+      {items.map((item, i) =>
+                   <>
+                     {item.type === "link" && <Center vertical> <NavigationIcon icon={item.icon}/> {item.label} </Center>}
+                     {item.type === "menu" && <Menu items={[generateMenuItem(item, i)]}/>}
+                   </>,
+      )}
+    </span>
+  </>;
+}
+
+
+function generateMenuItem(item: IGlobalNavigationManagement | IGlobalNavigationTool, i: number) {
+
+  const children: (MenuItemType | MenuItemGroupType)[] = item.children.map((child, j) => ({
+    key: `${child.label}${j}`,
+    ...child,
+  }));
+
+  children.unshift({ label: item.label, type: "group", key: item.label + "_groupTitle" });
+
+
+  return {
+    label: item.label,
+    key: `${item.label}${i}`,
+    icon: <NavigationIcon icon={item.icon}/>,
+    className: "globalNavigation__item",
+    children,
+  };
 }
