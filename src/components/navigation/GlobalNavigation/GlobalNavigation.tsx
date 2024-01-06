@@ -2,13 +2,14 @@ import React from "react";
 import { useState } from "react";
 import "./global-navigation.css";
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
-import { faSearch } from "@fortawesome/free-solid-svg-icons/faSearch";
-import { Menu } from "src/components";
+import { faSearch, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { Menu, Tooltip } from "src/components";
 import { Layout } from "src/components";
 import { Flex } from "src/components";
-import { Icon } from "src/components/general/Icon/Icon";
-import { ItemType } from "antd/es/menu/hooks/useItems";
 import { Space } from "src/components";
+import { Icon } from "src/components/general/Icon/Icon";
+import { MenuItemType } from "antd/es/menu/hooks/useItems";
+import { Center } from "src/components";
 
 export interface IBaseGlobalNavigationItem {
   label: string;
@@ -19,9 +20,11 @@ export interface IGlobalNavigationLogo extends IBaseGlobalNavigationItem {
 }
 
 export interface IGlobalNavigationTool extends IBaseGlobalNavigationItem {
+  children: Omit<MenuItemType, "key">[];
 }
 
 export interface IGlobalNavigationManagement extends IBaseGlobalNavigationItem {
+  children: Omit<MenuItemType, "key">[];
 }
 
 
@@ -30,7 +33,10 @@ export interface IGlobalNavigationProps {
   tools: IGlobalNavigationTool[];
   management: IGlobalNavigationManagement[];
   canSearch: boolean;
+  canCreate: boolean;
 }
+
+const NavItemHeight = "32px" as const;
 
 export const GlobalNavigation = (props: IGlobalNavigationProps) => {
   const [collapsed, setCollapsed] = useState(true);
@@ -55,6 +61,9 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
           {props.canSearch &&
            <NavigationSearch/>}
 
+          {props.canCreate &&
+           <NavigationCreate/>}
+
           <Menu items={props.tools.map(generateMenuItem)}/>
         </div>
 
@@ -65,18 +74,16 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
     </Layout.Sider>);
 
 
-  function generateMenuItem(item: IBaseGlobalNavigationItem, index: number): ItemType {
-    const key = index + 1 + "";
+  function generateMenuItem(item: IGlobalNavigationManagement | IGlobalNavigationTool, i: number) {
     return {
-      key: `sub${key}`,
-      icon: <Icon icon={item.icon}/>,
       label: item.label,
+      key: `${item.label}${i}`,
+      icon: <Icon icon={item.icon} color="gray"/>,
       className: "globalNavigation__item",
-      children: new Array(4).fill(null).map((_, j) => {
-        const subKey = index * 4 + j + 1;
+      children: item.children.map((child, j) => {
         return {
-          key: subKey,
-          label: `option${subKey}`,
+          label: child.label,
+          key: `${child.label}${j}`,
         };
       }),
     };
@@ -86,10 +93,10 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
 
 function SuiteLogo(props: IGlobalNavigationLogo) {
   return <>
-    <Flex justify="center" align="center">
+    <Center>
       <div style={{
         minWidth: "80px",
-        height: "32px",
+        minHeight: NavItemHeight,
         borderRadius: "6px",
         textAlign: "center",
         backgroundColor: "black",
@@ -102,15 +109,28 @@ function SuiteLogo(props: IGlobalNavigationLogo) {
           <Icon icon={props.icon}/>
         </Space>
       </div>
-    </Flex>
+    </Center>
   </>;
 }
 
 function NavigationSearch() {
   return <>
-    <Flex justify="center" align="center">
-      <Icon icon={faSearch} color="gray" size="2x"/>
-    </Flex>
+    <Center style={{ height: NavItemHeight }}>
+      <Tooltip placement="right" title={<Space size="large"><>Search</>
+        <>Ctrl + K</>
+      </Space>}>
+        <Icon icon={faSearch} color="gray" size="2x"/>
+      </Tooltip>
+    </Center>
+    <hr/>
+  </>;
+}
+
+function NavigationCreate() {
+  return <>
+    <Center style={{ height: NavItemHeight }}>
+      <Icon icon={faPlus} color="gray" size="2x"/>
+    </Center>
     <hr/>
   </>;
 }
