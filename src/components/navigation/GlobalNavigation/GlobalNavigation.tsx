@@ -10,6 +10,7 @@ import { Space } from "src/components";
 import { Icon } from "src/components/general/Icon/Icon";
 import { MenuItemType } from "antd/es/menu/hooks/useItems";
 import { Center } from "src/components";
+import { MenuItemGroupType } from "antd/es/menu/hooks/useItems";
 
 export interface IBaseGlobalNavigationItem {
   label: string;
@@ -36,7 +37,7 @@ export interface IGlobalNavigationProps {
   canCreate: boolean;
 }
 
-const NavItemHeight = "32px" as const;
+const NavItemHeight = "42px" as const;
 
 export const GlobalNavigation = (props: IGlobalNavigationProps) => {
   const [collapsed, setCollapsed] = useState(true);
@@ -75,17 +76,19 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
 
 
   function generateMenuItem(item: IGlobalNavigationManagement | IGlobalNavigationTool, i: number) {
+    const children: (MenuItemType | MenuItemGroupType)[] = item.children.map((child, j) => ({
+      label: child.label,
+      key: `${child.label}${j}`,
+    }));
+
+    children.unshift({ label: item.label, type: "group", key: item.label + "_groupTitle" });
+
     return {
       label: item.label,
       key: `${item.label}${i}`,
-      icon: <Icon icon={item.icon} color="gray"/>,
+      icon: <Icon icon={item.icon} color="gray" border style={{ borderRadius: "50%", padding: "6px", backgroundColor: "antiquewhite" }}/>,
       className: "globalNavigation__item",
-      children: item.children.map((child, j) => {
-        return {
-          label: child.label,
-          key: `${child.label}${j}`,
-        };
-      }),
+      children,
     };
   }
 };

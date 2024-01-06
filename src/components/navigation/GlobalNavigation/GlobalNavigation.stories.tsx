@@ -110,9 +110,9 @@ const mpTools: IGlobalNavigationTool[] = [
     icon: faBlenderPhone,
     children: [
       { label: "Platform Trends" },
-      { label: "System Alerts" },
+      { label: <Space>System Alerts<Badge color="red"/></Space> },
       { label: "Event Forwarding" },
-      { label: <Center><Space>Observability<Badge color="blue" count="Beta" dot={false}/></Space></Center> },
+      { label: <Space>Observability<Badge color="blue" count="Beta"/></Space> },
     ],
   },
   {
