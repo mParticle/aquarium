@@ -1,27 +1,36 @@
 import React from "react";
 import { useState } from "react";
-import { faUpload, faHamburger, faDiceOne, faBell, faLifeRing, faGear } from "@fortawesome/free-solid-svg-icons";
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { Layout, Menu } from "src/components";
 import { Flex } from "src/components";
-import { IMenuProps } from "src/components/navigation/Menu/Menu";
 import { Icon } from "src/components/general/Icon/Icon";
+import { ItemType } from "antd/es/menu/hooks/useItems";
+import "./global-navigation.css";
+
+export interface IBaseGlobalNavigationItem {
+  label: string;
+  icon: IconDefinition;
+}
+
+export interface IGlobalNavigationTool extends IBaseGlobalNavigationItem {
+}
+
+export interface IGlobalNavigationManagement extends IBaseGlobalNavigationItem {
+}
+
 
 export interface IGlobalNavigationProps {
-
+  tools: IGlobalNavigationTool[];
+  management: IGlobalNavigationManagement[];
 }
 
 export const GlobalNavigation = (props: IGlobalNavigationProps) => {
   const [collapsed, setCollapsed] = useState(true);
 
-  const topItems: IMenuProps["items"] = [faUpload, faHamburger, faDiceOne].map(generateItem);
-
-  const bottomItems: IMenuProps["items"] = [faBell, faLifeRing, faGear].map(generateItem);
-  
-
   return (
     <Layout.Sider width={200}
-                  style={{ border: "solid 1px black", minHeight: "500px", backgroundColor: "white" }}
+                  collapsedWidth={100}
+                  className="globalNavigation__slider"
                   collapsible
                   collapsed={collapsed}
                   trigger={null}
@@ -30,21 +39,20 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
     >
 
       <Flex vertical justify="space-between" style={{ height: "100%" }}>
-        <Menu items={topItems}/>
-        <Menu items={bottomItems}  />
+        <Menu items={props.tools.map(generateMenuItem)}/>
+        <Menu items={props.management.map(generateMenuItem)}/>
       </Flex>
 
     </Layout.Sider>
   );
 
-
-  function generateItem(icon: IconDefinition, index: number) {
+  function generateMenuItem(item: IBaseGlobalNavigationItem, index: number): ItemType {
     const key = index + 1 + "";
     return {
       key: `sub${key}`,
-      icon: <Icon icon={icon}/>,
-      label: `subnav ${key}`,
-
+      icon: <Icon icon={item.icon}/>,
+      label: item.label,
+      className: "globalNavigation__item",
       children: new Array(4).fill(null).map((_, j) => {
         const subKey = index * 4 + j + 1;
         return {

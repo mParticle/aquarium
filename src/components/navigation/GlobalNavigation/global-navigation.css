@@ -1,0 +1,19 @@
+.globalNavigation__slider {
+    border: solid 1px black;
+    min-height: 500px;
+    background-color: white;
+}
+
+.globalNavigation__item {
+    .ant-menu-submenu-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 48px !important;
+    }
+
+    .ant-menu-title-content {
+        margin-inline-start: 0 !important;
+        opacity: 1 !important;
+    }
+}
