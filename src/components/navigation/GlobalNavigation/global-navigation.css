@@ -1,9 +1,3 @@
-.globalNavigation__slider {
-    border: solid 1px black;
-    min-height: 900px;
-    background-color: white;
-}
-
 .globalNavigation__item {
 
     .ant-menu-submenu-title {

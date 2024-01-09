@@ -48,12 +48,16 @@ const NavItemHeight = "42px" as const;
 
 
 export const GlobalNavigation = (props: IGlobalNavigationProps) => {
-  const [collapsed, setCollapsed] = useState(true);
+  const [collapsed, setCollapsed] = useState<boolean>(true);
 
   return (
     <Layout.Sider width={200}
                   collapsedWidth={100}
-                  className="globalNavigation__slider"
+                  style={{
+                    border: 'solid 1px black',
+                    minHeight: '750px',
+                    backgroundColor: 'white'
+                  }}
                   collapsible
                   collapsed={collapsed}
                   trigger={null}
