@@ -1,6 +1,6 @@
-import type {Config} from 'jest'
+import type { Config } from 'jest'
 
-export {baseConfig}
+export { baseConfig }
 
 const baseConfig: Config = {
   testEnvironment: 'jsdom',
