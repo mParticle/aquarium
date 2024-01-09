@@ -11,7 +11,6 @@ jobs:
         with:
           node-version: '18.x'
       - name: Install dependencies
-        run: yarn
-             yarn playwright install
+        run: yarn && yarn playwright install
       - name: Run Storybook tests
         run: yarn test-storybook:ci
