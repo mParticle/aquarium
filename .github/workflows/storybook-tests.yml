@@ -10,7 +10,11 @@ jobs:
 
       - uses: actions/setup-node@v4
 
-      - run: npm ci && npx playwright install
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Install Playwright
+        run: npx playwright install
 
       - name: Run Storybook Tests
         run: npm run test-storybook:ci
