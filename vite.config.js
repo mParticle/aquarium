@@ -1,21 +1,31 @@
+// vite.config.js
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
-export default defineConfig(
-  {
-    build: {
-      lib: {
-        entry: resolve(__dirname, 'src/components/general/Button/Button.tsx'),
-        name: 'Button',
-        fileName: 'button-dist'
-      }
+export default defineConfig({
+  resolve: {
+    alias: {
+      src: '/src',
     },
-    plugins: [react()],
-    resolve: {
-      alias: {
-        src: '/src',
+  },
+
+  build: {
+    lib: {
+      // Could also be a dictionary or array of multiple entry points
+      entry: resolve(__dirname, 'src/components/index.ts'),
+      name: 'aquarium',
+      formats: ['es'],
+      fileName: 'aquarium',
+    },
+    rollupOptions: {
+      external: ['react', 'antd'],
+      output: {
+        globals: {
+          antd: 'antd',
+          react: 'React',
+        },
       },
     },
-  })
+  },
+})

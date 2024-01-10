@@ -6,7 +6,7 @@ import { StoryObj } from "@storybook/react";
 import { Button } from "src/components/general/Button/Button";
 
 const meta: Meta<typeof Popover> = {
-  title: "Aquarium/Data Entry/Popover",
+  title: "Aquarium/Data Display/Popover",
   component: Popover,
 
   args: {},
@@ -25,7 +25,7 @@ const PrimaryTemplate = (args: IPopoverProps) => {
 
   return <>
     <Popover content={content} title="Title" trigger={args.trigger}>
-      <Button copy={args.children + ""}/>
+      <Button>{args.children}</Button>
     </Popover>
   </>;
 };
