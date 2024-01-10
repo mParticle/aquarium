@@ -29,7 +29,6 @@
     "@storybook/testing-library": "0.2.2",
     "concurrently": "8.2.2",
     "http-server": "14.1.1",
-    "playwright": "1.40.1",
     "vite": "4.5.1",
     "wait-on": "7.2.0"
   },

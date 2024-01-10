@@ -9,8 +9,8 @@ jobs:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
-          
-      - run: npm ci
+
+      - run: npm ci && npx playwright install
 
       - name: Run Storybook tests
         run: npm run test-storybook:ci
