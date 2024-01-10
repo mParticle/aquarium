@@ -2,8 +2,8 @@ name: Storybook Tests
 on: push
 jobs:
   test:
-    name: Test Storybook
-    timeout-minutes: 60
+    name: Storybook Tests
+    timeout-minutes: 10
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -12,5 +12,5 @@ jobs:
 
       - run: npm ci && npx playwright install
 
-      - name: Run Storybook tests
+      - name: Run Storybook Tests
         run: npm run test-storybook:ci
