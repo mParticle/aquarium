@@ -1,6 +1,17 @@
 {
   "name": "@mparticle/aquarium",
-  "version": "1.0.0",
+  "version": "1.1.1",
+  "description": "mParticle Component Library",
+  "license": "Apache-2.0",
+  "keywords": [
+      "mparticle",
+      "analytics",
+      "cdp"
+  ],
+  "repository": "https://github.com/mParticle/aquarium/",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "dist/aquarium.mjs",
   "files": [
     "dist"
@@ -35,7 +46,7 @@
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "test-storybook": "test-storybook",
-    "test-storybook:ci": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"yarn build-storybook --quiet && NODE_NO_WARNINGS=1 npx http-server storybook-static --port 6006 --silent\" \"wait-on tcp:127.0.0.1:6006 && yarn test-storybook\"",
+    "test-storybook:ci": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"npm run build-storybook --quiet && NODE_NO_WARNINGS=1 npx http-server storybook-static --port 6006 --silent\" \"wait-on tcp:127.0.0.1:6006 && npm run test-storybook\"",
     "build-dist": "sh ./scripts/build-dist.sh",
     "build-storybook": "storybook build",
     "tokens-to-css": "npx style-dictionary build --config ./style-dictionary.json"
