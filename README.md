@@ -6,7 +6,7 @@ mParticle Component Library
 
 ## Contributing
 
-See [CONTRIBUTING.md](https://github.com/mParticle/aqauarium/blob/main/CONTRIBUTING.md).
+See [CONTRIBUTING.md](https://github.com/mParticle/aquarium/blob/main/CONTRIBUTING.md).
 
 Please make sure any new or updated components are present, tested and verified within [Storybook](https://storybook.js.org/)
 
