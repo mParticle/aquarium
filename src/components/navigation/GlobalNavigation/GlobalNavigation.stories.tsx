@@ -11,6 +11,8 @@ import {
   faDatabase,
   faPeopleGroup,
   faDiagramPredecessor,
+  faRoadSpikes,
+  faPaintbrush,
   faPizzaSlice,
   faPingPongPaddleBall,
   faChartBar,
@@ -406,18 +408,28 @@ const cortexLogo: IGlobalNavigationLogo = {
 };
 const cortexTools: IGlobalNavigationTool[] = [
   {
-    label: "Predict",
-    icon: faDiagramPredecessor,
-    type: "link",
-  },
-  {
     label: "Pipelines",
     icon: faPizzaSlice,
     type: "link",
   },
   {
-    label: "Explore",
+    label: "Projects",
+    icon: faDiagramPredecessor,
+    type: "link",
+  },
+  {
+    label: "Data",
     icon: faPingPongPaddleBall,
+    type: "link",
+  },
+  {
+    label: "API",
+    icon: faRoadSpikes,
+    type: "link",
+  },
+  {
+    label: "Insights",
+    icon: faPaintbrush,
     type: "link",
   },
 ];

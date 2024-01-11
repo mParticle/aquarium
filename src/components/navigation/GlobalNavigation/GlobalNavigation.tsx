@@ -54,9 +54,9 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
     <Layout.Sider width={200}
                   collapsedWidth={100}
                   style={{
-                    border: 'solid 1px black',
-                    minHeight: '750px',
-                    backgroundColor: 'white'
+                    border: "solid 1px black",
+                    minHeight: "750px",
+                    backgroundColor: "white",
                   }}
                   collapsible
                   collapsed={collapsed}
@@ -114,13 +114,13 @@ function SuiteLogo(props: IGlobalNavigationLogo) {
 
 function NavigationSearch() {
   return <>
-    <Center style={{ height: NavItemHeight }}>
-      <Tooltip placement="right" title={<Space size="large"><>Search</>
-        <>Ctrl + K</>
-      </Space>}>
+    <Tooltip placement="right" title={<Space size="large"><>Search</>
+      <>Ctrl + K</>
+    </Space>}>
+      <Center style={{ height: NavItemHeight }}>
         <Icon icon={faSearch} color="gray" size="2x"/>
-      </Tooltip>
-    </Center>
+      </Center>
+    </Tooltip>
     <hr/>
   </>;
 }
