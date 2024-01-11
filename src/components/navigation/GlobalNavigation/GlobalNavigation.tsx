@@ -142,7 +142,6 @@ function NavigationCreate({ createItems }: { createItems: (MenuItemType | MenuIt
 
       <Menu items={[{
         icon: <Icon icon={faPlus} color="gray" size="2x"/>,
-        label: "label",
         key: "NavigationCreate",
         children: createItems,
       }]}/>

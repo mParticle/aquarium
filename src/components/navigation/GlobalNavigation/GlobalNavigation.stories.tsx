@@ -26,21 +26,24 @@ import { faArrowsToDot } from "@fortawesome/free-solid-svg-icons";
 import { faKitchenSet } from "@fortawesome/free-solid-svg-icons";
 import { faBoxes } from "@fortawesome/free-solid-svg-icons";
 import { faShapes } from "@fortawesome/free-solid-svg-icons";
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
-import { GlobalNavigation } from "src/components";
-import { Layout } from "src/components";
-import { Space } from "src/components";
-import { Badge } from "src/components/data-display/Badge/Badge";
-import { IGlobalNavigationTool } from "src/components/navigation/GlobalNavigation/GlobalNavigation";
-import { IGlobalNavigationManagement } from "src/components/navigation/GlobalNavigation/GlobalNavigation";
-import { IGlobalNavigationLogo } from "src/components/navigation/GlobalNavigation/GlobalNavigation";
-import { Icon } from "src/components/general/Icon/Icon";
 import { faDashboard } from "@fortawesome/free-solid-svg-icons";
 import { faUserGraduate } from "@fortawesome/free-solid-svg-icons";
 import { faFunnelDollar } from "@fortawesome/free-solid-svg-icons";
 import { faCogs } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { Meta } from "@storybook/react";
+import { StoryObj } from "@storybook/react";
+import { GlobalNavigation } from "src/components";
+import { Layout } from "src/components";
+import { Space } from "src/components";
+import { Flex } from "src/components";
+import { Badge } from "src/components/data-display/Badge/Badge";
+import { IGlobalNavigationTool } from "src/components/navigation/GlobalNavigation/GlobalNavigation";
+import { IGlobalNavigationManagement } from "src/components/navigation/GlobalNavigation/GlobalNavigation";
+import { IGlobalNavigationLogo } from "src/components/navigation/GlobalNavigation/GlobalNavigation";
+import { Icon } from "src/components/general/Icon/Icon";
+import { MenuItemType } from "antd/es/menu/hooks/useItems";
+import { MenuItemGroupType } from "antd/es/menu/hooks/useItems";
 
 
 const defaultLogo: IGlobalNavigationLogo = {
@@ -271,16 +274,24 @@ const indManagement: IGlobalNavigationManagement[] = [
     type: "link",
   },
 ];
-const indCreateItems = [
+const indCreateItems: (MenuItemType | MenuItemGroupType)[] = [
   {
-    label: "Dashboards",
-    key: "Dashboards",
+    label: "Dashboard",
+    key: "Dashboard",
     type: "group",
   },
   {
-    label: "Dashboards",
-    key: "Dashboards",
-    icon: <Icon icon={faDashboard}/>,
+    className: "globalNavigation__create",
+    label: <>
+      <Flex style={{}} vertical gap="middle" justify="center">
+        <Space>
+          <Icon icon={faDashboard}/>
+          Dashboard
+        </Space>
+        <span>Create a new dashboard to organize your saved analysis.</span>
+      </Flex>
+    </>,
+    key: "Dashboard",
   },
 
   {
