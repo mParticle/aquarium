@@ -8,7 +8,7 @@ import { userEvent } from "@storybook/test";
 
 const meta: Meta<typeof Button> = {
   title: "Aquarium/General/Button",
-  component: props => <><Button {...props}>Button Text</Button></>,
+  component: props => <><Button {...props}>Button Text!</Button></>,
 
   args: {
     block: false,
