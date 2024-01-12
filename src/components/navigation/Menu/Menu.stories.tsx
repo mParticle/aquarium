@@ -145,7 +145,7 @@ export const InlineCollapsedState: Story = {
   },
 };
 
-export const DarkT: Story = {
+export const Dark: Story = {
   args: {
     theme: "dark",
   },
