@@ -1,4 +1,3 @@
-import React from "react";
 import { Radio as AntRadio } from "antd";
 import { RadioProps as AntRadioProps } from "antd";
 

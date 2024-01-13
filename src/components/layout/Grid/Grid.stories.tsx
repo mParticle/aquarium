@@ -1,8 +1,6 @@
 import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";
 import { Grid, Row, Col } from "antd";
-import React from "react";
-import { Divider } from "antd";
 
 const meta: Meta<typeof Grid> = {
   title: "Aquarium/Layout/Grid",

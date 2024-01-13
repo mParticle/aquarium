@@ -1,4 +1,3 @@
-import React from "react";
 import { Tree as AntTree } from "antd";
 import { TreeProps as AntTreeProps } from "antd";
 

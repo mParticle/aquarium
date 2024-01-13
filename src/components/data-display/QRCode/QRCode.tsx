@@ -1,4 +1,3 @@
-import React from "react";
 import { QRCode as AntQRCode } from "antd";
 import { QRCodeProps as AntQRCodeProps } from "antd";
 

@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import { Modal } from "src/components/feedback/Modal/Modal";
 import { IModalProps } from "src/components/feedback/Modal/Modal";

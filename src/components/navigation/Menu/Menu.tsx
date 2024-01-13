@@ -1,4 +1,3 @@
-import React from "react";
 import { Menu as AntMenu } from "antd";
 import { MenuProps as AntMenuProps } from "antd";
 import MenuItem from "antd/es/menu/MenuItem";

@@ -1,4 +1,3 @@
-import React from "react";
 import { Transfer as AntTransfer } from "antd";
 import { TransferProps as AntTransferProps } from "antd";
 

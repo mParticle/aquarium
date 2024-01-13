@@ -1,5 +1,3 @@
-import React from "react";
-import { useState } from "react";
 import { faIcons } from "@fortawesome/free-solid-svg-icons";
 import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";
@@ -7,6 +5,7 @@ import { Icon } from "src/components";
 import { Cascader } from "src/components";
 import { ICascaderProps } from "src/components/data-entry/Cascader/Cascader";
 import { ExampleStory } from "src/utils/ExampleStory";
+import { useState } from "react";
 
 
 const options: ICascaderProps["options"] = [
@@ -252,16 +251,8 @@ export const ExampleCustomTrigger: Story = {
 export const ExampleLazyLoad: Story = {
   render: () => {
     const optionLists: ICascaderProps["options"] = [
-      {
-        value: "A",
-        label: "A",
-        isLeaf: false,
-      },
-      {
-        value: "B",
-        label: "B",
-        isLeaf: false,
-      },
+      { value: "A", label: "A", isLeaf: false },
+      { value: "B", label: "B", isLeaf: false },
     ];
     const [options, setOptions] = useState<ICascaderProps["options"]>(optionLists);
     const onChange = (value: (string | number)[], selectedOptions: ICascaderProps["options"]) => { console.log(value, selectedOptions); };

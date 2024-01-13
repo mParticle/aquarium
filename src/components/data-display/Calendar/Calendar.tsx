@@ -1,4 +1,3 @@
-import React from "react";
 import { Calendar as AntCalendar } from "antd";
 import { CalendarProps as AntCalendarProps } from "antd";
 

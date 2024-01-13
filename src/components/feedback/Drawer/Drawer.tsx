@@ -1,4 +1,3 @@
-import React from "react";
 import { Drawer as AntDrawer } from "antd";
 import { DrawerProps as AntDrawerProps } from "antd";
 

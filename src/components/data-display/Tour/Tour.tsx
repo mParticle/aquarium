@@ -1,4 +1,3 @@
-import React from "react";
 import { Tour as AntTour } from "antd";
 import { TourProps as AntTourProps } from "antd";
 

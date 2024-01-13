@@ -1,4 +1,3 @@
-import React from "react";
 import { FloatButton as AntFloatButton } from "antd";
 import { FloatButtonProps as AntFloatButtonProps } from "antd";
 

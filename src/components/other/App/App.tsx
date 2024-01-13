@@ -1,4 +1,3 @@
-import React from "react";
 import { App as AntApp } from "antd";
 import { AppProps as AntAppProps } from "antd";
 

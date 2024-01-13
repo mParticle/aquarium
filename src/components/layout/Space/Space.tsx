@@ -1,4 +1,3 @@
-import React from "react";
 import { Space as AntSpace } from "antd";
 import { SpaceProps as AntSpaceProps } from "antd";
 
