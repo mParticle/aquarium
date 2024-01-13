@@ -7,7 +7,7 @@ import { faIcons } from "@fortawesome/free-solid-svg-icons";
 import { Icon, Input, Space, AutoComplete } from "src/components";
 import { Flex } from "src/components";
 import { ISelectProps } from "src/components/data-entry/Select/Select";
-import { ExampleStory } from "src/components/other/ExampleStory";
+import { ExampleStory } from "src/utils/ExampleStory"
 
 const baseOptions = [
   { label: "The quick brown fox jumps over the lazy dog", value: 1 },

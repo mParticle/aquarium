@@ -1,13 +1,12 @@
 import React from "react";
+import { useState } from "react";
 import { faIcons } from "@fortawesome/free-solid-svg-icons";
 import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";
 import { Icon } from "src/components";
 import { Cascader } from "src/components";
-import { useState } from "react";
-import { Space } from "src/components";
 import { ICascaderProps } from "src/components/data-entry/Cascader/Cascader";
-import { ExampleStory } from "src/components/other/ExampleStory";
+import { ExampleStory } from "src/utils/ExampleStory";
 
 
 const options: ICascaderProps["options"] = [

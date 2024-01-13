@@ -86,7 +86,7 @@ export const ExampleCheckAll: Story = {
     </>;
   },
 
-  play: async (context) => {
+  play: async context => {
     expect(context.canvasElement.querySelectorAll(".ant-checkbox-checked").length).toBe(2);
     await userEvent.click(context.canvasElement.querySelector(".ant-checkbox-indeterminate"));
     expect(context.canvasElement.querySelectorAll(".ant-checkbox-checked").length).toBe(4);
