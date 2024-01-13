@@ -4,15 +4,12 @@ import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";
 import { Icon } from "src/components";
 import { Cascader } from "src/components";
+import { useState } from "react";
+import { Space } from "src/components";
+import { ICascaderProps } from "src/components/data-entry/Cascader/Cascader";
 
 
-interface Option {
-  value: string | number;
-  label: string;
-  children?: Option[];
-}
-
-const options: Option[] = [
+const options: ICascaderProps["options"] = [
   {
     value: "A",
     label: "A",
@@ -138,6 +135,12 @@ export const AutoFocus: Story = {
   },
 };
 
+export const HoverExpand: Story = {
+  args: {
+    expandTrigger: "hover",
+  },
+};
+
 export const NoBorder: Story = {
   args: {
     bordered: false,
@@ -158,7 +161,7 @@ export const SearchIcon: Story = {
 
 export const CustomDropdownStyle: Story = {
   args: {
-    dropdownMenuColumnStyle: { minWidth: "15px", color: 'blueviolet' },
+    dropdownMenuColumnStyle: { minWidth: "15px", color: "blueviolet" },
   },
 };
 
@@ -178,4 +181,119 @@ export const Disabled: Story = {
   args: {
     disabled: true,
   },
+};
+
+export const DisabledOption: Story = {
+  args: {
+    options: [
+      {
+        value: "A",
+        label: "A",
+        children: [
+          {
+            value: "B",
+            label: "B",
+            children: [
+              {
+                value: "C",
+                label: "C",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "D",
+        label: "D",
+        children: [
+          {
+            value: "E",
+            label: "E",
+            disabled: true,
+            children: [
+              {
+                value: "F",
+                label: "F",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+};
+
+export const DefaultValue: Story = {
+  args: {
+    defaultValue: ["A", "B", "C"],
+  },
+};
+
+export const ExampleCustomTrigger: Story = {
+  render: () => {
+    const [text, setText] = useState("Unselect");
+    return <>
+      <Space direction="vertical">
+        <span>
+          {text}
+          &nbsp;
+          <Cascader options={options} onChange={(_, selectedOptions) => {
+            setText(selectedOptions.map((o) => o.label).join(", "));
+          }}>
+            <a>Change city</a>
+          </Cascader>
+        </span>
+        Separate trigger button and result.
+      </Space>
+    </>;
+  },
+};
+
+
+export const ExampleLazyLoad: Story = {
+  render: () => {
+    
+    const optionLists: ICascaderProps["options"] = [
+      {
+        value: "A",
+        label: "A",
+        isLeaf: false,
+      },
+      {
+        value: "B",
+        label: "B",
+        isLeaf: false,
+      },
+    ];
+    const [options, setOptions] = useState<ICascaderProps["options"]>(optionLists);
+    const onChange = (value: (string | number)[], selectedOptions: ICascaderProps["options"]) => { console.log(value, selectedOptions); };
+
+    const loadData = (selectedOptions: ICascaderProps["options"]) => {
+      const targetOption = selectedOptions?.[selectedOptions.length - 1];
+
+      // load options lazily
+      setTimeout(() => {
+        targetOption.children = [
+          {
+            label: `${targetOption.label} Dynamic 1`,
+            value: "dynamic1",
+          },
+          {
+            label: `${targetOption.label} Dynamic 2`,
+            value: "dynamic2",
+          },
+        ];
+        setOptions([...(options as [])]);
+      }, 1000);
+    };
+
+
+    return <>
+      <Space direction="vertical">
+        <Cascader options={options} loadData={loadData} onChange={onChange} changeOnSelect/>
+        Load options lazily with loadData.
+      </Space>
+    </>;
+  },
+
 };
