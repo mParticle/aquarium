@@ -1,9 +1,12 @@
 import React from "react";
 import { useState } from "react";
-import { AutoComplete } from "src/components/data-entry/AutoComplete/AutoComplete";
 import { IAutoCompleteProps } from "src/components/data-entry/AutoComplete/AutoComplete";
 import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";
+import { faIcons } from "@fortawesome/free-solid-svg-icons";
+import { Icon, Input, Space, AutoComplete } from "src/components";
+import { Flex } from "src/components";
+import { ISelectProps } from "src/components/data-entry/Select/Select";
 
 const baseOptions = [
   { label: "The quick brown fox jumps over the lazy dog", value: 1 },
@@ -105,5 +108,302 @@ export const Disabled: Story = {
 export const NotFound: Story = {
   args: {
     notFoundContent: <>Custom Not Found Component goes here</>,
+  },
+};
+
+
+export const ExampleBasic: Story = {
+  render: () => {
+    const [value, setValue] = useState("");
+    const [options, setOptions] = useState<IAutoCompleteProps["options"]>([]);
+    const [anotherOptions, setAnotherOptions] = useState<IAutoCompleteProps["options"]>([]);
+
+    const mockVal = (str: string, repeat = 1) => ({ value: str.repeat(repeat) });
+    const getPanelValue = (searchText: string) => !searchText ?
+      [] :
+                                                  [mockVal(searchText), mockVal(searchText, 2), mockVal(searchText, 3)] as IAutoCompleteProps["options"];
+    const onSelect = (data: string) => { alert("onSelect:" + data); };
+    const onChange = (data: string) => { setValue(data);};
+
+    return (<>
+      <Space direction="vertical">
+        <AutoComplete
+          options={options}
+          style={{ width: 200 }}
+          onSelect={onSelect}
+          onSearch={(text) => setOptions(getPanelValue(text))}
+          placeholder="input here"/>
+        <br/>
+        <br/>
+        <AutoComplete
+          value={value}
+          options={anotherOptions}
+          style={{ width: 200 }}
+          onSelect={onSelect}
+          onSearch={(text) => setAnotherOptions(getPanelValue(text))}
+          onChange={onChange}
+          placeholder="control mode"/>
+
+        Basic Usage, set data source of autocomplete with options property.
+      </Space>
+    </>);
+  },
+};
+
+export const ExampleCustomized: Story = {
+  render: () => {
+    const [options, setOptions] = useState<{ value: string; label: string }[]>([]);
+
+    const handleSearch = (value: string) => {
+      let res: { value: string; label: string }[];
+      if (!value || value.indexOf("@") >= 0) {
+        res = [];
+      } else {
+        res = ["gmail.com", "163.com", "qq.com"].map((domain) => ({
+          value,
+          label: `${value}@${domain}`,
+        }));
+      }
+      setOptions(res);
+    };
+
+    return <>
+      <Space direction="vertical">
+        <AutoComplete
+          style={{ width: 200 }}
+          onSearch={handleSearch}
+          placeholder="input here"
+          options={options}/>
+        You could set custom Option label
+      </Space>
+    </>;
+  },
+};
+
+export const ExampleCustomizeInput: Story = {
+  render: () => {
+    const [options, setOptions] = useState<IAutoCompleteProps["options"]>([]);
+
+    const handleSearch = (value: string) => {
+      setOptions(!value ? [] : [{ value }, { value: value + value }, { value: value + value + value }] as IAutoCompleteProps["options"]);
+    };
+
+    const handleKeyPress = (ev: React.KeyboardEvent<HTMLTextAreaElement>) => {
+      console.log("handleKeyPress", ev);
+    };
+
+    const onSelect = (value: string) => {
+      alert("selected: " + value);
+    };
+
+    return (
+      <AutoComplete
+        options={options}
+        style={{ width: 200 }}
+        onSelect={onSelect}
+        onSearch={handleSearch}>
+        <Input.TextArea
+          placeholder="input here"
+          className="custom"
+          style={{ height: 50 }}
+          onKeyPress={handleKeyPress}/>
+      </AutoComplete>);
+  },
+};
+
+export const ExampleNonCaseSensitive: Story = {
+  render: () => {
+    return <>
+      <AutoComplete
+        style={{ width: 200 }}
+        options={baseOptions.map(o => ({ ...o, label: o.label.toUpperCase() }))}
+        placeholder="try to type `b`"
+        filterOption={(inputValue, option) => option?.label?.toString().toUpperCase().indexOf(inputValue.toUpperCase()) !== -1}/>
+    </>;
+  },
+};
+
+export const ExampleLookupPatternsCertainCategory: Story = {
+  render: () => {
+
+    const renderTitle = (title: string) => (
+      <span>
+        {title}
+        <a style={{ float: "right" }}
+           href="https://www.google.com/search?q=antd"
+           target="_blank"
+           rel="noopener noreferrer">
+          more
+        </a>
+      </span>);
+
+    const renderItem = (title: string, count: number) => ({
+      value: title,
+      label: (
+        <Flex justify="space-between">
+          {title}
+          <span><Icon icon={faIcons}/>{count}</span>
+        </Flex>),
+    });
+
+    const options = [
+      {
+        label: renderTitle("Libraries"),
+        options: [renderItem("AntDesign", 10000), renderItem("AntDesign UI", 10600)],
+      },
+      {
+        label: renderTitle("Solutions"),
+        options: [renderItem("AntDesign UI FAQ", 60100), renderItem("AntDesign FAQ", 30010)],
+      },
+      {
+        label: renderTitle("Articles"),
+        options: [renderItem("AntDesign design language", 100000)],
+      },
+    ];
+
+    return <>
+      <Space direction="vertical">
+
+        <AutoComplete
+          popupClassName="certain-category-search-dropdown"
+          popupMatchSelectWidth={500}
+          style={{ width: 250 }}
+          options={options}
+          size="large">
+          <Input.Search size="large" placeholder="input here"/>
+        </AutoComplete>
+        Demonstration of <a href="https://ant.design/docs/spec/reaction/#lookup-patterns" target="_blank">Lookup Patterns: Certain Category</a>
+        Basic Usage, set options of autocomplete with options property.
+      </Space>
+    </>;
+  },
+};
+
+export const ExampleLookupPatternsUnCertainCategory: Story = {
+  render: () => {
+    const getRandomInt = (max: number, min = 0) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+    const searchResult = (query: string) => new Array(getRandomInt(5))
+      .join(".")
+      .split(".")
+      .map((_, idx) => {
+        const category = `${query}${idx}`;
+        return {
+          value: category,
+          label: (
+            <Flex justify="space-between">
+                <span>
+                  Found {query} on{" "}
+                  <a
+                    href={`https://s.taobao.com/search?q=${query}`}
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    {category}
+                  </a>
+                </span>
+              <span>{getRandomInt(200, 100)} results</span>
+            </Flex>),
+        };
+      });
+
+    const [options, setOptions] = useState<ISelectProps<object>["options"]>([]);
+    const handleSearch = (value: string) => { setOptions(value ? searchResult(value) : []); };
+    const onSelect = (value: string) => { alert("selected: " + value); };
+
+    return <>
+      <Space direction="vertical">
+        <AutoComplete
+          popupMatchSelectWidth={252}
+          style={{ width: 300 }}
+          options={options}
+          onSelect={onSelect}
+          onSearch={handleSearch}
+          size="large">
+          <Input.Search size="large" placeholder="input here" enterButton/>
+        </AutoComplete>
+
+        Demonstration of <a href="https://ant.design/docs/spec/reaction#lookup-patterns" target="_blank">Lookup Patterns: Certain Category</a>
+        Basic Usage, set options of autocomplete with options property.
+      </Space>
+    </>;
+  },
+};
+
+export const ExampleBorderless: Story = {
+  render: () => {
+    const mockVal = (str: string, repeat = 1) => ({
+      value: str.repeat(repeat),
+    });
+
+    const [options, setOptions] = useState<IAutoCompleteProps["options"]>([]);
+    const getPanelValue = (searchText: string) => !searchText ?
+      [] :
+                                                  [mockVal(searchText), mockVal(searchText, 2), mockVal(searchText, 3)] as IAutoCompleteProps["options"];
+
+    return (
+      <AutoComplete
+        options={options}
+        style={{ width: 200 }}
+        placeholder="Borderless"
+        onSearch={(text) => setOptions(getPanelValue(text))}
+        onSelect={x => { alert("Selected: " + x); }}
+        bordered={false}
+      />);
+  },
+};
+
+export const ExampleStatus: Story = {
+  render: () => {
+    const mockVal = (str: string, repeat = 1) => ({
+      value: str.repeat(repeat),
+    });
+    const [options, setOptions] = useState<IAutoCompleteProps["options"]>([]);
+    const [anotherOptions, setAnotherOptions] = useState<IAutoCompleteProps["options"]>([]);
+    const getPanelValue = (searchText: string) => !searchText ?
+      [] :
+                                                  [mockVal(searchText), mockVal(searchText, 2), mockVal(searchText, 3)] as IAutoCompleteProps[ "options"];
+
+    return (
+      <Space direction="vertical" style={{ width: "100%" }}>
+        <AutoComplete
+          placeholder="Error"
+          options={options}
+          onSearch={text => setOptions(getPanelValue(text))}
+          status="error"
+          style={{ width: 200 }}/>
+        <AutoComplete
+          placeholder="Warning"
+          options={anotherOptions}
+          onSearch={(text) => { setAnotherOptions(getPanelValue(text)); }}
+          status="warning"
+          style={{ width: 200 }}/>
+      </Space>);
+  },
+
+};
+
+export const ExampleClearButton: Story = {
+  render: () => {
+    const mockVal = (str: string, repeat = 1) => ({ value: str.repeat(repeat) });
+    const [options, setOptions] = useState<IAutoCompleteProps["options"]>([]);
+    const getPanelValue = (searchText: string) => !searchText ?
+      [] :
+                                                  [mockVal(searchText), mockVal(searchText, 2), mockVal(searchText, 3)] as IAutoCompleteProps["options"];
+    
+    return (<>
+      <AutoComplete
+        options={options}
+        style={{ width: 200 }}
+        onSearch={(text) => setOptions(getPanelValue(text))}
+        placeholder="No clear icon"
+        allowClear={false}/>
+      <br/><br/>
+      <AutoComplete
+        options={options}
+        style={{ width: 200 }}
+        onSearch={(text) => setOptions(getPanelValue(text))}
+        placeholder="Customized clear icon"
+        allowClear={{ clearIcon: <Icon icon={faIcons}/> }}/>
+    </>);
   },
 };

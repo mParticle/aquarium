@@ -1,5 +1,6 @@
 export {Button} from "./general/Button/Button";
 export {FloatButton} from "./general/FloatButton/FloatButton"
+export {Icon} from "./general/Icon/Icon";
 export {Rate} from "./data-entry/Rate/Rate"
 export {Form} from "./data-entry/Form/Form"
 export {TreeSelect} from "./data-entry/TreeSelect/TreeSelect"
