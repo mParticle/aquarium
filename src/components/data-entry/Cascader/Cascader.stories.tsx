@@ -7,6 +7,7 @@ import { Cascader } from "src/components";
 import { useState } from "react";
 import { Space } from "src/components";
 import { ICascaderProps } from "src/components/data-entry/Cascader/Cascader";
+import { ExampleStory } from "src/components/other/ExampleStory";
 
 
 const options: ICascaderProps["options"] = [
@@ -233,7 +234,7 @@ export const ExampleCustomTrigger: Story = {
   render: () => {
     const [text, setText] = useState("Unselect");
     return <>
-      <Space direction="vertical">
+      <ExampleStory title="Separate trigger button and result.">
         <span>
           {text}
           &nbsp;
@@ -243,8 +244,7 @@ export const ExampleCustomTrigger: Story = {
             <a>Change city</a>
           </Cascader>
         </span>
-        Separate trigger button and result.
-      </Space>
+      </ExampleStory>
     </>;
   },
 };
@@ -252,7 +252,6 @@ export const ExampleCustomTrigger: Story = {
 
 export const ExampleLazyLoad: Story = {
   render: () => {
-    
     const optionLists: ICascaderProps["options"] = [
       {
         value: "A",
@@ -287,13 +286,10 @@ export const ExampleLazyLoad: Story = {
       }, 1000);
     };
 
-
     return <>
-      <Space direction="vertical">
+      <ExampleStory title="Load options lazily with loadData.">
         <Cascader options={options} loadData={loadData} onChange={onChange} changeOnSelect/>
-        Load options lazily with loadData.
-      </Space>
+      </ExampleStory>
     </>;
   },
-
 };

@@ -7,6 +7,7 @@ import { faIcons } from "@fortawesome/free-solid-svg-icons";
 import { Icon, Input, Space, AutoComplete } from "src/components";
 import { Flex } from "src/components";
 import { ISelectProps } from "src/components/data-entry/Select/Select";
+import { ExampleStory } from "src/components/other/ExampleStory";
 
 const baseOptions = [
   { label: "The quick brown fox jumps over the lazy dog", value: 1 },
@@ -111,6 +112,12 @@ export const NotFound: Story = {
   },
 };
 
+export const Borderless: Story = {
+  args: {
+    bordered: false,
+  },
+};
+
 
 export const ExampleBasic: Story = {
   render: () => {
@@ -126,15 +133,14 @@ export const ExampleBasic: Story = {
     const onChange = (data: string) => { setValue(data);};
 
     return (<>
-      <Space direction="vertical">
+      <ExampleStory title="Basic Usage, set data source of autocomplete with options property.">
         <AutoComplete
           options={options}
           style={{ width: 200 }}
           onSelect={onSelect}
           onSearch={(text) => setOptions(getPanelValue(text))}
           placeholder="input here"/>
-        <br/>
-        <br/>
+        <br/><br/>
         <AutoComplete
           value={value}
           options={anotherOptions}
@@ -143,9 +149,7 @@ export const ExampleBasic: Story = {
           onSearch={(text) => setAnotherOptions(getPanelValue(text))}
           onChange={onChange}
           placeholder="control mode"/>
-
-        Basic Usage, set data source of autocomplete with options property.
-      </Space>
+      </ExampleStory>
     </>);
   },
 };
@@ -168,14 +172,13 @@ export const ExampleCustomized: Story = {
     };
 
     return <>
-      <Space direction="vertical">
+      <ExampleStory title="You could set custom Option label.">
         <AutoComplete
           style={{ width: 200 }}
           onSearch={handleSearch}
           placeholder="input here"
           options={options}/>
-        You could set custom Option label
-      </Space>
+      </ExampleStory>
     </>;
   },
 };
@@ -197,28 +200,32 @@ export const ExampleCustomizeInput: Story = {
     };
 
     return (
-      <AutoComplete
-        options={options}
-        style={{ width: 200 }}
-        onSelect={onSelect}
-        onSearch={handleSearch}>
-        <Input.TextArea
-          placeholder="input here"
-          className="custom"
-          style={{ height: 50 }}
-          onKeyPress={handleKeyPress}/>
-      </AutoComplete>);
+      <ExampleStory title="Customize Input Component">
+        <AutoComplete
+          options={options}
+          style={{ width: 200 }}
+          onSelect={onSelect}
+          onSearch={handleSearch}>
+          <Input.TextArea
+            placeholder="input here"
+            className="custom"
+            style={{ height: 50 }}
+            onKeyPress={handleKeyPress}/>
+        </AutoComplete>
+      </ExampleStory>);
   },
 };
 
 export const ExampleNonCaseSensitive: Story = {
   render: () => {
     return <>
-      <AutoComplete
-        style={{ width: 200 }}
-        options={baseOptions.map(o => ({ ...o, label: o.label.toUpperCase() }))}
-        placeholder="try to type `b`"
-        filterOption={(inputValue, option) => option?.label?.toString().toUpperCase().indexOf(inputValue.toUpperCase()) !== -1}/>
+      <ExampleStory title="A non-case-sensitive AutoComplete.">
+        <AutoComplete
+          style={{ width: 200 }}
+          options={baseOptions.map(o => ({ ...o, label: o.label.toUpperCase() }))}
+          placeholder="try to type `b`"
+          filterOption={(inputValue, option) => option?.label?.toString().toUpperCase().indexOf(inputValue.toUpperCase()) !== -1}/>
+      </ExampleStory>
     </>;
   },
 };
@@ -262,8 +269,7 @@ export const ExampleLookupPatternsCertainCategory: Story = {
     ];
 
     return <>
-      <Space direction="vertical">
-
+      <ExampleStory title={<>Demonstration of <a href="https://ant.design/docs/spec/reaction/#lookup-patterns" target="_blank">Lookup Patterns: Certain Category</a>Basic Usage, set options of autocomplete with options property.</>}>
         <AutoComplete
           popupClassName="certain-category-search-dropdown"
           popupMatchSelectWidth={500}
@@ -272,9 +278,7 @@ export const ExampleLookupPatternsCertainCategory: Story = {
           size="large">
           <Input.Search size="large" placeholder="input here"/>
         </AutoComplete>
-        Demonstration of <a href="https://ant.design/docs/spec/reaction/#lookup-patterns" target="_blank">Lookup Patterns: Certain Category</a>
-        Basic Usage, set options of autocomplete with options property.
-      </Space>
+      </ExampleStory>
     </>;
   },
 };
@@ -311,7 +315,7 @@ export const ExampleLookupPatternsUnCertainCategory: Story = {
     const onSelect = (value: string) => { alert("selected: " + value); };
 
     return <>
-      <Space direction="vertical">
+      <ExampleStory title={<>Demonstration of <a href="https://ant.design/docs/spec/reaction#lookup-patterns" target="_blank">Lookup Patterns: Certain Category</a>Basic Usage, set options of autocomplete with options property.</>}>
         <AutoComplete
           popupMatchSelectWidth={252}
           style={{ width: 300 }}
@@ -321,34 +325,8 @@ export const ExampleLookupPatternsUnCertainCategory: Story = {
           size="large">
           <Input.Search size="large" placeholder="input here" enterButton/>
         </AutoComplete>
-
-        Demonstration of <a href="https://ant.design/docs/spec/reaction#lookup-patterns" target="_blank">Lookup Patterns: Certain Category</a>
-        Basic Usage, set options of autocomplete with options property.
-      </Space>
+      </ExampleStory>
     </>;
-  },
-};
-
-export const ExampleBorderless: Story = {
-  render: () => {
-    const mockVal = (str: string, repeat = 1) => ({
-      value: str.repeat(repeat),
-    });
-
-    const [options, setOptions] = useState<IAutoCompleteProps["options"]>([]);
-    const getPanelValue = (searchText: string) => !searchText ?
-      [] :
-                                                  [mockVal(searchText), mockVal(searchText, 2), mockVal(searchText, 3)] as IAutoCompleteProps["options"];
-
-    return (
-      <AutoComplete
-        options={options}
-        style={{ width: 200 }}
-        placeholder="Borderless"
-        onSearch={(text) => setOptions(getPanelValue(text))}
-        onSelect={x => { alert("Selected: " + x); }}
-        bordered={false}
-      />);
   },
 };
 
@@ -364,22 +342,23 @@ export const ExampleStatus: Story = {
                                                   [mockVal(searchText), mockVal(searchText, 2), mockVal(searchText, 3)] as IAutoCompleteProps[ "options"];
 
     return (
-      <Space direction="vertical" style={{ width: "100%" }}>
-        <AutoComplete
-          placeholder="Error"
-          options={options}
-          onSearch={text => setOptions(getPanelValue(text))}
-          status="error"
-          style={{ width: 200 }}/>
-        <AutoComplete
-          placeholder="Warning"
-          options={anotherOptions}
-          onSearch={(text) => { setAnotherOptions(getPanelValue(text)); }}
-          status="warning"
-          style={{ width: 200 }}/>
-      </Space>);
+      <ExampleStory title="Add status to AutoComplete with status, which could be error or warning.">
+        <Space direction="vertical" style={{ width: "100%" }}>
+          <AutoComplete
+            placeholder="Error"
+            options={options}
+            onSearch={text => setOptions(getPanelValue(text))}
+            status="error"
+            style={{ width: 200 }}/>
+          <AutoComplete
+            placeholder="Warning"
+            options={anotherOptions}
+            onSearch={(text) => { setAnotherOptions(getPanelValue(text)); }}
+            status="warning"
+            style={{ width: 200 }}/>
+        </Space>
+      </ExampleStory>);
   },
-
 };
 
 export const ExampleClearButton: Story = {
@@ -389,21 +368,23 @@ export const ExampleClearButton: Story = {
     const getPanelValue = (searchText: string) => !searchText ?
       [] :
                                                   [mockVal(searchText), mockVal(searchText, 2), mockVal(searchText, 3)] as IAutoCompleteProps["options"];
-    
+
     return (<>
-      <AutoComplete
-        options={options}
-        style={{ width: 200 }}
-        onSearch={(text) => setOptions(getPanelValue(text))}
-        placeholder="No clear icon"
-        allowClear={false}/>
-      <br/><br/>
-      <AutoComplete
-        options={options}
-        style={{ width: 200 }}
-        onSearch={(text) => setOptions(getPanelValue(text))}
-        placeholder="Customized clear icon"
-        allowClear={{ clearIcon: <Icon icon={faIcons}/> }}/>
+      <ExampleStory title="Customize clear button">
+        <AutoComplete
+          options={options}
+          style={{ width: 200 }}
+          onSearch={(text) => setOptions(getPanelValue(text))}
+          placeholder="No clear icon"
+          allowClear={false}/>
+        <br/><br/>
+        <AutoComplete
+          options={options}
+          style={{ width: 200 }}
+          onSearch={(text) => setOptions(getPanelValue(text))}
+          placeholder="Customized clear icon"
+          allowClear={{ clearIcon: <Icon icon={faIcons}/> }}/>
+      </ExampleStory>
     </>);
   },
 };
