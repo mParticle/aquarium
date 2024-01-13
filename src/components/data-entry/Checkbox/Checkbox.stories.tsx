@@ -1,10 +1,15 @@
+import React from "react";
 import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";
-import { Checkbox } from "src/components/data-entry/Checkbox/Checkbox";
+import { Checkbox } from "src/components";
+import { useState } from "react";
 
 const meta: Meta<typeof Checkbox> = {
   title: "Aquarium/Data Entry/Checkbox",
-  component: Checkbox,
+  component: props => {
+    const [checked, setChecked] = useState<boolean>(props.checked || props.defaultChecked as boolean);
+    return <> <Checkbox {...props} checked={checked} onChange={e => { setChecked(!checked); }}/> </>;
+  },
 
   args: {
     autoFocus: false,
@@ -12,6 +17,7 @@ const meta: Meta<typeof Checkbox> = {
     defaultChecked: false,
     disabled: false,
     indeterminate: false,
+    onChange: e => alert(`checked = ${e.target.checked}`),
   },
 };
 export default meta;
@@ -32,12 +38,6 @@ export const WithAutoFocus: Story = {
   },
 };
 
-export const Checked: Story = {
-  args: {
-    checked: true,
-  },
-};
-
 export const DefaultChecked: Story = {
   args: {
     defaultChecked: true,
@@ -53,11 +53,5 @@ export const Disabled: Story = {
 export const Indeterminate: Story = {
   args: {
     indeterminate: true,
-  },
-};
-
-export const WithOnChange: Story = {
-  args: {
-    onChange: (e) => alert("Checkbox Changed"),
   },
 };
