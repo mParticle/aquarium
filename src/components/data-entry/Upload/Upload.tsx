@@ -1,4 +1,3 @@
-import React from "react";
 import { Upload as AntUpload } from "antd";
 import { UploadProps as AntUploadProps } from "antd";
 

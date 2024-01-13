@@ -1,4 +1,3 @@
-import React from "react";
 import { Divider as AntDivider } from "antd";
 import { DividerProps as AntDividerProps } from "antd";
 

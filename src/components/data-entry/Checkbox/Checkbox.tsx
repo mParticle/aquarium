@@ -1,4 +1,3 @@
-import React from "react";
 import { Checkbox as AntCheckbox } from "antd";
 import { CheckboxProps as AntCheckboxProps } from "antd";
 

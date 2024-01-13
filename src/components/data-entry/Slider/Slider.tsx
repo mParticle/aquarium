@@ -1,4 +1,3 @@
-import React from "react";
 import { Slider as AntSlider } from "antd";
 import { SliderProps as AntSliderProps } from "antd";
 

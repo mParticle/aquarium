@@ -1,4 +1,3 @@
-import React from "react";
 import { ReactNode } from "react";
 import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";

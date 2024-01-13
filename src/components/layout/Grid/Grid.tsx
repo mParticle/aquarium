@@ -1,4 +1,3 @@
-import React from "react";
 import { Grid as AntGrid, Col as AntCol, Row as AntRow } from "antd";
 
 export {AntGrid as Grid, AntCol as Col, AntRow as Row}

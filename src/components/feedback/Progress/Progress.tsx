@@ -1,4 +1,3 @@
-import React from "react";
 import { Progress as AntProgress } from "antd";
 import { ProgressProps as AntProgressProps } from "antd";
 

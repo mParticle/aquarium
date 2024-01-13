@@ -1,4 +1,3 @@
-import React from "react";
 import { Watermark as AntWatermark } from "antd";
 import { WatermarkProps as AntWatermarkProps } from "antd";
 

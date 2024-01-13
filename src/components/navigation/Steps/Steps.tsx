@@ -1,4 +1,3 @@
-import React from "react";
 import { Steps as AntSteps } from "antd";
 import { StepsProps as AntStepsProps } from "antd";
 

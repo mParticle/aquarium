@@ -1,4 +1,3 @@
-import React from "react";
 import { useInitData } from "src/hooks/useInitData";
 import { IModalProps } from "src/components/feedback/Modal/Modal";
 import { Skeleton } from "src/components/feedback/Skeleton/Skeleton";

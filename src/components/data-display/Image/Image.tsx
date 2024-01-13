@@ -1,4 +1,3 @@
-import React from "react";
 import { Image as AntImage } from "antd";
 import { ImageProps as AntImageProps } from "antd";
 

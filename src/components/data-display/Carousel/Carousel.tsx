@@ -1,4 +1,3 @@
-import React from "react";
 import { Carousel as AntCarousel } from "antd";
 import { CarouselProps as AntCarouselProps } from "antd";
 

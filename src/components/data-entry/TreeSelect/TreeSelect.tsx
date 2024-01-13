@@ -1,4 +1,3 @@
-import React from "react";
 import { TreeSelect as AntTreeSelect } from "antd";
 import { TreeSelectProps as AntTreeSelectProps } from "antd";
 

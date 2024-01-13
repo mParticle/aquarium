@@ -1,4 +1,3 @@
-import React from "react";
 import { Button as AntButton, ConfigProvider } from "antd";
 import { ButtonProps as AntButtonProps } from "antd";
 

@@ -1,4 +1,3 @@
-import React from "react";
 import { Rate as AntRate } from "antd";
 import { RateProps as AntRateProps } from "antd";
 

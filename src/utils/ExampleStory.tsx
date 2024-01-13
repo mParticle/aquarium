@@ -1,4 +1,3 @@
-import React from "react";
 import { Space } from "src/components";
 
 interface IExampleStoryProps {

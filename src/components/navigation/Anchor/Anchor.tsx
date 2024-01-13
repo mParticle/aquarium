@@ -1,4 +1,3 @@
-import React from "react";
 import { Anchor as AntAnchor } from "antd";
 import { AnchorProps as AntAnchorProps } from "antd";
 

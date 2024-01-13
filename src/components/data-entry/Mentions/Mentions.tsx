@@ -1,4 +1,3 @@
-import React from "react";
 import { Mentions as AntMentions } from "antd";
 import { MentionProps as AntMentionProps } from "antd";
 

@@ -1,4 +1,3 @@
-import React from "react";
 import { Popover as AntPopover } from "antd";
 import { PopoverProps as AntPopoverProps } from "antd";
 
