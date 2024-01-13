@@ -1,68 +1,72 @@
 import * as React from "react";
+import { useState } from "react";
 import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";
 import { Menu } from "src/components/navigation/Menu/Menu";
 import { Icon } from "src/components/general/Icon/Icon";
-import { faIcons } from "@fortawesome/free-solid-svg-icons";
+import { faIcons, faVolleyball, faExplosion } from "@fortawesome/free-solid-svg-icons";
+import { ExampleStory } from "src/utils/ExampleStory";
+import { IMenuProps } from "src/components/navigation/Menu/Menu";
 import { MenuProps } from "antd";
+import { Button } from "src/components";
 
-const items: MenuProps['items'] = [
+const items: IMenuProps["items"] = [
   {
-    label: 'Navigation One',
-    key: 'mail',
+    label: "Navigation One",
+    key: "mail",
   },
   {
-    label: 'Navigation Two',
-    key: 'app',
+    label: "Navigation Two",
+    key: "app",
     disabled: true,
   },
   {
-    label: 'Navigation Three - Submenu',
-    key: 'SubMenu',
+    label: "Navigation Three - Submenu",
+    key: "SubMenu",
     children: [
       {
-        type: 'group',
-        label: 'Item 1',
+        type: "group",
+        label: "Item 1",
         children: [
           {
-            label: 'Option 1',
-            key: 'setting:1',
+            label: "Option 1",
+            key: "setting:1",
           },
           {
-            label: 'Option 2',
-            key: 'setting:2',
+            label: "Option 2",
+            key: "setting:2",
           },
         ],
       },
       {
-        type: 'group',
-        label: 'Item 2',
+        type: "group",
+        label: "Item 2",
         children: [
           {
-            label: 'Option 3',
-            key: 'setting:3',
+            label: "Option 3",
+            key: "setting:3",
           },
           {
-            label: 'Option 4',
-            key: 'setting:4',
+            label: "Option 4",
+            key: "setting:4",
           },
         ],
       },
     ],
   },
   {
-    label: 'Navigation Four - Link',
-    key: 'alipay',
+    label: "Navigation Four - Link",
+    key: "alipay",
   },
 ];
 
 
 const meta: Meta<typeof Menu> = {
   title: "Aquarium/Navigation/Menu",
-  component:props=><> <Menu {...props}>  {props.children}  </Menu></>,
+  component: props => <> <Menu {...props}>  {props.children}  </Menu></>,
 
   args: {
-    children:<>Button</>,
+    children: <>Button</>,
     items,
     defaultOpenKeys: [],
     defaultSelectedKeys: [],
@@ -75,7 +79,7 @@ const meta: Meta<typeof Menu> = {
     // openKeys: [],
     overflowedIndicator: <>...</>,
     selectable: true,
-    selectedKeys: ['mail'],
+    selectedKeys: ["mail"],
     style: undefined,
     subMenuCloseDelay: 0.1,
     subMenuOpenDelay: 0,
@@ -161,5 +165,116 @@ export const WithSubMenuDelay: Story = {
   args: {
     subMenuOpenDelay: 0.2,
     subMenuCloseDelay: 0.2,
+  },
+};
+
+
+export const ExampleHorizontalTop: Story = {
+  render: () => {
+    const [current, setCurrent] = useState("mail");
+    const onClick: IMenuProps["onClick"] = e => {
+      console.log("clicked: ", e);
+      setCurrent(e.key);
+    };
+
+    return <>
+      <ExampleStory title="Horizontal top navigation menu">
+        <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items}/>
+      </ExampleStory>
+    </>;
+  },
+};
+
+export const ExampleVerticalInline: Story = {
+  render: () => {
+    const getItem = ({ label, key, icon, children, type }: { label: React.ReactNode, key: React.Key, icon?: React.ReactNode, children?: any, type?: "group" }) => ({ key, icon, children, label, type });
+
+    const items: IMenuProps["items"] = [getItem({
+                                                  label: "Navigation One", key: "sub1", icon: <Icon icon={faIcons}/>, children: [
+        getItem({ label: "Item 1", key: "g1", icon: null, children: [getItem({ label: "Option 1", key: "1" }), getItem({ label: "Option 2", key: "2" })], type: "group" }),
+        getItem({ label: "Item 2", key: "g2", icon: null, children: [getItem({ label: "Option 3", key: "3" }), getItem({ label: "Option 4", key: "4" })], type: "group" })],
+                                                }),
+                                        getItem({
+                                                  label: "Navigation Two", key: "sub2", icon: <Icon icon={faIcons}/>, children: [
+                                            getItem({ label: "Option 5", key: "5" }),
+                                            getItem({ label: "Option 6", key: "6" }),
+                                            getItem({ label: "Submenu", key: "sub3", icon: null, children: [getItem({ label: "Option 7", key: "7" }), getItem({ label: "Option 8", key: "8" })] })],
+                                                }), { type: "divider" },
+                                        getItem({
+                                                  label: "Navigation Three", key: "sub4", icon: <Icon icon={faIcons}/>, children: [
+                                            getItem({ label: "Option 9", key: "9" }),
+                                            getItem({ label: "Option 10", key: "10" }),
+                                            getItem({ label: "Option 11", key: "11" }),
+                                            getItem({ label: "Option 12", key: "12" })],
+                                                }),
+                                        getItem({ label: "Group", key: "grp", icon: null, children: [getItem({ label: "Option 13", key: "13" }), getItem({ label: "Option 14", key: "14" })], type: "group" }),
+    ];
+
+
+    return <>
+      <ExampleStory title="Vertical menu with inline submenus">
+        <Menu
+          onClick={e => { console.log("click ", e); }}
+          style={{ width: 256 }}
+          defaultSelectedKeys={["1"]}
+          defaultOpenKeys={["sub1"]}
+          mode="inline"
+          items={items}/>
+      </ExampleStory>
+    </>;
+  },
+};
+
+export const ExampleCollapsable: Story = {
+  render: () => {
+    const getItem = ({ label, key, icon, children, type }: { label: React.ReactNode, key: React.Key, icon?: React.ReactNode, children?: any, type?: "group" }) => ({ key, icon, children, label, type });
+
+    const items: MenuProps["items"] = [
+      getItem({ label: "Option 1", key: "1", icon: <Icon icon={faIcons}/> }),
+      getItem({ label: "Option 2", key: "2", icon: <Icon icon={faIcons}/> }),
+      getItem({ label: "Option 3", key: "3", icon: <Icon icon={faIcons}/> }),
+
+      getItem({
+                label: "Navigation One", key: "sub1", icon: <Icon icon={faIcons}/>, children: [
+          getItem({ label: "Option 5", key: "5" }),
+          getItem({ label: "Option 6", key: "6" }),
+          getItem({ label: "Option 7", key: "7" }),
+          getItem({ label: "Option 8", key: "8" }),
+        ],
+              }),
+
+      getItem({
+                label: "Navigation Two", key: "sub2", icon: <Icon icon={faIcons}/>, children: [
+          getItem({ label: "Option 9", key: "9" }),
+          getItem({ label: "Option 10", key: "10" }),
+
+          getItem({ label: "Submenu", key: "sub3", icon: null, children: [getItem({ label: "Option 11", key: "11" }), getItem({ label: "Option 12", key: "12" })] }),
+        ],
+              }),
+    ];
+
+    const [collapsed, setCollapsed] = useState(false);
+
+    const toggleCollapsed = () => {
+      setCollapsed(!collapsed);
+    };
+
+
+    return <>
+      <ExampleStory title={<>Inline menu could be collapsed. Here is a <a href="https://ant.design/components/layout#components-layout-demo-side" target="_blank">complete demo</a> with sider layout </>}>
+        <div style={{ width: 256 }}>
+          <Button type="primary" onClick={toggleCollapsed} style={{ marginBottom: 16 }}>
+            {collapsed ? <Icon icon={faExplosion}/> : <Icon icon={faVolleyball}/>}
+          </Button>
+          <Menu
+            defaultSelectedKeys={["1"]}
+            defaultOpenKeys={["sub1"]}
+            mode="inline"
+            theme="dark"
+            inlineCollapsed={collapsed}
+            items={items}/>
+        </div>
+      </ExampleStory>
+    </>;
   },
 };
