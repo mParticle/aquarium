@@ -10,3 +10,5 @@ export const Checkbox = (props: ICheckboxProps) => {
     <AntCheckbox {...props}/>
   </>;
 };
+
+Checkbox.Group = AntCheckbox.Group
