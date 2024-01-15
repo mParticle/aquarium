@@ -187,30 +187,46 @@ export const ExampleHorizontalTop: Story = {
 
 export const ExampleVerticalInline: Story = {
   render: () => {
-    const getItem = ({ label, key, icon, children, type }: { label: React.ReactNode, key: React.Key, icon?: React.ReactNode, children?: any, type?: "group" }) => ({ key, icon, children, label, type });
-
-    const items: IMenuProps["items"] = [getItem({
-                                                  label: "Navigation One", key: "sub1", icon: <Icon icon={faIcons}/>, children: [
-        getItem({ label: "Item 1", key: "g1", icon: null, children: [getItem({ label: "Option 1", key: "1" }), getItem({ label: "Option 2", key: "2" })], type: "group" }),
-        getItem({ label: "Item 2", key: "g2", icon: null, children: [getItem({ label: "Option 3", key: "3" }), getItem({ label: "Option 4", key: "4" })], type: "group" })],
-                                                }),
-                                        getItem({
-                                                  label: "Navigation Two", key: "sub2", icon: <Icon icon={faIcons}/>, children: [
-                                            getItem({ label: "Option 5", key: "5" }),
-                                            getItem({ label: "Option 6", key: "6" }),
-                                            getItem({ label: "Submenu", key: "sub3", icon: null, children: [getItem({ label: "Option 7", key: "7" }), getItem({ label: "Option 8", key: "8" })] })],
-                                                }), { type: "divider" },
-                                        getItem({
-                                                  label: "Navigation Three", key: "sub4", icon: <Icon icon={faIcons}/>, children: [
-                                            getItem({ label: "Option 9", key: "9" }),
-                                            getItem({ label: "Option 10", key: "10" }),
-                                            getItem({ label: "Option 11", key: "11" }),
-                                            getItem({ label: "Option 12", key: "12" })],
-                                                }),
-                                        getItem({ label: "Group", key: "grp", icon: null, children: [getItem({ label: "Option 13", key: "13" }), getItem({ label: "Option 14", key: "14" })], type: "group" }),
+    const items: IMenuProps["items"] = [{
+      label: "Navigation One", key: "sub1", icon: <Icon icon={faIcons}/>, children: [
+        {
+          label: "Item 1",
+          key: "g1",
+          children: [{ label: "Option 1", key: "1" }, { label: "Option 2", key: "2" }],
+          type: "group",
+        },
+        {
+          label: "Item 2",
+          key: "g2",
+          children: [{ label: "Option 3", key: "3" }, { label: "Option 4", key: "4" }],
+          type: "group",
+        }],
+    },
+      {
+        label: "Navigation Two", key: "sub2", icon: <Icon icon={faIcons}/>, children: [
+          { label: "Option 5", key: "5" },
+          { label: "Option 6", key: "6" },
+          {
+            label: "Submenu",
+            key: "sub3",
+            icon: null,
+            children: [{ label: "Option 7", key: "7" }, { label: "Option 8", key: "8" }],
+          }],
+      }, { type: "divider" },
+      {
+        label: "Navigation Three", key: "sub4", icon: <Icon icon={faIcons}/>, children: [
+          { label: "Option 9", key: "9" },
+          { label: "Option 10", key: "10" },
+          { label: "Option 11", key: "11" },
+          { label: "Option 12", key: "12" }],
+      },
+      {
+        label: "Group",
+        key: "grp", children: [{ label: "Option 13", key: "13" }, { label: "Option 14", key: "14" }],
+        type: "group",
+      },
     ];
-
-
+    
     return <>
       <ExampleStory title="Vertical menu with inline submenus">
         <Menu
@@ -227,38 +243,35 @@ export const ExampleVerticalInline: Story = {
 
 export const ExampleCollapsable: Story = {
   render: () => {
-    const getItem = ({ label, key, icon, children, type }: { label: React.ReactNode, key: React.Key, icon?: React.ReactNode, children?: any, type?: "group" }) => ({ key, icon, children, label, type });
-
     const items: MenuProps["items"] = [
-      getItem({ label: "Option 1", key: "1", icon: <Icon icon={faIcons}/> }),
-      getItem({ label: "Option 2", key: "2", icon: <Icon icon={faIcons}/> }),
-      getItem({ label: "Option 3", key: "3", icon: <Icon icon={faIcons}/> }),
-
-      getItem({
-                label: "Navigation One", key: "sub1", icon: <Icon icon={faIcons}/>, children: [
-          getItem({ label: "Option 5", key: "5" }),
-          getItem({ label: "Option 6", key: "6" }),
-          getItem({ label: "Option 7", key: "7" }),
-          getItem({ label: "Option 8", key: "8" }),
+      { label: "Option 1", key: "1", icon: <Icon icon={faIcons}/> },
+      { label: "Option 2", key: "2", icon: <Icon icon={faIcons}/> },
+      { label: "Option 3", key: "3", icon: <Icon icon={faIcons}/> },
+      {
+        label: "Navigation One", key: "sub1", icon: <Icon icon={faIcons}/>, children: [
+          { label: "Option 5", key: "5" },
+          { label: "Option 6", key: "6" },
+          { label: "Option 7", key: "7" },
+          { label: "Option 8", key: "8" },
         ],
-              }),
-
-      getItem({
-                label: "Navigation Two", key: "sub2", icon: <Icon icon={faIcons}/>, children: [
-          getItem({ label: "Option 9", key: "9" }),
-          getItem({ label: "Option 10", key: "10" }),
-
-          getItem({ label: "Submenu", key: "sub3", icon: null, children: [getItem({ label: "Option 11", key: "11" }), getItem({ label: "Option 12", key: "12" })] }),
+      },
+      {
+        label: "Navigation Two", key: "sub2", icon: <Icon icon={faIcons}/>, children: [
+          { label: "Option 9", key: "9" },
+          { label: "Option 10", key: "10" },
+          {
+            label: "Submenu",
+            key: "sub3",
+            icon: null,
+            children: [{ label: "Option 11", key: "11" }, { label: "Option 12", key: "12" }],
+          },
         ],
-              }),
+      },
     ];
-
     const [collapsed, setCollapsed] = useState(false);
-
     const toggleCollapsed = () => {
       setCollapsed(!collapsed);
     };
-
 
     return <>
       <ExampleStory title={<>Inline menu could be collapsed. Here is a <a href="https://ant.design/components/layout#components-layout-demo-side" target="_blank">complete demo</a> with sider layout </>}>
@@ -274,6 +287,106 @@ export const ExampleCollapsable: Story = {
             inlineCollapsed={collapsed}
             items={items}/>
         </div>
+      </ExampleStory>
+    </>;
+  },
+};
+
+export const ExampleOpenCurrentSubmenu: Story = {
+  render: () => {
+    const items: IMenuProps["items"] = [
+      {
+        label: "Navigation One", key: "sub1", icon: <Icon icon={faIcons}/>, children: [
+          { label: "Option 1", key: "1" },
+          { label: "Option 2", key: "2" },
+          { label: "Option 3", key: "3" },
+          { label: "Option 4", key: "4" },
+        ],
+      },
+      {
+        label: "Navigation Two", key: "sub2", icon: <Icon icon={faIcons}/>, children: [
+          { label: "Option 5", key: "5" },
+          { label: "Option 6", key: "6" },
+          {
+            label: "Submenu",
+            key: "sub3",
+            icon: null,
+            children: [{ label: "Option 7", key: "7" }, { label: "Option 8", key: "8" }],
+          }],
+      },
+      {
+        label: "Navigation Three", key: "sub4", icon: <Icon icon={faIcons}/>, children: [
+          { label: "Option 9", key: "9" },
+          { label: "Option 10", key: "10" },
+          { label: "Option 11", key: "11" },
+          { label: "Option 12", key: "12" },
+        ],
+      },
+    ];
+    
+    const rootSubmenuKeys = ["sub1", "sub2", "sub4"];
+    const [openKeys, setOpenKeys] = useState(["sub1"]);
+    const onOpenChange: MenuProps["onOpenChange"] = keys => {
+      const latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1);
+      if (latestOpenKey && rootSubmenuKeys.indexOf(latestOpenKey!) === -1) {
+        setOpenKeys(keys);
+      } else {
+        setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
+      }
+    };
+
+    return <>
+      <ExampleStory title="Click the menu and you will see that all the other menus gets collapsed to keep the entire menu compact">
+        <Menu
+          mode="inline"
+          openKeys={openKeys}
+          onOpenChange={onOpenChange}
+          style={{ width: 256 }}
+          items={items}/>
+      </ExampleStory>
+    </>;
+  },
+};
+
+export const ExampleVerticalMenu: Story = {
+  render: () => {
+    const items: IMenuProps["items"] = [
+      {
+        label: "Navigation One", key: "sub1", icon: <Icon icon={faIcons}/>, children: [
+          {
+            label: "Item 1",
+            key: "Item 1 Key",
+            children: [{ label: "Option 1", key: "1" }, { label: "Option 2", key: "2" }],
+            type: "group",
+          },
+          {
+            label: "Item 2",
+            key: "Item 2 Key",
+            children: [{ label: "Option 3", key: "3" }, { label: "Option 4", key: "4" }],
+            type: "group",
+          }],
+      },
+      {
+        label: "Navigation Two", key: "sub2", icon: <Icon icon={faIcons}/>, children: [
+          { label: "Option 5", key: "5" },
+          { label: "Option 6", key: "6" },
+          {
+            label: "Submenu",
+            key: "sub3",
+            children: [{ label: "Option 7", key: "7" }, { label: "Option 8", key: "8" }],
+          }],
+      },
+      {
+        label: "Navigation Three", key: "sub4", icon: <Icon icon={faIcons}/>, children: [
+          { label: "Option 9", key: "9" },
+          { label: "Option 10", key: "10" },
+          { label: "Option 11", key: "11" },
+          { label: "Option 12", key: "12" }],
+      }];
+
+    return <>
+      <ExampleStory title="Submenus open as pop-ups">
+        <Menu onClick={e => {console.log("click", e);}} style={{ width: 256 }} mode="vertical" items={items}/>
       </ExampleStory>
     </>;
   },
