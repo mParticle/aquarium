@@ -1,6 +1,6 @@
 import { Skeleton } from "src/components/feedback/Skeleton/Skeleton";
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
+import { type Meta , type StoryObj } from "@storybook/react";
+
 
 const meta: Meta<typeof Skeleton> = {
   title: "Aquarium/Feedback/Skeleton",

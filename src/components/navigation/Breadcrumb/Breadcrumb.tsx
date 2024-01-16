@@ -1,6 +1,6 @@
 import React from "react";
-import { Breadcrumb as AntBreadcrumb } from "antd";
-import { BreadcrumbProps as AntBreadcrumbProps } from "antd";
+import { Breadcrumb as AntBreadcrumb , type BreadcrumbProps as AntBreadcrumbProps } from "antd";
+
 
 export interface IBreadcrumbProps extends AntBreadcrumbProps {}
 

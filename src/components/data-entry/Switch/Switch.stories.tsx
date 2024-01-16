@@ -1,5 +1,5 @@
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
+import { type Meta , type StoryObj } from "@storybook/react";
+
 import { Switch } from "src/components/data-entry/Switch/Switch";
 
 const meta: Meta<typeof Switch> = {
@@ -19,7 +19,7 @@ const meta: Meta<typeof Switch> = {
     unCheckedChildren: "Off",
     value: false, // Alias for checked
     onClick: (checked, event) => {},
-    onChange: (checked, event) => alert(`Switch changed: ${checked}`),
+    onChange: (checked, event) => { alert(`Switch changed: ${checked}`); },
   },
 };
 export default meta;

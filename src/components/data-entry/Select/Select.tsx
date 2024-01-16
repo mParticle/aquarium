@@ -1,6 +1,6 @@
 import React from "react";
-import { Select as AntSelect } from "antd";
-import { SelectProps as AntSelectProps } from "antd";
+import { Select as AntSelect , type SelectProps as AntSelectProps } from "antd";
+
 
 export interface ISelectProps extends AntSelectProps {}
 

@@ -1,5 +1,5 @@
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
+import { type Meta , type StoryObj } from "@storybook/react";
+
 import { Checkbox } from "src/components/data-entry/Checkbox/Checkbox";
 
 const meta: Meta<typeof Checkbox> = {
@@ -57,6 +57,6 @@ export const Indeterminate: Story = {
 
 export const WithOnChange: Story = {
   args: {
-    onChange: (e) => alert("Checkbox Changed"),
+    onChange: (e) => { alert("Checkbox Changed"); },
   },
 };

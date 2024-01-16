@@ -1,6 +1,6 @@
 import React from "react";
-import { Checkbox as AntCheckbox } from "antd";
-import { CheckboxProps as AntCheckboxProps } from "antd";
+import { Checkbox as AntCheckbox , type CheckboxProps as AntCheckboxProps } from "antd";
+
 
 export interface ICheckboxProps extends AntCheckboxProps {}
 

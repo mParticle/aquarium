@@ -1,6 +1,6 @@
 import React from "react";
-import { notification } from "antd";
-import { NotificationArgsProps } from "antd";
+import { notification , type NotificationArgsProps } from "antd";
+
 
 export interface INotificationProps extends NotificationArgsProps {
   children: React.ReactNode;

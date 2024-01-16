@@ -1,14 +1,14 @@
 import React from "react";
 import { useInitData } from "src/hooks/useInitData";
-import { IModalProps } from "src/components/feedback/Modal/Modal";
+import { type IModalProps , Modal } from "src/components/feedback/Modal/Modal";
 import { Skeleton } from "src/components/feedback/Skeleton/Skeleton";
-import { Modal } from "src/components/feedback/Modal/Modal";
+
 import { Result } from "src/components/feedback/Result/Result";
 
 export interface ILoadingModalProps<Data>
   extends Omit<IModalProps, "children"> {
-  fetchData(): Promise<Data>;
-  children(initData: Data): React.ReactNode;
+  fetchData: () => Promise<Data>;
+  children: (initData: Data) => React.ReactNode;
 }
 
 export function LoadingModal<Data>(props: ILoadingModalProps<Data>) {

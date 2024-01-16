@@ -1,12 +1,12 @@
 import React from "react";
-import { LoadingModal } from "src/components/feedback/LoadingModal/LoadingModal";
-import { ILoadingModalProps } from "src/components/feedback/LoadingModal/LoadingModal";
+import { LoadingModal , type ILoadingModalProps } from "src/components/feedback/LoadingModal/LoadingModal";
+
 import { DatePicker } from "src/components/data-entry/DatePicker/DatePicker";
 import { Dropdown } from "src/components/navigation/Dropdown/Dropdown";
 import { Input } from "src/components/data-entry/Input/Input";
 import { Flex } from "src/components/layout/Flex/Flex";
 import { Button } from "src/components/general/Button/Button";
-import { ItemType } from "antd/es/menu/hooks/useItems";
+import { type ItemType } from "antd/es/menu/hooks/useItems";
 
 export interface IAnnotationModalProps
   extends Omit<
@@ -18,20 +18,20 @@ interface iAnnotationModel {
   title: string;
   description: string;
   startDate: Date;
-  events: { name: string }[];
+  events: Array<{ name: string }>;
 }
 
 export function AnnotationModal(props: IAnnotationModalProps) {
-  const fetchAnnotations = () =>
-    new Promise<iAnnotationModel>((resolve, reject) =>
+  const fetchAnnotations = async () =>
+    await new Promise<iAnnotationModel>((resolve, reject) =>
       setTimeout(
         () =>
-          resolve({
+          { resolve({
             title: "title",
             description: "description",
             startDate: new Date(),
             events: [{ name: "event1" }, { name: "event2" }],
-          }),
+          }); },
         500,
       ),
     );

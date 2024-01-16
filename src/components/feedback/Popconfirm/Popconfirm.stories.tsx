@@ -1,5 +1,5 @@
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
+import { type Meta , type StoryObj } from "@storybook/react";
+
 import { Popconfirm } from "src/components/feedback/Popconfirm/Popconfirm";
 
 const meta: Meta<typeof Popconfirm> = {

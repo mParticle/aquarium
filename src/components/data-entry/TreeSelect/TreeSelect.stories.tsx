@@ -1,5 +1,5 @@
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
+import { type Meta , type StoryObj } from "@storybook/react";
+
 import { TreeSelect } from "src/components/data-entry/TreeSelect/TreeSelect";
 
 const meta: Meta<typeof TreeSelect> = {

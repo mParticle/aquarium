@@ -1,8 +1,8 @@
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
+import { type Meta , type StoryObj } from "@storybook/react";
+
 import { Icon } from "src/components/general/Icon/Icon";
-import { faFontAwesome } from "@fortawesome/free-solid-svg-icons";
-import { faHamburger } from "@fortawesome/free-solid-svg-icons";
+import { faFontAwesome , faHamburger } from "@fortawesome/free-solid-svg-icons";
+
 
 const meta: Meta<typeof Icon> = {
   title: "Aquarium/General/Icon",

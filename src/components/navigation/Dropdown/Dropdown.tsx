@@ -1,6 +1,6 @@
 import React from "react";
-import { Dropdown as AntDropdown } from "antd";
-import { DropdownProps as AntDropdownProps } from "antd";
+import { Dropdown as AntDropdown , type DropdownProps as AntDropdownProps } from "antd";
+
 
 export interface IDropdownProps extends AntDropdownProps {}
 

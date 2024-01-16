@@ -1,6 +1,6 @@
 import React from "react";
-import { Divider as AntDivider } from "antd";
-import { DividerProps as AntDividerProps } from "antd";
+import { Divider as AntDivider , type DividerProps as AntDividerProps } from "antd";
+
 
 export interface IDividerProps extends AntDividerProps {}
 

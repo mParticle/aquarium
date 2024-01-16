@@ -1,9 +1,9 @@
-import React from "react";
-import { useState } from "react";
-import { AutoComplete } from "src/components/data-entry/AutoComplete/AutoComplete";
-import { IAutoCompleteProps } from "src/components/data-entry/AutoComplete/AutoComplete";
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
+import React, { useState } from "react";
+
+import { AutoComplete , type IAutoCompleteProps } from "src/components/data-entry/AutoComplete/AutoComplete";
+
+import { type Meta , type StoryObj } from "@storybook/react";
+
 
 const meta: Meta<typeof AutoComplete> = {
   title: "Aquarium/Data Entry/AutoComplete",
@@ -30,7 +30,7 @@ const PrimaryTemplate = (args: IAutoCompleteProps) => {
   const [value, setValue] = useState<IAutoCompleteProps["value"]>("");
   const [options, setOptions] = useState<IAutoCompleteProps["options"]>([]);
 
-  let onSearch = (text: string) => setOptions(getPanelValue(text));
+  const onSearch = (text: string) => { setOptions(getPanelValue(text)); };
   const onSelect = (value: string) => {
     console.log("you selected value: " + value);
   };

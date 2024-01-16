@@ -1,6 +1,6 @@
 import { DatePicker } from "src/components/data-entry/DatePicker/DatePicker";
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
+import { type Meta , type StoryObj } from "@storybook/react";
+
 
 const meta: Meta<typeof DatePicker> = {
   title: "Aquarium/Data Entry/Date Picker",

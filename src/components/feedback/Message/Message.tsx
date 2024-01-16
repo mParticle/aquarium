@@ -1,6 +1,6 @@
 import React from "react";
-import { message } from "antd";
-import { MessageArgsProps as AntMessageArgsProps } from "antd";
+import { message , type MessageArgsProps as AntMessageArgsProps } from "antd";
+
 
 export interface IMessageProps extends AntMessageArgsProps {
   children: React.ReactNode;

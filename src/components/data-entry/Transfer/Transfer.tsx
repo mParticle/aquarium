@@ -1,6 +1,6 @@
 import React from "react";
-import { Transfer as AntTransfer } from "antd";
-import { TransferProps as AntTransferProps } from "antd";
+import { Transfer as AntTransfer , type TransferProps as AntTransferProps } from "antd";
+
 
 export interface ITransferProps extends AntTransferProps {}
 

@@ -1,10 +1,10 @@
-import React from "react";
-import { useState } from "react";
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
+import React, { useState } from "react";
+
+import { type Meta , type StoryObj } from "@storybook/react";
+
 import { Button } from "src/components/general/Button/Button";
-import { LoadingModal } from "src/components/feedback/LoadingModal/LoadingModal";
-import { ILoadingModalProps } from "src/components/feedback/LoadingModal/LoadingModal";
+import { LoadingModal , type ILoadingModalProps } from "src/components/feedback/LoadingModal/LoadingModal";
+
 
 const meta: Meta<typeof LoadingModal> = {
   title: "Aquarium/Feedback/Loading Modal",
@@ -56,18 +56,18 @@ const BaseTemplate = (
 const PrimaryTemplate = (args: ILoadingModalProps<unknown>) =>
   BaseTemplate(
     args,
-    () =>
-      new Promise<boolean>((resolve, reject) => {
-        setTimeout(() => resolve(true), 1000);
+    async () =>
+      await new Promise<boolean>((resolve, reject) => {
+        setTimeout(() => { resolve(true); }, 1000);
       }),
   );
 
 const ErrorTemplate = (args: ILoadingModalProps<unknown>) =>
   BaseTemplate(
     args,
-    () =>
-      new Promise<boolean>((resolve, reject) => {
-        setTimeout(() => reject(true), 1000);
+    async () =>
+      await new Promise<boolean>((resolve, reject) => {
+        setTimeout(() => { reject(true); }, 1000);
       }),
   );
 

@@ -1,6 +1,6 @@
 import React from "react";
-import { Table as AntTable } from "antd";
-import { TableProps as AntTableProps } from "antd";
+import { Table as AntTable , type TableProps as AntTableProps } from "antd";
+
 
 export interface ITableProps extends AntTableProps {}
 

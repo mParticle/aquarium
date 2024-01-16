@@ -1,6 +1,6 @@
 import React from "react";
-import { TreeSelect as AntTreeSelect } from "antd";
-import { TreeSelectProps as AntTreeSelectProps } from "antd";
+import { TreeSelect as AntTreeSelect , type TreeSelectProps as AntTreeSelectProps } from "antd";
+
 
 export interface ITreeSelectProps extends AntTreeSelectProps {}
 

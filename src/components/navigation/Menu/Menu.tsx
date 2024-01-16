@@ -1,6 +1,6 @@
 import React from "react";
-import { Menu as AntMenu } from "antd";
-import { MenuProps as AntMenuProps } from "antd";
+import { Menu as AntMenu , type MenuProps as AntMenuProps } from "antd";
+
 
 export interface IMenuProps extends AntMenuProps {}
 

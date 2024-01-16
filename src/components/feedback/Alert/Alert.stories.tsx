@@ -1,5 +1,5 @@
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
+import { type Meta , type StoryObj } from "@storybook/react";
+
 import { Alert } from "src/components/feedback/Alert/Alert";
 
 const meta: Meta<typeof Alert> = {

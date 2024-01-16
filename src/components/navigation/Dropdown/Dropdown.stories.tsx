@@ -1,12 +1,12 @@
-import React from "react";
-import { ReactNode } from "react";
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
+import React, { type ReactNode } from "react";
+
+import { type Meta , type StoryObj } from "@storybook/react";
+
 import { SmileOutlined } from "@ant-design/icons";
 import { Button } from "src/components/general/Button/Button";
 import {
   Dropdown,
-  IDropdownProps,
+  type IDropdownProps,
 } from "src/components/navigation/Dropdown/Dropdown";
 
 const menu: IDropdownProps["menu"] = {

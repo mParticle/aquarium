@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
+import { type Meta , type StoryObj } from "@storybook/react";
+
 import { Empty } from "src/components/data-display/Empty/Empty";
 
 const meta: Meta<typeof Empty> = {

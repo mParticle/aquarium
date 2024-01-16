@@ -1,6 +1,6 @@
 import React from "react";
-import { ColorPicker as AntColorPicker } from "antd";
-import { ColorPickerProps as AntColorPickerProps } from "antd";
+import { ColorPicker as AntColorPicker , type ColorPickerProps as AntColorPickerProps } from "antd";
+
 
 export interface IColorPickerProps extends AntColorPickerProps {}
 

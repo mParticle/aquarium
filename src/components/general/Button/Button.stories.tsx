@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Button } from "src/components/general/Button/Button";
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
+import { type Meta , type StoryObj } from "@storybook/react";
+
 import { Icon } from "src/components/general/Icon/Icon";
 import { faHamburger } from "@fortawesome/free-solid-svg-icons";
 import { userEvent } from "@storybook/test";
@@ -147,6 +147,6 @@ export const Small: Story = {
 
 export const PrimaryButtonWithClick: Story = {
   args: {
-    onClick: (e) => alert("Button Clicked"),
+    onClick: (e) => { alert("Button Clicked"); },
   },
 };

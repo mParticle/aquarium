@@ -1,5 +1,5 @@
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
+import { type Meta , type StoryObj } from "@storybook/react";
+
 import { Tabs } from "src/components/data-display/Tabs/Tabs";
 
 const meta: Meta<typeof Tabs> = {

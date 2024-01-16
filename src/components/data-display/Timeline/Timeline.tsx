@@ -1,6 +1,6 @@
 import React from "react";
-import { Timeline as AntTimeline } from "antd";
-import { TimelineProps as AntTimelineProps } from "antd";
+import { Timeline as AntTimeline , type TimelineProps as AntTimelineProps } from "antd";
+
 
 export interface ITimelineProps extends AntTimelineProps {}
 

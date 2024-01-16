@@ -1,6 +1,6 @@
 import React from "react";
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
+import { type Meta , type StoryObj } from "@storybook/react";
+
 import { Steps } from "src/components/navigation/Steps/Steps";
 
 const items = [

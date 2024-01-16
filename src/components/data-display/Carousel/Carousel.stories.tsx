@@ -1,5 +1,5 @@
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
+import { type Meta , type StoryObj } from "@storybook/react";
+
 import { Carousel } from "src/components/data-display/Carousel/Carousel";
 
 const meta: Meta<typeof Carousel> = {

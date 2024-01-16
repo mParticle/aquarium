@@ -1,5 +1,5 @@
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
+import { type Meta , type StoryObj } from "@storybook/react";
+
 import { Timeline } from "src/components/data-display/Timeline/Timeline";
 
 const meta: Meta<typeof Timeline> = {

@@ -1,6 +1,6 @@
 import React from "react";
-import { Alert as AntAlert } from "antd";
-import { AlertProps as AntAlertProps } from "antd";
+import { Alert as AntAlert , type AlertProps as AntAlertProps } from "antd";
+
 
 export interface IAlertProps extends AntAlertProps {}
 

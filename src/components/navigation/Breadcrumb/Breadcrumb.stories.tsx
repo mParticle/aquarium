@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
+import { type Meta , type StoryObj } from "@storybook/react";
+
 import { Breadcrumb } from "src/components/navigation/Breadcrumb/Breadcrumb";
 
 const meta: Meta<typeof Breadcrumb> = {

@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
+import { type Meta , type StoryObj } from "@storybook/react";
+
 import { Notification } from "src/components/feedback/Notification/Notification";
 import { Button } from "src/components/general/Button/Button";
 

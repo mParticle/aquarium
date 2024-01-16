@@ -1,7 +1,7 @@
 import React from "react";
 import { DatePicker as AntDatePicker } from "antd";
-import { PickerDateProps } from "antd/es/date-picker/generatePicker";
-import { Dayjs } from "dayjs";
+import { type PickerDateProps } from "antd/es/date-picker/generatePicker";
+import { type Dayjs } from "dayjs";
 
 type AntDatePickerProps = PickerDateProps<Dayjs>;
 

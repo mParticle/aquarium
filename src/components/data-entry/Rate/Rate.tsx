@@ -1,6 +1,6 @@
 import React from "react";
-import { Rate as AntRate } from "antd";
-import { RateProps as AntRateProps } from "antd";
+import { Rate as AntRate , type RateProps as AntRateProps } from "antd";
+
 
 export interface IRateProps extends AntRateProps {}
 

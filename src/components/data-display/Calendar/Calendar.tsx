@@ -1,6 +1,6 @@
 import React from "react";
-import { Calendar as AntCalendar } from "antd";
-import { CalendarProps as AntCalendarProps } from "antd";
+import { Calendar as AntCalendar , type CalendarProps as AntCalendarProps } from "antd";
+
 
 export interface ICalendarProps extends AntCalendarProps {}
 

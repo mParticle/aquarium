@@ -1,6 +1,6 @@
 import React from "react";
-import { Tour as AntTour } from "antd";
-import { TourProps as AntTourProps } from "antd";
+import { Tour as AntTour , type TourProps as AntTourProps } from "antd";
+
 
 export interface ITourProps extends AntTourProps {}
 

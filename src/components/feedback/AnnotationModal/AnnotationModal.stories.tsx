@@ -1,7 +1,7 @@
-import React from "react";
-import { useState } from "react";
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
+import React, { useState } from "react";
+
+import { type Meta , type StoryObj } from "@storybook/react";
+
 import { Button } from "src/components/general/Button/Button";
 import { AnnotationModal } from "src/components/feedback/AnnotationModal/AnnotationModal";
 

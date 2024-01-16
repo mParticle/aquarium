@@ -1,6 +1,6 @@
 import React from "react";
-import { Tabs as AntTabs } from "antd";
-import { TabsProps as AntTabsProps } from "antd";
+import { Tabs as AntTabs , type TabsProps as AntTabsProps } from "antd";
+
 
 export interface ITabsProps extends AntTabsProps {}
 

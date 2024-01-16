@@ -1,6 +1,6 @@
 import React from "react";
-import { Space as AntSpace } from "antd";
-import { SpaceProps as AntSpaceProps } from "antd";
+import { Space as AntSpace , type SpaceProps as AntSpaceProps } from "antd";
+
 
 export interface ISpaceProps extends AntSpaceProps {}
 

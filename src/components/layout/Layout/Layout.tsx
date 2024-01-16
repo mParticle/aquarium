@@ -1,6 +1,6 @@
 import React from "react";
-import { Layout as AntLayout } from "antd";
-import { LayoutProps as AntLayoutProps } from "antd";
+import { Layout as AntLayout , type LayoutProps as AntLayoutProps } from "antd";
+
 
 export interface ILayoutProps extends AntLayoutProps {}
 

@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
+import { type Meta , type StoryObj } from "@storybook/react";
+
 import { Message } from "src/components/feedback/Message/Message";
 import { Button } from "src/components/general/Button/Button";
 
@@ -45,6 +45,6 @@ export const CustomStyle: Story = {
 
 export const Clickable: Story = {
   args: {
-    onClick: () => alert("Message clicked"),
+    onClick: () => { alert("Message clicked"); },
   },
 };

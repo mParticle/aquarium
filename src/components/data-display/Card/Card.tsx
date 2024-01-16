@@ -1,6 +1,6 @@
 import React from "react";
-import { Card as AntCard } from "antd";
-import { CardProps as AntCardProps } from "antd";
+import { Card as AntCard , type CardProps as AntCardProps } from "antd";
+
 
 export interface ICardProps extends AntCardProps {}
 

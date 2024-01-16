@@ -1,5 +1,5 @@
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
+import { type Meta , type StoryObj } from "@storybook/react";
+
 import { FloatButton } from "src/components/general/FloatButton/FloatButton";
 
 const meta: Meta<typeof FloatButton> = {
@@ -15,7 +15,7 @@ const meta: Meta<typeof FloatButton> = {
     href: "",
     target: "",
     badge: undefined,
-    onClick: (event) => alert("Float Button Clicked!"),
+    onClick: (event) => { alert("Float Button Clicked!"); },
   },
 
   argTypes: {

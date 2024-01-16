@@ -1,6 +1,6 @@
 import React from "react";
-import { Anchor as AntAnchor } from "antd";
-import { AnchorProps as AntAnchorProps } from "antd";
+import { Anchor as AntAnchor , type AnchorProps as AntAnchorProps } from "antd";
+
 
 export interface IAnchorProps extends AntAnchorProps {}
 

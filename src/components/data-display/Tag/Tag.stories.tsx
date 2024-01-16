@@ -1,5 +1,5 @@
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
+import { type Meta , type StoryObj } from "@storybook/react";
+
 import { Tag } from "src/components/data-display/Tag/Tag";
 
 const meta: Meta<typeof Tag> = {
