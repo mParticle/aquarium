@@ -1,4 +1,3 @@
-import React from "react";
 import { Popconfirm as AntPopconfirm } from "antd";
 import { PopconfirmProps as AntPopconfirmProps } from "antd";
 

@@ -1,4 +1,3 @@
-import * as React from "react";
 import { useState } from "react";
 import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";

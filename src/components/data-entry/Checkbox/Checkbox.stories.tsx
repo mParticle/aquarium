@@ -1,4 +1,3 @@
-import React from "react";
 import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";
 import { Checkbox, Divider } from "src/components";
@@ -6,7 +5,7 @@ import { useState } from "react";
 import { ExampleStory } from "src/utils/ExampleStory";
 import { CheckboxValueType } from "antd/es/checkbox/Group";
 import { ICheckboxProps } from "src/components/data-entry/Checkbox/Checkbox";
-import { userEvent, expect } from "@storybook/test";
+import { userEvent } from "@storybook/test";
 
 const meta: Meta<typeof Checkbox> = {
   title: "Aquarium/Data Entry/Checkbox",

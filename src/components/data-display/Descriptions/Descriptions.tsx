@@ -1,4 +1,3 @@
-import React from "react";
 import { Descriptions as AntDescriptions } from "antd";
 import { DescriptionsProps as AntDescriptionsProps } from "antd";
 

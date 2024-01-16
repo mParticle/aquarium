@@ -1,4 +1,3 @@
-import React from "react";
 import { ColorPicker as AntColorPicker } from "antd";
 import { ColorPickerProps as AntColorPickerProps } from "antd";
 

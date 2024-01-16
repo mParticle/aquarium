@@ -1,4 +1,3 @@
-import React from "react";
 import { Flex as AntFlex } from "antd";
 import { FlexProps as AntFlexProps } from "antd";
 

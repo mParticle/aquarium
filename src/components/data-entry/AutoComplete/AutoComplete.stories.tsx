@@ -1,5 +1,3 @@
-import React from "react";
-import { useState } from "react";
 import { IAutoCompleteProps } from "src/components/data-entry/AutoComplete/AutoComplete";
 import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";
@@ -7,7 +5,8 @@ import { faIcons } from "@fortawesome/free-solid-svg-icons";
 import { Icon, Input, Space, AutoComplete } from "src/components";
 import { Flex } from "src/components";
 import { ISelectProps } from "src/components/data-entry/Select/Select";
-import { ExampleStory } from "src/utils/ExampleStory"
+import { ExampleStory } from "src/utils/ExampleStory";
+import { useState } from "react";
 
 const baseOptions = [
   { label: "The quick brown fox jumps over the lazy dog", value: 1 },

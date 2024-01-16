@@ -1,4 +1,3 @@
-import React from "react";
 import { Result as AntResult } from "antd";
 import { ResultProps as AntResultProps } from "antd";
 

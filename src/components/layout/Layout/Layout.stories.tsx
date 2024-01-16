@@ -1,7 +1,6 @@
 import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";
 import { Layout } from "src/components/layout/Layout/Layout";
-import React from "react";
 
 
 const headerStyle: React.CSSProperties = {

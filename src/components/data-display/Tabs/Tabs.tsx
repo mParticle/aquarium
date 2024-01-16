@@ -1,4 +1,3 @@
-import React from "react";
 import { Tabs as AntTabs } from "antd";
 import { TabsProps as AntTabsProps } from "antd";
 

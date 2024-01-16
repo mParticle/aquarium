@@ -1,4 +1,3 @@
-import React from "react";
 import { Select as AntSelect } from "antd";
 import { SelectProps as AntSelectProps } from "antd";
 import { BaseOptionType, DefaultOptionType } from "antd/es/select";

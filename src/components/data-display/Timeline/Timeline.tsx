@@ -1,4 +1,3 @@
-import React from "react";
 import { Timeline as AntTimeline } from "antd";
 import { TimelineProps as AntTimelineProps } from "antd";
 

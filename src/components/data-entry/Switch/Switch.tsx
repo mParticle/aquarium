@@ -1,4 +1,3 @@
-import React from "react";
 import { Switch as AntSwitch } from "antd";
 import { SwitchProps as AntSwitchProps } from "antd";
 

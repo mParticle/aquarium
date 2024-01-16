@@ -1,4 +1,3 @@
-import React from "react";
 import { Skeleton as AntSkeleton } from "antd";
 import { SkeletonProps as AntSkeletonProps } from "antd";
 
