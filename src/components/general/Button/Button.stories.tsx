@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Button } from "src/components/general/Button/Button";
 import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";

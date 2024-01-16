@@ -10,7 +10,7 @@ export default defineConfig({
   },
 
   esbuild: {
-    jsxInject: `import React from 'react'; import { expect } from "@storybook/test";`,
+    jsxInject: `import React from "react"; import { expect } from "@storybook/test";`,
   },
   
   build: {
