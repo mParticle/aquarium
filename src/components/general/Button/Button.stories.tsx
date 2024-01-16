@@ -53,8 +53,8 @@ type Story = StoryObj<typeof Button>
 */
 
 export const Primary: Story = {
-  play: async ({ canvasElement }) => {
-    const button = canvasElement.querySelector("button");
+  play: async context => {
+    const button = context.canvasElement.querySelector("button");
     await userEvent.click(button); // Click the button
   },
 };

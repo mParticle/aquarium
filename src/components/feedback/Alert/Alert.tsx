@@ -10,3 +10,5 @@ export const Alert = (props: IAlertProps) => {
     <AntAlert {...props}/>
   </>;
 };
+
+Alert.ErrorBoundary = AntAlert.ErrorBoundary
