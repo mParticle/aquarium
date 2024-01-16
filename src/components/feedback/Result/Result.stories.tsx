@@ -10,9 +10,7 @@ const meta: Meta<typeof Result> = {
 };
 export default meta;
 
-
-type Story = StoryObj<typeof Result>
-
+type Story = StoryObj<typeof Result>;
 
 export const Primary: Story = {
   args: {

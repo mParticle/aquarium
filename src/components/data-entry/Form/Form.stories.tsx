@@ -10,10 +10,6 @@ const meta: Meta<typeof Form> = {
 };
 export default meta;
 
+type Story = StoryObj<typeof Form>;
 
-type Story = StoryObj<typeof Form>
-
-
-
-export const Primary: Story = {
-}; 
+export const Primary: Story = {};

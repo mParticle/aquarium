@@ -7,7 +7,9 @@ export interface ISegmentedProps extends AntSegmentedProps {
 }
 
 export const Segmented = (props: ISegmentedProps) => {
-  return <>
-    <AntSegmented {...props}/>
-  </>;
+  return (
+    <>
+      <AntSegmented {...props} />
+    </>
+  );
 };

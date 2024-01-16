@@ -10,10 +10,6 @@ const meta: Meta<typeof Cascader> = {
 };
 export default meta;
 
+type Story = StoryObj<typeof Cascader>;
 
-type Story = StoryObj<typeof Cascader>
-
-
-
-export const Primary: Story = {
-}; 
+export const Primary: Story = {};

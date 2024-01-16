@@ -10,10 +10,6 @@ const meta: Meta<typeof QRCode> = {
 };
 export default meta;
 
+type Story = StoryObj<typeof QRCode>;
 
-type Story = StoryObj<typeof QRCode>
-
-
-
-export const Primary: Story = {
-}; 
+export const Primary: Story = {};

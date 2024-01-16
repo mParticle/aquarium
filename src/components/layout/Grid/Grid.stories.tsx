@@ -10,10 +10,6 @@ const meta: Meta<typeof Grid> = {
 };
 export default meta;
 
+type Story = StoryObj<typeof Grid>;
 
-type Story = StoryObj<typeof Grid>
-
-
-
-export const Primary: Story = {
-}; 
+export const Primary: Story = {};

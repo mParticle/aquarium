@@ -10,10 +10,6 @@ const meta: Meta<typeof ConfigProvider> = {
 };
 export default meta;
 
+type Story = StoryObj<typeof ConfigProvider>;
 
-type Story = StoryObj<typeof ConfigProvider>
-
-
-
-export const Primary: Story = {
-}; 
+export const Primary: Story = {};

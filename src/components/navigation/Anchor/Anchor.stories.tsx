@@ -10,10 +10,6 @@ const meta: Meta<typeof Anchor> = {
 };
 export default meta;
 
+type Story = StoryObj<typeof Anchor>;
 
-type Story = StoryObj<typeof Anchor>
-
-
-
-export const Primary: Story = {
-}; 
+export const Primary: Story = {};

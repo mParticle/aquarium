@@ -14,57 +14,67 @@ const meta: Meta<typeof LoadingModal> = {
 };
 export default meta;
 
+type Story = StoryObj<typeof LoadingModal>;
 
-type Story = StoryObj<typeof LoadingModal>
-
-const BaseTemplate = (args: ILoadingModalProps<unknown>, fetchData: () => Promise<boolean>) => {
+const BaseTemplate = (
+  args: ILoadingModalProps<unknown>,
+  fetchData: () => Promise<boolean>,
+) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const showModal = () => { setIsModalOpen(true); };
-  const handleOk = () => { setIsModalOpen(false); };
-  const handleCancel = () => { setIsModalOpen(false); };
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
 
-  return <>
-    <Button type="primary"
-            onClick={showModal}>
-      Open Loading Modal
-    </Button>
+  return (
+    <>
+      <Button type="primary" onClick={showModal}>
+        Open Loading Modal
+      </Button>
 
-    {isModalOpen &&
-     <LoadingModal<boolean>
-       fetchData={fetchData}
-
-       title="Loading Modal"
-       open={true}
-       onOk={handleOk}
-       onCancel={handleCancel}>
-
-       {initData => <>
-         Data resolved with - {initData + ""}
-       </>}
-
-     </LoadingModal>}
-  </>;
+      {isModalOpen && (
+        <LoadingModal<boolean>
+          fetchData={fetchData}
+          title="Loading Modal"
+          open={true}
+          onOk={handleOk}
+          onCancel={handleCancel}
+        >
+          {(initData) => <>Data resolved with - {initData + ""}</>}
+        </LoadingModal>
+      )}
+    </>
+  );
 };
 
-
 const PrimaryTemplate = (args: ILoadingModalProps<unknown>) =>
-  BaseTemplate(args, () => new Promise<boolean>((resolve, reject) => {
-    setTimeout(() => resolve(true), 1000);
-  }));
-
+  BaseTemplate(
+    args,
+    () =>
+      new Promise<boolean>((resolve, reject) => {
+        setTimeout(() => resolve(true), 1000);
+      }),
+  );
 
 const ErrorTemplate = (args: ILoadingModalProps<unknown>) =>
-  BaseTemplate(args, () => new Promise<boolean>((resolve, reject) => {
-    setTimeout(() => reject(true), 1000);
-  }));
-
+  BaseTemplate(
+    args,
+    () =>
+      new Promise<boolean>((resolve, reject) => {
+        setTimeout(() => reject(true), 1000);
+      }),
+  );
 
 export const Primary: Story = {
   render: PrimaryTemplate,
 };
 
-
 export const Error: Story = {
   render: ErrorTemplate,
-}; 
+};

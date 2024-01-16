@@ -10,10 +10,6 @@ const meta: Meta<typeof Tour> = {
 };
 export default meta;
 
+type Story = StoryObj<typeof Tour>;
 
-type Story = StoryObj<typeof Tour>
-
-
-
-export const Primary: Story = {
-}; 
+export const Primary: Story = {};

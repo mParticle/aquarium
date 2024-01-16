@@ -13,10 +13,10 @@ export const Notification = (props: INotificationProps) => {
     notificationApi.open({ ...props });
   };
 
-  return (<>
-    {contextHolder}
-    <span onClick={open}>
-      {props.children}
-    </span>
-  </>);
+  return (
+    <>
+      {contextHolder}
+      <span onClick={open}>{props.children}</span>
+    </>
+  );
 };

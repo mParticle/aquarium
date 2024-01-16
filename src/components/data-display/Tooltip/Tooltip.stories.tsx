@@ -10,10 +10,6 @@ const meta: Meta<typeof Tooltip> = {
 };
 export default meta;
 
+type Story = StoryObj<typeof Tooltip>;
 
-type Story = StoryObj<typeof Tooltip>
-
-
-
-export const Primary: Story = {
-}; 
+export const Primary: Story = {};

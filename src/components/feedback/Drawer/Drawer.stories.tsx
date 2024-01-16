@@ -10,10 +10,6 @@ const meta: Meta<typeof Drawer> = {
 };
 export default meta;
 
+type Story = StoryObj<typeof Drawer>;
 
-type Story = StoryObj<typeof Drawer>
-
-
-
-export const Primary: Story = {
-}; 
+export const Primary: Story = {};

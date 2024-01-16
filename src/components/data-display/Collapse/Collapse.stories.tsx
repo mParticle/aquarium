@@ -10,10 +10,6 @@ const meta: Meta<typeof Collapse> = {
 };
 export default meta;
 
+type Story = StoryObj<typeof Collapse>;
 
-type Story = StoryObj<typeof Collapse>
-
-
-
-export const Primary: Story = {
-}; 
+export const Primary: Story = {};

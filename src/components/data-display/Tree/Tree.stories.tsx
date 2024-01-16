@@ -10,10 +10,6 @@ const meta: Meta<typeof Tree> = {
 };
 export default meta;
 
+type Story = StoryObj<typeof Tree>;
 
-type Story = StoryObj<typeof Tree>
-
-
-
-export const Primary: Story = {
-}; 
+export const Primary: Story = {};

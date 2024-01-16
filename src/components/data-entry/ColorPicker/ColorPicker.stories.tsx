@@ -10,10 +10,6 @@ const meta: Meta<typeof ColorPicker> = {
 };
 export default meta;
 
+type Story = StoryObj<typeof ColorPicker>;
 
-type Story = StoryObj<typeof ColorPicker>
-
-
-
-export const Primary: Story = {
-}; 
+export const Primary: Story = {};

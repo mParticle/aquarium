@@ -1,21 +1,19 @@
 {
   "compilerOptions": {
-    
     //for absolute imports
     "baseUrl": ".",
     //for absolute imports
     "paths": {
-      "src/*": ["./src/*"],
+      "src/*": ["./src/*"]
     },
-
 
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
     "moduleResolution": "bundler",
     "target": "es2015",
-    
+
     "noImplicitAny": true,
-    
+
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,

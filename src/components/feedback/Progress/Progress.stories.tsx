@@ -10,10 +10,6 @@ const meta: Meta<typeof Progress> = {
 };
 export default meta;
 
+type Story = StoryObj<typeof Progress>;
 
-type Story = StoryObj<typeof Progress>
-
-
-
-export const Primary: Story = {
-}; 
+export const Primary: Story = {};

@@ -10,10 +10,6 @@ const meta: Meta<typeof Card> = {
 };
 export default meta;
 
+type Story = StoryObj<typeof Card>;
 
-type Story = StoryObj<typeof Card>
-
-
-
-export const Primary: Story = {
-}; 
+export const Primary: Story = {};

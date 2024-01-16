@@ -13,23 +13,24 @@ const meta: Meta<typeof AnnotationModal> = {
 };
 export default meta;
 
-
-type Story = StoryObj<typeof AnnotationModal>
+type Story = StoryObj<typeof AnnotationModal>;
 
 const BaseTemplate = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const showModal = () => { setIsModalOpen(true); };
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
 
-  return <>
-    <Button type="primary"
-            onClick={showModal}>
-      Open Annotation Modal
-    </Button>
+  return (
+    <>
+      <Button type="primary" onClick={showModal}>
+        Open Annotation Modal
+      </Button>
 
-    {isModalOpen &&
-     <AnnotationModal/>}
-  </>;
+      {isModalOpen && <AnnotationModal />}
+    </>
+  );
 };
 
 const PrimaryTemplate = () => BaseTemplate();

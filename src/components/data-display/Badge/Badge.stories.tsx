@@ -10,10 +10,6 @@ const meta: Meta<typeof Badge> = {
 };
 export default meta;
 
+type Story = StoryObj<typeof Badge>;
 
-type Story = StoryObj<typeof Badge>
-
-
-
-export const Primary: Story = {
-}; 
+export const Primary: Story = {};

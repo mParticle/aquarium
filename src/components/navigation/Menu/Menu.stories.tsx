@@ -10,10 +10,6 @@ const meta: Meta<typeof Menu> = {
 };
 export default meta;
 
+type Story = StoryObj<typeof Menu>;
 
-type Story = StoryObj<typeof Menu>
-
-
-
-export const Primary: Story = {
-}; 
+export const Primary: Story = {};

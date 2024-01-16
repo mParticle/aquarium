@@ -10,10 +10,6 @@ const meta: Meta<typeof TreeSelect> = {
 };
 export default meta;
 
+type Story = StoryObj<typeof TreeSelect>;
 
-type Story = StoryObj<typeof TreeSelect>
-
-
-
-export const Primary: Story = {
-}; 
+export const Primary: Story = {};

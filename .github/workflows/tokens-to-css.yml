@@ -3,8 +3,8 @@ name: Design Tokens to CSS
 on:
   push:
     branches-ignore:
-      - 'main'
-      - 'development'
+      - "main"
+      - "development"
   workflow_dispatch:
 
 jobs:

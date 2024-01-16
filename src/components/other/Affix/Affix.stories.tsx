@@ -10,10 +10,6 @@ const meta: Meta<typeof Affix> = {
 };
 export default meta;
 
+type Story = StoryObj<typeof Affix>;
 
-type Story = StoryObj<typeof Affix>
-
-
-
-export const Primary: Story = {
-}; 
+export const Primary: Story = {};

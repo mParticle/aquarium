@@ -13,23 +13,23 @@ const meta: Meta<typeof Popover> = {
 };
 export default meta;
 
-
-type Story = StoryObj<typeof Popover>
+type Story = StoryObj<typeof Popover>;
 
 const PrimaryTemplate = (args: IPopoverProps) => {
-
   const content = (
     <div>
       <p>Content</p>
-    </div>);
+    </div>
+  );
 
-  return <>
-    <Popover content={content} title="Title" trigger={args.trigger}>
-      <Button>{args.children}</Button>
-    </Popover>
-  </>;
+  return (
+    <>
+      <Popover content={content} title="Title" trigger={args.trigger}>
+        <Button>{args.children}</Button>
+      </Popover>
+    </>
+  );
 };
-
 
 export const Primary: Story = {
   args: { trigger: "click", children: "Click Me" },

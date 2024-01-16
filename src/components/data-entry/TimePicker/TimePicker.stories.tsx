@@ -10,10 +10,6 @@ const meta: Meta<typeof TimePicker> = {
 };
 export default meta;
 
+type Story = StoryObj<typeof TimePicker>;
 
-type Story = StoryObj<typeof TimePicker>
-
-
-
-export const Primary: Story = {
-}; 
+export const Primary: Story = {};

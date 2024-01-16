@@ -10,10 +10,6 @@ const meta: Meta<typeof Segmented> = {
 };
 export default meta;
 
+type Story = StoryObj<typeof Segmented>;
 
-type Story = StoryObj<typeof Segmented>
-
-
-
-export const Primary: Story = {
-}; 
+export const Primary: Story = {};

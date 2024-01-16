@@ -10,10 +10,6 @@ const meta: Meta<typeof Carousel> = {
 };
 export default meta;
 
+type Story = StoryObj<typeof Carousel>;
 
-type Story = StoryObj<typeof Carousel>
-
-
-
-export const Primary: Story = {
-}; 
+export const Primary: Story = {};

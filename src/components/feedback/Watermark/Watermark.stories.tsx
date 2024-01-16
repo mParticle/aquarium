@@ -10,10 +10,6 @@ const meta: Meta<typeof Watermark> = {
 };
 export default meta;
 
+type Story = StoryObj<typeof Watermark>;
 
-type Story = StoryObj<typeof Watermark>
-
-
-
-export const Primary: Story = {
-}; 
+export const Primary: Story = {};

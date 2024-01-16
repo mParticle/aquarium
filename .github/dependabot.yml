@@ -3,13 +3,13 @@
 version: 2
 updates:
   - commit-message:
-      prefix: 'chore'
+      prefix: "chore"
     directory: "/"
-    labels: ['dependabot']
+    labels: ["dependabot"]
     open-pull-requests-limit: 5
     package-ecosystem: "npm"
     schedule:
       interval: "weekly"
       day: "monday"
       time: "15:00"
-    target-branch: 'chore/dependabot'
+    target-branch: "chore/dependabot"

@@ -10,10 +10,6 @@ const meta: Meta<typeof Popconfirm> = {
 };
 export default meta;
 
+type Story = StoryObj<typeof Popconfirm>;
 
-type Story = StoryObj<typeof Popconfirm>
-
-
-
-export const Primary: Story = {
-}; 
+export const Primary: Story = {};

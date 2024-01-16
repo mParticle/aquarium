@@ -7,7 +7,9 @@ export interface IIconProps {
 }
 
 export const Icon = (props: IIconProps) => {
-  return <>
-    <FontAwesomeIcon {...props}></FontAwesomeIcon>
-  </>;
+  return (
+    <>
+      <FontAwesomeIcon {...props}></FontAwesomeIcon>
+    </>
+  );
 };

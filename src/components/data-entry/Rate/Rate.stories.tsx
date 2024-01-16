@@ -10,10 +10,6 @@ const meta: Meta<typeof Rate> = {
 };
 export default meta;
 
+type Story = StoryObj<typeof Rate>;
 
-type Story = StoryObj<typeof Rate>
-
-
-
-export const Primary: Story = {
-}; 
+export const Primary: Story = {};

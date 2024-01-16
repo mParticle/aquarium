@@ -13,8 +13,10 @@ export const Message = (props: IMessageProps) => {
     messageApi.open({ ...props });
   };
 
-  return <>
-    {contextHolder}
-    <span onClick={open}>{props.children}</span>
-  </>;
+  return (
+    <>
+      {contextHolder}
+      <span onClick={open}>{props.children}</span>
+    </>
+  );
 };

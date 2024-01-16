@@ -2,11 +2,12 @@ import React from "react";
 import { Modal as AntModal } from "antd";
 import { ModalProps as AntModalProps } from "antd";
 
-export interface IModalProps extends AntModalProps {
-}
+export interface IModalProps extends AntModalProps {}
 
 export const Modal = (props: IModalProps) => {
-  return <>
-    <AntModal {...props}/>
-  </>;
+  return (
+    <>
+      <AntModal {...props} />
+    </>
+  );
 };

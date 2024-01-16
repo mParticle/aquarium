@@ -10,8 +10,6 @@ const meta: Meta<typeof DatePicker> = {
 };
 export default meta;
 
-
-type Story = StoryObj<typeof DatePicker>
-
+type Story = StoryObj<typeof DatePicker>;
 
 export const Primary: Story = {};
