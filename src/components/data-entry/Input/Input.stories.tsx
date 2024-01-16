@@ -1,6 +1,5 @@
 import { Input } from "src/components/data-entry/Input/Input";
-import { type Meta , type StoryObj } from "@storybook/react";
-
+import { type Meta, type StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Input> = {
   title: "Aquarium/Data Entry/Input",
@@ -26,8 +25,12 @@ const meta: Meta<typeof Input> = {
     suffix: undefined,
     type: "text",
     value: "",
-    onChange: (e) => { console.log("Input changed: " + e.target.value); },
-    onPressEnter: (e) => { console.log("Enter key pressed: " + e); },
+    onChange: (e) => {
+      console.log("Input changed: " + e.target.value);
+    },
+    onPressEnter: (e) => {
+      console.log("Enter key pressed: " + String(e));
+    },
   },
 
   argTypes: {

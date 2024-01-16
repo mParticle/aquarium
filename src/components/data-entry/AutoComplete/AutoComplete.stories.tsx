@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 
-import { AutoComplete , type IAutoCompleteProps } from "src/components/data-entry/AutoComplete/AutoComplete";
+import {
+  AutoComplete,
+  type IAutoCompleteProps,
+} from "src/components/data-entry/AutoComplete/AutoComplete";
 
-import { type Meta , type StoryObj } from "@storybook/react";
-
+import { type Meta, type StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof AutoComplete> = {
   title: "Aquarium/Data Entry/AutoComplete",
@@ -30,13 +32,15 @@ const PrimaryTemplate = (args: IAutoCompleteProps) => {
   const [value, setValue] = useState<IAutoCompleteProps["value"]>("");
   const [options, setOptions] = useState<IAutoCompleteProps["options"]>([]);
 
-  const onSearch = (text: string) => { setOptions(getPanelValue(text)); };
+  const onSearch = (text: string) => {
+    setOptions(getPanelValue(text));
+  };
   const onSelect = (value: string) => {
     console.log("you selected value: " + value);
   };
 
   const getPanelValue = (searchText: string): IAutoCompleteProps["options"] => {
-    if (!searchText) return [];
+    if (searchText === "") return [];
     return baseOptions.filter((o) =>
       o.label.toLowerCase().includes(searchText.toLowerCase()),
     );

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 
-import { type Meta , type StoryObj } from "@storybook/react";
+import { type Meta, type StoryObj } from "@storybook/react";
 
 import { Button } from "src/components/general/Button/Button";
-import { LoadingModal , type ILoadingModalProps } from "src/components/feedback/LoadingModal/LoadingModal";
-
+import {
+  LoadingModal,
+  type ILoadingModalProps,
+} from "src/components/feedback/LoadingModal/LoadingModal";
 
 const meta: Meta<typeof LoadingModal> = {
   title: "Aquarium/Feedback/Loading Modal",
@@ -57,8 +59,10 @@ const PrimaryTemplate = (args: ILoadingModalProps<unknown>) =>
   BaseTemplate(
     args,
     async () =>
-      await new Promise<boolean>((resolve, reject) => {
-        setTimeout(() => { resolve(true); }, 1000);
+      await new Promise<boolean>((resolve, _reject) => {
+        setTimeout(() => {
+          resolve(true);
+        }, 1000);
       }),
   );
 
@@ -66,8 +70,10 @@ const ErrorTemplate = (args: ILoadingModalProps<unknown>) =>
   BaseTemplate(
     args,
     async () =>
-      await new Promise<boolean>((resolve, reject) => {
-        setTimeout(() => { reject(true); }, 1000);
+      await new Promise<boolean>((_resolve, reject) => {
+        setTimeout(() => {
+          reject(new Error());
+        }, 1000);
       }),
   );
 
@@ -75,6 +81,6 @@ export const Primary: Story = {
   render: PrimaryTemplate,
 };
 
-export const Error: Story = {
+export const ErrorState: Story = {
   render: ErrorTemplate,
 };

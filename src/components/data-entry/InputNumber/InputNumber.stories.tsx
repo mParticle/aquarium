@@ -1,4 +1,4 @@
-import { type Meta , type StoryObj } from "@storybook/react";
+import { type Meta, type StoryObj } from "@storybook/react";
 
 import { InputNumber } from "src/components/data-entry/InputNumber/InputNumber";
 
@@ -30,9 +30,15 @@ const meta: Meta<typeof InputNumber> = {
     step: 1,
     stringMode: false,
     value: undefined,
-    onChange: (value) => { alert("InputNumber changed: " + value); },
-    onPressEnter: (e) => { console.log("Enter key pressed:", e); },
-    onStep: (value, info) => { console.log("Step:", value, info); },
+    onChange: (value) => {
+      alert("InputNumber changed: " + value);
+    },
+    onPressEnter: (e) => {
+      console.log("Enter key pressed:", e);
+    },
+    onStep: (value, info) => {
+      console.log("Step:", value, info);
+    },
   },
 
   argTypes: {
@@ -133,7 +139,7 @@ export const MinMaxConstraints: Story = {
   },
 };
 
-export const Step0_5: Story = {
+export const Step05: Story = {
   args: {
     step: 0.5,
   },

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { type Meta , type StoryObj } from "@storybook/react";
+import { type Meta, type StoryObj } from "@storybook/react";
 
 import { Flex } from "src/components/layout/Flex/Flex";
 
@@ -22,7 +22,7 @@ const meta: Meta<typeof Flex> = {
             style={{
               width: 20,
               height: 54,
-              backgroundColor: i % 2 ? "#1677ff" : "#1677ffbf",
+              backgroundColor: i % 2 === 0 ? "#1677ff" : "#1677ffbf",
             }}
           />
         ))}

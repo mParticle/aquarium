@@ -1,6 +1,6 @@
 import React from "react";
 import { useInitData } from "src/hooks/useInitData";
-import { type IModalProps , Modal } from "src/components/feedback/Modal/Modal";
+import { type IModalProps, Modal } from "src/components/feedback/Modal/Modal";
 import { Skeleton } from "src/components/feedback/Skeleton/Skeleton";
 
 import { Result } from "src/components/feedback/Result/Result";
@@ -13,7 +13,8 @@ export interface ILoadingModalProps<Data>
 
 export function LoadingModal<Data>(props: ILoadingModalProps<Data>) {
   const [isInitLoading, isInitError, initData] = useInitData(props.fetchData);
-  if (initData) debugger;
+  // eslint-disable-next-line no-debugger
+  if (initData !== undefined) debugger;
 
   return (
     <>

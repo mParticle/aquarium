@@ -31,5 +31,8 @@ module.exports = {
     extraFileExtensions: [".md", ".css"],
   },
   plugins: ["react", "react-hooks"],
-  rules: {},
+  ignorePatterns: [".eslintrc.js"],
+  rules: {
+    "@typescript-eslint/explicit-function-return-type": "off",
+  },
 };
