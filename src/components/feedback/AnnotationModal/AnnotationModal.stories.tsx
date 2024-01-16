@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { type Meta , type StoryObj } from "@storybook/react";
+import { type Meta, type StoryObj } from "@storybook/react";
 
 import { Button } from "src/components/general/Button/Button";
 import { AnnotationModal } from "src/components/feedback/AnnotationModal/AnnotationModal";
@@ -22,13 +22,23 @@ const BaseTemplate = () => {
     setIsModalOpen(true);
   };
 
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <>
       <Button type="primary" onClick={showModal}>
         Open Annotation Modal
       </Button>
 
-      {isModalOpen && <AnnotationModal />}
+      {isModalOpen && (
+        <AnnotationModal
+          onOk={closeModal}
+          onCancel={closeModal}
+          open={isModalOpen}
+        />
+      )}
     </>
   );
 };
