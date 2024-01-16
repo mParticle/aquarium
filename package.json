@@ -60,6 +60,16 @@
     "build-dist": "sh ./scripts/build-dist.sh",
     "build-storybook": "storybook build",
     "tokens-to-css": "npx style-dictionary build --config ./style-dictionary.json",
+    "prepare": "husky install",
     "lint": "eslint --ext .ts,.tsx,.js,.jsx \"src/**/*.{ts,js,tsx,jsx}\""
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "npm lint --fix",
+      "prettier --write"
+    ],
+    "*.{json,yml,md}": [
+      "prettier --write"
+    ]
   }
 }
