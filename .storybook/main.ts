@@ -2,7 +2,6 @@
 import type { StorybookConfig } from "@storybook/react-vite";
 import react from '@vitejs/plugin-react'
 import { PluginOption } from "vite";
-import dts from "vite-plugin-dts";
 
 type StorybookVitePlugins = { plugins: PluginOption[][] }
 
@@ -25,17 +24,7 @@ const config: StorybookConfig & StorybookVitePlugins = {
     defaultName: "Documentation",
   },
 
-  plugins: [react(),
-            dts({
-                  rollupTypes: true,
-                  insertTypesEntry: true,
-                  outDir: 'dist',
-                  exclude: [
-                    'src/**/*.stories.ts',
-                    'src/**/*.stories.tsx',
-                    'src/hooks/*.ts',
-                  ],
-                })],
+  plugins: [react()],
 };
 
 export default config;
