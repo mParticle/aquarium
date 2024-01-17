@@ -1,6 +1,4 @@
-import React from "react";
-import { Affix as AntAffix , type AffixProps as AntAffixProps } from "antd";
-
+import { Affix as AntAffix, type AffixProps as AntAffixProps } from "antd";
 
 export interface IAffixProps extends AntAffixProps {}
 

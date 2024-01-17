@@ -1,5 +1,4 @@
-import * as React from "react";
-import { type Meta , type StoryObj } from "@storybook/react";
+import { type Meta, type StoryObj } from "@storybook/react";
 
 import { Space } from "src/components/layout/Space/Space";
 import { Divider } from "src/components/layout/Divider/Divider";

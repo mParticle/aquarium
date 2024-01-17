@@ -1,6 +1,4 @@
-import React from "react";
-import { Tree as AntTree , type TreeProps as AntTreeProps } from "antd";
-
+import { Tree as AntTree, type TreeProps as AntTreeProps } from "antd";
 
 export interface ITreeProps extends AntTreeProps {}
 

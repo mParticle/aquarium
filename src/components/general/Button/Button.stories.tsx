@@ -1,6 +1,5 @@
-import * as React from "react";
 import { Button } from "src/components/general/Button/Button";
-import { type Meta , type StoryObj } from "@storybook/react";
+import { type Meta, type StoryObj } from "@storybook/react";
 
 import { Icon } from "src/components/general/Icon/Icon";
 import { faHamburger } from "@fortawesome/free-solid-svg-icons";
@@ -55,8 +54,8 @@ type Story = StoryObj<typeof Button>;
 */
 
 export const Primary: Story = {
-  play: async ({ canvasElement }) => {
-    const button = canvasElement.querySelector("button");
+  play: async (context) => {
+    const button = context.canvasElement.querySelector("button");
     await userEvent.click(button); // Click the button
   },
 };
@@ -147,6 +146,8 @@ export const Small: Story = {
 
 export const PrimaryButtonWithClick: Story = {
   args: {
-    onClick: (e) => { alert("Button Clicked"); },
+    onClick: (e) => {
+      alert("Button Clicked");
+    },
   },
 };

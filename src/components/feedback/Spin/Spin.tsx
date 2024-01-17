@@ -1,6 +1,4 @@
-import React from "react";
-import { Spin as AntSpin , type SpinProps as AntSpinProps } from "antd";
-
+import { Spin as AntSpin, type SpinProps as AntSpinProps } from "antd";
 
 export interface ISpinProps extends AntSpinProps {}
 

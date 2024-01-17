@@ -1,6 +1,4 @@
-import React from "react";
-import { Alert as AntAlert , type AlertProps as AntAlertProps } from "antd";
-
+import { Alert as AntAlert, type AlertProps as AntAlertProps } from "antd";
 
 export interface IAlertProps extends AntAlertProps {}
 
@@ -11,3 +9,5 @@ export const Alert = (props: IAlertProps) => {
     </>
   );
 };
+
+Alert.ErrorBoundary = AntAlert.ErrorBoundary;

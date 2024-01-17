@@ -1,6 +1,7 @@
-import React from "react";
-import { Pagination as AntPagination , type PaginationProps as AntPaginationProps } from "antd";
-
+import {
+  Pagination as AntPagination,
+  type PaginationProps as AntPaginationProps,
+} from "antd";
 
 export interface IPaginationProps extends AntPaginationProps {}
 

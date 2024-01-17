@@ -1,6 +1,4 @@
-import React from "react";
-import { Upload as AntUpload , type UploadProps as AntUploadProps } from "antd";
-
+import { Upload as AntUpload, type UploadProps as AntUploadProps } from "antd";
 
 export interface IUploadProps extends AntUploadProps {}
 

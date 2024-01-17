@@ -1,7 +1,9 @@
-import React from "react";
-import { Popover , type IPopoverProps } from "src/components/data-display/Popover/Popover";
+import {
+  Popover,
+  type IPopoverProps,
+} from "src/components/data-display/Popover/Popover";
 
-import { type Meta , type StoryObj } from "@storybook/react";
+import { type Meta, type StoryObj } from "@storybook/react";
 
 import { Button } from "src/components/general/Button/Button";
 

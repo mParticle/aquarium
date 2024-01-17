@@ -1,6 +1,4 @@
-import React from "react";
-import { Form as AntForm , type FormProps as AntFormProps } from "antd";
-
+import { Form as AntForm, type FormProps as AntFormProps } from "antd";
 
 export interface IFormProps extends AntFormProps {
   children: React.ReactNode;

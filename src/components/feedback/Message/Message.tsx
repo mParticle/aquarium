@@ -1,4 +1,3 @@
-import React from "react";
 import { message, type MessageArgsProps as AntMessageArgsProps } from "antd";
 
 export interface IMessageProps extends AntMessageArgsProps {
@@ -8,7 +7,7 @@ export interface IMessageProps extends AntMessageArgsProps {
 export const Message = (props: IMessageProps) => {
   const [messageApi, contextHolder] = message.useMessage();
 
-  const open = () => {
+  const open = (): void => {
     void messageApi.open({ ...props });
   };
 

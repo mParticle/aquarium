@@ -1,6 +1,4 @@
-import React from "react";
-import { Modal as AntModal , type ModalProps as AntModalProps } from "antd";
-
+import { Modal as AntModal, type ModalProps as AntModalProps } from "antd";
 
 export interface IModalProps extends AntModalProps {}
 

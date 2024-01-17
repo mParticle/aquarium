@@ -1,5 +1,4 @@
-import * as React from "react";
-import { type Meta , type StoryObj } from "@storybook/react";
+import { type Meta, type StoryObj } from "@storybook/react";
 
 import { Upload } from "src/components/data-entry/Upload/Upload";
 import { Icon } from "src/components/general/Icon/Icon";
@@ -46,10 +45,18 @@ const meta: Meta<typeof Upload> = {
     progress: { strokeWidth: 2, showInfo: false },
     showUploadList: true,
     withCredentials: false,
-    onChange: (info) => { alert("Upload Change:"); },
-    onDrop: (event) => { alert("File Drop:"); },
-    onDownload: (file) => { alert("Download:"); },
-    onPreview: (file) => { alert("Preview:"); },
+    onChange: (info) => {
+      alert("Upload Change:");
+    },
+    onDrop: (event) => {
+      alert("File Drop:");
+    },
+    onDownload: (file) => {
+      alert("Download:");
+    },
+    onPreview: (file) => {
+      alert("Preview:");
+    },
     onRemove: (file) => {
       alert("Remove:");
       // Customize remove logic
@@ -76,7 +83,9 @@ export const CustomListType: Story = {
 
 export const DragAndDropUpload: Story = {
   args: {
-    onDrop: (event) => { alert("File Drop:"); },
+    onDrop: (event) => {
+      alert("File Drop:");
+    },
   },
 };
 

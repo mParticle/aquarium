@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Dropdown as AntDropdown,
   type DropdownProps as AntDropdownProps,

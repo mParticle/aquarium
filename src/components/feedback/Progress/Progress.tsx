@@ -1,6 +1,7 @@
-import React from "react";
-import { Progress as AntProgress , type ProgressProps as AntProgressProps } from "antd";
-
+import {
+  Progress as AntProgress,
+  type ProgressProps as AntProgressProps,
+} from "antd";
 
 export interface IProgressProps extends AntProgressProps {}
 

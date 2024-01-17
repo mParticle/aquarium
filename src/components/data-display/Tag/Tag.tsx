@@ -1,6 +1,4 @@
-import React from "react";
-import { Tag as AntTag , type TagProps as AntTagProps } from "antd";
-
+import { Tag as AntTag, type TagProps as AntTagProps } from "antd";
 
 export interface ITagProps extends AntTagProps {}
 

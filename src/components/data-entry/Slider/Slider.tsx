@@ -1,7 +1,5 @@
-import React from "react";
 import { Slider as AntSlider } from "antd";
-import { type SliderRangeProps , type SliderSingleProps } from "antd/es/slider";
-
+import { type SliderRangeProps, type SliderSingleProps } from "antd/es/slider";
 
 export type ISliderProps = SliderSingleProps | SliderRangeProps;
 

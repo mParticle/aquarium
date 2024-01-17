@@ -1,6 +1,7 @@
-import React from "react";
-import { InputNumber as AntInputNumber , type InputNumberProps as AntInputNumberProps } from "antd";
-
+import {
+  InputNumber as AntInputNumber,
+  type InputNumberProps as AntInputNumberProps,
+} from "antd";
 
 export interface IInputNumberProps extends AntInputNumberProps {}
 

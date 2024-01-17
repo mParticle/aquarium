@@ -1,4 +1,3 @@
-import React from "react";
 import { ConfigProvider as AntConfigProvider } from "antd";
 import { type ConfigProviderProps as AntConfigProviderProps } from "antd/es/config-provider";
 

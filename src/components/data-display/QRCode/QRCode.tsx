@@ -1,6 +1,4 @@
-import React from "react";
-import { QRCode as AntQRCode , type QRCodeProps as AntQRCodeProps } from "antd";
-
+import { QRCode as AntQRCode, type QRCodeProps as AntQRCodeProps } from "antd";
 
 export interface IQRCodeProps extends AntQRCodeProps {}
 

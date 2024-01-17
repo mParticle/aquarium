@@ -1,6 +1,4 @@
-import React from "react";
-import { Steps as AntSteps , type StepsProps as AntStepsProps } from "antd";
-
+import { Steps as AntSteps, type StepsProps as AntStepsProps } from "antd";
 
 export interface IStepsProps extends AntStepsProps {}
 

@@ -1,6 +1,7 @@
-import React from "react";
-import { Collapse as AntCollapse , type CollapseProps as AntCollapseProps } from "antd";
-
+import {
+  Collapse as AntCollapse,
+  type CollapseProps as AntCollapseProps,
+} from "antd";
 
 export interface ICollapseProps extends AntCollapseProps {}
 

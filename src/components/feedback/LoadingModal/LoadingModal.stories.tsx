@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-
+import { useState } from "react";
 import { type Meta, type StoryObj } from "@storybook/react";
 
 import { Button } from "src/components/general/Button/Button";
@@ -59,7 +58,7 @@ const PrimaryTemplate = (args: ILoadingModalProps<unknown>) =>
   BaseTemplate(
     args,
     async () =>
-      await new Promise<boolean>((resolve, _reject) => {
+      await new Promise<boolean>((resolve, reject) => {
         setTimeout(() => {
           resolve(true);
         }, 1000);
@@ -70,7 +69,7 @@ const ErrorTemplate = (args: ILoadingModalProps<unknown>) =>
   BaseTemplate(
     args,
     async () =>
-      await new Promise<boolean>((_resolve, reject) => {
+      await new Promise<boolean>((resolve, reject) => {
         setTimeout(() => {
           reject(new Error());
         }, 1000);
@@ -81,6 +80,6 @@ export const Primary: Story = {
   render: PrimaryTemplate,
 };
 
-export const ErrorState: Story = {
+export const ErrorStory: Story = {
   render: ErrorTemplate,
 };

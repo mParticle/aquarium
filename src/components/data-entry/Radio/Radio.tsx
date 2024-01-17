@@ -1,6 +1,4 @@
-import React from "react";
-import { Radio as AntRadio , type RadioProps as AntRadioProps } from "antd";
-
+import { Radio as AntRadio, type RadioProps as AntRadioProps } from "antd";
 
 export interface IRadioProps extends AntRadioProps {}
 

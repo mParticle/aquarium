@@ -1,6 +1,4 @@
-import React from "react";
-import { Flex as AntFlex , type FlexProps as AntFlexProps } from "antd";
-
+import { Flex as AntFlex, type FlexProps as AntFlexProps } from "antd";
 
 export interface IFlexProps extends AntFlexProps {}
 

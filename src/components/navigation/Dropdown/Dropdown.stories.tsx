@@ -1,6 +1,5 @@
-import React, { type ReactNode } from "react";
-
-import { type Meta , type StoryObj } from "@storybook/react";
+import { type ReactNode } from "react";
+import { type Meta, type StoryObj } from "@storybook/react";
 
 import { SmileOutlined } from "@ant-design/icons";
 import { Button } from "src/components/general/Button/Button";

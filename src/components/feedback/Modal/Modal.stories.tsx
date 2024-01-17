@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { Modal, type IModalProps } from "src/components/feedback/Modal/Modal";
 
-import { Modal , type IModalProps } from "src/components/feedback/Modal/Modal";
-
-import { type Meta , type StoryObj } from "@storybook/react";
+import { type Meta, type StoryObj } from "@storybook/react";
 
 import { Button } from "src/components/general/Button/Button";
 

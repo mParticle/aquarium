@@ -1,6 +1,7 @@
-import React from "react";
-import { Skeleton as AntSkeleton , type SkeletonProps as AntSkeletonProps } from "antd";
-
+import {
+  Skeleton as AntSkeleton,
+  type SkeletonProps as AntSkeletonProps,
+} from "antd";
 
 export interface ISkeletonProps extends Omit<AntSkeletonProps, "active"> {}
 

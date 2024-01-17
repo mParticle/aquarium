@@ -1,6 +1,4 @@
-import React from "react";
-import { Empty as AntEmpty , type EmptyProps as AntEmptyProps } from "antd";
-
+import { Empty as AntEmpty, type EmptyProps as AntEmptyProps } from "antd";
 
 export interface IEmptyProps extends AntEmptyProps {}
 

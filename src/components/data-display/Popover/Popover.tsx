@@ -1,6 +1,7 @@
-import React from "react";
-import { Popover as AntPopover , type PopoverProps as AntPopoverProps } from "antd";
-
+import {
+  Popover as AntPopover,
+  type PopoverProps as AntPopoverProps,
+} from "antd";
 
 export interface IPopoverProps extends AntPopoverProps {}
 
