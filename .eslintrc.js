@@ -1,7 +1,7 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true,
+    es2024: true,
   },
   settings: {
     react: {
@@ -13,17 +13,6 @@ module.exports = {
     "eslint:recommended",
     "plugin:react/recommended",
     "prettier",
-  ],
-  overrides: [
-    {
-      env: {
-        node: true,
-      },
-      files: [".eslintrc.{js,cjs}"],
-      parserOptions: {
-        sourceType: "script",
-      },
-    },
   ],
   parserOptions: {
     ecmaVersion: "latest",
