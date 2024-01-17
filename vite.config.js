@@ -1,6 +1,6 @@
-// vite.config.js
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
+import dts from 'vite-plugin-dts'
 
 export default defineConfig({
   resolve: {
@@ -9,6 +9,19 @@ export default defineConfig({
     },
   },
 
+  plugins: [
+    dts({
+      rollupTypes: true,
+      insertTypesEntry: true,
+      outDir: 'dist',
+      exclude: [
+        'src/**/*.stories.ts',
+        'src/**/*.stories.tsx',
+        'src/hooks/*.ts',
+      ],
+    }),
+  ],
+  
   esbuild: {
     jsxInject: `import React from "react"; import { expect } from "@storybook/test";`,
   },
