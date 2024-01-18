@@ -13,7 +13,6 @@
     "access": "public"
   },
   "main": "dist/aquarium.js",
-  "type": "module",
   "files": [
     "dist"
   ],
