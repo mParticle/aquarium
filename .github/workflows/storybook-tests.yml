@@ -24,10 +24,8 @@ jobs:
         @swc/core-linux-x64-musl \
         @swc/core-win32-arm64-msvc \
         @swc/core-win32-ia32-msvc \
-        @swc/core-win32-x64-msvc
-
-      - name: Install Playwright
-        run: npx playwright install
+        @swc/core-win32-x64-msvc \
+        playwright
 
       - name: Run Storybook Tests
         run: npm run test-storybook:ci
