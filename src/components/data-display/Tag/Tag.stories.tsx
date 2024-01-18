@@ -61,7 +61,7 @@ export const WithOnCloseCallback: Story = {
   },
 };
 
-export const CheckableTagPrimary: Story = {
+export const ExampleCheckableTagPrimary: Story = {
   render: () => {
     const [checked, setChecked] = useState(true);
 
