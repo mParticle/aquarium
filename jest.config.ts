@@ -2,6 +2,8 @@ import type { Config } from 'jest'
 
 type StorybookTestConfig = { testRunnerOptions: { play: boolean } }
 
+export { baseConfig }
+
 const baseConfig: Config & StorybookTestConfig = {
   testEnvironment: 'jsdom',
 
@@ -10,5 +12,3 @@ const baseConfig: Config & StorybookTestConfig = {
     play: true,
   },
 }
-
-export { baseConfig }

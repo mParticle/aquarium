@@ -20,16 +20,16 @@ const meta: Meta<typeof AutoComplete> = {
     const [value, setValue] = useState<IAutoCompleteProps['value']>('')
     const [options, setOptions] = useState<IAutoCompleteProps['options']>([])
 
+    const getPanelValue = (searchText: string): IAutoCompleteProps['options'] => {
+      if (!searchText) return []
+      return baseOptions.filter(o => o.label.toLowerCase().includes(searchText.toLowerCase()))
+    }
+
     const onSearch = (text: string) => {
       setOptions(getPanelValue(text))
     }
     const onSelect = (value: string) => {
       console.log('you selected value: ' + value)
-    }
-
-    const getPanelValue = (searchText: string): IAutoCompleteProps['options'] => {
-      if (!searchText) return []
-      return baseOptions.filter(o => o.label.toLowerCase().includes(searchText.toLowerCase()))
     }
 
     return (
