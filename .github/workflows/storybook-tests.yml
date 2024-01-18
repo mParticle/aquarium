@@ -13,11 +13,22 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
+      - name: Install CI specific deps
+        run: npm i --save-optional \
+             @rollup/rollup-linux-x64-gnu \
+             @swc/core-darwin-arm64 \
+             @swc/core-darwin-x64 \
+             @swc/core-linux-arm-gnueabihf \
+             @swc/core-linux-arm64-gnu \
+             @swc/core-linux-arm64-musl \
+             @swc/core-linux-x64-gnu \
+             @swc/core-linux-x64-musl \
+             @swc/core-win32-arm64-msvc \
+             @swc/core-win32-ia32-msvc \
+             @swc/core-win32-x64-msvc
+
       - name: Install Playwright
         run: npx playwright install
-
-      - name: Install rollup for ci
-        run: npm i @rollup/rollup-linux-x64-gnu
 
       - name: Run Storybook Tests
         run: npm run test-storybook:ci
