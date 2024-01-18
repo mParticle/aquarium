@@ -13,8 +13,10 @@
     "access": "public"
   },
   "main": "dist/aquarium.mjs",
+  "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist/aquarium.mjs",
+    "dist/index.d.ts"
   ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "6.5.1",
