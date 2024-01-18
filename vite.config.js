@@ -1,5 +1,6 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
+import dts from 'vite-plugin-dts'
 
 export default defineConfig({
   resolve: {
@@ -7,9 +8,21 @@ export default defineConfig({
       src: '/src',
     },
   },
-
+  plugins: [
+    dts({
+          rollupTypes: false,
+          insertTypesEntry: true,
+          copyDtsFiles: true,
+          exclude: [
+            'src/**/*.stories.ts',
+            'src/**/*.stories.tsx',
+            'src/hooks/*.ts',
+          ],
+        }),
+  ],
+  
   esbuild: {
-    jsxInject: `import React from "react"; import { expect } from "@storybook/test";`,
+    jsxInject: `import { expect } from "@storybook/test";`,
   },
   
   build: {
