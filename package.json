@@ -4,9 +4,9 @@
   "description": "mParticle Component Library",
   "license": "Apache-2.0",
   "keywords": [
-      "mparticle",
-      "analytics",
-      "cdp"
+    "mparticle",
+    "analytics",
+    "cdp"
   ],
   "repository": "https://github.com/mParticle/aquarium/",
   "publishConfig": {
@@ -24,8 +24,8 @@
     "antd": "5.13.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "5.3.3",
-    "storybook": "7.6.9"
+    "storybook": "7.6.9",
+    "typescript": "5.3.3"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "7.6.9",
@@ -39,6 +39,7 @@
     "@storybook/test": "7.6.9",
     "@storybook/test-runner": "0.16.0",
     "@storybook/testing-library": "0.2.2",
+    "@vitejs/plugin-react": "4.2.1",
     "concurrently": "8.2.2",
     "http-server": "14.1.1",
     "vite": "5.0.11",
