@@ -95,7 +95,7 @@ export const ExampleCheckableTagPrimary: Story = {
   },
 };
 
-export const Colors: Story = {
+export const ExampleColors: Story = {
   render: () => {
     return (
       <>
