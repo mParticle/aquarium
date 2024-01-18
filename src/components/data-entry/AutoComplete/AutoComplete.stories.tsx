@@ -145,7 +145,11 @@ export const ExampleBasic: Story = {
     const getPanelValue = (searchText: string) =>
       !searchText
         ? []
-        : ([mockVal(searchText), mockVal(searchText, 2), mockVal(searchText, 3)] as IAutoCompleteProps['options'])
+        : ([
+            mockVal(searchText),
+            mockVal(searchText, 2),
+            mockVal(searchText, 3),
+          ] as IAutoCompleteProps['options'])
     const onSelect = (data: string) => {
       alert('onSelect:' + data)
     }
@@ -204,7 +208,12 @@ export const ExampleCustomized: Story = {
     return (
       <>
         <ExampleStory title="You could set custom Option label.">
-          <AutoComplete style={{ width: 200 }} onSearch={handleSearch} placeholder="input here" options={options} />
+          <AutoComplete
+            style={{ width: 200 }}
+            onSearch={handleSearch}
+            placeholder="input here"
+            options={options}
+          />
         </ExampleStory>
       </>
     )
@@ -219,7 +228,11 @@ export const ExampleCustomizeInput: Story = {
       setOptions(
         !value
           ? []
-          : ([{ value }, { value: value + value }, { value: value + value + value }] as IAutoCompleteProps['options']),
+          : ([
+              { value },
+              { value: value + value },
+              { value: value + value + value },
+            ] as IAutoCompleteProps['options']),
       )
     }
 
@@ -233,7 +246,12 @@ export const ExampleCustomizeInput: Story = {
 
     return (
       <ExampleStory title="Customize Input Component">
-        <AutoComplete options={options} style={{ width: 200 }} onSelect={onSelect} onSearch={handleSearch}>
+        <AutoComplete
+          options={options}
+          style={{ width: 200 }}
+          onSelect={onSelect}
+          onSearch={handleSearch}
+        >
           <Input.TextArea
             placeholder="input here"
             className="custom"
@@ -318,7 +336,11 @@ export const ExampleLookupPatternsCertainCategory: Story = {
           title={
             <>
               Demonstration of{' '}
-              <a href="https://ant.design/docs/spec/reaction/#lookup-patterns" target="_blank" rel="noreferrer">
+              <a
+                href="https://ant.design/docs/spec/reaction/#lookup-patterns"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Lookup Patterns: Certain Category
               </a>
               Basic Usage, set options of autocomplete with options property.
@@ -356,7 +378,11 @@ export const ExampleLookupPatternsUnCertainCategory: Story = {
               <Flex justify="space-between">
                 <span>
                   Found {query} on{' '}
-                  <a href={`https://s.taobao.com/search?q=${query}`} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={`https://s.taobao.com/search?q=${query}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     {category}
                   </a>
                 </span>
@@ -380,7 +406,11 @@ export const ExampleLookupPatternsUnCertainCategory: Story = {
           title={
             <>
               Demonstration of{' '}
-              <a href="https://ant.design/docs/spec/reaction#lookup-patterns" target="_blank" rel="noreferrer">
+              <a
+                href="https://ant.design/docs/spec/reaction#lookup-patterns"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Lookup Patterns: Certain Category
               </a>
               Basic Usage, set options of autocomplete with options property.
@@ -413,7 +443,11 @@ export const ExampleStatus: Story = {
     const getPanelValue = (searchText: string) =>
       !searchText
         ? []
-        : ([mockVal(searchText), mockVal(searchText, 2), mockVal(searchText, 3)] as IAutoCompleteProps['options'])
+        : ([
+            mockVal(searchText),
+            mockVal(searchText, 2),
+            mockVal(searchText, 3),
+          ] as IAutoCompleteProps['options'])
 
     return (
       <ExampleStory title="Add status to AutoComplete with status, which could be error or warning.">
@@ -451,7 +485,11 @@ export const ExampleClearButton: Story = {
     const getPanelValue = (searchText: string) =>
       !searchText
         ? []
-        : ([mockVal(searchText), mockVal(searchText, 2), mockVal(searchText, 3)] as IAutoCompleteProps['options'])
+        : ([
+            mockVal(searchText),
+            mockVal(searchText, 2),
+            mockVal(searchText, 3),
+          ] as IAutoCompleteProps['options'])
 
     return (
       <>
