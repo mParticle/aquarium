@@ -22,6 +22,7 @@ module.exports = {
     '@typescript-eslint/consistent-type-definitions': 'off',
     '@typescript-eslint/no-use-before-define': ['error', { allowNamedExports: true }],
     'react/react-in-jsx-scope': 'off',
+    'import/no-duplicates': 'off'
   },
   globals: {
     React: true,
