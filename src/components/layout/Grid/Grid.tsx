@@ -1,7 +1,11 @@
-import { Grid as AntGrid, Row as AntRow, RowProps as AntRowProps, Col as AntCol, ColProps as AntColProps } from "antd";
+import {
+  Grid as AntGrid,
+  Col as AntCol, ColProps as AntColProps,
+  Row as AntRow, RowProps as AntRowProps,
+} from "antd";
 
 export {
   AntGrid as Grid,
-  AntRow as Row, type AntRowProps as IRowProps,
   AntCol as Col, type AntColProps as IColProps,
+  AntRow as Row, type AntRowProps as IRowProps,
 };

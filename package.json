@@ -12,10 +12,10 @@
   "publishConfig": {
     "access": "public"
   },
-  "types": "dist/index.d.ts",
-  "main": "dist/aquarium.mjs",
+  "type": "module",
+  "main": "dist/aquarium.js",
   "files": [
-    "dist"
+    "dist/aquarium.js"
   ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "6.5.1",
@@ -33,18 +33,15 @@
     "@storybook/addon-links": "7.6.9",
     "@storybook/addon-onboarding": "1.0.10",
     "@storybook/blocks": "7.6.9",
-    "@storybook/builder-vite": "7.6.9",
     "@storybook/jest": "0.2.3",
     "@storybook/react": "7.6.9",
     "@storybook/react-vite": "7.6.9",
     "@storybook/test": "7.6.9",
     "@storybook/test-runner": "0.16.0",
     "@storybook/testing-library": "0.2.2",
-    "@vitejs/plugin-react": "4.2.1",
     "concurrently": "8.2.2",
     "http-server": "14.1.1",
     "vite": "5.0.11",
-    "vite-plugin-dts": "3.7.1",
     "wait-on": "7.2.0"
   },
   "scripts": {
