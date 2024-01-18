@@ -12,7 +12,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "dist/aquarium.js",
+  "main": "dist/aquarium.mjs",
   "files": [
     "dist"
   ],
