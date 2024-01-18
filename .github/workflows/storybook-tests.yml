@@ -16,5 +16,8 @@ jobs:
       - name: Install Playwright
         run: npx playwright install
 
+      - name: Install rollup for ci
+        run: npm i @rollup/rollup-linux-x64-gnu
+
       - name: Run Storybook Tests
         run: npm run test-storybook:ci
