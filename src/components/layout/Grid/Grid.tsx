@@ -1,12 +1,11 @@
-import { Grid as AntGrid, Col as AntCol, Row as AntRow } from "antd";
+import {
+  Grid as AntGrid,
+  Col as AntCol, ColProps as AntColProps,
+  Row as AntRow, RowProps as AntRowProps,
+} from "antd";
 
-export {AntGrid as Grid, AntCol as Col, AntRow as Row}
-
-// export interface IGridProps /*extends AntGridProps*/ {
-// }
-
-// export const Grid = (props: IGridProps) => {
-//   return <>
-//     {/*<AntGrid {...props}/>*/}
-//   </>;
-// };
+export {
+  AntGrid as Grid,
+  AntCol as Col, type AntColProps as IColProps,
+  AntRow as Row, type AntRowProps as IRowProps,
+};
