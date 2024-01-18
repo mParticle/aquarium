@@ -4,45 +4,43 @@
   "description": "mParticle Component Library",
   "license": "Apache-2.0",
   "keywords": [
-    "mparticle",
-    "analytics",
-    "cdp"
+      "mparticle",
+      "analytics",
+      "cdp"
   ],
   "repository": "https://github.com/mParticle/aquarium/",
   "publishConfig": {
     "access": "public"
   },
-  "type": "module",
-  "main": "dist/aquarium.js",
+  "main": "dist/aquarium.mjs",
   "files": [
-    "dist/aquarium.js"
+    "dist"
   ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "6.5.1",
     "@fortawesome/free-solid-svg-icons": "6.5.1",
     "@fortawesome/react-fontawesome": "0.2.0",
-    "antd": "5.13.1",
+    "antd": "5.12.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "storybook": "7.6.9",
-    "typescript": "5.3.3"
+    "typescript": "5.3.2",
+    "storybook": "7.6.2"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "7.6.9",
-    "@storybook/addon-interactions": "7.6.9",
-    "@storybook/addon-links": "7.6.9",
-    "@storybook/addon-onboarding": "1.0.10",
-    "@storybook/blocks": "7.6.9",
+    "@storybook/addon-essentials": "7.6.2",
+    "@storybook/addon-interactions": "7.6.2",
+    "@storybook/addon-links": "7.6.2",
+    "@storybook/addon-onboarding": "1.0.8",
+    "@storybook/blocks": "7.6.2",
     "@storybook/jest": "0.2.3",
-    "@storybook/react": "7.6.9",
-    "@storybook/react-vite": "7.6.9",
-    "@storybook/test": "7.6.9",
+    "@storybook/react": "7.6.2",
+    "@storybook/react-vite": "7.6.2",
+    "@storybook/test": "7.6.2",
     "@storybook/test-runner": "0.16.0",
     "@storybook/testing-library": "0.2.2",
-    "@vitejs/plugin-react": "4.2.1",
     "concurrently": "8.2.2",
     "http-server": "14.1.1",
-    "vite": "5.0.11",
+    "vite": "4.5.1",
     "wait-on": "7.2.0"
   },
   "scripts": {
