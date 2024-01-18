@@ -12,7 +12,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "dist/aquarium.mjs",
+  "main": "dist/aquarium.js",
+  "type": "module",
   "files": [
     "dist"
   ],
