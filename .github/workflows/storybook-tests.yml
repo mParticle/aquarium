@@ -12,6 +12,7 @@ jobs:
 
       - name: Install Dependencies
         run: npm ci
+             npm i -D @rollup/rollup-linux-x64-gnu
 
       - name: Install Playwright
         run: npx playwright install
