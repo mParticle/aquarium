@@ -1,4 +1,4 @@
-import { Image as AntImage, type ImageProps as AntImageProps } from "antd";
+import { Image as AntImage, type ImageProps as AntImageProps } from 'antd'
 
 export interface IImageProps extends AntImageProps {}
 
@@ -7,5 +7,5 @@ export const Image = (props: IImageProps) => {
     <>
       <AntImage {...props} />
     </>
-  );
-};
+  )
+}

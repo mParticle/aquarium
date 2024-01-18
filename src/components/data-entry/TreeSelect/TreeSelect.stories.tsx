@@ -1,15 +1,15 @@
-import { type Meta , type StoryObj } from "@storybook/react";
+import { type Meta, type StoryObj } from '@storybook/react'
 
-import { TreeSelect } from "src/components/data-entry/TreeSelect/TreeSelect";
+import { TreeSelect } from 'src/components/data-entry/TreeSelect/TreeSelect'
 
 const meta: Meta<typeof TreeSelect> = {
-  title: "Aquarium/Data Entry/TreeSelect",
+  title: 'Aquarium/Data Entry/TreeSelect',
   component: TreeSelect,
 
   args: {},
-};
-export default meta;
+}
+export default meta
 
-type Story = StoryObj<typeof TreeSelect>;
+type Story = StoryObj<typeof TreeSelect>
 
-export const Primary: Story = {};
+export const Primary: Story = {}

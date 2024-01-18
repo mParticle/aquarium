@@ -1,8 +1,8 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { type IconProp } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { type IconProp } from '@fortawesome/fontawesome-svg-core'
 
 export interface IIconProps {
-  icon: IconProp;
+  icon: IconProp
 }
 
 export const Icon = (props: IIconProps) => {
@@ -10,5 +10,5 @@ export const Icon = (props: IIconProps) => {
     <>
       <FontAwesomeIcon {...props}></FontAwesomeIcon>
     </>
-  );
-};
+  )
+}

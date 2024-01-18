@@ -1,8 +1,8 @@
-import { Space } from "src/components";
+import { Space } from 'src/components'
 
 interface IExampleStoryProps {
-  children: React.ReactNode;
-  title: React.ReactNode;
+  children: React.ReactNode
+  title: React.ReactNode
 }
 
 export function ExampleStory(props: IExampleStoryProps) {
@@ -15,5 +15,5 @@ export function ExampleStory(props: IExampleStoryProps) {
         {props.children}
       </Space>
     </>
-  );
+  )
 }

@@ -1,5 +1,5 @@
-import { Tooltip as AntTooltip } from "antd";
-import { type TooltipPropsWithTitle as AntTooltipPropsWithTitle } from "antd/es/tooltip";
+import { Tooltip as AntTooltip } from 'antd'
+import { type TooltipPropsWithTitle as AntTooltipPropsWithTitle } from 'antd/es/tooltip'
 
 export interface ITooltipProps extends AntTooltipPropsWithTitle {}
 
@@ -8,5 +8,5 @@ export const Tooltip = (props: ITooltipProps) => {
     <>
       <AntTooltip {...props} />
     </>
-  );
-};
+  )
+}

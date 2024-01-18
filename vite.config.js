@@ -12,7 +12,7 @@ export default defineConfig({
   esbuild: {
     jsxInject: `import React from "react"; import { expect } from "@storybook/test";`,
   },
-  
+
   build: {
     lib: {
       // Could also be a dictionary or array of multiple entry points

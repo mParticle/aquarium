@@ -1,15 +1,15 @@
-import { type Meta , type StoryObj } from "@storybook/react";
+import { type Meta, type StoryObj } from '@storybook/react'
 
-import { Spin } from "src/components/feedback/Spin/Spin";
+import { Spin } from 'src/components/feedback/Spin/Spin'
 
 const meta: Meta<typeof Spin> = {
-  title: "Aquarium/Feedback/Spin",
+  title: 'Aquarium/Feedback/Spin',
   component: Spin,
 
   args: {},
-};
-export default meta;
+}
+export default meta
 
-type Story = StoryObj<typeof Spin>;
+type Story = StoryObj<typeof Spin>
 
-export const Primary: Story = {};
+export const Primary: Story = {}

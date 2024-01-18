@@ -5,29 +5,30 @@ module.exports = {
   },
   settings: {
     react: {
-      version: "detect",
+      version: 'detect',
     },
   },
   extends: [
-    "standard-with-typescript",
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "prettier",
+    'standard-with-typescript',
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'prettier',
   ],
   parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    extraFileExtensions: [".md", ".css"],
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    extraFileExtensions: ['.md', '.css'],
   },
-  plugins: ["react", "react-hooks"],
-  ignorePatterns: [".eslintrc.js"],
+  plugins: ['react', 'react-hooks'],
+  ignorePatterns: ['.eslintrc.js'],
   rules: {
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/strict-boolean-expressions": "off",
-    "react/react-in-jsx-scope": "off",
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/strict-boolean-expressions': 'off',
+    '@typescript-eslint/consistent-type-definitions': 'off',
+    'react/react-in-jsx-scope': 'off',
   },
   globals: {
-    "React": true,
-    "expect": true
-  }
-};
+    React: true,
+    expect: true,
+  },
+}

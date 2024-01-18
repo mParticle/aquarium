@@ -1,4 +1,4 @@
-import { Tour as AntTour, type TourProps as AntTourProps } from "antd";
+import { Tour as AntTour, type TourProps as AntTourProps } from 'antd'
 
 export interface ITourProps extends AntTourProps {}
 
@@ -7,5 +7,5 @@ export const Tour = (props: ITourProps) => {
     <>
       <AntTour {...props} />
     </>
-  );
-};
+  )
+}

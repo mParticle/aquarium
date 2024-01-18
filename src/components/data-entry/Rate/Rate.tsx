@@ -1,4 +1,4 @@
-import { Rate as AntRate, type RateProps as AntRateProps } from "antd";
+import { Rate as AntRate, type RateProps as AntRateProps } from 'antd'
 
 export interface IRateProps extends AntRateProps {}
 
@@ -7,5 +7,5 @@ export const Rate = (props: IRateProps) => {
     <>
       <AntRate {...props} />
     </>
-  );
-};
+  )
+}

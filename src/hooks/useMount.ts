@@ -1,5 +1,5 @@
-import { useEffect } from "react";
+import { useEffect } from 'react'
 
 export const useMount = (mount: () => void) => {
-  useEffect(mount, []);
-};
+  useEffect(mount, [])
+}

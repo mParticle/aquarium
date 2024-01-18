@@ -1,38 +1,38 @@
 module.exports = {
-  branches: ["main"],
-  tagFormat: "v${version}",
-  repositoryUrl: "https://github.com/mParticle/aquarium",
+  branches: ['main'],
+  tagFormat: 'v${version}',
+  repositoryUrl: 'https://github.com/mParticle/aquarium',
   plugins: [
     [
-      "@semantic-release/commit-analyzer",
+      '@semantic-release/commit-analyzer',
       {
-        preset: "angular",
+        preset: 'angular',
         releaseRules: [
-          { type: "feat", release: "minor" },
-          { type: "ci", release: "patch" },
-          { type: "fix", release: "patch" },
-          { type: "docs", release: "patch" },
-          { type: "test", release: "patch" },
-          { type: "refactor", release: "patch" },
-          { type: "style", release: "patch" },
-          { type: "build", release: "patch" },
-          { type: "chore", release: "patch" },
-          { type: "revert", release: "patch" },
+          { type: 'feat', release: 'minor' },
+          { type: 'ci', release: 'patch' },
+          { type: 'fix', release: 'patch' },
+          { type: 'docs', release: 'patch' },
+          { type: 'test', release: 'patch' },
+          { type: 'refactor', release: 'patch' },
+          { type: 'style', release: 'patch' },
+          { type: 'build', release: 'patch' },
+          { type: 'chore', release: 'patch' },
+          { type: 'revert', release: 'patch' },
         ],
       },
     ],
     [
-      "@semantic-release/release-notes-generator",
+      '@semantic-release/release-notes-generator',
       {
-        preset: "angular",
+        preset: 'angular',
       },
     ],
-    ["@semantic-release/npm"],
+    ['@semantic-release/npm'],
     [
-      "@semantic-release/github",
+      '@semantic-release/github',
       {
-        assets: ["dist/**"],
+        assets: ['dist/**'],
       },
     ],
   ],
-};
+}

@@ -1,15 +1,15 @@
-import { type Meta , type StoryObj } from "@storybook/react";
+import { type Meta, type StoryObj } from '@storybook/react'
 
-import { Select } from "src/components/data-entry/Select/Select";
+import { Select } from 'src/components/data-entry/Select/Select'
 
 const meta: Meta<typeof Select> = {
-  title: "Aquarium/Data Entry/Select",
+  title: 'Aquarium/Data Entry/Select',
   component: Select,
 
   args: {},
-};
-export default meta;
+}
+export default meta
 
-type Story = StoryObj<typeof Select>;
+type Story = StoryObj<typeof Select>
 
-export const Primary: Story = {};
+export const Primary: Story = {}

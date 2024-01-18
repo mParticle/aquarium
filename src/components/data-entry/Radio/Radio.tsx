@@ -1,4 +1,4 @@
-import { Radio as AntRadio, type RadioProps as AntRadioProps } from "antd";
+import { Radio as AntRadio, type RadioProps as AntRadioProps } from 'antd'
 
 export interface IRadioProps extends AntRadioProps {}
 
@@ -7,8 +7,8 @@ export const Radio = (props: IRadioProps) => {
     <>
       <AntRadio {...props} />
     </>
-  );
-};
+  )
+}
 
-Radio.Group = AntRadio.Group;
-Radio.Button = AntRadio.Button;
+Radio.Group = AntRadio.Group
+Radio.Button = AntRadio.Button

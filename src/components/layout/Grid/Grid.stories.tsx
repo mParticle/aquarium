@@ -1,21 +1,21 @@
-import { type Meta, type StoryObj } from "@storybook/react";
+import { type Meta, type StoryObj } from '@storybook/react'
 
-import { type Grid, Row, Col } from "antd";
+import { type Grid, Row, Col } from 'antd'
 
 const meta: Meta<typeof Grid> = {
-  title: "Aquarium/Layout/Grid",
+  title: 'Aquarium/Layout/Grid',
   // component: Grid,
 
   args: {},
-};
-export default meta;
+}
+export default meta
 
-type Story = StoryObj<typeof Grid>;
+type Story = StoryObj<typeof Grid>
 
 const divStyle: React.CSSProperties = {
-  background: "#0092ff",
-  padding: "8px 0",
-};
+  background: '#0092ff',
+  padding: '8px 0',
+}
 
 export const Primary: Story = {
   render: () => (
@@ -48,4 +48,4 @@ export const Primary: Story = {
       </Row>
     </>
   ),
-};
+}

@@ -1,6 +1,6 @@
-import { Select as AntSelect, type SelectProps as AntSelectProps } from "antd";
+import { Select as AntSelect, type SelectProps as AntSelectProps } from 'antd'
 
-import { type BaseOptionType, type DefaultOptionType } from "antd/es/select";
+import { type BaseOptionType, type DefaultOptionType } from 'antd/es/select'
 
 export interface ISelectProps<
   ValueType = any,
@@ -12,5 +12,5 @@ export const Select = (props: ISelectProps) => {
     <>
       <AntSelect {...props} />
     </>
-  );
-};
+  )
+}

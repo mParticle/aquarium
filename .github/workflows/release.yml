@@ -6,7 +6,7 @@ on:
 jobs:
   # release is done from main branch.
   confirm-public-repo-main-branch:
-    name: "Confirm release is run from public/main branch"
+    name: 'Confirm release is run from public/main branch'
     uses: mParticle/mparticle-workflows/.github/workflows/sdk-release-repo-branch-check.yml@main
 
   release:

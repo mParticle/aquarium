@@ -1,10 +1,7 @@
-import {
-  Segmented as AntSegmented,
-  type SegmentedProps as AntSegmentedProps,
-} from "antd";
+import { Segmented as AntSegmented, type SegmentedProps as AntSegmentedProps } from 'antd'
 
 export interface ISegmentedProps extends AntSegmentedProps {
-  ref?: React.RefObject<HTMLDivElement>;
+  ref?: React.RefObject<HTMLDivElement>
 }
 
 export const Segmented = (props: ISegmentedProps) => {
@@ -12,5 +9,5 @@ export const Segmented = (props: ISegmentedProps) => {
     <>
       <AntSegmented {...props} />
     </>
-  );
-};
+  )
+}

@@ -1,15 +1,15 @@
-import { type Meta , type StoryObj } from "@storybook/react";
+import { type Meta, type StoryObj } from '@storybook/react'
 
-import { Calendar } from "src/components/data-display/Calendar/Calendar";
+import { Calendar } from 'src/components/data-display/Calendar/Calendar'
 
 const meta: Meta<typeof Calendar> = {
-  title: "Aquarium/Data Display/Calendar",
+  title: 'Aquarium/Data Display/Calendar',
   component: Calendar,
 
   args: {},
-};
-export default meta;
+}
+export default meta
 
-type Story = StoryObj<typeof Calendar>;
+type Story = StoryObj<typeof Calendar>
 
-export const Primary: Story = {};
+export const Primary: Story = {}

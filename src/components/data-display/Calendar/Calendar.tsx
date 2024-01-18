@@ -1,7 +1,4 @@
-import {
-  Calendar as AntCalendar,
-  type CalendarProps as AntCalendarProps,
-} from "antd";
+import { Calendar as AntCalendar, type CalendarProps as AntCalendarProps } from 'antd'
 
 export interface ICalendarProps extends AntCalendarProps {}
 
@@ -10,5 +7,5 @@ export const Calendar = (props: ICalendarProps) => {
     <>
       <AntCalendar {...props} />
     </>
-  );
-};
+  )
+}

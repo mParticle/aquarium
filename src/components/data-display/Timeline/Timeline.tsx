@@ -1,7 +1,4 @@
-import {
-  Timeline as AntTimeline,
-  type TimelineProps as AntTimelineProps,
-} from "antd";
+import { Timeline as AntTimeline, type TimelineProps as AntTimelineProps } from 'antd'
 
 export interface ITimelineProps extends AntTimelineProps {}
 
@@ -10,5 +7,5 @@ export const Timeline = (props: ITimelineProps) => {
     <>
       <AntTimeline {...props} />
     </>
-  );
-};
+  )
+}
