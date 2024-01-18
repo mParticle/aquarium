@@ -10,13 +10,13 @@ export default defineConfig({
   },
   plugins: [
     dts({
-          rollupTypes: false,
           insertTypesEntry: true,
-          copyDtsFiles: true,
           exclude: [
             'src/**/*.stories.ts',
             'src/**/*.stories.tsx',
             'src/hooks/*.ts',
+            'src/utils/*.ts',
+            'jest.config.ts',
           ],
         }),
   ],
