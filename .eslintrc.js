@@ -8,12 +8,7 @@ module.exports = {
       version: 'detect',
     },
   },
-  extends: [
-    'standard-with-typescript',
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'prettier',
-  ],
+  extends: ['standard-with-typescript', 'eslint:recommended', 'plugin:react/recommended', 'prettier'],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',

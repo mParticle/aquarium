@@ -419,13 +419,7 @@ export const ExampleOpenCurrentSubmenu: Story = {
     return (
       <>
         <ExampleStory title="Click the menu and you will see that all the other menus gets collapsed to keep the entire menu compact">
-          <Menu
-            mode="inline"
-            openKeys={openKeys}
-            onOpenChange={onOpenChange}
-            style={{ width: 256 }}
-            items={items}
-          />
+          <Menu mode="inline" openKeys={openKeys} onOpenChange={onOpenChange} style={{ width: 256 }} items={items} />
         </ExampleStory>
       </>
     )

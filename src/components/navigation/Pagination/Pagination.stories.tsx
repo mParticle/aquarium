@@ -14,8 +14,7 @@ const meta: Meta<typeof Pagination> = {
     defaultPageSize: 10,
     disabled: false,
     hideOnSinglePage: false,
-    itemRender: (page, type, originalElement) =>
-      type === 'page' ? <a>{page}</a> : originalElement,
+    itemRender: (page, type, originalElement) => (type === 'page' ? <a>{page}</a> : originalElement),
     pageSize: 10,
     pageSizeOptions: [10, 20, 50, 100],
     responsive: false,

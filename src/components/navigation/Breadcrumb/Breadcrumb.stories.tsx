@@ -8,12 +8,7 @@ const meta: Meta<typeof Breadcrumb> = {
 
   args: {
     separator: '/',
-    items: [
-      { title: 'Home' },
-      { title: 'Category' },
-      { title: 'Subcategory' },
-      { title: 'Current Page' },
-    ],
+    items: [{ title: 'Home' }, { title: 'Category' }, { title: 'Subcategory' }, { title: 'Current Page' }],
   },
 }
 export default meta

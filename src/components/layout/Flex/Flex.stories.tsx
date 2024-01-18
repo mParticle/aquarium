@@ -46,28 +46,11 @@ const meta: Meta<typeof Flex> = {
     },
     justify: {
       control: 'select',
-      options: [
-        'flex-start',
-        'center',
-        'flex-end',
-        'space-between',
-        'space-around',
-        'space-evenly',
-        'stretch',
-      ],
+      options: ['flex-start', 'center', 'flex-end', 'space-between', 'space-around', 'space-evenly', 'stretch'],
     },
     align: {
       control: 'select',
-      options: [
-        'normal',
-        'stretch',
-        'center',
-        'flex-start',
-        'flex-end',
-        'self-start',
-        'self-end',
-        'baseline',
-      ],
+      options: ['normal', 'stretch', 'center', 'flex-start', 'flex-end', 'self-start', 'self-end', 'baseline'],
     },
   },
 }

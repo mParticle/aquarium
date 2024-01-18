@@ -90,9 +90,7 @@ const meta: Meta<typeof Cascader> = {
       console.log(`Dropdown Visible: ${visible}`)
     },
     onChange: (value, selectedOptions) => {
-      alert(
-        `Selected Value: ${String(value)}, Selected Options: ${JSON.stringify(selectedOptions)}`,
-      )
+      alert(`Selected Value: ${String(value)}, Selected Options: ${JSON.stringify(selectedOptions)}`)
     },
     getPopupContainer: triggerNode => document.body,
   },
@@ -264,10 +262,7 @@ export const ExampleLazyLoad: Story = {
       { value: 'B', label: 'B', isLeaf: false },
     ]
     const [options, setOptions] = useState<ICascaderProps['options']>(optionLists)
-    const onChange = (
-      value: Array<string | number>,
-      selectedOptions: ICascaderProps['options'],
-    ) => {
+    const onChange = (value: Array<string | number>, selectedOptions: ICascaderProps['options']) => {
       console.log(value, selectedOptions)
     }
 

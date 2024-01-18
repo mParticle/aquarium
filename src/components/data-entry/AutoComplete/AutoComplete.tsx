@@ -1,7 +1,4 @@
-import {
-  AutoComplete as AntAutoComplete,
-  type AutoCompleteProps as AntAutoCompleteProps,
-} from 'antd'
+import { AutoComplete as AntAutoComplete, type AutoCompleteProps as AntAutoCompleteProps } from 'antd'
 
 export interface IAutoCompleteProps extends AntAutoCompleteProps {}
 

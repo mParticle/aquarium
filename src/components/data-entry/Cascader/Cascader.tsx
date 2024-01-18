@@ -2,8 +2,7 @@ import { Cascader as AntCascader, type CascaderProps as AntCascaderProps } from 
 
 import { type BaseOptionType } from 'antd/es/select'
 
-export type ICascaderProps<DataNodeType extends BaseOptionType = any> =
-  AntCascaderProps<DataNodeType>
+export type ICascaderProps<DataNodeType extends BaseOptionType = any> = AntCascaderProps<DataNodeType>
 
 export const Cascader = (props: ICascaderProps) => {
   return (
