@@ -2,8 +2,9 @@
 import type { StorybookConfig } from '@storybook/react-vite'
 import react from '@vitejs/plugin-react'
 import { PluginOption } from 'vite'
+import { Plugin } from 'vite'
 
-type StorybookVitePlugins = { plugins: PluginOption[][] }
+type StorybookVitePlugins = { plugins: (PluginOption[] | Plugin)[] }
 
 const config: StorybookConfig & StorybookVitePlugins = {
   framework: '@storybook/react-vite',
