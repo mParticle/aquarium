@@ -14,7 +14,7 @@ jobs:
         run: npm ci
 
       - name: Install CI specific deps
-        run: npm i --save-dev @rollup/rollup-linux-x64-gnu @swc/core-linux-x64-gnu @swc/core-linux-x64-musl
+        run: npm i --save-dev @swc/core-linux-x64-gnu @swc/core-linux-x64-musl
 
       - name: Install Playwright
         run: npx playwright install
