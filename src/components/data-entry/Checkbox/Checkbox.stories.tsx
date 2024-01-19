@@ -12,16 +12,13 @@ const meta: Meta<typeof Checkbox> = {
   component: props => {
     const [checked, setChecked] = useState<boolean>(props.checked ?? props.defaultChecked ?? false)
     return (
-      <>
-        {' '}
-        <Checkbox
-          {...props}
-          checked={checked}
-          onChange={e => {
-            setChecked(!checked)
-          }}
-        />{' '}
-      </>
+      <Checkbox
+        {...props}
+        checked={checked}
+        onChange={e => {
+          setChecked(!checked)
+        }}
+      />
     )
   },
 

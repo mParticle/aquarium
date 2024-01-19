@@ -63,7 +63,7 @@
     "build-storybook": "storybook build",
     "tokens-to-css": "npx style-dictionary build --config ./style-dictionary.json",
     "prepare": "husky install",
-    "lint": "eslint --ext .ts,.tsx \"src/**/*.{ts,tsx}\""
+    "lint": "eslint --ext .ts,.tsx \"src/**/*.{ts,tsx}\" --quiet"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
