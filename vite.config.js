@@ -11,11 +11,17 @@ export default defineConfig({
   plugins: [
     dts({
           insertTypesEntry: true,
+          rollupOptions: { 
+            showVerboseMessages: true, 
+            showDiagnostics: true,
+          },
           exclude: [
             'src/**/*.stories.ts',
             'src/**/*.stories.tsx',
-            'src/hooks/*.ts',
             'src/utils/*.ts',
+            'src/utils/*.tsx',
+            'src/hooks/*.ts',
+            'src/hooks/*.tsx',
             'jest.config.ts',
           ],
         }),
