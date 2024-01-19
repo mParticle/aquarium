@@ -3,9 +3,5 @@ import { ColorPicker as AntColorPicker, type ColorPickerProps as AntColorPickerP
 export interface IColorPickerProps extends AntColorPickerProps {}
 
 export const ColorPicker = (props: IColorPickerProps) => {
-  return (
-    <>
-      <AntColorPicker {...props} />
-    </>
-  )
+  return <AntColorPicker {...props} />
 }

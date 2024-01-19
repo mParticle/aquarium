@@ -3,9 +3,5 @@ import { Watermark as AntWatermark, type WatermarkProps as AntWatermarkProps } f
 export interface IWatermarkProps extends AntWatermarkProps {}
 
 export const Watermark = (props: IWatermarkProps) => {
-  return (
-    <>
-      <AntWatermark {...props} />
-    </>
-  )
+  return <AntWatermark {...props} />
 }

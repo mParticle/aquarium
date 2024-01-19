@@ -8,9 +8,5 @@ export interface ISelectProps<
 > extends AntSelectProps<ValueType, OptionType> {}
 
 export const Select = (props: ISelectProps) => {
-  return (
-    <>
-      <AntSelect {...props} />
-    </>
-  )
+  return <AntSelect {...props} />
 }

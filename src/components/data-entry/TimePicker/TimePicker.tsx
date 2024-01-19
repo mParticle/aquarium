@@ -3,9 +3,5 @@ import { TimePicker as AntTimePicker, type TimePickerProps as AntTimePickerProps
 export interface ITimePickerProps extends AntTimePickerProps {}
 
 export const TimePicker = (props: ITimePickerProps) => {
-  return (
-    <>
-      <AntTimePicker {...props} />
-    </>
-  )
+  return <AntTimePicker {...props} />
 }

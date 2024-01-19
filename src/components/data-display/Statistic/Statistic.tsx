@@ -3,9 +3,5 @@ import { Statistic as AntStatistic, type StatisticProps as AntStatisticProps } f
 export interface IStatisticProps extends AntStatisticProps {}
 
 export const Statistic = (props: IStatisticProps) => {
-  return (
-    <>
-      <AntStatistic {...props} />
-    </>
-  )
+  return <AntStatistic {...props} />
 }

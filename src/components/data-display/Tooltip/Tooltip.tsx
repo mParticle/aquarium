@@ -4,9 +4,5 @@ import { type TooltipPropsWithTitle as AntTooltipPropsWithTitle } from 'antd/es/
 export interface ITooltipProps extends AntTooltipPropsWithTitle {}
 
 export const Tooltip = (props: ITooltipProps) => {
-  return (
-    <>
-      <AntTooltip {...props} />
-    </>
-  )
+  return <AntTooltip {...props} />
 }

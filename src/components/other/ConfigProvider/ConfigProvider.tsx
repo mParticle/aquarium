@@ -4,9 +4,5 @@ import { type ConfigProviderProps as AntConfigProviderProps } from 'antd/es/conf
 export interface IConfigProviderProps extends AntConfigProviderProps {}
 
 export const ConfigProvider = (props: IConfigProviderProps) => {
-  return (
-    <>
-      <AntConfigProvider {...props} />
-    </>
-  )
+  return <AntConfigProvider {...props} />
 }

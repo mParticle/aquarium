@@ -3,9 +3,5 @@ import { AutoComplete as AntAutoComplete, type AutoCompleteProps as AntAutoCompl
 export interface IAutoCompleteProps extends AntAutoCompleteProps {}
 
 export const AutoComplete = (props: IAutoCompleteProps) => {
-  return (
-    <>
-      <AntAutoComplete {...props} />
-    </>
-  )
+  return <AntAutoComplete {...props} />
 }

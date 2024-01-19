@@ -3,9 +3,5 @@ import { Descriptions as AntDescriptions, type DescriptionsProps as AntDescripti
 export interface IDescriptionsProps extends AntDescriptionsProps {}
 
 export const Descriptions = (props: IDescriptionsProps) => {
-  return (
-    <>
-      <AntDescriptions {...props} />
-    </>
-  )
+  return <AntDescriptions {...props} />
 }

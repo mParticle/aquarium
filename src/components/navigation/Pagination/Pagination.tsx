@@ -3,9 +3,5 @@ import { Pagination as AntPagination, type PaginationProps as AntPaginationProps
 export interface IPaginationProps extends AntPaginationProps {}
 
 export const Pagination = (props: IPaginationProps) => {
-  return (
-    <>
-      <AntPagination {...props} />
-    </>
-  )
+  return <AntPagination {...props} />
 }

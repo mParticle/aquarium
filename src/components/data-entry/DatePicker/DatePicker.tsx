@@ -7,9 +7,5 @@ type AntDatePickerProps = PickerDateProps<Dayjs>
 export interface IDatePickerProps extends AntDatePickerProps {}
 
 export const DatePicker = (props: IDatePickerProps) => {
-  return (
-    <>
-      <AntDatePicker {...props} />
-    </>
-  )
+  return <AntDatePicker {...props} />
 }

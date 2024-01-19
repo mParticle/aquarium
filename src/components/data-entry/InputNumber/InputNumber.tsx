@@ -3,9 +3,5 @@ import { InputNumber as AntInputNumber, type InputNumberProps as AntInputNumberP
 export interface IInputNumberProps extends AntInputNumberProps {}
 
 export const InputNumber = (props: IInputNumberProps) => {
-  return (
-    <>
-      <AntInputNumber {...props} />
-    </>
-  )
+  return <AntInputNumber {...props} />
 }

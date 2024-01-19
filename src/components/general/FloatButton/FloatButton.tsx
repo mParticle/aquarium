@@ -3,9 +3,5 @@ import { FloatButton as AntFloatButton, type FloatButtonProps as AntFloatButtonP
 export interface IFloatButtonProps extends AntFloatButtonProps {}
 
 export const FloatButton = (props: IFloatButtonProps) => {
-  return (
-    <>
-      <AntFloatButton {...props} />
-    </>
-  )
+  return <AntFloatButton {...props} />
 }

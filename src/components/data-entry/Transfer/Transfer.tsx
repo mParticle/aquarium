@@ -3,9 +3,5 @@ import { Transfer as AntTransfer, type TransferProps as AntTransferProps } from 
 export interface ITransferProps extends AntTransferProps {}
 
 export const Transfer = (props: ITransferProps) => {
-  return (
-    <>
-      <AntTransfer {...props} />
-    </>
-  )
+  return <AntTransfer {...props} />
 }

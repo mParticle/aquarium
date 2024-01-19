@@ -3,11 +3,7 @@ import { Checkbox as AntCheckbox, type CheckboxProps as AntCheckboxProps } from 
 export interface ICheckboxProps extends AntCheckboxProps {}
 
 export const Checkbox = (props: ICheckboxProps) => {
-  return (
-    <>
-      <AntCheckbox {...props} />
-    </>
-  )
+  return <AntCheckbox {...props} />
 }
 
 Checkbox.Group = AntCheckbox.Group

@@ -5,9 +5,5 @@ export interface IFormProps extends AntFormProps {
 }
 
 export const Form = (props: IFormProps) => {
-  return (
-    <>
-      <AntForm {...props}>{props.children}</AntForm>
-    </>
-  )
+  return <AntForm {...props}>{props.children}</AntForm>
 }

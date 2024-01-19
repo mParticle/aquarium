@@ -3,9 +3,5 @@ import { Divider as AntDivider, type DividerProps as AntDividerProps } from 'ant
 export interface IDividerProps extends AntDividerProps {}
 
 export const Divider = (props: IDividerProps) => {
-  return (
-    <>
-      <AntDivider {...props} />
-    </>
-  )
+  return <AntDivider {...props} />
 }
