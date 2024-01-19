@@ -1,5 +1,4 @@
 export * from "./general/Button/Button";
-export * from "./general/Icon/Icon";
 export * from "./general/FloatButton/FloatButton";
 export * from "./data-entry/Rate/Rate";
 export * from "./data-entry/Form/Form";
