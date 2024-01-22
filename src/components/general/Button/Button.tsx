@@ -8,7 +8,7 @@ interface IButtonProps extends AntButtonProps {
 export const Button = (props: IButtonProps) => <>
   <ConfigProvider>
     <AntButton {...props}>
-      {props.children + "hi"}
+      {props.children}
     </AntButton>
   </ConfigProvider>
-</>;
+</>
