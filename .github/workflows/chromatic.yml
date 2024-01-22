@@ -1,4 +1,4 @@
-name: Chromatic
+name: Publish Chromatic
 
 on: push
 
