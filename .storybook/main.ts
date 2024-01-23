@@ -25,6 +25,10 @@ const config: StorybookConfig & StorybookVitePlugins = {
   },
 
   plugins: [react()],
+    
+  core: {
+    disableTelemetry: true, // requested by security 
+  },
 };
 
 export default config;
