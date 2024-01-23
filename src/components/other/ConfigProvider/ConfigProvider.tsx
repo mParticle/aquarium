@@ -5,7 +5,7 @@ export interface IConfigProviderProps extends AntConfigProviderProps {
 }
 
 export const ConfigProvider = (props: IConfigProviderProps) => {
-  const theme /*:ThemeConfig*/ = {
+  const LightTheme /*:ThemeConfig*/ = {
     "token": {
       "colorLinkHover": "#5f29f8",
       "controlOutline": "rgba(0.21176470816135406, 0, 0.8196078538894653, 0.10000000149011612)",
@@ -407,6 +407,6 @@ export const ConfigProvider = (props: IConfigProviderProps) => {
   };
 
   return <>
-    <AntConfigProvider {...props} theme={theme}/>
+    <AntConfigProvider {...props} theme={LightTheme}/>
   </>;
 };
