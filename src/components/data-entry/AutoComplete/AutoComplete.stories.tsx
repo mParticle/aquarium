@@ -1,8 +1,10 @@
 import { type IAutoCompleteProps } from 'src/components/data-entry/AutoComplete/AutoComplete'
-import { type Meta, type StoryObj } from '@storybook/react'
-import { type ISelectProps } from 'src/components/data-entry/Select/Select'
+import { type Meta } from '@storybook/react'
+import { type StoryObj } from '@storybook/react'
 import { faIcons } from '@fortawesome/free-solid-svg-icons'
-import { Icon, Input, Space, AutoComplete, Flex } from 'src/components'
+import { Icon, Input, Space, AutoComplete } from 'src/components'
+import { Flex } from 'src/components'
+import { type ISelectProps } from 'src/components/data-entry/Select/Select'
 import { ExampleStory } from 'src/utils/ExampleStory'
 import { useState } from 'react'
 

@@ -1,8 +1,8 @@
 import { faIcons } from '@fortawesome/free-solid-svg-icons'
-import { type Meta, type StoryObj } from '@storybook/react'
-
-import { Icon, Cascader } from 'src/components'
-
+import { type Meta } from '@storybook/react'
+import { type StoryObj } from '@storybook/react'
+import { Icon } from 'src/components'
+import { Cascader } from 'src/components'
 import { type ICascaderProps } from 'src/components/data-entry/Cascader/Cascader'
 import { ExampleStory } from 'src/utils/ExampleStory'
 import { useState } from 'react'

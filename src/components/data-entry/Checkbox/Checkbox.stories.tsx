@@ -1,5 +1,5 @@
-import { type Meta, type StoryObj } from '@storybook/react'
-
+import { type Meta } from '@storybook/react'
+import { type StoryObj } from '@storybook/react'
 import { Checkbox, Divider } from 'src/components'
 import { useState } from 'react'
 import { ExampleStory } from 'src/utils/ExampleStory'
