@@ -44,7 +44,6 @@
     "@storybook/test": "7.6.10",
     "@storybook/test-runner": "0.16.0",
     "@storybook/testing-library": "0.2.2",
-    "@vitejs/plugin-legacy": "^5.2.0",
     "@vitejs/plugin-react": "4.2.1",
     "concurrently": "8.2.2",
     "http-server": "14.1.1",
