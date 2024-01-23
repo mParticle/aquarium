@@ -1,11 +1,12 @@
 import { ColorPicker as AntColorPicker } from "antd";
 import { ColorPickerProps as AntColorPickerProps } from "antd";
+import { ConfigProvider } from "src/components";
 
 export interface IColorPickerProps extends AntColorPickerProps {
 }
 
 export const ColorPicker = (props: IColorPickerProps) => {
-  return <>
+  return <ConfigProvider>
     <AntColorPicker {...props}/>
-  </>;
+  </ConfigProvider>;
 };

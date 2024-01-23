@@ -7,14 +7,15 @@ import {
   type MenuDividerType as AndMenuDividerType,
   type SubMenuType as AndSubMenuType,
 } from "antd/es/menu/hooks/useItems";
+import { ConfigProvider } from "src/components";
 
 export interface IMenuProps extends AntMenuProps {
 }
 
 export const Menu = (props: IMenuProps) => {
-  return <>
+  return <ConfigProvider>
     <AntMenu {...props}/>
-  </>;
+  </ConfigProvider>;
 };
 
 export {

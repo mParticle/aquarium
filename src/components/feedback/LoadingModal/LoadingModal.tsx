@@ -11,7 +11,6 @@ export interface ILoadingModalProps<Data> extends Omit<IModalProps, "children"> 
 
 export function LoadingModal<Data>(props: ILoadingModalProps<Data>) {
   const [isInitLoading, isInitError, initData] = useInitData(props.fetchData);
-  if (initData) debugger;
 
   return <>
     <Modal {...props}>
