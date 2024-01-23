@@ -38,7 +38,7 @@ type Story = StoryObj<typeof Tag>;
 
 export const Primary: Story = {};
 
-export const WithCustomCloseIcon: Story = {
+export const WithCloseIcon: Story = {
   args: {
     closeIcon: true,
   },
