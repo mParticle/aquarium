@@ -1,16 +1,12 @@
 {
   "name": "@mparticle/aquarium",
-  "version": "1.5.0",
+  "version": "1.1.1",
   "description": "mParticle Component Library",
   "license": "Apache-2.0",
   "keywords": [
     "mparticle",
     "analytics",
     "cdp"
-  ],
-  "browserslist": [
-    "> 0.5%",
-    "not dead"
   ],
   "repository": "https://github.com/mParticle/aquarium/",
   "publishConfig": {
@@ -27,17 +23,15 @@
     "@fortawesome/fontawesome-svg-core": "6.5.1",
     "@fortawesome/free-solid-svg-icons": "6.5.1",
     "@fortawesome/react-fontawesome": "0.2.0",
-    "antd": "5.13.2",
     "storybook": "7.6.10",
     "typescript": "5.3.3"
   },
   "peerDependencies": {
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "antd": "5.13.2"
   },
   "devDependencies": {
-    "@babel/plugin-transform-runtime": "^7.23.7",
-    "@rollup/plugin-babel": "^6.0.4",
     "@storybook/addon-essentials": "7.6.10",
     "@storybook/addon-interactions": "7.6.10",
     "@storybook/addon-links": "7.6.10",
