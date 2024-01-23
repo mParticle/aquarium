@@ -1,6 +1,7 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
+import { babel } from "@rollup/plugin-babel";
 
 export default defineConfig({
   resolve: {
@@ -19,6 +20,12 @@ export default defineConfig({
     },
     rollupOptions: {
       external: ["react", "react/jsx-runtime"],
+      plugins: [
+        babel({
+          babelHelpers: "runtime",
+          extensions: [".js", ".jsx", ".es6", ".es", ".mjs", "ts"],
+        }),
+      ],
       output: {
         globals: {
           antd: "antd",
