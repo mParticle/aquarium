@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Button } from "src/components/general/Button/Button";
 import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";
@@ -53,8 +52,8 @@ type Story = StoryObj<typeof Button>
 */
 
 export const Primary: Story = {
-  play: async ({ canvasElement }) => {
-    const button = canvasElement.querySelector("button");
+  play: async context => {
+    const button = context.canvasElement.querySelector("button");
     await userEvent.click(button); // Click the button
   },
 };

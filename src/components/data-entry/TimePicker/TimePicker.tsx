@@ -1,4 +1,3 @@
-import React from "react";
 import { TimePicker as AntTimePicker } from "antd";
 import { TimePickerProps as AntTimePickerProps } from "antd";
 

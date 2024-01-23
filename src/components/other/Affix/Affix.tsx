@@ -1,4 +1,3 @@
-import React from "react";
 import { Affix as AntAffix } from "antd";
 import { AffixProps as AntAffixProps } from "antd";
 

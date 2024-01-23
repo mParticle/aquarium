@@ -1,4 +1,3 @@
-import React from "react";
 import { Checkbox as AntCheckbox } from "antd";
 import { CheckboxProps as AntCheckboxProps } from "antd";
 
@@ -10,3 +9,5 @@ export const Checkbox = (props: ICheckboxProps) => {
     <AntCheckbox {...props}/>
   </>;
 };
+
+Checkbox.Group = AntCheckbox.Group

@@ -1,4 +1,3 @@
-import React from "react";
 import { Empty as AntEmpty } from "antd";
 import { EmptyProps as AntEmptyProps } from "antd";
 

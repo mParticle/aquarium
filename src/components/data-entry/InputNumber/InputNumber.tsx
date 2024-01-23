@@ -1,4 +1,3 @@
-import React from "react";
 import { InputNumber as AntInputNumber } from "antd";
 import { InputNumberProps as AntInputNumberProps } from "antd";
 

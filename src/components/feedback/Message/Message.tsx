@@ -1,4 +1,3 @@
-import React from "react";
 import { message } from "antd";
 import { MessageArgsProps as AntMessageArgsProps } from "antd";
 

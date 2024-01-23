@@ -1,4 +1,3 @@
-import React from "react";
 import { Statistic as AntStatistic } from "antd";
 import { StatisticProps as AntStatisticProps } from "antd";
 

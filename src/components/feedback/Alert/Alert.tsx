@@ -1,4 +1,3 @@
-import React from "react";
 import { Alert as AntAlert } from "antd";
 import { AlertProps as AntAlertProps } from "antd";
 
@@ -10,3 +9,5 @@ export const Alert = (props: IAlertProps) => {
     <AntAlert {...props}/>
   </>;
 };
+
+Alert.ErrorBoundary = AntAlert.ErrorBoundary

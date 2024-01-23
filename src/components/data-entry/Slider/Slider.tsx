@@ -1,9 +1,8 @@
-import React from "react";
 import { Slider as AntSlider } from "antd";
-import { SliderProps as AntSliderProps } from "antd";
+import { SliderRangeProps as SliderRangeProps } from "antd/es/slider";
+import { SliderSingleProps } from "antd/es/slider";
 
-export interface ISliderProps extends AntSliderProps {
-}
+export type ISliderProps = SliderSingleProps | SliderRangeProps
 
 export const Slider = (props: ISliderProps) => {
   return <>

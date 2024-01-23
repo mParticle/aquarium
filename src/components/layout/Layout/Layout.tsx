@@ -1,4 +1,3 @@
-import React from "react";
 import { Layout as AntLayout } from "antd";
 import { LayoutProps as AntLayoutProps } from "antd";
 
@@ -10,3 +9,8 @@ export const Layout = (props: ILayoutProps) => {
     <AntLayout {...props}/>
   </>;
 };
+
+Layout.Sider = AntLayout.Sider
+Layout.Footer = AntLayout.Footer
+Layout.Content = AntLayout.Content
+Layout.Header = AntLayout.Header
