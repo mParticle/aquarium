@@ -1,7 +1,6 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
-import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   resolve: {
@@ -9,7 +8,7 @@ export default defineConfig({
       src: "/src",
     },
   },
-  plugins: [react(), dts({ include: "src", rollupTypes: true })],
+  plugins: [dts({ include: "src", rollupTypes: true })],
   build: {
     lib: {
       // Could also be a dictionary or array of multiple entry points
