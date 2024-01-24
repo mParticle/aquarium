@@ -7,6 +7,7 @@ type StorybookVitePlugins = { plugins: (PluginOption[] | Plugin)[]; };
 
 const config: StorybookConfig & StorybookVitePlugins = {
   framework: "@storybook/react-vite",
+
   stories: [
     "../src/**/*.mdx",
     "../src/**/*.stories.@(ts|tsx)",

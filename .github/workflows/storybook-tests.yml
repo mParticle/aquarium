@@ -13,9 +13,6 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Install Peer Deps
-        run: npm i react@18.2.0 react-dom@18.2.0 antd@5.13.2
-
       - name: Install Playwright
         run: npx playwright install
 
