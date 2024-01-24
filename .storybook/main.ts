@@ -32,6 +32,10 @@ const config: StorybookConfig & StorybookVitePlugins = {
       plugins: await withoutVitePlugins(config.plugins, ["vite:dts"]),
     });
   },
+    
+  core: {
+    disableTelemetry: true, // requested by security 
+  },
 };
 
 export default config;
