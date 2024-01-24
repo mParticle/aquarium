@@ -16,8 +16,7 @@
   "main": "dist/aquarium.mjs",
   "files": [
     "dist/aquarium.mjs",
-    "dist/index.d.ts",
-    "dist/components"
+    "dist/index.d.ts"
   ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "6.5.1",

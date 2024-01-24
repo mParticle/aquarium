@@ -1,4 +1,4 @@
-export {  Button, type IButtonProps } from "./general/Button/Button";
+export { Button, type IButtonProps } from "./general/Button/Button";
 export { FloatButton, type IFloatButtonProps } from "./general/FloatButton/FloatButton";
 export { Rate, type IRateProps } from "./data-entry/Rate/Rate";
 export { Form, type IFormProps } from "./data-entry/Form/Form";
