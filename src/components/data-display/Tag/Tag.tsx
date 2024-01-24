@@ -15,10 +15,12 @@ export const Tag = (props: ITagProps) => {
   )
 }
 
-Tag.CheckableTag = function CheckableTag(props: CheckableTagProps) {
+const CheckableTag = (props: CheckableTagProps) => {
   return (
     <ConfigProvider>
       <AntTag.CheckableTag {...props} />
     </ConfigProvider>
   )
 }
+
+Tag.CheckableTag = CheckableTag
