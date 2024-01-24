@@ -11,4 +11,4 @@ export const Button = (props: IButtonProps) => <>
       {props.children}
     </AntButton>
   </ConfigProvider>
-</>;
+</>
