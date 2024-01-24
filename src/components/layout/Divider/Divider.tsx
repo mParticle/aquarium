@@ -1,7 +1,13 @@
-import { Divider as AntDivider, type DividerProps as AntDividerProps } from 'antd'
+import { Divider as AntDivider } from 'antd'
+import { type DividerProps as AntDividerProps } from 'antd'
+import { ConfigProvider } from 'src/components'
 
 export interface IDividerProps extends AntDividerProps {}
 
 export const Divider = (props: IDividerProps) => {
-  return <AntDivider {...props} />
+  return (
+    <ConfigProvider>
+      <AntDivider {...props} />
+    </ConfigProvider>
+  )
 }

@@ -1,9 +1,15 @@
-import { Checkbox as AntCheckbox, type CheckboxProps as AntCheckboxProps } from 'antd'
+import { Checkbox as AntCheckbox } from 'antd'
+import { type CheckboxProps as AntCheckboxProps } from 'antd'
+import { ConfigProvider } from 'src/components'
 
 export interface ICheckboxProps extends AntCheckboxProps {}
 
 export const Checkbox = (props: ICheckboxProps) => {
-  return <AntCheckbox {...props} />
+  return (
+    <ConfigProvider>
+      <AntCheckbox {...props} />
+    </ConfigProvider>
+  )
 }
 
 Checkbox.Group = AntCheckbox.Group

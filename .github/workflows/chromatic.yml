@@ -1,0 +1,19 @@
+name: Publish Chromatic
+
+on: push
+
+jobs:
+  chromatic:
+    name: Publish Storybook to Chromatic
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - run: npm ci
+
+      - name: Publish to Chromatic
+        uses: chromaui/action@latest
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}

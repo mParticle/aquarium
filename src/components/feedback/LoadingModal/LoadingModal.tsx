@@ -1,6 +1,7 @@
 import { useInitData } from 'src/hooks/useInitData'
-import { type IModalProps, Modal } from 'src/components/feedback/Modal/Modal'
+import { type IModalProps } from 'src/components/feedback/Modal/Modal'
 import { Skeleton } from 'src/components/feedback/Skeleton/Skeleton'
+import { Modal } from 'src/components/feedback/Modal/Modal'
 import { Result } from 'src/components/feedback/Result/Result'
 
 export interface ILoadingModalProps<Data> extends Omit<IModalProps, 'children'> {
@@ -10,7 +11,6 @@ export interface ILoadingModalProps<Data> extends Omit<IModalProps, 'children'> 
 
 export function LoadingModal<Data>(props: ILoadingModalProps<Data>) {
   const [isInitLoading, isInitError, initData] = useInitData(props.fetchData)
-  // eslint-disable-next-line no-debugger
 
   return (
     <>

@@ -8,25 +8,9 @@ export default defineConfig({
       src: '/src',
     },
   },
-  plugins: [
-    dts({
-          insertTypesEntry: true,
-          rollupOptions: { 
-            showVerboseMessages: true, 
-            showDiagnostics: true,
-          },
-          exclude: [
-            'src/**/*.stories.ts',
-            'src/**/*.stories.tsx',
-            'src/utils/*.ts',
-            'src/utils/*.tsx',
-            'src/hooks/*.ts',
-            'src/hooks/*.tsx',
-            'jest.config.ts',
-          ],
-        }),
-  ],
+  plugins: [dts({ include: 'src/components', rollupTypes: true, })],
   build: {
+    outDir: 'dist',
     lib: {
       // Could also be a dictionary or array of multiple entry points
       entry: resolve(__dirname, 'src/components/index.ts'),
@@ -35,7 +19,7 @@ export default defineConfig({
       fileName: 'aquarium',
     },
     rollupOptions: {
-      external: ['react', 'antd'],
+      external: ['react', 'react/jsx-runtime', 'antd'],
       output: {
         globals: {
           antd: 'antd',

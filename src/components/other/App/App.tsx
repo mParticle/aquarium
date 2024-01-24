@@ -1,7 +1,13 @@
-import { App as AntApp, type AppProps as AntAppProps } from 'antd'
+import { App as AntApp } from 'antd'
+import { type AppProps as AntAppProps } from 'antd'
+import { ConfigProvider } from 'src/components'
 
 export interface IAppProps extends AntAppProps {}
 
 export const App = (props: IAppProps) => {
-  return <AntApp {...props} />
+  return (
+    <ConfigProvider>
+      <AntApp {...props} />
+    </ConfigProvider>
+  )
 }

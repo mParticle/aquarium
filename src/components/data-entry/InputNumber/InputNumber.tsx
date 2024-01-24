@@ -1,7 +1,13 @@
-import { InputNumber as AntInputNumber, type InputNumberProps as AntInputNumberProps } from 'antd'
+import { InputNumber as AntInputNumber } from 'antd'
+import { type InputNumberProps as AntInputNumberProps } from 'antd'
+import { ConfigProvider } from 'src/components'
 
 export interface IInputNumberProps extends AntInputNumberProps {}
 
 export const InputNumber = (props: IInputNumberProps) => {
-  return <AntInputNumber {...props} />
+  return (
+    <ConfigProvider>
+      <AntInputNumber {...props} />
+    </ConfigProvider>
+  )
 }

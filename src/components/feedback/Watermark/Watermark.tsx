@@ -1,7 +1,13 @@
-import { Watermark as AntWatermark, type WatermarkProps as AntWatermarkProps } from 'antd'
+import { Watermark as AntWatermark } from 'antd'
+import { type WatermarkProps as AntWatermarkProps } from 'antd'
+import { ConfigProvider } from 'src/components'
 
 export interface IWatermarkProps extends AntWatermarkProps {}
 
 export const Watermark = (props: IWatermarkProps) => {
-  return <AntWatermark {...props} />
+  return (
+    <ConfigProvider>
+      <AntWatermark {...props} />
+    </ConfigProvider>
+  )
 }
