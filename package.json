@@ -23,7 +23,6 @@
     "@fortawesome/fontawesome-svg-core": "6.5.1",
     "@fortawesome/free-solid-svg-icons": "6.5.1",
     "@fortawesome/react-fontawesome": "0.2.0",
-    "storybook": "7.6.10",
     "typescript": "5.3.3"
   },
   "peerDependencies": {
@@ -47,9 +46,7 @@
     "@vitejs/plugin-react": "4.2.1",
     "concurrently": "8.2.2",
     "http-server": "14.1.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "terser": "^5.27.0",
+    "storybook": "7.6.10",
     "vite": "5.0.12",
     "vite-plugin-dts": "3.7.1",
     "wait-on": "7.2.0"
