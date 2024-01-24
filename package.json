@@ -58,6 +58,8 @@
   },
   "scripts": {
     "storybook": "storybook dev -p 6006",
+    "test-storybook": "test-storybook",
+    "test-storybook:ci": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"npm run build-storybook --quiet && NODE_NO_WARNINGS=1 npx http-server storybook-static --port 6006 --silent\" \"wait-on tcp:127.0.0.1:6006 && npm run test-storybook\"",
     "build-dist": "sh ./scripts/build-dist.sh",
     "build-storybook": "storybook build"
   }
