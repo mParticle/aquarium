@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-floating-promises */
+
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
 import { Checkbox, Divider } from 'src/components'
@@ -6,6 +8,7 @@ import { ExampleStory } from 'src/utils/ExampleStory'
 import { type CheckboxValueType } from 'antd/es/checkbox/Group'
 import { type ICheckboxProps } from 'src/components/data-entry/Checkbox/Checkbox'
 import { userEvent } from '@storybook/test'
+import { expect } from '@storybook/test'
 
 const meta: Meta<typeof Checkbox> = {
   title: 'Aquarium/Data Entry/Checkbox',
