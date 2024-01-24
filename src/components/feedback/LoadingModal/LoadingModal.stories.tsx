@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";
@@ -7,7 +6,7 @@ import { LoadingModal } from "src/components/feedback/LoadingModal/LoadingModal"
 import { ILoadingModalProps } from "src/components/feedback/LoadingModal/LoadingModal";
 
 const meta: Meta<typeof LoadingModal> = {
-  title: "Aquarium/Unknown/Loading Modal",
+  title: "Aquarium/Feedback/Loading Modal",
   component: LoadingModal,
 
   args: {},

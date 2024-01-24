@@ -1,7 +1,9 @@
-import * as React from "react";
 import { Button } from "src/components/general/Button/Button";
 import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";
+import { Icon } from "src/components/general/Icon/Icon";
+import { faHamburger } from "@fortawesome/free-solid-svg-icons";
+import { userEvent } from "@storybook/test";
 
 const meta: Meta<typeof Button> = {
   title: "Aquarium/General/Button",
@@ -49,7 +51,12 @@ type Story = StoryObj<typeof Button>
   Customize the stories based on specific requirements.
 */
 
-export const Primary: Story = {};
+export const Primary: Story = {
+  play: async context => {
+    const button = context.canvasElement.querySelector("button");
+    await userEvent.click(button); // Click the button
+  },
+};
 
 export const Default: Story = {
   args: {
@@ -99,11 +106,11 @@ export const Block: Story = {
   },
 };
 
-// export const WithIcon: Story = {
-//   args: {
-//     icon: <IconComponent />,
-//   },
-// };
+export const WithIcon: Story = {
+  args: {
+    icon: <Icon icon={faHamburger}/>,
+  },
+};
 
 export const Loading: Story = {
   args: {

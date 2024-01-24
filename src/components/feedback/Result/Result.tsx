@@ -1,12 +1,12 @@
-import React from "react";
 import { Result as AntResult } from "antd";
 import { ResultProps as AntResultProps } from "antd";
+import { ConfigProvider } from "src/components";
 
 export interface IResultProps extends AntResultProps {
 }
 
 export const Result = (props: IResultProps) => {
-  return <>
+  return <ConfigProvider>
     <AntResult {...props}/>
-  </>;
+  </ConfigProvider>;
 };

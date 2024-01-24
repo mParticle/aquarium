@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";
 import { List } from "src/components/data-display/List/List";

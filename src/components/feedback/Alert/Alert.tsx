@@ -1,12 +1,14 @@
-import React from "react";
 import { Alert as AntAlert } from "antd";
 import { AlertProps as AntAlertProps } from "antd";
+import { ConfigProvider } from "src/components";
 
 export interface IAlertProps extends AntAlertProps {
 }
 
 export const Alert = (props: IAlertProps) => {
-  return <>
+  return <ConfigProvider>
     <AntAlert {...props}/>
-  </>;
+  </ConfigProvider>;
 };
+
+Alert.ErrorBoundary = AntAlert.ErrorBoundary

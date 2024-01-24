@@ -1,12 +1,12 @@
-import React from "react";
 import { Card as AntCard } from "antd";
 import { CardProps as AntCardProps } from "antd";
+import { ConfigProvider } from "src/components";
 
 export interface ICardProps extends AntCardProps {
 }
 
 export const Card = (props: ICardProps) => {
-  return <>
+  return <ConfigProvider>
     <AntCard {...props}/>
-  </>;
+  </ConfigProvider>;
 };

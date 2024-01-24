@@ -1,12 +1,12 @@
-import React from "react";
 import { Badge as AntBadge } from "antd";
 import { BadgeProps as AntBadgeProps } from "antd";
+import { ConfigProvider } from "src/components";
 
 export interface IBadgeProps extends AntBadgeProps {
 }
 
 export const Badge = (props: IBadgeProps) => {
-  return <>
+  return <ConfigProvider>
     <AntBadge {...props}/>
-  </>;
+  </ConfigProvider>;
 };

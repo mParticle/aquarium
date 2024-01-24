@@ -27,6 +27,7 @@ module.exports = {
                 preset: 'angular',
             },
         ],
+        ['@semantic-release/npm'],
         [
             '@semantic-release/github',
             {

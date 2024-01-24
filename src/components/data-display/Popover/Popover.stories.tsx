@@ -1,4 +1,3 @@
-import React from "react";
 import { Popover } from "src/components/data-display/Popover/Popover";
 import { IPopoverProps } from "src/components/data-display/Popover/Popover";
 import { Meta } from "@storybook/react";

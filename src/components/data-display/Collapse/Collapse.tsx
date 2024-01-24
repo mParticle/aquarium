@@ -1,12 +1,12 @@
-import React from "react";
 import { Collapse as AntCollapse } from "antd";
 import { CollapseProps as AntCollapseProps } from "antd";
+import { ConfigProvider } from "src/components";
 
 export interface ICollapseProps extends AntCollapseProps {
 }
 
 export const Collapse = (props: ICollapseProps) => {
-  return <>
+  return <ConfigProvider>
     <AntCollapse {...props}/>
-  </>;
+  </ConfigProvider>;
 };

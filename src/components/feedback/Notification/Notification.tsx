@@ -1,6 +1,6 @@
-import React from "react";
 import { notification } from "antd";
 import { NotificationArgsProps } from "antd";
+import { ConfigProvider } from "src/components";
 
 export interface INotificationProps extends NotificationArgsProps {
   children: React.ReactNode;
@@ -13,10 +13,10 @@ export const Notification = (props: INotificationProps) => {
     notificationApi.open({ ...props });
   };
 
-  return (<>
+  return <ConfigProvider>
     {contextHolder}
     <span onClick={open}>
       {props.children}
     </span>
-  </>);
+  </ConfigProvider>
 };
