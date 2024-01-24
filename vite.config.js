@@ -8,7 +8,7 @@ export default defineConfig({
       src: '/src',
     },
   },
-  plugins: [dts({ include: 'src', rollupTypes: true })],
+  plugins: [dts({ include: 'src/components', rollupTypes: true })],
   build: {
     lib: {
       // Could also be a dictionary or array of multiple entry points
