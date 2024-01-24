@@ -12,6 +12,7 @@ import {
 import { ExampleStory } from "src/utils/ExampleStory";
 import { useState } from "react";
 import { userEvent } from "@storybook/test";
+import { expect } from "@storybook/test";
 
 const meta: Meta<typeof Tag> = {
   title: "Aquarium/Data Display/Tag",
