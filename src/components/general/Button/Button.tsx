@@ -1,5 +1,6 @@
-import { Button as AntButton, ConfigProvider } from "antd";
+import { Button as AntButton } from "antd";
 import { ButtonProps as AntButtonProps } from "antd";
+import { ConfigProvider } from "src/components";
 
 export interface IButtonProps extends AntButtonProps {
 }
