@@ -1,7 +1,7 @@
 import { Meta } from "@storybook/react";
 import { StoryObj } from "@storybook/react";
 import { Alert } from "src/components/feedback/Alert/Alert";
-import { Icon } from "src/components";
+import { Icon } from "src/components/general/Icon/Icon";
 import { faIcons } from "@fortawesome/free-solid-svg-icons";
 import { ExampleStory } from "src/utils/ExampleStory";
 import { Space } from "src/components";

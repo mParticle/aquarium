@@ -6,6 +6,7 @@ import { ExampleStory } from "src/utils/ExampleStory";
 import { CheckboxValueType } from "antd/es/checkbox/Group";
 import { ICheckboxProps } from "src/components/data-entry/Checkbox/Checkbox";
 import { userEvent } from "@storybook/test";
+import { expect } from "@storybook/test";
 
 const meta: Meta<typeof Checkbox> = {
   title: "Aquarium/Data Entry/Checkbox",

@@ -1,11 +1,12 @@
 import { Modal as AntModal } from "antd";
 import { ModalProps as AntModalProps } from "antd";
+import { ConfigProvider } from "src/components";
 
 export interface IModalProps extends AntModalProps {
 }
 
 export const Modal = (props: IModalProps) => {
-  return <>
+  return <ConfigProvider>
     <AntModal {...props}/>
-  </>;
+  </ConfigProvider>;
 };
