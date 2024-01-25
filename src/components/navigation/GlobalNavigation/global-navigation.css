@@ -15,7 +15,18 @@
     }
 }
 
- .ant-menu-item {
+
+.globalNavigation__icon {
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 6px;
+
+    &:hover {
+        backgroundColor: antiquewhite;
+    }
+}
+
+.ant-menu-item {
     height: initial !important;
     line-height: initial !important;
 }

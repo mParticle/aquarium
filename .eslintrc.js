@@ -17,6 +17,7 @@ module.exports = {
   plugins: ['react', 'react-hooks'],
   ignorePatterns: ['.eslintrc.js'],
   rules: {
+    'semi': 'off',
     '@typescript-eslint/explicit-function-return-type': [
       'warn',
       {
@@ -89,6 +90,11 @@ module.exports = {
           'ConfigProvider',
           'Affix',
           'App',
+          'GlobalNavigation',
+          'SuiteLogo',
+          'NavigationSearch',
+          'NavigationIcon',
+          'NavigationList',
         ],
       },
     ],
