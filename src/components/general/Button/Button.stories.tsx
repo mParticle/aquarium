@@ -1,17 +1,12 @@
 import { Button } from 'src/components/general/Button/Button'
 import { type Meta, type StoryObj } from '@storybook/react'
-
 import { Icon } from 'src/components/general/Icon/Icon'
 import { faHamburger } from '@fortawesome/free-solid-svg-icons'
 import { userEvent } from '@storybook/test'
 
 const meta: Meta<typeof Button> = {
   title: 'Aquarium/General/Button',
-  component: props => (
-    <>
-      <Button {...props}>Button Text</Button>
-    </>
-  ),
+  component: props => <Button {...props}>Button Text</Button>,
 
   args: {
     block: false,
