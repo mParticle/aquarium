@@ -1,12 +1,13 @@
-import React from "react";
-import { ColorPicker as AntColorPicker } from "antd";
-import { ColorPickerProps as AntColorPickerProps } from "antd";
+import { ColorPicker as AntColorPicker } from 'antd'
+import { type ColorPickerProps as AntColorPickerProps } from 'antd'
+import { ConfigProvider } from 'src/components'
 
-export interface IColorPickerProps extends AntColorPickerProps {
-}
+export interface IColorPickerProps extends AntColorPickerProps {}
 
 export const ColorPicker = (props: IColorPickerProps) => {
-  return <>
-    <AntColorPicker {...props}/>
-  </>;
-};
+  return (
+    <ConfigProvider>
+      <AntColorPicker {...props} />
+    </ConfigProvider>
+  )
+}

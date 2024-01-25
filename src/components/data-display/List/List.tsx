@@ -1,12 +1,15 @@
-import React from "react";
-import { List as AntList } from "antd";
-import { ListProps as AntListProps } from "antd";
+import { List as AntList } from 'antd'
+import { type ListProps as AntListProps } from 'antd'
+import { ConfigProvider } from 'src/components'
 
-export interface IListProps<T> extends AntListProps<T> {
+export interface IListProps extends AntListProps {}
+
+export const List = (props: IListProps) => {
+  return (
+    <ConfigProvider>
+      <AntList {...props} />
+    </ConfigProvider>
+  )
 }
-
-export const List = <T extends any>(props: IListProps<T>) => <>
-  <AntList {...props}/>
-</>;
 
 List.Item = AntList.Item

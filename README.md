@@ -1,7 +1,7 @@
 <img src="https://static.mparticle.com/sdk/mp_logo_black.svg" width="280"><br>
 
-
 # mParticle Aquarium
+
 mParticle Component Library
 
 ## Contributing

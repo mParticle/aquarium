@@ -1,9 +1,9 @@
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
-import { InputNumber } from "src/components/data-entry/InputNumber/InputNumber";
+import { type Meta, type StoryObj } from '@storybook/react'
+
+import { InputNumber } from 'src/components/data-entry/InputNumber/InputNumber'
 
 const meta: Meta<typeof InputNumber> = {
-  title: "Aquarium/Data Entry/InputNumber",
+  title: 'Aquarium/Data Entry/InputNumber',
   component: InputNumber,
 
   args: {
@@ -13,8 +13,8 @@ const meta: Meta<typeof InputNumber> = {
     bordered: true,
     changeOnBlur: true,
     controls: true,
-    decimalSeparator: ".",
-    placeholder: "Enter a number",
+    decimalSeparator: '.',
+    placeholder: 'Enter a number',
     defaultValue: undefined,
     disabled: false,
     formatter: undefined,
@@ -26,28 +26,33 @@ const meta: Meta<typeof InputNumber> = {
     readOnly: false,
     status: undefined,
     prefix: undefined,
-    size: "middle",
+    size: 'middle',
     step: 1,
     stringMode: false,
     value: undefined,
-    onChange: (value) => alert("InputNumber changed: " + value),
-    onPressEnter: (e) => console.log("Enter key pressed:", e),
-    onStep: (value, info) => console.log("Step:", value, info),
+    onChange: value => {
+      alert('InputNumber changed: ' + value)
+    },
+    onPressEnter: e => {
+      console.log('Enter key pressed:', e)
+    },
+    onStep: (value, info) => {
+      console.log('Step:', value, info)
+    },
   },
 
   argTypes: {
     size: {
-      control: "select",
-      options: ["large", "middle", "small"],
+      control: 'select',
+      options: ['large', 'middle', 'small'],
     },
     status: {
-      control: "select",
-      options: ["error", "warning"],
+      control: 'select',
+      options: ['error', 'warning'],
     },
   },
-};
-export default meta;
-
+}
+export default meta
 
 type Story = StoryObj<typeof InputNumber>
 
@@ -56,86 +61,86 @@ type Story = StoryObj<typeof InputNumber>
   Customize the stories based on specific requirements.
 */
 
-export const Primary: Story = {};
+export const Primary: Story = {}
 
 export const Small: Story = {
   args: {
-    size: "small",
+    size: 'small',
   },
-};
+}
 
 export const Large: Story = {
   args: {
-    size: "large",
+    size: 'large',
   },
-};
+}
 
 export const Warning: Story = {
   args: {
-    status: "warning",
+    status: 'warning',
   },
-};
+}
 
 export const Error: Story = {
   args: {
-    status: "error",
+    status: 'error',
   },
-};
+}
 
 export const Disabled: Story = {
   args: {
     disabled: true,
     value: 42,
   },
-};
+}
 
 export const ReadOnly: Story = {
   args: {
     readOnly: true,
     value: 123,
   },
-};
+}
 
 export const $Prefix: Story = {
   args: {
-    prefix: "$",
+    prefix: '$',
   },
-};
+}
 export const StringMode: Story = {
   args: {
     stringMode: true,
-    value: "42.50",
+    value: '42.50',
   },
-};
+}
 
 export const WithControlsAndPrecision: Story = {
   args: {
     controls: true,
     precision: 2,
   },
-};
+}
 
 export const DecimalSeparatorComma: Story = {
   args: {
-    decimalSeparator: ",",
+    decimalSeparator: ',',
   },
-};
+}
 
 export const WithFormatter: Story = {
   args: {
     formatter: (value, info) => `$${value}`,
   },
-};
+}
 
 export const MinMaxConstraints: Story = {
   args: {
     min: 10,
     max: 100,
   },
-};
+}
 
-export const Step0_5: Story = {
+export const Step05: Story = {
   args: {
     step: 0.5,
   },
-};
+}

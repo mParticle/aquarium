@@ -1,12 +1,14 @@
-import React from "react";
-import { Slider as AntSlider } from "antd";
-import { SliderProps as AntSliderProps } from "antd";
+import { Slider as AntSlider } from 'antd'
+import { type SliderRangeProps } from 'antd/es/slider'
+import { type SliderSingleProps } from 'antd/es/slider'
+import { ConfigProvider } from 'src/components'
 
-export interface ISliderProps extends AntSliderProps {
-}
+export type ISliderProps = SliderSingleProps | SliderRangeProps
 
 export const Slider = (props: ISliderProps) => {
-  return <>
-    <AntSlider {...props}/>
-  </>;
-};
+  return (
+    <ConfigProvider>
+      <AntSlider {...props} />
+    </ConfigProvider>
+  )
+}

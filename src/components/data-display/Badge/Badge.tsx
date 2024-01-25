@@ -1,14 +1,15 @@
-import React from "react";
-import { Badge as AntBadge } from "antd";
-import { BadgeProps as AntBadgeProps } from "antd";
+import { Badge as AntBadge } from 'antd'
+import { type BadgeProps as AntBadgeProps } from 'antd'
+import { ConfigProvider } from 'src/components'
 
-export interface IBadgeProps extends AntBadgeProps {
-}
+export interface IBadgeProps extends AntBadgeProps {}
 
 export const Badge = (props: IBadgeProps) => {
-  return <>
-    <AntBadge {...props}/>
-  </>;
-};
+  return (
+    <ConfigProvider>
+      <AntBadge {...props} />
+    </ConfigProvider>
+  )
+}
 
 Badge.Ribbon = AntBadge.Ribbon

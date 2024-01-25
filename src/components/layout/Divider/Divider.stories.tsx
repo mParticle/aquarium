@@ -1,40 +1,40 @@
-import * as React from "react";
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
-import { Divider } from "src/components/layout/Divider/Divider";
+import { type Meta, type StoryObj } from '@storybook/react'
+
+import { Divider } from 'src/components/layout/Divider/Divider'
 
 const meta: Meta<typeof Divider> = {
-  title: "Aquarium/Layout/Divider",
+  title: 'Aquarium/Layout/Divider',
 
-  component: props => <>
-    <span>top text</span>
-    <Divider {...props}></Divider>
-    <span>bottom text</span>
-  </>,
+  component: props => (
+    <>
+      <span>top text</span>
+      <Divider {...props}></Divider>
+      <span>bottom text</span>
+    </>
+  ),
 
   args: {
-    children: "Divider Title",
+    children: 'Divider Title',
     dashed: false,
-    orientation: "center",
+    orientation: 'center',
     orientationMargin: undefined,
     plain: true,
     style: undefined,
-    type: "horizontal",
+    type: 'horizontal',
   },
 
   argTypes: {
     orientation: {
-      control: "select",
-      options: ["left", "right", "center"],
+      control: 'select',
+      options: ['left', 'right', 'center'],
     },
     type: {
-      control: "select",
-      options: ["vertical", "horizontal"],
+      control: 'select',
+      options: ['vertical', 'horizontal'],
     },
   },
-};
-export default meta;
-
+}
+export default meta
 
 type Story = StoryObj<typeof Divider>
 
@@ -43,41 +43,41 @@ type Story = StoryObj<typeof Divider>
   Customize the stories based on specific requirements.
 */
 
-export const Primary: Story = {};
+export const Primary: Story = {}
 
 export const Dashed: Story = {
   args: {
     dashed: true,
   },
-};
+}
 
 export const WithOrientation: Story = {
   args: {
-    orientation: "right",
+    orientation: 'right',
   },
-};
+}
 
 export const WithOrientationMargin: Story = {
   args: {
-    orientation: "left",
-    orientationMargin: "20px",
+    orientation: 'left',
+    orientationMargin: '20px',
   },
-};
+}
 
 export const NotPlain: Story = {
   args: {
     plain: false,
   },
-};
+}
 
 export const WithStyle: Story = {
   args: {
-    style: { color: "red" },
+    style: { color: 'red' },
   },
-};
+}
 
 export const VerticalDivider: Story = {
   args: {
-    type: "vertical",
+    type: 'vertical',
   },
-};
+}

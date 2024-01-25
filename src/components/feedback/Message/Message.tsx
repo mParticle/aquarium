@@ -1,20 +1,22 @@
-import React from "react";
-import { message } from "antd";
-import { MessageArgsProps as AntMessageArgsProps } from "antd";
+import { message } from 'antd'
+import { type MessageArgsProps as AntMessageArgsProps } from 'antd'
+import { ConfigProvider } from 'src/components'
 
 export interface IMessageProps extends AntMessageArgsProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 export const Message = (props: IMessageProps) => {
-  const [messageApi, contextHolder] = message.useMessage();
+  const [messageApi, contextHolder] = message.useMessage()
 
   const open = (): void => {
-    messageApi.open({ ...props });
-  };
+    void messageApi.open({ ...props })
+  }
 
-  return <>
-    {contextHolder}
-    <span onClick={open}>{props.children}</span>
-  </>;
-};
+  return (
+    <ConfigProvider>
+      {contextHolder}
+      <span onClick={open}>{props.children}</span>
+    </ConfigProvider>
+  )
+}

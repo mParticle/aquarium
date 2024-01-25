@@ -1,12 +1,13 @@
-import React from "react";
-import { FloatButton as AntFloatButton } from "antd";
-import { FloatButtonProps as AntFloatButtonProps } from "antd";
+import { FloatButton as AntFloatButton } from 'antd'
+import { type FloatButtonProps as AntFloatButtonProps } from 'antd'
+import { ConfigProvider } from 'src/components'
 
-export interface IFloatButtonProps extends AntFloatButtonProps {
-}
+export interface IFloatButtonProps extends AntFloatButtonProps {}
 
 export const FloatButton = (props: IFloatButtonProps) => {
-  return <>
-    <AntFloatButton {...props}/>
-  </>;
-};
+  return (
+    <ConfigProvider>
+      <AntFloatButton {...props} />
+    </ConfigProvider>
+  )
+}

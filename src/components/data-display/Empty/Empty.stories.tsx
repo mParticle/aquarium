@@ -1,20 +1,18 @@
-import * as React from "react";
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
-import { Empty } from "src/components/data-display/Empty/Empty";
+import { type Meta, type StoryObj } from '@storybook/react'
+
+import { Empty } from 'src/components/data-display/Empty/Empty'
 
 const meta: Meta<typeof Empty> = {
-  title: "Aquarium/Data Display/Empty",
+  title: 'Aquarium/Data Display/Empty',
   component: Empty,
 
   args: {
-    description: "Default Message",
+    description: 'Default Message',
     image: Empty.PRESENTED_IMAGE_DEFAULT,
     imageStyle: undefined,
   },
-};
-export default meta;
-
+}
+export default meta
 
 type Story = StoryObj<typeof Empty>
 
@@ -23,58 +21,65 @@ type Story = StoryObj<typeof Empty>
   Customize the stories based on specific requirements.
 */
 
-export const Primary: Story = {};
+export const Primary: Story = {}
 
 export const CustomDescription: Story = {
   args: {
-    description: "Custom description for empty state",
+    description: 'Custom description for empty state',
   },
-};
+}
 
 export const CustomImageStyle: Story = {
   args: {
-    imageStyle: { width: "60px", height: "60px" },
+    imageStyle: { width: '60px', height: '60px' },
   },
-};
+}
 
 export const NoImage: Story = {
   args: {
     image: null,
   },
-};
+}
 
 export const AltImage: Story = {
   args: {
     image: Empty.PRESENTED_IMAGE_SIMPLE,
   },
-};
+}
 
 export const CustomDescriptionAndImage: Story = {
   args: {
-    description: <>
-      <p>This is a custom description for the empty state.</p>
-      <b>Feel free to add <i>formatted</i> content here.</b>
-    </>,
-    imageStyle: { width: "200px", height: "200px" },
+    description: (
+      <>
+        <p>This is a custom description for the empty state.</p>
+        <b>
+          Feel free to add <i>formatted</i> content here.
+        </b>
+      </>
+    ),
+    imageStyle: { width: '200px', height: '200px' },
   },
-};
+}
 
 export const NoDescription: Story = {
   args: {
-    description: "",
+    description: '',
   },
-};
+}
 
 export const CustomImageAndStyle: Story = {
   args: {
-    description: "No data available",
-    imageStyle: { borderRadius: "50%", boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)" },
+    description: 'No data available',
+    imageStyle: {
+      borderRadius: '50%',
+      boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
+    },
   },
-};
+}
 
 export const NoImageAndNoDescription: Story = {
   args: {
     description: null,
     image: null,
   },
-};
+}

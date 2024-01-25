@@ -1,12 +1,13 @@
-import React from "react";
-import { Space as AntSpace } from "antd";
-import { SpaceProps as AntSpaceProps } from "antd";
+import { Space as AntSpace } from 'antd'
+import { type SpaceProps as AntSpaceProps } from 'antd'
+import { ConfigProvider } from 'src/components'
 
-export interface ISpaceProps extends AntSpaceProps {
-}
+export interface ISpaceProps extends AntSpaceProps {}
 
 export const Space = (props: ISpaceProps) => {
-  return <>
-    <AntSpace {...props}/>
-  </>;
-};
+  return (
+    <ConfigProvider>
+      <AntSpace {...props} />
+    </ConfigProvider>
+  )
+}

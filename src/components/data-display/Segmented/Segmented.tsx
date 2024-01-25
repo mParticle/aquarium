@@ -1,13 +1,15 @@
-import React from "react";
-import { Segmented as AntSegmented } from "antd";
-import { SegmentedProps as AntSegmentedProps } from "antd";
+import { Segmented as AntSegmented } from 'antd'
+import { type SegmentedProps as AntSegmentedProps } from 'antd'
+import { ConfigProvider } from 'src/components'
 
 export interface ISegmentedProps extends AntSegmentedProps {
-  ref?: React.RefObject<HTMLDivElement>;
+  ref?: React.RefObject<HTMLDivElement>
 }
 
 export const Segmented = (props: ISegmentedProps) => {
-  return <>
-    <AntSegmented {...props}/>
-  </>;
-};
+  return (
+    <ConfigProvider>
+      <AntSegmented {...props} />
+    </ConfigProvider>
+  )
+}

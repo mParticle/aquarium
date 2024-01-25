@@ -1,12 +1,13 @@
-import React from "react";
-import { Anchor as AntAnchor } from "antd";
-import { AnchorProps as AntAnchorProps } from "antd";
+import { Anchor as AntAnchor } from 'antd'
+import { type AnchorProps as AntAnchorProps } from 'antd'
+import { ConfigProvider } from 'src/components'
 
-export interface IAnchorProps extends AntAnchorProps {
-}
+export interface IAnchorProps extends AntAnchorProps {}
 
 export const Anchor = (props: IAnchorProps) => {
-  return <>
-    <AntAnchor {...props}/>
-  </>;
-};
+  return (
+    <ConfigProvider>
+      <AntAnchor {...props} />
+    </ConfigProvider>
+  )
+}

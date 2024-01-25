@@ -1,17 +1,18 @@
-import React from "react";
-import { Layout as AntLayout } from "antd";
-import { LayoutProps as AntLayoutProps } from "antd";
+import { Layout as AntLayout } from 'antd'
+import { type LayoutProps as AntLayoutProps } from 'antd'
+import { ConfigProvider } from 'src/components'
 
-export interface ILayoutProps extends AntLayoutProps {
-}
+export interface ILayoutProps extends AntLayoutProps {}
 
 export const Layout = (props: ILayoutProps) => {
-  return <>
-    <AntLayout {...props}/>
-  </>;
-};
+  return (
+    <ConfigProvider>
+      <AntLayout {...props} />
+    </ConfigProvider>
+  )
+}
 
-Layout.Header = AntLayout.Header
 Layout.Sider = AntLayout.Sider
-Layout.Content = AntLayout.Content
 Layout.Footer = AntLayout.Footer
+Layout.Content = AntLayout.Content
+Layout.Header = AntLayout.Header

@@ -1,19 +1,15 @@
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
-import { Watermark } from "src/components/feedback/Watermark/Watermark";
+import { type Meta, type StoryObj } from '@storybook/react'
+
+import { Watermark } from 'src/components/feedback/Watermark/Watermark'
 
 const meta: Meta<typeof Watermark> = {
-  title: "Aquarium/Feedback/Watermark",
+  title: 'Aquarium/Feedback/Watermark',
   component: Watermark,
 
   args: {},
-};
-export default meta;
-
+}
+export default meta
 
 type Story = StoryObj<typeof Watermark>
 
-
-
-export const Primary: Story = {
-}; 
+export const Primary: Story = {}

@@ -1,12 +1,13 @@
-import React from "react";
-import { Timeline as AntTimeline } from "antd";
-import { TimelineProps as AntTimelineProps } from "antd";
+import { Timeline as AntTimeline } from 'antd'
+import { type TimelineProps as AntTimelineProps } from 'antd'
+import { ConfigProvider } from 'src/components'
 
-export interface ITimelineProps extends AntTimelineProps {
-}
+export interface ITimelineProps extends AntTimelineProps {}
 
 export const Timeline = (props: ITimelineProps) => {
-  return <>
-    <AntTimeline {...props}/>
-  </>;
-};
+  return (
+    <ConfigProvider>
+      <AntTimeline {...props} />
+    </ConfigProvider>
+  )
+}

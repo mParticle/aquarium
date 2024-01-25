@@ -1,12 +1,13 @@
-import React from "react";
-import { Avatar as AntAvatar } from "antd";
-import { AvatarProps as AntAvatarProps } from "antd";
+import { Avatar as AntAvatar } from 'antd'
+import { type AvatarProps as AntAvatarProps } from 'antd'
+import { ConfigProvider } from 'src/components'
 
-export interface IAvatarProps extends AntAvatarProps {
-}
+export interface IAvatarProps extends AntAvatarProps {}
 
 export const Avatar = (props: IAvatarProps) => {
-  return <>
-    <AntAvatar {...props}/>
-  </>;
-};
+  return (
+    <ConfigProvider>
+      <AntAvatar {...props} />
+    </ConfigProvider>
+  )
+}

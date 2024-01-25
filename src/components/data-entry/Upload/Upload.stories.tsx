@@ -1,62 +1,70 @@
-import * as React from "react";
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
-import { Upload } from "src/components/data-entry/Upload/Upload";
-import { Icon } from "src/components/general/Icon/Icon";
-import { Button } from "src/components/general/Button/Button";
-import { faUpload } from "@fortawesome/free-solid-svg-icons";
+import { type Meta, type StoryObj } from '@storybook/react'
+
+import { Upload } from 'src/components/data-entry/Upload/Upload'
+import { Icon } from 'src/components/general/Icon/Icon'
+import { Button } from 'src/components/general/Button/Button'
+import { faUpload } from '@fortawesome/free-solid-svg-icons'
 
 const meta: Meta<typeof Upload> = {
-  title: "Aquarium/Data Entry/Upload",
-  component: props => <Upload {...props}>
-    <Button icon={<Icon icon={faUpload}/>}>Click to Upload</Button>
-  </Upload>,
+  title: 'Aquarium/Data Entry/Upload',
+  component: props => (
+    <Upload {...props}>
+      <Button icon={<Icon icon={faUpload} />}>Click to Upload</Button>
+    </Upload>
+  ),
 
   args: {
-    accept: ".jpg,.png,.gif",
-    action: "/upload",
+    accept: '.jpg,.png,.gif',
+    action: '/upload',
     beforeUpload: (file, fileList) => {
-      alert("Before Upload:");
+      alert('Before Upload:')
       // Customize before upload logic
-      return true;
+      return true
     },
     customRequest: undefined,
-    data: (file) => {
-      alert("Custom Data:");
+    data: file => {
+      alert('Custom Data:')
       // Customize data logic
-      return { name: file.name, type: file.type };
+      return { name: file.name, type: file.type }
     },
     defaultFileList: [],
     directory: false,
     disabled: false,
     fileList: [],
-    headers: { Authorization: "Bearer token" },
+    headers: { Authorization: 'Bearer token' },
     iconRender: undefined,
     isImageUrl: undefined,
     itemRender: undefined,
-    listType: "text",
+    listType: 'text',
     maxCount: undefined,
-    method: "post",
+    method: 'post',
     multiple: false,
-    name: "file",
+    name: 'file',
     openFileDialogOnClick: true,
     previewFile: undefined,
     progress: { strokeWidth: 2, showInfo: false },
     showUploadList: true,
     withCredentials: false,
-    onChange: (info) => alert("Upload Change:"),
-    onDrop: (event) => alert("File Drop:"),
-    onDownload: (file) => alert("Download:"),
-    onPreview: (file) => alert("Preview:"),
-    onRemove: (file) => {
-      alert("Remove:");
+    onChange: info => {
+      alert('Upload Change:')
+    },
+    onDrop: event => {
+      alert('File Drop:')
+    },
+    onDownload: file => {
+      alert('Download:')
+    },
+    onPreview: file => {
+      alert('Preview:')
+    },
+    onRemove: file => {
+      alert('Remove:')
       // Customize remove logic
-      return true;
+      return true
     },
   },
-};
-export default meta;
-
+}
+export default meta
 
 type Story = StoryObj<typeof Upload>
 
@@ -65,34 +73,36 @@ type Story = StoryObj<typeof Upload>
   Customize the stories based on specific requirements.
 */
 
-export const Primary: Story = {};
+export const Primary: Story = {}
 
 export const CustomListType: Story = {
   args: {
-    listType: "picture-card",
+    listType: 'picture-card',
   },
-};
+}
 
 export const DragAndDropUpload: Story = {
   args: {
-    onDrop: (event) => alert("File Drop:"),
+    onDrop: event => {
+      alert('File Drop:')
+    },
   },
-};
+}
 
 export const CustomProgress: Story = {
   args: {
     progress: { strokeWidth: 5, showInfo: true },
   },
-};
+}
 
 export const CustomAcceptFileType: Story = {
   args: {
-    accept: ".pdf,.docx",
+    accept: '.pdf,.docx',
   },
-};
+}
 
 export const DisabledUpload: Story = {
   args: {
     disabled: true,
   },
-};
+}
