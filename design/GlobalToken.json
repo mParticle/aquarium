@@ -63,13 +63,13 @@
     "value": "#fff"
   },
   "fontFamily": {
-    "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,\n'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',\n'Noto Color Emoji'"
+    "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol','Noto Color Emoji'"
   },
   "fontFamilyCode": {
     "value": "'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace"
   },
   "fontSize": {
-    "value": 14
+    "value": "14px"
   },
   "lineWidth": {
     "value": 1
@@ -108,16 +108,16 @@
     "value": "cubic-bezier(0.23, 1, 0.32, 1)"
   },
   "borderRadius": {
-    "value": 6
+    "value": "6px"
   },
   "sizeUnit": {
-    "value": 4
+    "value": "4px"
   },
   "sizeStep": {
-    "value": 4
+    "value": "4px"
   },
   "sizePopupArrow": {
-    "value": 16
+    "value": "16px"
   },
   "controlHeight": {
     "value": 32
@@ -1110,28 +1110,28 @@
     "value": "#fff"
   },
   "fontSizeSM": {
-    "value": 12
+    "value": "12px"
   },
   "fontSizeLG": {
-    "value": 16
+    "value": "16px"
   },
   "fontSizeXL": {
-    "value": 20
+    "value": "20px"
   },
   "fontSizeHeading1": {
-    "value": 38
+    "value": "38px"
   },
   "fontSizeHeading2": {
-    "value": 30
+    "value": "30px"
   },
   "fontSizeHeading3": {
-    "value": 24
+    "value": "24px"
   },
   "fontSizeHeading4": {
-    "value": 20
+    "value": "20px"
   },
   "fontSizeHeading5": {
-    "value": 16
+    "value": "16px"
   },
   "lineHeight": {
     "value": 1.5714285714285714
@@ -1143,13 +1143,13 @@
     "value": 1.6666666666666667
   },
   "fontHeight": {
-    "value": 22
+    "value": "22px"
   },
   "fontHeightLG": {
-    "value": 24
+    "value": "24px"
   },
   "fontHeightSM": {
-    "value": 20
+    "value": "20px"
   },
   "lineHeightHeading1": {
     "value": 1.2105263157894737
@@ -1167,31 +1167,31 @@
     "value": 1.5
   },
   "sizeXXL": {
-    "value": 48
+    "value": "48px"
   },
   "sizeXL": {
-    "value": 32
+    "value": "32px"
   },
   "sizeLG": {
-    "value": 24
+    "value": "24px"
   },
   "sizeMD": {
-    "value": 20
+    "value": "20px"
   },
   "sizeMS": {
-    "value": 16
+    "value": "16px"
   },
   "size": {
-    "value": 16
+    "value": "16px"
   },
   "sizeSM": {
-    "value": 12
+    "value": "12px"
   },
   "sizeXS": {
-    "value": 8
+    "value": "8px"
   },
   "sizeXXS": {
-    "value": 4
+    "value": "4px"
   },
   "controlHeightSM": {
     "value": 24
@@ -1215,16 +1215,16 @@
     "value": 2
   },
   "borderRadiusXS": {
-    "value": 2
+    "value": "2px"
   },
   "borderRadiusSM": {
-    "value": 4
+    "value": "4px"
   },
   "borderRadiusLG": {
-    "value": 8
+    "value": "8px"
   },
   "borderRadiusOuter": {
-    "value": 4
+    "value": "4px"
   },
   "colorFillContent": {
     "value": "rgba(0, 0, 0, 0.06)"
@@ -1284,7 +1284,7 @@
     "value": "rgba(255, 215, 5, 0.1)"
   },
   "fontSizeIcon": {
-    "value": 12
+    "value": "12px"
   },
   "lineWidthFocus": {
     "value": 4
@@ -1293,7 +1293,7 @@
     "value": 2
   },
   "controlInteractiveSize": {
-    "value": 16
+    "value": "16px"
   },
   "controlItemBgHover": {
     "value": "rgba(0, 0, 0, 0.04)"
@@ -1314,7 +1314,7 @@
     "value": "rgba(5, 145, 255, 0.1)"
   },
   "fontWeightStrong": {
-    "value": 600
+    "value": "600px"
   },
   "opacityLoading": {
     "value": 0.65
@@ -1329,151 +1329,151 @@
     "value": "none"
   },
   "controlPaddingHorizontal": {
-    "value": 12
+    "value": "12px"
   },
   "controlPaddingHorizontalSM": {
-    "value": 8
+    "value": "8px"
   },
   "paddingXXS": {
-    "value": 4
+    "value": "4px"
   },
   "paddingXS": {
-    "value": 8
+    "value": "8px"
   },
   "paddingSM": {
-    "value": 12
+    "value": "12px"
   },
   "padding": {
-    "value": 16
+    "value": "16px"
   },
   "paddingMD": {
-    "value": 20
+    "value": "20px"
   },
   "paddingLG": {
-    "value": 24
+    "value": "24px"
   },
   "paddingXL": {
-    "value": 32
+    "value": "32px"
   },
   "paddingContentHorizontalLG": {
-    "value": 24
+    "value": "24px"
   },
   "paddingContentVerticalLG": {
-    "value": 16
+    "value": "16px"
   },
   "paddingContentHorizontal": {
-    "value": 16
+    "value": "16px"
   },
   "paddingContentVertical": {
-    "value": 12
+    "value": "12px"
   },
   "paddingContentHorizontalSM": {
-    "value": 16
+    "value": "16px"
   },
   "paddingContentVerticalSM": {
-    "value": 8
+    "value": "8px"
   },
   "marginXXS": {
-    "value": 4
+    "value": "4px"
   },
   "marginXS": {
-    "value": 8
+    "value": "8px"
   },
   "marginSM": {
-    "value": 12
+    "value": "12px"
   },
   "margin": {
-    "value": 16
+    "value": "16px"
   },
   "marginMD": {
-    "value": 20
+    "value": "20px"
   },
   "marginLG": {
-    "value": 24
+    "value": "24px"
   },
   "marginXL": {
-    "value": 32
+    "value": "32px"
   },
   "marginXXL": {
-    "value": 48
+    "value": "48px"
   },
   "boxShadow": {
-    "value": "0 6px 16px 0 rgba(0, 0, 0, 0.08),0 3px 6px -4px rgba(0, 0, 0, 0.12),0 9px 28px 8px rgba(0, 0, 0, 0.05)\n    "
+    "value": "      0 6px 16px 0 rgba(0, 0, 0, 0.08),      0 3px 6px -4px rgba(0, 0, 0, 0.12),      0 9px 28px 8px rgba(0, 0, 0, 0.05)    "
   },
   "boxShadowSecondary": {
-    "value": "0 6px 16px 0 rgba(0, 0, 0, 0.08),0 3px 6px -4px rgba(0, 0, 0, 0.12),0 9px 28px 8px rgba(0, 0, 0, 0.05)\n    "
+    "value": "      0 6px 16px 0 rgba(0, 0, 0, 0.08),      0 3px 6px -4px rgba(0, 0, 0, 0.12),      0 9px 28px 8px rgba(0, 0, 0, 0.05)    "
   },
   "boxShadowTertiary": {
-    "value": "0 1px 2px 0 rgba(0, 0, 0, 0.03),0 1px 6px -1px rgba(0, 0, 0, 0.02),0 2px 4px 0 rgba(0, 0, 0, 0.02)\n    "
+    "value": "      0 1px 2px 0 rgba(0, 0, 0, 0.03),      0 1px 6px -1px rgba(0, 0, 0, 0.02),      0 2px 4px 0 rgba(0, 0, 0, 0.02)    "
   },
   "screenXS": {
-    "value": 480
+    "value": "480px"
   },
   "screenXSMin": {
-    "value": 480
+    "value": "480px"
   },
   "screenXSMax": {
-    "value": 575
+    "value": "575px"
   },
   "screenSM": {
-    "value": 576
+    "value": "576px"
   },
   "screenSMMin": {
-    "value": 576
+    "value": "576px"
   },
   "screenSMMax": {
-    "value": 767
+    "value": "767px"
   },
   "screenMD": {
-    "value": 768
+    "value": "768px"
   },
   "screenMDMin": {
-    "value": 768
+    "value": "768px"
   },
   "screenMDMax": {
-    "value": 991
+    "value": "991px"
   },
   "screenLG": {
-    "value": 992
+    "value": "992px"
   },
   "screenLGMin": {
-    "value": 992
+    "value": "992px"
   },
   "screenLGMax": {
-    "value": 1199
+    "value": "1199px"
   },
   "screenXL": {
-    "value": 1200
+    "value": "1200px"
   },
   "screenXLMin": {
-    "value": 1200
+    "value": "1200px"
   },
   "screenXLMax": {
-    "value": 1599
+    "value": "1599px"
   },
   "screenXXL": {
-    "value": 1600
+    "value": "1600px"
   },
   "screenXXLMin": {
-    "value": 1600
+    "value": "1600px"
   },
   "boxShadowPopoverArrow": {
     "value": "2px 2px 5px rgba(0, 0, 0, 0.05)"
   },
   "boxShadowCard": {
-    "value": "0 1px 2px -2px rgba(0, 0, 0, 0.16),0 3px 6px 0 rgba(0, 0, 0, 0.12),0 5px 12px 4px rgba(0, 0, 0, 0.09)\n    "
+    "value": "      0 1px 2px -2px rgba(0, 0, 0, 0.16),      0 3px 6px 0 rgba(0, 0, 0, 0.12),      0 5px 12px 4px rgba(0, 0, 0, 0.09)    "
   },
   "boxShadowDrawerRight": {
-    "value": "-6px 0 16px 0 rgba(0, 0, 0, 0.08),-3px 0 6px -4px rgba(0, 0, 0, 0.12),-9px 0 28px 8px rgba(0, 0, 0, 0.05)\n    "
+    "value": "      -6px 0 16px 0 rgba(0, 0, 0, 0.08),      -3px 0 6px -4px rgba(0, 0, 0, 0.12),      -9px 0 28px 8px rgba(0, 0, 0, 0.05)    "
   },
   "boxShadowDrawerLeft": {
-    "value": "6px 0 16px 0 rgba(0, 0, 0, 0.08),3px 0 6px -4px rgba(0, 0, 0, 0.12),9px 0 28px 8px rgba(0, 0, 0, 0.05)\n    "
+    "value": "      6px 0 16px 0 rgba(0, 0, 0, 0.08),      3px 0 6px -4px rgba(0, 0, 0, 0.12),      9px 0 28px 8px rgba(0, 0, 0, 0.05)    "
   },
   "boxShadowDrawerUp": {
-    "value": "0 6px 16px 0 rgba(0, 0, 0, 0.08),0 3px 6px -4px rgba(0, 0, 0, 0.12),0 9px 28px 8px rgba(0, 0, 0, 0.05)\n    "
+    "value": "      0 6px 16px 0 rgba(0, 0, 0, 0.08),      0 3px 6px -4px rgba(0, 0, 0, 0.12),      0 9px 28px 8px rgba(0, 0, 0, 0.05)    "
   },
   "boxShadowDrawerDown": {
-    "value": "0 -6px 16px 0 rgba(0, 0, 0, 0.08),0 -3px 6px -4px rgba(0, 0, 0, 0.12),0 -9px 28px 8px rgba(0, 0, 0, 0.05)\n    "
+    "value": "      0 -6px 16px 0 rgba(0, 0, 0, 0.08),      0 -3px 6px -4px rgba(0, 0, 0, 0.12),      0 -9px 28px 8px rgba(0, 0, 0, 0.05)    "
   },
   "boxShadowTabsOverflowLeft": {
     "value": "inset 10px 0 8px -8px rgba(0, 0, 0, 0.08)"
