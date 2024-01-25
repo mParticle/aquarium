@@ -139,3 +139,6 @@ test/reports
 test/test-bundle.js.map
 test/stub/test-stub-bundle.js
 **/dist
+
+#auto-generated on commit
+src/styles/_variables.css
