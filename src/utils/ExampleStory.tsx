@@ -1,16 +1,19 @@
-import { Space } from "src/components";
+import { Space } from 'src/components'
 
 interface IExampleStoryProps {
-  children: React.ReactNode;
-  title: React.ReactNode;
+  children: React.ReactNode
+  title: React.ReactNode
 }
 
 export function ExampleStory(props: IExampleStoryProps) {
-  return <>
-    <Space direction="vertical">
-      {props.title}
-      <hr/><br/>
-      {props.children}
-    </Space>
-  </>;
+  return (
+    <>
+      <Space direction="vertical">
+        {props.title}
+        <hr />
+        <br />
+        {props.children}
+      </Space>
+    </>
+  )
 }

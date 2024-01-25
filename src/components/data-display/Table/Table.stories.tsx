@@ -1,19 +1,15 @@
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
-import { Table } from "src/components/data-display/Table/Table";
+import { type Meta, type StoryObj } from '@storybook/react'
+
+import { Table } from 'src/components/data-display/Table/Table'
 
 const meta: Meta<typeof Table> = {
-  title: "Aquarium/Data Display/Table",
+  title: 'Aquarium/Data Display/Table',
   component: Table,
 
   args: {},
-};
-export default meta;
-
+}
+export default meta
 
 type Story = StoryObj<typeof Table>
 
-
-
-export const Primary: Story = {
-}; 
+export const Primary: Story = {}

@@ -1,22 +1,26 @@
-import { Tag as AntTag } from "antd";
-import { TagProps as AntTagProps } from "antd";
-import { type CheckableTagProps as AntCheckableTagProps } from "antd/lib/tag";
-import { ConfigProvider } from "src/components";
+import { Tag as AntTag } from 'antd'
+import { type TagProps as AntTagProps } from 'antd'
+import { type CheckableTagProps as AntCheckableTagProps } from 'antd/lib/tag'
+import { ConfigProvider } from 'src/components'
 
 export interface ITagProps extends AntTagProps {}
 
-type CheckableTagProps = AntCheckableTagProps & ITagProps;
+type CheckableTagProps = AntCheckableTagProps & ITagProps
 
 export const Tag = (props: ITagProps) => {
-  return <ConfigProvider>
-    <AntTag {...props} />
-  </ConfigProvider>
-};
+  return (
+    <ConfigProvider>
+      <AntTag {...props} />
+    </ConfigProvider>
+  )
+}
 
-Tag.CheckableTag = (props: CheckableTagProps) => {
+const CheckableTag = (props: CheckableTagProps) => {
   return (
     <ConfigProvider>
       <AntTag.CheckableTag {...props} />
     </ConfigProvider>
-  );
-};
+  )
+}
+
+Tag.CheckableTag = CheckableTag

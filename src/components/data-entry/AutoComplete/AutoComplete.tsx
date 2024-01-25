@@ -1,12 +1,13 @@
-import { AutoComplete as AntAutoComplete } from "antd";
-import { AutoCompleteProps as AntAutoCompleteProps } from "antd";
-import { ConfigProvider } from "src/components";
+import { AutoComplete as AntAutoComplete } from 'antd'
+import { type AutoCompleteProps as AntAutoCompleteProps } from 'antd'
+import { ConfigProvider } from 'src/components'
 
-export interface IAutoCompleteProps extends AntAutoCompleteProps {
-}
+export interface IAutoCompleteProps extends AntAutoCompleteProps {}
 
 export const AutoComplete = (props: IAutoCompleteProps) => {
-  return <ConfigProvider>
-    <AntAutoComplete {...props}/>
-  </ConfigProvider>;
-};
+  return (
+    <ConfigProvider>
+      <AntAutoComplete {...props} />
+    </ConfigProvider>
+  )
+}

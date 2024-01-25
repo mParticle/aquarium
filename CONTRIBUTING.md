@@ -4,10 +4,11 @@ Thanks for contributing! Please read this document to follow our conventions for
 
 ## Setting Up
 
--   Fork the repository and then clone down your fork
--   Commit your code per the conventions below, and PR into the repository's `main` branch
--   Your PR title will be checked automatically against the below convention (view the commit history to see examples of a proper commit/PR title). If it fails, you must update your title.
--   Our engineers will work with you to get your code change implemented once a PR is up
+- Fork the repository and then clone down your fork
+- Run `npm run prepare` to setup Husky pre-commit hooks
+- Commit your code per the conventions below, and PR into the repository's `main` branch
+- Your PR title will be checked automatically against the below convention (view the commit history to see examples of a proper commit/PR title). If it fails, you must update your title.
+- Our engineers will work with you to get your code change implemented once a PR is up
 
 ## PR Title and Commit Convention
 
@@ -25,16 +26,22 @@ The standard format for commit messages is as follows:
 
 The following lists the different `types` allowed in the commit message:
 
--   feat: A new feature (automatic minor release)
--   fix: A bug fix (automatic patch release)
--   docs: Documentation only changes
--   style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
--   refactor: A code change that neither fixes a bug nor adds a feature
--   perf: A code change that improves performance
--   test: Adding missing or correcting existing tests
--   chore: Changes that don't modify src or test files, such as automatic documentation generation, or building latest assets
--   ci: Changes to CI configuration files/scripts
--   revert: Revert commit
--   build: Changes that affect the build system or other dependencies
+- feat: A new feature (automatic minor release)
+- fix: A bug fix (automatic patch release)
+- docs: Documentation only changes
+- style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+- refactor: A code change that neither fixes a bug nor adds a feature
+- perf: A code change that improves performance
+- test: Adding missing or correcting existing tests
+- chore: Changes that don't modify src or test files, such as automatic documentation generation, or building latest assets
+- ci: Changes to CI configuration files/scripts
+- revert: Revert commit
+- build: Changes that affect the build system or other dependencies
 
 In the footer, if there is a breaking change, start your footer with `BREAKING CHANGE:` followed by a description.
+
+## Editor configuration
+
+- **Prettier**: For configuring your editor to play nicely with Prettier, take a look at the [Editors doc page](https://prettier.io/docs/en/editors).
+  - Also, if you're using VSCode you might want to set prettier as the default formatter and also turn on "Format on Save" option.
+- **ESLint**: Check [Integrations doc page](https://eslint.org/docs/latest/use/integrations)

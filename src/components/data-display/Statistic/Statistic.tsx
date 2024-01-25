@@ -1,12 +1,13 @@
-import { Statistic as AntStatistic } from "antd";
-import { StatisticProps as AntStatisticProps } from "antd";
-import { ConfigProvider } from "src/components";
+import { Statistic as AntStatistic } from 'antd'
+import { type StatisticProps as AntStatisticProps } from 'antd'
+import { ConfigProvider } from 'src/components'
 
-export interface IStatisticProps extends AntStatisticProps {
-}
+export interface IStatisticProps extends AntStatisticProps {}
 
 export const Statistic = (props: IStatisticProps) => {
-  return <ConfigProvider>
-    <AntStatistic {...props}/>
-  </ConfigProvider>;
-};
+  return (
+    <ConfigProvider>
+      <AntStatistic {...props} />
+    </ConfigProvider>
+  )
+}

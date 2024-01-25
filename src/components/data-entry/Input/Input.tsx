@@ -1,16 +1,16 @@
-import { Input as AntInput } from "antd";
-import { InputProps as AntInputProps } from "antd";
-import { ConfigProvider } from "src/components";
+import { Input as AntInput } from 'antd'
+import { type InputProps as AntInputProps } from 'antd'
+import { ConfigProvider } from 'src/components'
 
-export interface IInputProps extends AntInputProps {
-}
+export interface IInputProps extends AntInputProps {}
 
 export const Input = (props: IInputProps) => {
-  return <ConfigProvider>
-    <AntInput {...props}/>
-  </ConfigProvider>;
-};
-
+  return (
+    <ConfigProvider>
+      <AntInput {...props} />
+    </ConfigProvider>
+  )
+}
 
 Input.Group = AntInput.Group
 Input.Password = AntInput.Password

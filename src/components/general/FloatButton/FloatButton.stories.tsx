@@ -1,36 +1,37 @@
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
-import { FloatButton } from "src/components/general/FloatButton/FloatButton";
+import { type Meta, type StoryObj } from '@storybook/react'
+
+import { FloatButton } from 'src/components/general/FloatButton/FloatButton'
 
 const meta: Meta<typeof FloatButton> = {
-  title: "Aquarium/General/FloatButton",
+  title: 'Aquarium/General/FloatButton',
   component: FloatButton,
 
   args: {
     // icon: <IconComponent />,
-    description: "Float Button",
-    tooltip: "Tooltip Text",
-    type: "primary",
-    shape: "circle",
-    href: "",
-    target: "",
+    description: 'Float Button',
+    tooltip: 'Tooltip Text',
+    type: 'primary',
+    shape: 'circle',
+    href: '',
+    target: '',
     badge: undefined,
-    onClick: (event) => alert("Float Button Clicked!"),
+    onClick: event => {
+      alert('Float Button Clicked!')
+    },
   },
 
   argTypes: {
     shape: {
-      control: "select",
-      options: ["circle", "square"],
+      control: 'select',
+      options: ['circle', 'square'],
     },
     type: {
-      control: "select",
-      options: ["default", "primary"],
+      control: 'select',
+      options: ['default', 'primary'],
     },
   },
-};
-export default meta;
-
+}
+export default meta
 
 type Story = StoryObj<typeof FloatButton>
 
@@ -39,16 +40,16 @@ type Story = StoryObj<typeof FloatButton>
   Customize the stories based on specific requirements.
 */
 
-export const Primary: Story = {};
+export const Primary: Story = {}
 
 export const WithBadge: Story = {
   args: {
     badge: { count: 5 },
   },
-};
+}
 
 export const Square: Story = {
   args: {
-    shape: "square",
+    shape: 'square',
   },
-};
+}

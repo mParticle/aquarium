@@ -1,22 +1,20 @@
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
-import { Pagination } from "src/components/navigation/Pagination/Pagination";
-import { Icon } from "src/components/general/Icon/Icon";
-import { faIcons } from "@fortawesome/free-solid-svg-icons";
+import { type Meta, type StoryObj } from '@storybook/react'
+
+import { Pagination } from 'src/components/navigation/Pagination/Pagination'
+import { Icon } from 'src/components/general/Icon/Icon'
+import { faIcons } from '@fortawesome/free-solid-svg-icons'
 
 const meta: Meta<typeof Pagination> = {
-  title: "Aquarium/Navigation/Pagination",
+  title: 'Aquarium/Navigation/Pagination',
   component: Pagination,
-  
+
   args: {
     current: 1,
     defaultCurrent: 1,
     defaultPageSize: 10,
     disabled: false,
     hideOnSinglePage: false,
-    itemRender: (page, type, originalElement) => (
-      type === "page" ? <a>{page}</a> : originalElement
-    ),
+    itemRender: (page, type, originalElement) => (type === 'page' ? <a>{page}</a> : originalElement),
     pageSize: 10,
     pageSizeOptions: [10, 20, 50, 100],
     responsive: false,
@@ -26,14 +24,17 @@ const meta: Meta<typeof Pagination> = {
     showTitle: true,
     showTotal: (total, range) => `Total ${total} items`,
     simple: false,
-    size: "default",
+    size: 'default',
     total: 27,
-    onChange: (page, pageSize) => { alert(`Page changed to ${page}, Page Size: ${pageSize}`); },
-    onShowSizeChange: (current, size) => { alert(`Page Size changed to ${size}, Current Page: ${current}`); },
+    onChange: (page, pageSize) => {
+      alert(`Page changed to ${page}, Page Size: ${pageSize}`)
+    },
+    onShowSizeChange: (current, size) => {
+      alert(`Page Size changed to ${size}, Current Page: ${current}`)
+    },
   },
-};
-export default meta;
-
+}
+export default meta
 
 type Story = StoryObj<typeof Pagination>
 
@@ -42,47 +43,47 @@ type Story = StoryObj<typeof Pagination>
   Customize the stories based on specific requirements.
 */
 
-export const Primary: Story = {};
+export const Primary: Story = {}
 
 export const SmallSize: Story = {
   args: {
-    size: "small",
+    size: 'small',
   },
-};
+}
 
 export const ResponsivePagination: Story = {
   args: {
     responsive: true,
   },
-};
+}
 
 export const ShowQuickJumperWithButton: Story = {
   args: {
-    showQuickJumper: { goButton: <Icon icon={faIcons}/> },
+    showQuickJumper: { goButton: <Icon icon={faIcons} /> },
   },
-};
+}
 
 export const ShowSizeChangerDynamic: Story = {
   args: {
     showSizeChanger: true,
     total: 60,
   },
-};
+}
 
 export const SimplePagination: Story = {
   args: {
     simple: true,
   },
-};
+}
 
 export const ShowLessItemsPagination: Story = {
   args: {
     showLessItems: true,
   },
-};
+}
 
 export const CustomTotalText: Story = {
   args: {
     showTotal: (total, range) => `Showing ${range[0]}-${range[1]} of ${total} items`,
   },
-};
+}

@@ -1,14 +1,14 @@
-import type { Config } from "jest";
+import type { Config } from 'jest'
 
-export { baseConfig };
+type StorybookTestConfig = { testRunnerOptions: { play: boolean } }
 
-type StorybookTestConfig = { testRunnerOptions: { play: boolean } };
+export { baseConfig }
 
 const baseConfig: Config & StorybookTestConfig = {
-  testEnvironment: "jsdom",
+  testEnvironment: 'jsdom',
 
-  testRunner: "storybook-test-runner",
+  testRunner: 'storybook-test-runner',
   testRunnerOptions: {
     play: true,
   },
-};
+}

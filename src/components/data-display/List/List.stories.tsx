@@ -1,9 +1,9 @@
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
-import { List } from "src/components/data-display/List/List";
+import { type Meta, type StoryObj } from '@storybook/react'
+
+import { List } from 'src/components/data-display/List/List'
 
 const meta: Meta<typeof List> = {
-  title: "Aquarium/Data Display/List",
+  title: 'Aquarium/Data Display/List',
   component: props => <List {...props}></List>,
 
   args: {
@@ -13,26 +13,25 @@ const meta: Meta<typeof List> = {
     footer: undefined,
     grid: undefined,
     header: undefined,
-    itemLayout: "horizontal",
+    itemLayout: 'horizontal',
     loading: false,
-    locale: { emptyText: "No Data" },
+    locale: { emptyText: 'No Data' },
     pagination: false,
-    size: "default",
+    size: 'default',
     split: true,
   },
   argTypes: {
     itemLayout: {
-      control: "select",
-      options: ["horizontal", "vertical"],
+      control: 'select',
+      options: ['horizontal', 'vertical'],
     },
     size: {
-      control: "select",
-      options: ["default", "large", "small"],
+      control: 'select',
+      options: ['default', 'large', 'small'],
     },
   },
-};
-export default meta;
-
+}
+export default meta
 
 type Story = StoryObj<typeof List>
 
@@ -41,52 +40,52 @@ type Story = StoryObj<typeof List>
   Customize the stories based on specific requirements.
 */
 
-export const Primary: Story = {};
+export const Primary: Story = {}
 
 export const BorderedList: Story = {
   args: {
     bordered: true,
   },
-};
+}
 
 export const VerticalLayout: Story = {
   args: {
-    itemLayout: "vertical",
+    itemLayout: 'vertical',
   },
-};
+}
 
 export const LoadingIndicator: Story = {
   args: {
     loading: true,
   },
-};
+}
 
 export const CustomPagination: Story = {
   args: {
     pagination: { current: 1, total: 50, pageSize: 10 },
   },
-};
+}
 
 export const CustomGrid: Story = {
   args: {
     grid: { gutter: 16, column: 4 },
   },
-};
+}
 
 export const LargeSizeList: Story = {
   args: {
-    size: "large",
+    size: 'large',
   },
-};
+}
 
 export const CustomFooter: Story = {
   args: {
     footer: <>Custom Footer</>,
   },
-};
+}
 
 export const NoSplitUnderListItem: Story = {
   args: {
     split: false,
   },
-};
+}

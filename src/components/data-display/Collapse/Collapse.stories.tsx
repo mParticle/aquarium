@@ -1,19 +1,15 @@
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
-import { Collapse } from "src/components/data-display/Collapse/Collapse";
+import { type Meta, type StoryObj } from '@storybook/react'
+
+import { Collapse } from 'src/components/data-display/Collapse/Collapse'
 
 const meta: Meta<typeof Collapse> = {
-  title: "Aquarium/Data Display/Collapse",
+  title: 'Aquarium/Data Display/Collapse',
   component: Collapse,
 
   args: {},
-};
-export default meta;
-
+}
+export default meta
 
 type Story = StoryObj<typeof Collapse>
 
-
-
-export const Primary: Story = {
-}; 
+export const Primary: Story = {}

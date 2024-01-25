@@ -1,22 +1,22 @@
-import { notification } from "antd";
-import { NotificationArgsProps } from "antd";
-import { ConfigProvider } from "src/components";
+import { notification } from 'antd'
+import { type NotificationArgsProps } from 'antd'
+import { ConfigProvider } from 'src/components'
 
 export interface INotificationProps extends NotificationArgsProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 export const Notification = (props: INotificationProps) => {
-  const [notificationApi, contextHolder] = notification.useNotification();
+  const [notificationApi, contextHolder] = notification.useNotification()
 
   const open = (): void => {
-    notificationApi.open({ ...props });
-  };
+    notificationApi.open({ ...props })
+  }
 
-  return <ConfigProvider>
-    {contextHolder}
-    <span onClick={open}>
-      {props.children}
-    </span>
-  </ConfigProvider>
-};
+  return (
+    <ConfigProvider>
+      {contextHolder}
+      <span onClick={open}>{props.children}</span>
+    </ConfigProvider>
+  )
+}

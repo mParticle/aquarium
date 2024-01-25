@@ -1,12 +1,13 @@
-import { Calendar as AntCalendar } from "antd";
-import { CalendarProps as AntCalendarProps } from "antd";
-import { ConfigProvider } from "src/components";
+import { Calendar as AntCalendar } from 'antd'
+import { type CalendarProps as AntCalendarProps } from 'antd'
+import { ConfigProvider } from 'src/components'
 
-export interface ICalendarProps extends AntCalendarProps {
-}
+export interface ICalendarProps extends AntCalendarProps {}
 
 export const Calendar = (props: ICalendarProps) => {
-  return <ConfigProvider>
-    <AntCalendar {...props}/>
-  </ConfigProvider>;
-};
+  return (
+    <ConfigProvider>
+      <AntCalendar {...props} />
+    </ConfigProvider>
+  )
+}
