@@ -1,0 +1,55 @@
+{ 
+  "extends": [
+    "stylelint-config-standard"
+  ],
+  "plugins": [
+    "stylelint-no-indistinguishable-colors"
+  ],
+  "rules": {
+    "block-no-empty": true,
+    "comment-no-empty": true,
+    "no-duplicate-selectors": true,
+    "selector-type-no-unknown": null,
+    "no-descending-specificity": null,
+    "media-feature-name-no-unknown": null,
+    "function-calc-no-unspaced-operator": true,
+    "declaration-block-single-line-max-declarations": 1,
+    "selector-type-case": "lower",
+    "rule-empty-line-before": [
+      "always-multi-line",
+      {
+        "ignore": [
+          "first-nested",
+          "after-comment"
+        ]
+      }
+    ],
+    "property-no-unknown": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ],
+    "property-disallowed-list": [
+      "margin-top",
+      "font-size",
+      "stroke",
+      "fill"
+    ],
+    "unit-allowed-list": [
+      "em",
+      "rem",
+      "s",
+      "px",
+      "%",
+      "vw",
+      "vh",
+      "ms",
+      "deg",
+      "ch",
+      "cm",
+      "dpi",
+      "fr"
+    ]
+  }
+}
