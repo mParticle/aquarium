@@ -48,7 +48,7 @@
     "http-server": "14.1.1",
     "storybook": "7.6.10",
     "vite": "5.0.12",
-    "vite-plugin-dts": "3.7.1",
+    "vite-plugin-dts": "3.7.2",
     "wait-on": "7.2.0"
   },
   "optionalDependencies": {
