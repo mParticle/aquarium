@@ -21,11 +21,13 @@ export interface IGlobalNavigationLogo extends IBaseGlobalNavigationItem {}
 export interface IGlobalNavigationTool extends IBaseGlobalNavigationItem {
   type: 'menu' | 'link'
   children? // : Omit<MenuItemType, "key">[];
+  onClick?: (e) => void
 }
 
 export interface IGlobalNavigationManagement extends IBaseGlobalNavigationItem {
   type: 'menu' | 'link'
   children? // : Omit<MenuItemType, "key">[];
+  onClick?: (e) => void
 }
 
 export interface IGlobalNavigationProps {
@@ -50,18 +52,18 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
       width={200}
       collapsedWidth={100}
       style={{
-        border: 'solid 1px black',
+        // border: 'solid 1px black',
         minHeight: '750px',
-        backgroundColor: 'white',
+        // backgroundColor: 'white',
       }}
       collapsible
       collapsed={collapsed}
       trigger={null}
       onMouseEnter={e => {
-        setCollapsed(false)
+        // setCollapsed(false)
       }}
       onMouseLeave={e => {
-        setCollapsed(true)
+        // setCollapsed(true)
       }}
     >
       <Flex vertical justify="space-between" style={{ height: '100%', backgroundColor: 'white' }}>

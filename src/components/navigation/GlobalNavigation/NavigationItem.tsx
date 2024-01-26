@@ -7,15 +7,25 @@ interface INavigationIconProps {
   icon: IconDefinition
   label: string
 
-  children? // menu only
-  onClick?: () => void // link only
+  items? // menu only
+  onClick?: (e) => void // link only
 }
 
 export function NavigationItem(props: INavigationIconProps) {
   return (
     <>
-      {props.type === 'link' && <NavigationIcon {...props} />}
-      {props.type === 'menu' && <NavigationList {...props} />}
+      {props.type === 'link' && (
+        <>
+          <NavigationIcon
+            icon={props.icon}
+            label={props.label}
+            onClick={props.onClick}
+            className="globalNavigation__item"
+          />
+        </>
+      )}
+
+      {props.type === 'menu' && <NavigationList items={props.items} />}
     </>
   )
 }

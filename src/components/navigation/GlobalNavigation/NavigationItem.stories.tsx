@@ -35,6 +35,24 @@ export const NavList: Story = {
     label: 'List Label',
     type: 'menu',
     icon: faList,
-    items: [],
+
+    items: [
+      {
+        label: 'Nav Item - Menu',
+        type: 'menu',
+        children: [
+          { label: 'a', type: 'link' },
+          { label: 'b', type: 'link' },
+          {
+            label: 'c',
+            type: 'menu',
+            children: [
+              { label: 'sub1', type: 'link' },
+              { label: 'sub2', type: 'link' },
+            ],
+          },
+        ],
+      },
+    ],
   },
 }

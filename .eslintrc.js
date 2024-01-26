@@ -17,7 +17,7 @@ module.exports = {
   plugins: ['react', 'react-hooks'],
   ignorePatterns: ['.eslintrc.js'],
   rules: {
-    'semi': 'off',
+    semi: 'off',
     '@typescript-eslint/explicit-function-return-type': [
       'warn',
       {
@@ -103,6 +103,7 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': ['error', { allowNamedExports: true }],
     'react/react-in-jsx-scope': 'off',
     'import/no-duplicates': 'off',
+    //'react/jsx-boolean-value': ['always'], todo: get this working
   },
   globals: {
     React: true,

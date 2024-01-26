@@ -1,6 +1,33 @@
-
 .globalNavigation__item {
+    width: 80px;
 
+    padding: var(--padding);
+    gap: var(--margin-xxs);
+
+    border-radius: var(--border-radius);
+    cursor: pointer;
+
+    &:hover {
+        background-color: #ebe8f8; /* todo: find variable */
+    }
+}
+
+
+.globalNavigation__menu {
+    border-inline-end: initial !important;
+
+    &:after, &:before { /* hide arrow */
+        display: none; !important
+    }
+
+    .globalNavigation__icon {
+        height: 100%;
+    }
+}
+
+
+.globalNavigation__menuItem {
+    .ant-tooltip { display: none; }
     .ant-menu-submenu-title {
         display: flex;
         flex-direction: column;
@@ -17,15 +44,27 @@
 }
 
 
-.globalNavigation__icon {
-    cursor: pointer;
-    border-radius: 50%;
-    padding: 6px;
 
-    &:hover {
-        background-color: var(--blue);
-    }
+
+.globalNavigation__icon {
+    /* width: 80px; */
+
+    /* padding: var(--padding); */
+    /* gap: var(--margin-xxs); */
+
+    /* border-radius: var(--border-radius); */
+    /* cursor: pointer; */
+
+    /* &:hover { */
+    /*     background-color: #EBE8F8; !* todo: find variable *! */
+    /* } */
 }
+
+
+.globalNavigation__iconLabel {
+    color: rgba(0, 0, 0, 0.88); /* var(--Components-Menu-Component-itemColor, rgba(0, 0, 0, 0.88)); */
+}
+
 
 .ant-menu-item {
     height: initial !important;
