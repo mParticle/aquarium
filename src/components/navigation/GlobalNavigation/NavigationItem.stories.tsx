@@ -1,10 +1,9 @@
 import * as React from 'react'
 import { faShapes } from '@fortawesome/free-solid-svg-icons'
+import { faList } from '@fortawesome/free-solid-svg-icons'
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
-import { faIcons } from '@fortawesome/free-solid-svg-icons'
-import { faList } from '@fortawesome/free-solid-svg-icons'
 
 const meta: Meta<typeof NavigationItem> = {
   title: 'Aquarium/Navigation/NavigationItem',
