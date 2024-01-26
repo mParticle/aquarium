@@ -1,5 +1,4 @@
 import type { IconDefinition } from '@fortawesome/free-solid-svg-icons'
-import React from 'react'
 import { NavigationIcon } from 'src/components/navigation/GlobalNavigation/NavigationIcon'
 import { NavigationList } from 'src/components/navigation/GlobalNavigation/NavigationList'
 
@@ -8,7 +7,7 @@ interface INavigationIconProps {
   icon: IconDefinition
   label: string
 
-  items? // menu only
+  children? // menu only
   onClick?: () => void // link only
 }
 

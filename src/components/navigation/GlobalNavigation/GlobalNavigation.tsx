@@ -1,18 +1,15 @@
-import React from 'react'
-import { useState } from 'react'
+import 'src/styles/_variables.css'
 import './global-navigation.css'
+import { useState } from 'react'
 import { type IconDefinition } from '@fortawesome/free-solid-svg-icons'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
-import { Menu } from 'src/components'
 import { Layout } from 'src/components'
 import { Flex } from 'src/components'
-import { Center } from 'src/components'
-import { Icon } from 'src/components/general/Icon/Icon'
 import { type MenuItemType } from 'antd/es/menu/hooks/useItems'
 import { type MenuItemGroupType } from 'antd/es/menu/hooks/useItems'
 import { SuiteLogo } from 'src/components/navigation/GlobalNavigation/SuiteLogo'
 import { NavigationSearch } from 'src/components/navigation/GlobalNavigation/NavigationSearch'
 import { NavigationList } from 'src/components/navigation/GlobalNavigation/NavigationList'
+import { NavigationCreate } from 'src/components/navigation/GlobalNavigation/NavigationCreate'
 
 export interface IBaseGlobalNavigationItem {
   label: string
@@ -75,7 +72,10 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
           {props.canSearch && <NavigationSearch />}
 
           {props.createOptions?.canCreate && props.createOptions?.createItems && (
-            <NavigationCreate createItems={props.createOptions.createItems} />
+            <>
+              <NavigationCreate createItems={props.createOptions.createItems} />
+              <hr />
+            </>
           )}
 
           <NavigationList items={props.tools} />
@@ -84,24 +84,5 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
         <NavigationList items={props.management} />
       </Flex>
     </Layout.Sider>
-  )
-}
-
-function NavigationCreate({ createItems }: { createItems: Array<MenuItemType | MenuItemGroupType> }) {
-  return (
-    <>
-      <Center style={{ height: NavItemHeight }}>
-        <Menu
-          items={[
-            {
-              icon: <Icon icon={faPlus} color="gray" size="2x" />,
-              key: 'NavigationCreate',
-              children: createItems,
-            },
-          ]}
-        />
-      </Center>
-      <hr />
-    </>
   )
 }

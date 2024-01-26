@@ -1,6 +1,5 @@
 import { Center } from 'src/components'
 import { Space } from 'src/components'
-import React from 'react'
 import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavigation/GlobalNavigation'
 import { NavItemHeight } from 'src/components/navigation/GlobalNavigation/GlobalNavigation'
 import { NavigationIcon } from 'src/components/navigation/GlobalNavigation/NavigationIcon'

@@ -1,4 +1,3 @@
-import * as React from "react";
 import {
   faTools,
   faPersonWalkingDashedLineArrowRight,
@@ -20,84 +19,86 @@ import {
   faUsers,
   faChartSimple,
   faUserCog,
-} from "@fortawesome/free-solid-svg-icons";
-import { faBlenderPhone } from "@fortawesome/free-solid-svg-icons";
-import { faArrowsToDot } from "@fortawesome/free-solid-svg-icons";
-import { faKitchenSet } from "@fortawesome/free-solid-svg-icons";
-import { faBoxes } from "@fortawesome/free-solid-svg-icons";
-import { faShapes } from "@fortawesome/free-solid-svg-icons";
-import { faDashboard } from "@fortawesome/free-solid-svg-icons";
-import { faUserGraduate } from "@fortawesome/free-solid-svg-icons";
-import { faFunnelDollar } from "@fortawesome/free-solid-svg-icons";
-import { faCogs } from "@fortawesome/free-solid-svg-icons";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
-import { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
-import { GlobalNavigation } from "src/components";
-import { Layout } from "src/components";
-import { Space } from "src/components";
-import { Flex } from "src/components";
-import { Badge } from "src/components/data-display/Badge/Badge";
-import { IGlobalNavigationTool } from "src/components/navigation/GlobalNavigation/GlobalNavigation";
-import { IGlobalNavigationManagement } from "src/components/navigation/GlobalNavigation/GlobalNavigation";
-import { IGlobalNavigationLogo } from "src/components/navigation/GlobalNavigation/GlobalNavigation";
-import { Icon } from "src/components/general/Icon/Icon";
-import { MenuItemType } from "antd/es/menu/hooks/useItems";
-import { MenuItemGroupType } from "antd/es/menu/hooks/useItems";
-
+} from '@fortawesome/free-solid-svg-icons'
+import { faBlenderPhone } from '@fortawesome/free-solid-svg-icons'
+import { faArrowsToDot } from '@fortawesome/free-solid-svg-icons'
+import { faKitchenSet } from '@fortawesome/free-solid-svg-icons'
+import { faBoxes } from '@fortawesome/free-solid-svg-icons'
+import { faShapes } from '@fortawesome/free-solid-svg-icons'
+import { faDashboard } from '@fortawesome/free-solid-svg-icons'
+import { faUserGraduate } from '@fortawesome/free-solid-svg-icons'
+import { faFunnelDollar } from '@fortawesome/free-solid-svg-icons'
+import { faCogs } from '@fortawesome/free-solid-svg-icons'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { type Meta } from '@storybook/react'
+import { type StoryObj } from '@storybook/react'
+import { GlobalNavigation } from 'src/components'
+import { Layout } from 'src/components'
+import { Space } from 'src/components'
+import { Flex } from 'src/components'
+import { Badge } from 'src/components/data-display/Badge/Badge'
+import { type IGlobalNavigationTool } from 'src/components/navigation/GlobalNavigation/GlobalNavigation'
+import { type IGlobalNavigationManagement } from 'src/components/navigation/GlobalNavigation/GlobalNavigation'
+import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavigation/GlobalNavigation'
+import { Icon } from 'src/components/general/Icon/Icon'
+import { type MenuItemType } from 'antd/es/menu/hooks/useItems'
+import { type MenuItemGroupType } from 'antd/es/menu/hooks/useItems'
 
 const defaultLogo: IGlobalNavigationLogo = {
-  label: "Aqua",
+  label: 'Aqua',
   icon: faFishFins,
-};
+}
 const defaultTools: IGlobalNavigationTool[] = [
   {
-    label: "Tool 1",
+    label: 'Tool 1',
     icon: faTools,
-    type: "menu",
-    children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
+    type: 'menu',
+    children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
-    label: "Tool 2",
+    label: 'Tool 2',
     icon: faPersonWalkingDashedLineArrowRight,
-    type: "menu",
-    children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
+    type: 'menu',
+    children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
-    label: "Tool 3",
+    label: 'Tool 3',
     icon: faAudioDescription,
-    type: "link",
+    type: 'link',
   },
-];
+]
 const defaultManagement: IGlobalNavigationManagement[] = [
   {
-    label: "Notifications",
+    label: 'Notifications',
     icon: faBell,
-    type: "link",
+    type: 'link',
   },
   {
-    label: "Support",
+    label: 'Support',
     icon: faLifeRing,
-    type: "menu",
-    children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
+    type: 'menu',
+    children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
-    label: "Settings",
+    label: 'Settings',
     icon: faGear,
-    type: "menu",
-    children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
+    type: 'menu',
+    children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
-    label: "Account",
+    label: 'Account',
     icon: faGuitar,
-    type: "link",
+    type: 'link',
   },
-];
-
+]
 
 const meta: Meta<typeof GlobalNavigation> = {
-  title: "Aquarium/Navigation/GlobalNavigation",
-  component: props => <Layout><GlobalNavigation {...props}></GlobalNavigation></Layout>,
+  title: 'Aquarium/Navigation/GlobalNavigation',
+  component: props => (
+    <Layout>
+      <GlobalNavigation {...props}></GlobalNavigation>
+    </Layout>
+  ),
 
   args: {
     logo: defaultLogo,
@@ -106,114 +107,114 @@ const meta: Meta<typeof GlobalNavigation> = {
     canSearch: false,
     createOptions: { canCreate: false, createItems: [] },
   },
-};
-export default meta;
-
+}
+export default meta
 
 type Story = StoryObj<typeof GlobalNavigation>
 
-export const Primary: Story = {};
-
+export const Primary: Story = {}
 
 const mpLogo: IGlobalNavigationLogo = {
-  label: "mP",
+  label: 'mP',
   icon: faShapes,
-};
-
-function Beta(label: string) {
-  return <Space>{label}<Badge color="blue" count="Beta"/></Space>;
 }
 
+function Beta(label: string) {
+  return (
+    <Space>
+      {label}
+      <Badge color="blue" count="Beta" />
+    </Space>
+  )
+}
 
 const mpTools: IGlobalNavigationTool[] = [
   {
-    label: "Activity",
+    label: 'Activity',
     icon: faBlenderPhone,
-    type: "menu",
+    type: 'menu',
     children: [
-      { label: "Platform Trends" },
-      { label: <Space>System Alerts<Badge color="red"/></Space> },
-      { label: "Event Forwarding" },
-      { label: Beta("Observability") },
-    ],
-  },
-  {
-    label: "Data Master",
-    icon: faDatabase,
-    type: "menu",
-    children: [
-      { label: "Catalog" },
-      { label: "Plans" },
-      { label: "Live Stream" },
-      { label: Beta("User Groups") },
-      { label: "Calculated Attributes" },
-      { label: "Rules" },
-    ],
-  },
-  {
-    label: "Audiences",
-    icon: faPeopleGroup,
-    type: "menu",
-    children: [
-      { label: "Real-time" },
-      { label: "Standard" },
-      { label: "Journeys" },
-    ],
-  },
-  {
-    label: "Connections",
-    icon: faArrowsToDot,
-    type: "menu",
-    children: [
-      { label: "Connect" },
+      { label: 'Platform Trends' },
       {
-        label: "Filter", children: [{ label: "Platforms" }, { label: "Feeds" }],
+        label: (
+          <Space>
+            System Alerts
+            <Badge color="red" />
+          </Space>
+        ),
+      },
+      { label: 'Event Forwarding' },
+      { label: Beta('Observability') },
+    ],
+  },
+  {
+    label: 'Data Master',
+    icon: faDatabase,
+    type: 'menu',
+    children: [
+      { label: 'Catalog' },
+      { label: 'Plans' },
+      { label: 'Live Stream' },
+      { label: Beta('User Groups') },
+      { label: 'Calculated Attributes' },
+      { label: 'Rules' },
+    ],
+  },
+  {
+    label: 'Audiences',
+    icon: faPeopleGroup,
+    type: 'menu',
+    children: [{ label: 'Real-time' }, { label: 'Standard' }, { label: 'Journeys' }],
+  },
+  {
+    label: 'Connections',
+    icon: faArrowsToDot,
+    type: 'menu',
+    children: [
+      { label: 'Connect' },
+      {
+        label: 'Filter',
+        children: [{ label: 'Platforms' }, { label: 'Feeds' }],
       },
     ],
   },
   {
-    label: "Setup",
+    label: 'Setup',
     icon: faKitchenSet,
-    type: "menu",
-    children: [
-      { label: "Inputs" },
-      { label: "Outputs" },
-      { label: "Data Warehouse" },
-      { label: "CRM" },
-    ],
+    type: 'menu',
+    children: [{ label: 'Inputs' }, { label: 'Outputs' }, { label: 'Data Warehouse' }, { label: 'CRM' }],
   },
   {
-    label: "Directory",
+    label: 'Directory',
     icon: faBoxes,
-    type: "link",
+    type: 'link',
   },
-];
-
+]
 
 const mpManagement: IGlobalNavigationManagement[] = [
   {
-    label: "Notification",
+    label: 'Notification',
     icon: faBell,
-    type: "link",
+    type: 'link',
   },
   {
-    label: "Support",
+    label: 'Support',
     icon: faLifeRing,
-    type: "menu",
-    children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
+    type: 'menu',
+    children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
-    label: "Settings",
+    label: 'Settings',
     icon: faGear,
-    type: "menu",
-    children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
+    type: 'menu',
+    children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
-    label: "Account",
+    label: 'Account',
     icon: faGuitar,
-    type: "link",
+    type: 'link',
   },
-];
+]
 export const MP: Story = {
   args: {
     canSearch: true,
@@ -221,184 +222,185 @@ export const MP: Story = {
     tools: mpTools,
     management: mpManagement,
   },
-};
-
+}
 
 const indLogo: IGlobalNavigationLogo = {
-  label: "Ind",
+  label: 'Ind',
   icon: faShapes,
-};
+}
 const indTools: IGlobalNavigationTool[] = [
   {
-    label: "Segmentation",
+    label: 'Segmentation',
     icon: faChartSimple,
-    type: "link",
+    type: 'link',
   },
   {
-    label: "Funnel",
+    label: 'Funnel',
     icon: faChartBar,
-    type: "link",
+    type: 'link',
   },
   {
-    label: "Journeys",
+    label: 'Journeys',
     icon: faJournalWhills,
-    type: "link",
+    type: 'link',
   },
   {
-    label: "Cohort",
+    label: 'Cohort',
     icon: faUserCog,
-    type: "link",
+    type: 'link',
   },
   {
-    label: "Users",
+    label: 'Users',
     icon: faUsers,
-    type: "link",
+    type: 'link',
   },
-];
+]
 const indManagement: IGlobalNavigationManagement[] = [
   {
-    label: "Support",
+    label: 'Support',
     icon: faLifeRing,
-    type: "menu",
-    children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
+    type: 'menu',
+    children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
-    label: "Settings",
+    label: 'Settings',
     icon: faGear,
-    type: "menu",
-    children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
+    type: 'menu',
+    children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
-    label: "Account",
+    label: 'Account',
     icon: faGuitar,
-    type: "link",
+    type: 'link',
   },
-];
-const indCreateItems: (MenuItemType | MenuItemGroupType)[] = [
+]
+const indCreateItems: Array<MenuItemType | MenuItemGroupType> = [
   {
-    label: "Dashboard",
-    key: "Dashboard",
-    type: "group",
+    label: 'Dashboard',
+    key: 'Dashboard',
+    type: 'group',
   },
   {
-    className: "globalNavigation__create",
-    label: <>
-      <Flex style={{}} vertical gap="middle" justify="center">
-        <Space>
-          <Icon icon={faDashboard}/>
-          Dashboard
-        </Space>
-        <span>Create a new dashboard to organize your saved analysis.</span>
-      </Flex>
-    </>,
-    key: "Dashboard",
+    className: 'globalNavigation__create',
+    label: (
+      <>
+        <Flex style={{}} vertical gap="middle" justify="center">
+          <Space>
+            <Icon icon={faDashboard} />
+            Dashboard
+          </Space>
+          <span>Create a new dashboard to organize your saved analysis.</span>
+        </Flex>
+      </>
+    ),
+    key: 'Dashboard',
   },
 
   {
-    label: "Segmentation",
-    key: "Segmentation",
-    type: "group",
+    label: 'Segmentation',
+    key: 'Segmentation',
+    type: 'group',
   },
   {
-    label: "Event Segmentation",
-    key: "Event Segmentation",
-    icon: <Icon icon={faUserGraduate}/>,
+    label: 'Event Segmentation',
+    key: 'Event Segmentation',
+    icon: <Icon icon={faUserGraduate} />,
   },
   {
-    label: "User Segmentation",
-    key: "User Segmentation",
-    icon: <Icon icon={faUserGraduate}/>,
+    label: 'User Segmentation',
+    key: 'User Segmentation',
+    icon: <Icon icon={faUserGraduate} />,
   },
   {
-    label: "Revenue Analysis",
-    key: "Revenue Analysis",
-    icon: <Icon icon={faUserGraduate}/>,
+    label: 'Revenue Analysis',
+    key: 'Revenue Analysis',
+    icon: <Icon icon={faUserGraduate} />,
   },
   {
-    label: "Frequency",
-    key: "Frequency",
-    icon: <Icon icon={faUserGraduate}/>,
+    label: 'Frequency',
+    key: 'Frequency',
+    icon: <Icon icon={faUserGraduate} />,
   },
 
   {
-    label: "Funnel",
-    key: "Funnel",
-    type: "group",
+    label: 'Funnel',
+    key: 'Funnel',
+    type: 'group',
   },
   {
-    label: "Conversion and Drop Off",
-    key: "Conversion and Drop Off",
-    icon: <Icon icon={faFunnelDollar}/>,
+    label: 'Conversion and Drop Off',
+    key: 'Conversion and Drop Off',
+    icon: <Icon icon={faFunnelDollar} />,
   },
   {
-    label: "Multipath Funnel",
-    key: "Multipath Funnel",
-    icon: <Icon icon={faFunnelDollar}/>,
+    label: 'Multipath Funnel',
+    key: 'Multipath Funnel',
+    icon: <Icon icon={faFunnelDollar} />,
   },
   {
-    label: "Conversion Over Time",
-    key: "Conversion Over Time",
-    icon: <Icon icon={faFunnelDollar}/>,
+    label: 'Conversion Over Time',
+    key: 'Conversion Over Time',
+    icon: <Icon icon={faFunnelDollar} />,
   },
   {
-    label: "Contribution",
-    key: "Contribution",
-    icon: <Icon icon={faFunnelDollar}/>,
+    label: 'Contribution',
+    key: 'Contribution',
+    icon: <Icon icon={faFunnelDollar} />,
   },
 
   {
-    label: "Journeys",
-    key: "Journeys",
-    type: "group",
+    label: 'Journeys',
+    key: 'Journeys',
+    type: 'group',
   },
   {
-    label: "Journeys From an Event",
-    key: "Journeys From an Event",
-    icon: <Icon icon={faJournalWhills}/>,
+    label: 'Journeys From an Event',
+    key: 'Journeys From an Event',
+    icon: <Icon icon={faJournalWhills} />,
   },
   {
-    label: "Journeys To an Event",
-    key: "Journeys To an Event",
-    icon: <Icon icon={faJournalWhills}/>,
+    label: 'Journeys To an Event',
+    key: 'Journeys To an Event',
+    icon: <Icon icon={faJournalWhills} />,
   },
 
   {
-    label: "Cohort",
-    key: "Cohort",
-    type: "group",
+    label: 'Cohort',
+    key: 'Cohort',
+    type: 'group',
   },
   {
-    label: "Retention",
-    key: "Retention",
-    icon: <Icon icon={faCogs}/>,
+    label: 'Retention',
+    key: 'Retention',
+    icon: <Icon icon={faCogs} />,
   },
   {
-    label: "Activation",
-    key: "Activation",
-    icon: <Icon icon={faCogs}/>,
+    label: 'Activation',
+    key: 'Activation',
+    icon: <Icon icon={faCogs} />,
   },
 
   {
-    label: "Users",
-    key: "Users",
-    type: "group",
+    label: 'Users',
+    key: 'Users',
+    type: 'group',
   },
   {
-    label: "User Lookup by ID",
-    key: "User Lookup by ID",
-    icon: <Icon icon={faUser}/>,
+    label: 'User Lookup by ID',
+    key: 'User Lookup by ID',
+    icon: <Icon icon={faUser} />,
   },
   {
-    label: "User Lookup by Event",
-    key: "User Lookup by Event",
-    icon: <Icon icon={faUser}/>,
+    label: 'User Lookup by Event',
+    key: 'User Lookup by Event',
+    icon: <Icon icon={faUser} />,
   },
   {
-    label: "User Lookup by Segment",
-    key: "User Lookup by Segment",
-    icon: <Icon icon={faUser}/>,
+    label: 'User Lookup by Segment',
+    key: 'User Lookup by Segment',
+    icon: <Icon icon={faUser} />,
   },
-];
+]
 
 export const Indicative: Story = {
   args: {
@@ -410,59 +412,58 @@ export const Indicative: Story = {
     tools: indTools,
     management: indManagement,
   },
-};
-
+}
 
 const cortexLogo: IGlobalNavigationLogo = {
-  label: "Cortex",
+  label: 'Cortex',
   icon: faShapes,
-};
+}
 const cortexTools: IGlobalNavigationTool[] = [
   {
-    label: "Pipelines",
+    label: 'Pipelines',
     icon: faPizzaSlice,
-    type: "link",
+    type: 'link',
   },
   {
-    label: "Projects",
+    label: 'Projects',
     icon: faDiagramPredecessor,
-    type: "link",
+    type: 'link',
   },
   {
-    label: "Data",
+    label: 'Data',
     icon: faPingPongPaddleBall,
-    type: "link",
+    type: 'link',
   },
   {
-    label: "API",
+    label: 'API',
     icon: faRoadSpikes,
-    type: "link",
+    type: 'link',
   },
   {
-    label: "Insights",
+    label: 'Insights',
     icon: faPaintbrush,
-    type: "link",
+    type: 'link',
   },
-];
+]
 const cortexManagement: IGlobalNavigationManagement[] = [
   {
-    label: "Support",
+    label: 'Support',
     icon: faLifeRing,
-    type: "menu",
-    children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
+    type: 'menu',
+    children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
-    label: "Settings",
+    label: 'Settings',
     icon: faGear,
-    type: "menu",
-    children: [{ label: "option 1" }, { label: "option 2" }, { label: "option 3" }],
+    type: 'menu',
+    children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
-    label: "Account",
+    label: 'Account',
     icon: faGuitar,
-    type: "link",
+    type: 'link',
   },
-];
+]
 export const Cortex: Story = {
   args: {
     canSearch: false,
@@ -470,4 +471,4 @@ export const Cortex: Story = {
     tools: cortexTools,
     management: cortexManagement,
   },
-};
+}

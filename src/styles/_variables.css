@@ -1,6 +1,7 @@
 :root {
-  --color-font-base: #111111;
-  --color-font-secondary: #333333;
-  --color-font-tertiary: #666666;
-  --color-font-inverse-base: #ffffff;
+    --color-font-base: #111;
+    --color-font-secondary: #333;
+    --color-font-tertiary: #666;
+    --color-font-inverse-base: #fff;
+    --blue: #00f;
 }

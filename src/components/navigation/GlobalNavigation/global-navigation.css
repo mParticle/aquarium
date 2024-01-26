@@ -1,3 +1,4 @@
+
 .globalNavigation__item {
 
     .ant-menu-submenu-title {
@@ -22,7 +23,7 @@
     padding: 6px;
 
     &:hover {
-        backgroundColor: antiquewhite;
+        background-color: var(--blue);
     }
 }
 
