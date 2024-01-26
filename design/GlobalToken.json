@@ -1,0 +1,1490 @@
+{
+  "blue": {
+    "value": "#1677ff"
+  },
+  "purple": {
+    "value": "#722ED1"
+  },
+  "cyan": {
+    "value": "#13C2C2"
+  },
+  "green": {
+    "value": "#52C41A"
+  },
+  "magenta": {
+    "value": "#EB2F96"
+  },
+  "pink": {
+    "value": "#eb2f96"
+  },
+  "red": {
+    "value": "#F5222D"
+  },
+  "orange": {
+    "value": "#FA8C16"
+  },
+  "yellow": {
+    "value": "#FADB14"
+  },
+  "volcano": {
+    "value": "#FA541C"
+  },
+  "geekblue": {
+    "value": "#2F54EB"
+  },
+  "gold": {
+    "value": "#FAAD14"
+  },
+  "lime": {
+    "value": "#A0D911"
+  },
+  "colorPrimary": {
+    "value": "#1677ff"
+  },
+  "colorSuccess": {
+    "value": "#52c41a"
+  },
+  "colorWarning": {
+    "value": "#faad14"
+  },
+  "colorError": {
+    "value": "#ff4d4f"
+  },
+  "colorInfo": {
+    "value": "#1677ff"
+  },
+  "colorLink": {
+    "value": "#1677ff"
+  },
+  "colorTextBase": {
+    "value": "#000"
+  },
+  "colorBgBase": {
+    "value": "#fff"
+  },
+  "fontFamily": {
+    "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol','Noto Color Emoji'"
+  },
+  "fontFamilyCode": {
+    "value": "'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace"
+  },
+  "fontSize": {
+    "value": "14px"
+  },
+  "lineWidth": {
+    "value": 1
+  },
+  "lineType": {
+    "value": "solid"
+  },
+  "motionUnit": {
+    "value": 0.1
+  },
+  "motionBase": {
+    "value": 0
+  },
+  "motionEaseOutCirc": {
+    "value": "cubic-bezier(0.08, 0.82, 0.17, 1)"
+  },
+  "motionEaseInOutCirc": {
+    "value": "cubic-bezier(0.78, 0.14, 0.15, 0.86)"
+  },
+  "motionEaseOut": {
+    "value": "cubic-bezier(0.215, 0.61, 0.355, 1)"
+  },
+  "motionEaseInOut": {
+    "value": "cubic-bezier(0.645, 0.045, 0.355, 1)"
+  },
+  "motionEaseOutBack": {
+    "value": "cubic-bezier(0.12, 0.4, 0.29, 1.46)"
+  },
+  "motionEaseInBack": {
+    "value": "cubic-bezier(0.71, -0.46, 0.88, 0.6)"
+  },
+  "motionEaseInQuint": {
+    "value": "cubic-bezier(0.755, 0.05, 0.855, 0.06)"
+  },
+  "motionEaseOutQuint": {
+    "value": "cubic-bezier(0.23, 1, 0.32, 1)"
+  },
+  "borderRadius": {
+    "value": "6px"
+  },
+  "sizeUnit": {
+    "value": "4px"
+  },
+  "sizeStep": {
+    "value": "4px"
+  },
+  "sizePopupArrow": {
+    "value": "16px"
+  },
+  "controlHeight": {
+    "value": 32
+  },
+  "zIndexBase": {
+    "value": 0
+  },
+  "zIndexPopupBase": {
+    "value": 1000
+  },
+  "opacityImage": {
+    "value": 1
+  },
+  "wireframe": {
+    "value": false
+  },
+  "motion": {
+    "value": true
+  },
+  "blue-1": {
+    "value": "#e6f4ff"
+  },
+  "blue1": {
+    "value": "#e6f4ff"
+  },
+  "blue-2": {
+    "value": "#bae0ff"
+  },
+  "blue2": {
+    "value": "#bae0ff"
+  },
+  "blue-3": {
+    "value": "#91caff"
+  },
+  "blue3": {
+    "value": "#91caff"
+  },
+  "blue-4": {
+    "value": "#69b1ff"
+  },
+  "blue4": {
+    "value": "#69b1ff"
+  },
+  "blue-5": {
+    "value": "#4096ff"
+  },
+  "blue5": {
+    "value": "#4096ff"
+  },
+  "blue-6": {
+    "value": "#1677ff"
+  },
+  "blue6": {
+    "value": "#1677ff"
+  },
+  "blue-7": {
+    "value": "#0958d9"
+  },
+  "blue7": {
+    "value": "#0958d9"
+  },
+  "blue-8": {
+    "value": "#003eb3"
+  },
+  "blue8": {
+    "value": "#003eb3"
+  },
+  "blue-9": {
+    "value": "#002c8c"
+  },
+  "blue9": {
+    "value": "#002c8c"
+  },
+  "blue-10": {
+    "value": "#001d66"
+  },
+  "blue10": {
+    "value": "#001d66"
+  },
+  "purple-1": {
+    "value": "#f9f0ff"
+  },
+  "purple1": {
+    "value": "#f9f0ff"
+  },
+  "purple-2": {
+    "value": "#efdbff"
+  },
+  "purple2": {
+    "value": "#efdbff"
+  },
+  "purple-3": {
+    "value": "#d3adf7"
+  },
+  "purple3": {
+    "value": "#d3adf7"
+  },
+  "purple-4": {
+    "value": "#b37feb"
+  },
+  "purple4": {
+    "value": "#b37feb"
+  },
+  "purple-5": {
+    "value": "#9254de"
+  },
+  "purple5": {
+    "value": "#9254de"
+  },
+  "purple-6": {
+    "value": "#722ed1"
+  },
+  "purple6": {
+    "value": "#722ed1"
+  },
+  "purple-7": {
+    "value": "#531dab"
+  },
+  "purple7": {
+    "value": "#531dab"
+  },
+  "purple-8": {
+    "value": "#391085"
+  },
+  "purple8": {
+    "value": "#391085"
+  },
+  "purple-9": {
+    "value": "#22075e"
+  },
+  "purple9": {
+    "value": "#22075e"
+  },
+  "purple-10": {
+    "value": "#120338"
+  },
+  "purple10": {
+    "value": "#120338"
+  },
+  "cyan-1": {
+    "value": "#e6fffb"
+  },
+  "cyan1": {
+    "value": "#e6fffb"
+  },
+  "cyan-2": {
+    "value": "#b5f5ec"
+  },
+  "cyan2": {
+    "value": "#b5f5ec"
+  },
+  "cyan-3": {
+    "value": "#87e8de"
+  },
+  "cyan3": {
+    "value": "#87e8de"
+  },
+  "cyan-4": {
+    "value": "#5cdbd3"
+  },
+  "cyan4": {
+    "value": "#5cdbd3"
+  },
+  "cyan-5": {
+    "value": "#36cfc9"
+  },
+  "cyan5": {
+    "value": "#36cfc9"
+  },
+  "cyan-6": {
+    "value": "#13c2c2"
+  },
+  "cyan6": {
+    "value": "#13c2c2"
+  },
+  "cyan-7": {
+    "value": "#08979c"
+  },
+  "cyan7": {
+    "value": "#08979c"
+  },
+  "cyan-8": {
+    "value": "#006d75"
+  },
+  "cyan8": {
+    "value": "#006d75"
+  },
+  "cyan-9": {
+    "value": "#00474f"
+  },
+  "cyan9": {
+    "value": "#00474f"
+  },
+  "cyan-10": {
+    "value": "#002329"
+  },
+  "cyan10": {
+    "value": "#002329"
+  },
+  "green-1": {
+    "value": "#f6ffed"
+  },
+  "green1": {
+    "value": "#f6ffed"
+  },
+  "green-2": {
+    "value": "#d9f7be"
+  },
+  "green2": {
+    "value": "#d9f7be"
+  },
+  "green-3": {
+    "value": "#b7eb8f"
+  },
+  "green3": {
+    "value": "#b7eb8f"
+  },
+  "green-4": {
+    "value": "#95de64"
+  },
+  "green4": {
+    "value": "#95de64"
+  },
+  "green-5": {
+    "value": "#73d13d"
+  },
+  "green5": {
+    "value": "#73d13d"
+  },
+  "green-6": {
+    "value": "#52c41a"
+  },
+  "green6": {
+    "value": "#52c41a"
+  },
+  "green-7": {
+    "value": "#389e0d"
+  },
+  "green7": {
+    "value": "#389e0d"
+  },
+  "green-8": {
+    "value": "#237804"
+  },
+  "green8": {
+    "value": "#237804"
+  },
+  "green-9": {
+    "value": "#135200"
+  },
+  "green9": {
+    "value": "#135200"
+  },
+  "green-10": {
+    "value": "#092b00"
+  },
+  "green10": {
+    "value": "#092b00"
+  },
+  "magenta-1": {
+    "value": "#fff0f6"
+  },
+  "magenta1": {
+    "value": "#fff0f6"
+  },
+  "magenta-2": {
+    "value": "#ffd6e7"
+  },
+  "magenta2": {
+    "value": "#ffd6e7"
+  },
+  "magenta-3": {
+    "value": "#ffadd2"
+  },
+  "magenta3": {
+    "value": "#ffadd2"
+  },
+  "magenta-4": {
+    "value": "#ff85c0"
+  },
+  "magenta4": {
+    "value": "#ff85c0"
+  },
+  "magenta-5": {
+    "value": "#f759ab"
+  },
+  "magenta5": {
+    "value": "#f759ab"
+  },
+  "magenta-6": {
+    "value": "#eb2f96"
+  },
+  "magenta6": {
+    "value": "#eb2f96"
+  },
+  "magenta-7": {
+    "value": "#c41d7f"
+  },
+  "magenta7": {
+    "value": "#c41d7f"
+  },
+  "magenta-8": {
+    "value": "#9e1068"
+  },
+  "magenta8": {
+    "value": "#9e1068"
+  },
+  "magenta-9": {
+    "value": "#780650"
+  },
+  "magenta9": {
+    "value": "#780650"
+  },
+  "magenta-10": {
+    "value": "#520339"
+  },
+  "magenta10": {
+    "value": "#520339"
+  },
+  "pink-1": {
+    "value": "#fff0f6"
+  },
+  "pink1": {
+    "value": "#fff0f6"
+  },
+  "pink-2": {
+    "value": "#ffd6e7"
+  },
+  "pink2": {
+    "value": "#ffd6e7"
+  },
+  "pink-3": {
+    "value": "#ffadd2"
+  },
+  "pink3": {
+    "value": "#ffadd2"
+  },
+  "pink-4": {
+    "value": "#ff85c0"
+  },
+  "pink4": {
+    "value": "#ff85c0"
+  },
+  "pink-5": {
+    "value": "#f759ab"
+  },
+  "pink5": {
+    "value": "#f759ab"
+  },
+  "pink-6": {
+    "value": "#eb2f96"
+  },
+  "pink6": {
+    "value": "#eb2f96"
+  },
+  "pink-7": {
+    "value": "#c41d7f"
+  },
+  "pink7": {
+    "value": "#c41d7f"
+  },
+  "pink-8": {
+    "value": "#9e1068"
+  },
+  "pink8": {
+    "value": "#9e1068"
+  },
+  "pink-9": {
+    "value": "#780650"
+  },
+  "pink9": {
+    "value": "#780650"
+  },
+  "pink-10": {
+    "value": "#520339"
+  },
+  "pink10": {
+    "value": "#520339"
+  },
+  "red-1": {
+    "value": "#fff1f0"
+  },
+  "red1": {
+    "value": "#fff1f0"
+  },
+  "red-2": {
+    "value": "#ffccc7"
+  },
+  "red2": {
+    "value": "#ffccc7"
+  },
+  "red-3": {
+    "value": "#ffa39e"
+  },
+  "red3": {
+    "value": "#ffa39e"
+  },
+  "red-4": {
+    "value": "#ff7875"
+  },
+  "red4": {
+    "value": "#ff7875"
+  },
+  "red-5": {
+    "value": "#ff4d4f"
+  },
+  "red5": {
+    "value": "#ff4d4f"
+  },
+  "red-6": {
+    "value": "#f5222d"
+  },
+  "red6": {
+    "value": "#f5222d"
+  },
+  "red-7": {
+    "value": "#cf1322"
+  },
+  "red7": {
+    "value": "#cf1322"
+  },
+  "red-8": {
+    "value": "#a8071a"
+  },
+  "red8": {
+    "value": "#a8071a"
+  },
+  "red-9": {
+    "value": "#820014"
+  },
+  "red9": {
+    "value": "#820014"
+  },
+  "red-10": {
+    "value": "#5c0011"
+  },
+  "red10": {
+    "value": "#5c0011"
+  },
+  "orange-1": {
+    "value": "#fff7e6"
+  },
+  "orange1": {
+    "value": "#fff7e6"
+  },
+  "orange-2": {
+    "value": "#ffe7ba"
+  },
+  "orange2": {
+    "value": "#ffe7ba"
+  },
+  "orange-3": {
+    "value": "#ffd591"
+  },
+  "orange3": {
+    "value": "#ffd591"
+  },
+  "orange-4": {
+    "value": "#ffc069"
+  },
+  "orange4": {
+    "value": "#ffc069"
+  },
+  "orange-5": {
+    "value": "#ffa940"
+  },
+  "orange5": {
+    "value": "#ffa940"
+  },
+  "orange-6": {
+    "value": "#fa8c16"
+  },
+  "orange6": {
+    "value": "#fa8c16"
+  },
+  "orange-7": {
+    "value": "#d46b08"
+  },
+  "orange7": {
+    "value": "#d46b08"
+  },
+  "orange-8": {
+    "value": "#ad4e00"
+  },
+  "orange8": {
+    "value": "#ad4e00"
+  },
+  "orange-9": {
+    "value": "#873800"
+  },
+  "orange9": {
+    "value": "#873800"
+  },
+  "orange-10": {
+    "value": "#612500"
+  },
+  "orange10": {
+    "value": "#612500"
+  },
+  "yellow-1": {
+    "value": "#feffe6"
+  },
+  "yellow1": {
+    "value": "#feffe6"
+  },
+  "yellow-2": {
+    "value": "#ffffb8"
+  },
+  "yellow2": {
+    "value": "#ffffb8"
+  },
+  "yellow-3": {
+    "value": "#fffb8f"
+  },
+  "yellow3": {
+    "value": "#fffb8f"
+  },
+  "yellow-4": {
+    "value": "#fff566"
+  },
+  "yellow4": {
+    "value": "#fff566"
+  },
+  "yellow-5": {
+    "value": "#ffec3d"
+  },
+  "yellow5": {
+    "value": "#ffec3d"
+  },
+  "yellow-6": {
+    "value": "#fadb14"
+  },
+  "yellow6": {
+    "value": "#fadb14"
+  },
+  "yellow-7": {
+    "value": "#d4b106"
+  },
+  "yellow7": {
+    "value": "#d4b106"
+  },
+  "yellow-8": {
+    "value": "#ad8b00"
+  },
+  "yellow8": {
+    "value": "#ad8b00"
+  },
+  "yellow-9": {
+    "value": "#876800"
+  },
+  "yellow9": {
+    "value": "#876800"
+  },
+  "yellow-10": {
+    "value": "#614700"
+  },
+  "yellow10": {
+    "value": "#614700"
+  },
+  "volcano-1": {
+    "value": "#fff2e8"
+  },
+  "volcano1": {
+    "value": "#fff2e8"
+  },
+  "volcano-2": {
+    "value": "#ffd8bf"
+  },
+  "volcano2": {
+    "value": "#ffd8bf"
+  },
+  "volcano-3": {
+    "value": "#ffbb96"
+  },
+  "volcano3": {
+    "value": "#ffbb96"
+  },
+  "volcano-4": {
+    "value": "#ff9c6e"
+  },
+  "volcano4": {
+    "value": "#ff9c6e"
+  },
+  "volcano-5": {
+    "value": "#ff7a45"
+  },
+  "volcano5": {
+    "value": "#ff7a45"
+  },
+  "volcano-6": {
+    "value": "#fa541c"
+  },
+  "volcano6": {
+    "value": "#fa541c"
+  },
+  "volcano-7": {
+    "value": "#d4380d"
+  },
+  "volcano7": {
+    "value": "#d4380d"
+  },
+  "volcano-8": {
+    "value": "#ad2102"
+  },
+  "volcano8": {
+    "value": "#ad2102"
+  },
+  "volcano-9": {
+    "value": "#871400"
+  },
+  "volcano9": {
+    "value": "#871400"
+  },
+  "volcano-10": {
+    "value": "#610b00"
+  },
+  "volcano10": {
+    "value": "#610b00"
+  },
+  "geekblue-1": {
+    "value": "#f0f5ff"
+  },
+  "geekblue1": {
+    "value": "#f0f5ff"
+  },
+  "geekblue-2": {
+    "value": "#d6e4ff"
+  },
+  "geekblue2": {
+    "value": "#d6e4ff"
+  },
+  "geekblue-3": {
+    "value": "#adc6ff"
+  },
+  "geekblue3": {
+    "value": "#adc6ff"
+  },
+  "geekblue-4": {
+    "value": "#85a5ff"
+  },
+  "geekblue4": {
+    "value": "#85a5ff"
+  },
+  "geekblue-5": {
+    "value": "#597ef7"
+  },
+  "geekblue5": {
+    "value": "#597ef7"
+  },
+  "geekblue-6": {
+    "value": "#2f54eb"
+  },
+  "geekblue6": {
+    "value": "#2f54eb"
+  },
+  "geekblue-7": {
+    "value": "#1d39c4"
+  },
+  "geekblue7": {
+    "value": "#1d39c4"
+  },
+  "geekblue-8": {
+    "value": "#10239e"
+  },
+  "geekblue8": {
+    "value": "#10239e"
+  },
+  "geekblue-9": {
+    "value": "#061178"
+  },
+  "geekblue9": {
+    "value": "#061178"
+  },
+  "geekblue-10": {
+    "value": "#030852"
+  },
+  "geekblue10": {
+    "value": "#030852"
+  },
+  "gold-1": {
+    "value": "#fffbe6"
+  },
+  "gold1": {
+    "value": "#fffbe6"
+  },
+  "gold-2": {
+    "value": "#fff1b8"
+  },
+  "gold2": {
+    "value": "#fff1b8"
+  },
+  "gold-3": {
+    "value": "#ffe58f"
+  },
+  "gold3": {
+    "value": "#ffe58f"
+  },
+  "gold-4": {
+    "value": "#ffd666"
+  },
+  "gold4": {
+    "value": "#ffd666"
+  },
+  "gold-5": {
+    "value": "#ffc53d"
+  },
+  "gold5": {
+    "value": "#ffc53d"
+  },
+  "gold-6": {
+    "value": "#faad14"
+  },
+  "gold6": {
+    "value": "#faad14"
+  },
+  "gold-7": {
+    "value": "#d48806"
+  },
+  "gold7": {
+    "value": "#d48806"
+  },
+  "gold-8": {
+    "value": "#ad6800"
+  },
+  "gold8": {
+    "value": "#ad6800"
+  },
+  "gold-9": {
+    "value": "#874d00"
+  },
+  "gold9": {
+    "value": "#874d00"
+  },
+  "gold-10": {
+    "value": "#613400"
+  },
+  "gold10": {
+    "value": "#613400"
+  },
+  "lime-1": {
+    "value": "#fcffe6"
+  },
+  "lime1": {
+    "value": "#fcffe6"
+  },
+  "lime-2": {
+    "value": "#f4ffb8"
+  },
+  "lime2": {
+    "value": "#f4ffb8"
+  },
+  "lime-3": {
+    "value": "#eaff8f"
+  },
+  "lime3": {
+    "value": "#eaff8f"
+  },
+  "lime-4": {
+    "value": "#d3f261"
+  },
+  "lime4": {
+    "value": "#d3f261"
+  },
+  "lime-5": {
+    "value": "#bae637"
+  },
+  "lime5": {
+    "value": "#bae637"
+  },
+  "lime-6": {
+    "value": "#a0d911"
+  },
+  "lime6": {
+    "value": "#a0d911"
+  },
+  "lime-7": {
+    "value": "#7cb305"
+  },
+  "lime7": {
+    "value": "#7cb305"
+  },
+  "lime-8": {
+    "value": "#5b8c00"
+  },
+  "lime8": {
+    "value": "#5b8c00"
+  },
+  "lime-9": {
+    "value": "#3f6600"
+  },
+  "lime9": {
+    "value": "#3f6600"
+  },
+  "lime-10": {
+    "value": "#254000"
+  },
+  "lime10": {
+    "value": "#254000"
+  },
+  "colorText": {
+    "value": "rgba(0, 0, 0, 0.88)"
+  },
+  "colorTextSecondary": {
+    "value": "rgba(0, 0, 0, 0.65)"
+  },
+  "colorTextTertiary": {
+    "value": "rgba(0, 0, 0, 0.45)"
+  },
+  "colorTextQuaternary": {
+    "value": "rgba(0, 0, 0, 0.25)"
+  },
+  "colorFill": {
+    "value": "rgba(0, 0, 0, 0.15)"
+  },
+  "colorFillSecondary": {
+    "value": "rgba(0, 0, 0, 0.06)"
+  },
+  "colorFillTertiary": {
+    "value": "rgba(0, 0, 0, 0.04)"
+  },
+  "colorFillQuaternary": {
+    "value": "rgba(0, 0, 0, 0.02)"
+  },
+  "colorBgLayout": {
+    "value": "#f5f5f5"
+  },
+  "colorBgContainer": {
+    "value": "#ffffff"
+  },
+  "colorBgElevated": {
+    "value": "#ffffff"
+  },
+  "colorBgSpotlight": {
+    "value": "rgba(0, 0, 0, 0.85)"
+  },
+  "colorBgBlur": {
+    "value": "transparent"
+  },
+  "colorBorder": {
+    "value": "#d9d9d9"
+  },
+  "colorBorderSecondary": {
+    "value": "#f0f0f0"
+  },
+  "colorPrimaryBg": {
+    "value": "#e6f4ff"
+  },
+  "colorPrimaryBgHover": {
+    "value": "#bae0ff"
+  },
+  "colorPrimaryBorder": {
+    "value": "#91caff"
+  },
+  "colorPrimaryBorderHover": {
+    "value": "#69b1ff"
+  },
+  "colorPrimaryHover": {
+    "value": "#4096ff"
+  },
+  "colorPrimaryActive": {
+    "value": "#0958d9"
+  },
+  "colorPrimaryTextHover": {
+    "value": "#4096ff"
+  },
+  "colorPrimaryText": {
+    "value": "#1677ff"
+  },
+  "colorPrimaryTextActive": {
+    "value": "#0958d9"
+  },
+  "colorSuccessBg": {
+    "value": "#f6ffed"
+  },
+  "colorSuccessBgHover": {
+    "value": "#d9f7be"
+  },
+  "colorSuccessBorder": {
+    "value": "#b7eb8f"
+  },
+  "colorSuccessBorderHover": {
+    "value": "#95de64"
+  },
+  "colorSuccessHover": {
+    "value": "#95de64"
+  },
+  "colorSuccessActive": {
+    "value": "#389e0d"
+  },
+  "colorSuccessTextHover": {
+    "value": "#73d13d"
+  },
+  "colorSuccessText": {
+    "value": "#52c41a"
+  },
+  "colorSuccessTextActive": {
+    "value": "#389e0d"
+  },
+  "colorErrorBg": {
+    "value": "#fff2f0"
+  },
+  "colorErrorBgHover": {
+    "value": "#fff1f0"
+  },
+  "colorErrorBorder": {
+    "value": "#ffccc7"
+  },
+  "colorErrorBorderHover": {
+    "value": "#ffa39e"
+  },
+  "colorErrorHover": {
+    "value": "#ff7875"
+  },
+  "colorErrorActive": {
+    "value": "#d9363e"
+  },
+  "colorErrorTextHover": {
+    "value": "#ff7875"
+  },
+  "colorErrorText": {
+    "value": "#ff4d4f"
+  },
+  "colorErrorTextActive": {
+    "value": "#d9363e"
+  },
+  "colorWarningBg": {
+    "value": "#fffbe6"
+  },
+  "colorWarningBgHover": {
+    "value": "#fff1b8"
+  },
+  "colorWarningBorder": {
+    "value": "#ffe58f"
+  },
+  "colorWarningBorderHover": {
+    "value": "#ffd666"
+  },
+  "colorWarningHover": {
+    "value": "#ffd666"
+  },
+  "colorWarningActive": {
+    "value": "#d48806"
+  },
+  "colorWarningTextHover": {
+    "value": "#ffc53d"
+  },
+  "colorWarningText": {
+    "value": "#faad14"
+  },
+  "colorWarningTextActive": {
+    "value": "#d48806"
+  },
+  "colorInfoBg": {
+    "value": "#e6f4ff"
+  },
+  "colorInfoBgHover": {
+    "value": "#bae0ff"
+  },
+  "colorInfoBorder": {
+    "value": "#91caff"
+  },
+  "colorInfoBorderHover": {
+    "value": "#69b1ff"
+  },
+  "colorInfoHover": {
+    "value": "#69b1ff"
+  },
+  "colorInfoActive": {
+    "value": "#0958d9"
+  },
+  "colorInfoTextHover": {
+    "value": "#4096ff"
+  },
+  "colorInfoText": {
+    "value": "#1677ff"
+  },
+  "colorInfoTextActive": {
+    "value": "#0958d9"
+  },
+  "colorLinkHover": {
+    "value": "#69b1ff"
+  },
+  "colorLinkActive": {
+    "value": "#0958d9"
+  },
+  "colorBgMask": {
+    "value": "rgba(0, 0, 0, 0.45)"
+  },
+  "colorWhite": {
+    "value": "#fff"
+  },
+  "fontSizeSM": {
+    "value": "12px"
+  },
+  "fontSizeLG": {
+    "value": "16px"
+  },
+  "fontSizeXL": {
+    "value": "20px"
+  },
+  "fontSizeHeading1": {
+    "value": "38px"
+  },
+  "fontSizeHeading2": {
+    "value": "30px"
+  },
+  "fontSizeHeading3": {
+    "value": "24px"
+  },
+  "fontSizeHeading4": {
+    "value": "20px"
+  },
+  "fontSizeHeading5": {
+    "value": "16px"
+  },
+  "lineHeight": {
+    "value": 1.5714285714285714
+  },
+  "lineHeightLG": {
+    "value": 1.5
+  },
+  "lineHeightSM": {
+    "value": 1.6666666666666667
+  },
+  "fontHeight": {
+    "value": "22px"
+  },
+  "fontHeightLG": {
+    "value": "24px"
+  },
+  "fontHeightSM": {
+    "value": "20px"
+  },
+  "lineHeightHeading1": {
+    "value": 1.2105263157894737
+  },
+  "lineHeightHeading2": {
+    "value": 1.2666666666666666
+  },
+  "lineHeightHeading3": {
+    "value": 1.3333333333333333
+  },
+  "lineHeightHeading4": {
+    "value": 1.4
+  },
+  "lineHeightHeading5": {
+    "value": 1.5
+  },
+  "sizeXXL": {
+    "value": "48px"
+  },
+  "sizeXL": {
+    "value": "32px"
+  },
+  "sizeLG": {
+    "value": "24px"
+  },
+  "sizeMD": {
+    "value": "20px"
+  },
+  "sizeMS": {
+    "value": "16px"
+  },
+  "size": {
+    "value": "16px"
+  },
+  "sizeSM": {
+    "value": "12px"
+  },
+  "sizeXS": {
+    "value": "8px"
+  },
+  "sizeXXS": {
+    "value": "4px"
+  },
+  "controlHeightSM": {
+    "value": 24
+  },
+  "controlHeightXS": {
+    "value": 16
+  },
+  "controlHeightLG": {
+    "value": 40
+  },
+  "motionDurationFast": {
+    "value": "0.1s"
+  },
+  "motionDurationMid": {
+    "value": "0.2s"
+  },
+  "motionDurationSlow": {
+    "value": "0.3s"
+  },
+  "lineWidthBold": {
+    "value": 2
+  },
+  "borderRadiusXS": {
+    "value": "2px"
+  },
+  "borderRadiusSM": {
+    "value": "4px"
+  },
+  "borderRadiusLG": {
+    "value": "8px"
+  },
+  "borderRadiusOuter": {
+    "value": "4px"
+  },
+  "colorFillContent": {
+    "value": "rgba(0, 0, 0, 0.06)"
+  },
+  "colorFillContentHover": {
+    "value": "rgba(0, 0, 0, 0.15)"
+  },
+  "colorFillAlter": {
+    "value": "rgba(0, 0, 0, 0.02)"
+  },
+  "colorBgContainerDisabled": {
+    "value": "rgba(0, 0, 0, 0.04)"
+  },
+  "colorBorderBg": {
+    "value": "#ffffff"
+  },
+  "colorSplit": {
+    "value": "rgba(5, 5, 5, 0.06)"
+  },
+  "colorTextPlaceholder": {
+    "value": "rgba(0, 0, 0, 0.25)"
+  },
+  "colorTextDisabled": {
+    "value": "rgba(0, 0, 0, 0.25)"
+  },
+  "colorTextHeading": {
+    "value": "rgba(0, 0, 0, 0.88)"
+  },
+  "colorTextLabel": {
+    "value": "rgba(0, 0, 0, 0.65)"
+  },
+  "colorTextDescription": {
+    "value": "rgba(0, 0, 0, 0.45)"
+  },
+  "colorTextLightSolid": {
+    "value": "#fff"
+  },
+  "colorHighlight": {
+    "value": "#ff4d4f"
+  },
+  "colorBgTextHover": {
+    "value": "rgba(0, 0, 0, 0.06)"
+  },
+  "colorBgTextActive": {
+    "value": "rgba(0, 0, 0, 0.15)"
+  },
+  "colorIcon": {
+    "value": "rgba(0, 0, 0, 0.45)"
+  },
+  "colorIconHover": {
+    "value": "rgba(0, 0, 0, 0.88)"
+  },
+  "colorErrorOutline": {
+    "value": "rgba(255, 38, 5, 0.06)"
+  },
+  "colorWarningOutline": {
+    "value": "rgba(255, 215, 5, 0.1)"
+  },
+  "fontSizeIcon": {
+    "value": "12px"
+  },
+  "lineWidthFocus": {
+    "value": 4
+  },
+  "controlOutlineWidth": {
+    "value": 2
+  },
+  "controlInteractiveSize": {
+    "value": "16px"
+  },
+  "controlItemBgHover": {
+    "value": "rgba(0, 0, 0, 0.04)"
+  },
+  "controlItemBgActive": {
+    "value": "#e6f4ff"
+  },
+  "controlItemBgActiveHover": {
+    "value": "#bae0ff"
+  },
+  "controlItemBgActiveDisabled": {
+    "value": "rgba(0, 0, 0, 0.15)"
+  },
+  "controlTmpOutline": {
+    "value": "rgba(0, 0, 0, 0.02)"
+  },
+  "controlOutline": {
+    "value": "rgba(5, 145, 255, 0.1)"
+  },
+  "fontWeightStrong": {
+    "value": "600px"
+  },
+  "opacityLoading": {
+    "value": 0.65
+  },
+  "linkDecoration": {
+    "value": "none"
+  },
+  "linkHoverDecoration": {
+    "value": "none"
+  },
+  "linkFocusDecoration": {
+    "value": "none"
+  },
+  "controlPaddingHorizontal": {
+    "value": "12px"
+  },
+  "controlPaddingHorizontalSM": {
+    "value": "8px"
+  },
+  "paddingXXS": {
+    "value": "4px"
+  },
+  "paddingXS": {
+    "value": "8px"
+  },
+  "paddingSM": {
+    "value": "12px"
+  },
+  "padding": {
+    "value": "16px"
+  },
+  "paddingMD": {
+    "value": "20px"
+  },
+  "paddingLG": {
+    "value": "24px"
+  },
+  "paddingXL": {
+    "value": "32px"
+  },
+  "paddingContentHorizontalLG": {
+    "value": "24px"
+  },
+  "paddingContentVerticalLG": {
+    "value": "16px"
+  },
+  "paddingContentHorizontal": {
+    "value": "16px"
+  },
+  "paddingContentVertical": {
+    "value": "12px"
+  },
+  "paddingContentHorizontalSM": {
+    "value": "16px"
+  },
+  "paddingContentVerticalSM": {
+    "value": "8px"
+  },
+  "marginXXS": {
+    "value": "4px"
+  },
+  "marginXS": {
+    "value": "8px"
+  },
+  "marginSM": {
+    "value": "12px"
+  },
+  "margin": {
+    "value": "16px"
+  },
+  "marginMD": {
+    "value": "20px"
+  },
+  "marginLG": {
+    "value": "24px"
+  },
+  "marginXL": {
+    "value": "32px"
+  },
+  "marginXXL": {
+    "value": "48px"
+  },
+  "boxShadow": {
+    "value": " 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05) "
+  },
+  "boxShadowSecondary": {
+    "value": " 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05) "
+  },
+  "boxShadowTertiary": {
+    "value": " 0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02) "
+  },
+  "screenXS": {
+    "value": "480px"
+  },
+  "screenXSMin": {
+    "value": "480px"
+  },
+  "screenXSMax": {
+    "value": "575px"
+  },
+  "screenSM": {
+    "value": "576px"
+  },
+  "screenSMMin": {
+    "value": "576px"
+  },
+  "screenSMMax": {
+    "value": "767px"
+  },
+  "screenMD": {
+    "value": "768px"
+  },
+  "screenMDMin": {
+    "value": "768px"
+  },
+  "screenMDMax": {
+    "value": "991px"
+  },
+  "screenLG": {
+    "value": "992px"
+  },
+  "screenLGMin": {
+    "value": "992px"
+  },
+  "screenLGMax": {
+    "value": "1199px"
+  },
+  "screenXL": {
+    "value": "1200px"
+  },
+  "screenXLMin": {
+    "value": "1200px"
+  },
+  "screenXLMax": {
+    "value": "1599px"
+  },
+  "screenXXL": {
+    "value": "1600px"
+  },
+  "screenXXLMin": {
+    "value": "1600px"
+  },
+  "boxShadowPopoverArrow": {
+    "value": "2px 2px 5px rgba(0, 0, 0, 0.05)"
+  },
+  "boxShadowCard": {
+    "value": " 0 1px 2px -2px rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.12), 0 5px 12px 4px rgba(0, 0, 0, 0.09) "
+  },
+  "boxShadowDrawerRight": {
+    "value": " -6px 0 16px 0 rgba(0, 0, 0, 0.08), -3px 0 6px -4px rgba(0, 0, 0, 0.12), -9px 0 28px 8px rgba(0, 0, 0, 0.05) "
+  },
+  "boxShadowDrawerLeft": {
+    "value": " 6px 0 16px 0 rgba(0, 0, 0, 0.08), 3px 0 6px -4px rgba(0, 0, 0, 0.12), 9px 0 28px 8px rgba(0, 0, 0, 0.05) "
+  },
+  "boxShadowDrawerUp": {
+    "value": " 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05) "
+  },
+  "boxShadowDrawerDown": {
+    "value": " 0 -6px 16px 0 rgba(0, 0, 0, 0.08), 0 -3px 6px -4px rgba(0, 0, 0, 0.12), 0 -9px 28px 8px rgba(0, 0, 0, 0.05) "
+  },
+  "boxShadowTabsOverflowLeft": {
+    "value": "inset 10px 0 8px -8px rgba(0, 0, 0, 0.08)"
+  },
+  "boxShadowTabsOverflowRight": {
+    "value": "inset -10px 0 8px -8px rgba(0, 0, 0, 0.08)"
+  },
+  "boxShadowTabsOverflowTop": {
+    "value": "inset 0 10px 8px -8px rgba(0, 0, 0, 0.08)"
+  },
+  "boxShadowTabsOverflowBottom": {
+    "value": "inset 0 -10px 8px -8px rgba(0, 0, 0, 0.08)"
+  }
+}
