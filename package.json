@@ -16,7 +16,8 @@
   "main": "dist/aquarium.mjs",
   "files": [
     "dist/aquarium.mjs",
-    "dist/index.d.ts"
+    "dist/index.d.ts",
+    "dist/_variables.css"
   ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "6.5.1",
@@ -75,7 +76,8 @@
     "build-dist": "sh ./scripts/build-dist.sh",
     "build-storybook": "storybook build",
     "lint": "eslint --ext .ts,.tsx \"src/**/*.{ts,tsx}\"",
-    "lint:fix": "eslint --ext .ts,.tsx \"src/**/*.{ts,tsx}\" --quiet --fix"
+    "lint:fix": "eslint --ext .ts,.tsx \"src/**/*.{ts,tsx}\" --quiet --fix",
+    "tokens-to-css": "npx style-dictionary build --config ./style-dictionary.json"
   },
   "lint-staged": {
     "*.{ts,tsx}": [

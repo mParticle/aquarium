@@ -4,10 +4,10 @@ import { ConfigProvider } from 'src/components/other/ConfigProvider/ConfigProvid
 
 export interface IButtonProps extends AntButtonProps {}
 
-export const Button = (props: IButtonProps) => (
-  <>
+export const Button = (props: IButtonProps) => {
+  return (
     <ConfigProvider>
       <AntButton {...props}>{props.children}</AntButton>
     </ConfigProvider>
-  </>
-)
+  )
+}
