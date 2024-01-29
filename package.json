@@ -80,7 +80,7 @@
     "build-dist": "sh ./scripts/build-dist.sh",
     "build-storybook": "storybook build",
     "lint": "concurrently \"eslint --ext .ts,.tsx \"src/**/*.{ts,tsx}\"\" \"stylelint \"**/*.css\"\"",
-    "lint:fix": "concurrently \"eslint --ext .ts,.tsx \"src/**/*.{ts,tsx}\" --quiet --fix\" \"stylelint \"**/*.css\" --fix\""
+    "lint:fix": "concurrently \"eslint --ext .ts,.tsx \"src/**/*.{ts,tsx}\" --quiet --fix\" \"stylelint \"**/*.css\" --fix\"",
     "tokens-to-css": "npx style-dictionary build --config ./style-dictionary.json"
   },
   "lint-staged": {
