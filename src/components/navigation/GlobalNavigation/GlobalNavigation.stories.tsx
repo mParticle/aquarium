@@ -123,7 +123,7 @@ function Beta(label: string) {
   return (
     <Space>
       {label}
-      <Badge color="blue" count="Beta" />
+      <Badge color="blue" count="Beta" className="globalNavigation__badge" />
     </Space>
   )
 }

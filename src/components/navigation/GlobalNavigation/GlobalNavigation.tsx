@@ -52,8 +52,8 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
       width={200}
       collapsedWidth={100}
       style={{
-        // border: 'solid 1px black',
-        minHeight: '750px',
+        border: 'solid 1px black',
+        minHeight: '850px',
         // backgroundColor: 'white',
       }}
       collapsible
@@ -63,7 +63,7 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
         // setCollapsed(false)
       }}
       onMouseLeave={e => {
-        // setCollapsed(true)
+        setCollapsed(true)
       }}
     >
       <Flex vertical justify="space-between" style={{ height: '100%', backgroundColor: 'white' }}>

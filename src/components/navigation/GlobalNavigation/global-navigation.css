@@ -1,4 +1,9 @@
+:root {
+    --nav-item-height: 56px;
+}
+
 .globalNavigation__item {
+    height: var(--nav-item-height) !important;
     width: 80px;
 
     padding: var(--padding);
@@ -16,6 +21,7 @@
 .globalNavigation__menu {
     border-inline-end: initial !important;
 
+
     &:after, &:before { /* hide arrow */
         display: none; !important
     }
@@ -27,14 +33,14 @@
 
 
 .globalNavigation__menuItem {
-    .ant-tooltip { display: none; }
+
     .ant-menu-submenu-title {
         display: flex;
         flex-direction: column;
         align-items: center;
 
-        line-height: 18px !important;
-        height: 48px !important;
+        height: var(--nav-item-height) !important;
+        width: 80px !important;
     }
 
     .ant-menu-title-content {
@@ -44,29 +50,18 @@
 }
 
 
-
-
-.globalNavigation__icon {
-    /* width: 80px; */
-
-    /* padding: var(--padding); */
-    /* gap: var(--margin-xxs); */
-
-    /* border-radius: var(--border-radius); */
-    /* cursor: pointer; */
-
-    /* &:hover { */
-    /*     background-color: #EBE8F8; !* todo: find variable *! */
-    /* } */
-}
-
-
 .globalNavigation__iconLabel {
     color: rgba(0, 0, 0, 0.88); /* var(--Components-Menu-Component-itemColor, rgba(0, 0, 0, 0.88)); */
 }
 
+.globalNavigation__badge {
+    border: solid 1px #c3aeff; /* todo: var - Components/Tag/Global/colorBorder */
+    border-radius: var(--border-radius-sm);
+    padding: 1px var(--padding-content-vertical-sm);
+    box-shadow: none !important;
 
-.ant-menu-item {
-    height: initial !important;
-    line-height: initial !important;
+    .ant-badge-count {
+        color: #000000e0 !important;
+        background: transparent !important;
+    }
 }

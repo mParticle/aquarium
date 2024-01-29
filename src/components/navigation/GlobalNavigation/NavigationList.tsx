@@ -5,17 +5,18 @@ import { type IGlobalNavigationManagement } from 'src/components/navigation/Glob
 import { type IGlobalNavigationTool } from 'src/components/navigation/GlobalNavigation/GlobalNavigation'
 import { NavigationIcon } from 'src/components/navigation/GlobalNavigation/NavigationIcon'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
+import { Center } from "src/components";
 
 export function NavigationList({ items }: { items: Array<IGlobalNavigationManagement | IGlobalNavigationTool> }) {
   return (
-    <span>
+    <Center vertical>
       {items.map((item, i) => (
         <>
           {item.type === 'link' && <NavigationItem {...item} />}
           {item.type === 'menu' && <Menu items={[generateMenuItem(item, i)]} className="globalNavigation__menu" />}
         </>
       ))}
-    </span>
+    </Center>
   )
 }
 
