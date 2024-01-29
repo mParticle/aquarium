@@ -40,6 +40,14 @@ const meta: Meta<typeof Avatar> = {
       control: 'select',
       options: [true, false, 'true', 'false'],
     },
+     icon: {
+      control: 'select',
+      options: ['User', 'Gamepad'],
+      mapping: {
+        User: <Icon icon={faUser} />,
+        Gamepad: <Icon icon={faGamepad} />,
+      },
+    },
   },
 }
 export default meta
