@@ -49,8 +49,8 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
 
   return (
     <Layout.Sider
-      width={200}
-      collapsedWidth={100}
+      width={250}
+      collapsedWidth={150}
       style={{
         border: 'solid 1px black',
         minHeight: '850px',
@@ -60,7 +60,7 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
       collapsed={collapsed}
       trigger={null}
       onMouseEnter={e => {
-        // setCollapsed(false)
+        setCollapsed(false)
       }}
       onMouseLeave={e => {
         setCollapsed(true)

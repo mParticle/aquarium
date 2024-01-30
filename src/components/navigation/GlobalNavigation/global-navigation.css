@@ -61,7 +61,12 @@
     box-shadow: none !important;
 
     .ant-badge-count {
-        color: #000000e0 !important;
+        color: #000000e0 !important; /* todo - var? */
         background: transparent !important;
     }
+}
+
+.ant-badge-color-red {
+    color: var(--color-error) !important;
+    background: var(--color-error) !important;
 }

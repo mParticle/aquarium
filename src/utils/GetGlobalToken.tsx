@@ -3,7 +3,7 @@
 
 import { theme } from 'antd'
 import { type AliasToken } from 'antd/es/theme/interface'
-import useTheme from 'antd/es/config-provider/hooks/useTheme'
+import { LightTheme } from 'design/LightTheme'
 
 export function GetGlobalToken(): React.ReactNode {
   const { getDesignToken } = theme
@@ -25,7 +25,7 @@ export function GetGlobalToken(): React.ReactNode {
     )
   }
 
-  const globalToken = wrapValuesInObject(getDesignToken(useTheme()))
+  const globalToken = wrapValuesInObject(getDesignToken(LightTheme))
 
   return <>{JSON.stringify(globalToken, null, 1)}</>
 }
