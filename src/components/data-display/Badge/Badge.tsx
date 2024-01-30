@@ -11,3 +11,5 @@ export const Badge = (props: IBadgeProps) => {
     </ConfigProvider>
   )
 }
+
+Badge.Ribbon = AntBadge.Ribbon
