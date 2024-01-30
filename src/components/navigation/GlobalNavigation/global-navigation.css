@@ -1,10 +1,11 @@
 :root {
     --nav-item-height: 56px;
+    --nav-item-width: 80px;
 }
 
 .globalNavigation__item {
     height: var(--nav-item-height) !important;
-    width: 80px;
+    width: var(--nav-item-height);
 
     padding: var(--padding);
     gap: var(--margin-xxs);
@@ -12,8 +13,12 @@
     border-radius: var(--border-radius);
     cursor: pointer;
 
-    &:hover, :focus, :active {
-        background-color: #ebe8f8; /* todo: find variable */
+    &:hover {
+        background-color: var(--control-item-bg-hover);
+    }
+
+    :focus, :active {
+        background-color: var(--control-item-bg-active);
     }
 }
 
@@ -51,18 +56,19 @@
 
 
 .globalNavigation__iconLabel {
-    color: rgba(0, 0, 0, 0.88); /* var(--Components-Menu-Component-itemColor, rgba(0, 0, 0, 0.88)); */
+    color: var(--color-text);
 }
 
 .globalNavigation__badge {
-    border: solid 1px #c3aeff; /* todo: var - Components/Tag/Global/colorBorder */
+    border: solid 1px var(--color-border);
     border-radius: var(--border-radius-sm);
     padding: 1px var(--padding-content-vertical-sm);
     box-shadow: none !important;
 
     .ant-badge-count {
-        color: #000000e0 !important; /* todo - var? */
+        color: var(--color-text) !important;
         background: transparent !important;
+        box-shadow: none !important;
     }
 }
 

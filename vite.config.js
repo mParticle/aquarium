@@ -6,6 +6,7 @@ export default defineConfig({
   resolve: {
     alias: {
       src: '/src',
+      design: '/design',
     },
   },
   plugins: [dts({ include: 'src/components', rollupTypes: true, })],
