@@ -128,10 +128,6 @@ export const WithClickTriggerAndActionOnChange: Story = {
   },
 }
 
-const text = <span>prompt text</span>
-const buttonWidth = 80
-const buttonHeight = 70
-
 export const WithCustomArrowPlacements: Story = {
   render: () => {
     const [arrow, setArrow] = useState('Show')
@@ -149,6 +145,10 @@ export const WithCustomArrowPlacements: Story = {
         pointAtCenter: true,
       }
     }, [arrow])
+
+    const text = <span>prompt text</span>
+    const buttonWidth = 80
+    const buttonHeight = 70
 
     return (
       <ExampleStory title={'Show, hide or center arrow and change placements of the tooltip'}>
