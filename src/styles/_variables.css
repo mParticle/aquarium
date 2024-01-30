@@ -23,7 +23,7 @@
   --font-family: 'GT America', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --font-family-code: 'RobotoMono', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
   --font-size: 14px;
-  --line-width: 1;
+  --line-width: 1px;
   --line-type: solid;
   --motion-unit: 0.1;
   --motion-base: 0;
@@ -39,7 +39,7 @@
   --size-unit: 4px;
   --size-step: 4px;
   --size-popup-arrow: 16px;
-  --control-height: 32;
+  --control-height: 32px;
   --z-index-base: 0;
   --z-index-popup-base: 1000;
   --opacity-image: 1;
@@ -82,7 +82,7 @@
   --line-height-md: 1.5700000524520874;
   --white-alpha-1: rgba(1, 1, 1, 0);
   --black-alpha-1: rgba(0, 0, 0, 0);
-  --control-height-md: 32;
+  --control-height-md: 32px;
   --x-xs: 4;
   --orange-1: #fff0e8;
   --purple-1: #fef5ff;
@@ -551,13 +551,13 @@
   --size-sm: 12px;
   --size-xs: 8px;
   --size-xxs: 4px;
-  --control-height-sm: 24;
-  --control-height-xs: 16;
-  --control-height-lg: 40;
+  --control-height-sm: 24px;
+  --control-height-xs: 16px;
+  --control-height-lg: 40px;
   --motion-duration-fast: 0.1s;
   --motion-duration-mid: 0.2s;
   --motion-duration-slow: 0.3s;
-  --line-width-bold: 2;
+  --line-width-bold: 2px;
   --border-radius-xs: 2px;
   --border-radius-sm: 4px;
   --border-radius-lg: 8px;
@@ -578,8 +578,8 @@
   --color-error-outline: rgba(255, 5, 22, 0.06);
   --color-warning-outline: rgba(255, 138, 5, 0.06);
   --font-size-icon: 12px;
-  --line-width-focus: 4;
-  --control-outline-width: 2;
+  --line-width-focus: 4px;
+  --control-outline-width: 2px;
   --control-interactive-size: 16px;
   --control-item-bg-active-hover: #c8a3ff;
   --control-item-bg-active-disabled: rgba(0, 0, 0, 0.1599999964237213);
