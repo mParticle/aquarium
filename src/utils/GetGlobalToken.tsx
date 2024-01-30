@@ -11,9 +11,13 @@ export function GetGlobalToken(): React.ReactNode {
   function wrapValuesInObject(obj: AliasToken) {
     return Object.fromEntries(
       Object.entries(obj).map(([key, value]) => {
-        const pxKeys = ['padding', 'margin', 'borderRadius', 'screen', 'size', 'font']
+        const pxKeys = ['padding', 'margin', 'borderRadius', 'screen', 'size', 'font', 'width', 'height']
+        const excludePxKeys = ['lineHeight']
 
-        const addPx = typeof value === 'number' && pxKeys.some(k => (key + '').toLowerCase().includes(k.toLowerCase()))
+        const addPx =
+          typeof value === 'number' &&
+          pxKeys.some(k => (key + '').toLowerCase().includes(k.toLowerCase())) &&
+          !excludePxKeys.some(k => (key + '').toLowerCase().includes(k.toLowerCase()))
 
         if (addPx) value += 'px'
 

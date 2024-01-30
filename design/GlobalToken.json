@@ -72,7 +72,7 @@
     "value": "14px"
   },
   "lineWidth": {
-    "value": 1
+    "value": "1px"
   },
   "lineType": {
     "value": "solid"
@@ -120,7 +120,7 @@
     "value": "16px"
   },
   "controlHeight": {
-    "value": 32
+    "value": "32px"
   },
   "zIndexBase": {
     "value": 0
@@ -249,7 +249,7 @@
     "value": "rgba(0, 0, 0, 0)"
   },
   "controlHeightMD": {
-    "value": 32
+    "value": "32px"
   },
   "xXS": {
     "value": 4
@@ -1656,13 +1656,13 @@
     "value": "4px"
   },
   "controlHeightSM": {
-    "value": 24
+    "value": "24px"
   },
   "controlHeightXS": {
-    "value": 16
+    "value": "16px"
   },
   "controlHeightLG": {
-    "value": 40
+    "value": "40px"
   },
   "motionDurationFast": {
     "value": "0.1s"
@@ -1674,7 +1674,7 @@
     "value": "0.3s"
   },
   "lineWidthBold": {
-    "value": 2
+    "value": "2px"
   },
   "borderRadiusXS": {
     "value": "2px"
@@ -1737,10 +1737,10 @@
     "value": "12px"
   },
   "lineWidthFocus": {
-    "value": 4
+    "value": "4px"
   },
   "controlOutlineWidth": {
-    "value": 2
+    "value": "2px"
   },
   "controlInteractiveSize": {
     "value": "16px"
