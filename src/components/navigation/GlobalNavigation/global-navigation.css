@@ -85,7 +85,12 @@
     /* align-items: center; */
     /* flex-shrink: 0; */
     /* gap: var(--margin-xs); */
-    /* width: var(--control-height-lg); */
+    width: var(--control-height-lg);
     height: var(--control-height-lg) !important;
     padding: 0 var(--padding-sm);
+
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--color-border, #C3AEFF);
+
+    /* box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.02); */ /* Component/Button/defaultShadow */
 }
