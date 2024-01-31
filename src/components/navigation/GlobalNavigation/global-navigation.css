@@ -59,6 +59,7 @@
     color: var(--color-text);
 }
 
+
 .globalNavigation__badge {
     border: solid 1px var(--color-border);
     border-radius: var(--border-radius-sm);
@@ -72,7 +73,19 @@
     }
 }
 
+
 .ant-badge-color-red {
     color: var(--color-error) !important;
     background: var(--color-error) !important;
+}
+
+.globalNavigation__headerItem {
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* flex-shrink: 0; */
+    /* gap: var(--margin-xs); */
+    /* width: var(--control-height-lg); */
+    height: var(--control-height-lg) !important;
+    padding: 0 var(--padding-sm);
 }

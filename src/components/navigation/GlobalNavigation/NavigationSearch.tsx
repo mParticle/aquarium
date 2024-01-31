@@ -17,7 +17,7 @@ export function NavigationSearch() {
           </Space>
         }
       >
-        <Center style={{ height: NavItemHeight }}>
+        <Center style={{ height: NavItemHeight }} className="globalNavigation__headerItem">
           <Icon icon={faSearch} color="gray" size="2x" />
         </Center>
       </Tooltip>
