@@ -584,7 +584,7 @@
   --control-item-bg-active-hover: #c8a3ff;
   --control-item-bg-active-disabled: rgba(0, 0, 0, 0.1599999964237213);
   --control-tmp-outline: rgba(0, 0, 0, 0);
-  --font-weight-strong: 600px;
+  --font-weight-strong: 600;
   --opacity-loading: 0.65;
   --link-decoration: none;
   --link-hover-decoration: none;

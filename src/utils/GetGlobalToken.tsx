@@ -12,7 +12,7 @@ export function GetGlobalToken(): React.ReactNode {
     return Object.fromEntries(
       Object.entries(obj).map(([key, value]) => {
         const pxKeys = ['padding', 'margin', 'borderRadius', 'screen', 'size', 'font', 'width', 'height']
-        const excludePxKeys = ['lineHeight']
+        const excludePxKeys = ['lineHeight', 'fontWeight']
 
         const addPx =
           typeof value === 'number' &&
