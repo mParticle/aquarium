@@ -3982,7 +3982,7 @@ const jr = "42px", cs = 90, rl = (e) => {
         // for storybook rendering height only
         minHeight: "850px"
       },
-      children: /* @__PURE__ */ V(Dr, { vertical: !0, justify: "space-between", style: { height: "100%", backgroundColor: "white" }, children: [
+      children: /* @__PURE__ */ V(Dr, { vertical: !0, justify: "space-between", style: { height: "100%" }, children: [
         /* @__PURE__ */ V("div", { children: [
           /* @__PURE__ */ s(ts, { ...e.logo }),
           /* @__PURE__ */ s("hr", {}),
