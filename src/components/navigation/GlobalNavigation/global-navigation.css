@@ -3,16 +3,25 @@
     --nav-item-width: 80px;
 }
 
+.globalNavigation {
+    border: solid 1px var(--black-alpha-12);
+    min-height: 100%;
+}
+
 .globalNavigation__item {
     height: var(--nav-item-height) !important;
-    width: var(--nav-item-height);
+    width: 88px !important;
 
-    padding: var(--padding);
+
+    margin: 0;
+    padding: 0;
     gap: var(--margin-xxs);
-
-    border-radius: var(--border-radius);
+    
+    border-radius: 0 !important;
     cursor: pointer;
 
+    transition:none !important; 
+    
     &:hover {
         background-color: var(--control-item-bg-hover);
     }
@@ -20,43 +29,68 @@
     :focus, :active {
         background-color: var(--control-item-bg-active);
     }
-}
 
-
-.globalNavigation__menu {
-    border-inline-end: initial !important;
-
-
-    &:after, &:before { /* hide arrow */
-        display: none; !important
-    }
-
-    .globalNavigation__icon {
-        height: 100%;
-    }
-}
-
-
-.globalNavigation__menuItem {
 
     .ant-menu-submenu-title {
         display: flex;
         flex-direction: column;
         align-items: center;
-
+        
         height: var(--nav-item-height) !important;
-        width: 80px !important;
+        padding: 0 !important;
+
+        background-color: transparent !important;
     }
 
     .ant-menu-title-content {
         margin-inline-start: 0 !important;
         opacity: 1 !important;
     }
+
 }
+
+
+.globalNavigation__menu {
+    height: var(--nav-item-height) !important;
+    width: 100%;
+
+    border-inline-end: initial !important;
+
+    .globalNavigation__icon {
+        height: 100%;
+        width: 20px;
+        /* height:20px; */
+    }
+}
+
+
+/* .globalNavigation__menuItem { */
+.ant-menu-submenu-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* margin: 0; */
+    /* padding: 0; */
+    /* height: var(--nav-item-height) !important; */
+    /* width: 88px !important; */
+    /* border-radius: 0; */
+}
+
+.ant-menu-title-content {
+    margin-inline-start: 0 !important;
+    opacity: 1 !important;
+}
+
+/* } */
 
 
 .globalNavigation__iconLabel {
     color: var(--color-text);
+    font-size: 10px;
+    padding-top: var(--margin-xxs);
+    font-style: normal;
+    font-weight: 400;
 }
 
 
@@ -90,7 +124,7 @@
     padding: 0 var(--padding-sm);
 
     border-radius: var(--border-radius-lg);
-    border: 1px solid var(--color-border, #C3AEFF);
+    border: 1px solid var(--color-border, #c3aeff);
 
     /* box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.02); */ /* Component/Button/defaultShadow */
 }

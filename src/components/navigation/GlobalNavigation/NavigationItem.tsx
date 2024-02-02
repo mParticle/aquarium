@@ -1,13 +1,13 @@
-import type { IconDefinition } from '@fortawesome/free-solid-svg-icons'
 import { NavigationIcon } from 'src/components/navigation/GlobalNavigation/NavigationIcon'
 import { NavigationList } from 'src/components/navigation/GlobalNavigation/NavigationList'
 import { Tooltip } from 'src/components'
+import { type ReactNode } from 'react'
 
 interface INavigationIconProps {
   type: 'link' | 'menu'
-  icon: IconDefinition
+  icon: ReactNode
   label: string
-
+  hideLabel?: boolean
   items? // menu only
   onClick?: (e) => void // link only
 }
@@ -23,6 +23,7 @@ export function NavigationItem(props: INavigationIconProps) {
               icon={props.icon}
               label={props.label}
               onClick={props.onClick}
+              hideLabel={props.hideLabel}
             />
           </Tooltip>
         </>

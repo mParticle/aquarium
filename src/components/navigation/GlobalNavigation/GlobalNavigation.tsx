@@ -1,7 +1,6 @@
 import 'src/styles/_variables.css'
 import './global-navigation.css'
-import { useState } from 'react'
-import { type IconDefinition } from '@fortawesome/free-solid-svg-icons'
+import { type ReactNode } from 'react'
 import { Layout } from 'src/components'
 import { Flex } from 'src/components'
 import { type MenuItemType } from 'antd/es/menu/hooks/useItems'
@@ -13,7 +12,8 @@ import { NavigationCreate } from 'src/components/navigation/GlobalNavigation/Nav
 
 export interface IBaseGlobalNavigationItem {
   label: string
-  icon: IconDefinition
+  icon: ReactNode
+  hideLabel?: boolean
 }
 
 export interface IGlobalNavigationLogo extends IBaseGlobalNavigationItem {}
@@ -43,27 +43,18 @@ export interface IGlobalNavigationProps {
 }
 
 export const NavItemHeight = '42px' as const
+export const NavWidth = 90 as const
 
 export const GlobalNavigation = (props: IGlobalNavigationProps) => {
-  const [collapsed, setCollapsed] = useState<boolean>(true)
+  
 
   return (
     <Layout.Sider
-      width={250}
-      collapsedWidth={150}
+      className="globalNavigation"
+      width={NavWidth}
       style={{
-        border: 'solid 1px black',
+        // for storybook rendering height only
         minHeight: '850px',
-        // backgroundColor: 'white',
-      }}
-      collapsible
-      collapsed={collapsed}
-      trigger={null}
-      onMouseEnter={e => {
-        setCollapsed(false)
-      }}
-      onMouseLeave={e => {
-        setCollapsed(true)
       }}
     >
       <Flex vertical justify="space-between" style={{ height: '100%', backgroundColor: 'white' }}>

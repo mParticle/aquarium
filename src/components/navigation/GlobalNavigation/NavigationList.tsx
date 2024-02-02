@@ -13,7 +13,7 @@ export function NavigationList({ items }: { items: Array<IGlobalNavigationManage
       {items.map((item, i) => (
         <>
           {item.type === 'link' && <NavigationItem {...item} />}
-          {item.type === 'menu' && <Menu items={[generateMenuItem(item, i)]} className="globalNavigation__menu" />}
+          {item.type === 'menu' && <Menu expandIcon={null} items={[generateMenuItem(item, i)]} className="globalNavigation__menu" />}
         </>
       ))}
     </Center>
@@ -29,8 +29,8 @@ function generateMenuItem(item: IGlobalNavigationManagement | IGlobalNavigationT
   children.unshift({ label: item.label, type: 'group', key: item.label + '_groupTitle' })
 
   return {
-    icon: <NavigationIcon icon={item.icon} label={item.label} onClick={item.onClick} />,
-    className: 'globalNavigation__menuItem',
+    icon: <NavigationIcon icon={item.icon} label={item.label} onClick={item.onClick} hideLabel={item.hideLabel} />,
+    className: 'globalNavigation__item',
     key: `${item.label}${i}`,
     children,
   }

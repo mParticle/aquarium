@@ -5,7 +5,6 @@ import {
   faBell,
   faLifeRing,
   faGear,
-  faGuitar,
   faFishFins,
   faDatabase,
   faPeopleGroup,
@@ -43,51 +42,57 @@ import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavi
 import { Icon } from 'src/components/general/Icon/Icon'
 import { type MenuItemType } from 'antd/es/menu/hooks/useItems'
 import { type MenuItemGroupType } from 'antd/es/menu/hooks/useItems'
+import { Avatar } from 'src/components'
+import { Button } from "src/components";
 
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',
-  icon: faFishFins,
+  icon: <Icon icon={faFishFins} />,
 }
 const defaultTools: IGlobalNavigationTool[] = [
   {
     label: 'Tool 1',
-    icon: faTools,
+    icon: <Icon icon={faTools} />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Tool 2',
-    icon: faPersonWalkingDashedLineArrowRight,
+    icon: <Icon icon={faPersonWalkingDashedLineArrowRight} />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Tool 3',
-    icon: faAudioDescription,
+    icon: <Icon icon={faAudioDescription} />,
     type: 'link',
   },
 ]
 const defaultManagement: IGlobalNavigationManagement[] = [
   {
     label: 'Notifications',
-    icon: faBell,
+    hideLabel: true,
+    icon: <Icon icon={faBell} />,
     type: 'link',
   },
   {
     label: 'Support',
-    icon: faLifeRing,
+    hideLabel: true,
+    icon: <Icon icon={faLifeRing} />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Settings',
-    icon: faGear,
+    hideLabel: true,
+    icon: <Icon icon={faGear} />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Account',
-    icon: faGuitar,
+    hideLabel: true,
+    icon: <Avatar>WS</Avatar>,
     type: 'link',
   },
 ]
@@ -116,7 +121,7 @@ export const Primary: Story = {}
 
 const mpLogo: IGlobalNavigationLogo = {
   label: 'mP',
-  icon: faShapes,
+  icon: <Icon icon={faShapes} />,
 }
 
 function Beta(label: string) {
@@ -131,7 +136,7 @@ function Beta(label: string) {
 const mpTools: IGlobalNavigationTool[] = [
   {
     label: 'Activity',
-    icon: faBlenderPhone,
+    icon: <Icon icon={faBlenderPhone} />,
     type: 'menu',
     children: [
       { label: 'Platform Trends' },
@@ -149,7 +154,7 @@ const mpTools: IGlobalNavigationTool[] = [
   },
   {
     label: 'Data Master',
-    icon: faDatabase,
+    icon: <Icon icon={faDatabase} />,
     type: 'menu',
     children: [
       { label: 'Catalog' },
@@ -162,13 +167,13 @@ const mpTools: IGlobalNavigationTool[] = [
   },
   {
     label: 'Audiences',
-    icon: faPeopleGroup,
+    icon: <Icon icon={faPeopleGroup} />,
     type: 'menu',
     children: [{ label: 'Real-time' }, { label: 'Standard' }, { label: 'Journeys' }],
   },
   {
-    label: 'Connections',
-    icon: faArrowsToDot,
+    label: 'Observability',
+    icon: <Icon icon={faArrowsToDot} />,
     type: 'menu',
     children: [
       { label: 'Connect' },
@@ -180,38 +185,42 @@ const mpTools: IGlobalNavigationTool[] = [
   },
   {
     label: 'Setup',
-    icon: faKitchenSet,
+    icon: <Icon icon={faKitchenSet} />,
     type: 'menu',
     children: [{ label: 'Inputs' }, { label: 'Outputs' }, { label: 'Data Warehouse' }, { label: 'CRM' }],
   },
   {
     label: 'Directory',
-    icon: faBoxes,
+    icon: <Icon icon={faBoxes} />,
     type: 'link',
   },
 ]
 
 const mpManagement: IGlobalNavigationManagement[] = [
   {
-    label: 'Notification',
-    icon: faBell,
+    label: 'Notifications',
+    hideLabel: true,
+    icon: <Icon icon={faBell} />,
     type: 'link',
   },
   {
     label: 'Support',
-    icon: faLifeRing,
+    hideLabel: true,
+    icon: <Icon icon={faLifeRing} />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Settings',
-    icon: faGear,
+    hideLabel: true,
+    icon: <Icon icon={faGear} />,
     type: 'menu',
-    children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
+    children: [{ label: 'Platform Settings' }, { label: 'User Settings' }, { label: <Button type="primary">Switch to Legacy UI</Button> }],
   },
   {
     label: 'Account',
-    icon: faGuitar,
+    hideLabel: true,
+    icon: <Avatar>WS</Avatar>,
     type: 'link',
   },
 ]
@@ -226,51 +235,54 @@ export const MP: Story = {
 
 const indLogo: IGlobalNavigationLogo = {
   label: 'Ind',
-  icon: faShapes,
+  icon: <Icon icon={faShapes} />,
 }
 const indTools: IGlobalNavigationTool[] = [
   {
     label: 'Segmentation',
-    icon: faChartSimple,
+    icon: <Icon icon={faChartSimple} />,
     type: 'link',
   },
   {
     label: 'Funnel',
-    icon: faChartBar,
+    icon: <Icon icon={faChartBar} />,
     type: 'link',
   },
   {
     label: 'Journeys',
-    icon: faJournalWhills,
+    icon: <Icon icon={faJournalWhills} />,
     type: 'link',
   },
   {
     label: 'Cohort',
-    icon: faUserCog,
+    icon: <Icon icon={faUserCog} />,
     type: 'link',
   },
   {
     label: 'Users',
-    icon: faUsers,
+    icon: <Icon icon={faUsers} />,
     type: 'link',
   },
 ]
 const indManagement: IGlobalNavigationManagement[] = [
   {
     label: 'Support',
-    icon: faLifeRing,
+    hideLabel: true,
+    icon: <Icon icon={faLifeRing} />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Settings',
-    icon: faGear,
+    hideLabel: true,
+    icon: <Icon icon={faGear} />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Account',
-    icon: faGuitar,
+    hideLabel: true,
+    icon: <Avatar>WS</Avatar>,
     type: 'link',
   },
 ]
@@ -416,51 +428,54 @@ export const Indicative: Story = {
 
 const cortexLogo: IGlobalNavigationLogo = {
   label: 'Cortex',
-  icon: faShapes,
+  icon: <Icon icon={faShapes} />,
 }
 const cortexTools: IGlobalNavigationTool[] = [
   {
     label: 'Pipelines',
-    icon: faPizzaSlice,
+    icon: <Icon icon={faPizzaSlice} />,
     type: 'link',
   },
   {
     label: 'Projects',
-    icon: faDiagramPredecessor,
+    icon: <Icon icon={faDiagramPredecessor} />,
     type: 'link',
   },
   {
     label: 'Data',
-    icon: faPingPongPaddleBall,
+    icon: <Icon icon={faPingPongPaddleBall} />,
     type: 'link',
   },
   {
     label: 'API',
-    icon: faRoadSpikes,
+    icon: <Icon icon={faRoadSpikes} />,
     type: 'link',
   },
   {
     label: 'Insights',
-    icon: faPaintbrush,
+    icon: <Icon icon={faPaintbrush} />,
     type: 'link',
   },
 ]
 const cortexManagement: IGlobalNavigationManagement[] = [
   {
     label: 'Support',
-    icon: faLifeRing,
+    hideLabel: true,
+    icon: <Icon icon={faLifeRing} />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Settings',
-    icon: faGear,
+    hideLabel: true,
+    icon: <Icon icon={faGear} />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Account',
-    icon: faGuitar,
+    hideLabel: true,
+    icon: <Avatar>WS</Avatar>,
     type: 'link',
   },
 ]

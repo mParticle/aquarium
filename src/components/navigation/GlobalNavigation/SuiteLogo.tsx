@@ -21,8 +21,8 @@ export function SuiteLogo(props: IGlobalNavigationLogo) {
           }}
         >
           <Space>
+            <NavigationIcon icon={props.icon} label="" hideLabel={true} />
             {props.label}
-            <NavigationIcon icon={props.icon} />
           </Space>
         </div>
       </Center>
