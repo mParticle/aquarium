@@ -41,11 +41,10 @@ import { ForwardRefExoticComponent } from 'react';
 import { Grid } from 'antd';
 import { GroupProps } from 'antd/es/input';
 import { ColProps as IColProps } from 'antd';
-import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { IFlexProps as IFlexProps_2 } from '../../../../../../src/components/layout/Flex/Flex';
+import { IFlexProps as IFlexProps_2 } from '../../../../../../../src/components/layout/Flex/Flex';
 import { ImageProps } from 'antd';
-import { IModalProps as IModalProps_2 } from '../../../../../../src/components/feedback/Modal/Modal';
+import { IModalProps as IModalProps_2 } from '../../../../../../../src/components/feedback/Modal/Modal';
 import { InputNumberProps } from 'antd';
 import { InputProps } from 'antd';
 import { InputRef } from 'antd';
@@ -220,7 +219,8 @@ export declare interface IBadgeProps extends BadgeProps {
 
 declare interface IBaseGlobalNavigationItem {
     label: string;
-    icon: IconDefinition;
+    icon: ReactNode;
+    hideLabel?: boolean;
 }
 
 export declare interface IBreadcrumbProps extends BreadcrumbProps {
@@ -297,11 +297,11 @@ declare interface IGlobalNavigationProps {
     logo: IGlobalNavigationLogo;
     tools: IGlobalNavigationTool[];
     management: IGlobalNavigationManagement[];
-    canSearch: boolean;
     createOptions: {
         canCreate: boolean;
         createItems: Array<MenuItemType | MenuItemGroupType>;
     };
+    onSearchClick?: () => void;
 }
 
 declare interface IGlobalNavigationTool extends IBaseGlobalNavigationItem {
