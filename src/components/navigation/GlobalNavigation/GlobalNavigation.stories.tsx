@@ -43,7 +43,7 @@ import { Icon } from 'src/components/general/Icon/Icon'
 import { type MenuItemType } from 'antd/es/menu/hooks/useItems'
 import { type MenuItemGroupType } from 'antd/es/menu/hooks/useItems'
 import { Avatar } from 'src/components'
-import { Button } from "src/components";
+import { Button } from 'src/components'
 
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',
@@ -109,7 +109,6 @@ const meta: Meta<typeof GlobalNavigation> = {
     logo: defaultLogo,
     tools: defaultTools,
     management: defaultManagement,
-    canSearch: false,
     createOptions: { canCreate: false, createItems: [] },
   },
 }
@@ -215,7 +214,11 @@ const mpManagement: IGlobalNavigationManagement[] = [
     hideLabel: true,
     icon: <Icon icon={faGear} />,
     type: 'menu',
-    children: [{ label: 'Platform Settings' }, { label: 'User Settings' }, { label: <Button type="primary">Switch to Legacy UI</Button> }],
+    children: [
+      { label: 'Platform Settings' },
+      { label: 'User Settings' },
+      { label: <Button type="primary">Switch to Legacy UI</Button> },
+    ],
   },
   {
     label: 'Account',
@@ -226,7 +229,9 @@ const mpManagement: IGlobalNavigationManagement[] = [
 ]
 export const MP: Story = {
   args: {
-    canSearch: true,
+    onSearchClick: () => {
+      alert('Searching!')
+    },
     logo: mpLogo,
     tools: mpTools,
     management: mpManagement,
@@ -433,26 +438,31 @@ const cortexLogo: IGlobalNavigationLogo = {
 const cortexTools: IGlobalNavigationTool[] = [
   {
     label: 'Pipelines',
+    hideLabel: true,
     icon: <Icon icon={faPizzaSlice} />,
     type: 'link',
   },
   {
     label: 'Projects',
+    hideLabel: true,
     icon: <Icon icon={faDiagramPredecessor} />,
     type: 'link',
   },
   {
     label: 'Data',
+    hideLabel: true,
     icon: <Icon icon={faPingPongPaddleBall} />,
     type: 'link',
   },
   {
     label: 'API',
+    hideLabel: true,
     icon: <Icon icon={faRoadSpikes} />,
     type: 'link',
   },
   {
     label: 'Insights',
+    hideLabel: true,
     icon: <Icon icon={faPaintbrush} />,
     type: 'link',
   },
@@ -481,7 +491,6 @@ const cortexManagement: IGlobalNavigationManagement[] = [
 ]
 export const Cortex: Story = {
   args: {
-    canSearch: false,
     logo: cortexLogo,
     tools: cortexTools,
     management: cortexManagement,

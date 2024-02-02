@@ -2,10 +2,15 @@ import { Tooltip } from 'src/components'
 import { Space } from 'src/components'
 import { Center } from 'src/components'
 import { Icon } from 'src/components'
+import { Button } from 'src/components'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { NavItemHeight } from 'src/components/navigation/GlobalNavigation/GlobalNavigation'
 
-export function NavigationSearch() {
+interface INavigationSearchProps {
+  onClick: () => void
+}
+
+export function NavigationSearch(props: INavigationSearchProps) {
   return (
     <>
       <Tooltip
@@ -17,11 +22,10 @@ export function NavigationSearch() {
           </Space>
         }
       >
-        <Center style={{ height: NavItemHeight }} >
-          <Icon icon={faSearch} color="gray" size="2x" className="globalNavigation__headerItem"/>
+        <Center style={{ height: NavItemHeight }}>
+          <Button onClick={props.onClick} icon={<Icon icon={faSearch}></Icon>}></Button>
         </Center>
       </Tooltip>
-      <hr />
     </>
   )
 }

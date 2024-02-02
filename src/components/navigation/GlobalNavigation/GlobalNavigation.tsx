@@ -9,6 +9,7 @@ import { SuiteLogo } from 'src/components/navigation/GlobalNavigation/SuiteLogo'
 import { NavigationSearch } from 'src/components/navigation/GlobalNavigation/NavigationSearch'
 import { NavigationList } from 'src/components/navigation/GlobalNavigation/NavigationList'
 import { NavigationCreate } from 'src/components/navigation/GlobalNavigation/NavigationCreate'
+import { Center } from 'src/components'
 
 export interface IBaseGlobalNavigationItem {
   label: string
@@ -34,20 +35,18 @@ export interface IGlobalNavigationProps {
   logo: IGlobalNavigationLogo
   tools: IGlobalNavigationTool[]
   management: IGlobalNavigationManagement[]
-  canSearch: boolean
-
   createOptions: {
     canCreate: boolean
     createItems: Array<MenuItemType | MenuItemGroupType>
   }
+
+  onSearchClick?: () => void
 }
 
 export const NavItemHeight = '42px' as const
 export const NavWidth = 90 as const
 
 export const GlobalNavigation = (props: IGlobalNavigationProps) => {
-  
-
   return (
     <Layout.Sider
       className="globalNavigation"
@@ -62,14 +61,16 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
           <SuiteLogo {...props.logo} />
           <hr />
 
-          {props.canSearch && <NavigationSearch />}
+          <Center vertical>
+            {props.onSearchClick && <NavigationSearch onClick={props.onSearchClick} />}
 
-          {props.createOptions?.canCreate && props.createOptions?.createItems && (
-            <>
-              <NavigationCreate createItems={props.createOptions.createItems} />
-              <hr />
-            </>
-          )}
+            {props.createOptions?.canCreate && props.createOptions?.createItems && (
+              <>
+                <NavigationCreate createItems={props.createOptions.createItems} />
+                <hr />
+              </>
+            )}
+          </Center>
 
           <NavigationList items={props.tools} />
         </div>
