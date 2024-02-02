@@ -1755,7 +1755,7 @@
     "value": "rgba(0, 0, 0, 0)"
   },
   "fontWeightStrong": {
-    "value": "600px"
+    "value": 600
   },
   "opacityLoading": {
     "value": 0.65

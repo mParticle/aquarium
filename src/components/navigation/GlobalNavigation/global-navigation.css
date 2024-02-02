@@ -1,5 +1,5 @@
 :root {
-    --nav-item-height: 56px;
+    --nav-item-height: 56px; /* todo: 42 or 56? is 42 in the js */
     --nav-item-width: 80px;
 }
 
@@ -16,12 +16,12 @@
     margin: 0;
     padding: 0;
     gap: var(--margin-xxs);
-    
+
     border-radius: 0 !important;
     cursor: pointer;
 
-    transition:none !important; 
-    
+    transition: none !important;
+
     &:hover {
         background-color: var(--control-item-bg-hover);
     }
@@ -35,7 +35,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        
+
         height: var(--nav-item-height) !important;
         padding: 0 !important;
 
@@ -46,7 +46,6 @@
         margin-inline-start: 0 !important;
         opacity: 1 !important;
     }
-
 }
 
 
@@ -64,32 +63,10 @@
 }
 
 
-/* .globalNavigation__menuItem { */
-.ant-menu-submenu-title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    /* margin: 0; */
-    /* padding: 0; */
-    /* height: var(--nav-item-height) !important; */
-    /* width: 88px !important; */
-    /* border-radius: 0; */
-}
-
-.ant-menu-title-content {
-    margin-inline-start: 0 !important;
-    opacity: 1 !important;
-}
-
-/* } */
-
-
 .globalNavigation__iconLabel {
+    padding-top: var(--margin-xxs);
     color: var(--color-text);
     font-size: 10px;
-    padding-top: var(--margin-xxs);
-    font-style: normal;
     font-weight: 400;
 }
 
@@ -113,18 +90,31 @@
     background: var(--color-error) !important;
 }
 
+
 .globalNavigation__headerItem {
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* flex-shrink: 0; */
-    /* gap: var(--margin-xs); */
     width: var(--control-height-lg);
     height: var(--control-height-lg) !important;
     padding: 0 var(--padding-sm);
 
     border-radius: var(--border-radius-lg);
     border: 1px solid var(--color-border, #c3aeff);
+}
 
-    /* box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.02); */ /* Component/Button/defaultShadow */
+.globalNavigation__suiteLogo {
+    --suite-logo-height: 82px;
+
+    min-height: var(--suite-logo-height);
+    min-width: var(--nav-item-width);
+    padding-top: var(--padding-xs);
+    margin: var(--margin-xs) 0;
+
+    color: var(--black-alpha-12);
+
+    font-size: var(--font-size-sm);
+    font-weight: 400;
+    
+    .globalNavigation__icon {
+        padding-bottom: var(--padding-xs)
+    }
+
 }

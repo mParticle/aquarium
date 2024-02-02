@@ -120,7 +120,7 @@ type Story = StoryObj<typeof GlobalNavigation>
 export const Primary: Story = {}
 
 const mpLogo: IGlobalNavigationLogo = {
-  label: 'mP',
+  label: 'Data Platform',
   icon: <Icon icon={faShapes} />,
 }
 
@@ -234,7 +234,7 @@ export const MP: Story = {
 }
 
 const indLogo: IGlobalNavigationLogo = {
-  label: 'Ind',
+  label: 'Analytics',
   icon: <Icon icon={faShapes} />,
 }
 const indTools: IGlobalNavigationTool[] = [
@@ -427,7 +427,7 @@ export const Indicative: Story = {
 }
 
 const cortexLogo: IGlobalNavigationLogo = {
-  label: 'Cortex',
+  label: 'Predictions',
   icon: <Icon icon={faShapes} />,
 }
 const cortexTools: IGlobalNavigationTool[] = [
