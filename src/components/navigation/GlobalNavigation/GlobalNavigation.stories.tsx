@@ -32,9 +32,10 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
 import { GlobalNavigation } from 'src/components'
-import { Layout } from 'src/components'
 import { Space } from 'src/components'
 import { Flex } from 'src/components'
+import { Avatar } from 'src/components'
+import { Button } from 'src/components'
 import { Badge } from 'src/components/data-display/Badge/Badge'
 import { type IGlobalNavigationTool } from 'src/components/navigation/GlobalNavigation/GlobalNavigation'
 import { type IGlobalNavigationManagement } from 'src/components/navigation/GlobalNavigation/GlobalNavigation'
@@ -42,8 +43,7 @@ import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavi
 import { Icon } from 'src/components/general/Icon/Icon'
 import { type MenuItemType } from 'antd/es/menu/hooks/useItems'
 import { type MenuItemGroupType } from 'antd/es/menu/hooks/useItems'
-import { Avatar } from 'src/components'
-import { Button } from 'src/components'
+import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector'
 
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',
@@ -99,17 +99,12 @@ const defaultManagement: IGlobalNavigationManagement[] = [
 
 const meta: Meta<typeof GlobalNavigation> = {
   title: 'Aquarium/Navigation/GlobalNavigation',
-  component: props => (
-    <Layout>
-      <GlobalNavigation {...props}></GlobalNavigation>
-    </Layout>
-  ),
+  component: props => <GlobalNavigation {...props}></GlobalNavigation>,
 
   args: {
     logo: defaultLogo,
     tools: defaultTools,
     management: defaultManagement,
-    createOptions: { canCreate: false, createItems: [] },
   },
 }
 export default meta
@@ -195,6 +190,23 @@ const mpTools: IGlobalNavigationTool[] = [
   },
 ]
 
+const mpOrgs: INavigationOrg[] = [
+  {
+    id: 'org1',
+    name: 'Org 1',
+    accounts: [{ id: 'account1', name: 'Account 1', workspaces: [{ id: 'workspace1', name: 'workspace 1' }] }],
+  },
+  {
+    id: 'org2',
+    name: 'Org 2',
+    accounts: [{ id: 'account2', name: 'Account 2', workspaces: [{ id: 'workspace2', name: 'workspace 2' }] }],
+  },
+  {
+    id: 'org3',
+    name: 'Org 3',
+    accounts: [{ id: 'account3', name: 'Account 3', workspaces: [{ id: 'workspace3', name: 'workspace 3' }] }],
+  },
+]
 const mpManagement: IGlobalNavigationManagement[] = [
   {
     label: 'Notifications',
@@ -220,12 +232,6 @@ const mpManagement: IGlobalNavigationManagement[] = [
       { label: <Button type="primary">Switch to Legacy UI</Button> },
     ],
   },
-  {
-    label: 'Account',
-    hideLabel: true,
-    icon: <Avatar>WS</Avatar>,
-    type: 'link',
-  },
 ]
 export const MP: Story = {
   args: {
@@ -235,6 +241,7 @@ export const MP: Story = {
     logo: mpLogo,
     tools: mpTools,
     management: mpManagement,
+    orgs: mpOrgs,
   },
 }
 
@@ -421,13 +428,10 @@ const indCreateItems: Array<MenuItemType | MenuItemGroupType> = [
 
 export const Indicative: Story = {
   args: {
-    createOptions: {
-      canCreate: true,
-      createItems: indCreateItems,
-    },
     logo: indLogo,
     tools: indTools,
     management: indManagement,
+    createItems: indCreateItems,
   },
 }
 

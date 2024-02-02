@@ -95,6 +95,7 @@ module.exports = {
           'NavigationSearch',
           'NavigationIcon',
           'NavigationList',
+          'WorkspaceSelector',
         ],
       },
     ],
