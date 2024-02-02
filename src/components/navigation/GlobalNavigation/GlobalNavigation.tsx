@@ -56,7 +56,7 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
         minHeight: '850px',
       }}
     >
-      <Flex vertical justify="space-between" style={{ height: '100%', backgroundColor: 'white' }}>
+      <Flex vertical justify="space-between" style={{ height: '100%' }}>
         <div>
           <SuiteLogo {...props.logo} />
           <hr />

@@ -4,8 +4,8 @@
 }
 
 .globalNavigation {
-    border: solid 1px var(--black-alpha-12);
     min-height: 100%;
+    background-color: var(--white-alpha-12);
 }
 
 .globalNavigation__item {
@@ -38,7 +38,9 @@
 
         height: var(--nav-item-height) !important;
         padding: 0 !important;
-
+        /* padding-inline-end: 0 !important; */
+        /* padding-inline-start: 0 !important; */
+        
         background-color: transparent !important;
     }
 
