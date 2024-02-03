@@ -101,7 +101,7 @@ module.exports = {
     ],
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/consistent-type-definitions': 'off',
-    '@typescript-eslint/no-use-before-define': ['error', { allowNamedExports: true }],
+    '@typescript-eslint/no-use-before-define': ['error', { allowNamedExports: true, functions: false }],
     'react/react-in-jsx-scope': 'off',
     'import/no-duplicates': 'off',
     //'react/jsx-boolean-value': ['always'], todo: get this working
