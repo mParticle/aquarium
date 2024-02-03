@@ -18,6 +18,7 @@ export interface WorkspaceSelectorMapping {
   className: 'workspaceSelector__orgName' | 'workspaceSelector__accountName' | 'workspaceSelector__workspaceName'
   label: string
   id: string
+  key: string
 
   accounts?: INavigationAccount[]
   workspaces?: INavigationWorkspace[]

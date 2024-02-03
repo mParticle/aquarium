@@ -22,7 +22,7 @@ export function NavigationList(props: INavigationListProps) {
               expandIcon={null}
               items={[generateMenuItem(item, i)]}
               className="globalNavigation__menu"
-              openKeys={['Account0']} // testing only
+              // openKeys={['Account0']} // testing only
             />
           )}
         </>

@@ -1,7 +1,7 @@
 import './workspace-selector.css'
 import { Avatar } from 'src/components'
 import { Input } from 'src/components'
-import { NavigationList } from 'src/components/navigation/GlobalNavigation/NavigationList'
+import { Menu } from 'src/components'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
 import { type WorkspaceSelectorMapping } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
 import { type INavigationAccount } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
@@ -16,19 +16,33 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
   const allItemsFlat = generateAllItems()
   const [children, setChildren] = useState<WorkspaceSelectorMapping[]>(allItemsFlat)
 
-  const searchEl = { label: <Input placeholder="Search" allowClear onChange={onSearch} /> }
+  const searchEl = {
+    key: 'search',
+    label: (
+      <Input
+        placeholder="Search"
+        allowClear
+        onChange={onSearch}
+        onClick={e => {
+          e.preventDefault()
+          e.stopPropagation()
+        }}
+      />
+    ),
+  }
 
   return (
-    <NavigationList
+    <Menu
+      expandIcon={null}
       items={[
         {
-          label: 'Account',
-          hideLabel: true,
+          key: 'WorkspaceSelector',
           icon: <Avatar>WS</Avatar>,
-          type: 'menu',
           children: [searchEl, ...children],
         },
       ]}
+      className="globalNavigation__menu globalNavigation__item"
+      // openKeys={['Account0']} // testing only
     />
   )
 
@@ -39,6 +53,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
         className: 'workspaceSelector__orgName',
         label: org.label,
         id: org.id,
+        key: org.id,
         accounts: org.accounts,
         workspaces: org.accounts.flatMap(account => account.workspaces),
       })
@@ -49,6 +64,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
           className: 'workspaceSelector__accountName',
           label: account.label,
           id: account.id,
+          key: account.id,
           workspaces: account.workspaces,
         })
 
@@ -58,6 +74,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
             className: 'workspaceSelector__workspaceName',
             label: workspace.label,
             id: workspace.id,
+            key: workspace.id,
           })
         })
       })
@@ -70,6 +87,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
     const searchTerm = e.target.value.toLowerCase()
 
     const filteredChildren = allItemsFlat?.filter(item => {
+      /* eslint-disable-next-line */
       return isHit(item) || item.accounts?.some(isHit) || item.workspaces?.some(isHit)
 
       function isHit(item: WorkspaceSelectorMapping | INavigationAccount | INavigationWorkspace): boolean {

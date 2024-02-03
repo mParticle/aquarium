@@ -45,6 +45,7 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { IFlexProps as IFlexProps_2 } from '../../../../../../../src/components/layout/Flex/Flex';
 import { ImageProps } from 'antd';
 import { IModalProps as IModalProps_2 } from '../../../../../../../src/components/feedback/Modal/Modal';
+import { INavigationOrg } from '../../../../../../../src/components/navigation/GlobalNavigation/WorkspaceSelector';
 import { InputNumberProps } from 'antd';
 import { InputProps } from 'antd';
 import { InputRef } from 'antd';
@@ -289,7 +290,7 @@ declare interface IGlobalNavigationLogo extends IBaseGlobalNavigationItem {
 
 declare interface IGlobalNavigationManagement extends IBaseGlobalNavigationItem {
     type: 'menu' | 'link';
-    children?: any;
+    children?: Array<Omit<MenuItemType, 'key'>>;
     onClick?: (e: any) => void;
 }
 
@@ -297,16 +298,14 @@ declare interface IGlobalNavigationProps {
     logo: IGlobalNavigationLogo;
     tools: IGlobalNavigationTool[];
     management: IGlobalNavigationManagement[];
-    createOptions: {
-        canCreate: boolean;
-        createItems: Array<MenuItemType | MenuItemGroupType>;
-    };
+    orgs?: INavigationOrg[];
+    createItems?: Array<MenuItemType | MenuItemGroupType>;
     onSearchClick?: () => void;
 }
 
 declare interface IGlobalNavigationTool extends IBaseGlobalNavigationItem {
     type: 'menu' | 'link';
-    children?: any;
+    children?: Array<Omit<MenuItemType, 'key'>>;
     onClick?: (e: any) => void;
 }
 
