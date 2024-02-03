@@ -2,57 +2,41 @@ import './workspace-selector.css'
 import { Avatar } from 'src/components'
 import { NavigationList } from 'src/components/navigation/GlobalNavigation/NavigationList'
 import { type INavigationListProps } from 'src/components/navigation/GlobalNavigation/NavigationList'
-
-export interface INavigationOrg {
-  name: string
-  id: string
-  accounts: INavigationAccount[]
-}
-
-export interface INavigationAccount {
-  name: string
-  id: string
-  workspaces: INavigationWorkspace[]
-}
-
-export interface INavigationWorkspace {
-  name: string
-  id: string
-}
+import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
+import { type WorkspaceSelectorMapping } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
 
 export interface IWorkspaceSelectorProps {
   orgs: INavigationOrg[]
 }
 
-interface SelectorMappingType {
-  type: 'org' | 'account' | 'workspace'
-  name: string
-  id: string
-}
-
 export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
-  const flatList = props.orgs.reduce<SelectorMappingType[]>((total, org) => {
-    total.push({ type: 'org', ...org })
+  const children: INavigationListProps['items'][0]['children'] = props.orgs.reduce<WorkspaceSelectorMapping[]>(
+    (total, org) => {
+      total.push({ type: 'org', className: 'workspaceSelector__orgName', label: org.name, id: org.id })
 
-    org.accounts.forEach(account => {
-      total.push({ type: 'account', ...account })
-      account.workspaces.forEach(workspace => {
-        total.push({ type: 'workspace', ...workspace })
+      org.accounts.forEach(account => {
+        total.push({
+          type: 'account',
+          className: 'workspaceSelector__accountName',
+          label: account.name,
+          id: account.id,
+        })
+
+        account.workspaces.forEach(workspace => {
+          total.push({
+            type: 'workspace',
+            className: 'workspaceSelector__workspaceName',
+            label: workspace.name,
+            id: workspace.id,
+          })
+        })
       })
-    })
 
-    return total
-  }, [])
+      return total
+    },
+    [],
+  )
 
-  debugger
-
-  const children: INavigationListProps['items'][0]['children'] = flatList.map(item => {
-    const className = `workspaceSelector__${item.type}Name`
-    return {
-      label: item.name,
-      className,
-    }
-  })
   return (
     <NavigationList
       items={[
