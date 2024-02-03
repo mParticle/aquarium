@@ -206,6 +206,21 @@ const mpOrgs: INavigationOrg[] = [
     name: 'Org 3',
     accounts: [{ id: 'account3', name: 'Account 3', workspaces: [{ id: 'workspace3', name: 'workspace 3' }] }],
   },
+  {
+    id: 'org4',
+    name: 'Org 4',
+    accounts: [{ id: 'account4', name: 'Account 4', workspaces: [{ id: 'workspace4', name: 'workspace 3' }] }],
+  },
+  {
+    id: 'org5',
+    name: 'Org 5',
+    accounts: [{ id: 'account5', name: 'Account 5', workspaces: [{ id: 'workspace5', name: 'workspace 3' }] }],
+  },
+  {
+    id: 'org6',
+    name: 'Org 6',
+    accounts: [{ id: 'account6', name: 'Account 6', workspaces: [{ id: 'workspace6', name: 'workspace 3' }] }],
+  },
 ]
 const mpManagement: IGlobalNavigationManagement[] = [
   {

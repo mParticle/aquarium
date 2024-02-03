@@ -1,13 +1,10 @@
-.workspaceSelector{
- min-height: 1000px !important;   
-}
 
 .workspaceSelector__orgName {}
 
 .workspaceSelector__accountName {
-    padding-left: var(--padding)
+    padding-left: var(--padding-xl) !important;
 }
 
 .workspaceSelector__workspaceName {
-    padding-left: var(--padding-xl)
+    padding-left: calc(2* var(--padding-xl)) !important;
 }

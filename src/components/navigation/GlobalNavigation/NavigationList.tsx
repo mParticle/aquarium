@@ -5,15 +5,26 @@ import { type IGlobalNavigationManagement } from 'src/components/navigation/Glob
 import { type IGlobalNavigationTool } from 'src/components/navigation/GlobalNavigation/GlobalNavigation'
 import { NavigationIcon } from 'src/components/navigation/GlobalNavigation/NavigationIcon'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
-import { Center } from "src/components";
+import { Center } from 'src/components'
 
-export function NavigationList({ items }: { items: Array<IGlobalNavigationManagement | IGlobalNavigationTool> }) {
+export interface INavigationListProps {
+  items: Array<IGlobalNavigationManagement | IGlobalNavigationTool>
+}
+
+export function NavigationList(props: INavigationListProps) {
   return (
     <Center vertical>
-      {items.map((item, i) => (
+      {props.items.map((item, i) => (
         <>
           {item.type === 'link' && <NavigationItem {...item} />}
-          {item.type === 'menu' && <Menu expandIcon={null} items={[generateMenuItem(item, i)]} className="globalNavigation__menu" />}
+          {item.type === 'menu' && (
+            <Menu
+              expandIcon={null}
+              items={[generateMenuItem(item, i)]}
+              className="globalNavigation__menu"
+              openKeys={['Account0']} // testing only
+            />
+          )}
         </>
       ))}
     </Center>
