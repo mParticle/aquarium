@@ -193,33 +193,33 @@ const mpTools: IGlobalNavigationTool[] = [
 const mpOrgs: INavigationOrg[] = [
   {
     id: 'org1',
-    name: 'Org 1',
-    accounts: [{ id: 'account1', name: 'Account 1', workspaces: [{ id: 'workspace1', name: 'workspace 1' }] }],
+    label: 'Org 1',
+    accounts: [{ id: 'account1', label: 'Account 1', workspaces: [{ id: 'workspace1', label: 'workspace 1' }] }],
   },
   {
     id: 'org2',
-    name: 'Org 2',
-    accounts: [{ id: 'account2', name: 'Account 2', workspaces: [{ id: 'workspace2', name: 'workspace 2' }] }],
+    label: 'Org 2',
+    accounts: [{ id: 'account2', label: 'Account 2', workspaces: [{ id: 'workspace2', label: 'workspace 2' }] }],
   },
   {
     id: 'org3',
-    name: 'Org 3',
-    accounts: [{ id: 'account3', name: 'Account 3', workspaces: [{ id: 'workspace3', name: 'workspace 3' }] }],
+    label: 'Org 3',
+    accounts: [{ id: 'account3', label: 'Account 3', workspaces: [{ id: 'workspace3', label: 'workspace 3' }] }],
   },
   {
     id: 'org4',
-    name: 'Org 4',
-    accounts: [{ id: 'account4', name: 'Account 4', workspaces: [{ id: 'workspace4', name: 'workspace 4' }] }],
+    label: 'Org 4',
+    accounts: [{ id: 'account4', label: 'Account 4', workspaces: [{ id: 'workspace4', label: 'workspace 4' }] }],
   },
   {
     id: 'org5',
-    name: 'Org 5',
-    accounts: [{ id: 'account5', name: 'Account 5', workspaces: [{ id: 'workspace5', name: 'workspace 5' }] }],
+    label: 'Org 5',
+    accounts: [{ id: 'account5', label: 'Account 5', workspaces: [{ id: 'workspace5', label: 'workspace 5' }] }],
   },
   {
     id: 'org6',
-    name: 'Org 6',
-    accounts: [{ id: 'account6', name: 'Account 6', workspaces: [{ id: 'workspace6', name: 'workspace 6' }] }],
+    label: 'Org 6',
+    accounts: [{ id: 'account6', label: 'Account 6', workspaces: [{ id: 'workspace6', label: 'workspace 6' }] }],
   },
 ]
 const mpManagement: IGlobalNavigationManagement[] = [
