@@ -1,3 +1,4 @@
+const { Typography } = require('src/components/general/Typography/Typography')
 module.exports = {
   env: {
     browser: true,
@@ -24,6 +25,11 @@ module.exports = {
           'Button',
           'FloatButton',
           'Icon',
+          'Typography',
+          'Text',
+          'Title',
+          'Link',
+          'Paragraph',
           'Rate',
           'Form',
           'TreeSelect',
