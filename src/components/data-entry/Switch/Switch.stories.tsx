@@ -1,6 +1,13 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 
 import { Switch } from 'src/components/data-entry/Switch/Switch'
+import { ExampleStory } from 'src/utils/ExampleStory'
+import { Space } from 'src/components'
+import { useState } from 'react'
+import { Button } from 'src/components'
+import { Icon } from 'src/components'
+import { faCheck } from '@fortawesome/free-solid-svg-icons'
+import { faIcons } from '@fortawesome/free-solid-svg-icons'
 
 const meta: Meta<typeof Switch> = {
   title: 'Aquarium/Data Entry/Switch',
@@ -64,5 +71,66 @@ export const Loading: Story = {
 export const Small: Story = {
   args: {
     size: 'small',
+  },
+}
+
+export const ExampleDisabled: Story = {
+  render: () => {
+    const [disabled, setDisabled] = useState(true)
+    const toggle = () => {
+      setDisabled(!disabled)
+    }
+    return (
+      <ExampleStory title="Press button to toggle disabled state.">
+        <Space direction="vertical">
+          <Switch disabled={disabled} defaultChecked />
+          <Button type="primary" onClick={toggle}>
+            Toggle disabled
+          </Button>
+        </Space>
+      </ExampleStory>
+    )
+  },
+}
+
+export const ExampleSizes: Story = {
+  render: () => {
+    return (
+      <ExampleStory title={<>size=small represents a small sized switch.</>}>
+        <Switch defaultChecked />
+        <br />
+        <Switch size="small" defaultChecked />
+      </ExampleStory>
+    )
+  },
+}
+
+export const ExampleLoading: Story = {
+  render: () => {
+    return (
+      <ExampleStory title="Mark a pending state of switch.">
+        <Switch loading defaultChecked />
+        <br />
+        <Switch size="small" loading checkedChildren="Loading" unCheckedChildren="Loading" />
+      </ExampleStory>
+    )
+  },
+}
+
+export const ExampleTextAndIcon: Story = {
+  render: () => {
+    return (
+      <ExampleStory title="With text and icon.">
+        <Space direction="vertical">
+          <Switch checkedChildren="Checked Text" unCheckedChildren="Unchecked Text" defaultChecked />
+          <Switch checkedChildren="1" unCheckedChildren="0" />
+          <Switch
+            checkedChildren={<Icon icon={faIcons} />}
+            unCheckedChildren={<Icon icon={faCheck} />}
+            defaultChecked
+          />
+        </Space>
+      </ExampleStory>
+    )
   },
 }
