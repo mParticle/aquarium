@@ -45,7 +45,7 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { IFlexProps as IFlexProps_2 } from '../../../../../../../src/components/layout/Flex/Flex';
 import { ImageProps } from 'antd';
 import { IModalProps as IModalProps_2 } from '../../../../../../../src/components/feedback/Modal/Modal';
-import { INavigationOrg } from '../../../../../../../src/components/navigation/GlobalNavigation/WorkspaceSelector';
+import { INavigationOrg } from '../../../../../../../src/components/navigation/GlobalNavigation/WorkspaceSelectorItems';
 import { InputNumberProps } from 'antd';
 import { InputProps } from 'antd';
 import { InputRef } from 'antd';
@@ -290,8 +290,8 @@ declare interface IGlobalNavigationLogo extends IBaseGlobalNavigationItem {
 
 declare interface IGlobalNavigationManagement extends IBaseGlobalNavigationItem {
     type: 'menu' | 'link';
-    children?: Array<Omit<MenuItemType, 'key'>>;
-    onClick?: (e: any) => void;
+    children?: MenuItem[];
+    onClick?: (e: React.MouseEvent) => void;
 }
 
 declare interface IGlobalNavigationProps {
@@ -305,8 +305,8 @@ declare interface IGlobalNavigationProps {
 
 declare interface IGlobalNavigationTool extends IBaseGlobalNavigationItem {
     type: 'menu' | 'link';
-    children?: Array<Omit<MenuItemType, 'key'>>;
-    onClick?: (e: any) => void;
+    children?: MenuItem[];
+    onClick?: (e: React.MouseEvent) => void;
 }
 
 export declare interface IIconProps extends FontAwesomeIconProps {
@@ -470,6 +470,10 @@ export declare function LoadingModal<Data>(props: ILoadingModalProps<Data>): JSX
 export declare const Mentions: (props: IMentionsProps) => JSX_2.Element;
 
 export declare const Menu: (props: IMenuProps) => JSX_2.Element;
+
+declare interface MenuItem extends Omit<MenuItemType, 'key'> {
+    children?: MenuItem[];
+}
 
 export declare const Message: (props: IMessageProps) => JSX_2.Element;
 
