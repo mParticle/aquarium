@@ -31,7 +31,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "7.6.10",
+    "@storybook/addon-essentials": "7.6.12",
     "@storybook/addon-interactions": "7.6.10",
     "@storybook/addon-links": "7.6.10",
     "@storybook/addon-onboarding": "1.0.11",
