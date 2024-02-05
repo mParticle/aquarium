@@ -53,13 +53,20 @@ export { Alert, type IAlertProps } from './feedback/Alert/Alert'
 export { Message, type IMessageProps } from './feedback/Message/Message'
 export { LoadingModal, type ILoadingModalProps } from './feedback/LoadingModal/LoadingModal'
 export { Flex, type IFlexProps } from './layout/Flex/Flex'
-export { Center } from "./layout/Center/Center"
+export { Center } from './layout/Center/Center'
 export { Divider, type IDividerProps } from './layout/Divider/Divider'
 export { Space, type ISpaceProps } from './layout/Space/Space'
 export { Layout, type ILayoutProps } from './layout/Layout/Layout'
 export { Grid, Col, Row, type IColProps, type IRowProps } from './layout/Grid/Grid'
 export { Steps, type IStepsProps } from './navigation/Steps/Steps'
-export { GlobalNavigation } from "./navigation/GlobalNavigation/GlobalNavigation"
+export {
+  GlobalNavigation,
+  type IGlobalNavigationManagement,
+  type IGlobalNavigationLogo,
+  type IGlobalNavigationTool,
+  type IGlobalNavigationProps,
+  type IBaseGlobalNavigationItem,
+} from './navigation/GlobalNavigation/GlobalNavigation'
 export { Anchor, type IAnchorProps } from './navigation/Anchor/Anchor'
 export { Dropdown, type IDropdownProps } from './navigation/Dropdown/Dropdown'
 export { Breadcrumb, type IBreadcrumbProps } from './navigation/Breadcrumb/Breadcrumb'

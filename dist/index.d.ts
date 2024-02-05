@@ -218,7 +218,7 @@ export declare interface IAvatarProps extends AvatarProps {
 export declare interface IBadgeProps extends BadgeProps {
 }
 
-declare interface IBaseGlobalNavigationItem {
+export declare interface IBaseGlobalNavigationItem {
     label: string;
     icon: ReactNode;
     hideLabel?: boolean;
@@ -285,16 +285,16 @@ export declare interface IFormProps extends FormProps {
     children: React.ReactNode;
 }
 
-declare interface IGlobalNavigationLogo extends IBaseGlobalNavigationItem {
+export declare interface IGlobalNavigationLogo extends IBaseGlobalNavigationItem {
 }
 
-declare interface IGlobalNavigationManagement extends IBaseGlobalNavigationItem {
+export declare interface IGlobalNavigationManagement extends IBaseGlobalNavigationItem {
     type: 'menu' | 'link';
     children?: MenuItem[];
     onClick?: (e: React.MouseEvent) => void;
 }
 
-declare interface IGlobalNavigationProps {
+export declare interface IGlobalNavigationProps {
     logo: IGlobalNavigationLogo;
     tools: IGlobalNavigationTool[];
     management: IGlobalNavigationManagement[];
@@ -303,7 +303,7 @@ declare interface IGlobalNavigationProps {
     onSearchClick?: () => void;
 }
 
-declare interface IGlobalNavigationTool extends IBaseGlobalNavigationItem {
+export declare interface IGlobalNavigationTool extends IBaseGlobalNavigationItem {
     type: 'menu' | 'link';
     children?: MenuItem[];
     onClick?: (e: React.MouseEvent) => void;
