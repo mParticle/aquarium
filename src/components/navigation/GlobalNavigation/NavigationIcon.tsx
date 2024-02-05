@@ -6,7 +6,7 @@ interface INavigationIconProps {
   icon: ReactNode
   label: string
   hideLabel?: boolean
-  onClick?: (e) => void
+  onClick?: (e: React.MouseEvent) => void
 }
 
 export function NavigationIcon(props: INavigationIconProps) {

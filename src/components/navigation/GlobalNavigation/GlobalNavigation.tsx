@@ -11,7 +11,7 @@ import { NavigationSearch } from 'src/components/navigation/GlobalNavigation/Nav
 import { NavigationList } from 'src/components/navigation/GlobalNavigation/NavigationList'
 import { NavigationCreate } from 'src/components/navigation/GlobalNavigation/NavigationCreate'
 import { WorkspaceSelector } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector'
-import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector'
+import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
 
 export interface IBaseGlobalNavigationItem {
   label: string
@@ -21,16 +21,20 @@ export interface IBaseGlobalNavigationItem {
 
 export interface IGlobalNavigationLogo extends IBaseGlobalNavigationItem {}
 
+interface MenuItem extends Omit<MenuItemType, 'key'> {
+  children?: MenuItem[]
+}
+
 export interface IGlobalNavigationTool extends IBaseGlobalNavigationItem {
   type: 'menu' | 'link'
-  children?: Array<Omit<MenuItemType, 'key'>>
-  onClick?: (e) => void
+  children?: MenuItem[]
+  onClick?: (e: React.MouseEvent) => void
 }
 
 export interface IGlobalNavigationManagement extends IBaseGlobalNavigationItem {
   type: 'menu' | 'link'
-  children?: Array<Omit<MenuItemType, 'key'>>
-  onClick?: (e) => void
+  children?: MenuItem[]
+  onClick?: (e: React.MouseEvent) => void
 }
 
 export interface IGlobalNavigationProps {

@@ -32,12 +32,16 @@ export function NavigationList(props: INavigationListProps) {
 }
 
 function generateMenuItem(item: IGlobalNavigationManagement | IGlobalNavigationTool, i: number) {
-  const children: Array<MenuItemType | MenuItemGroupType> = item.children.map((child, j) => ({
-    key: `${child.label}${j}`,
-    ...child,
-  }))
+  let children: Array<MenuItemType | MenuItemGroupType>
 
-  children.unshift({ label: item.label, type: 'group', key: item.label + '_groupTitle' })
+  if (item.children) {
+    children = item.children.map((child, j) => ({
+      key: `${child.label}${j}`,
+      ...child,
+    }))
+
+    children.unshift({ label: item.label, type: 'group', key: item.label + '_groupTitle' })
+  }
 
   return {
     icon: <NavigationIcon icon={item.icon} label={item.label} onClick={item.onClick} hideLabel={item.hideLabel} />,

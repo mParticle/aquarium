@@ -43,7 +43,7 @@ import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavi
 import { Icon } from 'src/components/general/Icon/Icon'
 import { type MenuItemType } from 'antd/es/menu/hooks/useItems'
 import { type MenuItemGroupType } from 'antd/es/menu/hooks/useItems'
-import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector'
+import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
 
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',

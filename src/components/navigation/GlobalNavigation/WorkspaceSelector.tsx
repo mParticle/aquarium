@@ -21,7 +21,6 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
     label: (
       <Input
         placeholder="Search"
-        allowClear
         onChange={onSearch}
         onClick={e => {
           e.preventDefault()
@@ -31,18 +30,20 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
     ),
   }
 
+  const items = [
+    {
+      key: 'WorkspaceSelector',
+      icon: <Avatar>WS</Avatar>,
+      children: [searchEl, ...children],
+    },
+  ]
+
   return (
     <Menu
-      expandIcon={null}
-      items={[
-        {
-          key: 'WorkspaceSelector',
-          icon: <Avatar>WS</Avatar>,
-          children: [searchEl, ...children],
-        },
-      ]}
       className="globalNavigation__menu globalNavigation__item"
-      // openKeys={['Account0']} // testing only
+      items={items}
+      subMenuCloseDelay={9999999} // never close the menu on mouse leave
+      expandIcon={null}
     />
   )
 
