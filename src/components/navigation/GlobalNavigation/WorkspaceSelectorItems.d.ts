@@ -1,3 +1,6 @@
+import { type MenuItemType } from 'src/components/navigation/Menu/Menu'
+import { type MenuInfo } from 'rc-menu/lib/interface'
+
 interface IWorkspaceSelectorItem {
   label: string
   id: string
@@ -11,14 +14,15 @@ export interface INavigationAccount extends IWorkspaceSelectorItem {
   workspaces: INavigationWorkspace[]
 }
 
-export interface INavigationWorkspace extends IWorkspaceSelectorItem {}
+export interface INavigationWorkspace extends IWorkspaceSelectorItem {
+  onClick: (info: MenuInfo) => void
+}
 
-export interface WorkspaceSelectorMapping {
+export interface WorkspaceSelectorMapping extends MenuItemType {
   type: 'org' | 'account' | 'workspace'
   className: 'workspaceSelector__orgName' | 'workspaceSelector__accountName' | 'workspaceSelector__workspaceName'
   label: string
   id: string
-  key: string
 
   accounts?: INavigationAccount[]
   workspaces?: INavigationWorkspace[]

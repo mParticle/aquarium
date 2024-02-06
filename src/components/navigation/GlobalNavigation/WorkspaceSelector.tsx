@@ -2,25 +2,31 @@ import './workspace-selector.css'
 import { Avatar } from 'src/components'
 import { Input } from 'src/components'
 import { Menu } from 'src/components'
+import { type IMenuProps } from 'src/components'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
 import { type WorkspaceSelectorMapping } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
 import { type INavigationAccount } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
 import { type INavigationWorkspace } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
 import { useState } from 'react'
+import { useMemo } from 'react'
+import { type MenuItemType } from 'src/components/navigation/Menu/Menu'
 
 export interface IWorkspaceSelectorProps {
   orgs: INavigationOrg[]
 }
 
 export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
-  const allItemsFlat = generateAllItems()
+  const allItemsFlat = useMemo(generateAllItems, [props.orgs])
+
   const [children, setChildren] = useState<WorkspaceSelectorMapping[]>(allItemsFlat)
 
-  const searchEl = {
+  const searchEl: MenuItemType = {
     key: 'search',
+    className: 'workspaceSelector__search',
     label: (
       <Input
         placeholder="Search"
+        className="workspaceSelector__searchInput"
         onChange={onSearch}
         onClick={e => {
           e.preventDefault()
@@ -30,7 +36,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
     ),
   }
 
-  const items = [
+  const items: IMenuProps['items'] = [
     {
       key: 'WorkspaceSelector',
       icon: <Avatar>WS</Avatar>,
@@ -40,6 +46,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
   return (
     <Menu
+      // openKeys={['WorkspaceSelector']} // testing only
       className="globalNavigation__menu globalNavigation__item"
       items={items}
       subMenuCloseDelay={9999999} // never close the menu on mouse leave
@@ -76,6 +83,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
             label: workspace.label,
             id: workspace.id,
             key: workspace.id,
+            onClick: workspace.onClick,
           })
         })
       })

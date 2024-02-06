@@ -194,32 +194,32 @@ const mpOrgs: INavigationOrg[] = [
   {
     id: 'org1',
     label: 'Org 1',
-    accounts: [{ id: 'account1', label: 'Account 1', workspaces: [{ id: 'workspace1', label: 'workspace 1' }] }],
+    accounts: [{ id: 'account1', label: 'Account 1', workspaces: [{ id: 'workspace1', label: 'workspace 1', onClick:e=>{alert('Selected workspace 1')} }] }],
   },
   {
     id: 'org2',
     label: 'Org 2',
-    accounts: [{ id: 'account2', label: 'Account 2', workspaces: [{ id: 'workspace2', label: 'workspace 2' }] }],
+    accounts: [{ id: 'account2', label: 'Account 2', workspaces: [{ id: 'workspace2', label: 'workspace 2', onClick:e=>{alert('Selected workspace 2')} }] }],
   },
   {
     id: 'org3',
     label: 'Org 3',
-    accounts: [{ id: 'account3', label: 'Account 3', workspaces: [{ id: 'workspace3', label: 'workspace 3' }] }],
+    accounts: [{ id: 'account3', label: 'Account 3', workspaces: [{ id: 'workspace3', label: 'workspace 3', onClick:e=>{alert('Selected workspace 3')} }] }],
   },
   {
     id: 'org4',
     label: 'Org 4',
-    accounts: [{ id: 'account4', label: 'Account 4', workspaces: [{ id: 'workspace4', label: 'workspace 4' }] }],
+    accounts: [{ id: 'account4', label: 'Account 4', workspaces: [{ id: 'workspace4', label: 'workspace 4', onClick:e=>{alert('Selected workspace 4')} }] }],
   },
   {
     id: 'org5',
     label: 'Org 5',
-    accounts: [{ id: 'account5', label: 'Account 5', workspaces: [{ id: 'workspace5', label: 'workspace 5' }] }],
+    accounts: [{ id: 'account5', label: 'Account 5', workspaces: [{ id: 'workspace5', label: 'workspace 5', onClick:e=>{alert('Selected workspace 5')} }] }],
   },
   {
     id: 'org6',
     label: 'Org 6',
-    accounts: [{ id: 'account6', label: 'Account 6', workspaces: [{ id: 'workspace6', label: 'workspace 6' }] }],
+    accounts: [{ id: 'account6', label: 'Account 6', workspaces: [{ id: 'workspace6', label: 'workspace 6', onClick:e=>{alert('Selected workspace 6')} }] }],
   },
 ]
 const mpManagement: IGlobalNavigationManagement[] = [
