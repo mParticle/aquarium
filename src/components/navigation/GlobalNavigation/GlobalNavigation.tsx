@@ -12,6 +12,7 @@ import { NavigationList } from 'src/components/navigation/GlobalNavigation/Navig
 import { NavigationCreate } from 'src/components/navigation/GlobalNavigation/NavigationCreate'
 import { WorkspaceSelector } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
+import MpLogo from 'src/assets/mpLogo.svg?react'
 
 export interface IBaseGlobalNavigationItem {
   label: string
@@ -71,6 +72,11 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
           <NavigationList items={props.management} onClick={props.onClick} />
 
           {props.orgs && <WorkspaceSelector orgs={props.orgs} />}
+
+          <Center className="globalNavigation__mpHome">
+            <MpLogo className="globalNavigation__mpSvg" />
+          </Center>
+          
         </Flex>
       </Layout.Sider>
     </Layout>

@@ -39,7 +39,7 @@
 
         height: var(--nav-item-height) !important;
         padding: 0 !important;
-        
+
         background-color: transparent !important;
     }
 
@@ -100,6 +100,7 @@
     border: 1px solid var(--color-border, #c3aeff);
 }
 
+
 .globalNavigation__suiteLogo {
     min-height: var(--suite-logo-height);
     min-width: var(--nav-item-width);
@@ -110,9 +111,25 @@
 
     font-size: var(--font-size-sm);
     font-weight: 400;
-    
+
     .globalNavigation__icon {
         padding-bottom: var(--padding-xs)
     }
 
+}
+
+.globalNavigation__mpHome {
+    padding: var(--padding-lg, 20px); /* TODO: dependency between padding-lg/md and 20 from figma... */
+    margin: var(--margin-xxs);
+    width: var(--nav-item-width);
+    height: var(--nav-item-height);
+    background-color: black;
+
+    color: white;
+    cursor: pointer;
+}
+
+.globalNavigation__mpSvg {
+    width: 28px;
+    height: 24px;
 }

@@ -25,6 +25,10 @@
 
 .workspaceSelector__workspaceName {
     padding-left: calc(var(--padding-sm) + var(--padding)) !important;
+
+    &.workspaceSelector__workspaceName--selected {
+        /* todo: implement */
+    }
 }
 
 .workspaceSelector__orgName,
