@@ -45,6 +45,7 @@ export interface IGlobalNavigationProps {
   orgs?: INavigationOrg[]
   createItems?: Array<MenuItemType | MenuItemGroupType>
   onSearchClick?: () => void
+  onClick?: () => void
 }
 
 export const NavItemHeight = '42px' as const
@@ -64,10 +65,10 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
               {props.createItems && <NavigationCreate createItems={props.createItems} />}
             </Center>
 
-            <NavigationList items={props.tools} />
+            <NavigationList items={props.tools} onClick={props.onClick} />
           </div>
 
-          <NavigationList items={props.management} />
+          <NavigationList items={props.management} onClick={props.onClick} />
 
           {props.orgs && <WorkspaceSelector orgs={props.orgs} />}
         </Flex>

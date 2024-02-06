@@ -3936,18 +3936,25 @@ function ls(e) {
         hideLabel: e.hideLabel
       }
     ) }) }),
-    e.type === "menu" && /* @__PURE__ */ s(Un, { items: e.items })
+    e.type === "menu" && /* @__PURE__ */ s(Un, { onClick: e.onClick, items: e.items })
   ] });
 }
 function Un(e) {
   return /* @__PURE__ */ s(Ee, { vertical: !0, children: e.items.map((n, t) => /* @__PURE__ */ J(Q, { children: [
-    n.type === "link" && /* @__PURE__ */ s(ls, { ...n }),
+    n.type === "link" && /* @__PURE__ */ s(ls, { onClick: () => {
+      var r;
+      return (r = e.onClick) == null ? void 0 : r.call(e, n);
+    }, ...n }),
     n.type === "menu" && /* @__PURE__ */ s(
       ft,
       {
         expandIcon: null,
         items: [fs(n, t)],
-        className: "globalNavigation__menu"
+        className: "globalNavigation__menu",
+        onClick: (r) => {
+          var a;
+          return (a = e.onClick) == null ? void 0 : a.call(e, n, r);
+        }
       }
     )
   ] })) });
@@ -4054,9 +4061,9 @@ const Hr = "42px", ds = 90, al = (e) => /* @__PURE__ */ s(Se, { children: /* @__
       e.onSearchClick && /* @__PURE__ */ s(ss, { onClick: e.onSearchClick }),
       e.createItems && /* @__PURE__ */ s(cs, { createItems: e.createItems })
     ] }),
-    /* @__PURE__ */ s(Un, { items: e.tools })
+    /* @__PURE__ */ s(Un, { items: e.tools, onClick: e.onClick })
   ] }),
-  /* @__PURE__ */ s(Un, { items: e.management }),
+  /* @__PURE__ */ s(Un, { items: e.management, onClick: e.onClick }),
   e.orgs && /* @__PURE__ */ s(us, { orgs: e.orgs })
 ] }) }) }), il = (e) => /* @__PURE__ */ s(g, { children: /* @__PURE__ */ s(Na, { ...e }) }), ms = (e) => /* @__PURE__ */ s(g, { children: /* @__PURE__ */ s(Zt, { ...e, children: e.children }) });
 ms.Button = Zt.Button;

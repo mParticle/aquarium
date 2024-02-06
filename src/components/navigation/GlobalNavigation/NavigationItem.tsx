@@ -29,7 +29,7 @@ export function NavigationItem(props: INavigationIconProps) {
         </>
       )}
 
-      {props.type === 'menu' && <NavigationList items={props.items} />}
+      {props.type === 'menu' && <NavigationList onClick={props.onClick} items={props.items} />}
     </>
   )
 }

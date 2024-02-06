@@ -42,10 +42,10 @@ import { Grid } from 'antd';
 import { GroupProps } from 'antd/es/input';
 import { ColProps as IColProps } from 'antd';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { IFlexProps as IFlexProps_2 } from '../../../../../../../src/components/layout/Flex/Flex';
+import { IFlexProps as IFlexProps_2 } from '../../../../../../src/components/layout/Flex/Flex';
 import { ImageProps } from 'antd';
-import { IModalProps as IModalProps_2 } from '../../../../../../../src/components/feedback/Modal/Modal';
-import { INavigationOrg } from '../../../../../../../src/components/navigation/GlobalNavigation/WorkspaceSelectorItems';
+import { IModalProps as IModalProps_2 } from '../../../../../../src/components/feedback/Modal/Modal';
+import { INavigationOrg } from '../../../../../../src/components/navigation/GlobalNavigation/WorkspaceSelectorItems';
 import { InputNumberProps } from 'antd';
 import { InputProps } from 'antd';
 import { InputRef } from 'antd';
@@ -301,6 +301,7 @@ export declare interface IGlobalNavigationProps {
     orgs?: INavigationOrg[];
     createItems?: Array<MenuItemType | MenuItemGroupType>;
     onSearchClick?: () => void;
+    onClick?: () => void;
 }
 
 export declare interface IGlobalNavigationTool extends IBaseGlobalNavigationItem {
