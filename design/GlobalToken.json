@@ -42,19 +42,19 @@
     "value": "#3600d1"
   },
   "colorSuccess": {
-    "value": "#5aac6b"
+    "value": "#204829"
   },
   "colorWarning": {
-    "value": "#f09362"
+    "value": "#a74d1d"
   },
   "colorError": {
-    "value": "#d95b7c"
+    "value": "#b03757"
   },
   "colorInfo": {
-    "value": "#456095"
+    "value": "#2e436d"
   },
   "colorLink": {
-    "value": "#456095"
+    "value": "#2e436d"
   },
   "colorTextBase": {
     "value": "#0f0e0e"
@@ -158,20 +158,23 @@
   "controlItemBgActive": {
     "value": "#ebe8f8"
   },
+  "colorText": {
+    "value": "#0f0e0e"
+  },
   "colorTextSecondary": {
-    "value": "rgba(0, 0, 0, 0.6399999856948853)"
+    "value": "#212020"
   },
   "colorTextTertiary": {
-    "value": "rgba(0, 0, 0, 0.47999998927116394)"
+    "value": "rgba(0, 0, 0, 0.7200000286102295)"
   },
   "colorTextQuaternary": {
-    "value": "rgba(0, 0, 0, 0.23999999463558197)"
+    "value": "rgba(0, 0, 0, 0.6399999856948853)"
   },
   "colorFill": {
     "value": "rgba(0, 0, 0, 0.1599999964237213)"
   },
   "colorFillSecondary": {
-    "value": "#ebe8f8"
+    "value": "#f8f6fb"
   },
   "colorFillTertiary": {
     "value": "rgba(0, 0, 0, 0.07999999821186066)"
@@ -180,7 +183,7 @@
     "value": "rgba(0, 0, 0, 0)"
   },
   "colorBgLayout": {
-    "value": "#ffffff"
+    "value": "#fff"
   },
   "colorBgSpotlight": {
     "value": "rgba(0, 0, 0, 0.6399999856948853)"
@@ -531,10 +534,10 @@
     "value": 1.5
   },
   "borderRadiusMD": {
-    "value": "6px"
+    "value": "4px"
   },
   "gray.1": {
-    "value": "#ffffff"
+    "value": "#fff"
   },
   "gray.2": {
     "value": "#faf9f8"
@@ -630,16 +633,19 @@
     "value": "rgba(1, 1, 1, 0.03999999910593033)"
   },
   "whiteAlpha.12": {
-    "value": "#ffffff"
+    "value": "#fff"
   },
   "blackAlpha.2": {
     "value": "rgba(0, 0, 0, 0.03999999910593033)"
   },
   "blackAlpha.12": {
-    "value": "#000000"
+    "value": "#000"
   },
   "colorDisabled": {
-    "value": "rgba(0, 0, 0, 0.47999998927116394)"
+    "value": "rgba(0, 0, 0, 0.7200000286102295)"
+  },
+  "fontSizeXS": {
+    "value": "10px"
   },
   "blue-1": {
     "value": "#e6f4ff"
@@ -1421,9 +1427,6 @@
   "lime10": {
     "value": "#254000"
   },
-  "colorText": {
-    "value": "rgba(15, 14, 14, 0.88)"
-  },
   "colorBgContainer": {
     "value": "#ffffff"
   },
@@ -1461,115 +1464,115 @@
     "value": "#2800ab"
   },
   "colorSuccessBg": {
-    "value": "#ddebdd"
+    "value": "#7f8780"
   },
   "colorSuccessBgHover": {
-    "value": "#d1ded1"
+    "value": "#737a74"
   },
   "colorSuccessBorder": {
-    "value": "#c5d1c6"
+    "value": "#656e66"
   },
   "colorSuccessBorderHover": {
-    "value": "#a5c4a9"
+    "value": "#4a614e"
   },
   "colorSuccessHover": {
-    "value": "#a5c4a9"
+    "value": "#4a614e"
   },
   "colorSuccessActive": {
-    "value": "#3e854f"
+    "value": "#0d2112"
   },
   "colorSuccessTextHover": {
-    "value": "#7db887"
+    "value": "#325439"
   },
   "colorSuccessText": {
-    "value": "#5aac6b"
+    "value": "#204829"
   },
   "colorSuccessTextActive": {
-    "value": "#3e854f"
+    "value": "#0d2112"
   },
   "colorErrorBg": {
-    "value": "#fff0f1"
+    "value": "#f0e1e3"
   },
   "colorErrorBgHover": {
-    "value": "#fff0f2"
+    "value": "#e3d5d7"
   },
   "colorErrorBorder": {
-    "value": "#ffe6ea"
+    "value": "#d6a9b1"
   },
   "colorErrorBorderHover": {
-    "value": "#f2b3c0"
+    "value": "#c97f8e"
   },
   "colorErrorHover": {
-    "value": "#e6859c"
+    "value": "#bd5970"
   },
   "colorErrorActive": {
-    "value": "#b34264"
+    "value": "#8a2442"
   },
   "colorErrorTextHover": {
-    "value": "#e6859c"
+    "value": "#bd5970"
   },
   "colorErrorText": {
-    "value": "#d95b7c"
+    "value": "#b03757"
   },
   "colorErrorTextActive": {
-    "value": "#b34264"
+    "value": "#8a2442"
   },
   "colorWarningBg": {
-    "value": "#fff8f0"
+    "value": "#e6dfd8"
   },
   "colorWarningBgHover": {
-    "value": "#fff7f0"
+    "value": "#d9c3b0"
   },
   "colorWarningBorder": {
-    "value": "#fff0e3"
+    "value": "#cca585"
   },
   "colorWarningBorderHover": {
-    "value": "#ffd7ba"
+    "value": "#bf865e"
   },
   "colorWarningHover": {
-    "value": "#ffd7ba"
+    "value": "#bf865e"
   },
   "colorWarningActive": {
-    "value": "#c97149"
+    "value": "#80330f"
   },
   "colorWarningTextHover": {
-    "value": "#fcba90"
+    "value": "#b3693b"
   },
   "colorWarningText": {
-    "value": "#f09362"
+    "value": "#a74d1d"
   },
   "colorWarningTextActive": {
-    "value": "#c97149"
+    "value": "#80330f"
   },
   "colorInfoBg": {
-    "value": "#c7cdd4"
+    "value": "#a3a8ad"
   },
   "colorInfoBgHover": {
-    "value": "#bbc1c7"
+    "value": "#979ca1"
   },
   "colorInfoBorder": {
-    "value": "#afb4ba"
+    "value": "#858b94"
   },
   "colorInfoBorderHover": {
-    "value": "#8797ad"
+    "value": "#647287"
   },
   "colorInfoHover": {
-    "value": "#8797ad"
+    "value": "#647287"
   },
   "colorInfoActive": {
-    "value": "#2d406e"
+    "value": "#1a2847"
   },
   "colorInfoTextHover": {
-    "value": "#647aa1"
+    "value": "#475a7a"
   },
   "colorInfoText": {
-    "value": "#456095"
+    "value": "#2e436d"
   },
   "colorInfoTextActive": {
-    "value": "#2d406e"
+    "value": "#1a2847"
   },
   "colorLinkActive": {
-    "value": "#2d406e"
+    "value": "#1a2847"
   },
   "colorWhite": {
     "value": "#fff"
@@ -1695,43 +1698,43 @@
     "value": "#ffffff"
   },
   "colorTextPlaceholder": {
-    "value": "rgba(0, 0, 0, 0.23999999463558197)"
-  },
-  "colorTextDisabled": {
-    "value": "rgba(0, 0, 0, 0.23999999463558197)"
-  },
-  "colorTextHeading": {
-    "value": "rgba(15, 14, 14, 0.88)"
-  },
-  "colorTextLabel": {
     "value": "rgba(0, 0, 0, 0.6399999856948853)"
   },
+  "colorTextDisabled": {
+    "value": "rgba(0, 0, 0, 0.6399999856948853)"
+  },
+  "colorTextHeading": {
+    "value": "#0f0e0e"
+  },
+  "colorTextLabel": {
+    "value": "#212020"
+  },
   "colorTextDescription": {
-    "value": "rgba(0, 0, 0, 0.47999998927116394)"
+    "value": "rgba(0, 0, 0, 0.7200000286102295)"
   },
   "colorTextLightSolid": {
     "value": "#fff"
   },
   "colorHighlight": {
-    "value": "#d95b7c"
+    "value": "#b03757"
   },
   "colorBgTextHover": {
-    "value": "#ebe8f8"
+    "value": "#f8f6fb"
   },
   "colorBgTextActive": {
     "value": "rgba(0, 0, 0, 0.1599999964237213)"
   },
   "colorIcon": {
-    "value": "rgba(0, 0, 0, 0.47999998927116394)"
+    "value": "rgba(0, 0, 0, 0.7200000286102295)"
   },
   "colorIconHover": {
-    "value": "rgba(15, 14, 14, 0.88)"
+    "value": "#0f0e0e"
   },
   "colorErrorOutline": {
-    "value": "rgba(255, 5, 22, 0.06)"
+    "value": "rgba(130, 5, 22, 0.12)"
   },
   "colorWarningOutline": {
-    "value": "rgba(255, 138, 5, 0.06)"
+    "value": "rgba(99, 55, 11, 0.16)"
   },
   "fontSizeIcon": {
     "value": "12px"

@@ -1,7 +1,6 @@
-
-/* 
-* This theme is copy/pasted from figma, via the Token Buddy for Ant Design plugin
-*  */
+/*
+ * This theme is copy/pasted from figma, via the Token Buddy for Ant Design plugin
+ *  */
 
 export const LightTheme /*: ThemeConfig */ = {
   token: {
@@ -12,14 +11,15 @@ export const LightTheme /*: ThemeConfig */ = {
     controlOutline: 'rgba(0.21176470816135406, 0, 0.8196078538894653, 0.10000000149011612)',
     controlItemBgHover: '#ebe8f8',
     controlItemBgActive: '#ebe8f8',
-    colorTextSecondary: 'rgba(0, 0, 0, 0.6399999856948853)',
-    colorTextTertiary: 'rgba(0, 0, 0, 0.47999998927116394)',
-    colorTextQuaternary: 'rgba(0, 0, 0, 0.23999999463558197)',
+    colorText: '#0f0e0e',
+    colorTextSecondary: '#212020',
+    colorTextTertiary: 'rgba(0, 0, 0, 0.7200000286102295)',
+    colorTextQuaternary: 'rgba(0, 0, 0, 0.6399999856948853)',
     colorFill: 'rgba(0, 0, 0, 0.1599999964237213)',
-    colorFillSecondary: '#ebe8f8',
+    colorFillSecondary: '#f8f6fb',
     colorFillTertiary: 'rgba(0, 0, 0, 0.07999999821186066)',
     colorFillQuaternary: 'rgba(0, 0, 0, 0)',
-    colorBgLayout: '#ffffff',
+    colorBgLayout: '#fff',
     colorBgSpotlight: 'rgba(0, 0, 0, 0.6399999856948853)',
     colorBorder: '#c3aeff',
     colorBorderSecondary: 'rgba(0, 0, 0, 0.07999999821186066)',
@@ -27,10 +27,10 @@ export const LightTheme /*: ThemeConfig */ = {
     colorBgMask: 'rgba(0, 0, 0, 0.23999999463558197)',
     colorTextBase: '#0f0e0e',
     colorPrimary: '#3600d1',
-    colorError: '#d95b7c',
-    colorWarning: '#f09362',
-    colorSuccess: '#5aac6b',
-    colorInfo: '#456095',
+    colorError: '#b03757',
+    colorWarning: '#a74d1d',
+    colorSuccess: '#204829',
+    colorInfo: '#2e436d',
     paddingMD: 18,
     paddingLG: 20,
     paddingXL: 24,
@@ -144,9 +144,9 @@ export const LightTheme /*: ThemeConfig */ = {
     lineHeightH3: 1.3300000429153442,
     lineHeightH4: 1.399999976158142,
     lineHeightH5: 1.5,
-    borderRadiusMD: 6,
+    borderRadiusMD: 4,
     fontFamilyCode: "'RobotoMono', Consolas, 'Liberation Mono', Menlo, Courier, monospace",
-    'gray.1': '#ffffff',
+    'gray.1': '#fff',
     'gray.2': '#faf9f8',
     'gray.3': '#eceae9',
     'gray.4': '#dcdcd8',
@@ -178,24 +178,100 @@ export const LightTheme /*: ThemeConfig */ = {
     'blurple.9': '#2c00aa',
     'blurple.10': '#20007a',
     'whiteAlpha.2': 'rgba(1, 1, 1, 0.03999999910593033)',
-    'whiteAlpha.12': '#ffffff',
+    'whiteAlpha.12': '#fff',
     'blackAlpha.2': 'rgba(0, 0, 0, 0.03999999910593033)',
-    'blackAlpha.12': '#000000',
-    colorDisabled: 'rgba(0, 0, 0, 0.47999998927116394)',
+    'blackAlpha.12': '#000',
+    colorDisabled: 'rgba(0, 0, 0, 0.7200000286102295)',
+    fontSizeXS: 10,
   },
   components: {
-    Menu: {
-      controlHeightSM: 32,
-      darkItemBg: '#0f0e0e',
-      itemSelectedColor: '#0f0e0e',
+    Steps: {
+      colorPrimary: '#505249',
+      controlItemBgActive: '#eceae9',
       lineHeight: 1.5700000524520874,
     },
+    Progress: {
+      colorFillSecondary: '#eceae9',
+      lineHeight: 1.5700000524520874,
+      defaultColor: '#505249',
+      remainingColor: '#eceae9',
+    },
     Button: {
+      borderRadius: 4,
+      defaultGhostBorderColor: '#3600d1',
+      defaultGhostColor: '#3600d1',
       onlyIconSizeLG: 20,
       onlyIconSizeSM: 12,
       paddingInline: 16,
       paddingInlineLG: 16,
       paddingInlineSM: 8,
+      lineHeight: 1.5700000524520874,
+    },
+    Menu: {
+      borderRadius: 4,
+      controlHeightSM: 32,
+      darkItemBg: '#0f0e0e',
+      itemSelectedColor: '#0f0e0e',
+      lineHeight: 1.5700000524520874,
+    },
+    Pagination: {
+      borderRadius: 4,
+      lineHeight: 1.5700000524520874,
+    },
+    DatePicker: {
+      borderRadius: 4,
+      lineHeight: 1.5700000524520874,
+    },
+    Input: {
+      borderRadius: 4,
+      lineHeight: 1.5700000524520874,
+      paddingBlockLG: 8,
+      paddingInline: 12,
+      paddingInlineLG: 12,
+      paddingInlineSM: 8,
+    },
+    Radio: {
+      borderRadius: 4,
+      lineHeight: 1.5700000524520874,
+    },
+    Select: {
+      borderRadius: 4,
+      lineHeight: 1.5700000524520874,
+      optionLineHeight: 1.5700000524520874,
+      multipleItemHeightSM: 16,
+    },
+    TimePicker: {
+      borderRadius: 4,
+      lineHeight: 1.5700000524520874,
+    },
+    TreeSelect: {
+      borderRadius: 4,
+      lineHeight: 1.5700000524520874,
+    },
+    Avatar: {
+      borderRadius: 4,
+      lineHeight: 1.5700000524520874,
+    },
+    Segmented: {
+      borderRadius: 4,
+      lineHeight: 1.5700000524520874,
+    },
+    Table: {
+      borderRadius: 4,
+      lineHeight: 1.5700000524520874,
+      footerBg: '#f8f6fb',
+      headerBg: '#f8f6fb',
+    },
+    Tabs: {
+      borderRadius: 4,
+      lineHeight: 1.5700000524520874,
+    },
+    Tooltip: {
+      borderRadius: 4,
+      lineHeight: 1.5700000524520874,
+    },
+    Tour: {
+      borderRadius: 4,
       lineHeight: 1.5700000524520874,
     },
     Spin: {
@@ -204,10 +280,6 @@ export const LightTheme /*: ThemeConfig */ = {
     Result: {
       lineHeight: 1.5700000524520874,
       lineHeightHeading3: 1.3300000429153442,
-    },
-    Progress: {
-      lineHeight: 1.5700000524520874,
-      defaultColor: '#3600d1',
     },
     Notification: {
       lineHeight: 1.5700000524520874,
@@ -236,30 +308,14 @@ export const LightTheme /*: ThemeConfig */ = {
     Dropdown: {
       lineHeight: 1.5700000524520874,
     },
-    Pagination: {
-      lineHeight: 1.5700000524520874,
-    },
-    Steps: {
-      lineHeight: 1.5700000524520874,
-    },
     Cascader: {
       lineHeight: 1.5700000524520874,
     },
     Checkbox: {
       lineHeight: 1.5700000524520874,
     },
-    DatePicker: {
-      lineHeight: 1.5700000524520874,
-    },
     Form: {
       lineHeight: 1.5700000524520874,
-    },
-    Input: {
-      lineHeight: 1.5700000524520874,
-      paddingBlockLG: 8,
-      paddingInline: 12,
-      paddingInlineLG: 12,
-      paddingInlineSM: 8,
     },
     InputNumber: {
       paddingBlockLG: 8,
@@ -267,9 +323,7 @@ export const LightTheme /*: ThemeConfig */ = {
       paddingInlineLG: 12,
       paddingInlineSM: 8,
       lineHeight: 1.5700000524520874,
-    },
-    Radio: {
-      lineHeight: 1.5700000524520874,
+      borderRadius: 4,
     },
     Rate: {
       lineHeight: 1.5700000524520874,
@@ -277,27 +331,14 @@ export const LightTheme /*: ThemeConfig */ = {
     Upload: {
       lineHeight: 1.5700000524520874,
     },
-    TreeSelect: {
-      lineHeight: 1.5700000524520874,
-    },
     Transfer: {
       lineHeight: 1.5700000524520874,
       listWidth: 200,
-    },
-    Select: {
-      lineHeight: 1.5700000524520874,
-      optionLineHeight: 1.5700000524520874,
     },
     Slider: {
       lineHeight: 1.5700000524520874,
     },
     Switch: {
-      lineHeight: 1.5700000524520874,
-    },
-    TimePicker: {
-      lineHeight: 1.5700000524520874,
-    },
-    Avatar: {
       lineHeight: 1.5700000524520874,
     },
     Badge: {
@@ -330,18 +371,7 @@ export const LightTheme /*: ThemeConfig */ = {
     QRCode: {
       lineHeight: 1.5700000524520874,
     },
-    Segmented: {
-      lineHeight: 1.5700000524520874,
-    },
     Statistic: {
-      lineHeight: 1.5700000524520874,
-    },
-    Table: {
-      lineHeight: 1.5700000524520874,
-      footerBg: '#f8f6fb',
-      headerBg: '#f8f6fb',
-    },
-    Tabs: {
       lineHeight: 1.5700000524520874,
     },
     Tag: {
@@ -350,16 +380,12 @@ export const LightTheme /*: ThemeConfig */ = {
     Timeline: {
       lineHeight: 1.5700000524520874,
     },
-    Tooltip: {
-      lineHeight: 1.5700000524520874,
-    },
-    Tour: {
-      lineHeight: 1.5700000524520874,
-    },
     Tree: {
+      borderRadius: 4,
       lineHeight: 1.5700000524520874,
     },
     AutoComplete: {
+      borderRadius: 4,
       lineHeight: 1.5700000524520874,
     },
   },
