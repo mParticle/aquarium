@@ -67,6 +67,10 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
             <NavigationList items={props.tools} onClick={props.onClick} />
           </div>
 
+          <Center>
+            <div className="globalNavigation__divider" />
+          </Center>
+
           <NavigationList items={props.management} onClick={props.onClick} />
 
           {props.orgs && <WorkspaceSelector orgs={props.orgs} />}
@@ -74,7 +78,6 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
           <Center className="globalNavigation__mpHome">
             <MpLogo className="globalNavigation__mpSvg" />
           </Center>
-          
         </Flex>
       </Layout.Sider>
     </Layout>

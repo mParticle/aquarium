@@ -108,15 +108,15 @@
 .globalNavigation__suiteLogo {
     min-height: var(--suite-logo-height);
     min-width: var(--nav-item-width);
-
+    padding-top: var(--padding-sm);
     color: var(--black-alpha-12);
     font-size: var(--font-size-sm);
 }
 
-.globalNavigation__suiteBorder {
+.globalNavigation__divider {
     border-bottom: 1px solid var(--color-border-secondary);
-    padding-top: var(--padding-lg);
     width: 80%;
+    margin: var(--padding-lg) 0;
 }
 
 .globalNavigation__search {
