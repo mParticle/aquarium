@@ -45,11 +45,16 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { IFlexProps as IFlexProps_2 } from '../../../../../../../src/components/layout/Flex/Flex';
 import { ImageProps } from 'antd';
 import { IModalProps as IModalProps_2 } from '../../../../../../../src/components/feedback/Modal/Modal';
-import { INavigationOrg } from '../../../../../../../src/components/navigation/GlobalNavigation/WorkspaceSelectorItems';
+import { INavigationAccount } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
+import { INavigationOrg } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
+import { INavigationOrg as INavigationOrg_2 } from '../../../../../../../src/components/navigation/GlobalNavigation/WorkspaceSelectorItems';
+import { INavigationWorkspace } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
 import { InputNumberProps } from 'antd';
 import { InputProps } from 'antd';
 import { InputRef } from 'antd';
 import { RowProps as IRowProps } from 'antd';
+import { IWorkspaceSelectorItem } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
+import { IWorkspaceSelectorMapping } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
 import { JSX as JSX_2 } from 'react/jsx-runtime';
 import { JSXElementConstructor } from 'react';
 import { LayoutProps } from 'antd';
@@ -57,6 +62,8 @@ import { ListItemTypeProps } from 'antd/es/list/Item';
 import { ListProps } from 'antd';
 import { MemoExoticComponent } from 'react';
 import { MentionProps } from 'antd';
+import { MenuDividerType } from 'antd/es/menu/hooks/useItems';
+import { default as MenuItem } from 'antd/es/menu/MenuItem';
 import { MenuItemGroupType } from 'antd/es/menu/hooks/useItems';
 import { MenuItemType } from 'antd/es/menu/hooks/useItems';
 import { MenuProps } from 'antd';
@@ -91,6 +98,7 @@ import { SpaceProps } from 'antd';
 import { SpinProps } from 'antd';
 import { StatisticProps } from 'antd';
 import { StepsProps } from 'antd';
+import { SubMenuType } from 'antd/es/menu/hooks/useItems';
 import { SwitchProps } from 'antd';
 import { TableProps } from 'antd';
 import { TabsProps } from 'antd';
@@ -290,7 +298,7 @@ export declare interface IGlobalNavigationLogo extends IBaseGlobalNavigationItem
 
 export declare interface IGlobalNavigationManagement extends IBaseGlobalNavigationItem {
     type: 'menu' | 'link';
-    children?: MenuItem[];
+    children?: MenuItem_2[];
     onClick?: (e: React.MouseEvent) => void;
 }
 
@@ -298,7 +306,7 @@ export declare interface IGlobalNavigationProps {
     logo: IGlobalNavigationLogo;
     tools: IGlobalNavigationTool[];
     management: IGlobalNavigationManagement[];
-    orgs?: INavigationOrg[];
+    orgs?: INavigationOrg_2[];
     createItems?: Array<MenuItemType | MenuItemGroupType>;
     onSearchClick?: () => void;
     onClick?: () => void;
@@ -306,7 +314,7 @@ export declare interface IGlobalNavigationProps {
 
 export declare interface IGlobalNavigationTool extends IBaseGlobalNavigationItem {
     type: 'menu' | 'link';
-    children?: MenuItem[];
+    children?: MenuItem_2[];
     onClick?: (e: React.MouseEvent) => void;
 }
 
@@ -349,6 +357,12 @@ export declare interface IMessageProps extends MessageArgsProps {
 
 export declare interface IModalProps extends ModalProps {
 }
+
+export { INavigationAccount }
+
+export { INavigationOrg }
+
+export { INavigationWorkspace }
 
 export declare interface INotificationProps extends NotificationArgsProps {
     children: React.ReactNode;
@@ -453,6 +467,10 @@ export declare interface IUploadProps extends UploadProps {
 export declare interface IWatermarkProps extends WatermarkProps {
 }
 
+export { IWorkspaceSelectorItem }
+
+export { IWorkspaceSelectorMapping }
+
 export declare const Layout: {
     (props: ILayoutProps): JSX_2.Element;
     Sider: ForwardRefExoticComponent<SiderProps & RefAttributes<HTMLDivElement>>;
@@ -472,9 +490,17 @@ export declare const Mentions: (props: IMentionsProps) => JSX_2.Element;
 
 export declare const Menu: (props: IMenuProps) => JSX_2.Element;
 
-declare interface MenuItem extends Omit<MenuItemType, 'key'> {
-    children?: MenuItem[];
+export { MenuDividerType }
+
+export { MenuItem }
+
+declare interface MenuItem_2 extends Omit<MenuItemType, 'key'> {
+    children?: MenuItem_2[];
 }
+
+export { MenuItemGroupType }
+
+export { MenuItemType }
 
 export declare const Message: (props: IMessageProps) => JSX_2.Element;
 
@@ -520,6 +546,8 @@ export declare const Spin: (props: ISpinProps) => JSX_2.Element;
 export declare const Statistic: (props: IStatisticProps) => JSX_2.Element;
 
 export declare const Steps: (props: IStepsProps) => JSX_2.Element;
+
+export { SubMenuType }
 
 export declare const Switch: (props: ISwitchProps) => JSX_2.Element;
 

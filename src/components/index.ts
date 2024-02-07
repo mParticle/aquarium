@@ -71,7 +71,22 @@ export { Anchor, type IAnchorProps } from './navigation/Anchor/Anchor'
 export { Dropdown, type IDropdownProps } from './navigation/Dropdown/Dropdown'
 export { Breadcrumb, type IBreadcrumbProps } from './navigation/Breadcrumb/Breadcrumb'
 export { Pagination, type IPaginationProps } from './navigation/Pagination/Pagination'
-export { Menu, type IMenuProps } from './navigation/Menu/Menu'
+export {
+  Menu,
+  MenuItem,
+  type IMenuProps,
+  type MenuItemType,
+  type SubMenuType,
+  type MenuItemGroupType,
+  type MenuDividerType,
+} from './navigation/Menu/Menu'
 export { ConfigProvider, type IConfigProviderProps } from './other/ConfigProvider/ConfigProvider'
 export { Affix, type IAffixProps } from './other/Affix/Affix'
 export { App, type IAppProps } from './other/App/App'
+export {
+  type INavigationOrg,
+  type INavigationWorkspace,
+  type INavigationAccount,
+  type IWorkspaceSelectorMapping,
+  type IWorkspaceSelectorItem,
+} from './navigation/GlobalNavigation/WorkspaceSelectorItems'

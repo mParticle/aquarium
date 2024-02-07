@@ -4,7 +4,7 @@ import { Input } from 'src/components'
 import { Menu } from 'src/components'
 import { type IMenuProps } from 'src/components'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
-import { type WorkspaceSelectorMapping } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
+import { type IWorkspaceSelectorMapping } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
 import { type INavigationAccount } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
 import { type INavigationWorkspace } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
 import { useState } from 'react'
@@ -18,7 +18,7 @@ export interface IWorkspaceSelectorProps {
 export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
   const allItemsFlat = useMemo(generateAllItems, [props.orgs])
 
-  const [children, setChildren] = useState<WorkspaceSelectorMapping[]>(allItemsFlat)
+  const [children, setChildren] = useState<IWorkspaceSelectorMapping[]>(allItemsFlat)
 
   const searchEl: MenuItemType = {
     key: 'search',
@@ -53,8 +53,8 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
     />
   )
 
-  function generateAllItems(): WorkspaceSelectorMapping[] {
-    return props.orgs.reduce<WorkspaceSelectorMapping[]>((total, org) => {
+  function generateAllItems(): IWorkspaceSelectorMapping[] {
+    return props.orgs.reduce<IWorkspaceSelectorMapping[]>((total, org) => {
       total.push({
         type: 'org',
         className: 'workspaceSelector__orgName',
@@ -100,7 +100,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
       /* eslint-disable-next-line */
       return isHit(item) || item.accounts?.some(isHit) || item.workspaces?.some(isHit)
 
-      function isHit(item: WorkspaceSelectorMapping | INavigationAccount | INavigationWorkspace): boolean {
+      function isHit(item: IWorkspaceSelectorMapping | INavigationAccount | INavigationWorkspace): boolean {
         return (
           item.label.toString().toLowerCase().includes(searchTerm) ||
           item.id.toString().toLowerCase().includes(searchTerm)

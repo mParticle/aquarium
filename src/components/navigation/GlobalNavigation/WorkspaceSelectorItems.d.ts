@@ -18,7 +18,7 @@ export interface INavigationWorkspace extends IWorkspaceSelectorItem {
   onClick: (info: MenuInfo) => void
 }
 
-export interface WorkspaceSelectorMapping extends MenuItemType {
+export interface IWorkspaceSelectorMapping extends MenuItemType {
   type: 'org' | 'account' | 'workspace'
   className: string
   label: string
