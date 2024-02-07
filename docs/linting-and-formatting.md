@@ -10,16 +10,7 @@ In order to propose changes to linting and formatting, open an issue or a pull r
 
 ### Prettier
 
-That's our current config file for prettier:
-
-```json
-{
-  "semi": false,
-  "singleQuote": true,
-  "arrowParens": "avoid",
-  "printWidth": 120
-}
-```
+[Here's our current config file for prettier](https://github.com/mParticle/aquarium/blob/main/.prettierrc)
 
 Since we are coming from two large printWidth codebases we decided on 120 printWidth for the Aquarium to make it more
 similar.
@@ -28,39 +19,7 @@ similar.
 
 ### ESLint
 
-Our current ESLint config files customizes some rules. Here's the rational behind them.
-
-```js
-{
-  rules: {
-    '@typescript-eslint/explicit-function-return-type'
-  :
-    [
-      'warn',
-      {
-        allowedNames: [
-          ...
-        ],
-      },
-    ],
-      '@typescript-eslint/strict-boolean-expressions'
-  :
-    'off',
-      '@typescript-eslint/consistent-type-definitions'
-  :
-    'off',
-      '@typescript-eslint/no-use-before-define'
-  :
-    ['error', { allowNamedExports: true }],
-      'react/react-in-jsx-scope'
-  :
-    'off',
-      'import/no-duplicates'
-  :
-    'off',
-  }
-}
-```
+[Our current ESLint config file](https://github.com/mParticle/aquarium/blob/main/.eslintrc.js#L19) customizes some rules. Here's the rational behind them.
 
 - [@typescript-eslint/explicit-function-return-type](https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/explicit-function-return-type.md)
 
