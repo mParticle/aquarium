@@ -23,6 +23,11 @@
     pointer-events: none;
 }
 
+.workspaceSelector__accountName.workspaceSelector__accountName--hidden {
+    display: none !important;
+}
+
+
 .workspaceSelector__workspaceName {
     padding-left: calc(var(--padding-sm) + var(--padding)) !important;
 

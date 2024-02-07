@@ -20,7 +20,7 @@ export interface INavigationWorkspace extends IWorkspaceSelectorItem {
 
 export interface WorkspaceSelectorMapping extends MenuItemType {
   type: 'org' | 'account' | 'workspace'
-  className: 'workspaceSelector__orgName' | 'workspaceSelector__accountName' | 'workspaceSelector__workspaceName'
+  className: string
   label: string
   id: string
 

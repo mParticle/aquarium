@@ -46,7 +46,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
   return (
     <Menu
-      // openKeys={['WorkspaceSelector']} // testing only
+   //   openKeys={['WorkspaceSelector']} // testing only
       className="globalNavigation__menu globalNavigation__item"
       items={items}
       expandIcon={null}
@@ -68,7 +68,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
       org.accounts.forEach(account => {
         total.push({
           type: 'account',
-          className: 'workspaceSelector__accountName',
+          className: 'workspaceSelector__accountName' + (account.label ? '' : ' workspaceSelector__accountName--hidden'),
           label: account.label,
           id: account.id,
           key: account.id,
