@@ -49,7 +49,6 @@ export interface IGlobalNavigationProps {
   onClick?: () => void
 }
 
-export const NavItemHeight = '42px' as const
 export const NavWidth = 90 as const
 
 export const GlobalNavigation = (props: IGlobalNavigationProps) => {
@@ -59,7 +58,6 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
         <Flex vertical justify="space-between" style={{ height: '100%' }}>
           <div>
             <SuiteLogo {...props.logo} />
-            <hr />
 
             <Center vertical>
               {props.onSearchClick && <NavigationSearch onClick={props.onSearchClick} />}

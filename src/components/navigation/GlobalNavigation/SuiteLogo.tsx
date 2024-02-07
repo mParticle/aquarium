@@ -6,8 +6,9 @@ export function SuiteLogo(props: IGlobalNavigationLogo) {
   return (
     <>
       <Center vertical className="globalNavigation__suiteLogo">
-        <NavigationIcon icon={props.icon} label="" hideLabel={true} />
+        <NavigationIcon icon={props.icon} label="" hideLabel={true}  className="globalNavigation__icon--suiteLogo"/>
         {props.label}
+        <div className="globalNavigation__suiteBorder"/>
       </Center>
     </>
   )

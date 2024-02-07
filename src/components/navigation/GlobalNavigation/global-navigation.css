@@ -7,6 +7,7 @@
 .globalNavigation {
     min-height: 100%;
     background-color: var(--white-alpha-12) !important;
+    border-right: 1px solid var(--color-border-secondary);
 }
 
 .globalNavigation__item {
@@ -62,12 +63,15 @@
     }
 }
 
+.globalNavigation__icon.globalNavigation__icon--suiteLogo {
+    padding-bottom: var(--padding-xs)
+}
+
 
 .globalNavigation__iconLabel {
     padding-top: var(--margin-xxs);
     color: var(--color-text);
     font-size: 10px;
-    font-weight: 400;
 }
 
 
@@ -104,18 +108,19 @@
 .globalNavigation__suiteLogo {
     min-height: var(--suite-logo-height);
     min-width: var(--nav-item-width);
-    padding-top: var(--padding-xs);
-    margin: var(--margin-xs) 0;
 
     color: var(--black-alpha-12);
-
     font-size: var(--font-size-sm);
-    font-weight: 400;
+}
 
-    .globalNavigation__icon {
-        padding-bottom: var(--padding-xs)
-    }
+.globalNavigation__suiteBorder {
+    border-bottom: 1px solid var(--color-border-secondary);
+    padding-top: var(--padding-lg);
+    width: 80%;
+}
 
+.globalNavigation__search {
+    width: 100%;
 }
 
 .globalNavigation__mpHome {

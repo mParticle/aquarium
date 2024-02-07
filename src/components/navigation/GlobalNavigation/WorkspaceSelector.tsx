@@ -49,7 +49,6 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
       // openKeys={['WorkspaceSelector']} // testing only
       className="globalNavigation__menu globalNavigation__item"
       items={items}
-      subMenuCloseDelay={9999999} // never close the menu on mouse leave
       expandIcon={null}
     />
   )
