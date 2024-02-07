@@ -43,6 +43,8 @@ import { Icon } from 'src/components/general/Icon/Icon'
 import { type MenuItemType } from 'antd/es/menu/hooks/useItems'
 import { type MenuItemGroupType } from 'antd/es/menu/hooks/useItems'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
+import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { faSave } from "@fortawesome/free-solid-svg-icons";
 
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',
@@ -365,28 +367,18 @@ const indLogo: IGlobalNavigationLogo = {
 }
 const indTools: IGlobalNavigationTool[] = [
   {
-    label: 'Segmentation',
-    icon: <Icon icon={faChartSimple} />,
+    label: 'My Hub',
+    icon: <Icon icon={faHome} />,
     type: 'link',
   },
   {
-    label: 'Funnel',
-    icon: <Icon icon={faChartBar} />,
+    label: 'Saved',
+    icon: <Icon icon={faSave} />,
     type: 'link',
   },
   {
-    label: 'Journeys',
-    icon: <Icon icon={faJournalWhills} />,
-    type: 'link',
-  },
-  {
-    label: 'Cohort',
-    icon: <Icon icon={faUserCog} />,
-    type: 'link',
-  },
-  {
-    label: 'Users',
-    icon: <Icon icon={faUsers} />,
+    label: 'Manage Data',
+    icon: <Icon icon={faDatabase} />,
     type: 'link',
   },
 ]
@@ -533,7 +525,6 @@ const indCreateItems: Array<MenuItemType | MenuItemGroupType> = [
     icon: <Icon icon={faUser} />,
   },
 ]
-
 const indOrgs: INavigationOrg[] = [
   {
     id: 'org1',

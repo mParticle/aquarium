@@ -28,7 +28,7 @@
         background-color: var(--control-item-bg-hover);
     }
 
-    :focus, :active {
+    &:focus, &:active {
         background-color: var(--control-item-bg-active);
     }
 
