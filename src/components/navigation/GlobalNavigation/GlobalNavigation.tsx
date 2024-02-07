@@ -53,8 +53,8 @@ export const NavWidth = 90 as const
 
 export const GlobalNavigation = (props: IGlobalNavigationProps) => {
   return (
-    <Layout>
-      <Layout.Sider className="globalNavigation" width={NavWidth}>
+    <Layout className="globalNavigation">
+      <Layout.Sider className="globalNavigation__sider" width={NavWidth}>
         <Flex vertical justify="space-between" style={{ height: '100%' }}>
           <div>
             <SuiteLogo {...props.logo} />

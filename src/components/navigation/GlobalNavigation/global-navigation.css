@@ -10,6 +10,11 @@
     border-right: 1px solid var(--color-border-secondary);
 }
 
+.globalNavigation__sider {
+    min-height: 100%;
+    background-color: white !important;
+}
+
 .globalNavigation__item {
     height: var(--nav-item-height) !important;
     width: 88px !important;
