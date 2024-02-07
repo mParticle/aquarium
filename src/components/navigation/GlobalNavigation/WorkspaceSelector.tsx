@@ -39,14 +39,14 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
   const items: IMenuProps['items'] = [
     {
       key: 'WorkspaceSelector',
-      icon: <Avatar>WS</Avatar>,
+      icon: <Avatar className="workspaceSelector__avatar">WS</Avatar>,
       children: [searchEl, ...children],
     },
   ]
 
   return (
     <Menu
-   //   openKeys={['WorkspaceSelector']} // testing only
+      //   openKeys={['WorkspaceSelector']} // testing only
       className="globalNavigation__menu globalNavigation__item"
       items={items}
       expandIcon={null}
@@ -66,9 +66,11 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
       })
 
       org.accounts.forEach(account => {
+        const className =
+          'workspaceSelector__accountName' + (account.label ? '' : ' workspaceSelector__accountName--hidden')
         total.push({
           type: 'account',
-          className: 'workspaceSelector__accountName' + (account.label ? '' : ' workspaceSelector__accountName--hidden'),
+          className,
           label: account.label,
           id: account.id,
           key: account.id,

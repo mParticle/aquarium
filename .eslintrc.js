@@ -93,6 +93,7 @@ module.exports = {
           'GlobalNavigation',
           'SuiteLogo',
           'NavigationSearch',
+          'NavigationCreate',
           'NavigationIcon',
           'NavigationList',
           'WorkspaceSelector',

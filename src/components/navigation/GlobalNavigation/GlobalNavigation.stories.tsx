@@ -34,7 +34,6 @@ import { type StoryObj } from '@storybook/react'
 import { GlobalNavigation } from 'src/components'
 import { Space } from 'src/components'
 import { Flex } from 'src/components'
-import { Avatar } from 'src/components'
 import { Button } from 'src/components'
 import { Badge } from 'src/components/data-display/Badge/Badge'
 import { type IGlobalNavigationTool } from 'src/components/navigation/GlobalNavigation/GlobalNavigation'
@@ -89,11 +88,26 @@ const defaultManagement: IGlobalNavigationManagement[] = [
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
+]
+const defaultOrgs: INavigationOrg[] = [
   {
-    label: 'Account',
-    hideLabel: true,
-    icon: <Avatar>WS</Avatar>,
-    type: 'link',
+    id: 'org1',
+    label: 'Org 1',
+    accounts: [
+      {
+        id: 'account1',
+        label: 'account 1',
+        workspaces: [
+          {
+            id: 'workspace1',
+            label: 'Workspace 1',
+            onClick: e => {
+              alert('Selected Workspace 1')
+            },
+          },
+        ],
+      },
+    ],
   },
 ]
 
@@ -105,6 +119,7 @@ const meta: Meta<typeof GlobalNavigation> = {
     logo: defaultLogo,
     tools: defaultTools,
     management: defaultManagement,
+    orgs: defaultOrgs,
   },
 }
 export default meta
@@ -201,7 +216,7 @@ const mpOrgs: INavigationOrg[] = [
         workspaces: [
           {
             id: 'workspace1',
-            label: 'workspace 1',
+            label: 'Workspace 1',
             onClick: e => {
               alert('Selected workspace 1')
             },
@@ -220,7 +235,7 @@ const mpOrgs: INavigationOrg[] = [
         workspaces: [
           {
             id: 'workspace2',
-            label: 'workspace 2',
+            label: 'Workspace 2',
             onClick: e => {
               alert('Selected workspace 2')
             },
@@ -239,7 +254,7 @@ const mpOrgs: INavigationOrg[] = [
         workspaces: [
           {
             id: 'workspace3',
-            label: 'workspace 3',
+            label: 'Workspace 3',
             onClick: e => {
               alert('Selected workspace 3')
             },
@@ -258,7 +273,7 @@ const mpOrgs: INavigationOrg[] = [
         workspaces: [
           {
             id: 'workspace4',
-            label: 'workspace 4',
+            label: 'Workspace 4',
             onClick: e => {
               alert('Selected workspace 4')
             },
@@ -277,7 +292,7 @@ const mpOrgs: INavigationOrg[] = [
         workspaces: [
           {
             id: 'workspace5',
-            label: 'workspace 5',
+            label: 'Workspace 5',
             onClick: e => {
               alert('Selected workspace 5')
             },
@@ -296,7 +311,7 @@ const mpOrgs: INavigationOrg[] = [
         workspaces: [
           {
             id: 'workspace6',
-            label: 'workspace 6',
+            label: 'Workspace 6',
             onClick: e => {
               alert('Selected workspace 6')
             },
@@ -389,12 +404,6 @@ const indManagement: IGlobalNavigationManagement[] = [
     icon: <Icon icon={faGear} />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
-  },
-  {
-    label: 'Account',
-    hideLabel: true,
-    icon: <Avatar>WS</Avatar>,
-    type: 'link',
   },
 ]
 const indCreateItems: Array<MenuItemType | MenuItemGroupType> = [
@@ -702,12 +711,6 @@ const cortexManagement: IGlobalNavigationManagement[] = [
     icon: <Icon icon={faGear} />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
-  },
-  {
-    label: 'Account',
-    hideLabel: true,
-    icon: <Avatar>WS</Avatar>,
-    type: 'link',
   },
 ]
 export const Cortex: Story = {
