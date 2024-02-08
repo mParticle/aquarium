@@ -4020,8 +4020,7 @@ function b4(n) {
     {
       className: "globalNavigation__menu globalNavigation__item",
       items: a,
-      expandIcon: null,
-      defaultOpenKeys: ["NavigationCreate"]
+      expandIcon: null
     }
   ) });
 }
