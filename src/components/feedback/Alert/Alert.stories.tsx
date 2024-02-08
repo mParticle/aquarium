@@ -2,11 +2,11 @@ import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
 import { Alert } from 'src/components/feedback/Alert/Alert'
 import { Icon } from 'src/components'
-import { faIcons } from '@fortawesome/free-solid-svg-icons'
 import { ExampleStory } from 'src/utils/ExampleStory'
 import { Space } from 'src/components'
 import { useState } from 'react'
 import { Button } from 'src/components'
+import { faIcons } from "@awesome.me/kit-f3b115a3e2/icons/classic/light";
 
 const meta: Meta<typeof Alert> = {
   title: 'Aquarium/Feedback/Alert',

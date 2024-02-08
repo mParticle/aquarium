@@ -3,7 +3,7 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { Upload } from 'src/components/data-entry/Upload/Upload'
 import { Icon } from 'src/components/general/Icon/Icon'
 import { Button } from 'src/components/general/Button/Button'
-import { faUpload } from '@fortawesome/free-solid-svg-icons'
+import { faUpload } from '@awesome.me/kit-f3b115a3e2/icons/classic/light'
 
 const meta: Meta<typeof Upload> = {
   title: 'Aquarium/Data Entry/Upload',

@@ -2,7 +2,7 @@ import { type Meta, type StoryObj } from '@storybook/react'
 
 import { Pagination } from 'src/components/navigation/Pagination/Pagination'
 import { Icon } from 'src/components/general/Icon/Icon'
-import { faIcons } from '@fortawesome/free-solid-svg-icons'
+import { faIcons } from '@awesome.me/kit-f3b115a3e2/icons/classic/light'
 
 const meta: Meta<typeof Pagination> = {
   title: 'Aquarium/Navigation/Pagination',
