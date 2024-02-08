@@ -4008,7 +4008,7 @@ function b4(n) {
       children: n.createItems.map((l) => l.type === "group" ? { label: l.label, key: l.label, type: l.type } : {
         key: l.description,
         className: "globalNavigation__createItem",
-        onclick: l.onClick,
+        onClick: l.onClick,
         label: /* @__PURE__ */ Ja(tC, { vertical: !0, gap: "middle", justify: "center", children: [
           l.title,
           /* @__PURE__ */ q("span", { children: l.description })

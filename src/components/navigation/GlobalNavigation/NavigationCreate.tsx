@@ -24,9 +24,9 @@ export interface INavigationCreateItem extends Omit<MenuItemType, 'key'> {
   type?: undefined
 
   // isSelected: boolean // todo: implement??
-  
+
   /* todo: we're gonna need url/showMe stuff here */
-  
+
   /* todo: implement loading state / tooltip */
 }
 
@@ -47,7 +47,7 @@ export function NavigationCreate(props: INavigationCreateProps) {
         return {
           key: item.description,
           className: 'globalNavigation__createItem',
-          onclick: item.onClick,
+          onClick: item.onClick,
           label: (
             <Flex vertical={true} gap="middle" justify="center">
               {/* todo: implement isPaywalled */}

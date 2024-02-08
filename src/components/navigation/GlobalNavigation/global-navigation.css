@@ -104,6 +104,10 @@
 .globalNavigation__createItem {
     height: 100% !important;
     min-height: 100% !important;
+
+    .ant-menu-item-group-title {
+        user-select: none;
+    }
 }
 
 

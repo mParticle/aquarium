@@ -401,6 +401,9 @@ const indCreateItems: INavigationCreateProps['createItems'] = [
   {
     title: 'Dashboard',
     description: 'Create a new dashboard to organize your saved analysis.',
+    onClick: () => {
+      alert('Opening New Dashboard Modal')
+    },
   },
 
   {
@@ -409,21 +412,20 @@ const indCreateItems: INavigationCreateProps['createItems'] = [
   },
   {
     title: 'Event Segmentation',
-    description:'Measure engagement based on behaviors and attributes.',
+    description: 'Measure engagement based on behaviors and attributes.',
   },
   {
     title: 'User Segmentation',
-    description:'Measure unique users based on behaviors and attributes.',
+    description: 'Measure unique users based on behaviors and attributes.',
   },
   {
     title: 'Revenue Analysis',
-    description:'Track revenue over time.',
+    description: 'Track revenue over time.',
   },
   {
     title: 'Frequency',
-    description:'Analyze how many distinct times an event is performed within a given interval.',
-    isPaywalled:true,
-
+    description: 'Analyze how many distinct times an event is performed within a given interval.',
+    isPaywalled: true,
   },
 
   {
@@ -432,45 +434,45 @@ const indCreateItems: INavigationCreateProps['createItems'] = [
   },
   {
     title: 'Conversion and Drop Off',
-    description:'Identify points of friction between funnel steps.',
+    description: 'Identify points of friction between funnel steps.',
   },
   {
     title: 'Multipath Funnel',
-    description:'Analyze multiple customer paths to identify the optimal path to conversion.',
+    description: 'Analyze multiple customer paths to identify the optimal path to conversion.',
   },
   {
     title: 'Conversion Over Time',
-    description:'Track key conversion metrics over time.',
+    description: 'Track key conversion metrics over time.',
   },
   {
     title: 'Contribution',
-    description:'Reverse the funnel to measure each step\'s contribution to the target action.',
+    description: "Reverse the funnel to measure each step's contribution to the target action.",
   },
-  
+
   {
     label: 'Journeys',
     type: 'group',
   },
   {
     title: 'Journeys From an Event',
-    description:'Discover the most common paths users take from a starting point.',
+    description: 'Discover the most common paths users take from a starting point.',
   },
   {
     title: 'Journeys To an Event',
-    description:'Discover the most common paths users take towards a target action.',
+    description: 'Discover the most common paths users take towards a target action.',
   },
-  
+
   {
     label: 'Cohort',
     type: 'group',
   },
   {
     title: 'Retention',
-    description:'Analyze how often user cohorts return to engage with a target action.',
+    description: 'Analyze how often user cohorts return to engage with a target action.',
   },
   {
     title: 'Activation',
-    description:'Analyze when user cohorts engage with a target action for the first time.',
+    description: 'Analyze when user cohorts engage with a target action for the first time.',
   },
 
   {
@@ -479,18 +481,17 @@ const indCreateItems: INavigationCreateProps['createItems'] = [
   },
   {
     title: 'User Lookup by ID',
-    description:'Find a user by searching for their User ID.',
+    description: 'Find a user by searching for their User ID.',
   },
   {
     title: 'User Lookup by Event',
-    description:'Display a list of users who performed an event.',
+    description: 'Display a list of users who performed an event.',
   },
   {
     title: 'User Lookup by Segment',
-    description:'Display a list of users who are in a particular User Segment.',
+    description: 'Display a list of users who are in a particular User Segment.',
   },
 ]
-
 
 const indOrgs: INavigationOrg[] = [
   {
