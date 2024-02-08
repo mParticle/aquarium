@@ -11,7 +11,7 @@ jobs:
       - uses: actions/setup-node@v4
 
       - name: Install Dependencies
-        run: npm ci
+        run:  npm ci --registry https://registry.npmjs.org
 
       - name: Install Playwright
         run: npx playwright install
