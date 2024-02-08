@@ -1,10 +1,10 @@
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
 import { Space } from 'src/components'
-import { Text, Typography } from 'src/components/general/Typography/Typography'
+import { Switch } from 'src/components'
+import { Text } from 'src/components/general/Typography/Typography'
 import { ExampleStory } from 'src/utils/ExampleStory'
 import { useState } from 'react'
-import { Switch } from 'src/components'
 
 const meta: Meta<typeof Text> = {
   title: 'Aquarium/General/Text',
@@ -72,12 +72,6 @@ export const Disabled: Story = {
 export const Editable: Story = {
   args: {
     editable: true,
-  },
-}
-
-export const Ellipsis: Story = {
-  args: {
-    ellipsis: true,
   },
 }
 

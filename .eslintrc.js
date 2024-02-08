@@ -1,4 +1,3 @@
-const { Typography } = require('src/components/general/Typography/Typography')
 module.exports = {
   env: {
     browser: true,
