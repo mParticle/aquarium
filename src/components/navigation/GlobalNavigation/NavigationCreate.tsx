@@ -23,8 +23,11 @@ export interface INavigationCreateItem extends Omit<MenuItemType, 'key'> {
   isPaywalled?: boolean
   type?: undefined
 
-  isSelected: boolean // todo: implement??
+  // isSelected: boolean // todo: implement??
+  
   /* todo: we're gonna need url/showMe stuff here */
+  
+  /* todo: implement loading state / tooltip */
 }
 
 export function NavigationCreate(props: INavigationCreateProps) {
@@ -42,8 +45,9 @@ export function NavigationCreate(props: INavigationCreateProps) {
         if (item.type === 'group') return { label: item.label, key: item.label, type: item.type }
 
         return {
-          key: item.title,
+          key: item.description,
           className: 'globalNavigation__createItem',
+          onclick: item.onClick,
           label: (
             <Flex vertical={true} gap="middle" justify="center">
               {/* todo: implement isPaywalled */}

@@ -401,7 +401,6 @@ const indCreateItems: INavigationCreateProps['createItems'] = [
   {
     title: 'Dashboard',
     description: 'Create a new dashboard to organize your saved analysis.',
-    isSelected: false,
   },
 
   {
@@ -411,22 +410,18 @@ const indCreateItems: INavigationCreateProps['createItems'] = [
   {
     title: 'Event Segmentation',
     description:'Measure engagement based on behaviors and attributes.',
-    isSelected: false,
   },
   {
     title: 'User Segmentation',
     description:'Measure unique users based on behaviors and attributes.',
-    isSelected: false,
   },
   {
     title: 'Revenue Analysis',
     description:'Track revenue over time.',
-    isSelected: false,
   },
   {
     title: 'Frequency',
     description:'Analyze how many distinct times an event is performed within a given interval.',
-    isSelected: false,
     isPaywalled:true,
 
   },
@@ -438,22 +433,18 @@ const indCreateItems: INavigationCreateProps['createItems'] = [
   {
     title: 'Conversion and Drop Off',
     description:'Identify points of friction between funnel steps.',
-    isSelected: false,
   },
   {
     title: 'Multipath Funnel',
     description:'Analyze multiple customer paths to identify the optimal path to conversion.',
-    isSelected: false,
   },
   {
     title: 'Conversion Over Time',
     description:'Track key conversion metrics over time.',
-    isSelected: false,
   },
   {
     title: 'Contribution',
     description:'Reverse the funnel to measure each step\'s contribution to the target action.',
-    isSelected: false,
   },
   
   {
@@ -463,12 +454,10 @@ const indCreateItems: INavigationCreateProps['createItems'] = [
   {
     title: 'Journeys From an Event',
     description:'Discover the most common paths users take from a starting point.',
-    isSelected: false,
   },
   {
     title: 'Journeys To an Event',
     description:'Discover the most common paths users take towards a target action.',
-    isSelected: false,
   },
   
   {
@@ -478,12 +467,10 @@ const indCreateItems: INavigationCreateProps['createItems'] = [
   {
     title: 'Retention',
     description:'Analyze how often user cohorts return to engage with a target action.',
-    isSelected: false,
   },
   {
     title: 'Activation',
     description:'Analyze when user cohorts engage with a target action for the first time.',
-    isSelected: false,
   },
 
   {
@@ -493,17 +480,14 @@ const indCreateItems: INavigationCreateProps['createItems'] = [
   {
     title: 'User Lookup by ID',
     description:'Find a user by searching for their User ID.',
-    isSelected: false,
   },
   {
     title: 'User Lookup by Event',
     description:'Display a list of users who performed an event.',
-    isSelected: false,
   },
   {
     title: 'User Lookup by Segment',
     description:'Display a list of users who are in a particular User Segment.',
-    isSelected: false,
   },
 ]
 

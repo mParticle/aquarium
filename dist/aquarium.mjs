@@ -4006,8 +4006,9 @@ function b4(n) {
       key: "NavigationCreate",
       icon: /* @__PURE__ */ q(Ul, { style: { pointerEvents: "none" }, children: /* @__PURE__ */ q(c2, { icon: /* @__PURE__ */ q(V2, { icon: h4 }) }) }),
       children: n.createItems.map((l) => l.type === "group" ? { label: l.label, key: l.label, type: l.type } : {
-        key: l.title,
+        key: l.description,
         className: "globalNavigation__createItem",
+        onclick: l.onClick,
         label: /* @__PURE__ */ Ja(tC, { vertical: !0, gap: "middle", justify: "center", children: [
           l.title,
           /* @__PURE__ */ q("span", { children: l.description })
