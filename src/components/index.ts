@@ -90,3 +90,8 @@ export {
   type IWorkspaceSelectorMapping,
   type IWorkspaceSelectorItem,
 } from './navigation/GlobalNavigation/WorkspaceSelectorItems'
+export type {
+  INavigationCreateProps,
+  INavigationCreateGroup,
+  INavigationCreateItem,
+} from 'src/components/navigation/GlobalNavigation/NavigationCreate'

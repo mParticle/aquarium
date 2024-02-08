@@ -13,38 +13,26 @@ import {
   faPaintbrush,
   faPizzaSlice,
   faPingPongPaddleBall,
-  faChartBar,
-  faJournalWhills,
-  faUsers,
-  faChartSimple,
-  faUserCog,
 } from '@fortawesome/free-solid-svg-icons'
 import { faBlenderPhone } from '@fortawesome/free-solid-svg-icons'
 import { faArrowsToDot } from '@fortawesome/free-solid-svg-icons'
 import { faKitchenSet } from '@fortawesome/free-solid-svg-icons'
 import { faBoxes } from '@fortawesome/free-solid-svg-icons'
 import { faShapes } from '@fortawesome/free-solid-svg-icons'
-import { faDashboard } from '@fortawesome/free-solid-svg-icons'
-import { faUserGraduate } from '@fortawesome/free-solid-svg-icons'
-import { faFunnelDollar } from '@fortawesome/free-solid-svg-icons'
-import { faCogs } from '@fortawesome/free-solid-svg-icons'
-import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { faHome } from '@fortawesome/free-solid-svg-icons'
+import { faSave } from '@fortawesome/free-solid-svg-icons'
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
 import { GlobalNavigation } from 'src/components'
 import { Space } from 'src/components'
-import { Flex } from 'src/components'
 import { Button } from 'src/components'
+import { type INavigationCreateProps } from 'src/components'
 import { Badge } from 'src/components/data-display/Badge/Badge'
 import { type IGlobalNavigationTool } from 'src/components/navigation/GlobalNavigation/GlobalNavigation'
 import { type IGlobalNavigationManagement } from 'src/components/navigation/GlobalNavigation/GlobalNavigation'
 import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavigation/GlobalNavigation'
 import { Icon } from 'src/components/general/Icon/Icon'
-import { type MenuItemType } from 'antd/es/menu/hooks/useItems'
-import { type MenuItemGroupType } from 'antd/es/menu/hooks/useItems'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
-import { faHome } from "@fortawesome/free-solid-svg-icons";
-import { faSave } from "@fortawesome/free-solid-svg-icons";
 
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',
@@ -103,6 +91,7 @@ const defaultOrgs: INavigationOrg[] = [
           {
             id: 'workspace1',
             label: 'Workspace 1',
+            isSelected: true,
             onClick: e => {
               alert('Selected Workspace 1')
             },
@@ -219,6 +208,7 @@ const mpOrgs: INavigationOrg[] = [
           {
             id: 'workspace1',
             label: 'Workspace 1',
+            isSelected: false,
             onClick: e => {
               alert('Selected workspace 1')
             },
@@ -238,6 +228,7 @@ const mpOrgs: INavigationOrg[] = [
           {
             id: 'workspace2',
             label: 'Workspace 2',
+            isSelected: true,
             onClick: e => {
               alert('Selected workspace 2')
             },
@@ -257,6 +248,7 @@ const mpOrgs: INavigationOrg[] = [
           {
             id: 'workspace3',
             label: 'Workspace 3',
+            isSelected: false,
             onClick: e => {
               alert('Selected workspace 3')
             },
@@ -276,6 +268,7 @@ const mpOrgs: INavigationOrg[] = [
           {
             id: 'workspace4',
             label: 'Workspace 4',
+            isSelected: false,
             onClick: e => {
               alert('Selected workspace 4')
             },
@@ -295,6 +288,7 @@ const mpOrgs: INavigationOrg[] = [
           {
             id: 'workspace5',
             label: 'Workspace 5',
+            isSelected: false,
             onClick: e => {
               alert('Selected workspace 5')
             },
@@ -314,6 +308,7 @@ const mpOrgs: INavigationOrg[] = [
           {
             id: 'workspace6',
             label: 'Workspace 6',
+            isSelected: false,
             onClick: e => {
               alert('Selected workspace 6')
             },
@@ -398,133 +393,121 @@ const indManagement: IGlobalNavigationManagement[] = [
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
 ]
-const indCreateItems: Array<MenuItemType | MenuItemGroupType> = [
+const indCreateItems: INavigationCreateProps['createItems'] = [
   {
-    label: 'Dashboard',
-    key: 'Dashboard',
     type: 'group',
+    label: 'Dashboard',
   },
   {
-    className: 'globalNavigation__create',
-    label: (
-      <>
-        <Flex style={{}} vertical gap="middle" justify="center">
-          <Space>
-            <Icon icon={faDashboard} />
-            Dashboard
-          </Space>
-          <span>Create a new dashboard to organize your saved analysis.</span>
-        </Flex>
-      </>
-    ),
-    key: 'Dashboard',
+    title: 'Dashboard',
+    description: 'Create a new dashboard to organize your saved analysis.',
+    isSelected: false,
   },
 
   {
     label: 'Segmentation',
-    key: 'Segmentation',
     type: 'group',
   },
   {
-    label: 'Event Segmentation',
-    key: 'Event Segmentation',
-    icon: <Icon icon={faUserGraduate} />,
+    title: 'Event Segmentation',
+    description:'Measure engagement based on behaviors and attributes.',
+    isSelected: false,
   },
   {
-    label: 'User Segmentation',
-    key: 'User Segmentation',
-    icon: <Icon icon={faUserGraduate} />,
+    title: 'User Segmentation',
+    description:'Measure unique users based on behaviors and attributes.',
+    isSelected: false,
   },
   {
-    label: 'Revenue Analysis',
-    key: 'Revenue Analysis',
-    icon: <Icon icon={faUserGraduate} />,
+    title: 'Revenue Analysis',
+    description:'Track revenue over time.',
+    isSelected: false,
   },
   {
-    label: 'Frequency',
-    key: 'Frequency',
-    icon: <Icon icon={faUserGraduate} />,
+    title: 'Frequency',
+    description:'Analyze how many distinct times an event is performed within a given interval.',
+    isSelected: false,
+    isPaywalled:true,
+
   },
 
   {
     label: 'Funnel',
-    key: 'Funnel',
     type: 'group',
   },
   {
-    label: 'Conversion and Drop Off',
-    key: 'Conversion and Drop Off',
-    icon: <Icon icon={faFunnelDollar} />,
+    title: 'Conversion and Drop Off',
+    description:'Identify points of friction between funnel steps.',
+    isSelected: false,
   },
   {
-    label: 'Multipath Funnel',
-    key: 'Multipath Funnel',
-    icon: <Icon icon={faFunnelDollar} />,
+    title: 'Multipath Funnel',
+    description:'Analyze multiple customer paths to identify the optimal path to conversion.',
+    isSelected: false,
   },
   {
-    label: 'Conversion Over Time',
-    key: 'Conversion Over Time',
-    icon: <Icon icon={faFunnelDollar} />,
+    title: 'Conversion Over Time',
+    description:'Track key conversion metrics over time.',
+    isSelected: false,
   },
   {
-    label: 'Contribution',
-    key: 'Contribution',
-    icon: <Icon icon={faFunnelDollar} />,
+    title: 'Contribution',
+    description:'Reverse the funnel to measure each step\'s contribution to the target action.',
+    isSelected: false,
   },
-
+  
   {
     label: 'Journeys',
-    key: 'Journeys',
     type: 'group',
   },
   {
-    label: 'Journeys From an Event',
-    key: 'Journeys From an Event',
-    icon: <Icon icon={faJournalWhills} />,
+    title: 'Journeys From an Event',
+    description:'Discover the most common paths users take from a starting point.',
+    isSelected: false,
   },
   {
-    label: 'Journeys To an Event',
-    key: 'Journeys To an Event',
-    icon: <Icon icon={faJournalWhills} />,
+    title: 'Journeys To an Event',
+    description:'Discover the most common paths users take towards a target action.',
+    isSelected: false,
   },
-
+  
   {
     label: 'Cohort',
-    key: 'Cohort',
     type: 'group',
   },
   {
-    label: 'Retention',
-    key: 'Retention',
-    icon: <Icon icon={faCogs} />,
+    title: 'Retention',
+    description:'Analyze how often user cohorts return to engage with a target action.',
+    isSelected: false,
   },
   {
-    label: 'Activation',
-    key: 'Activation',
-    icon: <Icon icon={faCogs} />,
+    title: 'Activation',
+    description:'Analyze when user cohorts engage with a target action for the first time.',
+    isSelected: false,
   },
 
   {
     label: 'Users',
-    key: 'Users',
     type: 'group',
   },
   {
-    label: 'User Lookup by ID',
-    key: 'User Lookup by ID',
-    icon: <Icon icon={faUser} />,
+    title: 'User Lookup by ID',
+    description:'Find a user by searching for their User ID.',
+    isSelected: false,
   },
   {
-    label: 'User Lookup by Event',
-    key: 'User Lookup by Event',
-    icon: <Icon icon={faUser} />,
+    title: 'User Lookup by Event',
+    description:'Display a list of users who performed an event.',
+    isSelected: false,
   },
   {
-    label: 'User Lookup by Segment',
-    key: 'User Lookup by Segment',
-    icon: <Icon icon={faUser} />,
+    title: 'User Lookup by Segment',
+    description:'Display a list of users who are in a particular User Segment.',
+    isSelected: false,
   },
 ]
+
+
 const indOrgs: INavigationOrg[] = [
   {
     id: 'org1',
@@ -537,6 +520,7 @@ const indOrgs: INavigationOrg[] = [
           {
             id: 'project',
             label: 'project 1',
+            isSelected: false,
             onClick: e => {
               alert('Selected project 1')
             },
@@ -556,6 +540,7 @@ const indOrgs: INavigationOrg[] = [
           {
             id: 'project',
             label: 'project 2',
+            isSelected: true,
             onClick: e => {
               alert('Selected project 2')
             },
@@ -575,6 +560,7 @@ const indOrgs: INavigationOrg[] = [
           {
             id: 'project',
             label: 'project 3',
+            isSelected: false,
             onClick: e => {
               alert('Selected project 3')
             },
@@ -594,6 +580,7 @@ const indOrgs: INavigationOrg[] = [
           {
             id: 'project',
             label: 'project 4',
+            isSelected: false,
             onClick: e => {
               alert('Selected project 4')
             },
@@ -613,6 +600,7 @@ const indOrgs: INavigationOrg[] = [
           {
             id: 'project',
             label: 'project 5',
+            isSelected: false,
             onClick: e => {
               alert('Selected project 5')
             },
@@ -632,6 +620,7 @@ const indOrgs: INavigationOrg[] = [
           {
             id: 'project',
             label: 'project 6',
+            isSelected: false,
             onClick: e => {
               alert('Selected project 6')
             },

@@ -4,8 +4,8 @@ import { type ReactNode } from 'react'
 import { Layout } from 'src/components'
 import { Flex } from 'src/components'
 import { Center } from 'src/components'
+import { type INavigationCreateProps } from 'src/components'
 import { type MenuItemType } from 'antd/es/menu/hooks/useItems'
-import { type MenuItemGroupType } from 'antd/es/menu/hooks/useItems'
 import { SuiteLogo } from 'src/components/navigation/GlobalNavigation/SuiteLogo'
 import { NavigationSearch } from 'src/components/navigation/GlobalNavigation/NavigationSearch'
 import { NavigationList } from 'src/components/navigation/GlobalNavigation/NavigationList'
@@ -44,7 +44,7 @@ export interface IGlobalNavigationProps {
   management: IGlobalNavigationManagement[]
 
   orgs?: INavigationOrg[]
-  createItems?: Array<MenuItemType | MenuItemGroupType>
+  createItems?: INavigationCreateProps['createItems']
   onSearchClick?: () => void
   onClick?: () => void
 }

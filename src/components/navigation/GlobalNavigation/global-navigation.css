@@ -101,6 +101,12 @@
 }
 
 
+.globalNavigation__createItem {
+    height: 100% !important;
+    min-height: 100% !important;
+}
+
+
 .globalNavigation__headerItem {
     width: var(--control-height-lg);
     height: var(--control-height-lg) !important;

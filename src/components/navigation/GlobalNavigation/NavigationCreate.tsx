@@ -4,23 +4,56 @@ import { Center } from 'src/components'
 import { Menu } from 'src/components'
 import { Icon } from 'src/components'
 import type { IMenuProps } from 'src/components'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { Button } from 'src/components'
+import { Flex } from 'src/components'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
-interface INavigationCreateProps {
-  createItems: Array<MenuItemType | MenuItemGroupType>
+export interface INavigationCreateProps {
+  createItems: Array<INavigationCreateItem | INavigationCreateGroup>
+}
+
+export interface INavigationCreateGroup extends Omit<MenuItemGroupType, 'key'> {
+  label: string
+  type: 'group'
+}
+
+export interface INavigationCreateItem extends Omit<MenuItemType, 'key'> {
+  title: string
+  description: string
+  isPaywalled?: boolean
+  type?: undefined
+
+  isSelected: boolean // todo: implement??
+  /* todo: we're gonna need url/showMe stuff here */
 }
 
 export function NavigationCreate(props: INavigationCreateProps) {
   const items: IMenuProps['items'] = [
     {
       key: 'NavigationCreate',
+
       icon: (
         <Center style={{ pointerEvents: 'none' }}>
           <Button icon={<Icon icon={faPlus} />} />
         </Center>
       ),
-      children: props.createItems,
+
+      children: props.createItems.map(item => {
+        if (item.type === 'group') return { label: item.label, key: item.label, type: item.type }
+
+        return {
+          key: item.title,
+          className: 'globalNavigation__createItem',
+          label: (
+            <Flex vertical={true} gap="middle" justify="center">
+              {/* todo: implement isPaywalled */}
+
+              {item.title}
+              <span>{item.description}</span>
+            </Flex>
+          ),
+        }
+      }),
     },
   ]
 

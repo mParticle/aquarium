@@ -15,6 +15,7 @@ export interface INavigationAccount extends IWorkspaceSelectorItem {
 }
 
 export interface INavigationWorkspace extends IWorkspaceSelectorItem {
+  isSelected: boolean// todo: is this needed? 
   onClick: (info: MenuInfo) => void
 }
 
@@ -23,7 +24,8 @@ export interface IWorkspaceSelectorMapping extends MenuItemType {
   className: string
   label: string
   id: string
-
+  
+  isSelected?: boolean// todo: is this needed? 
   accounts?: INavigationAccount[]
   workspaces?: INavigationWorkspace[]
 }

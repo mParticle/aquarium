@@ -42,19 +42,23 @@ import { Grid } from 'antd';
 import { GroupProps } from 'antd/es/input';
 import { ColProps as IColProps } from 'antd';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { IFlexProps as IFlexProps_2 } from 'src/components/layout/Flex/Flex';
+import { IFlexProps as IFlexProps_2 } from '../../../../../../../src/components/layout/Flex/Flex';
 import { ImageProps } from 'antd';
-import { IModalProps as IModalProps_2 } from 'src/components/feedback/Modal/Modal';
-import { INavigationAccount } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems';
-import { INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems';
-import { INavigationOrg as INavigationOrg_2 } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems';
-import { INavigationWorkspace } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems';
+import { IModalProps as IModalProps_2 } from '../../../../../../../src/components/feedback/Modal/Modal';
+import { INavigationAccount } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
+import { INavigationCreateGroup } from '../../../../../src/components/navigation/GlobalNavigation/NavigationCreate';
+import { INavigationCreateItem } from '../../../../../src/components/navigation/GlobalNavigation/NavigationCreate';
+import { INavigationCreateProps } from '../../../../../src/components/navigation/GlobalNavigation/NavigationCreate';
+import { INavigationCreateProps as INavigationCreateProps_2 } from '../../../../../../../src/components';
+import { INavigationOrg } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
+import { INavigationOrg as INavigationOrg_2 } from '../../../../../../../src/components/navigation/GlobalNavigation/WorkspaceSelectorItems';
+import { INavigationWorkspace } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
 import { InputNumberProps } from 'antd';
 import { InputProps } from 'antd';
 import { InputRef } from 'antd';
 import { RowProps as IRowProps } from 'antd';
-import { IWorkspaceSelectorItem } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems';
-import { IWorkspaceSelectorMapping } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems';
+import { IWorkspaceSelectorItem } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
+import { IWorkspaceSelectorMapping } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
 import { JSX as JSX_2 } from 'react/jsx-runtime';
 import { JSXElementConstructor } from 'react';
 import { LayoutProps } from 'antd';
@@ -307,7 +311,7 @@ export declare interface IGlobalNavigationProps {
     tools: IGlobalNavigationTool[];
     management: IGlobalNavigationManagement[];
     orgs?: INavigationOrg_2[];
-    createItems?: Array<MenuItemType | MenuItemGroupType>;
+    createItems?: INavigationCreateProps_2['createItems'];
     onSearchClick?: () => void;
     onClick?: () => void;
 }
@@ -359,6 +363,12 @@ export declare interface IModalProps extends ModalProps {
 }
 
 export { INavigationAccount }
+
+export { INavigationCreateGroup }
+
+export { INavigationCreateItem }
+
+export { INavigationCreateProps }
 
 export { INavigationOrg }
 

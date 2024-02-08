@@ -44,6 +44,10 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
     },
   ]
 
+  
+  /*todo: scroll to selected ws*/
+  
+  
   return (
     <Menu
       //   openKeys={['WorkspaceSelector']} // testing only
@@ -84,6 +88,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
             label: workspace.label,
             id: workspace.id,
             key: workspace.id,
+            isSelected:workspace.isSelected,
             onClick: workspace.onClick,
           })
         })
