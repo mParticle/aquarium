@@ -20,6 +20,7 @@
     "dist/_variables.css"
   ],
   "dependencies": {
+    "@awesome.me/kit-f3b115a3e2": "^1.0.7"
   },
   "peerDependencies": {
     "antd": ">=5.13.2",
