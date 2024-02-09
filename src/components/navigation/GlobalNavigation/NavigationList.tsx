@@ -8,6 +8,7 @@ import { NavigationItem } from 'src/components/navigation/GlobalNavigation/Navig
 import { Center } from 'src/components'
 
 type Item = IGlobalNavigationManagement | IGlobalNavigationTool
+
 export interface INavigationListProps {
   items: Array<IGlobalNavigationManagement | IGlobalNavigationTool>
   onClick?: (item: Item) => void
@@ -18,13 +19,14 @@ export function NavigationList(props: INavigationListProps) {
     <Center vertical>
       {props.items.map((item, i) => (
         <>
-          {item.type === 'link' && <NavigationItem onClick={() => props.onClick?.(item)} {...item} />}
+          {item.type === 'link' && <NavigationItem onClick={() => props.onClick?.(item)} {...item}  key={i}/>}
           {item.type === 'menu' && (
             <Menu
+              key={i}
               expandIcon={null}
               items={[generateMenuItem(item, i)]}
               className="globalNavigation__menu"
-              onClick={evt => props.onClick?.(item)}
+              onClick={e => props.onClick?.(item)}
             />
           )}
         </>
@@ -47,7 +49,7 @@ function generateMenuItem(item: IGlobalNavigationManagement | IGlobalNavigationT
 
   return {
     icon: <NavigationIcon icon={item.icon} label={item.label} onClick={item.onClick} hideLabel={item.hideLabel} />,
-    className: 'globalNavigation__item',
+    className: 'globalNavigation__item' + (item.isActive ? ' globalNavigation__item--active' : ''),
     key: `${item.label}${i}`,
     children,
   }

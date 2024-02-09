@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { faShapes } from '@fortawesome/free-solid-svg-icons'
-import { faList } from '@fortawesome/free-solid-svg-icons'
+import { faShapes } from '@awesome.me/kit-f3b115a3e2/icons/classic/light'
+import { faList } from '@awesome.me/kit-f3b115a3e2/icons/classic/light'
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'

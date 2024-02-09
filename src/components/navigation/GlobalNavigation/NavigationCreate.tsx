@@ -6,7 +6,7 @@ import { Icon } from 'src/components'
 import type { IMenuProps } from 'src/components'
 import { Button } from 'src/components'
 import { Flex } from 'src/components'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faPlus } from '@awesome.me/kit-f3b115a3e2/icons/classic/light'
 
 export interface INavigationCreateProps {
   createItems: Array<INavigationCreateItem | INavigationCreateGroup>
@@ -22,10 +22,6 @@ export interface INavigationCreateItem extends Omit<MenuItemType, 'key'> {
   description: string
   isPaywalled?: boolean
   type?: undefined
-
-  // isSelected: boolean // todo: implement??
-
-  /* todo: we're gonna need url/showMe stuff here */
 
   /* todo: implement loading state / tooltip */
 }
@@ -64,7 +60,7 @@ export function NavigationCreate(props: INavigationCreateProps) {
   return (
     <Center>
       <Menu
-        className="globalNavigation__menu globalNavigation__item"
+        className=" globalNavigation__item globalNavigation__item--createNew"
         items={items}
         expandIcon={null}
         // defaultOpenKeys={['NavigationCreate']} /* testing only */

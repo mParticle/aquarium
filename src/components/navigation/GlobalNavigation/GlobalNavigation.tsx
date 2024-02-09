@@ -29,12 +29,14 @@ interface MenuItem extends Omit<MenuItemType, 'key'> {
 export interface IGlobalNavigationTool extends IBaseGlobalNavigationItem {
   type: 'menu' | 'link'
   children?: MenuItem[]
+  isActive?: boolean
   onClick?: (e: React.MouseEvent) => void
 }
 
 export interface IGlobalNavigationManagement extends IBaseGlobalNavigationItem {
   type: 'menu' | 'link'
   children?: MenuItem[]
+  isActive?: boolean
   onClick?: (e: React.MouseEvent) => void
 }
 

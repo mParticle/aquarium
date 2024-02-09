@@ -56,6 +56,22 @@
     }
 }
 
+.globalNavigation__item.globalNavigation__item--active {
+    border-left: solid 3px var(--color-primary) !important;
+}
+
+.globalNavigation__item.globalNavigation__item--createNew {
+    &:hover {
+        background-color: initial !important;
+    }
+
+    .ant-menu-item-icon { pointer-events: initial !important;}
+
+    .ant-button:hover {
+        border-color: var(--color-primary-hover) !important;
+    }
+}
+
 
 .globalNavigation__menu {
     height: var(--nav-item-height) !important;
