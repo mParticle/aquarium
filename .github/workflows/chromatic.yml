@@ -11,7 +11,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - run: npm ci
+      - run: FONTAWESOME_PACKAGE_TOKEN=${{secrets.FONTAWESOME_PACKAGE_TOKEN}} npm ci
 
       - name: Publish to Chromatic
         uses: chromaui/action@latest
