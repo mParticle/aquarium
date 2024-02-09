@@ -13,14 +13,14 @@ import {
   faPaintbrush,
   faPizzaSlice,
   faPingPongPaddleBall,
-} from '@fortawesome/free-solid-svg-icons'
-import { faBlenderPhone } from '@fortawesome/free-solid-svg-icons'
-import { faArrowsToDot } from '@fortawesome/free-solid-svg-icons'
-import { faKitchenSet } from '@fortawesome/free-solid-svg-icons'
-import { faBoxes } from '@fortawesome/free-solid-svg-icons'
-import { faShapes } from '@fortawesome/free-solid-svg-icons'
-import { faHome } from '@fortawesome/free-solid-svg-icons'
-import { faSave } from '@fortawesome/free-solid-svg-icons'
+} from '@awesome.me/kit-f3b115a3e2/icons/classic/light'
+import { faBlenderPhone } from '@awesome.me/kit-f3b115a3e2/icons/classic/light'
+import { faArrowsToDot } from '@awesome.me/kit-f3b115a3e2/icons/classic/light'
+import { faKitchenSet } from '@awesome.me/kit-f3b115a3e2/icons/classic/light'
+import { faBoxes } from '@awesome.me/kit-f3b115a3e2/icons/classic/light'
+import { faShapes } from '@awesome.me/kit-f3b115a3e2/icons/classic/light'
+import { faHome } from '@awesome.me/kit-f3b115a3e2/icons/classic/light'
+import { faSave } from '@awesome.me/kit-f3b115a3e2/icons/classic/light'
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
 import { GlobalNavigation } from 'src/components'
@@ -41,6 +41,7 @@ const defaultLogo: IGlobalNavigationLogo = {
 const defaultTools: IGlobalNavigationTool[] = [
   {
     label: 'Tool 1',
+    isActive:true,
     icon: <Icon icon={faTools} />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
@@ -91,7 +92,7 @@ const defaultOrgs: INavigationOrg[] = [
           {
             id: 'workspace1',
             label: 'Workspace 1',
-            isSelected: true,
+            isActive: true,
             onClick: e => {
               alert('Selected Workspace 1')
             },
@@ -208,7 +209,7 @@ const mpOrgs: INavigationOrg[] = [
           {
             id: 'workspace1',
             label: 'Workspace 1',
-            isSelected: false,
+            isActive: false,
             onClick: e => {
               alert('Selected workspace 1')
             },
@@ -228,7 +229,7 @@ const mpOrgs: INavigationOrg[] = [
           {
             id: 'workspace2',
             label: 'Workspace 2',
-            isSelected: true,
+            isActive: true,
             onClick: e => {
               alert('Selected workspace 2')
             },
@@ -248,7 +249,7 @@ const mpOrgs: INavigationOrg[] = [
           {
             id: 'workspace3',
             label: 'Workspace 3',
-            isSelected: false,
+            isActive: false,
             onClick: e => {
               alert('Selected workspace 3')
             },
@@ -268,7 +269,7 @@ const mpOrgs: INavigationOrg[] = [
           {
             id: 'workspace4',
             label: 'Workspace 4',
-            isSelected: false,
+            isActive: false,
             onClick: e => {
               alert('Selected workspace 4')
             },
@@ -288,7 +289,7 @@ const mpOrgs: INavigationOrg[] = [
           {
             id: 'workspace5',
             label: 'Workspace 5',
-            isSelected: false,
+            isActive: false,
             onClick: e => {
               alert('Selected workspace 5')
             },
@@ -308,7 +309,7 @@ const mpOrgs: INavigationOrg[] = [
           {
             id: 'workspace6',
             label: 'Workspace 6',
-            isSelected: false,
+            isActive: false,
             onClick: e => {
               alert('Selected workspace 6')
             },
@@ -326,6 +327,7 @@ const mpManagement: IGlobalNavigationManagement[] = [
     type: 'link',
   },
   {
+    isActive: true,
     label: 'Support',
     hideLabel: true,
     icon: <Icon icon={faLifeRing} />,
@@ -365,6 +367,7 @@ const indTools: IGlobalNavigationTool[] = [
     label: 'My Hub',
     icon: <Icon icon={faHome} />,
     type: 'link',
+    isActive: true,
   },
   {
     label: 'Saved',
@@ -505,7 +508,7 @@ const indOrgs: INavigationOrg[] = [
           {
             id: 'project',
             label: 'project 1',
-            isSelected: false,
+            isActive: false,
             onClick: e => {
               alert('Selected project 1')
             },
@@ -525,7 +528,7 @@ const indOrgs: INavigationOrg[] = [
           {
             id: 'project',
             label: 'project 2',
-            isSelected: true,
+            isActive: true,
             onClick: e => {
               alert('Selected project 2')
             },
@@ -545,7 +548,7 @@ const indOrgs: INavigationOrg[] = [
           {
             id: 'project',
             label: 'project 3',
-            isSelected: false,
+            isActive: false,
             onClick: e => {
               alert('Selected project 3')
             },
@@ -565,7 +568,7 @@ const indOrgs: INavigationOrg[] = [
           {
             id: 'project',
             label: 'project 4',
-            isSelected: false,
+            isActive: false,
             onClick: e => {
               alert('Selected project 4')
             },
@@ -585,7 +588,7 @@ const indOrgs: INavigationOrg[] = [
           {
             id: 'project',
             label: 'project 5',
-            isSelected: false,
+            isActive: false,
             onClick: e => {
               alert('Selected project 5')
             },
@@ -605,7 +608,7 @@ const indOrgs: INavigationOrg[] = [
           {
             id: 'project',
             label: 'project 6',
-            isSelected: false,
+            isActive: false,
             onClick: e => {
               alert('Selected project 6')
             },
@@ -633,31 +636,27 @@ const cortexLogo: IGlobalNavigationLogo = {
 const cortexTools: IGlobalNavigationTool[] = [
   {
     label: 'Pipelines',
-    hideLabel: true,
     icon: <Icon icon={faPizzaSlice} />,
     type: 'link',
   },
   {
     label: 'Projects',
-    hideLabel: true,
     icon: <Icon icon={faDiagramPredecessor} />,
     type: 'link',
+    isActive: true,
   },
   {
     label: 'Data',
-    hideLabel: true,
     icon: <Icon icon={faPingPongPaddleBall} />,
     type: 'link',
   },
   {
     label: 'API',
-    hideLabel: true,
     icon: <Icon icon={faRoadSpikes} />,
     type: 'link',
   },
   {
     label: 'Insights',
-    hideLabel: true,
     icon: <Icon icon={faPaintbrush} />,
     type: 'link',
   },
