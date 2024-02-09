@@ -1,5 +1,4 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-
 import { Watermark } from 'src/components/feedback/Watermark/Watermark'
 
 const meta: Meta<typeof Watermark> = {

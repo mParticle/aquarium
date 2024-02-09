@@ -1,5 +1,4 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-
 import { Switch } from 'src/components/data-entry/Switch/Switch'
 import { ExampleStory } from 'src/utils/ExampleStory'
 import { Space } from 'src/components'
