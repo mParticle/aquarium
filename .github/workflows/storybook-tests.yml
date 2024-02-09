@@ -11,7 +11,7 @@ jobs:
       - uses: actions/setup-node@v4
 
       - name: Install Dependencies
-        run: npm ci
+        run: FONTAWESOME_PACKAGE_TOKEN=${{secrets.FONTAWESOME_PACKAGE_TOKEN}} npm ci
 
       - name: Install Playwright
         run: npx playwright install

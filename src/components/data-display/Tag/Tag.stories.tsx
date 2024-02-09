@@ -10,7 +10,7 @@ import {
   faCircleInfo,
   faCircleExclamation,
   faTimesCircle,
-} from '@fortawesome/free-solid-svg-icons'
+} from '@awesome.me/kit-f3b115a3e2/icons/classic/light'
 import { ExampleStory } from 'src/utils/ExampleStory'
 import { useState } from 'react'
 import { userEvent } from '@storybook/test'

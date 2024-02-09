@@ -1,4 +1,4 @@
-import { faIcons } from '@fortawesome/free-solid-svg-icons'
+import { faIcons } from '@awesome.me/kit-f3b115a3e2/icons/classic/light'
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
 import { Icon } from 'src/components'
