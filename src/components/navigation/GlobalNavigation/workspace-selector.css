@@ -4,10 +4,6 @@
 
 .workspaceSelector__search {
     padding: 0 !important;
-        
-    &::placeholder {
-        color: var(--color-border) !important;
-    }
 }
 
 .workspaceSelector__avatar {
