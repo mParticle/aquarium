@@ -94,7 +94,12 @@
 }
 
 .globalNavigation__icon.globalNavigation__icon--suiteLogo {
-    padding-bottom: var(--padding-xs)
+    padding-bottom: var(--padding-xs);
+
+    svg {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 
@@ -148,7 +153,7 @@
 .globalNavigation__suiteLogo {
     min-height: var(--suite-logo-height);
     min-width: var(--nav-width);
-    padding-top: var(--padding);
+    padding-top: var(--padding-lg);
     color: black;
     font-size: var(--font-size-sm);
     cursor: default;
@@ -157,12 +162,22 @@
 .globalNavigation__divider {
     border-bottom: 1px solid var(--color-border-secondary);
     width: 80%;
-    margin: var(--padding-lg) 0;
+    margin-top: var(--margin-lg);
 }
 
 .globalNavigation__search {
     width: 100%;
 }
+
+.globalNavigation__searchButtonWrapper{
+    height: var(--nav-item-height);
+}
+
+.globalNavigation__searchButton {
+    box-shadow: var(--box-shadow);
+    padding-inline: var(--padding-xs) var(--padding-xs) !important;
+}
+
 
 .globalNavigation__mpHome {
     padding: var(--padding-lg, 20px); /* TODO: dependency between padding-lg/md and 20 from figma... */

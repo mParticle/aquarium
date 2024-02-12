@@ -21,8 +21,8 @@ export function NavigationSearch(props: INavigationSearchProps) {
           </Space>
         }
       >
-        <Center>
-          <Button icon={<Icon icon={faSearch}></Icon>}/>
+        <Center className="globalNavigation__searchButtonWrapper">
+          <Button className="globalNavigation__searchButton" shape="round" icon={<Icon icon={faSearch}></Icon>} />
         </Center>
       </Tooltip>
     </span>
