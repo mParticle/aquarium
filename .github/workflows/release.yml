@@ -39,6 +39,10 @@ jobs:
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
+        with:
+          node-version: 16
+          cache: 'npm'
+          cache-dependency-path: subdir/package-lock.json
 
       - name: Install dependencies
         run: FONTAWESOME_PACKAGE_TOKEN=${{secrets.FONTAWESOME_PACKAGE_TOKEN}} npm ci
