@@ -1,9 +1,28 @@
 .workspaceSelector {
-    height: 50%;
+    max-height: 80%;
+    height: 80%;
+
+    .ant-menu {
+        height: 500px;
+    }
 }
 
 .workspaceSelector__search {
     padding: 0 !important;
+}
+
+.workspaceSelector__noResults {
+    height: 100% !important;
+    max-width: 200px;
+    pointer-events: none;
+
+    .ant-menu-title-content {
+        height: 100% !important;
+    }
+
+    .ant-result-title {
+        font-size: var(--font-size);
+    }
 }
 
 .workspaceSelector__avatar {
