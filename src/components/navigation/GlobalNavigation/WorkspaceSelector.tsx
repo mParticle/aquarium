@@ -16,10 +16,11 @@ export interface IWorkspaceSelectorProps {
 }
 
 export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
-  const allItemsFlat = useMemo(generateAllItems, [props.orgs])
+  const allItemsFlat = useMemo(generateAllItems, [props.orgs]) // todo: will useMemo work when the active ws changes??
 
   const [children, setChildren] = useState<IWorkspaceSelectorMapping[]>(allItemsFlat)
 
+  // todo: use ref here, because we dont expect this to change
   const searchEl: MenuItemType = {
     key: 'search',
     className: 'workspaceSelector__search',
@@ -44,13 +45,11 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
     },
   ]
 
-  
-  /*todo: scroll to selected ws*/
-  
-  
+  /* todo: scroll to selected ws */
+
   return (
     <Menu
-      //   openKeys={['WorkspaceSelector']} // testing only
+      openKeys={['WorkspaceSelector']} // testing only
       className="globalNavigation__menu globalNavigation__item"
       items={items}
       expandIcon={null}
@@ -84,11 +83,12 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
         account.workspaces.forEach(workspace => {
           total.push({
             type: 'workspace',
-            className: 'workspaceSelector__workspaceName',
+            className:
+              'workspaceSelector__workspaceName' +
+              (workspace.isActive ? ' workspaceSelector__workspaceName--active' : ''),
             label: workspace.label,
             id: workspace.id,
             key: workspace.id,
-            isSelected:workspace.isSelected,
             onClick: workspace.onClick,
           })
         })

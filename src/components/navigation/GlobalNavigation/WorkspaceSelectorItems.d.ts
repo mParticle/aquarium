@@ -25,7 +25,7 @@ export interface IWorkspaceSelectorMapping extends MenuItemType {
   label: string
   id: string
   
-  isActive?: boolean// todo: is this needed? 
+  // isActive?: boolean// todo: is this needed? 
   accounts?: INavigationAccount[]
   workspaces?: INavigationWorkspace[]
 }

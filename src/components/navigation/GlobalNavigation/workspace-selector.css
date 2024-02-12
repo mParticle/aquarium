@@ -4,10 +4,10 @@
 
 .workspaceSelector__search {
     padding: 0 !important;
-}
-
-.workspaceSelector__searchInput::placeholder {
-    color: var(--color-border) !important;
+        
+    &::placeholder {
+        color: var(--color-border) !important;
+    }
 }
 
 .workspaceSelector__avatar {
@@ -25,17 +25,19 @@
     height: var(--control-height);
     padding: var(--padding-xxs) var(--control-padding-horizontal);
     pointer-events: none;
-}
 
-.workspaceSelector__accountName.workspaceSelector__accountName--hidden {
-    display: none !important;
+    &.workspaceSelector__accountName--hidden {
+        display: none !important;
+    }
 }
 
 .workspaceSelector__workspaceName {
     padding-left: calc(var(--padding-sm) + var(--padding)) !important;
 
-    &.workspaceSelector__workspaceName--selected {
-        /* todo: implement */
+    &.workspaceSelector__workspaceName--active {
+        /* todo: check these vars/names... */
+        border-radius: 4px; /* var(--Components-Menu-Global-borderRadius, 4px); */
+        background: #ebe8f8; /* var(--Components-Menu-Component-itemSelectedBg, #EBE8F8); */
     }
 }
 
