@@ -303,6 +303,7 @@ export declare interface IGlobalNavigationLogo extends IBaseGlobalNavigationItem
 export declare interface IGlobalNavigationManagement extends IBaseGlobalNavigationItem {
     type: 'menu' | 'link';
     children?: MenuItem_2[];
+    isActive?: boolean;
     onClick?: (e: React.MouseEvent) => void;
 }
 
@@ -313,12 +314,14 @@ export declare interface IGlobalNavigationProps {
     orgs?: INavigationOrg_2[];
     createItems?: INavigationCreateProps_2['createItems'];
     onSearchClick?: () => void;
-    onClick?: () => void;
+    onMpHomeClick: () => void;
+    hideMpHome?: boolean;
 }
 
 export declare interface IGlobalNavigationTool extends IBaseGlobalNavigationItem {
     type: 'menu' | 'link';
     children?: MenuItem_2[];
+    isActive?: boolean;
     onClick?: (e: React.MouseEvent) => void;
 }
 
