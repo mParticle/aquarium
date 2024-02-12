@@ -4032,8 +4032,7 @@ function O4(n) {
     {
       className: " globalNavigation__item globalNavigation__item--createNew",
       items: a,
-      expandIcon: null,
-      defaultOpenKeys: ["NavigationCreate"]
+      expandIcon: null
     }
   ) });
 }
