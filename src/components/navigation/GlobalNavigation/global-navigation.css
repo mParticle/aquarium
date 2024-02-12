@@ -60,23 +60,53 @@
     &.globalNavigation__item--workspaceSelector:hover {
         background-color: initial;
     }
-}
 
-.globalNavigation__item.globalNavigation__item--active {
-    border-left: solid 3px var(--color-primary) !important;
-}
-
-.globalNavigation__item.globalNavigation__item--createNew {
-    border: none !important;
-
-    &:hover {
-        background-color: initial !important;
+    &.globalNavigation__item--active {
+        border-left: solid 3px var(--color-primary) !important;
     }
 
-    .ant-menu-item-icon { pointer-events: initial !important;}
+    &.globalNavigation__item--createNew {
+        border: none !important;
 
-    .ant-button:hover {
-        border-color: var(--color-primary-hover) !important;
+        &:hover {
+            background-color: initial !important;
+        }
+
+        .ant-menu-item-icon { pointer-events: initial !important;}
+
+        .ant-button:hover {
+            border-color: var(--color-primary-hover) !important;
+        }
+    }
+
+}
+
+
+.globalNavigation__search {
+    width: 100%;
+}
+
+.globalNavigation__searchButtonWrapper,
+.globalNavigation__createButtonWrapper {
+    height: var(--nav-item-height);
+}
+
+.globalNavigation__searchButton,
+.globalNavigation__createButton {
+    box-shadow: 0px 2px 0px 0px rgba(54, 0, 209, 0.10);
+}
+
+.globalNavigation__searchButton {
+    padding-inline: var(--padding-xs) var(--padding-xs) !important;
+}
+
+
+.globalNavigation__createItem {
+    height: 100% !important;
+    min-height: 100% !important;
+
+    .ant-menu-item-group-title {
+        user-select: none;
     }
 }
 
@@ -130,16 +160,6 @@
 }
 
 
-.globalNavigation__createItem {
-    height: 100% !important;
-    min-height: 100% !important;
-
-    .ant-menu-item-group-title {
-        user-select: none;
-    }
-}
-
-
 .globalNavigation__headerItem {
     width: var(--control-height-lg);
     height: var(--control-height-lg) !important;
@@ -163,19 +183,6 @@
     border-bottom: 1px solid var(--color-border-secondary);
     width: 80%;
     margin-top: var(--margin-lg);
-}
-
-.globalNavigation__search {
-    width: 100%;
-}
-
-.globalNavigation__searchButtonWrapper{
-    height: var(--nav-item-height);
-}
-
-.globalNavigation__searchButton {
-    box-shadow: var(--box-shadow);
-    padding-inline: var(--padding-xs) var(--padding-xs) !important;
 }
 
 
