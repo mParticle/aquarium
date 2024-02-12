@@ -229,7 +229,7 @@ const mpOrgs: INavigationOrg[] = [
           {
             id: 'workspace2',
             label: 'Workspace 2',
-            isActive: true,
+            isActive: false,
             onClick: e => {
               alert('Selected workspace 2')
             },
@@ -312,6 +312,26 @@ const mpOrgs: INavigationOrg[] = [
             isActive: false,
             onClick: e => {
               alert('Selected workspace 6')
+            },
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'org7',
+    label: 'Org 7',
+    accounts: [
+      {
+        id: 'account7',
+        label: 'Account 7',
+        workspaces: [
+          {
+            id: 'workspace7',
+            label: 'Workspace 7',
+            isActive: true,
+            onClick: e => {
+              alert('Selected workspace 7')
             },
           },
         ],
@@ -612,6 +632,26 @@ const indOrgs: INavigationOrg[] = [
             isActive: false,
             onClick: e => {
               alert('Selected project 6')
+            },
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'org7',
+    label: 'Org 7',
+    accounts: [
+      {
+        id: '',
+        label: '',
+        workspaces: [
+          {
+            id: 'project',
+            label: 'project 7',
+            isActive: false,
+            onClick: e => {
+              alert('Selected project 7')
             },
           },
         ],
