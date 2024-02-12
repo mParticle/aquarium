@@ -196,7 +196,33 @@ const mpTools: IGlobalNavigationTool[] = [
     type: 'link',
   },
 ]
-
+const mpManagement: IGlobalNavigationManagement[] = [
+  {
+    label: 'Notifications',
+    hideLabel: true,
+    icon: <Icon icon={faBell} />,
+    type: 'link',
+  },
+  {
+    isActive: true,
+    label: 'Support',
+    hideLabel: true,
+    icon: <Icon icon={faLifeRing} />,
+    type: 'menu',
+    children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
+  },
+  {
+    label: 'Settings',
+    hideLabel: true,
+    icon: <Icon icon={faGear} />,
+    type: 'menu',
+    children: [
+      { label: 'Platform Settings' },
+      { label: 'User Settings' },
+      { label: <Button type="primary">Switch to Legacy UI</Button> },
+    ],
+  },
+]
 const mpOrgs: INavigationOrg[] = [
   {
     id: 'org1',
@@ -336,33 +362,6 @@ const mpOrgs: INavigationOrg[] = [
           },
         ],
       },
-    ],
-  },
-]
-const mpManagement: IGlobalNavigationManagement[] = [
-  {
-    label: 'Notifications',
-    hideLabel: true,
-    icon: <Icon icon={faBell} />,
-    type: 'link',
-  },
-  {
-    isActive: true,
-    label: 'Support',
-    hideLabel: true,
-    icon: <Icon icon={faLifeRing} />,
-    type: 'menu',
-    children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
-  },
-  {
-    label: 'Settings',
-    hideLabel: true,
-    icon: <Icon icon={faGear} />,
-    type: 'menu',
-    children: [
-      { label: 'Platform Settings' },
-      { label: 'User Settings' },
-      { label: <Button type="primary">Switch to Legacy UI</Button> },
     ],
   },
 ]

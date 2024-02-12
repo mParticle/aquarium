@@ -32,8 +32,8 @@ export function NavigationCreate(props: INavigationCreateProps) {
       key: 'NavigationCreate',
 
       icon: (
-        <Center style={{ pointerEvents: 'none' }}>
-          <Button icon={<Icon icon={faPlus} />} />
+        <Center className="globalNavigation__createButtonWrapper" style={{ pointerEvents: 'none' }}>
+          <Button className="globalNavigation__createButton" icon={<Icon icon={faPlus} />} />
         </Center>
       ),
 
