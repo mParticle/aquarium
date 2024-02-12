@@ -21,7 +21,7 @@
     width: var(--nav-width);
 
     margin: 0;
-    padding: 0 ;
+    padding: 0;
     gap: var(--margin-xxs);
 
     border-radius: 0 !important;
@@ -43,8 +43,8 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-width:100%;
-        
+        width: 100%;
+
         height: var(--nav-item-height) !important;
         padding: 0 !important;
         margin: 0 !important;
@@ -56,6 +56,10 @@ width:100%;
         margin-inline-start: 0 !important;
         opacity: 1 !important;
     }
+
+    &.globalNavigation__item--workspaceSelector:hover {
+        background-color: initial;
+    }
 }
 
 .globalNavigation__item.globalNavigation__item--active {
@@ -64,7 +68,7 @@ width:100%;
 
 .globalNavigation__item.globalNavigation__item--createNew {
     border: none !important;
-    
+
     &:hover {
         background-color: initial !important;
     }
