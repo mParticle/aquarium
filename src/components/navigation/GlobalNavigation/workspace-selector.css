@@ -30,7 +30,7 @@
 }
 
 .workspaceSelector__orgName {
-    color: var(--color-text-description, rgba(0, 0, 0, 0.72));
+    color: var(--color-text-description);
     font-size: 12px;
     font-weight: 400;
     pointer-events: none;

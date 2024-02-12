@@ -30,7 +30,7 @@ export function NavigationCreate(props: INavigationCreateProps) {
   const items: IMenuProps['items'] = [
     {
       key: 'NavigationCreate',
-
+      popupClassName: 'globalNavigation__createPopup',
       icon: (
         <Center className="globalNavigation__createButtonWrapper" style={{ pointerEvents: 'none' }}>
           <Button className="globalNavigation__createButton" icon={<Icon icon={faPlus} />} />
@@ -48,8 +48,8 @@ export function NavigationCreate(props: INavigationCreateProps) {
             <Flex vertical={true} gap="middle" justify="center">
               {/* todo: implement isPaywalled */}
 
-              {item.title}
-              <span>{item.description}</span>
+              <span className="createItem__title">{item.title}</span>
+              <span className="createItem__description">{item.description}</span>
             </Flex>
           ),
         }
@@ -63,7 +63,7 @@ export function NavigationCreate(props: INavigationCreateProps) {
         className=" globalNavigation__item globalNavigation__item--createNew"
         items={items}
         expandIcon={null}
-        // defaultOpenKeys={['NavigationCreate']} /* testing only */
+        defaultOpenKeys={['NavigationCreate']} /* testing only */
       />
     </Center>
   )
