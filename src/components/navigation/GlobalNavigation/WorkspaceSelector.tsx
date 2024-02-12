@@ -3,6 +3,8 @@ import { Avatar } from 'src/components'
 import { Input } from 'src/components'
 import { Menu } from 'src/components'
 import { type IMenuProps } from 'src/components'
+import { Result } from 'src/components'
+import { Center } from 'src/components'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
 import { type IWorkspaceSelectorMapping } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
 import { type INavigationAccount } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
@@ -20,7 +22,6 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
   const [children, setChildren] = useState<IWorkspaceSelectorMapping[]>(allItemsFlat)
   const [searchTerm, setSearchTerm] = useState<string>('')
-
 
   // todo: use ref here, because we dont expect this to change
   const searchEl: MenuItemType = {
@@ -40,11 +41,24 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
     ),
   }
 
+  const noResultsEl: MenuItemType = {
+    key: 'no-results',
+    className: 'workspaceSelector__noResults',
+    label: (
+      <Center>
+        <Result status="info" title="No results found" />
+      </Center>
+    ),
+  }
+
+  const hasNoResults = !!searchTerm && !children.length
+
   const items: IMenuProps['items'] = [
     {
       key: 'WorkspaceSelector',
       icon: <Avatar className="workspaceSelector__avatar">WS</Avatar>,
-      children: [searchEl, ...children],
+      popupClassName: 'workspaceSelector',
+      children: [searchEl, ...(hasNoResults ? [noResultsEl] : children)],
     },
   ]
 
