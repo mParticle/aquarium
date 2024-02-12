@@ -7,9 +7,9 @@ import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/
 import { type IWorkspaceSelectorMapping } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
 import { type INavigationAccount } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
 import { type INavigationWorkspace } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
+import { type MenuItemType } from 'src/components/navigation/Menu/Menu'
 import { useState } from 'react'
 import { useMemo } from 'react'
-import { type MenuItemType } from 'src/components/navigation/Menu/Menu'
 
 export interface IWorkspaceSelectorProps {
   orgs: INavigationOrg[]
@@ -19,6 +19,8 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
   const allItemsFlat = useMemo(generateAllItems, [props.orgs]) // todo: will useMemo work when the active ws changes??
 
   const [children, setChildren] = useState<IWorkspaceSelectorMapping[]>(allItemsFlat)
+  const [searchTerm, setSearchTerm] = useState<string>('')
+
 
   // todo: use ref here, because we dont expect this to change
   const searchEl: MenuItemType = {
@@ -29,6 +31,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
         placeholder="Search"
         className="workspaceSelector__searchInput"
         onChange={onSearch}
+        value={searchTerm}
         onClick={e => {
           e.preventDefault()
           e.stopPropagation()
@@ -46,12 +49,14 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
   ]
 
   /* todo: scroll to selected ws */
+  /* see indicative rFancyDropdown.tsx:277 for a similar implementation. make it a service/util? */
 
   return (
     <Menu
       // openKeys={['WorkspaceSelector']} // testing only
       className="globalNavigation__menu globalNavigation__item globalNavigation__item--workspaceSelector"
       items={items}
+      onOpenChange={clearSearch}
       expandIcon={null}
     />
   )
@@ -99,7 +104,8 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
   }
 
   function onSearch(e: React.ChangeEvent<HTMLInputElement>): void {
-    const searchTerm = e.target.value.toLowerCase()
+    const newSearchTerm = e.target.value.toLowerCase()
+    setSearchTerm(newSearchTerm)
 
     const filteredChildren = allItemsFlat?.filter(item => {
       /* eslint-disable-next-line */
@@ -107,12 +113,17 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
       function isHit(item: IWorkspaceSelectorMapping | INavigationAccount | INavigationWorkspace): boolean {
         return (
-          item.label.toString().toLowerCase().includes(searchTerm) ||
-          item.id.toString().toLowerCase().includes(searchTerm)
+          item.label.toString().toLowerCase().includes(newSearchTerm) ||
+          item.id.toString().toLowerCase().includes(newSearchTerm)
         )
       }
     })
 
     setChildren(filteredChildren)
+  }
+
+  function clearSearch(): void {
+    setSearchTerm('')
+    setChildren(allItemsFlat)
   }
 }
