@@ -13,6 +13,7 @@ import { NavigationCreate } from 'src/components/navigation/GlobalNavigation/Nav
 import { WorkspaceSelector } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
 import MpLogo from 'src/assets/mpLogo.svg?react'
+import { Tooltip } from "src/components";
 
 export interface IBaseGlobalNavigationItem {
   label: string
@@ -49,6 +50,7 @@ export interface IGlobalNavigationProps {
   createItems?: INavigationCreateProps['createItems']
   onSearchClick?: () => void
   onMpHomeClick: () => void
+  hideMpHome?: boolean
 }
 
 export const NavWidth = 90 as const
@@ -74,9 +76,18 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
 
             {props.orgs && <WorkspaceSelector orgs={props.orgs} />}
 
-            <Center className="globalNavigation__mpHome">
-              <MpLogo className="globalNavigation__mpSvg" onClick={() => { props.onMpHomeClick() }} />
-            </Center>
+            {!props.hideMpHome && (
+              <Center className="globalNavigation__mpHome">
+                <Tooltip title="mParticle Overview">
+                  <MpLogo
+                    className="globalNavigation__mpSvg"
+                    onClick={() => {
+                      props.onMpHomeClick()
+                    }}
+                  />
+                </Tooltip>
+              </Center>
+            )}
           </div>
         </Flex>
       </Layout.Sider>
