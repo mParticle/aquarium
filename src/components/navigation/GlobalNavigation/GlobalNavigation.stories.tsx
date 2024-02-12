@@ -41,7 +41,7 @@ const defaultLogo: IGlobalNavigationLogo = {
 const defaultTools: IGlobalNavigationTool[] = [
   {
     label: 'Tool 1',
-    isActive:true,
+    isActive: true,
     icon: <Icon icon={faTools} />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
@@ -355,6 +355,7 @@ export const MP: Story = {
     tools: mpTools,
     management: mpManagement,
     orgs: mpOrgs,
+    onMpHomeClick:() => { alert('going to overview map') }
   },
 }
 
@@ -626,6 +627,7 @@ export const Indicative: Story = {
     management: indManagement,
     createItems: indCreateItems,
     orgs: indOrgs,
+    onMpHomeClick:() => { alert('going to overview map') }
   },
 }
 
@@ -682,5 +684,6 @@ export const Cortex: Story = {
     logo: cortexLogo,
     tools: cortexTools,
     management: cortexManagement,
+    onMpHomeClick:() => { alert('going to overview map') }
   },
 }

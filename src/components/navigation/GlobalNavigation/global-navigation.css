@@ -1,6 +1,7 @@
 :root {
     --nav-item-height: 56px; /* todo: 42 or 56? is 42 in the js */
-    --nav-item-width: 80px;
+    --nav-item-width: 82px;
+    --nav-width: 90px;
     --suite-logo-height: 82px;
 }
 
@@ -17,11 +18,10 @@
 
 .globalNavigation__item {
     height: var(--nav-item-height) !important;
-    width: 88px !important;
-
+    width: var(--nav-width);
 
     margin: 0;
-    padding: 0;
+    padding: 0 ;
     gap: var(--margin-xxs);
 
     border-radius: 0 !important;
@@ -43,9 +43,11 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-
+width:100%;
+        
         height: var(--nav-item-height) !important;
         padding: 0 !important;
+        margin: 0 !important;
 
         background-color: transparent !important;
     }
@@ -61,6 +63,8 @@
 }
 
 .globalNavigation__item.globalNavigation__item--createNew {
+    border: none !important;
+    
     &:hover {
         background-color: initial !important;
     }
@@ -139,8 +143,8 @@
 
 .globalNavigation__suiteLogo {
     min-height: var(--suite-logo-height);
-    min-width: var(--nav-item-width);
-    padding-top: var(--padding-sm);
+    min-width: var(--nav-width);
+    padding-top: var(--padding);
     color: black;
     font-size: var(--font-size-sm);
     cursor: default;
@@ -158,8 +162,7 @@
 
 .globalNavigation__mpHome {
     padding: var(--padding-lg, 20px); /* TODO: dependency between padding-lg/md and 20 from figma... */
-    margin: var(--margin-xxs);
-    width: var(--nav-item-width);
+    width: var(--nav-width);
     height: var(--nav-item-height);
     background-color: black;
 

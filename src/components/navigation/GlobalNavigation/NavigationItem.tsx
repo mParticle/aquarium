@@ -28,7 +28,7 @@ export function NavigationItem(props: INavigationItemProps) {
         </Tooltip>
       )}
 
-      {props.type === 'menu' && <NavigationList onClick={props.onClick} items={props.items} />}
+      {props.type === 'menu' && <NavigationList items={props.items} />}
     </>
   )
 }

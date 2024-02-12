@@ -48,7 +48,7 @@ export interface IGlobalNavigationProps {
   orgs?: INavigationOrg[]
   createItems?: INavigationCreateProps['createItems']
   onSearchClick?: () => void
-  onClick?: () => void
+  onMpHomeClick: () => void
 }
 
 export const NavWidth = 90 as const
@@ -66,16 +66,16 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
               {props.createItems && <NavigationCreate createItems={props.createItems} />}
             </Center>
 
-            <NavigationList items={props.tools} onClick={props.onClick} />
+            <NavigationList items={props.tools} />
           </div>
 
           <div>
-            <NavigationList items={props.management} onClick={props.onClick} />
+            <NavigationList items={props.management} />
 
             {props.orgs && <WorkspaceSelector orgs={props.orgs} />}
 
             <Center className="globalNavigation__mpHome">
-              <MpLogo className="globalNavigation__mpSvg" />
+              <MpLogo className="globalNavigation__mpSvg" onClick={() => { props.onMpHomeClick() }} />
             </Center>
           </div>
         </Flex>
