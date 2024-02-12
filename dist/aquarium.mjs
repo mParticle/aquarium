@@ -4131,7 +4131,7 @@ const A4 = (n) => /* @__PURE__ */ k.createElement("svg", Ve({ id: "mpLogo", xmln
   /* @__PURE__ */ ei("div", { children: [
     /* @__PURE__ */ q(JS, { items: n.management }),
     n.orgs && /* @__PURE__ */ q(M4, { orgs: n.orgs }),
-    !n.hideMpHome && /* @__PURE__ */ q(ql, { className: "globalNavigation__mpHome", children: /* @__PURE__ */ q(rC, { title: "mParticle Overview", children: /* @__PURE__ */ q(
+    !n.hideMpHome && /* @__PURE__ */ q(ql, { className: "globalNavigation__mpHome", children: /* @__PURE__ */ q(rC, { title: "mParticle Overview", placement: "right", children: /* @__PURE__ */ q(
       A4,
       {
         className: "globalNavigation__mpSvg",

@@ -78,7 +78,7 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
 
             {!props.hideMpHome && (
               <Center className="globalNavigation__mpHome">
-                <Tooltip title="mParticle Overview">
+                <Tooltip title="mParticle Overview" placement="right">
                   <MpLogo
                     className="globalNavigation__mpSvg"
                     onClick={() => {
