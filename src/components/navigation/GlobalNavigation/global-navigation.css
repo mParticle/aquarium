@@ -93,21 +93,40 @@
 
 .globalNavigation__searchButton,
 .globalNavigation__createButton {
-    box-shadow: 0px 2px 0px 0px rgba(54, 0, 209, 0.10);
+    box-shadow: 0 2px 0 0 rgba(54, 0, 209, 0.10);
 }
 
 .globalNavigation__searchButton {
     padding-inline: var(--padding-xs) var(--padding-xs) !important;
 }
 
+.globalNavigation__createPopup {
+    .ant-menu-item-group-title {
+        margin: 0 var(--margin-xxs);
+        border-top: 1px solid var(--color-border-secondary);
+        user-select: none;
+        color: var(--color-primary-text) !important;
+        font-size: 12px !important;
+        font-weight: 500;
+    }
+}
 
 .globalNavigation__createItem {
     height: 100% !important;
     min-height: 100% !important;
 
-    .ant-menu-item-group-title {
-        user-select: none;
+    .ant-flex {
+        gap: 0;
     }
+}
+
+.createItem__title {
+    color: var(--color-text-heading);
+}
+
+.createItem__description {
+    color: var(--color-text-description);
+    font-size: 12px;
 }
 
 
