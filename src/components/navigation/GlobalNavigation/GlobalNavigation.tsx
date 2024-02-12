@@ -13,7 +13,7 @@ import { NavigationCreate } from 'src/components/navigation/GlobalNavigation/Nav
 import { WorkspaceSelector } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
 import MpLogo from 'src/assets/mpLogo.svg?react'
-import { Tooltip } from "src/components";
+import { Tooltip } from 'src/components'
 
 export interface IBaseGlobalNavigationItem {
   label: string
@@ -77,16 +77,16 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
             {props.orgs && <WorkspaceSelector orgs={props.orgs} />}
 
             {!props.hideMpHome && (
-              <Center className="globalNavigation__mpHome">
-                <Tooltip title="mParticle Overview" placement="right">
+              <Tooltip title="mParticle Overview" placement="right">
+                <Center className="globalNavigation__mpHome">
                   <MpLogo
                     className="globalNavigation__mpSvg"
                     onClick={() => {
                       props.onMpHomeClick()
                     }}
                   />
-                </Tooltip>
-              </Center>
+                </Center>
+              </Tooltip>
             )}
           </div>
         </Flex>
