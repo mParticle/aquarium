@@ -13,6 +13,7 @@ export default defineConfig({
   plugins: [svgr(), dts({ include: 'src/components', rollupTypes: true })],
 
   build: {
+    target: 'es6',
     outDir: 'dist',
     lib: {
       // Could also be a dictionary or array of multiple entry points
