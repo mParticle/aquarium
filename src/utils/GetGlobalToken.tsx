@@ -3,7 +3,7 @@
 
 import { theme } from 'antd'
 import { type AliasToken } from 'antd/es/theme/interface'
-import useTheme from 'antd/es/config-provider/hooks/useTheme'
+import { LightTheme } from 'design/LightTheme'
 
 export function GetGlobalToken(): React.ReactNode {
   const { getDesignToken } = theme
@@ -11,9 +11,13 @@ export function GetGlobalToken(): React.ReactNode {
   function wrapValuesInObject(obj: AliasToken) {
     return Object.fromEntries(
       Object.entries(obj).map(([key, value]) => {
-        const pxKeys = ['padding', 'margin', 'borderRadius', 'screen', 'size', 'font']
+        const pxKeys = ['padding', 'margin', 'borderRadius', 'screen', 'size', 'font', 'width', 'height']
+        const excludePxKeys = ['lineHeight', 'fontWeight']
 
-        const addPx = typeof value === 'number' && pxKeys.some(k => (key + '').toLowerCase().includes(k.toLowerCase()))
+        const addPx =
+          typeof value === 'number' &&
+          pxKeys.some(k => (key + '').toLowerCase().includes(k.toLowerCase())) &&
+          !excludePxKeys.some(k => (key + '').toLowerCase().includes(k.toLowerCase()))
 
         if (addPx) value += 'px'
 
@@ -25,7 +29,7 @@ export function GetGlobalToken(): React.ReactNode {
     )
   }
 
-  const globalToken = wrapValuesInObject(getDesignToken(useTheme()))
+  const globalToken = wrapValuesInObject(getDesignToken(LightTheme))
 
   return <>{JSON.stringify(globalToken, null, 1)}</>
 }
