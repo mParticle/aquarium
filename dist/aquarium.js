@@ -30019,7 +30019,6 @@ function lH(n) {
   return /* @__PURE__ */ q(
     _C,
     {
-      openKeys: ["WorkspaceSelector"],
       className: "globalNavigation__menu globalNavigation__item globalNavigation__item--workspaceSelector",
       items: R,
       onOpenChange: M,

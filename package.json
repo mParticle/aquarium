@@ -20,7 +20,7 @@
     "dist/aquarium.umd.cjs",
     "dist/aquarium.js",
     "dist/index.d.ts",
-    "dist/_variables.css"
+    "dist/style.css"
   ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "6.5.1",
