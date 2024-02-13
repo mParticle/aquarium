@@ -13,14 +13,14 @@ import {
   faPaintbrush,
   faPizzaSlice,
   faPingPongPaddleBall,
-} from '@awesome.me/kit-f3b115a3e2/icons/classic/light'
-import { faBlenderPhone } from '@awesome.me/kit-f3b115a3e2/icons/classic/light'
-import { faArrowsToDot } from '@awesome.me/kit-f3b115a3e2/icons/classic/light'
-import { faKitchenSet } from '@awesome.me/kit-f3b115a3e2/icons/classic/light'
-import { faBoxes } from '@awesome.me/kit-f3b115a3e2/icons/classic/light'
-import { faShapes } from '@awesome.me/kit-f3b115a3e2/icons/classic/light'
-import { faHome } from '@awesome.me/kit-f3b115a3e2/icons/classic/light'
-import { faSave } from '@awesome.me/kit-f3b115a3e2/icons/classic/light'
+  faBlenderPhone,
+  faArrowsToDot,
+  faKitchenSet,
+  faBoxes,
+  faShapes,
+  faHome,
+  faSave,
+} from '@fortawesome/free-solid-svg-icons'
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
 import { GlobalNavigation } from 'src/components'
@@ -374,7 +374,9 @@ export const MP: Story = {
     tools: mpTools,
     management: mpManagement,
     orgs: mpOrgs,
-    onMpHomeClick:() => { alert('going to overview map') }
+    onMpHomeClick: () => {
+      alert('going to overview map')
+    },
   },
 }
 
@@ -666,7 +668,9 @@ export const Indicative: Story = {
     management: indManagement,
     createItems: indCreateItems,
     orgs: indOrgs,
-    onMpHomeClick:() => { alert('going to overview map') }
+    onMpHomeClick: () => {
+      alert('going to overview map')
+    },
   },
 }
 
@@ -723,6 +727,8 @@ export const Cortex: Story = {
     logo: cortexLogo,
     tools: cortexTools,
     management: cortexManagement,
-    onMpHomeClick:() => { alert('going to overview map') }
+    onMpHomeClick: () => {
+      alert('going to overview map')
+    },
   },
 }

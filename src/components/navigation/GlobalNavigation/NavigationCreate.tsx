@@ -6,7 +6,7 @@ import { Icon } from 'src/components'
 import type { IMenuProps } from 'src/components'
 import { Button } from 'src/components'
 import { Flex } from 'src/components'
-import { faPlus } from '@awesome.me/kit-f3b115a3e2/icons/classic/light'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 export interface INavigationCreateProps {
   createItems: Array<INavigationCreateItem | INavigationCreateGroup>

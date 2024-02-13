@@ -3,7 +3,7 @@ import { Space } from 'src/components'
 import { Center } from 'src/components'
 import { Icon } from 'src/components'
 import { Button } from 'src/components'
-import { faSearch } from '@awesome.me/kit-f3b115a3e2/icons/classic/light'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 interface INavigationSearchProps {
   onClick: () => void

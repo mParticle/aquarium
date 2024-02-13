@@ -1,9 +1,8 @@
-import * as React from 'react'
-import { faShapes } from '@awesome.me/kit-f3b115a3e2/icons/classic/light'
-import { faList } from '@awesome.me/kit-f3b115a3e2/icons/classic/light'
+import { faShapes, faList } from '@fortawesome/free-solid-svg-icons'
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
+import { Icon } from 'src/components'
 
 const meta: Meta<typeof NavigationItem> = {
   title: 'Aquarium/Navigation/NavigationItem',
@@ -21,7 +20,7 @@ export const Primary: Story = {}
 
 export const NavIcon: Story = {
   args: {
-    icon: faShapes,
+    icon: <Icon icon={faShapes} />,
     label: 'Icon Label',
     type: 'link',
     onClick: () => {
@@ -34,8 +33,7 @@ export const NavList: Story = {
   args: {
     label: 'List Label',
     type: 'menu',
-    icon: faList,
-
+    icon: <Icon icon={faList} />,
     items: [
       {
         label: 'Nav Item - Menu',

@@ -12,6 +12,8 @@ import { type INavigationWorkspace } from 'src/components/navigation/GlobalNavig
 import { type MenuItemType } from 'src/components/navigation/Menu/Menu'
 import { useState } from 'react'
 import { useMemo } from 'react'
+import { useCallback } from 'react'
+import { debounce } from 'src/utils/debounce'
 
 export interface IWorkspaceSelectorProps {
   orgs: INavigationOrg[]
@@ -22,6 +24,8 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
   const [children, setChildren] = useState<IWorkspaceSelectorMapping[]>(allItemsFlat)
   const [searchTerm, setSearchTerm] = useState<string>('')
+
+  const setChildrenDebounced = useCallback(debounce(setChildren, 150), [])
 
   // todo: use ref here, because we dont expect this to change
   const searchEl: MenuItemType = {
@@ -67,7 +71,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
   return (
     <Menu
-      // openKeys={['WorkspaceSelector']} // testing only
+      openKeys={['WorkspaceSelector']} // testing only
       className="globalNavigation__menu globalNavigation__item globalNavigation__item--workspaceSelector"
       items={items}
       onOpenChange={clearSearch}
@@ -121,19 +125,25 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
     const newSearchTerm = e.target.value.toLowerCase()
     setSearchTerm(newSearchTerm)
 
-    const filteredChildren = allItemsFlat?.filter(item => {
-      /* eslint-disable-next-line */
-      return isHit(item) || item.accounts?.some(isHit) || item.workspaces?.some(isHit)
+    if (newSearchTerm) {
+      setChildrenDebounced(getFilteredItems)
+    } else {// reset list immediately so it feels faster
+      setChildren(allItemsFlat)
+    }
 
-      function isHit(item: IWorkspaceSelectorMapping | INavigationAccount | INavigationWorkspace): boolean {
-        return (
-          item.label.toString().toLowerCase().includes(newSearchTerm) ||
-          item.id.toString().toLowerCase().includes(newSearchTerm)
-        )
-      }
-    })
+    function getFilteredItems(): IWorkspaceSelectorMapping[] {
+      return allItemsFlat?.filter(item => {
+        /* eslint-disable-next-line */
+        return isHit(item) || item.accounts?.some(isHit) || item.workspaces?.some(isHit)
 
-    setChildren(filteredChildren)
+        function isHit(item: IWorkspaceSelectorMapping | INavigationAccount | INavigationWorkspace): boolean {
+          return (
+            item.label.toString().toLowerCase().includes(newSearchTerm) ||
+            item.id.toString().toLowerCase().includes(newSearchTerm)
+          )
+        }
+      })
+    }
   }
 
   function clearSearch(): void {

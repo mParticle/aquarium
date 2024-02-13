@@ -116,7 +116,6 @@ import { TourProps } from 'antd';
 import { TransferProps } from 'antd';
 import { TreeProps } from 'antd';
 import { TreeSelectProps } from 'antd';
-import { UploadProps } from 'antd';
 import { WatermarkProps } from 'antd';
 
 export declare const Affix: (props: IAffixProps) => JSX_2.Element;
@@ -474,9 +473,6 @@ export declare interface ITreeProps extends TreeProps {
 export declare interface ITreeSelectProps extends TreeSelectProps {
 }
 
-export declare interface IUploadProps extends UploadProps {
-}
-
 export declare interface IWatermarkProps extends WatermarkProps {
 }
 
@@ -586,8 +582,6 @@ export declare const Transfer: (props: ITransferProps) => JSX_2.Element;
 export declare const Tree: (props: ITreeProps) => JSX_2.Element;
 
 export declare const TreeSelect: (props: ITreeSelectProps) => JSX_2.Element;
-
-export declare const Upload: (props: IUploadProps) => JSX_2.Element;
 
 export declare const Watermark: (props: IWatermarkProps) => JSX_2.Element;
 
