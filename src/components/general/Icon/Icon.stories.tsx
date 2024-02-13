@@ -1,5 +1,4 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-
 import { Icon } from 'src/components/general/Icon/Icon'
 import { faFontAwesome, faHamburger } from '@awesome.me/kit-f3b115a3e2/icons/classic/light'
 

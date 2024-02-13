@@ -1,5 +1,4 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-
 import { Segmented } from 'src/components/data-display/Segmented/Segmented'
 
 const meta: Meta<typeof Segmented> = {

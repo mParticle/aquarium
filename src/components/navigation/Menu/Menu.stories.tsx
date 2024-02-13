@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { type Meta, type StoryObj } from '@storybook/react'
-
 import { Menu, type IMenuProps } from 'src/components/navigation/Menu/Menu'
 import { Icon } from 'src/components/general/Icon/Icon'
 import { faIcons, faVolleyball, faExplosion } from '@awesome.me/kit-f3b115a3e2/icons/classic/light'
