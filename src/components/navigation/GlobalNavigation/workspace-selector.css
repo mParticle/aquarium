@@ -61,3 +61,13 @@
     margin-top: 0 !important;
     margin-bottom: 0 !important;
 }
+
+.workspaceSelector__signout{
+    margin:var(--margin-xs) !important;
+    padding:0 !important;
+}
+.workspaceSelector__signout,
+.workspaceSelector__signoutButton {
+    padding:0 !important;
+    width: 100% !important;
+}

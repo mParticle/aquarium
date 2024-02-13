@@ -94,6 +94,6 @@ export {
   type INavigationOrg,
   type INavigationWorkspace,
   type INavigationAccount,
-  type IWorkspaceSelectorDisplay,
+  type IWorkspaceSelectorDisplayItem,
   type IWorkspaceSelectorItem,
 } from './navigation/GlobalNavigation/WorkspaceSelectorItems'

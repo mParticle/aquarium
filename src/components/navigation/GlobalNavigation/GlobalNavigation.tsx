@@ -26,6 +26,7 @@ export interface IGlobalNavigationProps {
   onSearchClick?: () => void
   onMpHomeClick: () => void
   hideMpHome?: boolean
+  signout: () => void
 }
 
 export const GlobalNavWidth = 90 as const
@@ -49,7 +50,7 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
           <div>
             <NavigationList items={props.management} />
 
-            {props.orgs && <WorkspaceSelector orgs={props.orgs} />}
+            {props.orgs && <WorkspaceSelector orgs={props.orgs} signout={props.signout}/>}
 
             {!props.hideMpHome && (
               <Tooltip title="mParticle Overview" placement="right">

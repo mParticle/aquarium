@@ -7,7 +7,7 @@ import { type IMenuProps } from 'src/components'
 import { Result } from 'src/components'
 import { Center } from 'src/components'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
-import { type IWorkspaceSelectorDisplay } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
+import { type IWorkspaceSelectorDisplayItem } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
 import { type INavigationAccount } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
 import { type INavigationWorkspace } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
 import { type MenuItemType } from 'src/components/navigation/Menu/Menu'
@@ -16,9 +16,11 @@ import { useCallback } from 'react'
 import { useEffect } from 'react'
 import { useMemo } from 'react'
 import { debounce } from 'src/utils/debounce'
+import { Button } from 'src/components'
 
 export interface IWorkspaceSelectorProps {
   orgs: INavigationOrg[]
+  signout: () => void
 }
 
 export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
@@ -32,10 +34,13 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
   const setCurrentFilteredOrgsDebounced = useCallback(debounce(setCurrentFilteredOrgs, 200), [])
 
-  const menuItems = useMemo(() => generateDisplayItems(currentFilteredOrgs), currentFilteredOrgs)
+  const menuItems: IWorkspaceSelectorDisplayItem[] = useMemo(
+    () => generateDisplayItems(currentFilteredOrgs),
+    currentFilteredOrgs,
+  )
 
   // todo: use ref here, because we dont expect this to change
-  const searchEl: MenuItemType = {
+  const searchInput: MenuItemType = {
     key: 'search',
     className: 'workspaceSelector__search',
     label: (
@@ -52,6 +57,22 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
     ),
   }
 
+  const signoutButton: MenuItemType = {
+    key: 'signout',
+    className: 'workspaceSelector__signout',
+    label: (
+      <Button
+        className="workspaceSelector__signoutButton"
+        type="primary"
+        onClick={e => {
+          props.signout()
+        }}
+      >
+        Sign Out of mParticle
+      </Button>
+    ),
+  }
+
   const noResultsEl: MenuItemType = {
     key: 'no-results',
     className: 'workspaceSelector__noResults',
@@ -64,21 +85,23 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
   const hasNoResults = !!searchTerm && !currentFilteredOrgs.length
 
+  const menuChildren = [searchInput, ...(hasNoResults ? [noResultsEl] : menuItems), signoutButton]
+
   const items: IMenuProps['items'] = [
     {
       key: 'WorkspaceSelector',
       icon: <Avatar className="workspaceSelector__avatar">WS</Avatar>,
       popupClassName: 'workspaceSelector',
-      children: [searchEl, ...(hasNoResults ? [noResultsEl] : menuItems)],
+      children: menuChildren,
     },
   ]
 
   /* todo: scroll to selected ws */
-  /* see indicative rFancyDropdown.tsx:277 for a similar implementation. make it a service/util? */
+  /* see indicative rFancyDropdown.tsx:277 for a similar implementation. make it a hook ~~service/util~~? */
 
   return (
     <Menu
-      // openKeys={['WorkspaceSelector']} // testing only
+      openKeys={['WorkspaceSelector']} // testing only
       className="globalNavigation__menu globalNavigation__item globalNavigation__item--workspaceSelector"
       items={items}
       onOpenChange={clearSearch}
@@ -86,8 +109,8 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
     />
   )
 
-  function generateDisplayItems(orgs: INavigationOrg[]): IWorkspaceSelectorDisplay[] {
-    return currentFilteredOrgs.reduce<IWorkspaceSelectorDisplay[]>((total, org) => {
+  function generateDisplayItems(orgs: INavigationOrg[]): IWorkspaceSelectorDisplayItem[] {
+    return currentFilteredOrgs.reduce<IWorkspaceSelectorDisplayItem[]>((total, org) => {
       total.push({
         type: 'org',
         className: 'workspaceSelector__orgName' + (org.label ? '' : ' u-display-none'),
