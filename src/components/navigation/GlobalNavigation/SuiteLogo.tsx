@@ -1,6 +1,6 @@
 import { Center } from 'src/components'
-import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavigation/GlobalNavigation'
 import { NavigationIcon } from 'src/components/navigation/GlobalNavigation/NavigationIcon'
+import { type IGlobalNavigationLogo } from "src/components/navigation/GlobalNavigation/GlobalNavigationItems";
 
 export function SuiteLogo(props: IGlobalNavigationLogo) {
   return (

@@ -60,11 +60,8 @@ export { Grid, Col, Row, type IColProps, type IRowProps } from './layout/Grid/Gr
 export { Steps, type IStepsProps } from './navigation/Steps/Steps'
 export {
   GlobalNavigation,
-  type IGlobalNavigationManagement,
-  type IGlobalNavigationLogo,
-  type IGlobalNavigationTool,
+  GlobalNavWidth,
   type IGlobalNavigationProps,
-  type IBaseGlobalNavigationItem,
 } from './navigation/GlobalNavigation/GlobalNavigation'
 export { Anchor, type IAnchorProps } from './navigation/Anchor/Anchor'
 export { Dropdown, type IDropdownProps } from './navigation/Dropdown/Dropdown'
@@ -94,3 +91,8 @@ export type {
   INavigationCreateGroup,
   INavigationCreateItem,
 } from 'src/components/navigation/GlobalNavigation/NavigationCreate'
+export type {
+  IGlobalNavigationLogo,
+  IGlobalNavigationManagement,
+  IGlobalNavigationTool,
+} from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'

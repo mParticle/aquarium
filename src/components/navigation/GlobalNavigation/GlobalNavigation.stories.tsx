@@ -28,11 +28,11 @@ import { Space } from 'src/components'
 import { Button } from 'src/components'
 import { type INavigationCreateProps } from 'src/components'
 import { Badge } from 'src/components/data-display/Badge/Badge'
-import { type IGlobalNavigationTool } from 'src/components/navigation/GlobalNavigation/GlobalNavigation'
-import { type IGlobalNavigationManagement } from 'src/components/navigation/GlobalNavigation/GlobalNavigation'
-import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavigation/GlobalNavigation'
 import { Icon } from 'src/components/general/Icon/Icon'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
+import { type IGlobalNavigationLogo } from "src/components/navigation/GlobalNavigation/GlobalNavigationItems";
+import { type IGlobalNavigationManagement } from "src/components/navigation/GlobalNavigation/GlobalNavigationItems";
+import { type IGlobalNavigationTool } from "src/components/navigation/GlobalNavigation/GlobalNavigationItems";
 
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',
@@ -180,6 +180,7 @@ const mpTools: IGlobalNavigationTool[] = [
       { label: 'Connect' },
       {
         label: 'Filter',
+        isNestedMenu: true,
         children: [{ label: 'Platforms' }, { label: 'Feeds' }],
       },
     ],
