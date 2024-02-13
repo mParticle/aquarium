@@ -30,9 +30,9 @@ import { type INavigationCreateProps } from 'src/components'
 import { Badge } from 'src/components/data-display/Badge/Badge'
 import { Icon } from 'src/components/general/Icon/Icon'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
-import { type IGlobalNavigationLogo } from "src/components/navigation/GlobalNavigation/GlobalNavigationItems";
-import { type IGlobalNavigationManagement } from "src/components/navigation/GlobalNavigation/GlobalNavigationItems";
-import { type IGlobalNavigationTool } from "src/components/navigation/GlobalNavigation/GlobalNavigationItems";
+import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
+import { type IGlobalNavigationManagement } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
+import { type IGlobalNavigationTool } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',
@@ -239,6 +239,52 @@ const mpOrgs: INavigationOrg[] = [
             isActive: false,
             onClick: e => {
               alert('Selected workspace 1')
+            },
+          },
+          {
+            id: 'workspace1a',
+            label: 'Workspace 1a',
+            isActive: false,
+            onClick: e => {
+              alert('Selected workspace 1a')
+            },
+          },
+          {
+            id: 'workspace1b',
+            label: 'Workspace 1b',
+            isActive: false,
+            onClick: e => {
+              alert('Selected workspace 1b')
+            },
+          },
+        ],
+      },
+      {
+        id: 'account1a',
+        label: 'Account 1a',
+        workspaces: [
+          {
+            id: 'workspace12',
+            label: 'Workspace 12',
+            isActive: false,
+            onClick: e => {
+              alert('Selected workspace 12')
+            },
+          },
+          {
+            id: 'workspace12a',
+            label: 'Workspace 12a',
+            isActive: false,
+            onClick: e => {
+              alert('Selected workspace 12a')
+            },
+          },
+          {
+            id: 'workspace12b',
+            label: 'Workspace 12b',
+            isActive: false,
+            onClick: e => {
+              alert('Selected workspace 12b')
             },
           },
         ],
@@ -529,7 +575,7 @@ const indOrgs: INavigationOrg[] = [
         label: '',
         workspaces: [
           {
-            id: 'project',
+            id: 'project 1',
             label: 'project 1',
             isActive: false,
             onClick: e => {
@@ -549,7 +595,7 @@ const indOrgs: INavigationOrg[] = [
         label: '',
         workspaces: [
           {
-            id: 'project',
+            id: 'project 2',
             label: 'project 2',
             isActive: true,
             onClick: e => {
@@ -569,7 +615,7 @@ const indOrgs: INavigationOrg[] = [
         label: '',
         workspaces: [
           {
-            id: 'project',
+            id: 'project 3',
             label: 'project 3',
             isActive: false,
             onClick: e => {
@@ -589,7 +635,7 @@ const indOrgs: INavigationOrg[] = [
         label: '',
         workspaces: [
           {
-            id: 'project',
+            id: 'project 4',
             label: 'project 4',
             isActive: false,
             onClick: e => {
@@ -609,7 +655,7 @@ const indOrgs: INavigationOrg[] = [
         label: '',
         workspaces: [
           {
-            id: 'project',
+            id: 'project 5',
             label: 'project 5',
             isActive: false,
             onClick: e => {
@@ -629,7 +675,7 @@ const indOrgs: INavigationOrg[] = [
         label: '',
         workspaces: [
           {
-            id: 'project',
+            id: 'project 6',
             label: 'project 6',
             isActive: false,
             onClick: e => {
@@ -649,7 +695,7 @@ const indOrgs: INavigationOrg[] = [
         label: '',
         workspaces: [
           {
-            id: 'project',
+            id: 'project 7',
             label: 'project 7',
             isActive: false,
             onClick: e => {

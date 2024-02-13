@@ -6,13 +6,14 @@ import { type IMenuProps } from 'src/components'
 import { Result } from 'src/components'
 import { Center } from 'src/components'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
-import { type IWorkspaceSelectorMapping } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
+import { type IWorkspaceSelectorDisplay } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
 import { type INavigationAccount } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
 import { type INavigationWorkspace } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
 import { type MenuItemType } from 'src/components/navigation/Menu/Menu'
 import { useState } from 'react'
-import { useMemo } from 'react'
 import { useCallback } from 'react'
+import { useEffect } from 'react'
+import { useMemo } from 'react'
 import { debounce } from 'src/utils/debounce'
 
 export interface IWorkspaceSelectorProps {
@@ -20,12 +21,17 @@ export interface IWorkspaceSelectorProps {
 }
 
 export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
-  const allItemsFlat = useMemo(generateAllItems, [props.orgs]) // todo: will useMemo work when the active ws changes??
-
-  const [children, setChildren] = useState<IWorkspaceSelectorMapping[]>(allItemsFlat)
   const [searchTerm, setSearchTerm] = useState<string>('')
 
-  const setChildrenDebounced = useCallback(debounce(setChildren, 150), [])
+  const [currentFilteredOrgs, setCurrentFilteredOrgs] = useState<INavigationOrg[]>(props.orgs)
+  useEffect(() => {
+    // since we are setting state from props, when the props change be sure to update the state
+    setCurrentFilteredOrgs(props.orgs)
+  }, props.orgs)
+
+  const setCurrentFilteredOrgsDebounced = useCallback(debounce(setCurrentFilteredOrgs, 200), [])
+
+  const menuItems = useMemo(() => generateDisplayItems(currentFilteredOrgs), currentFilteredOrgs)
 
   // todo: use ref here, because we dont expect this to change
   const searchEl: MenuItemType = {
@@ -55,14 +61,14 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
     ),
   }
 
-  const hasNoResults = !!searchTerm && !children.length
+  const hasNoResults = !!searchTerm && !currentFilteredOrgs.length
 
   const items: IMenuProps['items'] = [
     {
       key: 'WorkspaceSelector',
       icon: <Avatar className="workspaceSelector__avatar">WS</Avatar>,
       popupClassName: 'workspaceSelector',
-      children: [searchEl, ...(hasNoResults ? [noResultsEl] : children)],
+      children: [searchEl, ...(hasNoResults ? [noResultsEl] : menuItems)],
     },
   ]
 
@@ -71,7 +77,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
   return (
     <Menu
-      openKeys={['WorkspaceSelector']} // testing only
+      // openKeys={['WorkspaceSelector']} // testing only
       className="globalNavigation__menu globalNavigation__item globalNavigation__item--workspaceSelector"
       items={items}
       onOpenChange={clearSearch}
@@ -79,8 +85,8 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
     />
   )
 
-  function generateAllItems(): IWorkspaceSelectorMapping[] {
-    return props.orgs.reduce<IWorkspaceSelectorMapping[]>((total, org) => {
+  function generateDisplayItems(orgs: INavigationOrg[]): IWorkspaceSelectorDisplay[] {
+    return currentFilteredOrgs.reduce<IWorkspaceSelectorDisplay[]>((total, org) => {
       total.push({
         type: 'org',
         className: 'workspaceSelector__orgName',
@@ -126,28 +132,55 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
     setSearchTerm(newSearchTerm)
 
     if (newSearchTerm) {
-      setChildrenDebounced(getFilteredItems)
-    } else {// reset list immediately so it feels faster
-      setChildren(allItemsFlat)
+      const filteredOrgs = getFilteredOrgs()
+      setCurrentFilteredOrgsDebounced(filteredOrgs)
+    } else {
+      // reset list immediately so it feels faster
+      setCurrentFilteredOrgs(props.orgs)
     }
 
-    function getFilteredItems(): IWorkspaceSelectorMapping[] {
-      return allItemsFlat?.filter(item => {
-        /* eslint-disable-next-line */
-        return isHit(item) || item.accounts?.some(isHit) || item.workspaces?.some(isHit)
+    function getFilteredOrgs(): INavigationOrg[] {
+      return props.orgs.reduce<INavigationOrg[]>((total, org) => {
+        if (isHit(org)) {
+          total.push(org)
+        } else {
+          const workingOrg: INavigationOrg = { ...org }
+          workingOrg.accounts = []
+          org.accounts.forEach(account => {
+            const workingAccount = { ...account }
+            workingAccount.workspaces = []
 
-        function isHit(item: IWorkspaceSelectorMapping | INavigationAccount | INavigationWorkspace): boolean {
-          return (
-            item.label.toString().toLowerCase().includes(newSearchTerm) ||
-            item.id.toString().toLowerCase().includes(newSearchTerm)
-          )
+            if (isHit(account)) {
+              workingOrg.accounts.push(account)
+            } else {
+              account.workspaces.forEach(workspace => {
+                if (isHit(workspace)) {
+                  workingAccount.workspaces.push(workspace)
+                }
+              })
+              if (workingAccount.workspaces.length) {
+                workingOrg.accounts.push(workingAccount)
+              }
+            }
+          })
+
+          if (workingOrg.accounts.length) total.push(workingOrg)
         }
-      })
+
+        return total
+      }, [])
+
+      function isHit(item: INavigationOrg | INavigationAccount | INavigationWorkspace): boolean {
+        return (
+          (!!item.label && item.label.toString().toLowerCase().includes(newSearchTerm)) ||
+          (!!item.id && item.id.toString().toLowerCase().includes(newSearchTerm))
+        )
+      }
     }
   }
 
   function clearSearch(): void {
     setSearchTerm('')
-    setChildren(allItemsFlat)
+    setCurrentFilteredOrgs(props.orgs)
   }
 }
