@@ -15,6 +15,7 @@ export { Checkbox, type ICheckboxProps } from './data-entry/Checkbox/Checkbox'
 export { Input, type IInputProps } from './data-entry/Input/Input'
 export { InputNumber, type IInputNumberProps } from './data-entry/InputNumber/InputNumber'
 export { Switch, type ISwitchProps } from './data-entry/Switch/Switch'
+export { Upload, type IUploadProps } from './data-entry/Upload/Upload'
 export { AutoComplete, type IAutoCompleteProps } from './data-entry/AutoComplete/AutoComplete'
 export { TimePicker, type ITimePickerProps } from './data-entry/TimePicker/TimePicker'
 export { Transfer, type ITransferProps } from './data-entry/Transfer/Transfer'
@@ -58,11 +59,6 @@ export { Space, type ISpaceProps } from './layout/Space/Space'
 export { Layout, type ILayoutProps } from './layout/Layout/Layout'
 export { Grid, Col, Row, type IColProps, type IRowProps } from './layout/Grid/Grid'
 export { Steps, type IStepsProps } from './navigation/Steps/Steps'
-export {
-  GlobalNavigation,
-  GlobalNavWidth,
-  type IGlobalNavigationProps,
-} from './navigation/GlobalNavigation/GlobalNavigation'
 export { Anchor, type IAnchorProps } from './navigation/Anchor/Anchor'
 export { Dropdown, type IDropdownProps } from './navigation/Dropdown/Dropdown'
 export { Breadcrumb, type IBreadcrumbProps } from './navigation/Breadcrumb/Breadcrumb'
@@ -80,19 +76,24 @@ export { ConfigProvider, type IConfigProviderProps } from './other/ConfigProvide
 export { Affix, type IAffixProps } from './other/Affix/Affix'
 export { App, type IAppProps } from './other/App/App'
 export {
+  GlobalNavigation,
+  GlobalNavWidth,
+  type IGlobalNavigationProps,
+} from './navigation/GlobalNavigation/GlobalNavigation'
+export type {
+  IGlobalNavigationLogo,
+  IGlobalNavigationManagement,
+  IGlobalNavigationTool,
+} from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
+export type {
+  INavigationCreateProps,
+  INavigationCreateGroup,
+  INavigationCreateItem,
+} from 'src/components/navigation/GlobalNavigation/NavigationCreate'
+export {
   type INavigationOrg,
   type INavigationWorkspace,
   type INavigationAccount,
   type IWorkspaceSelectorMapping,
   type IWorkspaceSelectorItem,
 } from './navigation/GlobalNavigation/WorkspaceSelectorItems'
-export type {
-  INavigationCreateProps,
-  INavigationCreateGroup,
-  INavigationCreateItem,
-} from 'src/components/navigation/GlobalNavigation/NavigationCreate'
-export type {
-  IGlobalNavigationLogo,
-  IGlobalNavigationManagement,
-  IGlobalNavigationTool,
-} from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'

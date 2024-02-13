@@ -77,6 +77,7 @@ module.exports = {
           'Message',
           'LoadingModal',
           'Flex',
+          'Center',
           'Space',
           'Layout',
           'Grid',

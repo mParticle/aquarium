@@ -14,32 +14,32 @@ const meta: Meta<typeof Button> = {
     disabled: false,
     ghost: false,
     href: undefined,
-    htmlType: "button",
+    htmlType: 'button',
     icon: undefined,
     loading: false,
-    shape: "default",
-    size: "middle",
+    shape: 'default',
+    size: 'middle',
     target: undefined,
-    type: "primary",
+    type: 'primary',
     onClick: undefined,
   },
 
   argTypes: {
     shape: {
-      control: "select",
-      options: ["default", "circle", "round"],
+      control: 'select',
+      options: ['default', 'circle', 'round'],
     },
     size: {
-      control: "select",
-      options: ["small", "medium", "large"],
+      control: 'select',
+      options: ['small', 'medium', 'large'],
     },
     type: {
-      control: "select",
-      options: ["primary", "dashed", "link", "text", "default"],
+      control: 'select',
+      options: ['primary', 'dashed', 'link', 'text', 'default'],
     },
   },
-};
-export default meta;
+}
+export default meta
 
 type Story = StoryObj<typeof Button>
 
@@ -50,99 +50,99 @@ type Story = StoryObj<typeof Button>
 
 export const Primary: Story = {
   play: async context => {
-    const button = context.canvasElement.querySelector("button");
-    await userEvent.click(button); // Click the button
+    const button = context.canvasElement.querySelector('button')
+    await userEvent.click(button) // Click the button
   },
-};
+}
 
 export const Default: Story = {
   args: {
-    type: "default",
+    type: 'default',
   },
-};
+}
 
 export const Dashed: Story = {
   args: {
-    type: "dashed",
+    type: 'dashed',
   },
-};
+}
 
 export const Text: Story = {
   args: {
-    type: "text",
+    type: 'text',
   },
-};
+}
 
 export const Link: Story = {
   args: {
-    type: "link",
+    type: 'link',
   },
-};
+}
 
 export const WithDanger: Story = {
   args: {
     danger: true,
   },
-};
+}
 
 export const Disabled: Story = {
   args: {
     disabled: true,
   },
-};
+}
 
 export const Ghost: Story = {
   args: {
     ghost: true,
   },
-};
+}
 
 export const Block: Story = {
   args: {
     block: true,
   },
-};
+}
 
 export const WithIcon: Story = {
   args: {
-    icon: <Icon icon={faHamburger}/>,
+    icon: <Icon icon={faHamburger} />,
   },
-};
+}
 
 export const Loading: Story = {
   args: {
     loading: true,
   },
-};
+}
 
 export const Circle: Story = {
   args: {
-    shape: "circle",
+    shape: 'circle',
   },
-};
+}
 
 export const Round: Story = {
   args: {
-    shape: "round",
+    shape: 'round',
   },
-};
+}
 
 export const Large: Story = {
   args: {
-    size: "large",
+    size: 'large',
   },
-};
+}
 
 export const Small: Story = {
   args: {
-    size: "small",
+    size: 'small',
   },
-};
+}
 
 export const PrimaryButtonWithClick: Story = {
   args: {
     onClick: e => {
-      alert("Button Clicked");
+      alert('Button Clicked')
     },
   },
 }
