@@ -1,5 +1,4 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-
 import { Steps } from 'src/components/navigation/Steps/Steps'
 
 const items = [

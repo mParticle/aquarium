@@ -11,3 +11,5 @@ export const Descriptions = (props: IDescriptionsProps) => {
     </ConfigProvider>
   )
 }
+
+Descriptions.Item = AntDescriptions.Item

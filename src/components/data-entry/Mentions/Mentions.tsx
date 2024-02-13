@@ -11,3 +11,5 @@ export const Mentions = (props: IMentionsProps) => {
     </ConfigProvider>
   )
 }
+
+Mentions.getMentions = AntMentions.getMentions

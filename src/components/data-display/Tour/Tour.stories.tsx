@@ -1,5 +1,4 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-
 import { Tour } from 'src/components/data-display/Tour/Tour'
 
 const meta: Meta<typeof Tour> = {
