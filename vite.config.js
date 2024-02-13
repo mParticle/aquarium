@@ -8,14 +8,14 @@ export default defineConfig({
       src: '/src',
     },
   },
-  plugins: [dts({ include: 'src/components', rollupTypes: true, })],
+  plugins: [dts({ include: 'src/components', rollupTypes: true })],
   build: {
     outDir: 'dist',
     lib: {
       // Could also be a dictionary or array of multiple entry points
       entry: resolve(__dirname, 'src/components/index.ts'),
       name: 'aquarium',
-      formats: ['es'],
+      formats: ['es', 'umd'],
       fileName: 'aquarium',
     },
     rollupOptions: {
