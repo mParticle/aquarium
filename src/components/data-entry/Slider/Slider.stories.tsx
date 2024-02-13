@@ -1,5 +1,4 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-
 import { Slider } from 'src/components/data-entry/Slider/Slider'
 
 const meta: Meta<typeof Slider> = {

@@ -1,5 +1,4 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-
 import { Select } from 'src/components/data-entry/Select/Select'
 
 const meta: Meta<typeof Select> = {

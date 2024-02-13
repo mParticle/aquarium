@@ -11,3 +11,6 @@ export const Avatar = (props: IAvatarProps) => {
     </ConfigProvider>
   )
 }
+
+
+Avatar.Group = AntAvatar.Group
