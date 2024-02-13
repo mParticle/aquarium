@@ -16,9 +16,6 @@ jobs:
         
       - name: Setup Node.js
         uses: actions/setup-node@v4
-        with:
-          cache: 'npm'
-          cache-dependency-path: subdir/package-lock.json
       
       - name: Run tokens-to-css
         run: npm run tokens-to-css
