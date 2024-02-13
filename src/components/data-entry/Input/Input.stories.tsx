@@ -1,6 +1,5 @@
 import { Input } from 'src/components/data-entry/Input/Input'
 import { type Meta, type StoryObj } from '@storybook/react'
-
 const meta: Meta<typeof Input> = {
   title: 'Aquarium/Data Entry/Input',
   component: Input,

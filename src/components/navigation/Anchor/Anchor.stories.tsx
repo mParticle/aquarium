@@ -1,5 +1,4 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-
 import { Anchor } from 'src/components/navigation/Anchor/Anchor'
 
 const meta: Meta<typeof Anchor> = {
