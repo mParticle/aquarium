@@ -576,7 +576,7 @@ const indOrgs: INavigationOrg[] = [
         workspaces: [
           {
             id: 'project 1',
-            label: 'project 1',
+            label: 'Project 1',
             isActive: false,
             onClick: e => {
               alert('Selected project 1')
@@ -596,7 +596,7 @@ const indOrgs: INavigationOrg[] = [
         workspaces: [
           {
             id: 'project 2',
-            label: 'project 2',
+            label: 'Project 2',
             isActive: true,
             onClick: e => {
               alert('Selected project 2')
@@ -616,7 +616,7 @@ const indOrgs: INavigationOrg[] = [
         workspaces: [
           {
             id: 'project 3',
-            label: 'project 3',
+            label: 'Project 3',
             isActive: false,
             onClick: e => {
               alert('Selected project 3')
@@ -636,7 +636,7 @@ const indOrgs: INavigationOrg[] = [
         workspaces: [
           {
             id: 'project 4',
-            label: 'project 4',
+            label: 'Project 4',
             isActive: false,
             onClick: e => {
               alert('Selected project 4')
@@ -656,7 +656,7 @@ const indOrgs: INavigationOrg[] = [
         workspaces: [
           {
             id: 'project 5',
-            label: 'project 5',
+            label: 'Project 5',
             isActive: false,
             onClick: e => {
               alert('Selected project 5')
@@ -676,7 +676,7 @@ const indOrgs: INavigationOrg[] = [
         workspaces: [
           {
             id: 'project 6',
-            label: 'project 6',
+            label: 'Project 6',
             isActive: false,
             onClick: e => {
               alert('Selected project 6')
@@ -696,7 +696,7 @@ const indOrgs: INavigationOrg[] = [
         workspaces: [
           {
             id: 'project 7',
-            label: 'project 7',
+            label: 'Project 7',
             isActive: false,
             onClick: e => {
               alert('Selected project 7')
@@ -769,11 +769,95 @@ const cortexManagement: IGlobalNavigationManagement[] = [
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
 ]
+const cortexOrgs: INavigationOrg[] = [
+  {
+    id: '',
+    label: '',
+    accounts: [
+      {
+        id: '',
+        label: '',
+        workspaces: [
+          {
+            id: 'Account 1',
+            label: 'Account 1',
+            onClick: () => {
+              alert('Selected Account 1')
+            },
+            isActive: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '',
+    label: '',
+    accounts: [
+      {
+        id: '',
+        label: '',
+        workspaces: [
+          {
+            id: 'Account 2',
+            label: 'Account 2',
+            onClick: () => {
+              alert('Selected Account 2')
+            },
+            isActive: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '',
+    label: '',
+    accounts: [
+      {
+        id: '',
+        label: '',
+        workspaces: [
+          {
+            id: 'Account 3',
+            label: 'Account 3',
+            onClick: () => {
+              alert('Selected Account 3')
+            },
+            isActive: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '',
+    label: '',
+    accounts: [
+      {
+        id: '',
+        label: '',
+        workspaces: [
+          {
+            id: 'Account 4',
+            label: 'Account 4',
+            onClick: () => {
+              alert('Selected Account 4')
+            },
+            isActive: false,
+          },
+        ],
+      },
+    ],
+  },
+]
+
 export const Cortex: Story = {
   args: {
     logo: cortexLogo,
     tools: cortexTools,
     management: cortexManagement,
+    orgs: cortexOrgs,
     onMpHomeClick: () => {
       alert('going to overview map')
     },

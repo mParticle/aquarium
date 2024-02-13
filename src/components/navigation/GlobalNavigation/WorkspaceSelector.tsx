@@ -1,3 +1,4 @@
+import 'src/utils/utils.css'
 import './workspace-selector.css'
 import { Avatar } from 'src/components'
 import { Input } from 'src/components'
@@ -77,7 +78,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
   return (
     <Menu
-      // openKeys={['WorkspaceSelector']} // testing only
+      openKeys={['WorkspaceSelector']} // testing only
       className="globalNavigation__menu globalNavigation__item globalNavigation__item--workspaceSelector"
       items={items}
       onOpenChange={clearSearch}
@@ -89,7 +90,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
     return currentFilteredOrgs.reduce<IWorkspaceSelectorDisplay[]>((total, org) => {
       total.push({
         type: 'org',
-        className: 'workspaceSelector__orgName',
+        className: 'workspaceSelector__orgName' + (org.label ? '' : ' u-display-none'),
         label: org.label,
         id: org.id,
         key: org.id,
@@ -98,11 +99,9 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
       })
 
       org.accounts.forEach(account => {
-        const className =
-          'workspaceSelector__accountName' + (account.label ? '' : ' workspaceSelector__accountName--hidden')
         total.push({
           type: 'account',
-          className,
+          className: 'workspaceSelector__accountName' + (account.label ? '' : ' u-display-none'),
           label: account.label,
           id: account.id,
           key: account.id,
