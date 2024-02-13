@@ -1,5 +1,4 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-
 import { Empty } from 'src/components/data-display/Empty/Empty'
 
 const meta: Meta<typeof Empty> = {

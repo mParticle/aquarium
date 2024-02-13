@@ -1,5 +1,4 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-
 import { Upload } from 'src/components/data-entry/Upload/Upload'
 import { Icon } from 'src/components/general/Icon/Icon'
 import { Button } from 'src/components/general/Button/Button'

@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { type Meta, type StoryObj } from '@storybook/react'
-
 import { Button } from 'src/components/general/Button/Button'
 import { LoadingModal, type ILoadingModalProps } from 'src/components/feedback/LoadingModal/LoadingModal'
 

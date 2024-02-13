@@ -1,5 +1,4 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-
 import { Drawer } from 'src/components/feedback/Drawer/Drawer'
 
 const meta: Meta<typeof Drawer> = {
