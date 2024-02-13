@@ -43,6 +43,12 @@ import { GroupProps } from 'antd/es/input';
 import { ColProps as IColProps } from 'antd';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { IFlexProps as IFlexProps_2 } from '../../../../../../../src/components/layout/Flex/Flex';
+import { IGlobalNavigationLogo } from '../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
+import { IGlobalNavigationLogo as IGlobalNavigationLogo_2 } from '../../../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
+import { IGlobalNavigationManagement } from '../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
+import { IGlobalNavigationManagement as IGlobalNavigationManagement_2 } from '../../../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
+import { IGlobalNavigationTool } from '../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
+import { IGlobalNavigationTool as IGlobalNavigationTool_2 } from '../../../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
 import { ImageProps } from 'antd';
 import { IModalProps as IModalProps_2 } from '../../../../../../../src/components/feedback/Modal/Modal';
 import { INavigationAccount } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
@@ -57,8 +63,8 @@ import { InputNumberProps } from 'antd';
 import { InputProps } from 'antd';
 import { InputRef } from 'antd';
 import { RowProps as IRowProps } from 'antd';
+import { IWorkspaceSelectorDisplay } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
 import { IWorkspaceSelectorItem } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
-import { IWorkspaceSelectorMapping } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
 import { JSX as JSX_2 } from 'react/jsx-runtime';
 import { JSXElementConstructor } from 'react';
 import { LayoutProps } from 'antd';
@@ -116,6 +122,7 @@ import { TourProps } from 'antd';
 import { TransferProps } from 'antd';
 import { TreeProps } from 'antd';
 import { TreeSelectProps } from 'antd';
+import { UploadProps } from 'antd';
 import { WatermarkProps } from 'antd';
 
 export declare const Affix: (props: IAffixProps) => JSX_2.Element;
@@ -206,6 +213,8 @@ export declare const Form: (props: IFormProps) => JSX_2.Element;
 
 export declare const GlobalNavigation: (props: IGlobalNavigationProps) => JSX_2.Element;
 
+export declare const GlobalNavWidth: 90;
+
 export { Grid }
 
 export declare interface IAffixProps extends AffixProps {
@@ -227,12 +236,6 @@ export declare interface IAvatarProps extends AvatarProps {
 }
 
 export declare interface IBadgeProps extends BadgeProps {
-}
-
-export declare interface IBaseGlobalNavigationItem {
-    label: string;
-    icon: ReactNode;
-    hideLabel?: boolean;
 }
 
 export declare interface IBreadcrumbProps extends BreadcrumbProps {
@@ -296,20 +299,14 @@ export declare interface IFormProps extends FormProps {
     children: React.ReactNode;
 }
 
-export declare interface IGlobalNavigationLogo extends IBaseGlobalNavigationItem {
-}
+export { IGlobalNavigationLogo }
 
-export declare interface IGlobalNavigationManagement extends IBaseGlobalNavigationItem {
-    type: 'menu' | 'link';
-    children?: MenuItem_2[];
-    isActive?: boolean;
-    onClick?: (e: React.MouseEvent) => void;
-}
+export { IGlobalNavigationManagement }
 
 export declare interface IGlobalNavigationProps {
-    logo: IGlobalNavigationLogo;
-    tools: IGlobalNavigationTool[];
-    management: IGlobalNavigationManagement[];
+    logo: IGlobalNavigationLogo_2;
+    tools: IGlobalNavigationTool_2[];
+    management: IGlobalNavigationManagement_2[];
     orgs?: INavigationOrg_2[];
     createItems?: INavigationCreateProps_2['createItems'];
     onSearchClick?: () => void;
@@ -317,12 +314,7 @@ export declare interface IGlobalNavigationProps {
     hideMpHome?: boolean;
 }
 
-export declare interface IGlobalNavigationTool extends IBaseGlobalNavigationItem {
-    type: 'menu' | 'link';
-    children?: MenuItem_2[];
-    isActive?: boolean;
-    onClick?: (e: React.MouseEvent) => void;
-}
+export { IGlobalNavigationTool }
 
 export declare interface IIconProps extends FontAwesomeIconProps {
     icon: IconProp;
@@ -473,12 +465,15 @@ export declare interface ITreeProps extends TreeProps {
 export declare interface ITreeSelectProps extends TreeSelectProps {
 }
 
+export declare interface IUploadProps extends UploadProps {
+}
+
 export declare interface IWatermarkProps extends WatermarkProps {
 }
 
-export { IWorkspaceSelectorItem }
+export { IWorkspaceSelectorDisplay }
 
-export { IWorkspaceSelectorMapping }
+export { IWorkspaceSelectorItem }
 
 export declare const Layout: {
     (props: ILayoutProps): JSX_2.Element;
@@ -502,10 +497,6 @@ export declare const Menu: (props: IMenuProps) => JSX_2.Element;
 export { MenuDividerType }
 
 export { MenuItem }
-
-declare interface MenuItem_2 extends Omit<MenuItemType, 'key'> {
-    children?: MenuItem_2[];
-}
 
 export { MenuItemGroupType }
 
@@ -582,6 +573,8 @@ export declare const Transfer: (props: ITransferProps) => JSX_2.Element;
 export declare const Tree: (props: ITreeProps) => JSX_2.Element;
 
 export declare const TreeSelect: (props: ITreeSelectProps) => JSX_2.Element;
+
+export declare const Upload: (props: IUploadProps) => JSX_2.Element;
 
 export declare const Watermark: (props: IWatermarkProps) => JSX_2.Element;
 
