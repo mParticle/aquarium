@@ -8,8 +8,11 @@ import { BadgeProps } from 'antd';
 import { BaseOptionType } from 'antd/es/select';
 import { BreadcrumbItemProps } from 'antd';
 import { BreadcrumbProps } from 'antd';
+import { ButtonGroupProps } from 'antd/es/button';
 import { ButtonProps } from 'antd';
 import { CalendarProps } from 'antd';
+import { CardGridProps } from 'antd/es/card';
+import { CardMetaProps } from 'antd/es/card';
 import { CardProps } from 'antd';
 import { CarouselProps } from 'antd';
 import { CascaderPanelProps } from 'antd/es/cascader/Panel';
@@ -24,22 +27,30 @@ import { CollapseProps } from 'antd';
 import { ColorPickerProps } from 'antd';
 import { ConfigProviderProps } from 'antd/es/config-provider';
 import { Dayjs } from 'dayjs';
-import { default as default_2 } from 'antd/es/alert/ErrorBoundary';
+import { default as default_2 } from 'rc-field-form/es/useWatch';
+import { default as default_3 } from 'antd/es/form/hooks/useFormInstance';
+import { default as default_4 } from 'antd/es/alert/ErrorBoundary';
 import { DefaultOptionType } from 'antd/es/select';
+import { DescriptionsItemProps } from 'antd/es/descriptions/Item';
 import { DescriptionsProps } from 'antd';
 import { DividerProps } from 'antd';
 import { DrawerProps } from 'antd';
 import { DropdownButtonProps } from 'antd/es/dropdown';
 import { DropdownProps } from 'antd';
 import { EmptyProps } from 'antd';
+import { ErrorListProps } from 'antd/es/form';
 import { FC } from 'react';
 import { FlexProps } from 'antd';
 import { FloatButtonProps } from 'antd';
 import { FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
+import { FormItemProps } from 'antd';
+import { FormListProps } from 'antd/es/form';
 import { FormProps } from 'antd';
+import { FormProviderProps } from 'antd/es/form/context';
 import { ForwardRefExoticComponent } from 'react';
 import { Grid } from 'antd';
 import { GroupProps } from 'antd/es/input';
+import { GroupProps as GroupProps_2 } from 'antd/es/avatar';
 import { ColProps as IColProps } from 'antd';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { IFlexProps as IFlexProps_2 } from '../../../../../../../src/components/layout/Flex/Flex';
@@ -50,6 +61,7 @@ import { IGlobalNavigationManagement as IGlobalNavigationManagement_2 } from '..
 import { IGlobalNavigationTool } from '../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
 import { IGlobalNavigationTool as IGlobalNavigationTool_2 } from '../../../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
 import { ImageProps } from 'antd';
+import { IMentionsProps } from './data-entry/Mentions/Mentions';
 import { IModalProps as IModalProps_2 } from '../../../../../../../src/components/feedback/Modal/Modal';
 import { INavigationAccount } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
 import { INavigationCreateGroup } from '../../../../../src/components/navigation/GlobalNavigation/NavigationCreate';
@@ -63,7 +75,7 @@ import { InputNumberProps } from 'antd';
 import { InputProps } from 'antd';
 import { InputRef } from 'antd';
 import { RowProps as IRowProps } from 'antd';
-import { IWorkspaceSelectorDisplay } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
+import { IWorkspaceSelectorDisplayItem } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
 import { IWorkspaceSelectorItem } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
 import { JSX as JSX_2 } from 'react/jsx-runtime';
 import { JSXElementConstructor } from 'react';
@@ -71,7 +83,7 @@ import { LayoutProps } from 'antd';
 import { ListItemTypeProps } from 'antd/es/list/Item';
 import { ListProps } from 'antd';
 import { MemoExoticComponent } from 'react';
-import { MentionProps } from 'antd';
+import { Mentions } from './data-entry/Mentions/Mentions';
 import { MenuDividerType } from 'antd/es/menu/hooks/useItems';
 import { default as MenuItem } from 'antd/es/menu/MenuItem';
 import { MenuItemGroupType } from 'antd/es/menu/hooks/useItems';
@@ -123,13 +135,14 @@ import { TransferProps } from 'antd';
 import { TreeProps } from 'antd';
 import { TreeSelectProps } from 'antd';
 import { UploadProps } from 'antd';
+import { useForm } from 'antd/es/form/Form';
 import { WatermarkProps } from 'antd';
 
 export declare const Affix: (props: IAffixProps) => JSX_2.Element;
 
 export declare const Alert: {
     (props: IAlertProps): JSX_2.Element;
-    ErrorBoundary: typeof default_2;
+    ErrorBoundary: typeof default_4;
 };
 
 export declare const Anchor: (props: IAnchorProps) => JSX_2.Element;
@@ -140,7 +153,10 @@ export declare const App: (props: IAppProps) => JSX_2.Element;
 
 export declare const AutoComplete: (props: IAutoCompleteProps) => JSX_2.Element;
 
-export declare const Avatar: (props: IAvatarProps) => JSX_2.Element;
+export declare const Avatar: {
+    (props: IAvatarProps): JSX_2.Element;
+    Group: FC<GroupProps_2>;
+};
 
 export declare const Badge: {
     (props: IBadgeProps): JSX_2.Element;
@@ -154,11 +170,18 @@ export declare const Breadcrumb: {
     };
 };
 
-export declare const Button: (props: IButtonProps) => JSX_2.Element;
+export declare const Button: {
+    (props: IButtonProps): JSX_2.Element;
+    Group: FC<ButtonGroupProps>;
+};
 
 export declare const Calendar: (props: ICalendarProps) => JSX_2.Element;
 
-export declare const Card: (props: ICardProps) => JSX_2.Element;
+export declare const Card: {
+    (props: ICardProps): JSX_2.Element;
+    Meta: FC<CardMetaProps>;
+    Grid: FC<CardGridProps>;
+};
 
 export declare const Carousel: (props: ICarouselProps) => JSX_2.Element;
 
@@ -188,7 +211,10 @@ export declare const ConfigProvider: (props: IConfigProviderProps) => JSX_2.Elem
 
 export declare const DatePicker: (props: IDatePickerProps) => JSX_2.Element;
 
-export declare const Descriptions: (props: IDescriptionsProps) => JSX_2.Element;
+export declare const Descriptions: {
+    (props: IDescriptionsProps): JSX_2.Element;
+    Item: FC<DescriptionsItemProps>;
+};
 
 export declare const Divider: (props: IDividerProps) => JSX_2.Element;
 
@@ -209,7 +235,23 @@ export declare const Flex: (props: IFlexProps) => JSX_2.Element;
 
 export declare const FloatButton: (props: IFloatButtonProps) => JSX_2.Element;
 
-export declare const Form: (props: IFormProps) => JSX_2.Element;
+export declare const Form: {
+    (props: IFormProps): JSX_2.Element;
+    useForm: typeof useForm;
+    useWatch: typeof default_2;
+    useFormInstance: typeof default_3;
+    Item: (<Values = any>(props: FormItemProps<Values>) => ReactElement<any, string | JSXElementConstructor<any>>) & {
+        useStatus: () => {
+            status?: "" | "warning" | "error" | "success" | "validating" | undefined;
+            errors: ReactNode[];
+            warnings: ReactNode[];
+        };
+    };
+    List: FC<FormListProps>;
+    displayName: string | undefined;
+    Provider: FC<FormProviderProps>;
+    ErrorList: FC<ErrorListProps>;
+};
 
 export declare const GlobalNavigation: (props: IGlobalNavigationProps) => JSX_2.Element;
 
@@ -296,7 +338,7 @@ export declare interface IFloatButtonProps extends FloatButtonProps {
 }
 
 export declare interface IFormProps extends FormProps {
-    children: React.ReactNode;
+    children: ReactNode;
 }
 
 export { IGlobalNavigationLogo }
@@ -312,6 +354,7 @@ export declare interface IGlobalNavigationProps {
     onSearchClick?: () => void;
     onMpHomeClick: () => void;
     hideMpHome?: boolean;
+    signout: () => void;
 }
 
 export { IGlobalNavigationTool }
@@ -343,8 +386,7 @@ export declare interface ILoadingModalProps<Data> extends Omit<IModalProps_2, 'c
 declare const Image_2: (props: IImageProps) => JSX_2.Element;
 export { Image_2 as Image }
 
-export declare interface IMentionsProps extends MentionProps {
-}
+export { IMentionsProps }
 
 export declare interface IMenuProps extends MenuProps {
 }
@@ -471,7 +513,7 @@ export declare interface IUploadProps extends UploadProps {
 export declare interface IWatermarkProps extends WatermarkProps {
 }
 
-export { IWorkspaceSelectorDisplay }
+export { IWorkspaceSelectorDisplayItem }
 
 export { IWorkspaceSelectorItem }
 
@@ -490,7 +532,7 @@ export declare const List: {
 
 export declare function LoadingModal<Data>(props: ILoadingModalProps<Data>): JSX_2.Element;
 
-export declare const Mentions: (props: IMentionsProps) => JSX_2.Element;
+export { Mentions }
 
 export declare const Menu: (props: IMenuProps) => JSX_2.Element;
 
