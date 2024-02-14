@@ -86,7 +86,7 @@ export function NavigationCreate(props: INavigationCreateProps) {
         className=" globalNavigation__item globalNavigation__item--createNew"
         items={items}
         expandIcon={null}
-        defaultOpenKeys={['NavigationCreate']} /* testing only */
+        // defaultOpenKeys={['NavigationCreate']} /* testing only */
       />
     </Center>
   )

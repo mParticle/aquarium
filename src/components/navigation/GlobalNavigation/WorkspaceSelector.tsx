@@ -20,7 +20,7 @@ import { Button } from 'src/components'
 
 export interface IWorkspaceSelectorProps {
   orgs: INavigationOrg[]
-  signout: () => void
+  signout?: () => void
 }
 
 export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
@@ -65,7 +65,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
         className="workspaceSelector__signoutButton"
         type="primary"
         onClick={e => {
-          props.signout()
+          props.signout?.()
         }}
       >
         Sign Out of mParticle
@@ -85,7 +85,11 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
   const hasNoResults = !!searchTerm && !currentFilteredOrgs.length
 
-  const menuChildren = [searchInput, ...(hasNoResults ? [noResultsEl] : menuItems), signoutButton]
+  const menuChildren = [
+    searchInput,
+    ...(hasNoResults ? [noResultsEl] : menuItems),
+    props.signout ? signoutButton : null,
+  ]
 
   const items: IMenuProps['items'] = [
     {

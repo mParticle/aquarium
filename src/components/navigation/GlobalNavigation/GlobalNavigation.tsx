@@ -26,7 +26,7 @@ export interface IGlobalNavigationProps {
   onSearchClick?: () => void
   onMpHomeClick: () => void
   hideMpHome?: boolean
-  signout: () => void
+  signout?: () => void
 }
 
 export const GlobalNavWidth = 90 as const

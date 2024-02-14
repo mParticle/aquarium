@@ -354,7 +354,7 @@ export declare interface IGlobalNavigationProps {
     onSearchClick?: () => void;
     onMpHomeClick: () => void;
     hideMpHome?: boolean;
-    signout: () => void;
+    signout?: () => void;
 }
 
 export { IGlobalNavigationTool }

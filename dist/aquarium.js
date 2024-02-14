@@ -30010,8 +30010,7 @@ function fH(n) {
     {
       className: " globalNavigation__item globalNavigation__item--createNew",
       items: a,
-      expandIcon: null,
-      defaultOpenKeys: ["NavigationCreate"]
+      expandIcon: null
     }
   ) });
 }
@@ -30055,7 +30054,8 @@ function vH(n) {
         className: "workspaceSelector__signoutButton",
         type: "primary",
         onClick: (D) => {
-          n.signout();
+          var V;
+          (V = n.signout) == null || V.call(n);
         },
         children: "Sign Out of mParticle"
       }
@@ -30064,7 +30064,11 @@ function vH(n) {
     key: "no-results",
     className: "workspaceSelector__noResults",
     label: /* @__PURE__ */ G(ql, { children: /* @__PURE__ */ G(o_, { status: "info", title: "No results found" }) })
-  }, R = !!a && !u.length, x = [b, ...R ? [C] : v, S];
+  }, R = !!a && !u.length, x = [
+    b,
+    ...R ? [C] : v,
+    n.signout ? S : null
+  ];
   return /* @__PURE__ */ G(
     DC,
     {
