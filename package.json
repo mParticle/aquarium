@@ -20,7 +20,7 @@
     "dist/aquarium.umd.cjs",
     "dist/aquarium.js",
     "dist/index.d.ts",
-    "dist/_variables.css"
+    "dist/style.css"
   ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "6.5.1",
@@ -67,6 +67,7 @@
     "typescript": "5.3.3",
     "vite": "5.0.12",
     "vite-plugin-dts": "3.7.1",
+    "vite-plugin-svgr": "4.2.0",
     "wait-on": "7.2.0"
   },
   "optionalDependencies": {

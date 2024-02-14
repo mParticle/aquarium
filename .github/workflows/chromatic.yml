@@ -11,7 +11,8 @@ jobs:
         with:
           fetch-depth: 0
 
-      - run: npm ci
+      - name: Install Dependencies
+        run: npm ci
 
       - name: Publish to Chromatic
         uses: chromaui/action@latest

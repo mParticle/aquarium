@@ -17,6 +17,7 @@ module.exports = {
   plugins: ['react', 'react-hooks'],
   ignorePatterns: ['.eslintrc.js'],
   rules: {
+    semi: 'off',
     '@typescript-eslint/explicit-function-return-type': [
       'warn',
       {
@@ -81,6 +82,7 @@ module.exports = {
           'Message',
           'LoadingModal',
           'Flex',
+          'Center',
           'Space',
           'Layout',
           'Grid',
@@ -99,7 +101,7 @@ module.exports = {
     ],
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/consistent-type-definitions': 'off',
-    '@typescript-eslint/no-use-before-define': ['error', { allowNamedExports: true }],
+    '@typescript-eslint/no-use-before-define': ['error', { allowNamedExports: true, functions: false }],
     'react/react-in-jsx-scope': 'off',
     'import/no-duplicates': 'off',
   },
