@@ -29975,41 +29975,41 @@ function cH(n, a) {
   };
 }
 function fH(n) {
-  const a = [
-    {
-      key: "NavigationCreate",
-      popupClassName: "navigationCreate__popup",
-      icon: /* @__PURE__ */ G(ql, { className: "navigationCreate__popupButtonWrapper", style: { pointerEvents: "none" }, children: /* @__PURE__ */ G(_y, { className: "navigationCreate__popupButton", icon: /* @__PURE__ */ G(rE, { icon: lH }) }) }),
-      children: n.createItems.map((l) => {
-        if (l.type === "group")
-          return { label: l.label, key: l.label, type: l.type };
-        const u = l.isLocked, f = l.disabled;
-        let h = "navigationCreate__item";
-        return (f != null ? f : u) && (h += " navigationCreate__item--disabled"), {
-          key: l.description,
-          className: h,
-          disabled: l.disabled,
-          onClick: (v) => {
-            var b;
-            l.disabled || ((b = l.onClick) == null || b.call(l), v.domEvent.stopPropagation(), v.domEvent.preventDefault());
-          },
-          label: /* @__PURE__ */ G(Dy, { title: l.tooltip, children: /* @__PURE__ */ $a(sC, { vertical: !0, gap: "middle", justify: "center", children: [
-            /* @__PURE__ */ $a("span", { className: "navigationCreate__itemTitle", children: [
-              l.title,
-              l.isLoading && /* @__PURE__ */ G(SI, { className: "navigationCreate__itemLoading", size: "small" }),
-              u && /* @__PURE__ */ G(rE, { icon: aH, className: "navigationCreate__itemLock" })
-            ] }),
-            /* @__PURE__ */ G("span", { className: "navigationCreate__itemDescription", children: l.description })
-          ] }) })
-        };
-      })
-    }
-  ];
+  let a = n.createItems.map((u) => {
+    if (u.type === "group")
+      return { label: u.label, key: u.label, type: u.type };
+    const f = u.isLocked, h = u.disabled;
+    let v = "navigationCreate__item";
+    return (h != null ? h : f) && (v += " navigationCreate__item--disabled"), {
+      key: u.description,
+      className: v,
+      disabled: u.disabled,
+      onClick: (b) => {
+        var S;
+        u.disabled || ((S = u.onClick) == null || S.call(u), b.domEvent.stopPropagation(), b.domEvent.preventDefault());
+      },
+      label: /* @__PURE__ */ G(Dy, { title: u.tooltip, children: /* @__PURE__ */ $a(sC, { vertical: !0, gap: "middle", justify: "center", children: [
+        /* @__PURE__ */ $a("span", { className: "navigationCreate__itemTitle", children: [
+          u.title,
+          u.isLoading && /* @__PURE__ */ G(SI, { className: "navigationCreate__itemLoading", size: "small" }),
+          f && /* @__PURE__ */ G(rE, { icon: aH, className: "navigationCreate__itemLock" })
+        ] }),
+        /* @__PURE__ */ G("span", { className: "navigationCreate__itemDescription", children: u.description })
+      ] }) })
+    };
+  });
   return /* @__PURE__ */ G(ql, { children: /* @__PURE__ */ G(
     DC,
     {
       className: " globalNavigation__item globalNavigation__item--createNew",
-      items: a,
+      items: [
+        {
+          key: "NavigationCreate",
+          popupClassName: "navigationCreate__popup",
+          icon: /* @__PURE__ */ G(ql, { className: "navigationCreate__popupButtonWrapper", style: { pointerEvents: "none" }, children: /* @__PURE__ */ G(_y, { className: "navigationCreate__popupButton", icon: /* @__PURE__ */ G(rE, { icon: lH }) }) }),
+          children: a
+        }
+      ],
       expandIcon: null
     }
   ) });
