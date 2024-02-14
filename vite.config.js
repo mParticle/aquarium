@@ -10,8 +10,9 @@ export default defineConfig({
       design: '/design',
     },
   },
+  
   plugins: [svgr(), dts({ include: 'src/components', rollupTypes: true })],
-
+  
   build: {
     target: 'es6',
     outDir: 'dist',
@@ -19,7 +20,7 @@ export default defineConfig({
       // Could also be a dictionary or array of multiple entry points
       entry: resolve(__dirname, 'src/components/index.ts'),
       name: 'aquarium',
-      formats: ['es'],
+      formats: ['es', 'umd'],
       fileName: 'aquarium',
     },
     rollupOptions: {

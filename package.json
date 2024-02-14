@@ -12,10 +12,13 @@
   "publishConfig": {
     "access": "public"
   },
+  "type": "module",
   "types": "dist/index.d.ts",
-  "main": "dist/aquarium.mjs",
+  "main": "dist/aquarium.umd.cjs",
+  "module": "dist/aquarium.js",
   "files": [
-    "dist/aquarium.mjs",
+    "dist/aquarium.umd.cjs",
+    "dist/aquarium.js",
     "dist/index.d.ts",
     "dist/style.css"
   ],
