@@ -15,8 +15,9 @@ import { useState } from 'react'
 import { useCallback } from 'react'
 import { useEffect } from 'react'
 import { useMemo } from 'react'
-import { debounce } from 'src/utils/debounce'
+import { debounce } from 'src/utils/utils'
 import { Button } from 'src/components'
+import { getInitials } from 'src/utils/utils'
 
 export interface IWorkspaceSelectorProps {
   orgs: INavigationOrg[]
@@ -91,10 +92,22 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
     props.signout ? signoutButton : null,
   ]
 
+  let activeWorkspace: INavigationWorkspace
+  props.orgs.find(org => {
+    return org.accounts.find(account => {
+      return account.workspaces.find(workspace => {
+        if (workspace.isActive) {
+          activeWorkspace = workspace
+          return true
+        }
+      })
+    })
+  })
+
   const items: IMenuProps['items'] = [
     {
       key: 'WorkspaceSelector',
-      icon: <Avatar className="workspaceSelector__avatar">WS</Avatar>,
+      icon: <Avatar className="workspaceSelector__avatar">{getInitials(activeWorkspace?.label)}</Avatar>,
       popupClassName: 'workspaceSelector',
       children: menuChildren,
     },
