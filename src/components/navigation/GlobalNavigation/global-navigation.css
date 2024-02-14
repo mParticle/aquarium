@@ -103,6 +103,8 @@
 }
 
 .navigationCreate__popup {
+    width: 290px !important;
+
     .ant-menu-item-group-title {
         margin: 0 var(--margin-xxs);
         border-top: 1px solid var(--color-border-secondary);
@@ -116,12 +118,12 @@
 .navigationCreate__item {
     height: 100% !important;
     min-height: 100% !important;
-    
+
     .ant-flex {
         gap: 0;
     }
 
-    &.navigationCreate__item--disabled{
+    &.navigationCreate__item--disabled {
         .navigationCreate__itemTitle,
         .navigationCreate__itemDescription {
             color: var(--color-text-disabled) !important;
@@ -136,6 +138,7 @@
 .navigationCreate__itemDescription {
     color: var(--color-text-description);
     font-size: 12px;
+    white-space: normal !important;
 }
 
 .navigationCreate__itemLoading,

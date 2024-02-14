@@ -32,6 +32,42 @@ export interface INavigationCreateItem extends Omit<MenuItemType, 'key'> {
 }
 
 export function NavigationCreate(props: INavigationCreateProps) {
+  let menuItems = props.createItems.map(item => {
+    if (item.type === 'group') return { label: item.label, key: item.label, type: item.type }
+
+    const isLocked = item.isLocked
+    const isDisabled = item.disabled
+
+    let itemClassName = 'navigationCreate__item'
+    if (isDisabled ?? isLocked) {
+      itemClassName += ' navigationCreate__item--disabled'
+    }
+    return {
+      key: item.description,
+      className: itemClassName,
+      disabled: item.disabled,
+      onClick: menuInfo => {
+        if (item.disabled) return
+        item.onClick?.()
+        menuInfo.domEvent.stopPropagation()
+        menuInfo.domEvent.preventDefault()
+      },
+      label: (
+        <Tooltip title={item.tooltip}>
+          <Flex vertical={true} gap="middle" justify="center">
+            <span className="navigationCreate__itemTitle">
+              {item.title}
+              {item.isLoading && <Spin className="navigationCreate__itemLoading" size="small" />}
+              {isLocked && <Icon icon={faLock} className="navigationCreate__itemLock" />}
+            </span>
+
+            <span className="navigationCreate__itemDescription">{item.description}</span>
+          </Flex>
+        </Tooltip>
+      ),
+    }
+  });
+  
   const items: IMenuProps['items'] = [
     {
       key: 'NavigationCreate',
@@ -42,41 +78,7 @@ export function NavigationCreate(props: INavigationCreateProps) {
         </Center>
       ),
 
-      children: props.createItems.map(item => {
-        if (item.type === 'group') return { label: item.label, key: item.label, type: item.type }
-
-        const isLocked = item.isLocked
-        const isDisabled = item.disabled
-
-        let itemClassName = 'navigationCreate__item'
-        if (isDisabled ?? isLocked) {
-          itemClassName += ' navigationCreate__item--disabled'
-        }
-        return {
-          key: item.description,
-          className: itemClassName,
-          disabled: item.disabled,
-          onClick: menuInfo => {
-            if (item.disabled) return
-            item.onClick?.()
-            menuInfo.domEvent.stopPropagation()
-            menuInfo.domEvent.preventDefault()
-          },
-          label: (
-            <Tooltip title={item.tooltip}>
-              <Flex vertical={true} gap="middle" justify="center">
-                <span className="navigationCreate__itemTitle">
-                  {item.title}
-                  {item.isLoading && <Spin className="navigationCreate__itemLoading" size="small" />}
-                  {isLocked && <Icon icon={faLock} className="navigationCreate__itemLock" />}
-                </span>
-
-                <span className="navigationCreate__itemDescription">{item.description}</span>
-              </Flex>
-            </Tooltip>
-          ),
-        }
-      }),
+      children: menuItems,
     },
   ]
 
