@@ -112,7 +112,9 @@ const meta: Meta<typeof GlobalNavigation> = {
     tools: defaultTools,
     management: defaultManagement,
     orgs: defaultOrgs,
-    signout:() => { alert('Logging out!') }
+    signout: () => {
+      alert('Logging out!')
+    },
   },
 }
 export default meta
@@ -484,10 +486,18 @@ const indCreateItems: INavigationCreateProps['createItems'] = [
     type: 'group',
   },
   {
+    onClick: () => {
+      alert('clicked')
+    },
     title: 'Event Segmentation',
     description: 'Measure engagement based on behaviors and attributes.',
   },
   {
+    disabled: true,
+    tooltip:'is disabled',
+    onClick: () => {
+      alert('clicked disabled')
+    },
     title: 'User Segmentation',
     description: 'Measure unique users based on behaviors and attributes.',
   },
@@ -498,7 +508,12 @@ const indCreateItems: INavigationCreateProps['createItems'] = [
   {
     title: 'Frequency',
     description: 'Analyze how many distinct times an event is performed within a given interval.',
-    isPaywalled: true,
+
+    tooltip: 'This feature is currently locked',
+    onClick: () => {
+      alert('Opening paywall modal.')
+    },
+    isLocked: true,
   },
 
   {
@@ -527,6 +542,8 @@ const indCreateItems: INavigationCreateProps['createItems'] = [
     type: 'group',
   },
   {
+    isLoading: true,
+    tooltip: 'Journeys data is loading, please check back later.',
     title: 'Journeys From an Event',
     description: 'Discover the most common paths users take from a starting point.',
   },

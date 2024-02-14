@@ -89,12 +89,12 @@
 }
 
 .globalNavigation__searchButtonWrapper,
-.globalNavigation__createButtonWrapper {
+.navigationCreate__popupButtonWrapper {
     height: var(--nav-item-height);
 }
 
 .globalNavigation__searchButton,
-.globalNavigation__createButton {
+.navigationCreate__popupButton {
     box-shadow: 0 2px 0 0 rgba(54, 0, 209, 0.10);
 }
 
@@ -102,7 +102,7 @@
     padding-inline: var(--padding-xs) var(--padding-xs) !important;
 }
 
-.globalNavigation__createPopup {
+.navigationCreate__popup {
     .ant-menu-item-group-title {
         margin: 0 var(--margin-xxs);
         border-top: 1px solid var(--color-border-secondary);
@@ -113,24 +113,40 @@
     }
 }
 
-.globalNavigation__createItem {
+.navigationCreate__item {
     height: 100% !important;
     min-height: 100% !important;
-
+    
     .ant-flex {
         gap: 0;
     }
+
+    &.navigationCreate__item--disabled{
+        .navigationCreate__itemTitle,
+        .navigationCreate__itemDescription {
+            color: var(--color-text-disabled) !important;
+        }
+    }
 }
 
-.createItem__title {
+.navigationCreate__itemTitle {
     color: var(--color-text-heading);
 }
 
-.createItem__description {
+.navigationCreate__itemDescription {
     color: var(--color-text-description);
     font-size: 12px;
 }
 
+.navigationCreate__itemLoading,
+.navigationCreate__itemLock {
+    padding-left: var(--padding-sm);
+}
+
+.navigationCreate__itemLock {
+    width: var(--size-sm);
+    height: var(--size-sm);
+}
 
 .globalNavigation__menu {
     height: var(--nav-item-height) !important;

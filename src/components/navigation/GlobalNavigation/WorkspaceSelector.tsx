@@ -101,7 +101,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
   return (
     <Menu
-      openKeys={['WorkspaceSelector']} // testing only
+      // openKeys={['WorkspaceSelector']} // testing only
       className="globalNavigation__menu globalNavigation__item globalNavigation__item--workspaceSelector"
       items={items}
       onOpenChange={clearSearch}
