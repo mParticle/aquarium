@@ -32,7 +32,7 @@
     transition: none !important;
 
     &:hover {
-        background-color: var(--control-item-bg-hover);
+        background-color: var(--control-item-bg-hover) !important;
     }
 
     &:focus, &:active {
@@ -55,6 +55,7 @@
     }
 
     .ant-menu-title-content {
+        text-wrap: normal;
         margin-inline-start: 0 !important;
         opacity: 1 !important;
     }
@@ -63,9 +64,6 @@
         background-color: initial;
     }
 
-    &.globalNavigation__item--active {
-        border-left: solid 3px var(--color-primary) !important;
-    }
 
     &.globalNavigation__item--createNew {
         border: none !important;
@@ -80,7 +78,12 @@
             border-color: var(--color-primary-hover) !important;
         }
     }
+    
 
+    &.globalNavigation__item--active {
+        border-left: solid 3px var(--color-primary);
+        background-color: var(--color-bg-text-hover);
+    }
 }
 
 
