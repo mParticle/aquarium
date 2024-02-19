@@ -30015,12 +30015,12 @@ function fH(n) {
   ) });
 }
 function dH(n = "") {
-  return n.split(" ").reduce((u, f) => {
-    if (u.length > 2)
-      return u;
-    const h = (b) => !!b.match(/[a-z]/i), v = f.split("").find(h);
-    return v && (u += v + " "), u;
-  }, "").toUpperCase().trim();
+  var l;
+  const a = new RegExp(
+    "^(\\w)\\w*\\b.*\\s(\\w)[\\w-]*$",
+    "i"
+  );
+  return (l = n.replace(a, "$1$2")) == null ? void 0 : l.toUpperCase();
 }
 const vH = (n, a) => {
   let l;
@@ -30077,11 +30077,15 @@ function pH(n) {
     ...R ? [C] : v,
     n.signout ? S : null
   ];
-  let O;
-  n.orgs.find((V) => V.accounts.find((H) => H.workspaces.find((I) => {
-    if (I.isActive)
-      return O = I, !0;
-  })));
+  let O = n.orgs.flatMap((V) => {
+    let H = [];
+    const { accounts: I } = V;
+    if (I) {
+      const L = I.flatMap(({ workspaces: M }) => M);
+      H = H.concat(L);
+    }
+    return H;
+  }).find((V) => V.isActive);
   const N = [
     {
       key: "WorkspaceSelector",
