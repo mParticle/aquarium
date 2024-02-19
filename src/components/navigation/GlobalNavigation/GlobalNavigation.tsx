@@ -11,10 +11,10 @@ import { NavigationList } from 'src/components/navigation/GlobalNavigation/Navig
 import { NavigationCreate } from 'src/components/navigation/GlobalNavigation/NavigationCreate'
 import { WorkspaceSelector } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
-import MpLogo from 'src/assets/mpLogo.svg?react'
 import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IGlobalNavigationManagement } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IGlobalNavigationTool } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
+import MpLogo from 'src/assets/mpLogo.svg?react'
 
 export interface IGlobalNavigationProps {
   logo: IGlobalNavigationLogo
@@ -26,6 +26,7 @@ export interface IGlobalNavigationProps {
   onSearchClick?: () => void
   onMpHomeClick: () => void
   hideMpHome?: boolean
+  signout?: () => void
 }
 
 export const GlobalNavWidth = 90 as const
@@ -49,7 +50,7 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
           <div>
             <NavigationList items={props.management} />
 
-            {props.orgs && <WorkspaceSelector orgs={props.orgs} />}
+            {props.orgs && <WorkspaceSelector orgs={props.orgs} signout={props.signout}/>}
 
             {!props.hideMpHome && (
               <Tooltip title="mParticle Overview" placement="right">

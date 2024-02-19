@@ -11,3 +11,5 @@ export const Button = (props: IButtonProps) => {
     </ConfigProvider>
   )
 }
+
+Button.Group = AntButton.Group

@@ -30,9 +30,9 @@ import { type INavigationCreateProps } from 'src/components'
 import { Badge } from 'src/components/data-display/Badge/Badge'
 import { Icon } from 'src/components/general/Icon/Icon'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
-import { type IGlobalNavigationLogo } from "src/components/navigation/GlobalNavigation/GlobalNavigationItems";
-import { type IGlobalNavigationManagement } from "src/components/navigation/GlobalNavigation/GlobalNavigationItems";
-import { type IGlobalNavigationTool } from "src/components/navigation/GlobalNavigation/GlobalNavigationItems";
+import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
+import { type IGlobalNavigationManagement } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
+import { type IGlobalNavigationTool } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',
@@ -241,6 +241,52 @@ const mpOrgs: INavigationOrg[] = [
               alert('Selected workspace 1')
             },
           },
+          {
+            id: 'workspace1a',
+            label: 'Workspace 1a',
+            isActive: false,
+            onClick: e => {
+              alert('Selected workspace 1a')
+            },
+          },
+          {
+            id: 'workspace1b',
+            label: 'Workspace 1b',
+            isActive: false,
+            onClick: e => {
+              alert('Selected workspace 1b')
+            },
+          },
+        ],
+      },
+      {
+        id: 'account1a',
+        label: 'Account 1a',
+        workspaces: [
+          {
+            id: 'workspace12',
+            label: 'Workspace 12',
+            isActive: false,
+            onClick: e => {
+              alert('Selected workspace 12')
+            },
+          },
+          {
+            id: 'workspace12a',
+            label: 'Workspace 12a',
+            isActive: false,
+            onClick: e => {
+              alert('Selected workspace 12a')
+            },
+          },
+          {
+            id: 'workspace12b',
+            label: 'Workspace 12b',
+            isActive: false,
+            onClick: e => {
+              alert('Selected workspace 12b')
+            },
+          },
         ],
       },
     ],
@@ -437,10 +483,18 @@ const indCreateItems: INavigationCreateProps['createItems'] = [
     type: 'group',
   },
   {
+    onClick: () => {
+      alert('clicked')
+    },
     title: 'Event Segmentation',
     description: 'Measure engagement based on behaviors and attributes.',
   },
   {
+    disabled: true,
+    tooltip:'is disabled',
+    onClick: () => {
+      alert('clicked disabled')
+    },
     title: 'User Segmentation',
     description: 'Measure unique users based on behaviors and attributes.',
   },
@@ -451,7 +505,12 @@ const indCreateItems: INavigationCreateProps['createItems'] = [
   {
     title: 'Frequency',
     description: 'Analyze how many distinct times an event is performed within a given interval.',
-    isPaywalled: true,
+
+    tooltip: 'This feature is currently locked',
+    onClick: () => {
+      alert('Opening paywall modal.')
+    },
+    isLocked: true,
   },
 
   {
@@ -480,6 +539,8 @@ const indCreateItems: INavigationCreateProps['createItems'] = [
     type: 'group',
   },
   {
+    isLoading: true,
+    tooltip: 'Journeys data is loading, please check back later.',
     title: 'Journeys From an Event',
     description: 'Discover the most common paths users take from a starting point.',
   },
@@ -529,8 +590,8 @@ const indOrgs: INavigationOrg[] = [
         label: '',
         workspaces: [
           {
-            id: 'project',
-            label: 'project 1',
+            id: 'project 1',
+            label: 'Project 1',
             isActive: false,
             onClick: e => {
               alert('Selected project 1')
@@ -549,8 +610,8 @@ const indOrgs: INavigationOrg[] = [
         label: '',
         workspaces: [
           {
-            id: 'project',
-            label: 'project 2',
+            id: 'project 2',
+            label: 'Project 2',
             isActive: true,
             onClick: e => {
               alert('Selected project 2')
@@ -569,8 +630,8 @@ const indOrgs: INavigationOrg[] = [
         label: '',
         workspaces: [
           {
-            id: 'project',
-            label: 'project 3',
+            id: 'project 3',
+            label: 'Project 3',
             isActive: false,
             onClick: e => {
               alert('Selected project 3')
@@ -589,8 +650,8 @@ const indOrgs: INavigationOrg[] = [
         label: '',
         workspaces: [
           {
-            id: 'project',
-            label: 'project 4',
+            id: 'project 4',
+            label: 'Project 4',
             isActive: false,
             onClick: e => {
               alert('Selected project 4')
@@ -609,8 +670,8 @@ const indOrgs: INavigationOrg[] = [
         label: '',
         workspaces: [
           {
-            id: 'project',
-            label: 'project 5',
+            id: 'project 5',
+            label: 'Project 5',
             isActive: false,
             onClick: e => {
               alert('Selected project 5')
@@ -629,8 +690,8 @@ const indOrgs: INavigationOrg[] = [
         label: '',
         workspaces: [
           {
-            id: 'project',
-            label: 'project 6',
+            id: 'project 6',
+            label: 'Project 6',
             isActive: false,
             onClick: e => {
               alert('Selected project 6')
@@ -649,8 +710,8 @@ const indOrgs: INavigationOrg[] = [
         label: '',
         workspaces: [
           {
-            id: 'project',
-            label: 'project 7',
+            id: 'project 7',
+            label: 'Project 7',
             isActive: false,
             onClick: e => {
               alert('Selected project 7')
@@ -723,11 +784,95 @@ const cortexManagement: IGlobalNavigationManagement[] = [
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
 ]
+const cortexOrgs: INavigationOrg[] = [
+  {
+    id: '',
+    label: '',
+    accounts: [
+      {
+        id: '',
+        label: '',
+        workspaces: [
+          {
+            id: 'Account 1',
+            label: 'Account 1',
+            onClick: () => {
+              alert('Selected Account 1')
+            },
+            isActive: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '',
+    label: '',
+    accounts: [
+      {
+        id: '',
+        label: '',
+        workspaces: [
+          {
+            id: 'Account 2',
+            label: 'Account 2',
+            onClick: () => {
+              alert('Selected Account 2')
+            },
+            isActive: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '',
+    label: '',
+    accounts: [
+      {
+        id: '',
+        label: '',
+        workspaces: [
+          {
+            id: 'Account 3',
+            label: 'Account 3',
+            onClick: () => {
+              alert('Selected Account 3')
+            },
+            isActive: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '',
+    label: '',
+    accounts: [
+      {
+        id: '',
+        label: '',
+        workspaces: [
+          {
+            id: 'Account 4',
+            label: 'Account 4',
+            onClick: () => {
+              alert('Selected Account 4')
+            },
+            isActive: false,
+          },
+        ],
+      },
+    ],
+  },
+]
+
 export const Cortex: Story = {
   args: {
     logo: cortexLogo,
     tools: cortexTools,
     management: cortexManagement,
+    orgs: cortexOrgs,
     onMpHomeClick: () => {
       alert('going to overview map')
     },

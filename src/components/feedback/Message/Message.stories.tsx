@@ -1,5 +1,4 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-
 import { Message } from 'src/components/feedback/Message/Message'
 import { Button } from 'src/components/general/Button/Button'
 

@@ -1,9 +1,6 @@
 .workspaceSelector {
-    max-height: 80%;
-    height: 80%;
-
     .ant-menu {
-        height: 500px;
+        max-height: 500px !important;
     }
 }
 
@@ -40,10 +37,6 @@
     height: var(--control-height);
     padding: var(--padding-xxs) var(--control-padding-horizontal);
     pointer-events: none;
-
-    &.workspaceSelector__accountName--hidden {
-        display: none !important;
-    }
 }
 
 .workspaceSelector__workspaceName {
@@ -67,4 +60,14 @@
 .workspaceSelector__workspaceName {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
+}
+
+.workspaceSelector__signout{
+    margin:var(--margin-xs) !important;
+    padding:0 !important;
+}
+.workspaceSelector__signout,
+.workspaceSelector__signoutButton {
+    padding:0 !important;
+    width: 100% !important;
 }

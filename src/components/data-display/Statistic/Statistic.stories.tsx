@@ -1,5 +1,4 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-
 import { Statistic } from 'src/components/data-display/Statistic/Statistic'
 
 const meta: Meta<typeof Statistic> = {
