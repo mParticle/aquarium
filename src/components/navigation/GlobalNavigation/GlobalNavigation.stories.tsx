@@ -89,6 +89,7 @@ const meta: Meta<typeof GlobalNavigation> = {
     tools: defaultTools,
     management: defaultManagement,
     orgs: defaultOrgs,
+    signout:() => { alert('Signing Out!') }
   },
 }
 export default meta

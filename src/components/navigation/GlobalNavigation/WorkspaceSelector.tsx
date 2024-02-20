@@ -92,21 +92,19 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
     props.signout ? signoutButton : null,
   ]
 
-  let activeWorkspace: INavigationWorkspace = props.orgs
+  const activeWorkspace: INavigationWorkspace = props.orgs
     .flatMap<INavigationWorkspace>(org => {
       let flattenedSelectors: INavigationWorkspace[] = []
 
       const { accounts } = org
       if (accounts) {
-        const workspaces = accounts.flatMap(({workspaces}) => workspaces)
+        const workspaces = accounts.flatMap(({ workspaces }) => workspaces)
         flattenedSelectors = flattenedSelectors.concat(workspaces)
       }
 
       return flattenedSelectors
     })
-    .find((
-      workspaceCandidate 
-    ) => (workspaceCandidate as INavigationWorkspace).isActive) as INavigationWorkspace
+    .find(workspaceCandidate => (workspaceCandidate ).isActive)!
 
   const items: IMenuProps['items'] = [
     {
@@ -138,7 +136,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
         label: org.label,
         id: org.id,
         key: org.id,
-        accounts: org.accounts,
+        accounts: org.accounts, // todo: these are ending up in the html as attributes..
         workspaces: org.accounts.flatMap(account => account.workspaces),
       })
 

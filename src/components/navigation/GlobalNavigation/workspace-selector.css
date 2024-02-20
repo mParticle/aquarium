@@ -5,7 +5,15 @@
 }
 
 .workspaceSelector__search {
-    padding: 0 !important;
+    position: sticky !important;
+    top: 0;
+    z-index: 1 ;
+
+    width: 100% !important;
+    padding: 0 var(--padding-xxs) !important;
+    margin: 0 !important;
+
+    background-color: white !important;
 }
 
 .workspaceSelector__noResults {
@@ -62,12 +70,17 @@
     margin-bottom: 0 !important;
 }
 
-.workspaceSelector__signout{
-    margin:var(--margin-xs) !important;
-    padding:0 !important;
+.workspaceSelector__signout {
+    position: sticky !important;
+    bottom: 0;
+
+    width: 100% !important;
+    padding: 0 var(--padding-xxs) !important;
+    margin: 0 !important;
+
+    background-color: white !important;
 }
-.workspaceSelector__signout,
+
 .workspaceSelector__signoutButton {
-    padding:0 !important;
     width: 100% !important;
 }
