@@ -69,7 +69,7 @@ export function NavigationCreate(props: INavigationCreateProps) {
   const items: IMenuProps['items'] = [
     {
       key: 'NavigationCreate',
-      popupClassName: 'navigationCreate__popup',
+      popupClassName: 'globalNavigation__popup globalNavigation__popup--navigationCreate',
       icon: (
         <Center className="navigationCreate__popupButtonWrapper" style={{ pointerEvents: 'none' }}>
           <Button className="navigationCreate__popupButton" icon={<MpLogo/>} />

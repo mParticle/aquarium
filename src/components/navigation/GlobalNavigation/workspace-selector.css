@@ -7,7 +7,7 @@
 .workspaceSelector__search {
     position: sticky !important;
     top: 0;
-    z-index: 1 ;
+    z-index: 1;
 
     width: 100% !important;
     padding: 0 var(--padding-xxs) !important;
@@ -35,15 +35,21 @@
 }
 
 .workspaceSelector__orgName {
-    color: var(--color-text-description);
-    font-size: 12px;
-    font-weight: 400;
+    color: var(--color-primary);
     pointer-events: none;
+    font-weight: 500;
+    padding: var(--padding-xxs) var(--control-padding-horizontal) !important;
+
+    &:not(:nth-child(2)) {
+        padding-left: var(--padding-xs);
+        padding-right: var(--padding-xs);
+        border-top: 1px solid var(--color-border-secondary);
+    }
 }
 
 .workspaceSelector__accountName {
     height: var(--control-height);
-    padding: var(--padding-xxs) var(--control-padding-horizontal);
+    padding: 0 var(--control-padding-horizontal) !important;
     pointer-events: none;
 }
 
@@ -51,9 +57,8 @@
     padding-left: calc(var(--padding-sm) + var(--padding)) !important;
 
     &.workspaceSelector__workspaceName--active {
-        /* todo: check these vars/names... */
-        border-radius: 4px; /* var(--Components-Menu-Global-borderRadius, 4px); */
-        background: #ebe8f8; /* var(--Components-Menu-Component-itemSelectedBg, #EBE8F8); */
+        border-radius: 4px; /* var(--Components-Menu-Global-borderRadius, 4px); */ /* todo: check this vars/name... */
+        background: var(--control-item-bg-active) !important;
     }
 }
 

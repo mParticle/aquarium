@@ -54,6 +54,7 @@ function generateMenuItem(item: IGlobalNavigationManagement | IGlobalNavigationT
         hideLabel={item.hideLabel}
       />
     ),
+    popupClassName: 'globalNavigation__popup',
     className: 'globalNavigation__item' + (item.isActive ? ' globalNavigation__item--active' : ''),
     key: `${item.label}${i}`,
     children,
