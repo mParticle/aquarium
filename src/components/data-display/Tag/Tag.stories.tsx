@@ -3,18 +3,12 @@
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
 import { Tag } from 'src/components/data-display/Tag/Tag'
-import { Divider, Flex, Icon, Space } from 'src/components'
-import {
-  faUser,
-  faCheckCircle,
-  faCircleInfo,
-  faCircleExclamation,
-  faTimesCircle,
-} from '@fortawesome/free-solid-svg-icons'
+import { Divider, Flex, Space } from 'src/components'
 import { ExampleStory } from 'src/utils/ExampleStory'
 import { useState } from 'react'
 import { userEvent } from '@storybook/test'
 import { expect } from '@storybook/test'
+import MpLogo from 'src/assets/mpLogo.svg?react'
 
 const meta: Meta<typeof Tag> = {
   title: 'Aquarium/Data Display/Tag',
@@ -55,7 +49,7 @@ export const WithColor: Story = {
 
 export const WithIcon: Story = {
   args: {
-    icon: <Icon icon={faUser} />,
+    icon: <MpLogo/>,
   },
 }
 
@@ -153,16 +147,16 @@ export const ExampleStatusTags: Story = {
           </Space>
           <Divider orientation="left">With icon</Divider>
           <Space size={[0, 8]} wrap>
-            <Tag icon={<Icon icon={faCheckCircle} />} color="success">
+            <Tag icon={<MpLogo/>} color="success">
               success
             </Tag>
-            <Tag icon={<Icon icon={faCircleInfo} />} color="processing">
+            <Tag icon={<MpLogo/>} color="processing">
               processing
             </Tag>
-            <Tag icon={<Icon icon={faTimesCircle} />} color="error">
+            <Tag icon={<MpLogo/>} color="error">
               error
             </Tag>
-            <Tag icon={<Icon icon={faCircleExclamation} />} color="warning">
+            <Tag icon={<MpLogo/>} color="warning">
               warning
             </Tag>
           </Space>

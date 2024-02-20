@@ -1,14 +1,13 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { Upload } from 'src/components/data-entry/Upload/Upload'
-import { Icon } from 'src/components/general/Icon/Icon'
 import { Button } from 'src/components/general/Button/Button'
-import { faUpload } from '@fortawesome/free-solid-svg-icons'
+import MpLogo from 'src/assets/mpLogo.svg?react'
 
 const meta: Meta<typeof Upload> = {
   title: 'Aquarium/Data Entry/Upload',
   component: props => (
     <Upload {...props}>
-      <Button icon={<Icon icon={faUpload} />}>Click to Upload</Button>
+      <Button icon={<MpLogo/>}>Click to Upload</Button>
     </Upload>
   ),
 

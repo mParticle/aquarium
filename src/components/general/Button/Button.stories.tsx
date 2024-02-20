@@ -1,8 +1,7 @@
 import { Button } from 'src/components/general/Button/Button'
 import { type Meta, type StoryObj } from '@storybook/react'
-import { Icon } from 'src/components/general/Icon/Icon'
-import { faHamburger } from '@fortawesome/free-solid-svg-icons'
 import { userEvent } from '@storybook/test'
+import MpLogo from 'src/assets/mpLogo.svg?react'
 
 const meta: Meta<typeof Button> = {
   title: 'Aquarium/General/Button',
@@ -105,7 +104,7 @@ export const Block: Story = {
 
 export const WithIcon: Story = {
   args: {
-    icon: <Icon icon={faHamburger} />,
+    icon: <MpLogo/>,
   },
 }
 

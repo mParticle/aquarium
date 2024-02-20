@@ -1,26 +1,3 @@
-import {
-  faTools,
-  faPersonWalkingDashedLineArrowRight,
-  faAudioDescription,
-  faBell,
-  faLifeRing,
-  faGear,
-  faFishFins,
-  faDatabase,
-  faPeopleGroup,
-  faDiagramPredecessor,
-  faRoadSpikes,
-  faPaintbrush,
-  faPizzaSlice,
-  faPingPongPaddleBall,
-  faBlenderPhone,
-  faArrowsToDot,
-  faKitchenSet,
-  faBoxes,
-  faShapes,
-  faHome,
-  faSave,
-} from '@fortawesome/free-solid-svg-icons'
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
 import { GlobalNavigation } from 'src/components'
@@ -28,33 +5,33 @@ import { Space } from 'src/components'
 import { Button } from 'src/components'
 import { type INavigationCreateProps } from 'src/components'
 import { Badge } from 'src/components/data-display/Badge/Badge'
-import { Icon } from 'src/components/general/Icon/Icon'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
 import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IGlobalNavigationManagement } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IGlobalNavigationTool } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
+import MpLogo from 'src/assets/mpLogo.svg?react'
 
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',
-  icon: <Icon icon={faFishFins} />,
+  icon: <MpLogo/>,
 }
 const defaultTools: IGlobalNavigationTool[] = [
   {
     label: 'Tool 1',
     isActive: true,
-    icon: <Icon icon={faTools} />,
+    icon: <MpLogo/>,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Tool 2',
-    icon: <Icon icon={faPersonWalkingDashedLineArrowRight} />,
+    icon: <MpLogo/>,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Tool 3',
-    icon: <Icon icon={faAudioDescription} />,
+    icon: <MpLogo/>,
     type: 'link',
   },
 ]
@@ -62,20 +39,20 @@ const defaultManagement: IGlobalNavigationManagement[] = [
   {
     label: 'Notifications',
     hideLabel: true,
-    icon: <Icon icon={faBell} />,
+    icon: <MpLogo/>,
     type: 'link',
   },
   {
     label: 'Support',
     hideLabel: true,
-    icon: <Icon icon={faLifeRing} />,
+    icon: <MpLogo/>,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Settings',
     hideLabel: true,
-    icon: <Icon icon={faGear} />,
+    icon: <MpLogo/>,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
@@ -122,7 +99,7 @@ export const Primary: Story = {}
 
 const mpLogo: IGlobalNavigationLogo = {
   label: 'Data Platform',
-  icon: <Icon icon={faShapes} />,
+  icon: <MpLogo/>,
 }
 
 function Beta(label: string) {
@@ -137,7 +114,7 @@ function Beta(label: string) {
 const mpTools: IGlobalNavigationTool[] = [
   {
     label: 'Activity',
-    icon: <Icon icon={faBlenderPhone} />,
+    icon: <MpLogo/>,
     type: 'menu',
     children: [
       { label: 'Platform Trends' },
@@ -155,7 +132,7 @@ const mpTools: IGlobalNavigationTool[] = [
   },
   {
     label: 'Data Master',
-    icon: <Icon icon={faDatabase} />,
+    icon: <MpLogo/>,
     type: 'menu',
     children: [
       { label: 'Catalog' },
@@ -168,13 +145,13 @@ const mpTools: IGlobalNavigationTool[] = [
   },
   {
     label: 'Audiences',
-    icon: <Icon icon={faPeopleGroup} />,
+    icon: <MpLogo/>,
     type: 'menu',
     children: [{ label: 'Real-time' }, { label: 'Standard' }, { label: 'Journeys' }],
   },
   {
     label: 'Observability',
-    icon: <Icon icon={faArrowsToDot} />,
+    icon: <MpLogo/>,
     type: 'menu',
     children: [
       { label: 'Connect' },
@@ -187,13 +164,13 @@ const mpTools: IGlobalNavigationTool[] = [
   },
   {
     label: 'Setup',
-    icon: <Icon icon={faKitchenSet} />,
+    icon: <MpLogo/>,
     type: 'menu',
     children: [{ label: 'Inputs' }, { label: 'Outputs' }, { label: 'Data Warehouse' }, { label: 'CRM' }],
   },
   {
     label: 'Directory',
-    icon: <Icon icon={faBoxes} />,
+    icon: <MpLogo/>,
     type: 'link',
   },
 ]
@@ -201,21 +178,21 @@ const mpManagement: IGlobalNavigationManagement[] = [
   {
     label: 'Notifications',
     hideLabel: true,
-    icon: <Icon icon={faBell} />,
+    icon: <MpLogo/>,
     type: 'link',
   },
   {
     isActive: true,
     label: 'Support',
     hideLabel: true,
-    icon: <Icon icon={faLifeRing} />,
+    icon: <MpLogo/>,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Settings',
     hideLabel: true,
-    icon: <Icon icon={faGear} />,
+    icon: <MpLogo/>,
     type: 'menu',
     children: [
       { label: 'Platform Settings' },
@@ -429,23 +406,23 @@ export const MP: Story = {
 
 const indLogo: IGlobalNavigationLogo = {
   label: 'Analytics',
-  icon: <Icon icon={faShapes} />,
+  icon: <MpLogo/>,
 }
 const indTools: IGlobalNavigationTool[] = [
   {
     label: 'My Hub',
-    icon: <Icon icon={faHome} />,
+    icon: <MpLogo/>,
     type: 'link',
     isActive: true,
   },
   {
     label: 'Saved',
-    icon: <Icon icon={faSave} />,
+    icon: <MpLogo/>,
     type: 'link',
   },
   {
     label: 'Manage Data',
-    icon: <Icon icon={faDatabase} />,
+    icon: <MpLogo/>,
     type: 'link',
   },
 ]
@@ -453,14 +430,14 @@ const indManagement: IGlobalNavigationManagement[] = [
   {
     label: 'Support',
     hideLabel: true,
-    icon: <Icon icon={faLifeRing} />,
+    icon: <MpLogo/>,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Settings',
     hideLabel: true,
-    icon: <Icon icon={faGear} />,
+    icon: <MpLogo/>,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
@@ -738,33 +715,33 @@ export const Indicative: Story = {
 
 const cortexLogo: IGlobalNavigationLogo = {
   label: 'Predictions',
-  icon: <Icon icon={faShapes} />,
+  icon: <MpLogo/>,
 }
 const cortexTools: IGlobalNavigationTool[] = [
   {
     label: 'Pipelines',
-    icon: <Icon icon={faPizzaSlice} />,
+    icon: <MpLogo/>,
     type: 'link',
   },
   {
     label: 'Projects',
-    icon: <Icon icon={faDiagramPredecessor} />,
+    icon: <MpLogo/>,
     type: 'link',
     isActive: true,
   },
   {
     label: 'Data',
-    icon: <Icon icon={faPingPongPaddleBall} />,
+    icon: <MpLogo/>,
     type: 'link',
   },
   {
     label: 'API',
-    icon: <Icon icon={faRoadSpikes} />,
+    icon: <MpLogo/>,
     type: 'link',
   },
   {
     label: 'Insights',
-    icon: <Icon icon={faPaintbrush} />,
+    icon: <MpLogo/>,
     type: 'link',
   },
 ]
@@ -772,14 +749,14 @@ const cortexManagement: IGlobalNavigationManagement[] = [
   {
     label: 'Support',
     hideLabel: true,
-    icon: <Icon icon={faLifeRing} />,
+    icon: <MpLogo/>,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Settings',
     hideLabel: true,
-    icon: <Icon icon={faGear} />,
+    icon: <MpLogo/>,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },

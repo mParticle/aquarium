@@ -2,14 +2,12 @@ import type { MenuItemType } from 'antd/es/menu/hooks/useItems'
 import type { MenuItemGroupType } from 'antd/es/menu/hooks/useItems'
 import { Center } from 'src/components'
 import { Menu } from 'src/components'
-import { Icon } from 'src/components'
 import type { IMenuProps } from 'src/components'
 import { Button } from 'src/components'
 import { Flex } from 'src/components'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
-import { faLock } from '@fortawesome/free-solid-svg-icons'
 import { Tooltip } from 'src/components'
 import { Spin } from 'src/components'
+import MpLogo from 'src/assets/mpLogo.svg?react'
 
 export interface INavigationCreateProps {
   createItems: Array<INavigationCreateItem | INavigationCreateGroup>
@@ -32,7 +30,7 @@ export interface INavigationCreateItem extends Omit<MenuItemType, 'key'> {
 }
 
 export function NavigationCreate(props: INavigationCreateProps) {
-  let menuItems = props.createItems.map(item => {
+  const menuItems = props.createItems.map(item => {
     if (item.type === 'group') return { label: item.label, key: item.label, type: item.type }
 
     const isLocked = item.isLocked
@@ -58,7 +56,7 @@ export function NavigationCreate(props: INavigationCreateProps) {
             <span className="navigationCreate__itemTitle">
               {item.title}
               {item.isLoading && <Spin className="navigationCreate__itemLoading" size="small" />}
-              {isLocked && <Icon icon={faLock} className="navigationCreate__itemLock" />}
+              {isLocked && <MpLogo/>}
             </span>
 
             <span className="navigationCreate__itemDescription">{item.description}</span>
@@ -74,7 +72,7 @@ export function NavigationCreate(props: INavigationCreateProps) {
       popupClassName: 'navigationCreate__popup',
       icon: (
         <Center className="navigationCreate__popupButtonWrapper" style={{ pointerEvents: 'none' }}>
-          <Button className="navigationCreate__popupButton" icon={<Icon icon={faPlus} />} />
+          <Button className="navigationCreate__popupButton" icon={<MpLogo/>} />
         </Center>
       ),
 

@@ -1,9 +1,8 @@
 import { Tooltip } from 'src/components'
 import { Space } from 'src/components'
 import { Center } from 'src/components'
-import { Icon } from 'src/components'
 import { Button } from 'src/components'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import MpLogo from 'src/assets/mpLogo.svg?react'
 
 interface INavigationSearchProps {
   onClick: () => void
@@ -22,7 +21,7 @@ export function NavigationSearch(props: INavigationSearchProps) {
         }
       >
         <Center className="globalNavigation__searchButtonWrapper">
-          <Button className="globalNavigation__searchButton" shape="round" icon={<Icon icon={faSearch}></Icon>} />
+          <Button className="globalNavigation__searchButton" shape="round" icon={<MpLogo/>} />
         </Center>
       </Tooltip>
     </span>
