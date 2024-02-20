@@ -1,7 +1,6 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { Pagination } from 'src/components/navigation/Pagination/Pagination'
-import { Icon } from 'src/components/general/Icon/Icon'
-import { faIcons } from '@fortawesome/free-solid-svg-icons'
+import MpLogo from 'src/assets/mpLogo.svg?react'
 
 const meta: Meta<typeof Pagination> = {
   title: 'Aquarium/Navigation/Pagination',
@@ -58,7 +57,7 @@ export const ResponsivePagination: Story = {
 
 export const ShowQuickJumperWithButton: Story = {
   args: {
-    showQuickJumper: { goButton: <Icon icon={faIcons} /> },
+    showQuickJumper: { goButton: <MpLogo/> },
   },
 }
 

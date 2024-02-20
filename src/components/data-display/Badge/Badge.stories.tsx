@@ -3,12 +3,11 @@ import { Badge } from 'src/components/data-display/Badge/Badge'
 import { ExampleStory } from 'src/utils/ExampleStory'
 import { Avatar, Button } from 'src/components'
 import { Space } from 'src/components'
-import { Icon } from 'src/components'
 import { Switch } from 'src/components'
 import { Card } from 'src/components'
 import { Divider } from 'src/components'
-import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
+import MpLogo from 'src/assets/mpLogo.svg?react'
 
 const meta: Meta<typeof Badge> = {
   title: 'Aquarium/Data Display/Badge',
@@ -97,7 +96,7 @@ export const ExampleBasic: Story = {
           <Badge count={0} showZero>
             <Avatar shape="square" size="large" />
           </Badge>
-          <Badge count={<Icon icon={faUser} />}>
+          <Badge count={<MpLogo />}>
             <Avatar shape="square" size="large" />
           </Badge>
         </Space>
@@ -112,10 +111,15 @@ export const ExampleStandalone: Story = {
     return (
       <ExampleStory title="Used in standalone when children is empty.">
         <Space>
-          <Switch checked={show} onChange={() => setShow(!show)} />
+          <Switch
+            checked={show}
+            onChange={() => {
+              setShow(!show)
+            }}
+          />
           <Badge count={show ? 11 : 0} showZero color="#faad14" />
           <Badge count={show ? 25 : 0} />
-          <Badge count={show ? <Icon icon={faUser} /> : 0} />
+          <Badge count={show ? <MpLogo /> : 0} />
           <Badge className="site-badge-count-109" count={show ? 109 : 0} style={{ backgroundColor: '#52c41a' }} />
         </Space>
       </ExampleStory>
@@ -168,7 +172,7 @@ export const ExampleDynamic: Story = {
       setCount(newCount)
     }
 
-    const onChange = (checked: boolean) => { 
+    const onChange = (checked: boolean) => {
       setShow(checked)
     }
 
@@ -205,10 +209,10 @@ export const ExampleOffset: Story = {
           <Avatar shape="square" size="large" />
         </Badge>
       </ExampleStory>
-    );
+    )
   },
-};
-  
+}
+
 export const ExampleStatus: Story = {
   render: () => {
     return (
@@ -229,25 +233,25 @@ export const ExampleStatus: Story = {
           <Badge status="warning" text="Warning" />
         </Space>
       </ExampleStory>
-    );
+    )
   },
-};
+}
 
 export const ExampleRibbon: Story = {
   render: () => {
     return (
       <ExampleStory title="Use ribbon badge.">
         <Space direction="vertical" size="middle" style={{ width: '200px' }}>
-        <Badge.Ribbon text="Ribbon">
-          <Card title="Card Title" size="small">
-            Card Inner text
-          </Card>
-        </Badge.Ribbon>
+          <Badge.Ribbon text="Ribbon">
+            <Card title="Card Title" size="small">
+              Card Inner text
+            </Card>
+          </Badge.Ribbon>
         </Space>
       </ExampleStory>
-    );
+    )
   },
-};
+}
 
 export const ExampleClickable: Story = {
   render: () => {
@@ -255,13 +259,13 @@ export const ExampleClickable: Story = {
       <ExampleStory title="The badge can be wrapped with a tag to make it linkable.">
         <a>
           <Badge count={5}>
-            <Avatar shape="square" size="large"/>
+            <Avatar shape="square" size="large" />
           </Badge>
         </a>
       </ExampleStory>
-    );
+    )
   },
-};
+}
 
 export const ExampleColors: Story = {
   render: () => {
@@ -279,12 +283,12 @@ export const ExampleColors: Story = {
       'volcano',
       'gold',
       'lime',
-    ];
+    ]
     return (
       <ExampleStory title="We preset a series of colorful Badge styles for use in different situations. You can also set it to a hex color string for custom color.">
         <Divider orientation="left">Presets</Divider>
         <Space direction="vertical">
-          {colors.map((color) => (
+          {colors.map(color => (
             <Badge key={color} color={color} text={color} />
           ))}
         </Space>
@@ -296,6 +300,6 @@ export const ExampleColors: Story = {
           <Badge color="hwb(205 6% 9%)" text="hwb(205 6% 9%)" />
         </Space>
       </ExampleStory>
-    );
+    )
   },
-};
+}

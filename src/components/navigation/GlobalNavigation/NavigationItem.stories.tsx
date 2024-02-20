@@ -1,8 +1,7 @@
-import { faShapes, faList } from '@fortawesome/free-solid-svg-icons'
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
-import { Icon } from 'src/components'
+import MpLogo from 'src/assets/mpLogo.svg?react'
 
 const meta: Meta<typeof NavigationItem> = {
   title: 'Aquarium/Navigation/NavigationItem',
@@ -20,7 +19,7 @@ export const Primary: Story = {}
 
 export const NavIcon: Story = {
   args: {
-    icon: <Icon icon={faShapes} />,
+    icon: <MpLogo/>,
     label: 'Icon Label',
     type: 'link',
     onClick: () => {
@@ -33,7 +32,7 @@ export const NavList: Story = {
   args: {
     label: 'List Label',
     type: 'menu',
-    icon: <Icon icon={faList} />,
+    icon: <MpLogo/>,
     items: [
       {
         label: 'Nav Item - Menu',

@@ -5,8 +5,7 @@ import { Space } from 'src/components'
 import { useState } from 'react'
 import { Button } from 'src/components'
 import { Icon } from 'src/components'
-import { faCheck } from '@fortawesome/free-solid-svg-icons'
-import { faIcons } from '@fortawesome/free-solid-svg-icons'
+import MpLogo from 'src/assets/mpLogo.svg?react'
 
 const meta: Meta<typeof Switch> = {
   title: 'Aquarium/Data Entry/Switch',
@@ -124,8 +123,8 @@ export const ExampleTextAndIcon: Story = {
           <Switch checkedChildren="Checked Text" unCheckedChildren="Unchecked Text" defaultChecked />
           <Switch checkedChildren="1" unCheckedChildren="0" />
           <Switch
-            checkedChildren={<Icon icon={faIcons} />}
-            unCheckedChildren={<Icon icon={faCheck} />}
+            checkedChildren={<MpLogo/>}
+            unCheckedChildren={<MpLogo/>}
             defaultChecked
           />
         </Space>
