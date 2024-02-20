@@ -37,6 +37,7 @@ function generateMenuItem(item: IGlobalNavigationManagement | IGlobalNavigationT
 
   if (item.type === 'menu' && item.children) {
     children = item.children.map((child, j) => ({
+      expandIcon: child.isNestedMenu ? true : null,
       key: `${String(child.label)}${j}`,
       ...child,
     }))
