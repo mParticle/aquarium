@@ -26661,8 +26661,7 @@ function r3(r) {
     C,
     ...M ? [E] : h,
     r.signout ? x : null
-  ];
-  let N = r.orgs.flatMap((G) => {
+  ], N = r.orgs.flatMap((G) => {
     let $ = [];
     const { accounts: z } = G;
     if (z) {
@@ -26670,8 +26669,7 @@ function r3(r) {
       $ = $.concat(P);
     }
     return $;
-  }).find((G) => G.isActive);
-  const L = [
+  }).find((G) => G.isActive), L = [
     {
       key: "WorkspaceSelector",
       icon: /* @__PURE__ */ B(YT, { className: "workspaceSelector__avatar", children: t3(N == null ? void 0 : N.label) }),
@@ -26696,6 +26694,7 @@ function r3(r) {
       id: z.id,
       key: z.id,
       accounts: z.accounts,
+      // todo: these are ending up in the html as attributes..
       workspaces: z.accounts.flatMap((P) => P.workspaces)
     }), z.accounts.forEach((P) => {
       $.push({
