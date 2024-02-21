@@ -73,6 +73,7 @@ import { InputNumberProps } from 'antd';
 import { InputProps } from 'antd';
 import { InputRef } from 'antd';
 import { RowProps as IRowProps } from 'antd';
+import { ITreeData as ITreeData_2 } from '../../../../../../../src/components';
 import { IWorkspaceSelectorDisplayItem } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
 import { IWorkspaceSelectorItem } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
 import { JSX as JSX_2 } from 'react/jsx-runtime';
@@ -130,6 +131,7 @@ import { TimePickerProps } from 'antd';
 import { TooltipPropsWithTitle } from 'antd/es/tooltip';
 import { TourProps } from 'antd';
 import { TransferProps } from 'antd';
+import { TreeDataNode } from 'antd';
 import { TreeProps } from 'antd';
 import { TreeSelectProps } from 'antd';
 import { UploadProps } from 'antd';
@@ -346,6 +348,7 @@ export declare interface IGlobalNavigationProps {
     tools: IGlobalNavigationTool_2[];
     management: IGlobalNavigationManagement_2[];
     orgs?: INavigationOrg_2[];
+    accountSwitcher?: ITreeData_2[];
     createItems?: INavigationCreateProps_2['createItems'];
     onSearchClick?: () => void;
     onMpHomeClick: () => void;
@@ -491,6 +494,9 @@ export declare interface ITourProps extends TourProps {
 }
 
 export declare interface ITransferProps extends TransferProps {
+}
+
+export declare interface ITreeData extends TreeDataNode {
 }
 
 export declare interface ITreeProps extends TreeProps {
