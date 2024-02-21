@@ -98,15 +98,13 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
       const { accounts } = org
       if (accounts) {
-        const workspaces = accounts.flatMap(({workspaces}) => workspaces)
+        const workspaces = accounts.flatMap(({ workspaces }) => workspaces)
         flattenedSelectors = flattenedSelectors.concat(workspaces)
       }
 
       return flattenedSelectors
     })
-    .find((
-      workspaceCandidate 
-    ) => (workspaceCandidate as INavigationWorkspace).isActive) as INavigationWorkspace
+    .find(workspaceCandidate => (workspaceCandidate as INavigationWorkspace).isActive) as INavigationWorkspace
 
   const items: IMenuProps['items'] = [
     {
@@ -122,10 +120,10 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
   return (
     <Menu
-      // openKeys={['WorkspaceSelector']} // testing only
+      openKeys={['WorkspaceSelector']} // testing only
       className="globalNavigation__menu globalNavigation__item globalNavigation__item--workspaceSelector"
       items={items}
-      onOpenChange={clearSearch}
+      // onOpenChange={clearSearch}
       expandIcon={null}
     />
   )

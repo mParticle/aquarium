@@ -6,9 +6,11 @@
 }
 
 .accountSelector__content {
-    height: 500px !important;
+    max-height: 500px !important;
+    height: 100% !important;
     padding: 0 !important;
     overflow-y: auto !important;
+    background-color: var(--color-white)
 }
 
 .accountSelector__search {

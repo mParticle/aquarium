@@ -1,20 +1,9 @@
 ﻿import 'src/utils/utils.css'
 import './account-selector.css'
 import { useMemo, useState } from 'react'
-import {
-  Avatar,
-  Button,
-  Center,
-  type INavigationWorkspace,
-  ITreeData,
-  ITreeProps,
-  type MenuItemType,
-  Result,
-  Tree,
-} from 'src/components'
+import { Avatar, Button, Center, Input, ITreeData, type MenuItemType, Result, Tree } from 'src/components'
 import { Menu } from 'src/components'
 import { type IMenuProps } from 'src/components'
-import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
 import { getInitials } from 'src/utils/utils'
 import Search from 'antd/es/input/Search'
 import * as React from 'react'
@@ -49,41 +38,6 @@ const getParentKey = (key: React.Key, tree: ITreeData[]): React.Key => {
 export function AccountSelector(props: IWorkspaceSelectorProps) {
   const [searchValue, setSearchValue] = useState('')
 
-  // const defaultTreeData: ITreeData[] = useMemo(
-  //   (): ITreeData[] =>
-  //     props.treeData.map(org => ({
-  //       key: org.id,
-  //       title: org.label,
-  //       disabled: true,
-  //       className: 'accountSelector__orgName',
-  //       children: org.accounts.map(acc => ({
-  //         key: acc.id,
-  //         title: acc.label,
-  //         disabled: true,
-  //         className: 'accountSelector__accountName',
-  //         children: acc.workspaces.map(ws => ({
-  //           key: ws.id,
-  //           title: ws.label,
-  //           className: 'accountSelector__workspaceName',
-  //         })),
-  //       })),
-  //     })),
-  //   [props.treeData],
-  // )
-
-  // const includeClasses = (className: string) => (data: ITreeData) => ({
-  //   ...data,
-  //   className
-  // })
-  //
-  // const defaultTreeData = useMemo(() => props.treeData.map(data => {
-  //   if (data.children) {
-  //
-  //   }
-  //
-  //   return includeClasses()
-  // }), [props.treeData])
-
   const searchableData = useMemo((): { key: React.Key; title: string }[] => {
     console.log('Generating searchableData from the original tree: ', props.treeData)
     const list: { key: React.Key; title: string }[] = []
@@ -111,18 +65,6 @@ export function AccountSelector(props: IWorkspaceSelectorProps) {
     const { value } = e.target
 
     console.log('Search is changing. We need to update current tree to match it', value)
-
-    // if (!value) {
-    //   setSearchValue(value)
-    //   setCurrentFilteredOrgs(defaultSetFromDataList())
-    //   return
-    // }
-
-    // if (!value) {
-    //   setCurrentShownKeys(defaultSetFromDataList())
-    //   setSearchValue(value)
-    //   return
-    // }
 
     const mapped = searchableData.map(item => {
       if (item.title.indexOf(value) > -1 || String(item.key).indexOf(value) > -1) {
@@ -154,7 +96,7 @@ export function AccountSelector(props: IWorkspaceSelectorProps) {
         })
         .map(item => {
           if (item.children) {
-            return { title: item.title, key: item.key, children: loop(item.children) }
+            return { title: item.title, key: item.key, disabled: true, children: loop(item.children) }
           }
 
           return {
@@ -182,16 +124,6 @@ export function AccountSelector(props: IWorkspaceSelectorProps) {
     ),
   }
 
-  const noResultsEl: MenuItemType = {
-    key: 'no-results',
-    className: 'accountSelector__noResults',
-    label: (
-      <Center>
-        <Result status="info" title="No results found" />
-      </Center>
-    ),
-  }
-
   // let activeWorkspace: string
   // defaultTreeData.find(org => {
   //   return org.children?.find(account => {
@@ -204,6 +136,23 @@ export function AccountSelector(props: IWorkspaceSelectorProps) {
   //   })
   // })
 
+  const searchInput: MenuItemType = {
+    key: 'search',
+    className: 'workspaceSelector__search',
+    label: (
+      <Input
+        placeholder="Search"
+        className="workspaceSelector__searchInput"
+        onChange={onChange}
+        value={searchValue}
+        onClick={e => {
+          e.preventDefault()
+          e.stopPropagation()
+        }}
+      />
+    ),
+  }
+
   const items: IMenuProps['items'] = [
     {
       key: 'AccountSelector',
@@ -211,17 +160,17 @@ export function AccountSelector(props: IWorkspaceSelectorProps) {
       icon: <Avatar className="accountSelector__avatar">WS</Avatar>,
       popupClassName: 'accountSelector',
       children: [
+        searchInput,
         {
           key: 'SearchableTree',
           className: 'accountSelector__content',
           label: (
             <>
-              <Search
-                placeholder="Search"
-                onChange={onChange}
-                className="accountSelector__searchInput"
-                value={searchValue}
-              />
+              {treeData.length === 0 && (
+                <Center>
+                  <Result className="accountSelector__noResults" status="info" title="No results found" />
+                </Center>
+              )}
               <Tree
                 defaultExpandAll
                 treeData={treeData}
