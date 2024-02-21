@@ -1,14 +1,21 @@
-.workspaceSelector {
+.accountSelector {
     .ant-menu {
         max-height: 500px !important;
+        overflow-y: hidden !important;
     }
 }
 
-.workspaceSelector__search {
+.accountSelector__content {
+    height: 500px !important;
+    padding: 0 !important;
+    overflow-y: auto !important;
+}
+
+.accountSelector__search {
     padding: 0 !important;
 }
 
-.workspaceSelector__noResults {
+.accountSelector__noResults {
     height: 100% !important;
     max-width: 200px;
     pointer-events: none;
@@ -22,27 +29,27 @@
     }
 }
 
-.workspaceSelector__avatar {
+.accountSelector__avatar {
     color: white !important;
 }
 
-.workspaceSelector__orgName {
+.accountSelector__orgName {
     color: var(--color-text-description);
     font-size: 12px;
     font-weight: 400;
     pointer-events: none;
 }
 
-.workspaceSelector__accountName {
+.accountSelector__accountName {
     height: var(--control-height);
     padding: var(--padding-xxs) var(--control-padding-horizontal);
     pointer-events: none;
 }
 
-.workspaceSelector__workspaceName {
+.accountSelector__workspaceName {
     padding-left: calc(var(--padding-sm) + var(--padding)) !important;
 
-    &.workspaceSelector__workspaceName--active {
+    &.accountSelector__workspaceName--active {
         /* todo: check these vars/names... */
         border-radius: 4px; /* var(--Components-Menu-Global-borderRadius, 4px); */
         background: #ebe8f8; /* var(--Components-Menu-Component-itemSelectedBg, #EBE8F8); */
@@ -50,24 +57,24 @@
 }
 
 
-.workspaceSelector__orgName,
-.workspaceSelector__accountName {
+.accountSelector__orgName,
+.accountSelector__accountName {
     pointer-events: none; /* only workspaces are clickable */
 }
 
-.workspaceSelector__orgName,
-.workspaceSelector__accountName,
-.workspaceSelector__workspaceName {
+.accountSelector__orgName,
+.accountSelector__accountName,
+.accountSelector__workspaceName {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
 }
 
-.workspaceSelector__signout {
+.accountSelector__signout {
     margin: var(--margin-xs) !important;
     padding: 0 !important;
 }
-.workspaceSelector__signout,
-.workspaceSelector__signoutButton {
+.accountSelector__signout,
+.accountSelector__signoutButton {
     padding: 0 !important;
     width: 100% !important;
 }

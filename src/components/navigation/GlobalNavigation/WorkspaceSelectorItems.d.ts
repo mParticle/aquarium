@@ -15,8 +15,8 @@ export interface INavigationAccount extends IWorkspaceSelectorItem {
 }
 
 export interface INavigationWorkspace extends IWorkspaceSelectorItem {
-  isActive: boolean// todo: is this needed? 
-  onClick: (info: MenuInfo) => void
+  isActive: boolean // todo: is this needed?
+  onClick?: (info: MenuInfo) => void
 }
 
 export interface IWorkspaceSelectorDisplayItem extends MenuItemType {
@@ -24,7 +24,7 @@ export interface IWorkspaceSelectorDisplayItem extends MenuItemType {
   className: string
   label: string
   id: string
-  
+
   accounts?: INavigationAccount[]
   workspaces?: INavigationWorkspace[]
 }
