@@ -10,7 +10,7 @@ export default defineConfig({
       design: '/design',
     },
   },
-  
+
   plugins: [svgr(), dts({ include: 'src/components', rollupTypes: true })],
 
   build: {
@@ -24,7 +24,7 @@ export default defineConfig({
       fileName: 'aquarium',
     },
     rollupOptions: {
-      external: ['react', 'react/jsx-runtime'],
+      external: ['react', 'react/jsx-runtime', 'antd'],
       output: {
         globals: {
           antd: 'antd',
