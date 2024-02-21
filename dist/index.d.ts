@@ -42,7 +42,6 @@ import { ErrorListProps } from 'antd/es/form';
 import { FC } from 'react';
 import { FlexProps } from 'antd';
 import { FloatButtonProps } from 'antd';
-import { FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
 import { FormItemProps } from 'antd';
 import { FormListProps } from 'antd/es/form';
 import { FormProps } from 'antd';
@@ -52,29 +51,29 @@ import { Grid } from 'antd';
 import { GroupProps } from 'antd/es/input';
 import { GroupProps as GroupProps_2 } from 'antd/es/avatar';
 import { ColProps as IColProps } from 'antd';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { IFlexProps as IFlexProps_2 } from '../../../../../../src/components/layout/Flex/Flex';
-import { IGlobalNavigationLogo } from '../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
-import { IGlobalNavigationLogo as IGlobalNavigationLogo_2 } from '../../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
-import { IGlobalNavigationManagement } from '../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
-import { IGlobalNavigationManagement as IGlobalNavigationManagement_2 } from '../../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
-import { IGlobalNavigationTool } from '../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
-import { IGlobalNavigationTool as IGlobalNavigationTool_2 } from '../../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
+import { IFlexProps as IFlexProps_2 } from '../../../../../../../src/components/layout/Flex/Flex';
+import { IGlobalNavigationLogo } from '../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
+import { IGlobalNavigationLogo as IGlobalNavigationLogo_2 } from '../../../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
+import { IGlobalNavigationManagement } from '../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
+import { IGlobalNavigationManagement as IGlobalNavigationManagement_2 } from '../../../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
+import { IGlobalNavigationTool } from '../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
+import { IGlobalNavigationTool as IGlobalNavigationTool_2 } from '../../../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
 import { ImageProps } from 'antd';
 import { IMentionsProps } from './data-entry/Mentions/Mentions';
-import { IModalProps as IModalProps_2 } from '../../../../../../src/components/feedback/Modal/Modal';
+import { IModalProps as IModalProps_2 } from '../../../../../../../src/components/feedback/Modal/Modal';
 import { INavigationAccount } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
-import { INavigationCreateGroup } from '../../../../src/components/navigation/GlobalNavigation/NavigationCreate';
-import { INavigationCreateItem } from '../../../../src/components/navigation/GlobalNavigation/NavigationCreate';
-import { INavigationCreateProps } from '../../../../src/components/navigation/GlobalNavigation/NavigationCreate';
-import { INavigationCreateProps as INavigationCreateProps_2 } from '../../../../../../src/components';
+import { INavigationCreateGroup } from '../../../../../src/components/navigation/GlobalNavigation/NavigationCreate';
+import { INavigationCreateItem } from '../../../../../src/components/navigation/GlobalNavigation/NavigationCreate';
+import { INavigationCreateProps } from '../../../../../src/components/navigation/GlobalNavigation/NavigationCreate';
+import { INavigationCreateProps as INavigationCreateProps_2 } from '../../../../../../../src/components';
 import { INavigationOrg } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
-import { INavigationOrg as INavigationOrg_2 } from '../../../../../../src/components/navigation/GlobalNavigation/WorkspaceSelectorItems';
+import { INavigationOrg as INavigationOrg_2 } from '../../../../../../../src/components/navigation/GlobalNavigation/WorkspaceSelectorItems';
 import { INavigationWorkspace } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
 import { InputNumberProps } from 'antd';
 import { InputProps } from 'antd';
 import { InputRef } from 'antd';
 import { RowProps as IRowProps } from 'antd';
+import { ITreeData as ITreeData_2 } from '../../../../../../../src/components';
 import { IWorkspaceSelectorDisplayItem } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
 import { IWorkspaceSelectorItem } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
 import { JSX as JSX_2 } from 'react/jsx-runtime';
@@ -132,6 +131,7 @@ import { TimePickerProps } from 'antd';
 import { TooltipPropsWithTitle } from 'antd/es/tooltip';
 import { TourProps } from 'antd';
 import { TransferProps } from 'antd';
+import { TreeDataNode } from 'antd';
 import { TreeProps } from 'antd';
 import { TreeSelectProps } from 'antd';
 import { UploadProps } from 'antd';
@@ -308,8 +308,6 @@ export declare interface IColorPickerProps extends ColorPickerProps {
 
 export { IColProps }
 
-export declare const Icon: (props: IIconProps) => JSX_2.Element;
-
 export declare interface IConfigProviderProps extends ConfigProviderProps {
 }
 
@@ -350,6 +348,7 @@ export declare interface IGlobalNavigationProps {
     tools: IGlobalNavigationTool_2[];
     management: IGlobalNavigationManagement_2[];
     orgs?: INavigationOrg_2[];
+    accountSwitcher?: ITreeData_2[];
     createItems?: INavigationCreateProps_2['createItems'];
     onSearchClick?: () => void;
     onMpHomeClick: () => void;
@@ -358,10 +357,6 @@ export declare interface IGlobalNavigationProps {
 }
 
 export { IGlobalNavigationTool }
-
-export declare interface IIconProps extends FontAwesomeIconProps {
-    icon: IconProp;
-}
 
 export declare interface IImageProps extends ImageProps {
 }
@@ -499,6 +494,9 @@ export declare interface ITourProps extends TourProps {
 }
 
 export declare interface ITransferProps extends TransferProps {
+}
+
+export declare interface ITreeData extends TreeDataNode {
 }
 
 export declare interface ITreeProps extends TreeProps {

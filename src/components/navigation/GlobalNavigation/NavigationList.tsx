@@ -7,6 +7,7 @@ import { Center } from 'src/components'
 import { type IGlobalNavigationManagement } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IGlobalNavigationTool } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IGlobalNavigationLink } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
+import { Fragment } from 'react'
 
 export interface INavigationListProps {
   items: Array<IGlobalNavigationManagement | IGlobalNavigationTool>
@@ -16,7 +17,7 @@ export function NavigationList(props: INavigationListProps) {
   return (
     <Center vertical>
       {props.items.map((item, i) => (
-        <>
+        <Fragment key={i}>
           {item.type === 'link' && <NavigationItem {...item} key={i} />}
           {item.type === 'menu' && (
             <Menu
@@ -26,7 +27,7 @@ export function NavigationList(props: INavigationListProps) {
               className="globalNavigation__menu"
             />
           )}
-        </>
+        </Fragment>
       ))}
     </Center>
   )
@@ -37,6 +38,7 @@ function generateMenuItem(item: IGlobalNavigationManagement | IGlobalNavigationT
 
   if (item.type === 'menu' && item.children) {
     children = item.children.map((child, j) => ({
+      expandIcon: child.isNestedMenu ? true : null,
       key: `${String(child.label)}${j}`,
       ...child,
     }))
@@ -53,6 +55,7 @@ function generateMenuItem(item: IGlobalNavigationManagement | IGlobalNavigationT
         hideLabel={item.hideLabel}
       />
     ),
+    popupClassName: 'globalNavigation__popup',
     className: 'globalNavigation__item' + (item.isActive ? ' globalNavigation__item--active' : ''),
     key: `${item.label}${i}`,
     children,

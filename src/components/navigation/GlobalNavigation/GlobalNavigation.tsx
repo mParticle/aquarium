@@ -1,6 +1,6 @@
 import 'src/styles/_variables.css'
 import './global-navigation.css'
-import { Layout } from 'src/components'
+import { ITreeData, Layout } from 'src/components'
 import { Flex } from 'src/components'
 import { Center } from 'src/components'
 import { type INavigationCreateProps } from 'src/components'
@@ -10,11 +10,12 @@ import { NavigationSearch } from 'src/components/navigation/GlobalNavigation/Nav
 import { NavigationList } from 'src/components/navigation/GlobalNavigation/NavigationList'
 import { NavigationCreate } from 'src/components/navigation/GlobalNavigation/NavigationCreate'
 import { WorkspaceSelector } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector'
+import { AccountSelector } from 'src/components/navigation/GlobalNavigation/AccountSelector'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
 import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IGlobalNavigationManagement } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IGlobalNavigationTool } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
-import MpLogo from 'src/assets/mpLogo.svg?react'
+import MpLogo from 'src/assets/svg/mpLogo.svg?react'
 
 export interface IGlobalNavigationProps {
   logo: IGlobalNavigationLogo
@@ -22,6 +23,8 @@ export interface IGlobalNavigationProps {
   management: IGlobalNavigationManagement[]
 
   orgs?: INavigationOrg[]
+  accountSwitcher?: ITreeData[]
+
   createItems?: INavigationCreateProps['createItems']
   onSearchClick?: () => void
   onMpHomeClick: () => void
@@ -50,7 +53,14 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
           <div>
             <NavigationList items={props.management} />
 
-            {props.orgs && <WorkspaceSelector orgs={props.orgs} signout={props.signout}/>}
+            {props.orgs && <WorkspaceSelector orgs={props.orgs} signout={props.signout} />}
+            {props.accountSwitcher && (
+              <AccountSelector
+                treeData={props.accountSwitcher}
+                signout={props.signout}
+                onClick={item => alert(`Clicked on: ${item.title}`)}
+              />
+            )}
 
             {!props.hideMpHome && (
               <Tooltip title="mParticle Overview" placement="right">

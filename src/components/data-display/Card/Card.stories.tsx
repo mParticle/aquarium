@@ -6,12 +6,9 @@ import { Col } from 'src/components'
 import { Row } from 'src/components'
 import { useState } from 'react'
 import { Switch } from 'src/components'
-import { Icon } from 'src/components'
-import { faGear } from '@fortawesome/free-solid-svg-icons'
 import { Avatar } from 'src/components'
 import { Skeleton } from 'src/components'
-import { faEdit } from '@fortawesome/free-solid-svg-icons'
-import { faEllipsis } from '@fortawesome/free-solid-svg-icons'
+import MpLogo from 'src/assets/svg/mpLogo.svg?react'
 
 const meta: Meta<typeof Card> = {
   title: 'Aquarium/Data Display/Card',
@@ -203,9 +200,9 @@ export const ExampleLoading: Story = {
           <Card
             style={{ width: 300, marginTop: 16 }}
             actions={[
-              <Icon icon={faGear} key="setting" />,
-              <Icon icon={faEdit} key="edit" />,
-              <Icon icon={faEllipsis} key="ellipsis" />,
+              <MpLogo key={1}/>,
+              <MpLogo key={2}/>,
+              <MpLogo key={3}/>,
             ]}
           >
             <Skeleton loading={loading} avatar>
@@ -327,9 +324,9 @@ export const ExampleContentConfiguration: Story = {
           style={{ width: 300 }}
           cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
           actions={[
-            <Icon icon={faGear} key="setting" />,
-            <Icon icon={faEdit} key="edit" />,
-            <Icon icon={faEllipsis} key="ellipsis" />,
+            <MpLogo key={1}/>,
+            <MpLogo key={2}/>,
+            <MpLogo key={3}/>,
           ]}
         >
           <Card.Meta
