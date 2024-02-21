@@ -8,7 +8,7 @@ import { useRef } from 'react'
 import { Form } from 'src/components'
 import { Button } from 'src/components'
 import { Space } from 'antd'
-import MpLogo from 'src/assets/mpLogo.svg?react'
+import MpLogo from 'src/assets/svg/mpLogo.svg?react'
 
 const meta: Meta<typeof Mentions> = {
   title: 'Aquarium/Data Entry/Mentions',

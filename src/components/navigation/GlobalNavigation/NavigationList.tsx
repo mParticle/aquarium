@@ -38,6 +38,7 @@ function generateMenuItem(item: IGlobalNavigationManagement | IGlobalNavigationT
 
   if (item.type === 'menu' && item.children) {
     children = item.children.map((child, j) => ({
+      expandIcon: child.isNestedMenu ? true : null,
       key: `${String(child.label)}${j}`,
       ...child,
     }))
@@ -54,6 +55,7 @@ function generateMenuItem(item: IGlobalNavigationManagement | IGlobalNavigationT
         hideLabel={item.hideLabel}
       />
     ),
+    popupClassName: 'globalNavigation__popup',
     className: 'globalNavigation__item' + (item.isActive ? ' globalNavigation__item--active' : ''),
     key: `${item.label}${i}`,
     children,

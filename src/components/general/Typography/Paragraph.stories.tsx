@@ -7,7 +7,7 @@ import { useState } from 'react'
 import { Radio } from 'src/components'
 import { Switch } from 'src/components'
 import { Slider } from 'src/components'
-import MpLogo from 'src/assets/mpLogo.svg?react'
+import MpLogo from 'src/assets/svg/mpLogo.svg?react'
 
 const meta: Meta<typeof Paragraph> = {
   title: 'Aquarium/General/Paragraph',

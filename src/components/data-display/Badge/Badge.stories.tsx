@@ -7,7 +7,7 @@ import { Switch } from 'src/components'
 import { Card } from 'src/components'
 import { Divider } from 'src/components'
 import { useState } from 'react'
-import MpLogo from 'src/assets/mpLogo.svg?react'
+import MpLogo from 'src/assets/svg/mpLogo.svg?react'
 
 const meta: Meta<typeof Badge> = {
   title: 'Aquarium/Data Display/Badge',

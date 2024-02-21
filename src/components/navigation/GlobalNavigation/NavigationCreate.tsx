@@ -7,7 +7,8 @@ import { Button } from 'src/components'
 import { Flex } from 'src/components'
 import { Tooltip } from 'src/components'
 import { Spin } from 'src/components'
-import MpLogo from 'src/assets/mpLogo.svg?react'
+import MpLogo from 'src/assets/svg/mpLogo.svg?react'
+import Lock from 'src/assets/svg/lock.svg?react'
 
 export interface INavigationCreateProps {
   createItems: Array<INavigationCreateItem | INavigationCreateGroup>
@@ -56,7 +57,7 @@ export function NavigationCreate(props: INavigationCreateProps) {
             <span className="navigationCreate__itemTitle">
               {item.title}
               {item.isLoading && <Spin className="navigationCreate__itemLoading" size="small" />}
-              {isLocked && <MpLogo/>}
+              {isLocked && <Lock className="navigationCreate__lockIcon"/>}
             </span>
 
             <span className="navigationCreate__itemDescription">{item.description}</span>
@@ -69,10 +70,10 @@ export function NavigationCreate(props: INavigationCreateProps) {
   const items: IMenuProps['items'] = [
     {
       key: 'NavigationCreate',
-      popupClassName: 'navigationCreate__popup',
+      popupClassName: 'globalNavigation__popup globalNavigation__popup--navigationCreate',
       icon: (
         <Center className="navigationCreate__popupButtonWrapper" style={{ pointerEvents: 'none' }}>
-          <Button className="navigationCreate__popupButton" icon={<MpLogo/>} />
+          <Button className="navigationCreate__popupButton" icon={<MpLogo className="navigationCreate__popupIcon"/>} />
         </Center>
       ),
 
@@ -83,7 +84,7 @@ export function NavigationCreate(props: INavigationCreateProps) {
   return (
     <Center>
       <Menu
-        className=" globalNavigation__item globalNavigation__item--createNew"
+        className="globalNavigation__item globalNavigation__item--createNew"
         items={items}
         expandIcon={null}
         // defaultOpenKeys={['NavigationCreate']} /* testing only */

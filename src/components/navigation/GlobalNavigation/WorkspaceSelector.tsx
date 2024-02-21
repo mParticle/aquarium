@@ -18,6 +18,7 @@ import { useMemo } from 'react'
 import { debounce } from 'src/utils/utils'
 import { Button } from 'src/components'
 import { getInitials } from 'src/utils/utils'
+import { useRef } from 'react'
 
 export interface IWorkspaceSelectorProps {
   orgs: INavigationOrg[]
@@ -36,11 +37,10 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
   const setCurrentFilteredOrgsDebounced = useCallback(debounce(setCurrentFilteredOrgs, 200), [])
 
   const menuItems: IWorkspaceSelectorDisplayItem[] = useMemo(
-    () => generateDisplayItems(currentFilteredOrgs),
+    () => generateDisplayItems(/* currentFilteredOrgs */),
     currentFilteredOrgs,
   )
 
-  // todo: use ref here, because we dont expect this to change
   const searchInput: MenuItemType = {
     key: 'search',
     className: 'workspaceSelector__search',
@@ -58,7 +58,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
     ),
   }
 
-  const signoutButton: MenuItemType = {
+  const signoutButton = useRef<MenuItemType>({
     key: 'signout',
     className: 'workspaceSelector__signout',
     label: (
@@ -72,7 +72,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
         Sign Out of mParticle
       </Button>
     ),
-  }
+  })
 
   const noResultsEl: MenuItemType = {
     key: 'no-results',
@@ -89,10 +89,11 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
   const menuChildren = [
     searchInput,
     ...(hasNoResults ? [noResultsEl] : menuItems),
-    props.signout ? signoutButton : null,
+    props.signout ? signoutButton.current : null,
   ]
 
-  let activeWorkspace: INavigationWorkspace = props.orgs
+  // todo: this probably doesnt need to be calculated on every render
+  const activeWorkspace: INavigationWorkspace = props.orgs
     .flatMap<INavigationWorkspace>(org => {
       let flattenedSelectors: INavigationWorkspace[] = []
 
@@ -120,15 +121,15 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
   return (
     <Menu
-      openKeys={['WorkspaceSelector']} // testing only
+      // openKeys={['WorkspaceSelector']} // testing only
       className="globalNavigation__menu globalNavigation__item globalNavigation__item--workspaceSelector"
       items={items}
-      // onOpenChange={clearSearch}
+      onOpenChange={clearSearch}
       expandIcon={null}
     />
   )
 
-  function generateDisplayItems(orgs: INavigationOrg[]): IWorkspaceSelectorDisplayItem[] {
+  function generateDisplayItems(/* orgs: INavigationOrg[] */): IWorkspaceSelectorDisplayItem[] {
     return currentFilteredOrgs.reduce<IWorkspaceSelectorDisplayItem[]>((total, org) => {
       total.push({
         type: 'org',
@@ -136,7 +137,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
         label: org.label,
         id: org.id,
         key: org.id,
-        accounts: org.accounts,
+        accounts: org.accounts, // todo: these are ending up in the html as attributes..
         workspaces: org.accounts.flatMap(account => account.workspaces),
       })
 

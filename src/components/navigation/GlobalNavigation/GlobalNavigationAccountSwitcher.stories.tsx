@@ -4,7 +4,7 @@ import { GlobalNavigation, ITreeData } from 'src/components'
 import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IGlobalNavigationManagement } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IGlobalNavigationTool } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
-import MpLogo from 'src/assets/mpLogo.svg?react'
+import MpLogo from 'src/assets/svg/mpLogo.svg?react'
 
 const singleLevelOrg: ITreeData[] = [
   {

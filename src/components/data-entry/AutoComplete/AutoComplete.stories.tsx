@@ -6,7 +6,7 @@ import { Flex } from 'src/components'
 import { type ISelectProps } from 'src/components/data-entry/Select/Select'
 import { ExampleStory } from 'src/utils/ExampleStory'
 import { useState } from 'react'
-import MpLogo from 'src/assets/mpLogo.svg?react'
+import MpLogo from 'src/assets/svg/mpLogo.svg?react'
 
 const baseOptions = [
   { label: 'The quick brown fox jumps over the lazy dog', value: 1 },

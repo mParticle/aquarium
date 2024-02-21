@@ -1,7 +1,7 @@
 import { Button } from 'src/components/general/Button/Button'
 import { type Meta, type StoryObj } from '@storybook/react'
 import { userEvent } from '@storybook/test'
-import MpLogo from 'src/assets/mpLogo.svg?react'
+import MpLogo from 'src/assets/svg/mpLogo.svg?react'
 
 const meta: Meta<typeof Button> = {
   title: 'Aquarium/General/Button',

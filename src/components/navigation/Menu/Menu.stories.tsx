@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { type Meta, type StoryObj } from '@storybook/react'
 import { Menu, type IMenuProps } from 'src/components/navigation/Menu/Menu'
 import { ExampleStory } from 'src/utils/ExampleStory'
-import MpLogo from 'src/assets/mpLogo.svg?react'
+import MpLogo from 'src/assets/svg/mpLogo.svg?react'
 
 import { type MenuProps } from 'antd'
 import { Button } from 'src/components'

@@ -4,8 +4,7 @@ import { ExampleStory } from 'src/utils/ExampleStory'
 import { Space } from 'src/components'
 import { useState } from 'react'
 import { Button } from 'src/components'
-import { Icon } from 'src/components'
-import MpLogo from 'src/assets/mpLogo.svg?react'
+import MpLogo from 'src/assets/svg/mpLogo.svg?react'
 
 const meta: Meta<typeof Switch> = {
   title: 'Aquarium/Data Entry/Switch',

@@ -1,6 +1,6 @@
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
-import MpLogo from 'src/assets/mpLogo.svg?react'
+import MpLogo from 'src/assets/svg/mpLogo.svg?react'
 import { Avatar } from 'src/components/data-display/Avatar/Avatar'
 import { ExampleStory } from 'src/utils/ExampleStory'
 import { Space } from 'src/components'
