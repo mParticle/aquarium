@@ -105,7 +105,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
       return flattenedSelectors
     })
-    .find(workspaceCandidate => workspaceCandidate.isActive)!
+    .find(workspaceCandidate => (workspaceCandidate as INavigationWorkspace).isActive) as INavigationWorkspace
 
   const items: IMenuProps['items'] = [
     {
