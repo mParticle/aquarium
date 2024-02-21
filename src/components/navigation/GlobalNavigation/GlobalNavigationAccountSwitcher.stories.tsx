@@ -27,8 +27,8 @@ const doubleLevelOrg: ITreeData[] = [
         title: 'Account 1-1',
       },
       {
-        key: 'account2-1',
-        title: 'Account 2-1',
+        key: 'account1-2',
+        title: 'Account 1-2',
       },
     ],
   },
@@ -37,8 +37,8 @@ const doubleLevelOrg: ITreeData[] = [
     title: 'Org 2',
     children: [
       {
-        key: 'account2-2',
-        title: 'Account 2-2',
+        key: 'account2-1',
+        title: 'Account 2-1',
       },
       {
         key: 'account2-2',

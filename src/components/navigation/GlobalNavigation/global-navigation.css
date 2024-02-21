@@ -193,7 +193,7 @@
 }
 
 .globalNavigation__icon.globalNavigation__icon--suiteLogo {
-    padding-bottom: var(--padding-xs);
+    padding-bottom: var(--padding-xxs);
 
     svg {
         width: 20px;
@@ -203,7 +203,6 @@
 
 
 .globalNavigation__iconLabel {
-    padding-top: var(--margin-xxs);
     color: var(--color-text);
     font-size: 10px;
 }
@@ -249,18 +248,21 @@
     padding-top: var(--padding-lg);
     color: black;
     font-size: var(--font-size-sm);
+    font-weight: 400;
     cursor: default;
 }
 
 .globalNavigation__divider {
     border-bottom: 1px solid var(--color-border-secondary);
     width: 80%;
-    margin-top: var(--margin-lg);
+    margin-top: var(--margin-md);
+    margin-bottom: var(--margin-md);
 }
 
 
 .globalNavigation__mpHome {
     padding: var(--padding-lg, 20px); /* TODO: dependency between padding-lg/md and 20 from figma... */
+    margin-top: var(--margin-xs);
     width: var(--nav-width);
     height: var(--nav-item-height);
     background-color: black;

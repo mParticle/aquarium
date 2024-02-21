@@ -10,7 +10,7 @@ export default defineConfig({
       design: '/design',
     },
   },
-  
+
   plugins: [svgr(), dts({ include: 'src/components', rollupTypes: true })],
 
   build: {
