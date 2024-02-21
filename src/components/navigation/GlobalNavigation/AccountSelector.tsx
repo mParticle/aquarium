@@ -21,6 +21,7 @@ export interface IWorkspaceSelectorProps {
 }
 
 const getParentKey = (key: React.Key, tree: ITreeData[]): React.Key => {
+  console.log('getParentKey from:', key)
   let parentKey: React.Key
   for (let i = 0; i < tree.length; i++) {
     const node = tree[i]
@@ -54,6 +55,7 @@ export function AccountSelector(props: IWorkspaceSelectorProps) {
 
     generateList(props.treeData)
 
+    console.log('Searchable data generated:', list)
     return list
   }, [props.treeData])
 

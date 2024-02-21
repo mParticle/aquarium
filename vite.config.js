@@ -24,7 +24,7 @@ export default defineConfig({
       fileName: 'aquarium',
     },
     rollupOptions: {
-      external: ['react', 'react/jsx-runtime', 'antd'],
+      external: ['react', 'react/jsx-runtime'],
       output: {
         globals: {
           antd: 'antd',
