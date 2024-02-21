@@ -101,6 +101,18 @@
     box-shadow: 0 2px 0 0 rgba(54, 0, 209, 0.10);
 }
 
+.navigationCreate__popupIcon,
+.globalNavigation__searchIcon {
+    width: var(--size-lg) !important;
+    height: var(--size-lg) !important;
+}
+
+.navigationCreate__lockIcon {
+    padding-left: var(--padding-xs);
+    width: var(--size-sm) !important;
+    height: var(--size-sm) !important;
+}
+
 .globalNavigation__searchButton {
     padding-inline: var(--padding-xs) var(--padding-xs) !important;
 }
@@ -259,5 +271,5 @@
 
 .globalNavigation__mpSvg {
     width: 28px;
-    height: 24px;
+    height: var(--size-lg);
 }

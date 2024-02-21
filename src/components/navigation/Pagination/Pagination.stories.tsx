@@ -1,6 +1,6 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { Pagination } from 'src/components/navigation/Pagination/Pagination'
-import MpLogo from 'src/assets/mpLogo.svg?react'
+import MpLogo from 'src/assets/svg/mpLogo.svg?react'
 
 const meta: Meta<typeof Pagination> = {
   title: 'Aquarium/Navigation/Pagination',

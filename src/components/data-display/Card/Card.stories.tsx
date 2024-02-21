@@ -8,7 +8,7 @@ import { useState } from 'react'
 import { Switch } from 'src/components'
 import { Avatar } from 'src/components'
 import { Skeleton } from 'src/components'
-import MpLogo from 'src/assets/mpLogo.svg?react'
+import MpLogo from 'src/assets/svg/mpLogo.svg?react'
 
 const meta: Meta<typeof Card> = {
   title: 'Aquarium/Data Display/Card',

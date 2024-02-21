@@ -8,7 +8,7 @@ import { ExampleStory } from 'src/utils/ExampleStory'
 import { useState } from 'react'
 import { userEvent } from '@storybook/test'
 import { expect } from '@storybook/test'
-import MpLogo from 'src/assets/mpLogo.svg?react'
+import MpLogo from 'src/assets/svg/mpLogo.svg?react'
 
 const meta: Meta<typeof Tag> = {
   title: 'Aquarium/Data Display/Tag',

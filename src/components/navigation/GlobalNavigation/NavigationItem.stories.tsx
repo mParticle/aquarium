@@ -1,7 +1,7 @@
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
-import MpLogo from 'src/assets/mpLogo.svg?react'
+import MpLogo from 'src/assets/svg/mpLogo.svg?react'
 
 const meta: Meta<typeof NavigationItem> = {
   title: 'Aquarium/Navigation/NavigationItem',
