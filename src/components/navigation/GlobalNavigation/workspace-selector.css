@@ -1,8 +1,7 @@
-.workspaceSelector {
-    .ant-menu {
-        max-height: 500px !important;
-    }
+.workspaceSelector .ant-menu {
+    max-height: 500px !important;
 }
+
 
 .workspaceSelector__search {
     position: sticky !important;
@@ -20,14 +19,14 @@
     height: 100% !important;
     max-width: 200px;
     pointer-events: none;
+}
 
-    .ant-menu-title-content {
-        height: 100% !important;
-    }
+.workspaceSelector__noResults .ant-menu-title-content {
+    height: 100% !important;
+}
 
-    .ant-result-title {
-        font-size: var(--font-size);
-    }
+.workspaceSelector__noResults .ant-result-title {
+    font-size: var(--font-size);
 }
 
 .workspaceSelector__avatar {
@@ -39,12 +38,12 @@
     pointer-events: none;
     font-weight: 500;
     padding: var(--padding-xxs) var(--control-padding-horizontal) !important;
+}
 
-    &:not(:nth-child(2)) {
-        padding-left: var(--padding-xs);
-        padding-right: var(--padding-xs);
-        border-top: 1px solid var(--color-border-secondary);
-    }
+.workspaceSelector__orgName:not(:nth-child(2)) {
+    padding-left: var(--padding-xs);
+    padding-right: var(--padding-xs);
+    border-top: 1px solid var(--color-border-secondary);
 }
 
 .workspaceSelector__accountName {
@@ -55,11 +54,11 @@
 
 .workspaceSelector__workspaceName {
     padding-left: calc(var(--padding-sm) + var(--padding)) !important;
+}
 
-    &.workspaceSelector__workspaceName--active {
-        border-radius: 4px; /* var(--Components-Menu-Global-borderRadius, 4px); */ /* todo: check this vars/name... */
-        background: var(--control-item-bg-active) !important;
-    }
+.workspaceSelector__workspaceName.workspaceSelector__workspaceName--active {
+    border-radius: 4px;
+    background: var(--control-item-bg-active) !important;
 }
 
 
@@ -87,6 +86,6 @@
 }
 
 .workspaceSelector__signoutButton {
-    padding:0 !important;
+    padding: 0 !important;
     width: 100% !important;
 }
