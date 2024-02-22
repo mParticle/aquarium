@@ -200,6 +200,9 @@
     height: 20px;
 }
 
+.globalNavigation__menu .globalNavigation__iconLabel {
+    margin-top: var(--margin-xxs);
+}
 
 .globalNavigation__iconLabel {
     color: var(--color-text);
