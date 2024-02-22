@@ -353,7 +353,10 @@ export declare interface IGlobalNavigationProps {
     onSearchClick?: () => void;
     onMpHomeClick: () => void;
     hideMpHome?: boolean;
-    signout?: () => void;
+    signoutOptions?: {
+        label?: string;
+        onSignout: () => void;
+    };
 }
 
 export { IGlobalNavigationTool }
