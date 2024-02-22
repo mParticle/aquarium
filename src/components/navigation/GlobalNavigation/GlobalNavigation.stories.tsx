@@ -13,25 +13,25 @@ import MpLogo from 'src/assets/svg/mpLogo.svg?react'
 
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',
-  icon: <MpLogo/>,
+  icon: <MpLogo />,
 }
 const defaultTools: IGlobalNavigationTool[] = [
   {
     label: 'Tool 1',
     isActive: true,
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Tool 2',
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Tool 3',
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
     type: 'link',
   },
 ]
@@ -39,20 +39,20 @@ const defaultManagement: IGlobalNavigationManagement[] = [
   {
     label: 'Notifications',
     hideLabel: true,
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
     type: 'link',
   },
   {
     label: 'Support',
     hideLabel: true,
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Settings',
     hideLabel: true,
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
@@ -89,7 +89,11 @@ const meta: Meta<typeof GlobalNavigation> = {
     tools: defaultTools,
     management: defaultManagement,
     orgs: defaultOrgs,
-    signout:() => { alert('Signing Out!') }
+    signoutOptions: {
+      onSignout: () => {
+        alert('signing out!')
+      },
+    },
   },
 }
 export default meta
@@ -100,7 +104,7 @@ export const Primary: Story = {}
 
 const mpLogo: IGlobalNavigationLogo = {
   label: 'Data Platform',
-  icon: <MpLogo/>,
+  icon: <MpLogo />,
 }
 
 function Beta(label: string) {
@@ -115,7 +119,7 @@ function Beta(label: string) {
 const mpTools: IGlobalNavigationTool[] = [
   {
     label: 'Activity',
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
     type: 'menu',
     children: [
       { label: 'Platform Trends' },
@@ -133,7 +137,7 @@ const mpTools: IGlobalNavigationTool[] = [
   },
   {
     label: 'Data Master',
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
     type: 'menu',
     children: [
       { label: 'Catalog' },
@@ -146,13 +150,13 @@ const mpTools: IGlobalNavigationTool[] = [
   },
   {
     label: 'Audiences',
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
     type: 'menu',
     children: [{ label: 'Real-time' }, { label: 'Standard' }, { label: 'Journeys' }],
   },
   {
     label: 'Observability',
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
     type: 'menu',
     children: [
       { label: 'Connect' },
@@ -165,13 +169,13 @@ const mpTools: IGlobalNavigationTool[] = [
   },
   {
     label: 'Setup',
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
     type: 'menu',
     children: [{ label: 'Inputs' }, { label: 'Outputs' }, { label: 'Data Warehouse' }, { label: 'CRM' }],
   },
   {
     label: 'Directory',
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
     type: 'link',
   },
 ]
@@ -179,21 +183,21 @@ const mpManagement: IGlobalNavigationManagement[] = [
   {
     label: 'Notifications',
     hideLabel: true,
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
     type: 'link',
   },
   {
     isActive: true,
     label: 'Support',
     hideLabel: true,
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Settings',
     hideLabel: true,
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
     type: 'menu',
     children: [
       { label: 'Platform Settings' },
@@ -407,23 +411,23 @@ export const MP: Story = {
 
 const indLogo: IGlobalNavigationLogo = {
   label: 'Analytics',
-  icon: <MpLogo/>,
+  icon: <MpLogo />,
 }
 const indTools: IGlobalNavigationTool[] = [
   {
     label: 'My Hub',
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
     type: 'link',
     isActive: true,
   },
   {
     label: 'Saved',
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
     type: 'link',
   },
   {
     label: 'Manage Data',
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
     type: 'link',
   },
 ]
@@ -431,14 +435,14 @@ const indManagement: IGlobalNavigationManagement[] = [
   {
     label: 'Support',
     hideLabel: true,
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Settings',
     hideLabel: true,
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
@@ -469,7 +473,7 @@ const indCreateItems: INavigationCreateProps['createItems'] = [
   },
   {
     disabled: true,
-    tooltip:'is disabled',
+    tooltip: 'is disabled',
     onClick: () => {
       alert('clicked disabled')
     },
@@ -708,6 +712,12 @@ export const Indicative: Story = {
     management: indManagement,
     createItems: indCreateItems,
     orgs: indOrgs,
+    signoutOptions: {
+      label: 'Custom Signout Label',
+      onSignout: () => {
+        alert('Signout!')
+      },
+    },
     onMpHomeClick: () => {
       alert('going to overview map')
     },
@@ -716,33 +726,33 @@ export const Indicative: Story = {
 
 const cortexLogo: IGlobalNavigationLogo = {
   label: 'Predictions',
-  icon: <MpLogo/>,
+  icon: <MpLogo />,
 }
 const cortexTools: IGlobalNavigationTool[] = [
   {
     label: 'Pipelines',
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
     type: 'link',
   },
   {
     label: 'Projects',
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
     type: 'link',
     isActive: true,
   },
   {
     label: 'Data',
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
     type: 'link',
   },
   {
     label: 'API',
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
     type: 'link',
   },
   {
     label: 'Insights',
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
     type: 'link',
   },
 ]
@@ -750,14 +760,14 @@ const cortexManagement: IGlobalNavigationManagement[] = [
   {
     label: 'Support',
     hideLabel: true,
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Settings',
     hideLabel: true,
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
@@ -851,8 +861,10 @@ export const Cortex: Story = {
     tools: cortexTools,
     management: cortexManagement,
     orgs: cortexOrgs,
+    signoutOptions: undefined,
     onMpHomeClick: () => {
       alert('going to overview map')
     },
   },
+  
 }

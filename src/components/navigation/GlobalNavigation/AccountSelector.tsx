@@ -17,7 +17,10 @@ export interface IWorkspaceSelectorProps {
   treeData: ITreeData[]
   onClick: (item: TreeItem, event: React.MouseEvent<HTMLElement>) => void
   // activeLevel: string
-  signout?: () => void
+  signoutOptions?: {
+    label?: string
+    onSignout: () => void
+  }
 }
 
 const getParentKey = (key: React.Key, tree: ITreeData[]): React.Key => {
@@ -115,13 +118,13 @@ export function AccountSelector(props: IWorkspaceSelectorProps) {
     className: 'accountSelector__signout',
     label: (
       <Button
-        className="accountSelector__signoutButton"
+        className="workspaceSelector__signoutButton"
         type="primary"
         onClick={e => {
-          props.signout?.()
+          props.signoutOptions?.onSignout()
         }}
       >
-        Sign Out of mParticle
+        {props.signoutOptions?.label ?? 'Sign Out of mParticle'}
       </Button>
     ),
   }
@@ -192,7 +195,7 @@ export function AccountSelector(props: IWorkspaceSelectorProps) {
             </>
           ),
         },
-        props.signout ? signoutButton : null,
+        props.signoutOptions ? signoutButton : null,
       ],
     },
   ]

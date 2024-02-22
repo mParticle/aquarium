@@ -29,7 +29,10 @@ export interface IGlobalNavigationProps {
   onSearchClick?: () => void
   onMpHomeClick: () => void
   hideMpHome?: boolean
-  signout?: () => void
+  signoutOptions?: {
+    label?: string
+    onSignout: () => void
+  }
 }
 
 export const GlobalNavWidth = 90 as const
@@ -53,11 +56,11 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
           <div>
             <NavigationList items={props.management} />
 
-            {props.orgs && <WorkspaceSelector orgs={props.orgs} signout={props.signout} />}
+            {props.orgs && <WorkspaceSelector orgs={props.orgs} signoutOptions={props.signoutOptions} />}
             {props.accountSwitcher && (
               <AccountSelector
                 treeData={props.accountSwitcher}
-                signout={props.signout}
+                signoutOptions={props.signoutOptions}
                 onClick={item => alert(`Clicked on: ${item.title}`)}
               />
             )}

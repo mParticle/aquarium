@@ -22,7 +22,10 @@ import { useRef } from 'react'
 
 export interface IWorkspaceSelectorProps {
   orgs: INavigationOrg[]
-  signout?: () => void
+  signoutOptions?: {
+    label?: string
+    onSignout: () => void
+  }
 }
 
 export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
@@ -66,10 +69,10 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
         className="workspaceSelector__signoutButton"
         type="primary"
         onClick={e => {
-          props.signout?.()
+          props.signoutOptions?.onSignout()
         }}
       >
-        Sign Out of mParticle
+        {props.signoutOptions?.label ?? 'Sign Out of mParticle'}
       </Button>
     ),
   })
@@ -89,7 +92,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
   const menuChildren = [
     searchInput,
     ...(hasNoResults ? [noResultsEl] : menuItems),
-    props.signout ? signoutButton.current : null,
+    props.signoutOptions ? signoutButton.current : null,
   ]
 
   // todo: this probably doesnt need to be calculated on every render
