@@ -88,6 +88,7 @@ import { default as MenuItem } from 'antd/es/menu/MenuItem';
 import { MenuItemGroupType } from 'antd/es/menu/hooks/useItems';
 import { MenuItemType } from 'antd/es/menu/hooks/useItems';
 import { MenuProps } from 'antd';
+import { MenuInfo as RCMenuInfo } from "rc-menu/lib/interface";
 import { MessageArgsProps } from 'antd';
 import { ModalProps } from 'antd';
 import { NotificationArgsProps } from 'antd';
@@ -407,6 +408,10 @@ export { INavigationCreateProps }
 export { INavigationOrg }
 
 export { INavigationWorkspace }
+
+export declare interface MenuInfo extends RCMenuInfo {
+
+}
 
 export declare interface INotificationProps extends NotificationArgsProps {
     children: React.ReactNode;
