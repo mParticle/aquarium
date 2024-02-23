@@ -2,6 +2,7 @@ import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
 import { GlobalNavigation } from 'src/components'
 import { Space } from 'src/components'
+import { Center } from 'src/components'
 import { Button } from 'src/components'
 import { type INavigationCreateProps } from 'src/components'
 import { Badge } from 'src/components/data-display/Badge/Badge'
@@ -82,7 +83,11 @@ const defaultOrgs: INavigationOrg[] = [
 
 const meta: Meta<typeof GlobalNavigation> = {
   title: 'Aquarium/Navigation/GlobalNavigation',
-  component: props => <GlobalNavigation {...props}></GlobalNavigation>,
+  component: props => (
+    <Center style={{ minHeight: '800px' }}>
+      <GlobalNavigation {...props}></GlobalNavigation>
+    </Center>
+  ),
 
   args: {
     logo: defaultLogo,
@@ -867,5 +872,4 @@ export const Cortex: Story = {
       alert('going to overview map')
     },
   },
-  
 }
