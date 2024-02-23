@@ -60,6 +60,7 @@ import { IGlobalNavigationTool } from '../../../../src/components/navigation/Glo
 import { IGlobalNavigationTool as IGlobalNavigationTool_2 } from '../../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
 import { ImageProps } from 'antd';
 import { IMentionsProps } from './data-entry/Mentions/Mentions';
+import { IMenuInfo } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
 import { IModalProps as IModalProps_2 } from '../../../../../../src/components/feedback/Modal/Modal';
 import { INavigationAccount } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
 import { INavigationCreateGroup } from '../../../../src/components/navigation/GlobalNavigation/NavigationCreate';
@@ -385,6 +386,8 @@ declare const Image_2: (props: IImageProps) => JSX_2.Element;
 export { Image_2 as Image }
 
 export { IMentionsProps }
+
+export { IMenuInfo }
 
 export declare interface IMenuProps extends MenuProps {
 }

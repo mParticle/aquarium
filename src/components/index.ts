@@ -89,10 +89,11 @@ export type {
   INavigationCreateGroup,
   INavigationCreateItem,
 } from 'src/components/navigation/GlobalNavigation/NavigationCreate'
-export {
-  type INavigationOrg,
-  type INavigationWorkspace,
-  type INavigationAccount,
-  type IWorkspaceSelectorDisplayItem,
-  type IWorkspaceSelectorItem,
+export type  {
+  INavigationOrg,
+  INavigationWorkspace,
+  INavigationAccount,
+  IWorkspaceSelectorDisplayItem,
+  IWorkspaceSelectorItem,
+  IMenuInfo
 } from './navigation/GlobalNavigation/WorkspaceSelectorItems'

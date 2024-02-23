@@ -26365,6 +26365,7 @@ function u$(r) {
       label: P.label,
       id: P.id,
       key: P.id,
+      onClick: P.onClick,
       accounts: P.accounts,
       // todo: these are ending up in the html as attributes..
       workspaces: P.accounts.flatMap(($) => $.workspaces)
@@ -26375,6 +26376,7 @@ function u$(r) {
         label: $.label,
         id: $.id,
         key: $.id,
+        onClick: $.onClick,
         workspaces: $.workspaces
       }), $.workspaces.forEach((W) => {
         I.push({
