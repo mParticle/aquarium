@@ -119,8 +119,6 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
     },
   ]
 
-  /* todo: scroll to selected ws */
-  /* see indicative rFancyDropdown.tsx:277 for a similar implementation. make it a hook ~~service/util~~? */
 
   return (
     <Menu
@@ -132,7 +130,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
     />
   )
 
-  function generateDisplayItems(/* orgs: INavigationOrg[] */): IWorkspaceSelectorDisplayItem[] {
+  function generateDisplayItems(): IWorkspaceSelectorDisplayItem[] {
     return currentFilteredOrgs.reduce<IWorkspaceSelectorDisplayItem[]>((total, org) => {
       total.push({
         type: 'org',
