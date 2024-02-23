@@ -7,12 +7,10 @@ interface IWorkspaceSelectorItem {
 
 export interface INavigationOrg extends IWorkspaceSelectorItem {
   accounts: INavigationAccount[];
-  onClick?: (info: IMenuInfo) => void;
 }
 
 export interface INavigationAccount extends IWorkspaceSelectorItem {
   workspaces: INavigationWorkspace[];
-  onClick?: (info: IMenuInfo) => void;
 }
 
 export interface INavigationWorkspace extends IWorkspaceSelectorItem {

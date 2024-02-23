@@ -60,7 +60,6 @@ import { IGlobalNavigationTool } from '../../../../src/components/navigation/Glo
 import { IGlobalNavigationTool as IGlobalNavigationTool_2 } from '../../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
 import { ImageProps } from 'antd';
 import { IMentionsProps } from './data-entry/Mentions/Mentions';
-import { IMenuInfo } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
 import { IModalProps as IModalProps_2 } from '../../../../../../src/components/feedback/Modal/Modal';
 import { INavigationAccount } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
 import { INavigationCreateGroup } from '../../../../src/components/navigation/GlobalNavigation/NavigationCreate';
@@ -85,6 +84,7 @@ import { ListProps } from 'antd';
 import { MemoExoticComponent } from 'react';
 import { Mentions } from './data-entry/Mentions/Mentions';
 import { MenuDividerType } from 'antd/es/menu/hooks/useItems';
+import { MenuInfo } from 'rc-menu/lib/interface';
 import { default as MenuItem } from 'antd/es/menu/MenuItem';
 import { MenuItemGroupType } from 'antd/es/menu/hooks/useItems';
 import { MenuItemType } from 'antd/es/menu/hooks/useItems';
@@ -387,7 +387,8 @@ export { Image_2 as Image }
 
 export { IMentionsProps }
 
-export { IMenuInfo }
+export declare interface IMenuInfo extends MenuInfo {
+}
 
 export declare interface IMenuProps extends MenuProps {
 }
