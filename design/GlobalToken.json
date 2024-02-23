@@ -57,7 +57,7 @@
     "value": "#1677ff"
   },
   "colorTextBase": {
-    "value": "#000"
+    "value": "#0f0e0e"
   },
   "colorBgBase": {
     "value": "#fff"
@@ -152,11 +152,47 @@
   "controlItemBgActiveHover": {
     "value": "#c3aeff"
   },
+  "colorText": {
+    "value": "#0f0e0e"
+  },
+  "colorTextSecondary": {
+    "value": "#212020"
+  },
+  "colorTextTertiary": {
+    "value": "#2c2d2b"
+  },
+  "colorTextQuaternary": {
+    "value": "#505249"
+  },
+  "colorFill": {
+    "value": "#dcdcd8"
+  },
   "colorFillSecondary": {
     "value": "#ebe8f8"
   },
+  "colorFillTertiary": {
+    "value": "#faf9f8"
+  },
+  "colorFillQuaternary": {
+    "value": "#f8f6fb"
+  },
+  "colorBgLayout": {
+    "value": "#fff"
+  },
+  "colorBgSpotlight": {
+    "value": "#2c2d2b"
+  },
   "colorBorder": {
     "value": "#c3aeff"
+  },
+  "colorBorderSecondary": {
+    "value": "#eceae9"
+  },
+  "colorSplit": {
+    "value": "#eceae9"
+  },
+  "colorBgMask": {
+    "value": "#babbb5"
   },
   "mpBrandPrimary.1": {
     "value": "#f8f6fb"
@@ -189,7 +225,7 @@
     "value": "#20007a"
   },
   "mpBrandSecondary.1": {
-    "value": "#ffffff"
+    "value": "#fff"
   },
   "mpBrandSecondary.2": {
     "value": "#faf9f8"
@@ -1001,44 +1037,14 @@
   "lime10": {
     "value": "#254000"
   },
-  "colorText": {
-    "value": "rgba(0, 0, 0, 0.88)"
-  },
-  "colorTextSecondary": {
-    "value": "rgba(0, 0, 0, 0.65)"
-  },
-  "colorTextTertiary": {
-    "value": "rgba(0, 0, 0, 0.45)"
-  },
-  "colorTextQuaternary": {
-    "value": "rgba(0, 0, 0, 0.25)"
-  },
-  "colorFill": {
-    "value": "rgba(0, 0, 0, 0.15)"
-  },
-  "colorFillTertiary": {
-    "value": "rgba(0, 0, 0, 0.04)"
-  },
-  "colorFillQuaternary": {
-    "value": "rgba(0, 0, 0, 0.02)"
-  },
-  "colorBgLayout": {
-    "value": "#f5f5f5"
-  },
   "colorBgContainer": {
     "value": "#ffffff"
   },
   "colorBgElevated": {
     "value": "#ffffff"
   },
-  "colorBgSpotlight": {
-    "value": "rgba(0, 0, 0, 0.85)"
-  },
   "colorBgBlur": {
     "value": "transparent"
-  },
-  "colorBorderSecondary": {
-    "value": "#f0f0f0"
   },
   "colorPrimaryBg": {
     "value": "#f1e6ff"
@@ -1178,9 +1184,6 @@
   "colorLinkActive": {
     "value": "#0958d9"
   },
-  "colorBgMask": {
-    "value": "rgba(0, 0, 0, 0.45)"
-  },
   "colorWhite": {
     "value": "#fff"
   },
@@ -1305,34 +1308,31 @@
     "value": "#ebe8f8"
   },
   "colorFillContentHover": {
-    "value": "rgba(0, 0, 0, 0.15)"
+    "value": "#dcdcd8"
   },
   "colorFillAlter": {
-    "value": "rgba(0, 0, 0, 0.02)"
+    "value": "#f8f6fb"
   },
   "colorBgContainerDisabled": {
-    "value": "rgba(0, 0, 0, 0.04)"
+    "value": "#faf9f8"
   },
   "colorBorderBg": {
     "value": "#ffffff"
   },
-  "colorSplit": {
-    "value": "rgba(5, 5, 5, 0.06)"
-  },
   "colorTextPlaceholder": {
-    "value": "rgba(0, 0, 0, 0.25)"
+    "value": "#505249"
   },
   "colorTextDisabled": {
-    "value": "rgba(0, 0, 0, 0.25)"
+    "value": "#505249"
   },
   "colorTextHeading": {
-    "value": "rgba(0, 0, 0, 0.88)"
+    "value": "#0f0e0e"
   },
   "colorTextLabel": {
-    "value": "rgba(0, 0, 0, 0.65)"
+    "value": "#212020"
   },
   "colorTextDescription": {
-    "value": "rgba(0, 0, 0, 0.45)"
+    "value": "#2c2d2b"
   },
   "colorTextLightSolid": {
     "value": "#fff"
@@ -1344,13 +1344,13 @@
     "value": "#ebe8f8"
   },
   "colorBgTextActive": {
-    "value": "rgba(0, 0, 0, 0.15)"
+    "value": "#dcdcd8"
   },
   "colorIcon": {
-    "value": "rgba(0, 0, 0, 0.45)"
+    "value": "#2c2d2b"
   },
   "colorIconHover": {
-    "value": "rgba(0, 0, 0, 0.88)"
+    "value": "#0f0e0e"
   },
   "colorErrorOutline": {
     "value": "rgba(255, 22, 5, 0.06)"
@@ -1371,10 +1371,10 @@
     "value": "16px"
   },
   "controlItemBgActiveDisabled": {
-    "value": "rgba(0, 0, 0, 0.15)"
+    "value": "#dcdcd8"
   },
   "controlTmpOutline": {
-    "value": "rgba(0, 0, 0, 0.02)"
+    "value": "#f8f6fb"
   },
   "fontWeightStrong": {
     "value": 600

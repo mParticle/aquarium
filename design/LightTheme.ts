@@ -2,46 +2,9 @@
  * This theme is copy/pasted from figma, via the Token Buddy for Ant Design plugin
  *  */
 
-import { ThemeConfig } from 'antd'
+import { IMpThemeConfig } from 'design/MpThemeConfig'
 
-export interface IMpThemeConfig {
-  token: {
-    'mpBrandPrimary.1': string
-    ['mpBrandPrimary.2']: string
-    ['mpBrandPrimary.3']: string
-    ['mpBrandPrimary.4']: string
-    ['mpBrandPrimary.5']: string
-    ['mpBrandPrimary.6']: string
-    ['mpBrandPrimary.7']: string
-    ['mpBrandPrimary.8']: string
-    ['mpBrandPrimary.9']: string
-    ['mpBrandPrimary.10']: string
-    ['mpBrandSecondary.1']: string
-    ['mpBrandSecondary.2']: string
-    ['mpBrandSecondary.3']: string
-    ['mpBrandSecondary.4']: string
-    ['mpBrandSecondary.5']: string
-    ['mpBrandSecondary.6']: string
-    ['mpBrandSecondary.7']: string
-    ['mpBrandSecondary.8']: string
-    ['mpBrandSecondary.9']: string
-    ['mpBrandSecondary.10']: string
-    mpColorBorderDisabled: string
-  }
-  components: {
-    Select: { mpColorBorderDisabled: string }
-    Input: { mpColorBorderDisabled: string }
-    Checkbox: { mpColorBorderDisabled: string }
-    Radio: { mpColorBorderDisabled: string }
-    DatePicker: { mpColorBorderDisabled: string }
-    TimePicker: { mpColorBorderDisabled: string }
-    InputNumber: { mpColorBorderDisabled: string }
-  }
-}
-
-type newType = IMpThemeConfig & ThemeConfig
-
-export const LightTheme: newType = {
+export const LightTheme: IMpThemeConfig = {
   token: {
     colorLinkHover: '#ab8eff',
     controlOutline: 'rgba(0.21176470816135406, 0, 0.8196078538894653, 0.10000000149011612)',
