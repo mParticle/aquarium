@@ -228,6 +228,7 @@
 
 .ant-menu-item-selected {
     background-color: revert !important;
+    color: revert !important;
 }
 
 
