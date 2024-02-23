@@ -96,4 +96,4 @@ export type  {
   IWorkspaceSelectorDisplayItem,
   IWorkspaceSelectorItem,
   IMenuInfo
-} from './navigation/GlobalNavigation/WorkspaceSelectorItems'
+} from './navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'
