@@ -1,6 +1,6 @@
 import 'src/styles/_variables.css'
 import './global-navigation.css'
-import { ITreeData, Layout } from 'src/components'
+import { Layout } from 'src/components'
 import { Flex } from 'src/components'
 import { Center } from 'src/components'
 import { type INavigationCreateProps } from 'src/components'
@@ -10,7 +10,6 @@ import { NavigationSearch } from 'src/components/navigation/GlobalNavigation/Nav
 import { NavigationList } from 'src/components/navigation/GlobalNavigation/NavigationList'
 import { NavigationCreate } from 'src/components/navigation/GlobalNavigation/NavigationCreate'
 import { WorkspaceSelector } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelector'
-import { AccountSelector } from 'src/components/navigation/GlobalNavigation/AccountSelector'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
 import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IGlobalNavigationManagement } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
@@ -23,7 +22,6 @@ export interface IGlobalNavigationProps {
   management: IGlobalNavigationManagement[]
 
   orgs?: INavigationOrg[]
-  accountSwitcher?: ITreeData[]
 
   createItems?: INavigationCreateProps['createItems']
   onSearchClick?: () => void
@@ -57,13 +55,6 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
             <NavigationList items={props.management} />
 
             {props.orgs && <WorkspaceSelector orgs={props.orgs} signoutOptions={props.signoutOptions} />}
-            {props.accountSwitcher && (
-              <AccountSelector
-                treeData={props.accountSwitcher}
-                signoutOptions={props.signoutOptions}
-                onClick={item => alert(`Clicked on: ${item.title}`)}
-              />
-            )}
 
             {!props.hideMpHome && (
               <Tooltip title="mParticle Overview" placement="right">
