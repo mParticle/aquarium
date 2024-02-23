@@ -14,7 +14,7 @@ export interface INavigationAccount extends IWorkspaceSelectorItem {
 }
 
 export interface INavigationWorkspace extends IWorkspaceSelectorItem {
-  isActive: boolean // todo: is this needed?
+  isActive: boolean
   onClick?: (info: IMenuInfo) => void
 }
 
