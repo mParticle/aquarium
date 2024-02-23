@@ -1,10 +1,7 @@
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
-
+import MpLogo from 'src/assets/svg/mpLogo.svg?react'
 import { Avatar } from 'src/components/data-display/Avatar/Avatar'
-import { Icon } from 'src/components'
-import { faUser } from '@fortawesome/free-solid-svg-icons'
-import { faGamepad } from '@fortawesome/free-solid-svg-icons'
 import { ExampleStory } from 'src/utils/ExampleStory'
 import { Space } from 'src/components'
 import { Badge } from 'src/components'
@@ -18,7 +15,7 @@ const meta: Meta<typeof Avatar> = {
   args: {
     alt: 'User Avatar',
     gap: 4,
-    icon: <Icon icon={faUser} />,
+    icon: <MpLogo/>,
     shape: 'circle',
     size: 'default',
     src: '',
@@ -44,8 +41,8 @@ const meta: Meta<typeof Avatar> = {
       control: 'select',
       options: ['User', 'Gamepad'],
       mapping: {
-        User: <Icon icon={faUser} />,
-        Gamepad: <Icon icon={faGamepad} />,
+        User: <MpLogo/>,
+        Gamepad: <MpLogo/>,
       },
     },
   },
@@ -87,7 +84,7 @@ export const CustomSizes: Story = {
 
 export const CustomIcon: Story = {
   args: {
-    icon: <Icon icon={faGamepad} />,
+    icon: <MpLogo/>,
   },
 }
 
@@ -97,16 +94,16 @@ export const ExampleBasic: Story = {
       <ExampleStory title="Four sizes and two shapes are available.">
         <Space direction="vertical" size={16}>
           <Space wrap size={16}>
-            <Avatar size={64} icon={<Icon icon={faUser} />} />
-            <Avatar size="large" icon={<Icon icon={faUser} />} />
-            <Avatar icon={<Icon icon={faUser} />} />
-            <Avatar size="small" icon={<Icon icon={faUser} />} />
+            <Avatar size={64} icon={<MpLogo/>} />
+            <Avatar size="large" icon={<MpLogo/>} />
+            <Avatar icon={<MpLogo/>} />
+            <Avatar size="small" icon={<MpLogo/>} />
           </Space>
           <Space wrap size={16}>
-            <Avatar shape="square" size={64} icon={<Icon icon={faUser} />} />
-            <Avatar shape="square" size="large" icon={<Icon icon={faUser} />} />
-            <Avatar shape="square" icon={<Icon icon={faUser} />} />
-            <Avatar shape="square" size="small" icon={<Icon icon={faUser} />} />
+            <Avatar shape="square" size={64} icon={<MpLogo/>} />
+            <Avatar shape="square" size="large" icon={<MpLogo/>} />
+            <Avatar shape="square" icon={<MpLogo/>} />
+            <Avatar shape="square" size="small" icon={<MpLogo/>} />
           </Space>
         </Space>
       </ExampleStory>
@@ -120,13 +117,13 @@ export const ExampleTypes: Story = {
     return (
       <ExampleStory title="Image, Icon and letter are supported, and the latter two kinds of avatar can have custom colors and background colors.">
         <Space size={16} wrap>
-          <Avatar icon={<Icon icon={faUser} />} />
+          <Avatar icon={<MpLogo/>} />
           <Avatar>U</Avatar>
           <Avatar size={40}>USER</Avatar>
           <Avatar src={url} />
           <Avatar src={<img src={url} alt="avatar" />} />
           <Avatar style={{ backgroundColor: '#fde3cf', color: '#f56a00' }}>U</Avatar>
-          <Avatar style={{ backgroundColor: '#87d068' }} icon={<Icon icon={faUser} />} />
+          <Avatar style={{ backgroundColor: '#87d068' }} icon={<MpLogo/>} />
         </Space>
       </ExampleStory>
     )
@@ -139,10 +136,10 @@ export const ExampleWithBadge: Story = {
       <ExampleStory title="Usually used for reminders and notifications.">
         <Space size={24}>
           <Badge count={1}>
-            <Avatar shape="square" icon={<Icon icon={faUser} />} />
+            <Avatar shape="square" icon={<MpLogo/>} />
           </Badge>
           <Badge dot>
-            <Avatar shape="square" icon={<Icon icon={faUser} />} />
+            <Avatar shape="square" icon={<MpLogo/>} />
           </Badge>
         </Space>
       </ExampleStory>
@@ -154,7 +151,7 @@ export const ExampleResponsive: Story = {
   render: () => {
     return (
       <ExampleStory title="Avatar size can be automatically adjusted based on the screen size.">
-        <Avatar size={{ xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100 }} icon={<Icon icon={faUser} />} />
+        <Avatar size={{ xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100 }} icon={<MpLogo/>} />
       </ExampleStory>
     )
   },

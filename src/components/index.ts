@@ -1,6 +1,5 @@
 export { Button, type IButtonProps } from './general/Button/Button'
 export { FloatButton, type IFloatButtonProps } from './general/FloatButton/FloatButton'
-export { Icon, type IIconProps } from './general/Icon/Icon'
 export { Rate, type IRateProps } from './data-entry/Rate/Rate'
 export { Form, type IFormProps } from './data-entry/Form/Form'
 export { TreeSelect, type ITreeSelectProps } from './data-entry/TreeSelect/TreeSelect'
@@ -29,7 +28,7 @@ export { Tour, type ITourProps } from './data-display/Tour/Tour'
 export { Carousel, type ICarouselProps } from './data-display/Carousel/Carousel'
 export { Tooltip, type ITooltipProps } from './data-display/Tooltip/Tooltip'
 export { Statistic, type IStatisticProps } from './data-display/Statistic/Statistic'
-export { Tree, type ITreeProps } from './data-display/Tree/Tree'
+export { Tree, type ITreeProps, type ITreeData } from './data-display/Tree/Tree'
 export { Image, type IImageProps } from './data-display/Image/Image'
 export { QRCode, type IQRCodeProps } from './data-display/QRCode/QRCode'
 export { Badge, type IBadgeProps } from './data-display/Badge/Badge'
@@ -71,7 +70,30 @@ export {
   type SubMenuType,
   type MenuItemGroupType,
   type MenuDividerType,
+  type IMenuInfo
 } from './navigation/Menu/Menu'
 export { ConfigProvider, type IConfigProviderProps } from './other/ConfigProvider/ConfigProvider'
 export { Affix, type IAffixProps } from './other/Affix/Affix'
 export { App, type IAppProps } from './other/App/App'
+export {
+  GlobalNavigation,
+  GlobalNavWidth,
+  type IGlobalNavigationProps,
+} from './navigation/GlobalNavigation/GlobalNavigation'
+export type {
+  IGlobalNavigationLogo,
+  IGlobalNavigationManagement,
+  IGlobalNavigationTool,
+} from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
+export type {
+  INavigationCreateProps,
+  INavigationCreateGroup,
+  INavigationCreateItem,
+} from 'src/components/navigation/GlobalNavigation/NavigationCreate'
+export type  {
+  INavigationOrg,
+  INavigationWorkspace,
+  INavigationAccount,
+  IWorkspaceSelectorDisplayItem,
+  IWorkspaceSelectorItem,
+} from './navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'

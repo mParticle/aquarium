@@ -10,9 +10,9 @@ export default defineConfig({
       design: '/design',
     },
   },
-  
+
   plugins: [svgr(), dts({ include: 'src/components', rollupTypes: true })],
-  
+
   build: {
     target: 'es6',
     outDir: 'dist',

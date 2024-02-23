@@ -4,12 +4,10 @@ import { Paragraph } from 'src/components/general/Typography/Typography'
 import { ExampleStory } from 'src/utils/ExampleStory'
 import { useMemo } from 'react'
 import { useState } from 'react'
-import { faShapes } from '@fortawesome/free-solid-svg-icons'
-import { Icon, Radio } from 'src/components'
-import { faCheck } from '@fortawesome/free-solid-svg-icons'
-import { faCopy } from '@fortawesome/free-solid-svg-icons'
+import { Radio } from 'src/components'
 import { Switch } from 'src/components'
 import { Slider } from 'src/components'
+import MpLogo from 'src/assets/svg/mpLogo.svg?react'
 
 const meta: Meta<typeof Paragraph> = {
   title: 'Aquarium/General/Paragraph',
@@ -153,7 +151,7 @@ export const ExampleEditable: Story = {
     )
     const [customIconStr, setCustomIconStr] = useState('Custom Edit icon and replace tooltip text.')
     const [clickTriggerStr, setClickTriggerStr] = useState('Text or icon as trigger - click to start editing.')
-    const [chooseTrigger, setChooseTrigger] = useState<('icon' | 'text')[]>(['icon'])
+    const [chooseTrigger, setChooseTrigger] = useState<Array<'icon' | 'text'>>(['icon'])
     const [customEnterIconStr, setCustomEnterIconStr] = useState(
       'Editable text with a custom enter icon in edit field.',
     )
@@ -161,7 +159,7 @@ export const ExampleEditable: Story = {
     const [hideTooltipStr, setHideTooltipStr] = useState('Hide Edit tooltip.')
     const [lengthLimitedStr, setLengthLimitedStr] = useState('This is an editable text with limited length.')
 
-    const radioToState = (input: string): ('icon' | 'text')[] => {
+    const radioToState = (input: string): Array<'icon' | 'text'> => {
       switch (input) {
         case 'text':
           return ['text']
@@ -196,7 +194,7 @@ export const ExampleEditable: Story = {
         </Paragraph>
         <Paragraph
           editable={{
-            icon: <Icon icon={faShapes} />,
+            icon: <MpLogo/>,
             tooltip: 'click to edit text',
             onChange: setCustomIconStr,
           }}
@@ -204,7 +202,7 @@ export const ExampleEditable: Story = {
           {customIconStr}
         </Paragraph>
         Trigger edit with:{' '}
-        <Radio.Group onChange={e => setChooseTrigger(radioToState(e.target.value))} value={stateToRadio}>
+        <Radio.Group onChange={e => { setChooseTrigger(radioToState(e.target.value as string)); }} value={stateToRadio}>
           <Radio value="icon">icon</Radio>
           <Radio value="text">text</Radio>
           <Radio value="both">both</Radio>
@@ -220,17 +218,17 @@ export const ExampleEditable: Story = {
         </Paragraph>
         <Paragraph
           editable={{
-            icon: <Icon icon={faShapes} />,
+            icon: <MpLogo/>,
             tooltip: 'click to edit text',
             onChange: setCustomEnterIconStr,
-            enterIcon: <Icon icon={faCheck} />,
+            enterIcon: <MpLogo/>,
           }}
         >
           {customEnterIconStr}
         </Paragraph>
         <Paragraph
           editable={{
-            icon: <Icon icon={faShapes} />,
+            icon: <MpLogo/>,
             tooltip: 'click to edit text',
             onChange: setNoEnterIconStr,
             enterIcon: null,
@@ -261,7 +259,7 @@ export const ExampleCopyable: Story = {
         <Paragraph copyable={{ text: 'Hello, Ant Design!' }}>Replace copy text.</Paragraph>
         <Paragraph
           copyable={{
-            icon: [<Icon icon={faCopy} key="copy-icon" />, <Icon icon={faCheck} key="copied-icon" />],
+            icon: [<MpLogo key={1}/>, <MpLogo key={2}/>],
             tooltips: ['click here', 'you clicked!!'],
           }}
         >

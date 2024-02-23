@@ -1,0 +1,91 @@
+.workspaceSelector .ant-menu {
+    max-height: 500px !important;
+}
+
+
+.workspaceSelector__search {
+    position: sticky !important;
+    bottom: 40px;
+    z-index: 1;
+
+    width: 100% !important;
+    padding: 0 var(--padding-xxs) !important;
+    margin: 0 !important;
+
+    background-color: white !important;
+}
+
+.workspaceSelector__noResults {
+    height: 100% !important;
+    width: 180px !important;
+    pointer-events: none;
+}
+
+.workspaceSelector__noResults .ant-menu-title-content {
+    height: 100% !important;
+}
+
+.workspaceSelector__noResults .ant-result-title {
+    font-size: var(--font-size);
+}
+
+.workspaceSelector__avatar {
+    color: white !important;
+}
+
+.workspaceSelector__orgName {
+    color: var(--color-primary);
+    pointer-events: none;
+    font-weight: 500;
+    padding: var(--padding-xxs) var(--control-padding-horizontal) !important;
+}
+
+.workspaceSelector__orgName:not(:nth-child(2)) {
+    padding-left: var(--padding-xs);
+    padding-right: var(--padding-xs);
+    border-top: 1px solid var(--color-border-secondary);
+}
+
+.workspaceSelector__accountName {
+    height: var(--control-height);
+    padding: 0 var(--control-padding-horizontal) !important;
+    pointer-events: none;
+}
+
+.workspaceSelector__workspaceName {
+    padding-left: calc(var(--padding-sm) + var(--padding)) !important;
+}
+
+.workspaceSelector__workspaceName.workspaceSelector__workspaceName--active {
+    border-radius: 4px;
+    background: var(--control-item-bg-active) !important;
+}
+
+
+.workspaceSelector__orgName,
+.workspaceSelector__accountName {
+    pointer-events: none; /* only workspaces are clickable */
+}
+
+.workspaceSelector__orgName,
+.workspaceSelector__accountName,
+.workspaceSelector__workspaceName {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.workspaceSelector__signout {
+    position: sticky !important;
+    bottom: 0;
+
+    width: 100% !important;
+    padding: 0 var(--padding-xxs) !important;
+    margin: 0 !important;
+
+    background-color: white !important;
+}
+
+.workspaceSelector__signoutButton {
+    padding: 0 !important;
+    width: 100% !important;
+}
