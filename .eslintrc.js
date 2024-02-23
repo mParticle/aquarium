@@ -111,7 +111,7 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': ['error', { allowNamedExports: true, functions: false }],
     'react/react-in-jsx-scope': 'off',
     'import/no-duplicates': 'off',
-    //'react/jsx-boolean-value': ['always'], todo: get this working
+    'react/jsx-boolean-value': ['always'], 
   },
   globals: {
     React: true,
