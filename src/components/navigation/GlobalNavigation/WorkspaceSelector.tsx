@@ -140,7 +140,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
         label: org.label,
         id: org.id,
         key: org.id,
-        onClick: org.onClick
+        onClick: org.onClick,
         accounts: org.accounts, // todo: these are ending up in the html as attributes..
         workspaces: org.accounts.flatMap(account => account.workspaces),
       })
