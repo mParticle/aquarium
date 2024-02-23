@@ -31,8 +31,6 @@
       }
     ],
     "property-disallowed-list": [
-      "margin-top",
-      "font-size",
       "stroke",
       "fill"
     ],

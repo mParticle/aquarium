@@ -1,11 +1,10 @@
-import { faIcons } from '@fortawesome/free-solid-svg-icons'
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
-import { Icon } from 'src/components'
 import { Cascader } from 'src/components'
 import { type ICascaderProps } from 'src/components/data-entry/Cascader/Cascader'
 import { ExampleStory } from 'src/utils/ExampleStory'
 import { useState } from 'react'
+import MpLogo from 'src/assets/svg/mpLogo.svg?react'
 
 const options: ICascaderProps['options'] = [
   {
@@ -169,7 +168,7 @@ export const CustomDropdownStyle: Story = {
 
 export const SuffixIcon: Story = {
   args: {
-    suffixIcon: <Icon icon={faIcons} />,
+    suffixIcon: <MpLogo/>,
   },
 }
 
