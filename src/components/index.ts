@@ -53,6 +53,7 @@ export { Alert, type IAlertProps } from './feedback/Alert/Alert'
 export { Message, type IMessageProps } from './feedback/Message/Message'
 export { LoadingModal, type ILoadingModalProps } from './feedback/LoadingModal/LoadingModal'
 export { Flex, type IFlexProps } from './layout/Flex/Flex'
+export { Center } from './layout/Center/Center'
 export { Divider, type IDividerProps } from './layout/Divider/Divider'
 export { Space, type ISpaceProps } from './layout/Space/Space'
 export { Layout, type ILayoutProps } from './layout/Layout/Layout'
@@ -62,7 +63,15 @@ export { Anchor, type IAnchorProps } from './navigation/Anchor/Anchor'
 export { Dropdown, type IDropdownProps } from './navigation/Dropdown/Dropdown'
 export { Breadcrumb, type IBreadcrumbProps } from './navigation/Breadcrumb/Breadcrumb'
 export { Pagination, type IPaginationProps } from './navigation/Pagination/Pagination'
-export { Menu, type IMenuProps } from './navigation/Menu/Menu'
+export {
+  Menu,
+  MenuItem,
+  type IMenuProps,
+  type MenuItemType,
+  type SubMenuType,
+  type MenuItemGroupType,
+  type MenuDividerType,
+} from './navigation/Menu/Menu'
 export { ConfigProvider, type IConfigProviderProps } from './other/ConfigProvider/ConfigProvider'
 export { Affix, type IAffixProps } from './other/Affix/Affix'
 export { App, type IAppProps } from './other/App/App'

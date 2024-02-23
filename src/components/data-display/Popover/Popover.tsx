@@ -7,7 +7,11 @@ export interface IPopoverProps extends AntPopoverProps {}
 export const Popover = (props: IPopoverProps) => {
   return (
     <ConfigProvider>
-      <AntPopover {...props} />
+      <AntPopover {...props}>
+        {/* Fragment fixes popover sometimes not showing */}
+        {/* https://github.com/ant-design/ant-design/issues/15909 */}
+        <>{props.children}</>
+      </AntPopover>
     </ConfigProvider>
   )
 }
