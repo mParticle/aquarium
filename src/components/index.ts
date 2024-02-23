@@ -70,6 +70,7 @@ export {
   type SubMenuType,
   type MenuItemGroupType,
   type MenuDividerType,
+  type IMenuInfo
 } from './navigation/Menu/Menu'
 export { ConfigProvider, type IConfigProviderProps } from './other/ConfigProvider/ConfigProvider'
 export { Affix, type IAffixProps } from './other/Affix/Affix'
@@ -95,5 +96,4 @@ export type  {
   INavigationAccount,
   IWorkspaceSelectorDisplayItem,
   IWorkspaceSelectorItem,
-  IMenuInfo
 } from './navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'

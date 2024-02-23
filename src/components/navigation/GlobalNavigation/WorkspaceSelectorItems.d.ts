@@ -1,5 +1,4 @@
 import { type MenuItemType } from 'src/components/navigation/Menu/Menu'
-import { type MenuInfo as RCMenuInfo } from 'rc-menu/lib/interface'
 
 interface IWorkspaceSelectorItem {
   label: string
@@ -8,12 +7,10 @@ interface IWorkspaceSelectorItem {
 
 export interface INavigationOrg extends IWorkspaceSelectorItem {
   accounts: INavigationAccount[];
-  onClick?: (info: IMenuInfo) => void;
 }
 
 export interface INavigationAccount extends IWorkspaceSelectorItem {
   workspaces: INavigationWorkspace[];
-  onClick?: (info: IMenuInfo) => void;
 }
 
 export interface INavigationWorkspace extends IWorkspaceSelectorItem {
@@ -29,8 +26,4 @@ export interface IWorkspaceSelectorDisplayItem extends MenuItemType {
 
   accounts?: INavigationAccount[]
   workspaces?: INavigationWorkspace[]
-}
-
-export interface IMenuInfo extends RCMenuInfo {
-
 }

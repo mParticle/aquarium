@@ -51,32 +51,31 @@ import { Grid } from 'antd';
 import { GroupProps } from 'antd/es/input';
 import { GroupProps as GroupProps_2 } from 'antd/es/avatar';
 import { ColProps as IColProps } from 'antd';
-import { IFlexProps as IFlexProps_2 } from '../../../../../../../src/components/layout/Flex/Flex';
-import { IGlobalNavigationLogo } from '../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
-import { IGlobalNavigationLogo as IGlobalNavigationLogo_2 } from '../../../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
-import { IGlobalNavigationManagement } from '../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
-import { IGlobalNavigationManagement as IGlobalNavigationManagement_2 } from '../../../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
-import { IGlobalNavigationTool } from '../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
-import { IGlobalNavigationTool as IGlobalNavigationTool_2 } from '../../../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
+import { IFlexProps as IFlexProps_2 } from '../../../../../../src/components/layout/Flex/Flex';
+import { IGlobalNavigationLogo } from '../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
+import { IGlobalNavigationLogo as IGlobalNavigationLogo_2 } from '../../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
+import { IGlobalNavigationManagement } from '../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
+import { IGlobalNavigationManagement as IGlobalNavigationManagement_2 } from '../../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
+import { IGlobalNavigationTool } from '../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
+import { IGlobalNavigationTool as IGlobalNavigationTool_2 } from '../../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
 import { ImageProps } from 'antd';
 import { IMentionsProps } from './data-entry/Mentions/Mentions';
-import { IMenuInfo } from './navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems';
-import { IModalProps as IModalProps_2 } from '../../../../../../../src/components/feedback/Modal/Modal';
-import { INavigationAccount } from './navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems';
-import { INavigationCreateGroup } from '../../../../../src/components/navigation/GlobalNavigation/NavigationCreate';
-import { INavigationCreateItem } from '../../../../../src/components/navigation/GlobalNavigation/NavigationCreate';
-import { INavigationCreateProps } from '../../../../../src/components/navigation/GlobalNavigation/NavigationCreate';
-import { INavigationCreateProps as INavigationCreateProps_2 } from '../../../../../../../src/components';
-import { INavigationOrg } from './navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems';
-import { INavigationOrg as INavigationOrg_2 } from '../../../../../../../src/components/navigation/GlobalNavigation/WorkspaceSelectorItems';
-import { INavigationWorkspace } from './navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems';
+import { IModalProps as IModalProps_2 } from '../../../../../../src/components/feedback/Modal/Modal';
+import { INavigationAccount } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
+import { INavigationCreateGroup } from '../../../../src/components/navigation/GlobalNavigation/NavigationCreate';
+import { INavigationCreateItem } from '../../../../src/components/navigation/GlobalNavigation/NavigationCreate';
+import { INavigationCreateProps } from '../../../../src/components/navigation/GlobalNavigation/NavigationCreate';
+import { INavigationCreateProps as INavigationCreateProps_2 } from '../../../../../../src/components';
+import { INavigationOrg } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
+import { INavigationOrg as INavigationOrg_2 } from '../../../../../../src/components/navigation/GlobalNavigation/WorkspaceSelectorItems';
+import { INavigationWorkspace } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
 import { InputNumberProps } from 'antd';
 import { InputProps } from 'antd';
 import { InputRef } from 'antd';
 import { RowProps as IRowProps } from 'antd';
-import { ITreeData as ITreeData_2 } from '../../../../../../../src/components';
-import { IWorkspaceSelectorDisplayItem } from './navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems';
-import { IWorkspaceSelectorItem } from './navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems';
+import { ITreeData as ITreeData_2 } from '../../../../../../src/components';
+import { IWorkspaceSelectorDisplayItem } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
+import { IWorkspaceSelectorItem } from './navigation/GlobalNavigation/WorkspaceSelectorItems';
 import { JSX as JSX_2 } from 'react/jsx-runtime';
 import { JSXElementConstructor } from 'react';
 import { LayoutProps } from 'antd';
@@ -85,6 +84,7 @@ import { ListProps } from 'antd';
 import { MemoExoticComponent } from 'react';
 import { Mentions } from './data-entry/Mentions/Mentions';
 import { MenuDividerType } from 'antd/es/menu/hooks/useItems';
+import { MenuInfo } from 'rc-menu/lib/interface';
 import { default as MenuItem } from 'antd/es/menu/MenuItem';
 import { MenuItemGroupType } from 'antd/es/menu/hooks/useItems';
 import { MenuItemType } from 'antd/es/menu/hooks/useItems';
@@ -387,7 +387,8 @@ export { Image_2 as Image }
 
 export { IMentionsProps }
 
-export { IMenuInfo }
+export declare interface IMenuInfo extends MenuInfo {
+}
 
 export declare interface IMenuProps extends MenuProps {
 }
