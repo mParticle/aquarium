@@ -26605,15 +26605,16 @@ const c$ = (r) => /* @__PURE__ */ T.createElement("svg", Oe({ id: "mpLogo", xmln
         onClick: (o) => alert(`Clicked on: ${o.title}`)
       }
     ),
-    !r.hideMpHome && /* @__PURE__ */ V(Tg, { title: "mParticle Overview", placement: "right", children: /* @__PURE__ */ V(Ko, { className: "globalNavigation__mpHome", children: /* @__PURE__ */ V(
-      c$,
+    !r.hideMpHome && /* @__PURE__ */ V(Tg, { title: "mParticle Overview", placement: "right", children: /* @__PURE__ */ V(
+      Ko,
       {
-        className: "globalNavigation__mpSvg",
+        className: "globalNavigation__mpHome",
         onClick: () => {
           r.onMpHomeClick();
-        }
+        },
+        children: /* @__PURE__ */ V(c$, { className: "globalNavigation__mpSvg" })
       }
-    ) }) })
+    ) })
   ] })
 ] }) }) });
 export {

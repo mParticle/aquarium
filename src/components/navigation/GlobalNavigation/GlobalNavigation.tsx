@@ -67,13 +67,13 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
 
             {!props.hideMpHome && (
               <Tooltip title="mParticle Overview" placement="right">
-                <Center className="globalNavigation__mpHome">
-                  <MpLogo
-                    className="globalNavigation__mpSvg"
-                    onClick={() => {
-                      props.onMpHomeClick()
-                    }}
-                  />
+                <Center
+                  className="globalNavigation__mpHome"
+                  onClick={() => {
+                    props.onMpHomeClick()
+                  }}
+                >
+                  <MpLogo className="globalNavigation__mpSvg" />
                 </Center>
               </Tooltip>
             )}

@@ -94,6 +94,7 @@ const meta: Meta<typeof GlobalNavigation> = {
         alert('signing out!')
       },
     },
+    onMpHomeClick:() => { alert('Going to mP!') }
   },
 }
 export default meta
