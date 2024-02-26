@@ -1,4 +1,4 @@
-import { Tree as AntTree, TreeDataNode } from 'antd'
+import { Tree as AntTree, type TreeDataNode } from 'antd'
 import { type TreeProps as AntTreeProps } from 'antd'
 import { ConfigProvider } from 'src/components'
 

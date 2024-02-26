@@ -29,7 +29,6 @@ export interface IWorkspaceSelectorProps {
 }
 
 const WorkspaceSearchLabel = () => (
-  
   <Center>
     <Empty description="No results found" imageStyle={{ height: '60px' }}></Empty>
   </Center>
@@ -66,7 +65,6 @@ const WorkspaceInputLabel = ({
     />
   </>
 )
-
 
 export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
   const [searchTerm, setSearchTerm] = useState<string>('')
@@ -111,6 +109,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
   ]
 
   // todo: this probably doesnt need to be calculated on every render
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const activeWorkspace: INavigationWorkspace = props.orgs
     .flatMap<INavigationWorkspace>(org => {
       let flattenedSelectors: INavigationWorkspace[] = []
@@ -123,7 +122,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
       return flattenedSelectors
     })
-    .find(workspaceCandidate => (workspaceCandidate as INavigationWorkspace).isActive) as INavigationWorkspace
+    .find(workspaceCandidate => workspaceCandidate.isActive)!
 
   const items: IMenuProps['items'] = [
     {
@@ -133,7 +132,6 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
       children: menuChildren,
     },
   ]
-
 
   return (
     <Menu

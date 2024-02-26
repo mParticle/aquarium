@@ -1,13 +1,12 @@
 import { Typography as AntTypography } from 'antd'
 import { ConfigProvider } from 'src/components'
 import { type ReactNode } from 'react'
-import { TextProps as AntTextProps } from 'antd/es/typography/Text'
-import { TitleProps as AntTitleProps } from 'antd/es/typography/Title'
-import { LinkProps as AntLinkProps } from 'antd/es/typography/Link'
-import { ParagraphProps as AntParagraphProps } from 'antd/es/typography/Paragraph'
+import { type TextProps as AntTextProps } from 'antd/es/typography/Text'
+import { type TitleProps as AntTitleProps } from 'antd/es/typography/Title'
+import { type LinkProps as AntLinkProps } from 'antd/es/typography/Link'
+import { type ParagraphProps as AntParagraphProps } from 'antd/es/typography/Paragraph'
 
 export const Typography = AntTypography
-
 
 export interface ITextProps extends AntTextProps {
   children: ReactNode
