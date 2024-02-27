@@ -51,7 +51,7 @@ import { FormProps } from 'antd';
 import { FormProviderProps } from 'antd/es/form/context';
 import { ForwardRefExoticComponent } from 'react';
 import { Grid } from 'antd';
-import GridIcon from '../../../../../src/assets/svg/grid-2.svg?react';
+import GridIcon from '../../../../../src/assets/svg/grid.svg?react';
 import { GroupProps } from 'antd/es/input';
 import { GroupProps as GroupProps_2 } from 'antd/es/avatar';
 import { ColProps as IColProps } from 'antd';
