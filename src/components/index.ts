@@ -70,7 +70,7 @@ export {
   type SubMenuType,
   type MenuItemGroupType,
   type MenuDividerType,
-  type IMenuInfo
+  type IMenuInfo,
 } from './navigation/Menu/Menu'
 export { ConfigProvider, type IConfigProviderProps } from './other/ConfigProvider/ConfigProvider'
 export { Affix, type IAffixProps } from './other/Affix/Affix'
@@ -90,10 +90,24 @@ export type {
   INavigationCreateGroup,
   INavigationCreateItem,
 } from 'src/components/navigation/GlobalNavigation/NavigationCreate'
-export type  {
+export type {
   INavigationOrg,
   INavigationWorkspace,
   INavigationAccount,
   IWorkspaceSelectorDisplayItem,
   IWorkspaceSelectorItem,
 } from './navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'
+
+/**
+ * Icons
+ */
+
+export {
+  ChartLineIcon,
+  ConnectionsIcon,
+  DatabaseIcon,
+  GridIcon,
+  ShieldKeyholeIcon,
+  UsersIcon,
+  WrenchIcon,
+} from './icons/index'
