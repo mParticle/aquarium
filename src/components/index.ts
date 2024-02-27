@@ -101,13 +101,4 @@ export type {
 /**
  * Icons
  */
-
-export {
-  ChartLineIcon,
-  ConnectionsIcon,
-  DatabaseIcon,
-  GridIcon,
-  ShieldKeyholeIcon,
-  UsersIcon,
-  WrenchIcon,
-} from './icons/index'
+export * from './icons/index'
