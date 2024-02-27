@@ -1,5 +1,6 @@
 import { AffixProps } from 'antd';
 import { AlertProps } from 'antd';
+import AlicornIcon from '../../../../../src/assets/svg/alicorn.svg?react';
 import { AnchorProps } from 'antd';
 import { AppProps } from 'antd';
 import { AutoCompleteProps } from 'antd';
@@ -17,12 +18,15 @@ import { CardProps } from 'antd';
 import { CarouselProps } from 'antd';
 import { CascaderPanelProps } from 'antd/es/cascader/Panel';
 import { CascaderProps } from 'antd';
+import ChartColumnIcon from '../../../../../src/assets/svg/chart-column.svg?react';
 import ChartLineIcon from '../../../../../src/assets/svg/chart-line.svg?react';
 import { CheckableTagProps as CheckableTagProps_2 } from 'antd/lib/tag';
 import { CheckboxGroupProps } from 'antd/es/checkbox';
 import { CheckboxProps } from 'antd';
 import { CheckboxRef } from 'rc-checkbox';
 import { CheckboxValueType } from 'antd/es/checkbox/Group';
+import CircleNodesIcon from '../../../../../src/assets/svg/circle-nodes.svg?react';
+import CloudIcon from '../../../../../src/assets/svg/cloud.svg?react';
 import { Col } from 'antd';
 import { CollapseProps } from 'antd';
 import { ColorPickerProps } from 'antd';
@@ -45,15 +49,18 @@ import { ErrorListProps } from 'antd/es/form';
 import { FC } from 'react';
 import { FlexProps } from 'antd';
 import { FloatButtonProps } from 'antd';
+import FolderClosedIcon from '../../../../../src/assets/svg/folder-closed.svg?react';
 import { FormItemProps } from 'antd';
 import { FormListProps } from 'antd/es/form';
 import { FormProps } from 'antd';
 import { FormProviderProps } from 'antd/es/form/context';
 import { ForwardRefExoticComponent } from 'react';
+import GearIcon from '../../../../../src/assets/svg/gear.svg?react';
 import { Grid } from 'antd';
 import GridIcon from '../../../../../src/assets/svg/grid.svg?react';
 import { GroupProps } from 'antd/es/input';
 import { GroupProps as GroupProps_2 } from 'antd/es/avatar';
+import HeartIcon from '../../../../../src/assets/svg/heart.svg?react';
 import { ColProps as IColProps } from 'antd';
 import { IFlexProps as IFlexProps_2 } from '../../../../../../src/components/layout/Flex/Flex';
 import { IGlobalNavigationLogo } from '../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
@@ -82,6 +89,7 @@ import { IWorkspaceSelectorItem } from './navigation/GlobalNavigation/WorkspaceS
 import { JSX as JSX_2 } from 'react/jsx-runtime';
 import { JSXElementConstructor } from 'react';
 import { LayoutProps } from 'antd';
+import LightBulbIcon from '../../../../../src/assets/svg/lightbulb.svg?react';
 import { ListItemTypeProps } from 'antd/es/list/Item';
 import { ListProps } from 'antd';
 import { MemoExoticComponent } from 'react';
@@ -93,6 +101,7 @@ import { MenuItemGroupType } from 'antd/es/menu/hooks/useItems';
 import { MenuItemType } from 'antd/es/menu/hooks/useItems';
 import { MenuProps } from 'antd';
 import { MessageArgsProps } from 'antd';
+import MessageQuestionIcon from '../../../../../src/assets/svg/message-question.svg?react';
 import { ModalProps } from 'antd';
 import { NotificationArgsProps } from 'antd';
 import { PaginationProps } from 'antd';
@@ -117,11 +126,14 @@ import { SegmentedProps } from 'antd';
 import { SelectProps } from 'antd';
 import ShieldKeyholeIcon from '../../../../../src/assets/svg/shield-keyhole.svg?react';
 import { SiderProps } from 'antd';
+import SiteMapIcon from '../../../../../src/assets/svg/sitemap.svg?react';
 import { SkeletonProps } from 'antd';
 import { SliderRangeProps } from 'antd/es/slider';
 import { SliderSingleProps } from 'antd/es/slider';
 import { SpaceProps } from 'antd';
+import SparklesIcon from '../../../../../src/assets/svg/sparkles.svg?react';
 import { SpinProps } from 'antd';
+import SplitIcon from '../../../../../src/assets/svg/split.svg?react';
 import { StatisticProps } from 'antd';
 import { StepsProps } from 'antd';
 import { SubMenuType } from 'antd/es/menu/hooks/useItems';
@@ -151,6 +163,8 @@ export declare const Alert: {
     (props: IAlertProps): JSX_2.Element;
     ErrorBoundary: typeof default_4;
 };
+
+export { AlicornIcon }
 
 export declare const Anchor: (props: IAnchorProps) => JSX_2.Element;
 
@@ -201,6 +215,8 @@ export declare const Cascader: {
 
 export declare const Center: (props: Omit<IFlexProps_2, 'justify' | 'align'>) => JSX_2.Element;
 
+export { ChartColumnIcon }
+
 export { ChartLineIcon }
 
 declare type CheckableTagProps = CheckableTagProps_2 & ITagProps;
@@ -209,6 +225,10 @@ export declare const Checkbox: {
     (props: ICheckboxProps): JSX_2.Element;
     Group: <T extends CheckboxValueType = CheckboxValueType>(props: CheckboxGroupProps<T> & RefAttributes<HTMLDivElement>) => ReactElement<any, string | JSXElementConstructor<any>>;
 };
+
+export { CircleNodesIcon }
+
+export { CloudIcon }
 
 export { Col }
 
@@ -248,6 +268,8 @@ export declare const Flex: (props: IFlexProps) => JSX_2.Element;
 
 export declare const FloatButton: (props: IFloatButtonProps) => JSX_2.Element;
 
+export { FolderClosedIcon }
+
 export declare const Form: {
     (props: IFormProps): JSX_2.Element;
     useForm: typeof useForm;
@@ -266,6 +288,8 @@ export declare const Form: {
     ErrorList: FC<ErrorListProps>;
 };
 
+export { GearIcon }
+
 export declare const GlobalNavigation: (props: IGlobalNavigationProps) => JSX_2.Element;
 
 export declare const GlobalNavWidth: 90;
@@ -273,6 +297,8 @@ export declare const GlobalNavWidth: 90;
 export { Grid }
 
 export { GridIcon }
+
+export { HeartIcon }
 
 export declare interface IAffixProps extends AffixProps {
 }
@@ -543,6 +569,8 @@ export declare const Layout: {
     Header: ForwardRefExoticComponent<LayoutProps & RefAttributes<HTMLElement>>;
 };
 
+export { LightBulbIcon }
+
 export declare const List: {
     (props: IListProps): JSX_2.Element;
     Item: ListItemTypeProps;
@@ -563,6 +591,8 @@ export { MenuItemGroupType }
 export { MenuItemType }
 
 export declare const Message: (props: IMessageProps) => JSX_2.Element;
+
+export { MessageQuestionIcon }
 
 export declare const Modal: (props: IModalProps) => JSX_2.Element;
 
@@ -597,13 +627,19 @@ export declare const Select: (props: ISelectProps) => JSX_2.Element;
 
 export { ShieldKeyholeIcon }
 
+export { SiteMapIcon }
+
 export declare const Skeleton: (props: ISkeletonProps) => JSX_2.Element;
 
 export declare const Slider: (props: ISliderProps) => JSX_2.Element;
 
 export declare const Space: (props: ISpaceProps) => JSX_2.Element;
 
+export { SparklesIcon }
+
 export declare const Spin: (props: ISpinProps) => JSX_2.Element;
+
+export { SplitIcon }
 
 export declare const Statistic: (props: IStatisticProps) => JSX_2.Element;
 

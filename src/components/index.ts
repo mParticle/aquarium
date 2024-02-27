@@ -97,8 +97,24 @@ export type {
   IWorkspaceSelectorDisplayItem,
   IWorkspaceSelectorItem,
 } from './navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'
-
-/**
- * Icons
- */
-export * from './icons/index'
+export {
+  ChartLineIcon,
+  ConnectionsIcon,
+  DatabaseIcon,
+  GridIcon,
+  ShieldKeyholeIcon,
+  UsersIcon,
+  WrenchIcon,
+  AlicornIcon,
+  MessageQuestionIcon,
+  GearIcon,
+  SparklesIcon,
+  SiteMapIcon,
+  ChartColumnIcon,
+  HeartIcon,
+  LightBulbIcon,
+  SplitIcon,
+  CircleNodesIcon,
+  CloudIcon,
+  FolderClosedIcon,
+} from './icons/index'
