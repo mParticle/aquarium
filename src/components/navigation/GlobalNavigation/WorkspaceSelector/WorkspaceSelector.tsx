@@ -144,14 +144,14 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
   )
 
   function generateDisplayItems(): IWorkspaceSelectorDisplayItem[] {
-    return currentFilteredOrgs.reduce<IWorkspaceSelectorDisplayItem[]>((total, org) => {
+    const items = currentFilteredOrgs.reduce<IWorkspaceSelectorDisplayItem[]>((total, org) => {
       total.push({
         type: 'org',
         className: 'workspaceSelector__orgName' + (org.label ? '' : ' u-display-none'),
         label: org.label,
         id: org.id,
-        key: org.id,
-        accounts: org.accounts, // todo: these are ending up in the html as attributes..
+        key: `${org.id}_${org.label}`,
+        accounts: org.accounts,
         workspaces: org.accounts.flatMap(account => account.workspaces),
       })
 
@@ -161,7 +161,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
           className: 'workspaceSelector__accountName' + (account.label ? '' : ' u-display-none'),
           label: account.label,
           id: account.id,
-          key: account.id,
+          key: `${account.id}_${account.label}`,
           workspaces: account.workspaces,
         })
 
@@ -173,7 +173,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
               (workspace.isActive ? ' workspaceSelector__workspaceName--active' : ''),
             label: workspace.label,
             id: workspace.id,
-            key: workspace.id,
+            key: `${workspace.id}_${workspace.label}`,
             onClick: workspace.onClick,
           })
         })
@@ -181,6 +181,16 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
       return total
     }, [])
+
+    // prevent attributes to end up in the HTML
+    return items.map(item => ({
+      type: item.type,
+      className: item.className,
+      label: item.label,
+      id: item.id,
+      key: item.key,
+      onClick: item.onClick,
+    }))
   }
 
   function onSearch(e: React.ChangeEvent<HTMLInputElement>): void {

@@ -11,6 +11,7 @@ import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavi
 import { type IGlobalNavigationManagement } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IGlobalNavigationTool } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import MpLogo from 'src/assets/svg/mpLogo.svg?react'
+import thousandOrgs from './WorkspaceSelector/ThousandOrgs.json'
 
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',
@@ -99,7 +100,9 @@ const meta: Meta<typeof GlobalNavigation> = {
         alert('signing out!')
       },
     },
-    onMpHomeClick:() => { alert('Going to mP!') }
+    onMpHomeClick: () => {
+      alert('Going to mP!')
+    },
   },
 }
 export default meta
@@ -412,6 +415,28 @@ export const MP: Story = {
     onMpHomeClick: () => {
       alert('going to overview map')
     },
+  },
+}
+
+export const MPOrgSwitcher: Story = {
+  render: props => {
+    return (
+      <div style={{ width: 800 }}>
+        <GlobalNavigation
+          {...props}
+          onSearchClick={() => {
+            alert('Searching!')
+          }}
+          logo={mpLogo}
+          tools={mpTools}
+          management={mpManagement}
+          orgs={thousandOrgs}
+          onMpHomeClick={() => {
+            alert('going to overview map')
+          }}
+        />
+      </div>
+    )
   },
 }
 
