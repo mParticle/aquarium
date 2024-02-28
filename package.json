@@ -23,9 +23,9 @@
     "dist/style.css"
   ],
   "peerDependencies": {
+    "antd": ">=5.13.1",
     "react": ">=17.0.2",
-    "react-dom": ">=17.0.2",
-    "antd": ">=5.13.1"
+    "react-dom": ">=17.0.2"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "7.6.14",
@@ -43,6 +43,7 @@
     "@typescript-eslint/eslint-plugin": "6.19.0",
     "@vitejs/plugin-react": "4.2.1",
     "concurrently": "8.2.2",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "8.56.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-config-standard-with-typescript": "43.0.0",
@@ -90,5 +91,10 @@
     "*.{json,yml,md}": [
       "prettier --write"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
