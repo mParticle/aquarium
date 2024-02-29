@@ -418,6 +418,16 @@ export const MP: Story = {
   },
 }
 
+thousandOrgs.forEach(org => {
+  org.accounts.forEach(account => {
+    account.workspaces.forEach(workspace => {
+      ;(workspace as any).onClick = () => {
+        alert(`Selected ${workspace.label}`)
+      }
+    })
+  })
+})
+
 export const MPOrgSwitcher: Story = {
   render: props => {
     return (

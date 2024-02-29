@@ -7,9 +7,8 @@
   bottom: 40px;
   z-index: 1;
   width: 100% !important;
-  padding: 0 var(--padding-xxs) !important;
-  margin: 0 !important;
   background-color: white !important;
+  margin-bottom: var(--margin-xxs);
 }
 
 .workspaceSelector__noResults {
@@ -33,24 +32,28 @@
 .workspaceSelector__orgName {
   color: var(--color-primary);
   pointer-events: none;
-  font-weight: 500;
-  padding: var(--padding-xxs) var(--control-padding-horizontal) !important;
+  padding: 8px 16px 0;
+  font-weight: var(--font-weight-strong);
 }
 
 .workspaceSelector__orgName:not(:nth-child(2)) {
-  padding-left: var(--padding-xs);
-  padding-right: var(--padding-xs);
   border-top: 1px solid var(--color-border-secondary);
 }
 
 .workspaceSelector__accountName {
-  height: var(--control-height);
-  padding: 0 var(--control-padding-horizontal) !important;
   pointer-events: none;
+  padding: 16px 8px 16px 16px;
 }
 
 .workspaceSelector__workspaceName {
+  padding-top: var(--padding-xs);
+  padding-bottom: var(--padding-xs);
+  cursor: pointer;
   padding-left: calc(var(--padding-sm) + var(--padding)) !important;
+}
+
+.workspaceSelector__workspaceName:hover {
+  background-color: var(--color-bg-text-hover);
 }
 
 .workspaceSelector__workspaceName.workspaceSelector__workspaceName--active {
@@ -81,5 +84,9 @@
 
 .workspaceSelector__signoutButton {
   padding: 0 !important;
-  width: 100% !important;
+  width: calc(302px - var(--padding-xxs));
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: var(--margin-xxs);
 }

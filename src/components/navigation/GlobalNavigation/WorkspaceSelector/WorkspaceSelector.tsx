@@ -1,6 +1,6 @@
 import 'src/utils/utils.css'
 import './workspace-selector.css'
-import { Avatar } from 'src/components'
+import { Avatar, List, Popover } from 'src/components'
 import { Input } from 'src/components'
 import { Menu } from 'src/components'
 import { type IMenuProps } from 'src/components'
@@ -11,12 +11,10 @@ import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/
 import { type IWorkspaceSelectorDisplayItem } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
 import { type INavigationAccount } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
 import { type INavigationWorkspace } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
-import { type MenuItemType } from 'src/components/navigation/Menu/Menu'
 import { useState } from 'react'
 import { useCallback } from 'react'
 import { useEffect } from 'react'
 import { useMemo } from 'react'
-import { useRef } from 'react'
 import { debounce } from 'src/utils/utils'
 import { getInitials } from 'src/utils/utils'
 
@@ -37,7 +35,7 @@ const WorkspaceSignoutLabel = ({ signoutOptions }: { signoutOptions: IWorkspaceS
   <Button
     className="workspaceSelector__signoutButton"
     type="primary"
-    onClick={e => {
+    onClick={_e => {
       signoutOptions?.onSignout()
     }}
   >
@@ -82,31 +80,31 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
     currentFilteredOrgs,
   )
 
-  const searchInput: MenuItemType = {
-    key: 'search',
-    className: 'workspaceSelector__search',
-    label: <WorkspaceInputLabel onSearch={onSearch} searchTerm={searchTerm} />,
-  }
+  // const searchInput: MenuItemType = {
+  //   key: 'search',
+  //   className: 'workspaceSelector__search',
+  //   label: <WorkspaceInputLabel onSearch={onSearch} searchTerm={searchTerm} />,
+  // }
+  //
+  // const signoutButton = useRef<MenuItemType>({
+  //   key: 'signout',
+  //   className: 'workspaceSelector__signout',
+  //   label: <WorkspaceSignoutLabel signoutOptions={props.signoutOptions} />,
+  // })
+  //
+  // const noResultsEl: MenuItemType = {
+  //   key: 'no-results',
+  //   className: 'workspaceSelector__noResults',
+  //   label: <WorkspaceSearchLabel />,
+  // }
+  //
+  // const hasNoResults = !!searchTerm && !currentFilteredOrgs.length
 
-  const signoutButton = useRef<MenuItemType>({
-    key: 'signout',
-    className: 'workspaceSelector__signout',
-    label: <WorkspaceSignoutLabel signoutOptions={props.signoutOptions} />,
-  })
-
-  const noResultsEl: MenuItemType = {
-    key: 'no-results',
-    className: 'workspaceSelector__noResults',
-    label: <WorkspaceSearchLabel />,
-  }
-
-  const hasNoResults = !!searchTerm && !currentFilteredOrgs.length
-
-  const menuChildren = [
-    ...(hasNoResults ? [noResultsEl] : menuItems),
-    searchInput,
-    props.signoutOptions ? signoutButton.current : null,
-  ]
+  // const menuChildren = [
+  //   ...(hasNoResults ? [noResultsEl] : menuItems),
+  //   searchInput,
+  //   props.signoutOptions ? signoutButton.current : null,
+  // ]
 
   // todo: this probably doesnt need to be calculated on every render
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -124,23 +122,61 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
     })
     .find(workspaceCandidate => workspaceCandidate.isActive)!
 
-  const items: IMenuProps['items'] = [
-    {
-      key: 'WorkspaceSelector',
-      icon: <Avatar className="workspaceSelector__avatar">{getInitials(activeWorkspace?.label)}</Avatar>,
-      popupClassName: 'workspaceSelector',
-      children: menuChildren,
-    },
-  ]
+  // const items: IMenuProps['items'] = [
+  //   {
+  //     key: 'WorkspaceSelector',
+  //     icon: <Avatar className="workspaceSelector__avatar">{getInitials(activeWorkspace?.label)}</Avatar>,
+  //     popupClassName: 'workspaceSelector',
+  //     children: menuChildren,
+  //   },
+  // ]
 
   return (
-    <Menu
-      // openKeys={['WorkspaceSelector']} // testing only
-      className="globalNavigation__menu globalNavigation__item globalNavigation__item--workspaceSelector"
-      items={items}
-      onOpenChange={clearSearch}
-      expandIcon={null}
-    />
+    <Popover
+      placement="right"
+      open
+      overlayInnerStyle={{ padding: 4 }}
+      content={
+        <div style={{ height: 400, width: 300 }}>
+          <div className="workspaceSelector__search">
+            <WorkspaceInputLabel onSearch={onSearch} searchTerm={searchTerm} />
+          </div>
+
+          <ul
+            style={{
+              listStyle: 'none',
+              paddingLeft: 0,
+              marginBlockStart: 0,
+              overflowY: 'scroll',
+              overflowX: 'auto',
+              height: 390,
+            }}
+          >
+            {menuItems.map(item => (
+              <li
+                key={item.key}
+                className={item.className}
+                onClick={() => {
+                  if (item.onClick) item.onClick()
+                }}
+              >
+                {item.label}
+              </li>
+            ))}
+          </ul>
+          <WorkspaceSignoutLabel signoutOptions={props.signoutOptions} />
+        </div>
+      }
+    >
+      <Avatar className="workspaceSelector__avatar">{getInitials(activeWorkspace?.label)}</Avatar>
+    </Popover>
+    // <Menu
+    //   // openKeys={['WorkspaceSelector']} // testing only
+    //   className="globalNavigation__menu globalNavigation__item globalNavigation__item--workspaceSelector"
+    //   items={items}
+    //   onOpenChange={clearSearch}
+    //   expandIcon={null}
+    // />
   )
 
   function generateDisplayItems(): IWorkspaceSelectorDisplayItem[] {
