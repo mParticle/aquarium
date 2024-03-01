@@ -152,22 +152,19 @@ export const WithFocusManagement: Story = {
             <Button
               onClick={() => {
                 focus('start')
-              }}
-            >
+              }}>
               Focus at start
             </Button>
             <Button
               onClick={() => {
                 focus('end')
-              }}
-            >
+              }}>
               Focus at last
             </Button>
             <Button
               onClick={() => {
                 focus('all')
-              }}
-            >
+              }}>
               Focus to select all
             </Button>
           </Space>
