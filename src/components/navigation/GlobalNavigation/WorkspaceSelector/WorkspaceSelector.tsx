@@ -134,7 +134,6 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
   return (
     <Popover
       placement="right"
-      open
       overlayInnerStyle={{ padding: 4 }}
       content={
         <div style={{ height: 400, width: 300 }}>
@@ -149,7 +148,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
               marginBlockStart: 0,
               overflowY: 'scroll',
               overflowX: 'auto',
-              height: 390,
+              height: 350,
             }}
           >
             {menuItems.map(item => (
@@ -168,7 +167,9 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
         </div>
       }
     >
-      <Avatar className="workspaceSelector__avatar">{getInitials(activeWorkspace?.label)}</Avatar>
+      <div className="workspaceSelector__avatarContainer">
+        <Avatar className="workspaceSelector__avatar">{getInitials(activeWorkspace?.label)}</Avatar>
+      </div>
     </Popover>
     // <Menu
     //   // openKeys={['WorkspaceSelector']} // testing only

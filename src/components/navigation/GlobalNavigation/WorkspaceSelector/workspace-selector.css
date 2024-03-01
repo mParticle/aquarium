@@ -25,6 +25,12 @@
   font-size: var(--font-size);
 }
 
+.workspaceSelector__avatarContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .workspaceSelector__avatar {
   color: white !important;
 }
