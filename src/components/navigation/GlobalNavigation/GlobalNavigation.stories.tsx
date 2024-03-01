@@ -82,7 +82,7 @@ const defaultOrgs: INavigationOrg[] = [
             id: 'workspace1',
             label: 'Workspace 1',
             isActive: true,
-            onClick: e => {
+            onClick: () => {
               alert('Selected Workspace 1')
             },
           },
@@ -225,7 +225,7 @@ const mpOrgs: INavigationOrg[] = [
             id: 'workspace1',
             label: 'Workspace 1',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
               alert('Selected workspace 1')
             },
           },
@@ -233,7 +233,7 @@ const mpOrgs: INavigationOrg[] = [
             id: 'workspace1a',
             label: 'Workspace 1a',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
               alert('Selected workspace 1a')
             },
           },
@@ -241,7 +241,7 @@ const mpOrgs: INavigationOrg[] = [
             id: 'workspace1b',
             label: 'Workspace 1b',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
               alert('Selected workspace 1b')
             },
           },
@@ -255,7 +255,7 @@ const mpOrgs: INavigationOrg[] = [
             id: 'workspace12',
             label: 'Workspace 12',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
               alert('Selected workspace 12')
             },
           },
@@ -263,7 +263,7 @@ const mpOrgs: INavigationOrg[] = [
             id: 'workspace12a',
             label: 'Workspace 12a',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
               alert('Selected workspace 12a')
             },
           },
@@ -271,7 +271,7 @@ const mpOrgs: INavigationOrg[] = [
             id: 'workspace12b',
             label: 'Workspace 12b',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
               alert('Selected workspace 12b')
             },
           },
@@ -291,7 +291,7 @@ const mpOrgs: INavigationOrg[] = [
             id: 'workspace2',
             label: 'Workspace 2',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
               alert('Selected workspace 2')
             },
           },
@@ -311,7 +311,7 @@ const mpOrgs: INavigationOrg[] = [
             id: 'workspace3',
             label: 'Workspace 3',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
               alert('Selected workspace 3')
             },
           },
@@ -331,7 +331,7 @@ const mpOrgs: INavigationOrg[] = [
             id: 'workspace4',
             label: 'Workspace 4',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
               alert('Selected workspace 4')
             },
           },
@@ -351,7 +351,7 @@ const mpOrgs: INavigationOrg[] = [
             id: 'workspace5',
             label: 'Workspace 5',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
               alert('Selected workspace 5')
             },
           },
@@ -371,7 +371,7 @@ const mpOrgs: INavigationOrg[] = [
             id: 'workspace6',
             label: 'Workspace 6',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
               alert('Selected workspace 6')
             },
           },
@@ -391,7 +391,7 @@ const mpOrgs: INavigationOrg[] = [
             id: 'workspace7',
             label: 'Workspace 7',
             isActive: true,
-            onClick: e => {
+            onClick: () => {
               alert('Selected workspace 7')
             },
           },
@@ -613,7 +613,7 @@ const indOrgs: INavigationOrg[] = [
             id: 'project 1',
             label: 'Project 1',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
               alert('Selected project 1')
             },
           },
@@ -633,7 +633,7 @@ const indOrgs: INavigationOrg[] = [
             id: 'project 2',
             label: 'Project 2',
             isActive: true,
-            onClick: e => {
+            onClick: () => {
               alert('Selected project 2')
             },
           },
@@ -653,7 +653,7 @@ const indOrgs: INavigationOrg[] = [
             id: 'project 3',
             label: 'Project 3',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
               alert('Selected project 3')
             },
           },
@@ -673,7 +673,7 @@ const indOrgs: INavigationOrg[] = [
             id: 'project 4',
             label: 'Project 4',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
               alert('Selected project 4')
             },
           },
@@ -693,7 +693,7 @@ const indOrgs: INavigationOrg[] = [
             id: 'project 5',
             label: 'Project 5',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
               alert('Selected project 5')
             },
           },
@@ -713,7 +713,7 @@ const indOrgs: INavigationOrg[] = [
             id: 'project 6',
             label: 'Project 6',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
               alert('Selected project 6')
             },
           },
@@ -733,7 +733,7 @@ const indOrgs: INavigationOrg[] = [
             id: 'project 7',
             label: 'Project 7',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
               alert('Selected project 7')
             },
           },
