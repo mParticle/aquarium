@@ -4,6 +4,8 @@ import { ConfigProvider } from 'src/components'
 import { type InputRef } from 'antd'
 import { forwardRef, type ForwardRefExoticComponent, type Ref, type RefAttributes } from 'react'
 
+export { Input, type InputRef, type IInputProps }
+
 interface IInputProps extends AntInputProps {}
 
 type CompoundedComponent = ForwardRefExoticComponent<IInputProps & RefAttributes<InputRef>> & {
@@ -28,5 +30,3 @@ Input.Group = AntInput.Group
 Input.Password = AntInput.Password
 Input.Search = AntInput.Search
 Input.TextArea = AntInput.TextArea
-
-export { Input, type InputRef, type IInputProps }
