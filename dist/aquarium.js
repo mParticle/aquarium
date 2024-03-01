@@ -28525,7 +28525,6 @@ function nP(i) {
     l_,
     {
       placement: "right",
-      open: !0,
       overlayInnerStyle: { padding: 4 },
       content: /* @__PURE__ */ ai("div", { style: { height: 400, width: 300 }, children: [
         /* @__PURE__ */ j("div", { className: "workspaceSelector__search", children: /* @__PURE__ */ j(tP, { onSearch: R, searchTerm: l }) }),
@@ -28538,7 +28537,7 @@ function nP(i) {
               marginBlockStart: 0,
               overflowY: "scroll",
               overflowX: "auto",
-              height: 390
+              height: 350
             },
             children: h.map((O) => /* @__PURE__ */ j(
               "li",
@@ -28555,7 +28554,7 @@ function nP(i) {
         ),
         /* @__PURE__ */ j(eP, { signoutOptions: i.signoutOptions })
       ] }),
-      children: /* @__PURE__ */ j(Jb, { className: "workspaceSelector__avatar", children: qz(w == null ? void 0 : w.label) })
+      children: /* @__PURE__ */ j("div", { className: "workspaceSelector__avatarContainer", children: /* @__PURE__ */ j(Jb, { className: "workspaceSelector__avatar", children: qz(w == null ? void 0 : w.label) }) })
     }
   );
   function T() {
