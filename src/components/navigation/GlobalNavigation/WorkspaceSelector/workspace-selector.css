@@ -1,7 +1,3 @@
-.workspaceSelector .ant-menu {
-  max-height: 500px !important;
-}
-
 .workspaceSelector__search {
   position: sticky !important;
   bottom: 40px;
@@ -12,20 +8,15 @@
 }
 
 .workspaceSelector__noResults {
-  height: 100% !important;
-  width: 180px !important;
+  height: 330px;
   pointer-events: none;
-}
-
-.workspaceSelector__noResults .ant-menu-title-content {
-  height: 100% !important;
 }
 
 .workspaceSelector__noResults .ant-result-title {
   font-size: var(--font-size);
 }
 
-.workspaceSelector__avatarContainer {
+.workspaceSelector__menuItem {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,10 +26,27 @@
   color: white !important;
 }
 
+.workspaceSelector__popover {
+  padding: var(--padding-xxs) !important;
+}
+
+.workspaceSelector__popoverContent {
+  height: 400px;
+  width: 200px;
+}
+
+.workspaceSelector__itemsList {
+  list-style: none;
+  padding-left: 0;
+  margin-block-start: 0;
+  overflow: auto;
+  height: 350px;
+}
+
 .workspaceSelector__orgName {
   color: var(--color-primary);
   pointer-events: none;
-  padding: 8px 16px 0;
+  padding: var(--padding-xs) var(--padding) 0;
   font-weight: var(--font-weight-strong);
 }
 
@@ -48,7 +56,7 @@
 
 .workspaceSelector__accountName {
   pointer-events: none;
-  padding: 16px 8px 16px 16px;
+  padding: var(--padding-xs) var(--padding-xs) var(--padding-xs) var(--padding);
 }
 
 .workspaceSelector__workspaceName {
@@ -63,7 +71,7 @@
 }
 
 .workspaceSelector__workspaceName.workspaceSelector__workspaceName--active {
-  border-radius: 4px;
+  border-radius: var(--border-radius-sm);
   background: var(--control-item-bg-active) !important;
 }
 
@@ -88,11 +96,14 @@
   background-color: white !important;
 }
 
-.workspaceSelector__signoutButton {
-  padding: 0 !important;
-  width: calc(302px - var(--padding-xxs));
+.workspaceSelector__signoutButtonContainer {
+  width: calc(100% - var(--padding-xs));
   position: absolute;
   bottom: 0;
   left: 0;
-  margin: var(--margin-xxs);
+  padding: var(--padding-xxs);
+}
+
+.workspaceSelector__signoutButton {
+  width: 100%;
 }

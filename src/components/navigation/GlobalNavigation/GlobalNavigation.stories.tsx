@@ -1,6 +1,16 @@
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
-import { GlobalNavigation } from 'src/components'
+import {
+  ChartLineIcon,
+  ConnectionsIcon,
+  DatabaseIcon,
+  GearIcon,
+  GlobalNavigation,
+  GridIcon,
+  MessageQuestionIcon,
+  UsersIcon,
+  WrenchIcon,
+} from 'src/components'
 import { Space } from 'src/components'
 import { Center } from 'src/components'
 import { Button } from 'src/components'
@@ -128,7 +138,7 @@ function Beta(label: string) {
 const mpTools: IGlobalNavigationTool[] = [
   {
     label: 'Activity',
-    icon: <MpLogo />,
+    icon: <ChartLineIcon />,
     type: 'menu',
     children: [
       { label: 'Platform Trends' },
@@ -146,7 +156,7 @@ const mpTools: IGlobalNavigationTool[] = [
   },
   {
     label: 'Data Master',
-    icon: <MpLogo />,
+    icon: <DatabaseIcon />,
     type: 'menu',
     children: [
       { label: 'Catalog' },
@@ -159,54 +169,41 @@ const mpTools: IGlobalNavigationTool[] = [
   },
   {
     label: 'Audiences',
-    icon: <MpLogo />,
+    icon: <UsersIcon />,
     type: 'menu',
     children: [{ label: 'Real-time' }, { label: 'Standard' }, { label: 'Journeys' }],
   },
   {
-    label: 'Observability',
-    icon: <MpLogo />,
+    label: 'Connections',
+    icon: <ConnectionsIcon />,
     type: 'menu',
-    children: [
-      { label: 'Connect' },
-      {
-        label: 'Filter',
-        isNestedMenu: true,
-        children: [{ label: 'Platforms' }, { label: 'Feeds' }],
-      },
-    ],
+    children: [{ label: 'Connect' }, { label: 'Platform Filters' }, { label: 'Feed Filters' }],
   },
   {
     label: 'Setup',
-    icon: <MpLogo />,
+    icon: <WrenchIcon />,
     type: 'menu',
     children: [{ label: 'Inputs' }, { label: 'Outputs' }, { label: 'Data Warehouse' }, { label: 'CRM' }],
   },
   {
     label: 'Directory',
-    icon: <MpLogo />,
+    icon: <GridIcon />,
     type: 'link',
   },
 ]
 const mpManagement: IGlobalNavigationManagement[] = [
   {
-    label: 'Notifications',
-    hideLabel: true,
-    icon: <MpLogo />,
-    type: 'link',
-  },
-  {
     isActive: true,
     label: 'Support',
     hideLabel: true,
-    icon: <MpLogo />,
+    icon: <MessageQuestionIcon />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Settings',
     hideLabel: true,
-    icon: <MpLogo />,
+    icon: <GearIcon />,
     type: 'menu',
     children: [
       { label: 'Platform Settings' },
