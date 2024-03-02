@@ -38,6 +38,7 @@
 .workspaceSelector__itemsList {
   list-style: none;
   padding-left: 0;
+  margin-left: 0;
   margin-block-start: 0;
   overflow: auto;
   height: 350px;
