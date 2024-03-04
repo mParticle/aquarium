@@ -1,3 +1,4 @@
+import AddIcon from '../../../../../../src/assets/svg/add.svg?react';
 import { AffixProps } from 'antd';
 import { AlertProps } from 'antd';
 import AlicornIcon from '../../../../../../src/assets/svg/alicorn.svg?react';
@@ -92,6 +93,7 @@ import { LayoutProps } from 'antd';
 import LightBulbIcon from '../../../../../../src/assets/svg/lightbulb.svg?react';
 import { ListItemTypeProps } from 'antd/es/list/Item';
 import { ListProps } from 'antd';
+import LockIcon from '../../../../../../src/assets/svg/lock.svg?react';
 import { MemoExoticComponent } from 'react';
 import { Mentions } from './data-entry/Mentions/Mentions';
 import { MenuDividerType } from 'antd/es/menu/hooks/useItems';
@@ -103,6 +105,7 @@ import { MenuProps } from 'antd';
 import { MessageArgsProps } from 'antd';
 import MessageQuestionIcon from '../../../../../../src/assets/svg/message-question.svg?react';
 import { ModalProps } from 'antd';
+import MpLogoIcon from '../../../../../../src/assets/svg/mpLogo.svg?react';
 import { NotificationArgsProps } from 'antd';
 import { PaginationProps } from 'antd';
 import { PasswordProps } from 'antd/es/input';
@@ -121,6 +124,7 @@ import { RefAttributes } from 'react';
 import { ResultProps } from 'antd';
 import { RibbonProps } from 'antd/es/badge/Ribbon';
 import { Row } from 'antd';
+import SearchIcon from '../../../../../../src/assets/svg/search.svg?react';
 import { SearchProps } from 'antd/es/input';
 import { SegmentedProps } from 'antd';
 import { SelectProps } from 'antd';
@@ -156,6 +160,8 @@ import { useForm } from 'antd/es/form/Form';
 import UsersIcon from '../../../../../../src/assets/svg/users.svg?react';
 import { WatermarkProps } from 'antd';
 import WrenchIcon from '../../../../../../src/assets/svg/wrench.svg?react';
+
+export { AddIcon }
 
 export declare const Affix: (props: IAffixProps) => JSX_2.Element;
 
@@ -578,6 +584,8 @@ export declare const List: {
 
 export declare function LoadingModal<Data>(props: ILoadingModalProps<Data>): JSX_2.Element;
 
+export { LockIcon }
+
 export { Mentions }
 
 export declare const Menu: (props: IMenuProps) => JSX_2.Element;
@@ -595,6 +603,8 @@ export declare const Message: (props: IMessageProps) => JSX_2.Element;
 export { MessageQuestionIcon }
 
 export declare const Modal: (props: IModalProps) => JSX_2.Element;
+
+export { MpLogoIcon }
 
 declare const Notification_2: (props: INotificationProps) => JSX_2.Element;
 export { Notification_2 as Notification }
@@ -620,6 +630,8 @@ export declare const Rate: (props: IRateProps) => JSX_2.Element;
 export declare const Result: (props: IResultProps) => JSX_2.Element;
 
 export { Row }
+
+export { SearchIcon }
 
 export declare const Segmented: (props: ISegmentedProps) => JSX_2.Element;
 

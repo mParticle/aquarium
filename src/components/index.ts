@@ -98,6 +98,10 @@ export type {
   IWorkspaceSelectorItem,
 } from './navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'
 export {
+  AddIcon,
+  LockIcon,
+  MpLogoIcon,
+  SearchIcon,
   ChartLineIcon,
   ConnectionsIcon,
   DatabaseIcon,
