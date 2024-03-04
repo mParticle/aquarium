@@ -1,13 +1,12 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { Space } from 'src/components'
 import { Progress } from 'src/components/feedback/Progress/Progress'
-import { ExampleStory } from "src/utils/ExampleStory";
-import { Button } from "src/components";
-import { useState } from "react";
-import { Icon } from "src/components";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import { faMinus } from "@fortawesome/free-solid-svg-icons";
-import { Tooltip } from "src/components";
+import { ExampleStory } from 'src/utils/ExampleStory'
+import { Button } from 'src/components'
+import { useState } from 'react'
+import { Tooltip } from 'src/components'
+import MpLogo from 'src/assets/svg/mpLogo.svg?react'
+import AddIcon from 'src/assets/svg/add.svg?react'
 
 const meta: Meta<typeof Progress> = {
   title: 'Aquarium/Feedback/Progress',
@@ -75,28 +74,28 @@ export const WithCustomColors: Story = {
 
 export const CircleType: Story = {
   args: {
-    percent:50,
+    percent: 50,
     type: 'circle',
   },
 }
 
 export const DashboardType: Story = {
   args: {
-    percent:50,
+    percent: 50,
     type: 'dashboard',
   },
 }
 
 export const SmallSize: Story = {
   args: {
-    percent:50,
+    percent: 50,
     size: 'small',
   },
 }
 
 export const CustomFormat: Story = {
   args: {
-    percent:50,
+    percent: 50,
     format: (percent, successPercent) => `Progress: ${percent}% (Success: ${successPercent}%)`,
   },
 }
@@ -113,9 +112,9 @@ export const ExampleProgress: Story = {
           <Progress percent={50} showInfo={false} />
         </>
       </ExampleStory>
-    );
+    )
   },
-};
+}
 
 export const ExampleCircle: Story = {
   render: () => {
@@ -127,24 +126,24 @@ export const ExampleCircle: Story = {
           <Progress type="circle" percent={100} />
         </Space>
       </ExampleStory>
-    );
+    )
   },
-};
+}
 
 export const ExampleSmall: Story = {
   render: () => {
     return (
       <ExampleStory title="Appropriate for a narrow area.">
         <div style={{ width: 170 }}>
-          <Progress percent={30} size="small"/>
-          <Progress percent={50} size="small" status="active"/>
-          <Progress percent={70} size="small" status="exception"/>
-          <Progress percent={100} size="small"/>
+          <Progress percent={30} size="small" />
+          <Progress percent={50} size="small" status="active" />
+          <Progress percent={70} size="small" status="exception" />
+          <Progress percent={100} size="small" />
         </div>
       </ExampleStory>
-    );
+    )
   },
-};
+}
 
 export const ExampleResponsive: Story = {
   render: () => {
@@ -156,95 +155,95 @@ export const ExampleResponsive: Story = {
           percent={60}
           strokeWidth={20}
           size={14}
-          format={(number) => `Tooltip with percent info - ${number}%`}
+          format={number => `Tooltip with percent info - ${number}%`}
         />
       </ExampleStory>
-    );
+    )
   },
-};
+}
 
 export const ExampleDynamic: Story = {
   render: () => {
-    const [percent, setPercent] = useState<number>(0);
+    const [percent, setPercent] = useState<number>(0)
 
     const increase = () => {
-      setPercent((prevPercent) => {
-        const newPercent = prevPercent + 10;
+      setPercent(prevPercent => {
+        const newPercent = prevPercent + 10
         if (newPercent > 100) {
-          return 100;
+          return 100
         }
-        return newPercent;
-      });
-    };
+        return newPercent
+      })
+    }
 
     const decline = () => {
-      setPercent((prevPercent) => {
-        const newPercent = prevPercent - 10;
+      setPercent(prevPercent => {
+        const newPercent = prevPercent - 10
         if (newPercent < 0) {
-          return 0;
+          return 0
         }
-        return newPercent;
-      });
-    };    
+        return newPercent
+      })
+    }
     return (
       <ExampleStory title="A dynamic progress bar is better.">
         <div style={{ marginBottom: 10 }}>
-          <Progress percent={percent}/>
-          <Progress type="circle" percent={percent}/>
+          <Progress percent={percent} />
+          <Progress type="circle" percent={percent} />
         </div>
         <Button.Group>
-          <Button onClick={decline} icon={<Icon icon={faPlus}/>}/>
-          <Button onClick={increase} icon={<Icon icon={faMinus}/>}/>
+          <Button onClick={decline} icon={<AddIcon />} />
+          <Button onClick={increase} icon={<MpLogo />} />
         </Button.Group>
       </ExampleStory>
-    );
+    )
   },
-};
+}
 
 export const ExampleSegments: Story = {
   render: () => {
     return (
       <ExampleStory title="Show several parts of progress with different status.">
+        <Tooltip title="3 done / 3 in progress / 4 to do">
+          <Progress percent={60} success={{ percent: 30 }} />
+        </Tooltip>
+        <Space wrap>
           <Tooltip title="3 done / 3 in progress / 4 to do">
-            <Progress percent={60} success={{ percent: 30 }} />
+            <Progress percent={60} success={{ percent: 30 }} type="circle" />
           </Tooltip>
-          <Space wrap>
-            <Tooltip title="3 done / 3 in progress / 4 to do">
-              <Progress percent={60} success={{ percent: 30 }} type="circle" />
-            </Tooltip>
-            <Tooltip title="3 done / 3 in progress / 4 to do">
-              <Progress percent={60} success={{ percent: 30 }} type="dashboard" />
-            </Tooltip>
-          </Space>
+          <Tooltip title="3 done / 3 in progress / 4 to do">
+            <Progress percent={60} success={{ percent: 30 }} type="dashboard" />
+          </Tooltip>
+        </Space>
       </ExampleStory>
-    );
+    )
   },
-};
+}
 
 export const ExampleGradient: Story = {
   render: () => {
-    const twoColors = { '0%': '#108ee9', '100%': '#87d068' };
-    const conicColors = { '0%': '#87d068', '50%': '#ffe58f', '100%': '#ffccc7' };
+    const twoColors = { '0%': '#108ee9', '100%': '#87d068' }
+    const conicColors = { '0%': '#87d068', '50%': '#ffe58f', '100%': '#ffccc7' }
     return (
-      <ExampleStory title={<>  </>}>
+      <ExampleStory title={<> </>}>
         <div style={{ display: 'flex', flexDirection: 'column', rowGap: 16 }}>
-          <Progress percent={99.9} strokeColor={twoColors}/>
-          <Progress percent={50} status="active" strokeColor={{ from: '#108ee9', to: '#87d068' }}/>
+          <Progress percent={99.9} strokeColor={twoColors} />
+          <Progress percent={50} status="active" strokeColor={{ from: '#108ee9', to: '#87d068' }} />
           <Space wrap>
-            <Progress type="circle" percent={90} strokeColor={twoColors}/>
-            <Progress type="circle" percent={100} strokeColor={twoColors}/>
-            <Progress type="circle" percent={93} strokeColor={conicColors}/>
+            <Progress type="circle" percent={90} strokeColor={twoColors} />
+            <Progress type="circle" percent={100} strokeColor={twoColors} />
+            <Progress type="circle" percent={93} strokeColor={conicColors} />
           </Space>
           <Space wrap>
-            <Progress type="dashboard" percent={90} strokeColor={twoColors}/>
-            <Progress type="dashboard" percent={100} strokeColor={twoColors}/>
-            <Progress type="dashboard" percent={93} strokeColor={conicColors}/>
+            <Progress type="dashboard" percent={90} strokeColor={twoColors} />
+            <Progress type="dashboard" percent={100} strokeColor={twoColors} />
+            <Progress type="dashboard" percent={93} strokeColor={conicColors} />
           </Space>
         </div>
       </ExampleStory>
-    );
+    )
   },
-};
+}
 
 export const ExampleProgressSize: Story = {
   render: () => {
@@ -278,6 +277,6 @@ export const ExampleProgressSize: Story = {
           <Progress steps={3} percent={50} size={[20, 30]} />
         </Space>
       </ExampleStory>
-    );
+    )
   },
-};
+}
