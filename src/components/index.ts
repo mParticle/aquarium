@@ -81,6 +81,7 @@ export {
   type IGlobalNavigationProps,
 } from './navigation/GlobalNavigation/GlobalNavigation'
 export type {
+  IBaseGlobalNavigationItem,
   IGlobalNavigationManagement,
   IGlobalNavigationTool,
 } from './navigation/GlobalNavigation/GlobalNavigationItems'

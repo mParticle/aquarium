@@ -62,7 +62,8 @@ import GridIcon from '../../../../../../src/assets/svg/grid.svg?react';
 import { GroupProps } from 'antd/es/input';
 import { GroupProps as GroupProps_2 } from 'antd/es/avatar';
 import HeartIcon from '../../../../../../src/assets/svg/heart.svg?react';
-import { IBaseGlobalNavigationItem } from '../../../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
+import { IBaseGlobalNavigationItem } from './navigation/GlobalNavigation/GlobalNavigationItems';
+import { IBaseGlobalNavigationItem as IBaseGlobalNavigationItem_2 } from '../../../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
 import { ColProps as IColProps } from 'antd';
 import { IFlexProps as IFlexProps_2 } from '../../../../../../../src/components/layout/Flex/Flex';
 import { IGlobalNavigationLogoProps as IGlobalNavigationLogoProps_2 } from '../../../../../../../src/components';
@@ -324,6 +325,8 @@ export declare interface IAvatarProps extends AvatarProps {
 export declare interface IBadgeProps extends BadgeProps {
 }
 
+export { IBaseGlobalNavigationItem }
+
 export declare interface IBreadcrumbProps extends BreadcrumbProps {
 }
 
@@ -383,7 +386,7 @@ export declare interface IFormProps extends FormProps {
     children: ReactNode;
 }
 
-export declare interface IGlobalNavigationLogoProps extends IBaseGlobalNavigationItem {
+export declare interface IGlobalNavigationLogoProps extends IBaseGlobalNavigationItem_2 {
     onSuiteLogoClick: () => void;
 }
 
