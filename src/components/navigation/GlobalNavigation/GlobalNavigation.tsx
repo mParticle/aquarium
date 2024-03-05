@@ -10,21 +10,23 @@ import { NavigationSearch } from 'src/components/navigation/GlobalNavigation/Nav
 import { NavigationList } from 'src/components/navigation/GlobalNavigation/NavigationList'
 import { NavigationCreate } from 'src/components/navigation/GlobalNavigation/NavigationCreate'
 import { WorkspaceSelector } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelector'
-import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
-import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IGlobalNavigationManagement } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IGlobalNavigationTool } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
+import { type INavigationOrg } from "src/components";
 import MpLogo from 'src/assets/svg/mpLogo.svg?react'
+import { type IGlobalNavigationLogoProps } from "src/components";
 
 export interface IGlobalNavigationProps {
-  logo: IGlobalNavigationLogo
+  logo: IGlobalNavigationLogoProps
   tools: IGlobalNavigationTool[]
   management: IGlobalNavigationManagement[]
 
+  // eslint-disable-next-line no-undef
   orgs?: INavigationOrg[]
 
   createItems?: INavigationCreateProps['createItems']
   onSearchClick?: () => void
+  onSuiteLogoClick?: () => void
   onMpHomeClick: () => void
   hideMpHome?: boolean
   signoutOptions?: {
@@ -43,6 +45,8 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
           <div>
             <SuiteLogo {...props.logo} />
 
+            <div className="globalNavigation__divider"/>
+            
             <Center vertical>
               {props.onSearchClick && <NavigationSearch onClick={props.onSearchClick} />}
               {props.createItems && <NavigationCreate createItems={props.createItems} />}

@@ -23,19 +23,22 @@ import { AlicornIcon } from 'src/components'
 import { CloudIcon } from 'src/components'
 import { Badge } from 'src/components/data-display/Badge/Badge'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'
-import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IGlobalNavigationManagement } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IGlobalNavigationTool } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import thousandOrgs from './WorkspaceSelector/ThousandOrgs.json'
-import React from "react";
-import { SparklesIcon } from "src/components";
-import { CircleNodesIcon } from "src/components";
-import { SplitIcon } from "src/components";
-import { LightBulbIcon } from "src/components";
+import React from 'react'
+import { SparklesIcon } from 'src/components'
+import { CircleNodesIcon } from 'src/components'
+import { SplitIcon } from 'src/components'
+import { LightBulbIcon } from 'src/components'
+import { type IGlobalNavigationLogoProps } from 'src/components'
 
-const defaultLogo: IGlobalNavigationLogo = {
+const defaultLogo: IGlobalNavigationLogoProps = {
   label: 'Aqua',
   icon: <AlicornIcon />,
+  onSuiteLogoClick: () => {
+    alert('Going to Aqua Home!')
+  },
 }
 const defaultTools: IGlobalNavigationTool[] = [
   {
@@ -131,9 +134,12 @@ type Story = StoryObj<typeof GlobalNavigation>
 
 export const Primary: Story = {}
 
-const mpLogo: IGlobalNavigationLogo = {
+const mpLogo: IGlobalNavigationLogoProps = {
   label: 'Data Platform',
   icon: <MpLogoIcon />,
+  onSuiteLogoClick: () => {
+    alert('Going to mP Home!')
+  },
 }
 
 function Beta(label: string) {
@@ -457,9 +463,12 @@ export const MPOrgSwitcher: Story = {
   },
 }
 
-const indLogo: IGlobalNavigationLogo = {
+const indLogo: IGlobalNavigationLogoProps = {
   label: 'Analytics',
   icon: <MpLogoIcon />,
+  onSuiteLogoClick: () => {
+    alert('Going to Analytics Home!')
+  },
 }
 const indTools: IGlobalNavigationTool[] = [
   {
@@ -772,9 +781,12 @@ export const Indicative: Story = {
   },
 }
 
-const cortexLogo: IGlobalNavigationLogo = {
+const cortexLogo: IGlobalNavigationLogoProps = {
   label: 'Predictions',
   icon: <SparklesIcon />,
+  onSuiteLogoClick: () => {
+    alert('Going to Predictions Home!')
+  },
 }
 const cortexTools: IGlobalNavigationTool[] = [
   {

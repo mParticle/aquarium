@@ -241,17 +241,17 @@
 .globalNavigation__suiteLogo {
   min-height: var(--suite-logo-height);
   min-width: var(--nav-width);
-  padding-top: var(--padding-lg);
+  padding: var(--padding-md) 0;
   color: black;
   font-size: var(--font-size-sm);
   font-weight: 400;
-  cursor: default;
+  cursor: pointer;
 }
 
 .globalNavigation__divider {
   border-bottom: 1px solid var(--color-border-secondary);
-  width: 80%;
-  margin-top: var(--margin-md);
+  margin-right: var(--margin-sm);
+  margin-left: var(--margin-sm);
   margin-bottom: var(--margin-md);
 }
 
