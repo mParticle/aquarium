@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-
 import { getInitials } from './utils'
 
 describe('Testing getInitials', () => {

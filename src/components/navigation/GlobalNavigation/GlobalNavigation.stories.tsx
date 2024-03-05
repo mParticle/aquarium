@@ -10,27 +10,23 @@ import {
   MessageQuestionIcon,
   UsersIcon,
   WrenchIcon,
-  MpLogoIcon
+  MpLogoIcon,
 } from 'src/components'
 import { Space } from 'src/components'
 import { Center } from 'src/components'
 import { Button } from 'src/components'
 import { type INavigationCreateProps } from 'src/components'
+import { FolderClosedIcon } from 'src/components'
+import { ShieldKeyholeIcon } from 'src/components'
+import { HeartIcon } from 'src/components'
+import { AlicornIcon } from 'src/components'
+import { CloudIcon } from 'src/components'
 import { Badge } from 'src/components/data-display/Badge/Badge'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'
 import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IGlobalNavigationManagement } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IGlobalNavigationTool } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import thousandOrgs from './WorkspaceSelector/ThousandOrgs.json'
-import { FolderClosedIcon } from "src/components";
-import { ShieldKeyholeIcon } from "src/components";
-import { HeartIcon } from "src/components";
-import { AlicornIcon } from "src/components";
-import { CloudIcon } from "src/components";
-import { CircleNodesIcon } from "src/components";
-import { LightBulbIcon } from "src/components";
-import { SparklesIcon } from "src/components";
-import { SplitIcon } from "src/components";
 
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',

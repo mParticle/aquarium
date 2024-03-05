@@ -1,8 +1,11 @@
 :root {
-    --workspace-selector-height: 400px;
-    --workspace-selector-search-height: 36px;
-    --workspace-selector-signout-height: 40px;
-    --workspace-selector-items-height: calc(var(--workspace-selector-height) - var(--workspace-selector-search-height) - var(--workspace-selector-signout-height));
+  --workspace-selector-height: 400px;
+  --workspace-selector-search-height: 36px;
+  --workspace-selector-signout-height: 40px;
+  --workspace-selector-items-height: calc(
+    var(--workspace-selector-height) - var(--workspace-selector-search-height) -
+      var(--workspace-selector-signout-height)
+  );
 }
 
 .workspaceSelector__search {
@@ -36,7 +39,6 @@
 .workspaceSelector__popover {
   padding: var(--padding-xxs) !important;
 }
-
 
 .workspaceSelector__popoverContent {
   height: var(--workspace-selector-height);
@@ -104,7 +106,7 @@
   padding: 0 var(--padding-xxs) !important;
   margin: 0 !important;
   background-color: white !important;
-  height:var(--workspace-selector-signout-height);
+  height: var(--workspace-selector-signout-height);
 }
 
 .workspaceSelector__signoutButtonContainer {
