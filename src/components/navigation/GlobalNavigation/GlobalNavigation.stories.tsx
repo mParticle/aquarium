@@ -27,6 +27,10 @@ import { ShieldKeyholeIcon } from "src/components";
 import { HeartIcon } from "src/components";
 import { AlicornIcon } from "src/components";
 import { CloudIcon } from "src/components";
+import { CircleNodesIcon } from "src/components";
+import { LightBulbIcon } from "src/components";
+import { SparklesIcon } from "src/components";
+import { SplitIcon } from "src/components";
 
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',
@@ -769,33 +773,33 @@ export const Indicative: Story = {
 
 const cortexLogo: IGlobalNavigationLogo = {
   label: 'Predictions',
-  icon: <MpLogoIcon />,
+  icon: <SparklesIcon />,
 }
 const cortexTools: IGlobalNavigationTool[] = [
   {
     label: 'Pipelines',
-    icon: <MpLogoIcon />,
+    icon: <CircleNodesIcon />,
     type: 'link',
   },
   {
     label: 'Projects',
-    icon: <MpLogoIcon />,
+    icon: <SplitIcon />,
     type: 'link',
     isActive: true,
   },
   {
     label: 'Data',
-    icon: <MpLogoIcon />,
+    icon: <DatabaseIcon />,
     type: 'link',
   },
   {
     label: 'API',
-    icon: <MpLogoIcon />,
+    icon: <CloudIcon />,
     type: 'link',
   },
   {
     label: 'Insights',
-    icon: <MpLogoIcon />,
+    icon: <LightBulbIcon />,
     type: 'link',
   },
 ]
