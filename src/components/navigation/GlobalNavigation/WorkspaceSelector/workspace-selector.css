@@ -1,6 +1,16 @@
+:root {
+  --workspace-selector-height: 400px;
+  --workspace-selector-search-height: 36px;
+  --workspace-selector-signout-height: 40px;
+  --workspace-selector-items-height: calc(
+    var(--workspace-selector-height) - var(--workspace-selector-search-height) -
+      var(--workspace-selector-signout-height)
+  );
+}
+
 .workspaceSelector__search {
   position: sticky !important;
-  bottom: 40px;
+  bottom: var(--workspace-selector-search-height);
   z-index: 1;
   width: 100% !important;
   background-color: white !important;
@@ -8,7 +18,7 @@
 }
 
 .workspaceSelector__noResults {
-  height: 330px;
+  height: var(--workspace-selector-items-height);
   pointer-events: none;
 }
 
@@ -31,7 +41,7 @@
 }
 
 .workspaceSelector__popoverContent {
-  height: 400px;
+  height: var(--workspace-selector-height);
   width: 200px;
 }
 
@@ -41,7 +51,8 @@
   margin-left: 0;
   margin-block-start: 0;
   overflow: auto;
-  height: 350px;
+  height: var(--workspace-selector-items-height);
+  margin-bottom: var(--margin-xxs);
 }
 
 .workspaceSelector__orgName {
@@ -51,7 +62,7 @@
   font-weight: var(--font-weight-strong);
 }
 
-.workspaceSelector__orgName:not(:nth-child(2)) {
+.workspaceSelector__orgName:not(:first-child) {
   border-top: 1px solid var(--color-border-secondary);
 }
 
@@ -95,6 +106,7 @@
   padding: 0 var(--padding-xxs) !important;
   margin: 0 !important;
   background-color: white !important;
+  height: var(--workspace-selector-signout-height);
 }
 
 .workspaceSelector__signoutButtonContainer {

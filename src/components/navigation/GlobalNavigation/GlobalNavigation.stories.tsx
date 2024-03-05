@@ -10,6 +10,7 @@ import {
   MessageQuestionIcon,
   UsersIcon,
   WrenchIcon,
+  MpLogoIcon,
 } from 'src/components'
 import { Space } from 'src/components'
 import { Center } from 'src/components'
@@ -20,30 +21,34 @@ import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/
 import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IGlobalNavigationManagement } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IGlobalNavigationTool } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
-import MpLogo from 'src/assets/svg/mpLogo.svg?react'
 import thousandOrgs from './WorkspaceSelector/ThousandOrgs.json'
+import { FolderClosedIcon } from 'src/components'
+import { ShieldKeyholeIcon } from 'src/components'
+import { HeartIcon } from 'src/components'
+import { AlicornIcon } from 'src/components'
+import { CloudIcon } from 'src/components'
 
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',
-  icon: <MpLogo />,
+  icon: <AlicornIcon />,
 }
 const defaultTools: IGlobalNavigationTool[] = [
   {
     label: 'Tool 1',
     isActive: true,
-    icon: <MpLogo />,
+    icon: <ShieldKeyholeIcon />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Tool 2',
-    icon: <MpLogo />,
+    icon: <HeartIcon />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Tool 3',
-    icon: <MpLogo />,
+    icon: <ConnectionsIcon />,
     type: 'link',
   },
 ]
@@ -51,20 +56,20 @@ const defaultManagement: IGlobalNavigationManagement[] = [
   {
     label: 'Notifications',
     hideLabel: true,
-    icon: <MpLogo />,
+    icon: <CloudIcon />,
     type: 'link',
   },
   {
     label: 'Support',
     hideLabel: true,
-    icon: <MpLogo />,
+    icon: <MessageQuestionIcon />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Settings',
     hideLabel: true,
-    icon: <MpLogo />,
+    icon: <GearIcon />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
@@ -123,7 +128,7 @@ export const Primary: Story = {}
 
 const mpLogo: IGlobalNavigationLogo = {
   label: 'Data Platform',
-  icon: <MpLogo />,
+  icon: <MpLogoIcon />,
 }
 
 function Beta(label: string) {
@@ -449,23 +454,23 @@ export const MPOrgSwitcher: Story = {
 
 const indLogo: IGlobalNavigationLogo = {
   label: 'Analytics',
-  icon: <MpLogo />,
+  icon: <MpLogoIcon />,
 }
 const indTools: IGlobalNavigationTool[] = [
   {
     label: 'My Hub',
-    icon: <MpLogo />,
+    icon: <GridIcon />,
     type: 'link',
     isActive: true,
   },
   {
     label: 'Saved',
-    icon: <MpLogo />,
+    icon: <FolderClosedIcon />,
     type: 'link',
   },
   {
     label: 'Manage Data',
-    icon: <MpLogo />,
+    icon: <DatabaseIcon />,
     type: 'link',
   },
 ]
@@ -473,14 +478,14 @@ const indManagement: IGlobalNavigationManagement[] = [
   {
     label: 'Support',
     hideLabel: true,
-    icon: <MpLogo />,
+    icon: <MessageQuestionIcon />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Settings',
     hideLabel: true,
-    icon: <MpLogo />,
+    icon: <GearIcon />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
@@ -764,33 +769,33 @@ export const Indicative: Story = {
 
 const cortexLogo: IGlobalNavigationLogo = {
   label: 'Predictions',
-  icon: <MpLogo />,
+  icon: <MpLogoIcon />,
 }
 const cortexTools: IGlobalNavigationTool[] = [
   {
     label: 'Pipelines',
-    icon: <MpLogo />,
+    icon: <MpLogoIcon />,
     type: 'link',
   },
   {
     label: 'Projects',
-    icon: <MpLogo />,
+    icon: <MpLogoIcon />,
     type: 'link',
     isActive: true,
   },
   {
     label: 'Data',
-    icon: <MpLogo />,
+    icon: <MpLogoIcon />,
     type: 'link',
   },
   {
     label: 'API',
-    icon: <MpLogo />,
+    icon: <MpLogoIcon />,
     type: 'link',
   },
   {
     label: 'Insights',
-    icon: <MpLogo />,
+    icon: <MpLogoIcon />,
     type: 'link',
   },
 ]
@@ -798,14 +803,14 @@ const cortexManagement: IGlobalNavigationManagement[] = [
   {
     label: 'Support',
     hideLabel: true,
-    icon: <MpLogo />,
+    icon: <MessageQuestionIcon />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Settings',
     hideLabel: true,
-    icon: <MpLogo />,
+    icon: <GearIcon />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },

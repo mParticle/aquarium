@@ -111,7 +111,7 @@
 }
 
 .navigationCreate__lockIcon {
-  padding-left: var(--padding-xs);
+  margin-left: var(--padding-xs);
   width: var(--size-sm) !important;
   height: var(--size-sm) !important;
 }

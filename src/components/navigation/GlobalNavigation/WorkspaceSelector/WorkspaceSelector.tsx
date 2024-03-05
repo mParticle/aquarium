@@ -77,6 +77,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
   return (
     <Popover
+      arrow={false}
       placement="right"
       // Use case for variables.ts once style-dictionary is exporting both css and ts files
       overlayInnerStyle={{ padding: 4 }}
