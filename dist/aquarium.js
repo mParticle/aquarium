@@ -26333,7 +26333,7 @@ const oL = (r, o) => {
       r(...c);
     }, o);
   };
-}, lL = () => /* @__PURE__ */ B("div", { className: "workspaceSelector__noResults", children: /* @__PURE__ */ B(Ll, { children: /* @__PURE__ */ B(d2, { description: "No results found", imageStyle: { height: "60px" } }) }) }), uL = ({
+}, lL = () => /* @__PURE__ */ B(Ll, { className: "workspaceSelector__noResults", children: /* @__PURE__ */ B(d2, { description: "No results found", imageStyle: { height: "60px" } }) }), uL = ({
   signoutOptions: r
 }) => {
   var o;
@@ -26378,6 +26378,7 @@ function sL(r) {
   return /* @__PURE__ */ B(
     fR,
     {
+      arrow: !1,
       placement: "right",
       overlayInnerStyle: { padding: 4 },
       overlayClassName: "workspaceSelector__popover",
