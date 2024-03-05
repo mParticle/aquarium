@@ -63,10 +63,11 @@ import { GroupProps } from 'antd/es/input';
 import { GroupProps as GroupProps_2 } from 'antd/es/avatar';
 import HeartIcon from '../../../../../../src/assets/svg/heart.svg?react';
 import { IBaseGlobalNavigationItem } from './navigation/GlobalNavigation/GlobalNavigationItems';
-import { IBaseGlobalNavigationItem as IBaseGlobalNavigationItem_2 } from '../../../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
 import { ColProps as IColProps } from 'antd';
 import { IFlexProps as IFlexProps_2 } from '../../../../../../../src/components/layout/Flex/Flex';
-import { IGlobalNavigationLogoProps as IGlobalNavigationLogoProps_2 } from '../../../../../../../src/components';
+import { IGlobalNavigationLogo } from './navigation/GlobalNavigation/GlobalNavigationItems';
+import { IGlobalNavigationLogo as IGlobalNavigationLogo_2 } from '../../../../../../../src/components';
+import { IGlobalNavigationLogo as IGlobalNavigationLogo_3 } from '../../../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
 import { IGlobalNavigationManagement } from './navigation/GlobalNavigation/GlobalNavigationItems';
 import { IGlobalNavigationManagement as IGlobalNavigationManagement_2 } from '../../../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
 import { IGlobalNavigationTool } from './navigation/GlobalNavigation/GlobalNavigationItems';
@@ -386,14 +387,12 @@ export declare interface IFormProps extends FormProps {
     children: ReactNode;
 }
 
-export declare interface IGlobalNavigationLogoProps extends IBaseGlobalNavigationItem_2 {
-    onSuiteLogoClick: () => void;
-}
+export { IGlobalNavigationLogo }
 
 export { IGlobalNavigationManagement }
 
 export declare interface IGlobalNavigationProps {
-    logo: IGlobalNavigationLogoProps_2;
+    logo: IGlobalNavigationLogo_2;
     tools: IGlobalNavigationTool_2[];
     management: IGlobalNavigationManagement_2[];
     orgs?: INavigationOrg_2[];
@@ -675,7 +674,7 @@ export declare const Steps: (props: IStepsProps) => JSX_2.Element;
 
 export { SubMenuType }
 
-export declare function SuiteLogo(props: IGlobalNavigationLogoProps): JSX_2.Element;
+export declare function SuiteLogo(props: IGlobalNavigationLogo_3): JSX_2.Element;
 
 export declare const Switch: (props: ISwitchProps) => JSX_2.Element;
 
