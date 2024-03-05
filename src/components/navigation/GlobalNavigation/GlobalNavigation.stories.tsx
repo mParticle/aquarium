@@ -31,9 +31,9 @@ import { SparklesIcon } from 'src/components'
 import { CircleNodesIcon } from 'src/components'
 import { SplitIcon } from 'src/components'
 import { LightBulbIcon } from 'src/components'
-import { type IGlobalNavigationLogoProps } from 'src/components'
+import { type IGlobalNavigationLogo } from 'src/components'
 
-const defaultLogo: IGlobalNavigationLogoProps = {
+const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',
   icon: <AlicornIcon />,
   onSuiteLogoClick: () => {
@@ -134,7 +134,7 @@ type Story = StoryObj<typeof GlobalNavigation>
 
 export const Primary: Story = {}
 
-const mpLogo: IGlobalNavigationLogoProps = {
+const mpLogo: IGlobalNavigationLogo = {
   label: 'Data Platform',
   icon: <MpLogoIcon />,
   onSuiteLogoClick: () => {
@@ -463,7 +463,7 @@ export const MPOrgSwitcher: Story = {
   },
 }
 
-const indLogo: IGlobalNavigationLogoProps = {
+const indLogo: IGlobalNavigationLogo = {
   label: 'Analytics',
   icon: <MpLogoIcon />,
   onSuiteLogoClick: () => {
@@ -781,7 +781,7 @@ export const Indicative: Story = {
   },
 }
 
-const cortexLogo: IGlobalNavigationLogoProps = {
+const cortexLogo: IGlobalNavigationLogo = {
   label: 'Predictions',
   icon: <SparklesIcon />,
   onSuiteLogoClick: () => {

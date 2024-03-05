@@ -84,6 +84,7 @@ export type {
   IBaseGlobalNavigationItem,
   IGlobalNavigationManagement,
   IGlobalNavigationTool,
+  IGlobalNavigationLogo,
 } from './navigation/GlobalNavigation/GlobalNavigationItems'
 export type {
   INavigationCreateProps,
@@ -97,7 +98,7 @@ export type {
   IWorkspaceSelectorDisplayItem,
   IWorkspaceSelectorItem,
 } from './navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'
-export { SuiteLogo, type IGlobalNavigationLogoProps } from './navigation/GlobalNavigation/SuiteLogo'
+export { SuiteLogo } from './navigation/GlobalNavigation/SuiteLogo'
 export {
   AddIcon,
   LockIcon,

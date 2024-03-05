@@ -14,10 +14,10 @@ import { type IGlobalNavigationManagement } from 'src/components/navigation/Glob
 import { type IGlobalNavigationTool } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type INavigationOrg } from "src/components";
 import MpLogo from 'src/assets/svg/mpLogo.svg?react'
-import { type IGlobalNavigationLogoProps } from "src/components";
+import { type IGlobalNavigationLogo } from "src/components";
 
 export interface IGlobalNavigationProps {
-  logo: IGlobalNavigationLogoProps
+  logo: IGlobalNavigationLogo
   tools: IGlobalNavigationTool[]
   management: IGlobalNavigationManagement[]
 
