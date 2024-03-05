@@ -1,10 +1,10 @@
 import { type ChangeEvent, type RefObject } from 'react'
 import { Input, type InputRef } from 'antd'
-import { WorkspaceSearchLabel } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceNoResults'
-import { WorkspaceSignoutLabel } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSignout'
 import type { IWorkspaceSelectorProps } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelector'
 import type { IWorkspaceSelectorDisplayItem } from 'src/components'
 import { WorkspaceSelectorContentItems } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorContentItems'
+import { WorkspaceNoResults } from "src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceNoResults";
+import { WorkspaceSignout } from "src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSignout";
 
 type WorkspaceSelectorContentProps = {
   onSearch: (e: ChangeEvent<HTMLInputElement>) => void
@@ -34,9 +34,9 @@ export function WorkspaceSelectorContent(props: WorkspaceSelectorContentProps) {
         />
       </div>
 
-      {hasNoResults ? <WorkspaceSearchLabel /> : <WorkspaceSelectorContentItems menuItems={menuItems} />}
+      {hasNoResults ? <WorkspaceNoResults /> : <WorkspaceSelectorContentItems menuItems={menuItems} />}
 
-      <WorkspaceSignoutLabel signoutOptions={signoutOptions} />
+      <WorkspaceSignout signoutOptions={signoutOptions} />
     </div>
   )
 }

@@ -27,6 +27,11 @@ import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavi
 import { type IGlobalNavigationManagement } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IGlobalNavigationTool } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import thousandOrgs from './WorkspaceSelector/ThousandOrgs.json'
+import React from "react";
+import { SparklesIcon } from "src/components";
+import { CircleNodesIcon } from "src/components";
+import { SplitIcon } from "src/components";
+import { LightBulbIcon } from "src/components";
 
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',
