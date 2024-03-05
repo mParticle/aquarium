@@ -1,7 +1,7 @@
 ﻿import { Button } from 'src/components'
 import { type IWorkspaceSelectorProps } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelector'
 
-export const WorkspaceSignoutLabel = ({
+export const WorkspaceSignout = ({
   signoutOptions,
 }: {
   signoutOptions: IWorkspaceSelectorProps['signoutOptions']

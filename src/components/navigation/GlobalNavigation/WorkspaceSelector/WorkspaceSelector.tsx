@@ -18,8 +18,8 @@ import { getInitials } from 'src/utils/utils'
 // Need to make our Input component comply with forwardRef to be able to import it from src/components
 // Couldn't make it work as of right now
 import { Input, type InputRef } from 'antd'
-import { WorkspaceSearchLabel } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceNoResults'
-import { WorkspaceSignoutLabel } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSignout'
+import { WorkspaceNoResults } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceNoResults'
+import { WorkspaceSignout } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSignout'
 
 export interface IWorkspaceSelectorProps {
   orgs: INavigationOrg[]
@@ -78,6 +78,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
   return (
     <Popover
+      arrow={false}
       placement="right"
       // Can't seem to find a way to access it via className
       overlayInnerStyle={{ padding: 4 }}
@@ -101,7 +102,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
           </div>
 
           {hasNoResults ? (
-            <WorkspaceSearchLabel />
+            <WorkspaceNoResults />
           ) : (
             <ul className="workspaceSelector__itemsList">
               {menuItems.map(item => (
@@ -112,7 +113,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
             </ul>
           )}
 
-          <WorkspaceSignoutLabel signoutOptions={props.signoutOptions} />
+          <WorkspaceSignout signoutOptions={props.signoutOptions} />
         </div>
       }
     >

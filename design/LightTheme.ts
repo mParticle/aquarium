@@ -2,7 +2,7 @@
  * This theme is copy/pasted from figma, via the Token Buddy for Ant Design plugin
  *  */
 
-import { IMpThemeConfig } from 'design/MpThemeConfig'
+import { type IMpThemeConfig } from 'design/MpThemeConfig'
 
 export const LightTheme: IMpThemeConfig = {
   token: {
