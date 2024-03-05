@@ -66,15 +66,14 @@ export const Primary: Story = {
       control: 'select',
       options: ['outlined', 'borderless', 'filled'],
     },
-  },
-  // @ts-expect-error TODO
-  status: {
-    control: 'select',
-    options: ['error', 'warning'],
-  },
-  placement: {
-    control: 'select',
-    options: ['top', 'bottom'],
+    status: {
+      control: 'select',
+      options: ['error', 'warning'],
+    },
+    placement: {
+      control: 'select',
+      options: ['top', 'bottom'],
+    },
   },
 }
 

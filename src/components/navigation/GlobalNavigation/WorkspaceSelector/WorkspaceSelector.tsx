@@ -8,7 +8,7 @@ import {
   type IWorkspaceSelectorDisplayItem,
   Popover,
 } from 'src/components'
-import { useRef, useState } from 'react'
+import { type ChangeEvent, useRef, useState } from 'react'
 import { useCallback } from 'react'
 import { useEffect } from 'react'
 import { useMemo } from 'react'
@@ -17,9 +17,8 @@ import { getInitials } from 'src/utils/utils'
 
 // Need to make our Input component comply with forwardRef to be able to import it from src/components
 // Couldn't make it work as of right now
-import { Input, type InputRef } from 'antd'
-import { WorkspaceSearchLabel } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceNoResults'
-import { WorkspaceSignoutLabel } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSignout'
+import { type InputRef } from 'antd'
+import { WorkspaceSelectorContent } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorContent'
 
 export interface IWorkspaceSelectorProps {
   orgs: INavigationOrg[]
@@ -41,12 +40,12 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
   const setCurrentFilteredOrgsDebounced = useCallback(debounce(setCurrentFilteredOrgs, 200), [])
 
+  const hasNoResults = !!searchTerm && !currentFilteredOrgs.length
+
   const menuItems: IWorkspaceSelectorDisplayItem[] = useMemo(
     () => generateDisplayItems(/* currentFilteredOrgs */),
     [currentFilteredOrgs],
   )
-
-  const hasNoResults = !!searchTerm && !currentFilteredOrgs.length
 
   // todo: this probably doesnt need to be calculated on every render
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -79,41 +78,20 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
   return (
     <Popover
       placement="right"
-      // Can't seem to find a way to access it via className
+      // Use case for variables.ts once style-dictionary is exporting both css and ts files
       overlayInnerStyle={{ padding: 4 }}
       overlayClassName="workspaceSelector__popover"
       onOpenChange={focusOnInput}
       afterOpenChange={focusOnInput}
       content={
-        <div className="workspaceSelector__popoverContent">
-          <div className="workspaceSelector__search">
-            <Input
-              placeholder="Search"
-              className="workspaceSelector__searchInput"
-              onChange={onSearch}
-              value={searchTerm}
-              ref={inputRef}
-              onClick={e => {
-                e.preventDefault()
-                e.stopPropagation()
-              }}
-            />
-          </div>
-
-          {hasNoResults ? (
-            <WorkspaceSearchLabel />
-          ) : (
-            <ul className="workspaceSelector__itemsList">
-              {menuItems.map(item => (
-                <li key={item.key} className={item.className} onClick={item.onClick}>
-                  {item.label}
-                </li>
-              ))}
-            </ul>
-          )}
-
-          <WorkspaceSignoutLabel signoutOptions={props.signoutOptions} />
-        </div>
+        <WorkspaceSelectorContent
+          onSearch={onSearch}
+          searchTerm={searchTerm}
+          inputRef={inputRef}
+          hasNoResults={hasNoResults}
+          signoutOptions={props.signoutOptions}
+          menuItems={menuItems}
+        />
       }
     >
       <div className="globalNavigation__item workspaceSelector__menuItem">
@@ -172,7 +150,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
     }))
   }
 
-  function onSearch(e: React.ChangeEvent<HTMLInputElement>): void {
+  function onSearch(e: ChangeEvent<HTMLInputElement>): void {
     const newSearchTerm = e.target.value.toLowerCase()
     setSearchTerm(newSearchTerm)
 
