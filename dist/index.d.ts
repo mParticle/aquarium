@@ -62,24 +62,21 @@ import GridIcon from '../../../../../../src/assets/svg/grid.svg?react';
 import { GroupProps } from 'antd/es/input';
 import { GroupProps as GroupProps_2 } from 'antd/es/avatar';
 import HeartIcon from '../../../../../../src/assets/svg/heart.svg?react';
+import { IBaseGlobalNavigationItem } from '../../../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
 import { ColProps as IColProps } from 'antd';
 import { IFlexProps as IFlexProps_2 } from '../../../../../../../src/components/layout/Flex/Flex';
-import { IGlobalNavigationLogo } from '../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
-import { IGlobalNavigationLogo as IGlobalNavigationLogo_2 } from '../../../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
-import { IGlobalNavigationManagement } from '../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
+import { IGlobalNavigationLogoProps as IGlobalNavigationLogoProps_2 } from '../../../../../../../src/components';
+import { IGlobalNavigationManagement } from './navigation/GlobalNavigation/GlobalNavigationItems';
 import { IGlobalNavigationManagement as IGlobalNavigationManagement_2 } from '../../../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
-import { IGlobalNavigationTool } from '../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
+import { IGlobalNavigationTool } from './navigation/GlobalNavigation/GlobalNavigationItems';
 import { IGlobalNavigationTool as IGlobalNavigationTool_2 } from '../../../../../../../src/components/navigation/GlobalNavigation/GlobalNavigationItems';
 import { ImageProps } from 'antd';
 import { IMentionsProps } from './data-entry/Mentions/Mentions';
 import { IModalProps as IModalProps_2 } from '../../../../../../../src/components/feedback/Modal/Modal';
 import { INavigationAccount } from './navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems';
-import { INavigationCreateGroup } from '../../../../../src/components/navigation/GlobalNavigation/NavigationCreate';
-import { INavigationCreateItem } from '../../../../../src/components/navigation/GlobalNavigation/NavigationCreate';
-import { INavigationCreateProps } from '../../../../../src/components/navigation/GlobalNavigation/NavigationCreate';
 import { INavigationCreateProps as INavigationCreateProps_2 } from '../../../../../../../src/components';
 import { INavigationOrg } from './navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems';
-import { INavigationOrg as INavigationOrg_2 } from '../../../../../../../src/components/navigation/GlobalNavigation/WorkspaceSelectorItems';
+import { INavigationOrg as INavigationOrg_2 } from '../../../../../../../src/components';
 import { INavigationWorkspace } from './navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems';
 import { InputNumberProps } from 'antd';
 import { InputProps } from 'antd';
@@ -386,17 +383,20 @@ export declare interface IFormProps extends FormProps {
     children: ReactNode;
 }
 
-export { IGlobalNavigationLogo }
+export declare interface IGlobalNavigationLogoProps extends IBaseGlobalNavigationItem {
+    onSuiteLogoClick: () => void;
+}
 
 export { IGlobalNavigationManagement }
 
 export declare interface IGlobalNavigationProps {
-    logo: IGlobalNavigationLogo_2;
+    logo: IGlobalNavigationLogoProps_2;
     tools: IGlobalNavigationTool_2[];
     management: IGlobalNavigationManagement_2[];
     orgs?: INavigationOrg_2[];
     createItems?: INavigationCreateProps_2['createItems'];
     onSearchClick?: () => void;
+    onSuiteLogoClick?: () => void;
     onMpHomeClick: () => void;
     hideMpHome?: boolean;
     signoutOptions?: {
@@ -447,11 +447,24 @@ export declare interface IModalProps extends ModalProps {
 
 export { INavigationAccount }
 
-export { INavigationCreateGroup }
+export declare interface INavigationCreateGroup extends Omit<MenuItemGroupType, 'key'> {
+    label: string;
+    type: 'group';
+}
 
-export { INavigationCreateItem }
+export declare interface INavigationCreateItem extends Omit<MenuItemType, 'key'> {
+    title: string;
+    description: string;
+    type?: undefined;
+    isLoading?: boolean;
+    isLocked?: boolean;
+    tooltip?: string;
+    onClick?: () => void;
+}
 
-export { INavigationCreateProps }
+export declare interface INavigationCreateProps {
+    createItems: Array<INavigationCreateItem | INavigationCreateGroup>;
+}
 
 export { INavigationOrg }
 
@@ -658,6 +671,8 @@ export declare const Statistic: (props: IStatisticProps) => JSX_2.Element;
 export declare const Steps: (props: IStepsProps) => JSX_2.Element;
 
 export { SubMenuType }
+
+export declare function SuiteLogo(props: IGlobalNavigationLogoProps): JSX_2.Element;
 
 export declare const Switch: (props: ISwitchProps) => JSX_2.Element;
 
