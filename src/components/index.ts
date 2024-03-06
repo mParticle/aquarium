@@ -97,3 +97,8 @@ export type  {
   IWorkspaceSelectorDisplayItem,
   IWorkspaceSelectorItem,
 } from './navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'
+export {
+  AlicornIcon,
+  SparklesIcon,
+  UsersIcon,
+} from './icons/index'
