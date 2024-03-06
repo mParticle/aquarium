@@ -34,6 +34,8 @@
   padding: 0;
   gap: var(--margin-xxs);
   border-radius: 0 !important;
+  border-left: solid 3px transparent;
+  border-right: solid 3px transparent;
   cursor: pointer;
   transition: none !important;
 }
@@ -86,7 +88,7 @@
 }
 
 .globalNavigation__item.globalNavigation__item--active {
-  border-left: solid 3px var(--color-primary);
+  border-left-color: var(--color-primary);
   background-color: var(--color-bg-text-hover);
 }
 
