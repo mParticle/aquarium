@@ -28,15 +28,49 @@ export interface IWorkspaceSelectorProps {
   }
 }
 
+function moveToTheTop<T>(array: T[], index: number): T[] {
+  return [array[index], ...array.slice(0, index), ...array.slice(index + 1)]
+}
+
+function sortOrgsByActiveWorkspace(orgs: INavigationOrg[]): INavigationOrg[] {
+  const activeOrgIndex = orgs.findIndex(org =>
+    org.accounts.find(account => account.workspaces.find(workspace => workspace.isActive)),
+  )
+
+  if (activeOrgIndex >= 0) {
+    const activeOrg = orgs[activeOrgIndex]
+    const activeAccountIndex = activeOrg.accounts.findIndex(account =>
+      account.workspaces.find(workspace => workspace.isActive),
+    )
+
+    if (activeAccountIndex >= 0) {
+      const activeAccount = activeOrg.accounts[activeAccountIndex]
+      activeOrg.accounts = moveToTheTop(activeOrg.accounts, activeAccountIndex)
+
+      const activeWorkspaceIndex = activeAccount.workspaces.findIndex(workspace => workspace.isActive)
+      activeAccount.workspaces = moveToTheTop(activeAccount.workspaces, activeWorkspaceIndex)
+
+      return moveToTheTop(orgs, activeOrgIndex)
+    }
+  }
+
+  return orgs
+}
+
 export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
   const [searchTerm, setSearchTerm] = useState<string>('')
   const inputRef = useRef<InputRef>(null)
 
-  const [currentFilteredOrgs, setCurrentFilteredOrgs] = useState<INavigationOrg[]>(props.orgs)
+  const sortedOrgs = useMemo(() => {
+    return sortOrgsByActiveWorkspace(props.orgs)
+  }, [props.orgs])
+
+  const [currentFilteredOrgs, setCurrentFilteredOrgs] = useState<INavigationOrg[]>(sortedOrgs)
+
   useEffect(() => {
     // since we are setting state from props, when the props change be sure to update the state
-    setCurrentFilteredOrgs(props.orgs)
-  }, props.orgs)
+    setCurrentFilteredOrgs(sortedOrgs)
+  }, [sortedOrgs])
 
   const setCurrentFilteredOrgsDebounced = useCallback(debounce(setCurrentFilteredOrgs, 200), [])
 
@@ -133,6 +167,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
             id: workspace.id,
             key: `${workspace.id}_${workspace.label}`,
             onClick: workspace.onClick,
+            isActive: workspace.isActive,
           })
         })
       })
@@ -148,6 +183,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
       id: item.id,
       key: item.key,
       onClick: item.onClick,
+      isActive: item.isActive,
     }))
   }
 
@@ -160,11 +196,11 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
       setCurrentFilteredOrgsDebounced(filteredOrgs)
     } else {
       // reset list immediately so it feels faster
-      setCurrentFilteredOrgs(props.orgs)
+      setCurrentFilteredOrgs(sortedOrgs)
     }
 
     function getFilteredOrgs(): INavigationOrg[] {
-      return props.orgs.reduce<INavigationOrg[]>((total, org) => {
+      return sortedOrgs.reduce<INavigationOrg[]>((total, org) => {
         if (isHit(org)) {
           total.push(org)
         } else {

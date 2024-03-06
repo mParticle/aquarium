@@ -39,6 +39,7 @@ export function NavigationCreate(props: INavigationCreateProps) {
     const isDisabled = item.disabled
 
     let itemClassName = 'navigationCreate__item'
+    // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
     if (isDisabled || isLocked || item.isLoading) {
       itemClassName += ' navigationCreate__item--disabled'
     }
@@ -47,6 +48,7 @@ export function NavigationCreate(props: INavigationCreateProps) {
       className: itemClassName,
       disabled: item.disabled,
       onClick: (menuInfo: IMenuInfo): void => {
+        // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
         if (item.disabled || item.isLoading) return
         item.onClick?.()
         menuInfo.domEvent.stopPropagation()
@@ -57,7 +59,7 @@ export function NavigationCreate(props: INavigationCreateProps) {
           <Flex vertical gap="middle" justify="center">
             <span className="navigationCreate__itemTitle">
               {item.title}
-              {item.isLoading && <Spin className="navigationCreate__itemLoading" size="small"/>}
+              {item.isLoading && <Spin className="navigationCreate__itemLoading" size="small" />}
               {isLocked && <LockIcon className="navigationCreate__lockIcon" />}
             </span>
 

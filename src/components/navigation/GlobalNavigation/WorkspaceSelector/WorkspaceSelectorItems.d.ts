@@ -28,4 +28,5 @@ export interface IWorkspaceSelectorDisplayItem extends MenuItemType {
 
   accounts?: INavigationAccount[]
   workspaces?: INavigationWorkspace[]
+  isActive?: boolean
 }
