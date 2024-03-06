@@ -39,7 +39,7 @@ export function NavigationCreate(props: INavigationCreateProps) {
     const isDisabled = item.disabled
 
     let itemClassName = 'navigationCreate__item'
-    if (isDisabled ?? isLocked ?? item.isLocked) {
+    if (isDisabled ?? isLocked ?? item.isLoading) {
       itemClassName += ' navigationCreate__item--disabled'
     }
     return {

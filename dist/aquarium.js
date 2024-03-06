@@ -26316,7 +26316,7 @@ function aL(r) {
       return { label: c.label, key: c.label, type: c.type };
     const d = c.isLocked, m = c.disabled;
     let h = "navigationCreate__item";
-    return ((E = m != null ? m : d) != null ? E : c.isLocked) && (h += " navigationCreate__item--disabled"), {
+    return ((E = m != null ? m : d) != null ? E : c.isLoading) && (h += " navigationCreate__item--disabled"), {
       key: c.description,
       className: h,
       disabled: c.disabled,
@@ -26342,7 +26342,13 @@ function aL(r) {
         {
           key: "NavigationCreate",
           popupClassName: "globalNavigation__popup globalNavigation__popup--navigationCreate",
-          icon: /* @__PURE__ */ B(Ll, { className: "navigationCreate__popupButtonWrapper", style: { pointerEvents: "none" }, children: /* @__PURE__ */ B(Em, { className: "navigationCreate__popupButton", icon: /* @__PURE__ */ B(rL, { className: "navigationCreate__popupIcon" }) }) }),
+          icon: /* @__PURE__ */ B(Ll, { className: "navigationCreate__popupButtonWrapper", style: { pointerEvents: "none" }, children: /* @__PURE__ */ B(
+            Em,
+            {
+              className: "navigationCreate__popupButton",
+              icon: /* @__PURE__ */ B(rL, { className: "navigationCreate__popupIcon" })
+            }
+          ) }),
           children: o
         }
       ],

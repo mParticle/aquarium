@@ -151,6 +151,14 @@
   gap: 0;
 }
 
+.navigationCreate__item.navigationCreate__item--disabled {
+  cursor: default !important;
+}
+
+.navigationCreate__item.navigationCreate__item--disabled:hover {
+  background-color: initial !important;
+}
+
 .navigationCreate__item.navigationCreate__item--disabled .navigationCreate__itemTitle,
 .navigationCreate__item.navigationCreate__item--disabled .navigationCreate__itemDescription {
   color: var(--color-text-disabled) !important;
