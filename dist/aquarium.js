@@ -26311,18 +26311,17 @@ const nL = (r) => /* @__PURE__ */ S.createElement("svg", be({ xmlns: "http://www
     `, /* @__PURE__ */ S.createElement("path", { d: "M12.5992 4.8002C12.5992 4.4702 12.3292 4.2002 11.9992 4.2002C11.6692 4.2002 11.3992 4.4702 11.3992 4.8002V11.4002H4.79922C4.46922 11.4002 4.19922 11.6702 4.19922 12.0002C4.19922 12.3302 4.46922 12.6002 4.79922 12.6002H11.3992V19.2002C11.3992 19.5302 11.6692 19.8002 11.9992 19.8002C12.3292 19.8002 12.5992 19.5302 12.5992 19.2002V12.6002H19.1992C19.5292 12.6002 19.7992 12.3302 19.7992 12.0002C19.7992 11.6702 19.5292 11.4002 19.1992 11.4002H12.5992V4.8002Z", fill: "currentColor" }));
 function aL(r) {
   const o = r.createItems.map((c) => {
-    var E;
     if (c.type === "group")
       return { label: c.label, key: c.label, type: c.type };
     const d = c.isLocked, m = c.disabled;
     let h = "navigationCreate__item";
-    return ((E = m != null ? m : d) != null ? E : c.isLoading) && (h += " navigationCreate__item--disabled"), {
+    return (m || d || c.isLoading) && (h += " navigationCreate__item--disabled"), {
       key: c.description,
       className: h,
       disabled: c.disabled,
-      onClick: (T) => {
-        var w;
-        c.disabled || ((w = c.onClick) == null || w.call(c), T.domEvent.stopPropagation(), T.domEvent.preventDefault());
+      onClick: (E) => {
+        var T;
+        c.disabled || c.isLoading || ((T = c.onClick) == null || T.call(c), E.domEvent.stopPropagation(), E.domEvent.preventDefault());
       },
       label: /* @__PURE__ */ B(xm, { title: c.tooltip, children: /* @__PURE__ */ va(v2, { vertical: !0, gap: "middle", justify: "center", children: [
         /* @__PURE__ */ va("span", { className: "navigationCreate__itemTitle", children: [
