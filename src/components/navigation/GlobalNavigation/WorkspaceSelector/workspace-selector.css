@@ -36,6 +36,10 @@
   color: white !important;
 }
 
+.workspaceSelector__avatar--with-image {
+  background-color: var(--color-text-quaternary);
+}
+
 .workspaceSelector__popover {
   padding: var(--padding-xxs) !important;
 }

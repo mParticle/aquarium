@@ -3,6 +3,7 @@ import { type ReactNode } from 'react'
 
 interface IWorkspaceSelectorItem {
   label: string
+  imageUrl?: string,
   id: string
 }
 
