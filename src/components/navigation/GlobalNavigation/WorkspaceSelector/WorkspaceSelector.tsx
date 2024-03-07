@@ -2,6 +2,7 @@ import 'src/utils/utils.css'
 import './workspace-selector.css'
 import {
   Avatar,
+  type IAvatarProps,
   type INavigationAccount,
   type INavigationOrg,
   type INavigationWorkspace,
@@ -22,6 +23,7 @@ import { WorkspaceSelectorContent } from 'src/components/navigation/GlobalNaviga
 
 export interface IWorkspaceSelectorProps {
   orgs: INavigationOrg[]
+  avatarOptions?: IAvatarProps
   signoutOptions?: {
     label?: string
     onSignout: () => void
@@ -130,7 +132,9 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
       }
     >
       <div className="globalNavigation__item workspaceSelector__menuItem">
-        <Avatar className="workspaceSelector__avatar">{getInitials(activeWorkspace?.label)}</Avatar>
+        <Avatar className="workspaceSelector__avatar" {...props.avatarOptions}>
+          {!props.avatarOptions?.src && getInitials(activeWorkspace?.label)}
+        </Avatar>
       </div>
     </Popover>
   )
