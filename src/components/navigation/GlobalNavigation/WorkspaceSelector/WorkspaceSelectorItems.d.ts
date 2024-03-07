@@ -2,7 +2,6 @@ import { type MenuItemType } from 'src/components/navigation/Menu/Menu'
 
 interface IWorkspaceSelectorItem {
   label: string
-  imageUrl?: string,
   id: string
 }
 

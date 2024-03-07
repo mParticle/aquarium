@@ -2,6 +2,7 @@ import 'src/utils/utils.css'
 import './workspace-selector.css'
 import {
   Avatar,
+  type IAvatarProps,
   type INavigationAccount,
   type INavigationOrg,
   type INavigationWorkspace,
@@ -9,7 +10,7 @@ import {
   Popover,
   Image
 } from 'src/components'
-import { type ChangeEvent, useRef, useState } from 'react'
+import React, { type ChangeEvent, useRef, useState } from 'react'
 import { useCallback } from 'react'
 import { useEffect } from 'react'
 import { useMemo } from 'react'
@@ -23,6 +24,7 @@ import { WorkspaceSelectorContent } from 'src/components/navigation/GlobalNaviga
 
 export interface IWorkspaceSelectorProps {
   orgs: INavigationOrg[]
+  avatarOptions?: IAvatarProps
   signoutOptions?: {
     label?: string
     onSignout: () => void
@@ -131,20 +133,33 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
       }
     >
       <div className="globalNavigation__item workspaceSelector__menuItem">
-       {renderAvatar(activeWorkspace)}
+       {renderAvatar(activeWorkspace, props.avatarOptions!)}
       </div>
     </Popover>
   )
 
-  function renderAvatar(activeWorkspace: INavigationWorkspace): JSX.Element {
-    const workspaceInitials = getInitials(activeWorkspace?.label);
-    if (!!activeWorkspace.imageUrl) {
+  function renderAvatar(activeWorkspace: INavigationWorkspace, avatarOptions: IAvatarProps): JSX.Element {
+    const workspaceInitials = getInitials(activeWorkspace?.label)
+
+    if (avatarOptions.src || avatarOptions.srcSet) {
       const initialsImage = createSvgDataBlobFromText(workspaceInitials);
-      const image = <Image src={activeWorkspace.imageUrl} fallback={initialsImage} preview={false}/>
-      return <Avatar src={image} className="workspaceSelector__avatar workspaceSelector__avatar--with-image" />
+      const image = <Image src={avatarOptions.src ?? avatarOptions.srcSet} fallback={initialsImage} preview={false} />
+      const adjustedAvatarOptions = {
+        ...avatarOptions,
+        src: image,
+        srcSet: undefined,
+      }
+
+      return <Avatar
+        {...adjustedAvatarOptions}
+        className="workspaceSelector__avatar workspaceSelector__avatar--with-image"
+      />
     }
       
-    return <Avatar className="workspaceSelector__avatar">{workspaceInitials}</Avatar>
+    return <Avatar
+      {...avatarOptions}
+      className="workspaceSelector__avatar"
+    >{workspaceInitials}</Avatar>
   }
 
   function generateDisplayItems(): IWorkspaceSelectorDisplayItem[] {

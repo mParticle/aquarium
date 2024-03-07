@@ -1,6 +1,6 @@
 import 'src/styles/_variables.css'
 import './global-navigation.css'
-import { Layout } from 'src/components'
+import { type IAvatarProps, Layout } from 'src/components'
 import { Flex } from 'src/components'
 import { Center } from 'src/components'
 import { type INavigationCreateProps } from 'src/components'
@@ -12,9 +12,9 @@ import { NavigationCreate } from 'src/components/navigation/GlobalNavigation/Nav
 import { WorkspaceSelector } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelector'
 import { type IGlobalNavigationManagement } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IGlobalNavigationTool } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
-import { type INavigationOrg } from "src/components";
+import { type INavigationOrg } from 'src/components'
 import MpLogo from 'src/assets/svg/mpLogo.svg?react'
-import { type IGlobalNavigationLogo } from "src/components";
+import { type IGlobalNavigationLogo } from 'src/components'
 
 export interface IGlobalNavigationProps {
   logo: IGlobalNavigationLogo
@@ -29,6 +29,7 @@ export interface IGlobalNavigationProps {
   onSuiteLogoClick?: () => void
   onMpHomeClick: () => void
   hideMpHome?: boolean
+  avatarOptions?: IAvatarProps
   signoutOptions?: {
     label?: string
     onSignout: () => void
@@ -45,8 +46,8 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
           <div>
             <SuiteLogo {...props.logo} />
 
-            <div className="globalNavigation__divider"/>
-            
+            <div className="globalNavigation__divider" />
+
             <Center vertical>
               {props.onSearchClick && <NavigationSearch onClick={props.onSearchClick} />}
               {props.createItems && <NavigationCreate createItems={props.createItems} />}
@@ -58,7 +59,13 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
           <div>
             <NavigationList items={props.management} />
 
-            {props.orgs && <WorkspaceSelector orgs={props.orgs} signoutOptions={props.signoutOptions} />}
+            {props.orgs && (
+              <WorkspaceSelector
+                orgs={props.orgs}
+                signoutOptions={props.signoutOptions}
+                avatarOptions={props.avatarOptions}
+              />
+            )}
 
             {!props.hideMpHome && (
               <Tooltip title="mParticle Overview" placement="right">
