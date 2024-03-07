@@ -298,7 +298,6 @@ const mpOrgs: INavigationOrg[] = [
           {
             id: 'workspace2ab',
             label: '_Workspace 2ab',
-            imageUrl: "https://static-qa1.qa.corp.mparticle.com/appimg/logo_af_916397d2-9732-8de6-77cc-80e3bba120ca.png",
             isActive: true,
             onClick: () => {
               alert('Selected workspace 2')
@@ -420,6 +419,10 @@ export const MP: Story = {
     orgs: mpOrgs,
     onMpHomeClick: () => {
       alert('going to overview map')
+    },
+    avatarOptions: { 
+      src: "https://static-qa1.qa.corp.mparticle.com/appimg/logo_af_916397d2-9732-8de6-77cc-80e3bba120ca.png",
+      alt: 'avatar',
     },
   },
 }
