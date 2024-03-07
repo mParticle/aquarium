@@ -7,12 +7,13 @@ import {
   type INavigationWorkspace,
   type IWorkspaceSelectorDisplayItem,
   Popover,
+  Image
 } from 'src/components'
 import { type ChangeEvent, useRef, useState } from 'react'
 import { useCallback } from 'react'
 import { useEffect } from 'react'
 import { useMemo } from 'react'
-import { debounce } from 'src/utils/utils'
+import { createSvgDataBlobFromText, debounce } from 'src/utils/utils'
 import { getInitials } from 'src/utils/utils'
 
 // Need to make our Input component comply with forwardRef to be able to import it from src/components
@@ -130,10 +131,21 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
       }
     >
       <div className="globalNavigation__item workspaceSelector__menuItem">
-        <Avatar className="workspaceSelector__avatar">{getInitials(activeWorkspace?.label)}</Avatar>
+       {renderAvatar(activeWorkspace)}
       </div>
     </Popover>
   )
+
+  function renderAvatar(activeWorkspace: INavigationWorkspace): JSX.Element {
+    const workspaceInitials = getInitials(activeWorkspace?.label);
+    if (!!activeWorkspace.imageUrl) {
+      const initialsImage = createSvgDataBlobFromText(workspaceInitials);
+      const image = <Image src={activeWorkspace.imageUrl} fallback={initialsImage} preview={false}/>
+      return <Avatar src={image} className="workspaceSelector__avatar workspaceSelector__avatar--with-image" />
+    }
+      
+    return <Avatar className="workspaceSelector__avatar">{workspaceInitials}</Avatar>
+  }
 
   function generateDisplayItems(): IWorkspaceSelectorDisplayItem[] {
     const items = currentFilteredOrgs.reduce<IWorkspaceSelectorDisplayItem[]>((total, org) => {
