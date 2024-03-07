@@ -11,6 +11,25 @@ export function getInitials(str: string = ''): string {
   return str.replace(getInitialsRegex, '$1$2')?.toUpperCase()
 }
 
+export function createSvgDataBlobFromText(
+  text: string,
+  { height = 30, width = 30, color = "white" }: { height?: number, width?: number; color?: string } = {}
+): string {
+  const dataBlob = 'data:image/svg+xml,' + encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">
+      <foreignObject width="${width}px" height="${height}px">
+        <div xmlns="http://www.w3.org/1999/xhtml"
+          style="color: ${color}; text-align: center; vertical-align: middle; line-height: ${height}px;"
+        >
+        ${text}
+        </div>
+      </foreignObject>
+    </svg>`
+  )
+  
+  return dataBlob;
+}
+
 export const debounce = (callback: (...args: any[]) => void, wait: number): ((...args: unknown[]) => void) => {
   let timeoutId: number
 
