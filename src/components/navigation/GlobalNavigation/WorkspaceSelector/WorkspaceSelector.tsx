@@ -141,7 +141,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
   function renderAvatar(activeWorkspace: INavigationWorkspace, avatarOptions: IAvatarProps): JSX.Element {
     const workspaceInitials = getInitials(activeWorkspace?.label)
 
-    if (avatarOptions.src || avatarOptions.srcSet) {
+    if (!!(avatarOptions.src || avatarOptions.srcSet)) {
       const initialsImage = createSvgDataBlobFromText(workspaceInitials);
       const image = <Image src={avatarOptions.src ?? avatarOptions.srcSet} fallback={initialsImage} preview={false} />
       const adjustedAvatarOptions = {
