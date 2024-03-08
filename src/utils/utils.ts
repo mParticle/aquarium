@@ -34,15 +34,15 @@ export const getOS = (): OSNames => {
   return 'Unknown OS'
 }
 
-export function hasImageAtSrc(src: string, hasImageSetter: (hasImage: boolean) => void): Promise<boolean> {
+export function hasImageAtSrc(src: string, hasImageSetter?: (hasImage: boolean) => void): Promise<boolean> {
   return new Promise(resolve => {
     const img = new Image()
     img.onload = () => {
-      hasImageSetter(true)
+      hasImageSetter?.(true)
       resolve(true)
     }
     img.onerror = () => {
-      hasImageSetter(false)
+      hasImageSetter?.(false)
       resolve(false)
     }
     img.src = src
