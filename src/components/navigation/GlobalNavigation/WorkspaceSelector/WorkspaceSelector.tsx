@@ -70,10 +70,19 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
   const [currentFilteredOrgs, setCurrentFilteredOrgs] = useState<INavigationOrg[]>(sortedOrgs)
 
+  const [hasImage, setHasImage] = useState<boolean>(false)
+
   useEffect(() => {
     // since we are setting state from props, when the props change be sure to update the state
     setCurrentFilteredOrgs(sortedOrgs)
   }, [sortedOrgs])
+
+  useEffect(() => {
+    const avatarImageSrc = props.avatarOptions?.src ?? props.avatarOptions?.srcSet
+    if (typeof avatarImageSrc === 'string') {
+      hasImageAtSrc(avatarImageSrc, setHasImage)
+    }
+  }, [])
 
   const setCurrentFilteredOrgsDebounced = useCallback(debounce(setCurrentFilteredOrgs, 200), [])
 
@@ -99,6 +108,8 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
       return flattenedSelectors
     })
     .find(workspaceCandidate => workspaceCandidate.isActive)!
+
+  const workspaceInitials = getInitials(activeWorkspace?.label)
 
   // This seems to be the only way of consistenly focusing the input on the first open
   // We should find a better way to do this and not rely on setTimout
@@ -133,33 +144,15 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
       }
     >
       <div className="globalNavigation__item workspaceSelector__menuItem">
-       {renderAvatar(activeWorkspace, props.avatarOptions!)}
+        <Avatar {...props.avatarOptions} className="workspaceSelector__avatar">
+          {getInitialsIfNoImage(hasImage, workspaceInitials)}
+        </Avatar>
       </div>
     </Popover>
   )
 
-  function renderAvatar(activeWorkspace: INavigationWorkspace, avatarOptions: IAvatarProps): JSX.Element {
-    const workspaceInitials = getInitials(activeWorkspace?.label)
-
-    if (!!(avatarOptions.src || avatarOptions.srcSet)) {
-      const initialsImage = createSvgDataBlobFromText(workspaceInitials);
-      const image = <Image src={avatarOptions.src ?? avatarOptions.srcSet} fallback={initialsImage} preview={false} />
-      const adjustedAvatarOptions = {
-        ...avatarOptions,
-        src: image,
-        srcSet: undefined,
-      }
-
-      return <Avatar
-        {...adjustedAvatarOptions}
-        className="workspaceSelector__avatar workspaceSelector__avatar--with-image"
-      />
-    }
-      
-    return <Avatar
-      {...avatarOptions}
-      className="workspaceSelector__avatar"
-    >{workspaceInitials}</Avatar>
+  function getInitialsIfNoImage(hasImage: boolean, initials: string): string {
+    return hasImage ? '' : initials
   }
 
   function generateDisplayItems(): IWorkspaceSelectorDisplayItem[] {
@@ -264,5 +257,12 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
         )
       }
     }
+  }
+
+  function hasImageAtSrc(src: string, hasImageSetter: (hasImage: boolean) => void) {
+    const image = document.createElement('img')
+    image.src = src
+    image.onload = () => hasImageSetter(true)
+    image.onerror = () => hasImageSetter(false) 
   }
 }

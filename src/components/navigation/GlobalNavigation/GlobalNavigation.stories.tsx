@@ -421,7 +421,7 @@ export const MP: Story = {
       alert('going to overview map')
     },
     avatarOptions: { 
-      src: "https://static-qa1.qa.corp.mparticle.com/appimg/logo_af_916397d2-9732-8de6-77cc-80e3bba120ca.png",
+      // src: "https://static-qa1.qa.corp.mparticle.com/appimg/logo_af_916397d2-9732-8de6-77cc-80e3bba120ca.png",
       alt: 'avatar',
     },
   },
