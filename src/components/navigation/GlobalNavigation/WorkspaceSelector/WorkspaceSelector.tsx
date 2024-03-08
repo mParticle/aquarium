@@ -29,7 +29,7 @@ export interface IWorkspaceSelectorProps {
 }
 
 const WorkspaceSearchLabel = () => (
-  
+
   <Center>
     <Empty description="No results found" imageStyle={{ height: '60px' }}></Empty>
   </Center>
@@ -103,10 +103,11 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
   }
 
   const hasNoResults = !!searchTerm && !currentFilteredOrgs.length
+  const showSearchInput = menuItems.filter(item => !!item.label).length > 5
 
   const menuChildren = [
     ...(hasNoResults ? [noResultsEl] : menuItems),
-    searchInput,
+    showSearchInput ? searchInput : null,
     props.signoutOptions ? signoutButton.current : null,
   ]
 
