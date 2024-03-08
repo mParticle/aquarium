@@ -27,11 +27,11 @@ import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/
 import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IGlobalNavigationManagement } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IGlobalNavigationTool } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
-import thousandOrgs from './WorkspaceSelector/ThousandOrgs.json'
 import { SparklesIcon } from 'src/components'
 import { CircleNodesIcon } from 'src/components'
 import { SplitIcon } from 'src/components'
 import { LightBulbIcon } from 'src/components'
+import { generateOrgs } from 'src/components/navigation/GlobalNavigation/stories-utils'
 
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',
@@ -420,24 +420,16 @@ export const MP: Story = {
     onMpHomeClick: () => {
       alert('going to overview map')
     },
-    avatarOptions: { 
+    avatarOptions: {
       // src: "https://static-qa1.qa.corp.mparticle.com/appimg/logo_af_916397d2-9732-8de6-77cc-80e3bba120ca.png",
       alt: 'avatar',
     },
   },
 }
 
-thousandOrgs.forEach(org => {
-  org.accounts.forEach(account => {
-    account.workspaces.forEach(workspace => {
-      ;(workspace as any).onClick = () => {
-        alert(`Selected ${workspace.label}`)
-      }
-    })
-  })
-})
+const thousandOrgs = generateOrgs(1000, 4, 4)
 
-export const MPOrgSwitcher: Story = {
+export const MPThousandOrgs: Story = {
   render: props => {
     return (
       <div style={{ width: 800 }}>
