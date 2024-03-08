@@ -14,13 +14,14 @@ import React, { type ChangeEvent, useRef, useState } from 'react'
 import { useCallback } from 'react'
 import { useEffect } from 'react'
 import { useMemo } from 'react'
-import { createSvgDataBlobFromText, debounce } from 'src/utils/utils'
+import { createSvgDataBlobFromText, debounce, hasImageAtSrc } from 'src/utils/utils'
 import { getInitials } from 'src/utils/utils'
 
 // Need to make our Input component comply with forwardRef to be able to import it from src/components
 // Couldn't make it work as of right now
 import { type InputRef } from 'antd'
 import { WorkspaceSelectorContent } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorContent'
+import { useMount } from 'src/hooks/useMount';
 
 export interface IWorkspaceSelectorProps {
   orgs: INavigationOrg[]
@@ -77,12 +78,12 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
     setCurrentFilteredOrgs(sortedOrgs)
   }, [sortedOrgs])
 
-  useEffect(() => {
+  useMount(() => {
     const avatarImageSrc = props.avatarOptions?.src ?? props.avatarOptions?.srcSet
     if (typeof avatarImageSrc === 'string') {
       hasImageAtSrc(avatarImageSrc, setHasImage)
     }
-  }, [])
+  })
 
   const setCurrentFilteredOrgsDebounced = useCallback(debounce(setCurrentFilteredOrgs, 200), [])
 
@@ -257,12 +258,5 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
         )
       }
     }
-  }
-
-  function hasImageAtSrc(src: string, hasImageSetter: (hasImage: boolean) => void) {
-    const image = document.createElement('img')
-    image.src = src
-    image.onload = () => hasImageSetter(true)
-    image.onerror = () => hasImageSetter(false) 
   }
 }
