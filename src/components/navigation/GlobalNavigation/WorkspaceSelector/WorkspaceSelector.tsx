@@ -16,8 +16,8 @@ import { useMemo } from 'react'
 import { debounce, hasImageAtSrc } from 'src/utils/utils'
 import { getInitials } from 'src/utils/utils'
 
-// Need to make our Input component comply with forwardRef to be able to import it from src/components
-// Couldn't make it work as of right now
+// TODO: Need to make our Input component comply with forwardRef to be able to import it from src/components
+// As soon as https://github.com/mParticle/aquarium/pull/123 is merged
 import { type InputRef } from 'antd'
 import { WorkspaceSelectorContent } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorContent'
 import { useMount } from 'src/hooks/useMount'
@@ -93,25 +93,26 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
     [currentFilteredOrgs],
   )
 
-  // todo: this probably doesnt need to be calculated on every render
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const activeWorkspace: INavigationWorkspace = props.orgs
-    .flatMap<INavigationWorkspace>(org => {
-      let flattenedSelectors: INavigationWorkspace[] = []
+  const activeWorkspace = useMemo(() => {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    return sortedOrgs
+      .flatMap<INavigationWorkspace>(org => {
+        let flattenedSelectors: INavigationWorkspace[] = []
 
-      const { accounts } = org
-      if (accounts) {
-        const workspaces = accounts.flatMap(({ workspaces }) => workspaces)
-        flattenedSelectors = flattenedSelectors.concat(workspaces)
-      }
+        const { accounts } = org
+        if (accounts) {
+          const workspaces = accounts.flatMap(({ workspaces }) => workspaces)
+          flattenedSelectors = flattenedSelectors.concat(workspaces)
+        }
 
-      return flattenedSelectors
-    })
-    .find(workspaceCandidate => workspaceCandidate.isActive)!
+        return flattenedSelectors
+      })
+      .find(workspaceCandidate => workspaceCandidate.isActive)!
+  }, [sortedOrgs])
 
   const workspaceInitials = getInitials(activeWorkspace?.label)
 
-  // This seems to be the only way of consistenly focusing the input on the first open
+  // This seems to be the only way of consistently focusing the input on the first open
   // We should find a better way to do this and not rely on setTimout
   const focusOnInput = (open: boolean) => {
     if (open) {
@@ -156,7 +157,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
   }
 
   function generateDisplayItems(): IWorkspaceSelectorDisplayItem[] {
-    const items = currentFilteredOrgs.reduce<IWorkspaceSelectorDisplayItem[]>((total, org) => {
+    return currentFilteredOrgs.reduce<IWorkspaceSelectorDisplayItem[]>((total, org) => {
       total.push({
         type: 'org',
         className: 'workspaceSelector__orgName' + (org.label ? '' : ' u-display-none'),
@@ -194,17 +195,6 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
       return total
     }, [])
-
-    // prevent attributes to end up in the HTML
-    return items.map(item => ({
-      type: item.type,
-      className: item.className,
-      label: item.label,
-      id: item.id,
-      key: item.key,
-      onClick: item.onClick,
-      isActive: item.isActive,
-    }))
   }
 
   function onSearch(e: ChangeEvent<HTMLInputElement>): void {
