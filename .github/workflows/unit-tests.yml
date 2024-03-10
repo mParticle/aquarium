@@ -1,4 +1,4 @@
-name: Storybook Tests
+name: Unit Tests
 on: push
 jobs:
   test:
@@ -14,5 +14,5 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Run Storybook Tests
+      - name: Run Unit Tests
         run: npm run test-unit
