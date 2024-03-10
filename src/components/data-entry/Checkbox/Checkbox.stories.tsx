@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-floating-promises */
-
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
 import { Checkbox, Divider } from 'src/components'
@@ -99,8 +97,8 @@ export const ExampleCheckAll: Story = {
   },
 
   play: async context => {
-    expect(context.canvasElement.querySelectorAll('.ant-checkbox-checked').length).toBe(2)
+    void expect(context.canvasElement.querySelectorAll('.ant-checkbox-checked').length).toBe(2)
     await userEvent.click(context.canvasElement.querySelector('.ant-checkbox-indeterminate'))
-    expect(context.canvasElement.querySelectorAll('.ant-checkbox-checked').length).toBe(4)
+    void expect(context.canvasElement.querySelectorAll('.ant-checkbox-checked').length).toBe(4)
   },
 }
