@@ -54,7 +54,7 @@
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "4.12.1",
     "@swc/core-linux-x64-gnu": "1.4.2",
-    "@swc/core-linux-x64-musl": "1.4.2"
+    "@swc/core-linux-x64-musl": "1.4.6"
   },
   "scripts": {
     "storybook": "storybook dev -p 6006",
