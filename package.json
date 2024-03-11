@@ -52,7 +52,7 @@
     "wait-on": "7.2.0"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "4.12.0",
+    "@rollup/rollup-linux-x64-gnu": "4.12.1",
     "@swc/core-linux-x64-gnu": "1.4.2",
     "@swc/core-linux-x64-musl": "1.4.2"
   },
