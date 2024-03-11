@@ -68,7 +68,15 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
                 avatarOptions={props.avatarOptions}
               />
             ) : (
-              <NavigationItem type="link" icon={<SignoutIcon />} label="Sign Out" hideLabel />
+              !!props.signoutOptions?.onSignout && (
+                <NavigationItem
+                  type="link"
+                  icon={<SignoutIcon />}
+                  label="Sign Out"
+                  hideLabel
+                  onClick={props.signoutOptions?.onSignout}
+                />
+              )
             )}
 
             {!props.hideMpHome && (
