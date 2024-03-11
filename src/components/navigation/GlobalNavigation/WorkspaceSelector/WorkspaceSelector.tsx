@@ -103,6 +103,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
   }
 
   const hasNoResults = !!searchTerm && !currentFilteredOrgs.length
+
   const showSearchInput = menuItems.filter(item => !!item.label).length > 5
 
   const menuChildren = [
