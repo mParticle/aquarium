@@ -1,18 +1,49 @@
 # Contributing
 
-Thanks for contributing! Please read this document to follow our conventions for contributing to the mParticle SDK.
+Thanks for contributing! Please read this document to follow our conventions for contributing to the mParticle Aquarium Library.
 
 ## Setting Up
 
-- Fork the repository and then clone down your fork
-- Run `npm run prepare` to setup Husky pre-commit hooks
-- Commit your code per the conventions below, and PR into the repository's `main` branch
-- Your PR title will be checked automatically against the below convention (view the commit history to see examples of a proper commit/PR title). If it fails, you must update your title.
-- Our engineers will work with you to get your code change implemented once a PR is up
+- Clone the repository and run `npm install`
+- Run `npm start` to start storybook
 
-## PR Title and Commit Convention
+## Testing in Nancy
 
-PR titles should follow [conventional commit standards](https://www.conventionalcommits.org/). This helps automate the release process.
+In order to test your changes, you will need to link the local version of the library. To do this, run the following commands:
+
+- Make sure to have the library built by running `npx vite build`. The linked version will use the build files from _dist/_ folder.
+- Make sure the `resolve.symlinks` property in you webpack config is set to `false`
+- `yarn link` in the root of the library
+- `yarn link @mparticle/aquarium` in the root of Nancy
+- Make sure your _/node_modules/@mparticle/aquarium_ folder contains all of the Aquarium code
+
+## Testing by installing from a branch
+
+Another way to test your changes is by installing the library from a branch. To do this, we need to push the _dist/_ folder to the remote
+and install it directly from there with the following command:
+
+```
+yarn add https://github.com/mParticle/aquarium#<branch-name>
+```
+
+## Releasing
+
+We use semantic-release for releasing new versions of the library.
+
+## Release next versions
+
+We currently have the `next` branch available to test the releasing of the library to npm public registry. This might change in the near future
+as we figure out the best way to manage our release process.
+
+## Releasing beta versions
+
+[TODO](https://mparticle-eng.atlassian.net/browse/UNI-264)
+
+## Commit conventions and PR titles
+
+- We use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) to help automating the release process. Both PR titles and commit messages should follow this convention.
+- [This repo is commitizen friendly](https://github.com/commitizen/cz-cli?tab=readme-ov-file#using-the-command-line-tool) so we can use `git cz` to commit changes.
+  `npx cz` is also available if you don't have commitizen installed globally.
 
 The standard format for commit messages is as follows:
 
@@ -45,3 +76,4 @@ In the footer, if there is a breaking change, start your footer with `BREAKING C
 - **Prettier**: For configuring your editor to play nicely with Prettier, take a look at the [Editors doc page](https://prettier.io/docs/en/editors).
   - Also, if you're using VSCode you might want to set prettier as the default formatter and also turn on "Format on Save" option.
 - **ESLint**: Check [Integrations doc page](https://eslint.org/docs/latest/use/integrations)
+- **Stylelint**: Check [Editor integrations doc page](https://stylelint.io/awesome-stylelint/#editor-integrations)
