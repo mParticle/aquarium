@@ -1,5 +1,5 @@
 import { getInitials, getOS } from './utils'
-import { expect, describe, it, beforeEach } from 'vitest'
+import { expect, describe, it } from 'vitest'
 
 describe('Testing utils', () => {
   describe('Testing getInitials', () => {
@@ -23,11 +23,6 @@ describe('Testing utils', () => {
   })
 
   describe('Testing getOS', () => {
-    beforeEach(() => {
-      // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
-      global.navigator = {} as Navigator
-    })
-
     it('it should return "Windows" when the user agent includes "Win"', () => {
       // arrange
       Object.defineProperty(navigator, 'userAgent', {
