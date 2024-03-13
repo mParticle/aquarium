@@ -6,6 +6,7 @@
     "stylelint-no-indistinguishable-colors"
   ],
   "rules": {
+    "selector-class-pattern": null,
     "block-no-empty": true,
     "comment-no-empty": true,
     "no-duplicate-selectors": true,
