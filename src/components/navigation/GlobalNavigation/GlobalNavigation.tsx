@@ -14,7 +14,9 @@ import { type IGlobalNavigationManagement } from 'src/components/navigation/Glob
 import { type IGlobalNavigationTool } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type INavigationOrg } from 'src/components'
 import MpLogo from 'src/assets/svg/mpLogo.svg?react'
+import SignoutIcon from 'src/assets/svg/signout.svg?react'
 import { type IGlobalNavigationLogo } from 'src/components'
+import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
 
 export interface IGlobalNavigationProps {
   logo: IGlobalNavigationLogo
@@ -59,12 +61,22 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
           <div>
             <NavigationList items={props.management} />
 
-            {props.orgs && (
+            {props.orgs ? (
               <WorkspaceSelector
                 orgs={props.orgs}
                 signoutOptions={props.signoutOptions}
                 avatarOptions={props.avatarOptions}
               />
+            ) : (
+              !!props.signoutOptions?.onSignout && (
+                <NavigationItem
+                  type="link"
+                  icon={<SignoutIcon />}
+                  label="Sign Out"
+                  hideLabel
+                  onClick={props.signoutOptions?.onSignout}
+                />
+              )
             )}
 
             {!props.hideMpHome && (
