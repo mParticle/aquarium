@@ -130,7 +130,7 @@ export const ExampleStandalone: Story = {
 export const ExampleOverflowCount: Story = {
   render: () => {
     return (
-      <ExampleStory title="${overflowCount}+ is displayed when count is larger than overflowCount. The default value of overflowCount is 99.">
+      <ExampleStory title="overflowCount+ is displayed when count is larger than overflowCount. The default value of overflowCount is 99.">
         <Space size="large">
           <Badge count={99}>
             <Avatar shape="square" size="large" />

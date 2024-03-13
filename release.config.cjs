@@ -1,5 +1,5 @@
 module.exports = {
-  branches: ['main'],
+  branches: ['main', 'next'],
   tagFormat: 'v${version}',
   repositoryUrl: 'https://github.com/mParticle/aquarium',
   plugins: [

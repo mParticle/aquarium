@@ -1,91 +1,122 @@
-.workspaceSelector .ant-menu {
-    max-height: 500px !important;
+:root {
+  --workspace-selector-height: 400px;
+  --workspace-selector-search-height: 36px;
+  --workspace-selector-signout-height: 40px;
+  --workspace-selector-items-height: calc(
+    var(--workspace-selector-height) - var(--workspace-selector-search-height) -
+      var(--workspace-selector-signout-height)
+  );
 }
 
-
 .workspaceSelector__search {
-    position: sticky !important;
-    bottom: 40px;
-    z-index: 1;
-
-    width: 100% !important;
-    padding: 0 var(--padding-xxs) !important;
-    margin: 0 !important;
-
-    background-color: white !important;
+  position: sticky !important;
+  bottom: var(--workspace-selector-search-height);
+  z-index: 1;
+  width: 100% !important;
+  background-color: white !important;
+  margin-bottom: var(--margin-xxs);
 }
 
 .workspaceSelector__noResults {
-    height: 100% !important;
-    width: 180px !important;
-    pointer-events: none;
-}
-
-.workspaceSelector__noResults .ant-menu-title-content {
-    height: 100% !important;
+  height: var(--workspace-selector-items-height);
+  pointer-events: none;
 }
 
 .workspaceSelector__noResults .ant-result-title {
-    font-size: var(--font-size);
+  font-size: var(--font-size);
+}
+
+.workspaceSelector__menuItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .workspaceSelector__avatar {
-    color: white !important;
+  color: white !important;
+}
+
+.workspaceSelector__popover {
+  padding: var(--padding-xxs) !important;
+}
+
+.workspaceSelector__popoverContent {
+  height: var(--workspace-selector-height);
+  width: 200px;
+}
+
+.workspaceSelector__itemsList {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+  margin-block-start: 0;
+  overflow: auto;
+  height: var(--workspace-selector-items-height);
+  margin-bottom: var(--margin-xxs);
 }
 
 .workspaceSelector__orgName {
-    color: var(--color-primary);
-    pointer-events: none;
-    font-weight: 500;
-    padding: var(--padding-xxs) var(--control-padding-horizontal) !important;
+  color: var(--color-primary);
+  pointer-events: none;
+  padding: var(--padding-xs) var(--padding) 0;
+  font-weight: var(--font-weight-strong);
 }
 
-.workspaceSelector__orgName:not(:nth-child(2)) {
-    padding-left: var(--padding-xs);
-    padding-right: var(--padding-xs);
-    border-top: 1px solid var(--color-border-secondary);
+.workspaceSelector__orgName:not(:first-child) {
+  border-top: 1px solid var(--color-border-secondary);
 }
 
 .workspaceSelector__accountName {
-    height: var(--control-height);
-    padding: 0 var(--control-padding-horizontal) !important;
-    pointer-events: none;
+  pointer-events: none;
+  padding: var(--padding-xs) var(--padding-xs) var(--padding-xs) var(--padding);
 }
 
 .workspaceSelector__workspaceName {
-    padding-left: calc(var(--padding-sm) + var(--padding)) !important;
+  padding-top: var(--padding-xs);
+  padding-bottom: var(--padding-xs);
+  cursor: pointer;
+  padding-left: calc(var(--padding-sm) + var(--padding)) !important;
+}
+
+.workspaceSelector__workspaceName:hover {
+  background-color: var(--color-bg-text-hover);
 }
 
 .workspaceSelector__workspaceName.workspaceSelector__workspaceName--active {
-    border-radius: 4px;
-    background: var(--control-item-bg-active) !important;
+  border-radius: var(--border-radius-sm);
+  background: var(--control-item-bg-active) !important;
 }
-
 
 .workspaceSelector__orgName,
 .workspaceSelector__accountName {
-    pointer-events: none; /* only workspaces are clickable */
+  pointer-events: none; /* only workspaces are clickable */
 }
 
 .workspaceSelector__orgName,
 .workspaceSelector__accountName,
 .workspaceSelector__workspaceName {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .workspaceSelector__signout {
-    position: sticky !important;
-    bottom: 0;
+  position: sticky !important;
+  bottom: 0;
+  width: 100% !important;
+  padding: 0 var(--padding-xxs) !important;
+  margin: 0 !important;
+  background-color: white !important;
+  height: var(--workspace-selector-signout-height);
+}
 
-    width: 100% !important;
-    padding: 0 var(--padding-xxs) !important;
-    margin: 0 !important;
-
-    background-color: white !important;
+.workspaceSelector__signoutButtonContainer {
+  width: calc(100% - var(--padding-xs));
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: var(--padding-xxs);
 }
 
 .workspaceSelector__signoutButton {
-    padding: 0 !important;
-    width: 100% !important;
+  width: 100%;
 }
