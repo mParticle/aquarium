@@ -70,7 +70,7 @@ export {
   type SubMenuType,
   type MenuItemGroupType,
   type MenuDividerType,
-  type IMenuInfo
+  type IMenuInfo,
 } from './navigation/Menu/Menu'
 export { ConfigProvider, type IConfigProviderProps } from './other/ConfigProvider/ConfigProvider'
 export { Affix, type IAffixProps } from './other/Affix/Affix'
@@ -81,24 +81,46 @@ export {
   type IGlobalNavigationProps,
 } from './navigation/GlobalNavigation/GlobalNavigation'
 export type {
-  IGlobalNavigationLogo,
+  IBaseGlobalNavigationItem,
   IGlobalNavigationManagement,
   IGlobalNavigationTool,
-} from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
+  IGlobalNavigationLogo,
+} from './navigation/GlobalNavigation/GlobalNavigationItems'
 export type {
   INavigationCreateProps,
   INavigationCreateGroup,
   INavigationCreateItem,
-} from 'src/components/navigation/GlobalNavigation/NavigationCreate'
-export type  {
+} from './navigation/GlobalNavigation/NavigationCreate'
+export type {
   INavigationOrg,
   INavigationWorkspace,
   INavigationAccount,
   IWorkspaceSelectorDisplayItem,
   IWorkspaceSelectorItem,
 } from './navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'
+export { SuiteLogo } from './navigation/GlobalNavigation/SuiteLogo'
 export {
-  AlicornIcon,
-  SparklesIcon,
+  AddIcon,
+  LockIcon,
+  MpLogoIcon,
+  SearchIcon,
+  ChartLineIcon,
+  ConnectionsIcon,
+  DatabaseIcon,
+  GridIcon,
+  ShieldKeyholeIcon,
   UsersIcon,
+  WrenchIcon,
+  AlicornIcon,
+  MessageQuestionIcon,
+  GearIcon,
+  SparklesIcon,
+  SiteMapIcon,
+  ChartColumnIcon,
+  HeartIcon,
+  LightBulbIcon,
+  SplitIcon,
+  CircleNodesIcon,
+  CloudIcon,
+  FolderClosedIcon,
 } from './icons/index'

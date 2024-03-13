@@ -9,6 +9,7 @@ import { Tooltip } from 'src/components'
 import { Spin } from 'src/components'
 import LockIcon from 'src/assets/svg/lock.svg?react'
 import AddIcon from 'src/assets/svg/add.svg?react'
+import { type IMenuInfo } from 'src/components'
 
 export interface INavigationCreateProps {
   createItems: Array<INavigationCreateItem | INavigationCreateGroup>
@@ -38,26 +39,28 @@ export function NavigationCreate(props: INavigationCreateProps) {
     const isDisabled = item.disabled
 
     let itemClassName = 'navigationCreate__item'
-    if (isDisabled ?? isLocked) {
+    // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+    if (isDisabled || isLocked || item.isLoading) {
       itemClassName += ' navigationCreate__item--disabled'
     }
     return {
       key: item.description,
       className: itemClassName,
       disabled: item.disabled,
-      onClick: menuInfo => {
-        if (item.disabled) return
+      onClick: (menuInfo: IMenuInfo): void => {
+        // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+        if (item.disabled || item.isLoading) return
         item.onClick?.()
         menuInfo.domEvent.stopPropagation()
         menuInfo.domEvent.preventDefault()
       },
       label: (
         <Tooltip title={item.tooltip}>
-          <Flex vertical={true} gap="middle" justify="center">
+          <Flex vertical gap="middle" justify="center">
             <span className="navigationCreate__itemTitle">
               {item.title}
               {item.isLoading && <Spin className="navigationCreate__itemLoading" size="small" />}
-              {isLocked && <LockIcon className="navigationCreate__lockIcon"/>}
+              {isLocked && <LockIcon className="navigationCreate__lockIcon" />}
             </span>
 
             <span className="navigationCreate__itemDescription">{item.description}</span>
@@ -65,15 +68,18 @@ export function NavigationCreate(props: INavigationCreateProps) {
         </Tooltip>
       ),
     }
-  });
-  
+  })
+
   const items: IMenuProps['items'] = [
     {
       key: 'NavigationCreate',
       popupClassName: 'globalNavigation__popup globalNavigation__popup--navigationCreate',
       icon: (
         <Center className="navigationCreate__popupButtonWrapper" style={{ pointerEvents: 'none' }}>
-          <Button className="navigationCreate__popupButton" icon={<AddIcon className="navigationCreate__popupIcon"/>} />
+          <Button
+            className="navigationCreate__popupButton"
+            icon={<AddIcon className="navigationCreate__popupIcon" />}
+          />
         </Center>
       ),
 
