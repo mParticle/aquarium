@@ -66,15 +66,14 @@ export const Primary: Story = {
       control: 'select',
       options: ['outlined', 'borderless', 'filled'],
     },
-  },
-// @ts-ignore
-  status: {
-    control: 'select',
-    options: ['error', 'warning']
-  },
-  placement: {
-    control: 'select',
-    options: ['top', 'bottom'],
+    status: {
+      control: 'select',
+      options: ['error', 'warning'],
+    },
+    placement: {
+      control: 'select',
+      options: ['top', 'bottom'],
+    },
   },
 }
 
@@ -165,10 +164,15 @@ export const ExampleVariants: Story = {
   },
 }
 
+type ItemType = {
+  login: string
+  avatar_url: string
+}
+
 export const ExampleAsync: Story = {
   render: () => {
     const [loading, setLoading] = useState(false)
-    const [users, setUsers] = useState<Array<{ login: string; avatar_url: string }>>([])
+    const [users, setUsers] = useState<ItemType[]>([])
     const ref = useRef<string>()
     const loadGithubUsers = (key: string) => {
       if (!key) {
@@ -177,10 +181,10 @@ export const ExampleAsync: Story = {
       }
       void fetch(`https://api.github.com/search/users?q=${key}`)
         .then(async res => await res.json())
-        .then(({ items = [] }) => {
+        .then(({ items = [] }: { items: ItemType[] }) => {
           if (ref.current !== key) return
           setLoading(false)
-          setUsers(items.slice(0, 10) || [])
+          setUsers(items.slice(0, 10) ?? [])
         })
     }
     const debounceLoadGithubUsers = useCallback(loadGithubUsers, [])
@@ -240,7 +244,13 @@ export const ExampleForm: Story = {
     }
     return (
       <ExampleStory title="Controlled mode, for example, to work with Form.">
-        <Form form={form} layout="horizontal" onFinish={onFinish}>
+        <Form
+          form={form}
+          layout="horizontal"
+          onFinish={() => {
+            void onFinish()
+          }}
+        >
           <Form.Item
             name="coders"
             label="Top coders"
@@ -330,14 +340,14 @@ export const ExampleDisabledOrReadOnly: Story = {
 
 export const ExampleClearIcon: Story = {
   render: () => {
-    const [value, setValue] = useState('hello world');
+    const [value, setValue] = useState('hello world')
     return (
       <ExampleStory title="Customize clear button.">
         <>
           <Mentions value={value} onChange={setValue} allowClear />
           <br />
           <br />
-          <Mentions value={value} onChange={setValue} allowClear={{ clearIcon: <MpLogo/> }} />
+          <Mentions value={value} onChange={setValue} allowClear={{ clearIcon: <MpLogo /> }} />
           <br />
           <br />
           <Mentions value={value} onChange={setValue} allowClear rows={3} />
@@ -345,15 +355,14 @@ export const ExampleClearIcon: Story = {
       </ExampleStory>
     )
   },
-};
+}
 
 export const ExampleStatus: Story = {
   render: () => {
-
     const onChange = (value: string) => {
-      console.log('Change:', value);
-    };
-    
+      console.log('Change:', value)
+    }
+
     const options = [
       {
         value: 'afc163',
@@ -367,9 +376,8 @@ export const ExampleStatus: Story = {
         value: 'yesmeck',
         label: 'yesmeck',
       },
-    ];
-    
-    
+    ]
+
     return (
       <ExampleStory title="Add status to Mentions with status, which could be error or warning。">
         <Space direction="vertical">
@@ -389,6 +397,6 @@ export const ExampleStatus: Story = {
           />
         </Space>
       </ExampleStory>
-    );
+    )
   },
-};
+}

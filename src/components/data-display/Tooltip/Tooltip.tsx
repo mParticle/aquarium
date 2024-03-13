@@ -7,9 +7,9 @@ export interface ITooltipProps extends AntTooltipPropsWithTitle {}
 export const Tooltip = (props: ITooltipProps) => {
   return (
     <ConfigProvider>
-      <AntTooltip {...props} >
+      <AntTooltip {...props}>
         {/* Fragment fixes tooltip sometimes not showing */}
-        {/*https://github.com/ant-design/ant-design/issues/15909*/}
+        {/* https://github.com/ant-design/ant-design/issues/15909 */}
         <>{props.children}</>
       </AntTooltip>
     </ConfigProvider>

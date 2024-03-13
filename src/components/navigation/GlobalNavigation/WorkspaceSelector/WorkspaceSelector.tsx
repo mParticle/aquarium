@@ -1,151 +1,160 @@
 import 'src/utils/utils.css'
 import './workspace-selector.css'
-import { Avatar } from 'src/components'
-import { Input } from 'src/components'
-import { Menu } from 'src/components'
-import { type IMenuProps } from 'src/components'
-import { Center } from 'src/components'
-import { Button } from 'src/components'
-import { Empty } from 'src/components'
-import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
-import { type IWorkspaceSelectorDisplayItem } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
-import { type INavigationAccount } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
-import { type INavigationWorkspace } from 'src/components/navigation/GlobalNavigation/WorkspaceSelectorItems'
-import { type MenuItemType } from 'src/components/navigation/Menu/Menu'
-import { useState } from 'react'
+import {
+  Avatar,
+  type IAvatarProps,
+  type INavigationAccount,
+  type INavigationOrg,
+  type INavigationWorkspace,
+  type IWorkspaceSelectorDisplayItem,
+  Popover,
+} from 'src/components'
+import React, { type ChangeEvent, useRef, useState } from 'react'
 import { useCallback } from 'react'
 import { useEffect } from 'react'
 import { useMemo } from 'react'
-import { useRef } from 'react'
-import { debounce } from 'src/utils/utils'
+import { debounce, hasImageAtSrc } from 'src/utils/utils'
 import { getInitials } from 'src/utils/utils'
+
+// TODO: Need to make our Input component comply with forwardRef to be able to import it from src/components
+// As soon as https://github.com/mParticle/aquarium/pull/123 is merged
+import { type InputRef } from 'antd'
+import { WorkspaceSelectorContent } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorContent'
+import { useMount } from 'src/hooks/useMount'
 
 export interface IWorkspaceSelectorProps {
   orgs: INavigationOrg[]
+  avatarOptions?: IAvatarProps
   signoutOptions?: {
     label?: string
     onSignout: () => void
   }
 }
 
-const WorkspaceSearchLabel = () => (
+function moveToTheTop<T>(array: T[], index: number): T[] {
+  return [array[index], ...array.slice(0, index), ...array.slice(index + 1)]
+}
 
-  <Center>
-    <Empty description="No results found" imageStyle={{ height: '60px' }}></Empty>
-  </Center>
-)
-const WorkspaceSignoutLabel = ({ signoutOptions }: { signoutOptions: IWorkspaceSelectorProps['signoutOptions'] }) => (
-  <Button
-    className="workspaceSelector__signoutButton"
-    type="primary"
-    onClick={e => {
-      signoutOptions?.onSignout()
-    }}
-  >
-    {signoutOptions?.label ?? 'Sign Out of mParticle'}
-  </Button>
-)
+function sortOrgsByActiveWorkspace(orgs: INavigationOrg[]): INavigationOrg[] {
+  const activeOrgIndex = orgs.findIndex(org =>
+    org.accounts.find(account => account.workspaces.find(workspace => workspace.isActive)),
+  )
 
-const WorkspaceInputLabel = ({
-  onSearch,
-  searchTerm,
-}: {
-  onSearch: (e: React.ChangeEvent<HTMLInputElement>) => void
-  searchTerm: string
-}) => (
-  <>
-    <Input
-      placeholder="Search"
-      className="workspaceSelector__searchInput"
-      onChange={onSearch}
-      value={searchTerm}
-      onClick={e => {
-        e.preventDefault()
-        e.stopPropagation()
-      }}
-    />
-  </>
-)
+  if (activeOrgIndex >= 0) {
+    const activeOrg = orgs[activeOrgIndex]
+    const activeAccountIndex = activeOrg.accounts.findIndex(account =>
+      account.workspaces.find(workspace => workspace.isActive),
+    )
 
+    if (activeAccountIndex >= 0) {
+      const activeAccount = activeOrg.accounts[activeAccountIndex]
+      activeOrg.accounts = moveToTheTop(activeOrg.accounts, activeAccountIndex)
+
+      const activeWorkspaceIndex = activeAccount.workspaces.findIndex(workspace => workspace.isActive)
+      activeAccount.workspaces = moveToTheTop(activeAccount.workspaces, activeWorkspaceIndex)
+
+      return moveToTheTop(orgs, activeOrgIndex)
+    }
+  }
+
+  return orgs
+}
 
 export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
   const [searchTerm, setSearchTerm] = useState<string>('')
+  const inputRef = useRef<InputRef>(null)
 
-  const [currentFilteredOrgs, setCurrentFilteredOrgs] = useState<INavigationOrg[]>(props.orgs)
+  const sortedOrgs = useMemo(() => {
+    return sortOrgsByActiveWorkspace(props.orgs)
+  }, [props.orgs])
+
+  const [currentFilteredOrgs, setCurrentFilteredOrgs] = useState<INavigationOrg[]>(sortedOrgs)
+
+  const [hasImage, setHasImage] = useState<boolean>(false)
+
   useEffect(() => {
     // since we are setting state from props, when the props change be sure to update the state
-    setCurrentFilteredOrgs(props.orgs)
-  }, props.orgs)
+    setCurrentFilteredOrgs(sortedOrgs)
+  }, [sortedOrgs])
+
+  useMount(() => {
+    const avatarImageSrc = props.avatarOptions?.src ?? props.avatarOptions?.srcSet
+    if (typeof avatarImageSrc === 'string') {
+      void hasImageAtSrc(avatarImageSrc, setHasImage)
+    }
+  })
 
   const setCurrentFilteredOrgsDebounced = useCallback(debounce(setCurrentFilteredOrgs, 200), [])
 
-  const menuItems: IWorkspaceSelectorDisplayItem[] = useMemo(
-    () => generateDisplayItems(/* currentFilteredOrgs */),
-    currentFilteredOrgs,
-  )
-
-  const searchInput: MenuItemType = {
-    key: 'search',
-    className: 'workspaceSelector__search',
-    label: <WorkspaceInputLabel onSearch={onSearch} searchTerm={searchTerm} />,
-  }
-
-  const signoutButton = useRef<MenuItemType>({
-    key: 'signout',
-    className: 'workspaceSelector__signout',
-    label: <WorkspaceSignoutLabel signoutOptions={props.signoutOptions} />,
-  })
-
-  const noResultsEl: MenuItemType = {
-    key: 'no-results',
-    className: 'workspaceSelector__noResults',
-    label: <WorkspaceSearchLabel />,
-  }
-
   const hasNoResults = !!searchTerm && !currentFilteredOrgs.length
 
-  const showSearchInput = menuItems.filter(item => !!item.label).length > 5
+  const menuItems: IWorkspaceSelectorDisplayItem[] = useMemo(
+    () => generateDisplayItems(/* currentFilteredOrgs */),
+    [currentFilteredOrgs],
+  )
 
-  const menuChildren = [
-    ...(hasNoResults ? [noResultsEl] : menuItems),
-    showSearchInput ? searchInput : null,
-    props.signoutOptions ? signoutButton.current : null,
-  ]
+  const activeWorkspace = useMemo(() => {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    return sortedOrgs
+      .flatMap<INavigationWorkspace>(org => {
+        let flattenedSelectors: INavigationWorkspace[] = []
 
-  // todo: this probably doesnt need to be calculated on every render
-  const activeWorkspace: INavigationWorkspace = props.orgs
-    .flatMap<INavigationWorkspace>(org => {
-      let flattenedSelectors: INavigationWorkspace[] = []
+        const { accounts } = org
+        if (accounts) {
+          const workspaces = accounts.flatMap(({ workspaces }) => workspaces)
+          flattenedSelectors = flattenedSelectors.concat(workspaces)
+        }
 
-      const { accounts } = org
-      if (accounts) {
-        const workspaces = accounts.flatMap(({ workspaces }) => workspaces)
-        flattenedSelectors = flattenedSelectors.concat(workspaces)
-      }
+        return flattenedSelectors
+      })
+      .find(workspaceCandidate => workspaceCandidate.isActive)!
+  }, [sortedOrgs])
 
-      return flattenedSelectors
-    })
-    .find(workspaceCandidate => (workspaceCandidate as INavigationWorkspace).isActive) as INavigationWorkspace
+  const workspaceInitials = getInitials(activeWorkspace?.label)
 
-  const items: IMenuProps['items'] = [
-    {
-      key: 'WorkspaceSelector',
-      icon: <Avatar className="workspaceSelector__avatar">{getInitials(activeWorkspace?.label)}</Avatar>,
-      popupClassName: 'workspaceSelector',
-      children: menuChildren,
-    },
-  ]
-
+  // This seems to be the only way of consistently focusing the input on the first open
+  // We should find a better way to do this and not rely on setTimout
+  const focusOnInput = (open: boolean) => {
+    if (open) {
+      setTimeout(() => {
+        inputRef.current?.focus({
+          cursor: 'all',
+        })
+      }, 0)
+    }
+  }
 
   return (
-    <Menu
-      // openKeys={['WorkspaceSelector']} // testing only
-      className="globalNavigation__menu globalNavigation__item globalNavigation__item--workspaceSelector"
-      items={items}
-      onOpenChange={clearSearch}
-      expandIcon={null}
-    />
+    <Popover
+      arrow={false}
+      placement="right"
+      // Use case for variables.ts once style-dictionary is exporting both css and ts files
+      overlayInnerStyle={{ padding: 4 }}
+      overlayClassName="workspaceSelector__popover"
+      onOpenChange={focusOnInput}
+      afterOpenChange={focusOnInput}
+      content={
+        <WorkspaceSelectorContent
+          onSearch={onSearch}
+          searchTerm={searchTerm}
+          inputRef={inputRef}
+          hasNoResults={hasNoResults}
+          signoutOptions={props.signoutOptions}
+          menuItems={menuItems}
+        />
+      }
+    >
+      <div className="globalNavigation__item workspaceSelector__menuItem">
+        <Avatar {...props.avatarOptions} className="workspaceSelector__avatar">
+          {getInitialsIfNoImage(hasImage, workspaceInitials)}
+        </Avatar>
+      </div>
+    </Popover>
   )
+
+  function getInitialsIfNoImage(hasImage: boolean, initials: string): string {
+    return hasImage ? '' : initials
+  }
 
   function generateDisplayItems(): IWorkspaceSelectorDisplayItem[] {
     return currentFilteredOrgs.reduce<IWorkspaceSelectorDisplayItem[]>((total, org) => {
@@ -154,8 +163,8 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
         className: 'workspaceSelector__orgName' + (org.label ? '' : ' u-display-none'),
         label: org.label,
         id: org.id,
-        key: org.id,
-        accounts: org.accounts, // todo: these are ending up in the html as attributes..
+        key: `${org.id}_${org.label}`,
+        accounts: org.accounts,
         workspaces: org.accounts.flatMap(account => account.workspaces),
       })
 
@@ -165,7 +174,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
           className: 'workspaceSelector__accountName' + (account.label ? '' : ' u-display-none'),
           label: account.label,
           id: account.id,
-          key: account.id,
+          key: `${account.id}_${account.label}`,
           workspaces: account.workspaces,
         })
 
@@ -177,8 +186,9 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
               (workspace.isActive ? ' workspaceSelector__workspaceName--active' : ''),
             label: workspace.label,
             id: workspace.id,
-            key: workspace.id,
+            key: `${workspace.id}_${workspace.label}`,
             onClick: workspace.onClick,
+            isActive: workspace.isActive,
           })
         })
       })
@@ -187,7 +197,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
     }, [])
   }
 
-  function onSearch(e: React.ChangeEvent<HTMLInputElement>): void {
+  function onSearch(e: ChangeEvent<HTMLInputElement>): void {
     const newSearchTerm = e.target.value.toLowerCase()
     setSearchTerm(newSearchTerm)
 
@@ -196,11 +206,11 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
       setCurrentFilteredOrgsDebounced(filteredOrgs)
     } else {
       // reset list immediately so it feels faster
-      setCurrentFilteredOrgs(props.orgs)
+      setCurrentFilteredOrgs(sortedOrgs)
     }
 
     function getFilteredOrgs(): INavigationOrg[] {
-      return props.orgs.reduce<INavigationOrg[]>((total, org) => {
+      return sortedOrgs.reduce<INavigationOrg[]>((total, org) => {
         if (isHit(org)) {
           total.push(org)
         } else {
@@ -237,10 +247,5 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
         )
       }
     }
-  }
-
-  function clearSearch(): void {
-    setSearchTerm('')
-    setCurrentFilteredOrgs(props.orgs)
   }
 }

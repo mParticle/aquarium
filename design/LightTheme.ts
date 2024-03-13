@@ -2,12 +2,14 @@
  * This theme is copy/pasted from figma, via the Token Buddy for Ant Design plugin
  *  */
 
-import { IMpThemeConfig } from 'design/MpThemeConfig'
+import { type IMpThemeConfig } from 'design/MpThemeConfig'
 
 export const LightTheme: IMpThemeConfig = {
   token: {
     colorLinkHover: '#ab8eff',
     controlOutline: 'rgba(0.21176470816135406, 0, 0.8196078538894653, 0.10000000149011612)',
+    colorWarningOutline: '#fffbe6',
+    colorErrorOutline: '#fff1f0',
     controlItemBgHover: '#f8f6fb',
     controlItemBgActive: '#ebe8f8',
     controlItemBgActiveHover: '#c3aeff',
@@ -24,10 +26,38 @@ export const LightTheme: IMpThemeConfig = {
     colorBorder: '#c3aeff',
     colorBorderSecondary: '#eceae9',
     colorSplit: '#eceae9',
+    colorPrimaryBg: '#f8f6fb',
+    colorPrimaryBgHover: '#ebe8f8',
+    colorPrimaryBorder: '#c3aeff',
+    colorPrimaryBorderHover: '#ab8eff',
+    colorPrimaryHover: '#ab8eff',
+    colorPrimaryActive: '#8255ff',
+    colorPrimaryTextHover: '#5f29f8',
+    colorPrimaryText: '#2c00aa',
+    colorPrimaryTextActive: '#20007a',
+    colorSuccessHover: '#73d13d',
+    colorSuccessTextHover: '#237804',
+    colorSuccessText: '#135200',
+    colorSuccessTextActive: '#092b00',
+    colorWarningHover: '#ffc53d',
+    colorWarningTextHover: '#ad6800',
+    colorWarningText: '#874d00',
+    colorWarningTextActive: '#613400',
+    colorErrorBg: '#fff1f0',
+    colorErrorBgHover: '#ffccc7',
+    colorErrorBorder: '#ffa39e',
+    colorErrorBorderHover: '#ff7875',
+    colorErrorHover: '#ff4d4f',
+    colorErrorActive: '#cf1322',
+    colorErrorTextHover: '#a8071a',
+    colorErrorText: '#820014',
+    colorErrorTextActive: '#5c0011',
     colorBgMask: '#babbb5',
     colorTextBase: '#0f0e0e',
     colorPrimary: '#3600d1',
     colorError: '#f5222d',
+    borderRadiusLG: 16,
+    borderRadius: 8,
     fontFamily:
       "'GT America', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
     fontFamilyCode: "'Roboto Mono', Consolas, 'Liberation Mono', Menlo, Courier, monospace",
@@ -62,6 +92,8 @@ export const LightTheme: IMpThemeConfig = {
     Button: {
       borderColorDisabled: '#dcdcd8',
       primaryShadow: '0 2px 0 rgba(54, 0, 209, 0.1)',
+      onlyIconSizeLG: 20,
+      onlyIconSizeSM: 12,
     },
     Menu: {
       darkItemBg: '#212020',

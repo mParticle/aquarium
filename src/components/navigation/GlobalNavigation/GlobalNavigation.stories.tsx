@@ -1,38 +1,62 @@
+import React from 'react'
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
-import { GlobalNavigation } from 'src/components'
+import {
+  ChartLineIcon,
+  ConnectionsIcon,
+  DatabaseIcon,
+  GearIcon,
+  GlobalNavigation,
+  GridIcon,
+  MessageQuestionIcon,
+  UsersIcon,
+  WrenchIcon,
+  MpLogoIcon,
+} from 'src/components'
 import { Space } from 'src/components'
 import { Center } from 'src/components'
 import { Button } from 'src/components'
 import { type INavigationCreateProps } from 'src/components'
+import { FolderClosedIcon } from 'src/components'
+import { ShieldKeyholeIcon } from 'src/components'
+import { HeartIcon } from 'src/components'
+import { AlicornIcon } from 'src/components'
+import { CloudIcon } from 'src/components'
 import { Badge } from 'src/components/data-display/Badge/Badge'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'
 import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IGlobalNavigationManagement } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IGlobalNavigationTool } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
-import MpLogo from 'src/assets/svg/mpLogo.svg?react'
+import { SparklesIcon } from 'src/components'
+import { CircleNodesIcon } from 'src/components'
+import { SplitIcon } from 'src/components'
+import { LightBulbIcon } from 'src/components'
+import { generateOrgs } from 'src/components/navigation/GlobalNavigation/stories-utils'
 
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',
-  icon: <MpLogo />,
+  icon: <AlicornIcon />,
+  onSuiteLogoClick: () => {
+    alert('Going to Aqua Home!')
+  },
 }
 const defaultTools: IGlobalNavigationTool[] = [
   {
     label: 'Tool 1',
     isActive: true,
-    icon: <MpLogo />,
+    icon: <ShieldKeyholeIcon />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Tool 2',
-    icon: <MpLogo />,
+    icon: <HeartIcon />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Tool 3',
-    icon: <MpLogo />,
+    icon: <ConnectionsIcon />,
     type: 'link',
   },
 ]
@@ -40,20 +64,20 @@ const defaultManagement: IGlobalNavigationManagement[] = [
   {
     label: 'Notifications',
     hideLabel: true,
-    icon: <MpLogo />,
+    icon: <CloudIcon />,
     type: 'link',
   },
   {
     label: 'Support',
     hideLabel: true,
-    icon: <MpLogo />,
+    icon: <MessageQuestionIcon />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Settings',
     hideLabel: true,
-    icon: <MpLogo />,
+    icon: <GearIcon />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
@@ -71,7 +95,7 @@ const defaultOrgs: INavigationOrg[] = [
             id: 'workspace1',
             label: 'Workspace 1',
             isActive: true,
-            onClick: e => {
+            onClick: () => {
               alert('Selected Workspace 1')
             },
           },
@@ -99,7 +123,9 @@ const meta: Meta<typeof GlobalNavigation> = {
         alert('signing out!')
       },
     },
-    onMpHomeClick:() => { alert('Going to mP!') }
+    onMpHomeClick: () => {
+      alert('Going to mP!')
+    },
   },
 }
 export default meta
@@ -110,7 +136,10 @@ export const Primary: Story = {}
 
 const mpLogo: IGlobalNavigationLogo = {
   label: 'Data Platform',
-  icon: <MpLogo />,
+  icon: <MpLogoIcon />,
+  onSuiteLogoClick: () => {
+    alert('Going to mP Home!')
+  },
 }
 
 function Beta(label: string) {
@@ -125,7 +154,7 @@ function Beta(label: string) {
 const mpTools: IGlobalNavigationTool[] = [
   {
     label: 'Activity',
-    icon: <MpLogo />,
+    icon: <ChartLineIcon />,
     type: 'menu',
     children: [
       { label: 'Platform Trends' },
@@ -143,7 +172,7 @@ const mpTools: IGlobalNavigationTool[] = [
   },
   {
     label: 'Data Master',
-    icon: <MpLogo />,
+    icon: <DatabaseIcon />,
     type: 'menu',
     children: [
       { label: 'Catalog' },
@@ -156,54 +185,41 @@ const mpTools: IGlobalNavigationTool[] = [
   },
   {
     label: 'Audiences',
-    icon: <MpLogo />,
+    icon: <UsersIcon />,
     type: 'menu',
     children: [{ label: 'Real-time' }, { label: 'Standard' }, { label: 'Journeys' }],
   },
   {
-    label: 'Observability',
-    icon: <MpLogo />,
+    label: 'Connections',
+    icon: <ConnectionsIcon />,
     type: 'menu',
-    children: [
-      { label: 'Connect' },
-      {
-        label: 'Filter',
-        isNestedMenu: true,
-        children: [{ label: 'Platforms' }, { label: 'Feeds' }],
-      },
-    ],
+    children: [{ label: 'Connect' }, { label: 'Platform Filters' }, { label: 'Feed Filters' }],
   },
   {
     label: 'Setup',
-    icon: <MpLogo />,
+    icon: <WrenchIcon />,
     type: 'menu',
     children: [{ label: 'Inputs' }, { label: 'Outputs' }, { label: 'Data Warehouse' }, { label: 'CRM' }],
   },
   {
     label: 'Directory',
-    icon: <MpLogo />,
+    icon: <GridIcon />,
     type: 'link',
   },
 ]
 const mpManagement: IGlobalNavigationManagement[] = [
   {
-    label: 'Notifications',
-    hideLabel: true,
-    icon: <MpLogo />,
-    type: 'link',
-  },
-  {
     isActive: true,
     label: 'Support',
     hideLabel: true,
-    icon: <MpLogo />,
+    icon: <MessageQuestionIcon />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Settings',
     hideLabel: true,
-    icon: <MpLogo />,
+    icon: <GearIcon />,
     type: 'menu',
     children: [
       { label: 'Platform Settings' },
@@ -225,7 +241,7 @@ const mpOrgs: INavigationOrg[] = [
             id: 'workspace1',
             label: 'Workspace 1',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
               alert('Selected workspace 1')
             },
           },
@@ -233,7 +249,7 @@ const mpOrgs: INavigationOrg[] = [
             id: 'workspace1a',
             label: 'Workspace 1a',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
               alert('Selected workspace 1a')
             },
           },
@@ -241,38 +257,8 @@ const mpOrgs: INavigationOrg[] = [
             id: 'workspace1b',
             label: 'Workspace 1b',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
               alert('Selected workspace 1b')
-            },
-          },
-        ],
-      },
-      {
-        id: 'account1a',
-        label: 'Account 1a',
-        workspaces: [
-          {
-            id: 'workspace12',
-            label: 'Workspace 12',
-            isActive: false,
-            onClick: e => {
-              alert('Selected workspace 12')
-            },
-          },
-          {
-            id: 'workspace12a',
-            label: 'Workspace 12a',
-            isActive: false,
-            onClick: e => {
-              alert('Selected workspace 12a')
-            },
-          },
-          {
-            id: 'workspace12b',
-            label: 'Workspace 12b',
-            isActive: false,
-            onClick: e => {
-              alert('Selected workspace 12b')
             },
           },
         ],
@@ -291,7 +277,29 @@ const mpOrgs: INavigationOrg[] = [
             id: 'workspace2',
             label: 'Workspace 2',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
+              alert('Selected workspace 2')
+            },
+          },
+        ],
+      },
+      {
+        id: 'account2a',
+        label: 'Account 2a',
+        workspaces: [
+          {
+            id: 'workspace2a',
+            label: 'Workspace 2a',
+            isActive: false,
+            onClick: () => {
+              alert('Selected workspace 2')
+            },
+          },
+          {
+            id: 'workspace2ab',
+            label: '_Workspace 2ab',
+            isActive: true,
+            onClick: () => {
               alert('Selected workspace 2')
             },
           },
@@ -311,7 +319,7 @@ const mpOrgs: INavigationOrg[] = [
             id: 'workspace3',
             label: 'Workspace 3',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
               alert('Selected workspace 3')
             },
           },
@@ -331,7 +339,7 @@ const mpOrgs: INavigationOrg[] = [
             id: 'workspace4',
             label: 'Workspace 4',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
               alert('Selected workspace 4')
             },
           },
@@ -351,7 +359,7 @@ const mpOrgs: INavigationOrg[] = [
             id: 'workspace5',
             label: 'Workspace 5',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
               alert('Selected workspace 5')
             },
           },
@@ -371,7 +379,7 @@ const mpOrgs: INavigationOrg[] = [
             id: 'workspace6',
             label: 'Workspace 6',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
               alert('Selected workspace 6')
             },
           },
@@ -390,8 +398,8 @@ const mpOrgs: INavigationOrg[] = [
           {
             id: 'workspace7',
             label: 'Workspace 7',
-            isActive: true,
-            onClick: e => {
+            isActive: false,
+            onClick: () => {
               alert('Selected workspace 7')
             },
           },
@@ -412,28 +420,59 @@ export const MP: Story = {
     onMpHomeClick: () => {
       alert('going to overview map')
     },
+    avatarOptions: {
+      // src: "https://static-qa1.qa.corp.mparticle.com/appimg/logo_af_916397d2-9732-8de6-77cc-80e3bba120ca.png",
+      alt: 'avatar',
+    },
+  },
+}
+
+const thousandOrgs = generateOrgs(1000, 4, 4)
+
+export const MPThousandOrgs: Story = {
+  render: props => {
+    return (
+      <div style={{ width: 800 }}>
+        <GlobalNavigation
+          {...props}
+          onSearchClick={() => {
+            alert('Searching!')
+          }}
+          logo={mpLogo}
+          tools={mpTools}
+          management={mpManagement}
+          orgs={thousandOrgs}
+          onMpHomeClick={() => {
+            alert('going to overview map')
+          }}
+        />
+      </div>
+    )
   },
 }
 
 const indLogo: IGlobalNavigationLogo = {
   label: 'Analytics',
-  icon: <MpLogo />,
+  icon: <MpLogoIcon />,
+  onSuiteLogoClick: () => {
+    alert('Going to Analytics Home!')
+  },
 }
 const indTools: IGlobalNavigationTool[] = [
   {
     label: 'My Hub',
-    icon: <MpLogo />,
+    icon: <GridIcon />,
     type: 'link',
     isActive: true,
   },
   {
     label: 'Saved',
-    icon: <MpLogo />,
+    icon: <FolderClosedIcon />,
     type: 'link',
   },
   {
     label: 'Manage Data',
-    icon: <MpLogo />,
+    icon: <DatabaseIcon />,
     type: 'link',
   },
 ]
@@ -441,14 +480,14 @@ const indManagement: IGlobalNavigationManagement[] = [
   {
     label: 'Support',
     hideLabel: true,
-    icon: <MpLogo />,
+    icon: <MessageQuestionIcon />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Settings',
     hideLabel: true,
-    icon: <MpLogo />,
+    icon: <GearIcon />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
@@ -581,7 +620,7 @@ const indOrgs: INavigationOrg[] = [
             id: 'project 1',
             label: 'Project 1',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
               alert('Selected project 1')
             },
           },
@@ -601,7 +640,7 @@ const indOrgs: INavigationOrg[] = [
             id: 'project 2',
             label: 'Project 2',
             isActive: true,
-            onClick: e => {
+            onClick: () => {
               alert('Selected project 2')
             },
           },
@@ -621,7 +660,7 @@ const indOrgs: INavigationOrg[] = [
             id: 'project 3',
             label: 'Project 3',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
               alert('Selected project 3')
             },
           },
@@ -641,7 +680,7 @@ const indOrgs: INavigationOrg[] = [
             id: 'project 4',
             label: 'Project 4',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
               alert('Selected project 4')
             },
           },
@@ -661,7 +700,7 @@ const indOrgs: INavigationOrg[] = [
             id: 'project 5',
             label: 'Project 5',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
               alert('Selected project 5')
             },
           },
@@ -681,7 +720,7 @@ const indOrgs: INavigationOrg[] = [
             id: 'project 6',
             label: 'Project 6',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
               alert('Selected project 6')
             },
           },
@@ -701,7 +740,7 @@ const indOrgs: INavigationOrg[] = [
             id: 'project 7',
             label: 'Project 7',
             isActive: false,
-            onClick: e => {
+            onClick: () => {
               alert('Selected project 7')
             },
           },
@@ -732,33 +771,36 @@ export const Indicative: Story = {
 
 const cortexLogo: IGlobalNavigationLogo = {
   label: 'Predictions',
-  icon: <MpLogo />,
+  icon: <SparklesIcon />,
+  onSuiteLogoClick: () => {
+    alert('Going to Predictions Home!')
+  },
 }
 const cortexTools: IGlobalNavigationTool[] = [
   {
     label: 'Pipelines',
-    icon: <MpLogo />,
+    icon: <CircleNodesIcon />,
     type: 'link',
   },
   {
     label: 'Projects',
-    icon: <MpLogo />,
+    icon: <SplitIcon />,
     type: 'link',
     isActive: true,
   },
   {
     label: 'Data',
-    icon: <MpLogo />,
+    icon: <DatabaseIcon />,
     type: 'link',
   },
   {
     label: 'API',
-    icon: <MpLogo />,
+    icon: <CloudIcon />,
     type: 'link',
   },
   {
     label: 'Insights',
-    icon: <MpLogo />,
+    icon: <LightBulbIcon />,
     type: 'link',
   },
 ]
@@ -766,14 +808,14 @@ const cortexManagement: IGlobalNavigationManagement[] = [
   {
     label: 'Support',
     hideLabel: true,
-    icon: <MpLogo />,
+    icon: <MessageQuestionIcon />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
   {
     label: 'Settings',
     hideLabel: true,
-    icon: <MpLogo />,
+    icon: <GearIcon />,
     type: 'menu',
     children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
   },
