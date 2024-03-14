@@ -10,29 +10,30 @@ export function GetGlobalToken(): React.ReactNode {
 
   function wrapValuesInObject(obj: AliasToken) {
     return Object.fromEntries(
-      Object.entries(obj).map(([key, value]) => {
-        const pxKeys = ['padding', 'margin', 'borderRadius', 'screen', 'size', 'font', 'width', 'height']
-        const excludePxKeys = ['lineHeight', 'fontWeight']
+      Object.entries(obj)
+        .map(([key, value]) => {
+          const pxKeys = ['padding', 'margin', 'borderRadius', 'screen', 'size', 'font', 'width', 'height']
+          const excludePxKeys = ['lineHeight', 'fontWeight']
 
-        const addPx =
-          typeof value === 'number' &&
-          pxKeys.some(k => (key + '').toLowerCase().includes(k.toLowerCase())) &&
-          !excludePxKeys.some(k => (key + '').toLowerCase().includes(k.toLowerCase()))
+          const addPx =
+            typeof value === 'number' &&
+            pxKeys.some(k => (key + '').toLowerCase().includes(k.toLowerCase())) &&
+            !excludePxKeys.some(k => (key + '').toLowerCase().includes(k.toLowerCase()))
 
-        if (addPx) value += 'px'
+          if (addPx) value += 'px'
 
-        // remove newlines [from properties like box-shadow]
-        if (typeof value === 'string') value = value.replace(/[\r\n]/gm, '')
+          // remove newlines [from properties like box-shadow]
+          if (typeof value === 'string') value = value.replace(/[\r\n]/gm, '')
 
-        // remove deprecated color key syntax - https://ant.design/changelog#530
-        const regex = /-([1-9]|10)$/
-        if (regex.test(key)) {
-          console.log(key)
-          return [null, { value }]
-        }
-        return [key, { value }]
-      })
-      .filter(([key]) => key !== null),
+          // remove deprecated color key syntax - https://ant.design/changelog#530
+          const regex = /-([1-9]|10)$/
+          if (regex.test(key)) {
+            console.log(key)
+            return [null, { value }]
+          }
+          return [key, { value }]
+        })
+        .filter(([key]) => key !== null),
     )
   }
 

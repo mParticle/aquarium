@@ -23,7 +23,7 @@ import { getInitials } from 'src/utils/utils'
 import { type InputRef } from 'antd'
 import { WorkspaceSelectorContent } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorContent'
 import { useMount } from 'src/hooks/useMount'
-import { PaddingXxs } from "src/styles/style";
+import { PaddingXxs } from 'src/styles/style'
 
 export interface IWorkspaceSelectorProps {
   orgs: INavigationOrg[]

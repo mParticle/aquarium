@@ -96,7 +96,6 @@
   height: var(--size-sm);
 }
 
-
 .workspaceSelector__orgName,
 .workspaceSelector__accountName {
   pointer-events: none; /* only workspaces are clickable */
