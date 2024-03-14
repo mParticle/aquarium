@@ -87,6 +87,14 @@
   background: var(--control-item-bg-active) !important;
 }
 
+.workspaceSelector__activeIcon {
+  padding-right: var(--padding);
+  padding-left: var(--padding-xs);
+  width: var(--size-sm);
+  height: var(--size-sm);
+}
+
+
 .workspaceSelector__orgName,
 .workspaceSelector__accountName {
   pointer-events: none; /* only workspaces are clickable */
