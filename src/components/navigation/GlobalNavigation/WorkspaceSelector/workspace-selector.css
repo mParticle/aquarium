@@ -91,6 +91,7 @@
   padding-right: var(--padding);
   padding-left: var(--padding-xs);
   width: var(--size-sm);
+  min-width: var(--size-sm);
   height: var(--size-sm);
 }
 
@@ -105,6 +106,7 @@
 .workspaceSelector__workspaceName {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
+  overflow-wrap: anywhere;
 }
 
 .workspaceSelector__signout {
