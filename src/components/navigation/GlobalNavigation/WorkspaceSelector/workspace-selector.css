@@ -79,10 +79,11 @@
 }
 
 .workspaceSelector__workspaceName:hover {
-  background-color: var(--color-bg-text-hover);
+  background-color: var(--control-item-bg-hover);
 }
 
-.workspaceSelector__workspaceName.workspaceSelector__workspaceName--active {
+.workspaceSelector__workspaceName.workspaceSelector__workspaceName--active,
+.workspaceSelector__workspaceName:active {
   border-radius: var(--border-radius-sm);
   background: var(--control-item-bg-active) !important;
 }
