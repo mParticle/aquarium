@@ -59,12 +59,11 @@ function sortOrgsByActiveWorkspace(orgs: INavigationOrg[]): INavigationOrg[] {
 
 export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
   const [searchTerm, setSearchTerm] = useState<string>('')
+  const inputRef = useRef<InputRef>(null)
 
   const sortedOrgs = useMemo(() => {
     return sortOrgsByActiveWorkspace(props.orgs)
   }, [props.orgs])
-
-  const inputRef = useRef<InputRef>(null)
 
   const [currentFilteredOrgs, setCurrentFilteredOrgs] = useState<INavigationOrg[]>(sortedOrgs)
 
@@ -154,7 +153,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
   }
 
   function generateDisplayItems(): IWorkspaceSelectorDisplayItem[] {
-    const items = currentFilteredOrgs.reduce<IWorkspaceSelectorDisplayItem[]>((total, org) => {
+    return currentFilteredOrgs.reduce<IWorkspaceSelectorDisplayItem[]>((total, org) => {
       total.push({
         type: 'org',
         className: 'workspaceSelector__orgName' + (org.label ? '' : ' u-display-none'),
@@ -192,16 +191,6 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
       return total
     }, [])
-
-    // prevent attributes to end up in the HTML
-    return items.map(item => ({
-      type: item.type,
-      className: item.className,
-      label: item.label,
-      id: item.id,
-      key: item.key,
-      onClick: item.onClick,
-    }))
   }
 
   function onSearch(e: ChangeEvent<HTMLInputElement>): void {

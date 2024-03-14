@@ -104,8 +104,6 @@ module.exports = {
           'NavigationIcon',
           'NavigationList',
           'WorkspaceSelector',
-          'WorkspaceSearchLabel',
-          'WorkspaceInputLabel',
           'WorkspaceNoResults',
           'WorkspaceSignout',
         ],
