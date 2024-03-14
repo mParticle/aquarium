@@ -5,11 +5,20 @@
       "transformGroup": "css",
       "files": [
         {
-          "destination": "src/styles/_variables.css",
+          "destination": "src/styles/style.css",
           "format": "css/variables",
           "options": {
             "showFileHeader": false
           }
+        }
+      ]
+    },
+    "typescript": {
+      "transformGroup": "js",
+      "files": [
+        {
+          "destination": "src/styles/style.ts",
+          "format": "javascript/es6"
         }
       ]
     }
