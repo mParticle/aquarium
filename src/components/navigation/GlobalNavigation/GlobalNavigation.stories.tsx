@@ -638,7 +638,7 @@ const indOrgs: INavigationOrg[] = [
         workspaces: [
           {
             id: 'project 2',
-            label: 'Project 2',
+            label: 'Project2Project2Project2Project2Project2Project2',
             isActive: true,
             onClick: () => {
               alert('Selected project 2')

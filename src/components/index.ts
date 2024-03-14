@@ -104,6 +104,7 @@ export {
   LockIcon,
   MpLogoIcon,
   SearchIcon,
+  CheckIcon,
   ChartLineIcon,
   ConnectionsIcon,
   DatabaseIcon,

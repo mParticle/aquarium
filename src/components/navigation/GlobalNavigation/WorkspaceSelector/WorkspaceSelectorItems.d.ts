@@ -1,4 +1,5 @@
 import { type MenuItemType } from 'src/components/navigation/Menu/Menu'
+import { type ReactNode } from 'react'
 
 interface IWorkspaceSelectorItem {
   label: string
@@ -23,7 +24,7 @@ export interface INavigationWorkspace extends IWorkspaceSelectorItem {
 export interface IWorkspaceSelectorDisplayItem extends MenuItemType {
   type: 'org' | 'account' | 'workspace'
   className: string
-  label: string
+  label: ReactNode
   id: string
 
   accounts?: INavigationAccount[]

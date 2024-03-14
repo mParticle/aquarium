@@ -1,4 +1,4 @@
-import 'src/styles/_variables.css'
+import 'src/styles/style.css'
 import './global-navigation.css'
 import { type IAvatarProps, Layout } from 'src/components'
 import { Flex } from 'src/components'
