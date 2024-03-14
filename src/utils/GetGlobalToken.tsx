@@ -24,8 +24,15 @@ export function GetGlobalToken(): React.ReactNode {
         // remove newlines [from properties like box-shadow]
         if (typeof value === 'string') value = value.replace(/[\r\n]/gm, '')
 
+        // remove deprecated color key syntax - https://ant.design/changelog#530
+        const regex = /-([1-9]|10)$/
+        if (regex.test(key)) {
+          console.log(key)
+          return [null, { value }]
+        }
         return [key, { value }]
-      }),
+      })
+      .filter(([key]) => key !== null),
     )
   }
 
