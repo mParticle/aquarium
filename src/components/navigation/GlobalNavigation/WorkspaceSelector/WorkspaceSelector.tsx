@@ -23,6 +23,7 @@ import { getInitials } from 'src/utils/utils'
 import { type InputRef } from 'antd'
 import { WorkspaceSelectorContent } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorContent'
 import { useMount } from 'src/hooks/useMount'
+import { PaddingXxs } from "src/styles/style";
 
 export interface IWorkspaceSelectorProps {
   orgs: INavigationOrg[]
@@ -130,8 +131,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
     <Popover
       arrow={false}
       placement="right"
-      // Use case for variables.ts once style-dictionary is exporting both css and ts files
-      overlayInnerStyle={{ padding: 4 }}
+      overlayInnerStyle={{ padding: PaddingXxs }}
       overlayClassName="workspaceSelector__popover"
       onOpenChange={focusOnInput}
       afterOpenChange={focusOnInput}

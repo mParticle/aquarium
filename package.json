@@ -20,7 +20,8 @@
     "dist/aquarium.umd.cjs",
     "dist/aquarium.js",
     "dist/index.d.ts",
-    "dist/style.css"
+    "dist/style.css",
+    "dist/style.ts"
   ],
   "peerDependencies": {
     "antd": ">=5.13.1",
