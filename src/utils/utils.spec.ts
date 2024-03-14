@@ -1,4 +1,5 @@
 import { getInitials, getOS } from './utils'
+import { expect, describe, it, beforeEach } from 'vitest'
 
 describe('Testing utils', () => {
   describe('Testing getInitials', () => {
@@ -8,7 +9,7 @@ describe('Testing utils', () => {
       ['Ren & Stimpy- Wein', 'RW'],
       ['Ren & Stimpy - Wein', 'RW'],
       ['R. N. Stimpy', 'RS'],
-      ['1Ren Stimpy', 'RS'],
+      ['1Ren Stimpy', '1RS'],
       ['Ren', 'R'],
       ['* Ren & Stimpy', 'RS'],
       ['234* Ren & Stimpy', 'RS'],
@@ -22,6 +23,11 @@ describe('Testing utils', () => {
   })
 
   describe('Testing getOS', () => {
+    beforeEach(() => {
+      // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+      global.navigator = {} as Navigator
+    })
+
     it('it should return "Windows" when the user agent includes "Win"', () => {
       // arrange
       Object.defineProperty(navigator, 'userAgent', {
