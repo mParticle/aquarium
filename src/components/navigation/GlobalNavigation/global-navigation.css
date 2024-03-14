@@ -34,6 +34,8 @@
   padding: 0;
   gap: var(--margin-xxs);
   border-radius: 0 !important;
+  border-left: solid 3px transparent;
+  border-right: solid 3px transparent;
   cursor: pointer;
   transition: none !important;
 }
@@ -86,7 +88,7 @@
 }
 
 .globalNavigation__item.globalNavigation__item--active {
-  border-left: solid 3px var(--color-primary);
+  border-left-color: var(--color-primary);
   background-color: var(--color-bg-text-hover);
 }
 
@@ -111,7 +113,7 @@
 }
 
 .navigationCreate__lockIcon {
-  padding-left: var(--padding-xs);
+  margin-left: var(--padding-xs);
   width: var(--size-sm) !important;
   height: var(--size-sm) !important;
 }
@@ -142,10 +144,19 @@
 .navigationCreate__item {
   height: 100% !important;
   min-height: 100% !important;
+  padding: var(--padding-xxs) 0;
 }
 
 .navigationCreate__item .ant-flex {
   gap: 0;
+}
+
+.navigationCreate__item.navigationCreate__item--disabled {
+  cursor: default !important;
+}
+
+.navigationCreate__item.navigationCreate__item--disabled:hover {
+  background-color: initial !important;
 }
 
 .navigationCreate__item.navigationCreate__item--disabled .navigationCreate__itemTitle,
@@ -156,7 +167,7 @@
 .navigationCreate__itemTitle {
   color: var(--color-text-heading);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 22px;
 }
 
@@ -165,6 +176,7 @@
   font-size: 12px;
   line-height: 20px;
   white-space: normal !important;
+  padding: var(--padding-xs) 0;
 }
 
 .navigationCreate__itemLoading,
@@ -240,17 +252,17 @@
 .globalNavigation__suiteLogo {
   min-height: var(--suite-logo-height);
   min-width: var(--nav-width);
-  padding-top: var(--padding-lg);
+  padding: var(--padding-md) 0;
   color: black;
   font-size: var(--font-size-sm);
   font-weight: 400;
-  cursor: default;
+  cursor: pointer;
 }
 
 .globalNavigation__divider {
   border-bottom: 1px solid var(--color-border-secondary);
-  width: 80%;
-  margin-top: var(--margin-md);
+  margin-right: var(--margin-sm);
+  margin-left: var(--margin-sm);
   margin-bottom: var(--margin-md);
 }
 

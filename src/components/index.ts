@@ -81,15 +81,16 @@ export {
   type IGlobalNavigationProps,
 } from './navigation/GlobalNavigation/GlobalNavigation'
 export type {
-  IGlobalNavigationLogo,
+  IBaseGlobalNavigationItem,
   IGlobalNavigationManagement,
   IGlobalNavigationTool,
-} from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
+  IGlobalNavigationLogo,
+} from './navigation/GlobalNavigation/GlobalNavigationItems'
 export type {
   INavigationCreateProps,
   INavigationCreateGroup,
   INavigationCreateItem,
-} from 'src/components/navigation/GlobalNavigation/NavigationCreate'
+} from './navigation/GlobalNavigation/NavigationCreate'
 export type {
   INavigationOrg,
   INavigationWorkspace,
@@ -97,7 +98,12 @@ export type {
   IWorkspaceSelectorDisplayItem,
   IWorkspaceSelectorItem,
 } from './navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'
+export { SuiteLogo } from './navigation/GlobalNavigation/SuiteLogo'
 export {
+  AddIcon,
+  LockIcon,
+  MpLogoIcon,
+  SearchIcon,
   ChartLineIcon,
   ConnectionsIcon,
   DatabaseIcon,

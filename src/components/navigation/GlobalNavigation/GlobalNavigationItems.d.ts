@@ -9,13 +9,16 @@ export interface IBaseGlobalNavigationItem {
   isActive?: boolean
 }
 
-export interface IGlobalNavigationLogo extends IBaseGlobalNavigationItem {}
+export interface IGlobalNavigationLogo extends IBaseGlobalNavigationItem {
+  onSuiteLogoClick: () => void
+}
 
 export interface IGlobalNavigationMenu extends IBaseGlobalNavigationItem {
   type: 'menu'
   isNestedMenu?: boolean
   children?: IGlobalNavigationMenuItem[]
 }
+
 interface IGlobalNavigationMenuItem extends Omit<MenuItemType, 'key'> {
   type?: 'menu'
   isNestedMenu?: boolean

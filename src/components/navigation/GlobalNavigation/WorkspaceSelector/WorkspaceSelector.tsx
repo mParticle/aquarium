@@ -2,69 +2,115 @@ import 'src/utils/utils.css'
 import './workspace-selector.css'
 import {
   Avatar,
+  type IAvatarProps,
   type INavigationAccount,
   type INavigationOrg,
   type INavigationWorkspace,
   type IWorkspaceSelectorDisplayItem,
+  type InputRef,
   Popover,
 } from 'src/components'
-import { useRef, useState } from 'react'
+import React, { type ChangeEvent, useRef, useState } from 'react'
 import { useCallback } from 'react'
 import { useEffect } from 'react'
 import { useMemo } from 'react'
-import { debounce } from 'src/utils/utils'
+import { debounce, hasImageAtSrc } from 'src/utils/utils'
 import { getInitials } from 'src/utils/utils'
-
-// Need to make our Input component comply with forwardRef to be able to import it from src/components
-// Couldn't make it work as of right now
-import { Input, type InputRef } from 'antd'
-import { WorkspaceSearchLabel } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceNoResults'
-import { WorkspaceSignoutLabel } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSignout'
+import { WorkspaceSelectorContent } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorContent'
+import { useMount } from 'src/hooks/useMount'
 
 export interface IWorkspaceSelectorProps {
   orgs: INavigationOrg[]
+  avatarOptions?: IAvatarProps
   signoutOptions?: {
     label?: string
     onSignout: () => void
   }
 }
 
+function moveToTheTop<T>(array: T[], index: number): T[] {
+  return [array[index], ...array.slice(0, index), ...array.slice(index + 1)]
+}
+
+function sortOrgsByActiveWorkspace(orgs: INavigationOrg[]): INavigationOrg[] {
+  const activeOrgIndex = orgs.findIndex(org =>
+    org.accounts.find(account => account.workspaces.find(workspace => workspace.isActive)),
+  )
+
+  if (activeOrgIndex >= 0) {
+    const activeOrg = orgs[activeOrgIndex]
+    const activeAccountIndex = activeOrg.accounts.findIndex(account =>
+      account.workspaces.find(workspace => workspace.isActive),
+    )
+
+    if (activeAccountIndex >= 0) {
+      const activeAccount = activeOrg.accounts[activeAccountIndex]
+      activeOrg.accounts = moveToTheTop(activeOrg.accounts, activeAccountIndex)
+
+      const activeWorkspaceIndex = activeAccount.workspaces.findIndex(workspace => workspace.isActive)
+      activeAccount.workspaces = moveToTheTop(activeAccount.workspaces, activeWorkspaceIndex)
+
+      return moveToTheTop(orgs, activeOrgIndex)
+    }
+  }
+
+  return orgs
+}
+
 export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
   const [searchTerm, setSearchTerm] = useState<string>('')
+
+  const sortedOrgs = useMemo(() => {
+    return sortOrgsByActiveWorkspace(props.orgs)
+  }, [props.orgs])
+
   const inputRef = useRef<InputRef>(null)
 
-  const [currentFilteredOrgs, setCurrentFilteredOrgs] = useState<INavigationOrg[]>(props.orgs)
+  const [currentFilteredOrgs, setCurrentFilteredOrgs] = useState<INavigationOrg[]>(sortedOrgs)
+
+  const [hasImage, setHasImage] = useState<boolean>(false)
+
   useEffect(() => {
     // since we are setting state from props, when the props change be sure to update the state
-    setCurrentFilteredOrgs(props.orgs)
-  }, props.orgs)
+    setCurrentFilteredOrgs(sortedOrgs)
+  }, [sortedOrgs])
+
+  useMount(() => {
+    const avatarImageSrc = props.avatarOptions?.src ?? props.avatarOptions?.srcSet
+    if (typeof avatarImageSrc === 'string') {
+      void hasImageAtSrc(avatarImageSrc, setHasImage)
+    }
+  })
 
   const setCurrentFilteredOrgsDebounced = useCallback(debounce(setCurrentFilteredOrgs, 200), [])
+
+  const hasNoResults = !!searchTerm && !currentFilteredOrgs.length
 
   const menuItems: IWorkspaceSelectorDisplayItem[] = useMemo(
     () => generateDisplayItems(/* currentFilteredOrgs */),
     [currentFilteredOrgs],
   )
 
-  const hasNoResults = !!searchTerm && !currentFilteredOrgs.length
+  const activeWorkspace = useMemo(() => {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    return sortedOrgs
+      .flatMap<INavigationWorkspace>(org => {
+        let flattenedSelectors: INavigationWorkspace[] = []
 
-  // todo: this probably doesnt need to be calculated on every render
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const activeWorkspace: INavigationWorkspace = props.orgs
-    .flatMap<INavigationWorkspace>(org => {
-      let flattenedSelectors: INavigationWorkspace[] = []
+        const { accounts } = org
+        if (accounts) {
+          const workspaces = accounts.flatMap(({ workspaces }) => workspaces)
+          flattenedSelectors = flattenedSelectors.concat(workspaces)
+        }
 
-      const { accounts } = org
-      if (accounts) {
-        const workspaces = accounts.flatMap(({ workspaces }) => workspaces)
-        flattenedSelectors = flattenedSelectors.concat(workspaces)
-      }
+        return flattenedSelectors
+      })
+      .find(workspaceCandidate => workspaceCandidate.isActive)!
+  }, [sortedOrgs])
 
-      return flattenedSelectors
-    })
-    .find(workspaceCandidate => workspaceCandidate.isActive)!
+  const workspaceInitials = getInitials(activeWorkspace?.label)
 
-  // This seems to be the only way of consistenly focusing the input on the first open
+  // This seems to be the only way of consistently focusing the input on the first open
   // We should find a better way to do this and not rely on setTimout
   const focusOnInput = (open: boolean) => {
     if (open) {
@@ -78,49 +124,34 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
   return (
     <Popover
+      arrow={false}
       placement="right"
-      // Can't seem to find a way to access it via className
+      // Use case for variables.ts once style-dictionary is exporting both css and ts files
       overlayInnerStyle={{ padding: 4 }}
       overlayClassName="workspaceSelector__popover"
       onOpenChange={focusOnInput}
       afterOpenChange={focusOnInput}
       content={
-        <div className="workspaceSelector__popoverContent">
-          <div className="workspaceSelector__search">
-            <Input
-              placeholder="Search"
-              className="workspaceSelector__searchInput"
-              onChange={onSearch}
-              value={searchTerm}
-              ref={inputRef}
-              onClick={e => {
-                e.preventDefault()
-                e.stopPropagation()
-              }}
-            />
-          </div>
-
-          {hasNoResults ? (
-            <WorkspaceSearchLabel />
-          ) : (
-            <ul className="workspaceSelector__itemsList">
-              {menuItems.map(item => (
-                <li key={item.key} className={item.className} onClick={item.onClick}>
-                  {item.label}
-                </li>
-              ))}
-            </ul>
-          )}
-
-          <WorkspaceSignoutLabel signoutOptions={props.signoutOptions} />
-        </div>
-      }
-    >
+        <WorkspaceSelectorContent
+          onSearch={onSearch}
+          searchTerm={searchTerm}
+          inputRef={inputRef}
+          hasNoResults={hasNoResults}
+          signoutOptions={props.signoutOptions}
+          menuItems={menuItems}
+        />
+      }>
       <div className="globalNavigation__item workspaceSelector__menuItem">
-        <Avatar className="workspaceSelector__avatar">{getInitials(activeWorkspace?.label)}</Avatar>
+        <Avatar {...props.avatarOptions} className="workspaceSelector__avatar">
+          {getInitialsIfNoImage(hasImage, workspaceInitials)}
+        </Avatar>
       </div>
     </Popover>
   )
+
+  function getInitialsIfNoImage(hasImage: boolean, initials: string): string {
+    return hasImage ? '' : initials
+  }
 
   function generateDisplayItems(): IWorkspaceSelectorDisplayItem[] {
     const items = currentFilteredOrgs.reduce<IWorkspaceSelectorDisplayItem[]>((total, org) => {
@@ -154,6 +185,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
             id: workspace.id,
             key: `${workspace.id}_${workspace.label}`,
             onClick: workspace.onClick,
+            isActive: workspace.isActive,
           })
         })
       })
@@ -172,7 +204,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
     }))
   }
 
-  function onSearch(e: React.ChangeEvent<HTMLInputElement>): void {
+  function onSearch(e: ChangeEvent<HTMLInputElement>): void {
     const newSearchTerm = e.target.value.toLowerCase()
     setSearchTerm(newSearchTerm)
 
@@ -181,11 +213,11 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
       setCurrentFilteredOrgsDebounced(filteredOrgs)
     } else {
       // reset list immediately so it feels faster
-      setCurrentFilteredOrgs(props.orgs)
+      setCurrentFilteredOrgs(sortedOrgs)
     }
 
     function getFilteredOrgs(): INavigationOrg[] {
-      return props.orgs.reduce<INavigationOrg[]>((total, org) => {
+      return sortedOrgs.reduce<INavigationOrg[]>((total, org) => {
         if (isHit(org)) {
           total.push(org)
         } else {
