@@ -74,18 +74,28 @@
 .workspaceSelector__workspaceName {
   padding-top: var(--padding-xs);
   padding-bottom: var(--padding-xs);
-  cursor: pointer;
   padding-left: calc(var(--padding-sm) + var(--padding)) !important;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
 }
 
 .workspaceSelector__workspaceName:hover {
-  background-color: var(--color-bg-text-hover);
+  background-color: var(--control-item-bg-hover);
 }
 
-.workspaceSelector__workspaceName.workspaceSelector__workspaceName--active {
-  border-radius: var(--border-radius-sm);
+.workspaceSelector__workspaceName.workspaceSelector__workspaceName--active,
+.workspaceSelector__workspaceName:active {
   background: var(--control-item-bg-active) !important;
 }
+
+.workspaceSelector__activeIcon {
+  padding-right: var(--padding);
+  padding-left: var(--padding-xs);
+  width: var(--size-sm);
+  min-width: var(--size-sm);
+  height: var(--size-sm);
+}
+
 
 .workspaceSelector__orgName,
 .workspaceSelector__accountName {
@@ -97,6 +107,7 @@
 .workspaceSelector__workspaceName {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
+  overflow-wrap: anywhere;
 }
 
 .workspaceSelector__signout {
