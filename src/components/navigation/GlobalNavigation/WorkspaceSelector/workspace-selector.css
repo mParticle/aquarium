@@ -74,8 +74,9 @@
 .workspaceSelector__workspaceName {
   padding-top: var(--padding-xs);
   padding-bottom: var(--padding-xs);
-  cursor: pointer;
   padding-left: calc(var(--padding-sm) + var(--padding)) !important;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
 }
 
 .workspaceSelector__workspaceName:hover {
@@ -84,7 +85,6 @@
 
 .workspaceSelector__workspaceName.workspaceSelector__workspaceName--active,
 .workspaceSelector__workspaceName:active {
-  border-radius: var(--border-radius-sm);
   background: var(--control-item-bg-active) !important;
 }
 
