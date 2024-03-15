@@ -5,6 +5,7 @@ import { Switch } from 'src/components'
 import { Text } from 'src/components/general/Typography/Typography'
 import { ExampleStory } from 'src/utils/ExampleStory'
 import { useState } from 'react'
+import { expect } from '@storybook/test'
 
 const meta: Meta<typeof Text> = {
   title: 'Aquarium/General/Text',
@@ -43,7 +44,12 @@ type Story = StoryObj<typeof Text>
   Customize the stories based on specific requirements.
 */
 
-export const Primary: Story = {}
+export const Primary: Story = {
+  play: async context => {
+    const text = context.canvasElement.querySelector('span')
+    void expect(text?.textContent).toEqual('Example Text')
+  },
+}
 
 export const Code: Story = {
   args: {
