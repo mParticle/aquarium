@@ -19,7 +19,9 @@ export function NavigationItem(props: INavigationItemProps) {
       {props.type === 'link' && (
         <Tooltip title={props.hideLabel ? props.label : undefined} placement="right">
           <NavigationIcon
-            className={`globalNavigation__item ${props.isActive ? ' globalNavigation__item--active' : ''}`}
+            className={`globalNavigation__item globalNavigation__link ${
+              props.isActive ? ' globalNavigation__item--active' : ''
+            }`}
             icon={props.icon}
             label={props.label}
             onClick={props.onClick}
