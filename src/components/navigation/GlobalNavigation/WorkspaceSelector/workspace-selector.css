@@ -89,8 +89,8 @@
 }
 
 .workspaceSelector__activeIcon {
-  padding-right: var(--padding);
-  padding-left: var(--padding-xs);
+  margin-right: var(--margin);
+  margin-left: var(--margin-xs);
   width: var(--size-sm);
   min-width: var(--size-sm);
   height: var(--size-sm);
