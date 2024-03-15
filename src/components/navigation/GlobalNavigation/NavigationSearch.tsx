@@ -19,7 +19,8 @@ export function NavigationSearch(props: INavigationSearchProps) {
             <>Search</>
             <>{getOS() === 'Macintosh' ? 'Cmd' : 'Ctrl'} + K</>
           </Space>
-        }>
+        }
+      >
         <Center className="globalNavigation__searchButtonWrapper">
           <Button
             className="globalNavigation__searchButton"

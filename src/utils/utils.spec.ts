@@ -1,4 +1,5 @@
 import { getInitials, getOS } from './utils'
+import { expect, describe, it, beforeEach } from 'vitest'
 
 describe('Testing utils', () => {
   describe('Testing getInitials', () => {

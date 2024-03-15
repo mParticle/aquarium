@@ -249,13 +249,15 @@ export const ExampleForm: Story = {
           layout="horizontal"
           onFinish={() => {
             void onFinish()
-          }}>
+          }}
+        >
           <Form.Item
             name="coders"
             label="Top coders"
             labelCol={{ span: 6 }}
             wrapperCol={{ span: 16 }}
-            rules={[{ validator: checkMention }]}>
+            rules={[{ validator: checkMention }]}
+          >
             <Mentions
               rows={1}
               options={[
@@ -279,7 +281,8 @@ export const ExampleForm: Story = {
             label="Bio"
             labelCol={{ span: 6 }}
             wrapperCol={{ span: 16 }}
-            rules={[{ required: true }]}>
+            rules={[{ required: true }]}
+          >
             <Mentions
               rows={3}
               placeholder="You can use @ to ref user here"
