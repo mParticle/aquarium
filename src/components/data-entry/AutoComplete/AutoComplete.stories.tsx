@@ -279,8 +279,7 @@ export const ExampleLookupPatternsCertainCategory: Story = {
           style={{ float: 'right' }}
           href="https://www.google.com/search?q=antd"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
           more
         </a>
       </span>
@@ -292,7 +291,7 @@ export const ExampleLookupPatternsCertainCategory: Story = {
         <Flex justify="space-between">
           {title}
           <span>
-            <MpLogo/>
+            <MpLogo />
             {count}
           </span>
         </Flex>
@@ -325,15 +324,13 @@ export const ExampleLookupPatternsCertainCategory: Story = {
               </a>
               Basic Usage, set options of autocomplete with options property.
             </>
-          }
-        >
+          }>
           <AutoComplete
             popupClassName="certain-category-search-dropdown"
             popupMatchSelectWidth={500}
             style={{ width: 250 }}
             options={options}
-            size="large"
-          >
+            size="large">
             <Input.Search size="large" placeholder="input here" />
           </AutoComplete>
         </ExampleStory>
@@ -387,16 +384,14 @@ export const ExampleLookupPatternsUnCertainCategory: Story = {
               </a>
               Basic Usage, set options of autocomplete with options property.
             </>
-          }
-        >
+          }>
           <AutoComplete
             popupMatchSelectWidth={252}
             style={{ width: 300 }}
             options={options}
             onSelect={onSelect}
             onSearch={handleSearch}
-            size="large"
-          >
+            size="large">
             <Input.Search size="large" placeholder="input here" enterButton />
           </AutoComplete>
         </ExampleStory>
@@ -476,7 +471,7 @@ export const ExampleClearButton: Story = {
               setOptions(getPanelValue(text))
             }}
             placeholder="Customized clear icon"
-            allowClear={{ clearIcon: <MpLogo/> }}
+            allowClear={{ clearIcon: <MpLogo /> }}
           />
         </ExampleStory>
       </>
