@@ -30,11 +30,6 @@ yarn add https://github.com/mParticle/aquarium#<branch-name>
 
 We use semantic-release for releasing new versions of the library.
 
-## Release next versions
-
-We currently have the `next` branch available to test the releasing of the library to npm public registry. This might change in the near future
-as we figure out the best way to manage our release process.
-
 ## Releasing beta versions
 
 [TODO](https://mparticle-eng.atlassian.net/browse/UNI-264)
