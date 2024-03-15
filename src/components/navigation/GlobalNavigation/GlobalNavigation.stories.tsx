@@ -25,8 +25,7 @@ import { CloudIcon } from 'src/components'
 import { Badge } from 'src/components/data-display/Badge/Badge'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'
 import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
-import { type IGlobalNavigationManagement } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
-import { type IGlobalNavigationTool } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
+import { type IGlobalNavigationItem } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { SparklesIcon } from 'src/components'
 import { CircleNodesIcon } from 'src/components'
 import { SplitIcon } from 'src/components'
@@ -41,7 +40,7 @@ const defaultLogo: IGlobalNavigationLogo = {
   },
 }
 
-const defaultTools: IGlobalNavigationTool[] = [
+const defaultTools: IGlobalNavigationItem[] = [
   {
     label: 'Tool 1',
     isActive: true,
@@ -70,7 +69,7 @@ const defaultTools: IGlobalNavigationTool[] = [
   },
 ]
 
-const defaultManagement: IGlobalNavigationManagement[] = [
+const defaultManagement: IGlobalNavigationItem[] = [
   {
     label: 'Notifications',
     hideLabel: true,
@@ -169,7 +168,7 @@ function Beta(label: string) {
   )
 }
 
-const mpTools: IGlobalNavigationTool[] = [
+const mpTools: IGlobalNavigationItem[] = [
   {
     label: 'Activity',
     icon: <ChartLineIcon />,
@@ -239,7 +238,7 @@ const mpTools: IGlobalNavigationTool[] = [
     href: '/',
   },
 ]
-const mpManagement: IGlobalNavigationManagement[] = [
+const mpManagement: IGlobalNavigationItem[] = [
   {
     isActive: true,
     label: 'Support',
@@ -494,7 +493,7 @@ const indLogo: IGlobalNavigationLogo = {
     alert('Going to Analytics Home!')
   },
 }
-const indTools: IGlobalNavigationTool[] = [
+const indTools: IGlobalNavigationItem[] = [
   {
     label: 'My Hub',
     icon: <GridIcon />,
@@ -512,7 +511,7 @@ const indTools: IGlobalNavigationTool[] = [
     href: '/',
   },
 ]
-const indManagement: IGlobalNavigationManagement[] = [
+const indManagement: IGlobalNavigationItem[] = [
   {
     label: 'Support',
     hideLabel: true,
@@ -820,7 +819,7 @@ const cortexLogo: IGlobalNavigationLogo = {
     alert('Going to Predictions Home!')
   },
 }
-const cortexTools: IGlobalNavigationTool[] = [
+const cortexTools: IGlobalNavigationItem[] = [
   {
     label: 'Pipelines',
     icon: <CircleNodesIcon />,
@@ -848,7 +847,7 @@ const cortexTools: IGlobalNavigationTool[] = [
     href: '/',
   },
 ]
-const cortexManagement: IGlobalNavigationManagement[] = [
+const cortexManagement: IGlobalNavigationItem[] = [
   {
     label: 'Support',
     hideLabel: true,

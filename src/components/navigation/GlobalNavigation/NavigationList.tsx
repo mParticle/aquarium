@@ -3,13 +3,12 @@ import type { MenuItemGroupType } from 'antd/es/menu/hooks/useItems'
 import { NavigationIcon } from 'src/components/navigation/GlobalNavigation/NavigationIcon'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
 import { Center } from 'src/components'
-import { type IGlobalNavigationManagement } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
-import { type IGlobalNavigationTool } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
+import { type IGlobalNavigationItem } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IGlobalNavigationLink } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { Fragment } from 'react'
 
 export interface INavigationListProps {
-  items: Array<IGlobalNavigationManagement | IGlobalNavigationTool>
+  items: IGlobalNavigationItem[]
 }
 
 export function NavigationList(props: INavigationListProps) {
@@ -33,7 +32,7 @@ export function NavigationList(props: INavigationListProps) {
   )
 }
 
-function generateMenuItem(item: IGlobalNavigationManagement | IGlobalNavigationTool, i: number) {
+function generateMenuItem(item: IGlobalNavigationItem, i: number) {
   const children: Array<IGlobalNavigationLink | MenuItemGroupType> = [
     { label: item.label, type: 'group', key: String(item.label) + '_groupTitle' },
   ]

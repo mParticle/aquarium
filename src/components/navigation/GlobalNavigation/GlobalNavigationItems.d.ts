@@ -25,6 +25,4 @@ export interface IGlobalNavigationLink extends IBaseGlobalNavigationItem {
   onClick?: (e: MouseEvent) => void
 }
 
-export type IGlobalNavigationTool = IGlobalNavigationMenu | IGlobalNavigationLink
-
-export type IGlobalNavigationManagement = IGlobalNavigationMenu | IGlobalNavigationLink
+export type IGlobalNavigationItem = IGlobalNavigationMenu | IGlobalNavigationLink

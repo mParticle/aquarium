@@ -1,14 +1,14 @@
 import { type MouseEvent, type ReactNode } from 'react'
 import { NavigationIcon } from 'src/components/navigation/GlobalNavigation/NavigationIcon'
 import { NavigationList } from 'src/components/navigation/GlobalNavigation/NavigationList'
-import { type IGlobalNavigationManagement, type IGlobalNavigationTool, Tooltip } from 'src/components'
+import { type IGlobalNavigationItem, Tooltip } from 'src/components'
 
 export interface INavigationItemProps {
   type: 'link' | 'menu'
   icon?: ReactNode
   label: ReactNode
   hideLabel?: boolean
-  items?: Array<IGlobalNavigationManagement | IGlobalNavigationTool>
+  items?: IGlobalNavigationItem[]
   isActive?: boolean
   onClick?: (e: MouseEvent) => void // link only
   href?: string // link only
