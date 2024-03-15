@@ -3,8 +3,8 @@ import { Input, type InputRef } from 'antd'
 import type { IWorkspaceSelectorProps } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelector'
 import type { IWorkspaceSelectorDisplayItem } from 'src/components'
 import { WorkspaceSelectorContentItems } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorContentItems'
-import { WorkspaceNoResults } from "src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceNoResults"
-import { WorkspaceSignout } from "src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSignout"
+import { WorkspaceNoResults } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceNoResults'
+import { WorkspaceSignout } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSignout'
 
 type WorkspaceSelectorContentProps = {
   onSearch: (e: ChangeEvent<HTMLInputElement>) => void

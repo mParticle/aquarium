@@ -84,7 +84,8 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
                   className="globalNavigation__mpHome"
                   onClick={() => {
                     props.onMpHomeClick()
-                  }}>
+                  }}
+                >
                   <MpLogo className="globalNavigation__mpSvg" />
                 </Center>
               </Tooltip>
