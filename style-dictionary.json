@@ -5,7 +5,7 @@
       "transformGroup": "css",
       "files": [
         {
-          "destination": "src/styles/style.css",
+          "destination": "src/styles/_variables.css",
           "format": "css/variables",
           "options": {
             "showFileHeader": false
