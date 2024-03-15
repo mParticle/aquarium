@@ -121,11 +121,7 @@ export const ExampleTextAndIcon: Story = {
         <Space direction="vertical">
           <Switch checkedChildren="Checked Text" unCheckedChildren="Unchecked Text" defaultChecked />
           <Switch checkedChildren="1" unCheckedChildren="0" />
-          <Switch
-            checkedChildren={<MpLogo/>}
-            unCheckedChildren={<MpLogo/>}
-            defaultChecked
-          />
+          <Switch checkedChildren={<MpLogo />} unCheckedChildren={<MpLogo />} defaultChecked />
         </Space>
       </ExampleStory>
     )

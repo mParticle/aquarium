@@ -104,7 +104,7 @@ export const Block: Story = {
 
 export const WithIcon: Story = {
   args: {
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
   },
 }
 

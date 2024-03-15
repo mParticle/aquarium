@@ -49,7 +49,7 @@ export const WithColor: Story = {
 
 export const WithIcon: Story = {
   args: {
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
   },
 }
 
@@ -82,8 +82,7 @@ export const ExampleCheckableTagPrimary: Story = {
               onChange={checked => {
                 alert(`Tag ${checked ? 'Checked' : 'Unchecked'}`)
                 setChecked(curr => !curr)
-              }}
-            >
+              }}>
               Tag
             </Tag.CheckableTag>
           </Flex>
@@ -147,16 +146,16 @@ export const ExampleStatusTags: Story = {
           </Space>
           <Divider orientation="left">With icon</Divider>
           <Space size={[0, 8]} wrap>
-            <Tag icon={<MpLogo/>} color="success">
+            <Tag icon={<MpLogo />} color="success">
               success
             </Tag>
-            <Tag icon={<MpLogo/>} color="processing">
+            <Tag icon={<MpLogo />} color="processing">
               processing
             </Tag>
-            <Tag icon={<MpLogo/>} color="error">
+            <Tag icon={<MpLogo />} color="error">
               error
             </Tag>
-            <Tag icon={<MpLogo/>} color="warning">
+            <Tag icon={<MpLogo />} color="warning">
               warning
             </Tag>
           </Space>

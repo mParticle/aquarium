@@ -120,8 +120,7 @@ export const ExampleMeta: Story = {
         <Card
           hoverable
           style={{ width: 240 }}
-          cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-        >
+          cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}>
           <Card.Meta title="Europe Street beat" description="www.instagram.com" />
         </Card>
       </ExampleStory>
@@ -199,12 +198,7 @@ export const ExampleLoading: Story = {
           </Card>
           <Card
             style={{ width: 300, marginTop: 16 }}
-            actions={[
-              <MpLogo key={1}/>,
-              <MpLogo key={2}/>,
-              <MpLogo key={3}/>,
-            ]}
-          >
+            actions={[<MpLogo key={1} />, <MpLogo key={2} />, <MpLogo key={3} />]}>
             <Skeleton loading={loading} avatar>
               <Card.Meta
                 avatar={<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=2" />}
@@ -293,8 +287,7 @@ export const ExampleWithTabs: Story = {
           extra={<a href="#">More</a>}
           tabList={tabList}
           activeTabKey={activeTabKey1}
-          onTabChange={onTab1Change}
-        >
+          onTabChange={onTab1Change}>
           {contentList[activeTabKey1]}
         </Card>
         <br />
@@ -307,8 +300,7 @@ export const ExampleWithTabs: Story = {
           onTabChange={onTab2Change}
           tabProps={{
             size: 'middle',
-          }}
-        >
+          }}>
           {contentListNoTitle[activeTabKey2]}
         </Card>
       </ExampleStory>
@@ -323,12 +315,7 @@ export const ExampleContentConfiguration: Story = {
         <Card
           style={{ width: 300 }}
           cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
-          actions={[
-            <MpLogo key={1}/>,
-            <MpLogo key={2}/>,
-            <MpLogo key={3}/>,
-          ]}
-        >
+          actions={[<MpLogo key={1} />, <MpLogo key={2} />, <MpLogo key={3} />]}>
           <Card.Meta
             avatar={<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=8" />}
             title="Card title"

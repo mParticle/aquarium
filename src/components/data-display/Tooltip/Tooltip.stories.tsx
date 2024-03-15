@@ -4,7 +4,7 @@ import { Button } from 'src/components'
 import { useState, useMemo } from 'react'
 import { ExampleStory } from 'src/utils/ExampleStory'
 import { Space } from 'src/components'
-import { useEffect } from "react";
+import { useEffect } from 'react'
 
 const meta: Meta<typeof Tooltip> = {
   title: 'Aquarium/Data Display/Tooltip',
@@ -218,8 +218,7 @@ export const ExampleDisabled: Story = {
           <Button
             onClick={() => {
               setDisabled(!disabled)
-            }}
-          >
+            }}>
             {disabled ? 'Enable' : 'Disable'}
           </Button>
           <Tooltip title={disabled ? '' : 'prompt text'}>
@@ -234,10 +233,10 @@ export const ExampleDisabled: Story = {
 export const ExampleAutoShift: Story = {
   render: () => {
     useEffect(() => {
-      document.documentElement.scrollTop = document.documentElement.clientHeight;
-      document.documentElement.scrollLeft = document.documentElement.clientWidth;
-    }, []);
-    
+      document.documentElement.scrollTop = document.documentElement.clientHeight
+      document.documentElement.scrollLeft = document.documentElement.clientWidth
+    }, [])
+
     return (
       <ExampleStory title="Auto adjust Popup and arrow position when Tooltip is close to the edge of the screen. Will be out of screen when exceed limitation.">
         <div>
@@ -247,14 +246,13 @@ export const ExampleAutoShift: Story = {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-            }}
-          >
+            }}>
             <Tooltip title="Thanks for using antd. Have a nice day!" trigger="click" defaultOpen>
               <Button>Scroll The Window, watch the tooltip move</Button>
             </Tooltip>
           </div>
         </div>
       </ExampleStory>
-    );
+    )
   },
-};
+}

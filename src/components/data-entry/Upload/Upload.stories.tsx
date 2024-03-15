@@ -7,7 +7,7 @@ const meta: Meta<typeof Upload> = {
   title: 'Aquarium/Data Entry/Upload',
   component: props => (
     <Upload {...props}>
-      <Button icon={<MpLogo/>}>Click to Upload</Button>
+      <Button icon={<MpLogo />}>Click to Upload</Button>
     </Upload>
   ),
 
