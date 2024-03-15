@@ -1,6 +1,5 @@
 import { Menu as AntMenu } from 'antd'
 import { type MenuProps as AntMenuProps } from 'antd'
-import AntMenuItem from 'antd/es/menu/MenuItem'
 import {
   type MenuItemType as AndMenuItemType,
   type MenuItemGroupType as AndMenuItemGroupType,
@@ -23,7 +22,6 @@ export const Menu = (props: IMenuProps) => {
 }
 
 export {
-  AntMenuItem as MenuItem,
   type AndMenuItemType as MenuItemType,
   type AndMenuItemGroupType as MenuItemGroupType,
   type AndMenuDividerType as MenuDividerType,
