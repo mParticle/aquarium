@@ -31,6 +31,7 @@ import { CircleNodesIcon } from 'src/components'
 import { SplitIcon } from 'src/components'
 import { LightBulbIcon } from 'src/components'
 import { generateOrgs } from 'src/components/navigation/GlobalNavigation/stories-utils'
+import { expect } from '@storybook/test'
 
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',
@@ -149,7 +150,25 @@ export default meta
 
 type Story = StoryObj<typeof GlobalNavigation>
 
-export const Primary: Story = {}
+export const Primary: Story = {
+  // This would benefit from test IDs, we have a future task to do that.
+  play: async ({ canvasElement }) => {
+    const menuItem = canvasElement.querySelector('li.globalNavigation__item')
+    if (!menuItem) throw new Error('Menu item not found')
+
+    const nullAnchorEl = menuItem.querySelector('a')
+    await expect(nullAnchorEl).toBeNull()
+
+    const linkItem = canvasElement.querySelector('.globalNavigation__link')
+    if (!linkItem) throw new Error('Link item not found')
+
+    await expect(linkItem.computedStyleMap().get('cursor')?.toString()).toBe('pointer')
+
+    const anchorEl = linkItem.parentElement
+    await expect(anchorEl).toBeTruthy()
+    await expect(anchorEl).toHaveProperty('href')
+  },
+}
 
 const mpLogo: IGlobalNavigationLogo = {
   label: 'Data Platform',
