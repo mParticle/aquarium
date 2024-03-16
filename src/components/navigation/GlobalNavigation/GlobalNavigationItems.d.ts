@@ -9,7 +9,7 @@ export interface IBaseGlobalNavigationItem {
   isNestedMenu?: boolean
 }
 
-export interface IGlobalNavigationLogo extends Omit<IBaseGlobalNavigationItem, 'type'> {
+export interface IGlobalNavigationLogo extends IBaseGlobalNavigationItem {
   onSuiteLogoClick: () => void
 }
 
