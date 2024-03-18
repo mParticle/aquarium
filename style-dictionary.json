@@ -12,6 +12,15 @@
           }
         }
       ]
+    },
+    "typescript": {
+      "transformGroup": "js",
+      "files": [
+        {
+          "destination": "src/styles/style.ts",
+          "format": "javascript/es6"
+        }
+      ]
     }
   }
 }
