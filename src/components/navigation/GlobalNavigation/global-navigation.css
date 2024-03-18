@@ -101,7 +101,7 @@
 }
 
 .navigationCreate__popupButton {
-  cursor: revert !important;
+  cursor: default !important;
 }
 
 .globalNavigation__searchButtonWrapper,
