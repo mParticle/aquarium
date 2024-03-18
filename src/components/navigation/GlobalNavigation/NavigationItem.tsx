@@ -20,26 +20,26 @@ export function NavigationItem(props: INavigationItemProps) {
   }
 
   const navigationIcon = (
-    <a href={props.href}>
-      <NavigationIcon
-        className={`globalNavigation__item globalNavigation__link ${
-          props.isActive ? ' globalNavigation__item--active' : ''
-        }`}
-        icon={props.icon}
-        label={props.label}
-        onClick={props.onClick}
-        hideLabel={props.hideLabel}
-      />
-    </a>
+    <NavigationIcon
+      className={`globalNavigation__item globalNavigation__link ${
+        props.isActive ? ' globalNavigation__item--active' : ''
+      }`}
+      icon={props.icon}
+      label={props.label}
+      onClick={props.onClick}
+      hideLabel={props.hideLabel}
+    />
   )
+
+  const resultNavigationIcon = props.href ? <a href={props.href}>{navigationIcon}</a> : navigationIcon
 
   if (props.hideLabel) {
     return (
       <Tooltip title={props.label} placement="right">
-        {navigationIcon}
+        {resultNavigationIcon}
       </Tooltip>
     )
   }
 
-  return navigationIcon
+  return resultNavigationIcon
 }

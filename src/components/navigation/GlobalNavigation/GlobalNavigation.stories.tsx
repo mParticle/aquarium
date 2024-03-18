@@ -100,6 +100,7 @@ const defaultManagement: IGlobalNavigationItem[] = [
     ],
   },
 ]
+
 const defaultOrgs: INavigationOrg[] = [
   {
     id: 'org1',
@@ -257,6 +258,7 @@ const mpTools: IGlobalNavigationItem[] = [
     href: '/',
   },
 ]
+
 const mpManagement: IGlobalNavigationItem[] = [
   {
     isActive: true,
@@ -282,6 +284,7 @@ const mpManagement: IGlobalNavigationItem[] = [
     ],
   },
 ]
+
 const mpOrgs: INavigationOrg[] = [
   {
     id: 'org1',
@@ -462,6 +465,7 @@ const mpOrgs: INavigationOrg[] = [
     ],
   },
 ]
+
 export const MP: Story = {
   args: {
     onSearchClick: () => {
@@ -512,12 +516,12 @@ const indLogo: IGlobalNavigationLogo = {
     alert('Going to Analytics Home!')
   },
 }
+
 const indTools: IGlobalNavigationItem[] = [
   {
     label: 'My Hub',
     icon: <GridIcon />,
     isActive: true,
-    href: '/',
   },
   {
     label: 'Saved',
@@ -530,6 +534,7 @@ const indTools: IGlobalNavigationItem[] = [
     href: '/',
   },
 ]
+
 const indManagement: IGlobalNavigationItem[] = [
   {
     label: 'Support',
@@ -554,6 +559,7 @@ const indManagement: IGlobalNavigationItem[] = [
     ],
   },
 ]
+
 const indCreateItems: INavigationCreateProps['createItems'] = [
   {
     type: 'group',
@@ -838,6 +844,7 @@ const cortexLogo: IGlobalNavigationLogo = {
     alert('Going to Predictions Home!')
   },
 }
+
 const cortexTools: IGlobalNavigationItem[] = [
   {
     label: 'Pipelines',
@@ -866,6 +873,7 @@ const cortexTools: IGlobalNavigationItem[] = [
     href: '/',
   },
 ]
+
 const cortexManagement: IGlobalNavigationItem[] = [
   {
     label: 'Support',
@@ -890,6 +898,7 @@ const cortexManagement: IGlobalNavigationItem[] = [
     ],
   },
 ]
+
 const cortexOrgs: INavigationOrg[] = [
   {
     id: '',
