@@ -122,4 +122,5 @@ export {
   CircleNodesIcon,
   CloudIcon,
   FolderClosedIcon,
+  AnalyticsIcon,
 } from './icons/index'
