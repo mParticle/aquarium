@@ -918,27 +918,8 @@ export const Cortex: Story = {
 }
 
 export const WorkspaceSearchWithNoResults: Meta<typeof GlobalNavigation> = {
-  render: args => (
-    <Center style={{ minHeight: '800px' }}>
-      <GlobalNavigation {...args}></GlobalNavigation>
-    </Center>
-  ),
-
   args: {
-    onSearchClick: () => {
-      alert('Searching!')
-    },
-    logo: mpLogo,
-    tools: mpTools,
-    management: mpManagement,
     orgs: mpOrgs,
-    onMpHomeClick: () => {
-      alert('going to overview map')
-    },
-    avatarOptions: {
-      // src: "https://static-qa1.qa.corp.mparticle.com/appimg/logo_af_916397d2-9732-8de6-77cc-80e3bba120ca.png",
-      alt: 'avatar',
-    },
   },
   play: async () => {
     const workspaceSelector = screen.getByText('_W2')
