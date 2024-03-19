@@ -6,6 +6,7 @@ import MpLogo from 'src/assets/svg/mpLogo.svg?react'
 
 import { type MenuProps } from 'antd'
 import { Button } from 'src/components'
+import { AlicornIcon } from "src/components";
 
 const items: IMenuProps['items'] = [
   {
@@ -146,7 +147,7 @@ export const MultipleSelection: Story = {
 
 export const CustomExpandIcon: Story = {
   args: {
-    expandIcon: props => <MpLogo/>,
+    expandIcon: props => <AlicornIcon/>,
   },
 }
 
@@ -199,7 +200,7 @@ export const ExampleVerticalInline: Story = {
       {
         label: 'Navigation One',
         key: 'sub1',
-        icon: <MpLogo/>,
+        icon: <AlicornIcon/>,
         children: [
           {
             label: 'Item 1',
@@ -224,7 +225,7 @@ export const ExampleVerticalInline: Story = {
       {
         label: 'Navigation Two',
         key: 'sub2',
-        icon: <MpLogo/>,
+        icon: <AlicornIcon/>,
         children: [
           { label: 'Option 5', key: '5' },
           { label: 'Option 6', key: '6' },
@@ -243,7 +244,7 @@ export const ExampleVerticalInline: Story = {
       {
         label: 'Navigation Three',
         key: 'sub4',
-        icon: <MpLogo/>,
+        icon: <AlicornIcon/>,
         children: [
           { label: 'Option 9', key: '9' },
           { label: 'Option 10', key: '10' },
@@ -284,13 +285,13 @@ export const ExampleVerticalInline: Story = {
 export const ExampleCollapsable: Story = {
   render: () => {
     const items: MenuProps['items'] = [
-      { label: 'Option 1', key: '1', icon: <MpLogo/> },
-      { label: 'Option 2', key: '2', icon: <MpLogo/> },
-      { label: 'Option 3', key: '3', icon: <MpLogo/> },
+      { label: 'Option 1', key: '1', icon: <AlicornIcon/> },
+      { label: 'Option 2', key: '2', icon: <AlicornIcon/> },
+      { label: 'Option 3', key: '3', icon: <AlicornIcon/> },
       {
         label: 'Navigation One',
         key: 'sub1',
-        icon: <MpLogo/>,
+        icon: <AlicornIcon/>,
         children: [
           { label: 'Option 5', key: '5' },
           { label: 'Option 6', key: '6' },
@@ -301,7 +302,7 @@ export const ExampleCollapsable: Story = {
       {
         label: 'Navigation Two',
         key: 'sub2',
-        icon: <MpLogo/>,
+        icon: <AlicornIcon/>,
         children: [
           { label: 'Option 9', key: '9' },
           { label: 'Option 10', key: '10' },
@@ -341,13 +342,13 @@ export const ExampleCollapsable: Story = {
         >
           <div style={{ width: 256 }}>
             <Button type="primary" onClick={toggleCollapsed} style={{ marginBottom: 16 }}>
-              {collapsed ? <MpLogo/> : <MpLogo/>}
+              {collapsed ? 'Expand' : 'Collapse'}
             </Button>
             <Menu
               defaultSelectedKeys={['1']}
               defaultOpenKeys={['sub1']}
               mode="inline"
-              theme="dark"
+              // theme="dark"
               inlineCollapsed={collapsed}
               items={items}
             />
@@ -364,7 +365,7 @@ export const ExampleOpenCurrentSubmenu: Story = {
       {
         label: 'Navigation One',
         key: 'sub1',
-        icon: <MpLogo/>,
+        icon: <AlicornIcon/>,
         children: [
           { label: 'Option 1', key: '1' },
           { label: 'Option 2', key: '2' },
@@ -375,7 +376,7 @@ export const ExampleOpenCurrentSubmenu: Story = {
       {
         label: 'Navigation Two',
         key: 'sub2',
-        icon: <MpLogo/>,
+        icon: <AlicornIcon/>,
         children: [
           { label: 'Option 5', key: '5' },
           { label: 'Option 6', key: '6' },
@@ -393,7 +394,7 @@ export const ExampleOpenCurrentSubmenu: Story = {
       {
         label: 'Navigation Three',
         key: 'sub4',
-        icon: <MpLogo/>,
+        icon: <AlicornIcon/>,
         children: [
           { label: 'Option 9', key: '9' },
           { label: 'Option 10', key: '10' },
@@ -430,7 +431,7 @@ export const ExampleVerticalMenu: Story = {
       {
         label: 'Navigation One',
         key: 'sub1',
-        icon: <MpLogo/>,
+        icon: <AlicornIcon/>,
         children: [
           {
             label: 'Item 1',
@@ -455,7 +456,7 @@ export const ExampleVerticalMenu: Story = {
       {
         label: 'Navigation Two',
         key: 'sub2',
-        icon: <MpLogo/>,
+        icon: <AlicornIcon/>,
         children: [
           { label: 'Option 5', key: '5' },
           { label: 'Option 6', key: '6' },
@@ -472,7 +473,7 @@ export const ExampleVerticalMenu: Story = {
       {
         label: 'Navigation Three',
         key: 'sub4',
-        icon: <MpLogo/>,
+        icon: <AlicornIcon/>,
         children: [
           { label: 'Option 9', key: '9' },
           { label: 'Option 10', key: '10' },

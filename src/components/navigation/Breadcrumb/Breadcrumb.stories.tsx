@@ -1,5 +1,11 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { Breadcrumb } from 'src/components/navigation/Breadcrumb/Breadcrumb'
+import { ExampleStory } from 'src/utils/ExampleStory'
+import { AlicornIcon } from 'src/components'
+import { MpLogoIcon } from 'src/components'
+import { Center } from 'src/components'
+import { SizeMs } from 'src/styles/style'
+import { PaddingXs } from 'src/styles/style'
 
 const meta: Meta<typeof Breadcrumb> = {
   title: 'Aquarium/Navigation/Breadcrumb',
@@ -44,5 +50,178 @@ export const WithCustomItemRender: Story = {
     itemRender: (item, index, items) => (
       <span style={{ color: item.title === items[1].title ? 'red' : 'black' }}>{item.title}</span>
     ),
+  },
+}
+
+export const ExampleBasic: Story = {
+  render: () => {
+    return (
+      <ExampleStory title="The simplest use.">
+        <Breadcrumb
+          items={[
+            {
+              title: 'Home',
+            },
+            {
+              title: <a href="">Application Center</a>,
+            },
+            {
+              title: <a href="">Application List</a>,
+            },
+            {
+              title: 'An Application',
+            },
+          ]}
+        />
+      </ExampleStory>
+    )
+  },
+}
+
+export const ExampleIcon: Story = {
+  render: () => {
+    return (
+      <ExampleStory title="The icon should be placed in front of the text.">
+        <Breadcrumb
+          items={[
+            {
+              href: '',
+              title: <AlicornIcon />,
+            },
+            {
+              href: '',
+              title: (
+                <Center>
+                  <MpLogoIcon style={{ width: SizeMs, height: SizeMs, paddingRight: PaddingXs }} />
+                  <span>Application List</span>
+                </Center>
+              ),
+            },
+            {
+              title: 'Application',
+            },
+          ]}
+        />
+      </ExampleStory>
+    )
+  },
+}
+
+export const ExampleSeperator: Story = {
+  render: () => {
+    return (
+      <ExampleStory title="The separator can be customized">
+        <Breadcrumb
+          separator=">"
+          items={[
+            {
+              title: 'Home',
+            },
+            {
+              title: 'Application Center',
+              href: '',
+            },
+            {
+              title: 'Application List',
+              href: '',
+            },
+            {
+              title: 'An Application',
+            },
+          ]}
+        />
+      </ExampleStory>
+    )
+  },
+}
+
+export const ExampleDropdown: Story = {
+  render: () => {
+    const menuItems = [
+      {
+        key: '1',
+        label: (
+          <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">
+            General
+          </a>
+        ),
+      },
+      {
+        key: '2',
+        label: (
+          <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">
+            Layout
+          </a>
+        ),
+      },
+      {
+        key: '3',
+        label: (
+          <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">
+            Navigation
+          </a>
+        ),
+      },
+    ]
+
+    return (
+      <ExampleStory title="Breadcrumbs support drop down menu.">
+        <Breadcrumb
+          items={[
+            {
+              title: 'Ant Design',
+            },
+            {
+              title: <a href="">Component</a>,
+            },
+            {
+              title: <a href="">General</a>,
+              menu: { items: menuItems },
+            },
+            {
+              title: 'Button',
+            },
+          ]}
+        />
+      </ExampleStory>
+    )
+  },
+}
+
+export const ExampleIndependentSeparators: Story = {
+  render: () => {
+    return (
+      <ExampleStory title="Customize separator for each item.">
+        <Breadcrumb
+          separator=""
+          items={[
+            {
+              title: 'Location',
+            },
+            {
+              type: 'separator',
+              separator: ':',
+            },
+            {
+              href: '',
+              title: 'Application Center',
+            },
+            {
+              type: 'separator',
+            },
+            {
+              href: '',
+              title: 'Application List',
+            },
+            {
+              type: 'separator',
+            },
+            {
+              title: 'An Application',
+            },
+          ]}
+        />
+      </ExampleStory>
+    )
   },
 }
