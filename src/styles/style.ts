@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Fri, 15 Mar 2024 19:06:03 GMT
+ * Generated on Tue, 19 Mar 2024 18:40:59 GMT
  */
 
 export const Blue = "#1677ff";
