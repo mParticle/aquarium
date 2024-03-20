@@ -117,12 +117,16 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
   // This seems to be the only way of consistently focusing the input on the first open
   // We should find a better way to do this and not rely on setTimout
-  const focusOnInput = (open: boolean) => {
+  const focusOnInput = (open: boolean): void => {
     if (open) {
       setTimeout(() => {
         inputRef.current?.focus({
           cursor: 'all',
         })
+      }, 0)
+    } else {
+      setTimeout(() => {
+        inputRef.current?.blur()
       }, 0)
     }
   }
@@ -146,7 +150,12 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
         />
       }
     >
-      <div className="globalNavigation__item workspaceSelector__menuItem">
+      <div
+        className="globalNavigation__item workspaceSelector__menuItem"
+        onClick={e => {
+          focusOnInput(true)
+        }}
+      >
         <Avatar {...props.avatarOptions} className="workspaceSelector__avatar">
           {getInitialsIfNoImage(hasImage, workspaceInitials)}
         </Avatar>
