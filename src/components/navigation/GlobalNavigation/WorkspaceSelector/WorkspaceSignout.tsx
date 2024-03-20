@@ -8,8 +8,7 @@ export const WorkspaceSignout = ({ signoutOptions }: { signoutOptions: IWorkspac
       type="primary"
       onClick={_e => {
         signoutOptions?.onSignout()
-      }}
-    >
+      }}>
       {signoutOptions?.label ?? 'Sign Out of mParticle'}
     </Button>
   </div>
