@@ -91,7 +91,7 @@ In the footer, if there is a breaking change, start your footer with `BREAKING C
 To make changes to the release process, you can use the `--dry-run` from semantic-release flag to test the release
 process without actually publishing a new version.
 
-You will need to environment variables to run the release process locally:
+You will need two environment variables to run the release process locally:
 
 - NPM_TOKEN: You can create a personal npm account and use a personal token.
   Since we are using `--dry-run` it won't try to publish anything so having a valid read-only npm token works.
