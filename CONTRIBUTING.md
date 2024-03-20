@@ -7,7 +7,7 @@ Thanks for contributing! Please read this document to follow our conventions for
 - Clone the repository and run `npm install`
 - Run `npm start` to start storybook
 
-## Testing in Nancy
+## Testing in Nancy codebase
 
 In order to test your changes, you will need to link the local version of the library. To do this, run the following commands:
 
@@ -16,6 +16,10 @@ In order to test your changes, you will need to link the local version of the li
 - `yarn link` in the root of the library
 - `yarn link @mparticle/aquarium` in the root of Nancy
 - Make sure your _/node_modules/@mparticle/aquarium_ folder contains all of the Aquarium code
+
+## Testing in Indicative codebase
+
+TODO
 
 ## Testing by installing from a branch
 
@@ -26,17 +30,22 @@ and install it directly from there with the following command:
 yarn add https://github.com/mParticle/aquarium#<branch-name>
 ```
 
-## Releasing
+### Release Process
 
 We use semantic-release for releasing new versions of the library.
 
 ## Releasing development versions
 
-[TODO](https://mparticle-eng.atlassian.net/browse/UNI-264)
+To test development version of the Aquarium we use the `dev` branch on Github and `dev` distribution channel on npm.
+This allows us to install development version of the library by running the following command:
 
-Additional readings:
+```
+yarn add @mparticle/aquarium@dev
+```
 
-- [Understanding npm distribution channels](https://docs.npmjs.com/cli/v8/commands/npm-dist-tag#purpose)
+## Merging development versions into main
+
+TODO
 
 ## Commit conventions and PR titles
 
@@ -79,6 +88,24 @@ In the footer, if there is a breaking change, start your footer with `BREAKING C
 
 ## Contributing with the release process
 
+To make changes to the release process, you can use the `--dry-run` from semantic-release flag to test the release
+process without actually publishing a new version.
+
+You will need to environment variables to run the release process locally:
+
+- NPM_TOKEN: You can create a personal npm account and use a personal token.
+  Since we are using `--dry-run` it won't try to publish anything so having a valid read-only npm token works.
+
+- GITHUB_TOKEN: Create a [github personal access token (classic)](https://github.com/settings/tokens)
+  and give it access to the mParticle organization via "Configure SSO" button.
+
+After settings both variables locally, run the following locally:
+
 ```
 npx semantic-release --dry-run
 ```
+
+## Additional readings:
+
+- [Semantic Release Workflow Configuration](https://github.com/semantic-release/semantic-release/blob/master/docs/usage/workflow-configuration.md#workflow-configuration)
+- [Understanding npm distribution channels](https://docs.npmjs.com/cli/v8/commands/npm-dist-tag#purpose)

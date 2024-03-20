@@ -18,7 +18,10 @@
       "files": [
         {
           "destination": "src/styles/style.ts",
-          "format": "javascript/es6"
+          "format": "javascript/es6",
+          "options": {
+            "showFileHeader": false
+          }
         }
       ]
     }
