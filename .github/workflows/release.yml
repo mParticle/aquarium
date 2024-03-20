@@ -43,7 +43,7 @@ jobs:
 
       - name: Release
         run: |
-          npx semantic-release --dry-run
+          npx semantic-release
 
       - name: Archive npm failure logs
         uses: actions/upload-artifact@v3
