@@ -168,7 +168,7 @@ export const CustomDropdownStyle: Story = {
 
 export const SuffixIcon: Story = {
   args: {
-    suffixIcon: <MpLogo/>,
+    suffixIcon: <MpLogo />,
   },
 }
 
@@ -243,8 +243,7 @@ export const ExampleCustomTrigger: Story = {
               options={options}
               onChange={(_, selectedOptions) => {
                 setText(selectedOptions.map(o => o.label).join(', '))
-              }}
-            >
+              }}>
               <a>Change city</a>
             </Cascader>
           </span>

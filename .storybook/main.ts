@@ -6,7 +6,10 @@ import { withoutVitePlugins } from '@storybook/builder-vite'
 type StorybookVitePlugins = { plugins: (PluginOption[] | Plugin)[] }
 
 const config: StorybookConfig & StorybookVitePlugins = {
-  framework: '@storybook/react-vite',
+  framework: {
+    name: '@storybook/react-vite',
+    options: {},
+  },
 
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(ts|tsx)'],
 

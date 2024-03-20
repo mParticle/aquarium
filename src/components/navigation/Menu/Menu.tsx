@@ -1,18 +1,17 @@
 import { Menu as AntMenu } from 'antd'
 import { type MenuProps as AntMenuProps } from 'antd'
-import AntMenuItem from 'antd/es/menu/MenuItem'
 import {
   type MenuItemType as AndMenuItemType,
   type MenuItemGroupType as AndMenuItemGroupType,
   type MenuDividerType as AndMenuDividerType,
   type SubMenuType as AndSubMenuType,
 } from 'antd/es/menu/hooks/useItems'
-import { type MenuInfo as RCMenuInfo } from 'rc-menu/lib/interface';
+import { type MenuInfo as RCMenuInfo } from 'rc-menu/lib/interface'
 import { ConfigProvider } from 'src/components'
 
-export interface IMenuProps extends AntMenuProps { }
+export interface IMenuProps extends AntMenuProps {}
 
-export interface IMenuInfo extends RCMenuInfo { }
+export interface IMenuInfo extends RCMenuInfo {}
 
 export const Menu = (props: IMenuProps) => {
   return (
@@ -23,7 +22,6 @@ export const Menu = (props: IMenuProps) => {
 }
 
 export {
-  AntMenuItem as MenuItem,
   type AndMenuItemType as MenuItemType,
   type AndMenuItemGroupType as MenuItemGroupType,
   type AndMenuDividerType as MenuDividerType,

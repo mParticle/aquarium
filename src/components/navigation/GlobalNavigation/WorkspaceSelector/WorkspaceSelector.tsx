@@ -144,8 +144,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
           signoutOptions={props.signoutOptions}
           menuItems={menuItems}
         />
-      }
-    >
+      }>
       <div className="globalNavigation__item workspaceSelector__menuItem">
         <Avatar {...props.avatarOptions} className="workspaceSelector__avatar">
           {getInitialsIfNoImage(hasImage, workspaceInitials)}
