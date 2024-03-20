@@ -1,3 +1,8 @@
+/**
+ * Do not edit directly
+ * Generated on Wed, 20 Mar 2024 19:18:57 GMT
+ */
+
 export const Blue = '#1677ff'
 export const Purple = '#722ED1'
 export const Cyan = '#13C2C2'

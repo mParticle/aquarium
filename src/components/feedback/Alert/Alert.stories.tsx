@@ -78,7 +78,7 @@ export const CustomAction: Story = {
 
 export const CustomCloseIcon: Story = {
   args: {
-    closeIcon: <MpLogo/>,
+    closeIcon: <MpLogo />,
   },
 }
 

@@ -1,7 +1,7 @@
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
 import { Title } from 'src/components/general/Typography/Typography'
-import { ExampleStory } from "src/utils/ExampleStory";
+import { ExampleStory } from 'src/utils/ExampleStory'
 
 const meta: Meta<typeof Title> = {
   title: 'Aquarium/General/Title',
@@ -9,8 +9,7 @@ const meta: Meta<typeof Title> = {
 
   args: {},
 }
-export default meta;
-
+export default meta
 
 type Story = StoryObj<typeof Title>
 
@@ -36,6 +35,6 @@ export const ExampleHeadings: Story = {
           h5. Ant Design
         </Title>
       </ExampleStory>
-    );
+    )
   },
-};
+}
