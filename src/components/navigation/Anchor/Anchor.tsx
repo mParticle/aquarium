@@ -11,3 +11,4 @@ export const Anchor = (props: IAnchorProps) => {
     </ConfigProvider>
   )
 }
+Anchor.Link = AntAnchor.Link

@@ -55,6 +55,7 @@ module.exports = {
           'Segmented',
           'Tabs',
           'Tag',
+          'CheckableTag',
           'Tour',
           'Carousel',
           'Tooltip',

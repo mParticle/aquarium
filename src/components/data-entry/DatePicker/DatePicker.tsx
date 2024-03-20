@@ -14,3 +14,11 @@ export const DatePicker = (props: IDatePickerProps) => {
     </ConfigProvider>
   )
 }
+
+DatePicker.generatePicker = AntDatePicker.generatePicker
+DatePicker.QuarterPicker = AntDatePicker.QuarterPicker
+DatePicker.MonthPicker = AntDatePicker.MonthPicker
+DatePicker.RangePicker = AntDatePicker.RangePicker
+DatePicker.TimePicker = AntDatePicker.TimePicker
+DatePicker.WeekPicker = AntDatePicker.WeekPicker
+DatePicker.YearPicker = AntDatePicker.YearPicker

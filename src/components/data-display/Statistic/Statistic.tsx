@@ -11,3 +11,5 @@ export const Statistic = (props: IStatisticProps) => {
     </ConfigProvider>
   )
 }
+
+Statistic.Countdown = AntStatistic.Countdown

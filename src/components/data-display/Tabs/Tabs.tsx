@@ -11,3 +11,5 @@ export const Tabs = (props: ITabsProps) => {
     </ConfigProvider>
   )
 }
+
+Tabs.TabPane = AntTabs.TabPane

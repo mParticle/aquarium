@@ -11,3 +11,5 @@ export const App = (props: IAppProps) => {
     </ConfigProvider>
   )
 }
+
+App.useApp = AntApp.useApp

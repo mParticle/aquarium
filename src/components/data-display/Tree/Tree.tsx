@@ -13,3 +13,6 @@ export const Tree = (props: ITreeProps) => {
     </ConfigProvider>
   )
 }
+
+Tree.DirectoryTree = AntTree.DirectoryTree
+Tree.TreeNode = AntTree.TreeNode

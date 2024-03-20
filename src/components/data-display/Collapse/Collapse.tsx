@@ -11,3 +11,5 @@ export const Collapse = (props: ICollapseProps) => {
     </ConfigProvider>
   )
 }
+
+Collapse.Panel = AntCollapse.Panel
