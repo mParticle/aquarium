@@ -1,7 +1,7 @@
 import { Form as AntForm } from 'antd'
 import { type FormProps as AntFormProps } from 'antd'
 import { ConfigProvider } from 'src/components'
-import { type ReactNode } from "react";
+import { type ReactNode } from 'react'
 
 export interface IFormProps extends AntFormProps {
   children: ReactNode

@@ -8,7 +8,7 @@ interface IExampleStoryProps {
 export function ExampleStory(props: IExampleStoryProps) {
   return (
     <>
-      <Space direction="vertical" style={{maxWidth:'800px'}}>
+      <Space direction="vertical" style={{ maxWidth: '800px' }}>
         {props.title}
         <hr />
         <br />

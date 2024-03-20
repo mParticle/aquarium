@@ -19,7 +19,7 @@ export const Primary: Story = {}
 
 export const NavIcon: Story = {
   args: {
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
     label: 'Icon Label',
     type: 'link',
     onClick: () => {
@@ -32,7 +32,7 @@ export const NavList: Story = {
   args: {
     label: 'List Label',
     type: 'menu',
-    icon: <MpLogo/>,
+    icon: <MpLogo />,
     items: [
       {
         label: 'Nav Item - Menu',

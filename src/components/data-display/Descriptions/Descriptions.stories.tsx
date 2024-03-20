@@ -4,9 +4,9 @@ import { Button } from 'src/components'
 import { ExampleStory } from 'src/utils/ExampleStory'
 import { type IDescriptionsProps } from 'src/components/data-display/Descriptions/Descriptions'
 import { Badge } from 'src/components'
-import { useState } from "react";
-import { type RadioChangeEvent } from "antd";
-import { Radio } from "src/components";
+import { useState } from 'react'
+import { type RadioChangeEvent } from 'antd'
+import { Radio } from 'src/components'
 
 const meta: Meta<typeof Descriptions> = {
   title: 'Aquarium/Data Display/Descriptions',
@@ -186,7 +186,6 @@ export const ExampleTableLook: Story = {
 
 export const ExampleSize: Story = {
   render: () => {
-
     const borderedItems: IDescriptionsProps['items'] = [
       {
         key: '1',
@@ -238,7 +237,7 @@ export const ExampleSize: Story = {
           </>
         ),
       },
-    ];
+    ]
 
     const items: IDescriptionsProps['items'] = [
       {
@@ -271,8 +270,8 @@ export const ExampleSize: Story = {
         label: 'Official',
         children: '$60.00',
       },
-    ];
-    const [size, setSize] = useState<IDescriptionsProps['size']>('default');
+    ]
+    const [size, setSize] = useState<IDescriptionsProps['size']>('default')
 
     const onChange = (e: RadioChangeEvent): void => {
       console.log('size checked', e.target.value)
@@ -286,8 +285,8 @@ export const ExampleSize: Story = {
             <Radio value="middle">middle</Radio>
             <Radio value="small">small</Radio>
           </Radio.Group>
-          <br/>
-          <br/>
+          <br />
+          <br />
           <Descriptions
             bordered
             title="Custom Size"
@@ -295,23 +294,17 @@ export const ExampleSize: Story = {
             extra={<Button type="primary">Edit</Button>}
             items={borderedItems}
           />
-          <br/>
-          <br/>
-          <Descriptions
-            title="Custom Size"
-            size={size}
-            extra={<Button type="primary">Edit</Button>}
-            items={items}
-          />
+          <br />
+          <br />
+          <Descriptions title="Custom Size" size={size} extra={<Button type="primary">Edit</Button>} items={items} />
         </div>
       </ExampleStory>
-    );
+    )
   },
-};
+}
 
-export const ExampleResponsiveDescriptions  : Story = {
+export const ExampleResponsiveDescriptions: Story = {
   render: () => {
-
     const items: IDescriptionsProps['items'] = [
       {
         label: 'Product',
@@ -367,7 +360,7 @@ export const ExampleResponsiveDescriptions  : Story = {
           </>
         ),
       },
-    ];
+    ]
     return (
       <ExampleStory title="Responsive configuration enables perfect presentation on small screen devices.">
         <Descriptions
@@ -377,6 +370,6 @@ export const ExampleResponsiveDescriptions  : Story = {
           items={items}
         />
       </ExampleStory>
-    );
+    )
   },
-};
+}

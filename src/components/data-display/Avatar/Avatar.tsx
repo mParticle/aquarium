@@ -12,5 +12,4 @@ export const Avatar = (props: IAvatarProps) => {
   )
 }
 
-
 Avatar.Group = AntAvatar.Group
