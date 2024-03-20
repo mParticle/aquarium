@@ -30,9 +30,13 @@ yarn add https://github.com/mParticle/aquarium#<branch-name>
 
 We use semantic-release for releasing new versions of the library.
 
-## Releasing beta versions
+## Releasing development versions
 
 [TODO](https://mparticle-eng.atlassian.net/browse/UNI-264)
+
+Additional readings:
+
+- [Understanding npm distribution channels](https://docs.npmjs.com/cli/v8/commands/npm-dist-tag#purpose)
 
 ## Commit conventions and PR titles
 
@@ -72,3 +76,9 @@ In the footer, if there is a breaking change, start your footer with `BREAKING C
   - Also, if you're using VSCode you might want to set prettier as the default formatter and also turn on "Format on Save" option.
 - **ESLint**: Check [Integrations doc page](https://eslint.org/docs/latest/use/integrations)
 - **Stylelint**: Check [Editor integrations doc page](https://stylelint.io/awesome-stylelint/#editor-integrations)
+
+## Contributing with the release process
+
+```
+npx semantic-release --dry-run
+```
