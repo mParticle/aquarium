@@ -33,7 +33,10 @@ export function NavigationItem(props: INavigationItemProps) {
   )
 
   const resultNavigationIcon = props.href ? (
-    <a href={props.href} target={props.hrefTarget ?? '_self'}>
+    <a
+      href={props.href}
+      target={props.hrefTarget ?? '_self'}
+      rel={props.hrefTarget === '_blank' ? 'noopener' : undefined}>
       {navigationIcon}
     </a>
   ) : (
