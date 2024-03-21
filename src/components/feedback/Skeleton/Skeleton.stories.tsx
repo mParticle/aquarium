@@ -266,8 +266,7 @@ export const ExampleList: Story = {
                     src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
                   />
                 )
-              }
-            >
+              }>
               <Skeleton loading={loading} avatar>
                 <List.Item.Meta
                   avatar={<Avatar src={item.avatar} />}

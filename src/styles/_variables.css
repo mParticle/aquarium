@@ -1,17 +1,17 @@
 :root {
   --blue: #1677ff;
-  --purple: #722ED1;
-  --cyan: #13C2C2;
-  --green: #52C41A;
-  --magenta: #EB2F96;
+  --purple: #722ed1;
+  --cyan: #13c2c2;
+  --green: #52c41a;
+  --magenta: #eb2f96;
   --pink: #eb2f96;
-  --red: #F5222D;
-  --orange: #FA8C16;
-  --yellow: #FADB14;
-  --volcano: #FA541C;
-  --geekblue: #2F54EB;
-  --gold: #FAAD14;
-  --lime: #A0D911;
+  --red: #f5222d;
+  --orange: #fa8c16;
+  --yellow: #fadb14;
+  --volcano: #fa541c;
+  --geekblue: #2f54eb;
+  --gold: #faad14;
+  --lime: #a0d911;
   --color-primary: #3600d1;
   --color-success: #52c41a;
   --color-warning: #faad14;
@@ -20,7 +20,8 @@
   --color-link: #1677ff;
   --color-text-base: #0f0e0e;
   --color-bg-base: #fff;
-  --font-family: 'GT America', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-family: 'GT America', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --font-family-code: 'Roboto Mono', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
   --font-size: 14px;
   --line-width: 1px;
@@ -356,9 +357,11 @@
   --margin-lg: 24px;
   --margin-xl: 32px;
   --margin-xxl: 48px;
-  --box-shadow:  0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05) ;
-  --box-shadow-secondary:  0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05) ;
-  --box-shadow-tertiary:  0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02) ;
+  --box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  --box-shadow-secondary: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12),
+    0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  --box-shadow-tertiary: 0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02),
+    0 2px 4px 0 rgba(0, 0, 0, 0.02);
   --screen-xs: 480px;
   --screen-xs-min: 480px;
   --screen-xs-max: 575px;
@@ -377,11 +380,16 @@
   --screen-xxl: 1600px;
   --screen-xxl-min: 1600px;
   --box-shadow-popover-arrow: 2px 2px 5px rgba(0, 0, 0, 0.05);
-  --box-shadow-card:  0 1px 2px -2px rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.12), 0 5px 12px 4px rgba(0, 0, 0, 0.09) ;
-  --box-shadow-drawer-right:  -6px 0 16px 0 rgba(0, 0, 0, 0.08), -3px 0 6px -4px rgba(0, 0, 0, 0.12), -9px 0 28px 8px rgba(0, 0, 0, 0.05) ;
-  --box-shadow-drawer-left:  6px 0 16px 0 rgba(0, 0, 0, 0.08), 3px 0 6px -4px rgba(0, 0, 0, 0.12), 9px 0 28px 8px rgba(0, 0, 0, 0.05) ;
-  --box-shadow-drawer-up:  0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05) ;
-  --box-shadow-drawer-down:  0 -6px 16px 0 rgba(0, 0, 0, 0.08), 0 -3px 6px -4px rgba(0, 0, 0, 0.12), 0 -9px 28px 8px rgba(0, 0, 0, 0.05) ;
+  --box-shadow-card: 0 1px 2px -2px rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.12),
+    0 5px 12px 4px rgba(0, 0, 0, 0.09);
+  --box-shadow-drawer-right: -6px 0 16px 0 rgba(0, 0, 0, 0.08), -3px 0 6px -4px rgba(0, 0, 0, 0.12),
+    -9px 0 28px 8px rgba(0, 0, 0, 0.05);
+  --box-shadow-drawer-left: 6px 0 16px 0 rgba(0, 0, 0, 0.08), 3px 0 6px -4px rgba(0, 0, 0, 0.12),
+    9px 0 28px 8px rgba(0, 0, 0, 0.05);
+  --box-shadow-drawer-up: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12),
+    0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  --box-shadow-drawer-down: 0 -6px 16px 0 rgba(0, 0, 0, 0.08), 0 -3px 6px -4px rgba(0, 0, 0, 0.12),
+    0 -9px 28px 8px rgba(0, 0, 0, 0.05);
   --box-shadow-tabs-overflow-left: inset 10px 0 8px -8px rgba(0, 0, 0, 0.08);
   --box-shadow-tabs-overflow-right: inset -10px 0 8px -8px rgba(0, 0, 0, 0.08);
   --box-shadow-tabs-overflow-top: inset 0 10px 8px -8px rgba(0, 0, 0, 0.08);

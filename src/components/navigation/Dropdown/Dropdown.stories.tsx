@@ -206,8 +206,7 @@ export const ExampleBasic: Story = {
           <a
             onClick={e => {
               e.preventDefault()
-            }}
-          >
+            }}>
             <Space>
               Hover me
               <AlicornIcon />
@@ -412,8 +411,7 @@ export const ExampleClickEvent: Story = {
           <a
             onClick={e => {
               e.preventDefault()
-            }}
-          >
+            }}>
             <Space>
               Hover me, Click menu item
               <AlicornIcon />
@@ -481,13 +479,11 @@ export const ExampleCustomDropdown: Story = {
                 <Button type="primary">Click me!</Button>
               </Space>
             </div>
-          )}
-        >
+          )}>
           <a
             onClick={e => {
               e.preventDefault()
-            }}
-          >
+            }}>
             <Space>
               Hover me
               <AlicornIcon />
@@ -537,13 +533,11 @@ export const ExampleClosingMenu: Story = {
             onClick: handleMenuClick,
           }}
           onOpenChange={handleOpenChange}
-          open={open}
-        >
+          open={open}>
           <a
             onClick={e => {
               e.preventDefault()
-            }}
-          >
+            }}>
             <Space>
               Hover me
               <AlicornIcon />
@@ -596,8 +590,7 @@ export const ExampleLoading: Story = {
             menu={{ items }}
             onClick={() => {
               enterLoading(0)
-            }}
-          >
+            }}>
             Submit
           </Dropdown.Button>
           <Dropdown.Button
@@ -606,8 +599,7 @@ export const ExampleLoading: Story = {
             menu={{ items }}
             onClick={() => {
               enterLoading(1)
-            }}
-          >
+            }}>
             Submit
           </Dropdown.Button>
         </Space>
@@ -639,8 +631,7 @@ export const ExampleSelectable: Story = {
             items,
             selectable: true,
             defaultSelectedKeys: ['3'],
-          }}
-        >
+          }}>
           <Link>
             <Space>
               Selectable
@@ -683,8 +674,7 @@ export const ExampleContextMenu: Story = {
               height: 200,
               textAlign: 'center',
               lineHeight: '200px',
-            }}
-          >
+            }}>
             Right Click on here
           </div>
         </Dropdown>
@@ -747,8 +737,7 @@ export const ExampleNested: Story = {
           <a
             onClick={e => {
               e.preventDefault()
-            }}
-          >
+            }}>
             <Space>
               Cascading menu
               <AlicornIcon />
@@ -822,8 +811,7 @@ export const ExampleButtons: Story = {
                 {leftButton}
               </Tooltip>,
               cloneElement(rightButton as React.ReactElement<any, string>, { loading: true }),
-            ]}
-          >
+            ]}>
             With Tooltip
           </Dropdown.Button>
           <Dropdown menu={menuProps}>
@@ -877,8 +865,7 @@ export const ExampleContainerDivider: Story = {
           <a
             onClick={e => {
               e.preventDefault()
-            }}
-          >
+            }}>
             <Space>
               Hover me
               <AlicornIcon />

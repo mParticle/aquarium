@@ -349,8 +349,7 @@ export const ExampleScrollOffset: Story = {
               width: '75%',
               color: '#000',
             }}
-            ref={topRef}
-          >
+            ref={topRef}>
             <div>Fixed Top Block</div>
           </div>
         </div>

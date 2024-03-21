@@ -137,8 +137,7 @@ export const ExampleBasic: Story = {
             value={value}
             onChange={e => {
               setValue(e.target.value)
-            }}
-          >
+            }}>
             <Radio value="horizontal">horizontal</Radio>
             <Radio value="vertical">vertical</Radio>
           </Radio.Group>
@@ -200,8 +199,7 @@ export const ExampleGap: Story = {
             value={gapSize}
             onChange={e => {
               setGapSize(e.target.value)
-            }}
-          >
+            }}>
             {['small', 'middle', 'large', 'customize'].map(size => (
               <Radio key={size} value={size}>
                 {size}

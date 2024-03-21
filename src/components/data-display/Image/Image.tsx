@@ -1,7 +1,6 @@
 import { Image as AntImage } from 'antd'
 import { type ImageProps as AntImageProps } from 'antd'
 import { ConfigProvider } from 'src/components'
-import { AlicornIcon } from "src/components";
 
 export interface IImageProps extends AntImageProps {}
 

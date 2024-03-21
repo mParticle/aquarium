@@ -140,8 +140,7 @@ export const ExampleSize: Story = {
             If a large or small collapse is desired, set the size property to either large or small respectively. Omit
             the size property for a collapse with the default size.
           </>
-        }
-      >
+        }>
         <Divider orientation="left">Default Size</Divider>
         <Collapse items={[{ key: '1', label: 'This is default size panel header', children: <p>{text}</p> }]} />
         <Divider orientation="left">Small Size</Divider>

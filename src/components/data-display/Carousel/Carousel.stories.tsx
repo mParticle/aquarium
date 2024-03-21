@@ -17,20 +17,22 @@ const contentStyle: React.CSSProperties = {
 
 const meta: Meta<typeof Carousel> = {
   title: 'Aquarium/Data Display/Carousel',
-  component: props => <Carousel {...props} style={{maxWidth: '800px'}}>
-    <div>
-      <h3 style={contentStyle}>1</h3>
-    </div>
-    <div>
-      <h3 style={contentStyle}>2</h3>
-    </div>
-    <div>
-      <h3 style={contentStyle}>3</h3>
-    </div>
-    <div>
-      <h3 style={contentStyle}>4</h3>
-    </div>
-  </Carousel>,
+  component: props => (
+    <Carousel {...props} style={{ maxWidth: '800px' }}>
+      <div>
+        <h3 style={contentStyle}>1</h3>
+      </div>
+      <div>
+        <h3 style={contentStyle}>2</h3>
+      </div>
+      <div>
+        <h3 style={contentStyle}>3</h3>
+      </div>
+      <div>
+        <h3 style={contentStyle}>4</h3>
+      </div>
+    </Carousel>
+  ),
 
   args: {
     autoplay: false,

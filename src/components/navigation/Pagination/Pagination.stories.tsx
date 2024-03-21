@@ -3,7 +3,7 @@ import { Pagination } from 'src/components/navigation/Pagination/Pagination'
 import { ExampleStory } from 'src/utils/ExampleStory'
 import { type IPaginationProps } from 'src/components/navigation/Pagination/Pagination'
 import { useState } from 'react'
-import { AlicornIcon } from "src/components";
+import { AlicornIcon } from 'src/components'
 
 const meta: Meta<typeof Pagination> = {
   title: 'Aquarium/Navigation/Pagination',

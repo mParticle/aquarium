@@ -264,8 +264,7 @@ export const ExampleSwitch: Story = {
               type="primary"
               onClick={() => {
                 next()
-              }}
-            >
+              }}>
               Next
             </Button>
           )}
@@ -274,8 +273,7 @@ export const ExampleSwitch: Story = {
               type="primary"
               onClick={() => {
                 void message.success('Processing complete!')
-              }}
-            >
+              }}>
               Done
             </Button>
           )}
@@ -284,8 +282,7 @@ export const ExampleSwitch: Story = {
               style={{ margin: '0 8px' }}
               onClick={() => {
                 prev()
-              }}
-            >
+              }}>
               Previous
             </Button>
           )}
@@ -443,8 +440,7 @@ export const ExampleCustomDot: Story = {
           <span>
             step {index} status: {status}
           </span>
-        }
-      >
+        }>
         {dot}
       </Popover>
     )

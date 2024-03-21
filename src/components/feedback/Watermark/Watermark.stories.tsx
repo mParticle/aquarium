@@ -188,8 +188,7 @@ export const ExampleConfig: Story = {
             initialValues={config}
             onValuesChange={(_, values: WatermarkConfig) => {
               setConfig(values)
-            }}
-          >
+            }}>
             <Form.Item name="content" label="Content">
               <Input placeholder="请输入" />
             </Form.Item>
@@ -266,24 +265,21 @@ export const ExampleModalOrDrawer: Story = {
               type="primary"
               onClick={() => {
                 setShowModal(true)
-              }}
-            >
+              }}>
               Show in Modal
             </Button>
             <Button
               type="primary"
               onClick={() => {
                 setShowDrawer(true)
-              }}
-            >
+              }}>
               Show in Drawer
             </Button>
             <Button
               type="primary"
               onClick={() => {
                 setShowDrawer2(true)
-              }}
-            >
+              }}>
               Not Shown in Drawer
             </Button>
           </Flex>
