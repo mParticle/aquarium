@@ -36,8 +36,11 @@
   border-radius: 0 !important;
   border-left: solid 3px transparent;
   border-right: solid 3px transparent;
-  cursor: pointer;
   transition: none !important;
+}
+
+.globalNavigation__item.globalNavigation__link {
+  cursor: pointer;
 }
 
 .globalNavigation__item:hover {
@@ -59,6 +62,7 @@
   padding: 0 !important;
   margin: 0 !important;
   background-color: transparent !important;
+  cursor: revert !important;
 }
 
 .globalNavigation__item .ant-menu-title-content {
@@ -94,6 +98,10 @@
 
 .globalNavigation__search {
   width: 100%;
+}
+
+.navigationCreate__popupButton {
+  cursor: default !important;
 }
 
 .globalNavigation__searchButtonWrapper,

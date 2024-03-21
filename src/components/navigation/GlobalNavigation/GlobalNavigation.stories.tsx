@@ -26,13 +26,13 @@ import { CloudIcon } from 'src/components'
 import { Badge } from 'src/components/data-display/Badge/Badge'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'
 import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
-import { type IGlobalNavigationManagement } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
-import { type IGlobalNavigationTool } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
+import { type IGlobalNavigationItem } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { SparklesIcon } from 'src/components'
 import { CircleNodesIcon } from 'src/components'
 import { SplitIcon } from 'src/components'
 import { LightBulbIcon } from 'src/components'
 import { generateOrgs } from 'src/components/navigation/GlobalNavigation/stories-utils'
+import { expect } from '@storybook/test'
 
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',
@@ -41,48 +41,67 @@ const defaultLogo: IGlobalNavigationLogo = {
     alert('Going to Aqua Home!')
   },
 }
-const defaultTools: IGlobalNavigationTool[] = [
+
+const defaultTools: IGlobalNavigationItem[] = [
   {
     label: 'Tool 1',
     isActive: true,
     icon: <ShieldKeyholeIcon />,
     type: 'menu',
-    children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
+    children: [
+      { label: 'option 1', href: '/' },
+      { label: 'option 2', href: '/' },
+      { label: 'option 3', href: '/' },
+    ],
   },
   {
     label: 'Tool 2',
     icon: <HeartIcon />,
     type: 'menu',
-    children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
+    children: [
+      { label: 'option 1', href: '/' },
+      { label: 'option 2', href: '/' },
+      { label: 'option 3', href: '/' },
+    ],
   },
   {
     label: 'Tool 3',
     icon: <ConnectionsIcon />,
-    type: 'link',
+    href: '/',
   },
 ]
-const defaultManagement: IGlobalNavigationManagement[] = [
+
+const defaultManagement: IGlobalNavigationItem[] = [
   {
     label: 'Notifications',
     hideLabel: true,
     icon: <CloudIcon />,
-    type: 'link',
+    href: '/',
   },
   {
     label: 'Support',
     hideLabel: true,
     icon: <MessageQuestionIcon />,
     type: 'menu',
-    children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
+    children: [
+      { label: 'option 1', href: '/' },
+      { label: 'option 2', href: '/' },
+      { label: 'option 3', href: '/' },
+    ],
   },
   {
     label: 'Settings',
     hideLabel: true,
     icon: <GearIcon />,
     type: 'menu',
-    children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
+    children: [
+      { label: 'option 1', href: '/' },
+      { label: 'option 2', href: '/' },
+      { label: 'option 3', href: '/' },
+    ],
   },
 ]
+
 const defaultOrgs: INavigationOrg[] = [
   {
     id: 'org1',
@@ -133,7 +152,25 @@ export default meta
 
 type Story = StoryObj<typeof GlobalNavigation>
 
-export const Primary: Story = {}
+export const Primary: Story = {
+  // This would benefit from test IDs, we have a future task to do that.
+  play: async ({ canvasElement }) => {
+    const menuItem = canvasElement.querySelector('li.globalNavigation__item')
+    if (!menuItem) throw new Error('Menu item not found')
+
+    const nullAnchorEl = menuItem.querySelector('a')
+    await expect(nullAnchorEl).toBeNull()
+
+    const linkItem = canvasElement.querySelector('.globalNavigation__link')
+    if (!linkItem) throw new Error('Link item not found')
+
+    await expect(linkItem.computedStyleMap().get('cursor')?.toString()).toBe('pointer')
+
+    const anchorEl = linkItem.parentElement
+    await expect(anchorEl).toBeTruthy()
+    await expect(anchorEl).toHaveProperty('href')
+  },
+}
 
 const mpLogo: IGlobalNavigationLogo = {
   label: 'Data Platform',
@@ -152,14 +189,15 @@ function Beta(label: string) {
   )
 }
 
-const mpTools: IGlobalNavigationTool[] = [
+const mpTools: IGlobalNavigationItem[] = [
   {
     label: 'Activity',
     icon: <ChartLineIcon />,
     type: 'menu',
     children: [
-      { label: 'Platform Trends' },
+      { href: '/', label: 'Platform Trends' },
       {
+        href: '/',
         label: (
           <Space>
             System Alerts
@@ -167,8 +205,8 @@ const mpTools: IGlobalNavigationTool[] = [
           </Space>
         ),
       },
-      { label: 'Event Forwarding' },
-      { label: Beta('Observability') },
+      { href: '/', label: 'Event Forwarding' },
+      { href: '/', label: Beta('Observability') },
     ],
   },
   {
@@ -176,46 +214,64 @@ const mpTools: IGlobalNavigationTool[] = [
     icon: <DatabaseIcon />,
     type: 'menu',
     children: [
-      { label: 'Catalog' },
-      { label: 'Plans' },
-      { label: 'Live Stream' },
-      { label: Beta('User Groups') },
-      { label: 'Calculated Attributes' },
-      { label: 'Rules' },
+      { href: '/', label: 'Catalog' },
+      { href: '/', label: 'Plans' },
+      { href: '/', label: 'Live Stream' },
+      { href: '/', label: Beta('User Groups') },
+      { href: '/', label: 'Calculated Attributes' },
+      { href: '/', label: 'Rules' },
     ],
   },
   {
     label: 'Audiences',
     icon: <UsersIcon />,
     type: 'menu',
-    children: [{ label: 'Real-time' }, { label: 'Standard' }, { label: 'Journeys' }],
+    children: [
+      { href: '/', label: 'Real-time' },
+      { href: '/', label: 'Standard' },
+      { href: '/', label: 'Journeys' },
+    ],
   },
   {
     label: 'Connections',
     icon: <ConnectionsIcon />,
     type: 'menu',
-    children: [{ label: 'Connect' }, { label: 'Platform Filters' }, { label: 'Feed Filters' }],
+    children: [
+      { href: '/', label: 'Connect' },
+      { href: '/', label: 'Platform Filters' },
+      { href: '/', label: 'Feed Filters' },
+    ],
   },
   {
     label: 'Setup',
     icon: <WrenchIcon />,
     type: 'menu',
-    children: [{ label: 'Inputs' }, { label: 'Outputs' }, { label: 'Data Warehouse' }, { label: 'CRM' }],
+    children: [
+      { href: '/', label: 'Inputs' },
+      { href: '/', label: 'Outputs' },
+      { href: '/', label: 'Data Warehouse' },
+      { href: '/', label: 'CRM' },
+    ],
   },
   {
     label: 'Directory',
     icon: <GridIcon />,
-    type: 'link',
+    href: '/',
   },
 ]
-const mpManagement: IGlobalNavigationManagement[] = [
+
+const mpManagement: IGlobalNavigationItem[] = [
   {
     isActive: true,
     label: 'Support',
     hideLabel: true,
     icon: <MessageQuestionIcon />,
     type: 'menu',
-    children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
+    children: [
+      { label: 'option 1', href: '/' },
+      { label: 'option 2', href: '/' },
+      { label: 'option 3', href: '/' },
+    ],
   },
   {
     label: 'Settings',
@@ -223,12 +279,13 @@ const mpManagement: IGlobalNavigationManagement[] = [
     icon: <GearIcon />,
     type: 'menu',
     children: [
-      { label: 'Platform Settings' },
-      { label: 'User Settings' },
-      { label: <Button type="primary">Switch to Legacy UI</Button> },
+      { href: '/', label: 'Platform Settings' },
+      { href: '/', label: 'User Settings' },
+      { href: '/', label: <Button type="primary">Switch to Legacy UI</Button> },
     ],
   },
 ]
+
 const mpOrgs: INavigationOrg[] = [
   {
     id: 'org1',
@@ -409,6 +466,7 @@ const mpOrgs: INavigationOrg[] = [
     ],
   },
 ]
+
 export const MP: Story = {
   args: {
     onSearchClick: () => {
@@ -459,40 +517,50 @@ const indLogo: IGlobalNavigationLogo = {
     alert('Going to Analytics Home!')
   },
 }
-const indTools: IGlobalNavigationTool[] = [
+
+const indTools: IGlobalNavigationItem[] = [
   {
     label: 'My Hub',
     icon: <GridIcon />,
-    type: 'link',
     isActive: true,
   },
   {
     label: 'Saved',
     icon: <FolderClosedIcon />,
-    type: 'link',
+    href: '/',
   },
   {
     label: 'Manage Data',
     icon: <DatabaseIcon />,
-    type: 'link',
+    href: '/',
   },
 ]
-const indManagement: IGlobalNavigationManagement[] = [
+
+const indManagement: IGlobalNavigationItem[] = [
   {
     label: 'Support',
     hideLabel: true,
     icon: <MessageQuestionIcon />,
     type: 'menu',
-    children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
+    children: [
+      { label: 'option 1', href: '/' },
+      { label: 'option 2', href: '/' },
+      { label: 'option 3', href: '/' },
+    ],
   },
   {
     label: 'Settings',
     hideLabel: true,
     icon: <GearIcon />,
     type: 'menu',
-    children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
+    children: [
+      { label: 'option 1', href: '/' },
+      { label: 'option 2', href: '/' },
+      { label: 'option 3', href: '/' },
+    ],
   },
 ]
+
 const indCreateItems: INavigationCreateProps['createItems'] = [
   {
     type: 'group',
@@ -777,50 +845,61 @@ const cortexLogo: IGlobalNavigationLogo = {
     alert('Going to Predictions Home!')
   },
 }
-const cortexTools: IGlobalNavigationTool[] = [
+
+const cortexTools: IGlobalNavigationItem[] = [
   {
     label: 'Pipelines',
     icon: <CircleNodesIcon />,
-    type: 'link',
+    href: '/',
   },
   {
     label: 'Projects',
     icon: <SplitIcon />,
-    type: 'link',
+    href: '/',
     isActive: true,
   },
   {
     label: 'Data',
     icon: <DatabaseIcon />,
-    type: 'link',
+    href: '/',
   },
   {
     label: 'API',
     icon: <CloudIcon />,
-    type: 'link',
+    href: '/',
   },
   {
     label: 'Insights',
     icon: <LightBulbIcon />,
-    type: 'link',
+    href: '/',
   },
 ]
-const cortexManagement: IGlobalNavigationManagement[] = [
+
+const cortexManagement: IGlobalNavigationItem[] = [
   {
     label: 'Support',
     hideLabel: true,
     icon: <MessageQuestionIcon />,
     type: 'menu',
-    children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
+    children: [
+      { label: 'option 1', href: '/' },
+      { label: 'option 2', href: '/' },
+      { label: 'option 3', href: '/' },
+    ],
   },
   {
     label: 'Settings',
     hideLabel: true,
     icon: <GearIcon />,
     type: 'menu',
-    children: [{ label: 'option 1' }, { label: 'option 2' }, { label: 'option 3' }],
+    children: [
+      { label: 'option 1', href: '/' },
+      { label: 'option 2', href: '/' },
+      { label: 'option 3', href: '/' },
+    ],
   },
 ]
+
 const cortexOrgs: INavigationOrg[] = [
   {
     id: '',

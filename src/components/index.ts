@@ -81,8 +81,7 @@ export {
 } from './navigation/GlobalNavigation/GlobalNavigation'
 export type {
   IBaseGlobalNavigationItem,
-  IGlobalNavigationManagement,
-  IGlobalNavigationTool,
+  IGlobalNavigationItem,
   IGlobalNavigationLogo,
 } from './navigation/GlobalNavigation/GlobalNavigationItems'
 export type {
