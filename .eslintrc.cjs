@@ -106,7 +106,7 @@ module.exports = {
           'WorkspaceSelector',
           'WorkspaceNoResults',
           'WorkspaceSignout',
-          'NavigationItem'
+          'NavigationItem',
         ],
       },
     ],
