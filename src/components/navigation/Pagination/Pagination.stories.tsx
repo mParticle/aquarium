@@ -57,7 +57,7 @@ export const ResponsivePagination: Story = {
 
 export const ShowQuickJumperWithButton: Story = {
   args: {
-    showQuickJumper: { goButton: <MpLogo/> },
+    showQuickJumper: { goButton: <MpLogo /> },
   },
 }
 

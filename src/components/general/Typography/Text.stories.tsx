@@ -180,15 +180,13 @@ export const ExampleEllipsis: Story = {
         />
         <Text
           style={ellipsis ? { width: 200 } : undefined}
-          ellipsis={ellipsis ? { tooltip: 'I am ellipsis now!' } : false}
-        >
+          ellipsis={ellipsis ? { tooltip: 'I am ellipsis now!' } : false}>
           Ant Design, a design language for background applications, is refined by Ant UED Team.
         </Text>
         <Text
           code
           style={ellipsis ? { width: 200 } : undefined}
-          ellipsis={ellipsis ? { tooltip: 'I am ellipsis now!' } : false}
-        >
+          ellipsis={ellipsis ? { tooltip: 'I am ellipsis now!' } : false}>
           Ant Design, a design language for background applications, is refined by Ant UED Team.
         </Text>
       </ExampleStory>
