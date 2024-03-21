@@ -5,6 +5,8 @@ import { type InputRef } from 'antd'
 
 export interface IInputProps extends AntInputProps {}
 
+export { type InputRef }
+
 export const Input = (props: IInputProps) => {
   return (
     <ConfigProvider>
@@ -17,5 +19,3 @@ Input.Group = AntInput.Group
 Input.Password = AntInput.Password
 Input.Search = AntInput.Search
 Input.TextArea = AntInput.TextArea
-
-export { type InputRef }

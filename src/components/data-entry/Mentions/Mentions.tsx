@@ -13,3 +13,4 @@ export const Mentions = (props: IMentionsProps) => {
 }
 
 Mentions.getMentions = AntMentions.getMentions
+Mentions.Option = AntMentions.Option

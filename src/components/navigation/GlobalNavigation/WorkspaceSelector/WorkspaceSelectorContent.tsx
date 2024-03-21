@@ -21,7 +21,7 @@ export function WorkspaceSelectorContent(props: WorkspaceSelectorContentProps) {
 
   return (
     <div className="workspaceSelector__popoverContent">
-      {hasSearchInput &&
+      {hasSearchInput && (
         <div className="workspaceSelector__search">
           <Input
             placeholder="Search"
@@ -35,7 +35,7 @@ export function WorkspaceSelectorContent(props: WorkspaceSelectorContentProps) {
             }}
           />
         </div>
-      }
+      )}
 
       {hasNoResults ? <WorkspaceNoResults /> : <WorkspaceSelectorContentItems menuItems={menuItems} />}
 

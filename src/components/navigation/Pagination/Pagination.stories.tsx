@@ -1,6 +1,9 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { Pagination } from 'src/components/navigation/Pagination/Pagination'
-import MpLogo from 'src/assets/svg/mpLogo.svg?react'
+import { ExampleStory } from 'src/utils/ExampleStory'
+import { type IPaginationProps } from 'src/components/navigation/Pagination/Pagination'
+import { useState } from 'react'
+import { AlicornIcon } from 'src/components'
 
 const meta: Meta<typeof Pagination> = {
   title: 'Aquarium/Navigation/Pagination',
@@ -57,7 +60,7 @@ export const ResponsivePagination: Story = {
 
 export const ShowQuickJumperWithButton: Story = {
   args: {
-    showQuickJumper: { goButton: <MpLogo /> },
+    showQuickJumper: { goButton: <AlicornIcon /> },
   },
 }
 
@@ -83,5 +86,142 @@ export const ShowLessItemsPagination: Story = {
 export const CustomTotalText: Story = {
   args: {
     showTotal: (total, range) => `Showing ${range[0]}-${range[1]} of ${total} items`,
+  },
+}
+
+export const ExampleBasic: Story = {
+  render: () => {
+    return (
+      <ExampleStory title="Basic pagination.">
+        <Pagination defaultCurrent={1} total={50} />
+      </ExampleStory>
+    )
+  },
+}
+
+export const ExampleMorePages: Story = {
+  render: () => {
+    return (
+      <ExampleStory title="More Pages.">
+        <Pagination defaultCurrent={6} total={500} />
+      </ExampleStory>
+    )
+  },
+}
+
+export const ExampleChangePageSize: Story = {
+  render: () => {
+    const onShowSizeChange: IPaginationProps['onShowSizeChange'] = (current, pageSize) => {
+      console.log(current, pageSize)
+    }
+    return (
+      <ExampleStory title="Change pageSize.">
+        <Pagination showSizeChanger onShowSizeChange={onShowSizeChange} defaultCurrent={3} total={500} />
+        <br />
+        <Pagination showSizeChanger onShowSizeChange={onShowSizeChange} defaultCurrent={3} total={500} disabled />
+      </ExampleStory>
+    )
+  },
+}
+
+export const ExampleJump: Story = {
+  render: () => {
+    const onChange: IPaginationProps['onChange'] = pageNumber => {
+      console.log('Page: ', pageNumber)
+    }
+    return (
+      <ExampleStory title="Jump to a page directly.">
+        <Pagination showQuickJumper defaultCurrent={2} total={500} onChange={onChange} />
+        <br />
+        <Pagination showQuickJumper defaultCurrent={2} total={500} onChange={onChange} disabled />
+      </ExampleStory>
+    )
+  },
+}
+
+export const ExampleMini: Story = {
+  render: () => {
+    const showTotal: IPaginationProps['showTotal'] = total => `Total ${total} items`
+    return (
+      <ExampleStory title="Mini size pagination.">
+        <Pagination size="small" total={50} />
+        <Pagination size="small" total={50} showSizeChanger showQuickJumper />
+        <Pagination size="small" total={50} showTotal={showTotal} />
+        <Pagination size="small" total={50} disabled showTotal={showTotal} showSizeChanger showQuickJumper />
+      </ExampleStory>
+    )
+  },
+}
+
+export const ExampleSimple: Story = {
+  render: () => {
+    return (
+      <ExampleStory title="Simple mode.">
+        <Pagination simple defaultCurrent={2} total={50} />
+        <br />
+        <Pagination disabled simple defaultCurrent={2} total={50} />
+      </ExampleStory>
+    )
+  },
+}
+
+export const ExampleControlled: Story = {
+  render: () => {
+    const [current, setCurrent] = useState(3)
+    const onChange: IPaginationProps['onChange'] = page => {
+      console.log(page)
+      setCurrent(page)
+    }
+    return (
+      <ExampleStory title="Controlled page number.">
+        <Pagination current={current} onChange={onChange} total={50} />
+      </ExampleStory>
+    )
+  },
+}
+
+export const ExampleTotalNumber: Story = {
+  render: () => {
+    return (
+      <ExampleStory title="You can show the total number of data by setting showTotal.">
+        <Pagination total={85} showTotal={total => `Total ${total} items`} defaultPageSize={20} defaultCurrent={1} />
+        <br />
+        <Pagination
+          total={85}
+          showTotal={(total, range) => `${range[0]}-${range[1]} of ${total} items`}
+          defaultPageSize={20}
+          defaultCurrent={1}
+        />
+      </ExampleStory>
+    )
+  },
+}
+
+export const ExampleShowAll: Story = {
+  render: () => {
+    return (
+      <ExampleStory title="Show all configured prop.">
+        <Pagination total={85} showSizeChanger showQuickJumper showTotal={total => `Total ${total} items`} />
+      </ExampleStory>
+    )
+  },
+}
+
+export const ExamplePrevNext: Story = {
+  render: () => {
+    const itemRender: IPaginationProps['itemRender'] = (_, type, originalElement) => {
+      if (type === 'prev') {
+        return <a>Previous</a>
+      }
+      if (type === 'next') {
+        return <a>Next</a>
+      }
+      return originalElement
+    }
+    return (
+      <ExampleStory title="Use text link for prev and next button.">
+        <Pagination total={500} itemRender={itemRender} />
+      </ExampleStory>
+    )
   },
 }
