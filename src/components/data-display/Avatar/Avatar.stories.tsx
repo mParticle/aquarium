@@ -15,13 +15,13 @@ const meta: Meta<typeof Avatar> = {
   component: Avatar,
 
   args: {
-    alt: 'User Avatar',
+    alt: 'Avatar',
     gap: 4,
     icon: <AlicornIcon />,
     shape: 'circle',
     size: 'default',
-    src: '',
-    srcSet: '',
+    src: undefined,
+    srcSet: undefined,
     style: { color: 'white' },
     draggable: true,
     crossOrigin: '',
