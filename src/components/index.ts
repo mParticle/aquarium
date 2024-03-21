@@ -64,7 +64,6 @@ export { Breadcrumb, type IBreadcrumbProps } from './navigation/Breadcrumb/Bread
 export { Pagination, type IPaginationProps } from './navigation/Pagination/Pagination'
 export {
   Menu,
-  MenuItem,
   type IMenuProps,
   type MenuItemType,
   type SubMenuType,
@@ -82,8 +81,7 @@ export {
 } from './navigation/GlobalNavigation/GlobalNavigation'
 export type {
   IBaseGlobalNavigationItem,
-  IGlobalNavigationManagement,
-  IGlobalNavigationTool,
+  IGlobalNavigationItem,
   IGlobalNavigationLogo,
 } from './navigation/GlobalNavigation/GlobalNavigationItems'
 export type {

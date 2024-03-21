@@ -1,12 +1,12 @@
-import type { ReactNode } from 'react'
-import type { MenuItemType } from 'antd/es/menu/hooks/useItems'
+import type { ReactNode, type MouseEvent } from 'react'
 
 export interface IBaseGlobalNavigationItem {
   type?: 'menu' | 'link'
-  label: string
-  icon: ReactNode
+  label: ReactNode
+  icon?: ReactNode
   hideLabel?: boolean
   isActive?: boolean
+  isNestedMenu?: boolean
 }
 
 export interface IGlobalNavigationLogo extends IBaseGlobalNavigationItem {
@@ -15,28 +15,14 @@ export interface IGlobalNavigationLogo extends IBaseGlobalNavigationItem {
 
 export interface IGlobalNavigationMenu extends IBaseGlobalNavigationItem {
   type: 'menu'
-  isNestedMenu?: boolean
-  children?: IGlobalNavigationMenuItem[]
-}
-
-interface IGlobalNavigationMenuItem extends Omit<MenuItemType, 'key'> {
-  type?: 'menu'
-  isNestedMenu?: boolean
-  children?: IGlobalNavigationMenuItem[]
+  children: IGlobalNavigationLink[]
 }
 
 export interface IGlobalNavigationLink extends IBaseGlobalNavigationItem {
-  type: 'link'
-  onClick?: (e: React.MouseEvent) => void
+  type?: 'link'
+  href?: string
+  hideLabel?: boolean
+  onClick?: (e: MouseEvent) => void
 }
 
-type IGlobalNavigationItem = IGlobalNavigationMenu | IGlobalNavigationLink
-
-export type IGlobalNavigationTool = IGlobalNavigationItem & {
-  hideLabel?: true
-  type: 'menu' | 'link'
-}
-
-export type IGlobalNavigationManagement = IGlobalNavigationItem & {
-  type: 'menu' | 'link'
-}
+export type IGlobalNavigationItem = IGlobalNavigationMenu | IGlobalNavigationLink
