@@ -12,6 +12,7 @@ export interface INavigationItemProps {
   isActive?: boolean
   onClick?: (e: MouseEvent) => void // link only
   href?: string // link only
+  hrefTarget?: '_self' | '_blank' // link only
 }
 
 export function NavigationItem(props: INavigationItemProps) {
@@ -31,7 +32,7 @@ export function NavigationItem(props: INavigationItemProps) {
     />
   )
 
-  const resultNavigationIcon = props.href ? <a href={props.href}>{navigationIcon}</a> : navigationIcon
+  const resultNavigationIcon = props.href ? <a href={props.href} target={props.hrefTarget ?? '_self'}>{navigationIcon}</a> : navigationIcon
 
   if (props.hideLabel) {
     return (
