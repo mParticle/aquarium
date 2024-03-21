@@ -23,8 +23,7 @@ const meta: Meta<typeof Flex> = {
           height: 108,
           borderRadius: 6,
           border: '1px solid #40a9ff',
-        }}
-      >
+        }}>
         {Array.from({ length: 4 }).map((_, i) => (
           <div
             key={i}

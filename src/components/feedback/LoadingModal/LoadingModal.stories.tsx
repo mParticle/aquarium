@@ -38,8 +38,7 @@ const BaseTemplate = (args: ILoadingModalProps<unknown>, fetchData: () => Promis
           title="Loading Modal"
           open={true}
           onOk={handleOk}
-          onCancel={handleCancel}
-        >
+          onCancel={handleCancel}>
           {initData => <>Data resolved with - {initData + ''}</>}
         </LoadingModal>
       )}

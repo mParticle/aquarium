@@ -332,14 +332,12 @@ export const ExampleCollapsable: Story = {
               <a
                 href="https://ant.design/components/layout#components-layout-demo-side"
                 target="_blank"
-                rel="noreferrer"
-              >
+                rel="noreferrer">
                 complete demo
               </a>{' '}
               with sider layout{' '}
             </>
-          }
-        >
+          }>
           <div style={{ width: 256 }}>
             <Button type="primary" onClick={toggleCollapsed} style={{ marginBottom: 16 }}>
               {collapsed ? 'Expand' : 'Collapse'}

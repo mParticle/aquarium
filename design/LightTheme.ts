@@ -7,7 +7,7 @@ import { type IMpThemeConfig } from 'design/MpThemeConfig'
 export const LightTheme: IMpThemeConfig = {
   token: {
     colorLinkHover: '#ab8eff',
-    controlOutline: 'rgba(0.21176470816135406, 0, 0.8196078538894653, 0.10000000149011612)',
+    controlOutline: 'rgba(0.21176470816135406, 0, 0.8196078538894653, 0.1)',
     colorWarningOutline: '#fffbe6',
     colorErrorOutline: '#fff1f0',
     controlItemBgHover: '#f8f6fb',

@@ -188,21 +188,23 @@ export const ExampleEditable: Story = {
           }}
           ellipsis={{
             suffix: editableStrWithSuffixSuffixPart,
-          }}
-        >
+          }}>
           {editableStrWithSuffixStartPart}
         </Paragraph>
         <Paragraph
           editable={{
-            icon: <MpLogo/>,
+            icon: <MpLogo />,
             tooltip: 'click to edit text',
             onChange: setCustomIconStr,
-          }}
-        >
+          }}>
           {customIconStr}
         </Paragraph>
         Trigger edit with:{' '}
-        <Radio.Group onChange={e => { setChooseTrigger(radioToState(e.target.value as string)); }} value={stateToRadio}>
+        <Radio.Group
+          onChange={e => {
+            setChooseTrigger(radioToState(e.target.value as string))
+          }}
+          value={stateToRadio}>
           <Radio value="icon">icon</Radio>
           <Radio value="text">text</Radio>
           <Radio value="both">both</Radio>
@@ -212,28 +214,25 @@ export const ExampleEditable: Story = {
             tooltip: 'click to edit text',
             onChange: setClickTriggerStr,
             triggerType: chooseTrigger,
-          }}
-        >
+          }}>
           {clickTriggerStr}
         </Paragraph>
         <Paragraph
           editable={{
-            icon: <MpLogo/>,
+            icon: <MpLogo />,
             tooltip: 'click to edit text',
             onChange: setCustomEnterIconStr,
-            enterIcon: <MpLogo/>,
-          }}
-        >
+            enterIcon: <MpLogo />,
+          }}>
           {customEnterIconStr}
         </Paragraph>
         <Paragraph
           editable={{
-            icon: <MpLogo/>,
+            icon: <MpLogo />,
             tooltip: 'click to edit text',
             onChange: setNoEnterIconStr,
             enterIcon: null,
-          }}
-        >
+          }}>
           {noEnterIconStr}
         </Paragraph>
         <Paragraph editable={{ tooltip: false, onChange: setHideTooltipStr }}>{hideTooltipStr}</Paragraph>
@@ -242,8 +241,7 @@ export const ExampleEditable: Story = {
             onChange: setLengthLimitedStr,
             maxLength: 50,
             autoSize: { maxRows: 5, minRows: 3 },
-          }}
-        >
+          }}>
           {lengthLimitedStr}
         </Paragraph>
       </ExampleStory>
@@ -259,10 +257,9 @@ export const ExampleCopyable: Story = {
         <Paragraph copyable={{ text: 'Hello, Ant Design!' }}>Replace copy text.</Paragraph>
         <Paragraph
           copyable={{
-            icon: [<MpLogo key={1}/>, <MpLogo key={2}/>],
+            icon: [<MpLogo key={1} />, <MpLogo key={2} />],
             tooltips: ['click here', 'you clicked!!'],
-          }}
-        >
+          }}>
           Custom Copy icon and replace tooltips text.
         </Paragraph>
         <Paragraph copyable={{ tooltips: false }}>Hide Copy tooltips.</Paragraph>
@@ -320,8 +317,7 @@ export const ExampleSuffix: Story = {
               console.log('Ellipsis changed:', ellipsis)
             },
           }}
-          title={`${article}--William Shakespeare`}
-        >
+          title={`${article}--William Shakespeare`}>
           {article}
         </Paragraph>
       </ExampleStory>

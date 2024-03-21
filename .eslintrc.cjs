@@ -2,7 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2024: true,
-    jest: true
+    jest: true,
   },
   settings: {
     react: {
@@ -113,10 +113,10 @@ module.exports = {
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/consistent-type-definitions': 'off',
     '@typescript-eslint/no-use-before-define': ['error', { allowNamedExports: true, functions: false }],
-    "@typescript-eslint/promise-function-async": "warn",
+    '@typescript-eslint/promise-function-async': 'warn',
     'react/react-in-jsx-scope': 'off',
     'import/no-duplicates': 'off',
-    'react/jsx-boolean-value': 'warn'
+    'react/jsx-boolean-value': 'warn',
   },
   globals: {
     React: true,

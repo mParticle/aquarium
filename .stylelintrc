@@ -1,10 +1,6 @@
-{ 
-  "extends": [
-    "stylelint-config-standard"
-  ],
-  "plugins": [
-    "stylelint-no-indistinguishable-colors"
-  ],
+{
+  "extends": ["stylelint-config-standard"],
+  "plugins": ["stylelint-no-indistinguishable-colors"],
   "rules": {
     "selector-class-pattern": null,
     "block-no-empty": true,
@@ -19,10 +15,7 @@
     "rule-empty-line-before": [
       "always-multi-line",
       {
-        "ignore": [
-          "first-nested",
-          "after-comment"
-        ]
+        "ignore": ["first-nested", "after-comment"]
       }
     ],
     "property-no-unknown": [
@@ -31,24 +24,7 @@
         "severity": "warning"
       }
     ],
-    "property-disallowed-list": [
-      "stroke",
-      "fill"
-    ],
-    "unit-allowed-list": [
-      "em",
-      "rem",
-      "s",
-      "px",
-      "%",
-      "vw",
-      "vh",
-      "ms",
-      "deg",
-      "ch",
-      "cm",
-      "dpi",
-      "fr"
-    ]
+    "property-disallowed-list": ["stroke", "fill"],
+    "unit-allowed-list": ["em", "rem", "s", "px", "%", "vw", "vh", "ms", "deg", "ch", "cm", "dpi", "fr"]
   }
 }
