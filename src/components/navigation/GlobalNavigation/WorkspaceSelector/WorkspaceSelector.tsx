@@ -115,6 +115,8 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
   const workspaceInitials = getInitials(activeWorkspace?.label)
 
+  const hasSearchInput = !!searchTerm || menuItems.filter(item => !!item.label).length > 5
+
   // This seems to be the only way of consistently focusing the input on the first open
   // We should find a better way to do this and not rely on setTimout
   const focusOnInput = (open: boolean) => {
@@ -139,6 +141,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
         <WorkspaceSelectorContent
           onSearch={onSearch}
           searchTerm={searchTerm}
+          hasSearchInput={hasSearchInput}
           inputRef={inputRef}
           hasNoResults={hasNoResults}
           signoutOptions={props.signoutOptions}
