@@ -9,10 +9,16 @@ import {
 import { type MenuInfo as RCMenuInfo } from 'rc-menu/lib/interface'
 import { ConfigProvider } from 'src/components'
 
-
 export interface IMenuProps extends AntMenuProps {}
 
 export interface IMenuInfo extends RCMenuInfo {}
+
+export {
+  type AndMenuItemType as MenuItemType,
+  type AndMenuItemGroupType as MenuItemGroupType,
+  type AndMenuDividerType as MenuDividerType,
+  type AndSubMenuType as SubMenuType,
+}
 
 export const Menu = (props: IMenuProps) => {
   return (
@@ -26,10 +32,3 @@ Menu.SubMenu = AntMenu.SubMenu
 Menu.Item = AntMenu.Item
 Menu.ItemGroup = AntMenu.ItemGroup
 Menu.Divider = AntMenu.Divider
-
-export {
-  type AndMenuItemType as MenuItemType,
-  type AndMenuItemGroupType as MenuItemGroupType,
-  type AndMenuDividerType as MenuDividerType,
-  type AndSubMenuType as SubMenuType,
-}
