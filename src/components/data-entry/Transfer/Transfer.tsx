@@ -11,3 +11,7 @@ export const Transfer = (props: ITransferProps) => {
     </ConfigProvider>
   )
 }
+
+Transfer.List = AntTransfer.List
+Transfer.Search = AntTransfer.Search
+Transfer.Operation = AntTransfer.Operation

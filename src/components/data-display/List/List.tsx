@@ -2,9 +2,9 @@ import { List as AntList } from 'antd'
 import { type ListProps as AntListProps } from 'antd'
 import { ConfigProvider } from 'src/components'
 
-export interface IListProps extends AntListProps {}
+export interface IListProps<T> extends AntListProps<T> {}
 
-export const List = (props: IListProps) => {
+export function List<T>(props: IListProps<T>) {
   return (
     <ConfigProvider>
       <AntList {...props} />

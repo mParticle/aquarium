@@ -11,3 +11,5 @@ export const Spin = (props: ISpinProps) => {
     </ConfigProvider>
   )
 }
+
+Spin.setDefaultIndicator = AntSpin.setDefaultIndicator

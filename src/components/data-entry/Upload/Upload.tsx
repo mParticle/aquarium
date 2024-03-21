@@ -11,3 +11,6 @@ export const Upload = (props: IUploadProps) => {
     </ConfigProvider>
   )
 }
+
+Upload.Dragger = AntUpload.Dragger
+Upload.LIST_IGNORE = AntUpload.LIST_IGNORE

@@ -11,3 +11,5 @@ export const TimePicker = (props: ITimePickerProps) => {
     </ConfigProvider>
   )
 }
+
+TimePicker.RangePicker = AntTimePicker.RangePicker

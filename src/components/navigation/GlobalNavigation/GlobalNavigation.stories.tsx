@@ -1,6 +1,7 @@
 import React from 'react'
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
+import { userEvent, screen } from '@storybook/test'
 import {
   ChartLineIcon,
   ConnectionsIcon,
@@ -992,5 +993,18 @@ export const Cortex: Story = {
     onMpHomeClick: () => {
       alert('going to overview map')
     },
+  },
+}
+
+export const WorkspaceSearchWithNoResults: Meta<typeof GlobalNavigation> = {
+  args: {
+    orgs: mpOrgs,
+  },
+  play: async () => {
+    const workspaceSelector = screen.getByText('_W2')
+    await userEvent.hover(workspaceSelector)
+
+    const searchInput = await screen.findByPlaceholderText('Search')
+    await userEvent.type(searchInput, '123{enter}')
   },
 }

@@ -11,3 +11,8 @@ export const TreeSelect = (props: ITreeSelectProps) => {
     </ConfigProvider>
   )
 }
+
+TreeSelect.TreeNode = AntTreeSelect.TreeNode
+TreeSelect.SHOW_ALL = AntTreeSelect.SHOW_ALL
+TreeSelect.SHOW_CHILD = AntTreeSelect.SHOW_CHILD
+TreeSelect.SHOW_PARENT = AntTreeSelect.SHOW_PARENT

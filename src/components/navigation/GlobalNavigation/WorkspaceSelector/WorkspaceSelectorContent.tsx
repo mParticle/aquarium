@@ -9,6 +9,7 @@ import { WorkspaceSignout } from 'src/components/navigation/GlobalNavigation/Wor
 type WorkspaceSelectorContentProps = {
   onSearch: (e: ChangeEvent<HTMLInputElement>) => void
   searchTerm: string
+  hasSearchInput: boolean
   inputRef: RefObject<InputRef>
   hasNoResults: boolean
   menuItems: IWorkspaceSelectorDisplayItem[]
@@ -16,23 +17,25 @@ type WorkspaceSelectorContentProps = {
 }
 
 export function WorkspaceSelectorContent(props: WorkspaceSelectorContentProps) {
-  const { onSearch, searchTerm, inputRef, hasNoResults, menuItems, signoutOptions } = props
+  const { onSearch, searchTerm, hasSearchInput, inputRef, hasNoResults, menuItems, signoutOptions } = props
 
   return (
     <div className="workspaceSelector__popoverContent">
-      <div className="workspaceSelector__search">
-        <Input
-          placeholder="Search"
-          className="workspaceSelector__searchInput"
-          onChange={onSearch}
-          value={searchTerm}
-          ref={inputRef}
-          onClick={e => {
-            e.preventDefault()
-            e.stopPropagation()
-          }}
-        />
-      </div>
+      {hasSearchInput && (
+        <div className="workspaceSelector__search">
+          <Input
+            placeholder="Search"
+            className="workspaceSelector__searchInput"
+            onChange={onSearch}
+            value={searchTerm}
+            ref={inputRef}
+            onClick={e => {
+              e.preventDefault()
+              e.stopPropagation()
+            }}
+          />
+        </div>
+      )}
 
       {hasNoResults ? <WorkspaceNoResults /> : <WorkspaceSelectorContentItems menuItems={menuItems} />}
 

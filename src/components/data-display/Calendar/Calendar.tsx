@@ -11,3 +11,5 @@ export const Calendar = (props: ICalendarProps) => {
     </ConfigProvider>
   )
 }
+
+Calendar.generateCalendar = AntCalendar.generateCalendar
