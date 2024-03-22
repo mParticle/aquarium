@@ -1,3 +1,5 @@
+import { type ReactNode } from 'react'
+
 export function getInitials(str: string = ''): string {
   const getInitialsRegex = new RegExp(
     '(?:[\\W\\d]*\\b)*' + // Ignore non-word abd number characters that may exist at the beginning of the word
@@ -47,4 +49,17 @@ export function hasImageAtSrc(src: string, hasImageSetter?: (hasImage: boolean) 
     }
     img.src = src
   })
+}
+
+export type HrefOptions = { href: string; hrefTarget?: '_self' | '_blank' }
+
+export function buildLinkFromHrefOptions(label: ReactNode, hrefOptions?: HrefOptions): ReactNode {
+  return (
+    <a
+      href={hrefOptions?.href}
+      target={hrefOptions?.hrefTarget ?? '_self'}
+      rel={hrefOptions?.hrefTarget === '_blank' ? 'noopener' : undefined}>
+      {label}
+    </a>
+  )
 }

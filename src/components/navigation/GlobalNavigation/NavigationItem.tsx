@@ -2,6 +2,7 @@ import { type MouseEvent, type ReactNode } from 'react'
 import { NavigationIcon } from 'src/components/navigation/GlobalNavigation/NavigationIcon'
 import { NavigationList } from 'src/components/navigation/GlobalNavigation/NavigationList'
 import { type IGlobalNavigationItem, Tooltip } from 'src/components'
+import { buildLinkFromHrefOptions, type HrefOptions } from 'src/utils/utils'
 
 export interface INavigationItemProps {
   type: 'link' | 'menu'
@@ -11,7 +12,7 @@ export interface INavigationItemProps {
   items?: IGlobalNavigationItem[]
   isActive?: boolean
   onClick?: (e: MouseEvent) => void // link only
-  hrefOptions?: { href: string; hrefTarget?: '_self' | '_blank' } // link only
+  hrefOptions?: HrefOptions // link only
 }
 
 export function NavigationItem(props: INavigationItemProps) {
@@ -31,16 +32,9 @@ export function NavigationItem(props: INavigationItemProps) {
     />
   )
 
-  const resultNavigationIcon = props.hrefOptions ? (
-    <a
-      href={props.hrefOptions.href}
-      target={props.hrefOptions.hrefTarget ?? '_self'}
-      rel={props.hrefOptions.hrefTarget === '_blank' ? 'noopener' : undefined}>
-      {navigationIcon}
-    </a>
-  ) : (
-    navigationIcon
-  )
+  const resultNavigationIcon = props.hrefOptions
+    ? buildLinkFromHrefOptions(navigationIcon, props.hrefOptions)
+    : navigationIcon
 
   if (props.hideLabel) {
     return (
