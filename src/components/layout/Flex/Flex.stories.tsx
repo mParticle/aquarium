@@ -136,7 +136,8 @@ export const ExampleBasic: Story = {
           <Radio.Group
             value={value}
             onChange={e => {
-              setValue(e.target.value)
+              // TODO added a todo in Radio component to see if we can better type this
+              setValue(e.target.value as string)
             }}>
             <Radio value="horizontal">horizontal</Radio>
             <Radio value="vertical">vertical</Radio>
@@ -198,7 +199,7 @@ export const ExampleGap: Story = {
           <Radio.Group
             value={gapSize}
             onChange={e => {
-              setGapSize(e.target.value)
+              setGapSize(e.target.value as SizeType | 'customize')
             }}>
             {['small', 'middle', 'large', 'customize'].map(size => (
               <Radio key={size} value={size}>
