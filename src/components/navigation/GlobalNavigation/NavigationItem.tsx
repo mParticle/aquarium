@@ -11,8 +11,7 @@ export interface INavigationItemProps {
   items?: IGlobalNavigationItem[]
   isActive?: boolean
   onClick?: (e: MouseEvent) => void // link only
-  href?: string // link only
-  hrefTarget?: '_self' | '_blank' // link only
+  hrefOptions?: { href: string; hrefTarget?: '_self' | '_blank' } // link only
 }
 
 export function NavigationItem(props: INavigationItemProps) {
@@ -32,11 +31,11 @@ export function NavigationItem(props: INavigationItemProps) {
     />
   )
 
-  const resultNavigationIcon = props.href ? (
+  const resultNavigationIcon = props.hrefOptions ? (
     <a
-      href={props.href}
-      target={props.hrefTarget ?? '_self'}
-      rel={props.hrefTarget === '_blank' ? 'noopener' : undefined}>
+      href={props.hrefOptions.href}
+      target={props.hrefOptions.hrefTarget ?? '_self'}
+      rel={props.hrefOptions.hrefTarget === '_blank' ? 'noopener' : undefined}>
       {navigationIcon}
     </a>
   ) : (
