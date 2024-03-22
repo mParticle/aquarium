@@ -7,6 +7,7 @@ import {
   type INavigationOrg,
   type INavigationWorkspace,
   type IWorkspaceSelectorDisplayItem,
+  type InputRef,
   Popover,
 } from 'src/components'
 import { Flex } from 'src/components'
@@ -17,10 +18,6 @@ import { useEffect } from 'react'
 import { useMemo } from 'react'
 import { debounce, hasImageAtSrc } from 'src/utils/utils'
 import { getInitials } from 'src/utils/utils'
-
-// TODO: Need to make our Input component comply with forwardRef to be able to import it from src/components
-// As soon as https://github.com/mParticle/aquarium/pull/123 is merged
-import { type InputRef } from 'antd'
 import { WorkspaceSelectorContent } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorContent'
 import { useMount } from 'src/hooks/useMount'
 import { PaddingXxs } from 'src/styles/style'
@@ -151,12 +148,14 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
           signoutOptions={props.signoutOptions}
           menuItems={menuItems}
         />
-      }>
+      }
+    >
       <div
         className="globalNavigation__item workspaceSelector__menuItem"
         onClick={e => {
           focusOnInput(true)
-        }}>
+        }}
+      >
         <Avatar {...props.avatarOptions} className="workspaceSelector__avatar">
           {getInitialsIfNoImage(hasImage, workspaceInitials)}
         </Avatar>
