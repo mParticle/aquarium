@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-floating-promises */
-
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
 import { Tag } from 'src/components/data-display/Tag/Tag'
@@ -92,10 +90,10 @@ export const ExampleCheckableTagPrimary: Story = {
   },
   play: async context => {
     const tag = context.canvasElement.querySelector('.ant-tag.ant-tag-checkable')
-    expect(tag).not.toBeNull()
-    expect(tag?.classList.contains('ant-tag-checkable-checked')).toBeTruthy()
+    void expect(tag).not.toBeNull()
+    void expect(tag?.classList.contains('ant-tag-checkable-checked')).toBeTruthy()
     await userEvent.click(tag)
-    expect(tag?.classList.contains('ant-tag-checkable-checked')).toBeFalsy()
+    void expect(tag?.classList.contains('ant-tag-checkable-checked')).toBeFalsy()
   },
 }
 

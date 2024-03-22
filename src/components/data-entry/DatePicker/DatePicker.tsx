@@ -1,9 +1,5 @@
-import { DatePicker as AntDatePicker } from 'antd'
-import { type PickerDateProps } from 'antd/es/date-picker/generatePicker'
-import { type Dayjs } from 'dayjs'
+import { DatePicker as AntDatePicker, type DatePickerProps as AntDatePickerProps } from 'antd'
 import { ConfigProvider } from 'src/components'
-
-type AntDatePickerProps = PickerDateProps<Dayjs>
 
 export interface IDatePickerProps extends AntDatePickerProps {}
 

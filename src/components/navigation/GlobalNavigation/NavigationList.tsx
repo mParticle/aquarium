@@ -20,7 +20,6 @@ export function NavigationList(props: INavigationListProps) {
           {item.type === 'menu' ? (
             <Menu
               key={i}
-              expandIcon={item.isNestedMenu ?? null}
               className="globalNavigation__menu"
               items={[generateMenuItem(item, i)]}
             />
@@ -42,7 +41,6 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
     children.push(
       ...item.children.map((linkItem, j) => ({
         ...linkItem,
-        expandIcon: linkItem.isNestedMenu ? true : null,
         key: `${String(linkItem.label)}${j}`,
         label: buildLinkFromHrefOptions(linkItem.label, linkItem.hrefOptions),
       })),

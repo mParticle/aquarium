@@ -7,7 +7,6 @@ export interface IBaseGlobalNavigationItem {
   icon?: ReactNode
   hideLabel?: boolean
   isActive?: boolean
-  isNestedMenu?: boolean
 }
 
 export interface IGlobalNavigationLogo extends IBaseGlobalNavigationItem {

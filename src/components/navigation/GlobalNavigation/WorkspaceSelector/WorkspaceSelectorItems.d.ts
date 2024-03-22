@@ -27,6 +27,8 @@ export interface IWorkspaceSelectorDisplayItem extends MenuItemType {
   label: ReactNode
   id: string
 
+  onClick: (x) => void
+
   accounts?: INavigationAccount[]
   workspaces?: INavigationWorkspace[]
   isActive?: boolean
