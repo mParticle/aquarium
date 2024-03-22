@@ -51,9 +51,9 @@ export function hasImageAtSrc(src: string, hasImageSetter?: (hasImage: boolean) 
   })
 }
 
-export type hrefOptions = { href: string; hrefTarget?: '_self' | '_blank' }
+export type HrefOptions = { href: string; hrefTarget?: '_self' | '_blank' }
 
-export function buildLinkFromHrefOptions(label: ReactNode, hrefOptions?: hrefOptions): ReactNode {
+export function buildLinkFromHrefOptions(label: ReactNode, hrefOptions?: HrefOptions): ReactNode {
   return (
     <a
       href={hrefOptions?.href}

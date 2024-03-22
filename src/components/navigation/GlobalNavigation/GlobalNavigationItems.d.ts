@@ -1,5 +1,5 @@
 import type { ReactNode, type MouseEvent } from 'react'
-import { type hrefOptions } from 'src/utils/utils'
+import { type HrefOptions } from 'src/utils/utils'
 
 export interface IBaseGlobalNavigationItem {
   type?: 'menu' | 'link'
@@ -21,7 +21,7 @@ export interface IGlobalNavigationMenu extends IBaseGlobalNavigationItem {
 
 export interface IGlobalNavigationLink extends IBaseGlobalNavigationItem {
   type?: 'link'
-  hrefOptions?: hrefOptions
+  hrefOptions?: HrefOptions
   hideLabel?: boolean
   onClick?: (e: MouseEvent) => void
 }

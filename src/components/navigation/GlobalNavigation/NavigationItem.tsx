@@ -2,7 +2,7 @@ import { type MouseEvent, type ReactNode } from 'react'
 import { NavigationIcon } from 'src/components/navigation/GlobalNavigation/NavigationIcon'
 import { NavigationList } from 'src/components/navigation/GlobalNavigation/NavigationList'
 import { type IGlobalNavigationItem, Tooltip } from 'src/components'
-import { buildLinkFromHrefOptions, type hrefOptions } from 'src/utils/utils'
+import { buildLinkFromHrefOptions, type HrefOptions } from 'src/utils/utils'
 
 export interface INavigationItemProps {
   type: 'link' | 'menu'
@@ -12,7 +12,7 @@ export interface INavigationItemProps {
   items?: IGlobalNavigationItem[]
   isActive?: boolean
   onClick?: (e: MouseEvent) => void // link only
-  hrefOptions?: hrefOptions // link only
+  hrefOptions?: HrefOptions // link only
 }
 
 export function NavigationItem(props: INavigationItemProps) {
