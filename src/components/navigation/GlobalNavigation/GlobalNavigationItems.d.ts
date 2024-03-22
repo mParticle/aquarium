@@ -20,7 +20,7 @@ export interface IGlobalNavigationMenu extends IBaseGlobalNavigationItem {
 
 export interface IGlobalNavigationLink extends IBaseGlobalNavigationItem {
   type?: 'link'
-  href?: string
+  hrefOptions?: { href: string; hrefTarget?: '_self' | '_blank' }
   hideLabel?: boolean
   onClick?: (e: MouseEvent) => void
 }
