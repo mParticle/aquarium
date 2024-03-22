@@ -43,11 +43,11 @@
   }
 
   .globalNavigation::-webkit-scrollbar-track {
-    background: var(--color-scrollbar-track);
+    background-color: var(--color-scrollbar-track);
   }
 
   .globalNavigation::-webkit-scrollbar-thumb {
-    background: var(--color-scrollbar-handle);
+    background-color: var(--color-scrollbar-handle);
   }
 }
 
