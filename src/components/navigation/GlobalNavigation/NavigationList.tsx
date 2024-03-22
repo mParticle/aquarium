@@ -6,6 +6,7 @@ import { Center } from 'src/components'
 import { type IGlobalNavigationItem } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IGlobalNavigationLink } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { Fragment } from 'react'
+import { buildLinkFromHrefOptions } from 'src/utils/utils'
 
 export interface INavigationListProps {
   items: IGlobalNavigationItem[]
@@ -43,11 +44,10 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
         ...linkItem,
         expandIcon: linkItem.isNestedMenu ? true : null,
         key: `${String(linkItem.label)}${j}`,
-        label: <a href={linkItem.href}>{linkItem.label}</a>,
+        label: buildLinkFromHrefOptions(linkItem.label, linkItem.hrefOptions),
       })),
     )
   }
-
   const navigationIcon = (
     <NavigationIcon
       icon={item.icon}
