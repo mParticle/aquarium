@@ -1,5 +1,11 @@
-import { Input } from 'src/components/data-entry/Input/Input'
+import { Input, type InputRef } from 'src/components/data-entry/Input'
+import { Button } from 'src/components/general/Button/Button'
 import { type Meta, type StoryObj } from '@storybook/react'
+import { ExampleStory } from 'src/utils/ExampleStory'
+import { useRef } from 'react'
+import { Space } from 'src/components'
+import { expect, userEvent } from '@storybook/test'
+
 const meta: Meta<typeof Input> = {
   title: 'Aquarium/Data Entry/Input',
   component: Input,
@@ -123,5 +129,66 @@ export const WithPrefixAndSuffix: Story = {
     prefix: '@',
     suffix: '.com',
     placeholder: 'Email',
+  },
+}
+
+export const WithFocusManagement: Story = {
+  args: {
+    value: 'Test value',
+  },
+  render: (props, meta) => {
+    const inputRef = useRef<InputRef>(null)
+
+    const focus = (cursor: 'start' | 'end' | 'all' = 'start') => {
+      inputRef.current?.focus({
+        cursor,
+      })
+    }
+
+    return (
+      <ExampleStory title={meta.name}>
+        <Space direction="vertical" style={{ width: '100%' }}>
+          <Space wrap>
+            <Button
+              onClick={() => {
+                focus('start')
+              }}
+            >
+              Focus at start
+            </Button>
+            <Button
+              onClick={() => {
+                focus('end')
+              }}
+            >
+              Focus at last
+            </Button>
+            <Button
+              onClick={() => {
+                focus('all')
+              }}
+            >
+              Focus to select all
+            </Button>
+          </Space>
+          <br />
+          <Input {...props} defaultValue="Welcome to the Aquarium" ref={inputRef} />
+        </Space>
+      </ExampleStory>
+    )
+  },
+  play: async story => {
+    const input = story.canvasElement.querySelector('input')
+    await expect(input).toBeInTheDocument()
+
+    const buttons = story.canvasElement.querySelectorAll('button')
+    await expect(buttons.length).toBe(3)
+
+    for (const button of buttons) {
+      input?.blur()
+      await userEvent.click(button)
+      await expect(input).toHaveFocus()
+      input?.blur()
+    }
   },
 }
