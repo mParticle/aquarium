@@ -49,9 +49,9 @@ const defaultTools: IGlobalNavigationItem[] = [
     icon: <ShieldKeyholeIcon />,
     type: 'menu',
     children: [
-      { label: 'option 1', href: '/' },
-      { label: 'option 2', href: '/' },
-      { label: 'option 3', href: '/' },
+      { label: 'option 1', hrefOptions: { href: '/' } },
+      { label: 'option 2', hrefOptions: { href: '/' } },
+      { label: 'option 3', hrefOptions: { href: '/' } },
     ],
   },
   {
@@ -59,15 +59,15 @@ const defaultTools: IGlobalNavigationItem[] = [
     icon: <HeartIcon />,
     type: 'menu',
     children: [
-      { label: 'option 1', href: '/' },
-      { label: 'option 2', href: '/' },
-      { label: 'option 3', href: '/' },
+      { label: 'option 1', hrefOptions: { href: '/' } },
+      { label: 'option 2', hrefOptions: { href: '/' } },
+      { label: 'option 3', hrefOptions: { href: '/' } },
     ],
   },
   {
     label: 'Tool 3',
     icon: <ConnectionsIcon />,
-    href: '/',
+    hrefOptions: { href: '/' },
   },
 ]
 
@@ -76,7 +76,7 @@ const defaultManagement: IGlobalNavigationItem[] = [
     label: 'Notifications',
     hideLabel: true,
     icon: <CloudIcon />,
-    href: '/',
+    hrefOptions: { href: '/' },
   },
   {
     label: 'Support',
@@ -84,9 +84,9 @@ const defaultManagement: IGlobalNavigationItem[] = [
     icon: <MessageQuestionIcon />,
     type: 'menu',
     children: [
-      { label: 'option 1', href: '/' },
-      { label: 'option 2', href: '/' },
-      { label: 'option 3', href: '/' },
+      { label: 'option 1', hrefOptions: { href: '/' } },
+      { label: 'option 2', hrefOptions: { href: '/' } },
+      { label: 'option 3', hrefOptions: { href: '/' } },
     ],
   },
   {
@@ -95,9 +95,9 @@ const defaultManagement: IGlobalNavigationItem[] = [
     icon: <GearIcon />,
     type: 'menu',
     children: [
-      { label: 'option 1', href: '/' },
-      { label: 'option 2', href: '/' },
-      { label: 'option 3', href: '/' },
+      { label: 'option 1', hrefOptions: { href: '/' } },
+      { label: 'option 2', hrefOptions: { href: '/' } },
+      { label: 'option 3', hrefOptions: { href: '/' } },
     ],
   },
 ]
@@ -195,9 +195,9 @@ const mpTools: IGlobalNavigationItem[] = [
     icon: <ChartLineIcon />,
     type: 'menu',
     children: [
-      { href: '/', label: 'Platform Trends' },
+      { hrefOptions: { href: '/' }, label: 'Platform Trends' },
       {
-        href: '/',
+        hrefOptions: { href: '/' },
         label: (
           <Space>
             System Alerts
@@ -205,8 +205,8 @@ const mpTools: IGlobalNavigationItem[] = [
           </Space>
         ),
       },
-      { href: '/', label: 'Event Forwarding' },
-      { href: '/', label: Beta('Observability') },
+      { hrefOptions: { href: '/' }, label: 'Event Forwarding' },
+      { hrefOptions: { href: '/' }, label: Beta('Observability') },
     ],
   },
   {
@@ -214,12 +214,12 @@ const mpTools: IGlobalNavigationItem[] = [
     icon: <DatabaseIcon />,
     type: 'menu',
     children: [
-      { href: '/', label: 'Catalog' },
-      { href: '/', label: 'Plans' },
-      { href: '/', label: 'Live Stream' },
-      { href: '/', label: Beta('User Groups') },
-      { href: '/', label: 'Calculated Attributes' },
-      { href: '/', label: 'Rules' },
+      { hrefOptions: { href: '/' }, label: 'Catalog' },
+      { hrefOptions: { href: '/' }, label: 'Plans' },
+      { hrefOptions: { href: '/' }, label: 'Live Stream' },
+      { hrefOptions: { href: '/' }, label: Beta('User Groups') },
+      { hrefOptions: { href: '/' }, label: 'Calculated Attributes' },
+      { hrefOptions: { href: '/' }, label: 'Rules' },
     ],
   },
   {
@@ -227,9 +227,9 @@ const mpTools: IGlobalNavigationItem[] = [
     icon: <UsersIcon />,
     type: 'menu',
     children: [
-      { href: '/', label: 'Real-time' },
-      { href: '/', label: 'Standard' },
-      { href: '/', label: 'Journeys' },
+      { hrefOptions: { href: '/' }, label: 'Real-time' },
+      { hrefOptions: { href: '/' }, label: 'Standard' },
+      { hrefOptions: { href: '/' }, label: 'Journeys' },
     ],
   },
   {
@@ -237,9 +237,9 @@ const mpTools: IGlobalNavigationItem[] = [
     icon: <ConnectionsIcon />,
     type: 'menu',
     children: [
-      { href: '/', label: 'Connect' },
-      { href: '/', label: 'Platform Filters' },
-      { href: '/', label: 'Feed Filters' },
+      { hrefOptions: { href: '/' }, label: 'Connect' },
+      { hrefOptions: { href: '/' }, label: 'Platform Filters' },
+      { hrefOptions: { href: '/' }, label: 'Feed Filters' },
     ],
   },
   {
@@ -247,16 +247,16 @@ const mpTools: IGlobalNavigationItem[] = [
     icon: <WrenchIcon />,
     type: 'menu',
     children: [
-      { href: '/', label: 'Inputs' },
-      { href: '/', label: 'Outputs' },
-      { href: '/', label: 'Data Warehouse' },
-      { href: '/', label: 'CRM' },
+      { hrefOptions: { href: '/' }, label: 'Inputs' },
+      { hrefOptions: { href: '/' }, label: 'Outputs' },
+      { hrefOptions: { href: '/' }, label: 'Data Warehouse' },
+      { hrefOptions: { href: '/' }, label: 'CRM' },
     ],
   },
   {
     label: 'Directory',
     icon: <GridIcon />,
-    href: '/',
+    hrefOptions: { href: '/' },
   },
 ]
 
@@ -268,9 +268,9 @@ const mpManagement: IGlobalNavigationItem[] = [
     icon: <MessageQuestionIcon />,
     type: 'menu',
     children: [
-      { label: 'option 1', href: '/' },
-      { label: 'option 2', href: '/' },
-      { label: 'option 3', href: '/' },
+      { label: 'option 1', hrefOptions: { href: '/' } },
+      { label: 'option 2', hrefOptions: { href: '/' } },
+      { label: 'option 3', hrefOptions: { href: '/' } },
     ],
   },
   {
@@ -279,9 +279,9 @@ const mpManagement: IGlobalNavigationItem[] = [
     icon: <GearIcon />,
     type: 'menu',
     children: [
-      { href: '/', label: 'Platform Settings' },
-      { href: '/', label: 'User Settings' },
-      { href: '/', label: <Button type="primary">Switch to Legacy UI</Button> },
+      { hrefOptions: { href: '/' }, label: 'Platform Settings' },
+      { hrefOptions: { href: '/' }, label: 'User Settings' },
+      { hrefOptions: { href: '/' }, label: <Button type="primary">Switch to Legacy UI</Button> },
     ],
   },
 ]
@@ -523,16 +523,17 @@ const indTools: IGlobalNavigationItem[] = [
     label: 'My Hub',
     icon: <GridIcon />,
     isActive: true,
+    hrefOptions: { href: '/' },
   },
   {
     label: 'Saved',
     icon: <FolderClosedIcon />,
-    href: '/',
+    hrefOptions: { href: '/' },
   },
   {
     label: 'Manage Data',
     icon: <DatabaseIcon />,
-    href: '/',
+    hrefOptions: { href: '/' },
   },
 ]
 
@@ -543,9 +544,9 @@ const indManagement: IGlobalNavigationItem[] = [
     icon: <MessageQuestionIcon />,
     type: 'menu',
     children: [
-      { label: 'option 1', href: '/' },
-      { label: 'option 2', href: '/' },
-      { label: 'option 3', href: '/' },
+      { label: 'option 1', hrefOptions: { href: '/' } },
+      { label: 'option 2', hrefOptions: { href: '/' } },
+      { label: 'option 3', hrefOptions: { href: '/' } },
     ],
   },
   {
@@ -554,9 +555,9 @@ const indManagement: IGlobalNavigationItem[] = [
     icon: <GearIcon />,
     type: 'menu',
     children: [
-      { label: 'option 1', href: '/' },
-      { label: 'option 2', href: '/' },
-      { label: 'option 3', href: '/' },
+      { label: 'option 1', hrefOptions: { href: '/' } },
+      { label: 'option 2', hrefOptions: { href: '/' } },
+      { label: 'option 3', hrefOptions: { href: '/' } },
     ],
   },
 ]
@@ -850,28 +851,28 @@ const cortexTools: IGlobalNavigationItem[] = [
   {
     label: 'Pipelines',
     icon: <CircleNodesIcon />,
-    href: '/',
+    hrefOptions: { href: '/' },
   },
   {
     label: 'Projects',
     icon: <SplitIcon />,
-    href: '/',
+    hrefOptions: { href: '/' },
     isActive: true,
   },
   {
     label: 'Data',
     icon: <DatabaseIcon />,
-    href: '/',
+    hrefOptions: { href: '/' },
   },
   {
     label: 'API',
     icon: <CloudIcon />,
-    href: '/',
+    hrefOptions: { href: '/' },
   },
   {
     label: 'Insights',
     icon: <LightBulbIcon />,
-    href: '/',
+    hrefOptions: { href: '/' },
   },
 ]
 
@@ -882,9 +883,9 @@ const cortexManagement: IGlobalNavigationItem[] = [
     icon: <MessageQuestionIcon />,
     type: 'menu',
     children: [
-      { label: 'option 1', href: '/' },
-      { label: 'option 2', href: '/' },
-      { label: 'option 3', href: '/' },
+      { label: 'option 1', hrefOptions: { href: '/' } },
+      { label: 'option 2', hrefOptions: { href: '/' } },
+      { label: 'option 3', hrefOptions: { href: '/' } },
     ],
   },
   {
@@ -893,9 +894,9 @@ const cortexManagement: IGlobalNavigationItem[] = [
     icon: <GearIcon />,
     type: 'menu',
     children: [
-      { label: 'option 1', href: '/' },
-      { label: 'option 2', href: '/' },
-      { label: 'option 3', href: '/' },
+      { label: 'option 1', hrefOptions: { href: '/' } },
+      { label: 'option 2', hrefOptions: { href: '/' } },
+      { label: 'option 3', hrefOptions: { href: '/' } },
     ],
   },
 ]
