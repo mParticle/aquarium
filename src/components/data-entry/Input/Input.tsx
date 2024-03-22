@@ -2,13 +2,18 @@ import { Input as AntInput } from 'antd'
 import { type InputProps as AntInputProps } from 'antd'
 import { ConfigProvider } from 'src/components'
 import { type InputRef } from 'antd'
-import { forwardRef, type Ref } from 'react'
+import { forwardRef, type ForwardRefExoticComponent, type Ref, type RefAttributes } from 'react'
 
-export interface IInputProps extends AntInputProps {}
+interface IInputProps extends AntInputProps {}
 
-export { type InputRef }
+type CompoundedComponent = ForwardRefExoticComponent<IInputProps & RefAttributes<InputRef>> & {
+  Group: typeof AntInput.Group
+  Search: typeof AntInput.Search
+  TextArea: typeof AntInput.TextArea
+  Password: typeof AntInput.Password
+}
 
-const Input = (props: IInputProps, ref: Ref<InputRef>) => {
+const InternalInput = (props: IInputProps, ref: Ref<InputRef>) => {
   return (
     <ConfigProvider>
       <AntInput {...props} ref={ref} />
@@ -16,5 +21,12 @@ const Input = (props: IInputProps, ref: Ref<InputRef>) => {
   )
 }
 
-const InputWithRef = forwardRef(Input)
-export { InputWithRef as InternalInput }
+const InternalInputWithRef = forwardRef(InternalInput)
+const Input = InternalInputWithRef as CompoundedComponent
+
+Input.Group = AntInput.Group
+Input.Password = AntInput.Password
+Input.Search = AntInput.Search
+Input.TextArea = AntInput.TextArea
+
+export { Input, type InputRef, type IInputProps }

@@ -1,4 +1,4 @@
-import { Input, type InputRef } from 'src/components/data-entry/Input'
+import { Input, type InputRef } from 'src/components'
 import { Button } from 'src/components/general/Button/Button'
 import { type Meta, type StoryObj } from '@storybook/react'
 import { ExampleStory } from 'src/utils/ExampleStory'
@@ -152,22 +152,19 @@ export const WithFocusManagement: Story = {
             <Button
               onClick={() => {
                 focus('start')
-              }}
-            >
+              }}>
               Focus at start
             </Button>
             <Button
               onClick={() => {
                 focus('end')
-              }}
-            >
+              }}>
               Focus at last
             </Button>
             <Button
               onClick={() => {
                 focus('all')
-              }}
-            >
+              }}>
               Focus to select all
             </Button>
           </Space>
