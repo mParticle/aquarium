@@ -18,11 +18,7 @@ export function NavigationList(props: INavigationListProps) {
       {props.items.map((item, i) => (
         <Fragment key={i}>
           {item.type === 'menu' ? (
-            <Menu
-              key={i}
-              className="globalNavigation__menu"
-              items={[generateMenuItem(item, i)]}
-            />
+            <Menu key={i} className="globalNavigation__menu" items={[generateMenuItem(item, i)]} />
           ) : (
             <NavigationItem {...item} type="link" key={i} />
           )}
