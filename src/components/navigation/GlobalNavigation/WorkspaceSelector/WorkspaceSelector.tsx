@@ -97,7 +97,6 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
   )
 
   const activeWorkspace = useMemo(() => {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return sortedOrgs
       .flatMap<INavigationWorkspace>(org => {
         let flattenedSelectors: INavigationWorkspace[] = []
@@ -110,7 +109,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
         return flattenedSelectors
       })
-      .find(workspaceCandidate => workspaceCandidate.isActive)!
+      .find(workspaceCandidate => workspaceCandidate.isActive)
   }, [sortedOrgs])
 
   const workspaceInitials = getInitials(activeWorkspace?.label)

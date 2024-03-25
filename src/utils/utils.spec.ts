@@ -1,5 +1,5 @@
 import { getInitials, getOS } from './utils'
-import { expect, describe, it, beforeEach } from 'vitest'
+import { expect, describe, it, beforeEach, vi } from 'vitest'
 
 describe('Testing utils', () => {
   describe('Testing getInitials', () => {
@@ -24,16 +24,14 @@ describe('Testing utils', () => {
 
   describe('Testing getOS', () => {
     beforeEach(() => {
-      // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
-      global.navigator = {} as Navigator
+      vi.stubGlobal('navigator', { userAgent: '' })
     })
 
     it('it should return "Windows" when the user agent includes "Win"', () => {
       // arrange
-      Object.defineProperty(navigator, 'userAgent', {
-        value: 'Windows',
-        configurable: true,
-      })
+      global.navigator = {
+        userAgent: 'Windows',
+      } as Navigator
 
       // act
       const actualOS = getOS()
@@ -44,10 +42,9 @@ describe('Testing utils', () => {
 
     it('it should return "Macintosh" when the user agent includes "Mac"', () => {
       // arrange
-      Object.defineProperty(navigator, 'userAgent', {
-        value: 'Macintosh',
-        configurable: true,
-      })
+      global.navigator = {
+        userAgent: 'Macintosh',
+      } as Navigator
 
       // act
       const actualOS = getOS()
