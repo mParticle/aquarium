@@ -1,16 +1,15 @@
 import { Menu } from 'src/components'
-import type { MenuItemType } from 'antd/es/menu/hooks/useItems'
 import type { MenuItemGroupType } from 'antd/es/menu/hooks/useItems'
 import { NavigationIcon } from 'src/components/navigation/GlobalNavigation/NavigationIcon'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
 import { Center } from 'src/components'
-import { type IGlobalNavigationManagement } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
-import { type IGlobalNavigationTool } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
+import { type IGlobalNavigationItem } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IGlobalNavigationLink } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { Fragment } from 'react'
+import { buildLinkFromHrefOptions } from 'src/utils/utils'
 
 export interface INavigationListProps {
-  items: Array<IGlobalNavigationManagement | IGlobalNavigationTool>
+  items: IGlobalNavigationItem[]
 }
 
 export function NavigationList(props: INavigationListProps) {
@@ -18,14 +17,10 @@ export function NavigationList(props: INavigationListProps) {
     <Center vertical>
       {props.items.map((item, i) => (
         <Fragment key={i}>
-          {item.type === 'link' && <NavigationItem {...item} key={i} />}
-          {item.type === 'menu' && (
-            <Menu
-              key={i}
-              expandIcon={item.isNestedMenu ? true : null}
-              items={[generateMenuItem(item, i)]}
-              className="globalNavigation__menu"
-            />
+          {item.type === 'menu' ? (
+            <Menu key={i} expandIcon={null} className="globalNavigation__menu" items={[generateMenuItem(item, i)]} />
+          ) : (
+            <NavigationItem {...item} type="link" key={i} />
           )}
         </Fragment>
       ))}
@@ -33,31 +28,35 @@ export function NavigationList(props: INavigationListProps) {
   )
 }
 
-function generateMenuItem(item: IGlobalNavigationManagement | IGlobalNavigationTool, i: number) {
-  let children: Array<MenuItemType | MenuItemGroupType> | undefined
+function generateMenuItem(item: IGlobalNavigationItem, i: number) {
+  const children: Array<IGlobalNavigationLink | MenuItemGroupType> = [
+    { label: item.label, type: 'group', key: String(item.label) + '_groupTitle' },
+  ]
 
-  if (item.type === 'menu' && item.children) {
-    children = item.children.map((child, j) => ({
-      expandIcon: child.isNestedMenu ? true : null,
-      key: `${String(child.label)}${j}`,
-      ...child,
-    }))
-
-    children.unshift({ label: item.label, type: 'group', key: item.label + '_groupTitle' })
+  if (item.type === 'menu') {
+    children.push(
+      ...item.children.map((linkItem, j) => ({
+        ...linkItem,
+        expandIcon: null,
+        key: `${String(linkItem.label)}${j}`,
+        label: buildLinkFromHrefOptions(linkItem.label, linkItem.hrefOptions),
+      })),
+    )
   }
+  const navigationIcon = (
+    <NavigationIcon
+      icon={item.icon}
+      label={item.label}
+      onClick={(item as IGlobalNavigationLink).onClick}
+      hideLabel={item.hideLabel}
+    />
+  )
 
   return {
-    icon: (
-      <NavigationIcon
-        icon={item.icon}
-        label={item.label}
-        onClick={(item as IGlobalNavigationLink).onClick}
-        hideLabel={item.hideLabel}
-      />
-    ),
+    icon: navigationIcon,
     popupClassName: 'globalNavigation__popup',
     className: 'globalNavigation__item' + (item.isActive ? ' globalNavigation__item--active' : ''),
-    key: `${item.label}${i}`,
+    key: `${String(item.label)}${i}`,
     children,
   }
 }

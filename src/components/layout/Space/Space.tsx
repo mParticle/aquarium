@@ -11,3 +11,5 @@ export const Space = (props: ISpaceProps) => {
     </ConfigProvider>
   )
 }
+
+Space.Compact = AntSpace.Compact

@@ -1,11 +1,10 @@
-name: Unit Tests
+name: Compile Typescript
 
 on: push
 
 jobs:
-  test:
-    name: Unit Tests
-    timeout-minutes: 5
+  tsc:
+    name: typescript
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,5 +19,5 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Run Unit Tests
-        run: npm run test-unit
+      - name: Run Typescript
+        run: tsc

@@ -11,3 +11,5 @@ export const Image = (props: IImageProps) => {
     </ConfigProvider>
   )
 }
+
+Image.PreviewGroup = AntImage.PreviewGroup

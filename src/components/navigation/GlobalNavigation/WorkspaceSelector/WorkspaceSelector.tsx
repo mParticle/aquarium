@@ -97,7 +97,6 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
   )
 
   const activeWorkspace = useMemo(() => {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return sortedOrgs
       .flatMap<INavigationWorkspace>(org => {
         let flattenedSelectors: INavigationWorkspace[] = []
@@ -110,7 +109,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
         return flattenedSelectors
       })
-      .find(workspaceCandidate => workspaceCandidate.isActive)!
+      .find(workspaceCandidate => workspaceCandidate.isActive)
   }, [sortedOrgs])
 
   const workspaceInitials = getInitials(activeWorkspace?.label)
@@ -119,12 +118,16 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
   // This seems to be the only way of consistently focusing the input on the first open
   // We should find a better way to do this and not rely on setTimout
-  const focusOnInput = (open: boolean) => {
+  const focusOnInput = (open: boolean): void => {
     if (open) {
       setTimeout(() => {
         inputRef.current?.focus({
           cursor: 'all',
         })
+      }, 0)
+    } else {
+      setTimeout(() => {
+        inputRef.current?.blur()
       }, 0)
     }
   }
@@ -148,7 +151,11 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
           menuItems={menuItems}
         />
       }>
-      <div className="globalNavigation__item workspaceSelector__menuItem">
+      <div
+        className="globalNavigation__item workspaceSelector__menuItem"
+        onClick={e => {
+          focusOnInput(true)
+        }}>
         <Avatar {...props.avatarOptions} className="workspaceSelector__avatar">
           {getInitialsIfNoImage(hasImage, workspaceInitials)}
         </Avatar>

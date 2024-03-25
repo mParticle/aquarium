@@ -11,7 +11,7 @@ export { Slider, type ISliderProps } from './data-entry/Slider/Slider'
 export { Cascader, type ICascaderProps } from './data-entry/Cascader/Cascader'
 export { DatePicker, type IDatePickerProps } from './data-entry/DatePicker/DatePicker'
 export { Checkbox, type ICheckboxProps } from './data-entry/Checkbox/Checkbox'
-export { Input, type IInputProps } from './data-entry/Input/Input'
+export { Input, type IInputProps, type InputRef } from './data-entry/Input/Input'
 export { InputNumber, type IInputNumberProps } from './data-entry/InputNumber/InputNumber'
 export { Switch, type ISwitchProps } from './data-entry/Switch/Switch'
 export { Upload, type IUploadProps } from './data-entry/Upload/Upload'
@@ -47,9 +47,9 @@ export { Watermark, type IWatermarkProps } from './feedback/Watermark/Watermark'
 export { Popconfirm, type IPopconfirmProps } from './feedback/Popconfirm/Popconfirm'
 export { Drawer, type IDrawerProps } from './feedback/Drawer/Drawer'
 export { Modal, type IModalProps } from './feedback/Modal/Modal'
-export { Notification, type INotificationProps } from './feedback/Notification/Notification'
+export { Notification, type INotificationProps, notification } from './feedback/Notification/Notification'
 export { Alert, type IAlertProps } from './feedback/Alert/Alert'
-export { Message, type IMessageProps } from './feedback/Message/Message'
+export { Message, type IMessageProps, message } from './feedback/Message/Message'
 export { LoadingModal, type ILoadingModalProps } from './feedback/LoadingModal/LoadingModal'
 export { Flex, type IFlexProps } from './layout/Flex/Flex'
 export { Center } from './layout/Center/Center'
@@ -81,8 +81,7 @@ export {
 } from './navigation/GlobalNavigation/GlobalNavigation'
 export type {
   IBaseGlobalNavigationItem,
-  IGlobalNavigationManagement,
-  IGlobalNavigationTool,
+  IGlobalNavigationItem,
   IGlobalNavigationLogo,
 } from './navigation/GlobalNavigation/GlobalNavigationItems'
 export type {

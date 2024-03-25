@@ -11,3 +11,5 @@ export const Timeline = (props: ITimelineProps) => {
     </ConfigProvider>
   )
 }
+
+Timeline.Item = AntTimeline.Item

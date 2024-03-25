@@ -15,3 +15,6 @@ export const Select = (props: ISelectProps) => {
     </ConfigProvider>
   )
 }
+
+Select.Option = AntSelect.Option
+Select.OptGroup = AntSelect.OptGroup

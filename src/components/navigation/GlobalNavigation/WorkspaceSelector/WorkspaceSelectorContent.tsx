@@ -1,7 +1,6 @@
 import { type ChangeEvent, type RefObject } from 'react'
-import { Input, type InputRef } from 'antd'
 import type { IWorkspaceSelectorProps } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelector'
-import type { IWorkspaceSelectorDisplayItem } from 'src/components'
+import { Input, type InputRef, type IWorkspaceSelectorDisplayItem } from 'src/components'
 import { WorkspaceSelectorContentItems } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorContentItems'
 import { WorkspaceNoResults } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceNoResults'
 import { WorkspaceSignout } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSignout'
@@ -29,7 +28,7 @@ export function WorkspaceSelectorContent(props: WorkspaceSelectorContentProps) {
             onChange={onSearch}
             value={searchTerm}
             ref={inputRef}
-            onClick={e => {
+            onClick={(e: React.MouseEvent<HTMLInputElement>) => {
               e.preventDefault()
               e.stopPropagation()
             }}

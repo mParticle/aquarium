@@ -12,16 +12,15 @@ import { NavigationSearch } from 'src/components/navigation/GlobalNavigation/Nav
 import { NavigationList } from 'src/components/navigation/GlobalNavigation/NavigationList'
 import { NavigationCreate } from 'src/components/navigation/GlobalNavigation/NavigationCreate'
 import { WorkspaceSelector } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelector'
-import { type IGlobalNavigationManagement } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
-import { type IGlobalNavigationTool } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
+import { type IGlobalNavigationItem } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import MpLogo from 'src/assets/svg/mpLogo.svg?react'
 import SignoutIcon from 'src/assets/svg/signout.svg?react'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
 
 export interface IGlobalNavigationProps {
   logo: IGlobalNavigationLogo
-  tools: IGlobalNavigationTool[]
-  management: IGlobalNavigationManagement[]
+  tools: IGlobalNavigationItem[]
+  management: IGlobalNavigationItem[]
 
   // eslint-disable-next-line no-undef
   orgs?: INavigationOrg[]

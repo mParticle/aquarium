@@ -1,34 +1,48 @@
+import { type MouseEvent, type ReactNode } from 'react'
 import { NavigationIcon } from 'src/components/navigation/GlobalNavigation/NavigationIcon'
 import { NavigationList } from 'src/components/navigation/GlobalNavigation/NavigationList'
-import { Tooltip } from 'src/components'
-import { type ReactNode } from 'react'
+import { type IGlobalNavigationItem, Tooltip } from 'src/components'
+import { buildLinkFromHrefOptions, type HrefOptions } from 'src/utils/utils'
 
 export interface INavigationItemProps {
   type: 'link' | 'menu'
-  icon: ReactNode
-  label: string
+  icon?: ReactNode
+  label: ReactNode
   hideLabel?: boolean
-  items? // menu only
+  items?: IGlobalNavigationItem[]
   isActive?: boolean
-  onClick?: (e) => void // link only
+  onClick?: (e: MouseEvent) => void // link only
+  hrefOptions?: HrefOptions // link only
 }
 
 export function NavigationItem(props: INavigationItemProps) {
-  return (
-    <>
-      {props.type === 'link' && (
-        <Tooltip title={props.hideLabel ? props.label : undefined} placement="right">
-          <NavigationIcon
-            className={`globalNavigation__item ${props.isActive ? ' globalNavigation__item--active' : ''}`}
-            icon={props.icon}
-            label={props.label}
-            onClick={props.onClick}
-            hideLabel={props.hideLabel}
-          />
-        </Tooltip>
-      )}
+  if (props.type === 'menu' && props.items) {
+    return <NavigationList items={props.items} />
+  }
 
-      {props.type === 'menu' && <NavigationList items={props.items} />}
-    </>
+  const navigationIcon = (
+    <NavigationIcon
+      className={`globalNavigation__item globalNavigation__link ${
+        props.isActive ? ' globalNavigation__item--active' : ''
+      }`}
+      icon={props.icon}
+      label={props.label}
+      onClick={props.onClick}
+      hideLabel={props.hideLabel}
+    />
   )
+
+  const resultNavigationIcon = props.hrefOptions
+    ? buildLinkFromHrefOptions(navigationIcon, props.hrefOptions)
+    : navigationIcon
+
+  if (props.hideLabel) {
+    return (
+      <Tooltip title={props.label} placement="right">
+        {resultNavigationIcon}
+      </Tooltip>
+    )
+  }
+
+  return resultNavigationIcon
 }

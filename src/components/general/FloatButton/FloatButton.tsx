@@ -11,3 +11,6 @@ export const FloatButton = (props: IFloatButtonProps) => {
     </ConfigProvider>
   )
 }
+
+FloatButton.BackTop = AntFloatButton.BackTop
+FloatButton.Group = AntFloatButton.Group

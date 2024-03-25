@@ -4,7 +4,7 @@ import { type ReactNode } from 'react'
 interface INavigationIconProps {
   className?: string
   icon: ReactNode
-  label: string
+  label: ReactNode
   hideLabel?: boolean
   onClick?: (e: React.MouseEvent) => void
 }

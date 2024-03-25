@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 20 Mar 2024 19:18:57 GMT
+ * Generated on Thu, 21 Mar 2024 19:23:25 GMT
  */
 
 export const Blue = '#1677ff'
@@ -51,7 +51,7 @@ export const OpacityImage = 1
 export const Wireframe = false
 export const Motion = true
 export const ColorLinkHover = '#ab8eff'
-export const ControlOutline = 'rgba(0.21176470816135406, 0, 0.8196078538894653, 0.10000000149011612)'
+export const ControlOutline = 'rgba(0.21176470816135406, 0, 0.8196078538894653, 0.1)'
 export const ColorWarningOutline = '#fffbe6'
 export const ColorErrorOutline = '#fff1f0'
 export const ControlItemBgHover = '#f8f6fb'
