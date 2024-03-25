@@ -37,21 +37,18 @@ We use semantic-release for releasing new versions of the library.
 ## Releasing development versions
 
 To test development version of the Aquarium we use the `dev` branch on Github and `dev` distribution channel on npm.
-This allows us to install development version of the library by running the following command:
+This allows us to install a version of the library by running the following command:
 
 ```
 yarn add @mparticle/aquarium@dev
 ```
-
-## Merging development versions into main
-
-TODO
 
 ## Commit conventions and PR titles
 
 - We use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) to help automating the release process. Both PR titles and commit messages should follow this convention.
 - [This repo is commitizen friendly](https://github.com/commitizen/cz-cli?tab=readme-ov-file#using-the-command-line-tool) so we can use `git cz` to commit changes.
   `npx cz` is also available if you don't have commitizen installed globally.
+- We also have a [commitlint](https://commitlint.js.org/) setup to enforce the commit message format.
 
 The standard format for commit messages is as follows:
 
