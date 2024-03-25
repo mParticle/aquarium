@@ -95,7 +95,7 @@ export const ExampleCheckableTagPrimary: Story = {
       void expect(tag.classList.contains('ant-tag-checkable-checked')).toBeTruthy()
       await userEvent.click(tag)
       void expect(tag.classList.contains('ant-tag-checkable-checked')).toBeFalsy()
-    }else {
+    } else {
       throw new Error('Tag not found')
     }
   },
