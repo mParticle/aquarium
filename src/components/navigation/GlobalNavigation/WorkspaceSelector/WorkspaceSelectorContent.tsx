@@ -28,7 +28,7 @@ export function WorkspaceSelectorContent(props: WorkspaceSelectorContentProps) {
             onChange={onSearch}
             value={searchTerm}
             ref={inputRef}
-            onClick={(e: MouseEvent) => {
+            onClick={(e: React.MouseEvent<HTMLInputElement>) => {
               e.preventDefault()
               e.stopPropagation()
             }}
