@@ -90,10 +90,14 @@ export const ExampleCheckableTagPrimary: Story = {
   },
   play: async context => {
     const tag = context.canvasElement.querySelector('.ant-tag.ant-tag-checkable')
-    void expect(tag).not.toBeNull()
-    void expect(tag?.classList.contains('ant-tag-checkable-checked')).toBeTruthy()
-    await userEvent.click(tag)
-    void expect(tag?.classList.contains('ant-tag-checkable-checked')).toBeFalsy()
+    if (tag) {
+      void expect(tag).not.toBeNull()
+      void expect(tag.classList.contains('ant-tag-checkable-checked')).toBeTruthy()
+      await userEvent.click(tag)
+      void expect(tag.classList.contains('ant-tag-checkable-checked')).toBeFalsy()
+    }else {
+      throw new Error('Tag not found')
+    }
   },
 }
 

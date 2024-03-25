@@ -98,7 +98,12 @@ export const ExampleCheckAll: Story = {
 
   play: async context => {
     void expect(context.canvasElement.querySelectorAll('.ant-checkbox-checked').length).toBe(2)
-    await userEvent.click(context.canvasElement.querySelector('.ant-checkbox-indeterminate'))
+    const checkboxIndeterminate = context.canvasElement.querySelector('.ant-checkbox-indeterminate')
+    if (checkboxIndeterminate) {
+      await userEvent.click(checkboxIndeterminate)
+    } else {
+      throw new Error('Checkbox Indeterminate not found')
+    }
     void expect(context.canvasElement.querySelectorAll('.ant-checkbox-checked').length).toBe(4)
   },
 }
