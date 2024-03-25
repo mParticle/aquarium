@@ -42,11 +42,6 @@ export const NavList: Story = {
           { label: 'b', type: 'link' },
           {
             label: 'c',
-            type: 'menu',
-            children: [
-              { label: 'sub1', type: 'link' },
-              { label: 'sub2', type: 'link' },
-            ],
           },
         ],
       },

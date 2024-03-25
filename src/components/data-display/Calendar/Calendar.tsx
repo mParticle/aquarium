@@ -1,8 +1,8 @@
-import { Calendar as AntCalendar } from 'antd'
-import { type CalendarProps as AntCalendarProps } from 'antd'
+import { Calendar as AntCalendar, type CalendarProps as AntCalendarProps } from 'antd'
+import { type Dayjs } from 'dayjs'
 import { ConfigProvider } from 'src/components'
 
-export interface ICalendarProps extends AntCalendarProps {}
+export interface ICalendarProps extends AntCalendarProps<Dayjs> {}
 
 export const Calendar = (props: ICalendarProps) => {
   return (

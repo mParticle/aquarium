@@ -50,7 +50,11 @@ type Story = StoryObj<typeof Button>
 export const Primary: Story = {
   play: async context => {
     const button = context.canvasElement.querySelector('button')
-    await userEvent.click(button) // Click the button
+    if (button) {
+      await userEvent.click(button) // Click the button
+    } else {
+      throw new Error('Button not found')
+    }
   },
 }
 
