@@ -2,7 +2,6 @@ import { type ReactNode } from 'react'
 import { cloneElement } from 'react'
 import { useState } from 'react'
 import { type Meta, type StoryObj } from '@storybook/react'
-import { SmileOutlined } from '@ant-design/icons'
 import { Button } from 'src/components/general/Button/Button'
 import { Dropdown, type IDropdownProps } from 'src/components/navigation/Dropdown/Dropdown'
 import { ExampleStory } from 'src/utils/ExampleStory'
@@ -32,7 +31,7 @@ const menu: IDropdownProps['menu'] = {
           2nd menu item (disabled)
         </a>
       ),
-      icon: <SmileOutlined />,
+      icon: <AlicornIcon />,
       disabled: true,
     },
     {
@@ -181,7 +180,7 @@ export const ExampleBasic: Story = {
             2nd menu item (disabled)
           </a>
         ),
-        icon: <SmileOutlined />,
+        icon: <AlicornIcon />,
         disabled: true,
       },
       {
