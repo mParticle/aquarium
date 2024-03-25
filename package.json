@@ -39,7 +39,7 @@
     "@storybook/builder-vite": "7.6.17",
     "@storybook/jest": "0.2.3",
     "@storybook/react": "7.6.17",
-    "@storybook/react-vite": "8.0.2",
+    "@storybook/react-vite": "8.0.4",
     "@storybook/test": "8.0.4",
     "@storybook/test-runner": "0.17.0",
     "@storybook/testing-library": "0.2.2",
