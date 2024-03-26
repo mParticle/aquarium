@@ -13,14 +13,13 @@ jobs:
         id: is-semantic
         if: >
           startsWith(github.event.pull_request.head.ref, 'feat/') ||
+          startsWith(github.event.pull_request.head.ref, 'ci/') ||
           startsWith(github.event.pull_request.head.ref, 'fix/') ||
-          startsWith(github.event.pull_request.head.ref, 'perf/') ||
           startsWith(github.event.pull_request.head.ref, 'docs/') ||
           startsWith(github.event.pull_request.head.ref, 'test/') ||
           startsWith(github.event.pull_request.head.ref, 'refactor/') ||
           startsWith(github.event.pull_request.head.ref, 'style/') ||
           startsWith(github.event.pull_request.head.ref, 'build/') ||
-          startsWith(github.event.pull_request.head.ref, 'ci/') ||
           startsWith(github.event.pull_request.head.ref, 'chore/') ||
           startsWith(github.event.pull_request.head.ref, 'revert/') ||
           startsWith(github.event.pull_request.head.ref, 'dependabot/') ||
@@ -43,14 +42,13 @@ jobs:
           echo 'Pull request branch name, ${{github.event.pull_request.head.ref}} is not valid.'
           echo 'branch name must start with one of:'
           echo '    feat/,'
+          echo '    ci/,'
           echo '    fix/,'
-          echo '    perf/,'
           echo '    docs/,'
           echo '    test/,'
           echo '    refactor/,'
           echo '    style/,'
           echo '    build/,'
-          echo '    ci/,'
           echo '    chore/,'
           echo '    revert/,'
           echo '    dependabot/,'
