@@ -39,7 +39,7 @@ jobs:
         if: ${{ steps.is-semantic.outputs.isSemantic != 'true'}}
         run: |
           echo ${{ steps.is-semantic.outputs.isSemantic }}
-          echo 'Pull request branch name, ${{github.event.pull_request.head.ref}} is not valid.'
+          echo 'Pull request branch name is not valid.'
           echo 'branch name must start with one of:'
           echo '    feat/,'
           echo '    ci/,'
