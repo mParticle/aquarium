@@ -16,7 +16,7 @@ module.exports = {
     extraFileExtensions: ['.md', '.css'],
   },
   plugins: ['react', 'react-hooks'],
-  ignorePatterns: ['.eslintrc.js'],
+  ignorePatterns: ['.eslintrc.js', 'commitlint.config.js'],
   rules: {
     semi: 'off',
     '@typescript-eslint/explicit-function-return-type': [
