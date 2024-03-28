@@ -5,14 +5,14 @@ type IconColor = 'primary' | 'success' | 'warning' | 'error' | 'info' | 'white' 
 type IconSize = 'xxl' | 'xl' | 'lg' | 'md' | 'ms' | 'sm' | 'xs' | 'xxs'
 
 export interface IIconProps {
-  iconName: keyof typeof Icons
+  name: keyof typeof Icons
   color?: IconColor
   size?: IconSize
 }
 
 export const Icon = (props: IIconProps) => {
-  const IconName = Icons[props.iconName]
-  const iconId = `icon-${props.iconName.toLowerCase()}`
+  const IconName = Icons[props.name]
+  const iconId = `icon-${props.name.toLowerCase()}`
 
   let className = `${iconId} icon-size-${props.size ?? 'lg'}`
 
@@ -20,5 +20,5 @@ export const Icon = (props: IIconProps) => {
     className += ` icon-color-${props.color.toLowerCase()}`
   }
 
-  return <IconName className={className} data-test={iconId}/>
+  return <IconName className={className} data-test={iconId} />
 }

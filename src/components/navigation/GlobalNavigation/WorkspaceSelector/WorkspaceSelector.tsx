@@ -11,7 +11,6 @@ import {
   Popover,
 } from 'src/components'
 import { Flex } from 'src/components'
-import { CheckIcon } from 'src/components'
 import React, { type ChangeEvent, useRef, useState } from 'react'
 import { useCallback } from 'react'
 import { useEffect } from 'react'
@@ -199,9 +198,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
             label: (
               <Flex justify="space-between" align="center">
                 {workspace.label}
-                {workspace.isActive && (
-                  <Icon iconName="check" size="sm" color="text" />
-                )}
+                {workspace.isActive && <Icon name="check" size="sm" color="text" />}
               </Flex>
             ),
             id: workspace.id,

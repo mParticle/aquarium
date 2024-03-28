@@ -2,12 +2,10 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { Collapse } from 'src/components/data-display/Collapse/Collapse'
 import { ExampleStory } from 'src/utils/ExampleStory'
 import { type ICollapseProps } from 'src/components/data-display/Collapse/Collapse'
-import { Divider, Space } from 'src/components'
-import { SplitIcon } from 'src/components'
+import { Divider, Icon, Space } from 'src/components'
 import { theme } from 'antd'
 import { Select } from 'src/components'
 import { useState } from 'react'
-import { GearIcon } from 'src/components'
 
 const text = `
   A dog is a type of domesticated animal.
@@ -276,7 +274,7 @@ export const ExampleCustomPanel: Story = {
         <Collapse
           bordered={false}
           defaultActiveKey={['1']}
-          expandIcon={({ isActive }) => <SplitIcon rotate={isActive ? 90 : 0} />}
+          expandIcon={({ isActive }) => <Icon name={isActive ? 'split' : 'add'} />}
           style={{ background: token.colorBgContainer }}
           items={getItems(panelStyle)}
         />
@@ -336,12 +334,13 @@ export const ExampleExtraNode: Story = {
     }
 
     const genExtra = () => (
-      <GearIcon
+      <span
         onClick={event => {
           // If you don't want click extra trigger collapse, you can prevent this:
           event.stopPropagation()
-        }}
-      />
+        }}>
+        <Icon name="gear" />
+      </span>
     )
 
     const items: ICollapseProps['items'] = [
