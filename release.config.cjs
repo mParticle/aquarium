@@ -1,5 +1,5 @@
 module.exports = {
-  branches: ['main', { name: 'dev', channel: 'dev', prerelease: 'dev' }],
+  branches: ['main', 'next'],
   tagFormat: 'v${version}',
   repositoryUrl: 'https://github.com/mParticle/aquarium',
   plugins: [
@@ -27,12 +27,6 @@ module.exports = {
         preset: 'angular',
       },
     ],
-    [
-      '@semantic-release/changelog',
-      {
-        changelogFile: 'CHANGELOG.md',
-      },
-    ],
     ['@semantic-release/npm'],
     [
       '@semantic-release/github',
@@ -40,12 +34,5 @@ module.exports = {
         assets: ['dist/**'],
       },
     ],
-    [
-      '@semantic-release/git', 
-      {
-        'assets': ['package.json', 'package-lock.json', 'CHANGELOG.md'],
-        'message': 'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
-      }
-    ]
   ],
 }

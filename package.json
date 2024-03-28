@@ -1,6 +1,6 @@
 {
   "name": "@mparticle/aquarium",
-  "version": "1.9.6-dev.1",
+  "version": "1.6.2",
   "description": "mParticle Component Library",
   "license": "Apache-2.0",
   "keywords": [
@@ -29,10 +29,7 @@
     "react-dom": ">=17.0.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "19.2.1",
-    "@commitlint/config-conventional": "19.1.0",
-    "@semantic-release/changelog": "6.0.3",
-    "@semantic-release/git": "10.0.1",
+    "storybook": "8.0.0",
     "@storybook/addon-essentials": "8.0.0",
     "@storybook/addon-interactions": "8.0.0",
     "@storybook/addon-links": "8.0.0",
@@ -57,7 +54,6 @@
     "http-server": "14.1.1",
     "husky": "8.0.3",
     "prettier": "3.1.1",
-    "storybook": "8.0.0",
     "stylelint": "16.2.0",
     "stylelint-config-recommended": "14.0.0",
     "stylelint-config-standard": "36.0.0",
