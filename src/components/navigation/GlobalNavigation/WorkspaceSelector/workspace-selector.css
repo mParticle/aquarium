@@ -86,15 +86,13 @@
 .workspaceSelector__workspaceName.workspaceSelector__workspaceName--active,
 .workspaceSelector__workspaceName:active {
   background: var(--control-item-bg-active) !important;
+    
+    .icon-check {
+      margin-right: var(--margin);
+      margin-left: var(--margin-xs);
+  }
 }
 
-.workspaceSelector__activeIcon {
-  margin-right: var(--margin);
-  margin-left: var(--margin-xs);
-  width: var(--size-sm);
-  min-width: var(--size-sm);
-  height: var(--size-sm);
-}
 
 .workspaceSelector__orgName,
 .workspaceSelector__accountName {

@@ -1,0 +1,76 @@
+.icon-size-xxl {
+  width: var(--size-xxl);
+  min-width: var(--size-xxl);
+  height: var(--size-xxl);
+}
+
+.icon-size-xl {
+  width: var(--size-xl);
+  min-width: var(--size-xl);
+  height: var(--size-xl);
+}
+
+.icon-size-lg {
+  width: var(--size-lg);
+  min-width: var(--size-lg);
+  height: var(--size-lg);
+}
+
+.icon-size-md {
+  width: var(--size-md);
+  min-width: var(--size-md);
+  height: var(--size-md);
+}
+
+.icon-size-ms {
+  width: var(--size-ms);
+  min-width: var(--size-ms);
+  height: var(--size-ms);
+}
+
+.icon-size-sm {
+  width: var(--size-sm);
+  min-width: var(--size-sm);
+  height: var(--size-sm);
+}
+
+.icon-size-xs {
+  width: var(--size-xs);
+  min-width: var(--size-xs);
+  height: var(--size-xs);
+}
+
+.icon-size-xxs {
+  width: var(--size-xxs);
+  min-width: var(--size-xxs);
+  height: var(--size-xxs);
+}
+
+
+.icon-color-primary {
+  color: var(--color-primary);
+}
+
+.icon-color-success {
+  color: var(--color-success);
+}
+
+.icon-color-warning {
+  color: var(--color-warning);
+}
+
+.icon-color-error {
+  color: var(--color-error);
+}
+
+.icon-color-info {
+  color: var(--color-info);
+}
+
+.icon-color-text {
+  color: var(--color-text);
+}
+
+.icon-color-white {
+  color: white;
+}

@@ -3,6 +3,7 @@ import './workspace-selector.css'
 import {
   Avatar,
   type IAvatarProps,
+  Icon,
   type INavigationAccount,
   type INavigationOrg,
   type INavigationWorkspace,
@@ -198,7 +199,9 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
             label: (
               <Flex justify="space-between" align="center">
                 {workspace.label}
-                {workspace.isActive && <CheckIcon className="workspaceSelector__activeIcon" />}
+                {workspace.isActive && (
+                  <Icon iconName="check" size="sm" color="text" />
+                )}
               </Flex>
             ),
             id: workspace.id,
