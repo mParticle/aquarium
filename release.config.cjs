@@ -1,5 +1,5 @@
 module.exports = {
-  branches: ['main', { name: 'dev', channel: 'dev', prerelease: 'dev' }, {
+  branches: ['main', {
     name: 'feature/*',
     channel: 'feature',
     prerelease: "${name.split('/').slice(1).join('-').toLowerCase()}"
