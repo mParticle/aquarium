@@ -8,8 +8,8 @@ jobs:
     name: Perform Release
     runs-on: ubuntu-latest
 
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    env: 
+      GITHUB_TOKEN: ${{ secrets.MP_SEMANTIC_RELEASE_BOT }}
       GIT_AUTHOR_NAME: mparticle-automation
       GIT_AUTHOR_EMAIL: developers@mparticle.com
       GIT_COMMITTER_NAME: mparticle-automation
@@ -20,6 +20,7 @@ jobs:
       - name: Checkout public main branch
         uses: actions/checkout@v4
         with:
+          token: ${{ secrets.MP_SEMANTIC_RELEASE_BOT }}
           fetch-depth: 0
 
       - name: Import GPG Key
