@@ -18,9 +18,7 @@ import { useMemo } from 'react'
 import { debounce, hasImageAtSrc } from 'src/utils/utils'
 import { getInitials } from 'src/utils/utils'
 
-// TODO: Need to make our Input component comply with forwardRef to be able to import it from src/components
-// As soon as https://github.com/mParticle/aquarium/pull/123 is merged
-import { type InputRef } from 'antd'
+import { type InputRef } from 'src/components'
 import { WorkspaceSelectorContent } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorContent'
 import { useMount } from 'src/hooks/useMount'
 import { PaddingXxs } from 'src/styles/style'

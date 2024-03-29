@@ -29,6 +29,7 @@ describe('Testing utils', () => {
 
     it('it should return "Windows" when the user agent includes "Win"', () => {
       // arrange
+      // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
       global.navigator = {
         userAgent: 'Windows',
       } as Navigator
@@ -42,6 +43,7 @@ describe('Testing utils', () => {
 
     it('it should return "Macintosh" when the user agent includes "Mac"', () => {
       // arrange
+      // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
       global.navigator = {
         userAgent: 'Macintosh',
       } as Navigator
