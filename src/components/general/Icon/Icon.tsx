@@ -12,12 +12,12 @@ export interface IIconProps {
 
 export const Icon = (props: IIconProps) => {
   const IconName = Icons[props.name]
-  const iconId = `icon-${props.name.toLowerCase()}`
+  const iconId = `icon-${props.name}`
 
   let className = `${iconId} icon-size-${props.size ?? 'lg'}`
 
   if (props.color) {
-    className += ` icon-color-${props.color.toLowerCase()}`
+    className += ` icon-color-${props.color}`
   }
 
   return <IconName className={className} data-test={iconId} />
