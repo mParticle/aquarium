@@ -92,7 +92,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
   const hasNoResults = !!searchTerm && !currentFilteredOrgs.length
 
   const menuItems: IWorkspaceSelectorDisplayItem[] = useMemo(
-    () => generateDisplayItems(/* currentFilteredOrgs */),
+    () => generateDisplayItems(),
     [currentFilteredOrgs],
   )
 
@@ -196,7 +196,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
               'workspaceSelector__workspaceName' +
               (workspace.isActive ? ' workspaceSelector__workspaceName--active' : ''),
             label: (
-              <Flex justify="space-between" align="center">
+              <Flex justify="space-between" align="center" gap="small" >
                 {workspace.label}
                 {workspace.isActive && <Icon name="check" size="sm" color="text" />}
               </Flex>

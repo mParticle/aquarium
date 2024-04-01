@@ -86,11 +86,7 @@
 .workspaceSelector__workspaceName.workspaceSelector__workspaceName--active,
 .workspaceSelector__workspaceName:active {
   background: var(--control-item-bg-active) !important;
-
-  .icon-check {
-    margin-right: var(--margin);
-    margin-left: var(--margin-xs);
-  }
+  padding-right: var(--padding);
 }
 
 .workspaceSelector__orgName,

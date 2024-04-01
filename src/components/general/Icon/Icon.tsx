@@ -14,7 +14,7 @@ export const Icon = (props: IIconProps) => {
   const IconName = Icons[props.name]
   const iconId = `icon-${props.name}`
 
-  let className = `${iconId} icon-size-${props.size ?? 'lg'}`
+  let className = `icon-size-${props.size ?? 'lg'}`
 
   if (props.color) {
     className += ` icon-color-${props.color}`

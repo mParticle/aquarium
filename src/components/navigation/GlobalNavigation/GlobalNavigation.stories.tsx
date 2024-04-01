@@ -89,7 +89,7 @@ const defaultOrgs: INavigationOrg[] = [
         workspaces: [
           {
             id: 'workspace1',
-            label: 'Workspace 1',
+            label: 'Workspace 111111111',
             isActive: true,
             onClick: () => {
               alert('Selected Workspace 1')
