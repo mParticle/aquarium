@@ -1,6 +1,6 @@
 module.exports = {
   branches: ['main', {
-    name: 'feature/*',
+    name: 'feat/*',
     channel: 'feature',
     prerelease: "${name.split('/').slice(1).join('-').toLowerCase()}"
   }],
