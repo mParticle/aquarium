@@ -149,6 +149,12 @@
   height: var(--size-lg) !important;
 }
 
+.globalNavigation__searchIcon {
+  width: 22px !important;
+  height: 22px !important;
+  margin-left: -3px;
+}
+
 .navigationCreate__lockIcon {
   margin-left: var(--padding-xs);
   width: var(--size-sm) !important;
@@ -251,15 +257,19 @@
 }
 
 .globalNavigation__iconLabel {
+  font-family: var(--font-family) ;
   color: var(--color-text);
   font-size: 10px;
+  font-weight: 400;
 }
 
 .globalNavigation__badge {
   border: solid 1px var(--color-border);
   border-radius: var(--border-radius-sm);
-  padding: 1px var(--padding-content-vertical-sm);
+  padding: 0;
   box-shadow: none !important;
+  margin-left: 4px;
+
 }
 
 .globalNavigation__badge .ant-badge-count {
@@ -294,13 +304,17 @@
   font-size: var(--font-size-sm);
   font-weight: 400;
   cursor: pointer;
+  padding-top: 12px;
+
 }
 
 .globalNavigation__divider {
   border-bottom: 1px solid var(--color-border-secondary);
   margin-right: var(--margin-sm);
   margin-left: var(--margin-sm);
-  margin-bottom: var(--margin-md);
+  /* margin-bottom: var(--margin-md); */
+  margin-bottom: 0;
+  margin-top: -3px;
 }
 
 .globalNavigation__mpHome {
