@@ -8,7 +8,7 @@ import { useState } from 'react'
 import { Switch } from 'src/components'
 import { Avatar } from 'src/components'
 import { Skeleton } from 'src/components'
-import MpLogo from 'src/assets/svg/mpLogo.svg?react'
+import { Icon } from 'src/components'
 
 const meta: Meta<typeof Card> = {
   title: 'Aquarium/Data Display/Card',
@@ -198,7 +198,7 @@ export const ExampleLoading: Story = {
           </Card>
           <Card
             style={{ width: 300, marginTop: 16 }}
-            actions={[<MpLogo key={1} />, <MpLogo key={2} />, <MpLogo key={3} />]}>
+            actions={[<Icon name="mpLogo" key={1} />, <Icon name="mpLogo" key={2} />, <Icon name="mpLogo" key={3} />]}>
             <Skeleton loading={loading} avatar>
               <Card.Meta
                 avatar={<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=2" />}
@@ -315,7 +315,7 @@ export const ExampleContentConfiguration: Story = {
         <Card
           style={{ width: 300 }}
           cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
-          actions={[<MpLogo key={1} />, <MpLogo key={2} />, <MpLogo key={3} />]}>
+          actions={[<Icon name="mpLogo" key={1} />, <Icon name="mpLogo" key={2} />, <Icon name="mpLogo" key={3} />]}>
           <Card.Meta
             avatar={<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=8" />}
             title="Card title"

@@ -7,7 +7,7 @@ import { useState } from 'react'
 import { Radio } from 'src/components'
 import { Switch } from 'src/components'
 import { Slider } from 'src/components'
-import MpLogo from 'src/assets/svg/mpLogo.svg?react'
+import { Icon } from 'src/components'
 
 const meta: Meta<typeof Paragraph> = {
   title: 'Aquarium/General/Paragraph',
@@ -193,7 +193,7 @@ export const ExampleEditable: Story = {
         </Paragraph>
         <Paragraph
           editable={{
-            icon: <MpLogo />,
+            icon: <Icon name="mpLogo" />,
             tooltip: 'click to edit text',
             onChange: setCustomIconStr,
           }}>
@@ -219,16 +219,16 @@ export const ExampleEditable: Story = {
         </Paragraph>
         <Paragraph
           editable={{
-            icon: <MpLogo />,
+            icon: <Icon name="mpLogo" />,
             tooltip: 'click to edit text',
             onChange: setCustomEnterIconStr,
-            enterIcon: <MpLogo />,
+            enterIcon: <Icon name="mpLogo" />,
           }}>
           {customEnterIconStr}
         </Paragraph>
         <Paragraph
           editable={{
-            icon: <MpLogo />,
+            icon: <Icon name="mpLogo" />,
             tooltip: 'click to edit text',
             onChange: setNoEnterIconStr,
             enterIcon: null,
@@ -257,7 +257,7 @@ export const ExampleCopyable: Story = {
         <Paragraph copyable={{ text: 'Hello, Ant Design!' }}>Replace copy text.</Paragraph>
         <Paragraph
           copyable={{
-            icon: [<MpLogo key={1} />, <MpLogo key={2} />],
+            icon: [<Icon name="mpLogo" key={1} />, <Icon name="mpLogo" key={2} />],
             tooltips: ['click here', 'you clicked!!'],
           }}>
           Custom Copy icon and replace tooltips text.

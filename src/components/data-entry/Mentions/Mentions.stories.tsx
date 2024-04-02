@@ -8,7 +8,7 @@ import { useRef } from 'react'
 import { Form } from 'src/components'
 import { Button } from 'src/components'
 import { Space } from 'antd'
-import MpLogo from 'src/assets/svg/mpLogo.svg?react'
+import { Icon } from 'src/components'
 
 const meta: Meta<typeof Mentions> = {
   title: 'Aquarium/Data Entry/Mentions',
@@ -344,7 +344,7 @@ export const ExampleClearIcon: Story = {
           <Mentions value={value} onChange={setValue} allowClear />
           <br />
           <br />
-          <Mentions value={value} onChange={setValue} allowClear={{ clearIcon: <MpLogo /> }} />
+          <Mentions value={value} onChange={setValue} allowClear={{ clearIcon: <Icon name="mpLogo" /> }} />
           <br />
           <br />
           <Mentions value={value} onChange={setValue} allowClear rows={3} />
