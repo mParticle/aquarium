@@ -488,7 +488,7 @@ export const MPThousandOrgs: Story = {
 
 const indLogo: IGlobalNavigationLogo = {
   label: 'Analytics',
-  icon: <Icon name="mpLogo" />,
+  icon: <Icon name="analytics" />,
   onSuiteLogoClick: () => {
     alert('Going to Analytics Home!')
   },
