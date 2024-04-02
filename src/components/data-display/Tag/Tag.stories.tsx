@@ -6,7 +6,7 @@ import { ExampleStory } from 'src/utils/ExampleStory'
 import { useState } from 'react'
 import { userEvent } from '@storybook/test'
 import { expect } from '@storybook/test'
-import MpLogo from 'src/assets/svg/mpLogo.svg?react'
+import { Icon } from 'src/components'
 
 const meta: Meta<typeof Tag> = {
   title: 'Aquarium/Data Display/Tag',
@@ -47,7 +47,7 @@ export const WithColor: Story = {
 
 export const WithIcon: Story = {
   args: {
-    icon: <MpLogo />,
+    icon: <Icon name="mpLogo" />,
   },
 }
 
@@ -148,16 +148,16 @@ export const ExampleStatusTags: Story = {
           </Space>
           <Divider orientation="left">With icon</Divider>
           <Space size={[0, 8]} wrap>
-            <Tag icon={<MpLogo />} color="success">
+            <Tag icon={<Icon name="mpLogo" />} color="success">
               success
             </Tag>
-            <Tag icon={<MpLogo />} color="processing">
+            <Tag icon={<Icon name="mpLogo" />} color="processing">
               processing
             </Tag>
-            <Tag icon={<MpLogo />} color="error">
+            <Tag icon={<Icon name="mpLogo" />} color="error">
               error
             </Tag>
-            <Tag icon={<MpLogo />} color="warning">
+            <Tag icon={<Icon name="mpLogo" />} color="warning">
               warning
             </Tag>
           </Space>

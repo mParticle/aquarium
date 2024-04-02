@@ -1,12 +1,9 @@
+import { type Meta, type StoryObj } from '@storybook/react'
+import { useState } from 'react'
+import { AutoComplete, Flex, Icon, Input, Space } from 'src/components'
 import { type IAutoCompleteProps } from 'src/components/data-entry/AutoComplete/AutoComplete'
-import { type Meta } from '@storybook/react'
-import { type StoryObj } from '@storybook/react'
-import { Input, Space, AutoComplete } from 'src/components'
-import { Flex } from 'src/components'
 import { type ISelectProps } from 'src/components/data-entry/Select/Select'
 import { ExampleStory } from 'src/utils/ExampleStory'
-import { useState } from 'react'
-import MpLogo from 'src/assets/svg/mpLogo.svg?react'
 
 const baseOptions = [
   { label: 'The quick brown fox jumps over the lazy dog', value: 1 },
@@ -291,7 +288,7 @@ export const ExampleLookupPatternsCertainCategory: Story = {
         <Flex justify="space-between">
           {title}
           <span>
-            <MpLogo />
+            <Icon name="mpLogo" />
             {count}
           </span>
         </Flex>
@@ -471,7 +468,7 @@ export const ExampleClearButton: Story = {
               setOptions(getPanelValue(text))
             }}
             placeholder="Customized clear icon"
-            allowClear={{ clearIcon: <MpLogo /> }}
+            allowClear={{ clearIcon: <Icon name="mpLogo" /> }}
           />
         </ExampleStory>
       </>

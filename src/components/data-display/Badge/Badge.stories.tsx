@@ -7,7 +7,7 @@ import { Switch } from 'src/components'
 import { Card } from 'src/components'
 import { Divider } from 'src/components'
 import { useState } from 'react'
-import MpLogo from 'src/assets/svg/mpLogo.svg?react'
+import { Icon } from 'src/components'
 
 const meta: Meta<typeof Badge> = {
   title: 'Aquarium/Data Display/Badge',
@@ -96,7 +96,7 @@ export const ExampleBasic: Story = {
           <Badge count={0} showZero>
             <Avatar shape="square" size="large" />
           </Badge>
-          <Badge count={<MpLogo />}>
+          <Badge count={<Icon name="mpLogo" />}>
             <Avatar shape="square" size="large" />
           </Badge>
         </Space>
@@ -119,7 +119,7 @@ export const ExampleStandalone: Story = {
           />
           <Badge count={show ? 11 : 0} showZero color="#faad14" />
           <Badge count={show ? 25 : 0} />
-          <Badge count={show ? <MpLogo /> : 0} />
+          <Badge count={show ? <Icon name="mpLogo" /> : 0} />
           <Badge className="site-badge-count-109" count={show ? 109 : 0} style={{ backgroundColor: '#52c41a' }} />
         </Space>
       </ExampleStory>

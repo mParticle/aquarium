@@ -1,10 +1,9 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { Switch } from 'src/components/data-entry/Switch/Switch'
 import { ExampleStory } from 'src/utils/ExampleStory'
-import { Space } from 'src/components'
+import {Icon, Space} from 'src/components'
 import { useState } from 'react'
 import { Button } from 'src/components'
-import MpLogo from 'src/assets/svg/mpLogo.svg?react'
 
 const meta: Meta<typeof Switch> = {
   title: 'Aquarium/Data Entry/Switch',
@@ -121,7 +120,7 @@ export const ExampleTextAndIcon: Story = {
         <Space direction="vertical">
           <Switch checkedChildren="Checked Text" unCheckedChildren="Unchecked Text" defaultChecked />
           <Switch checkedChildren="1" unCheckedChildren="0" />
-          <Switch checkedChildren={<MpLogo />} unCheckedChildren={<MpLogo />} defaultChecked />
+          <Switch checkedChildren={<Icon name="check" />} unCheckedChildren={<Icon name="messageQuestion" />} defaultChecked />
         </Space>
       </ExampleStory>
     )
