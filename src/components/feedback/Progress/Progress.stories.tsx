@@ -1,5 +1,5 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import {Icon, Space} from 'src/components'
+import { Icon, Space } from 'src/components'
 import { Progress } from 'src/components/feedback/Progress/Progress'
 import { ExampleStory } from 'src/utils/ExampleStory'
 import { Button } from 'src/components'

@@ -2,7 +2,7 @@ import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
 import { Alert } from 'src/components/feedback/Alert/Alert'
 import { ExampleStory } from 'src/utils/ExampleStory'
-import {Icon, Space} from 'src/components'
+import { Icon, Space } from 'src/components'
 import { useState } from 'react'
 import { Button } from 'src/components'
 
