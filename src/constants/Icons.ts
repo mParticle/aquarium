@@ -20,6 +20,7 @@ import CloudIcon from 'src/assets/svg/cloud.svg?react'
 import FolderClosedIcon from 'src/assets/svg/folder-closed.svg?react'
 import AddIcon from 'src/assets/svg/add.svg?react'
 import MpLogoIcon from 'src/assets/svg/mpLogo.svg?react'
+import SignoutIcon from 'src/assets/svg/signout.svg?react'
 import LockIcon from 'src/assets/svg/lock.svg?react'
 import SearchIcon from 'src/assets/svg/search.svg?react'
 import AnalyticsIcon from 'src/assets/svg/analytics.svg?react'
@@ -46,6 +47,7 @@ export const Icons = {
   heart: HeartIcon,
   lightBulb: LightBulbIcon,
   split: SplitIcon,
+  signout: SignoutIcon,
   circleNodes: CircleNodesIcon,
   cloud: CloudIcon,
   folderClosed: FolderClosedIcon,
