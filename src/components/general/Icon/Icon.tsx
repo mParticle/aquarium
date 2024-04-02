@@ -1,7 +1,7 @@
 import { Icons } from 'src/constants/Icons'
 import './icon.css'
 
-type IconColor = 'primary' | 'success' | 'warning' | 'error' | 'info' | 'white' | 'text'
+type IconColor = 'default' | 'primary' | 'success' | 'warning' | 'error' | 'info' | 'white' | 'black' | 'text'
 type IconSize = 'xxl' | 'xl' | 'lg' | 'md' | 'ms' | 'sm' | 'xs' | 'xxs'
 
 export interface IIconProps {
@@ -12,13 +12,13 @@ export interface IIconProps {
 
 export const Icon = (props: IIconProps) => {
   const IconName = Icons[props.name]
+  const className = `icon-size-${props.size} icon-color-${props.color}`
   const iconId = `icon-${props.name}`
-
-  let className = `icon-size-${props.size ?? 'lg'}`
-
-  if (props.color) {
-    className += ` icon-color-${props.color}`
-  }
 
   return <IconName className={className} data-test={iconId} />
 }
+
+Icon.defaultProps = {
+  color: 'default',
+  size: 'lg',
+} satisfies Partial<IIconProps>

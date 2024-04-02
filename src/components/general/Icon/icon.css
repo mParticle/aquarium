@@ -70,6 +70,14 @@
   color: var(--color-text);
 }
 
+.icon-color-default {
+  color: var(--color-icon);
+}
+
 .icon-color-white {
   color: white;
+}
+
+.icon-color-black {
+  color: black;
 }
