@@ -34,21 +34,19 @@
 }
 
 /* Otherwise, use `::-webkit-scrollbar-*` pseudo-elements */
-@supports selector(::-webkit-scrollbar) {
-  .globalNavigation::-webkit-scrollbar {
-    /* stylelint-disable-next-line property-no-vendor-prefix */
-    -webkit-appearance: none;
-    width: var(--size-scrollbar-handle);
-    height: var(--size-scrollbar-handle);
-  }
+.globalNavigation::-webkit-scrollbar {
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-appearance: none;
+  width: var(--size-scrollbar-handle);
+  height: var(--size-scrollbar-handle);
+}
 
-  .globalNavigation::-webkit-scrollbar-track {
-    background-color: var(--color-scrollbar-track);
-  }
+.globalNavigation::-webkit-scrollbar-track {
+  background-color: var(--color-scrollbar-track);
+}
 
-  .globalNavigation::-webkit-scrollbar-thumb {
-    background-color: var(--color-scrollbar-handle);
-  }
+.globalNavigation::-webkit-scrollbar-thumb {
+  background-color: var(--color-scrollbar-handle);
 }
 
 .globalNavigation__sider {
