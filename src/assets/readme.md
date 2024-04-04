@@ -10,7 +10,9 @@ All icons are managed and approved by the Design Team. Do not add any assets tha
   - and all `fill` has the value `"currentColor"`.
 - ensure the svg should not set a `height` or `width` attribute
 
-Add the new asset to src/assets/svg, with a semantic name (one that describes the function and not the shape)
+## Adding a new SVG asset
+
+Add the new asset to src/assets/svg. If your svg file does not have a semantic name (one that describes the function and not the shape), one should be requested from the Designer you received the icon from.
 Then add the icon as an import and export in src/components/icons/index.ts
 Then add the icon to src/constants/Icons.ts to allow usage in as the `<Icon />` component `name` prop
 
