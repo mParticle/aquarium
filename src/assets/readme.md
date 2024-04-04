@@ -10,6 +10,6 @@ When adding a new svg:
 
 Add the new asset to src/assets/svg, with a semantic name (one that describes the function and not the shape)
 Then add the icon as an import and export in src/components/icons/index.ts
-Then add the icon to src/constants/Icons.ts to allow usage in as the `<Icon/>` component `name` prop
+Then add the icon to src/constants/Icons.ts to allow usage in as the `<Icon />` component `name` prop
 
 If a color is required and not yet available to the `<Icon/>` component, it should be added to both `icon.css` file and the `IconColor` type
