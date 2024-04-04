@@ -1,4 +1,6 @@
-All icons are managed and approved by the design team. Do not add any assets that have not been reviewed by them.
+# Icon Assets
+
+All icons are managed and approved by the Design Team. Do not add any assets that have not been approved to be included into the Aquarium.
 
 When adding a new svg:
 
