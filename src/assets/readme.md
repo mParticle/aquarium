@@ -2,7 +2,7 @@
 
 All icons are managed and approved by the Design Team. Do not add any assets that have not been approved to be included into the Aquarium.
 
-When adding a new svg:
+## Requirements for all SVGs
 
 - ensure that the viewbox is a square [0 0 24 24]
   - and that there is some internal padding so the image does not touch the edges of the box
