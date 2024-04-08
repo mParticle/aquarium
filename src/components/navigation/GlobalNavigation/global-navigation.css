@@ -2,7 +2,7 @@
   --nav-item-height: 56px;
   --nav-item-width: 82px;
   --nav-width: 90px;
-  --suite-logo-height: 82px;
+  --suite-logo-height: 80px;
   --color-scrollbar-handle: rgb(0 0 0 / 15%);
   --color-scrollbar-track: transparent;
   --size-scrollbar-handle: 6px;
@@ -255,7 +255,6 @@
 }
 
 .globalNavigation__iconLabel {
-  font-family: var(--font-family) ;
   color: var(--color-text);
   font-size: 10px;
   font-weight: 400;
@@ -303,6 +302,7 @@
   font-weight: 400;
   cursor: pointer;
   padding-top: 12px;
+  padding-bottom: 18px;
 
 }
 
@@ -310,9 +310,7 @@
   border-bottom: 1px solid var(--color-border-secondary);
   margin-right: var(--margin-sm);
   margin-left: var(--margin-sm);
-  /* margin-bottom: var(--margin-md); */
   margin-bottom: 0;
-  margin-top: -3px;
 }
 
 .globalNavigation__mpHome {
