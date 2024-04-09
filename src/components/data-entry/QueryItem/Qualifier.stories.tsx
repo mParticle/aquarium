@@ -26,3 +26,31 @@ export const Simple: Story = {
     ],
   },
 }
+
+export const Error: Story = {
+  args: {
+    errorMessage: 'This is an error message for the Qualifier component',
+    options: [
+      { value: '0', label: 'is equal to' },
+      { value: '1', label: 'is not equal to' },
+      { value: '2', label: 'is greater than to' },
+      { value: '3', label: 'is greater or equal to' },
+      { value: '4', label: 'is less than' },
+      { value: '5', label: 'is less or equal to' },
+    ],
+  },
+}
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+    options: [
+      { value: '0', label: 'is equal to' },
+      { value: '1', label: 'is not equal to' },
+      { value: '2', label: 'is greater than to' },
+      { value: '3', label: 'is greater or equal to' },
+      { value: '4', label: 'is less than' },
+      { value: '5', label: 'is less or equal to' },
+    ],
+  },
+}

@@ -9,13 +9,13 @@ export interface IActionProps {
 
 function Action(props: IActionProps) {
   const buttonClassNames: string = props.isPrimary
-    ? 'query-item-action'
-    : 'query-item-action query-item-action--secondary'
+    ? 'query-item query-item-action'
+    : 'query-item query-item-action query-item-action--secondary'
   return (
     <>
       <Button className={buttonClassNames} type={props.isPrimary ? 'primary' : 'default'} disabled={props.isDisabled}>
-        <AddIcon className={'query-item-action__icon'} />
-        <span>{props.text && props.text}</span>
+        <AddIcon className="query-item-action__icon" />
+        <span>{props.text}</span>
       </Button>
     </>
   )
