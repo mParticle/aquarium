@@ -1,7 +1,68 @@
+@import "src/styles/_variables.css";
+/*border-bottom: 3px solid var(--color-primary);*/
+.query-item-action {
+    border-width: var(--mp-query-item-border-width);
+    border-color: var(--mp-query-item-border-color) !important;
+    border-radius: var(--mp-query-item-border-radius);
+    background: var(--mp-query-item-bg-color) !important;
+    padding: var(--mp-query-item-padding) !important;
+    gap: var(--mp-query-item-gap);
+    color: var(--mp-query-item-action-primary-color) !important;
+    height: var(--mp-query-item-height) !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: none;
+
+
+    &:hover {
+        border-color: var(--mp-query-item-border-color-active) !important;
+        background: var(--mp-query-item-bg-color-hover) !important;
+    }
+
+    &:focus {
+        border-color: var(--mp-query-item-border-color-active) !important;
+        box-shadow: var(--mp-query-item-shadow-focus);
+        background: var(--mp-query-item-bg-color) !important;
+    }
+
+    &:active {
+        border-color: var(--mp-query-item-border-color-active) !important;
+        border-width: var(--mp-query-item-border-width-active);
+        background: var(--mp-query-item-bg-color-active) !important;
+        box-shadow: var(--mp-query-item-shadow-active);
+    }
+
+    &.query-item-action--secondary {
+        color: var(--mp-query-item-action-secondary-color) !important;
+
+        &:hover {
+            background: var(--mp-query-item-bg-color-hover) !important;
+        }
+
+        &:active {
+            border-width: var(--mp-query-item-border-width-active);
+            background: var(--mp-query-item-bg-color-active) !important;
+        }
+    }
+
+    &[disabled] {
+        color: var(--mp-query-item-color-disabled) !important;
+        border-color: var(--mp-query-item-border-color-disabled) !important;
+    }
+}
+
+/*This is temporary until the new icon component is available where sizes can be controlled without CSS*/
+.query-item-action__icon {
+    height: 16px;
+    width: 16px;
+}
+
+
 .query-item-qualifier__item-selected-icon {
-  margin-left: 5px;
+    margin-left: 5px;
 }
 
 .query-item-qualifier__select .ant-select-selection-item {
-  border-bottom: 4px solid var(--mp-brand-primary-8);
+    border-bottom: 4px solid var(--mp-brand-primary-8);
 }

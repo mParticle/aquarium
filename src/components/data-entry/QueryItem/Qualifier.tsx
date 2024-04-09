@@ -1,7 +1,7 @@
 import './query-item.css'
 import { CheckIcon } from 'src/components/icons'
 import type { DefaultOptionType } from 'antd/es/select'
-import { type ISelectProps, Select } from '../Select/Select'
+import { type ISelectProps, Select } from 'src/components'
 
 export type IQueryItemQualifierOption = DefaultOptionType
 
@@ -9,7 +9,7 @@ export interface IQueryItemQualifierProps {
   options: IQueryItemQualifierOption[]
 }
 
-export const QueryItemQualifier = (props: IQueryItemQualifierProps) => {
+export const Qualifier = (props: IQueryItemQualifierProps) => {
   const selectProps: ISelectProps = {
     defaultValue: props.options?.length ? props.options[0].value : undefined,
     options: props.options,

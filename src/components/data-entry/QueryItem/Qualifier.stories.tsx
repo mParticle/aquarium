@@ -1,12 +1,12 @@
-import { QueryItemQualifier } from './QueryItem.Qualifier'
+import { QueryItem } from './QueryItem'
 import { type Meta, type StoryObj } from '@storybook/react'
 
-type Story = StoryObj<typeof QueryItemQualifier>
+type Story = StoryObj<typeof QueryItem.Qualifier>
 
 // default
-const meta: Meta<typeof QueryItemQualifier> = {
-  title: 'Aquarium/Data Entry/QueryItem.Qualifier',
-  component: QueryItemQualifier,
+const meta: Meta<typeof QueryItem.Qualifier> = {
+  title: 'Aquarium/Data Entry/QueryItem/Qualifier',
+  component: QueryItem.Qualifier,
   args: {},
 }
 export default meta
