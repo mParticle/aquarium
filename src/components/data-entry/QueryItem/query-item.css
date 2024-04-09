@@ -1,0 +1,7 @@
+.query-item-qualifier__item-selected-icon {
+  margin-left: 5px;
+}
+
+.query-item-qualifier__select .ant-select-selection-item {
+  border-bottom: 4px solid var(--mp-brand-primary-8);
+}
