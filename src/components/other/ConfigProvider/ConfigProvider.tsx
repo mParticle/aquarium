@@ -1,11 +1,15 @@
 import { ConfigProvider as AntConfigProvider } from 'antd'
 import { type ConfigProviderProps as AntConfigProviderProps } from 'antd/es/config-provider'
-import { LightTheme } from 'design/LightTheme'
+import { ThemeContext } from '../ThemeContext/ThemeContext'
 
 export interface IConfigProviderProps extends AntConfigProviderProps {}
 
 export const ConfigProvider = (props: IConfigProviderProps) => {
-  return <AntConfigProvider {...props} theme={LightTheme} />
+  return (
+    <ThemeContext.Consumer>
+      {theme => <AntConfigProvider {...props} theme={theme} />}
+    </ThemeContext.Consumer>
+  )
 }
 
 ConfigProvider.ConfigContext = AntConfigProvider.ConfigContext

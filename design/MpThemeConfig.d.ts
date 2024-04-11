@@ -1,6 +1,7 @@
 import { ThemeConfig } from 'antd'
+import { CSSProperties } from 'react';
 
-export type IMpThemeConfig = ThemeConfig & {
+export type IMpThemeConfig = Optional<ThemeConfig & {
   token: {
     'mpBrandPrimary.1': string
     ['mpBrandPrimary.2']: string
@@ -50,6 +51,7 @@ export type IMpThemeConfig = ThemeConfig & {
     mpQueryItem_borderColor_hover: '#3600d1'
   }
   components: {
+    Button: ComponentConfig & { style: Record<SemanticDOM, CSSProperties> },
     Select: { mpColorBorderDisabled: string }
     Input: { mpColorBorderDisabled: string }
     Checkbox: { mpColorBorderDisabled: string }
@@ -58,4 +60,4 @@ export type IMpThemeConfig = ThemeConfig & {
     TimePicker: { mpColorBorderDisabled: string }
     InputNumber: { mpColorBorderDisabled: string }
   }
-}
+}>;

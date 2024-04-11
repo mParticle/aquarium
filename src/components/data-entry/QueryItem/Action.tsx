@@ -1,5 +1,4 @@
 import { AddIcon, Button } from 'src/components'
-import './query-item.css'
 
 export interface IActionProps {
   isPrimary?: boolean
@@ -18,7 +17,7 @@ function Action(props: IActionProps) {
         <span>{props.text}</span>
       </Button>
     </>
-  )
+  );
 }
 
 export default Action
