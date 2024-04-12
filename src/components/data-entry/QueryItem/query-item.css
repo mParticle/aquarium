@@ -38,11 +38,6 @@
   }
 }
 
-.query-item__error {
-  font-family: var(--font-family);
-  color: var(--color-error);
-}
-
 /**
  * QueryItem.Action
  */
