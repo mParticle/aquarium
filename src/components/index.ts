@@ -19,6 +19,7 @@ export { AutoComplete, type IAutoCompleteProps } from './data-entry/AutoComplete
 export { TimePicker, type ITimePickerProps } from './data-entry/TimePicker/TimePicker'
 export { Transfer, type ITransferProps } from './data-entry/Transfer/Transfer'
 export { QueryItem } from './data-entry/QueryItem/QueryItem'
+export type { IQueryItemQualifierOption } from './data-entry/QueryItem/Qualifier'
 export { Collapse, type ICollapseProps } from './data-display/Collapse/Collapse'
 export { Timeline, type ITimelineProps } from './data-display/Timeline/Timeline'
 export { Calendar, type ICalendarProps } from './data-display/Calendar/Calendar'
