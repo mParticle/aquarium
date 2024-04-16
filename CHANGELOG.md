@@ -1,3 +1,10 @@
+# [1.11.0-icon-component.1](https://github.com/mParticle/aquarium/compare/v1.10.0...v1.11.0-icon-component.1) (2024-04-16)
+
+
+### Features
+
+* Allows publishing npm versions from feature branches ([#186](https://github.com/mParticle/aquarium/issues/186)) ([044c117](https://github.com/mParticle/aquarium/commit/044c1171192865c82dab37ab87981dc27648713d))
+
 # [1.11.0-release-process.1](https://github.com/mParticle/aquarium/compare/v1.10.0...v1.11.0-release-process.1) (2024-03-29)
 
 
