@@ -16,4 +16,6 @@ Add the new asset to src/assets/svg. If your svg file does not have a semantic n
 Then add the icon as an import and export in src/components/icons/index.ts
 Then add the icon to src/constants/Icons.ts to allow usage in as the `<Icon />` component `name` prop
 
+### New icon colors
+
 If a color is required and not yet available to the `<Icon/>` component, it should be added to both `icon.css` file and the `IconColor` type
