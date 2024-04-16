@@ -29,9 +29,11 @@ describe('Testing utils', () => {
 
     it('it should return "Windows" when the user agent includes "Win"', () => {
       // arrange
-      global.navigator = {
+      const navigatorOverride: Partial<Navigator> = {
         userAgent: 'Windows',
-      } as Navigator
+      }
+
+      global.navigator = { ...global.navigator, ...navigatorOverride }
 
       // act
       const actualOS = getOS()
@@ -42,9 +44,11 @@ describe('Testing utils', () => {
 
     it('it should return "Macintosh" when the user agent includes "Mac"', () => {
       // arrange
-      global.navigator = {
-        userAgent: 'Macintosh',
-      } as Navigator
+      const navigatorOverride: Partial<Navigator> = {
+        userAgent: 'Windows',
+      }
+
+      global.navigator = { ...global.navigator, ...navigatorOverride }
 
       // act
       const actualOS = getOS()
