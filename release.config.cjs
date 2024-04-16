@@ -1,5 +1,9 @@
 module.exports = {
-  branches: ['main', { name: 'dev', channel: 'dev', prerelease: 'dev' }],
+  branches: ['main', {
+    name: 'feat/*',
+    channel: 'feature',
+    prerelease: "${name.split('/').slice(1).join('-').toLowerCase()}"
+  }],
   tagFormat: 'v${version}',
   repositoryUrl: 'https://github.com/mParticle/aquarium',
   plugins: [

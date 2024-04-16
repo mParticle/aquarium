@@ -1,3 +1,10 @@
+# [1.11.0-release-process.1](https://github.com/mParticle/aquarium/compare/v1.10.0...v1.11.0-release-process.1) (2024-03-29)
+
+
+### Features
+
+* allows publishing from feature branches ([eb32f58](https://github.com/mParticle/aquarium/commit/eb32f58e8b616c27c51a081e56e4e8f8d751a171))
+
 # [1.10.0](https://github.com/mParticle/aquarium/compare/v1.9.5...v1.10.0) (2024-03-29)
 
 ### Bug Fixes
