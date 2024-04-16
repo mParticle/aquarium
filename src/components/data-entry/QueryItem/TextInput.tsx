@@ -2,7 +2,7 @@ import { AutoComplete } from 'src/components'
 import { useEffect, useState } from 'react'
 import './query-item.css'
 
-interface ITextProps {
+interface ITextInputProps {
   value?: string;
   filterKey?: string;
   showValuesFromKey?: string;
@@ -11,7 +11,7 @@ interface ITextProps {
   onSelected: (selectedOption: any) => void;
 }
 
-export const Text = ({ value, placeHolder, _options, onSelected, showValuesFromKey = 'type' }: ITextProps) => {
+export const TextInput = ({ value, placeHolder, _options, onSelected, showValuesFromKey = 'type' }: ITextInputProps) => {
 
   const [inputValue, setInputValue] = useState(value || '')
   const [isOpen, setIsOpen] = useState(false)
