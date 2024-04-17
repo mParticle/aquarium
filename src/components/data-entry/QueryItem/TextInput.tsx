@@ -29,12 +29,12 @@ export const TextInput = ({ defaultValue, onChange, disabled = false, errorMessa
   return (
     <>
       <Input
-        status={errorMessage ? 'error' : undefined}
+        status={errorMessage && !disabled ? 'error' : undefined}
         disabled={disabled}
         className={'query-item query-item-input-text'}
         value={value}
         onChange={_onChange}
-        >
+      >
       </Input>
       {errorMessage && <Typography.Text type="danger">{errorMessage}</Typography.Text>}
     </>

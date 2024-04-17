@@ -1,14 +1,14 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { QueryItem } from 'src/components'
 
-const meta: Meta<typeof QueryItem.TextInput> = {
-  title: 'Aquarium/Data Entry/QueryItem/_TextInput',
-  component: QueryItem.TextInput,
+const meta: Meta<typeof QueryItem.ValueSelector.TextInput> = {
+  title: 'Aquarium/Data Entry/QueryItem/ValueSelector/TextInput',
+  component: QueryItem.ValueSelector.TextInput,
   parameters: {
     docs: {
       description: {
         component:
-          'This is the "Text Input" component of the QueryItem component group.'
+          'This is the "Text Input" component of the QueryItem/ValueSelector component group.'
       },
     },
   },
@@ -17,11 +17,10 @@ const meta: Meta<typeof QueryItem.TextInput> = {
 
 export default meta;
 
-type Story = StoryObj<typeof QueryItem.TextInput>
+type Story = StoryObj<typeof QueryItem.ValueSelector.TextInput>
 
 export const Primary: Story = {
   args: {
     onChange: ((value : string | number) => console.log(value)),
-    defaultValue: "Im a Text"
   }
 }
