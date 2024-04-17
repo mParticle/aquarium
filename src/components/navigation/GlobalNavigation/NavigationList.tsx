@@ -7,6 +7,7 @@ import { type IGlobalNavigationItem } from 'src/components/navigation/GlobalNavi
 import { type IGlobalNavigationLink } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { Fragment } from 'react'
 import { buildLinkFromHrefOptions } from 'src/utils/utils'
+import {WorkspaceSignout} from "src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSignout";
 
 export interface INavigationListProps {
   items: IGlobalNavigationItem[]
@@ -35,13 +36,19 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
 
   if (item.type === 'menu') {
     children.push(
-      ...item.children.map((linkItem, j) => ({
+      ...item.children.filter(linkItem => !linkItem.onClick).map((linkItem, j) => ({
         ...linkItem,
         expandIcon: null,
         key: `${String(linkItem.label)}${j}`,
         label: buildLinkFromHrefOptions(linkItem.label, linkItem.hrefOptions),
       })),
     )
+    if (item.children.some(child => child.onClick)) {
+      children.push({
+        key: 'submenu-button',
+        label: <WorkspaceSignout signoutOptions={{ label:"test", onSignout: () => {} }} />,
+      });
+    }
   }
   const navigationIcon = (
     <NavigationIcon
