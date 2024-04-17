@@ -12,7 +12,9 @@ const meta: Meta<typeof QueryItem.ValueSelector.TextInput> = {
       },
     },
   },
-  args: {},
+  args: {
+    onChange: ((value : string | number) => console.log(value)),
+  }
 }
 
 export default meta;
@@ -20,7 +22,5 @@ export default meta;
 type Story = StoryObj<typeof QueryItem.ValueSelector.TextInput>
 
 export const Primary: Story = {
-  args: {
-    onChange: ((value : string | number) => console.log(value)),
-  }
+  
 }

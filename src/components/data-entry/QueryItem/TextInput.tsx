@@ -10,25 +10,27 @@ interface ITextInputProps {
   errorMessage?: string;
 }
 
-export const TextInput = ({ defaultValue, onChange, disabled = false, errorMessage }: ITextInputProps) => {
-  const [value, setValue] = useState<string>(defaultValue || '')
-  
+export const TextInput = (props: ITextInputProps) => {
+  const [value, setValue] = useState<string>(props.defaultValue || '')
+  const isErrorStatus = props.errorMessage && !props.disabled
+
   const _onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value)
-    onChange(e.target.value)
+    props.onChange(e.target.value)
   }
 
+  
   return (
     <>
       <Input
-        status={errorMessage && !disabled ? 'error' : undefined}
-        disabled={disabled}
-        className={'query-item query-item-input-text'}
+        status={isErrorStatus ? 'error' : undefined}
+        disabled={props.disabled}
+        className={'query-item query-item--input-text'}
         value={value}
         onChange={_onChange}
       >
       </Input>
-      {errorMessage && <Typography.Text type="danger">{errorMessage}</Typography.Text>}
+      {props.errorMessage && <Typography.Text type="danger">{props.errorMessage}</Typography.Text>}
     </>
   )
 }
