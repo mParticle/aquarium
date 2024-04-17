@@ -11,16 +11,8 @@ interface ITextInputProps {
 }
 
 export const TextInput = ({ defaultValue, onChange, disabled = false, errorMessage }: ITextInputProps) => {
-
-  const props = {
-    defaultValue,
-    onChange,
-    disabled,
-    errorMessage
-  }
-
   const [value, setValue] = useState<string>(defaultValue || '')
-
+  
   const _onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value)
     onChange(e.target.value)
