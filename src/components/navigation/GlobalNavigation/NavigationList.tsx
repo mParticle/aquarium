@@ -35,18 +35,23 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
   ]
 
   if (item.type === 'menu') {
-    children.push(
-      ...item.children.filter(linkItem => !linkItem.onClick).map((linkItem, j) => ({
-        ...linkItem,
-        expandIcon: null,
-        key: `${String(linkItem.label)}${j}`,
-        label: buildLinkFromHrefOptions(linkItem.label, linkItem.hrefOptions),
-      })),
-    )
-    if (item.children.some(child => child.onClick)) {
+    const submenuItems = item.children.map((linkItem, j) => ({
+      ...linkItem,
+      expandIcon: null,
+      key: `${String(linkItem.label)}${j}`,
+      label: buildLinkFromHrefOptions(linkItem.label, linkItem.hrefOptions),
+    }));
+
+    const regularItems = submenuItems.filter(linkItem => linkItem.type !== 'button');
+    const actionItems = submenuItems.filter(linkItem => linkItem.type === 'button');
+
+    children.push(...regularItems);
+
+    if (actionItems.length > 0) {
       children.push({
         key: 'submenu-button',
         label: <WorkspaceSignout signoutOptions={{ label:"test", onSignout: () => {} }} />,
+
       });
     }
   }
