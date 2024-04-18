@@ -1,5 +1,6 @@
 import './query-item.css'
 import type { DefaultOptionType } from 'antd/es/select'
+import { useState } from 'react'
 import { CheckIcon } from 'src/components/icons'
 import { Typography } from 'src/components/general/Typography/Typography'
 import { type ISelectProps, Select } from 'src/components'
@@ -14,20 +15,28 @@ export interface IQueryItemQualifierProps {
 }
 
 export const Qualifier = (props: IQueryItemQualifierProps) => {
+  const [isOpen, setIsOpen] = useState(false)
   const selectProps: ISelectProps = {
     defaultValue: props.options?.length ? props.options[0].value : undefined,
     menuItemSelectedIcon: node =>
       node.isSelected ? <CheckIcon className="query-item-qualifier__item-selected-icon" /> : null,
     onChange: props.onChange,
+    onDropdownVisibleChange: () => setIsOpen(true),
     placement: 'bottomLeft',
     popupMatchSelectWidth: false,
     status: props.errorMessage ? 'error' : undefined,
     suffixIcon: null,
     variant: 'borderless',
+    options: props.options,
+    disabled: props.disabled,
   }
+
+  let className = 'query-item'
+  if (isOpen) className += ' query-item--open'
+
   return (
     <>
-      <Select className="query-item query-item-qualifier__select" {...selectProps}></Select>
+      <Select className={className} {...selectProps}></Select>
       {props.errorMessage && <Typography.Text type="danger">{props.errorMessage}</Typography.Text>}
     </>
   )

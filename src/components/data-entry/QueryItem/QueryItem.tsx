@@ -1,5 +1,6 @@
 import React from 'react'
-import Action from './Action'
+import { ValueSelector } from 'src/components/data-entry/QueryItem/ValueSelector'
+import { Action } from './Action'
 import { Qualifier } from './Qualifier'
 import { Text } from './Text'
 
@@ -8,4 +9,5 @@ export const QueryItem = () => {
 }
 QueryItem.Action = Action
 QueryItem.Qualifier = Qualifier
+QueryItem.ValueSelector = ValueSelector
 QueryItem.Text = Text

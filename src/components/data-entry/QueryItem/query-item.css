@@ -1,18 +1,21 @@
 @import url('src/styles/_variables.css');
-
+/**
+ * QueryItem
+ * _defaults_
+ */
 .query-item {
-  border-width: var(--mp-query-item-border-width);
+  border-width: var(--mp-query-item-border-width) !important;
   border-color: var(--mp-query-item-border-color) !important;
   border-radius: var(--mp-query-item-border-radius);
   background-color: var(--mp-query-item-bg-color) !important;
   padding: var(--mp-query-item-padding) !important;
-  gap: var(--mp-query-item-gap);
-  color: var(--mp-query-item-action-primary-color) !important;
+  /*color: var(--mp-query-item-color) !important;*/
   height: var(--mp-query-item-height) !important;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: none;
+  border-style: solid;
 
   &:hover {
     border-color: var(--mp-query-item-border-color-active) !important;
@@ -27,7 +30,7 @@
 
   &:active {
     border-color: var(--mp-query-item-border-color-active) !important;
-    border-width: var(--mp-query-item-border-width-active);
+    border-width: var(--mp-query-item-border-width-active) !important;
     background-color: var(--mp-query-item-bg-color-active) !important;
     box-shadow: var(--mp-query-item-shadow-active);
   }
@@ -36,105 +39,59 @@
     color: var(--mp-query-item-color-disabled) !important;
     border-color: var(--mp-query-item-border-color-disabled) !important;
   }
-}
 
-/**
- * QueryItem.Action
- */
-.query-item-action.query-item-action--secondary {
-  color: var(--mp-query-item-action-secondary-color) !important;
+  &.query-item--action {
+    color: var(--mp-query-item-action-primary-color) !important;
 
-  &:hover {
-    background-color: var(--mp-query-item-bg-color-hover) !important;
+    gap: var(--mp-query-item-gap);
+  }
+  &.query-item--secondary {
+    color: var(--mp-query-item-action-secondary-color) !important;
+
+    &:hover {
+      background-color: var(--mp-query-item-bg-color-hover) !important;
+    }
+
+    &:active {
+      border-width: var(--mp-query-item-border-width-active);
+      background-color: var(--mp-query-item-bg-color-active) !important;
+    }
   }
 
-  &:active {
-    border-width: var(--mp-query-item-border-width-active);
+  &.query-item--selected > input {
+    color: var(--mp-query-item-value-selector-color) !important;
+    font-weight: var(--mp-query-item-value-selector-font-weight) !important;
+  }
+  &.query-item--error {
+    border-color: var(--mp-query-item-border-color-error) !important;
+  }
+  &.query-item--open {
+    border-color: var(--mp-query-item-border-color-active) !important;
+    border-width: var(--mp-query-item-border-width-active) !important;
     background-color: var(--mp-query-item-bg-color-active) !important;
   }
+
+  /* Need to override the inner padding on Select... */
+  & .ant-select-selector {
+    padding: 0 !important;
+  }
 }
 
+
 /* This is temporary until the new icon component is available where sizes can be controlled without CSS */
-.query-item-action__icon {
+.query-item__icon {
   height: 16px;
   width: 16px;
 }
-
-/**
- * QueryItem.Qualifier
- * _defaults_
- */
-.query-item-qualifier__item-selected-icon {
-  margin-left: var(--mp-query-item-padding);
+.query-item__dropdown{
+  display: flex;
+  padding: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
 }
 
-.query-item-qualifier__select {
-  .ant-select-selector {
-    padding: calc(var(--mp-query-item-padding) / 2) !important;
-    border-radius: var(--mp-query-item-border-radius) !important;
-  }
-
-  .ant-select-selection-item {
-    line-height: var(--line-height) !important;
-    padding: calc(var(--mp-query-item-padding) / 2) !important;
-    border-radius: var(--mp-query-item-border-radius);
-    border-bottom: var(--line-width) solid var(--mp-query-item-border-color);
-  }
-}
-
-/**
- * QueryItem.Qualifier
- * :hover
- */
-.query-item-qualifier__select:hover {
-  .ant-select-selection-item {
-    border-bottom-color: var(--mp-query-item-border-color-active);
-  }
-}
-
-/**
- * QueryItem.Qualifier
- * :focus
- */
-.query-item-qualifier__select:focus {
-  .ant-select-selection-item {
-    background-color: var(--color-white);
-    border-bottom-color: var(--mp-query-item-border-color-active);
-  }
-}
-
-/**
- * QueryItem.Qualifier
- * :active
- */
-.query-item-qualifier__select.ant-select-open {
-  .ant-select-selection-item {
-    margin-top: calc(var(--line-width) - 1);
-    color: var(--color-text-base);
-    border-bottom-width: calc(var(--line-width) + 1);
-    border-bottom-color: var(--mp-query-item-border-color-active);
-  }
-}
-
-/**
- * QueryItem.Qualifier
- * Disabled
- */
-.query-item-qualifier__select.ant-select-disabled {
-  color: var(--color-text-disabled);
-  background-color: var(--mp-query-item-bg-color-disabled);
-
-  .ant-select-selection-item {
-    border-bottom-color: var(--mp-query-item-border-color-disabled);
-  }
-}
-
-/**
- * QueryItem.Qualifier
- * Error
- */
-.query-item-qualifier__select.ant-select-status-error {
-  .ant-select-selection-item {
-    border-bottom-color: var(--mp-query-item-border-color-error);
-  }
+/* This is a fix for a pre-existing Ant issue with the spacing on input.search */
+.query-item__input-search .ant-input-outlined{
+    height: var(--control-height);
 }

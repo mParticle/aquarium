@@ -42,3 +42,11 @@ export const Disabled: Story = {
     isDisabled: true,
   },
 }
+
+export const OnClick: Story = {
+  args: {
+    text: 'On Click Action',
+    isPrimary: true,
+    onClick: () => alert('You clicked the QueryItem.Action!')
+  },
+}
