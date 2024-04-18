@@ -20,13 +20,13 @@ export interface CascaderOption {
   disabled?: boolean
 }
 
-export type CascaderIcons = "blank" | "attribute" | "user" | "event"
+export type CascaderIcons = 'blank' | 'attribute' | 'user' | 'event'
 
 const CascaderIconList = {
-  "blank": <CircleDashedIcon className="query-item__icon"/>,
-  "attribute": <AddIcon className="query-item__icon"/>,
-  "user": <AddIcon className="query-item__icon"/>,
-  "event": <AddIcon className="query-item__icon"/>,
+  blank: <CircleDashedIcon className="query-item__icon" />,
+  attribute: <AddIcon className="query-item__icon" />,
+  user: <AddIcon className="query-item__icon" />,
+  event: <AddIcon className="query-item__icon" />,
 }
 
 export interface ICascaderProps {
@@ -34,7 +34,7 @@ export interface ICascaderProps {
   icon?: CascaderIcons
   errorMessage?: string
   placeholder?: string
-  onChange?: (selectedValue: string[]) => void
+  onChange?: (values: (number | string)[], selectedOptions: any) => Promise<void>
 }
 
 export const Cascader = (props: ICascaderProps) => {
@@ -57,20 +57,15 @@ export const Cascader = (props: ICascaderProps) => {
     getPopupContainer: triggerNode => triggerNode.parentElement,
     searchValue: searchValue,
     value: selectedValue,
-    onChange: (value: (string | number)[]): void => {
-      setSelectedValue(value as string[])
+    onChange: (values: (number | string)[], selectedOptions: any): void => {
+      setSelectedValue(values as string[])
       if (props.onChange) {
-        props.onChange(value as string[])
+        props.onChange(values, selectedOptions)
       }
     },
     dropdownRender: menu => (
       <div className={'query-item__dropdown'}>
-        <Input.Search
-          allowClear
-          className={'query-item__input-search'}
-          placeholder="Search"
-          onSearch={onSearch}
-        />
+        <Input.Search allowClear className={'query-item__input-search'} placeholder="Search" onSearch={onSearch} />
         <Flex justify="center">{menu}</Flex>
       </div>
     ),
