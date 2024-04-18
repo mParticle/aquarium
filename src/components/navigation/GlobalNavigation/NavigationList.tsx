@@ -7,7 +7,7 @@ import { type IGlobalNavigationItem } from 'src/components/navigation/GlobalNavi
 import { type IGlobalNavigationLink } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { Fragment } from 'react'
 import { buildLinkFromHrefOptions } from 'src/utils/utils'
-import {WorkspaceSignout} from "src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSignout";
+import { NavigationButton } from "src/components/navigation/GlobalNavigation/NavigationButton";
 
 export interface INavigationListProps {
   items: IGlobalNavigationItem[]
@@ -50,8 +50,7 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
     if (actionItems.length > 0) {
       children.push({
         key: 'submenu-button',
-        label: <WorkspaceSignout signoutOptions={{ label:"test", onSignout: () => {} }} />,
-
+        label: <NavigationButton navigationButtonOptions={{ label:"test", onClick: () => {} }} />,
       });
     }
   }

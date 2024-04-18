@@ -28,9 +28,9 @@ import { PaddingXxs } from 'src/styles/style'
 export interface IWorkspaceSelectorProps {
   orgs: INavigationOrg[]
   avatarOptions?: IAvatarProps
-  signoutOptions?: {
+  navigationButtonOptions?: {
     label?: string
-    onSignout: () => void
+    onClick: () => void
   }
 }
 
@@ -147,7 +147,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
           hasSearchInput={hasSearchInput}
           inputRef={inputRef}
           hasNoResults={hasNoResults}
-          signoutOptions={props.signoutOptions}
+          navigationButtonOptions={props.navigationButtonOptions}
           menuItems={menuItems}
         />
       }>
