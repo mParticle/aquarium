@@ -12,6 +12,7 @@ export interface IQueryItemQualifierProps {
   disabled?: boolean
   errorMessage?: string
   onChange: (value: IQueryItemQualifierOption) => void
+  value: IQueryItemQualifierOption
 }
 
 export const Qualifier = (props: IQueryItemQualifierProps) => {
@@ -29,6 +30,7 @@ export const Qualifier = (props: IQueryItemQualifierProps) => {
     variant: 'borderless',
     options: props.options,
     disabled: props.disabled,
+    value: props.value,
   }
 
   let className = 'query-item'

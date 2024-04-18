@@ -35,6 +35,7 @@ export interface ICascaderProps {
   errorMessage?: string
   placeholder?: string
   onChange?: (values: (number | string)[], selectedOptions: any) => Promise<void>
+  value?: (number | string)[]
 }
 
 export const Cascader = (props: ICascaderProps) => {
@@ -43,7 +44,7 @@ export const Cascader = (props: ICascaderProps) => {
   const options: CascaderOption[] = []
   const [items] = useState(props.options ?? options)
   const [searchValue, setSearchValue] = useState('')
-  const [selectedValue, setSelectedValue] = useState<string[]>()
+  const [selectedValue, setSelectedValue] = useState<(number | string)[]>(props.value ?? [""])
   const [isOpen, setIsOpen] = useState(false)
 
   const onSearch = (value: string) => {
@@ -87,7 +88,7 @@ export const Cascader = (props: ICascaderProps) => {
           placeholder={props.placeholder}
           status={props.errorMessage ? 'error' : undefined}
           className={inputClasses}
-          value={selectedValue?.slice(-1)}
+          value={(selectedValue as string[])?.slice(-1)}
           prefix={props.icon ?? <CircleDashedIcon className="query-item__icon" />}
         />
       </BaseCascader>
