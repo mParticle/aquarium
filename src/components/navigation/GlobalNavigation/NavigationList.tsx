@@ -33,7 +33,6 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
   const children: Array<IGlobalNavigationLink | MenuItemGroupType> = [
     { label: item.label, type: 'group', key: String(item.label) + '_groupTitle' },
   ]
-
   if (item.type === 'menu') {
     const submenuItems = item.children.map((linkItem, j) => ({
       ...linkItem,
@@ -49,6 +48,7 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
 
     if (actionItems.length > 0) {
       children.push({
+        className:"global_-button",
         key: 'submenu-button',
         label: <NavigationButton navigationButtonOptions={{ label:"test", onClick: () => {} }} />,
       });
