@@ -19,13 +19,15 @@ export const TextInput = (props: ITextInputProps) => {
     props.onChange(e.target.value)
   }
 
+  let inputClasses = `query-item query-item__input-text`
+  if (props.errorMessage) inputClasses += ' query-item--error'
   
   return (
     <>
       <Input
         status={isErrorStatus ? 'error' : undefined}
         disabled={props.disabled}
-        className={'query-item query-item--input-text'}
+        className={inputClasses}
         value={value}
         onChange={_onChange}
       >

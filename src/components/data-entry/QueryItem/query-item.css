@@ -96,16 +96,9 @@
     height: var(--control-height);
 }
 
-/**
- * QueryItem.ValueSelector.InputText
- */
-
-.query-item--input-text {
-    color: var(--mp-query-item-value-selector-color); 
+.query-item__input-text {
+    color: var(--mp-query-item-value-selector-color);
     font-weight: var(--mp-query-item-value-selector-font-weight);
 }
 
-.query-item--input-text.ant-input-status-error {
-    border-width: 0 !important;
-    border-bottom: var(--line-width) solid var(--mp-query-item-border-color-error) !important;
 
