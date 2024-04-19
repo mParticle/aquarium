@@ -127,7 +127,7 @@
   --mp-query-item-border-width-active: 0 0 2px 0;
   --mp-query-item-shadow-focus: 0 0 0 2px rgba(54, 0, 209, 0.1);
   --mp-query-item-color-disabled: #505249;
-  --mp-query-item-value-selector-font-weight: 600;
+  --mp-query-item-value-selector-font-weight: 500;
   --mp-query-item-value-selector-color: #20007a;
   --mp-query-item-padding: 4px;
   --mp-query-item-gap: 4px;

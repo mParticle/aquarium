@@ -1,12 +1,12 @@
-import { Text as BaseText } from 'src/components/general/Typography/Typography'
+import { Typography } from 'src/components/general/Typography/Typography'
 
-export interface IActionProps {
+export interface ITextProps {
   disabled?: boolean
   text: string
 }
 
-export const Text = ({ disabled = false, text }: IActionProps) => {
-  return <BaseText disabled={disabled}>{text}</BaseText>;
+export const Text = ({ disabled = false, text }: ITextProps) => {
+  return <Typography.Text disabled={disabled}>{text}</Typography.Text>;
 }
 
 export default Text

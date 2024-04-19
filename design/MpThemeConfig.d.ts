@@ -35,7 +35,7 @@ export type IMpThemeConfig = ThemeConfig & {
     mpQueryItem_borderWidth_active: '0 0 2px 0'
     mpQueryItem_shadow_focus: '0 0 0 2px rgba(54, 0, 209, 0.1)'
     mpQueryItem_color_disabled: '#505249'
-    'mpQueryItem|valueSelector_fontWeight': '600'
+    'mpQueryItem|valueSelector_fontWeight': '500'
     'mpQueryItem|valueSelector_color': '#20007a'
     mpQueryItem_padding: 4
     mpQueryItem_gap: 4

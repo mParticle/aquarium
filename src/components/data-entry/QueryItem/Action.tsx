@@ -5,20 +5,19 @@ export interface IActionProps {
   isPrimary?: boolean
   isDisabled?: boolean
   text?: string
+  onClick?: () => void
 }
 
-function Action(props: IActionProps) {
+export const Action = (props: IActionProps) => {
   const buttonClassNames: string = props.isPrimary
-    ? 'query-item query-item-action'
-    : 'query-item query-item-action query-item-action--secondary'
+    ? 'query-item query-item--action'
+    : 'query-item query-item--action query-item--secondary'
   return (
     <>
-      <Button className={buttonClassNames} type={props.isPrimary ? 'primary' : 'default'} disabled={props.isDisabled}>
-        <AddIcon className="query-item-action__icon" />
+      <Button className={buttonClassNames} type={props.isPrimary ? 'primary' : 'default'} disabled={props.isDisabled} onClick={props.onClick}>
+        <AddIcon className="query-item__icon" />
         <span>{props.text}</span>
       </Button>
     </>
   )
 }
-
-export default Action

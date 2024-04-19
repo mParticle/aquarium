@@ -23,6 +23,7 @@ import MpLogoIcon from 'src/assets/svg/mpLogo.svg?react'
 import LockIcon from 'src/assets/svg/lock.svg?react'
 import SearchIcon from 'src/assets/svg/search.svg?react'
 import AnalyticsIcon from 'src/assets/svg/analytics.svg?react'
+import CircleDashedIcon from 'src/assets/svg/circle-dashed.svg?react'
 
 export {
   AddIcon,
@@ -50,4 +51,5 @@ export {
   CloudIcon,
   FolderClosedIcon,
   AnalyticsIcon,
+  CircleDashedIcon,
 }
