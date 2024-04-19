@@ -49,8 +49,8 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
     if (actionItems.length > 0) {
       children.push({
         className:"submenu__button-item",
-        key: 'submenu-button',
-        label: <NavigationButton navigationButtonOptions={{ label:"test", onClick: () => {} }} />,
+        key: `submenu-button-${i}`,
+        label:  <NavigationButton navigationButtonOptions={{ label:"test", onClick: () => {}, withoutContainer:true }} />,
       });
     }
   }

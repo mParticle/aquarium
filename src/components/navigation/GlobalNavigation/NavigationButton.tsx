@@ -1,8 +1,7 @@
 import { Button } from 'src/components'
 import { type IWorkspaceSelectorProps } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelector'
-
-export const NavigationButton = ({ navigationButtonOptions }: { navigationButtonOptions: IWorkspaceSelectorProps['navigationButtonOptions'] }) => (
-  <div className="workspaceSelector__signoutButtonContainer">
+export const NavigationButton = ({ navigationButtonOptions}: { navigationButtonOptions: IWorkspaceSelectorProps['navigationButtonOptions'] }) => (
+  <div className={!navigationButtonOptions?.withoutContainer ? "workspaceSelector__signoutButtonContainer" : ""}>
     <Button
       className="workspaceSelector__signoutButton"
       type="primary"

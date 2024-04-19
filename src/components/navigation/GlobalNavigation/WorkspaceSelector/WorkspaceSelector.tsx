@@ -30,7 +30,8 @@ export interface IWorkspaceSelectorProps {
   avatarOptions?: IAvatarProps
   navigationButtonOptions?: {
     label?: string
-    onClick: () => void
+    onClick: () => void,
+    withoutContainer?: boolean
   }
 }
 

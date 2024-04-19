@@ -176,6 +176,11 @@
   color: var(--color-primary-text) !important;
 }
 
+.submenu__button-item {
+  padding: 0 !important;
+  margin: 0 auto !important;
+}
+
 .submenu__button-item:hover {
   background-color: transparent !important;
 }
