@@ -48,7 +48,7 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
 
     if (actionItems.length > 0) {
       children.push({
-        className:"global_-button",
+        className:"submenu__button-item",
         key: 'submenu-button',
         label: <NavigationButton navigationButtonOptions={{ label:"test", onClick: () => {} }} />,
       });

@@ -176,7 +176,7 @@
   color: var(--color-primary-text) !important;
 }
 
-.submenu-button:hover {
+.submenu__button-item:hover {
   background-color: transparent !important;
 }
 
