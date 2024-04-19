@@ -95,10 +95,3 @@
 .query-item__input-search .ant-input-outlined{
     height: var(--control-height);
 }
-
-.query-item__input-text {
-    color: var(--mp-query-item-value-selector-color);
-    font-weight: var(--mp-query-item-value-selector-font-weight);
-}
-
-
