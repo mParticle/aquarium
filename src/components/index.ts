@@ -125,6 +125,9 @@ export {
   CloudIcon,
   FolderClosedIcon,
   AnalyticsIcon,
-  CircleDashedIcon,
+  EmptyIcon,
+  EventAttributesIcon,
+  UserAttributesIcon,
+  EventsIcon,
 } from './icons/index'
 export { Typography } from './general/Typography/Typography'
