@@ -40,6 +40,11 @@
     border-color: var(--mp-query-item-border-color-disabled) !important;
   }
 
+  &.query-item--input-text {
+    color: var(--mp-query-item-value-selector-color);
+    font-weight: var(--mp-query-item-value-selector-font-weight);
+  }
+
   &.query-item--action {
     color: var(--mp-query-item-action-primary-color) !important;
 
@@ -95,10 +100,3 @@
 .query-item__input-search .ant-input-outlined{
     height: var(--control-height);
 }
-
-.query-item__input-text {
-    color: var(--mp-query-item-value-selector-color);
-    font-weight: var(--mp-query-item-value-selector-font-weight);
-}
-
-
