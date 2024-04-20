@@ -11,8 +11,8 @@ export interface IQueryItemQualifierProps {
   options: IQueryItemQualifierOption[]
   disabled?: boolean
   errorMessage?: string
-  onChange: (value: IQueryItemQualifierOption) => void
-  value: IQueryItemQualifierOption
+  onChange?: (value: IQueryItemQualifierOption) => void
+  value?: IQueryItemQualifierOption
 }
 
 export const Qualifier = (props: IQueryItemQualifierProps) => {
@@ -22,7 +22,7 @@ export const Qualifier = (props: IQueryItemQualifierProps) => {
     menuItemSelectedIcon: node =>
       node.isSelected ? <CheckIcon className="query-item-qualifier__item-selected-icon" /> : null,
     onChange: props.onChange,
-    onDropdownVisibleChange: () => setIsOpen(true),
+    onDropdownVisibleChange: () => setIsOpen(!isOpen),
     placement: 'bottomLeft',
     popupMatchSelectWidth: false,
     status: props.errorMessage ? 'error' : undefined,

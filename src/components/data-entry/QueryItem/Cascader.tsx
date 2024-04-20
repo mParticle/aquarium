@@ -2,31 +2,31 @@ import './query-item.css'
 import { GetProp } from 'antd'
 import { ReactNode, useState } from 'react'
 import {
-  AddIcon,
   Cascader as BaseCascader,
-  CircleDashedIcon,
   Flex,
   ICascaderProps as IBaseCascaderProps,
   Input,
-  Space,
   Typography,
+  EmptyIcon,
+  EventAttributesIcon,
+  EventsIcon,
+  UserAttributesIcon,
 } from 'src/components'
 
 export interface CascaderOption {
   value: string
-  label: ReactNode
-  selectedLabel?: string
+  label: string
   children?: CascaderOption[]
   disabled?: boolean
 }
 
-export type CascaderIcons = 'blank' | 'attribute' | 'user' | 'event'
+export type CascaderIcons = 'empty' | 'eventAttribute' | 'userAttribute' | 'event'
 
 const CascaderIconList = {
-  blank: <CircleDashedIcon className="query-item__icon" />,
-  attribute: <AddIcon className="query-item__icon" />,
-  user: <AddIcon className="query-item__icon" />,
-  event: <AddIcon className="query-item__icon" />,
+  empty: () => <EmptyIcon className="query-item__icon" />,
+  eventAttribute: () => <EventAttributesIcon className="query-item__icon" />,
+  userAttribute: () => <UserAttributesIcon className="query-item__icon" />,
+  event: () => <EventsIcon className="query-item__icon" />,
 }
 
 export interface ICascaderProps {
@@ -44,7 +44,7 @@ export const Cascader = (props: ICascaderProps) => {
   const options: CascaderOption[] = []
   const [items] = useState(props.options ?? options)
   const [searchValue, setSearchValue] = useState('')
-  const [selectedValue, setSelectedValue] = useState<(number | string)[]>(props.value ?? [""])
+  const [selectedValue, setSelectedValue] = useState<(number | string)[]>(props.value ?? [''])
   const [isOpen, setIsOpen] = useState(false)
 
   const onSearch = (value: string) => {
@@ -89,7 +89,7 @@ export const Cascader = (props: ICascaderProps) => {
           status={props.errorMessage ? 'error' : undefined}
           className={inputClasses}
           value={(selectedValue as string[])?.slice(-1)}
-          prefix={props.icon ?? <CircleDashedIcon className="query-item__icon" />}
+          prefix={props.icon ? CascaderIconList[props.icon]() : <EmptyIcon className="query-item__icon" />}
         />
       </BaseCascader>
       {props.errorMessage && <Typography.Text type={'danger'}>{props.errorMessage}</Typography.Text>}

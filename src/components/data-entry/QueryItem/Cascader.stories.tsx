@@ -107,6 +107,15 @@ export const OnSelect: Story = {
   args: {
     placeholder: "QueryItem.ValueSelector.Cascader Error",
     options: exampleOptions,
-    onChange: (value) => console.log(value),
+    onChange: async (value) => console.log(value),
+  },
+}
+
+export const PreSelectedValue: Story = {
+  args: {
+    placeholder: "QueryItem.ValueSelector.Cascader PreSelected",
+    options: exampleOptions,
+    value: ["Canada1", "Ontario1", "Toronto1"],
+    onChange: async (values, _) => {console.log(values)},
   },
 }

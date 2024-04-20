@@ -42,3 +42,11 @@ export const Disabled: Story = {
     options: defaultOptions,
   },
 }
+
+
+export const PreSelected: Story = {
+  args: {
+    options: defaultOptions,
+    value: { value: '2', label: 'is greater than' },
+  },
+}
