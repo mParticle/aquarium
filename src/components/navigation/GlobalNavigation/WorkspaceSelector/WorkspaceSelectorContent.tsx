@@ -17,7 +17,7 @@ type WorkspaceSelectorContentProps = {
     onClick: () => void;
     withoutContainer?: boolean;
   }; 
-  // signoutOptions will be deprecated.Please avoid using it.
+  // @deprecated signoutOptions will be deprecated.Please avoid using it.
   signoutOptions?: IWorkspaceSelectorProps['signoutOptions']
 }
 
