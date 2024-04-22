@@ -32,6 +32,10 @@ export interface IWorkspaceSelectorProps {
     label?: string
     onClick: () => void,
     withoutContainer?: boolean
+  },
+  signoutOptions?: {
+    label?: string
+    onSignout: () => void
   }
 }
 
@@ -132,7 +136,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
       }, 0)
     }
   }
-
+  
   return (
     <Popover
       arrow={false}
@@ -149,6 +153,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
           inputRef={inputRef}
           hasNoResults={hasNoResults}
           navigationButtonItemOptions={props.navigationButtonItemOptions}
+          signoutOptions={props.signoutOptions}
           menuItems={menuItems}
         />
       }>

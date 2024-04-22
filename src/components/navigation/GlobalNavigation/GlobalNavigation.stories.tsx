@@ -141,11 +141,15 @@ const meta: Meta<typeof GlobalNavigation> = {
     tools: defaultTools,
     management: defaultManagement,
     orgs: defaultOrgs,
-    navigationButtonItemOptions: {
-      onClick: () => {
-        alert('signing out!')
-      },
-    },
+    signoutOptions: {
+      onSignout: () => {
+        alert('signing out old!')
+      }},
+    // navigationButtonItemOptions: {
+    //   onClick: () => {
+    //     alert('signing out!')
+    //   },
+    // },
     onMpHomeClick: () => {
       alert('Going to mP!')
     },

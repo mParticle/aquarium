@@ -31,6 +31,10 @@ export interface IGlobalNavigationProps {
   onMpHomeClick: () => void
   hideMpHome?: boolean
   avatarOptions?: IAvatarProps
+  signoutOptions?: {
+    label?: string
+    onSignout: () => void
+  }
   navigationButtonItemOptions?: {
     label?: string
     onClick: () => void,
@@ -64,16 +68,17 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
               <WorkspaceSelector
                 orgs={props.orgs}
                 navigationButtonItemOptions={props.navigationButtonItemOptions}
+                signoutOptions={props.signoutOptions}
                 avatarOptions={props.avatarOptions}
               />
             ) : (
-              !!props.navigationButtonItemOptions?.onClick() && (
+              !!props.navigationButtonItemOptions?.onClick()  || !!props.signoutOptions?.onSignout&& (
                 <NavigationItem
                   type="link"
                   icon={<SignoutIcon />}
                   label="Sign Out"
                   hideLabel
-                  onClick={props.navigationButtonItemOptions?.onClick}
+                  onClick={props.navigationButtonItemOptions?.onClick || props.signoutOptions?.onSignout}
                 />
               )
             )}
