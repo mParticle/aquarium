@@ -3,7 +3,7 @@ import type { IWorkspaceSelectorProps } from 'src/components/navigation/GlobalNa
 import { Input, type InputRef, type IWorkspaceSelectorDisplayItem } from 'src/components'
 import { WorkspaceSelectorContentItems } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorContentItems'
 import { WorkspaceNoResults } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceNoResults'
-import {NavigationButton} from "src/components/navigation/GlobalNavigation/NavigationButton";
+import {NavigationButtonItem} from "src/components/navigation/GlobalNavigation/NavigationButtonItem";
 
 type WorkspaceSelectorContentProps = {
   onSearch: (e: ChangeEvent<HTMLInputElement>) => void
@@ -38,7 +38,7 @@ export function WorkspaceSelectorContent(props: WorkspaceSelectorContentProps) {
 
       {hasNoResults ? <WorkspaceNoResults /> : <WorkspaceSelectorContentItems menuItems={menuItems} />}
 
-      <NavigationButton navigationButtonOptions={navigationButtonOptions} />
+      <NavigationButtonItem navigationButtonOptions={navigationButtonOptions} />
     </div>
   )
 }

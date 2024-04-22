@@ -141,6 +141,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
       overlayClassName="workspaceSelector__popover"
       onOpenChange={focusOnInput}
       afterOpenChange={focusOnInput}
+      open={true}
       content={
         <WorkspaceSelectorContent
           onSearch={onSearch}

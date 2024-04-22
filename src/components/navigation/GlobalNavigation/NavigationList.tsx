@@ -7,7 +7,7 @@ import { type IGlobalNavigationItem } from 'src/components/navigation/GlobalNavi
 import { type IGlobalNavigationLink } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { Fragment } from 'react'
 import { buildLinkFromHrefOptions } from 'src/utils/utils'
-import { NavigationButton } from "src/components/navigation/GlobalNavigation/NavigationButton";
+import {NavigationButtonItem} from "src/components/navigation/GlobalNavigation/NavigationButtonItem";
 
 export interface INavigationListProps {
   items: IGlobalNavigationItem[]
@@ -19,9 +19,9 @@ export function NavigationList(props: INavigationListProps) {
       {props.items.map((item, i) => (
         <Fragment key={i}>
           {item.type === 'menu' ? (
-            <Menu key={i} expandIcon={null} className="globalNavigation__menu" items={[generateMenuItem(item, i)]} />
+            <Menu key={i} expandIcon={null} className="globalNavigation__menu" items={[generateMenuItem(item, i)]} /> // this is a menu item
           ) : (
-            <NavigationItem {...item} type="link" key={i} />
+            <NavigationItem {...item} type="link" key={i} /> // this is a link
           )}
         </Fragment>
       ))}
@@ -50,7 +50,9 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
       children.push({
         className:"submenu__button-item",
         key: `submenu-button-${i}`,
-        label:  <NavigationButton navigationButtonOptions={{ label:"test", onClick: () => {}, withoutContainer:true }} />,
+        label:  <NavigationButtonItem label="test" onClick={() => {
+          alert("clicked")
+        }} options={{withoutContainer: true}} />,
       });
     }
   }
