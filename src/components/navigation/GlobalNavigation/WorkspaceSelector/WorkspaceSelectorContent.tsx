@@ -3,7 +3,7 @@ import type { IWorkspaceSelectorProps } from 'src/components/navigation/GlobalNa
 import { Input, type InputRef, type IWorkspaceSelectorDisplayItem } from 'src/components'
 import { WorkspaceSelectorContentItems } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorContentItems'
 import { WorkspaceNoResults } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceNoResults'
-import {NavigationButtonItem} from "src/components/navigation/GlobalNavigation/NavigationButtonItem";
+import {NavigationButtonItem, INavigationButtonItemProps} from "src/components/navigation/GlobalNavigation/NavigationButtonItem";
 
 type WorkspaceSelectorContentProps = {
   onSearch: (e: ChangeEvent<HTMLInputElement>) => void
@@ -12,11 +12,15 @@ type WorkspaceSelectorContentProps = {
   inputRef: RefObject<InputRef>
   hasNoResults: boolean
   menuItems: IWorkspaceSelectorDisplayItem[]
-  navigationButtonOptions?: IWorkspaceSelectorProps['navigationButtonOptions']
+  navigationButtonItemOptions?: {
+    label?: string;
+    onClick: () => void;
+    withoutContainer?: boolean;
+  };
 }
 
 export function WorkspaceSelectorContent(props: WorkspaceSelectorContentProps) {
-  const { onSearch, searchTerm, hasSearchInput, inputRef, hasNoResults, menuItems, navigationButtonOptions } = props
+  const { onSearch, searchTerm, hasSearchInput, inputRef, hasNoResults, menuItems, navigationButtonItemOptions } = props
 
   return (
     <div className="workspaceSelector__popoverContent">
@@ -38,7 +42,7 @@ export function WorkspaceSelectorContent(props: WorkspaceSelectorContentProps) {
 
       {hasNoResults ? <WorkspaceNoResults /> : <WorkspaceSelectorContentItems menuItems={menuItems} />}
 
-      <NavigationButtonItem navigationButtonOptions={navigationButtonOptions} />
+      <NavigationButtonItem {...navigationButtonItemOptions} />
     </div>
   )
 }

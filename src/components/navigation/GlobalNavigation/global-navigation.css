@@ -176,13 +176,13 @@
   color: var(--color-primary-text) !important;
 }
 
-.submenu__button-item {
+.navigation__button-item {
   padding: 0 !important;
   margin: 0 auto !important;
   color: var(--mp-brand-secondary-1) !important;
 }
 
-.submenu__button-item:hover {
+.navigation__button-item:hover {
   background-color: transparent !important;
 }
 

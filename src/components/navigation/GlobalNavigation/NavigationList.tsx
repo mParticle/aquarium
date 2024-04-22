@@ -47,9 +47,8 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
     children.push(...regularItems);
 
     actionItems.forEach((actionItem, index) => {
-      console.log(actionItem,"action item")
       children.push({
-        className: "submenu__button-item",
+        className: "navigation__button-item",
         key: `submenu-button-${index}`,
         label: (
             <NavigationButtonItem

@@ -148,7 +148,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
           hasSearchInput={hasSearchInput}
           inputRef={inputRef}
           hasNoResults={hasNoResults}
-          navigationButtonOptions={props.navigationButtonItemOptions}
+          navigationButtonItemOptions={props.navigationButtonItemOptions}
           menuItems={menuItems}
         />
       }>

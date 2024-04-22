@@ -33,7 +33,7 @@ export interface IGlobalNavigationProps {
   avatarOptions?: IAvatarProps
   navigationButtonItemOptions?: {
     label?: string
-    onClick: () => void
+    onClick: () => void,
   }
 }
 

@@ -23,7 +23,7 @@ export {
 export const Menu = (props: IMenuProps) => {
   return (
     <ConfigProvider>
-      <AntMenu {...props}/>
+      <AntMenu {...props} />
     </ConfigProvider>
   )
 }
