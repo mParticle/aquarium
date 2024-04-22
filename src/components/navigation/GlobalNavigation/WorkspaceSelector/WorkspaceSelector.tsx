@@ -28,7 +28,7 @@ import { PaddingXxs } from 'src/styles/style'
 export interface IWorkspaceSelectorProps {
   orgs: INavigationOrg[]
   avatarOptions?: IAvatarProps
-  navigationButtonOptions?: {
+  navigationButtonItemOptions?: {
     label?: string
     onClick: () => void,
     withoutContainer?: boolean
@@ -141,7 +141,6 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
       overlayClassName="workspaceSelector__popover"
       onOpenChange={focusOnInput}
       afterOpenChange={focusOnInput}
-      open={true}
       content={
         <WorkspaceSelectorContent
           onSearch={onSearch}
@@ -149,7 +148,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
           hasSearchInput={hasSearchInput}
           inputRef={inputRef}
           hasNoResults={hasNoResults}
-          navigationButtonOptions={props.navigationButtonOptions}
+          navigationButtonOptions={props.navigationButtonItemOptions}
           menuItems={menuItems}
         />
       }>

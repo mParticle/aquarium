@@ -34,27 +34,31 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
     { label: item.label, type: 'group', key: String(item.label) + '_groupTitle' },
   ]
   if (item.type === 'menu') {
-    const submenuItems = item.children.map((linkItem, j) => ({
-      ...linkItem,
+    const childrenWithExpandedIcons = item.children.map((child, index) => ({
+      ...child,
       expandIcon: null,
-      key: `${String(linkItem.label)}${j}`,
-      label: buildLinkFromHrefOptions(linkItem.label, linkItem.hrefOptions),
+      key: `${child.label}${index}`,
+      label: buildLinkFromHrefOptions(child.label, child.hrefOptions),
     }));
 
-    const regularItems = submenuItems.filter(linkItem => linkItem.type !== 'button');
-    const actionItems = submenuItems.filter(linkItem => linkItem.type === 'button');
+    const regularItems = childrenWithExpandedIcons.filter(child => child.type !== 'button');
+    const actionItems = childrenWithExpandedIcons.filter(child => child.type === 'button');
 
     children.push(...regularItems);
 
-    if (actionItems.length > 0) {
+    actionItems.forEach((actionItem, index) => {
+      console.log(actionItem,"action item")
       children.push({
-        className:"submenu__button-item",
-        key: `submenu-button-${i}`,
-        label:  <NavigationButtonItem label="test" onClick={() => {
-          alert("clicked")
-        }} options={{withoutContainer: true}} />,
+        className: "submenu__button-item",
+        key: `submenu-button-${index}`,
+        label: (
+            <NavigationButtonItem
+                options={{ withoutContainer: true }}
+                {...actionItem.buttonOptions}
+            />
+        ),
       });
-    }
+    });
   }
   const navigationIcon = (
     <NavigationIcon
