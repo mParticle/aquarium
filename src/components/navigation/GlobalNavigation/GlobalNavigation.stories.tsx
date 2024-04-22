@@ -141,8 +141,8 @@ const meta: Meta<typeof GlobalNavigation> = {
     tools: defaultTools,
     management: defaultManagement,
     orgs: defaultOrgs,
-    signoutOptions: {
-      onSignout: () => {
+    navigationButtonItemOptions: {
+      onClick: () => {
         alert('signing out!')
       },
     },
@@ -830,9 +830,9 @@ export const Indicative: Story = {
     management: indManagement,
     createItems: indCreateItems,
     orgs: indOrgs,
-    signoutOptions: {
+    navigationButtonItemOptions: {
       label: 'Custom Signout Label',
-      onSignout: () => {
+      onClick: () => {
         alert('Signout!')
       },
     },
@@ -993,7 +993,7 @@ export const Cortex: Story = {
     tools: cortexTools,
     management: cortexManagement,
     orgs: cortexOrgs,
-    signoutOptions: undefined,
+    navigationButtonItemOptions: undefined,
     onMpHomeClick: () => {
       alert('going to overview map')
     },
