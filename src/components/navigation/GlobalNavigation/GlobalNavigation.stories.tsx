@@ -997,7 +997,6 @@ export const Cortex: Story = {
     tools: cortexTools,
     management: cortexManagement,
     orgs: cortexOrgs,
-    navigationButtonItemOptions: undefined,
     onMpHomeClick: () => {
       alert('going to overview map')
     },

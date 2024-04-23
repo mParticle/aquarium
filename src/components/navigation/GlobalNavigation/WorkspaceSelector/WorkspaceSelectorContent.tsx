@@ -16,13 +16,19 @@ type WorkspaceSelectorContentProps = {
     label?: string;
     onClick: () => void;
     withoutContainer?: boolean;
-  }; 
-  // @deprecated signoutOptions will be deprecated.Please avoid using it.
-  signoutOptions?: IWorkspaceSelectorProps['signoutOptions']
+  };
+  /**
+   * @deprecated signoutOptions will be deprecated. Please avoid using it.
+   */
+  signoutOptions?:  IWorkspaceSelectorProps['signoutOptions'] 
 }
 
 export function WorkspaceSelectorContent(props: WorkspaceSelectorContentProps) {
   const { onSearch, searchTerm, hasSearchInput, inputRef, hasNoResults, menuItems} = props
+  const label = props.navigationButtonItemOptions?.label ?? props.signoutOptions?.label;
+  const onClick = props.navigationButtonItemOptions?.onClick ?? props.signoutOptions?.onSignout;
+  const withoutContainer = props.navigationButtonItemOptions?.withoutContainer ?? false;
+
   return (
     <div className="workspaceSelector__popoverContent">
       {hasSearchInput && (
@@ -42,8 +48,9 @@ export function WorkspaceSelectorContent(props: WorkspaceSelectorContentProps) {
       )}
 
       {hasNoResults ? <WorkspaceNoResults /> : <WorkspaceSelectorContentItems menuItems={menuItems} />}
+      
+       <NavigationButtonItem label={label} onClick={onClick} options={{ withoutContainer }} />
 
-      <NavigationButtonItem label={props.signoutOptions?.label} onClick={props.signoutOptions?.onSignout}  {...props.navigationButtonItemOptions}/>
     </div>
   )
 }
