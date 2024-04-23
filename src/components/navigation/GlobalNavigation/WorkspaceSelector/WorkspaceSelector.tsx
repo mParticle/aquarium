@@ -33,6 +33,9 @@ export interface IWorkspaceSelectorProps {
     onClick: () => void,
     withoutContainer?: boolean
   },
+  /**
+   * @deprecated signoutOptions will be deprecated. Please avoid using it.
+   */
   signoutOptions?: {
     label?: string
     onSignout: () => void

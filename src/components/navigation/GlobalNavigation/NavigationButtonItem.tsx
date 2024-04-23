@@ -12,7 +12,6 @@ export interface INavigationButtonItemProps {
 
 export const NavigationButtonItem: React.FC<INavigationButtonItemProps> = ({ label = 'Sign Out of mParticle', onClick, options = {}, ...rest }) => {
     const { withoutContainer = false } = options;
-console.log(onClick,"onclick")
     return (
         <div className={!withoutContainer ? "workspaceSelector__signoutButtonContainer" : ""}>
             <Button

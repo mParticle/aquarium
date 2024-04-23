@@ -31,13 +31,17 @@ export interface IGlobalNavigationProps {
   onMpHomeClick: () => void
   hideMpHome?: boolean
   avatarOptions?: IAvatarProps
+  /**
+   * @deprecated signoutOptions will be deprecated. Please avoid using it.
+   */
   signoutOptions?: {
     label?: string
     onSignout: () => void
   }
   navigationButtonItemOptions?: {
-    label?: string
+    label: string
     onClick: () => void,
+    withoutContainer?: boolean;
   }
 }
 
