@@ -44,7 +44,6 @@ export interface IGlobalNavigationProps {
     withoutContainer?: boolean;
   }
 }
-
 export const GlobalNavWidth = 90 as const
 
 export const GlobalNavigation = (props: IGlobalNavigationProps) => {
