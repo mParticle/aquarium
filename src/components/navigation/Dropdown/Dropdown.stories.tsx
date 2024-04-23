@@ -5,11 +5,9 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { Button } from 'src/components/general/Button/Button'
 import { Dropdown, type IDropdownProps } from 'src/components/navigation/Dropdown/Dropdown'
 import { ExampleStory } from 'src/utils/ExampleStory'
-import { Tooltip, type IMenuProps } from 'src/components'
+import { Tooltip, type IMenuProps, Icon } from 'src/components'
 import { Space } from 'src/components'
-import { AlicornIcon } from 'src/components'
 import { Divider } from 'src/components'
-import { UsersIcon } from 'src/components'
 import { theme } from 'antd'
 import { type MenuProps } from 'antd'
 import { Link } from 'src/components/general/Typography/Typography'
@@ -31,7 +29,7 @@ const menu: IDropdownProps['menu'] = {
           2nd menu item (disabled)
         </a>
       ),
-      icon: <AlicornIcon />,
+      icon: <Icon name="alicorn" />,
       disabled: true,
     },
     {
@@ -180,7 +178,7 @@ export const ExampleBasic: Story = {
             2nd menu item (disabled)
           </a>
         ),
-        icon: <AlicornIcon />,
+        icon: <Icon name="alicorn" />,
         disabled: true,
       },
       {
@@ -207,7 +205,7 @@ export const ExampleBasic: Story = {
             }}>
             <Space>
               Hover me
-              <AlicornIcon />
+              <Icon name="alicorn" />
             </Space>
           </a>
         </Dropdown>
@@ -412,7 +410,7 @@ export const ExampleClickEvent: Story = {
             }}>
             <Space>
               Hover me, Click menu item
-              <AlicornIcon />
+              <Icon name="alicorn" />
             </Space>
           </a>
         </Dropdown>
@@ -484,7 +482,7 @@ export const ExampleCustomDropdown: Story = {
             }}>
             <Space>
               Hover me
-              <AlicornIcon />
+              <Icon name="alicorn" />
             </Space>
           </a>
         </Dropdown>
@@ -538,7 +536,7 @@ export const ExampleClosingMenu: Story = {
             }}>
             <Space>
               Hover me
-              <AlicornIcon />
+              <Icon name="alicorn" />
             </Space>
           </a>
         </Dropdown>
@@ -592,7 +590,7 @@ export const ExampleLoading: Story = {
             Submit
           </Dropdown.Button>
           <Dropdown.Button
-            icon={<AlicornIcon />}
+            icon={<Icon name="alicorn" />}
             loading={loadings[1]}
             menu={{ items }}
             onClick={() => {
@@ -633,7 +631,7 @@ export const ExampleSelectable: Story = {
           <Link>
             <Space>
               Selectable
-              <AlicornIcon />
+              <Icon name="alicorn" />
             </Space>
           </Link>
         </Dropdown>
@@ -738,7 +736,7 @@ export const ExampleNested: Story = {
             }}>
             <Space>
               Cascading menu
-              <AlicornIcon />
+              <Icon name="alicorn" />
             </Space>
           </a>
         </Dropdown>
@@ -763,23 +761,23 @@ export const ExampleButtons: Story = {
       {
         label: '1st menu item',
         key: '1',
-        icon: <UsersIcon />,
+        icon: <Icon name="users" />,
       },
       {
         label: '2nd menu item',
         key: '2',
-        icon: <UsersIcon />,
+        icon: <Icon name="users" />,
       },
       {
         label: '3rd menu item',
         key: '3',
-        icon: <UsersIcon />,
+        icon: <Icon name="users" />,
         danger: true,
       },
       {
         label: '4rd menu item',
         key: '4',
-        icon: <UsersIcon />,
+        icon: <Icon name="users" />,
         danger: true,
         disabled: true,
       },
@@ -796,7 +794,7 @@ export const ExampleButtons: Story = {
           <Dropdown.Button menu={menuProps} onClick={handleButtonClick}>
             Dropdown
           </Dropdown.Button>
-          <Dropdown.Button menu={menuProps} placement="bottom" icon={<UsersIcon />}>
+          <Dropdown.Button menu={menuProps} placement="bottom" icon={<Icon name="users" />}>
             Dropdown
           </Dropdown.Button>
           <Dropdown.Button menu={menuProps} onClick={handleButtonClick} disabled>
@@ -816,7 +814,7 @@ export const ExampleButtons: Story = {
             <Button>
               <Space>
                 Button
-                <AlicornIcon />
+                <Icon name="alicorn" />
               </Space>
             </Button>
           </Dropdown>
@@ -866,7 +864,7 @@ export const ExampleContainerDivider: Story = {
             }}>
             <Space>
               Hover me
-              <AlicornIcon />
+              <Icon name="alicorn" />
             </Space>
           </a>
         </Dropdown>

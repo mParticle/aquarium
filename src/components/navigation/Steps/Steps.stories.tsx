@@ -1,20 +1,9 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { Steps } from 'src/components/navigation/Steps/Steps'
-import { type IStepsProps } from 'src/components/navigation/Steps/Steps'
-import { ExampleStory } from 'src/utils/ExampleStory'
-import { UsersIcon } from 'src/components'
-import { CheckIcon } from 'src/components'
-import { AlicornIcon } from 'src/components'
-import { MpLogoIcon } from 'src/components'
-import { Button } from 'src/components'
-import { message } from 'src/components'
-import { Divider } from 'src/components'
-import { Popover } from 'src/components'
-import { Avatar } from 'src/components'
-import { List } from 'src/components'
 import { theme } from 'antd'
 import { useState } from 'react'
-import { SizeMs } from 'src/styles/style'
+import { Avatar, Button, Divider, Icon, List, message, Popover } from 'src/components'
+import { type IStepsProps, Steps } from 'src/components/navigation/Steps/Steps'
+import { ExampleStory } from 'src/utils/ExampleStory'
 
 const items = [
   {
@@ -191,22 +180,22 @@ export const ExampleIcon: Story = {
             {
               title: 'Login',
               status: 'finish',
-              icon: <UsersIcon />,
+              icon: <Icon name="users" />,
             },
             {
               title: 'Verification',
               status: 'finish',
-              icon: <CheckIcon />,
+              icon: <Icon name="gear" />,
             },
             {
               title: 'Pay',
               status: 'process',
-              icon: <AlicornIcon />,
+              icon: <Icon name="alicorn" />,
             },
             {
               title: 'Done',
               status: 'wait',
-              icon: <MpLogoIcon style={{ width: SizeMs, height: SizeMs }} />,
+              icon: <Icon name="check" size="ms" />,
             },
           ]}
         />
