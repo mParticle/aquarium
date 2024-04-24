@@ -1,23 +1,129 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { Row, Col, Button } from 'antd'
+import { type valueType } from 'antd/es/statistic/utils'
 import { Card } from 'src/components'
 import { type ICountdownProps, Statistic } from 'src/components/data-display/Statistic/Statistic'
 import { Icon } from 'src/components/general/Icon/Icon'
-import { Paragraph } from 'src/components/general/Typography/Typography'
-import { ColorError, ColorErrorText, ColorInfoBg, ColorSuccess, PaddingXl } from 'src/styles/style'
+import { Text, Paragraph } from 'src/components/general/Typography/Typography'
+import { ColorError, ColorInfoBg, ColorSuccess, PaddingXl } from 'src/styles/style'
 import { ExampleStory } from 'src/utils/ExampleStory'
 
 const meta: Meta<typeof Statistic> = {
   title: 'Aquarium/Data Display/Statistic',
   component: Statistic,
 
-  args: {},
+  args: {
+    decimalSeparator: '.',
+    formatter: (value: valueType) => `${value}`,
+    groupSeparator: ',',
+    loading: false,
+    precision: 0,
+    prefix: undefined,
+    suffix: undefined,
+    title: 'Statistic',
+    value: 0,
+    valueStyle: undefined,
+  },
+  argTypes: {
+    formatter: {
+      control: 'select',
+      options: ['default', 'code', 'error'],
+      mapping: {
+        default: (value: valueType) => `${value}`,
+        code: (value: valueType) => <Text code>{value}</Text>,
+        error: (value: valueType) => <Text type="danger">{value}</Text>,
+      },
+    },
+    prefix: {
+      control: 'select',
+      options: ['check', 'alicorn', 'wrench'],
+      mapping: {
+        check: <Icon name="check" />,
+        alicorn: <Icon name="alicorn" />,
+        wrench: <Icon name="wrench" />,
+      },
+    },
+    suffix: {
+      control: 'text',
+    },
+    valueStyle: {
+      control: 'object',
+    },
+  },
 }
 export default meta
 
 type Story = StoryObj<typeof Statistic>
 
 export const Primary: Story = {}
+
+export const CustomDecimalSeparator: Story = {
+  args: {
+    value: 1128.93,
+    decimalSeparator: ',',
+  },
+}
+
+export const CustomFormatter: Story = {
+  args: {
+    value: 112893,
+    formatter: (value: valueType) => (
+      <Text code copyable>
+        {value}
+      </Text>
+    ),
+  },
+}
+
+export const CustomGroupSeparator: Story = {
+  args: {
+    value: 112893,
+    groupSeparator: '.',
+  },
+}
+
+export const CustomLoading: Story = {
+  args: {
+    loading: true,
+  },
+}
+
+export const CustomPrecision: Story = {
+  args: {
+    // value: 1128.93402,
+    precision: 3,
+  },
+}
+
+export const CustomPrefix: Story = {
+  args: {
+    prefix: <Icon name="check" />,
+  },
+}
+
+export const CustomSuffix: Story = {
+  args: {
+    suffix: '元',
+  },
+}
+export const CustomTitle: Story = {
+  args: {
+    title: 'Custom title',
+  },
+}
+
+export const CustomValue: Story = {
+  args: {
+    value: 112893,
+  },
+}
+
+export const CustomValueStyle: Story = {
+  args: {
+    value: 112893,
+    valueStyle: { color: ColorSuccess },
+  },
+}
 
 export const ExampleBasic: Story = {
   render: () => {
