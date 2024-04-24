@@ -22,31 +22,29 @@ type Story = StoryObj<typeof QueryItem.Action>
 export const Primary: Story = {
   args: {
     text: 'Primary Action',
-    isPrimary: true,
-    isDisabled: false,
+    type: "primary"
   },
 }
 
 export const Secondary: Story = {
   args: {
     text: 'Secondary Action',
-    isPrimary: false,
-    isDisabled: false,
+    type: "default"
   },
 }
 
 export const Disabled: Story = {
   args: {
     text: 'Disabled Action',
-    isPrimary: true,
-    isDisabled: true,
+    type: "disabled"
+
   },
 }
 
 export const OnClick: Story = {
   args: {
     text: 'On Click Action',
-    isPrimary: true,
+    type: "primary",
     onClick: () => alert('You clicked the QueryItem.Action!')
   },
 }
