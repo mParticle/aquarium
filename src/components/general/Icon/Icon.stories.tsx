@@ -14,7 +14,10 @@ export const  IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg' 
         justifyItems: 'center'
     }}>
         {(Object.keys(Icons) as Array<keyof typeof Icons>).map((iconName) => (
-            <Icon name={iconName} size={size} color={color} key={iconName} />
+            <div style={{display: "flex", flexDirection:"column", alignItems:"center", gap:"10px"}}>
+                <Icon name={iconName} size={size} color={color} key={iconName} />
+                <p style={{fontFamily:"monospace"}}>{iconName}</p>
+            </div>
         ))}
     </div>
 );
