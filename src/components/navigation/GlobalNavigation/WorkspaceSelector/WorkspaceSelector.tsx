@@ -30,15 +30,8 @@ export interface IWorkspaceSelectorProps {
   avatarOptions?: IAvatarProps
   navigationButtonItemOptions?: {
     label: string
-    onClick: () => void,
+    onClick: () => void
     withoutContainer?: boolean
-  },
-  /**
-   * @deprecated signoutOptions will be deprecated. Please avoid using it.
-   */
-  signoutOptions?: {
-    label?: string
-    onSignout: () => void
   }
 }
 
@@ -139,7 +132,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
       }, 0)
     }
   }
-  
+
   return (
     <Popover
       arrow={false}
@@ -156,7 +149,6 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
           inputRef={inputRef}
           hasNoResults={hasNoResults}
           navigationButtonItemOptions={props.navigationButtonItemOptions}
-          signoutOptions={props.signoutOptions}
           menuItems={menuItems}
         />
       }>

@@ -22,8 +22,8 @@ export interface IGlobalNavigationLink extends IBaseGlobalNavigationItem {
   type?: 'link' | 'button'
   hrefOptions?: HrefOptions
   hideLabel?: boolean
-  onClick?: (e: MouseEvent) => void,
-  buttonOptions?:{ label: string, onClick?: () => void, href?: string, target?: 'self' | '_blank'}
+  onClick?: (e: MouseEvent) => void
+  buttonOptions?: { label: string; onClick?: () => void; href?: string; target?: 'self' | '_blank' }
 }
 
 export type IGlobalNavigationItem = IGlobalNavigationMenu | IGlobalNavigationLink

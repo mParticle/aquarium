@@ -7,7 +7,7 @@ import { type IGlobalNavigationItem } from 'src/components/navigation/GlobalNavi
 import { type IGlobalNavigationLink } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { Fragment } from 'react'
 import { buildLinkFromHrefOptions } from 'src/utils/utils'
-import {NavigationButtonItem} from "src/components/navigation/GlobalNavigation/NavigationButtonItem";
+import { NavigationButtonItem } from 'src/components/navigation/GlobalNavigation/NavigationButtonItem'
 
 export interface INavigationListProps {
   items: IGlobalNavigationItem[]
@@ -21,7 +21,7 @@ export function NavigationList(props: INavigationListProps) {
           {item.type === 'menu' ? (
             <Menu key={i} expandIcon={null} className="globalNavigation__menu" items={[generateMenuItem(item, i)]} />
           ) : (
-            <NavigationItem {...item} type="link" key={i} /> 
+            <NavigationItem {...item} type="link" key={i} />
           )}
         </Fragment>
       ))}
@@ -39,26 +39,21 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
       expandIcon: null,
       key: `${child.label}${index}`,
       label: buildLinkFromHrefOptions(child.label, child.hrefOptions),
-    }));
+    }))
 
-    const regularItems = childrenWithExpandedIcons.filter(child => child.type !== 'button');
-    const actionItems = childrenWithExpandedIcons.filter(child => child.type === 'button');
-
-    children.push(...regularItems);
-
-    actionItems.forEach((actionItem, index) => {
-      children.push({
-        className: "navigation__button-item",
-        key: `submenu-button-${index}`,
-        label: (
-            <NavigationButtonItem
-                options={{ withoutContainer: true }}
-                {...actionItem.buttonOptions}
-            />
-        ),
-      });
-    });
+    childrenWithExpandedIcons.forEach(child => {
+      if (child.type !== 'button') {
+        children.push(child)
+      } else {
+        children.push({
+          className: 'navigation__button-item',
+          key: `submenu-button-${children.filter(c => c.type === 'button').length}`,
+          label: <NavigationButtonItem withoutContainer {...child.buttonOptions} />,
+        })
+      }
+    })
   }
+
   const navigationIcon = (
     <NavigationIcon
       icon={item.icon}

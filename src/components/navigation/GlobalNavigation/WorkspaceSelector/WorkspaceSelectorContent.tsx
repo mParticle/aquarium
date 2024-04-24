@@ -3,7 +3,7 @@ import type { IWorkspaceSelectorProps } from 'src/components/navigation/GlobalNa
 import { Input, type InputRef, type IWorkspaceSelectorDisplayItem } from 'src/components'
 import { WorkspaceSelectorContentItems } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorContentItems'
 import { WorkspaceNoResults } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceNoResults'
-import { NavigationButtonItem } from "src/components/navigation/GlobalNavigation/NavigationButtonItem";
+import { NavigationButtonItem } from 'src/components/navigation/GlobalNavigation/NavigationButtonItem'
 
 type WorkspaceSelectorContentProps = {
   onSearch: (e: ChangeEvent<HTMLInputElement>) => void
@@ -13,21 +13,17 @@ type WorkspaceSelectorContentProps = {
   hasNoResults: boolean
   menuItems: IWorkspaceSelectorDisplayItem[]
   navigationButtonItemOptions?: {
-    label: string;
-    onClick: () => void;
-    withoutContainer?: boolean;
-  };
-  /**
-   * @deprecated signoutOptions will be deprecated. Please avoid using it.
-   */
-  signoutOptions?:  IWorkspaceSelectorProps['signoutOptions'] 
+    label: string
+    onClick: () => void
+    withoutContainer?: boolean
+  }
 }
 
 export function WorkspaceSelectorContent(props: WorkspaceSelectorContentProps) {
-  const { onSearch, searchTerm, hasSearchInput, inputRef, hasNoResults, menuItems} = props
-  const label = props.navigationButtonItemOptions?.label ?? props.signoutOptions?.label;
-  const onClick = props.navigationButtonItemOptions?.onClick ?? props.signoutOptions?.onSignout;
-  const withoutContainer = props.navigationButtonItemOptions?.withoutContainer ?? false;
+  const { onSearch, searchTerm, hasSearchInput, inputRef, hasNoResults, menuItems } = props
+  const label = props.navigationButtonItemOptions?.label
+  const onClick = props.navigationButtonItemOptions?.onClick
+  const withoutContainer = props.navigationButtonItemOptions?.withoutContainer ?? false
 
   return (
     <div className="workspaceSelector__popoverContent">
@@ -48,9 +44,8 @@ export function WorkspaceSelectorContent(props: WorkspaceSelectorContentProps) {
       )}
 
       {hasNoResults ? <WorkspaceNoResults /> : <WorkspaceSelectorContentItems menuItems={menuItems} />}
-      
-       <NavigationButtonItem label={label} onClick={onClick} options={{ withoutContainer }} />
 
+      <NavigationButtonItem label={label} onClick={onClick} withoutContainer />
     </div>
   )
 }
