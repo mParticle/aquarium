@@ -39,7 +39,3 @@
 2. Click Release Aquarium
 3. Run workflow > main branch
 
-For using it in a project:
-
-1. Request "Nexus cache cleanup" in the #buildops channel
-2. Run `yarn add mparticle/aquarium`
