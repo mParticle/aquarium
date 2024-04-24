@@ -45,6 +45,7 @@ export const Cascader = (props: ICascaderProps) => {
   const [items] = useState(props.options ?? options)
   const [searchValue, setSearchValue] = useState('')
   const [selectedValue, setSelectedValue] = useState<(number | string)[]>(props.value ?? [''])
+  const [selectedDisplayValue, setSelectedDisplayValue] = useState<DefaultOptionType[]>([])
   const [isOpen, setIsOpen] = useState(false)
 
   const onSearch = (value: string) => {
@@ -60,6 +61,7 @@ export const Cascader = (props: ICascaderProps) => {
     value: selectedValue,
     onChange: (values: (number | string)[], selectedOptions: any): void => {
       setSelectedValue(values as string[])
+      setSelectedDisplayValue(selectedOptions.slice(-1)[0].label)
       if (props.onChange) {
         props.onChange(values, selectedOptions)
       }
@@ -88,7 +90,7 @@ export const Cascader = (props: ICascaderProps) => {
           placeholder={props.placeholder}
           status={props.errorMessage ? 'error' : undefined}
           className={inputClasses}
-          value={(selectedValue as string[])?.slice(-1)}
+          value={selectedDisplayValue ?? selectedValue.slice(-1)}
           prefix={props.icon ? CascaderIconList[props.icon]() : <EmptyIcon className="query-item__icon" />}
         />
       </BaseCascader>
