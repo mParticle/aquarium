@@ -41,13 +41,14 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
       label: buildLinkFromHrefOptions(child.label, child.hrefOptions),
     }))
 
-    childrenWithExpandedIcons.forEach(child => {
+    childrenWithExpandedIcons.forEach((child, index) => {
       if (child.type !== 'button') {
         children.push(child)
       } else {
+        const buttonKey = `submenu-button-${children.filter(c => c.type === 'button').length}-${index}`
         children.push({
           className: 'globalNavigation__buttonItem',
-          key: `submenu-button-${children.filter(c => c.type === 'button').length}`,
+          key: buttonKey,
           label: <NavigationButtonItem withoutContainer {...child.buttonOptions} />,
         })
       }
