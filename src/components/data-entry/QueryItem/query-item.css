@@ -16,72 +16,60 @@
   align-items: center;
   box-shadow: none;
   border-style: solid;
-
-  &:hover {
-    border-color: var(--mp-query-item-border-color-active) !important;
-    background-color: var(--mp-query-item-bg-color-hover) !important;
-  }
-
-  &:focus {
-    border-color: var(--mp-query-item-border-color-active) !important;
-    box-shadow: var(--mp-query-item-shadow-focus);
-    background-color: var(--mp-query-item-bg-color) !important;
-  }
-
-  &:active {
-    border-color: var(--mp-query-item-border-color-active) !important;
-    border-width: var(--mp-query-item-border-width-active) !important;
-    background-color: var(--mp-query-item-bg-color-active) !important;
-    box-shadow: var(--mp-query-item-shadow-active);
-  }
-
-  &[disabled] {
-    color: var(--mp-query-item-color-disabled) !important;
-    border-color: var(--mp-query-item-border-color-disabled) !important;
-  }
-
-  &.query-item--input-text {
-    color: var(--mp-query-item-value-selector-color);
-    font-weight: var(--mp-query-item-value-selector-font-weight);
-  }
-
-  &.query-item--action {
-    color: var(--mp-query-item-action-primary-color) !important;
-
-    gap: var(--mp-query-item-gap);
-  }
-  &.query-item--secondary {
-    color: var(--mp-query-item-action-secondary-color) !important;
-
-    &:hover {
-      background-color: var(--mp-query-item-bg-color-hover) !important;
-    }
-
-    &:active {
-      border-width: var(--mp-query-item-border-width-active);
-      background-color: var(--mp-query-item-bg-color-active) !important;
-    }
-  }
-
-  &.query-item--selected > input {
-    color: var(--mp-query-item-value-selector-color) !important;
-    font-weight: var(--mp-query-item-value-selector-font-weight) !important;
-  }
-  &.query-item--error {
-    border-color: var(--mp-query-item-border-color-error) !important;
-  }
-  &.query-item--open {
-    border-color: var(--mp-query-item-border-color-active) !important;
-    border-width: var(--mp-query-item-border-width-active) !important;
-    background-color: var(--mp-query-item-bg-color-active) !important;
-  }
-
-  /* Need to override the inner padding on Select... */
-  & .ant-select-selector {
-    padding: 0 !important;
-  }
 }
+.query-item:hover {
+  border-color: var(--mp-query-item-border-color-active) !important;
+  background-color: var(--mp-query-item-bg-color-hover) !important;
+}
+.query-item:focus {
+  border-color: var(--mp-query-item-border-color-active) !important;
+  box-shadow: var(--mp-query-item-shadow-focus);
+  background-color: var(--mp-query-item-bg-color) !important;
+}
+.query-item:active {
+  border-color: var(--mp-query-item-border-color-active) !important;
+  border-width: var(--mp-query-item-border-width-active) !important;
+  background-color: var(--mp-query-item-bg-color-active) !important;
+  box-shadow: var(--mp-query-item-shadow-active);
+}
+.query-item[disabled] {
+  color: var(--mp-query-item-color-disabled) !important;
+  border-color: var(--mp-query-item-border-color-disabled) !important;
+}
+.query-item.query-item--input-text {
+  color: var(--mp-query-item-value-selector-color);
+  font-weight: var(--mp-query-item-value-selector-font-weight);
+}
+.query-item.query-item--action {
+  color: var(--mp-query-item-action-primary-color) !important;
 
+  gap: var(--mp-query-item-gap);
+}
+.query-item.query-item--secondary {
+  color: var(--mp-query-item-action-secondary-color) !important;
+}
+.query-item.query-item--secondary:hover {
+  background-color: var(--mp-query-item-bg-color-hover) !important;
+}
+.query-item.query-item--secondary:active {
+  border-width: var(--mp-query-item-border-width-active);
+  background-color: var(--mp-query-item-bg-color-active) !important;
+}
+.query-item.query-item--selected > input {
+  color: var(--mp-query-item-value-selector-color) !important;
+  font-weight: var(--mp-query-item-value-selector-font-weight) !important;
+}
+.query-item.query-item--error {
+  border-color: var(--mp-query-item-border-color-error) !important;
+}
+.query-item.query-item--open {
+  border-color: var(--mp-query-item-border-color-active) !important;
+  border-width: var(--mp-query-item-border-width-active) !important;
+  background-color: var(--mp-query-item-bg-color-active) !important;
+}
+.query-item .ant-select-selector {
+  padding: 0 !important;
+}
 
 /* This is temporary until the new icon component is available where sizes can be controlled without CSS */
 .query-item__icon {
