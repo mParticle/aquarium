@@ -164,13 +164,13 @@
   color: var(--color-primary-text) !important;
 }
 
-.navigation__button-item {
+.globalNavigation__buttonItem {
   padding: 0 !important;
   margin: 0 auto !important;
   color: var(--mp-brand-secondary-1) !important;
 }
 
-.navigation__button-item:hover {
+.globalNavigation__buttonItem:hover {
   background-color: transparent !important;
 }
 

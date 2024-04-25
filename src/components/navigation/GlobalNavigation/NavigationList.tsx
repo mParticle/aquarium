@@ -46,7 +46,7 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
         children.push(child)
       } else {
         children.push({
-          className: 'navigation__button-item',
+          className: 'globalNavigation__buttonItem',
           key: `submenu-button-${children.filter(c => c.type === 'button').length}`,
           label: <NavigationButtonItem withoutContainer {...child.buttonOptions} />,
         })

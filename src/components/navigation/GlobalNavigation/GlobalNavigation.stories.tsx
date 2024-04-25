@@ -75,7 +75,7 @@ const defaultManagement: IGlobalNavigationItem[] = [
       { label: 'option 2', hrefOptions: { href: '/' } },
       { label: 'option 3', hrefOptions: { href: '/' } },
       { label: 'button', type: 'button', buttonOptions: { label: 'button', onClick: () => alert('go') } },
-      { label: 'go', type: 'button', buttonOptions: { label: 'go', href: '/', target: '_blank' } },
+      { type: 'button', buttonOptions: { label: 'go', href: '/', target: '_blank' } },
     ],
   },
 ]
