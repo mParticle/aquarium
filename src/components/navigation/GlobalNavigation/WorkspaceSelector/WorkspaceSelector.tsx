@@ -3,6 +3,7 @@ import './workspace-selector.css'
 import {
   Avatar,
   type IAvatarProps,
+  Icon,
   type INavigationAccount,
   type INavigationOrg,
   type INavigationWorkspace,
@@ -10,7 +11,6 @@ import {
   Popover,
 } from 'src/components'
 import { Flex } from 'src/components'
-import { CheckIcon } from 'src/components'
 import React, { type ChangeEvent, useRef, useState } from 'react'
 import { useCallback } from 'react'
 import { useEffect } from 'react'
@@ -92,10 +92,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
 
   const hasNoResults = !!searchTerm && !currentFilteredOrgs.length
 
-  const menuItems: IWorkspaceSelectorDisplayItem[] = useMemo(
-    () => generateDisplayItems(/* currentFilteredOrgs */),
-    [currentFilteredOrgs],
-  )
+  const menuItems: IWorkspaceSelectorDisplayItem[] = useMemo(() => generateDisplayItems(), [currentFilteredOrgs])
 
   const activeWorkspace = useMemo(() => {
     return sortedOrgs
@@ -197,9 +194,9 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
               'workspaceSelector__workspaceName' +
               (workspace.isActive ? ' workspaceSelector__workspaceName--active' : ''),
             label: (
-              <Flex justify="space-between" align="center">
+              <Flex justify="space-between" align="center" gap="small">
                 {workspace.label}
-                {workspace.isActive && <CheckIcon className="workspaceSelector__activeIcon" />}
+                {workspace.isActive && <Icon name="check" size="sm" color="text" />}
               </Flex>
             ),
             id: workspace.id,

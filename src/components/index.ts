@@ -1,5 +1,6 @@
 export { Button, type IButtonProps } from './general/Button/Button'
 export { FloatButton, type IFloatButtonProps } from './general/FloatButton/FloatButton'
+export { Icon, type IIconProps } from './general/Icon/Icon'
 export { Rate, type IRateProps } from './data-entry/Rate/Rate'
 export { Form, type IFormProps } from './data-entry/Form/Form'
 export { TreeSelect, type ITreeSelectProps } from './data-entry/TreeSelect/TreeSelect'
@@ -97,30 +98,3 @@ export type {
   IWorkspaceSelectorItem,
 } from './navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'
 export { SuiteLogo } from './navigation/GlobalNavigation/SuiteLogo'
-export {
-  AddIcon,
-  LockIcon,
-  MpLogoIcon,
-  SearchIcon,
-  CheckIcon,
-  ChartLineIcon,
-  ConnectionsIcon,
-  DatabaseIcon,
-  GridIcon,
-  ShieldKeyholeIcon,
-  UsersIcon,
-  WrenchIcon,
-  AlicornIcon,
-  MessageQuestionIcon,
-  GearIcon,
-  SparklesIcon,
-  SiteMapIcon,
-  ChartColumnIcon,
-  HeartIcon,
-  LightBulbIcon,
-  SplitIcon,
-  CircleNodesIcon,
-  CloudIcon,
-  FolderClosedIcon,
-  AnalyticsIcon,
-} from './icons/index'

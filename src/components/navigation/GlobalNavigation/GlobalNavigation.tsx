@@ -1,6 +1,6 @@
 import 'src/styles/_variables.css'
 import './global-navigation.css'
-import { type IAvatarProps, Layout } from 'src/components'
+import { type IAvatarProps, Icon, Layout } from 'src/components'
 import { Flex } from 'src/components'
 import { Center } from 'src/components'
 import { type INavigationCreateProps } from 'src/components'
@@ -13,8 +13,6 @@ import { NavigationList } from 'src/components/navigation/GlobalNavigation/Navig
 import { NavigationCreate } from 'src/components/navigation/GlobalNavigation/NavigationCreate'
 import { WorkspaceSelector } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelector'
 import { type IGlobalNavigationItem } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
-import MpLogo from 'src/assets/svg/mpLogo.svg?react'
-import SignoutIcon from 'src/assets/svg/signout.svg?react'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
 
 export interface IGlobalNavigationProps {
@@ -70,7 +68,7 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
               !!props.navigationButtonItemOptions?.onClick() && (
                 <NavigationItem
                   type="link"
-                  icon={<SignoutIcon />}
+                  icon={<Icon name="signout" />}
                   label="Sign Out"
                   hideLabel
                   onClick={props.navigationButtonItemOptions?.onClick}
@@ -85,7 +83,7 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
                   onClick={() => {
                     props.onMpHomeClick()
                   }}>
-                  <MpLogo className="globalNavigation__mpSvg" />
+                  <Icon name="mpLogo" size="lg" color="white" />
                 </Center>
               </Tooltip>
             )}
