@@ -45,7 +45,7 @@ export const Cascader = (props: ICascaderProps) => {
   const [items] = useState(props.options ?? options)
   const [searchValue, setSearchValue] = useState('')
   const [selectedValue, setSelectedValue] = useState<(number | string)[]>(props.value ?? [''])
-  const [selectedDisplayValue, setSelectedDisplayValue] = useState<DefaultOptionType[]>([])
+  const [selectedDisplayValue, setSelectedDisplayValue] = useState("")
   const [isOpen, setIsOpen] = useState(false)
 
   const onSearch = (value: string) => {
