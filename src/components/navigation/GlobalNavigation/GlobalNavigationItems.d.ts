@@ -3,7 +3,7 @@ import { type HrefOptions } from 'src/utils/utils'
 
 export interface IBaseGlobalNavigationItem {
   type?: 'menu' | 'link'
-  label?: ReactNode
+  label: ReactNode
   icon?: ReactNode
   hideLabel?: boolean
   isActive?: boolean
@@ -20,10 +20,11 @@ export interface IGlobalNavigationMenu extends IBaseGlobalNavigationItem {
 
 export interface IGlobalNavigationLink extends IBaseGlobalNavigationItem {
   type?: 'link' | 'button'
+  label: ReactNode
   hrefOptions?: HrefOptions
   hideLabel?: boolean
   onClick?: (e: MouseEvent) => void
-  buttonOptions?: { label: string; onClick?: () => void; href?: string; target?: '_self' | '_blank' }
+  buttonOptions?: { onClick?: () => void; href?: string; target?: '_self' | '_blank' }
 }
 
 export type IGlobalNavigationItem = IGlobalNavigationMenu | IGlobalNavigationLink

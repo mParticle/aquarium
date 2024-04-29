@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { Button } from 'src/components'
 import { IWorkspaceSelectorProps } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelector'
 
 export interface INavigationButtonItemProps {
-  label?: string
+  label: ReactNode
   onClick?: () => void
   withoutContainer?: boolean
   href?: string
@@ -11,7 +11,7 @@ export interface INavigationButtonItemProps {
 }
 
 export const NavigationButtonItem: React.FC<INavigationButtonItemProps> = ({
-  label = 'Sign Out of mParticle',
+  label,
   onClick,
   withoutContainer = false,
   ...props
