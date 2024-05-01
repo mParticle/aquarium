@@ -5,6 +5,7 @@ import { Button } from 'src/components/general/Button/Button'
 const meta: Meta<typeof Notification> = {
   title: 'Aquarium/Feedback/Notification',
   component: Notification,
+
   args: {
     type: 'info',
     children: <Button type="primary">Show Notification</Button>,
