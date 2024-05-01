@@ -74,6 +74,8 @@ const defaultManagement: IGlobalNavigationItem[] = [
       { label: 'option 1', hrefOptions: { href: '/' } },
       { label: 'option 2', hrefOptions: { href: '/' } },
       { label: 'option 3', hrefOptions: { href: '/' } },
+      { label: 'button', type: 'button', buttonOptions: { onClick: () => alert('go') } },
+      { type: 'button', label: 'go', buttonOptions: { href: '/', target: '_blank' } },
     ],
   },
 ]
@@ -114,8 +116,9 @@ const meta: Meta<typeof GlobalNavigation> = {
     tools: defaultTools,
     management: defaultManagement,
     orgs: defaultOrgs,
-    signoutOptions: {
-      onSignout: () => {
+    navigationButtonItemOptions: {
+      label: 'Sign Out of mParticle',
+      onClick: () => {
         alert('signing out!')
       },
     },
@@ -803,9 +806,9 @@ export const Indicative: Story = {
     management: indManagement,
     createItems: indCreateItems,
     orgs: indOrgs,
-    signoutOptions: {
+    navigationButtonItemOptions: {
       label: 'Custom Signout Label',
-      onSignout: () => {
+      onClick: () => {
         alert('Signout!')
       },
     },
@@ -966,7 +969,6 @@ export const Cortex: Story = {
     tools: cortexTools,
     management: cortexManagement,
     orgs: cortexOrgs,
-    signoutOptions: undefined,
     onMpHomeClick: () => {
       alert('going to overview map')
     },
