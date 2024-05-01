@@ -1,0 +1,3 @@
+﻿.ant-notification.ant-notification-bottomLeft {
+    left: var(--nav-width) !important;
+}

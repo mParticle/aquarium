@@ -1,7 +1,7 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { expect, screen, userEvent } from '@storybook/test'
 import React from 'react'
-import { Button, Center, GlobalNavigation, Icon, type INavigationCreateProps, Space } from 'src/components'
+import { Button, Center, Flex, GlobalNavigation, Icon, type INavigationCreateProps, Space } from 'src/components'
 import { Badge } from 'src/components/data-display/Badge/Badge'
 import {
   type IGlobalNavigationItem,
@@ -9,6 +9,7 @@ import {
 } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { generateOrgs } from 'src/components/navigation/GlobalNavigation/stories-utils'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'
+import { useSuitesReminder } from 'src/hooks/SuitesReminder/useSuitesReminder'
 
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',
@@ -985,5 +986,46 @@ export const WorkspaceSearchWithNoResults: Meta<typeof GlobalNavigation> = {
 
     const searchInput = await screen.findByPlaceholderText('Search')
     await userEvent.type(searchInput, '123{enter}')
+  },
+}
+
+export const UseSuitesReminderHook: Story = {
+  render: props => {
+    const [openNotification, contextHolder] = useSuitesReminder({
+      onClose: () => {
+        alert('Notification closed')
+      },
+      onRemindMeLater: () => {
+        alert('Remind me later')
+      },
+      onTakeMeThere: () => {
+        alert('Take me there')
+      },
+    })
+
+    return (
+      <Flex style={{ minHeight: 800, width: 600, border: '1px solid black' }} justify="space-between" vertical={false}>
+        {contextHolder}
+        <div>
+          <GlobalNavigation {...props}></GlobalNavigation>
+        </div>
+        <Button onClick={openNotification}>Show Notification</Button>
+      </Flex>
+    )
+  },
+  args: {
+    logo: defaultLogo,
+    tools: defaultTools,
+    management: defaultManagement,
+    orgs: defaultOrgs,
+    navigationButtonItemOptions: {
+      label: 'Sign Out of mParticle',
+      onClick: () => {
+        alert('signing out!')
+      },
+    },
+    onMpHomeClick: () => {
+      alert('Going to mP!')
+    },
   },
 }

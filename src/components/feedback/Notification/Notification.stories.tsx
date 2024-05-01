@@ -85,26 +85,3 @@ export const Error: Story = {
     type: 'error',
   },
 }
-
-export const UseSuitesReminderHook: Story = {
-  render: () => {
-    const [openNotification, contextHolder] = useSuitesReminder({
-      onClose: () => {
-        alert('Notification closed')
-      },
-      onRemindMeLater: () => {
-        alert('Remind me later')
-      },
-      onTakeMeThere: () => {
-        alert('Take me there')
-      },
-    })
-
-    return (
-      <>
-        {contextHolder}
-        <Button onClick={openNotification}>Show Notification</Button>
-      </>
-    )
-  },
-}

@@ -1,11 +1,14 @@
-﻿import { type ReactNode } from 'react'
-import { Button, type IButtonProps, type INotificationProps, notification, Space } from 'src/components'
+﻿import 'src/styles/_variables.css'
+import './suites-reminder.css'
+
+import { type ReactNode } from 'react'
+import { Button, notification, Space } from 'src/components'
 import { FontWeightStrong } from 'src/styles/style'
 
 export interface ISuitesReminderOptions {
-  onClose: INotificationProps['onClose']
-  onRemindMeLater: IButtonProps['onClick']
-  onTakeMeThere: IButtonProps['onClick']
+  onClose: () => void
+  onRemindMeLater: () => void
+  onTakeMeThere: () => void
   duration?: number
   title?: string
   message?: string
@@ -37,10 +40,22 @@ export const useSuitesReminder = (options: ISuitesReminderOptions): SuitesRemind
     const key = `notification-${Date.now()}`
     const btn = (
       <Space>
-        <Button type="link" size="small" onClick={onRemindMeLater}>
+        <Button
+          type="link"
+          size="small"
+          onClick={_event => {
+            onRemindMeLater()
+            api.destroy(key)
+          }}>
           Remind me later
         </Button>
-        <Button type="primary" size="small" onClick={onTakeMeThere}>
+        <Button
+          type="primary"
+          size="small"
+          onClick={_event => {
+            onTakeMeThere()
+            api.destroy(key)
+          }}>
           Take me there
         </Button>
       </Space>
