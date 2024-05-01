@@ -40,6 +40,10 @@
   color: var(--mp-query-item-value-selector-color);
   font-weight: var(--mp-query-item-value-selector-font-weight);
 }
+.query-item.query-item--input-text::placeholder {
+  font-weight: normal;
+}
+
 .query-item.query-item--action {
   color: var(--mp-query-item-action-primary-color) !important;
 

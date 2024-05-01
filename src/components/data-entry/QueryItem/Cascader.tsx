@@ -1,6 +1,6 @@
 import './query-item.css'
 import { GetProp } from 'antd'
-import { ReactNode, useState } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 import {
   Cascader as BaseCascader,
   Flex,
@@ -42,11 +42,15 @@ export const Cascader = (props: ICascaderProps) => {
   type DefaultOptionType = GetProp<IBaseCascaderProps, 'options'>[number]
 
   const options: CascaderOption[] = []
-  const [items] = useState(props.options ?? options)
+  const [items, setItems] = useState(props.options ?? options)
   const [searchValue, setSearchValue] = useState('')
   const [selectedValue, setSelectedValue] = useState<(number | string)[]>(props.value ?? [''])
   const [selectedDisplayValue, setSelectedDisplayValue] = useState("")
   const [isOpen, setIsOpen] = useState(false)
+
+  useEffect(() => {
+    setItems(props.options)
+  }, [props.options])
 
   const onSearch = (value: string) => {
     setSearchValue(value)
