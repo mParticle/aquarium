@@ -1,7 +1,6 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { Notification } from 'src/components/feedback/Notification/Notification'
 import { Button } from 'src/components/general/Button/Button'
-import { useSuitesReminder } from 'src/hooks/SuitesReminder/useSuitesReminder'
 
 const meta: Meta<typeof Notification> = {
   title: 'Aquarium/Feedback/Notification',
@@ -35,13 +34,6 @@ const meta: Meta<typeof Notification> = {
     type: {
       control: 'select',
       options: ['info', 'warning', 'success', 'error'],
-    },
-    children: {
-      options: ['Text', 'Custom Component'],
-      mapping: {
-        Text: 'Some text',
-        'Custom Component': <Button type="primary">Custom component</Button>,
-      },
     },
   },
 }
