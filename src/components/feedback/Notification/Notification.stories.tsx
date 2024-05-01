@@ -1,11 +1,11 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { Notification } from 'src/components/feedback/Notification/Notification'
 import { Button } from 'src/components/general/Button/Button'
+import { useSuitesReminder } from 'src/hooks/SuitesReminder/useSuitesReminder'
 
 const meta: Meta<typeof Notification> = {
   title: 'Aquarium/Feedback/Notification',
   component: Notification,
-
   args: {
     type: 'info',
     children: <Button type="primary">Show Notification</Button>,
@@ -35,6 +35,13 @@ const meta: Meta<typeof Notification> = {
     type: {
       control: 'select',
       options: ['info', 'warning', 'success', 'error'],
+    },
+    children: {
+      options: ['Text', 'Custom Component'],
+      mapping: {
+        Text: 'Some text',
+        'Custom Component': <Button type="primary">Custom component</Button>,
+      },
     },
   },
 }
@@ -76,5 +83,28 @@ export const Success: Story = {
 export const Error: Story = {
   args: {
     type: 'error',
+  },
+}
+
+export const UseSuitesReminderHook: Story = {
+  render: () => {
+    const [openNotification, contextHolder] = useSuitesReminder({
+      onClose: () => {
+        alert('Notification closed')
+      },
+      onRemindMeLater: () => {
+        alert('Remind me later')
+      },
+      onTakeMeThere: () => {
+        alert('Take me there')
+      },
+    })
+
+    return (
+      <>
+        {contextHolder}
+        <Button onClick={openNotification}>Show Notification</Button>
+      </>
+    )
   },
 }
