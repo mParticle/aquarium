@@ -8,6 +8,7 @@ interface ITextInputProps {
   value?: string
   disabled?: boolean
   errorMessage?: string
+  placeholder?: string
 }
 
 export const TextInput = (props: ITextInputProps) => {
@@ -28,6 +29,7 @@ export const TextInput = (props: ITextInputProps) => {
         disabled={props.disabled}
         className={inputClasses}
         value={props.value}
+        placeholder={props.placeholder}
         onChange={_onChange}></Input>
       {props.errorMessage && <Typography.Text type="danger">{props.errorMessage}</Typography.Text>}
     </>

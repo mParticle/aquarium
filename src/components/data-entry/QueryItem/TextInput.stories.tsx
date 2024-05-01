@@ -21,6 +21,22 @@ export default meta;
 
 type Story = StoryObj<typeof QueryItem.ValueSelector.TextInput>
 
-export const Primary: Story = {
-  
+export const Default: Story = {
+  args: {
+    value: 'Primary',
+  },
+}
+
+
+export const Placeholder: Story = {
+  args: {
+    placeholder: 'Placeholder',
+  },
+}
+
+
+export const ErrorMessage: Story = {
+  args: {
+    errorMessage: 'Required field!',
+  },
 }
