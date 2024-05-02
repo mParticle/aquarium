@@ -141,7 +141,7 @@
     "value": "#ab8eff"
   },
   "controlOutline": {
-    "value": "rgba(0.21176470816135406, 0, 0.8196078538894653, 0.1)"
+    "value": "rgba(54, 0, 209, 0.1)"
   },
   "colorWarningOutline": {
     "value": "#fffbe6"
@@ -183,7 +183,7 @@
     "value": "#f8f6fb"
   },
   "colorBgLayout": {
-    "value": "#fff"
+    "value": "#ffffff"
   },
   "colorBgSpotlight": {
     "value": "#2c2d2b"
@@ -275,9 +275,6 @@
   "colorErrorTextActive": {
     "value": "#5c0011"
   },
-  "colorBgMask": {
-    "value": "#babbb5"
-  },
   "borderRadiusLG": {
     "value": "16px"
   },
@@ -312,7 +309,7 @@
     "value": "#20007a"
   },
   "mpBrandSecondary.1": {
-    "value": "#fff"
+    "value": "#ffffff"
   },
   "mpBrandSecondary.2": {
     "value": "#faf9f8"
@@ -343,6 +340,111 @@
   },
   "mpColorBorderDisabled": {
     "value": "#dcdcd8"
+  },
+  "mpColorIconStrong": {
+    "value": "#0f0e0e"
+  },
+  "mpColorIconBrand": {
+    "value": "#20007a"
+  },
+  "mpIconSizeXS": {
+    "value": "12px"
+  },
+  "mpIconSizeSM": {
+    "value": "16px"
+  },
+  "mpIconSizeMD": {
+    "value": "20px"
+  },
+  "mpIconSizeLG": {
+    "value": "24px"
+  },
+  "mpIconSizeXL": {
+    "value": "28px"
+  },
+  "mpIconSizeXXL": {
+    "value": "32px"
+  },
+  "mpIconSizeXXXL": {
+    "value": "40px"
+  },
+  "mpIconSizeXXXXL": {
+    "value": "48px"
+  },
+  "mpQueryItem_borderWidth": {
+    "value": "0 0 1px 0"
+  },
+  "mpQueryItem_borderColor": {
+    "value": "#c3aeff"
+  },
+  "mpQueryItem_borderColor_active": {
+    "value": "#3600d1"
+  },
+  "mpQueryItem_borderColor_disabled": {
+    "value": "#dcdcd8"
+  },
+  "mpQueryItem_borderColor_error": {
+    "value": "#f5222d"
+  },
+  "mpQueryItem_bgColor": {
+    "value": "#ffffff"
+  },
+  "mpQueryItem_bgColor_hover": {
+    "value": "#f8f6fb"
+  },
+  "mpQueryItem_bgColor_active": {
+    "value": "#ebe8f8"
+  },
+  "mpQueryItem_bgColor_disabled": {
+    "value": "#faf9f8"
+  },
+  "mpQueryItem_borderWidth_active": {
+    "value": "0 0 2px 0"
+  },
+  "mpQueryItem_shadow_focus": {
+    "value": "0 0 0 2px rgba(54, 0, 209, 0.1)"
+  },
+  "mpQueryItem_color_disabled": {
+    "value": "#505249"
+  },
+  "mpQueryItem|valueSelector_fontWeight": {
+    "value": "500"
+  },
+  "mpQueryItem|valueSelector_color": {
+    "value": "#20007a"
+  },
+  "mpQueryItem_padding": {
+    "value": "4px"
+  },
+  "mpQueryItem_gap": {
+    "value": "4px"
+  },
+  "mpQueryItem_height": {
+    "value": "32px"
+  },
+  "mpQueryItem_borderRadius": {
+    "value": "2px"
+  },
+  "mpQueryItem|action|primary_color": {
+    "value": "#3600d1"
+  },
+  "mpQueryItem|action|secondary_color": {
+    "value": "#505249"
+  },
+  "mpQueryItem|action_fontWeight": {
+    "value": "400"
+  },
+  "mpQueryItem_shadow_active": {
+    "value": "0 0 0 2px rgba(54, 0, 209, 0.1)"
+  },
+  "mpQueryItem_shadow": {
+    "value": "none"
+  },
+  "mpQueryItem_borderColor_focus": {
+    "value": "#3600d1"
+  },
+  "mpQueryItem_borderColor_hover": {
+    "value": "#3600d1"
   },
   "blue1": {
     "value": "#e6f4ff"
@@ -802,6 +904,9 @@
   },
   "colorLinkActive": {
     "value": "#0958d9"
+  },
+  "colorBgMask": {
+    "value": "rgba(0, 0, 0, 0.45)"
   },
   "colorWhite": {
     "value": "#fff"
