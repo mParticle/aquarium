@@ -19,7 +19,7 @@ export default meta
 
 type Story = StoryObj<typeof QueryItem.ValueSelector.Cascader>
 
-const exampleOptions = [
+let exampleOptions = [
   {
     value: "United States1",
     label: "United States",
@@ -100,6 +100,14 @@ export const Error: Story = {
     placeholder: "QueryItem.ValueSelector.Cascader Error",
     options: exampleOptions,
     errorMessage: 'test error',
+  },
+}
+
+export const Icon: Story = {
+  args: {
+    placeholder: "QueryItem.ValueSelector.Cascader Icon",
+    options: exampleOptions,
+    icon: 'events',
   },
 }
 

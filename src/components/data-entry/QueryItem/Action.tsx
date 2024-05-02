@@ -1,4 +1,4 @@
-import { AddIcon, Button, IButtonProps } from 'src/components'
+import { Icon, Button, IButtonProps } from 'src/components'
 import './query-item.css'
 
 export interface IActionProps {
@@ -10,6 +10,7 @@ export interface IActionProps {
 export const Action = (props: IActionProps) => {
   let buttonClassNames: string = 'query-item query-item--action'
   if ((props.type ?? 'default') !== 'primary') buttonClassNames += ` query-item--secondary`
+
   const baseProps: IButtonProps = {
     className: buttonClassNames,
     type: props.type === 'disabled' ? 'default' : 'primary',
@@ -17,10 +18,14 @@ export const Action = (props: IActionProps) => {
     onClick: props.onClick,
   }
 
+  let iconColor: 'primary' | 'default' = 'primary'
+  if (props.type == 'default') iconColor = 'default'
+  if (props.type == 'disabled') iconColor = 'default'
+
   return (
     <>
       <Button {...baseProps}>
-        <AddIcon className="query-item__icon" />
+        <Icon name="add" size="md" color={iconColor} />
         <span>{props.text}</span>
       </Button>
     </>

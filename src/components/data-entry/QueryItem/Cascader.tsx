@@ -7,11 +7,9 @@ import {
   ICascaderProps as IBaseCascaderProps,
   Input,
   Typography,
-  EmptyIcon,
-  EventAttributesIcon,
-  EventsIcon,
-  UserAttributesIcon,
+  Icon,
 } from 'src/components'
+import { Icons } from 'src/constants/Icons'
 
 export interface CascaderOption {
   value: string
@@ -20,18 +18,9 @@ export interface CascaderOption {
   disabled?: boolean
 }
 
-export type CascaderIcons = 'empty' | 'eventAttribute' | 'userAttribute' | 'event'
-
-const CascaderIconList = {
-  empty: () => <EmptyIcon className="query-item__icon" />,
-  eventAttribute: () => <EventAttributesIcon className="query-item__icon" />,
-  userAttribute: () => <UserAttributesIcon className="query-item__icon" />,
-  event: () => <EventsIcon className="query-item__icon" />,
-}
-
 export interface ICascaderProps {
   options: CascaderOption[]
-  icon?: CascaderIcons
+  icon?: keyof Pick<typeof Icons, ("empty" | "events" | "userAttributes" | "eventAttribute")>
   errorMessage?: string
   placeholder?: string
   onChange?: (values: (number | string)[], selectedOptions: any) => Promise<void>
@@ -44,7 +33,7 @@ export const Cascader = (props: ICascaderProps) => {
   const options: CascaderOption[] = []
   const [items, setItems] = useState(props.options ?? options)
   const [searchValue, setSearchValue] = useState('')
-  const [selectedValue, setSelectedValue] = useState<(number | string)[]>(props.value ?? [''])
+  const [selectedValue, setSelectedValue] = useState<(number | string)[]>(props.value ?? [])
   const [selectedDisplayValue, setSelectedDisplayValue] = useState("")
   const [isOpen, setIsOpen] = useState(false)
 
@@ -83,7 +72,7 @@ export const Cascader = (props: ICascaderProps) => {
 
   let inputClasses = `query-item`
   if (isOpen) inputClasses += ' query-item--open'
-  if (selectedValue) inputClasses += ' query-item--selected'
+  if (selectedValue && selectedValue.length != 0) inputClasses += ' query-item--selected'
   if (props.errorMessage) inputClasses += ' query-item--error'
 
   return (
@@ -95,7 +84,7 @@ export const Cascader = (props: ICascaderProps) => {
           status={props.errorMessage ? 'error' : undefined}
           className={inputClasses}
           value={selectedDisplayValue ?? selectedValue.slice(-1)}
-          prefix={props.icon ? CascaderIconList[props.icon]() : <EmptyIcon className="query-item__icon" />}
+          prefix={props.icon ? <Icon name={props.icon} size="ms" color="primary" /> : <Icon name="empty" size="ms" color="primary" />}
         />
       </BaseCascader>
       {props.errorMessage && <Typography.Text type={'danger'}>{props.errorMessage}</Typography.Text>}

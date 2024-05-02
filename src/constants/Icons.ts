@@ -24,6 +24,11 @@ import SignoutIcon from 'src/assets/svg/signout.svg?react'
 import LockIcon from 'src/assets/svg/lock.svg?react'
 import SearchIcon from 'src/assets/svg/search.svg?react'
 import AnalyticsIcon from 'src/assets/svg/analytics.svg?react'
+import EventsIcon from 'src/assets/svg/events.svg?react'
+import EventAttributesIcon from 'src/assets/svg/event-attributes.svg?react'
+import UserAttributesIcon from 'src/assets/svg/user-attributes.svg?react'
+import EmptyIcon from 'src/assets/svg/empty.svg?react'
+import RemoveIcon from 'src/assets/svg/remove.svg?react'
 
 export const Icons = {
   alicorn: AlicornIcon,
@@ -52,4 +57,9 @@ export const Icons = {
   cloud: CloudIcon,
   folderClosed: FolderClosedIcon,
   analytics: AnalyticsIcon,
+  empty: EmptyIcon,
+  eventAttribute: EventAttributesIcon,
+  events: EventsIcon,
+  userAttributes: UserAttributesIcon,
+  remove: RemoveIcon,
 } as const
