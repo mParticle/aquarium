@@ -37,7 +37,7 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
     const childrenWithExpandedIcons = item.children.map((child, index) => ({
       ...child,
       expandIcon: null,
-      key: `${child.label}${index}`,
+      key: `${String(child.label)}${index}`,
       label: buildLinkFromHrefOptions(child.label, child.hrefOptions),
     }))
 
