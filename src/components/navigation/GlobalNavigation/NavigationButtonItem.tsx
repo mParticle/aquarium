@@ -1,6 +1,5 @@
-import React, { ReactNode } from 'react'
+import React, { type ReactNode } from 'react'
 import { Button } from 'src/components'
-import { IWorkspaceSelectorProps } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelector'
 
 export interface INavigationButtonItemProps {
   label: ReactNode

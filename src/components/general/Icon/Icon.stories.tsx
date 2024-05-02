@@ -1,9 +1,7 @@
 import React from 'react'
-import { Meta, type StoryObj } from '@storybook/react'
+import { type Meta } from '@storybook/react'
 import { Icons } from 'src/constants/Icons'
-import { Center, Flex, Icon, IIconProps } from 'src/components'
-
-type Story = StoryObj<typeof Icon>
+import { Flex, Icon, type IIconProps } from 'src/components'
 
 export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg' }) => (
   <div
@@ -15,7 +13,7 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg' }
       justifyItems: 'center',
     }}>
     {(Object.keys(Icons) as Array<keyof typeof Icons>).map(iconName => (
-      <Flex vertical align="center">
+      <Flex vertical align="center" key={iconName}>
         <Icon name={iconName} size={size} color={color} key={iconName} />
         <p style={{ fontFamily: 'monospace' }}>{iconName}</p>
       </Flex>

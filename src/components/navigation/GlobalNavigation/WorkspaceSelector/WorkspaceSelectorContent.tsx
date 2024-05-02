@@ -1,5 +1,4 @@
 import { type ChangeEvent, type RefObject } from 'react'
-import type { IWorkspaceSelectorProps } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelector'
 import { Input, type InputRef, type IWorkspaceSelectorDisplayItem } from 'src/components'
 import { WorkspaceSelectorContentItems } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorContentItems'
 import { WorkspaceNoResults } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceNoResults'
@@ -23,7 +22,6 @@ export function WorkspaceSelectorContent(props: WorkspaceSelectorContentProps) {
   const { onSearch, searchTerm, hasSearchInput, inputRef, hasNoResults, menuItems } = props
   const label = props.navigationButtonItemOptions?.label
   const onClick = props.navigationButtonItemOptions?.onClick
-  const withoutContainer = props.navigationButtonItemOptions?.withoutContainer ?? false
 
   return (
     <div className="workspaceSelector__popoverContent">
