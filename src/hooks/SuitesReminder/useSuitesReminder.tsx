@@ -1,4 +1,4 @@
-﻿import 'src/styles/_variables.css'
+import 'src/styles/_variables.css'
 import './suites-reminder.css'
 
 import { type ReactNode } from 'react'
@@ -34,7 +34,7 @@ export const useSuitesReminder = (options: ISuitesReminderOptions): SuitesRemind
     message = DefaultMessage,
   } = options
 
-  const [api, contextHolder] = notification.useNotification({
+  const [notificationApi, contextHolder] = notification.useNotification({
     prefixCls: 'globalNavigation__suitesReminder',
     duration,
     placement: 'bottomLeft',
@@ -49,7 +49,7 @@ export const useSuitesReminder = (options: ISuitesReminderOptions): SuitesRemind
           size="small"
           onClick={_event => {
             onRemindMeLater()
-            api.destroy(key)
+            notificationApi.destroy(key)
           }}>
           Remind me later
         </Button>
@@ -58,14 +58,14 @@ export const useSuitesReminder = (options: ISuitesReminderOptions): SuitesRemind
           size="small"
           onClick={_event => {
             onTakeMeThere()
-            api.destroy(key)
+            notificationApi.destroy(key)
           }}>
           Take me there
         </Button>
       </Space>
     )
 
-    api.open({
+    notificationApi.open({
       message: <span style={{ fontWeight: FontWeightStrong }}>{title}</span>,
       description: message,
       btn,
