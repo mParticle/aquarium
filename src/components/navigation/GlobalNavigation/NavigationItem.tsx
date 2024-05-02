@@ -7,7 +7,7 @@ import { buildLinkFromHrefOptions, type HrefOptions } from 'src/utils/utils'
 export interface INavigationItemProps {
   type: 'link' | 'menu'
   icon?: ReactNode
-  label: ReactNode
+  label?: ReactNode
   hideLabel?: boolean
   items?: IGlobalNavigationItem[]
   isActive?: boolean

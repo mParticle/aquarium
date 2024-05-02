@@ -1,3 +1,5 @@
+## [1.11.1-global-nav-settings-button.1](https://github.com/mParticle/aquarium/compare/v1.11.0...v1.11.1-global-nav-settings-button.1) (2024-04-30)
+
 # [1.11.0](https://github.com/mParticle/aquarium/compare/v1.10.0...v1.11.0) (2024-04-23)
 
 

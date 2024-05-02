@@ -13,4 +13,4 @@ Then open the story `GetGlobalToken` to retrieve the latest global design token
 Then paste that into [GlobalTokens.json](https://github.com/mParticle/aquarium/blob/main/design/GlobalToken.json)
 
 These will then be converted into css variables on push, and committed via the [github action](https://github.com/mParticle/aquarium/blob/main/.github/workflows/tokens-to-css.yml)
-If you need these new tokens immediately for local development, run `npm run tokens-to-css`
+If you need these new tokens immediately for local development, run `npm run tokens-to-css`.
