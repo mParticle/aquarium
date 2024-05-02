@@ -7,7 +7,7 @@ import { type IMpThemeConfig } from 'design/MpThemeConfig'
 export const LightTheme: IMpThemeConfig = {
   token: {
     colorLinkHover: '#ab8eff',
-    controlOutline: 'rgba(0.21176470816135406, 0, 0.8196078538894653, 0.1)',
+    controlOutline: 'rgba(54, 0, 209, 0.1)',
     colorWarningOutline: '#fffbe6',
     colorErrorOutline: '#fff1f0',
     controlItemBgHover: '#f8f6fb',
@@ -52,7 +52,6 @@ export const LightTheme: IMpThemeConfig = {
     colorErrorTextHover: '#a8071a',
     colorErrorText: '#820014',
     colorErrorTextActive: '#5c0011',
-    colorBgMask: '#babbb5',
     colorTextBase: '#0f0e0e',
     colorPrimary: '#3600d1',
     colorError: '#f5222d',
@@ -146,6 +145,11 @@ export const LightTheme: IMpThemeConfig = {
     Select: {
       multipleItemBg: '#ebe8f8',
       mpColorBorderDisabled: '#dcdcd8',
+    },
+    Image: {
+      previewOperationColor: 'rgba(255, 255, 255, 0.65)',
+      previewOperationColorDisabled: 'rgba(255, 255, 255, 0.25)',
+      previewOperationHoverColor: 'rgba(255, 255, 255, 0.85)',
     },
     Table: {
       footerBg: '#faf9f8',
