@@ -23,6 +23,41 @@ export type IMpThemeConfig = ThemeConfig & {
     ['mpBrandSecondary.9']: string
     ['mpBrandSecondary.10']: string
     mpColorBorderDisabled: string
+    mpColorIconStrong: string
+    mpColorIconBrand: string
+    mpIconSizeXS: number
+    mpIconSizeSM: number
+    mpIconSizeMD: number
+    mpIconSizeLG: number
+    mpIconSizeXL: number
+    mpIconSizeXXL: number
+    mpIconSizeXXXL: number
+    mpIconSizeXXXXL: number
+    mpQueryItem_borderWidth: string
+    mpQueryItem_borderColor: string
+    mpQueryItem_borderColor_active: string
+    mpQueryItem_borderColor_disabled: string
+    mpQueryItem_borderColor_error: string
+    mpQueryItem_bgColor: string
+    mpQueryItem_bgColor_hover: string
+    mpQueryItem_bgColor_active: string
+    mpQueryItem_bgColor_disabled: string
+    mpQueryItem_borderWidth_active: string
+    mpQueryItem_shadow_focus: string
+    mpQueryItem_color_disabled: string
+    'mpQueryItem|valueSelector_fontWeight': string
+    'mpQueryItem|valueSelector_color': string
+    mpQueryItem_padding: number
+    mpQueryItem_gap: number
+    mpQueryItem_height: number
+    mpQueryItem_borderRadius: number
+    'mpQueryItem|action|primary_color': string
+    'mpQueryItem|action|secondary_color': string
+    'mpQueryItem|action_fontWeight': string
+    mpQueryItem_shadow_active: string
+    mpQueryItem_shadow: string
+    mpQueryItem_borderColor_focus: string
+    mpQueryItem_borderColor_hover: string
   }
   components: {
     Select: { mpColorBorderDisabled: string }
