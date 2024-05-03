@@ -1,8 +1,7 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { Row, Col, Button } from 'antd'
-import { type valueType } from 'antd/es/statistic/utils'
 import { Card } from 'src/components'
-import { type ICountdownProps, Statistic } from 'src/components/data-display/Statistic/Statistic'
+import { type ICountdownProps, Statistic, type valueType } from 'src/components/data-display/Statistic/Statistic'
 import { Icon } from 'src/components/general/Icon/Icon'
 import { Text, Paragraph } from 'src/components/general/Typography/Typography'
 import { ColorError, ColorInfoBg, ColorSuccess, PaddingXl } from 'src/styles/style'
@@ -206,7 +205,10 @@ export const ExampleWithCard: Story = {
   },
 }
 
-const deadline = Date.now() + 1000 * 60 * 60 * 24 * 2 + 1000 * 30 // Dayjs is also OK
+const twoDays = 1000 * 60 * 60 * 24 * 2
+const thirtySeconds = 1000 * 30
+const twoDaysFromNow = Date.now() + twoDays
+const deadline = twoDaysFromNow + thirtySeconds
 
 const onFinish: ICountdownProps['onFinish'] = () => {
   console.log('finished!')
