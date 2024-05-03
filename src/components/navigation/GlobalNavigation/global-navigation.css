@@ -164,6 +164,16 @@
   color: var(--color-primary-text) !important;
 }
 
+.globalNavigation__buttonItem {
+  padding: 0 !important;
+  margin: 0 auto !important;
+  color: var(--mp-brand-secondary-1) !important;
+}
+
+.globalNavigation__buttonItem:hover {
+  background-color: transparent !important;
+}
+
 .navigationCreate__item {
   height: 100% !important;
   min-height: 100% !important;
