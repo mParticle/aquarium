@@ -1,6 +1,5 @@
-import React, { ReactNode } from 'react'
+import React, { type ReactNode } from 'react'
 import { Button } from 'src/components'
-import { IWorkspaceSelectorProps } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelector'
 
 export interface INavigationButtonItemProps {
   label: ReactNode
@@ -17,7 +16,7 @@ export const NavigationButtonItem: React.FC<INavigationButtonItemProps> = ({
   ...props
 }) => {
   return (
-    <div className={!withoutContainer ? 'workspaceSelector__signoutButtonContainer' : ''}>
+    <div className={withoutContainer ? 'workspaceSelector__signoutButtonContainer' : ''}>
       <Button
         className="workspaceSelector__signoutButton"
         type="primary"

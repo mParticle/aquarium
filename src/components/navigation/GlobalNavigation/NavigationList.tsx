@@ -37,7 +37,7 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
     const childrenWithExpandedIcons = item.children.map((child, index) => ({
       ...child,
       expandIcon: null,
-      key: `${child.label}${index}`,
+      key: `${String(child.label)}${index}`,
       label: buildLinkFromHrefOptions(child.label, child.hrefOptions),
     }))
 
@@ -50,7 +50,7 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
         children.push({
           className: 'globalNavigation__buttonItem',
           key: buttonKey,
-          label: <NavigationButtonItem withoutContainer label={child.label} {...child.buttonOptions} />,
+          label: <NavigationButtonItem withoutContainer={false} label={child.label} {...child.buttonOptions} />,
         })
       }
     })
