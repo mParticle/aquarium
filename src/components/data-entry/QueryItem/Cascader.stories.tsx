@@ -107,7 +107,7 @@ export const Icon: Story = {
   args: {
     placeholder: "QueryItem.ValueSelector.Cascader Icon",
     options: exampleOptions,
-    icon: 'events',
+    icon: 'event',
   },
 }
 
@@ -125,5 +125,15 @@ export const PreSelectedValue: Story = {
     options: exampleOptions,
     value: ["Canada1", "Ontario1", "Toronto1"],
     onChange: async (values, _) => {console.log(values)},
+  },
+}
+
+export const LoadData: Story = {
+  args: {
+    placeholder: 'QueryItem.ValueSelector.Cascader Load',
+    options: exampleOptions,
+    loadData: (value: string) => {
+      console.log(value)
+    },
   },
 }
