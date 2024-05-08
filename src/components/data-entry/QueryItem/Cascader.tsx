@@ -76,7 +76,7 @@ export const Cascader = (props: ICascaderProps) => {
     },
     dropdownRender: menu => (
       <div className={'query-item__dropdown'}>
-        <Input.Search allowClear className={'query-item__input-search'} placeholder="Search" onChange={onSearch} />
+        <Input allowClear className={'query-item__input-search'} placeholder="Search" onChange={(a) => onSearch(a)} />
         <Flex justify="center">{menu}</Flex>
       </div>
     ),
