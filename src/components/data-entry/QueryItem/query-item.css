@@ -34,6 +34,7 @@
 }
 .query-item[disabled] {
   color: var(--mp-query-item-color-disabled) !important;
+  background-color: var(--mp-query-item-bg-color) !important;
   border-color: var(--mp-query-item-border-color-disabled) !important;
 }
 .query-item.query-item--input-text {
@@ -46,7 +47,6 @@
 
 .query-item.query-item--action {
   color: var(--mp-query-item-action-primary-color) !important;
-
   gap: var(--mp-query-item-gap);
 }
 .query-item.query-item--secondary {
@@ -58,6 +58,17 @@
 .query-item.query-item--secondary:active {
   border-width: var(--mp-query-item-border-width-active);
   background-color: var(--mp-query-item-bg-color-active) !important;
+}
+.query-item.query-item--disabled {
+  color: var(--mp-query-item-action-secondary-color) !important;
+}
+.query-item.query-item--disabled:hover {
+  background-color: var(--mp-query-item-bg-color) !important;
+}
+.query-item.query-item--disabled:active {
+  border-width: var(--mp-query-item-border-width) !important;
+  background-color: var(--mp-query-item-bg-color) !important;
+  box-shadow: none !important;
 }
 .query-item.query-item--selected > input {
   color: var(--mp-query-item-value-selector-color) !important;
@@ -73,6 +84,9 @@
 }
 .query-item .ant-select-selector {
   padding: 0 !important;
+}
+.query-item__search-highlight {
+  color: var(--mp-query-item-action-primary-color);
 }
 
 /* This is temporary until the new icon component is available where sizes can be controlled without CSS */

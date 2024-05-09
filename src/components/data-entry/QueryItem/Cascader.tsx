@@ -1,6 +1,6 @@
 import './query-item.css'
 import { GetProp } from 'antd'
-import { useCallback, useEffect, useState } from 'react'
+import { ReactNode, useCallback, useEffect, useState } from 'react'
 import {
   Cascader as BaseCascader,
   Flex,
@@ -21,7 +21,7 @@ export interface ICascaderOption {
 
 export interface ICascaderProps {
   options: ICascaderOption[]
-  icon?: keyof Pick<typeof Icons, ("empty" | "event" | "userAttribute" | "eventAttribute")>
+  icon?: keyof Pick<typeof Icons, 'empty' | 'event' | 'userAttribute' | 'eventAttribute'>
   errorMessage?: string
   placeholder?: string
   onChange?: (values: (number | string)[], selectedOptions: any) => Promise<void>
@@ -36,17 +36,19 @@ export const Cascader = (props: ICascaderProps) => {
   const [items, setItems] = useState(props.options ?? options)
   const [searchValue, setSearchValue] = useState('')
   const [selectedValue, setSelectedValue] = useState<(number | string)[]>(props.value ?? [])
-  const [selectedDisplayValue, setSelectedDisplayValue] = useState(props.value ? (props.value.slice(-1)[0] as any).label : "")
+  const [selectedDisplayValue, setSelectedDisplayValue] = useState(
+    props.value ? (props.value.slice(-1)[0] as any).label : '',
+  )
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
     setItems(props.options)
   }, [props.options])
 
-  const onSearch = ({ target: { value: value}}: { target: { value: string}}) => {
+  const onSearch = ({ target: { value: value } }: { target: { value: string } }) => {
     if (debouncedLoadData) {
       if (value.length > 3) {
-        if (transformOptionsToPaths(items,[]).filter((path) => filter(value, path)).length == 0) {
+        if (transformOptionsToPaths(items, []).filter(path => filter(value, path)).length == 0) {
           debouncedLoadData(value)
         }
       }
@@ -58,9 +60,9 @@ export const Cascader = (props: ICascaderProps) => {
     return path.some(option => (option.label as string).toLowerCase().indexOf(inputValue.toLowerCase()) > -1)
   }
 
-  let debouncedLoadData: (value: string) => void;
+  let debouncedLoadData: (value: string) => void
   if (props.loadData) {
-    debouncedLoadData = useCallback(debounce(props.loadData, 500),[])
+    debouncedLoadData = useCallback(debounce(props.loadData, 500), [])
   }
 
   const baseProps: IBaseCascaderProps = {
@@ -76,13 +78,39 @@ export const Cascader = (props: ICascaderProps) => {
     },
     dropdownRender: menu => (
       <div className={'query-item__dropdown'}>
-        <Input allowClear className={'query-item__input-search'} placeholder="Search" onChange={(a) => onSearch(a)} />
+        <Input
+          allowClear
+          value={searchValue}
+          className={'query-item__input-search'}
+          placeholder="Search"
+          onChange={a => onSearch(a)}
+        />
         <Flex justify="center">{menu}</Flex>
       </div>
     ),
-    showSearch: { filter },
+    showSearch: {
+      filter,
+      render: (inputValue: string, paths: ICascaderOption[]): ReactNode => {
+        return (
+          <>
+            {paths.map((path: ICascaderOption, index) => {
+              const lowerLabel = path.label.toLowerCase()
+              return (
+                <>
+                  {highlightMatches(path.label, inputValue.toLowerCase())}
+                  {index < paths.length - 1 ? ' > ' : ''}
+                </>
+              )
+            })}
+          </>
+        )
+      },
+    },
     options: items,
-    onDropdownVisibleChange: value => setIsOpen(value),
+    onDropdownVisibleChange: value => {
+      setIsOpen(value)
+      if (value) setSearchValue('')
+    },
   }
 
   let inputClasses = `query-item`
@@ -99,24 +127,46 @@ export const Cascader = (props: ICascaderProps) => {
           status={props.errorMessage ? 'error' : undefined}
           className={inputClasses}
           value={selectedDisplayValue ?? selectedValue.slice(-1)}
-          prefix={props.icon ? <Icon name={props.icon} size="ms" color="primary" /> : <Icon name="empty" size="ms" color="primary" />}
+          prefix={
+            props.icon ? (
+              <Icon name={props.icon} size="ms" color="primary" />
+            ) : (
+              <Icon name="empty" size="ms" color="primary" />
+            )
+          }
         />
       </BaseCascader>
       {props.errorMessage && <Typography.Text type={'danger'}>{props.errorMessage}</Typography.Text>}
     </>
   )
 
-  function transformOptionsToPaths(options: DefaultOptionType[], prefixPath: DefaultOptionType[]): DefaultOptionType[][] {
-    let result: DefaultOptionType[][] = [];
-    options.forEach((option) => {
+  function highlightMatches(source: string, valueToHighlight: string): ReactNode {
+    const lowerSource = source.toLowerCase()
+    return lowerSource.indexOf(valueToHighlight) === -1 ? (<>{ source }</>) : (
+      <>
+        {source.slice(0, lowerSource.indexOf(valueToHighlight))}
+        <span className="query-item__search-highlight">
+          {source.slice(lowerSource.indexOf(valueToHighlight), lowerSource.indexOf(valueToHighlight) + valueToHighlight.length)}
+        </span>
+        {highlightMatches(source.slice(lowerSource.indexOf(valueToHighlight) + valueToHighlight.length), valueToHighlight)}
+      </>
+    )
+  }
+
+  function transformOptionsToPaths(
+    options: DefaultOptionType[],
+    prefixPath: DefaultOptionType[],
+  ): DefaultOptionType[][] {
+    let result: DefaultOptionType[][] = []
+    options.forEach(option => {
       if (option.children && option.children.length > 0) {
-        const newPrefix = prefixPath.concat([{label: option.label, value: option.value}]);
-        result = result.concat(transformOptionsToPaths(option.children, newPrefix));
+        const newPrefix = prefixPath.concat([{ label: option.label, value: option.value }])
+        result = result.concat(transformOptionsToPaths(option.children, newPrefix))
       } else {
-        const path = prefixPath.concat([{label: option.label, value: option.value}]);
-        result.push(path);
+        const path = prefixPath.concat([{ label: option.label, value: option.value }])
+        result.push(path)
       }
     })
-    return result;
+    return result
   }
 }
