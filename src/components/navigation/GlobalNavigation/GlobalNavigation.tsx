@@ -15,7 +15,7 @@ import { WorkspaceSelector } from 'src/components/navigation/GlobalNavigation/Wo
 import { type IGlobalNavigationItem } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
 import { Popover } from 'antd'
-import { Minimap } from 'src/components/navigation/Minimap/Minmap'
+import Minimap from 'src/components/navigation/Minimap/Minmap'
 
 export interface IGlobalNavigationProps {
   logo: IGlobalNavigationLogo
