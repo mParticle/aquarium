@@ -29,6 +29,7 @@ import EventAttributeIcon from 'src/assets/svg/event-attribute.svg?react'
 import UserAttributeIcon from 'src/assets/svg/user-attribute.svg?react'
 import EmptyIcon from 'src/assets/svg/empty.svg?react'
 import RemoveIcon from 'src/assets/svg/remove.svg?react'
+import HelpIcon from 'src/assets/svg/help.svg?react'
 
 export const Icons = {
   alicorn: AlicornIcon,
@@ -62,4 +63,5 @@ export const Icons = {
   event: EventIcon,
   userAttribute: UserAttributeIcon,
   remove: RemoveIcon,
+  help: HelpIcon,
 } as const
