@@ -50,7 +50,7 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
         children.push({
           className: 'globalNavigation__buttonItem',
           key: buttonKey,
-          label: <NavigationButtonItem withoutContainer label={child.label} {...child.buttonOptions} />,
+          label: <NavigationButtonItem withoutContainer={false} label={child.label} {...child.buttonOptions} />,
         })
       }
     })

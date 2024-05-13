@@ -16,7 +16,7 @@ export const NavigationButtonItem: React.FC<INavigationButtonItemProps> = ({
   ...props
 }) => {
   return (
-    <div className={!withoutContainer ? 'workspaceSelector__signoutButtonContainer' : ''}>
+    <div className={withoutContainer ? 'workspaceSelector__signoutButtonContainer' : ''}>
       <Button
         className="workspaceSelector__signoutButton"
         type="primary"
