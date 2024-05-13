@@ -83,7 +83,7 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
 
             {!props.hideMpHome && (
               <Popover
-                content={() => <MiniMap href={props.minimapOptions.href} />}
+                content={() => <MiniMap href={props.minimapOptions?.href || '/'} />}
                 placement="rightBottom"
                 arrow={false}>
                 <Center
