@@ -79,7 +79,7 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
             )}
 
             {!props.hideMpHome && (
-              <Popover content={Minimap} placement="rightBottom" arrow={false}>
+              <Popover content={() => <Minimap />} placement="rightBottom" arrow={false}>
                 <Center
                   className="globalNavigation__mpHome"
                   onClick={() => {
