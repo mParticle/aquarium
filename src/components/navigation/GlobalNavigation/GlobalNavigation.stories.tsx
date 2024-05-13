@@ -1,5 +1,5 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { expect, screen, userEvent } from '@storybook/test'
+import { expect, fn, screen, userEvent } from '@storybook/test'
 import React from 'react'
 import { Button, Center, Flex, GlobalNavigation, Icon, type INavigationCreateProps, Space } from 'src/components'
 import { Badge } from 'src/components/data-display/Badge/Badge'
@@ -998,6 +998,34 @@ export const WorkspaceSearchWithNoResults: Meta<typeof GlobalNavigation> = {
 }
 
 export const UseSuitesReminderHook: Story = {
+  play: async () => {
+    const alert = fn()
+    global.alert = alert
+
+    const notificationTitle = 'Join the new mParticle Experience!'
+    const getNotification = () => screen.getByText(notificationTitle)
+
+    // mock global alert function with vitest
+
+    const showNotificationBtn = screen.getByText('Show Notification')
+    await userEvent.click(showNotificationBtn)
+
+    // Remind me later
+    const remindMeLaterBtn = await screen.findByText('Remind me later')
+    await userEvent.click(remindMeLaterBtn)
+
+    await expect(alert).toBeCalledWith('Remind me later')
+    await expect(getNotification()).not.toBeVisible()
+
+    // Take me there
+    await userEvent.click(showNotificationBtn)
+
+    const takeMeThereBtn = await screen.findByText('Take me there')
+    await userEvent.click(takeMeThereBtn)
+
+    await expect(alert).toBeCalledWith('Take me there')
+    await expect(getNotification()).not.toBeVisible()
+  },
   render: props => {
     const [openNotification, contextHolder] = useSuitesReminder({
       onClose: () => {

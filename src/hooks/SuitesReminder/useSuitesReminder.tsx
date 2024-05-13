@@ -19,10 +19,10 @@ type ContextHolder = ReactNode
 
 export type SuitesReminderHook = [OpenNotificationFn, ContextHolder]
 
-const DefaultReminderDuration = 4.5 // same as antd notification default duration
-const DefaultTitle = 'Join the new mParticle Experience!'
+const DefaultReminderDuration = 4.5 as const // same as antd notification default duration
+const DefaultTitle = 'Join the new mParticle Experience!' as const
 const DefaultMessage =
-  'Managing your data is easier than ever with the new mParticle experience. Try out the latest features with ease, and switch back to the classic experience anytime from the side navigation.'
+  'Managing your data is easier than ever with the new mParticle experience. Try out the latest features with ease, and switch back to the classic experience anytime from the side navigation.' as const
 
 export const useSuitesReminder = (options: ISuitesReminderOptions): SuitesReminderHook => {
   const {
