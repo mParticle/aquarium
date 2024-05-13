@@ -1,7 +1,6 @@
 import 'src/styles/_variables.css'
 import './minimap.css'
 import React from 'react'
-import { Card } from 'src/components/data-display/Card/Card'
 import { Button, ConfigProvider } from 'src/components'
 import Logo from 'src/assets/svg/mp-logo-wordmark.svg?react'
 import Map from './map.svg?react'
