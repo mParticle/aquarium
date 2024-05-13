@@ -117,23 +117,18 @@ export const Cascader = (props: ICascaderProps) => {
   if (isOpen) inputClasses += ' query-item--open'
   if (selectedValue && selectedValue.length != 0) inputClasses += ' query-item--selected'
   if (props.errorMessage) inputClasses += ' query-item--error'
+  const displayValue = selectedDisplayValue ?? selectedValue.slice(-1)
 
   return (
     <>
       <BaseCascader {...baseProps}>
         <Input
-          readOnly={true}
+          readOnly
           placeholder={props.placeholder}
           status={props.errorMessage ? 'error' : undefined}
           className={inputClasses}
-          value={selectedDisplayValue ?? selectedValue.slice(-1)}
-          prefix={
-            props.icon ? (
-              <Icon name={props.icon} size="ms" color="primary" />
-            ) : (
-              <Icon name="empty" size="ms" color="primary" />
-            )
-          }
+          value={displayValue}
+          prefix={getIcon()}
         />
       </BaseCascader>
       {props.errorMessage && <Typography.Text type={'danger'}>{props.errorMessage}</Typography.Text>}
@@ -142,13 +137,21 @@ export const Cascader = (props: ICascaderProps) => {
 
   function highlightMatches(source: string, valueToHighlight: string): ReactNode {
     const lowerSource = source.toLowerCase()
-    return lowerSource.indexOf(valueToHighlight) === -1 ? (<>{ source }</>) : (
+    return lowerSource.indexOf(valueToHighlight) === -1 ? (
+      <>{source}</>
+    ) : (
       <>
         {source.slice(0, lowerSource.indexOf(valueToHighlight))}
         <span className="query-item__search-highlight">
-          {source.slice(lowerSource.indexOf(valueToHighlight), lowerSource.indexOf(valueToHighlight) + valueToHighlight.length)}
+          {source.slice(
+            lowerSource.indexOf(valueToHighlight),
+            lowerSource.indexOf(valueToHighlight) + valueToHighlight.length,
+          )}
         </span>
-        {highlightMatches(source.slice(lowerSource.indexOf(valueToHighlight) + valueToHighlight.length), valueToHighlight)}
+        {highlightMatches(
+          source.slice(lowerSource.indexOf(valueToHighlight) + valueToHighlight.length),
+          valueToHighlight,
+        )}
       </>
     )
   }
@@ -168,5 +171,13 @@ export const Cascader = (props: ICascaderProps) => {
       }
     })
     return result
+  }
+
+  function getIcon() {
+    return props.icon ? (
+      <Icon name={props.icon} size="ms" color="primary" />
+    ) : (
+      <Icon name="empty" size="ms" color="primary" />
+    )
   }
 }
