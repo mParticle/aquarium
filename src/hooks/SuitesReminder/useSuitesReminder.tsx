@@ -1,6 +1,5 @@
 import 'src/styles/_variables.css'
 import './suites-reminder.css'
-
 import { type ReactNode } from 'react'
 import { Button, notification, Space } from 'src/components'
 import { FontWeightStrong } from 'src/styles/style'
