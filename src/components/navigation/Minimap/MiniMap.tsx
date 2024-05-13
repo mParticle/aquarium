@@ -1,5 +1,5 @@
 import 'src/styles/_variables.css'
-import './minimap.css'
+import './miniMap.css'
 import React from 'react'
 import { Button, ConfigProvider } from 'src/components'
 import Logo from 'src/assets/svg/mp-logo-wordmark.svg?react'
