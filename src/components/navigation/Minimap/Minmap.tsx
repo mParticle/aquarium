@@ -1,3 +1,5 @@
+import 'src/styles/_variables.css'
+import './minimap.css'
 import React from 'react'
 import { Card } from 'src/components/data-display/Card/Card'
 import { Button, ConfigProvider } from 'src/components'
@@ -9,20 +11,15 @@ export interface IMinimapProps {}
 const Minimap: React.FC<IMinimapProps> = props => {
   return (
     <ConfigProvider>
-      <Card
-        bordered={true}
-        actions={[
-          <Button
-            key="edit"
-            style={{ marginRight: '10px', marginLeft: 'auto', display: 'block', width: 'fit-content' }}>
-            Go to overview
-          </Button>,
-        ]}>
-        <Flex align="normal" component="div" flex="0 1 auto" gap="middle" justify="stretch" vertical wrap="nowrap">
-          <Logo />
+      <div className="minimap_container">
+        <Flex align="normal" component="div" flex="0 1 auto" gap="small" justify="stretch" vertical wrap="nowrap">
+          <Flex align="center" justify="space-between">
+            <Logo />
+            <Button>Go to overview</Button>
+          </Flex>
           <Map />
         </Flex>
-      </Card>
+      </div>
     </ConfigProvider>
   )
 }
