@@ -3,7 +3,7 @@ import './minimap.css'
 import React from 'react'
 import { Button, ConfigProvider } from 'src/components'
 import Logo from 'src/assets/svg/mp-logo-wordmark.svg?react'
-import Map from './map.svg?react'
+import MiniMap from './minimap.svg?react'
 import { Flex } from 'src/components/layout/Flex/Flex'
 export interface IMinimapProps {
   href: string
@@ -19,7 +19,7 @@ const Minimap: React.FC<IMinimapProps> = props => {
             <Logo />
             <Button href={href}>Go to overview</Button>
           </Flex>
-          <Map />
+          <MiniMap />
         </Flex>
       </div>
     </ConfigProvider>

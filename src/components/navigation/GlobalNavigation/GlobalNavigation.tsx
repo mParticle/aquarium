@@ -15,7 +15,7 @@ import { WorkspaceSelector } from 'src/components/navigation/GlobalNavigation/Wo
 import { type IGlobalNavigationItem } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
 import { Popover } from 'antd'
-import Minimap from 'src/components/navigation/Minimap/Minmap'
+import MiniMap from 'src/components/navigation/MiniMap/MiniMap'
 
 export interface IGlobalNavigationProps {
   logo: IGlobalNavigationLogo
@@ -36,7 +36,9 @@ export interface IGlobalNavigationProps {
     onClick: () => void
     withoutContainer?: boolean
   }
-  minimapHref: string
+  minimapOptions: {
+    href: string
+  }
 }
 export const GlobalNavWidth = 90 as const
 
@@ -80,7 +82,10 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
             )}
 
             {!props.hideMpHome && (
-              <Popover content={() => <Minimap href={props.minimapHref} />} placement="rightBottom" arrow={false}>
+              <Popover
+                content={() => <MiniMap href={props.minimapOptions.href} />}
+                placement="rightBottom"
+                arrow={false}>
                 <Center
                   className="globalNavigation__mpHome"
                   onClick={() => {
