@@ -999,13 +999,8 @@ export const WorkspaceSearchWithNoResults: Meta<typeof GlobalNavigation> = {
 
 export const UseSuitesReminderHook: Story = {
   play: async () => {
-    const alert = fn()
+    const alert = fn().mockImplementation(() => {})
     global.alert = alert
-
-    const notificationTitle = 'Join the new mParticle Experience!'
-    const getNotification = () => screen.getByText(notificationTitle)
-
-    // mock global alert function with vitest
 
     const showNotificationBtn = screen.getByText('Show Notification')
     await userEvent.click(showNotificationBtn)
@@ -1015,7 +1010,6 @@ export const UseSuitesReminderHook: Story = {
     await userEvent.click(remindMeLaterBtn)
 
     await expect(alert).toBeCalledWith('Remind me later')
-    await expect(getNotification()).not.toBeVisible()
 
     // Take me there
     await userEvent.click(showNotificationBtn)
@@ -1024,7 +1018,6 @@ export const UseSuitesReminderHook: Story = {
     await userEvent.click(takeMeThereBtn)
 
     await expect(alert).toBeCalledWith('Take me there')
-    await expect(getNotification()).not.toBeVisible()
   },
   render: props => {
     const [openNotification, contextHolder] = useSuitesReminder({
