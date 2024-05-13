@@ -36,6 +36,7 @@ export interface IGlobalNavigationProps {
     onClick: () => void
     withoutContainer?: boolean
   }
+  minimapHref: string
 }
 export const GlobalNavWidth = 90 as const
 
@@ -79,7 +80,7 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
             )}
 
             {!props.hideMpHome && (
-              <Popover content={() => <Minimap />} placement="rightBottom" arrow={false}>
+              <Popover content={() => <Minimap href={props.minimapHref} />} placement="rightBottom" arrow={false}>
                 <Center
                   className="globalNavigation__mpHome"
                   onClick={() => {

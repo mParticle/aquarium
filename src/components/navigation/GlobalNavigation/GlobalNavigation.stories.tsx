@@ -463,6 +463,7 @@ export const MP: Story = {
     tools: mpTools,
     management: mpManagement,
     orgs: mpOrgs,
+    minimapHref: "'/",
     onMpHomeClick: () => {
       alert('going to overview map')
     },
@@ -488,6 +489,7 @@ export const MPThousandOrgs: Story = {
           tools={mpTools}
           management={mpManagement}
           orgs={thousandOrgs}
+          minimapHref="/"
           onMpHomeClick={() => {
             alert('going to overview map')
           }}
