@@ -14,8 +14,6 @@ import { NavigationCreate } from 'src/components/navigation/GlobalNavigation/Nav
 import { WorkspaceSelector } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelector'
 import { type IGlobalNavigationItem } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
-import { Popover } from 'antd'
-import MiniMap from 'src/components/navigation/MiniMap/MiniMap'
 
 export interface IGlobalNavigationProps {
   logo: IGlobalNavigationLogo
@@ -82,10 +80,7 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
             )}
 
             {!props.hideMpHome && (
-              <Popover
-                content={() => <MiniMap href={props.minimapOptions?.href || '/'} />}
-                placement="rightBottom"
-                arrow={false}>
+              <Tooltip title="mParticle Overview" placement="right">
                 <Center
                   className="globalNavigation__mpHome"
                   onClick={() => {
@@ -93,7 +88,7 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
                   }}>
                   <Icon name="mpLogo" size="lg" color="white" />
                 </Center>
-              </Popover>
+              </Tooltip>
             )}
           </div>
         </Flex>
