@@ -1,0 +1,3 @@
+﻿.globalNavigation__suitesReminder.globalNavigation__suitesReminder-bottomLeft {
+    left: calc(var(--nav-width) + var(--margin-xs)) !important;
+}

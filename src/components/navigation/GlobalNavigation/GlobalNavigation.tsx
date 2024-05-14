@@ -14,6 +14,7 @@ import { NavigationCreate } from 'src/components/navigation/GlobalNavigation/Nav
 import { WorkspaceSelector } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelector'
 import { type IGlobalNavigationItem } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
+import { useSuitesReminder } from 'src/hooks/SuitesReminder/useSuitesReminder'
 import { Popover } from 'antd'
 import MiniMap from 'src/components/navigation/MiniMap/MiniMap'
 
@@ -101,3 +102,5 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
     </Layout>
   )
 }
+
+GlobalNavigation.useSuitesReminder = useSuitesReminder
