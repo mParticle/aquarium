@@ -1,18 +1,17 @@
+import { describe, it, expect, beforeEach } from 'vitest'
+import { CompositeUserPreferencesService } from 'src/services/user-preferences/composite-user-preferences-service'
+import { type UserPreferences } from 'src/services/user-preferences/models/storage-models/user-preferences'
+import { type UserPreferenceScope } from 'src/services/user-preferences/models/storage-models/user-preference-scope'
+import { type UserPreferenceDefinitions } from 'src/services/user-preferences/models/definitions/user-preference-definitions'
+import { UserPreferenceScopeType } from 'src/services/user-preferences/models/definitions/user-preference-scope-type'
+import { type UserPreferenceDefinition } from 'src/services/user-preferences/models/definitions/user-preference-definition'
 import {
-  CompositeUserPreferencesService,
   makeBuilderFromDefinition,
   TestUserPreferenceDefinitionsFakeFactory,
   TestUserPreferenceId,
-  TestUserPreferencesFakeFactory,
   type TestUserPreferencesFakeBuilder,
-  type UserPreferenceDefinition,
-  type UserPreferenceDefinitions,
-  type UserPreferences,
-  type UserPreferenceScope,
-  UserPreferenceScopeType,
-} from 'src/services/user-preferences'
-
-import { describe, it, expect, beforeEach } from 'vitest'
+  TestUserPreferencesFakeFactory,
+} from 'src/services/user-preferences/user-preferences-service.spec'
 
 describe('When testing CompositeUserPreferencesService', () => {
   let compositeUserPreferencesService: CompositeUserPreferencesService<TestUserPreferenceId>

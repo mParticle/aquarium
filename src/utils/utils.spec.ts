@@ -45,7 +45,7 @@ describe('Testing utils', () => {
     it('it should return "Macintosh" when the user agent includes "Mac"', () => {
       // arrange
       const navigatorOverride: Partial<Navigator> = {
-        userAgent: 'Windows',
+        userAgent: 'Macintosh',
       }
 
       global.navigator = { ...global.navigator, ...navigatorOverride }

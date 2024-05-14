@@ -1,19 +1,15 @@
-import {
-  CompositeUserPreferencesService,
-  type UserPreferenceScope,
-  type UserPreferences,
-  UserPreferencesService,
-  type UserPreferenceDefinitions,
-  TestUserPreferenceId,
-  makeBuilderFromDefinition,
-  TestUserPreferencesFakeFactory,
-  UserPreferenceScopeType,
-  TestUserPreferenceDefinitionsFakeFactory,
-} from './user-preferences'
-
-import * as Cookies from './Cookies'
+/* eslint-disable @typescript-eslint/no-use-before-define */
+import * as Cookies from '../Cookies'
 
 import { describe, afterEach, it, expect } from 'vitest'
+import { UserPreferencesService } from 'src/services/user-preferences/user-preferences'
+import { type UserPreferenceScope } from 'src/services/user-preferences/models/storage-models/user-preference-scope'
+import { type UserPreferences } from 'src/services/user-preferences/models/storage-models/user-preferences'
+import { type UserPreferenceDefinitions } from 'src/services/user-preferences/models/definitions/user-preference-definitions'
+import { CompositeUserPreferencesService } from 'src/services/user-preferences/composite-user-preferences-service'
+import { UserPreferenceScopeType } from 'src/services/user-preferences/models/definitions/user-preference-scope-type'
+import { type Sync } from 'factory.ts'
+import { faker } from '@faker-js/faker'
 
 describe('When testing the User Preferences Service', () => {
   let userPreferencesService: UserPreferencesService<TestUserPreferenceId>
@@ -36,42 +32,6 @@ describe('When testing the User Preferences Service', () => {
 
   afterEach(() => {
     Cookies.put(cookieKey, '')
-  })
-
-  describe('Testing stuff', () => {
-    const log = console.log
-
-    it('should work', async () => {
-      // scope
-      const allowedScope = UserPreferenceScopeType.Global
-      definitions = TestUserPreferenceDefinitionsFakeFactory([
-        { id: TestUserPreferenceId.Default, allowedScope },
-        { id: TestUserPreferenceId.PreferenceOne, allowedScope },
-      ]) as UserPreferenceDefinitions<TestUserPreferenceId>
-
-      log(definitions)
-
-      // setup
-      const scopedPreference = makeBuilderFromDefinition(definitions, lowLevelScope)
-      log(scopedPreference)
-      userPreferences = TestUserPreferencesFakeFactory([scopedPreference]) as UserPreferences<TestUserPreferenceId>
-      log(userPreferences)
-      Cookies.putObject(cookieKey, userPreferences)
-
-      userPreferencesService = new UserPreferencesService<TestUserPreferenceId>(
-        definitions,
-        compositeUserPreferencesService,
-        cookieKey,
-        lowLevelScope,
-        () => new Date(),
-      )
-      await userPreferencesService.init()
-
-      log(userPreferencesService.preferences)
-      log(await userPreferencesService.isOptedIn(TestUserPreferenceId.Default))
-
-      expect(true).toBe(true)
-    })
   })
 
   describe('and reading the data', () => {
@@ -140,14 +100,11 @@ describe('When testing the User Preferences Service', () => {
     })
 
     it("it should throw when the preference can't be found", async () => {
-      // console.log(Cookies.getAll())
       // arrange
       definitions = TestUserPreferenceDefinitionsFakeFactory() as UserPreferenceDefinitions<TestUserPreferenceId>
-      // console.log(definitions)
 
       const someScope = '1'
       setupPreferencesWithScope(definitions, someScope)
-      // console.log(Cookies.getAll())
 
       userPreferencesService = new UserPreferencesService<TestUserPreferenceId>(
         definitions,
@@ -247,3 +204,110 @@ describe('When testing the User Preferences Service', () => {
     })
   })
 })
+
+export enum TestUserPreferenceId {
+  Default = 'default-id',
+  PreferenceOne = 'preference-one',
+}
+
+export function TestUserPreferenceDefinitionsFakeFactory(
+  config?: Array<{
+    id: TestUserPreferenceId
+    isOptedInByDefault?: boolean
+    allowedScope?: UserPreferenceScopeType
+  }>,
+): Sync.Builder<
+  UserPreferenceDefinitions<TestUserPreferenceId>,
+  keyof UserPreferenceDefinitions<TestUserPreferenceId>
+> {
+  if (!config) {
+    config = Object.values(TestUserPreferenceId).map(id => ({ id }))
+  }
+
+  return config.reduce((definitions, { id, isOptedInByDefault, allowedScope }) => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    definitions[id] = createDefinition({ isOptedInByDefault, allowedScope })
+
+    return definitions
+  }, {})
+}
+
+type Definition = {
+  isOptedInByDefault?: boolean
+  allowedScope?: UserPreferenceScopeType
+}
+
+function createDefinition({ isOptedInByDefault, allowedScope }: Definition = {}): Definition {
+  return {
+    isOptedInByDefault: isOptedInByDefault ?? faker.datatype.boolean(),
+    allowedScope: allowedScope ?? faker.helpers.enumValue(UserPreferenceScopeType),
+  }
+}
+
+export interface TestUserPreferencesFakeBuilder {
+  wantsRandom?: boolean
+  scope?: UserPreferenceScope
+  userPreferenceIds?: TestUserPreferenceId[]
+  optedIns?: boolean[]
+}
+
+export function makeBuilderFromDefinition(
+  definitions: UserPreferenceDefinitions<TestUserPreferenceId>,
+  scope?: UserPreferenceScope,
+): TestUserPreferencesFakeBuilder {
+  return {
+    scope: scope ?? getRandomScope({ excludeGlobal: true }),
+    userPreferenceIds: Object.keys(definitions) as TestUserPreferenceId[],
+    optedIns: Object.values(definitions).map(({ isOptedInByDefault }) => isOptedInByDefault),
+  }
+}
+
+export function TestUserPreferencesFakeFactory(
+  scopes: TestUserPreferencesFakeBuilder[] = [],
+): Sync.Builder<UserPreferences<TestUserPreferenceId>, keyof UserPreferences<TestUserPreferenceId>> {
+  return scopes.reduce((scopedPreferences, { wantsRandom = false, scope, userPreferenceIds, optedIns }) => {
+    const effectiveScope = scope ?? getRandomScope({ excludeGlobal: true })
+    if (wantsRandom) {
+      const numberOfValues = faker.number.int({ max: Object.keys(TestUserPreferenceId).length, min: 1 })
+      userPreferenceIds = Array.from({ length: numberOfValues }, () => faker.helpers.enumValue(TestUserPreferenceId))
+      optedIns = Array.from({ length: numberOfValues }, () => faker.datatype.boolean())
+    }
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    scopedPreferences[effectiveScope] = userPreferenceIds.reduce((preferences, userPreferenceId, index) => {
+      const effectiveId = userPreferenceId ?? TestUserPreferenceId.Default
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-expect-error
+      const effectiveOptedInState = optedIns[index] ?? faker.datatype.boolean()
+
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-expect-error
+      preferences[effectiveId] = { optedIn: effectiveOptedInState }
+
+      return preferences
+    }, {})
+
+    return scopedPreferences
+  }, {}) as UserPreferences<TestUserPreferenceId>
+}
+
+function getRandomScope({ maxScope = 3, excludeGlobal = false }): UserPreferenceScope {
+  const numberOfScopes = faker.number.int({
+    max: maxScope,
+    min: excludeGlobal ? UserPreferenceScopeType.LevelOneScope : UserPreferenceScopeType.Global,
+  })
+
+  if (numberOfScopes === 0) return 'global'
+
+  const scopeIdMaxLength = 9999
+  const scopeIdOptions = { max: scopeIdMaxLength }
+  const scope = Array.from(
+    { length: numberOfScopes * 2 - 1 }, // Double the iterations, one for the number and
+    // one for the separator, removing the separator
+    (_, index: number): string => (!(index % 2) ? faker.number.int(scopeIdOptions).toString() : '-'),
+  ).join('')
+
+  return scope as UserPreferenceScope
+}
