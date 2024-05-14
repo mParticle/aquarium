@@ -19,6 +19,8 @@ export { Upload, type IUploadProps } from './data-entry/Upload/Upload'
 export { AutoComplete, type IAutoCompleteProps } from './data-entry/AutoComplete/AutoComplete'
 export { TimePicker, type ITimePickerProps } from './data-entry/TimePicker/TimePicker'
 export { Transfer, type ITransferProps } from './data-entry/Transfer/Transfer'
+export { QueryItem } from './data-entry/QueryItem/QueryItem'
+export type { IQueryItemQualifierOption } from './data-entry/QueryItem/Qualifier'
 export { Collapse, type ICollapseProps } from './data-display/Collapse/Collapse'
 export { Timeline, type ITimelineProps } from './data-display/Timeline/Timeline'
 export { Calendar, type ICalendarProps } from './data-display/Calendar/Calendar'
@@ -98,3 +100,4 @@ export type {
   IWorkspaceSelectorItem,
 } from './navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'
 export { SuiteLogo } from './navigation/GlobalNavigation/SuiteLogo'
+export { Typography } from './general/Typography/Typography'

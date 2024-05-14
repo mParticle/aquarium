@@ -10,7 +10,7 @@ import { Button } from 'src/components'
 import { type IConfigProviderProps } from 'src/components'
 import { Slider } from 'src/components'
 import { Card } from 'src/components'
-import { Title } from 'src/components/general/Typography/Typography'
+import { Typography } from 'src/components/general/Typography/Typography'
 
 const meta: Meta<typeof Flex> = {
   title: 'Aquarium/Layout/Flex',
@@ -252,7 +252,7 @@ export const ExampleNesting: Story = {
           <Flex justify="space-between">
             <img alt="avatar" style={imgStyle} />
             <Flex vertical align="flex-end" justify="space-between" style={{ padding: 32 }}>
-              <Title level={3}>“antd is an enterprise-class UI design language and React UI library.”</Title>
+              <Typography.Title level={3}>“antd is an enterprise-class UI design language and React UI library.”</Typography.Title>
               <Button type="primary" href="https://ant.design" target="_blank">
                 Get Started
               </Button>

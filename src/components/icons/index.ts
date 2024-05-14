@@ -23,6 +23,10 @@ import MpLogoIcon from 'src/assets/svg/mpLogo.svg?react'
 import LockIcon from 'src/assets/svg/lock.svg?react'
 import SearchIcon from 'src/assets/svg/search.svg?react'
 import AnalyticsIcon from 'src/assets/svg/analytics.svg?react'
+import EmptyIcon from 'src/assets/svg/empty.svg?react'
+import EventAttributeIcon from 'src/assets/svg/event-attribute.svg?react'
+import UserAttributeIcon from 'src/assets/svg/user-attribute.svg?react'
+import EventIcon from 'src/assets/svg/event.svg?react'
 
 export {
   AddIcon,
@@ -50,4 +54,8 @@ export {
   CloudIcon,
   FolderClosedIcon,
   AnalyticsIcon,
+  EmptyIcon,
+  EventAttributeIcon,
+  UserAttributeIcon,
+  EventIcon,
 }
