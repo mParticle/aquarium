@@ -8,7 +8,6 @@ import { type IColorPickerProps } from 'src/components'
 import { type IWatermarkProps } from 'src/components/feedback/Watermark/Watermark'
 import { InputNumber } from 'src/components'
 import { Typography } from 'src/components/general/Typography/Typography'
-import { Paragraph } from 'src/components/general/Typography/Typography'
 import { Input } from 'src/components'
 import { ColorPicker } from 'src/components'
 import { Slider } from 'src/components'
@@ -152,29 +151,27 @@ export const ExampleConfig: Story = {
       <ExampleStory title="Preview the watermark effect by configuring custom parameters.">
         <Flex gap="middle">
           <Watermark {...watermarkProps}>
-            <Typography>
-              <Paragraph>
-                The light-speed iteration of the digital world makes products more complex. However, human consciousness
-                and attention resources are limited. Facing this design contradiction, the pursuit of natural
-                interaction will be the consistent direction of Ant Design.
-              </Paragraph>
-              <Paragraph>
-                Natural user cognition: According to cognitive psychology, about 80% of external information is obtained
-                through visual channels. The most important visual elements in the interface design, including layout,
-                colors, illustrations, icons, etc., should fully absorb the laws of nature, thereby reducing the
-                user&apos;s cognitive cost and bringing authentic and smooth feelings. In some scenarios, opportunely
-                adding other sensory channels such as hearing, touch can create a richer and more natural product
-                experience.
-              </Paragraph>
-              <Paragraph>
-                Natural user behavior: In the interaction with the system, the designer should fully understand the
-                relationship between users, system roles, and task objectives, and also contextually organize system
-                functions and services. At the same time, a series of methods such as behavior analysis, artificial
-                intelligence and sensors could be applied to assist users to make effective decisions and reduce extra
-                operations of users, to save users&apos; mental and physical resources and make human-computer
-                interaction more natural.
-              </Paragraph>
-            </Typography>
+            <Typography.Paragraph>
+              The light-speed iteration of the digital world makes products more complex. However, human consciousness
+              and attention resources are limited. Facing this design contradiction, the pursuit of natural
+              interaction will be the consistent direction of Ant Design.
+            </Typography.Paragraph>
+            <Typography.Paragraph>
+              Natural user cognition: According to cognitive psychology, about 80% of external information is obtained
+              through visual channels. The most important visual elements in the interface design, including layout,
+              colors, illustrations, icons, etc., should fully absorb the laws of nature, thereby reducing the
+              user&apos;s cognitive cost and bringing authentic and smooth feelings. In some scenarios, opportunely
+              adding other sensory channels such as hearing, touch can create a richer and more natural product
+              experience.
+            </Typography.Paragraph>
+            <Typography.Paragraph>
+              Natural user behavior: In the interaction with the system, the designer should fully understand the
+              relationship between users, system roles, and task objectives, and also contextually organize system
+              functions and services. At the same time, a series of methods such as behavior analysis, artificial
+              intelligence and sensors could be applied to assist users to make effective decisions and reduce extra
+              operations of users, to save users&apos; mental and physical resources and make human-computer
+              interaction more natural.
+            </Typography.Paragraph>
             <img
               style={{ zIndex: 10, width: '100%', maxWidth: 800, position: 'relative' }}
               src="https://gw.alipayobjects.com/mdn/rms_08e378/afts/img/A*zx7LTI_ECSAAAAAAAAAAAABkARQnAQ"

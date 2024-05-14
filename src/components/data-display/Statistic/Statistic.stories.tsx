@@ -3,7 +3,7 @@ import { Row, Col, Button } from 'antd'
 import { Card } from 'src/components'
 import { type ICountdownProps, Statistic, type valueType } from 'src/components/data-display/Statistic/Statistic'
 import { Icon } from 'src/components/general/Icon/Icon'
-import { Text, Paragraph } from 'src/components/general/Typography/Typography'
+import { Typography } from 'src/components/general/Typography/Typography'
 import { ColorError, ColorInfoBg, ColorSuccess, PaddingXl } from 'src/styles/style'
 import { ExampleStory } from 'src/utils/ExampleStory'
 
@@ -29,8 +29,8 @@ const meta: Meta<typeof Statistic> = {
       options: ['default', 'code', 'error'],
       mapping: {
         default: (value: valueType) => `${value}`,
-        code: (value: valueType) => <Text code>{value}</Text>,
-        error: (value: valueType) => <Text type="danger">{value}</Text>,
+        code: (value: valueType) => <Typography.Text code>{value}</Typography.Text>,
+        error: (value: valueType) => <Typography.Text type="danger">{value}</Typography.Text>,
       },
     },
     prefix: {
@@ -67,9 +67,9 @@ export const CustomFormatter: Story = {
   args: {
     value: 112893,
     formatter: (value: valueType) => (
-      <Text code copyable>
+      <Typography.Text code copyable>
         {value}
-      </Text>
+      </Typography.Text>
     ),
   },
 }
@@ -153,9 +153,9 @@ export const ExampleWithUnit: Story = {
       <ExampleStory
         title="Add unit through prefix and suffix."
         description={
-          <Paragraph>
+          <Typography.Paragraph>
             Add unit through <code>prefix</code> and <code>suffix</code>
-          </Paragraph>
+          </Typography.Paragraph>
         }>
         <Row gutter={16}>
           <Col>

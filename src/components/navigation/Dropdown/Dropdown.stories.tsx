@@ -10,7 +10,7 @@ import { Space } from 'src/components'
 import { Divider } from 'src/components'
 import { theme } from 'antd'
 import { type MenuProps } from 'antd'
-import { Link } from 'src/components/general/Typography/Typography'
+import { Typography } from 'src/components/general/Typography/Typography'
 
 const menu: IDropdownProps['menu'] = {
   items: [
@@ -628,12 +628,12 @@ export const ExampleSelectable: Story = {
             selectable: true,
             defaultSelectedKeys: ['3'],
           }}>
-          <Link>
+          <Typography.Link>
             <Space>
               Selectable
               <Icon name="alicorn" />
             </Space>
-          </Link>
+          </Typography.Link>
         </Dropdown>
       </ExampleStory>
     )
