@@ -1,7 +1,7 @@
 import { Cascader as AntCascader } from 'antd'
 import { type CascaderProps as AntCascaderProps } from 'antd'
 import { type BaseOptionType } from 'antd/es/select'
-import { ConfigProvider } from 'antd'
+import { ConfigProvider } from 'src/components'
 
 export type ICascaderProps<DataNodeType extends BaseOptionType = any> = AntCascaderProps<DataNodeType>
 

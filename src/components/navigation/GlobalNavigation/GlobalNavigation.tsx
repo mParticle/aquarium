@@ -1,6 +1,6 @@
 import 'src/styles/_variables.css'
 import './global-navigation.css'
-import { type IAvatarProps, Layout } from 'src/components'
+import { type IAvatarProps, Icon, Layout } from 'src/components'
 import { Flex } from 'src/components'
 import { Center } from 'src/components'
 import { type INavigationCreateProps } from 'src/components'
@@ -13,9 +13,10 @@ import { NavigationList } from 'src/components/navigation/GlobalNavigation/Navig
 import { NavigationCreate } from 'src/components/navigation/GlobalNavigation/NavigationCreate'
 import { WorkspaceSelector } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelector'
 import { type IGlobalNavigationItem } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
-import MpLogo from 'src/assets/svg/mpLogo.svg?react'
-import SignoutIcon from 'src/assets/svg/signout.svg?react'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
+import { useSuitesReminder } from 'src/hooks/SuitesReminder/useSuitesReminder'
+import { Popover } from 'antd'
+import MiniMap from 'src/components/navigation/MiniMap/MiniMap'
 
 export interface IGlobalNavigationProps {
   logo: IGlobalNavigationLogo
@@ -31,12 +32,15 @@ export interface IGlobalNavigationProps {
   onMpHomeClick: () => void
   hideMpHome?: boolean
   avatarOptions?: IAvatarProps
-  signoutOptions?: {
-    label?: string
-    onSignout: () => void
+  navigationButtonItemOptions?: {
+    label: string
+    onClick: () => void
+    withoutContainer?: boolean
+  }
+  minimapOptions: {
+    href: string
   }
 }
-
 export const GlobalNavWidth = 90 as const
 
 export const GlobalNavigation = (props: IGlobalNavigationProps) => {
@@ -63,31 +67,34 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
             {props.orgs ? (
               <WorkspaceSelector
                 orgs={props.orgs}
-                signoutOptions={props.signoutOptions}
+                navigationButtonItemOptions={props.navigationButtonItemOptions}
                 avatarOptions={props.avatarOptions}
               />
             ) : (
-              !!props.signoutOptions?.onSignout && (
+              !!props.navigationButtonItemOptions?.onClick() && (
                 <NavigationItem
                   type="link"
-                  icon={<SignoutIcon />}
+                  icon={<Icon name="signout" />}
                   label="Sign Out"
                   hideLabel
-                  onClick={props.signoutOptions?.onSignout}
+                  onClick={props.navigationButtonItemOptions?.onClick}
                 />
               )
             )}
 
             {!props.hideMpHome && (
-              <Tooltip title="mParticle Overview" placement="right">
+              <Popover
+                content={() => <MiniMap href={props.minimapOptions?.href || '/'} />}
+                placement="rightBottom"
+                arrow={false}>
                 <Center
                   className="globalNavigation__mpHome"
                   onClick={() => {
                     props.onMpHomeClick()
                   }}>
-                  <MpLogo className="globalNavigation__mpSvg" />
+                  <Icon name="mpLogo" size="lg" color="white" />
                 </Center>
-              </Tooltip>
+              </Popover>
             )}
           </div>
         </Flex>
@@ -95,3 +102,5 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
     </Layout>
   )
 }
+
+GlobalNavigation.useSuitesReminder = useSuitesReminder

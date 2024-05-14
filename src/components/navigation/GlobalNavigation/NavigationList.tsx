@@ -7,6 +7,7 @@ import { type IGlobalNavigationItem } from 'src/components/navigation/GlobalNavi
 import { type IGlobalNavigationLink } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { Fragment } from 'react'
 import { buildLinkFromHrefOptions } from 'src/utils/utils'
+import { NavigationButtonItem } from 'src/components/navigation/GlobalNavigation/NavigationButtonItem'
 
 export interface INavigationListProps {
   items: IGlobalNavigationItem[]
@@ -32,17 +33,29 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
   const children: Array<IGlobalNavigationLink | MenuItemGroupType> = [
     { label: item.label, type: 'group', key: String(item.label) + '_groupTitle' },
   ]
-
   if (item.type === 'menu') {
-    children.push(
-      ...item.children.map((linkItem, j) => ({
-        ...linkItem,
-        expandIcon: null,
-        key: `${String(linkItem.label)}${j}`,
-        label: buildLinkFromHrefOptions(linkItem.label, linkItem.hrefOptions),
-      })),
-    )
+    const childrenWithExpandedIcons = item.children.map((child, index) => ({
+      ...child,
+      expandIcon: null,
+      key: `${String(child.label)}${index}`,
+      label: buildLinkFromHrefOptions(child.label, child.hrefOptions),
+    }))
+
+    childrenWithExpandedIcons.forEach((child, index) => {
+      if (child.type !== 'button') {
+        children.push(child)
+      } else {
+        const buttonKey = `submenu-button-${children.filter(c => c.type === 'button').length}-${index}`
+
+        children.push({
+          className: 'globalNavigation__buttonItem',
+          key: buttonKey,
+          label: <NavigationButtonItem withoutContainer={false} label={child.label} {...child.buttonOptions} />,
+        })
+      }
+    })
   }
+
   const navigationIcon = (
     <NavigationIcon
       icon={item.icon}

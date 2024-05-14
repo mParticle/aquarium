@@ -1,5 +1,6 @@
 export { Button, type IButtonProps } from './general/Button/Button'
 export { FloatButton, type IFloatButtonProps } from './general/FloatButton/FloatButton'
+export { Icon, type IIconProps } from './general/Icon/Icon'
 export { Rate, type IRateProps } from './data-entry/Rate/Rate'
 export { Form, type IFormProps } from './data-entry/Form/Form'
 export { TreeSelect, type ITreeSelectProps } from './data-entry/TreeSelect/TreeSelect'
@@ -18,6 +19,8 @@ export { Upload, type IUploadProps } from './data-entry/Upload/Upload'
 export { AutoComplete, type IAutoCompleteProps } from './data-entry/AutoComplete/AutoComplete'
 export { TimePicker, type ITimePickerProps } from './data-entry/TimePicker/TimePicker'
 export { Transfer, type ITransferProps } from './data-entry/Transfer/Transfer'
+export { QueryItem } from './data-entry/QueryItem/QueryItem'
+export type { IQueryItemQualifierOption } from './data-entry/QueryItem/Qualifier'
 export { Collapse, type ICollapseProps } from './data-display/Collapse/Collapse'
 export { Timeline, type ITimelineProps } from './data-display/Timeline/Timeline'
 export { Calendar, type ICalendarProps } from './data-display/Calendar/Calendar'
@@ -97,30 +100,4 @@ export type {
   IWorkspaceSelectorItem,
 } from './navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'
 export { SuiteLogo } from './navigation/GlobalNavigation/SuiteLogo'
-export {
-  AddIcon,
-  LockIcon,
-  MpLogoIcon,
-  SearchIcon,
-  CheckIcon,
-  ChartLineIcon,
-  ConnectionsIcon,
-  DatabaseIcon,
-  GridIcon,
-  ShieldKeyholeIcon,
-  UsersIcon,
-  WrenchIcon,
-  AlicornIcon,
-  MessageQuestionIcon,
-  GearIcon,
-  SparklesIcon,
-  SiteMapIcon,
-  ChartColumnIcon,
-  HeartIcon,
-  LightBulbIcon,
-  SplitIcon,
-  CircleNodesIcon,
-  CloudIcon,
-  FolderClosedIcon,
-  AnalyticsIcon,
-} from './icons/index'
+export { Typography } from './general/Typography/Typography'
