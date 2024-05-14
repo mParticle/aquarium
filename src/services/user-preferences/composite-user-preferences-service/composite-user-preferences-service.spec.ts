@@ -26,7 +26,6 @@ describe('When testing CompositeUserPreferencesService', () => {
     expectedScope = Object.keys(userPreferences)[0] as UserPreferenceScope
 
     compositeUserPreferencesService = new CompositeUserPreferencesService<TestUserPreferenceId>()
-    // container.invoke(CompositeUserPreferencesService) as CompositeUserPreferencesService<TestUserPreferenceId>;
   })
 
   describe('and getting scoped user preferences', () => {

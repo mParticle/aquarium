@@ -95,12 +95,7 @@ export class CompositeUserPreferencesService<TPreferenceIds extends PropertyKey>
         scopeLength = 3
         break
       default:
-        // TODO throw and let the consumer decide what to do
-        // Logger.log(
-        //   `CompositeUserPreferencesService | getEffectiveScope | Received unexpected allowed scope ${allowedScope}`,
-        //   LogLevel.Warn,
-        // )
-        break
+        throw new Error('ArgumentError | An invalid allowed scope was provided.')
     }
 
     const currenScopeParts = currentScope.split(USER_PREFERENCE_SCOPE_SEPARATOR)

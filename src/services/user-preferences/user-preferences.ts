@@ -30,7 +30,6 @@ export class UserPreferencesService<TUserPreferenceId extends PropertyKey> {
     this.onUpdate?.(this.preferences)
   }
 
-  // I assume this is async because it could reach some sort of API in the future?
   public async isOptedIn(userPreferenceId: TUserPreferenceId): Promise<boolean | undefined> {
     const userPreference = this.preferences[userPreferenceId]
 
