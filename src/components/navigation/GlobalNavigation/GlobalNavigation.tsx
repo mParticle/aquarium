@@ -18,7 +18,7 @@ import { WorkspaceSelector } from 'src/components/navigation/GlobalNavigation/Wo
 import { type IGlobalNavigationItem } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
 import { useSuitesReminder } from 'src/hooks/SuitesReminder/useSuitesReminder'
-import { renderHomeButton } from 'src/components/navigation/GlobalNavigation/GlobalNavigationHelpers'
+import { HomeButton } from 'src/components/navigation/GlobalNavigation/GlobalNavigationHelpers'
 
 export interface IGlobalNavigationProps {
   logo: IGlobalNavigationLogo
@@ -36,7 +36,7 @@ export interface IGlobalNavigationProps {
     onClick: () => void
     withoutContainer?: boolean
   }
-  minimapOptions?: {
+  minimapOptions: {
     goToOverviewHref: string
     hide?: boolean
   }
@@ -77,7 +77,9 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
                 />
               )
             )}
-            {!props.hideMpHome && renderHomeButton(props)}
+            {!props.hideMpHome && (
+              <HomeButton onMpHomeClick={props.onMpHomeClick} minimapOptions={props.minimapOptions} />
+            )}
           </div>
         </Flex>
       </Layout.Sider>

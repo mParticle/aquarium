@@ -2,34 +2,51 @@ import React from 'react'
 import { Center, IGlobalNavigationProps, Icon, Popover, Tooltip } from 'src/components'
 import MiniMap from 'src/components/navigation/MiniMap/MiniMap'
 
-export function CenterContent({ onClick }: { onClick: () => void }) {
-  return (
-    <Center className="globalNavigation__mpHome" onClick={onClick}>
-      <Icon name="mpLogo" size="lg" color="white" />
-    </Center>
-  )
+interface MpHomeButtonInterface {
+  onClick: () => void
 }
 
-export function WithMinimap({ goToOverviewHref, onClick }: { goToOverviewHref: string; onClick: () => void }) {
-  return (
-    <Popover content={() => <MiniMap goToOverviewHref={goToOverviewHref} />} placement="rightBottom" arrow={false}>
-      <CenterContent onClick={onClick} />
-    </Popover>
-  )
+interface MinimapWithPopoverInterface {
+  goToOverviewHref: string
+  onClick: () => void
 }
 
-export function WithTooltip({ onClick }: { onClick: () => void }) {
-  return (
-    <Tooltip title="mParticle Overview" placement="right">
-      <CenterContent onClick={onClick} />
-    </Tooltip>
-  )
+interface TooltipWithButtonInterface {
+  onClick: () => void
 }
 
-export function renderHomeButton(props: IGlobalNavigationProps) {
+interface HomeButtonInterface {
+  minimapOptions: {
+    goToOverviewHref: string
+    hide?: boolean
+  }
+  onMpHomeClick: () => void
+}
+const MpHomeButton: React.FC<MpHomeButtonInterface> = ({ onClick }) => (
+  <Center className="globalNavigation__mpHome" onClick={onClick}>
+    <Icon name="mpLogo" size="lg" color="white" />
+  </Center>
+)
+
+const MinimapWithPopover: React.FC<MinimapWithPopoverInterface> = ({ goToOverviewHref, onClick }) => (
+  <Popover content={() => <MiniMap goToOverviewHref={goToOverviewHref} />} placement="rightBottom" arrow={false}>
+    <MpHomeButton onClick={onClick} />
+  </Popover>
+)
+
+const TooltipWithButton: React.FC<TooltipWithButtonInterface> = ({ onClick }) => (
+  <Tooltip title="mParticle Overview" placement="right">
+    <MpHomeButton onClick={onClick} />
+  </Tooltip>
+)
+
+export const HomeButton: React.FC<HomeButtonInterface> = props => {
   return props.minimapOptions?.hide ? (
-    <WithMinimap goToOverviewHref={props.minimapOptions?.goToOverviewHref || '/'} onClick={props.onMpHomeClick} />
+    <MinimapWithPopover
+      goToOverviewHref={props.minimapOptions?.goToOverviewHref || '/'}
+      onClick={props.onMpHomeClick}
+    />
   ) : (
-    <WithTooltip onClick={props.onMpHomeClick} />
+    <TooltipWithButton onClick={props.onMpHomeClick} />
   )
 }
