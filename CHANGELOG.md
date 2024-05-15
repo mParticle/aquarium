@@ -1,3 +1,5 @@
+# [1.13.0-ups-utils.2](https://github.com/mParticle/aquarium/compare/v1.13.0-ups-utils.1...v1.13.0-ups-utils.2) (2024-05-15)
+
 # [1.13.0-ups-utils.1](https://github.com/mParticle/aquarium/compare/v1.12.0...v1.13.0-ups-utils.1) (2024-05-14)
 
 
