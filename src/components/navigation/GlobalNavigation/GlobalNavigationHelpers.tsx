@@ -24,13 +24,14 @@ export function WithMinimap({ goToOverviewHref, onClick }: { goToOverviewHref: s
 export function WithTooltip({ onClick }: { onClick: () => void }) {
   return (
     <Tooltip title="mParticle Overview" placement="right">
+      <div></div>
       <CenterContent onClick={onClick} />
     </Tooltip>
   )
 }
 
-export function HomeButton(props: IGlobalNavigationProps) {
-  return props.minimapOptions?.show ? (
+export function renderHomeButton(props: IGlobalNavigationProps) {
+  return props.minimapOptions?.hide ? (
     <WithMinimap goToOverviewHref={props.minimapOptions?.goToOverviewHref || '/'} onClick={props.onMpHomeClick} />
   ) : (
     <WithTooltip onClick={props.onMpHomeClick} />
