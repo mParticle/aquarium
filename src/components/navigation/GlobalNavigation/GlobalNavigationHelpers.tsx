@@ -24,7 +24,9 @@ export function WithMinimap({ goToOverviewHref, onClick }: { goToOverviewHref: s
 export function WithTooltip({ onClick }: { onClick: () => void }) {
   return (
     <Tooltip title="mParticle Overview" placement="right">
-      <CenterContent onClick={onClick} />
+      <div>
+        <CenterContent onClick={onClick} />
+      </div>
     </Tooltip>
   )
 }
