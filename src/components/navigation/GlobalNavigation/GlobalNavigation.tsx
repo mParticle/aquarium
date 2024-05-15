@@ -36,7 +36,7 @@ export interface IGlobalNavigationProps {
     onClick: () => void
     withoutContainer?: boolean
   }
-  minimapOptions: {
+  minimapOptions?: {
     href: string
     show?: boolean
   }
