@@ -22,10 +22,7 @@ export interface IGlobalNavigationProps {
   logo: IGlobalNavigationLogo
   tools: IGlobalNavigationItem[]
   management: IGlobalNavigationItem[]
-
-  // eslint-disable-next-line no-undef
   orgs?: INavigationOrg[]
-
   createItems?: INavigationCreateProps['createItems']
   onSearchClick?: () => void
   onSuiteLogoClick?: () => void
@@ -38,59 +35,29 @@ export interface IGlobalNavigationProps {
     withoutContainer?: boolean
   }
   minimapOptions?: { 
-     href: '/'; 
+    goToOverviewHref: '/'; 
      show?: boolean 
   }
 }
+
 export const GlobalNavWidth = 90 as const
 
 export const GlobalNavigation = (props: IGlobalNavigationProps) => {
-  const WillRenderMinimap = () =>
-    props.minimapOptions?.show ? (
-      <Popover
-        content={() => <MiniMap href={props.minimapOptions?.href || '/'} />}
-        placement="rightBottom"
-        arrow={false}>
-        <Center
-          className="globalNavigation__mpHome"
-          onClick={() => {
-            props.onMpHomeClick()
-          }}>
-          <Icon name="mpLogo" size="lg" color="white" />
-        </Center>
-      </Popover>
-    ) : (
-      <Tooltip title="mParticle Overview" placement="right">
-        <Center
-          className="globalNavigation__mpHome"
-          onClick={() => {
-            props.onMpHomeClick()
-          }}>
-          <Icon name="mpLogo" size="lg" color="white" />
-        </Center>
-      </Tooltip>
-    )
-
   return (
     <Layout className="globalNavigation">
       <Layout.Sider className="globalNavigation__sider" width={GlobalNavWidth}>
         <Flex vertical justify="space-between" style={{ height: '100%' }}>
           <div>
             <SuiteLogo {...props.logo} />
-
             <div className="globalNavigation__divider" />
-
             <Center vertical>
               {props.onSearchClick && <NavigationSearch onClick={props.onSearchClick} />}
               {props.createItems && <NavigationCreate createItems={props.createItems} />}
             </Center>
-
             <NavigationList items={props.tools} />
           </div>
-
           <div>
             <NavigationList items={props.management} />
-
             {props.orgs ? (
               <WorkspaceSelector
                 orgs={props.orgs}
@@ -108,8 +75,7 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
                 />
               )
             )}
-
-            {!props.hideMpHome && <WillRenderMinimap />}
+            {!props.hideMpHome && renderHomeButton(props)}
           </div>
         </Flex>
       </Layout.Sider>
@@ -118,3 +84,39 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
 }
 
 GlobalNavigation.useSuitesReminder = useSuitesReminder
+
+function CenterContent({ onClick }: { onClick: () => void }) {
+  return (
+    <Center className="globalNavigation__mpHome" onClick={onClick}>
+      <Icon name="mpLogo" size="lg" color="white" />
+    </Center>
+  )
+}
+
+function WithMinimap({ href, onClick }: { href: string; onClick: () => void }) {
+  return (
+    <Popover content={() => <MiniMap goToOverviewHref={href} />} placement="rightBottom" arrow={false}>
+      <div>
+        <CenterContent onClick={onClick} />
+      </div>
+    </Popover>
+  )
+}
+
+function WithTooltip({ onClick }: { onClick: () => void }) {
+  return (
+    <Tooltip title="mParticle Overview" placement="right">
+      <div>
+        <CenterContent onClick={onClick} />
+      </div>
+    </Tooltip>
+  )
+}
+
+function renderHomeButton(props: IGlobalNavigationProps) {
+  return props.minimapOptions?.show ? (
+    <WithMinimap href={props.minimapOptions?.goToOverviewHref || '/'} onClick={props.onMpHomeClick} />
+  ) : (
+    <WithTooltip onClick={props.onMpHomeClick} />
+  )
+}
