@@ -38,11 +38,36 @@ export interface IGlobalNavigationProps {
   }
   minimapOptions: {
     href: string
+    show?: boolean
   }
 }
 export const GlobalNavWidth = 90 as const
 
 export const GlobalNavigation = (props: IGlobalNavigationProps) => {
+  const MpLogoBottom = () => (
+    <Center
+      className="globalNavigation__mpHome"
+      onClick={() => {
+        props.onMpHomeClick()
+      }}>
+      <Icon name="mpLogo" size="lg" color="white" />
+    </Center>
+  )
+
+  const WillRenderMinimap = () =>
+    props.minimapOptions?.show ? (
+      <Popover
+        content={() => <MiniMap href={props.minimapOptions?.href || '/'} />}
+        placement="rightBottom"
+        arrow={false}>
+        <MpLogoBottom />
+      </Popover>
+    ) : (
+      <Tooltip title="mParticle Overview" placement="right">
+        <MpLogoBottom />
+      </Tooltip>
+    )
+
   return (
     <Layout className="globalNavigation">
       <Layout.Sider className="globalNavigation__sider" width={GlobalNavWidth}>
@@ -81,20 +106,7 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
               )
             )}
 
-            {!props.hideMpHome && (
-              <Popover
-                content={() => <MiniMap href={props.minimapOptions?.href || '/'} />}
-                placement="rightBottom"
-                arrow={false}>
-                <Center
-                  className="globalNavigation__mpHome"
-                  onClick={() => {
-                    props.onMpHomeClick()
-                  }}>
-                  <Icon name="mpLogo" size="lg" color="white" />
-                </Center>
-              </Popover>
-            )}
+            {!props.hideMpHome && <WillRenderMinimap />}
           </div>
         </Flex>
       </Layout.Sider>
