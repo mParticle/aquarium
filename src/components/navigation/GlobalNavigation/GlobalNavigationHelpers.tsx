@@ -30,7 +30,7 @@ export function WithTooltip({ onClick }: { onClick: () => void }) {
   )
 }
 
-export function renderHomeButton(props: IGlobalNavigationProps) {
+export function HomeButton(props: IGlobalNavigationProps) {
   return props.minimapOptions?.show ? (
     <WithMinimap goToOverviewHref={props.minimapOptions?.goToOverviewHref || '/'} onClick={props.onMpHomeClick} />
   ) : (
