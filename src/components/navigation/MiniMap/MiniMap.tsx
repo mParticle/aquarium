@@ -10,14 +10,13 @@ export interface IMinimapProps {
 }
 
 const Minimap: React.FC<IMinimapProps> = props => {
-  const { goToOverviewHref } = props
   return (
     <ConfigProvider>
       <div className="minimap_container">
         <Flex align="normal" component="div" flex="0 1 auto" gap="small" justify="stretch" vertical wrap="nowrap">
           <Flex align="center" justify="space-between">
             <Logo />
-            <Button href={goToOverviewHref}>Go to overview</Button>
+            <Button href={props.goToOverviewHref || '/'}>Go to overview</Button>
           </Flex>
           <MiniMap />
         </Flex>
