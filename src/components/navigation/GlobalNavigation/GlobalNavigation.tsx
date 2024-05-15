@@ -37,7 +37,10 @@ export interface IGlobalNavigationProps {
     onClick: () => void
     withoutContainer?: boolean
   }
-  minimapOptions?: { href: '/'; show?: true }
+  minimapOptions?: { 
+     href: '/'; 
+     show?: boolean 
+  }
 }
 export const GlobalNavWidth = 90 as const
 
