@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import * as Cookies from '../Cookies'
+import * as Cookies from '../../utils/Cookies'
 
 import { describe, afterEach, it, expect } from 'vitest'
 import { UserPreferencesService } from 'src/services/user-preferences/user-preferences'
