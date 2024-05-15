@@ -44,27 +44,29 @@ export interface IGlobalNavigationProps {
 export const GlobalNavWidth = 90 as const
 
 export const GlobalNavigation = (props: IGlobalNavigationProps) => {
-  const MpLogoBottom = () => (
-    <Center
-      className="globalNavigation__mpHome"
-      onClick={() => {
-        props.onMpHomeClick()
-      }}>
-      <Icon name="mpLogo" size="lg" color="white" />
-    </Center>
-  )
-
   const WillRenderMinimap = () =>
     props.minimapOptions?.show ? (
       <Popover
         content={() => <MiniMap href={props.minimapOptions?.href || '/'} />}
         placement="rightBottom"
         arrow={false}>
-        <MpLogoBottom />
+        <Center
+          className="globalNavigation__mpHome"
+          onClick={() => {
+            props.onMpHomeClick()
+          }}>
+          <Icon name="mpLogo" size="lg" color="white" />
+        </Center>
       </Popover>
     ) : (
       <Tooltip title="mParticle Overview" placement="right">
-        <MpLogoBottom />
+        <Center
+          className="globalNavigation__mpHome"
+          onClick={() => {
+            props.onMpHomeClick()
+          }}>
+          <Icon name="mpLogo" size="lg" color="white" />
+        </Center>
       </Tooltip>
     )
 
