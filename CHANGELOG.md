@@ -1,9 +1,15 @@
+# [1.13.0-ups-utils.2](https://github.com/mParticle/aquarium/compare/v1.13.0-ups-utils.1...v1.13.0-ups-utils.2) (2024-05-15)
+
+# [1.13.0-ups-utils.1](https://github.com/mParticle/aquarium/compare/v1.12.0...v1.13.0-ups-utils.1) (2024-05-14)
+
 # [1.13.0](https://github.com/mParticle/aquarium/compare/v1.12.0...v1.13.0) (2024-05-15)
 
 
 ### Features
 
 * Adds SuitesReminder hook to get a consistent look across platforms for the reminder notification ([#221](https://github.com/mParticle/aquarium/issues/221)) ([533428e](https://github.com/mParticle/aquarium/commit/533428e64de4e48e8e4d016df7c73f807a54851b))
+* export UPS interfaces ([ffcff89](https://github.com/mParticle/aquarium/commit/ffcff89f694639a62713b45b573a5bd006805226))
+* uPS code ported from Nancy with tests passing ([182be3d](https://github.com/mParticle/aquarium/commit/182be3dc6cda64ed4a6d5a6665da771e5fea33db))
 
 # [1.12.0](https://github.com/mParticle/aquarium/compare/v1.11.1...v1.12.0) (2024-05-14)
 

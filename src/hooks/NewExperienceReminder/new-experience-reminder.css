@@ -1,0 +1,3 @@
+﻿.globalNavigation__newExperienceReminder.globalNavigation__newExperienceReminder-bottomLeft {
+    left: calc(var(--nav-width) + var(--margin-xs)) !important;
+}

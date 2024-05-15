@@ -4,6 +4,9 @@ import dts from 'vite-plugin-dts'
 import svgr from 'vite-plugin-svgr'
 
 export default defineConfig({
+  test: {
+    environment: 'jsdom',
+  },
   resolve: {
     alias: {
       src: '/src',
