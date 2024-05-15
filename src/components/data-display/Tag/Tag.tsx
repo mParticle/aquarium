@@ -3,7 +3,9 @@ import { type TagProps as AntTagProps } from 'antd'
 import { type CheckableTagProps as AntCheckableTagProps } from 'antd/lib/tag'
 import { ConfigProvider } from 'src/components'
 
-export interface ITagProps extends AntTagProps {}
+export interface ITagProps extends AntTagProps {
+  children: React.ReactNode
+}
 
 type CheckableTagProps = AntCheckableTagProps & ITagProps
 
