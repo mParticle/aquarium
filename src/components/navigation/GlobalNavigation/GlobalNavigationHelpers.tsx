@@ -1,6 +1,5 @@
 import React from 'react'
-import { Center, IGlobalNavigationProps, Icon } from 'src/components'
-import { Popover, Tooltip } from 'antd'
+import { Center, IGlobalNavigationProps, Icon, Popover, Tooltip } from 'src/components'
 import MiniMap from 'src/components/navigation/MiniMap/MiniMap'
 
 export function CenterContent({ onClick }: { onClick: () => void }) {
@@ -14,9 +13,7 @@ export function CenterContent({ onClick }: { onClick: () => void }) {
 export function WithMinimap({ goToOverviewHref, onClick }: { goToOverviewHref: string; onClick: () => void }) {
   return (
     <Popover content={() => <MiniMap goToOverviewHref={goToOverviewHref} />} placement="rightBottom" arrow={false}>
-      <div>
-        <CenterContent onClick={onClick} />
-      </div>
+      <CenterContent onClick={onClick} />
     </Popover>
   )
 }
@@ -24,9 +21,7 @@ export function WithMinimap({ goToOverviewHref, onClick }: { goToOverviewHref: s
 export function WithTooltip({ onClick }: { onClick: () => void }) {
   return (
     <Tooltip title="mParticle Overview" placement="right">
-      <div>
-        <CenterContent onClick={onClick} />
-      </div>
+      <CenterContent onClick={onClick} />
     </Tooltip>
   )
 }
