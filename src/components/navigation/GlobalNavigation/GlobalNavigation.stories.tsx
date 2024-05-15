@@ -464,7 +464,7 @@ export const MP: Story = {
     tools: mpTools,
     management: mpManagement,
     orgs: mpOrgs,
-    minimapOptions: { href: '/' },
+    minimapOptions: { href: '/', show: true },
     onMpHomeClick: () => {
       alert('going to overview map')
     },
