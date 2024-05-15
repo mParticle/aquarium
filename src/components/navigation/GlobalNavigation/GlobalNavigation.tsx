@@ -1,12 +1,15 @@
 import 'src/styles/_variables.css'
 import './global-navigation.css'
-import { type IAvatarProps, Icon, Layout } from 'src/components'
-import { Flex } from 'src/components'
-import { Center } from 'src/components'
-import { type INavigationCreateProps } from 'src/components'
-import { Tooltip } from 'src/components'
-import { type INavigationOrg } from 'src/components'
-import { type IGlobalNavigationLogo } from 'src/components'
+import {
+  type IGlobalNavigationLogo,
+  type INavigationOrg,
+  type INavigationCreateProps,
+  Center,
+  Flex,
+  type IAvatarProps,
+  Icon,
+  Layout,
+} from 'src/components'
 import { SuiteLogo } from 'src/components/navigation/GlobalNavigation/SuiteLogo'
 import { NavigationSearch } from 'src/components/navigation/GlobalNavigation/NavigationSearch'
 import { NavigationList } from 'src/components/navigation/GlobalNavigation/NavigationList'
@@ -15,8 +18,7 @@ import { WorkspaceSelector } from 'src/components/navigation/GlobalNavigation/Wo
 import { type IGlobalNavigationItem } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
 import { useSuitesReminder } from 'src/hooks/SuitesReminder/useSuitesReminder'
-import { Popover } from 'antd'
-import MiniMap from 'src/components/navigation/MiniMap/MiniMap'
+import { renderHomeButton } from 'src/components/navigation/GlobalNavigation/GlobalNavigationHelpers'
 
 export interface IGlobalNavigationProps {
   logo: IGlobalNavigationLogo
@@ -34,9 +36,9 @@ export interface IGlobalNavigationProps {
     onClick: () => void
     withoutContainer?: boolean
   }
-  minimapOptions?: { 
-    goToOverviewHref: '/'; 
-     show?: boolean 
+  minimapOptions?: {
+    goToOverviewHref: '/'
+    show?: boolean
   }
 }
 
@@ -84,39 +86,3 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
 }
 
 GlobalNavigation.useSuitesReminder = useSuitesReminder
-
-function CenterContent({ onClick }: { onClick: () => void }) {
-  return (
-    <Center className="globalNavigation__mpHome" onClick={onClick}>
-      <Icon name="mpLogo" size="lg" color="white" />
-    </Center>
-  )
-}
-
-function WithMinimap({ href, onClick }: { href: string; onClick: () => void }) {
-  return (
-    <Popover content={() => <MiniMap goToOverviewHref={href} />} placement="rightBottom" arrow={false}>
-      <div>
-        <CenterContent onClick={onClick} />
-      </div>
-    </Popover>
-  )
-}
-
-function WithTooltip({ onClick }: { onClick: () => void }) {
-  return (
-    <Tooltip title="mParticle Overview" placement="right">
-      <div>
-        <CenterContent onClick={onClick} />
-      </div>
-    </Tooltip>
-  )
-}
-
-function renderHomeButton(props: IGlobalNavigationProps) {
-  return props.minimapOptions?.show ? (
-    <WithMinimap href={props.minimapOptions?.goToOverviewHref || '/'} onClick={props.onMpHomeClick} />
-  ) : (
-    <WithTooltip onClick={props.onMpHomeClick} />
-  )
-}
