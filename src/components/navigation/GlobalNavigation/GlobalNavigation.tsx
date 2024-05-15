@@ -17,7 +17,7 @@ import { NavigationCreate } from 'src/components/navigation/GlobalNavigation/Nav
 import { WorkspaceSelector } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelector'
 import { type IGlobalNavigationItem } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
-import { useSuitesReminder } from 'src/hooks/SuitesReminder/useSuitesReminder'
+import { useNewExperienceReminder } from 'src/hooks/NewExperienceReminder/useNewExperienceReminder'
 import { HomeButton } from 'src/components/navigation/GlobalNavigation/HomeButton'
 
 export interface IGlobalNavigationProps {
@@ -87,4 +87,4 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
   )
 }
 
-GlobalNavigation.useSuitesReminder = useSuitesReminder
+GlobalNavigation.useNewExperienceReminder = useNewExperienceReminder
