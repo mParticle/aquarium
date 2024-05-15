@@ -1,10 +1,10 @@
 import 'src/styles/_variables.css'
-import './suites-reminder.css'
+import './new-experience-reminder.css'
 import { type ReactNode } from 'react'
 import { Button, notification, Space } from 'src/components'
 import { FontWeightStrong } from 'src/styles/style'
 
-export interface ISuitesReminderOptions {
+export interface INewExperienceReminderOptions {
   onClose: () => void
   onRemindMeLater: () => void
   onTakeMeThere: () => void
@@ -16,14 +16,14 @@ export interface ISuitesReminderOptions {
 type OpenNotificationFn = () => void
 type ContextHolder = ReactNode
 
-export type SuitesReminderHook = [OpenNotificationFn, ContextHolder]
+export type NewExperienceReminderHook = [OpenNotificationFn, ContextHolder]
 
 const DefaultReminderDuration = 4.5 as const // same as antd notification default duration
 const DefaultTitle = 'Join the new mParticle Experience!' as const
 const DefaultMessage =
   'Managing your data is easier than ever with the new mParticle experience. Try out the latest features with ease, and switch back to the classic experience anytime from the side navigation.' as const
 
-export const useSuitesReminder = (options: ISuitesReminderOptions): SuitesReminderHook => {
+export const useNewExperienceReminder = (options: INewExperienceReminderOptions): NewExperienceReminderHook => {
   const {
     onClose,
     onRemindMeLater,
@@ -34,7 +34,7 @@ export const useSuitesReminder = (options: ISuitesReminderOptions): SuitesRemind
   } = options
 
   const [notificationApi, contextHolder] = notification.useNotification({
-    prefixCls: 'globalNavigation__suitesReminder',
+    prefixCls: 'globalNavigation__newExperienceReminder',
     duration,
     placement: 'bottomLeft',
   })

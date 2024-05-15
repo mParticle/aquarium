@@ -3,8 +3,8 @@ import './global-navigation.css'
 import { type IAvatarProps, Icon, Layout } from 'src/components'
 import { Flex } from 'src/components'
 import { Center } from 'src/components'
+import { Popover } from 'src/components'
 import { type INavigationCreateProps } from 'src/components'
-import { Tooltip } from 'src/components'
 import { type INavigationOrg } from 'src/components'
 import { type IGlobalNavigationLogo } from 'src/components'
 import { SuiteLogo } from 'src/components/navigation/GlobalNavigation/SuiteLogo'
@@ -14,8 +14,7 @@ import { NavigationCreate } from 'src/components/navigation/GlobalNavigation/Nav
 import { WorkspaceSelector } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelector'
 import { type IGlobalNavigationItem } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
-import { useSuitesReminder } from 'src/hooks/SuitesReminder/useSuitesReminder'
-import { Popover } from 'antd'
+import { useNewExperienceReminder } from 'src/hooks/NewExperienceReminder/useNewExperienceReminder'
 import MiniMap from 'src/components/navigation/MiniMap/MiniMap'
 
 export interface IGlobalNavigationProps {
@@ -103,4 +102,4 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
   )
 }
 
-GlobalNavigation.useSuitesReminder = useSuitesReminder
+GlobalNavigation.useNewExperienceReminder = useNewExperienceReminder

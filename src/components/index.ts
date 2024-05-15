@@ -118,3 +118,8 @@ export {
   type UserPreference,
   type UserPreferenceScope,
 } from '../services/user-preferences/models/storage-models'
+export {
+  useNewExperienceReminder,
+  type INewExperienceReminderOptions,
+  type NewExperienceReminderHook,
+} from '../hooks/NewExperienceReminder/useNewExperienceReminder'

@@ -9,7 +9,7 @@ import {
 } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { generateOrgs } from 'src/components/navigation/GlobalNavigation/stories-utils'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'
-import { useSuitesReminder } from 'src/hooks/SuitesReminder/useSuitesReminder'
+import { useNewExperienceReminder } from 'src/hooks/NewExperienceReminder/useNewExperienceReminder'
 
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',
@@ -999,7 +999,7 @@ export const WorkspaceSearchWithNoResults: Meta<typeof GlobalNavigation> = {
   },
 }
 
-export const UseSuitesReminderHook: Story = {
+export const UseNewExperienceReminderHook: Story = {
   play: async () => {
     const alert = fn().mockImplementation(() => {})
     global.alert = alert
@@ -1022,7 +1022,7 @@ export const UseSuitesReminderHook: Story = {
     await expect(alert).toBeCalledWith('Take me there')
   },
   render: props => {
-    const [openNotification, contextHolder] = useSuitesReminder({
+    const [openNotification, contextHolder] = useNewExperienceReminder({
       onClose: () => {
         alert('Notification closed')
       },
