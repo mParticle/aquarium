@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-extraneous-class,no-unused-vars,@typescript-eslint/no-unused-vars */
-import * as Cookies from '../Cookies'
+import * as Cookies from '../../utils/Cookies'
 import { type UserPreferences } from 'src/services/user-preferences/models/storage-models/user-preferences'
 import { type CompositeUserPreferences } from 'src/services/user-preferences/models/user-preferences/composite-user-preferences'
 import { type UserPreferenceScope } from 'src/services/user-preferences/models/storage-models/user-preference-scope'
