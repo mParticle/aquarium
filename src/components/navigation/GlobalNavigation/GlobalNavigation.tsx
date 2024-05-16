@@ -18,7 +18,7 @@ import { WorkspaceSelector } from 'src/components/navigation/GlobalNavigation/Wo
 import { type IGlobalNavigationItem } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
 import { useSuitesReminder } from 'src/hooks/SuitesReminder/useSuitesReminder'
-import { HomeButton } from 'src/components/navigation/GlobalNavigation/GlobalNavigationHelpers'
+import { HomeButton } from 'src/components/navigation/GlobalNavigation/HomeButton'
 
 export interface IGlobalNavigationProps {
   logo: IGlobalNavigationLogo
