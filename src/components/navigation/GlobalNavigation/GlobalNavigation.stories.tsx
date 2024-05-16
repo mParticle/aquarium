@@ -134,6 +134,9 @@ const meta: Meta<typeof GlobalNavigation> = {
     onMpHomeClick: () => {
       alert('Going to mP!')
     },
+    minimapOptions: {
+      show: true,
+    },
   },
 }
 export default meta
@@ -464,7 +467,7 @@ export const MP: Story = {
     tools: mpTools,
     management: mpManagement,
     orgs: mpOrgs,
-    minimapOptions: { goToOverviewHref: '/', hide: true },
+    minimapOptions: { goToOverviewHref: '/', show: true },
     onMpHomeClick: () => {
       alert('going to overview map')
     },

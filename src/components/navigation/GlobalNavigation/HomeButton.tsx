@@ -17,8 +17,8 @@ interface TooltipWithButtonProps {
 
 interface HomeButtonProps {
   minimapOptions: {
-    goToOverviewHref: string
-    hide?: boolean
+    goToOverviewHref?: string
+    show?: boolean
   }
   onMpHomeClick: () => void
 }
@@ -41,7 +41,7 @@ const TooltipWithButton: React.FC<TooltipWithButtonProps> = ({ onClick }) => (
 )
 
 export const HomeButton: React.FC<HomeButtonProps> = props => {
-  return !props.minimapOptions?.hide ? (
+  return props.minimapOptions?.show ? (
     <MinimapWithPopover
       goToOverviewHref={props.minimapOptions?.goToOverviewHref || '/'}
       onClick={props.onMpHomeClick}

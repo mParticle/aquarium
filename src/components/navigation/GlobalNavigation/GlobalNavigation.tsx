@@ -37,8 +37,8 @@ export interface IGlobalNavigationProps {
     withoutContainer?: boolean
   }
   minimapOptions: {
-    goToOverviewHref: string
-    hide?: boolean
+    goToOverviewHref?: string
+    show?: boolean
   }
 }
 
