@@ -1,3 +1,10 @@
+# [1.14.0-minimap.1](https://github.com/mParticle/aquarium/compare/v1.13.0...v1.14.0-minimap.1) (2024-05-16)
+
+
+### Features
+
+* UPS code ported from Nancy ([#207](https://github.com/mParticle/aquarium/issues/207)) ([cc153af](https://github.com/mParticle/aquarium/commit/cc153afc874dcacb6f2ee272559389dbdcb43d59))
+
 # [1.13.0-ups-utils.2](https://github.com/mParticle/aquarium/compare/v1.13.0-ups-utils.1...v1.13.0-ups-utils.2) (2024-05-15)
 
 # [1.13.0-ups-utils.1](https://github.com/mParticle/aquarium/compare/v1.12.0...v1.13.0-ups-utils.1) (2024-05-14)
