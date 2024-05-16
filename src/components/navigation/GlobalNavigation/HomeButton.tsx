@@ -7,7 +7,7 @@ interface MpHomeButtonProps {
 }
 
 interface MinimapWithPopoverProps {
-  goToOverviewHref: string
+  overviewHref: string
   onClick: () => void
 }
 
@@ -17,7 +17,7 @@ interface TooltipWithButtonProps {
 
 interface HomeButtonProps {
   minimapOptions: {
-    goToOverviewHref?: string
+    overviewHref?: string
     show?: boolean
   }
   onMpHomeClick: () => void
@@ -28,8 +28,8 @@ const MpHomeButton: React.FC<MpHomeButtonProps> = ({ onClick }) => (
   </Center>
 )
 
-const MinimapWithPopover: React.FC<MinimapWithPopoverProps> = ({ goToOverviewHref, onClick }) => (
-  <Popover content={() => <MiniMap goToOverviewHref={goToOverviewHref} />} placement="rightBottom" arrow={false}>
+const MinimapWithPopover: React.FC<MinimapWithPopoverProps> = ({ overviewHref, onClick }) => (
+  <Popover content={() => <MiniMap overviewHref={overviewHref} />} placement="rightBottom" arrow={false}>
     <MpHomeButton onClick={onClick} />
   </Popover>
 )
@@ -43,7 +43,7 @@ const TooltipWithButton: React.FC<TooltipWithButtonProps> = ({ onClick }) => (
 export const HomeButton: React.FC<HomeButtonProps> = props => {
   return props.minimapOptions?.show ? (
     <MinimapWithPopover
-      goToOverviewHref={props.minimapOptions?.goToOverviewHref || '/'}
+      overviewHref={props.minimapOptions?.overviewHref || '/'}
       onClick={props.onMpHomeClick}
     />
   ) : (

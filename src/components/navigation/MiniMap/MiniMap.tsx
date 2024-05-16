@@ -6,7 +6,7 @@ import Logo from 'src/assets/svg/mp-logo-wordmark.svg?react'
 import MiniMap from './miniMap.svg?react'
 import { Flex } from 'src/components/layout/Flex/Flex'
 export interface IMinimapProps {
-  goToOverviewHref: string
+  overviewHref: string
 }
 
 const Minimap: React.FC<IMinimapProps> = props => {
@@ -16,7 +16,7 @@ const Minimap: React.FC<IMinimapProps> = props => {
         <Flex align="normal" component="div" flex="0 1 auto" gap="small" justify="stretch" vertical wrap="nowrap">
           <Flex align="center" justify="space-between">
             <Logo />
-            <Button href={props.goToOverviewHref || '/'}>Go to overview</Button>
+            <Button href={props.overviewHref || '/'}>Go to overview</Button>
           </Flex>
           <MiniMap />
         </Flex>
