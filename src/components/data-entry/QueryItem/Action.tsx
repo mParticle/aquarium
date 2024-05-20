@@ -1,4 +1,4 @@
-import { Icon, Button, IButtonProps } from 'src/components'
+import { Button, type IButtonProps, Icon } from 'src/components'
 import './query-item.css'
 
 export interface IActionProps {
@@ -20,8 +20,8 @@ export const Action = (props: IActionProps) => {
   }
 
   let iconColor: 'primary' | 'default' = 'primary'
-  if (props.type == 'default') iconColor = 'default'
-  if (props.type == 'disabled') iconColor = 'default'
+  if (props.type === 'default') iconColor = 'default'
+  if (props.type === 'disabled') iconColor = 'default'
 
   return (
     <>
