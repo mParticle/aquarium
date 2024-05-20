@@ -196,7 +196,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
             label: (
               <Flex justify="space-between" align="center" gap="small">
                 {workspace.label}
-                {workspace.isActive && <Icon name="check" size="sm" color="text" />}
+                {workspace.isActive && <Icon name="check" size="xs" color="text" />}
               </Flex>
             ),
             id: workspace.id,
