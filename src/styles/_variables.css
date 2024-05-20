@@ -47,7 +47,7 @@
   --wireframe: false;
   --motion: true;
   --color-link-hover: #ab8eff;
-  --control-outline: rgba(0.21176470816135406, 0, 0.8196078538894653, 0.1);
+  --control-outline: rgba(54, 0, 209, 0.1);
   --color-warning-outline: #fffbe6;
   --color-error-outline: #fff1f0;
   --control-item-bg-hover: #f8f6fb;
@@ -92,7 +92,7 @@
   --color-error-text-hover: #a8071a;
   --color-error-text: #820014;
   --color-error-text-active: #5c0011;
-  --color-bg-mask: #babbb5;
+  --color-bg-mask: rgba(0, 0, 0, 0.45);
   --border-radius-lg: 16px;
   --mp-brand-primary-1: #f8f6fb;
   --mp-brand-primary-2: #ebe8f8;
@@ -115,6 +115,16 @@
   --mp-brand-secondary-9: #212020;
   --mp-brand-secondary-10: #0f0e0e;
   --mp-color-border-disabled: #dcdcd8;
+  --mp-color-icon-strong: #0f0e0e;
+  --mp-color-icon-brand: #20007a;
+  --mp-icon-size-xs: 12px;
+  --mp-icon-size-sm: 16px;
+  --mp-icon-size-md: 20px;
+  --mp-icon-size-lg: 24px;
+  --mp-icon-size-xl: 28px;
+  --mp-icon-size-xxl: 32px;
+  --mp-icon-size-xxxl: 40px;
+  --mp-icon-size-xxxxl: 48px;
   --mp-query-item-border-width: 0 0 1px 0;
   --mp-query-item-border-color: #c3aeff;
   --mp-query-item-border-color-active: #3600d1;
@@ -383,10 +393,8 @@
   --margin-xl: 32px;
   --margin-xxl: 48px;
   --box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
-  --box-shadow-secondary: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12),
-    0 9px 28px 8px rgba(0, 0, 0, 0.05);
-  --box-shadow-tertiary: 0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02),
-    0 2px 4px 0 rgba(0, 0, 0, 0.02);
+  --box-shadow-secondary: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  --box-shadow-tertiary: 0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02);
   --screen-xs: 480px;
   --screen-xs-min: 480px;
   --screen-xs-max: 575px;
@@ -405,16 +413,11 @@
   --screen-xxl: 1600px;
   --screen-xxl-min: 1600px;
   --box-shadow-popover-arrow: 2px 2px 5px rgba(0, 0, 0, 0.05);
-  --box-shadow-card: 0 1px 2px -2px rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.12),
-    0 5px 12px 4px rgba(0, 0, 0, 0.09);
-  --box-shadow-drawer-right: -6px 0 16px 0 rgba(0, 0, 0, 0.08), -3px 0 6px -4px rgba(0, 0, 0, 0.12),
-    -9px 0 28px 8px rgba(0, 0, 0, 0.05);
-  --box-shadow-drawer-left: 6px 0 16px 0 rgba(0, 0, 0, 0.08), 3px 0 6px -4px rgba(0, 0, 0, 0.12),
-    9px 0 28px 8px rgba(0, 0, 0, 0.05);
-  --box-shadow-drawer-up: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12),
-    0 9px 28px 8px rgba(0, 0, 0, 0.05);
-  --box-shadow-drawer-down: 0 -6px 16px 0 rgba(0, 0, 0, 0.08), 0 -3px 6px -4px rgba(0, 0, 0, 0.12),
-    0 -9px 28px 8px rgba(0, 0, 0, 0.05);
+  --box-shadow-card: 0 1px 2px -2px rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.12), 0 5px 12px 4px rgba(0, 0, 0, 0.09);
+  --box-shadow-drawer-right: -6px 0 16px 0 rgba(0, 0, 0, 0.08), -3px 0 6px -4px rgba(0, 0, 0, 0.12), -9px 0 28px 8px rgba(0, 0, 0, 0.05);
+  --box-shadow-drawer-left: 6px 0 16px 0 rgba(0, 0, 0, 0.08), 3px 0 6px -4px rgba(0, 0, 0, 0.12), 9px 0 28px 8px rgba(0, 0, 0, 0.05);
+  --box-shadow-drawer-up: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  --box-shadow-drawer-down: 0 -6px 16px 0 rgba(0, 0, 0, 0.08), 0 -3px 6px -4px rgba(0, 0, 0, 0.12), 0 -9px 28px 8px rgba(0, 0, 0, 0.05);
   --box-shadow-tabs-overflow-left: inset 10px 0 8px -8px rgba(0, 0, 0, 0.08);
   --box-shadow-tabs-overflow-right: inset -10px 0 8px -8px rgba(0, 0, 0, 0.08);
   --box-shadow-tabs-overflow-top: inset 0 10px 8px -8px rgba(0, 0, 0, 0.08);
