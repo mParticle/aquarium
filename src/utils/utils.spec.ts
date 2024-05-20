@@ -27,12 +27,12 @@ describe('Testing utils', () => {
       vi.stubGlobal('navigator', { userAgent: '' })
     })
 
-    it('it should return "Windows" when the user agent includes "Win"', () => {
+   it('it should return "Windows" when the user agent includes "Win"', () => {
       // arrange
-      // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
-      global.navigator = {
+      const navigatorOverride: Partial<Navigator> = {
         userAgent: 'Windows',
-      } as Navigator
+      }
+      global.navigator = { ...global.navigator, ...navigatorOverride }
 
       // act
       const actualOS = getOS()
@@ -43,10 +43,10 @@ describe('Testing utils', () => {
 
     it('it should return "Macintosh" when the user agent includes "Mac"', () => {
       // arrange
-      // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
-      global.navigator = {
+      const navigatorOverride: Partial<Navigator> = {
         userAgent: 'Macintosh',
-      } as Navigator
+      }
+      global.navigator = { ...global.navigator, ...navigatorOverride }
 
       // act
       const actualOS = getOS()

@@ -1,14 +1,7 @@
-import { type Meta } from '@storybook/react'
-import { type StoryObj } from '@storybook/react'
-import { Avatar } from 'src/components/data-display/Avatar/Avatar'
-import { ExampleStory } from 'src/utils/ExampleStory'
-import { Space } from 'src/components'
-import { Badge } from 'src/components'
-import { Button } from 'src/components'
+import { type Meta, type StoryObj } from '@storybook/react'
 import { useState } from 'react'
-import { AlicornIcon } from 'src/components'
-import { UsersIcon } from 'src/components'
-import { SparklesIcon } from 'src/components'
+import { Avatar, Badge, Button, Icon, Space } from 'src/components'
+import { ExampleStory } from 'src/utils/ExampleStory'
 
 const meta: Meta<typeof Avatar> = {
   title: 'Aquarium/Data Display/Avatar',
@@ -17,12 +10,11 @@ const meta: Meta<typeof Avatar> = {
   args: {
     alt: 'Avatar',
     gap: 4,
-    icon: <AlicornIcon />,
+    icon: <Icon name="alicorn" size="lg" color="white" />,
     shape: 'circle',
     size: 'default',
     src: undefined,
     srcSet: undefined,
-    style: { color: 'white' },
     draggable: true,
     crossOrigin: '',
     onError: () => true,
@@ -44,8 +36,8 @@ const meta: Meta<typeof Avatar> = {
       control: 'select',
       options: ['Users', 'Sparkles'],
       mapping: {
-        Users: <UsersIcon />,
-        Sparkles: <SparklesIcon />,
+        Users: <Icon name="users" />,
+        Sparkles: <Icon name="sparkles" />,
       },
     },
   },
@@ -97,16 +89,16 @@ export const ExampleBasic: Story = {
       <ExampleStory title="Four sizes and two shapes are available.">
         <Space direction="vertical" size={16}>
           <Space wrap size={16}>
-            <Avatar size={64} icon={<AlicornIcon />} />
-            <Avatar size="large" icon={<AlicornIcon />} />
-            <Avatar icon={<AlicornIcon />} />
-            <Avatar size="small" icon={<AlicornIcon />} />
+            <Avatar size={64} icon={<Icon name="alicorn" />} />
+            <Avatar size="large" icon={<Icon name="alicorn" />} />
+            <Avatar icon={<Icon name="alicorn" />} />
+            <Avatar size="small" icon={<Icon name="alicorn" />} />
           </Space>
           <Space wrap size={16}>
-            <Avatar shape="square" size={64} icon={<AlicornIcon />} />
-            <Avatar shape="square" size="large" icon={<AlicornIcon />} />
-            <Avatar shape="square" icon={<AlicornIcon />} />
-            <Avatar shape="square" size="small" icon={<AlicornIcon />} />
+            <Avatar shape="square" size={64} icon={<Icon name="alicorn" />} />
+            <Avatar shape="square" size="large" icon={<Icon name="alicorn" />} />
+            <Avatar shape="square" icon={<Icon name="alicorn" />} />
+            <Avatar shape="square" size="small" icon={<Icon name="alicorn" />} />
           </Space>
         </Space>
       </ExampleStory>
@@ -120,13 +112,13 @@ export const ExampleTypes: Story = {
     return (
       <ExampleStory title="Image, Icon and letter are supported, and the latter two kinds of avatar can have custom colors and background colors.">
         <Space size={16} wrap>
-          <Avatar icon={<AlicornIcon />} />
+          <Avatar icon={<Icon name="alicorn" />} />
           <Avatar>U</Avatar>
           <Avatar size={40}>USER</Avatar>
           <Avatar src={url} />
           <Avatar src={<img src={url} alt="avatar" />} />
           <Avatar style={{ backgroundColor: '#fde3cf', color: '#f56a00' }}>U</Avatar>
-          <Avatar style={{ backgroundColor: '#87d068' }} icon={<AlicornIcon />} />
+          <Avatar style={{ backgroundColor: '#87d068' }} icon={<Icon name="alicorn" />} />
         </Space>
       </ExampleStory>
     )
@@ -139,10 +131,10 @@ export const ExampleWithBadge: Story = {
       <ExampleStory title="Usually used for reminders and notifications.">
         <Space size={24}>
           <Badge count={1}>
-            <Avatar shape="square" icon={<AlicornIcon />} />
+            <Avatar shape="square" icon={<Icon name="alicorn" />} />
           </Badge>
           <Badge dot>
-            <Avatar shape="square" icon={<AlicornIcon />} />
+            <Avatar shape="square" icon={<Icon name="alicorn" />} />
           </Badge>
         </Space>
       </ExampleStory>
@@ -154,7 +146,7 @@ export const ExampleResponsive: Story = {
   render: () => {
     return (
       <ExampleStory title="Avatar size can be automatically adjusted based on the screen size.">
-        <Avatar size={{ xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100 }} icon={<AlicornIcon />} />
+        <Avatar size={{ xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100 }} icon={<Icon name="alicorn" />} />
       </ExampleStory>
     )
   },

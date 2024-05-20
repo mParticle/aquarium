@@ -19,10 +19,12 @@ export interface IGlobalNavigationMenu extends IBaseGlobalNavigationItem {
 }
 
 export interface IGlobalNavigationLink extends IBaseGlobalNavigationItem {
-  type?: 'link'
+  type?: 'link' | 'button'
+  label: ReactNode
   hrefOptions?: HrefOptions
   hideLabel?: boolean
   onClick?: (e: MouseEvent) => void
+  buttonOptions?: { onClick?: () => void; href?: string; target?: '_self' | '_blank' }
 }
 
 export type IGlobalNavigationItem = IGlobalNavigationMenu | IGlobalNavigationLink

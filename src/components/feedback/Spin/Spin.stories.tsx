@@ -1,11 +1,10 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { Spin } from 'src/components/feedback/Spin/Spin'
 import { ExampleStory } from 'src/utils/ExampleStory'
-import { Flex } from 'src/components'
+import { Flex, Icon } from 'src/components'
 import { Switch } from 'src/components'
 import { Alert } from 'src/components'
 import { Button } from 'src/components'
-import { MpLogoIcon } from 'src/components'
 import { Margin } from 'src/styles/style'
 import { useState } from 'react'
 
@@ -54,7 +53,7 @@ export const WithCustomDelay: Story = {
 
 export const WithCustomIndicator: Story = {
   args: {
-    indicator: <MpLogoIcon />,
+    indicator: <Icon name="mpLogo" />,
   },
 }
 
