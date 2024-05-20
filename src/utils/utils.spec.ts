@@ -27,7 +27,7 @@ describe('Testing utils', () => {
       vi.stubGlobal('navigator', { userAgent: '' })
     })
 
-   it('it should return "Windows" when the user agent includes "Win"', () => {
+    it('it should return "Windows" when the user agent includes "Win"', () => {
       // arrange
       const navigatorOverride: Partial<Navigator> = {
         userAgent: 'Windows',
