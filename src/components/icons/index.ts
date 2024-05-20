@@ -30,7 +30,6 @@ import MessageQuestionIcon from 'src/assets/svg/message-question.svg?react'
 import MpLogoIcon from 'src/assets/svg/mpLogo.svg?react'
 import ObservabilityIcon from 'src/assets/svg/mp_pm_lt_observability.svg?react'
 import RemoveIcon from 'src/assets/svg/remove.svg?react'
-import SetupIcon from 'src/assets/svg/mp_pm_lt_setup.svg?react'
 import SignoutIcon from 'src/assets/svg/signout.svg?react'
 import SiteMapIcon from 'src/assets/svg/sitemap.svg?react'
 import SparklesIcon from 'src/assets/svg/sparkles.svg?react'
@@ -74,7 +73,6 @@ export {
   MpLogoIcon,
   ObservabilityIcon,
   RemoveIcon,
-  SetupIcon,
   ShieldKeyholeIcon,
   SignoutIcon,
   SiteMapIcon,
