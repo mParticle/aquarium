@@ -1,3 +1,10 @@
+## [1.14.1-release-candidate.1](https://github.com/mParticle/aquarium/compare/v1.14.0...v1.14.1-release-candidate.1) (2024-05-21)
+
+
+### Bug Fixes
+
+* fixes path to be / on UPS cookie creation options ([#240](https://github.com/mParticle/aquarium/issues/240)) ([0cebf44](https://github.com/mParticle/aquarium/commit/0cebf44966190c555d0a9ffb846074ac3304f2dd))
+
 # [1.14.0](https://github.com/mParticle/aquarium/compare/v1.13.0...v1.14.0) (2024-05-20)
 
 
