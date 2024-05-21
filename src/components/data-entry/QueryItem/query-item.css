@@ -10,8 +10,6 @@
   border-radius: var(--mp-query-item-border-radius);
   background-color: var(--mp-query-item-bg-color) !important;
   padding: var(--mp-query-item-padding) !important;
-
-  /* color: var(--mp-query-item-color) !important; */
   height: var(--mp-query-item-height) !important;
   display: flex;
   justify-content: center;
