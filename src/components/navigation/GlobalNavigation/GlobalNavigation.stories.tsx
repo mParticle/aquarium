@@ -138,6 +138,7 @@ const meta: Meta<typeof GlobalNavigation> = {
     minimapOptions: {
       show: true,
     },
+    hideSuiteLogo: false,
   },
 }
 export default meta
