@@ -3,6 +3,7 @@
   --nav-item-width: 82px;
   --nav-width: 90px;
   --suite-logo-height: 82px;
+  --suite-logo-width: 82px;
   --color-scrollbar-handle: rgb(0 0 0 / 15%);
   --color-scrollbar-track: transparent;
   --size-scrollbar-handle: 6px;
@@ -240,10 +241,7 @@
   padding-bottom: var(--padding-xxs);
 }
 
-.globalNavigation__icon.globalNavigation__icon--suiteLogo svg {
-  width: 36px;
-  height: 36px;
-}
+
 
 .globalNavigation__menu .globalNavigation__iconLabel {
   margin-top: var(--margin-xxs);
@@ -285,6 +283,7 @@
   border: 1px solid var(--color-border, #c3aeff);
 }
 
+
 .globalNavigation__suiteLogo {
   min-height: var(--suite-logo-height);
   min-width: var(--nav-width);
@@ -293,6 +292,19 @@
   font-size: var(--font-size-sm);
   font-weight: 400;
   cursor: pointer;
+}
+
+.globalNavigation__suiteLogo-background {
+  background-color: var(--mp-brand-primary-2);
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 100%;
+}
+
+.globalNavigation__icon.globalNavigation__icon--suiteLogo svg {
+  width: 36px;
+  height: 36px;
+  
 }
 
 .globalNavigation__divider {

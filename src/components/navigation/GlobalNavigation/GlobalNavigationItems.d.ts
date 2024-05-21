@@ -11,6 +11,7 @@ export interface IBaseGlobalNavigationItem {
 
 export interface IGlobalNavigationLogo extends IBaseGlobalNavigationItem {
   onSuiteLogoClick: () => void
+  hasBackground?: boolean
 }
 
 export interface IGlobalNavigationMenu extends IBaseGlobalNavigationItem {

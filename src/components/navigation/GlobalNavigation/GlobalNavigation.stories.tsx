@@ -13,7 +13,7 @@ import { useNewExperienceReminder } from 'src/hooks/NewExperienceReminder/useNew
 
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',
-  icon: <Icon name="alicorn" />,
+  icon: <Icon name="alicorn" size="xxl" color="brand" />,
   onSuiteLogoClick: () => {
     alert('Going to Aqua Home!')
   },
@@ -834,10 +834,11 @@ export const Indicative: Story = {
 
 const cortexLogo: IGlobalNavigationLogo = {
   label: 'Predictions',
-  icon: <Icon name="sparkles" />,
+  icon: 'sparkles',
   onSuiteLogoClick: () => {
     alert('Going to Predictions Home!')
   },
+  hasBackground: true,
 }
 
 const cortexTools: IGlobalNavigationItem[] = [
