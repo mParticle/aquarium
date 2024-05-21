@@ -5,21 +5,23 @@ import React from 'react'
 import { Icons } from 'src/constants/Icons'
 
 export function SuiteLogo(props: IGlobalNavigationLogo) {
+  const classMap: { [key: string]: string } = {
+    default: 'globalNavigation__icon--suiteLogo',
+    'background-solid': 'globalNavigation__suiteLogo-background',
+  }
   return (
     <Center vertical className={`globalNavigation__suiteLogo`} onClick={props.onSuiteLogoClick}>
       <NavigationIcon
         icon={
-          typeof props.icon === 'string' && Object.keys(Icons).includes(props.icon) ? (
-            <Icon name={props.icon as keyof typeof Icons} color="brand" size="xxl" />
-          ) : (
+          !props.type || props.type === 'default' ? (
             props.icon
+          ) : (
+            <Icon name={props.icon as keyof typeof Icons} color="brand" size="xxl" />
           )
         }
         label=""
         hideLabel
-        className={`${
-          props.hasBackground ? 'globalNavigation__suiteLogo-background' : 'globalNavigation__icon--suiteLogo'
-        }`}
+        className={`${classMap[props.type || 'default']}`}
       />
       {props.label}
     </Center>

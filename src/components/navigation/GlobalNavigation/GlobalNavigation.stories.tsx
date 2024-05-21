@@ -835,10 +835,10 @@ export const Indicative: Story = {
 const cortexLogo: IGlobalNavigationLogo = {
   label: 'Predictions',
   icon: 'sparkles',
+  type: 'background-solid',
   onSuiteLogoClick: () => {
     alert('Going to Predictions Home!')
   },
-  hasBackground: true,
 }
 
 const cortexTools: IGlobalNavigationItem[] = [
