@@ -1,3 +1,10 @@
+# [1.15.0-icons-integration.1](https://github.com/mParticle/aquarium/compare/v1.14.0...v1.15.0-icons-integration.1) (2024-05-21)
+
+
+### Features
+
+* icon sizes ([#238](https://github.com/mParticle/aquarium/issues/238)) ([e093faa](https://github.com/mParticle/aquarium/commit/e093faa550fc731e1b16c668c702c47c7300be8e))
+
 # [1.14.0](https://github.com/mParticle/aquarium/compare/v1.13.0...v1.14.0) (2024-05-20)
 
 
