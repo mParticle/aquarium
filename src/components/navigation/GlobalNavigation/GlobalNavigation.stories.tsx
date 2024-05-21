@@ -14,6 +14,7 @@ import { useNewExperienceReminder } from 'src/hooks/NewExperienceReminder/useNew
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',
   icon: <Icon name="alicorn" size="xxl" color="brand" />,
+  type: 'default',
   onSuiteLogoClick: () => {
     alert('Going to Aqua Home!')
   },

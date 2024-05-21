@@ -13,7 +13,7 @@ export function SuiteLogo(props: IGlobalNavigationLogo) {
     <Center vertical className={`globalNavigation__suiteLogo`} onClick={props.onSuiteLogoClick}>
       <NavigationIcon
         icon={
-          !props.type || props.type === 'default' ? (
+          typeof props.icon !== 'string' ? (
             props.icon
           ) : (
             <Icon name={props.icon as keyof typeof Icons} color="brand" size="xxl" />
