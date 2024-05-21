@@ -3,7 +3,6 @@
   --nav-item-width: 82px;
   --nav-width: 90px;
   --suite-logo-height: 82px;
-  --suite-logo-width: 82px;
   --color-scrollbar-handle: rgb(0 0 0 / 15%);
   --color-scrollbar-track: transparent;
   --size-scrollbar-handle: 6px;
@@ -241,8 +240,6 @@
   padding-bottom: var(--padding-xxs);
 }
 
-
-
 .globalNavigation__menu .globalNavigation__iconLabel {
   margin-top: var(--margin-xxs);
 }
@@ -282,7 +279,6 @@
   border-radius: var(--border-radius-lg);
   border: 1px solid var(--color-border, #c3aeff);
 }
-
 
 .globalNavigation__suiteLogo {
   min-height: var(--suite-logo-height);
