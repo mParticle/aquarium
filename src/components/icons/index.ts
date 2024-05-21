@@ -37,8 +37,6 @@ import SearchIcon from 'src/assets/svg/search.svg?react'
 import SegmentationIcon from 'src/assets/svg/mp_pm_dt_segmentation.svg?react'
 import ShieldKeyholeIcon from 'src/assets/svg/shield-keyhole.svg?react'
 import SignoutIcon from 'src/assets/svg/signout.svg?react'
-import SiteMapIcon from 'src/assets/svg/sitemap.svg?react'
-import SparklesIcon from 'src/assets/svg/sparkles.svg?react'
 import SplitIcon from 'src/assets/svg/split.svg?react'
 import SystemAlertsIcon from 'src/assets/svg/mp_pm_lt_system-alerts.svg?react'
 import TransformationsIcon from 'src/assets/svg/mp_pm_lt_transformations.svg?react'
@@ -88,8 +86,6 @@ export {
   SegmentationIcon,
   ShieldKeyholeIcon,
   SignoutIcon,
-  SiteMapIcon,
-  SparklesIcon,
   SplitIcon,
   SystemAlertsIcon,
   TransformationsIcon,
