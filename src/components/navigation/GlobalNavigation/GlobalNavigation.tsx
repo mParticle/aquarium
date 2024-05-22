@@ -93,3 +93,7 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
 }
 
 GlobalNavigation.useNewExperienceReminder = useNewExperienceReminder
+
+GlobalNavigation.defaultProps = {
+  showSuiteLogo: true,
+}

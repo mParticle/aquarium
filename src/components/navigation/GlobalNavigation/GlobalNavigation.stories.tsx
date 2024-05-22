@@ -14,7 +14,7 @@ import { useNewExperienceReminder } from 'src/hooks/NewExperienceReminder/useNew
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',
   icon: <Icon name="alicorn" size="xxl" color="brand" />,
-  type: 'default',
+  type: 'custom-size',
   onSuiteLogoClick: () => {
     alert('Going to Aqua Home!')
   },
@@ -138,7 +138,6 @@ const meta: Meta<typeof GlobalNavigation> = {
     minimapOptions: {
       show: true,
     },
-    showSuiteLogo: false,
   },
 }
 export default meta
@@ -168,6 +167,24 @@ export const Primary: Story = {
 const mpLogo: IGlobalNavigationLogo = {
   label: 'Data Platform',
   icon: <Icon name="mpLogo" />,
+  onSuiteLogoClick: () => {
+    alert('Going to mP Home!')
+  },
+}
+
+const mpLogoWithBackground: IGlobalNavigationLogo = {
+  label: 'Data Platform',
+  icon: 'catalog',
+  type: 'background-solid',
+  onSuiteLogoClick: () => {
+    alert('Going to mP Home!')
+  },
+}
+
+const mpLogoWithoutCustomSizeLogo: IGlobalNavigationLogo = {
+  label: 'Data Platform',
+  icon: 'catalog',
+  type: 'default',
   onSuiteLogoClick: () => {
     alert('Going to mP Home!')
   },
@@ -1064,5 +1081,71 @@ export const UseNewExperienceReminderHook: Story = {
     onMpHomeClick: () => {
       alert('Going to mP!')
     },
+  },
+}
+
+export const MPWithoutLogo: Story = {
+  args: {
+    onSearchClick: () => {
+      alert('Searching!')
+    },
+    logo: {
+      onSuiteLogoClick: () => {},
+      label: '',
+    },
+    tools: mpTools,
+    management: mpManagement,
+    orgs: mpOrgs,
+    minimapOptions: { overviewHref: '/', show: true },
+    onMpHomeClick: () => {
+      alert('going to overview map')
+    },
+    avatarOptions: {
+      // src: "https://static-qa1.qa.corp.mparticle.com/appimg/logo_af_916397d2-9732-8de6-77cc-80e3bba120ca.png",
+      alt: 'avatar',
+    },
+    showSuiteLogo: false,
+  },
+}
+
+export const MPWithBackgroundLogo: Story = {
+  args: {
+    onSearchClick: () => {
+      alert('Searching!')
+    },
+    logo: mpLogoWithBackground,
+    tools: mpTools,
+    management: mpManagement,
+    orgs: mpOrgs,
+    minimapOptions: { overviewHref: '/', show: true },
+    onMpHomeClick: () => {
+      alert('going to overview map')
+    },
+    avatarOptions: {
+      // src: "https://static-qa1.qa.corp.mparticle.com/appimg/logo_af_916397d2-9732-8de6-77cc-80e3bba120ca.png",
+      alt: 'avatar',
+    },
+    showSuiteLogo: true,
+  },
+}
+
+export const MPWithoutCustomSizeLogo: Story = {
+  args: {
+    onSearchClick: () => {
+      alert('Searching!')
+    },
+    logo: mpLogoWithoutCustomSizeLogo,
+    tools: mpTools,
+    management: mpManagement,
+    orgs: mpOrgs,
+    minimapOptions: { overviewHref: '/', show: true },
+    onMpHomeClick: () => {
+      alert('going to overview map')
+    },
+    avatarOptions: {
+      // src: "https://static-qa1.qa.corp.mparticle.com/appimg/logo_af_916397d2-9732-8de6-77cc-80e3bba120ca.png",
+      alt: 'avatar',
+    },
+    showSuiteLogo: true,
   },
 }

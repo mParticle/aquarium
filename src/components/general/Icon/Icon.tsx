@@ -2,7 +2,7 @@ import { Icons } from 'src/constants/Icons'
 import './icon.css'
 
 type IconSize = 'xxxxl' | 'xxxl' | 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs'
-type IconColor =
+export type IconColor =
   | 'default'
   | 'primary'
   | 'success'

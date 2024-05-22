@@ -3,21 +3,29 @@ import { Center, Icon } from 'src/components'
 import { NavigationIcon } from 'src/components/navigation/GlobalNavigation/NavigationIcon'
 import { Icons } from 'src/constants/Icons'
 import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
+import { IconColor } from 'src/components/general/Icon/Icon'
 
-// TODO: Deprecate sending the icon as a component and only send it as a string in the future.
+// custom-size is the default size to prevent breaking changes.
 function isStringIcon(icon: ReactNode | string): icon is keyof typeof Icons {
   return typeof icon === 'string'
 }
 
-export function SuiteLogo({ icon, label, type = 'default', onSuiteLogoClick }: IGlobalNavigationLogo) {
+export function SuiteLogo({ icon, label, type = 'custom-size', onSuiteLogoClick }: IGlobalNavigationLogo) {
   const classMap = {
-    default: 'globalNavigation__icon--suiteLogo',
+    default: '',
+    'custom-size': 'globalNavigation__icon--suiteLogo',
     'background-solid': 'globalNavigation__icon--suiteBackground',
+  }
+
+  const iconColorMap: { [key in 'default' | 'background-solid' | 'custom-size']: IconColor } = {
+    default: 'default',
+    'background-solid': 'brand',
+    'custom-size': 'default',
   }
 
   const getIcon = () => {
     if (isStringIcon(icon)) {
-      return <Icon name={icon} color="brand" size="xxl" />
+      return <Icon name={icon} color={iconColorMap[type]} size="xxl" />
     }
     return icon
   }
