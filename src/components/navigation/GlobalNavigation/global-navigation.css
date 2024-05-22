@@ -290,7 +290,7 @@
   cursor: pointer;
 }
 
-.globalNavigation__suiteLogo-background {
+.globalNavigation__icon--suiteBackground {
   background-color: var(--mp-brand-primary-2);
   padding: 10px;
   margin-bottom: 8px;

@@ -1,29 +1,31 @@
+import React, { ReactElement, ReactNode } from 'react'
 import { Center, Icon } from 'src/components'
 import { NavigationIcon } from 'src/components/navigation/GlobalNavigation/NavigationIcon'
-import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
-import React from 'react'
 import { Icons } from 'src/constants/Icons'
+import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 
-export function SuiteLogo(props: IGlobalNavigationLogo) {
-  const classMap: { [key: string]: string } = {
+// TODO: Deprecate sending the icon as a component and only send it as a string in the future.
+function isStringIcon(icon: ReactNode | string): icon is keyof typeof Icons {
+  return typeof icon === 'string'
+}
+
+export function SuiteLogo({ icon, label, type = 'default', onSuiteLogoClick }: IGlobalNavigationLogo) {
+  const classMap = {
     default: 'globalNavigation__icon--suiteLogo',
-    'background-solid': 'globalNavigation__suiteLogo-background',
+    'background-solid': 'globalNavigation__icon--suiteBackground',
   }
+
+  const getIcon = () => {
+    if (isStringIcon(icon)) {
+      return <Icon name={icon} color="brand" size="xxl" />
+    }
+    return icon
+  }
+
   return (
-    <Center vertical className={`globalNavigation__suiteLogo`} onClick={props.onSuiteLogoClick}>
-      <NavigationIcon
-        icon={
-          typeof props.icon !== 'string' ? (
-            props.icon
-          ) : (
-            <Icon name={props.icon as keyof typeof Icons} color="brand" size="xxl" />
-          )
-        }
-        label=""
-        hideLabel
-        className={`${classMap[props.type || 'default']}`}
-      />
-      {props.label}
+    <Center vertical className="globalNavigation__suiteLogo" onClick={onSuiteLogoClick}>
+      <NavigationIcon icon={getIcon()} label="" hideLabel className={classMap[type]} />
+      {label}
     </Center>
   )
 }
