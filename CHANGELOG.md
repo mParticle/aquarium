@@ -1,3 +1,10 @@
+# [1.15.0-icons-integration.2](https://github.com/mParticle/aquarium/compare/v1.15.0-icons-integration.1...v1.15.0-icons-integration.2) (2024-05-22)
+
+
+### Features
+
+* add possibility to add background color to the suite icon logo ([#241](https://github.com/mParticle/aquarium/issues/241)) ([d4c206a](https://github.com/mParticle/aquarium/commit/d4c206abf442579b84c6f3340fa7f1b00523c71a))
+
 # [1.15.0-icons-integration.1](https://github.com/mParticle/aquarium/compare/v1.14.0...v1.15.0-icons-integration.1) (2024-05-21)
 
 
