@@ -1,3 +1,10 @@
+# [1.15.0-icons-integration.3](https://github.com/mParticle/aquarium/compare/v1.15.0-icons-integration.2...v1.15.0-icons-integration.3) (2024-05-23)
+
+
+### Bug Fixes
+
+* Align button content to the center ([#243](https://github.com/mParticle/aquarium/issues/243)) ([ca0901d](https://github.com/mParticle/aquarium/commit/ca0901da0c936dd53ab34a7db1a6946877803b4d))
+
 # [1.15.0-icons-integration.2](https://github.com/mParticle/aquarium/compare/v1.15.0-icons-integration.1...v1.15.0-icons-integration.2) (2024-05-22)
 
 
