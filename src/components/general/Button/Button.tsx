@@ -8,7 +8,7 @@ export interface IButtonProps extends AntButtonProps {}
 export const Button = (props: IButtonProps) => {
   return (
     <ConfigProvider>
-      <AntButton {...props} className="button">
+      <AntButton {...props} className="aquarium-button">
         {props.children}
       </AntButton>
     </ConfigProvider>
