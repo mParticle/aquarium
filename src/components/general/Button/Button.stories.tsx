@@ -112,6 +112,13 @@ export const WithIcon: Story = {
   },
 }
 
+export const WithIconSM: Story = {
+  args: {
+    type: 'default',
+    icon: <Icon name="mpLogo" size="sm" />,
+  },
+}
+
 export const Loading: Story = {
   args: {
     loading: true,
