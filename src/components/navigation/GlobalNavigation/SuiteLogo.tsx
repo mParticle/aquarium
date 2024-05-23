@@ -25,7 +25,7 @@ export function SuiteLogo({ icon, label, type = 'custom-size', onSuiteLogoClick 
 
   const getIcon = () => {
     if (isStringIcon(icon)) {
-      return <Icon name={icon} color={iconColorMap[type]} size="xxl" />
+      return <Icon name={icon} color={iconColorMap[type]} size="xl" />
     }
     return icon
   }
