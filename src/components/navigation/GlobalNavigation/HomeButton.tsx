@@ -1,5 +1,5 @@
 import React from 'react'
-import { Center, IGlobalNavigationProps, Icon, Popover, Tooltip } from 'src/components'
+import { Center, Icon, Popover, Tooltip } from 'src/components'
 import MiniMap from 'src/components/navigation/MiniMap/MiniMap'
 
 interface MpHomeButtonProps {
@@ -42,10 +42,7 @@ const TooltipWithButton: React.FC<TooltipWithButtonProps> = ({ onClick }) => (
 
 export const HomeButton: React.FC<HomeButtonProps> = props => {
   return props.minimapOptions?.show ? (
-    <MinimapWithPopover
-      overviewHref={props.minimapOptions?.overviewHref || '/'}
-      onClick={props.onMpHomeClick}
-    />
+    <MinimapWithPopover overviewHref={props.minimapOptions?.overviewHref ?? '/'} onClick={props.onMpHomeClick} />
   ) : (
     <TooltipWithButton onClick={props.onMpHomeClick} />
   )

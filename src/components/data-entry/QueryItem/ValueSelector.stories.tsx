@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react'
+import { type Meta, type StoryObj } from '@storybook/react'
 import { ValueSelector } from './ValueSelector'
 
 const meta: Meta<typeof ValueSelector> = {

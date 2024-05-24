@@ -1,4 +1,5 @@
-import { Button, type IButtonProps, Icon } from 'src/components'
+
+import { Icon, Button, type IButtonProps } from 'src/components'
 import './query-item.css'
 
 export interface IActionProps {
