@@ -45,13 +45,13 @@ export interface IGlobalNavigationProps {
 
 export const GlobalNavWidth = 90 as const
 
-export const GlobalNavigation = (props: IGlobalNavigationProps) => {
+export const GlobalNavigation = ({ showSuiteLogo = true, ...props }: IGlobalNavigationProps) => {
   return (
     <Layout className="globalNavigation">
       <Layout.Sider className="globalNavigation__sider" width={GlobalNavWidth}>
         <Flex vertical justify="space-between" style={{ height: '100%' }}>
           <div>
-            {props.showSuiteLogo && (
+            {showSuiteLogo && (
               <>
                 <SuiteLogo {...props.logo} />
                 <div className="globalNavigation__divider" />
@@ -93,7 +93,3 @@ export const GlobalNavigation = (props: IGlobalNavigationProps) => {
 }
 
 GlobalNavigation.useNewExperienceReminder = useNewExperienceReminder
-
-GlobalNavigation.defaultProps = {
-  showSuiteLogo: true,
-}
