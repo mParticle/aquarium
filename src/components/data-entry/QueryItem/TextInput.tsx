@@ -1,5 +1,5 @@
 import './query-item.css'
-import { ChangeEvent } from 'react'
+import { type ChangeEvent } from 'react'
 import { Input } from 'src/components'
 import { Typography } from 'src/components/general/Typography/Typography'
 
@@ -15,8 +15,7 @@ export const TextInput = (props: ITextInputProps) => {
   const isErrorStatus = props.errorMessage && !props.disabled
 
   const _onChange = (e: ChangeEvent<HTMLInputElement>) => {
-    if(props.onChange)
-      props.onChange(e.target.value)
+    if (props.onChange) props.onChange(e.target.value)
   }
 
   let inputClasses = `query-item query-item--input-text`
