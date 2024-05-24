@@ -2,10 +2,10 @@
     padding: var(--padding-sm);
 }
 
-.overview-map-root__button.overview-map-root__button--disabled {
+.svg-linker-root__button.svg-linker-root__button--disabled {
     cursor: default;
 
-    &.overview-map-root__button--regular {
+    &.svg-linker-root__button--regular {
         & rect:first-child {
             fill: transparent;
             stroke: var(--color-border);
@@ -20,7 +20,7 @@
         }
     }
 
-    &.overview-map-root__button--drop-shadow {
+    &.svg-linker-root__button--drop-shadow {
         & > g > g > rect {
             fill: var(--mp-brand-secondary-3);
         }
@@ -34,7 +34,7 @@
         }
     }
 
-    &.overview-map-root__button--black {
+    &.svg-linker-root__button--black {
         & rect:first-child {
             fill: var(--mp-brand-secondary-6);
         }
@@ -42,5 +42,21 @@
         &:hover rect:first-child {
             fill: var(--mp-brand-secondary-6);
         }
+    }
+}
+
+.svg-linker-root__button {
+    &.svg-linker-root__button--drop-shadow:hover {
+        filter: drop-shadow(0px 9px 28px rgba(0, 0, 0, 0.05))
+        drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.12))
+        drop-shadow(0px 6px 16px rgba(0, 0, 0, 0.08));
+    }
+
+    &.svg-linker-root__button--regular:hover rect:first-child {
+        fill: var(--mp-brand-primary-2);
+    }
+
+    &.svg-linker-root__button--black:hover rect:first-child {
+        fill: var(--mp-brand-secondary-7);
     }
 }

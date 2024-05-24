@@ -1,4 +1,4 @@
-import React, { Children, ReactElement } from 'react'
+import React, { Children, ReactElement, useCallback } from 'react'
 import './miniMap.css'
 
 export interface ISvgLink {
@@ -10,17 +10,27 @@ export interface ISvgLink {
 interface ISvgLinkerProps {
   buttons: ISvgLink[]
   children: React.ReactNode
+  onLinkClick: (route: string) => void
+  isAuthorizedRoute: (route: string) => boolean
 }
 
-export const SvgLinker: React.FC<ISvgLinkerProps> = ({ buttons, children }) => {
-  console.log(children, 'children')
+export const SvgLinker: React.FC<ISvgLinkerProps> = ({ buttons, children, onLinkClick, isAuthorizedRoute }) => {
+  const handleContainerClick = useCallback(
+    (e: React.MouseEvent) => {
+      e.preventDefault()
+      const target = e.target as HTMLElement
+      const href = target.closest('a')?.getAttribute('href')
+      if (href) {
+        const route = href.substring(1)
+        onLinkClick(route)
+      }
+    },
+    [onLinkClick],
+  )
 
   const wrapButtonsIntoLinks = (parent: React.ReactNode): React.ReactNode => {
     const wrapElement = (element: ReactElement): ReactElement => {
       if (element.type === 'svg') {
-        const idsInSVG = findIdsInSvg(element.props.children)
-        console.log(idsInSVG, 'IDs in SVG')
-
         const wrappedSvgContent = Children.map(element.props.children, child => {
           if (!React.isValidElement(child)) return child
           return wrapElement(child)
@@ -32,13 +42,21 @@ export const SvgLinker: React.FC<ISvgLinkerProps> = ({ buttons, children }) => {
         if (id) {
           const button = buttons.find(b => b.elementId === id)
           if (button) {
-            console.log(`Wrapping element with id: ${id} with link to ${button.route}`)
             return (
               <a
                 key={id}
                 href={`/${button.route}`}
-                style={{ backgroundColor: 'red' }} // Inline style for testing
-                className={`overview-map-root__button overview-map-root__button--${button.variant}`}>
+                className={`svg-linker-root__button svg-linker-root__button--${button.variant}${
+                  isAuthorizedRoute(button.route) ? '' : ' svg-linker-root__button--disabled'
+                }`}
+                onClick={e => {
+                  e.preventDefault()
+                  if (isAuthorizedRoute(button.route)) {
+                    onLinkClick(button.route)
+                  } else {
+                    alert('You are not authorized to access this page.')
+                  }
+                }}>
                 {element}
               </a>
             )
@@ -61,29 +79,7 @@ export const SvgLinker: React.FC<ISvgLinkerProps> = ({ buttons, children }) => {
     })
   }
 
-  const findIdsInSvg = (svgContent: React.ReactNode): string[] => {
-    const ids: string[] = []
-
-    const searchIds = (node: React.ReactNode) => {
-      Children.forEach(node, child => {
-        if (React.isValidElement(child)) {
-          const childElement = child as ReactElement
-          const id = childElement.props.id
-          if (id) {
-            ids.push(id)
-          }
-          if (childElement.props.children) {
-            searchIds(childElement.props.children)
-          }
-        }
-      })
-    }
-
-    searchIds(svgContent)
-    return ids
-  }
-
-  return <div>{wrapButtonsIntoLinks(children)}</div>
+  return <div onClick={handleContainerClick}>{wrapButtonsIntoLinks(children)}</div>
 }
 
 export default SvgLinker
