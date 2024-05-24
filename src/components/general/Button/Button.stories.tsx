@@ -6,7 +6,7 @@ import React from 'react'
 
 const meta: Meta<typeof Button> = {
   title: 'Aquarium/General/Button',
-  component: props => <Button {...props}>{props.children}</Button>,
+  component: props => <Button {...props}>{props.children || 'Button Label'}</Button>,
 
   args: {
     block: false,
