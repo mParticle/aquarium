@@ -1,3 +1,15 @@
+# [1.15.0](https://github.com/mParticle/aquarium/compare/v1.14.0...v1.15.0) (2024-05-24)
+
+
+### Bug Fixes
+
+* fixes path to be / on UPS cookie creation options ([#240](https://github.com/mParticle/aquarium/issues/240)) ([0cebf44](https://github.com/mParticle/aquarium/commit/0cebf44966190c555d0a9ffb846074ac3304f2dd))
+
+
+### Features
+
+* new icons ([#239](https://github.com/mParticle/aquarium/issues/239)) ([a1bfb88](https://github.com/mParticle/aquarium/commit/a1bfb88721146c31ce3924ce887e9b936e67a335))
+
 # [1.15.0-icons-integration.3](https://github.com/mParticle/aquarium/compare/v1.15.0-icons-integration.2...v1.15.0-icons-integration.3) (2024-05-23)
 
 
