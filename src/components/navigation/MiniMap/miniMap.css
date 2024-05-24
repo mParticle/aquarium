@@ -1,3 +1,46 @@
 .minimap_container{
     padding: var(--padding-sm);
 }
+
+.overview-map-root__button.overview-map-root__button--disabled {
+    cursor: default;
+
+    &.overview-map-root__button--regular {
+        & rect:first-child {
+            fill: transparent;
+            stroke: var(--color-border);
+        }
+
+        & path {
+            fill: var(--color-text-disabled);
+        }
+
+        &:hover rect:first-child {
+            fill: transparent;
+        }
+    }
+
+    &.overview-map-root__button--drop-shadow {
+        & > g > g > rect {
+            fill: var(--mp-brand-secondary-3);
+        }
+
+        & path {
+            fill: var(--color-text-disabled);
+        }
+
+        &:hover {
+            filter: none;
+        }
+    }
+
+    &.overview-map-root__button--black {
+        & rect:first-child {
+            fill: var(--mp-brand-secondary-6);
+        }
+
+        &:hover rect:first-child {
+            fill: var(--mp-brand-secondary-6);
+        }
+    }
+}

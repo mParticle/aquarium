@@ -1,4 +1,5 @@
 import React, { Children, ReactElement } from 'react'
+import './miniMap.css'
 
 export interface ISvgLink {
   elementId: string
@@ -12,48 +13,73 @@ interface ISvgLinkerProps {
 }
 
 export const SvgLinker: React.FC<ISvgLinkerProps> = ({ buttons, children }) => {
+  console.log(children, 'children')
+
   const wrapButtonsIntoLinks = (parent: React.ReactNode): React.ReactNode => {
-    return Children.map(parent, child => {
-      if (!React.isValidElement(child)) return child
+    const wrapElement = (element: ReactElement): ReactElement => {
+      if (element.type === 'svg') {
+        const idsInSVG = findIdsInSvg(element.props.children)
+        console.log(idsInSVG, 'IDs in SVG')
 
-      const childElement = child as ReactElement
-      if (childElement.type === 'svg') {
-        const svgContent = childElement.props.children
-        const idsInSVG = findIdsInSvg(svgContent)
-        console.log(svgContent, 'childElement')
+        const wrappedSvgContent = Children.map(element.props.children, child => {
+          if (!React.isValidElement(child)) return child
+          return wrapElement(child)
+        })
 
-        return idsInSVG.map((id: string) => {
+        return React.cloneElement(element, { children: wrappedSvgContent })
+      } else {
+        const id = element.props.id
+        if (id) {
           const button = buttons.find(b => b.elementId === id)
           if (button) {
+            console.log(`Wrapping element with id: ${id} with link to ${button.route}`)
             return (
               <a
-                key={button.elementId}
+                key={id}
                 href={`/${button.route}`}
+                style={{ backgroundColor: 'red' }} // Inline style for testing
                 className={`overview-map-root__button overview-map-root__button--${button.variant}`}>
-                {React.cloneElement(childElement, { key: id })} {/* Clone SVG element with a unique key */}
+                {element}
               </a>
             )
-          } else {
-            return null
           }
-        })
-      } else {
-        return child // Return non-SVG elements as is
+        }
+        if (element.props.children) {
+          const wrappedChildren = Children.map(element.props.children, child => {
+            if (!React.isValidElement(child)) return child
+            return wrapElement(child)
+          })
+          return React.cloneElement(element, { children: wrappedChildren })
+        }
+        return element
       }
+    }
+
+    return Children.map(parent, child => {
+      if (!React.isValidElement(child)) return child
+      return wrapElement(child as ReactElement)
     })
   }
 
   const findIdsInSvg = (svgContent: React.ReactNode): string[] => {
     const ids: string[] = []
-    Children.forEach(svgContent, child => {
-      if (React.isValidElement(child)) {
-        const childElement = child as ReactElement
-        const id = childElement.props['id'] || childElement.props['id'] // Accessing 'id' attribute for SVG elements
-        if (id) {
-          ids.push(id)
+
+    const searchIds = (node: React.ReactNode) => {
+      Children.forEach(node, child => {
+        if (React.isValidElement(child)) {
+          const childElement = child as ReactElement
+          const id = childElement.props.id
+          if (id) {
+            ids.push(id)
+          }
+          if (childElement.props.children) {
+            searchIds(childElement.props.children)
+          }
         }
-      }
-    })
+      })
+    }
+
+    searchIds(svgContent)
     return ids
   }
 
