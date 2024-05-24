@@ -12,7 +12,7 @@ export const Button = (props: IButtonProps) => {
 
   return (
     <ConfigProvider>
-      <AntButton {...props} className={`${props.className} ${props.variant ? classMap[props.variant] : ''}`}>
+      <AntButton {...props} className={`${props.className}${props.variant ? ` ${classMap[props.variant]}` : ''}`}>
         {props.children}
       </AntButton>
     </ConfigProvider>
