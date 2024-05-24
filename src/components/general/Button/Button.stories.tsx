@@ -5,7 +5,7 @@ import { Icon } from 'src/components'
 
 const meta: Meta<typeof Button> = {
   title: 'Aquarium/General/Button',
-  component: props => <Button {...props}>Button Text</Button>,
+  component: props => <Button {...props}>{props.children ?? 'Button Text'}</Button>,
 
   args: {
     block: false,
@@ -120,6 +120,15 @@ export const WithIconSM: Story = {
   },
 }
 
+export const CircleWithoutText: Story = {
+  args: {
+    icon: <Icon name="siteMap" size="xl" />,
+    children: '',
+    type: 'default',
+    shape: 'round',
+    variant: 'content-align-center',
+  },
+}
 export const Loading: Story = {
   args: {
     loading: true,
