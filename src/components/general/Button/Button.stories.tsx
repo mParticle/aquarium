@@ -116,6 +116,7 @@ export const WithIconSM: Story = {
   args: {
     type: 'default',
     icon: <Icon name="mpLogo" size="sm" />,
+    variant: 'content-align-center',
   },
 }
 
