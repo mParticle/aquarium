@@ -117,6 +117,7 @@ export const WithIconSM: Story = {
   args: {
     type: 'default',
     icon: <Icon name="mpLogo" size="sm" />,
+    variant: 'with-icon',
   },
 }
 
@@ -126,6 +127,7 @@ export const RoundIconButton: Story = {
     children: ' ',
     type: 'default',
     shape: 'round',
+    variant: 'with-icon',
   },
 }
 export const Loading: Story = {
