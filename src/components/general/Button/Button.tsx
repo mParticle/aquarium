@@ -6,7 +6,6 @@ export interface IButtonProps extends AntButtonProps {
   variant?: 'with-icon'
 }
 export const Button = (props: IButtonProps) => {
-  // TODO:
   const classMap = {
     'with-icon': 'u-display-flex u-align-items-center',
   }
