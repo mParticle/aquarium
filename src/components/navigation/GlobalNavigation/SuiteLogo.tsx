@@ -6,6 +6,8 @@ import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavi
 import { IconColor } from 'src/components/general/Icon/Icon'
 
 // custom-size is the default size to prevent breaking changes.
+type IconColorOptions = 'default' | 'background-solid' | 'custom-size'
+
 function isStringIcon(icon: ReactNode | string): icon is keyof typeof Icons {
   return typeof icon === 'string'
 }
@@ -17,7 +19,7 @@ export function SuiteLogo({ icon, label, type = 'custom-size', onSuiteLogoClick 
     'background-solid': 'globalNavigation__icon--suiteBackground',
   }
 
-  const iconColorMap: { [key in 'default' | 'background-solid' | 'custom-size']: IconColor } = {
+  const iconColorMap: { [key in IconColorOptions]: IconColor } = {
     default: 'default',
     'background-solid': 'brand',
     'custom-size': 'default',
