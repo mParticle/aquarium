@@ -5,7 +5,7 @@ import { Icon } from 'src/components'
 
 const meta: Meta<typeof Button> = {
   title: 'Aquarium/General/Button',
-  component: props => <Button {...props}>{props.children ?? 'Button Text'}</Button>,
+  component: props => <Button {...props}>{props.children || 'Button Text'}</Button>,
 
   args: {
     block: false,
