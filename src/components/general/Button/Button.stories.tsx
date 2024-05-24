@@ -2,10 +2,11 @@ import { Button } from 'src/components/general/Button/Button'
 import { type Meta, type StoryObj } from '@storybook/react'
 import { userEvent } from '@storybook/test'
 import { Icon } from 'src/components'
+import React from 'react'
 
 const meta: Meta<typeof Button> = {
   title: 'Aquarium/General/Button',
-  component: props => <Button {...props}>Button Text</Button>,
+  component: props => <Button {...props}>{props.children}</Button>,
 
   args: {
     block: false,
@@ -116,9 +117,19 @@ export const WithIconSM: Story = {
   args: {
     type: 'default',
     icon: <Icon name="mpLogo" size="sm" />,
+    variant: 'with-icon',
   },
 }
 
+export const RoundIconButton: Story = {
+  args: {
+    icon: <Icon name="siteMap" size="xl" />,
+    children: ' ',
+    type: 'default',
+    shape: 'round',
+    variant: 'with-icon',
+  },
+}
 export const Loading: Story = {
   args: {
     loading: true,
