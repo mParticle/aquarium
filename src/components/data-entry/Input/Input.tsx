@@ -1,6 +1,6 @@
 import { Input as AntInput } from 'antd'
 import { type InputProps as AntInputProps } from 'antd'
-import { SearchProps } from 'antd/es/input'
+import { type SearchProps } from 'antd/es/input'
 import { ConfigProvider } from 'src/components'
 import { type InputRef } from 'antd'
 import { forwardRef, type ForwardRefExoticComponent, type Ref, type RefAttributes } from 'react'
