@@ -12,6 +12,7 @@ interface MinimapWithPopoverProps {
   overviewHref: string
   onClick: () => void
   routes: ISvgLink[]
+  handleLinkClick: (route: string) => void
 }
 
 interface TooltipWithButtonProps {
@@ -29,9 +30,9 @@ const MpHomeButton: React.FC<MpHomeButtonProps> = ({ onClick }) => (
   </Center>
 )
 
-const MinimapWithPopover: React.FC<MinimapWithPopoverProps> = ({ overviewHref, onClick, routes }) => (
+const MinimapWithPopover: React.FC<MinimapWithPopoverProps> = ({ overviewHref, onClick, routes, handleLinkClick }) => (
   <Popover
-    content={() => <MiniMap overviewHref={overviewHref} routes={routes} />}
+    content={() => <MiniMap overviewHref={overviewHref} routes={routes} handleLinkClick={handleLinkClick} />}
     placement="rightBottom"
     arrow={false}>
     <MpHomeButton onClick={onClick} />
@@ -56,5 +57,7 @@ export const HomeButton: React.FC<HomeButtonProps> = props => {
       overviewHref={minimapOptions.overviewHref}
       onClick={onMpHomeClick}
       routes={minimapOptions.routes}
+      handleLinkClick={minimapOptions.handleLinkClick}
     />
+  )
 }

@@ -485,6 +485,7 @@ export const MP: Story = {
     orgs: mpOrgs,
     minimapOptions: {
       overviewHref: '/',
+      handleLinkClick: string => alert(string),
       routes: [
         { elementId: 'oversight', route: '/oversight', isAuthorized: true },
         { elementId: 'dataPlatform', route: '/data-platform', isAuthorized: false },
@@ -1101,7 +1102,6 @@ export const MPWithoutLogo: Story = {
     tools: mpTools,
     management: mpManagement,
     orgs: mpOrgs,
-    minimapOptions: { overviewHref: '/', show: true },
     onMpHomeClick: () => {
       alert('going to overview map')
     },
@@ -1122,7 +1122,6 @@ export const MPWithBackgroundLogo: Story = {
     tools: mpTools,
     management: mpManagement,
     orgs: mpOrgs,
-    minimapOptions: { overviewHref: '/', show: true },
     onMpHomeClick: () => {
       alert('going to overview map')
     },
@@ -1143,7 +1142,6 @@ export const MPWithoutCustomSizeLogo: Story = {
     tools: mpTools,
     management: mpManagement,
     orgs: mpOrgs,
-    minimapOptions: { overviewHref: '/', show: true },
     onMpHomeClick: () => {
       alert('going to overview map')
     },

@@ -22,10 +22,15 @@ export const SvgLinker: React.FC<ISvgLinkerProps> = ({ buttons, children, onLink
       const href = target.closest('a')?.getAttribute('href')
       if (href) {
         const route = href.substring(1)
-        onLinkClick(route)
+        const button = buttons.find(b => b.route === route)
+        if (button?.isAuthorized) {
+          onLinkClick(route)
+        } else {
+          alert('You are not authorized to access this page.')
+        }
       }
     },
-    [onLinkClick],
+    [buttons, onLinkClick],
   )
 
   const wrapButtonsIntoLinks = (parent: React.ReactNode): React.ReactNode => {

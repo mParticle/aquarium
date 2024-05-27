@@ -421,22 +421,10 @@ const minimap = (
 export interface IMinimapProps {
   overviewHref: string
   routes: { elementId: string; route: string; isAuthorized: boolean }[]
+  handleLinkClick: (route: string) => void
 }
 
-const isAuthorizedRoute = (route: string): boolean => {
-  const authorizedRoutes = ['/path1', '/path2', '/path3', '/path4', '/path5', '/path6']
-  return authorizedRoutes.includes(route)
-}
-
-const Minimap: React.FC<IMinimapProps> = ({ overviewHref, routes }) => {
-  const handleLinkClick = (route: string) => {
-    if (isAuthorizedRoute(route)) {
-      // manejar ruta autorizada
-    } else {
-      alert('No estás autorizado para acceder a esta página.')
-    }
-  }
-
+const Minimap: React.FC<IMinimapProps> = ({ overviewHref, routes, handleLinkClick }) => {
   const linkMap: { [key: string]: string } = {
     oversight: 'OversightBtn',
     dataPlatform: 'DataPlatformBtn',

@@ -27,10 +27,10 @@ export interface IGlobalNavigationLink extends IBaseGlobalNavigationItem {
   label: ReactNode
   hrefOptions?: HrefOptions
   hideLabel?: boolean
-  onClick?: (e: MouseEvent) => voida
+  onClick?: (e: MouseEvent) => void
   buttonOptions?: { onClick?: () => void; href?: string; target?: '_self' | '_blank' }
 }
 
 export type IGlobalNavigationItem = IGlobalNavigationMenu | IGlobalNavigationLink
 
-export type IMinimapOptions = { overviewHref: string; routes: ISvgLink[] }
+export type IMinimapOptions = { overviewHref: string; routes: ISvgLink[]; handleLinkClick: (route: string) => void }
