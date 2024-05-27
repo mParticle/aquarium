@@ -19,6 +19,7 @@ import { type IGlobalNavigationItem } from 'src/components/navigation/GlobalNavi
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
 import { useNewExperienceReminder } from 'src/hooks/NewExperienceReminder/useNewExperienceReminder'
 import { HomeButton } from 'src/components/navigation/GlobalNavigation/HomeButton'
+import { ISvgLink } from 'src/components/navigation/MiniMap/SvgLinker'
 
 export interface IGlobalNavigationProps {
   logo: IGlobalNavigationLogo
@@ -39,6 +40,7 @@ export interface IGlobalNavigationProps {
   minimapOptions: {
     overviewHref?: string
     show?: boolean
+    routes: ISvgLink[]
   }
 }
 

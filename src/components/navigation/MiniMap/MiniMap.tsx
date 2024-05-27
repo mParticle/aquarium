@@ -7,25 +7,6 @@ import MiniMapSvg from './miniMap.svg?react'
 import { Flex } from 'src/components/layout/Flex/Flex'
 import { ISvgLink, SvgLinker } from 'src/components/navigation/MiniMap/SvgLinker'
 
-export interface IMinimapProps {
-  overviewHref: string
-}
-
-const buttons: ISvgLink[] = [
-  { elementId: 'OversightBtn', route: '/path1', variant: 'drop-shadow' },
-  { elementId: 'DataPlatformBtn', route: '/path2', variant: 'drop-shadow' },
-  { elementId: 'c360Btn', route: '/data-oversight', variant: 'drop-shadow' },
-  { elementId: 'PredictionsBtn', route: '/data-oversight', variant: 'drop-shadow' },
-  { elementId: 'AnalyticsBtn', route: '/data-oversight', variant: 'drop-shadow' },
-  { elementId: 'AnalyticsBtn', route: '/data-oversight', variant: 'drop-shadow' },
-  { elementId: 'SegmentationBtn', route: '/data-oversight', variant: 'drop-shadow' },
-]
-
-const isAuthorizedRoute = (route: string): boolean => {
-  const authorizedRoutes = ['/path1', '/path2']
-  return authorizedRoutes.includes(route)
-}
-
 const minimap = (
   <svg width="385" height="374" viewBox="0 0 385 374" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g id="mini map content" clip-path="url(#clip0_5505_13516)">
@@ -437,24 +418,50 @@ const minimap = (
     </defs>
   </svg>
 )
+export interface IMinimapProps {
+  overviewHref: string
+  routes: { elementId: string; route: string; isAuthorized: boolean }[]
+}
 
-const Minimap: React.FC<IMinimapProps> = props => {
+const isAuthorizedRoute = (route: string): boolean => {
+  const authorizedRoutes = ['/path1', '/path2', '/path3', '/path4', '/path5', '/path6']
+  return authorizedRoutes.includes(route)
+}
+
+const Minimap: React.FC<IMinimapProps> = ({ overviewHref, routes }) => {
   const handleLinkClick = (route: string) => {
     if (isAuthorizedRoute(route)) {
+      // manejar ruta autorizada
     } else {
-      alert('You are not authorized to access this page.')
+      alert('No estás autorizado para acceder a esta página.')
     }
   }
+
+  const linkMap: { [key: string]: string } = {
+    oversight: 'OversightBtn',
+    dataPlatform: 'DataPlatformBtn',
+    customer360: 'c360Btn',
+    predictions: 'PredictionsBtn',
+    analytics: 'AnalyticsBtn',
+    segmentation: 'SegmentationBtn',
+  }
+
+  const buttonsWithRoutes: ISvgLink[] = routes.map(route => ({
+    elementId: linkMap[route.elementId] || route.elementId,
+    route: route.route,
+    variant: 'drop-shadow',
+    isAuthorized: route.isAuthorized,
+  }))
+
   return (
     <ConfigProvider>
       <div className="minimap_container">
         <Flex align="normal" component="div" flex="0 1 auto" gap="small" justify="stretch" vertical wrap="nowrap">
           <Flex align="center" justify="space-between">
             <Logo />
-            <Button href={props.overviewHref || '/'}>Go to overview</Button>
+            <Button href={overviewHref || '/'}>Go to overview</Button>
           </Flex>
-          <SvgLinker buttons={buttons} isAuthorizedRoute={isAuthorizedRoute} onLinkClick={handleLinkClick}>
-            {/*<MiniMapSvg id="svgRoot" />*/}
+          <SvgLinker buttons={buttonsWithRoutes} onLinkClick={handleLinkClick}>
             {minimap}
           </SvgLinker>
         </Flex>

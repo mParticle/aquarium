@@ -135,6 +135,14 @@ const meta: Meta<typeof GlobalNavigation> = {
       alert('Going to mP!')
     },
     minimapOptions: {
+      routes: [
+        { elementId: 'oversight', route: '/oversight', isAuthorized: true },
+        { elementId: 'dataPlatform', route: '/data-platform', isAuthorized: false },
+        { elementId: 'customer360', route: '/customer-360', isAuthorized: true },
+        { elementId: 'predictions', route: '/predictions', isAuthorized: false },
+        { elementId: 'analytics', route: '/analytics', isAuthorized: true },
+        { elementId: 'segmentation', route: '/segmentation', isAuthorized: false },
+      ],
       show: true,
     },
   },
@@ -472,7 +480,6 @@ export const MP: Story = {
       alert('going to overview map')
     },
     avatarOptions: {
-      // src: "https://static-qa1.qa.corp.mparticle.com/appimg/logo_af_916397d2-9732-8de6-77cc-80e3bba120ca.png",
       alt: 'avatar',
     },
   },

@@ -4,17 +4,17 @@ import './miniMap.css'
 export interface ISvgLink {
   elementId: string
   route: string
-  variant: 'regular' | 'black' | 'drop-shadow'
+  isAuthorized: boolean
+  variant?: 'regular' | 'black' | 'drop-shadow'
 }
 
 interface ISvgLinkerProps {
   buttons: ISvgLink[]
   children: React.ReactNode
   onLinkClick: (route: string) => void
-  isAuthorizedRoute: (route: string) => boolean
 }
 
-export const SvgLinker: React.FC<ISvgLinkerProps> = ({ buttons, children, onLinkClick, isAuthorizedRoute }) => {
+export const SvgLinker: React.FC<ISvgLinkerProps> = ({ buttons, children, onLinkClick }) => {
   const handleContainerClick = useCallback(
     (e: React.MouseEvent) => {
       e.preventDefault()
@@ -47,11 +47,11 @@ export const SvgLinker: React.FC<ISvgLinkerProps> = ({ buttons, children, onLink
                 key={id}
                 href={`/${button.route}`}
                 className={`svg-linker-root__button svg-linker-root__button--${button.variant}${
-                  isAuthorizedRoute(button.route) ? '' : ' svg-linker-root__button--disabled'
+                  button.isAuthorized ? '' : ' svg-linker-root__button--disabled'
                 }`}
                 onClick={e => {
                   e.preventDefault()
-                  if (isAuthorizedRoute(button.route)) {
+                  if (button.isAuthorized) {
                     onLinkClick(button.route)
                   } else {
                     alert('You are not authorized to access this page.')
