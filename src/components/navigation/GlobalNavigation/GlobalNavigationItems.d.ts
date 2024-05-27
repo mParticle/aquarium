@@ -1,6 +1,6 @@
 import type { ReactNode, type MouseEvent } from 'react'
 import { type HrefOptions } from 'src/utils/utils'
-
+import { ISvgLink } from 'src/components/navigation/MiniMap/SvgLinker'
 export interface IBaseGlobalNavigationItem {
   type?: 'menu' | 'link'
   label: ReactNode
@@ -28,3 +28,17 @@ export interface IGlobalNavigationLink extends IBaseGlobalNavigationItem {
 }
 
 export type IGlobalNavigationItem = IGlobalNavigationMenu | IGlobalNavigationLink
+
+interface IMinimapOptionsShow {
+  show: true
+  overviewHref: string
+  routes: ISvgLink[]
+}
+
+interface IMinimapOptionsHide {
+  show: false
+  overviewHref: undefined
+  routes: []
+}
+
+export type IMinimapOptions = IMinimapOptionsShow | IMinimapOptionsHide

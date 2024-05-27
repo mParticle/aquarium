@@ -475,7 +475,18 @@ export const MP: Story = {
     tools: mpTools,
     management: mpManagement,
     orgs: mpOrgs,
-    minimapOptions: { overviewHref: '/', show: true },
+    minimapOptions: {
+      overviewHref: '/',
+      show: true,
+      routes: [
+        { elementId: 'oversight', route: '/oversight', isAuthorized: true },
+        { elementId: 'dataPlatform', route: '/data-platform', isAuthorized: false },
+        { elementId: 'customer360', route: '/customer-360', isAuthorized: true },
+        { elementId: 'predictions', route: '/predictions', isAuthorized: false },
+        { elementId: 'analytics', route: '/analytics', isAuthorized: true },
+        { elementId: 'segmentation', route: '/segmentation', isAuthorized: false },
+      ],
+    },
     onMpHomeClick: () => {
       alert('going to overview map')
     },
@@ -500,7 +511,7 @@ export const MPThousandOrgs: Story = {
           tools={mpTools}
           management={mpManagement}
           orgs={thousandOrgs}
-          minimapOptions={{ overviewHref: '/' }}
+          minimapOptions={{ show: false }}
           onMpHomeClick={() => {
             alert('going to overview map')
           }}
