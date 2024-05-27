@@ -59,7 +59,7 @@ export function NavigationCreate(props: INavigationCreateProps) {
             <span className="navigationCreate__itemTitle">
               {item.title}
               {item.isLoading && <Spin className="navigationCreate__itemLoading" size="small" />}
-              {isLocked && <Icon name="lock" size="sm" />}
+              {isLocked && <Icon name="lock" size="xs" />}
             </span>
 
             <span className="navigationCreate__itemDescription">{item.description}</span>

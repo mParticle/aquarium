@@ -1,6 +1,8 @@
-import type { ReactNode, type MouseEvent } from 'react'
+import type { ReactNode, type MouseEvent, ReactElement } from 'react'
 import { type HrefOptions } from 'src/utils/utils'
 import { ISvgLink } from 'src/components/navigation/MiniMap/SvgLinker'
+import { Icons } from 'src/constants/Icons'
+
 export interface IBaseGlobalNavigationItem {
   type?: 'menu' | 'link'
   label: ReactNode
@@ -11,6 +13,8 @@ export interface IBaseGlobalNavigationItem {
 
 export interface IGlobalNavigationLogo extends IBaseGlobalNavigationItem {
   onSuiteLogoClick: () => void
+  type?: 'default' | 'background-solid' | 'custom-size'
+  icon?: ReactElement | keyof typeof Icons
 }
 
 export interface IGlobalNavigationMenu extends IBaseGlobalNavigationItem {

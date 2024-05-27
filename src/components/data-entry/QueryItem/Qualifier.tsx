@@ -22,7 +22,9 @@ export const Qualifier = (props: IQueryItemQualifierProps) => {
     menuItemSelectedIcon: node =>
       node.isSelected ? <CheckIcon className="query-item-qualifier__item-selected-icon" /> : null,
     onChange: props.onChange,
-    onDropdownVisibleChange: () => setIsOpen(!isOpen),
+    onDropdownVisibleChange: () => {
+      setIsOpen(!isOpen)
+    },
     placement: 'bottomLeft',
     popupMatchSelectWidth: false,
     status: props.errorMessage ? 'error' : undefined,

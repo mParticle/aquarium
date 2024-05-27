@@ -27,11 +27,23 @@ const meta: Meta = {
   argTypes: {
     size: {
       control: 'select',
-      options: ['xxl', 'xl', 'lg', 'md', 'ms', 'sm', 'xs', 'xxs'],
+      options: ['xxxxl', 'xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs'],
     },
     color: {
       control: 'select',
-      options: ['default', 'primary', 'success', 'warning', 'error', 'info', 'white', 'black', 'text'],
+      options: [
+        'default',
+        'primary',
+        'success',
+        'warning',
+        'error',
+        'info',
+        'white',
+        'black',
+        'text',
+        'strong',
+        'brand',
+      ],
     },
   },
 }

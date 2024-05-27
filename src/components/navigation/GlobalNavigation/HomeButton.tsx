@@ -57,5 +57,4 @@ export const HomeButton: React.FC<HomeButtonProps> = props => {
       onClick={onMpHomeClick}
       routes={minimapOptions.routes}
     />
-  )
 }

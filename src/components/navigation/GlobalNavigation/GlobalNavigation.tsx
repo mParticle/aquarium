@@ -34,6 +34,7 @@ export interface IGlobalNavigationProps {
   onSuiteLogoClick?: () => void
   onMpHomeClick: () => void
   hideMpHome?: boolean
+  showSuiteLogo?: boolean
   avatarOptions?: IAvatarProps
   navigationButtonItemOptions?: {
     label: string
@@ -45,14 +46,18 @@ export interface IGlobalNavigationProps {
 
 export const GlobalNavWidth = 90 as const
 
-export const GlobalNavigation = (props: IGlobalNavigationProps) => {
+export const GlobalNavigation = ({ showSuiteLogo = true, ...props }: IGlobalNavigationProps) => {
   return (
     <Layout className="globalNavigation">
       <Layout.Sider className="globalNavigation__sider" width={GlobalNavWidth}>
         <Flex vertical justify="space-between" style={{ height: '100%' }}>
           <div>
-            <SuiteLogo {...props.logo} />
-            <div className="globalNavigation__divider" />
+            {showSuiteLogo && (
+              <>
+                <SuiteLogo {...props.logo} />
+                <div className="globalNavigation__divider" />
+              </>
+            )}
             <Center vertical>
               {props.onSearchClick && <NavigationSearch onClick={props.onSearchClick} />}
               {props.createItems && <NavigationCreate createItems={props.createItems} />}

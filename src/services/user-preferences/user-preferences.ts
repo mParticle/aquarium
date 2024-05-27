@@ -75,6 +75,7 @@ export class UserPreferencesService<TUserPreferenceId extends PropertyKey> {
   private async setStoredPreferences(storedPreferences: UserPreferences<TUserPreferenceId>): Promise<void> {
     Cookies.putObject(this.cookieKey, storedPreferences, {
       expires: this.dateFormatter(),
+      path: '/',
     })
 
     await Promise.resolve()

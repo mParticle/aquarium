@@ -1,8 +1,19 @@
 import { Icons } from 'src/constants/Icons'
 import './icon.css'
 
-type IconColor = 'default' | 'primary' | 'success' | 'warning' | 'error' | 'info' | 'white' | 'black' | 'text'
-type IconSize = 'xxl' | 'xl' | 'lg' | 'md' | 'ms' | 'sm' | 'xs' | 'xxs'
+type IconSize = 'xxxxl' | 'xxxl' | 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs'
+export type IconColor =
+  | 'default'
+  | 'primary'
+  | 'success'
+  | 'warning'
+  | 'error'
+  | 'info'
+  | 'white'
+  | 'black'
+  | 'text'
+  | 'strong'
+  | 'brand'
 
 export interface IIconProps {
   name: keyof typeof Icons

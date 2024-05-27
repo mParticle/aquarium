@@ -89,7 +89,7 @@ export const ExampleIcon: Story = {
               href: '',
               title: (
                 <Center>
-                  <Icon name="mpLogo" size="ms" />
+                  <Icon name="mpLogo" size="sm" />
                   <span style={{ paddingLeft: PaddingXs }}>Application List</span>
                 </Center>
               ),
