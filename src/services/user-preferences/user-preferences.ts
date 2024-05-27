@@ -2,20 +2,41 @@
 import * as Cookies from '../../utils/Cookies'
 import { type UserPreferences } from 'src/services/user-preferences/models/storage-models/user-preferences'
 import { type CompositeUserPreferences } from 'src/services/user-preferences/models/user-preferences/composite-user-preferences'
-import { type UserPreferenceScope } from 'src/services/user-preferences/models/storage-models/user-preference-scope'
 import { type UserPreferenceDefinitions } from 'src/services/user-preferences/models/definitions/user-preference-definitions'
-import { type CompositeUserPreferencesService } from 'src/services/user-preferences/composite-user-preferences-service'
+import { CompositeUserPreferencesService } from 'src/services/user-preferences/composite-user-preferences-service'
+import { type UserPreferenceScope, UserPreferenceScopeType } from 'src/components'
 
-export class UserPreferencesService<TUserPreferenceId extends PropertyKey> {
-  public preferences!: CompositeUserPreferences<TUserPreferenceId>
+enum Chaves {
+  MinhaChave = 'minha-chave',
+}
+
+// eslint-disable-next-line @typescript-eslint/no-use-before-define
+const service = new UserPreferencesService<Chaves>(
+  {
+    [Chaves.MinhaChave]: {
+      isOptedInByDefault: false,
+      allowedScope: UserPreferenceScopeType.Global,
+    },
+  },
+  new CompositeUserPreferencesService<Chaves>(),
+  'cookie-key',
+  'global',
+  () => new Date(),
+  () => {
+    console.log('')
+  },
+)
+
+export class UserPreferencesService<TUserPreferenceId extends PropertyKey, Metadata = undefined> {
+  public preferences!: CompositeUserPreferences<TUserPreferenceId, Metadata>
 
   constructor(
-    private readonly definitions: UserPreferenceDefinitions<TUserPreferenceId>,
-    private readonly compositeUserPreferencesService: CompositeUserPreferencesService<TUserPreferenceId>,
+    private readonly definitions: UserPreferenceDefinitions<TUserPreferenceId, Metadata>,
+    private readonly compositeUserPreferencesService: CompositeUserPreferencesService<TUserPreferenceId, Metadata>,
     private readonly cookieKey: string,
     private readonly currentScope: UserPreferenceScope,
     public dateFormatter: () => Date,
-    private readonly onUpdate?: (resolvedPreferences: CompositeUserPreferences<TUserPreferenceId>) => void,
+    private readonly onUpdate?: (resolvedPreferences: CompositeUserPreferences<TUserPreferenceId, Metadata>) => void,
   ) {}
 
   public async init(): Promise<void> {
@@ -38,7 +59,18 @@ export class UserPreferencesService<TUserPreferenceId extends PropertyKey> {
     return userPreference.optedIn
   }
 
-  public async setPreference(userPreferenceId: TUserPreferenceId, isOptedIn: boolean): Promise<void> {
+  public async getMetadata(userPreferenceId: TUserPreferenceId): Promise<Metadata | undefined> {
+    console.log(userPreferenceId)
+    const { metadata } = this.preferences[userPreferenceId]
+
+    return metadata
+  }
+
+  public async setPreference(
+    userPreferenceId: TUserPreferenceId,
+    isOptedIn: boolean,
+    metadata?: Metadata,
+  ): Promise<void> {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error
     const { allowedScope } = this.definitions[userPreferenceId]
@@ -49,9 +81,10 @@ export class UserPreferencesService<TUserPreferenceId extends PropertyKey> {
       userPreferenceId,
       isOptedIn,
       this.currentScope,
-      currentStoredPreferences as unknown as UserPreferences<TUserPreferenceId>,
+      currentStoredPreferences as unknown as UserPreferences<TUserPreferenceId, Metadata>,
       // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       allowedScope,
+      metadata,
     )
 
     await this.setStoredPreferences(storedPreferences)
@@ -68,14 +101,15 @@ export class UserPreferencesService<TUserPreferenceId extends PropertyKey> {
     return Promise.resolve()
   }
 
-  private async getStoredPreferences(): Promise<UserPreferences<TUserPreferenceId>> {
+  private async getStoredPreferences(): Promise<UserPreferences<TUserPreferenceId, Metadata>> {
     return await Promise.resolve(Cookies.getObject(this.cookieKey) ?? {})
   }
 
-  private async setStoredPreferences(storedPreferences: UserPreferences<TUserPreferenceId>): Promise<void> {
+  private async setStoredPreferences(storedPreferences: UserPreferences<TUserPreferenceId, Metadata>): Promise<void> {
     Cookies.putObject(this.cookieKey, storedPreferences, {
       expires: this.dateFormatter(),
       path: '/',
+      domain: 'mparticle.com',
     })
 
     await Promise.resolve()

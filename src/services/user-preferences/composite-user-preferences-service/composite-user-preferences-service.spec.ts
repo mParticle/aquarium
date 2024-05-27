@@ -13,19 +13,32 @@ import {
   TestUserPreferencesFakeFactory,
 } from 'src/services/user-preferences/user-preferences-service.spec'
 
+type MetadataType = { test: string; testNumber: number }
+
 describe('When testing CompositeUserPreferencesService', () => {
-  let compositeUserPreferencesService: CompositeUserPreferencesService<TestUserPreferenceId>
-  let userPreferences: UserPreferences<TestUserPreferenceId>
+  const metadata: MetadataType = {
+    test: 'test',
+    testNumber: 1,
+  }
+
+  let compositeUserPreferencesService: CompositeUserPreferencesService<TestUserPreferenceId, MetadataType>
+  let userPreferences: UserPreferences<TestUserPreferenceId, MetadataType>
   let expectedScope: UserPreferenceScope
-  let definitions: UserPreferenceDefinitions<TestUserPreferenceId>
+  let definitions: UserPreferenceDefinitions<TestUserPreferenceId, MetadataType>
 
   beforeEach(() => {
-    definitions = TestUserPreferenceDefinitionsFakeFactory() as UserPreferenceDefinitions<TestUserPreferenceId>
+    definitions = TestUserPreferenceDefinitionsFakeFactory() as UserPreferenceDefinitions<
+      TestUserPreferenceId,
+      MetadataType
+    >
     const prefsBuilder = makeBuilderFromDefinition(definitions)
-    userPreferences = TestUserPreferencesFakeFactory([prefsBuilder]) as UserPreferences<TestUserPreferenceId>
+    userPreferences = TestUserPreferencesFakeFactory([prefsBuilder]) as UserPreferences<
+      TestUserPreferenceId,
+      MetadataType
+    >
     expectedScope = Object.keys(userPreferences)[0] as UserPreferenceScope
 
-    compositeUserPreferencesService = new CompositeUserPreferencesService<TestUserPreferenceId>()
+    compositeUserPreferencesService = new CompositeUserPreferencesService<TestUserPreferenceId, MetadataType>()
   })
 
   describe('and getting scoped user preferences', () => {
@@ -82,16 +95,17 @@ describe('When testing CompositeUserPreferencesService', () => {
           { wantsRandom: true },
           { wantsRandom: true },
         ]
-        userPreferences = TestUserPreferencesFakeFactory(
-          userPreferencesBuilder,
-        ) as UserPreferences<TestUserPreferenceId>
+        userPreferences = TestUserPreferencesFakeFactory(userPreferencesBuilder) as UserPreferences<
+          TestUserPreferenceId,
+          MetadataType
+        >
         definitions = TestUserPreferenceDefinitionsFakeFactory([
           {
             id: TestUserPreferenceId.Default,
             isOptedInByDefault: true,
             allowedScope,
           },
-        ]) as UserPreferenceDefinitions<TestUserPreferenceId>
+        ]) as UserPreferenceDefinitions<TestUserPreferenceId, MetadataType>
 
         // act
         const actualScopedUserPreferences = compositeUserPreferencesService.getScopedUserPreferences(
@@ -133,9 +147,10 @@ describe('When testing CompositeUserPreferencesService', () => {
           { wantsRandom: true },
           { wantsRandom: true },
         ]
-        userPreferences = TestUserPreferencesFakeFactory(
-          userPreferencesBuilder,
-        ) as UserPreferences<TestUserPreferenceId>
+        userPreferences = TestUserPreferencesFakeFactory(userPreferencesBuilder) as UserPreferences<
+          TestUserPreferenceId,
+          MetadataType
+        >
 
         // act
         const expectedPreferenceValue = !testPreferenceValue
@@ -192,8 +207,8 @@ describe('When testing CompositeUserPreferencesService', () => {
   })
 })
 
-function getFirstDefinition(definitions: UserPreferenceDefinitions<TestUserPreferenceId>): {
-  definition?: UserPreferenceDefinition
+function getFirstDefinition(definitions: UserPreferenceDefinitions<TestUserPreferenceId, MetadataType>): {
+  definition?: UserPreferenceDefinition<MetadataType>
   preferenceId: TestUserPreferenceId
 } {
   const preferenceId = Object.keys(definitions)[0] as TestUserPreferenceId

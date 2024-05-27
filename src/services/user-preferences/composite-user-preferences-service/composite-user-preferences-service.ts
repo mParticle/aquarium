@@ -11,13 +11,15 @@ import { UserPreferenceScopeType } from 'src/services/user-preferences/models/de
 import cloneDeep from 'lodash/cloneDeep'
 import { type UserPreferenceDefinition } from 'src/services/user-preferences/models/definitions/user-preference-definition'
 
-export class CompositeUserPreferencesService<TPreferenceIds extends PropertyKey> {
+export class CompositeUserPreferencesService<TPreferenceIds extends PropertyKey, Metadata = undefined> {
   public getScopedUserPreferences(
-    storedPreferences: UserPreferences<TPreferenceIds>,
+    storedPreferences: UserPreferences<TPreferenceIds, Metadata>,
     currentScope: UserPreferenceScope,
-    definitions: UserPreferenceDefinitions<TPreferenceIds>,
-  ): CompositeUserPreferences<TPreferenceIds> {
-    const entriesByIdAndUserPreference = Object.entries(definitions).map<[TPreferenceIds, UserPreference]>(
+    definitions: UserPreferenceDefinitions<TPreferenceIds, Metadata>,
+  ): CompositeUserPreferences<TPreferenceIds, Metadata> {
+    console.log('definitions coming from getScopedUserPreferences')
+    console.log(definitions)
+    const entriesByIdAndUserPreference = Object.entries(definitions).map<[TPreferenceIds, UserPreference<Metadata>]>(
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-expect-error
       this.createUserPreferenceEntryFromDefinition.bind(this, storedPreferences, currentScope),
@@ -30,9 +32,10 @@ export class CompositeUserPreferencesService<TPreferenceIds extends PropertyKey>
     preferenceId: TPreferenceIds,
     isOptedIn: boolean,
     currentScope: UserPreferenceScope,
-    currentPreferences: UserPreferences<TPreferenceIds>,
+    currentPreferences: UserPreferences<TPreferenceIds, Metadata>,
     allowedScope: UserPreferenceScopeType,
-  ): UserPreferences<TPreferenceIds> {
+    metadata?: Metadata,
+  ): UserPreferences<TPreferenceIds, Metadata> {
     const userPreferencesToUpdate = currentPreferences ? cloneDeep(currentPreferences) : {}
 
     const effectiveScope = this.getEffectiveScope(currentScope, allowedScope)
@@ -41,7 +44,7 @@ export class CompositeUserPreferencesService<TPreferenceIds extends PropertyKey>
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error
-    scopedUserPreferences[preferenceId] = { optedIn: isOptedIn }
+    scopedUserPreferences[preferenceId] = { optedIn: isOptedIn, metadata }
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error
@@ -51,12 +54,12 @@ export class CompositeUserPreferencesService<TPreferenceIds extends PropertyKey>
   }
 
   private createUserPreferenceEntryFromDefinition(
-    storedPreferences: UserPreferences<TPreferenceIds>,
+    storedPreferences: UserPreferences<TPreferenceIds, Metadata>,
     currentScope: UserPreferenceScope,
-    [definedUserPreferenceId, definition]: [TPreferenceIds, UserPreferenceDefinition],
-  ): [TPreferenceIds, UserPreference] {
+    [definedUserPreferenceId, definition]: [TPreferenceIds, UserPreferenceDefinition<Metadata>],
+  ): [TPreferenceIds, UserPreference<Metadata>] {
     if (!storedPreferences) {
-      const userPreferenceDefault = { optedIn: definition.isOptedInByDefault }
+      const userPreferenceDefault = { optedIn: definition.isOptedInByDefault, metadata: definition.metadata }
       return this.createPreferenceEntry(definedUserPreferenceId, userPreferenceDefault)
     }
 
@@ -71,7 +74,8 @@ export class CompositeUserPreferencesService<TPreferenceIds extends PropertyKey>
     const userPreferenceForCurrentDefinition: UserPreference = scopedUserPreferences?.[definedUserPreferenceId]
 
     const optedIn = userPreferenceForCurrentDefinition?.optedIn ?? definition.isOptedInByDefault
-    const userPreference = { optedIn }
+    const metadata = userPreferenceForCurrentDefinition?.metadata ?? definition.metadata
+    const userPreference = { optedIn, metadata }
     return this.createPreferenceEntry(definedUserPreferenceId, userPreference)
   }
 
@@ -109,25 +113,27 @@ export class CompositeUserPreferencesService<TPreferenceIds extends PropertyKey>
 
   private createPreferenceEntry(
     userPreferenceId: TPreferenceIds,
-    userPreference: UserPreference,
-  ): [TPreferenceIds, UserPreference] {
+    userPreference: UserPreference<Metadata>,
+  ): [TPreferenceIds, UserPreference<Metadata>] {
     return [userPreferenceId, userPreference]
   }
 
   // TODO: Should be replaced with Object.fromEntries when the transpiler is updated
   private createCompositePreferencesFromEntries(
-    entries: Array<[TPreferenceIds, UserPreference]>,
-  ): CompositeUserPreferences<TPreferenceIds> {
+    entries: Array<[TPreferenceIds, UserPreference<Metadata>]>,
+  ): CompositeUserPreferences<TPreferenceIds, Metadata> {
+    console.log('createCompositePreferencesFromEntries')
+    console.log(entries)
     return entries.reduce(
       (
-        composite: CompositeUserPreferences<TPreferenceIds>,
-        [userPreferenceId, preference]: [TPreferenceIds, UserPreference],
+        composite: CompositeUserPreferences<TPreferenceIds, Metadata>,
+        [userPreferenceId, preference]: [TPreferenceIds, UserPreference<Metadata>],
       ) => {
         composite[userPreferenceId] = preference
         return composite
       },
       // eslint-disable-next-line
-      {} as CompositeUserPreferences<TPreferenceIds>,
+      {} as CompositeUserPreferences<TPreferenceIds, Metadata>,
     )
   }
 }

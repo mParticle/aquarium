@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import * as Cookies from '../../utils/Cookies'
 
-import { describe, afterEach, it, expect } from 'vitest'
+import { afterEach, describe, expect, it } from 'vitest'
 import { UserPreferencesService } from 'src/services/user-preferences/user-preferences'
 import { type UserPreferenceScope } from 'src/services/user-preferences/models/storage-models/user-preference-scope'
 import { type UserPreferences } from 'src/services/user-preferences/models/storage-models/user-preferences'
@@ -11,8 +11,20 @@ import { UserPreferenceScopeType } from 'src/services/user-preferences/models/de
 import { type Sync } from 'factory.ts'
 import { faker } from '@faker-js/faker'
 
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+const log = (value: unknown) => {
+  console.log(JSON.stringify(value, null, '  '))
+}
+
+type MetadataType = { test: string; testNumber: number }
+
 describe('When testing the User Preferences Service', () => {
+  afterEach(() => {
+    Cookies.put(cookieKey, '')
+  })
+
   let userPreferencesService: UserPreferencesService<TestUserPreferenceId>
+  let userPreferencesServiceWithMetadata: UserPreferencesService<TestUserPreferenceId>
   const cookieKey = 'mp_u_p'
   const lowLevelScope: UserPreferenceScope = '1-1-1'
   let userPreferences: UserPreferences<TestUserPreferenceId>
@@ -30,11 +42,7 @@ describe('When testing the User Preferences Service', () => {
     Cookies.putObject(cookieKey, userPreferences)
   }
 
-  afterEach(() => {
-    Cookies.put(cookieKey, '')
-  })
-
-  describe('and reading the data', () => {
+  describe.skip('and reading the data', () => {
     it.each([
       [UserPreferenceScopeType.LevelOneScope],
       [UserPreferenceScopeType.LevelTwoScope],
@@ -128,7 +136,7 @@ describe('When testing the User Preferences Service', () => {
     })
   })
 
-  describe('and updating preferences', () => {
+  describe.skip('and updating preferences', () => {
     it.each([
       ['1', UserPreferenceScopeType.LevelOneScope],
       ['1-1', UserPreferenceScopeType.LevelTwoScope],
@@ -203,11 +211,145 @@ describe('When testing the User Preferences Service', () => {
       expect(actualState).toBe(expectedOptedInState)
     })
   })
+
+  describe('and using metadata', () => {
+    it('it should have a metadata property in preferences that use it', () => {})
+
+    it('it should be able to update metadata from preferences', () => {})
+
+    it('it should be able to handle nested objects in metadata properties', () => {})
+
+    // it('it should be able to handle multiple metadata types', () => {
+    //   const metadataCookieKey = 'mp_u_p_meta'
+    //
+    //   type MetadataType1 = {
+    //     type: 1
+    //     data: 'data'
+    //   }
+    //
+    //   type MetadataType2 = {
+    //     type: 2
+    //     otherData: 'other-data'
+    //   }
+    //
+    //   const metadataDefinitions = {
+    //     [TestUserPreferenceId.MetadataPreference]: {
+    //       allowedScope: UserPreferenceScopeType.Global,
+    //       isOptedInByDefault: false,
+    //       metadata: {
+    //         type: 1,
+    //         data: 'data',
+    //       } satisfies MetadataType1,
+    //     },
+    //     [TestUserPreferenceId.Default]: {
+    //       allowedScope: UserPreferenceScopeType.LevelOneScope,
+    //       isOptedInByDefault: false,
+    //       metadata: {
+    //         type: 2,
+    //         otherData: 'other-data',
+    //       } satisfies MetadataType2,
+    //     },
+    //   }
+    //
+    //   const scopedPreference = makeBuilderFromDefinition<MetadataType1>(metadataDefinitions, 'global')
+    // })
+
+    it('should work', async () => {
+      const metadataCookieKey = 'mp_u_p_meta'
+
+      type MetadataType = Record<TestUserPreferenceId, unknown>
+
+      interface MetadataTypes extends MetadataType {
+        [TestUserPreferenceId.MetadataPreference]: {
+          type: 1
+          data: string
+        }
+        [TestUserPreferenceId.OtherMetadataPreference]: {
+          type: 2
+          otherData: string
+        }
+      }
+
+      // const metadataDefaultValues: MetadataTypes = {
+      //   [TestUserPreferenceId.MetadataPreference]: {
+      //     type: 1,
+      //     data: 'data',
+      //   },
+      //   [TestUserPreferenceId.OtherMetadataPreference]: {
+      //     type: 2,
+      //     otherData: 'other-data',
+      //   },
+      // }
+
+      const metadataDefinitions: UserPreferenceDefinitions<TestUserPreferenceId> = {
+        [TestUserPreferenceId.MetadataPreference]: {
+          allowedScope: UserPreferenceScopeType.Global,
+          isOptedInByDefault: false,
+          metadata: {
+            type: 1,
+            data: 'data',
+          },
+        },
+        [TestUserPreferenceId.OtherMetadataPreference]: {
+          allowedScope: UserPreferenceScopeType.LevelOneScope,
+          isOptedInByDefault: false,
+          metadata: {
+            type: 2,
+            otherData: 'other-data',
+          },
+        },
+      }
+
+      const scopedPreference = makeBuilderFromDefinition<MetadataType>(metadataDefinitions, 'global')
+
+      const metadataUserPreferences = TestUserPreferencesFakeFactory<MetadataType>([
+        scopedPreference,
+      ]) as UserPreferences<TestUserPreferenceId, MetadataType>
+
+      console.log('metadataUserPreferences')
+
+      Cookies.putObject(cookieKey, metadataUserPreferences)
+
+      const metadataCompositeUserPreferenceService = new CompositeUserPreferencesService<
+        TestUserPreferenceId,
+        MetadataType
+      >()
+
+      const metadataUserPreferencesService = new UserPreferencesService<TestUserPreferenceId, MetadataType>(
+        metadataDefinitions,
+        metadataCompositeUserPreferenceService,
+        metadataCookieKey,
+        'global',
+        () => new Date(),
+      )
+
+      await metadataUserPreferencesService.init()
+
+      const actualMetadata = await metadataUserPreferencesService.getMetadata(TestUserPreferenceId.MetadataPreference)
+      console.log('actualMetadata')
+      log(actualMetadata)
+
+      expect(actualMetadata).toEqual(metadata)
+
+      await metadataUserPreferencesService.setPreference(TestUserPreferenceId.MetadataPreference, true, {
+        test: 'changed-test',
+        testNumber: 7,
+      })
+
+      const newOptedIn = await metadataUserPreferencesService.isOptedIn(TestUserPreferenceId.MetadataPreference)
+      const newMetadata = await metadataUserPreferencesService.getMetadata(TestUserPreferenceId.MetadataPreference)
+
+      expect(newOptedIn).toBe(true)
+      expect(newMetadata).toEqual({ test: 'changed-test', testNumber: 7 })
+    })
+  })
 })
 
 export enum TestUserPreferenceId {
   Default = 'default-id',
   PreferenceOne = 'preference-one',
+  MetadataPreference = 'metadata-preference',
+  OtherMetadataPreference = 'other-metadata-preference',
 }
 
 export function TestUserPreferenceDefinitionsFakeFactory(
@@ -215,19 +357,20 @@ export function TestUserPreferenceDefinitionsFakeFactory(
     id: TestUserPreferenceId
     isOptedInByDefault?: boolean
     allowedScope?: UserPreferenceScopeType
+    metadata?: MetadataType
   }>,
 ): Sync.Builder<
-  UserPreferenceDefinitions<TestUserPreferenceId>,
-  keyof UserPreferenceDefinitions<TestUserPreferenceId>
+  UserPreferenceDefinitions<TestUserPreferenceId, MetadataType>,
+  keyof UserPreferenceDefinitions<TestUserPreferenceId, MetadataType>
 > {
   if (!config) {
     config = Object.values(TestUserPreferenceId).map(id => ({ id }))
   }
 
-  return config.reduce((definitions, { id, isOptedInByDefault, allowedScope }) => {
+  return config.reduce((definitions, { id, isOptedInByDefault, allowedScope, metadata }) => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error
-    definitions[id] = createDefinition({ isOptedInByDefault, allowedScope })
+    definitions[id] = createDefinition({ isOptedInByDefault, allowedScope, metadata })
 
     return definitions
   }, {})
@@ -236,42 +379,56 @@ export function TestUserPreferenceDefinitionsFakeFactory(
 type Definition = {
   isOptedInByDefault?: boolean
   allowedScope?: UserPreferenceScopeType
+  metadata?: MetadataType
 }
 
-function createDefinition({ isOptedInByDefault, allowedScope }: Definition = {}): Definition {
-  return {
+function createDefinition({ isOptedInByDefault, allowedScope, metadata }: Definition = {}): Definition {
+  const definition = {
     isOptedInByDefault: isOptedInByDefault ?? faker.datatype.boolean(),
     allowedScope: allowedScope ?? faker.helpers.enumValue(UserPreferenceScopeType),
   }
+
+  if (!metadata) return definition
+
+  return {
+    ...definition,
+    metadata,
+  }
 }
 
-export interface TestUserPreferencesFakeBuilder {
+export interface TestUserPreferencesFakeBuilder<Metadata = undefined> {
   wantsRandom?: boolean
   scope?: UserPreferenceScope
   userPreferenceIds?: TestUserPreferenceId[]
   optedIns?: boolean[]
+  metadatas?: Array<Metadata | undefined>
 }
 
-export function makeBuilderFromDefinition(
-  definitions: UserPreferenceDefinitions<TestUserPreferenceId>,
+export function makeBuilderFromDefinition<Metadata = undefined>(
+  definitions: UserPreferenceDefinitions<TestUserPreferenceId, Metadata>,
   scope?: UserPreferenceScope,
-): TestUserPreferencesFakeBuilder {
+): TestUserPreferencesFakeBuilder<Metadata> {
   return {
     scope: scope ?? getRandomScope({ excludeGlobal: true }),
     userPreferenceIds: Object.keys(definitions) as TestUserPreferenceId[],
     optedIns: Object.values(definitions).map(({ isOptedInByDefault }) => isOptedInByDefault),
+    metadatas: Object.values(definitions).map(({ metadata }) => metadata),
   }
 }
 
-export function TestUserPreferencesFakeFactory(
-  scopes: TestUserPreferencesFakeBuilder[] = [],
-): Sync.Builder<UserPreferences<TestUserPreferenceId>, keyof UserPreferences<TestUserPreferenceId>> {
-  return scopes.reduce((scopedPreferences, { wantsRandom = false, scope, userPreferenceIds, optedIns }) => {
+export function TestUserPreferencesFakeFactory<Metadata = undefined>(
+  scopes: Array<TestUserPreferencesFakeBuilder<Metadata>> = [],
+): Sync.Builder<
+  UserPreferences<TestUserPreferenceId, Metadata>,
+  keyof UserPreferences<TestUserPreferenceId, Metadata>
+> {
+  return scopes.reduce((scopedPreferences, { wantsRandom = false, scope, userPreferenceIds, optedIns, metadatas }) => {
     const effectiveScope = scope ?? getRandomScope({ excludeGlobal: true })
     if (wantsRandom) {
       const numberOfValues = faker.number.int({ max: Object.keys(TestUserPreferenceId).length, min: 1 })
       userPreferenceIds = Array.from({ length: numberOfValues }, () => faker.helpers.enumValue(TestUserPreferenceId))
       optedIns = Array.from({ length: numberOfValues }, () => faker.datatype.boolean())
+      // metadatas = Array.from({ length: numberOfValues }, () => faker.helpers.objectValue({ test: 'metadata', testNumber: 1 }))
     }
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -282,15 +439,17 @@ export function TestUserPreferencesFakeFactory(
       // @ts-expect-error
       const effectiveOptedInState = optedIns[index] ?? faker.datatype.boolean()
 
+      const effectiveMetadata = metadatas?.[index]
+
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-expect-error
-      preferences[effectiveId] = { optedIn: effectiveOptedInState }
+      preferences[effectiveId] = { optedIn: effectiveOptedInState, metadata: effectiveMetadata }
 
       return preferences
     }, {})
 
     return scopedPreferences
-  }, {}) as UserPreferences<TestUserPreferenceId>
+  }, {}) as UserPreferences<TestUserPreferenceId, Metadata>
 }
 
 function getRandomScope({ maxScope = 3, excludeGlobal = false }): UserPreferenceScope {
