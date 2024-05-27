@@ -1,7 +1,8 @@
 import React from 'react'
-import { Center, IGlobalNavigationProps, Icon, Popover, Tooltip } from 'src/components'
+import { Center, Icon, Popover, Tooltip } from 'src/components'
 import MiniMap from 'src/components/navigation/MiniMap/MiniMap'
 import { ISvgLink } from 'src/components/navigation/MiniMap/SvgLinker'
+import { IMinimapOptions } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 
 interface MpHomeButtonProps {
   onClick: () => void
@@ -18,13 +19,10 @@ interface TooltipWithButtonProps {
 }
 
 interface HomeButtonProps {
-  minimapOptions: {
-    overviewHref?: string
-    show?: boolean
-    routes: ISvgLink[]
-  }
+  minimapOptions?: IMinimapOptions
   onMpHomeClick: () => void
 }
+
 const MpHomeButton: React.FC<MpHomeButtonProps> = ({ onClick }) => (
   <Center className="globalNavigation__mpHome" onClick={onClick}>
     <Icon name="mpLogo" size="lg" color="white" />
@@ -47,11 +45,13 @@ const TooltipWithButton: React.FC<TooltipWithButtonProps> = ({ onClick }) => (
 )
 
 export const HomeButton: React.FC<HomeButtonProps> = props => {
-  return props.minimapOptions?.show ? (
+  const { minimapOptions } = props
+
+  return minimapOptions ? (
     <MinimapWithPopover
-      overviewHref={props.minimapOptions?.overviewHref || '/'}
+      overviewHref={minimapOptions.overviewHref}
       onClick={props.onMpHomeClick}
-      routes={props.minimapOptions.routes}
+      routes={minimapOptions.routes}
     />
   ) : (
     <TooltipWithButton onClick={props.onMpHomeClick} />

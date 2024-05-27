@@ -143,7 +143,7 @@ const meta: Meta<typeof GlobalNavigation> = {
         { elementId: 'analytics', route: '/analytics', isAuthorized: true },
         { elementId: 'segmentation', route: '/segmentation', isAuthorized: false },
       ],
-      show: true,
+      overviewHref: '#',
     },
   },
 }
@@ -477,7 +477,6 @@ export const MP: Story = {
     orgs: mpOrgs,
     minimapOptions: {
       overviewHref: '/',
-      show: true,
       routes: [
         { elementId: 'oversight', route: '/oversight', isAuthorized: true },
         { elementId: 'dataPlatform', route: '/data-platform', isAuthorized: false },
@@ -511,7 +510,6 @@ export const MPThousandOrgs: Story = {
           tools={mpTools}
           management={mpManagement}
           orgs={thousandOrgs}
-          minimapOptions={{ show: false }}
           onMpHomeClick={() => {
             alert('going to overview map')
           }}

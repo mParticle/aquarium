@@ -40,7 +40,7 @@ export interface IGlobalNavigationProps {
     onClick: () => void
     withoutContainer?: boolean
   }
-  minimapOptions: IMinimapOptions
+  minimapOptions?: IMinimapOptions
 }
 
 export const GlobalNavWidth = 90 as const
