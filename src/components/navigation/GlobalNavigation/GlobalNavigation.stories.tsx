@@ -134,17 +134,6 @@ const meta: Meta<typeof GlobalNavigation> = {
     onMpHomeClick: () => {
       alert('Going to mP!')
     },
-    minimapOptions: {
-      routes: [
-        { elementId: 'oversight', route: '/oversight', isAuthorized: true },
-        { elementId: 'dataPlatform', route: '/data-platform', isAuthorized: false },
-        { elementId: 'customer360', route: '/customer-360', isAuthorized: true },
-        { elementId: 'predictions', route: '/predictions', isAuthorized: false },
-        { elementId: 'analytics', route: '/analytics', isAuthorized: true },
-        { elementId: 'segmentation', route: '/segmentation', isAuthorized: false },
-      ],
-      overviewHref: '#',
-    },
   },
 }
 export default meta

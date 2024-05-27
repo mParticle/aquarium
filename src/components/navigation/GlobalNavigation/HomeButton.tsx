@@ -45,15 +45,17 @@ const TooltipWithButton: React.FC<TooltipWithButtonProps> = ({ onClick }) => (
 )
 
 export const HomeButton: React.FC<HomeButtonProps> = props => {
-  const { minimapOptions } = props
+  const { minimapOptions, onMpHomeClick } = props
 
-  return minimapOptions ? (
+  if (!minimapOptions) {
+    return <TooltipWithButton onClick={onMpHomeClick} />
+  }
+
+  return (
     <MinimapWithPopover
       overviewHref={minimapOptions.overviewHref}
-      onClick={props.onMpHomeClick}
+      onClick={onMpHomeClick}
       routes={minimapOptions.routes}
     />
-  ) : (
-    <TooltipWithButton onClick={props.onMpHomeClick} />
   )
 }
