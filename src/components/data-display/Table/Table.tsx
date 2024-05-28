@@ -1,8 +1,12 @@
 import { Table as AntTable } from 'antd'
 import { type TableProps as AntTableProps } from 'antd'
 import { ConfigProvider } from 'src/components'
+import { type ColumnType, type ExpandableConfig } from 'antd/es/table/interface'
+import { type ColumnsType, type TableProps } from 'antd/es/table'
 
 export interface ITableProps extends AntTableProps {}
+
+export type { ColumnType, ExpandableConfig, ColumnsType, TableProps }
 
 export const Table = (props: ITableProps) => {
   return (
