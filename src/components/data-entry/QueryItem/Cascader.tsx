@@ -175,10 +175,6 @@ export const Cascader = (props: ICascaderProps) => {
   }
 
   function getIcon() {
-    return props.icon ? (
-      <Icon name={props.icon} size="ms" color="primary" />
-    ) : (
-      <Icon name="empty" size="ms" color="primary" />
-    )
+    return <Icon name={props.icon ?? 'empty'} size="sm" color="primary" />
   }
 }

@@ -1,3 +1,36 @@
+# [1.15.0](https://github.com/mParticle/aquarium/compare/v1.14.0...v1.15.0) (2024-05-24)
+
+
+### Bug Fixes
+
+* fixes path to be / on UPS cookie creation options ([#240](https://github.com/mParticle/aquarium/issues/240)) ([0cebf44](https://github.com/mParticle/aquarium/commit/0cebf44966190c555d0a9ffb846074ac3304f2dd))
+
+
+### Features
+
+* new icons ([#239](https://github.com/mParticle/aquarium/issues/239)) ([a1bfb88](https://github.com/mParticle/aquarium/commit/a1bfb88721146c31ce3924ce887e9b936e67a335))
+
+# [1.15.0-icons-integration.3](https://github.com/mParticle/aquarium/compare/v1.15.0-icons-integration.2...v1.15.0-icons-integration.3) (2024-05-23)
+
+
+### Bug Fixes
+
+* Align button content to the center ([#243](https://github.com/mParticle/aquarium/issues/243)) ([ca0901d](https://github.com/mParticle/aquarium/commit/ca0901da0c936dd53ab34a7db1a6946877803b4d))
+
+# [1.15.0-icons-integration.2](https://github.com/mParticle/aquarium/compare/v1.15.0-icons-integration.1...v1.15.0-icons-integration.2) (2024-05-22)
+
+
+### Features
+
+* add possibility to add background color to the suite icon logo ([#241](https://github.com/mParticle/aquarium/issues/241)) ([d4c206a](https://github.com/mParticle/aquarium/commit/d4c206abf442579b84c6f3340fa7f1b00523c71a))
+
+# [1.15.0-icons-integration.1](https://github.com/mParticle/aquarium/compare/v1.14.0...v1.15.0-icons-integration.1) (2024-05-21)
+
+
+### Features
+
+* icon sizes ([#238](https://github.com/mParticle/aquarium/issues/238)) ([e093faa](https://github.com/mParticle/aquarium/commit/e093faa550fc731e1b16c668c702c47c7300be8e))
+
 # [1.14.0](https://github.com/mParticle/aquarium/compare/v1.13.0...v1.14.0) (2024-05-20)
 
 
