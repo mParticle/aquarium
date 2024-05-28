@@ -17,12 +17,11 @@ import { NavigationCreate } from 'src/components/navigation/GlobalNavigation/Nav
 import { WorkspaceSelector } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelector'
 import {
   type IGlobalNavigationItem,
-  IMinimapOptions,
+  type IMinimapOptions,
 } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
 import { useNewExperienceReminder } from 'src/hooks/NewExperienceReminder/useNewExperienceReminder'
 import { HomeButton } from 'src/components/navigation/GlobalNavigation/HomeButton'
-import { ISvgLink } from 'src/components/navigation/MiniMap/SvgLinker'
 
 export interface IGlobalNavigationProps {
   logo: IGlobalNavigationLogo

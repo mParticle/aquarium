@@ -33,4 +33,9 @@ export interface IGlobalNavigationLink extends IBaseGlobalNavigationItem {
 
 export type IGlobalNavigationItem = IGlobalNavigationMenu | IGlobalNavigationLink
 
-export type IMinimapOptions = { overviewHref: string; routes: ISvgLink[]; handleLinkClick: (route: string) => void }
+export interface IMinimapOptions {
+  overviewHref: string
+  links: ISvgLink[]
+  onLinkClick: (link: string) => void
+  unauthorizedButtons: string[]
+}
