@@ -1,67 +1,99 @@
-import ChartLineIcon from 'src/assets/svg/chart-line.svg?react'
-import ConnectionsIcon from 'src/assets/svg/connections.svg?react'
-import DatabaseIcon from 'src/assets/svg/database.svg?react'
-import GridIcon from 'src/assets/svg/grid.svg?react'
-import CheckIcon from 'src/assets/svg/check.svg?react'
-import ShieldKeyholeIcon from 'src/assets/svg/shield-keyhole.svg?react'
-import UsersIcon from 'src/assets/svg/users.svg?react'
-import WrenchIcon from 'src/assets/svg/wrench.svg?react'
-import AlicornIcon from 'src/assets/svg/alicorn.svg?react'
-import MessageQuestionIcon from 'src/assets/svg/message-question.svg?react'
-import GearIcon from 'src/assets/svg/gear.svg?react'
-import SparklesIcon from 'src/assets/svg/sparkles.svg?react'
-import SiteMapIcon from 'src/assets/svg/sitemap.svg?react'
-import ChartColumnIcon from 'src/assets/svg/chart-column.svg?react'
-import HeartIcon from 'src/assets/svg/heart.svg?react'
-import LightBulbIcon from 'src/assets/svg/lightbulb.svg?react'
-import SplitIcon from 'src/assets/svg/split.svg?react'
-import CircleNodesIcon from 'src/assets/svg/circle-nodes.svg?react'
-import CloudIcon from 'src/assets/svg/cloud.svg?react'
-import FolderClosedIcon from 'src/assets/svg/folder-closed.svg?react'
-import AddIcon from 'src/assets/svg/add.svg?react'
-import MpLogoIcon from 'src/assets/svg/mpLogo.svg?react'
-import SignoutIcon from 'src/assets/svg/signout.svg?react'
-import LockIcon from 'src/assets/svg/lock.svg?react'
-import SearchIcon from 'src/assets/svg/search.svg?react'
-import AnalyticsIcon from 'src/assets/svg/analytics.svg?react'
-import EventIcon from 'src/assets/svg/event.svg?react'
-import EventAttributeIcon from 'src/assets/svg/event-attribute.svg?react'
-import UserAttributeIcon from 'src/assets/svg/user-attribute.svg?react'
-import EmptyIcon from 'src/assets/svg/empty.svg?react'
-import RemoveIcon from 'src/assets/svg/remove.svg?react'
-import HelpIcon from 'src/assets/svg/help.svg?react'
+import {
+  AddIcon,
+  AlicornIcon,
+  AnalyticsIcon,
+  C360Icon,
+  CatalogIcon,
+  ChartColumnIcon,
+  ChartLineIcon,
+  CheckIcon,
+  CircleNodesIcon,
+  CloudIcon,
+  ConnectionsIcon,
+  DataPlatform,
+  DatabaseIcon,
+  DsrIcon,
+  EmptyIcon,
+  EnrichmentIcon,
+  EventAttributeIcon,
+  EventIcon,
+  FolderClosedIcon,
+  ForwardingIcon,
+  GearIcon,
+  GridIcon,
+  HeartIcon,
+  HelpIcon,
+  IdentityIcon,
+  JumpToIcon,
+  LightBulbIcon,
+  LiveStreamIcon,
+  LockIcon,
+  MessageQuestionIcon,
+  MpLogoIcon,
+  ObservabilityIcon,
+  OversightIcon,
+  PredictionsIcon,
+  RemoveIcon,
+  SearchIcon,
+  SegmentationIcon,
+  ShieldKeyholeIcon,
+  SignoutIcon,
+  SplitIcon,
+  SystemAlertsIcon,
+  TransformationsIcon,
+  UploadIcon,
+  UserAttributeIcon,
+  UserProfilesIcon,
+  UsersIcon,
+  WrenchIcon,
+} from 'src/components/icons'
 
 export const Icons = {
-  alicorn: AlicornIcon,
   add: AddIcon,
-  lock: LockIcon,
-  mpLogo: MpLogoIcon,
-  search: SearchIcon,
-  check: CheckIcon,
-  chartLine: ChartLineIcon,
-  connections: ConnectionsIcon,
-  database: DatabaseIcon,
-  grid: GridIcon,
-  shieldKeyhole: ShieldKeyholeIcon,
-  users: UsersIcon,
-  wrench: WrenchIcon,
-  messageQuestion: MessageQuestionIcon,
-  gear: GearIcon,
-  sparkles: SparklesIcon,
-  siteMap: SiteMapIcon,
+  alicorn: AlicornIcon,
+  analytics: AnalyticsIcon,
+  C360: C360Icon,
+  catalog: CatalogIcon,
   chartColumn: ChartColumnIcon,
-  heart: HeartIcon,
-  lightBulb: LightBulbIcon,
-  split: SplitIcon,
-  signout: SignoutIcon,
+  chartLine: ChartLineIcon,
+  check: CheckIcon,
   circleNodes: CircleNodesIcon,
   cloud: CloudIcon,
-  folderClosed: FolderClosedIcon,
-  analytics: AnalyticsIcon,
+  connections: ConnectionsIcon,
+  database: DatabaseIcon,
+  dsr: DsrIcon,
   empty: EmptyIcon,
-  eventAttribute: EventAttributeIcon,
+  enrichment: EnrichmentIcon,
   event: EventIcon,
-  userAttribute: UserAttributeIcon,
-  remove: RemoveIcon,
+  eventAttribute: EventAttributeIcon,
+  folderClosed: FolderClosedIcon,
+  forwarding: ForwardingIcon,
+  gear: GearIcon,
+  grid: GridIcon,
+  heart: HeartIcon,
   help: HelpIcon,
+  identity: IdentityIcon,
+  jumpTo: JumpToIcon,
+  lightBulb: LightBulbIcon,
+  liveStream: LiveStreamIcon,
+  lock: LockIcon,
+  messageQuestion: MessageQuestionIcon,
+  mpLogo: MpLogoIcon,
+  observability: ObservabilityIcon,
+  oversight: OversightIcon,
+  remove: RemoveIcon,
+  shieldKeyhole: ShieldKeyholeIcon,
+  search: SearchIcon,
+  segmentation: SegmentationIcon,
+  signout: SignoutIcon,
+  siteMap: DataPlatform,
+  sparkles: PredictionsIcon,
+  split: SplitIcon,
+  systemAlerts: SystemAlertsIcon,
+  transformation: TransformationsIcon,
+  upload: UploadIcon,
+  userAttribute: UserAttributeIcon,
+  userProfiles: UserProfilesIcon,
+  users: UsersIcon,
+  wrench: WrenchIcon,
 } as const

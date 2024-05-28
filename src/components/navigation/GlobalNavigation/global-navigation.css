@@ -240,11 +240,6 @@
   padding-bottom: var(--padding-xxs);
 }
 
-.globalNavigation__icon.globalNavigation__icon--suiteLogo svg {
-  width: 36px;
-  height: 36px;
-}
-
 .globalNavigation__menu .globalNavigation__iconLabel {
   margin-top: var(--margin-xxs);
 }
@@ -293,6 +288,19 @@
   font-size: var(--font-size-sm);
   font-weight: 400;
   cursor: pointer;
+}
+
+.globalNavigation__icon--suiteBackground {
+  background-color: var(--mp-brand-primary-2);
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 100%;
+}
+
+.globalNavigation__icon.globalNavigation__icon--suiteLogo svg {
+  width: 36px;
+  height: 36px;
+  
 }
 
 .globalNavigation__divider {

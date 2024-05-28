@@ -136,7 +136,7 @@ export const ExampleConfigs: Story = {
         <Space>
           <Skeleton.Image active={active} />
           <Skeleton.Node active={active}>
-            <Icon name="mpLogo" size="xxl" color="success" />
+            <Icon name="mpLogo" size="xxxxl" color="success" />
           </Skeleton.Node>
         </Space>
         <Divider />
