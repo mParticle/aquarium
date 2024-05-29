@@ -485,7 +485,7 @@ export const MP: Story = {
     orgs: mpOrgs,
     minimapOptions: {
       overviewHref: '/',
-      onLinkClick: route => console.log(route),
+      onLinkClick: link => alert(link),
       unauthorizedButtons: ['oversight', 'dataPlatform'],
       links: [
         { elementId: 'oversight', link: '/oversight' },
