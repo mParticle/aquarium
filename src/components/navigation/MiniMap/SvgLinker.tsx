@@ -18,7 +18,7 @@ interface ISvgLinkerProps {
   unauthorizedButtons: string[]
 }
 
-export const SvgLinker = ({ links, children, onLinkClick, unauthorizedButtons = [] }: ISvgLinkerProps) => {
+export const SvgLinker = (props: ISvgLinkerProps) => {
   const handleContainerClick = (e: React.MouseEvent) => {
     e.preventDefault()
     const target = e.target as HTMLElement
@@ -29,22 +29,22 @@ export const SvgLinker = ({ links, children, onLinkClick, unauthorizedButtons = 
     }
   }
 
-  return <div onClick={handleContainerClick}>{wrapButtonsIntoLinks(children)}</div>
+  return <div onClick={handleContainerClick}>{wrapButtonsIntoLinks(props.children)}</div>
 
   function handleLinkClick(link: string) {
-    const button = links.find(b => b.link === link)
-    if (button && !unauthorizedButtons.includes(button.elementId)) {
-      onLinkClick(link)
+    const button = props.links.find(b => b.link === link)
+    if (button && !props.unauthorizedButtons.includes(button.elementId)) {
+      props.onLinkClick(link)
     }
   }
 
   function wrapButtonsIntoLinks(parent: React.ReactNode): React.ReactNode {
     const wrapElement = (element: ReactElement): ReactElement => {
       const { id, children } = element.props
-      const button = id && links.find(b => b.linkId === id)
+      const button = id && props.links.find(b => b.linkId === id)
 
       if (button) {
-        const isUnauthorized = unauthorizedButtons.includes(button.elementId)
+        const isUnauthorized = props.unauthorizedButtons.includes(button.elementId)
         const className = `svg-linker-root__button svg-linker-root__button--${button.variant}${
           isUnauthorized ? ' svg-linker-root__button--disabled' : ''
         }`

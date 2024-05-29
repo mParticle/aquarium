@@ -17,7 +17,7 @@ interface IMinimapProps extends IMinimapOptions {
   unauthorizedButtons: string[]
 }
 
-const Minimap = ({ overviewHref, unauthorizedButtons, links, onLinkClick }: IMinimapProps) => {
+const Minimap = (props: IMinimapProps) => {
   const linkMap: { [key: string]: string } = {
     oversight: 'OversightBtn',
     dataPlatform: 'DataPlatformBtn',
@@ -27,7 +27,7 @@ const Minimap = ({ overviewHref, unauthorizedButtons, links, onLinkClick }: IMin
     segmentation: 'SegmentationBtn',
   }
 
-  const linksWithRoutes: ISvgLinkComplete[] = links.map(link => ({
+  const linksWithRoutes: ISvgLinkComplete[] = props.links.map(link => ({
     ...link,
     linkId: linkMap[link.elementId],
     variant: 'drop-shadow',
@@ -39,9 +39,12 @@ const Minimap = ({ overviewHref, unauthorizedButtons, links, onLinkClick }: IMin
         <Flex align="normal" component="div" flex="0 1 auto" gap="small" justify="stretch" vertical wrap="nowrap">
           <Flex align="center" justify="space-between">
             <Logo />
-            <Button href={overviewHref || '/'}>Go to overview</Button>
+            <Button href={props.overviewHref || '/'}>Go to overview</Button>
           </Flex>
-          <SvgLinker links={linksWithRoutes} unauthorizedButtons={unauthorizedButtons} onLinkClick={onLinkClick}>
+          <SvgLinker
+            links={linksWithRoutes}
+            unauthorizedButtons={props.unauthorizedButtons}
+            onLinkClick={props.onLinkClick}>
             {minimap}
           </SvgLinker>
         </Flex>
