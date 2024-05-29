@@ -7,9 +7,10 @@ export interface ISvgLink {
   variant?: 'regular' | 'black' | 'drop-shadow'
 }
 
-interface ISvgLinkComplete extends ISvgLink {
+export interface ISvgLinkComplete extends ISvgLink {
   linkId: string
 }
+
 interface ISvgLinkerProps {
   links: ISvgLinkComplete[]
   children: React.ReactNode
@@ -45,7 +46,7 @@ export const SvgLinker = ({ links, children, onLinkClick, unauthorizedButtons = 
       if (button) {
         const isUnauthorized = unauthorizedButtons.includes(button.elementId)
         const className = `svg-linker-root__button svg-linker-root__button--${button.variant}${
-          isUnauthorized ? 'svg-linker-root__button--disabled' : ''
+          isUnauthorized ? ' svg-linker-root__button--disabled' : ''
         }`
 
         return (
@@ -55,6 +56,7 @@ export const SvgLinker = ({ links, children, onLinkClick, unauthorizedButtons = 
             className={className}
             onClick={e => {
               e.preventDefault()
+              e.stopPropagation()
               handleLinkClick(button.link)
             }}>
             {element}
