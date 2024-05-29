@@ -5,20 +5,13 @@ import { Button, ConfigProvider } from 'src/components'
 import Logo from 'src/assets/svg/mp-logo-wordmark.svg?react'
 import { minimap } from './minimap-svg'
 import { Flex } from 'src/components/layout/Flex/Flex'
-import { ISvgLink, ISvgLinkComplete, SvgLinker } from 'src/components/navigation/MiniMap/SvgLinker'
+import { ISvgLink, SvgLinker } from 'src/components/navigation/MiniMap/SvgLinker'
+import { IMinimapOptions, MiniMapLinks } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 
-interface IMinimapOptions {
-  overviewHref: string
-  links: ISvgLink[]
-  onLinkClick: (link: string) => void
-}
+type IMiniMapProps = IMinimapOptions
 
-interface IMinimapProps extends IMinimapOptions {
-  unauthorizedButtons: string[]
-}
-
-const Minimap = (props: IMinimapProps) => {
-  const linkMap: { [key: string]: string } = {
+const Minimap = (props: IMiniMapProps) => {
+  const elementIdMap: Record<MiniMapLinks, string> = {
     oversight: 'OversightBtn',
     dataPlatform: 'DataPlatformBtn',
     customer360: 'c360Btn',
@@ -27,10 +20,11 @@ const Minimap = (props: IMinimapProps) => {
     segmentation: 'SegmentationBtn',
   } as const
 
-  const linksWithRoutes: ISvgLinkComplete[] = props.links.map(link => ({
-    ...link,
-    linkId: linkMap[link.elementId],
+  const svgLinks: ISvgLink[] = props.links.map(link => ({
+    elementId: elementIdMap[link.linkId],
+    href: link.href,
     variant: 'drop-shadow',
+    isUnAuthorized: props.unauthorizedButtons.includes(link.linkId),
   }))
 
   return (
@@ -41,16 +35,19 @@ const Minimap = (props: IMinimapProps) => {
             <Logo />
             <Button href={props.overviewHref || '/'}>Go to overview</Button>
           </Flex>
-          <SvgLinker
-            links={linksWithRoutes}
-            unauthorizedButtons={props.unauthorizedButtons}
-            onLinkClick={props.onLinkClick}>
+          <SvgLinker links={svgLinks} onLinkClick={handleLinkClick}>
             {minimap}
           </SvgLinker>
         </Flex>
       </div>
     </ConfigProvider>
   )
+  function handleLinkClick(svgLink: ISvgLink): void {
+    const miniMapLink = props.links.find(link => link.href === svgLink.href)!
+
+    if (svgLink.isUnAuthorized) props.onUnAuthorizedClick(miniMapLink)
+    else props.onLinkClick(miniMapLink)
+  }
 }
 
 export default Minimap

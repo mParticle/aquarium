@@ -485,15 +485,16 @@ export const MP: Story = {
     orgs: mpOrgs,
     minimapOptions: {
       overviewHref: '/',
-      onLinkClick: link => alert(link),
+      onLinkClick: link => alert(link.href),
+      onUnAuthorizedClick: link => alert(`unauthorized ${link.href} `),
       unauthorizedButtons: ['oversight', 'dataPlatform'],
       links: [
-        { elementId: 'oversight', link: '/oversight' },
-        { elementId: 'dataPlatform', link: '/data-platform' },
-        { elementId: 'customer360', link: '/customer-360' },
-        { elementId: 'predictions', link: '/predictions' },
-        { elementId: 'analytics', link: '/analytics' },
-        { elementId: 'segmentation', link: '/segmentation' },
+        { linkId: 'oversight', href: '/oversight' },
+        { linkId: 'dataPlatform', href: '/data-platform' },
+        { linkId: 'customer360', href: '/customer-360' },
+        { linkId: 'predictions', href: '/predictions' },
+        { linkId: 'analytics', href: '/analytics' },
+        { linkId: 'segmentation', href: '/segmentation' },
       ],
     },
     onMpHomeClick: () => {

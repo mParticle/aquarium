@@ -1,6 +1,5 @@
 import type { ReactNode, type MouseEvent, ReactElement } from 'react'
 import { type HrefOptions } from 'src/utils/utils'
-import { ISvgLink } from 'src/components/navigation/MiniMap/SvgLinker'
 import { Icons } from 'src/constants/Icons'
 
 export interface IBaseGlobalNavigationItem {
@@ -33,9 +32,16 @@ export interface IGlobalNavigationLink extends IBaseGlobalNavigationItem {
 
 export type IGlobalNavigationItem = IGlobalNavigationMenu | IGlobalNavigationLink
 
+export type MiniMapLinks = 'oversight' | 'dataPlatform' | 'customer360' | 'predictions' | 'analytics' | 'segmentation'
+export type MiniMapLink = {
+  linkId: MiniMapLinks
+  href: string
+}
+
 export interface IMinimapOptions {
   overviewHref: string
-  links: ISvgLink[]
-  onLinkClick: (link: string) => void
-  unauthorizedButtons: string[]
+  links: MiniMapLink[]
+  onLinkClick: (link: MiniMapLink) => void
+  onUnAuthorizedClick: (link: MiniMapLink) => void
+  unauthorizedButtons: MiniMapLinks[]
 }

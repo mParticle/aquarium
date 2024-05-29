@@ -3,70 +3,48 @@ import './miniMap.css'
 
 export interface ISvgLink {
   elementId: string
-  link: string
+  href: string
   variant?: 'regular' | 'black' | 'drop-shadow'
-}
-
-export interface ISvgLinkComplete extends ISvgLink {
-  linkId: string
+  isUnAuthorized?: boolean
 }
 
 interface ISvgLinkerProps {
-  links: ISvgLinkComplete[]
+  links: ISvgLink[]
   children: React.ReactNode
-  onLinkClick: (link: string) => void
-  unauthorizedButtons: string[]
+  onLinkClick: (link: ISvgLink) => void
 }
 
 export const SvgLinker = (props: ISvgLinkerProps) => {
+  console.log(props, 'props')
   const handleContainerClick = (e: React.MouseEvent) => {
     e.preventDefault()
     const target = e.target as HTMLElement
     const href = target.closest('a')?.getAttribute('href')
-    if (href) {
-      const link = href.substring(1)
-      handleLinkClick(link)
-    }
+    const link = props.links.find(b => b.href === href)
+
+    if (link) props.onLinkClick(link)
   }
 
   return <div onClick={handleContainerClick}>{wrapButtonsIntoLinks(props.children)}</div>
 
-  function handleLinkClick(link: string) {
-    const button = props.links.find(b => b.link === link)
-    if (button && !props.unauthorizedButtons.includes(button.elementId)) {
-      props.onLinkClick(link)
-    }
-  }
-
   function wrapButtonsIntoLinks(parent: React.ReactNode): React.ReactNode {
     const wrapElement = (element: ReactElement): ReactElement => {
       const { id, children } = element.props
-      const button = id && props.links.find(b => b.linkId === id)
+      const link = props.links.find(b => b.elementId === id)
 
-      if (button) {
-        const isUnauthorized = props.unauthorizedButtons.includes(button.elementId)
-        const className = `svg-linker-root__button svg-linker-root__button--${button.variant}${
-          isUnauthorized ? ' svg-linker-root__button--disabled' : ''
+      if (link) {
+        const className = `svg-linker-root__button svg-linker-root__button--${link.variant}${
+          link.isUnAuthorized ? ' svg-linker-root__button--disabled' : ''
         }`
 
         return (
-          <a
-            key={id}
-            href={`/${button.link}`}
-            className={className}
-            onClick={e => {
-              e.preventDefault()
-              e.stopPropagation()
-              handleLinkClick(button.link)
-            }}>
+          <a key={id} href={link.href} className={className}>
             {element}
           </a>
         )
       }
 
-      const wrappedChildren = Children.map(children, child =>
-        React.isValidElement(child) ? wrapElement(child as ReactElement) : child,
-      )
+      const wrappedChildren = wrapButtonsIntoLinks(children)
 
       return React.cloneElement(element, { children: wrappedChildren })
     }
