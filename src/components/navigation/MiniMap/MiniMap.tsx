@@ -30,6 +30,7 @@ const Minimap = ({ overviewHref, unauthorizedButtons, links, onLinkClick }: IMin
   const linksWithRoutes: ISvgLink[] = links.map(link => ({
     ...link,
     linkId: linkMap[link.elementId],
+    variant: 'drop-shadow',
   }))
 
   return (

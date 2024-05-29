@@ -2,28 +2,20 @@ import React from 'react'
 
 export const minimap = (
   <svg width="385" height="374" viewBox="0 0 385 374" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g id="mini map content" clip-path="url(#clip0_5505_13516)">
+    <g id="mini map content" clipPath="url(#clip0_5505_13516)">
       <rect width="385" height="374" fill="white" />
-      <g id="Frame 481773" clip-path="url(#clip1_5505_13516)">
+      <g id="Frame 481773" clipPath="url(#clip1_5505_13516)">
         <g id="Frame 481772">
           <rect width="428" height="428" transform="translate(-23 -18)" fill="white" />
           <g id="Frame 481774">
             <rect width="353" height="326" transform="translate(14.5 17)" fill="#FAF9F8" />
             <g id="WhiteBkg" filter="url(#filter0_d_5505_13516)">
-              <rect
-                x="14.5"
-                y="17.5"
-                width="352"
-                height="325"
-                rx="15.5"
-                stroke="#BABBB5"
-                shape-rendering="crispEdges"
-              />
+              <rect x="14.5" y="17.5" width="352" height="325" rx="15.5" stroke="#BABBB5" shapeRendering="crispEdges" />
             </g>
             <g id="GrayBKG">
               <rect x="105" y="88" width="170" height="184" rx="16" fill="#ECEAE9" />
               <g id="DataPlatformBtn" filter="url(#filter1_d_5505_13516)">
-                <rect x="130" y="102" width="120" height="72" rx="8" fill="white" shape-rendering="crispEdges" />
+                <rect x="130" y="102" width="120" height="72" rx="8" fill="white" shapeRendering="crispEdges" />
                 <rect
                   x="130.5"
                   y="102.5"
@@ -31,7 +23,7 @@ export const minimap = (
                   height="71"
                   rx="7.5"
                   stroke="#EBE8F8"
-                  shape-rendering="crispEdges"
+                  shapeRendering="crispEdges"
                 />
                 <g id="Frame 481749">
                   <rect x="178" y="114" width="24" height="24" rx="12" fill="#EBE8F8" />
@@ -58,7 +50,7 @@ export const minimap = (
                 />
               </g>
               <g id="c360Btn" filter="url(#filter2_d_5505_13516)">
-                <rect x="130" y="186" width="120" height="72" rx="8" fill="white" shape-rendering="crispEdges" />
+                <rect x="130" y="186" width="120" height="72" rx="8" fill="white" shapeRendering="crispEdges" />
                 <rect
                   x="130.5"
                   y="186.5"
@@ -66,11 +58,11 @@ export const minimap = (
                   height="71"
                   rx="7.5"
                   stroke="#EBE8F8"
-                  shape-rendering="crispEdges"
+                  shapeRendering="crispEdges"
                 />
                 <g id="Frame 481749_2">
                   <rect x="178" y="198" width="24" height="24" rx="12" fill="#EBE8F8" />
-                  <g id="address-card 1" clip-path="url(#clip2_5505_13516)">
+                  <g id="address-card 1" clipPath="url(#clip2_5505_13516)">
                     <path
                       id="Vector_3"
                       opacity="0.4"
@@ -92,11 +84,11 @@ export const minimap = (
               </g>
             </g>
             <g id="OversightBtn" filter="url(#filter3_d_5505_13516)">
-              <rect x="131" y="2" width="120" height="72" rx="8" fill="white" shape-rendering="crispEdges" />
-              <rect x="131.5" y="2.5" width="119" height="71" rx="7.5" stroke="#EBE8F8" shape-rendering="crispEdges" />
+              <rect x="131" y="2" width="120" height="72" rx="8" fill="white" shapeRendering="crispEdges" />
+              <rect x="131.5" y="2.5" width="119" height="71" rx="7.5" stroke="#EBE8F8" shapeRendering="crispEdges" />
               <g id="Platform Logo">
                 <rect x="179" y="14" width="24" height="24" rx="12" fill="#EBE8F8" />
-                <g id="shield-keyhole 4" clip-path="url(#clip3_5505_13516)">
+                <g id="shield-keyhole 4" clipPath="url(#clip3_5505_13516)">
                   <path
                     id="Vector_5"
                     opacity="0.4"
@@ -126,8 +118,8 @@ export const minimap = (
       />
       <g id="Desstinations">
         <g id="PredictionsBtn" filter="url(#filter4_d_5505_13516)">
-          <rect x="5" y="295" width="120" height="72" rx="8" fill="white" shape-rendering="crispEdges" />
-          <rect x="5.5" y="295.5" width="119" height="71" rx="7.5" stroke="#EBE8F8" shape-rendering="crispEdges" />
+          <rect x="5" y="295" width="120" height="72" rx="8" fill="white" shapeRendering="crispEdges" />
+          <rect x="5.5" y="295.5" width="119" height="71" rx="7.5" stroke="#EBE8F8" shapeRendering="crispEdges" />
           <g id="Frame 481749_3">
             <rect x="53" y="307" width="24" height="24" rx="12" fill="#EBE8F8" />
             <g id="sparkles">
@@ -151,8 +143,8 @@ export const minimap = (
           />
         </g>
         <g id="AnalyticsBtn" filter="url(#filter5_d_5505_13516)">
-          <rect x="133" y="295" width="120" height="72" rx="8" fill="white" shape-rendering="crispEdges" />
-          <rect x="133.5" y="295.5" width="119" height="71" rx="7.5" stroke="#EBE8F8" shape-rendering="crispEdges" />
+          <rect x="133" y="295" width="120" height="72" rx="8" fill="white" shapeRendering="crispEdges" />
+          <rect x="133.5" y="295.5" width="119" height="71" rx="7.5" stroke="#EBE8F8" shapeRendering="crispEdges" />
           <g id="Frame 481749_4">
             <rect x="181" y="307" width="24" height="24" rx="12" fill="#EBE8F8" />
             <g id="mP_analytics">
@@ -160,7 +152,7 @@ export const minimap = (
                 <path
                   d="M188.898 324.833C188.586 324.833 188.333 324.572 188.333 324.25V317.469C188.333 317.147 188.586 316.886 188.898 316.886H190.24C190.552 316.886 190.805 317.147 190.805 317.469V324.25C190.805 324.572 190.552 324.833 190.24 324.833H188.898Z"
                   fill="#3600D1"
-                  fill-opacity="0.4"
+                  fillOpacity="0.4"
                 />
                 <path
                   d="M193.652 322.296H192.324C192.012 322.296 191.759 322.557 191.759 322.879V324.25C191.759 324.572 192.012 324.833 192.324 324.833H193.652C193.964 324.833 194.217 324.572 194.217 324.25V322.879C194.217 322.557 193.964 322.296 193.652 322.296Z"
@@ -173,7 +165,7 @@ export const minimap = (
                 <path
                   d="M197.084 320.604H195.756C195.444 320.604 195.191 320.865 195.191 321.188V324.25C195.191 324.572 195.444 324.833 195.756 324.833H197.084C197.396 324.833 197.649 324.572 197.649 324.25V321.188C197.649 320.865 197.396 320.604 197.084 320.604Z"
                   fill="#3600D1"
-                  fill-opacity="0.4"
+                  fillOpacity="0.4"
                 />
                 <path
                   d="M195.756 319.424C195.445 319.421 195.195 319.161 195.195 318.84V317.469C195.195 317.147 195.448 316.886 195.76 316.886H197.102C197.414 316.886 197.667 317.147 197.667 317.469V318.85C197.667 319.174 197.411 319.436 197.098 319.433L195.756 319.424Z"
@@ -182,7 +174,7 @@ export const minimap = (
                 <path
                   d="M192.324 321.115C192.012 321.115 191.759 320.854 191.759 320.531V317.469C191.759 317.147 192.012 316.886 192.324 316.886H193.666C193.978 316.886 194.231 317.147 194.231 317.469V320.531C194.231 320.854 193.978 321.115 193.666 321.115H192.324Z"
                   fill="#3600D1"
-                  fill-opacity="0.4"
+                  fillOpacity="0.4"
                 />
               </g>
             </g>
@@ -194,11 +186,11 @@ export const minimap = (
           />
         </g>
         <g id="SegmentationBtn" filter="url(#filter6_d_5505_13516)">
-          <rect x="261" y="295" width="120" height="72" rx="8" fill="white" shape-rendering="crispEdges" />
-          <rect x="261.5" y="295.5" width="119" height="71" rx="7.5" stroke="#EBE8F8" shape-rendering="crispEdges" />
+          <rect x="261" y="295" width="120" height="72" rx="8" fill="white" shapeRendering="crispEdges" />
+          <rect x="261.5" y="295.5" width="119" height="71" rx="7.5" stroke="#EBE8F8" shapeRendering="crispEdges" />
           <g id="Frame 481749_5">
             <rect x="309" y="307" width="24" height="24" rx="12" fill="#EBE8F8" />
-            <g id="users 1" clip-path="url(#clip4_5505_13516)">
+            <g id="users 1" clipPath="url(#clip4_5505_13516)">
               <path
                 id="Vector_10"
                 opacity="0.4"
@@ -220,18 +212,18 @@ export const minimap = (
         </g>
       </g>
       <g id="Group 2399">
-        <path id="Vector 154_2" d="M192 272L192 292.5" stroke="#012437" stroke-width="1.5" />
+        <path id="Vector 154_2" d="M192 272L192 292.5" stroke="#012437" strokeWidth="1.5" />
         <path
           id="Vector 155"
           d="M191.436 272V272C191.436 279.168 185.625 281.941 178.457 281.941L72.5445 281.941C67.2731 281.941 62.9998 286.214 62.9998 291.486V291.486"
           stroke="#012437"
-          stroke-width="1.5"
+          strokeWidth="1.5"
         />
         <path
           id="Vector 156"
           d="M192 272V272C192 278.111 196.94 282.02 203.051 281.994L311.978 281.517C316.954 281.495 321 285.524 321 290.5V290.5"
           stroke="#012437"
-          stroke-width="1.5"
+          strokeWidth="1.5"
         />
         <path id="Vector 169" d="M192 295.857L196.33 288.357L187.67 288.357L192 295.857Z" fill="#012437" />
         <path id="Vector 170" d="M320.648 296L324.978 288.5L316.318 288.5L320.648 296Z" fill="#012437" />
@@ -246,8 +238,8 @@ export const minimap = (
         width="393"
         height="366"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB">
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        colorInterpolationFilters="sRGB">
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -268,8 +260,8 @@ export const minimap = (
         width="128"
         height="80"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB">
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        colorInterpolationFilters="sRGB">
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -290,8 +282,8 @@ export const minimap = (
         width="128"
         height="80"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB">
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        colorInterpolationFilters="sRGB">
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -312,8 +304,8 @@ export const minimap = (
         width="128"
         height="80"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB">
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        colorInterpolationFilters="sRGB">
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -334,8 +326,8 @@ export const minimap = (
         width="128"
         height="80"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB">
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        colorInterpolationFilters="sRGB">
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -356,8 +348,8 @@ export const minimap = (
         width="128"
         height="80"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB">
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        colorInterpolationFilters="sRGB">
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -378,8 +370,8 @@ export const minimap = (
         width="128"
         height="80"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB">
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        colorInterpolationFilters="sRGB">
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"

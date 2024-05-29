@@ -1,11 +1,9 @@
-.minimap_container{
+.minimap_container {
     padding: var(--padding-sm);
 }
 
-.svg-linker-root__button .svg-linker-root__button--disabled {
+.svg-linker-root__button.svg-linker-root__button--disabled {
     cursor: default;
-    background-color: #2c00aa;
-
     &.svg-linker-root__button--regular {
         & rect:first-child {
             fill: transparent;
