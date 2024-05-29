@@ -25,7 +25,7 @@ const Minimap = (props: IMinimapProps) => {
     predictions: 'PredictionsBtn',
     analytics: 'AnalyticsBtn',
     segmentation: 'SegmentationBtn',
-  }
+  } as const
 
   const linksWithRoutes: ISvgLinkComplete[] = props.links.map(link => ({
     ...link,
