@@ -5,7 +5,7 @@ import { Button, ConfigProvider } from 'src/components'
 import Logo from 'src/assets/svg/mp-logo-wordmark.svg?react'
 import { minimap } from './minimap-svg'
 import { Flex } from 'src/components/layout/Flex/Flex'
-import { ISvgLink, SvgLinker } from 'src/components/navigation/MiniMap/SvgLinker'
+import { ISvgLink, ISvgLinkComplete, SvgLinker } from 'src/components/navigation/MiniMap/SvgLinker'
 
 interface IMinimapOptions {
   overviewHref: string
@@ -27,7 +27,7 @@ const Minimap = ({ overviewHref, unauthorizedButtons, links, onLinkClick }: IMin
     segmentation: 'SegmentationBtn',
   }
 
-  const linksWithRoutes: ISvgLink[] = links.map(link => ({
+  const linksWithRoutes: ISvgLinkComplete[] = links.map(link => ({
     ...link,
     linkId: linkMap[link.elementId],
     variant: 'drop-shadow',

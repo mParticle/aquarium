@@ -29,10 +29,8 @@ function MpHomeButton(props: MpHomeButtonProps) {
 }
 
 function MinimapWithPopover(props: MinimapWithPopoverProps) {
-  console.log(props, 'props')
   return (
     <Popover
-      open
       content={() => (
         <MiniMap
           overviewHref={props.overviewHref}
@@ -60,8 +58,6 @@ export function HomeButton(props: HomeButtonProps) {
   if (!props.minimapOptions) {
     return <TooltipWithButton onTooltipClick={props.onMpHomeClick} />
   }
-
-  console.log(props.minimapOptions, 'minimap options')
 
   return (
     <MinimapWithPopover
