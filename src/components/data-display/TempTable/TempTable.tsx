@@ -29,7 +29,7 @@ export type { ColumnType, ExpandableConfig, ColumnsType, TableProps }
 export const Table = <RecordType extends AnyObject>(props: ITableProps<RecordType>) => {
   return (
     <ConfigProvider>
-      <AntTable<RecordType>
+      <AntTable
         {...props}
         columns={props.columns.map(column => ({
           ...column,
