@@ -25,7 +25,7 @@ const Minimap = ({ overviewHref, unauthorizedButtons, links, onLinkClick }: IMin
     predictions: 'PredictionsBtn',
     analytics: 'AnalyticsBtn',
     segmentation: 'SegmentationBtn',
-  }
+  } as const
 
   const linksWithRoutes: ISvgLinkComplete[] = links.map(link => ({
     ...link,
