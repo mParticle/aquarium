@@ -9,3 +9,7 @@
 .u-align-items-center {
   align-items: center !important;
 }
+
+.u-padding-sm {
+  padding:var(--padding-sm)
+}

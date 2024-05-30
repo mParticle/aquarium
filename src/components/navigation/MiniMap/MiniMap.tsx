@@ -29,7 +29,7 @@ const Minimap = (props: IMiniMapProps) => {
 
   return (
     <ConfigProvider>
-      <div className="minimap_container">
+      <div className="u-padding-sm">
         <Flex align="normal" component="div" flex="0 1 auto" gap="small" justify="stretch" vertical wrap="nowrap">
           <Flex align="center" justify="space-between">
             <Logo />

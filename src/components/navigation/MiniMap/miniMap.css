@@ -1,7 +1,3 @@
-.minimap_container {
-    padding: var(--padding-sm);
-}
-
 .svg-linker-root__button.svg-linker-root__button--disabled {
     cursor: default;
     &.svg-linker-root__button--regular {
