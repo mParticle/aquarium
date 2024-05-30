@@ -24,7 +24,7 @@ const Minimap = (props: IMiniMapProps) => {
     elementId: elementIdMap[link.linkId],
     href: link.href,
     variant: 'drop-shadow',
-    isUnAuthorized: props.unauthorizedButtons.includes(link.linkId),
+    isUnAuthorized: props.unauthorizedLinks.includes(link.linkId),
   }))
 
   return (
