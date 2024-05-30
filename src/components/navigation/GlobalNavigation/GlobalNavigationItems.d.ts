@@ -42,6 +42,6 @@ export interface IMinimapOptions {
   overviewHref: string
   links: MiniMapLink[]
   onLinkClick: (link: MiniMapLink) => void
-  onUnAuthorizedClick: (link: MiniMapLink) => void
+  onUnAuthorizedClick: (link?: MiniMapLink) => void
   unauthorizedLinks: MiniMapLinks[]
 }
