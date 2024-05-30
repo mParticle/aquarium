@@ -486,7 +486,7 @@ export const MP: Story = {
     minimapOptions: {
       overviewHref: '/',
       onLinkClick: link => alert(link.href),
-      onUnAuthorizedClick: link => alert(`unauthorized ${link.href} `),
+      onUnAuthorizedClick: link => alert(`unauthorized ${link?.href} `),
       unauthorizedLinks: ['oversight', 'dataPlatform'],
       links: [
         { linkId: 'oversight', href: '/oversight' },
