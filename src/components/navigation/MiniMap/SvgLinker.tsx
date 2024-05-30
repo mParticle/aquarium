@@ -15,7 +15,6 @@ interface ISvgLinkerProps {
 }
 
 export const SvgLinker = (props: ISvgLinkerProps) => {
-  console.log(props, 'props')
   const handleContainerClick = (e: React.MouseEvent) => {
     e.preventDefault()
     const target = e.target as HTMLElement
@@ -46,7 +45,7 @@ export const SvgLinker = (props: ISvgLinkerProps) => {
 
       const wrappedChildren = wrapButtonsIntoLinks(children)
 
-      return React.cloneElement(element, { children: wrappedChildren })
+      return React.createElement(element.type, { ...element.props, children: wrappedChildren })
     }
 
     return Children.map(parent, child => (React.isValidElement(child) ? wrapElement(child as ReactElement) : child))
