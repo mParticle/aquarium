@@ -31,7 +31,6 @@ function MpHomeButton(props: MpHomeButtonProps) {
 function MinimapWithPopover(props: MinimapWithPopoverProps) {
   return (
     <Popover
-      open
       content={() => (
         <MiniMap
           overviewHref={props.overviewHref}
