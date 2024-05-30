@@ -15,7 +15,10 @@ import { NavigationSearch } from 'src/components/navigation/GlobalNavigation/Nav
 import { NavigationList } from 'src/components/navigation/GlobalNavigation/NavigationList'
 import { NavigationCreate } from 'src/components/navigation/GlobalNavigation/NavigationCreate'
 import { WorkspaceSelector } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelector'
-import { type IGlobalNavigationItem } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
+import {
+  type IGlobalNavigationItem,
+  type IMiniMapOptions,
+} from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
 import { useNewExperienceReminder } from 'src/hooks/NewExperienceReminder/useNewExperienceReminder'
 import { HomeButton } from 'src/components/navigation/GlobalNavigation/HomeButton'
@@ -37,10 +40,7 @@ export interface IGlobalNavigationProps {
     onClick: () => void
     withoutContainer?: boolean
   }
-  minimapOptions: {
-    overviewHref?: string
-    show?: boolean
-  }
+  minimapOptions?: IMiniMapOptions
 }
 
 export const GlobalNavWidth = 90 as const

@@ -1,3 +1,57 @@
-.minimap_container{
-    padding: var(--padding-sm);
+.svg-linker-root__button.svg-linker-root__button--disabled {
+    cursor: default;
+    &.svg-linker-root__button--regular {
+        & rect:first-child {
+            fill: transparent;
+            stroke: var(--color-border);
+        }
+
+        & path {
+            fill: var(--color-text-disabled);
+        }
+
+        &:hover rect:first-child {
+            fill: transparent;
+        }
+    }
+
+    &.svg-linker-root__button--drop-shadow {
+        & > g > g > rect {
+            fill: var(--mp-brand-secondary-3);
+        }
+
+        & path {
+            fill: var(--color-text-disabled);
+        }
+
+        &:hover {
+            filter: none;
+        }
+    }
+
+    &.svg-linker-root__button--black {
+        & rect:first-child {
+            fill: var(--mp-brand-secondary-6);
+        }
+
+        &:hover rect:first-child {
+            fill: var(--mp-brand-secondary-6);
+        }
+    }
+}
+
+.svg-linker-root__button {
+    &.svg-linker-root__button--drop-shadow:hover {
+        filter: drop-shadow(0px 9px 28px rgba(0, 0, 0, 0.05))
+        drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.12))
+        drop-shadow(0px 6px 16px rgba(0, 0, 0, 0.08));
+    }
+
+    &.svg-linker-root__button--regular:hover rect:first-child {
+        fill: var(--mp-brand-primary-2);
+    }
+
+    &.svg-linker-root__button--black:hover rect:first-child {
+        fill: var(--mp-brand-secondary-7);
+    }
 }

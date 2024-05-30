@@ -31,3 +31,17 @@ export interface IGlobalNavigationLink extends IBaseGlobalNavigationItem {
 }
 
 export type IGlobalNavigationItem = IGlobalNavigationMenu | IGlobalNavigationLink
+
+export type MiniMapLinks = 'oversight' | 'dataPlatform' | 'customer360' | 'predictions' | 'analytics' | 'segmentation'
+export type MiniMapLink = {
+  linkId: MiniMapLinks
+  href: string
+}
+
+export interface IMiniMapOptions {
+  overviewHref: string
+  links: MiniMapLink[]
+  onLinkClick: (link: MiniMapLink) => void
+  onUnAuthorizedClick: (link?: MiniMapLink) => void
+  unauthorizedLinks: MiniMapLinks[]
+}

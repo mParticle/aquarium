@@ -135,9 +135,6 @@ const meta: Meta<typeof GlobalNavigation> = {
     onMpHomeClick: () => {
       alert('Going to mP!')
     },
-    minimapOptions: {
-      show: true,
-    },
   },
 }
 export default meta
@@ -486,12 +483,24 @@ export const MP: Story = {
     tools: mpTools,
     management: mpManagement,
     orgs: mpOrgs,
-    minimapOptions: { overviewHref: '/', show: true },
+    minimapOptions: {
+      overviewHref: '/',
+      onLinkClick: link => alert(link.href),
+      onUnAuthorizedClick: link => alert(`unauthorized ${link?.href} `),
+      unauthorizedLinks: ['oversight', 'dataPlatform'],
+      links: [
+        { linkId: 'oversight', href: '/oversight' },
+        { linkId: 'dataPlatform', href: '/data-platform' },
+        { linkId: 'customer360', href: '/customer-360' },
+        { linkId: 'predictions', href: '/predictions' },
+        { linkId: 'analytics', href: '/analytics' },
+        { linkId: 'segmentation', href: '/segmentation' },
+      ],
+    },
     onMpHomeClick: () => {
       alert('going to overview map')
     },
     avatarOptions: {
-      // src: "https://static-qa1.qa.corp.mparticle.com/appimg/logo_af_916397d2-9732-8de6-77cc-80e3bba120ca.png",
       alt: 'avatar',
     },
   },
@@ -512,7 +521,6 @@ export const MPThousandOrgs: Story = {
           tools={mpTools}
           management={mpManagement}
           orgs={thousandOrgs}
-          minimapOptions={{ overviewHref: '/' }}
           onMpHomeClick={() => {
             alert('going to overview map')
           }}
@@ -1096,7 +1104,6 @@ export const MPWithoutLogo: Story = {
     tools: mpTools,
     management: mpManagement,
     orgs: mpOrgs,
-    minimapOptions: { overviewHref: '/', show: true },
     onMpHomeClick: () => {
       alert('going to overview map')
     },
@@ -1117,7 +1124,6 @@ export const MPWithBackgroundLogo: Story = {
     tools: mpTools,
     management: mpManagement,
     orgs: mpOrgs,
-    minimapOptions: { overviewHref: '/', show: true },
     onMpHomeClick: () => {
       alert('going to overview map')
     },
@@ -1138,7 +1144,6 @@ export const MPWithoutCustomSizeLogo: Story = {
     tools: mpTools,
     management: mpManagement,
     orgs: mpOrgs,
-    minimapOptions: { overviewHref: '/', show: true },
     onMpHomeClick: () => {
       alert('going to overview map')
     },
