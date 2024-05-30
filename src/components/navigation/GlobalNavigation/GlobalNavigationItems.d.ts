@@ -38,7 +38,7 @@ export type MiniMapLink = {
   href: string
 }
 
-export interface IMinimapOptions {
+export interface IMiniMapOptions {
   overviewHref: string
   links: MiniMapLink[]
   onLinkClick: (link: MiniMapLink) => void

@@ -5,7 +5,7 @@ export interface ISvgLink {
   elementId: string
   href: string
   variant?: 'regular' | 'black' | 'drop-shadow'
-  isUnAuthorized?: boolean
+  isUnauthorized?: boolean
 }
 
 interface ISvgLinkerProps {
@@ -33,7 +33,7 @@ export const SvgLinker = (props: ISvgLinkerProps) => {
 
       if (link) {
         const className = `svg-linker-root__button svg-linker-root__button--${link.variant}${
-          link.isUnAuthorized ? ' svg-linker-root__button--disabled' : ''
+          link.isUnauthorized ? ' svg-linker-root__button--disabled' : ''
         }`
 
         return (

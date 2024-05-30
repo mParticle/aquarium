@@ -1,13 +1,13 @@
 import React from 'react'
 import { Center, Icon, Popover, Tooltip } from 'src/components'
 import MiniMap from 'src/components/navigation/MiniMap/MiniMap'
-import { IMinimapOptions } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
+import { IMiniMapOptions } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 
 interface MpHomeButtonProps {
   onClick: () => void
 }
 
-interface MinimapWithPopoverProps extends IMinimapOptions {
+interface MinimapWithPopoverProps extends IMiniMapOptions {
   onPopoverClick: () => void
 }
 
@@ -16,7 +16,7 @@ interface TooltipWithButtonProps {
 }
 
 interface HomeButtonProps {
-  minimapOptions?: IMinimapOptions
+  minimapOptions?: IMiniMapOptions
   onMpHomeClick: () => void
 }
 

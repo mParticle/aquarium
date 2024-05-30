@@ -6,9 +6,9 @@ import Logo from 'src/assets/svg/mp-logo-wordmark.svg?react'
 import { minimap } from './minimap-svg'
 import { Flex } from 'src/components/layout/Flex/Flex'
 import { ISvgLink, SvgLinker } from 'src/components/navigation/MiniMap/SvgLinker'
-import { IMinimapOptions, MiniMapLinks } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
+import { IMiniMapOptions, MiniMapLinks } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 
-type IMiniMapProps = IMinimapOptions
+type IMiniMapProps = IMiniMapOptions
 
 const Minimap = (props: IMiniMapProps) => {
   const elementIdMap: Record<MiniMapLinks, string> = {
@@ -24,7 +24,7 @@ const Minimap = (props: IMiniMapProps) => {
     elementId: elementIdMap[link.linkId],
     href: link.href,
     variant: 'drop-shadow',
-    isUnAuthorized: props.unauthorizedLinks.includes(link.linkId),
+    isUnauthorized: props.unauthorizedLinks.includes(link.linkId),
   }))
 
   return (
@@ -45,7 +45,7 @@ const Minimap = (props: IMiniMapProps) => {
   function handleLinkClick(svgLink: ISvgLink): void {
     const miniMapLink = props.links.find(link => link.href === svgLink.href)!
 
-    if (svgLink.isUnAuthorized) props.onUnAuthorizedClick(miniMapLink)
+    if (svgLink.isUnauthorized) props.onUnAuthorizedClick(miniMapLink)
     else props.onLinkClick(miniMapLink)
   }
 }
