@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/mParticle/aquarium/compare/v1.15.0...v1.16.0) (2024-05-30)
+
+
+### Features
+
+* Add links to the minimap ([#246](https://github.com/mParticle/aquarium/issues/246)) ([80bd00c](https://github.com/mParticle/aquarium/commit/80bd00c991e931998b4df60e28394d0f7083f95b))
+
 ## [1.15.1-minimap-linker.1](https://github.com/mParticle/aquarium/compare/v1.15.0...v1.15.1-minimap-linker.1) (2024-05-30)
 
 # [1.15.0](https://github.com/mParticle/aquarium/compare/v1.14.0...v1.15.0) (2024-05-24)
