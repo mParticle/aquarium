@@ -1,3 +1,5 @@
+## [1.15.1-minimap-linker.1](https://github.com/mParticle/aquarium/compare/v1.15.0...v1.15.1-minimap-linker.1) (2024-05-30)
+
 # [1.15.0](https://github.com/mParticle/aquarium/compare/v1.14.0...v1.15.0) (2024-05-24)
 
 
