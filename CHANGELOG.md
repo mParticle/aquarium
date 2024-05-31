@@ -1,3 +1,10 @@
+## [1.16.1-minimap-styles.1](https://github.com/mParticle/aquarium/compare/v1.16.0...v1.16.1-minimap-styles.1) (2024-05-31)
+
+
+### Bug Fixes
+
+* in front of it ([97daf62](https://github.com/mParticle/aquarium/commit/97daf62cd5302862950d1bd60e999b20d5edddb9))
+
 # [1.16.0](https://github.com/mParticle/aquarium/compare/v1.15.0...v1.16.0) (2024-05-30)
 
 
