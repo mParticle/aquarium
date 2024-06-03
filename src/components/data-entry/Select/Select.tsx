@@ -1,5 +1,4 @@
-import { Select as AntSelect, Tag } from 'antd'
-import type { SelectProps } from 'antd'
+import { Select as AntSelect } from 'antd'
 import { type SelectProps as AntSelectProps } from 'antd'
 import { type BaseOptionType, type DefaultOptionType } from 'antd/es/select'
 import type { CustomTagProps } from 'rc-select/lib/BaseSelect'
@@ -11,27 +10,6 @@ export interface ISelectProps<
   OptionType extends BaseOptionType | DefaultOptionType = DefaultOptionType,
 > extends AntSelectProps<ValueType, OptionType> {}
 
-type TagRender = SelectProps['tagRender']
-
-const tagRender: TagRender = props => {
-  const { label, value, closable, onClose } = props
-  const onPreventMouseDown = (event: React.MouseEvent<HTMLSpanElement>): void => {
-    event.preventDefault()
-    event.stopPropagation()
-  }
-  return (
-    <>
-      <Tag
-        color={value}
-        onMouseDown={onPreventMouseDown}
-        closable={closable}
-        onClose={onClose}
-        style={{ marginInlineEnd: 4 }}>
-        {label}
-      </Tag>
-    </>
-  )
-}
 
 enum AllowedPrimitiveTypes {
   string = 'string',
@@ -45,18 +23,14 @@ enum AllowedComponentTypes {
 }
 
 export const Select = (props: ISelectProps) => {
-  const internalTagRender = (props: CustomTagProps): React.ReactElement => {
-    const tag = tagRender(props)
+  const internalTagRender = (internalTagRenderProps: CustomTagProps): React.ReactElement => {
+    const tag = props.tagRender?.(internalTagRenderProps)
 
     if (validateRender(tag)) {
-      console.log('Valid tag render')
-
-      return tag
+      return <>All components valid</>;
     }
 
-    console.log('Invalid tag render')
-
-    return <></>
+    return <>Something is invalid</>
   }
   const effectiveProps = {
     ...props,
@@ -73,7 +47,9 @@ export const Select = (props: ISelectProps) => {
 Select.Option = AntSelect.Option
 Select.OptGroup = AntSelect.OptGroup
 
-function validateRender(node: React.ReactElement): boolean {
+function validateRender(node?: React.ReactElement): boolean {
+  if (!node) return true;
+
   if (isPrimitive(node)) return true
 
   if (typeof node === 'object' && node !== null) {
