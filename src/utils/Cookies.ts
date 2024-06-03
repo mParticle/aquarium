@@ -12,23 +12,31 @@ export function getObject(key: string): string | null {
   return value ? JSON.parse(value) : value
 }
 
-export function put(key: string, value: string | null, options: any /* TODO fix any */ = {}): void {
+export type CookieOptions = {
+  path?: string
+  domain?: string
+  expires?: string | Date
+  secure?: boolean
+}
+
+export function put(key: string, value: string | null, options: CookieOptions = {}): void {
+  const defaultExpires = 'Thu, 01 Jan 1970 00:00:01 GMT'
   let expires = options.expires
-  if (value == null) expires = 'Thu, 01 Jan 1970 00:00:01 GMT'
+  if (value == null) expires = defaultExpires
   if (typeof expires === 'string') expires = new Date(expires)
   let str = `${_encode(key)}=${value != null ? _encode(value) : ''}`
   if (options.path) str += `; path=${options.path}`
   if (options.domain) str += `; domain=${options.domain}`
-  if (options.expires) str += `; expires=${expires.toUTCString()}`
+  if (options.expires) str += `; expires=${expires?.toUTCString() ?? defaultExpires}`
   if (options.secure) str += '; secure'
   document.cookie = str
 }
 
-export function putObject(key: string, value: Record<string, unknown>, options = {}): void {
+export function putObject(key: string, value: Record<string, unknown>, options: CookieOptions = {}): void {
   put(key, JSON.stringify(value), options)
 }
 
-export function remove(key: string, options = {}): void {
+export function remove(key: string, options: CookieOptions = {}): void {
   put(key, null, options)
 }
 
