@@ -1,3 +1,10 @@
+# [1.17.0-ups-configurable-cookie.1](https://github.com/mParticle/aquarium/compare/v1.16.1...v1.17.0-ups-configurable-cookie.1) (2024-06-03)
+
+
+### Features
+
+* allows UPS to receive cookie config options instead of only the key ([517d030](https://github.com/mParticle/aquarium/commit/517d03066bb1d55968d650bb7a2a6162a1567ad7))
+
 ## [1.16.1](https://github.com/mParticle/aquarium/compare/v1.16.0...v1.16.1) (2024-06-03)
 
 
