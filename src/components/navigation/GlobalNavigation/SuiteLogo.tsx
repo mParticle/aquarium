@@ -1,9 +1,9 @@
-import React, { ReactElement, ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import { Center, Icon } from 'src/components'
 import { NavigationIcon } from 'src/components/navigation/GlobalNavigation/NavigationIcon'
-import { Icons } from 'src/constants/Icons'
-import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
-import { IconColor } from 'src/components/general/Icon/Icon'
+import type { Icons } from 'src/constants/Icons'
+import type { IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
+import type { IconColor } from 'src/components/general/Icon/Icon'
 
 // custom-size is the default size to prevent breaking changes.
 type IconColorOptions = 'default' | 'background-solid' | 'custom-size'

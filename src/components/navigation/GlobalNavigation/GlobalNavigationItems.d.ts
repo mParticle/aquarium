@@ -1,6 +1,6 @@
-import type { ReactNode, type MouseEvent, ReactElement } from 'react'
-import { type HrefOptions } from 'src/utils/utils'
-import { Icons } from 'src/constants/Icons'
+import type { ReactNode, MouseEvent, ReactElement } from 'react'
+import type { HrefOptions } from 'src/utils/utils'
+import type { Icons } from 'src/constants/Icons'
 
 export interface IBaseGlobalNavigationItem {
   type?: 'menu' | 'link'
