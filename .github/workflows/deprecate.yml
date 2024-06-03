@@ -1,0 +1,40 @@
+name: Release Aquarium
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to deprecate'
+        required: true
+
+jobs:
+  release:
+    name: Deprecate Version
+    runs-on: ubuntu-latest
+
+    env:
+      GITHUB_TOKEN: ${{ secrets.MP_SEMANTIC_RELEASE_BOT }}
+      GIT_AUTHOR_NAME: mparticle-automation
+      GIT_AUTHOR_EMAIL: developers@mparticle.com
+      GIT_COMMITTER_NAME: mparticle-automation
+      GIT_COMMITTER_EMAIL: developers@mparticle.com
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+    steps:
+      - name: Import GPG Key
+        uses: crazy-max/ghaction-import-gpg@v4
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE }}
+          git_user_signingkey: true
+          git_commit_gpgsign: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'latest'
+
+      - name: Release
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+          npm deprecate "@mparticle/aquarium@${{ github.event.inputs.version }}" "This version has been deprecated."
