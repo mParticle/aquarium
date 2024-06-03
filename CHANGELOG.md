@@ -1,3 +1,10 @@
+## [1.16.1](https://github.com/mParticle/aquarium/compare/v1.16.0...v1.16.1) (2024-06-03)
+
+
+### Bug Fixes
+
+* unnesting minimap styles ([#253](https://github.com/mParticle/aquarium/issues/253)) ([067f24d](https://github.com/mParticle/aquarium/commit/067f24d4cd7d88f96a19792abaf4ee2ea4bbd73e))
+
 # [1.16.0](https://github.com/mParticle/aquarium/compare/v1.15.0...v1.16.0) (2024-05-30)
 
 
