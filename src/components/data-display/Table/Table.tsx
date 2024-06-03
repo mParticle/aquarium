@@ -5,11 +5,11 @@ import { ConfigProvider } from 'src/components'
 import { type ColumnType, type ExpandableConfig } from 'antd/es/table/interface'
 import { type ColumnsType, type TableProps } from 'antd/es/table'
 
-export interface ITableProps<RecordType extends AnyObject = any> extends AntTableProps<RecordType> {}
+export interface ITableProps<RecordType extends AnyObject = AnyObject> extends AntTableProps<RecordType> {}
 
 export type { ColumnType, ExpandableConfig, ColumnsType, TableProps }
 
-export const Table = <RecordType extends AnyObject = any>(props: ITableProps<RecordType>) => {
+export const Table = <RecordType extends AnyObject = AnyObject>(props: ITableProps<RecordType>) => {
   return (
     <ConfigProvider>
       <AntTable<RecordType> {...props} />
