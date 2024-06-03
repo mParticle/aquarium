@@ -47,12 +47,16 @@ export const Select = (props: ISelectProps) => {
 Select.Option = AntSelect.Option
 Select.OptGroup = AntSelect.OptGroup
 
+/**
+ * The validate render fn depends on the diversity of the React.ReactElement that could be a primitive, a component or a 
+ * container node.
+ */
 function validateRender(node?: React.ReactElement): boolean {
   if (!node) return true;
 
   if (isPrimitive(node)) return true
 
-  if (typeof node === 'object' && node !== null) {
+  if (isObject(node)) {
     if (isContainerNode(node)) {
       return areChildrenComponents(node)
     }
@@ -69,6 +73,10 @@ function areChildrenComponents(node: React.ReactElement): boolean {
   return Array.isArray(children)
     ? children.every((child: React.ReactElement) => isPrimitive(child) || isComponent(child))
     : isPrimitive(children) || isComponent(children)
+}
+
+function isObject(value: unknown): boolean {
+  return typeof value === 'object' && value !== null;
 }
 
 function isComponent(node?: React.ReactElement): boolean {
