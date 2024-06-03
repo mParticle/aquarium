@@ -22,7 +22,7 @@ interface BaseColumn<DataType> {
   key: string
   dataIndex?: string
   type?: never
-  render: ColumnGetProps<DataType>
+  render?: ColumnGetProps<DataType>
 }
 
 interface BaseColumnWithoutTypeAndRender<DataType> extends Omit<BaseColumn<DataType>, 'type' | 'render'> {}
@@ -76,34 +76,36 @@ export const TempTable = <RecordType extends AnyObject>({
       <AntTable
         pagination={pagination}
         dataSource={dataSource}
-        columns={columns.map(column => ({
-          ...column,
-          render: (...args): React.ReactNode => {
-            if (!('type' in column)) {
-              console.warn('No type given, prefer to use a column type')
-              if (!('render' in column)) {
-                throw new Error('You must specify a type or a render function')
-              }
-              return column.render(...args)
+        columns={columns.map(column => {
+          if (!('type' in column)) {
+            console.warn('No type given, prefer to use a column type')
+            if (!('render' in column) && !('dataIndex' in column)) {
+              throw new Error('You must specify a type or a render function or a dataIndex')
             }
+            return column
+          }
 
-            const { type } = column
+          return {
+            ...column,
+            render: (...args): React.ReactNode => {
+              const { type } = column
 
-            if (type === 'link') return <LinkCell {...column.getProps(...args)} />
+              if (type === 'link') return <LinkCell {...column.getProps(...args)} />
 
-            if (type === 'tag') return <TagCell {...column.getProps(...args)} />
+              if (type === 'tag') return <TagCell {...column.getProps(...args)} />
 
-            if (type === 'text') return <TextCell {...column.getProps(...args)} />
+              if (type === 'text') return <TextCell {...column.getProps(...args)} />
 
-            if (type === 'textDescription') return <TextDescriptionCell {...column.getProps(...args)} />
+              if (type === 'textDescription') return <TextDescriptionCell {...column.getProps(...args)} />
 
-            if (type === 'badge') return <BadgeCell {...column.getProps(...args)} />
+              if (type === 'badge') return <BadgeCell {...column.getProps(...args)} />
 
-            throw new Error(
-              `Invalid column type specified. Received ${type}, must be one of ${COLUMN_TYPES.toString()}`,
-            )
-          },
-        }))}
+              throw new Error(
+                `Invalid column type specified. Received ${type}, must be one of ${COLUMN_TYPES.toString()}`,
+              )
+            },
+          }
+        })}
       />
     </ConfigProvider>
   )

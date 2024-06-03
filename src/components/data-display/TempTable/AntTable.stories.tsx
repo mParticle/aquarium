@@ -55,7 +55,6 @@ const columns: Array<TableColumnType<ObservabilityRecord>> = [
     title: 'Input',
     key: 'input',
     dataIndex: 'input',
-    render: input => <TextCell text={input} />,
   },
   {
     title: 'Output',
