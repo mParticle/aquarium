@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-extraneous-class,no-unused-vars,@typescript-eslint/no-unused-vars */
-import * as Cookies from '../../utils/Cookies'
 import { type UserPreferences } from 'src/services/user-preferences/models/storage-models/user-preferences'
 import { type CompositeUserPreferences } from 'src/services/user-preferences/models/user-preferences/composite-user-preferences'
 import { type UserPreferenceScope } from 'src/services/user-preferences/models/storage-models/user-preference-scope'
 import { type UserPreferenceDefinitions } from 'src/services/user-preferences/models/definitions/user-preference-definitions'
 import { type CompositeUserPreferencesService } from 'src/services/user-preferences/composite-user-preferences-service'
+import * as Cookies from 'src/utils/Cookies'
 import { type CookieOptions } from 'src/utils/Cookies'
 
 export class UserPreferencesService<TUserPreferenceId extends PropertyKey> {
@@ -73,9 +73,7 @@ export class UserPreferencesService<TUserPreferenceId extends PropertyKey> {
   }
 
   private async setStoredPreferences(storedPreferences: UserPreferences<TUserPreferenceId>): Promise<void> {
-    Cookies.putObject(this.cookieOptions.key, storedPreferences, {
-      ...this.cookieOptions,
-    })
+    Cookies.putObject(this.cookieOptions.key, storedPreferences, this.cookieOptions)
 
     await Promise.resolve()
   }
