@@ -16,40 +16,40 @@ import {
 
 const COLUMN_TYPES = ['data', 'link', 'text', 'tag', 'textDescription', 'badge'] as const
 
+type ColumnGetProps<DataType, Return = React.ReactNode> = (value: any, dataType: DataType, index: number) => Return
 interface BaseColumn<DataType> {
   title: string
   key: string
+  dataIndex?: string
   type?: never
-  render: (value: any, data: DataType, index: number) => React.ReactNode
+  render: ColumnGetProps<DataType>
 }
 
 interface BaseColumnWithoutTypeAndRender<DataType> extends Omit<BaseColumn<DataType>, 'type' | 'render'> {}
 
-type ColumnGetProps<Props, DataType> = (dataType: DataType) => Props
-
 interface TagsColumn<DataType> extends BaseColumnWithoutTypeAndRender<DataType> {
   type: 'tag'
-  getProps: ColumnGetProps<ITagCellProps, DataType>
+  getProps: ColumnGetProps<DataType, ITagCellProps>
 }
 
 interface TextColumn<DataType> extends BaseColumnWithoutTypeAndRender<DataType> {
   type: 'text'
-  getProps: ColumnGetProps<ITextCellProps, DataType>
+  getProps: ColumnGetProps<DataType, ITextCellProps>
 }
 
 interface LinkColumn<DataType> extends BaseColumnWithoutTypeAndRender<DataType> {
   type: 'link'
-  getProps: ColumnGetProps<ILinkCellProps, DataType>
+  getProps: ColumnGetProps<DataType, ILinkCellProps>
 }
 
 interface TextDescriptionColumn<DataType> extends BaseColumnWithoutTypeAndRender<DataType> {
   type: 'textDescription'
-  getProps: ColumnGetProps<ITextDescriptionCellProps, DataType>
+  getProps: ColumnGetProps<DataType, ITextDescriptionCellProps>
 }
 
 interface BadgeColumn<DataType> extends BaseColumnWithoutTypeAndRender<DataType> {
   type: 'badge'
-  getProps: ColumnGetProps<IBadgeCellProps, DataType>
+  getProps: ColumnGetProps<DataType, IBadgeCellProps>
 }
 
 export type TableColumnType<DataType> =
@@ -79,7 +79,6 @@ export const TempTable = <RecordType extends AnyObject>({
         columns={columns.map(column => ({
           ...column,
           render: (...args): React.ReactNode => {
-            const dataType = args[1]
             if (!('type' in column)) {
               console.warn('No type given, prefer to use a column type')
               if (!('render' in column)) {
@@ -90,15 +89,15 @@ export const TempTable = <RecordType extends AnyObject>({
 
             const { type } = column
 
-            if (type === 'link') return <LinkCell {...column.getProps(dataType)} />
+            if (type === 'link') return <LinkCell {...column.getProps(...args)} />
 
-            if (type === 'tag') return <TagCell {...column.getProps(dataType)} />
+            if (type === 'tag') return <TagCell {...column.getProps(...args)} />
 
-            if (type === 'text') return <TextCell {...column.getProps(dataType)} />
+            if (type === 'text') return <TextCell {...column.getProps(...args)} />
 
-            if (type === 'textDescription') return <TextDescriptionCell {...column.getProps(dataType)} />
+            if (type === 'textDescription') return <TextDescriptionCell {...column.getProps(...args)} />
 
-            if (type === 'badge') return <BadgeCell {...column.getProps(dataType)} />
+            if (type === 'badge') return <BadgeCell {...column.getProps(...args)} />
 
             throw new Error(
               `Invalid column type specified. Received ${type}, must be one of ${COLUMN_TYPES.toString()}`,

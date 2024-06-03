@@ -19,17 +19,19 @@ const columns: Array<TableColumnType<ObservabilityRecord>> = [
   {
     title: 'Request Timestamp',
     type: 'text',
+    dataIndex: 'timestamp',
     key: 'timestamp',
-    getProps: dataType => ({ text: new Date(dataType.timestamp).toISOString() }),
+    getProps: (timestamp: string) => ({ text: new Date(timestamp).toISOString() }),
   },
   {
     title: 'Trace ID',
     type: 'link',
+    dataIndex: 'traceId',
     key: 'traceId',
-    getProps: dataType => ({
-      text: dataType.traceId,
+    getProps: traceId => ({
+      text: traceId,
       onClick: () => {
-        alert(`clicked on ${dataType.traceId}`)
+        alert(`clicked on ${traceId}`)
       },
     }),
   },
@@ -37,7 +39,7 @@ const columns: Array<TableColumnType<ObservabilityRecord>> = [
     title: 'Type',
     type: 'textDescription',
     key: 'type',
-    getProps: dataType => ({
+    getProps: (_, dataType) => ({
       title: dataType.eventName,
       subtitle: dataType.eventType,
     }),
@@ -45,43 +47,48 @@ const columns: Array<TableColumnType<ObservabilityRecord>> = [
   {
     title: 'Input',
     type: 'text',
+    dataIndex: 'input',
     key: 'input',
-    getProps: dataType => ({
-      text: dataType.input,
+    getProps: input => ({
+      text: input,
     }),
   },
   {
     title: 'Output',
     type: 'text',
+    dataIndex: 'output',
     key: 'output',
-    getProps: dataType => ({
-      text: dataType.output,
+    getProps: output => ({
+      text: output,
     }),
   },
   {
     title: 'mPID',
     type: 'text',
     key: 'output',
-    getProps: dataType => ({
-      text: `${dataType.mPID}`,
+    dataIndex: 'mPID',
+    getProps: mPID => ({
+      text: `${mPID}`,
     }),
   },
   {
     title: 'Environment',
     type: 'tag',
+    dataIndex: 'environment',
     key: 'environment',
-    getProps: dataType => ({
-      text: dataType.environment,
-      color: dataType.environment === 'dev' ? 'purple' : 'blue',
+    getProps: environment => ({
+      text: environment,
+      color: environment === 'dev' ? 'purple' : 'blue',
     }),
   },
   {
     title: 'Status',
     type: 'badge',
     key: 'badge',
-    getProps: dataType => ({
-      status: dataType.status,
-      text: dataType.status.toUpperCase(),
+    dataIndex: 'status',
+    getProps: status => ({
+      status,
+      text: status.toUpperCase(),
     }),
   },
 ]
