@@ -34,7 +34,7 @@ function MinimapWithPopover(props: MinimapWithPopoverProps) {
       content={() => (
         <MiniMap
           overviewHref={props.overviewHref}
-          onUnAuthorizedClick={props.onUnAuthorizedClick}
+          onUnauthorizedClick={props.onUnauthorizedClick}
           links={props.links}
           onLinkClick={props.onLinkClick}
           unauthorizedLinks={props.unauthorizedLinks}
@@ -62,7 +62,7 @@ export function HomeButton(props: HomeButtonProps) {
 
   return (
     <MinimapWithPopover
-      onUnAuthorizedClick={props.minimapOptions.onUnAuthorizedClick}
+      onUnauthorizedClick={props.minimapOptions.onUnauthorizedClick}
       overviewHref={props.minimapOptions.overviewHref}
       links={props.minimapOptions.links}
       onLinkClick={props.minimapOptions.onLinkClick}

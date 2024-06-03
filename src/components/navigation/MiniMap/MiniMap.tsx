@@ -45,7 +45,7 @@ const Minimap = (props: IMiniMapProps) => {
   function handleLinkClick(svgLink: ISvgLink): void {
     const miniMapLink = props.links.find(link => link.href === svgLink.href)!
 
-    if (svgLink.isUnauthorized) props.onUnAuthorizedClick(miniMapLink)
+    if (svgLink.isUnauthorized) props.onUnauthorizedClick(miniMapLink)
     else props.onLinkClick(miniMapLink)
   }
 }
