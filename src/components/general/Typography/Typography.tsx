@@ -16,13 +16,34 @@ export const Typography = (props: ITypographyProps) => (
   </ConfigProvider>
 )
 
-export interface ITextProps extends AntTextProps {}
+type TypographySize = 'base' | 'sm' | 'lg' | 'xl'
+export interface ITextProps extends AntTextProps {
+  size?: TypographySize
+}
 
-const Text = (props: ITextProps) => (
-  <ConfigProvider>
-    <AntTypography.Text {...props}>{props.children}</AntTypography.Text>
-  </ConfigProvider>
-)
+const getFontSizeVariable = (size: TypographySize): string => `--font-size${size === 'base' ? '' : `-${size}`}`
+
+const getLineHeightVariable = (size: TypographySize): string => {
+  if (size === 'sm') return `--line-height-sm`
+  if (size === 'lg' || size === 'xl') return '--line-height-lg'
+  return `--line-height`
+}
+
+const Text = ({ size = 'base', ...props }: ITextProps) => {
+  return (
+    <ConfigProvider>
+      <AntTypography.Text
+        style={{
+          fontSize: `var(${getFontSizeVariable(size)})`,
+          lineHeight: `var(${getLineHeightVariable(size)})`,
+        }}
+        {...props}>
+        {props.children}
+      </AntTypography.Text>
+    </ConfigProvider>
+  )
+}
+
 Typography.Text = Text
 
 interface ITitleProps extends AntTitleProps {
