@@ -1,6 +1,6 @@
 import { Table as AntTable } from 'antd'
 import { type TableProps as AntTableProps } from 'antd'
-import { type AnyObject } from 'antd/lib/_util/type'
+import { type AnyObject } from 'antd/es/_util/type'
 import { ConfigProvider } from 'src/components'
 import { type ColumnType, type ExpandableConfig } from 'antd/es/table/interface'
 import { type ColumnsType, type TableProps } from 'antd/es/table'
