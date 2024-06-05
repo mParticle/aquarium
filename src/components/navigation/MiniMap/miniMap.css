@@ -1,13 +1,22 @@
+/* disabled general */
+
 .svg-linker-root__button.svg-linker-root__button--disabled {
     cursor: default;
 }
+.svg-linker-root__button.svg-linker-root__button--disabled .node__text
+{
+    fill: var(--color-text-disabled);
+
+}
+
+/* disabled regular */
 
 .svg-linker-root__button.svg-linker-root__button--disabled.svg-linker-root__button--regular .node__main-rect {
     fill: transparent;
     stroke: var(--color-border);
 }
 
-.svg-linker-root__button.svg-linker-root__button--disabled.svg-linker-root__button--regular path {
+.svg-linker-root__button.svg-linker-root__button--disabled.svg-linker-root__button--regular .node__icon path {
     fill: var(--color-text-disabled);
 }
 
@@ -19,7 +28,7 @@
     fill: var(--mp-brand-secondary-3);
 }
 
-.svg-linker-root__button.svg-linker-root__button--disabled.svg-linker-root__button--drop-shadow path {
+.svg-linker-root__button.svg-linker-root__button--disabled.svg-linker-root__button--drop-shadow .node__icon path {
     fill: var(--color-text-disabled);
 }
 
@@ -35,17 +44,25 @@
     fill: var(--mp-brand-secondary-6);
 }
 
+/* variant: shadow, general */
+
 .svg-linker-root__button.svg-linker-root__button--drop-shadow:hover {
     filter: drop-shadow(0px 9px 28px rgba(0, 0, 0, 0.05)) drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.12)) drop-shadow(0px 6px 16px rgba(0, 0, 0, 0.08));
 }
+
+/* variant: black, general */
 
 .svg-linker-root__button.svg-linker-root__button--regular:hover .node__main-rect {
     fill: var(--mp-brand-primary-2);
 }
 
+/* variant: black, general */
+
 .svg-linker-root__button.svg-linker-root__button--black:hover .node__main-rect {
     fill: var(--mp-brand-secondary-7);
 }
+
+/* general */
 
 .svg-linker-root__button--active .node__main-rect {
     stroke: var(--mp-brand-primary-6);

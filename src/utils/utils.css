@@ -11,5 +11,9 @@
 }
 
 .u-padding-sm {
-  padding:var(--padding-sm)
+  padding:var(--padding-sm) !important;
+}
+
+.u-overflow-visible {
+  overflow: visible !important;
 }
