@@ -1,10 +1,18 @@
-import { Typography as AntTypography, type TypographyProps as AntTypographyProps } from 'antd'
+import {
+  Typography as AntTypography,
+  type TypographyProps as AntTypographyProps,
+  theme,
+  ConfigProvider as AntConfigProvider,
+} from 'antd'
 import { ConfigProvider } from 'src/components'
 import { type ReactNode } from 'react'
 import { type TextProps as AntTextProps } from 'antd/es/typography/Text'
 import { type TitleProps as AntTitleProps } from 'antd/es/typography/Title'
 import { type LinkProps as AntLinkProps } from 'antd/es/typography/Link'
 import { type ParagraphProps as AntParagraphProps } from 'antd/es/typography/Paragraph'
+import type { FontMapToken } from 'antd/es/theme/interface'
+
+const { useToken } = theme
 
 export interface ITypographyProps extends AntTypographyProps {
   children: ReactNode
@@ -21,25 +29,33 @@ export interface ITextProps extends AntTextProps {
   size?: TypographySize
 }
 
-const getFontSizeVariable = (size: TypographySize): string => `--font-size${size === 'base' ? '' : `-${size}`}`
+type FontSizeToken = keyof Pick<FontMapToken, 'fontSize' | 'fontSizeSM' | 'fontSizeLG' | 'fontSizeXL'>
+type LineHeightToken = keyof Pick<FontMapToken, 'lineHeight' | 'lineHeightSM' | 'lineHeightLG'>
 
-const getLineHeightVariable = (size: TypographySize): string => {
-  if (size === 'sm') return `--line-height-sm`
-  if (size === 'lg' || size === 'xl') return '--line-height-lg'
-  return `--line-height`
+const getFontSizeToken = (size: TypographySize): FontSizeToken => {
+  if (size === 'base') return 'fontSize'
+  if (size === 'sm') return 'fontSizeSM'
+  if (size === 'lg') return 'fontSizeLG'
+  return 'fontSizeXL'
+}
+
+const getLineHeightToken = (size: TypographySize): LineHeightToken => {
+  if (size === 'base') return 'lineHeight'
+  if (size === 'sm') return 'lineHeightSM'
+  return 'lineHeightLG'
 }
 
 const Text = ({ size = 'base', ...props }: ITextProps) => {
+  const { token } = useToken()
+
+  const fontSize = token[getFontSizeToken(size)]
+  const lineHeight = token[getLineHeightToken(size)]
+
   return (
     <ConfigProvider>
-      <AntTypography.Text
-        style={{
-          fontSize: `var(${getFontSizeVariable(size)})`,
-          lineHeight: `var(${getLineHeightVariable(size)})`,
-        }}
-        {...props}>
-        {props.children}
-      </AntTypography.Text>
+      <AntConfigProvider theme={{ components: { Typography: { fontSize, lineHeight } } }}>
+        <AntTypography.Text {...props}>{props.children}</AntTypography.Text>
+      </AntConfigProvider>
     </ConfigProvider>
   )
 }
