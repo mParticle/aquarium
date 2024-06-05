@@ -24,6 +24,7 @@ export const minimap = (
                   rx="7.5"
                   stroke="#EBE8F8"
                   shapeRendering="crispEdges"
+                  className="node__main-rect"
                 />
                 <g id="Frame 481749">
                   <rect x="178" y="114" width="24" height="24" rx="12" fill="#EBE8F8" />
@@ -59,9 +60,10 @@ export const minimap = (
                   rx="7.5"
                   stroke="#EBE8F8"
                   shapeRendering="crispEdges"
+                  className="node__main-rect"
                 />
-                <g id="Frame 481749_2">
-                  <rect x="178" y="198" width="24" height="24" rx="12" fill="#EBE8F8" />
+                <g id="Frame 481749_2" className="node__icon">
+                  <rect x="178" y="198" width="24" height="24" rx="12" fill="currentColor" />
                   <g id="address-card 1" clipPath="url(#clip2_5505_13516)">
                     <path
                       id="Vector_3"
@@ -85,9 +87,18 @@ export const minimap = (
             </g>
             <g id="OversightBtn" filter="url(#filter3_d_5505_13516)">
               <rect x="131" y="2" width="120" height="72" rx="8" fill="white" shapeRendering="crispEdges" />
-              <rect x="131.5" y="2.5" width="119" height="71" rx="7.5" stroke="#EBE8F8" shapeRendering="crispEdges" />
-              <g id="Platform Logo">
-                <rect x="179" y="14" width="24" height="24" rx="12" fill="#EBE8F8" />
+              <rect
+                x="131.5"
+                y="2.5"
+                width="119"
+                height="71"
+                rx="7.5"
+                stroke="#EBE8F8"
+                shapeRendering="crispEdges"
+                className="node__main-rect"
+              />
+              <g id="Platform Logo" className="node__icon">
+                <rect x="179" y="14" width="24" height="24" rx="12" fill="currentColor" />
                 <g id="shield-keyhole 4" clipPath="url(#clip3_5505_13516)">
                   <path
                     id="Vector_5"
@@ -119,9 +130,18 @@ export const minimap = (
       <g id="Desstinations">
         <g id="PredictionsBtn" filter="url(#filter4_d_5505_13516)">
           <rect x="5" y="295" width="120" height="72" rx="8" fill="white" shapeRendering="crispEdges" />
-          <rect x="5.5" y="295.5" width="119" height="71" rx="7.5" stroke="#EBE8F8" shapeRendering="crispEdges" />
-          <g id="Frame 481749_3">
-            <rect x="53" y="307" width="24" height="24" rx="12" fill="#EBE8F8" />
+          <rect
+            x="5.5"
+            y="295.5"
+            width="119"
+            height="71"
+            rx="7.5"
+            stroke="#EBE8F8"
+            shapeRendering="crispEdges"
+            className="node__main-rect"
+          />
+          <g id="Frame 481749_3" className="node__icon">
+            <rect x="53" y="307" width="24" height="24" rx="12" fill="currentColor" />
             <g id="sparkles">
               <path
                 id="Vector_7"
@@ -144,9 +164,18 @@ export const minimap = (
         </g>
         <g id="AnalyticsBtn" filter="url(#filter5_d_5505_13516)">
           <rect x="133" y="295" width="120" height="72" rx="8" fill="white" shapeRendering="crispEdges" />
-          <rect x="133.5" y="295.5" width="119" height="71" rx="7.5" stroke="#EBE8F8" shapeRendering="crispEdges" />
-          <g id="Frame 481749_4">
-            <rect x="181" y="307" width="24" height="24" rx="12" fill="#EBE8F8" />
+          <rect
+            x="133.5"
+            y="295.5"
+            width="119"
+            height="71"
+            rx="7.5"
+            stroke="#EBE8F8"
+            shapeRendering="crispEdges"
+            className="node__main-rect"
+          />
+          <g id="Frame 481749_4" className="node__icon">
+            <rect x="181" y="307" width="24" height="24" rx="12" fill="currentColor" />
             <g id="mP_analytics">
               <g id="Vector_9">
                 <path
@@ -187,9 +216,18 @@ export const minimap = (
         </g>
         <g id="SegmentationBtn" filter="url(#filter6_d_5505_13516)">
           <rect x="261" y="295" width="120" height="72" rx="8" fill="white" shapeRendering="crispEdges" />
-          <rect x="261.5" y="295.5" width="119" height="71" rx="7.5" stroke="#EBE8F8" shapeRendering="crispEdges" />
-          <g id="Frame 481749_5">
-            <rect x="309" y="307" width="24" height="24" rx="12" fill="#EBE8F8" />
+          <rect
+            x="261.5"
+            y="295.5"
+            width="119"
+            height="71"
+            rx="7.5"
+            stroke="#EBE8F8"
+            shapeRendering="crispEdges"
+            className="node__main-rect"
+          />
+          <g id="Frame 481749_5" className="node__icon">
+            <rect x="309" y="307" width="24" height="24" rx="12" fill="currentColor" />
             <g id="users 1" clipPath="url(#clip4_5505_13516)">
               <path
                 id="Vector_10"

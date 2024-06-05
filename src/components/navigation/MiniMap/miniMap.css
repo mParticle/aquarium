@@ -2,7 +2,7 @@
     cursor: default;
 }
 
-.svg-linker-root__button.svg-linker-root__button--disabled.svg-linker-root__button--regular rect:first-child {
+.svg-linker-root__button.svg-linker-root__button--disabled.svg-linker-root__button--regular .node__main-rect {
     fill: transparent;
     stroke: var(--color-border);
 }
@@ -11,11 +11,11 @@
     fill: var(--color-text-disabled);
 }
 
-.svg-linker-root__button.svg-linker-root__button--disabled.svg-linker-root__button--regular:hover rect:first-child {
+.svg-linker-root__button.svg-linker-root__button--disabled.svg-linker-root__button--regular:hover .node__main-rect {
     fill: transparent;
 }
 
-.svg-linker-root__button.svg-linker-root__button--disabled.svg-linker-root__button--drop-shadow > g > g > rect {
+.svg-linker-root__button.svg-linker-root__button--disabled.svg-linker-root__button--drop-shadow .node__icon > rect {
     fill: var(--mp-brand-secondary-3);
 }
 
@@ -27,11 +27,11 @@
     filter: none;
 }
 
-.svg-linker-root__button.svg-linker-root__button--disabled.svg-linker-root__button--black rect:first-child {
+.svg-linker-root__button.svg-linker-root__button--disabled.svg-linker-root__button--black .node__main-rect {
     fill: var(--mp-brand-secondary-6);
 }
 
-.svg-linker-root__button.svg-linker-root__button--disabled.svg-linker-root__button--black:hover rect:first-child {
+.svg-linker-root__button.svg-linker-root__button--disabled.svg-linker-root__button--black:hover .node__main-rect {
     fill: var(--mp-brand-secondary-6);
 }
 
@@ -39,10 +39,19 @@
     filter: drop-shadow(0px 9px 28px rgba(0, 0, 0, 0.05)) drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.12)) drop-shadow(0px 6px 16px rgba(0, 0, 0, 0.08));
 }
 
-.svg-linker-root__button.svg-linker-root__button--regular:hover rect:first-child {
+.svg-linker-root__button.svg-linker-root__button--regular:hover .node__main-rect {
     fill: var(--mp-brand-primary-2);
 }
 
-.svg-linker-root__button.svg-linker-root__button--black:hover rect:first-child {
+.svg-linker-root__button.svg-linker-root__button--black:hover .node__main-rect {
     fill: var(--mp-brand-secondary-7);
+}
+
+.svg-linker-root__button--active .node__main-rect {
+    stroke: var(--mp-brand-primary-6);
+    stroke-width: var(--line-width-bold)
+}
+
+.svg-linker-root__button .node__icon > rect {
+    fill: var(--mp-brand-primary-2);
 }
