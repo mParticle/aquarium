@@ -1,6 +1,6 @@
 import { Tag as AntTag } from 'antd'
 import { type TagProps as AntTagProps } from 'antd'
-import { type CheckableTagProps as AntCheckableTagProps } from 'antd/lib/tag'
+import { type CheckableTagProps as AntCheckableTagProps } from 'antd/es/tag'
 import { ConfigProvider } from 'src/components'
 
 export interface ITagProps extends AntTagProps {
