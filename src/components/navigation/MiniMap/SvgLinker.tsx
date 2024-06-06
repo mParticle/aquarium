@@ -39,8 +39,8 @@ export const SvgLinker = (props: ISvgLinkerProps) => {
       const link = props.links.find(b => b.elementId === id)
 
       if (link) {
-        const isActiveClass = link.isActive && ' svg-linker-root__button--active'
-        const isUnauthorizedClass = link.isUnauthorized && ' svg-linker-root__button--disabled'
+        const isActiveClass = link.isActive ? ' svg-linker-root__button--active' : ''
+        const isUnauthorizedClass = link.isUnauthorized ? ' svg-linker-root__button--disabled' : ''
         const linkStateClass = isActiveClass || isUnauthorizedClass
 
         const className = `svg-linker-root__button svg-linker-root__button--${link.variant} ${linkStateClass} `
