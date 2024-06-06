@@ -1,4 +1,4 @@
-import React, { Children, ReactElement, useState } from 'react'
+import React, { Children, ReactElement } from 'react'
 import './miniMap.css'
 
 export interface ISvgLink {
@@ -6,6 +6,7 @@ export interface ISvgLink {
   href: string
   variant?: 'regular' | 'black' | 'drop-shadow'
   isUnauthorized?: boolean
+  isActive?: boolean
 }
 
 interface ISvgLinkerProps {
@@ -15,8 +16,6 @@ interface ISvgLinkerProps {
 }
 
 export const SvgLinker = (props: ISvgLinkerProps) => {
-  const [activeLink, setActiveLink] = useState<string | null>(null)
-
   const handleContainerClick = (e: React.MouseEvent) => {
     e.preventDefault()
     const target = e.target as HTMLElement
@@ -24,12 +23,15 @@ export const SvgLinker = (props: ISvgLinkerProps) => {
     const link = props.links.find(b => b.href === href)
 
     if (link) {
-      !link.isUnauthorized && setActiveLink(link.href)
       props.onLinkClick(link)
     }
   }
 
-  return <div onClick={handleContainerClick}>{wrapButtonsIntoLinks(props.children)}</div>
+  return (
+    <div onClick={handleContainerClick} className="svg-linker__container">
+      {wrapButtonsIntoLinks(props.children)}
+    </div>
+  )
 
   function wrapButtonsIntoLinks(parent: React.ReactNode): React.ReactNode {
     const wrapElement = (element: ReactElement): ReactElement => {
@@ -37,7 +39,7 @@ export const SvgLinker = (props: ISvgLinkerProps) => {
       const link = props.links.find(b => b.elementId === id)
 
       if (link) {
-        const isActiveClass = link.href === activeLink && ' svg-linker-root__button--active'
+        const isActiveClass = link.isActive && ' svg-linker-root__button--active'
         const isUnauthorizedClass = link.isUnauthorized && ' svg-linker-root__button--disabled'
         const linkStateClass = isActiveClass || isUnauthorizedClass
 

@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const minimap = (
-  <svg width="385" height="374" viewBox="0 0 385 374" fill="none" xmlns="http://www.w3.org/2000/svg" className="u-overflow-visible">
+  <svg width="385" height="374" viewBox="0 0 385 374" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g id="mini map content" clipPath="url(#clip0_5505_13516)">
       <rect width="385" height="374" fill="white" />
       <g id="Frame 481773" clipPath="url(#clip1_5505_13516)">

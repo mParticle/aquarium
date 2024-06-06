@@ -1,3 +1,6 @@
+.svg-linker__container  svg {
+    overflow: visible;
+}
 /* disabled general */
 .svg-linker-root__button.svg-linker-root__button--disabled {
     cursor: default;
