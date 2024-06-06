@@ -487,7 +487,8 @@ export const MP: Story = {
       overviewHref: '/',
       onLinkClick: link => alert(link.href),
       onUnauthorizedClick: link => alert(`unauthorized ${link?.href} `),
-      unauthorizedLinks: ['oversight', 'dataPlatform'],
+      unauthorizedLinks: ['dataPlatform'],
+      activeLink: 'oversight',
       links: [
         { linkId: 'oversight', href: '/oversight' },
         { linkId: 'dataPlatform', href: '/data-platform' },

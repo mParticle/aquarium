@@ -25,6 +25,7 @@ const Minimap = (props: IMiniMapProps) => {
     href: link.href,
     variant: 'drop-shadow',
     isUnauthorized: props.unauthorizedLinks.includes(link.linkId),
+    isActive: props.activeLink === link.linkId,
   }))
 
   return (
