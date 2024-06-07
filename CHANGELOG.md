@@ -1,3 +1,15 @@
+# [1.17.0-ups-configurable-cookie.2](https://github.com/mParticle/aquarium/compare/v1.17.0-ups-configurable-cookie.1...v1.17.0-ups-configurable-cookie.2) (2024-06-07)
+
+
+### Bug Fixes
+
+* hide minimap after user clicks on a button ([#264](https://github.com/mParticle/aquarium/issues/264)) ([21a399c](https://github.com/mParticle/aquarium/commit/21a399c3afb60bde0737d472db095fba22c41d63))
+
+
+### Features
+
+* minimap active state ([#263](https://github.com/mParticle/aquarium/issues/263)) ([ae9a2b0](https://github.com/mParticle/aquarium/commit/ae9a2b0387b7474d13950078cd5b2ee663848ba7))
+
 # [1.17.0-ups-configurable-cookie.1](https://github.com/mParticle/aquarium/compare/v1.16.1...v1.17.0-ups-configurable-cookie.1) (2024-06-03)
 
 
