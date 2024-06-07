@@ -1,3 +1,5 @@
+import { RequireOneOrNone } from 'type-fest'
+
 export function get(key: string): string | null {
   const cookies = getAll()
   return cookies?.[key] ? cookies[key] : null
@@ -12,23 +14,58 @@ export function getObject(key: string): string | null {
   return value ? JSON.parse(value) : value
 }
 
-export function put(key: string, value: string | null, options: any /* TODO fix any */ = {}): void {
-  let expires = options.expires
-  if (value == null) expires = 'Thu, 01 Jan 1970 00:00:01 GMT'
-  if (typeof expires === 'string') expires = new Date(expires)
+export type CookieOptions = RequireOneOrNone<
+  {
+    path?: string
+    domain?: string
+    secure?: boolean
+    expiresISOString: string
+    permanent: boolean
+  },
+  'expiresISOString' | 'permanent'
+>
+
+export function put(key: string, value: string | null, options: CookieOptions = {}): void {
   let str = `${_encode(key)}=${value != null ? _encode(value) : ''}`
   if (options.path) str += `; path=${options.path}`
   if (options.domain) str += `; domain=${options.domain}`
-  if (options.expires) str += `; expires=${expires.toUTCString()}`
+  if (options.permanent || options.expiresISOString)
+    str += `; expires=${calculateExpires(value, options.permanent, options.expiresISOString)}`
   if (options.secure) str += '; secure'
   document.cookie = str
 }
 
-export function putObject(key: string, value: Record<string, unknown>, options = {}): void {
+/**
+ * This code came from the aurelia-cookie plugin initially and the way they remove a cookie
+ * is by calling the put method with a null value and the same options as the cookie that needs to be removed.
+ *
+ * This null value makes the cookie expire immediately by setting the expires attribute to a date in the past.
+ * I'm keeping the same logic, but we should consider using a more robust library for cookie management.
+ *
+ * If we don't set the expires option, the cookie Expires property in the browser becomes "Session", which
+ * doesn't seem to have a predictable behaviour across different browsers.
+ *
+ * @see https://stackoverflow.com/questions/4132095/when-does-a-cookie-with-expiration-time-at-end-of-session-expire
+ */
+function calculateExpires(value: string | null, permanent?: boolean, expires?: string): string {
+  const defaultExpires = 'Thu, 01 Jan 1970 00:00:01 GMT'
+
+  if (value === null) {
+    return defaultExpires
+  }
+
+  if (permanent) {
+    return 'Sat, 31 Dec 2044 23:59:59 GMT'
+  }
+
+  return expires ?? defaultExpires
+}
+
+export function putObject(key: string, value: Record<string, unknown>, options: CookieOptions = {}): void {
   put(key, JSON.stringify(value), options)
 }
 
-export function remove(key: string, options = {}): void {
+export function remove(key: string, options: CookieOptions = {}): void {
   put(key, null, options)
 }
 
