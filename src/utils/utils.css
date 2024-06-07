@@ -11,5 +11,5 @@
 }
 
 .u-padding-sm {
-  padding:var(--padding-sm)
+  padding:var(--padding-sm) !important;
 }

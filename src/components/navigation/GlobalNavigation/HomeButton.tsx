@@ -47,6 +47,7 @@ function MinimapWithPopover(props: MinimapWithPopoverProps) {
           links={props.links}
           onLinkClick={handleLinkClick}
           unauthorizedLinks={props.unauthorizedLinks}
+          activeLink={props.activeLink}
         />
       }
       placement="rightBottom"
@@ -79,6 +80,7 @@ export function HomeButton(props: HomeButtonProps) {
       onLinkClick={props.minimapOptions.onLinkClick}
       unauthorizedLinks={props.minimapOptions.unauthorizedLinks}
       onPopoverClick={props.onMpHomeClick}
+      activeLink={props.minimapOptions.activeLink}
     />
   )
 }

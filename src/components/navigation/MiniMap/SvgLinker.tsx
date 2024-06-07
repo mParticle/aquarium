@@ -6,6 +6,7 @@ export interface ISvgLink {
   href: string
   variant?: 'regular' | 'black' | 'drop-shadow'
   isUnauthorized?: boolean
+  isActive?: boolean
 }
 
 interface ISvgLinkerProps {
@@ -21,10 +22,16 @@ export const SvgLinker = (props: ISvgLinkerProps) => {
     const href = target.closest('a')?.getAttribute('href')
     const link = props.links.find(b => b.href === href)
 
-    if (link) props.onLinkClick(link)
+    if (link) {
+      props.onLinkClick(link)
+    }
   }
 
-  return <div onClick={handleContainerClick}>{wrapButtonsIntoLinks(props.children)}</div>
+  return (
+    <div onClick={handleContainerClick} className="svg-linker__container">
+      {wrapButtonsIntoLinks(props.children)}
+    </div>
+  )
 
   function wrapButtonsIntoLinks(parent: React.ReactNode): React.ReactNode {
     const wrapElement = (element: ReactElement): ReactElement => {
@@ -32,9 +39,11 @@ export const SvgLinker = (props: ISvgLinkerProps) => {
       const link = props.links.find(b => b.elementId === id)
 
       if (link) {
-        const className = `svg-linker-root__button svg-linker-root__button--${link.variant}${
-          link.isUnauthorized ? ' svg-linker-root__button--disabled' : ''
-        }`
+        const isActiveClass = link.isActive ? ' svg-linker-root__button--active' : ''
+        const isUnauthorizedClass = link.isUnauthorized ? ' svg-linker-root__button--disabled' : ''
+        const linkStateClass = isActiveClass || isUnauthorizedClass
+
+        const className = `svg-linker-root__button svg-linker-root__button--${link.variant} ${linkStateClass} `
 
         return (
           <a key={id} href={link.href} className={className}>
