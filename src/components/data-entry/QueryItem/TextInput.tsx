@@ -11,7 +11,7 @@ interface ITextInputProps {
   placeholder?: string
 }
 
-export const TextInput = (props: ITextInputProps) => {
+const TextInput = (props: ITextInputProps) => {
   const isErrorStatus = props.errorMessage && !props.disabled
 
   const _onChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -34,3 +34,5 @@ export const TextInput = (props: ITextInputProps) => {
     </>
   )
 }
+
+export default TextInput
