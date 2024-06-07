@@ -103,7 +103,7 @@ export const Error: Story = {
   },
 }
 
-export const Icon: Story = {
+export const WithIcon: Story = {
   args: {
     placeholder: 'QueryItem.ValueSelector.Cascader Icon',
     options: exampleOptions,

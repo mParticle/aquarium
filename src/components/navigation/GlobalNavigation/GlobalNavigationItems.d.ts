@@ -44,4 +44,5 @@ export interface IMiniMapOptions {
   onLinkClick: (link: MiniMapLink) => void
   onUnauthorizedClick: (link?: MiniMapLink) => void
   unauthorizedLinks: MiniMapLinks[]
+  activeLink: MiniMapLinks
 }
