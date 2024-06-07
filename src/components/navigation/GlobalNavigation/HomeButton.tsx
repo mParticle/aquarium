@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Center, Icon, Popover, Tooltip } from 'src/components'
 import MiniMap from 'src/components/navigation/MiniMap/MiniMap'
-import { IMiniMapOptions } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
+import { IMiniMapOptions, MiniMapLink } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 
 interface MpHomeButtonProps {
   onClick: () => void
@@ -29,19 +29,30 @@ function MpHomeButton(props: MpHomeButtonProps) {
 }
 
 function MinimapWithPopover(props: MinimapWithPopoverProps) {
+  const [isPopoverOpen, setIsPopoverOpen] = useState(false)
+  const handleLinkClick = (link: MiniMapLink) => {
+    setIsPopoverOpen(false)
+    props.onLinkClick(link)
+  }
+  const handlePopoverOpenChange = (newPopoverState: boolean) => {
+    setIsPopoverOpen(newPopoverState)
+  }
+
   return (
     <Popover
-      content={() => (
+      content={
         <MiniMap
           overviewHref={props.overviewHref}
           onUnauthorizedClick={props.onUnauthorizedClick}
           links={props.links}
-          onLinkClick={props.onLinkClick}
+          onLinkClick={handleLinkClick}
           unauthorizedLinks={props.unauthorizedLinks}
           activeLink={props.activeLink}
         />
-      )}
+      }
       placement="rightBottom"
+      open={isPopoverOpen}
+      onOpenChange={handlePopoverOpenChange}
       arrow={false}>
       <MpHomeButton onClick={props.onPopoverClick} />
     </Popover>
