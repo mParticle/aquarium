@@ -13,8 +13,8 @@ type IMiniMapProps = IMiniMapOptions
 const Minimap = (props: IMiniMapProps) => {
   const elementIdMap: Record<MiniMapLinks, string> = {
     oversight: 'OversightBtn',
-    dataPlatform: 'DataPlatformBtn',
-    customer360: 'c360Btn',
+    'data-platform': 'DataPlatformBtn',
+    'customer-360': 'c360Btn',
     predictions: 'PredictionsBtn',
     analytics: 'AnalyticsBtn',
     segmentation: 'SegmentationBtn',
