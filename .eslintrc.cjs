@@ -1,4 +1,3 @@
-const NumberInput = require('src/components/data-entry/QueryItem/NumberInput.js')
 module.exports = {
   env: {
     browser: true,
@@ -110,7 +109,11 @@ module.exports = {
           'WorkspaceSignout',
           'NavigationItem',
           'Action',
+          'QueryItem',
           'NumberInput',
+          'TextInput',
+          'Qualifier',
+          'ValueSelector',
         ],
       },
     ],
