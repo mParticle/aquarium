@@ -2,7 +2,7 @@ import './query-item.css'
 import { InputNumber } from 'src/components'
 import { Typography } from 'src/components/general/Typography/Typography'
 
-interface ITextInputProps {
+interface INumberInputProps {
   value?: number
   disabled?: boolean
   errorMessage?: string
@@ -12,7 +12,7 @@ interface ITextInputProps {
   onChange?: (value: number) => void
 }
 
-const NumberInput = (props: ITextInputProps) => {
+const NumberInput = (props: INumberInputProps) => {
   const isErrorStatus = props.errorMessage && !props.disabled
 
   let inputClasses = `query-item query-item--input-number`

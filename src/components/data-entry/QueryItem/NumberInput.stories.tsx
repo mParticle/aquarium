@@ -42,6 +42,13 @@ export const ErrorMessage: Story = {
   },
 }
 
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+    placeholder: 'Disabled',
+  },
+}
+
 export const Min: Story = {
   args: {
     min: 0,
