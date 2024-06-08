@@ -1,6 +1,6 @@
 {
   "name": "@mparticle/aquarium",
-  "version": "1.16.1",
+  "version": "1.16.2-query-select-number.1",
   "description": "mParticle Component Library",
   "license": "Apache-2.0",
   "keywords": [

@@ -1,3 +1,5 @@
+## [1.16.2-query-select-number.1](https://github.com/mParticle/aquarium/compare/v1.16.1...v1.16.2-query-select-number.1) (2024-06-08)
+
 ## [1.16.1](https://github.com/mParticle/aquarium/compare/v1.16.0...v1.16.1) (2024-06-03)
 
 
