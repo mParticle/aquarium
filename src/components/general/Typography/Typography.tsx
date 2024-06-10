@@ -1,7 +1,6 @@
 import {
   Typography as AntTypography,
   type TypographyProps as AntTypographyProps,
-  theme,
   ConfigProvider as AntConfigProvider,
 } from 'antd'
 import { ConfigProvider } from 'src/components'
@@ -10,9 +9,6 @@ import { type TextProps as AntTextProps } from 'antd/es/typography/Text'
 import { type TitleProps as AntTitleProps } from 'antd/es/typography/Title'
 import { type LinkProps as AntLinkProps } from 'antd/es/typography/Link'
 import { type ParagraphProps as AntParagraphProps } from 'antd/es/typography/Paragraph'
-import type { FontMapToken } from 'antd/es/theme/interface'
-
-const { useToken } = theme
 
 export interface ITypographyProps extends AntTypographyProps {
   children: ReactNode
@@ -29,27 +25,23 @@ export interface ITextProps extends AntTextProps {
   size?: TypographySize
 }
 
-type FontSizeToken = keyof Pick<FontMapToken, 'fontSize' | 'fontSizeSM' | 'fontSizeLG' | 'fontSizeXL'>
-type LineHeightToken = keyof Pick<FontMapToken, 'lineHeight' | 'lineHeightSM' | 'lineHeightLG'>
-
-const getFontSizeToken = (size: TypographySize): FontSizeToken => {
-  if (size === 'base') return 'fontSize'
-  if (size === 'sm') return 'fontSizeSM'
-  if (size === 'lg') return 'fontSizeLG'
-  return 'fontSizeXL'
+const getFontSize = (size: TypographySize): number => {
+  if (size === 'base') return 14
+  if (size === 'sm') return 12
+  if (size === 'lg') return 16
+  return 20
 }
 
-const getLineHeightToken = (size: TypographySize): LineHeightToken => {
-  if (size === 'base') return 'lineHeight'
-  if (size === 'sm') return 'lineHeightSM'
-  return 'lineHeightLG'
+const getLineHeight = (size: TypographySize): number => {
+  if (size === 'base') return 1.571428571428571
+  if (size === 'sm') return 1.666666666666667
+  if (size === 'lg') return 1.5
+  return 1.4
 }
 
 const Text = ({ size = 'base', ...props }: ITextProps) => {
-  const { token } = useToken()
-
-  const fontSize = token[getFontSizeToken(size)]
-  const lineHeight = token[getLineHeightToken(size)]
+  const fontSize = getFontSize(size)
+  const lineHeight = getLineHeight(size)
 
   return (
     <ConfigProvider>
