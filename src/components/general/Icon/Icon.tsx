@@ -1,4 +1,4 @@
-import { Icons } from 'src/constants/Icons'
+import { DuoIcons, LightIcons } from 'src/constants/Icons'
 import './icon.css'
 
 type IconSize = 'xxxxl' | 'xxxl' | 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs'
@@ -16,13 +16,21 @@ export type IconColor =
   | 'brand'
 
 export interface IIconProps {
-  name: keyof typeof Icons
+  name//: if type==='duo' then name is keyof typeof DuoIcons, else if type==='light' then name is keyof typeof LightIcons
   color?: IconColor
   size?: IconSize
+  type: 'duo' | 'light'
 }
 
 export const Icon = (props: IIconProps) => {
-  const IconName = Icons[props.name]
+  let IconName: IIconProps['name']
+
+  if (props.type === 'duo') {
+    IconName = DuoIcons[props.name]
+  } else if (props.type === 'light') {
+    IconName = LightIcons[props.name]
+  }
+
   const className = `icon-size-${props.size} icon-color-${props.color}`
   const iconId = `icon-${props.name}`
 
@@ -32,4 +40,5 @@ export const Icon = (props: IIconProps) => {
 Icon.defaultProps = {
   color: 'default',
   size: 'lg',
+  type: 'light',
 } satisfies Partial<IIconProps>

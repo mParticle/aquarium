@@ -1,8 +1,8 @@
 import {
   AddIcon,
   AlicornIcon,
-  AnalyticsIconDt,
-  C360IconDt,
+  AnalyticsIconDuo,
+  C360IconDuo,
   CatalogIcon,
   ChartColumnIcon,
   ChartLineIcon,
@@ -10,7 +10,7 @@ import {
   CircleNodesIcon,
   CloudIcon,
   ConnectionsIcon,
-  DataPlatformDt,
+  DataPlatformDuo,
   DatabaseIcon,
   DsrIcon,
   EmptyIcon,
@@ -32,8 +32,7 @@ import {
   MpLogoIcon,
   ObservabilityIcon,
   OversightIcon,
-  PredictionsIconDt,
-  PredictionsIconLt,
+  PredictionsIconLight,
   RemoveIcon,
   SearchIcon,
   SegmentationIcon,
@@ -50,13 +49,19 @@ import {
   PremiumIcon,
   HelpVideoIcon,
   ConversionIcon,
+  PredictionsIconDuo,
 } from 'src/components/icons'
 
-export const Icons = {
+export const DuoIcons = {
+  analytics: AnalyticsIconDuo,
+  C360: C360IconDuo,
+  siteMap: DataPlatformDuo,
+  sparkles: PredictionsIconDuo,
+} as const
+
+export const LightIcons = {
   add: AddIcon,
   alicorn: AlicornIcon,
-  analytics: AnalyticsIconDt,
-  C360: C360IconDt,
   catalog: CatalogIcon,
   chartColumn: ChartColumnIcon,
   chartLine: ChartLineIcon,
@@ -90,9 +95,7 @@ export const Icons = {
   search: SearchIcon,
   segmentation: SegmentationIcon,
   signout: SignoutIcon,
-  siteMap: DataPlatformDt,
-  sparkles: PredictionsIconDt,
-  predictions: PredictionsIconLt,
+  predictions: PredictionsIconLight,
   split: SplitIcon,
   systemAlerts: SystemAlertsIcon,
   transformation: TransformationsIcon,
