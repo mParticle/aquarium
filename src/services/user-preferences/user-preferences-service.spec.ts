@@ -51,9 +51,8 @@ describe('When testing the User Preferences Service', () => {
       userPreferencesService = new UserPreferencesService<TestUserPreferenceId>(
         definitions,
         compositeUserPreferencesService,
-        cookieKey,
         lowLevelScope,
-        () => new Date(),
+        { key: cookieKey },
       )
       await userPreferencesService.init()
 
@@ -82,9 +81,8 @@ describe('When testing the User Preferences Service', () => {
       userPreferencesService = new UserPreferencesService<TestUserPreferenceId>(
         definitions,
         compositeUserPreferencesService,
-        cookieKey,
         currentScope,
-        () => new Date(),
+        { key: cookieKey },
       )
       await userPreferencesService.init()
 
@@ -109,9 +107,8 @@ describe('When testing the User Preferences Service', () => {
       userPreferencesService = new UserPreferencesService<TestUserPreferenceId>(
         definitions,
         compositeUserPreferencesService,
-        cookieKey,
         someScope,
-        () => new Date(),
+        { key: cookieKey },
       )
       await userPreferencesService.init()
 
@@ -148,9 +145,8 @@ describe('When testing the User Preferences Service', () => {
         userPreferencesService = new UserPreferencesService<TestUserPreferenceId>(
           definitions,
           compositeUserPreferencesService,
-          cookieKey,
           lowLevelScope,
-          () => new Date(),
+          { key: cookieKey },
         )
         await userPreferencesService.init()
 
@@ -182,9 +178,8 @@ describe('When testing the User Preferences Service', () => {
       userPreferencesService = new UserPreferencesService<TestUserPreferenceId>(
         definitions,
         compositeUserPreferencesService,
-        cookieKey,
         lowLevelScope,
-        () => new Date(),
+        { key: cookieKey },
       )
       await userPreferencesService.init()
 

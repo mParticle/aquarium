@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/no-extraneous-class,no-unused-vars,@typescript-eslint/no-unused-vars */
-import * as Cookies from '../../utils/Cookies'
 import { type UserPreferences } from 'src/services/user-preferences/models/storage-models/user-preferences'
 import { type CompositeUserPreferences } from 'src/services/user-preferences/models/user-preferences/composite-user-preferences'
 import { type UserPreferenceScope } from 'src/services/user-preferences/models/storage-models/user-preference-scope'
 import { type UserPreferenceDefinitions } from 'src/services/user-preferences/models/definitions/user-preference-definitions'
 import { type CompositeUserPreferencesService } from 'src/services/user-preferences/composite-user-preferences-service'
+import * as Cookies from 'src/utils/Cookies'
+import { type CookieOptions } from 'src/utils/Cookies'
 
 export class UserPreferencesService<TUserPreferenceId extends PropertyKey> {
   public preferences!: CompositeUserPreferences<TUserPreferenceId>
@@ -12,9 +13,8 @@ export class UserPreferencesService<TUserPreferenceId extends PropertyKey> {
   constructor(
     private readonly definitions: UserPreferenceDefinitions<TUserPreferenceId>,
     private readonly compositeUserPreferencesService: CompositeUserPreferencesService<TUserPreferenceId>,
-    private readonly cookieKey: string,
     private readonly currentScope: UserPreferenceScope,
-    public dateFormatter: () => Date,
+    private readonly cookieOptions: CookieOptions & { key: string },
     private readonly onUpdate?: (resolvedPreferences: CompositeUserPreferences<TUserPreferenceId>) => void,
   ) {}
 
@@ -43,7 +43,7 @@ export class UserPreferencesService<TUserPreferenceId extends PropertyKey> {
     // @ts-expect-error
     const { allowedScope } = this.definitions[userPreferenceId]
 
-    const currentStoredPreferences = Cookies.getObject(this.cookieKey)
+    const currentStoredPreferences = Cookies.getObject(this.cookieOptions.key)
 
     const storedPreferences = this.compositeUserPreferencesService.getUpdatedUserPreferenceStorageObject(
       userPreferenceId,
@@ -69,14 +69,11 @@ export class UserPreferencesService<TUserPreferenceId extends PropertyKey> {
   }
 
   private async getStoredPreferences(): Promise<UserPreferences<TUserPreferenceId>> {
-    return await Promise.resolve(Cookies.getObject(this.cookieKey) ?? {})
+    return await Promise.resolve(Cookies.getObject(this.cookieOptions.key) ?? {})
   }
 
   private async setStoredPreferences(storedPreferences: UserPreferences<TUserPreferenceId>): Promise<void> {
-    Cookies.putObject(this.cookieKey, storedPreferences, {
-      expires: this.dateFormatter(),
-      path: '/',
-    })
+    Cookies.putObject(this.cookieOptions.key, storedPreferences, this.cookieOptions)
 
     await Promise.resolve()
   }
