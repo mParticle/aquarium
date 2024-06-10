@@ -1,3 +1,72 @@
-.minimap_container{
-    padding: var(--padding-sm);
+.svg-linker__container  svg {
+    overflow: visible;
+}
+/* disabled general */
+.svg-linker-root__button.svg-linker-root__button--disabled {
+    cursor: default;
+}
+
+/* disabled variant-regular */
+.svg-linker-root__button.svg-linker-root__button--disabled.svg-linker-root__button--regular rect:first-child {
+    fill: transparent;
+    stroke: var(--color-border);
+}
+
+.svg-linker-root__button.svg-linker-root__button--disabled.svg-linker-root__button--regular path {
+    fill: var(--color-text-disabled);
+}
+
+.svg-linker-root__button.svg-linker-root__button--disabled.svg-linker-root__button--regular:hover rect:first-child {
+    fill: transparent;
+}
+
+
+/* disabled - variant: shadow */
+.svg-linker-root__button.svg-linker-root__button--disabled.svg-linker-root__button--drop-shadow > g > g > rect {
+    fill: var(--mp-brand-secondary-3);
+}
+
+.svg-linker-root__button.svg-linker-root__button--disabled.svg-linker-root__button--drop-shadow path {
+    fill: var(--color-text-disabled);
+}
+
+.svg-linker-root__button.svg-linker-root__button--disabled.svg-linker-root__button--drop-shadow:hover {
+    filter: none;
+}
+
+/* disabled - variant: black */
+.svg-linker-root__button.svg-linker-root__button--disabled.svg-linker-root__button--black rect:first-child {
+    fill: var(--mp-brand-secondary-6);
+}
+
+.svg-linker-root__button.svg-linker-root__button--disabled.svg-linker-root__button--black:hover rect:first-child {
+    fill: var(--mp-brand-secondary-6);
+}
+
+/* general - variant: shadow */
+.svg-linker-root__button.svg-linker-root__button--drop-shadow:hover {
+    filter: drop-shadow(0px 9px 28px rgba(0, 0, 0, 0.05)) drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.12)) drop-shadow(0px 6px 16px rgba(0, 0, 0, 0.08));
+}
+
+/* general - variant: black */
+.svg-linker-root__button.svg-linker-root__button--regular:hover rect:first-child {
+    fill: var(--mp-brand-primary-2);
+}
+
+.svg-linker-root__button.svg-linker-root__button--black:hover rect:first-child {
+    fill: var(--mp-brand-secondary-7);
+}
+
+/* for the active state */
+.svg-linker-root__button--active > g > rect + rect   {
+    stroke: var(--mp-brand-primary-6);
+    stroke-width: var(--line-width-bold)
+}
+
+/* some fixes so the shadow on hover looks good without changing the svg */
+#clip0_5505_13516 {
+    display: none;
+}
+#Frame\ 481773 > #Frame\ 481772 > rect {
+    display: none;
 }
