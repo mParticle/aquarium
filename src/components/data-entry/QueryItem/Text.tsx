@@ -6,7 +6,11 @@ export interface ITextProps {
 }
 
 export const Text = ({ disabled = false, text }: ITextProps) => {
-  return <Typography.Text disabled={disabled}>{text}</Typography.Text>;
+  return (
+    <Typography.Text disabled={disabled} style={{ whiteSpace: 'nowrap' }}>
+      {text}
+    </Typography.Text>
+  )
 }
 
 export default Text
