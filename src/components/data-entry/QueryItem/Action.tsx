@@ -8,7 +8,7 @@ export interface IActionProps {
   onClick?: () => void
 }
 
-export const Action = (props: IActionProps) => {
+const Action = (props: IActionProps) => {
   let buttonClassNames: string = 'query-item query-item--action'
   if ((props.type ?? 'default') === 'default') buttonClassNames += ` query-item--secondary`
   if ((props.type ?? 'default') === 'disabled') buttonClassNames += ` query-item--disabled`
@@ -33,3 +33,5 @@ export const Action = (props: IActionProps) => {
     </>
   )
 }
+
+export default Action

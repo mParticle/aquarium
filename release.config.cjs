@@ -1,9 +1,22 @@
 module.exports = {
-  branches: ['main', {
-    name: 'feat/*',
-    channel: 'feature',
-    prerelease: "${name.split('/').slice(1).join('-').toLowerCase()}"
-  }],
+  branches: ['main', 
+    {
+      name: 'feat/*',
+      channel: 'feature',
+      prerelease: "${name.split('/').slice(1).join('-').toLowerCase()}"
+    },
+    {
+      name: 'chore/*',
+      channel: 'chore',
+      prerelease: "${name.split('/').slice(1).join('-').toLowerCase()}"
+    },
+    {
+      name: 'fix/*',
+      channel: 'fix',
+      prerelease: "${name.split('/').slice(1).join('-').toLowerCase()}"
+    },
+    
+  ],
   tagFormat: 'v${version}',
   repositoryUrl: 'https://github.com/mParticle/aquarium',
   plugins: [
