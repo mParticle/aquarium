@@ -16,8 +16,7 @@ export const Typography = (props: ITypographyProps) => (
   </ConfigProvider>
 )
 
-export interface ITextProps extends AntTextProps {
-}
+export interface ITextProps extends AntTextProps {}
 
 const Text = (props: ITextProps) => (
   <ConfigProvider>

@@ -29,7 +29,8 @@ export const TextInput = (props: ITextInputProps) => {
         className={inputClasses}
         value={props.value}
         placeholder={props.placeholder}
-        onChange={_onChange}></Input>
+        onChange={_onChange}
+      />
       {props.errorMessage && <Typography.Text type="danger">{props.errorMessage}</Typography.Text>}
     </>
   )
