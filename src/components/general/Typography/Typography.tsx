@@ -25,6 +25,8 @@ export interface ITextProps extends AntTextProps {
   size?: TypographySize
 }
 
+// TODO: Replace hardcoded values in getFontSize and getLineHeight with tokens when design is ready
+// These values are currently coming from https://www.figma.com/design/LffDbOUjeYqDMZ3djs9Cga/mParticle-Foundation-v1.0.1?node-id=3745-8164&m=dev
 const getFontSize = (size: TypographySize): number => {
   if (size === 'base') return 14
   if (size === 'sm') return 12
