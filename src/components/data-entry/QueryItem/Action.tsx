@@ -10,8 +10,9 @@ export interface IActionProps {
 
 const Action = (props: IActionProps) => {
   let buttonClassNames: string = 'query-item query-item--action'
-  if ((props.type ?? 'default') === 'default') buttonClassNames += ` query-item--secondary`
-  if ((props.type ?? 'default') === 'disabled') buttonClassNames += ` query-item--disabled`
+  const { type = 'default' } = props.type
+  if (type === 'default') buttonClassNames += ` query-item--secondary`
+  if (type === 'disabled') buttonClassNames += ` query-item--disabled`
 
   const baseProps: IButtonProps = {
     className: buttonClassNames,
