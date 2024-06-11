@@ -1,5 +1,4 @@
 import './query-item.css'
-import { type ChangeEvent } from 'react'
 import { Input } from 'src/components'
 import { Typography } from 'src/components/general/Typography/Typography'
 
@@ -29,9 +28,8 @@ const TextInput = (props: ITextInputProps) => {
           props.onChange?.(e.target.value)
         }}
       />
-      
-      {props.errorMessage && 
-       <Typography.Text type="danger">{props.errorMessage}</Typography.Text>}
+
+      {props.errorMessage && <Typography.Text type="danger">{props.errorMessage}</Typography.Text>}
     </>
   )
 }
