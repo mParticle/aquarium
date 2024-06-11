@@ -12,7 +12,7 @@ const meta: Meta<typeof QueryItem.ValueSelector.NumberInput> = {
     },
   },
   args: {
-    onChange: (value: string | number) => {
+    onChange: (value: number) => {
       console.log(value)
     },
   },
