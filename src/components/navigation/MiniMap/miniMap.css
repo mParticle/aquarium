@@ -1,6 +1,7 @@
 .svg-linker__container  svg {
     overflow: visible;
 }
+
 /* disabled general */
 .svg-linker-root__button.svg-linker-root__button--disabled {
     cursor: default;
@@ -45,7 +46,7 @@
 
 /* general - variant: shadow */
 .svg-linker-root__button.svg-linker-root__button--drop-shadow:hover {
-    filter: drop-shadow(0 9px 28px rgb(0 0 0 / 5%)) drop-shadow(0 3px 6px rgb(0 0 0 / 12%)) drop-shadow(0 6px 16px rgb(0 0 0 / 8%));
+    filter: drop-shadow(0px 9px 28px rgba(0, 0, 0, 0.05)) drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.12)) drop-shadow(0px 6px 16px rgba(0, 0, 0, 0.08));
 }
 
 /* general - variant: black */
@@ -66,6 +67,7 @@
 .svg-linker-root__button.svg-linker-root__button--active.svg-linker-root__button--drop-shadow:hover {
     filter: none;
 }
+
 /* some fixes so the shadow on hover looks good without changing the svg */
 #clip0_5505_13516 {
     display: none;
