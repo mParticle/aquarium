@@ -1,3 +1,18 @@
+# [1.18.0](https://github.com/mParticle/aquarium/compare/v1.17.0...v1.18.0) (2024-06-12)
+
+
+### Bug Fixes
+
+* add icons for overview map ([#275](https://github.com/mParticle/aquarium/issues/275)) ([a4bb97d](https://github.com/mParticle/aquarium/commit/a4bb97d42a8a4844b8f5607c69232ba1285d8f2b))
+* remove hover effect on active state ([#278](https://github.com/mParticle/aquarium/issues/278)) ([9f89fa1](https://github.com/mParticle/aquarium/commit/9f89fa1b4d338586adca445ada1fa094bdae8208))
+
+
+### Features
+
+* Add size prop to `Typography.Text` component ([#262](https://github.com/mParticle/aquarium/issues/262)) ([0c14f00](https://github.com/mParticle/aquarium/commit/0c14f00f772255b89d3beb9edd1444c8e71eb877))
+* query select number ([#268](https://github.com/mParticle/aquarium/issues/268)) ([13dc864](https://github.com/mParticle/aquarium/commit/13dc86452026fee6caae6d84c686009c0b80660d))
+* update design tokens ([#273](https://github.com/mParticle/aquarium/issues/273)) ([ac2b442](https://github.com/mParticle/aquarium/commit/ac2b4421c4a02c1c3e1b0e9dd8f55f8b716dbe44))
+
 # [1.18.0-fix-release-config.1](https://github.com/mParticle/aquarium/compare/v1.17.0...v1.18.0-fix-release-config.1) (2024-06-12)
 
 

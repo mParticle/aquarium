@@ -1,6 +1,6 @@
 {
   "name": "@mparticle/aquarium",
-  "version": "1.18.0-fix-release-config.1",
+  "version": "1.18.0",
   "description": "mParticle Component Library",
   "license": "Apache-2.0",
   "keywords": [
