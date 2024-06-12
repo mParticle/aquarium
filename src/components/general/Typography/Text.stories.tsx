@@ -13,6 +13,7 @@ const meta: Meta<typeof Typography.Text> = {
 
   args: {
     code: false,
+    size: 'base',
     copyable: false,
     delete: false,
     disabled: false,
@@ -32,6 +33,10 @@ const meta: Meta<typeof Typography.Text> = {
     type: {
       control: 'select',
       options: ['secondary', 'success', 'warning', 'danger'],
+    },
+    size: {
+      control: 'select',
+      options: ['base', 'sm', 'lg', 'xl'],
     },
   },
 }
