@@ -30,7 +30,7 @@ export interface ICascaderProps {
   value?: Array<number | string>
 }
 
-export const Cascader = (props: ICascaderProps) => {
+const Cascader = (props: ICascaderProps) => {
   type DefaultOptionType = GetProp<IBaseCascaderProps, 'options'>[number]
 
   const options: ICascaderOption[] = []
@@ -178,3 +178,5 @@ export const Cascader = (props: ICascaderProps) => {
     return <Icon name={props.icon ?? 'empty'} size="sm" color="primary" />
   }
 }
+
+export default Cascader

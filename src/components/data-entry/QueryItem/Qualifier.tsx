@@ -15,7 +15,7 @@ export interface IQueryItemQualifierProps {
   value?: IQueryItemQualifierOption
 }
 
-export const Qualifier = (props: IQueryItemQualifierProps) => {
+const Qualifier = (props: IQueryItemQualifierProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const selectProps: ISelectProps = {
     defaultValue: props.options?.length ? props.options[0].value : undefined,
@@ -45,3 +45,5 @@ export const Qualifier = (props: IQueryItemQualifierProps) => {
     </>
   )
 }
+
+export default Qualifier

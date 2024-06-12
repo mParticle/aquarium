@@ -1,4 +1,8 @@
-import { Typography as AntTypography, type TypographyProps as AntTypographyProps } from 'antd'
+import {
+  Typography as AntTypography,
+  type TypographyProps as AntTypographyProps,
+  ConfigProvider as AntConfigProvider,
+} from 'antd'
 import { ConfigProvider } from 'src/components'
 import { type ReactNode } from 'react'
 import { type TextProps as AntTextProps } from 'antd/es/typography/Text'
@@ -16,13 +20,40 @@ export const Typography = (props: ITypographyProps) => (
   </ConfigProvider>
 )
 
-export interface ITextProps extends AntTextProps {}
+type TypographySize = 'base' | 'sm' | 'lg' | 'xl'
+export interface ITextProps extends AntTextProps {
+  size?: TypographySize
+}
 
-const Text = (props: ITextProps) => (
-  <ConfigProvider>
-    <AntTypography.Text {...props}>{props.children}</AntTypography.Text>
-  </ConfigProvider>
-)
+// TODO: Replace hardcoded values in getFontSize and getLineHeight with tokens when design is ready
+// These values are currently coming from https://www.figma.com/design/LffDbOUjeYqDMZ3djs9Cga/mParticle-Foundation-v1.0.1?node-id=3745-8164&m=dev
+const getFontSize = (size: TypographySize): number => {
+  if (size === 'base') return 14
+  if (size === 'sm') return 12
+  if (size === 'lg') return 16
+  return 20
+}
+
+const getLineHeight = (size: TypographySize): number => {
+  if (size === 'base') return 1.571428571428571
+  if (size === 'sm') return 1.666666666666667
+  if (size === 'lg') return 1.5
+  return 1.4
+}
+
+const Text = ({ size = 'base', ...props }: ITextProps) => {
+  const fontSize = getFontSize(size)
+  const lineHeight = getLineHeight(size)
+
+  return (
+    <ConfigProvider>
+      <AntConfigProvider theme={{ components: { Typography: { fontSize, lineHeight } } }}>
+        <AntTypography.Text {...props}>{props.children}</AntTypography.Text>
+      </AntConfigProvider>
+    </ConfigProvider>
+  )
+}
+
 Typography.Text = Text
 
 interface ITitleProps extends AntTitleProps {
