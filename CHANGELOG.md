@@ -1,3 +1,10 @@
+# [1.19.0](https://github.com/mParticle/aquarium/compare/v1.18.0...v1.19.0) (2024-06-12)
+
+
+### Features
+
+* wrap radio group and button components ([#282](https://github.com/mParticle/aquarium/issues/282)) ([6e67439](https://github.com/mParticle/aquarium/commit/6e67439719a48333bab57916440b7e561394bf98))
+
 # [1.18.0](https://github.com/mParticle/aquarium/compare/v1.17.0...v1.18.0) (2024-06-12)
 
 
