@@ -16,6 +16,7 @@ import EmptyIcon from 'src/assets/svg/empty.svg?react'
 import EnrichmentIcon from 'src/assets/svg/mp_pm_lt_enrichment.svg?react'
 import EventAttributeIcon from 'src/assets/svg/event-attribute.svg?react'
 import EventIcon from 'src/assets/svg/event.svg?react'
+import FitToScreen from 'src/assets/svg/mp_act_lt_fit-to-screen.svg?react'
 import FolderClosedIcon from 'src/assets/svg/folder-closed.svg?react'
 import ForwardingIcon from 'src/assets/svg/mp_pm_lt_forwarding.svg?react'
 import GearIcon from 'src/assets/svg/gear.svg?react'
@@ -45,6 +46,8 @@ import UserAttributeIcon from 'src/assets/svg/user-attribute.svg?react'
 import UserProfilesIcon from 'src/assets/svg/mp_pm_lt_userprofiles.svg?react'
 import UsersIcon from 'src/assets/svg/users.svg?react'
 import WrenchIcon from 'src/assets/svg/wrench.svg?react'
+import ZoomIn from 'src/assets/svg/mp_act_lt_zoom-in.svg?react'
+import ZoomOut from 'src/assets/svg/mp_act_lt_zoom-out.svg?react'
 
 export {
   AddIcon,
@@ -65,6 +68,7 @@ export {
   EnrichmentIcon,
   EventAttributeIcon,
   EventIcon,
+  FitToScreen,
   FolderClosedIcon,
   ForwardingIcon,
   GearIcon,
@@ -94,4 +98,6 @@ export {
   UserProfilesIcon,
   UsersIcon,
   WrenchIcon,
+  ZoomIn,
+  ZoomOut,
 }
