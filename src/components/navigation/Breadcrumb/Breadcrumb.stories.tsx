@@ -1,11 +1,8 @@
 import { type Meta, type StoryObj } from '@storybook/react'
+import { Center, Icon } from 'src/components'
 import { Breadcrumb } from 'src/components/navigation/Breadcrumb/Breadcrumb'
-import { ExampleStory } from 'src/utils/ExampleStory'
-import { AlicornIcon } from 'src/components'
-import { MpLogoIcon } from 'src/components'
-import { Center } from 'src/components'
-import { SizeMs } from 'src/styles/style'
 import { PaddingXs } from 'src/styles/style'
+import { ExampleStory } from 'src/utils/ExampleStory'
 
 const meta: Meta<typeof Breadcrumb> = {
   title: 'Aquarium/Navigation/Breadcrumb',
@@ -86,14 +83,14 @@ export const ExampleIcon: Story = {
           items={[
             {
               href: '',
-              title: <AlicornIcon />,
+              title: <Icon name="alicorn" />,
             },
             {
               href: '',
               title: (
                 <Center>
-                  <MpLogoIcon style={{ width: SizeMs, height: SizeMs, paddingRight: PaddingXs }} />
-                  <span>Application List</span>
+                  <Icon name="mpLogo" size="sm" />
+                  <span style={{ paddingLeft: PaddingXs }}>Application List</span>
                 </Center>
               ),
             },

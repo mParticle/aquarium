@@ -34,14 +34,11 @@ yarn add https://github.com/mParticle/aquarium#<branch-name>
 
 We use semantic-release for releasing new versions of the library.
 
-## Releasing development versions
+## Releasing feature versions
 
-To test development version of the Aquarium we use the `dev` branch on Github and `dev` distribution channel on npm.
-This allows us to install a version of the library by running the following command:
-
-```
-yarn add @mparticle/aquarium@dev
-```
+To test feature versions of the Aquarium we use `feat/` branchs on Github and the `feature` distribution channel on npm.
+This allows us to release specific versions for testing specific features and install them on the platforms. To release it,
+just run the Github Action from the `feat/` branch you want to release.
 
 ## Commit conventions and PR titles
 

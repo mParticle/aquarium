@@ -1,12 +1,10 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { Space } from 'src/components'
+import { Icon, Space } from 'src/components'
 import { Progress } from 'src/components/feedback/Progress/Progress'
 import { ExampleStory } from 'src/utils/ExampleStory'
 import { Button } from 'src/components'
 import { useState } from 'react'
 import { Tooltip } from 'src/components'
-import MpLogo from 'src/assets/svg/mpLogo.svg?react'
-import AddIcon from 'src/assets/svg/add.svg?react'
 
 const meta: Meta<typeof Progress> = {
   title: 'Aquarium/Feedback/Progress',
@@ -192,8 +190,8 @@ export const ExampleDynamic: Story = {
           <Progress type="circle" percent={percent} />
         </div>
         <Button.Group>
-          <Button onClick={decline} icon={<AddIcon />} />
-          <Button onClick={increase} icon={<MpLogo />} />
+          <Button onClick={decline} icon={<Icon name="add" />} />
+          <Button onClick={increase} icon={<Icon name="mpLogo" />} />
         </Button.Group>
       </ExampleStory>
     )

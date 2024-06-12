@@ -1,5 +1,22 @@
 module.exports = {
-  branches: ['main', { name: 'dev', channel: 'dev', prerelease: 'dev' }],
+  branches: ['main', 
+    {
+      name: 'feat/*',
+      channel: 'feature',
+      prerelease: "${name.split('/').slice(1).join('-').toLowerCase()}"
+    },
+    {
+      name: 'chore/*',
+      channel: 'chore',
+      prerelease: "${name.split('/').slice(1).join('-').toLowerCase()}"
+    },
+    {
+      name: 'fix/*',
+      channel: 'fix',
+      prerelease: "${name.split('/').slice(1).join('-').toLowerCase()}"
+    },
+    
+  ],
   tagFormat: 'v${version}',
   repositoryUrl: 'https://github.com/mParticle/aquarium',
   plugins: [
@@ -41,11 +58,11 @@ module.exports = {
       },
     ],
     [
-      '@semantic-release/git', 
+      '@semantic-release/git',
       {
-        'assets': ['package.json', 'package-lock.json', 'CHANGELOG.md'],
-        'message': 'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
-      }
-    ]
+        assets: ['package.json', 'package-lock.json', 'CHANGELOG.md'],
+        message: 'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
+      },
+    ],
   ],
 }

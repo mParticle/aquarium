@@ -1,5 +1,6 @@
 import type { MenuItemType } from 'antd/es/menu/hooks/useItems'
 import type { MenuItemGroupType } from 'antd/es/menu/hooks/useItems'
+import { Icon } from 'src/components'
 import { Center } from 'src/components'
 import { Menu } from 'src/components'
 import type { IMenuProps } from 'src/components'
@@ -7,8 +8,6 @@ import { Button } from 'src/components'
 import { Flex } from 'src/components'
 import { Tooltip } from 'src/components'
 import { Spin } from 'src/components'
-import LockIcon from 'src/assets/svg/lock.svg?react'
-import AddIcon from 'src/assets/svg/add.svg?react'
 import { type IMenuInfo } from 'src/components'
 
 export interface INavigationCreateProps {
@@ -60,7 +59,7 @@ export function NavigationCreate(props: INavigationCreateProps) {
             <span className="navigationCreate__itemTitle">
               {item.title}
               {item.isLoading && <Spin className="navigationCreate__itemLoading" size="small" />}
-              {isLocked && <LockIcon className="navigationCreate__lockIcon" />}
+              {isLocked && <Icon name="lock" size="xs" />}
             </span>
 
             <span className="navigationCreate__itemDescription">{item.description}</span>
@@ -76,10 +75,7 @@ export function NavigationCreate(props: INavigationCreateProps) {
       popupClassName: 'globalNavigation__popup globalNavigation__popup--navigationCreate',
       icon: (
         <Center className="navigationCreate__popupButtonWrapper" style={{ pointerEvents: 'none' }}>
-          <Button
-            className="navigationCreate__popupButton"
-            icon={<AddIcon className="navigationCreate__popupIcon" />}
-          />
+          <Button className="navigationCreate__popupButton" icon={<Icon name="add" size="lg" />} />
         </Center>
       ),
 

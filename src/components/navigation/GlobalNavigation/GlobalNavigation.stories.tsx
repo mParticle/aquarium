@@ -1,42 +1,20 @@
+import { type Meta, type StoryObj } from '@storybook/react'
+import { expect, fn, screen, userEvent } from '@storybook/test'
 import React from 'react'
-import { type Meta } from '@storybook/react'
-import { type StoryObj } from '@storybook/react'
-import { userEvent, screen } from '@storybook/test'
-import {
-  ChartLineIcon,
-  ConnectionsIcon,
-  DatabaseIcon,
-  GearIcon,
-  GlobalNavigation,
-  GridIcon,
-  MessageQuestionIcon,
-  UsersIcon,
-  WrenchIcon,
-  MpLogoIcon,
-} from 'src/components'
-import { Space } from 'src/components'
-import { Center } from 'src/components'
-import { Button } from 'src/components'
-import { type INavigationCreateProps } from 'src/components'
-import { FolderClosedIcon } from 'src/components'
-import { ShieldKeyholeIcon } from 'src/components'
-import { HeartIcon } from 'src/components'
-import { AlicornIcon } from 'src/components'
-import { CloudIcon } from 'src/components'
+import { Button, Center, Flex, GlobalNavigation, Icon, type INavigationCreateProps, Space } from 'src/components'
 import { Badge } from 'src/components/data-display/Badge/Badge'
-import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'
-import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
-import { type IGlobalNavigationItem } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
-import { SparklesIcon } from 'src/components'
-import { CircleNodesIcon } from 'src/components'
-import { SplitIcon } from 'src/components'
-import { LightBulbIcon } from 'src/components'
+import {
+  type IGlobalNavigationItem,
+  type IGlobalNavigationLogo,
+} from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { generateOrgs } from 'src/components/navigation/GlobalNavigation/stories-utils'
-import { expect } from '@storybook/test'
+import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'
+import { useNewExperienceReminder } from 'src/hooks/NewExperienceReminder/useNewExperienceReminder'
 
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',
-  icon: <AlicornIcon />,
+  icon: <Icon name="alicorn" size="xxl" color="brand" />,
+  type: 'custom-size',
   onSuiteLogoClick: () => {
     alert('Going to Aqua Home!')
   },
@@ -46,7 +24,7 @@ const defaultTools: IGlobalNavigationItem[] = [
   {
     label: 'Tool 1',
     isActive: true,
-    icon: <ShieldKeyholeIcon />,
+    icon: <Icon name="shieldKeyhole" />,
     type: 'menu',
     children: [
       { label: 'option 1', hrefOptions: { href: '/' } },
@@ -56,7 +34,7 @@ const defaultTools: IGlobalNavigationItem[] = [
   },
   {
     label: 'Tool 2',
-    icon: <HeartIcon />,
+    icon: <Icon name="heart" />,
     type: 'menu',
     children: [
       { label: 'option 1', hrefOptions: { href: '/' } },
@@ -66,7 +44,7 @@ const defaultTools: IGlobalNavigationItem[] = [
   },
   {
     label: 'Tool 3',
-    icon: <ConnectionsIcon />,
+    icon: <Icon name="connections" />,
     hrefOptions: { href: '/' },
   },
 ]
@@ -75,13 +53,13 @@ const defaultManagement: IGlobalNavigationItem[] = [
   {
     label: 'Notifications',
     hideLabel: true,
-    icon: <CloudIcon />,
+    icon: <Icon name="cloud" />,
     hrefOptions: { href: '/' },
   },
   {
     label: 'Support',
     hideLabel: true,
-    icon: <MessageQuestionIcon />,
+    icon: <Icon name="messageQuestion" />,
     type: 'menu',
     children: [
       { label: 'option 1', hrefOptions: { href: '/' } },
@@ -92,12 +70,22 @@ const defaultManagement: IGlobalNavigationItem[] = [
   {
     label: 'Settings',
     hideLabel: true,
-    icon: <GearIcon />,
+    icon: <Icon name="gear" />,
     type: 'menu',
     children: [
       { label: 'option 1', hrefOptions: { href: '/' } },
       { label: 'option 2', hrefOptions: { href: '/' } },
       { label: 'option 3', hrefOptions: { href: '/' } },
+      {
+        label: 'button',
+        type: 'button',
+        buttonOptions: {
+          onClick: () => {
+            alert('go')
+          },
+        },
+      },
+      { type: 'button', label: 'go', buttonOptions: { href: '/', target: '_blank' } },
     ],
   },
 ]
@@ -113,7 +101,7 @@ const defaultOrgs: INavigationOrg[] = [
         workspaces: [
           {
             id: 'workspace1',
-            label: 'Workspace 1',
+            label: 'Workspace 111111111',
             isActive: true,
             onClick: () => {
               alert('Selected Workspace 1')
@@ -138,8 +126,9 @@ const meta: Meta<typeof GlobalNavigation> = {
     tools: defaultTools,
     management: defaultManagement,
     orgs: defaultOrgs,
-    signoutOptions: {
-      onSignout: () => {
+    navigationButtonItemOptions: {
+      label: 'Sign Out of mParticle',
+      onClick: () => {
         alert('signing out!')
       },
     },
@@ -174,7 +163,25 @@ export const Primary: Story = {
 
 const mpLogo: IGlobalNavigationLogo = {
   label: 'Data Platform',
-  icon: <MpLogoIcon />,
+  icon: <Icon name="siteMap" />,
+  onSuiteLogoClick: () => {
+    alert('Going to mP Home!')
+  },
+}
+
+const mpLogoWithBackground: IGlobalNavigationLogo = {
+  label: 'Data Platform',
+  icon: 'catalog',
+  type: 'background-solid',
+  onSuiteLogoClick: () => {
+    alert('Going to mP Home!')
+  },
+}
+
+const mpLogoWithoutCustomSizeLogo: IGlobalNavigationLogo = {
+  label: 'Data Platform',
+  icon: 'catalog',
+  type: 'default',
   onSuiteLogoClick: () => {
     alert('Going to mP Home!')
   },
@@ -192,7 +199,7 @@ function Beta(label: string) {
 const mpTools: IGlobalNavigationItem[] = [
   {
     label: 'Activity',
-    icon: <ChartLineIcon />,
+    icon: <Icon name="chartLine" />,
     type: 'menu',
     children: [
       { hrefOptions: { href: '/' }, label: 'Platform Trends' },
@@ -211,7 +218,7 @@ const mpTools: IGlobalNavigationItem[] = [
   },
   {
     label: 'Data Master',
-    icon: <DatabaseIcon />,
+    icon: <Icon name="database" />,
     type: 'menu',
     children: [
       { hrefOptions: { href: '/' }, label: 'Catalog' },
@@ -224,7 +231,7 @@ const mpTools: IGlobalNavigationItem[] = [
   },
   {
     label: 'Audiences',
-    icon: <UsersIcon />,
+    icon: <Icon name="users" />,
     type: 'menu',
     children: [
       { hrefOptions: { href: '/' }, label: 'Real-time' },
@@ -234,7 +241,7 @@ const mpTools: IGlobalNavigationItem[] = [
   },
   {
     label: 'Connections',
-    icon: <ConnectionsIcon />,
+    icon: <Icon name="connections" />,
     type: 'menu',
     children: [
       { hrefOptions: { href: '/' }, label: 'Connect' },
@@ -244,7 +251,7 @@ const mpTools: IGlobalNavigationItem[] = [
   },
   {
     label: 'Setup',
-    icon: <WrenchIcon />,
+    icon: <Icon name="wrench" />,
     type: 'menu',
     children: [
       { hrefOptions: { href: '/' }, label: 'Inputs' },
@@ -255,7 +262,7 @@ const mpTools: IGlobalNavigationItem[] = [
   },
   {
     label: 'Directory',
-    icon: <GridIcon />,
+    icon: <Icon name="grid" />,
     hrefOptions: { href: '/' },
   },
 ]
@@ -265,7 +272,7 @@ const mpManagement: IGlobalNavigationItem[] = [
     isActive: true,
     label: 'Support',
     hideLabel: true,
-    icon: <MessageQuestionIcon />,
+    icon: <Icon name="messageQuestion" />,
     type: 'menu',
     children: [
       { label: 'option 1', hrefOptions: { href: '/' } },
@@ -276,7 +283,7 @@ const mpManagement: IGlobalNavigationItem[] = [
   {
     label: 'Settings',
     hideLabel: true,
-    icon: <GearIcon />,
+    icon: <Icon name="gear" />,
     type: 'menu',
     children: [
       { hrefOptions: { href: '/' }, label: 'Platform Settings' },
@@ -476,11 +483,25 @@ export const MP: Story = {
     tools: mpTools,
     management: mpManagement,
     orgs: mpOrgs,
+    minimapOptions: {
+      overviewHref: '/',
+      onLinkClick: link => alert(link.href),
+      onUnauthorizedClick: link => alert(`unauthorized ${link?.href} `),
+      unauthorizedLinks: ['dataPlatform'],
+      activeLink: 'oversight',
+      links: [
+        { linkId: 'oversight', href: '/oversight' },
+        { linkId: 'dataPlatform', href: '/data-platform' },
+        { linkId: 'customer360', href: '/customer-360' },
+        { linkId: 'predictions', href: '/predictions' },
+        { linkId: 'analytics', href: '/analytics' },
+        { linkId: 'segmentation', href: '/segmentation' },
+      ],
+    },
     onMpHomeClick: () => {
       alert('going to overview map')
     },
     avatarOptions: {
-      // src: "https://static-qa1.qa.corp.mparticle.com/appimg/logo_af_916397d2-9732-8de6-77cc-80e3bba120ca.png",
       alt: 'avatar',
     },
   },
@@ -512,7 +533,7 @@ export const MPThousandOrgs: Story = {
 
 const indLogo: IGlobalNavigationLogo = {
   label: 'Analytics',
-  icon: <MpLogoIcon />,
+  icon: <Icon name="analytics" />,
   onSuiteLogoClick: () => {
     alert('Going to Analytics Home!')
   },
@@ -521,18 +542,18 @@ const indLogo: IGlobalNavigationLogo = {
 const indTools: IGlobalNavigationItem[] = [
   {
     label: 'My Hub',
-    icon: <GridIcon />,
+    icon: <Icon name="grid" />,
     isActive: true,
     hrefOptions: { href: '/' },
   },
   {
     label: 'Saved',
-    icon: <FolderClosedIcon />,
+    icon: <Icon name="folderClosed" />,
     hrefOptions: { href: '/' },
   },
   {
     label: 'Manage Data',
-    icon: <DatabaseIcon />,
+    icon: <Icon name="database" />,
     hrefOptions: { href: '/' },
   },
 ]
@@ -541,7 +562,7 @@ const indManagement: IGlobalNavigationItem[] = [
   {
     label: 'Support',
     hideLabel: true,
-    icon: <MessageQuestionIcon />,
+    icon: <Icon name="messageQuestion" />,
     type: 'menu',
     children: [
       { label: 'option 1', hrefOptions: { href: '/' } },
@@ -552,7 +573,7 @@ const indManagement: IGlobalNavigationItem[] = [
   {
     label: 'Settings',
     hideLabel: true,
-    icon: <GearIcon />,
+    icon: <Icon name="gear" />,
     type: 'menu',
     children: [
       { label: 'option 1', hrefOptions: { href: '/' } },
@@ -827,9 +848,9 @@ export const Indicative: Story = {
     management: indManagement,
     createItems: indCreateItems,
     orgs: indOrgs,
-    signoutOptions: {
+    navigationButtonItemOptions: {
       label: 'Custom Signout Label',
-      onSignout: () => {
+      onClick: () => {
         alert('Signout!')
       },
     },
@@ -841,7 +862,8 @@ export const Indicative: Story = {
 
 const cortexLogo: IGlobalNavigationLogo = {
   label: 'Predictions',
-  icon: <SparklesIcon />,
+  icon: 'sparkles',
+  type: 'background-solid',
   onSuiteLogoClick: () => {
     alert('Going to Predictions Home!')
   },
@@ -850,28 +872,28 @@ const cortexLogo: IGlobalNavigationLogo = {
 const cortexTools: IGlobalNavigationItem[] = [
   {
     label: 'Pipelines',
-    icon: <CircleNodesIcon />,
+    icon: <Icon name="circleNodes" />,
     hrefOptions: { href: '/' },
   },
   {
     label: 'Projects',
-    icon: <SplitIcon />,
+    icon: <Icon name="split" />,
     hrefOptions: { href: '/' },
     isActive: true,
   },
   {
     label: 'Data',
-    icon: <DatabaseIcon />,
+    icon: <Icon name="database" />,
     hrefOptions: { href: '/' },
   },
   {
     label: 'API',
-    icon: <CloudIcon />,
+    icon: <Icon name="cloud" />,
     hrefOptions: { href: '/' },
   },
   {
     label: 'Insights',
-    icon: <LightBulbIcon />,
+    icon: <Icon name="lightBulb" />,
     hrefOptions: { href: '/' },
   },
 ]
@@ -880,7 +902,7 @@ const cortexManagement: IGlobalNavigationItem[] = [
   {
     label: 'Support',
     hideLabel: true,
-    icon: <MessageQuestionIcon />,
+    icon: <Icon name="messageQuestion" />,
     type: 'menu',
     children: [
       { label: 'option 1', hrefOptions: { href: '/' } },
@@ -891,7 +913,7 @@ const cortexManagement: IGlobalNavigationItem[] = [
   {
     label: 'Settings',
     hideLabel: true,
-    icon: <GearIcon />,
+    icon: <Icon name="gear" />,
     type: 'menu',
     children: [
       { label: 'option 1', hrefOptions: { href: '/' } },
@@ -990,7 +1012,6 @@ export const Cortex: Story = {
     tools: cortexTools,
     management: cortexManagement,
     orgs: cortexOrgs,
-    signoutOptions: undefined,
     onMpHomeClick: () => {
       alert('going to overview map')
     },
@@ -1007,5 +1028,130 @@ export const WorkspaceSearchWithNoResults: Meta<typeof GlobalNavigation> = {
 
     const searchInput = await screen.findByPlaceholderText('Search')
     await userEvent.type(searchInput, '123{enter}')
+  },
+}
+
+export const UseNewExperienceReminderHook: Story = {
+  play: async () => {
+    const alert = fn().mockImplementation(() => {})
+    global.alert = alert
+
+    const showNotificationBtn = screen.getByText('Show Notification')
+    await userEvent.click(showNotificationBtn)
+
+    // Remind me later
+    const remindMeLaterBtn = await screen.findByText('Remind me later')
+    await userEvent.click(remindMeLaterBtn)
+
+    await expect(alert).toBeCalledWith('Remind me later')
+
+    // Take me there
+    await userEvent.click(showNotificationBtn)
+
+    const takeMeThereBtn = await screen.findByText('Take me there')
+    await userEvent.click(takeMeThereBtn)
+
+    await expect(alert).toBeCalledWith('Take me there')
+  },
+  render: props => {
+    const [openNotification, contextHolder] = useNewExperienceReminder({
+      onClose: () => {
+        alert('Notification closed')
+      },
+      onRemindMeLater: () => {
+        alert('Remind me later')
+      },
+      onTakeMeThere: () => {
+        alert('Take me there')
+      },
+    })
+
+    return (
+      <Flex style={{ minHeight: 800, width: 600, border: '1px solid black' }} justify="space-between" vertical={false}>
+        {contextHolder}
+        <div>
+          <GlobalNavigation {...props}></GlobalNavigation>
+        </div>
+        <Button onClick={openNotification}>Show Notification</Button>
+      </Flex>
+    )
+  },
+  args: {
+    logo: defaultLogo,
+    tools: defaultTools,
+    management: defaultManagement,
+    orgs: defaultOrgs,
+    navigationButtonItemOptions: {
+      label: 'Sign Out of mParticle',
+      onClick: () => {
+        alert('signing out!')
+      },
+    },
+    onMpHomeClick: () => {
+      alert('Going to mP!')
+    },
+  },
+}
+
+export const MPWithoutLogo: Story = {
+  args: {
+    onSearchClick: () => {
+      alert('Searching!')
+    },
+    logo: {
+      onSuiteLogoClick: () => {},
+      label: '',
+    },
+    tools: mpTools,
+    management: mpManagement,
+    orgs: mpOrgs,
+    onMpHomeClick: () => {
+      alert('going to overview map')
+    },
+    avatarOptions: {
+      // src: "https://static-qa1.qa.corp.mparticle.com/appimg/logo_af_916397d2-9732-8de6-77cc-80e3bba120ca.png",
+      alt: 'avatar',
+    },
+    showSuiteLogo: false,
+  },
+}
+
+export const MPWithBackgroundLogo: Story = {
+  args: {
+    onSearchClick: () => {
+      alert('Searching!')
+    },
+    logo: mpLogoWithBackground,
+    tools: mpTools,
+    management: mpManagement,
+    orgs: mpOrgs,
+    onMpHomeClick: () => {
+      alert('going to overview map')
+    },
+    avatarOptions: {
+      // src: "https://static-qa1.qa.corp.mparticle.com/appimg/logo_af_916397d2-9732-8de6-77cc-80e3bba120ca.png",
+      alt: 'avatar',
+    },
+    showSuiteLogo: true,
+  },
+}
+
+export const MPWithoutCustomSizeLogo: Story = {
+  args: {
+    onSearchClick: () => {
+      alert('Searching!')
+    },
+    logo: mpLogoWithoutCustomSizeLogo,
+    tools: mpTools,
+    management: mpManagement,
+    orgs: mpOrgs,
+    onMpHomeClick: () => {
+      alert('going to overview map')
+    },
+    avatarOptions: {
+      // src: "https://static-qa1.qa.corp.mparticle.com/appimg/logo_af_916397d2-9732-8de6-77cc-80e3bba120ca.png",
+      alt: 'avatar',
+    },
+    showSuiteLogo: true,
   },
 }

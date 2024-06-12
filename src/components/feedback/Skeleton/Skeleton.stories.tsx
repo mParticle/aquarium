@@ -1,17 +1,12 @@
 import { Skeleton } from 'src/components/feedback/Skeleton/Skeleton'
 import { type Meta, type StoryObj } from '@storybook/react'
 import { ExampleStory } from 'src/utils/ExampleStory'
-import { Avatar, Button, Radio, Switch } from 'src/components'
+import { Avatar, Button, Icon, Radio, Switch } from 'src/components'
 import { useState } from 'react'
 import { List, type RadioChangeEvent } from 'antd'
 import { Space } from 'src/components'
 import { Form } from 'src/components'
 import { Divider } from 'src/components'
-import { MpLogoIcon } from 'src/components'
-import { SizeMs } from 'src/styles/style'
-import { AlicornIcon } from 'src/components'
-import { UsersIcon } from 'src/components'
-import { GearIcon } from 'src/components'
 import { createElement } from 'react'
 
 const meta: Meta<typeof Skeleton> = {
@@ -141,7 +136,7 @@ export const ExampleConfigs: Story = {
         <Space>
           <Skeleton.Image active={active} />
           <Skeleton.Node active={active}>
-            <MpLogoIcon style={{ fontSize: 40, color: '#bfbfbf', height: SizeMs, width: SizeMs }} />
+            <Icon name="mpLogo" size="xxxxl" color="success" />
           </Skeleton.Node>
         </Space>
         <Divider />
@@ -252,9 +247,9 @@ export const ExampleList: Story = {
               actions={
                 !loading
                   ? [
-                      <IconText icon={AlicornIcon} text="156" key="list-vertical-star-o" />,
-                      <IconText icon={UsersIcon} text="156" key="list-vertical-like-o" />,
-                      <IconText icon={GearIcon} text="2" key="list-vertical-message" />,
+                      <IconText icon={<Icon name="alicorn"></Icon>} text="156" key="list-vertical-star-o" />,
+                      <IconText icon={<Icon name="users" />} text="156" key="list-vertical-like-o" />,
+                      <IconText icon={<Icon name="gear" />} text="2" key="list-vertical-message" />,
                     ]
                   : undefined
               }

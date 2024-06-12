@@ -1,5 +1,6 @@
 export { Button, type IButtonProps } from './general/Button/Button'
 export { FloatButton, type IFloatButtonProps } from './general/FloatButton/FloatButton'
+export { Icon, type IIconProps } from './general/Icon/Icon'
 export { Rate, type IRateProps } from './data-entry/Rate/Rate'
 export { Form, type IFormProps } from './data-entry/Form/Form'
 export { TreeSelect, type ITreeSelectProps } from './data-entry/TreeSelect/TreeSelect'
@@ -18,6 +19,8 @@ export { Upload, type IUploadProps } from './data-entry/Upload/Upload'
 export { AutoComplete, type IAutoCompleteProps } from './data-entry/AutoComplete/AutoComplete'
 export { TimePicker, type ITimePickerProps } from './data-entry/TimePicker/TimePicker'
 export { Transfer, type ITransferProps } from './data-entry/Transfer/Transfer'
+export { QueryItem } from './data-entry/QueryItem/QueryItem'
+export type { IQueryItemQualifierOption } from './data-entry/QueryItem/Qualifier'
 export { Collapse, type ICollapseProps } from './data-display/Collapse/Collapse'
 export { Timeline, type ITimelineProps } from './data-display/Timeline/Timeline'
 export { Calendar, type ICalendarProps } from './data-display/Calendar/Calendar'
@@ -97,30 +100,26 @@ export type {
   IWorkspaceSelectorItem,
 } from './navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'
 export { SuiteLogo } from './navigation/GlobalNavigation/SuiteLogo'
+export { Typography } from './general/Typography/Typography'
+
+// UPS
+export { UserPreferencesService } from '../services/user-preferences/user-preferences'
+export { CompositeUserPreferencesService } from '../services/user-preferences/composite-user-preferences-service'
+export { type CompositeUserPreferences } from '../services/user-preferences/models/user-preferences/composite-user-preferences'
 export {
-  AddIcon,
-  LockIcon,
-  MpLogoIcon,
-  SearchIcon,
-  CheckIcon,
-  ChartLineIcon,
-  ConnectionsIcon,
-  DatabaseIcon,
-  GridIcon,
-  ShieldKeyholeIcon,
-  UsersIcon,
-  WrenchIcon,
-  AlicornIcon,
-  MessageQuestionIcon,
-  GearIcon,
-  SparklesIcon,
-  SiteMapIcon,
-  ChartColumnIcon,
-  HeartIcon,
-  LightBulbIcon,
-  SplitIcon,
-  CircleNodesIcon,
-  CloudIcon,
-  FolderClosedIcon,
-  AnalyticsIcon,
-} from './icons/index'
+  UserPreferenceScopeType,
+  type UserPreferenceDefinition,
+  type UserPreferenceDefinitions,
+} from '../services/user-preferences/models/definitions'
+export {
+  type UserPreferences,
+  USER_PREFERENCE_SCOPE_SEPARATOR,
+  UserPreferenceGlobalScope,
+  type UserPreference,
+  type UserPreferenceScope,
+} from '../services/user-preferences/models/storage-models'
+export {
+  useNewExperienceReminder,
+  type INewExperienceReminderOptions,
+  type NewExperienceReminderHook,
+} from '../hooks/NewExperienceReminder/useNewExperienceReminder'
