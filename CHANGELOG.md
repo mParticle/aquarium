@@ -1,3 +1,10 @@
+## [1.19.1](https://github.com/mParticle/aquarium/compare/v1.19.0...v1.19.1) (2024-06-13)
+
+
+### Bug Fixes
+
+* button-alligned center ([#287](https://github.com/mParticle/aquarium/issues/287)) ([d8c056d](https://github.com/mParticle/aquarium/commit/d8c056d7911bd9d0fb7aecf9ee50e1191e7bd764))
+
 # [1.19.0](https://github.com/mParticle/aquarium/compare/v1.18.0...v1.19.0) (2024-06-12)
 
 
