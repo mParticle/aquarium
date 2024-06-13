@@ -24,7 +24,7 @@
         "severity": "warning"
       }
     ],
-    "property-disallowed-list": ["stroke", "fill"],
+    "property-disallowed-list": [],
     "unit-allowed-list": ["em", "rem", "s", "px", "%", "vw", "vh", "ms", "deg", "ch", "cm", "dpi", "fr"]
   }
 }

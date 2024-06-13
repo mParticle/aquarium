@@ -1,4 +1,4 @@
-import { RequireOneOrNone } from 'type-fest'
+import { type RequireOneOrNone } from 'type-fest'
 
 export function get(key: string): string | null {
   const cookies = getAll()
@@ -29,6 +29,7 @@ export function put(key: string, value: string | null, options: CookieOptions = 
   let str = `${_encode(key)}=${value != null ? _encode(value) : ''}`
   if (options.path) str += `; path=${options.path}`
   if (options.domain) str += `; domain=${options.domain}`
+  // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
   if (options.permanent || options.expiresISOString)
     str += `; expires=${calculateExpires(value, options.permanent, options.expiresISOString)}`
   if (options.secure) str += '; secure'
