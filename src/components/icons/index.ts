@@ -31,12 +31,12 @@ import LockIcon from 'src/assets/svg/lock.svg?react'
 import MessageQuestionIcon from 'src/assets/svg/message-question.svg?react'
 import MpLogoIcon from 'src/assets/svg/mpLogo.svg?react'
 import ObservabilityIcon from 'src/assets/svg/mp_pm_lt_observability.svg?react'
-import OversightIcon from 'src/assets/svg/mp_pm_dt_oversight.svg?react'
+import OversightIconDuo from 'src/assets/svg/mp_pm_dt_oversight.svg?react'
 import PredictionsIconLight from 'src/assets/svg/mp_pm_lt_predictions.svg?react'
 import PredictionsIconDuo from 'src/assets/svg/mp_pm_dt_predictions.svg?react'
 import RemoveIcon from 'src/assets/svg/remove.svg?react'
 import SearchIcon from 'src/assets/svg/search.svg?react'
-import SegmentationIcon from 'src/assets/svg/mp_pm_dt_segmentation.svg?react'
+import SegmentationIconDuo from 'src/assets/svg/mp_pm_dt_segmentation.svg?react'
 import ShieldKeyholeIcon from 'src/assets/svg/shield-keyhole.svg?react'
 import SignoutIcon from 'src/assets/svg/signout.svg?react'
 import SplitIcon from 'src/assets/svg/split.svg?react'
@@ -87,12 +87,12 @@ export {
   MessageQuestionIcon,
   MpLogoIcon,
   ObservabilityIcon,
-  OversightIcon,
+  OversightIconDuo,
   PredictionsIconDuo,
   PredictionsIconLight,
   RemoveIcon,
   SearchIcon,
-  SegmentationIcon,
+  SegmentationIconDuo,
   ShieldKeyholeIcon,
   SignoutIcon,
   SplitIcon,

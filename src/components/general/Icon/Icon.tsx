@@ -1,4 +1,5 @@
-import { DuoIcons, LightIcons } from 'src/constants/Icons'
+import { type ReactNode } from 'react'
+import { DuoIcons, type Icons, LightIcons } from 'src/constants/Icons'
 import './icon.css'
 
 type IconSize = 'xxxxl' | 'xxxl' | 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs'
@@ -15,20 +16,36 @@ export type IconColor =
   | 'strong'
   | 'brand'
 
-export interface IIconProps {
-  name//: if type==='duo' then name is keyof typeof DuoIcons, else if type==='light' then name is keyof typeof LightIcons
+export interface IBaseIconProps {
+  name: keyof Icons // : IIconProps['name']
   color?: IconColor
   size?: IconSize
   type: 'duo' | 'light'
 }
 
+export interface ILightIconProps extends IBaseIconProps {
+  name: keyof typeof LightIcons
+  type: 'light'
+}
+
+export interface IDuoIconProps extends IBaseIconProps {
+  name: keyof typeof DuoIcons
+  type: 'duo'
+}
+
+export type IIconProps = ILightIconProps | IDuoIconProps
+
 export const Icon = (props: IIconProps) => {
-  let IconName: IIconProps['name']
+  let IconName: any
 
   if (props.type === 'duo') {
-    IconName = DuoIcons[props.name]
-  } else if (props.type === 'light') {
-    IconName = LightIcons[props.name]
+    props.name = props.name as keyof typeof DuoIcons
+    IconName = DuoIcons[props.name] as unknown as ReactNode
+  }
+
+  if (props.type === 'light') {
+    props.name = props.name as keyof typeof LightIcons
+    IconName = LightIcons[props.name] as unknown as ReactNode
   }
 
   const className = `icon-size-${props.size} icon-color-${props.color}`

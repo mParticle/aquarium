@@ -1,14 +1,14 @@
-import React, { ReactElement, ReactNode } from 'react'
+import React, { type ReactNode } from 'react'
 import { Center, Icon } from 'src/components'
-import { NavigationIcon } from 'src/components/navigation/GlobalNavigation/NavigationIcon'
-import { Icons } from 'src/constants/Icons'
+import { type IconColor } from 'src/components/general/Icon/Icon'
 import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
-import { IconColor } from 'src/components/general/Icon/Icon'
+import { NavigationIcon } from 'src/components/navigation/GlobalNavigation/NavigationIcon'
+import { type DuoIcons, type Icons } from 'src/constants/Icons'
 
 // custom-size is the default size to prevent breaking changes.
 type IconColorOptions = 'default' | 'background-solid' | 'custom-size'
 
-function isStringIcon(icon: ReactNode | string): icon is keyof typeof Icons {
+function isStringIcon(icon: ReactNode | string): icon is keyof Icons {
   return typeof icon === 'string'
 }
 
@@ -27,7 +27,7 @@ export function SuiteLogo({ icon, label, type = 'custom-size', onSuiteLogoClick 
 
   const getIcon = () => {
     if (isStringIcon(icon)) {
-      return <Icon name={icon} color={iconColorMap[type]} size="xl" />
+      return <Icon name={icon as keyof typeof DuoIcons} color={iconColorMap[type]} size="xl" type="duo" />
     }
     return icon
   }

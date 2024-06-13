@@ -22,7 +22,7 @@ export interface ICascaderOption {
 
 export interface ICascaderProps {
   options: ICascaderOption[]
-  icon?: keyof Pick<typeof Icons, 'empty' | 'event' | 'userAttribute' | 'eventAttribute'>
+  icon?: keyof Pick<Icons, 'empty' | 'event' | 'userAttribute' | 'eventAttribute'>
   errorMessage?: string
   placeholder?: string
   onChange?: (values: Array<number | string>, selectedOptions: any) => Promise<void>

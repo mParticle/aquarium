@@ -1,7 +1,8 @@
 import { type Meta } from '@storybook/react'
-import React, { ReactNode } from 'react'
-import { Flex, Icon, type IIconProps } from 'src/components'
-import { Icons } from 'src/constants/Icons'
+import React, { type ReactNode } from 'react'
+import { Flex, Icon } from 'src/components'
+import {type IIconProps} from 'src/components/general/Icon/Icon'
+import { DuoIcons, LightIcons } from 'src/constants/Icons'
 
 export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', name }) => {
   return (
@@ -13,16 +14,27 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
         alignItems: 'center',
         justifyItems: 'center',
       }}>
-      {name // render either a single selected icon, or all possible icons
-        ? renderIcon(name, size, color)
-        : (Object.keys(Icons) as Array<keyof typeof Icons>).map(iconName => renderIcon(iconName, size, color))}
+      {/* renders either a single selected icon, or all possible icons */}
+      {name ? (
+        renderIcon(name, size, color)
+      ) : (
+        <>
+          {(Object.keys(LightIcons) as Array<keyof typeof LightIcons>).map(iconName => renderIcon(iconName, size, color, 'light'))}
+          {(Object.keys(DuoIcons) as Array<keyof typeof DuoIcons>).map(iconName => renderIcon(iconName, size, color, 'duo'))}
+        </>
+      )}
     </div>
   )
 
-  function renderIcon(iconName: IIconProps['name'], size: IIconProps['size'], color: IIconProps['color']): ReactNode {
+  function renderIcon(
+    iconName: IIconProps['name'],
+    size: IIconProps['size'],
+    color: IIconProps['color'],
+    type?: IIconProps['type'],
+  ): ReactNode {
     return (
       <Flex vertical align="center" key={iconName}>
-        <Icon name={iconName} size={size} color={color} key={iconName} />
+        <Icon name={iconName} size={size} color={color} type={type} key={iconName} />
         <p style={{ fontFamily: 'monospace' }}>{iconName}</p>
       </Flex>
     )

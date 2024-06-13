@@ -10,8 +10,9 @@ import {
   CircleNodesIcon,
   CloudIcon,
   ConnectionsIcon,
-  DataPlatformDuo,
+  ConversionIcon,
   DatabaseIcon,
+  DataPlatformDuo,
   DsrIcon,
   EmptyIcon,
   EnrichmentIcon,
@@ -24,6 +25,7 @@ import {
   GridIcon,
   HeartIcon,
   HelpIcon,
+  HelpVideoIcon,
   IdentityIcon,
   JumpToIcon,
   LightBulbIcon,
@@ -32,11 +34,13 @@ import {
   MessageQuestionIcon,
   MpLogoIcon,
   ObservabilityIcon,
-  OversightIcon,
+  OversightIconDuo,
+  PredictionsIconDuo,
   PredictionsIconLight,
+  PremiumIcon,
   RemoveIcon,
   SearchIcon,
-  SegmentationIcon,
+  SegmentationIconDuo,
   ShieldKeyholeIcon,
   SignoutIcon,
   SplitIcon,
@@ -49,17 +53,15 @@ import {
   WrenchIcon,
   ZoomIn,
   ZoomOut,
-  PremiumIcon,
-  HelpVideoIcon,
-  ConversionIcon,
-  PredictionsIconDuo,
 } from 'src/components/icons'
 
 export const DuoIcons = {
   analytics: AnalyticsIconDuo,
   C360: C360IconDuo,
   siteMap: DataPlatformDuo,
+  oversight: OversightIconDuo,
   sparkles: PredictionsIconDuo,
+  segmentation: SegmentationIconDuo,
 } as const
 
 export const LightIcons = {
@@ -93,10 +95,8 @@ export const LightIcons = {
   messageQuestion: MessageQuestionIcon,
   mpLogo: MpLogoIcon,
   observability: ObservabilityIcon,
-  oversight: OversightIcon,
   remove: RemoveIcon,
   search: SearchIcon,
-  segmentation: SegmentationIcon,
   shieldKeyhole: ShieldKeyholeIcon,
   signout: SignoutIcon,
   predictions: PredictionsIconLight,
@@ -114,3 +114,5 @@ export const LightIcons = {
   helpVideo: HelpVideoIcon,
   conversion: ConversionIcon,
 } as const
+
+export type Icons = typeof DuoIcons & typeof LightIcons
