@@ -57,7 +57,7 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "factory.ts": "1.4.1",
     "http-server": "14.1.1",
-    "husky": "8.0.3",
+    "husky": "^9.0.11",
     "jsdom": "24.0.0",
     "prettier": "3.1.1",
     "storybook": "8.0.0",
@@ -79,7 +79,7 @@
     "@swc/core-linux-x64-musl": "1.4.0"
   },
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "husky",
     "start": "npm run storybook",
     "storybook": "storybook dev -p 6006",
     "test-storybook": "test-storybook",
