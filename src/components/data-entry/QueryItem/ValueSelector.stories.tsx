@@ -1,5 +1,5 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { ValueSelector } from './ValueSelector'
+import ValueSelector from './ValueSelector'
 
 const meta: Meta<typeof ValueSelector> = {
   title: 'Aquarium/Data Entry/QueryItem/ValueSelector',
