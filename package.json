@@ -89,11 +89,12 @@
     "build-storybook": "storybook build",
     "lint": "concurrently \"eslint --ext .ts,.tsx \"src/**/*.{ts,tsx}\"\" \"stylelint \"**/*.css\"\"",
     "lint:fix": "concurrently \"eslint --ext .ts,.tsx \"src/**/*.{ts,tsx}\" --quiet --fix\" \"stylelint \"**/*.css\" --fix\"",
+    "lint:staged": "concurrently \"eslint --quiet --fix\" \"stylelint --fix\"",
     "tokens-to-css": "npx style-dictionary build --config ./style-dictionary.json"
   },
   "lint-staged": {
     "*.{ts,tsx,css}": [
-      "npm run lint:fix",
+      "npm run lint:staged",
       "prettier --write"
     ],
     "*.{json,yml,md}": [
