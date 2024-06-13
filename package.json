@@ -89,13 +89,17 @@
     "build-storybook": "storybook build",
     "lint": "concurrently \"eslint --ext .ts,.tsx \"src/**/*.{ts,tsx}\"\" \"stylelint \"**/*.css\"\"",
     "lint:fix": "concurrently \"eslint --ext .ts,.tsx \"src/**/*.{ts,tsx}\" --quiet --fix\" \"stylelint \"**/*.css\" --fix\"",
-    "lint:staged": "concurrently \"eslint --quiet --fix\" \"stylelint --fix\"",
+    "lint:staged": "eslint --quiet --fix --no-error-on-unmatched-pattern",
+    "stylelint:staged": "stylelint --allow-empty-input --fix ",
     "tokens-to-css": "npx style-dictionary build --config ./style-dictionary.json"
   },
   "lint-staged": {
-    "*.{ts,tsx,css}": [
+    "*.{ts,tsx}": [
       "npm run lint:staged",
       "prettier --write"
+    ],
+    "*.{css}": [
+      "npm run stylelint:staged"
     ],
     "*.{json,yml,md}": [
       "prettier --write"
