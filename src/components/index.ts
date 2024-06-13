@@ -74,7 +74,7 @@ export {
   type MenuDividerType,
   type IMenuInfo,
 } from './navigation/Menu/Menu'
-export { ConfigProvider, type IConfigProviderProps } from './other/ConfigProvider/ConfigProvider'
+export { ConfigProvider, withConfigProvider, type IConfigProviderProps } from './other/ConfigProvider/ConfigProvider'
 export { Affix, type IAffixProps } from './other/Affix/Affix'
 export { App, type IAppProps } from './other/App/App'
 export {
