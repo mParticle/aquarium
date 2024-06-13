@@ -4,7 +4,7 @@ import React from 'react'
 import { Button, ConfigProvider } from 'src/components'
 import Logo from 'src/assets/svg/mp-logo-wordmark.svg?react'
 import { minimap } from './minimap-svg'
-import { Flex } from 'src/components/layout/Flex/Flex'
+import { Flex } from 'src/components'
 import { ISvgLink, SvgLinker } from 'src/components/navigation/MiniMap/SvgLinker'
 import { IMiniMapOptions, MiniMapLinks } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 

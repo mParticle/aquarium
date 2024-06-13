@@ -6,7 +6,6 @@ import {
   type INavigationCreateProps,
   Center,
   Flex,
-  type IAvatarProps,
   Icon,
   Layout,
 } from 'src/components'
@@ -22,6 +21,7 @@ import {
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
 import { useNewExperienceReminder } from 'src/hooks/NewExperienceReminder/useNewExperienceReminder'
 import { HomeButton } from 'src/components/navigation/GlobalNavigation/HomeButton'
+import type { AvatarProps } from 'antd'
 
 export interface IGlobalNavigationProps {
   logo: IGlobalNavigationLogo
@@ -34,7 +34,7 @@ export interface IGlobalNavigationProps {
   onMpHomeClick: () => void
   hideMpHome?: boolean
   showSuiteLogo?: boolean
-  avatarOptions?: IAvatarProps
+  avatarOptions?: AvatarProps
   navigationButtonItemOptions?: {
     label: string
     onClick: () => void

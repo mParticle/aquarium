@@ -1,10 +1,8 @@
 import { useInitData } from 'src/hooks/useInitData'
-import { type IModalProps } from 'src/components/feedback/Modal/Modal'
 import { Skeleton } from 'src/components/feedback/Skeleton/Skeleton'
-import { Modal } from 'src/components/feedback/Modal/Modal'
-import { Result } from 'src/components/feedback/Result/Result'
+import { Modal, type ModalProps, Result } from 'antd'
 
-export interface ILoadingModalProps<Data> extends Omit<IModalProps, 'children'> {
+export interface ILoadingModalProps<Data> extends Omit<ModalProps, 'children'> {
   fetchData: () => Promise<Data>
   children: (initData: Data) => React.ReactNode
 }

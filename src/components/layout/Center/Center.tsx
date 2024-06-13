@@ -1,8 +1,7 @@
+import { Flex, type FlexProps } from 'antd'
 import React from 'react'
-import { type IFlexProps } from 'src/components/layout/Flex/Flex'
-import { Flex } from 'src/components/layout/Flex/Flex'
 
-export const Center = (props: Omit<IFlexProps, 'justify' | 'align'>) => {
+export const Center = (props: Omit<FlexProps, 'justify' | 'align'>) => {
   return (
     <>
       <Flex align="center" justify="center" {...props}>

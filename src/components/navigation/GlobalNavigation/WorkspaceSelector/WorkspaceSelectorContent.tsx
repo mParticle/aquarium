@@ -1,5 +1,6 @@
 import { type ChangeEvent, type RefObject } from 'react'
-import { Input, type InputRef, type IWorkspaceSelectorDisplayItem } from 'src/components'
+import { Input, type IWorkspaceSelectorDisplayItem } from 'src/components'
+import { type InputRef } from 'antd'
 import { WorkspaceSelectorContentItems } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorContentItems'
 import { WorkspaceNoResults } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceNoResults'
 import { NavigationButtonItem } from 'src/components/navigation/GlobalNavigation/NavigationButtonItem'

@@ -1,14 +1,14 @@
+import type { MenuProps } from 'antd'
 import type { MenuItemType } from 'antd/es/menu/hooks/useItems'
 import type { MenuItemGroupType } from 'antd/es/menu/hooks/useItems'
+import { type MenuInfo } from 'rc-menu/lib/interface'
 import { Icon } from 'src/components'
 import { Center } from 'src/components'
 import { Menu } from 'src/components'
-import type { IMenuProps } from 'src/components'
 import { Button } from 'src/components'
 import { Flex } from 'src/components'
 import { Tooltip } from 'src/components'
 import { Spin } from 'src/components'
-import { type IMenuInfo } from 'src/components'
 
 export interface INavigationCreateProps {
   createItems: Array<INavigationCreateItem | INavigationCreateGroup>
@@ -46,7 +46,7 @@ export function NavigationCreate(props: INavigationCreateProps) {
       key: item.description,
       className: itemClassName,
       disabled: item.disabled,
-      onClick: (menuInfo: IMenuInfo): void => {
+      onClick: (menuInfo: MenuInfo): void => {
         // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
         if (item.disabled || item.isLoading) return
         item.onClick?.()
@@ -69,7 +69,7 @@ export function NavigationCreate(props: INavigationCreateProps) {
     }
   })
 
-  const items: IMenuProps['items'] = [
+  const items: MenuProps['items'] = [
     {
       key: 'NavigationCreate',
       popupClassName: 'globalNavigation__popup globalNavigation__popup--navigationCreate',

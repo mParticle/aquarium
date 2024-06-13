@@ -2,7 +2,6 @@ import 'src/utils/utils.css'
 import './workspace-selector.css'
 import {
   Avatar,
-  type IAvatarProps,
   Icon,
   type INavigationAccount,
   type INavigationOrg,
@@ -20,14 +19,14 @@ import { getInitials } from 'src/utils/utils'
 
 // TODO: Need to make our Input component comply with forwardRef to be able to import it from src/components
 // As soon as https://github.com/mParticle/aquarium/pull/123 is merged
-import { type InputRef } from 'antd'
+import { type AvatarProps, type InputRef } from 'antd'
 import { WorkspaceSelectorContent } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorContent'
 import { useMount } from 'src/hooks/useMount'
 import { PaddingXxs } from 'src/styles/style'
 
 export interface IWorkspaceSelectorProps {
   orgs: INavigationOrg[]
-  avatarOptions?: IAvatarProps
+  avatarOptions?: AvatarProps
   navigationButtonItemOptions?: {
     label: string
     onClick: () => void

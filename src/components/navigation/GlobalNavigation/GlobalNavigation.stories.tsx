@@ -2,7 +2,7 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { expect, fn, screen, userEvent } from '@storybook/test'
 import React from 'react'
 import { Button, Center, Flex, GlobalNavigation, Icon, type INavigationCreateProps, Space } from 'src/components'
-import { Badge } from 'src/components/data-display/Badge/Badge'
+import { Badge } from 'src/components'
 import {
   type IGlobalNavigationItem,
   type IGlobalNavigationLogo,

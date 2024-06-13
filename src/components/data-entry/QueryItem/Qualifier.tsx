@@ -3,7 +3,7 @@ import type { DefaultOptionType } from 'antd/es/select'
 import { useState } from 'react'
 import { CheckIcon } from 'src/components/icons'
 import { Typography } from 'src/components/general/Typography/Typography'
-import { type ISelectProps, Select } from 'src/components'
+import { Select, type SelectProps } from 'antd'
 
 export type IQueryItemQualifierOption = DefaultOptionType
 
@@ -17,7 +17,7 @@ export interface IQueryItemQualifierProps {
 
 const Qualifier = (props: IQueryItemQualifierProps) => {
   const [isOpen, setIsOpen] = useState(false)
-  const selectProps: ISelectProps = {
+  const selectProps: SelectProps = {
     defaultValue: props.options?.length ? props.options[0].value : undefined,
     menuItemSelectedIcon: node =>
       node.isSelected ? <CheckIcon className="query-item-qualifier__item-selected-icon" /> : null,

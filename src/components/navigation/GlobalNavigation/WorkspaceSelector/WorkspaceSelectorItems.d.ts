@@ -1,4 +1,4 @@
-import { type MenuItemType } from 'src/components/navigation/Menu/Menu'
+import { type MenuItemType } from 'antd/es/menu/hooks/useItems'
 import { type ReactNode } from 'react'
 
 interface IWorkspaceSelectorItem {

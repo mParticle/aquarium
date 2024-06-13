@@ -1,15 +1,8 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import './query-item.css'
-import { type GetProp } from 'antd'
+import { CascaderProps, type GetProp } from 'antd'
 import { type ReactNode, useCallback, useEffect, useState } from 'react'
-import {
-  Cascader as BaseCascader,
-  Flex,
-  type ICascaderProps as IBaseCascaderProps,
-  Input,
-  Typography,
-  Icon,
-} from 'src/components'
+import { Cascader as BaseCascader, Flex, Input, Typography, Icon } from 'src/components'
 import { type Icons } from 'src/constants/Icons'
 import { debounce } from 'src/utils/utils'
 
@@ -31,7 +24,7 @@ export interface ICascaderProps {
 }
 
 const Cascader = (props: ICascaderProps) => {
-  type DefaultOptionType = GetProp<IBaseCascaderProps, 'options'>[number]
+  type DefaultOptionType = GetProp<CascaderProps, 'options'>[number]
 
   const options: ICascaderOption[] = []
   const [items, setItems] = useState(props.options ?? options)
@@ -66,7 +59,7 @@ const Cascader = (props: ICascaderProps) => {
     debouncedLoadData = useCallback(debounce(props.loadData, 500), [])
   }
 
-  const baseProps: IBaseCascaderProps = {
+  const baseProps: CascaderProps = {
     getPopupContainer: triggerNode => triggerNode.parentElement,
     searchValue: searchValue,
     value: selectedValue,
