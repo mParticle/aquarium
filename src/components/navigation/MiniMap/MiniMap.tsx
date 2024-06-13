@@ -29,19 +29,17 @@ const Minimap = (props: IMiniMapProps) => {
   }))
 
   return (
-    <ConfigProvider>
-      <div className="u-padding-sm">
-        <Flex align="normal" component="div" flex="0 1 auto" gap="small" justify="stretch" vertical wrap="nowrap">
-          <Flex align="center" justify="space-between">
-            <Logo />
-            <Button href={props.overviewHref || '/'}>Go to overview</Button>
-          </Flex>
-          <SvgLinker links={svgLinks} onLinkClick={handleLinkClick}>
-            {minimap}
-          </SvgLinker>
+    <div className="u-padding-sm">
+      <Flex align="normal" component="div" flex="0 1 auto" gap="small" justify="stretch" vertical wrap="nowrap">
+        <Flex align="center" justify="space-between">
+          <Logo />
+          <Button href={props.overviewHref || '/'}>Go to overview</Button>
         </Flex>
-      </div>
-    </ConfigProvider>
+        <SvgLinker links={svgLinks} onLinkClick={handleLinkClick}>
+          {minimap}
+        </SvgLinker>
+      </Flex>
+    </div>
   )
   function handleLinkClick(svgLink: ISvgLink): void {
     const miniMapLink = props.links.find(link => link.href === svgLink.href)!

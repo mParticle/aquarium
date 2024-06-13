@@ -3,7 +3,6 @@ import {
   type TypographyProps as AntTypographyProps,
   ConfigProvider as AntConfigProvider,
 } from 'antd'
-import { ConfigProvider } from 'src/components'
 import { type ReactNode } from 'react'
 import { type TextProps as AntTextProps } from 'antd/es/typography/Text'
 import { type TitleProps as AntTitleProps } from 'antd/es/typography/Title'
@@ -14,11 +13,7 @@ export interface ITypographyProps extends AntTypographyProps {
   children: ReactNode
 }
 
-export const Typography = (props: ITypographyProps) => (
-  <ConfigProvider>
-    <AntTypography {...props}>{props.children}</AntTypography>
-  </ConfigProvider>
-)
+export const Typography = (props: ITypographyProps) => <AntTypography {...props}>{props.children}</AntTypography>
 
 type TypographySize = 'base' | 'sm' | 'lg' | 'xl'
 export interface ITextProps extends AntTextProps {
@@ -46,11 +41,9 @@ const Text = ({ size = 'base', ...props }: ITextProps) => {
   const lineHeight = getLineHeight(size)
 
   return (
-    <ConfigProvider>
-      <AntConfigProvider theme={{ components: { Typography: { fontSize, lineHeight } } }}>
-        <AntTypography.Text {...props}>{props.children}</AntTypography.Text>
-      </AntConfigProvider>
-    </ConfigProvider>
+    <AntConfigProvider theme={{ components: { Typography: { fontSize, lineHeight } } }}>
+      <AntTypography.Text {...props}>{props.children}</AntTypography.Text>
+    </AntConfigProvider>
   )
 }
 
@@ -60,22 +53,14 @@ interface ITitleProps extends AntTitleProps {
   children: ReactNode
 }
 
-const Title = (props: ITitleProps) => (
-  <ConfigProvider>
-    <AntTypography.Title {...props}>{props.children}</AntTypography.Title>
-  </ConfigProvider>
-)
+const Title = (props: ITitleProps) => <AntTypography.Title {...props}>{props.children}</AntTypography.Title>
 Typography.Title = Title
 
 export interface ILinkProps extends AntLinkProps {
   children: ReactNode
 }
 
-const Link = (props: ILinkProps) => (
-  <ConfigProvider>
-    <AntTypography.Link {...props}>{props.children}</AntTypography.Link>
-  </ConfigProvider>
-)
+const Link = (props: ILinkProps) => <AntTypography.Link {...props}>{props.children}</AntTypography.Link>
 Typography.Link = Link
 
 export interface IParagraphProps extends AntParagraphProps {
@@ -83,8 +68,6 @@ export interface IParagraphProps extends AntParagraphProps {
 }
 
 const Paragraph = (props: IParagraphProps) => (
-  <ConfigProvider>
-    <AntTypography.Paragraph {...props}>{props.children}</AntTypography.Paragraph>
-  </ConfigProvider>
+  <AntTypography.Paragraph {...props}>{props.children}</AntTypography.Paragraph>
 )
 Typography.Paragraph = Paragraph

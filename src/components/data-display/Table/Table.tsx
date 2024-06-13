@@ -1,7 +1,6 @@
 import { Table as AntTable } from 'antd'
 import { type TableProps as AntTableProps } from 'antd'
 import { type AnyObject } from 'antd/es/_util/type'
-import { ConfigProvider } from 'src/components'
 import { type ColumnType, type ExpandableConfig } from 'antd/es/table/interface'
 import { type ColumnsType, type TableProps } from 'antd/es/table'
 
@@ -10,11 +9,7 @@ export interface ITableProps<RecordType extends AnyObject = AnyObject> extends A
 export type { ColumnType, ExpandableConfig, ColumnsType, TableProps }
 
 export const Table = <RecordType extends AnyObject = AnyObject>(props: ITableProps<RecordType>) => {
-  return (
-    <ConfigProvider>
-      <AntTable<RecordType> {...props} />
-    </ConfigProvider>
-  )
+  return <AntTable<RecordType> {...props} />
 }
 
 Table.Column = AntTable.Column

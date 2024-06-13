@@ -1,15 +1,10 @@
 import { Layout as AntLayout } from 'antd'
 import { type LayoutProps as AntLayoutProps } from 'antd'
-import { ConfigProvider } from 'src/components'
 
 export interface ILayoutProps extends AntLayoutProps {}
 
 export const Layout = (props: ILayoutProps) => {
-  return (
-    <ConfigProvider>
-      <AntLayout {...props} />
-    </ConfigProvider>
-  )
+  return <AntLayout {...props} />
 }
 
 Layout.Sider = AntLayout.Sider

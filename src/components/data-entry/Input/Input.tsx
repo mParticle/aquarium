@@ -1,7 +1,6 @@
 import { Input as AntInput } from 'antd'
 import { type InputProps as AntInputProps } from 'antd'
 import { type SearchProps } from 'antd/es/input'
-import { ConfigProvider } from 'src/components'
 import { type InputRef } from 'antd'
 import { forwardRef, type ForwardRefExoticComponent, type Ref, type RefAttributes } from 'react'
 
@@ -19,21 +18,13 @@ type CompoundedComponent = ForwardRefExoticComponent<IInputProps & RefAttributes
 }
 
 const InternalInput = (props: IInputProps, ref: Ref<InputRef>) => {
-  return (
-    <ConfigProvider>
-      <AntInput {...props} ref={ref} />
-    </ConfigProvider>
-  )
+  return <AntInput {...props} ref={ref} />
 }
 
 const InternalInputWithRef = forwardRef(InternalInput)
 const Input = InternalInputWithRef as CompoundedComponent
 
-const InternalSearch = (props: ISearchProps, ref: Ref<InputRef>) => (
-  <ConfigProvider>
-    <AntInput.Search ref={ref} {...props} />
-  </ConfigProvider>
-)
+const InternalSearch = (props: ISearchProps, ref: Ref<InputRef>) => <AntInput.Search ref={ref} {...props} />
 const InternalSearchWithRef = forwardRef(InternalSearch)
 const Search = InternalSearchWithRef as CompoundedComponent
 
