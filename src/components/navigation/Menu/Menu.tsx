@@ -7,7 +7,6 @@ import {
   type SubMenuType as AndSubMenuType,
 } from 'antd/es/menu/hooks/useItems'
 import { type MenuInfo as RCMenuInfo } from 'rc-menu/lib/interface'
-import { ConfigProvider } from 'src/components'
 
 export interface IMenuProps extends AntMenuProps {}
 
@@ -21,11 +20,7 @@ export {
 }
 
 export const Menu = (props: IMenuProps) => {
-  return (
-    <ConfigProvider>
-      <AntMenu {...props} />
-    </ConfigProvider>
-  )
+  return <AntMenu {...props} />
 }
 
 Menu.SubMenu = AntMenu.SubMenu

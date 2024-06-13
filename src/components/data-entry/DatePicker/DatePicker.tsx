@@ -1,14 +1,9 @@
 import { DatePicker as AntDatePicker, type DatePickerProps as AntDatePickerProps } from 'antd'
-import { ConfigProvider } from 'src/components'
 
 export interface IDatePickerProps extends AntDatePickerProps {}
 
 export const DatePicker = (props: IDatePickerProps) => {
-  return (
-    <ConfigProvider>
-      <AntDatePicker {...props} />
-    </ConfigProvider>
-  )
+  return <AntDatePicker {...props} />
 }
 
 DatePicker.generatePicker = AntDatePicker.generatePicker

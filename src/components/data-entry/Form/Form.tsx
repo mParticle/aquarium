@@ -1,6 +1,5 @@
 import { Form as AntForm } from 'antd'
 import { type FormProps as AntFormProps } from 'antd'
-import { ConfigProvider } from 'src/components'
 import { type ReactNode } from 'react'
 
 export interface IFormProps extends AntFormProps {
@@ -8,11 +7,7 @@ export interface IFormProps extends AntFormProps {
 }
 
 export const Form = (props: IFormProps) => {
-  return (
-    <ConfigProvider>
-      <AntForm {...props}>{props.children}</AntForm>
-    </ConfigProvider>
-  )
+  return <AntForm {...props}>{props.children}</AntForm>
 }
 
 Form.useForm = AntForm.useForm
