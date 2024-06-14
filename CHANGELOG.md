@@ -1,3 +1,5 @@
+## [1.19.2-chore-more-icons.1](https://github.com/mParticle/aquarium/compare/v1.19.1...v1.19.2-chore-more-icons.1) (2024-06-14)
+
 ## [1.19.1](https://github.com/mParticle/aquarium/compare/v1.19.0...v1.19.1) (2024-06-13)
 
 
