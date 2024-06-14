@@ -57,7 +57,7 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "factory.ts": "1.4.1",
     "http-server": "14.1.1",
-    "husky": "8.0.3",
+    "husky": "9.0.11",
     "jsdom": "24.0.0",
     "prettier": "3.1.1",
     "storybook": "8.0.0",
@@ -79,7 +79,7 @@
     "@swc/core-linux-x64-musl": "1.4.0"
   },
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "husky",
     "start": "npm run storybook",
     "storybook": "storybook dev -p 6006",
     "test-storybook": "test-storybook",
@@ -89,12 +89,17 @@
     "build-storybook": "storybook build",
     "lint": "concurrently \"eslint --ext .ts,.tsx \"src/**/*.{ts,tsx}\"\" \"stylelint \"**/*.css\"\"",
     "lint:fix": "concurrently \"eslint --ext .ts,.tsx \"src/**/*.{ts,tsx}\" --quiet --fix\" \"stylelint \"**/*.css\" --fix\"",
+    "lint:staged": "eslint --quiet --fix --no-error-on-unmatched-pattern",
+    "stylelint:staged": "stylelint --allow-empty-input --fix ",
     "tokens-to-css": "npx style-dictionary build --config ./style-dictionary.json"
   },
   "lint-staged": {
-    "*.{ts,tsx,css}": [
-      "npm run lint:fix",
+    "*.{ts,tsx}": [
+      "npm run lint:staged",
       "prettier --write"
+    ],
+    "*.{css}": [
+      "npm run stylelint:staged"
     ],
     "*.{json,yml,md}": [
       "prettier --write"
