@@ -8,12 +8,12 @@ module.exports = {
     {
       name: 'chore/*',
       channel: 'chore',
-      prerelease: "${name.split('/').slice(1).join('-').toLowerCase()}"
+      prerelease: "chore-${name.split('/').slice(1).join('-').toLowerCase()}"
     },
     {
       name: 'fix/*',
       channel: 'fix',
-      prerelease: "${name.split('/').slice(1).join('-').toLowerCase()}"
+      prerelease: "fix-${name.split('/').slice(1).join('-').toLowerCase()}"
     },
     
   ],

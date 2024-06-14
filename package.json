@@ -1,6 +1,6 @@
 {
   "name": "@mparticle/aquarium",
-  "version": "1.17.1-query-select-number.1",
+  "version": "1.19.1",
   "description": "mParticle Component Library",
   "license": "Apache-2.0",
   "keywords": [
@@ -89,11 +89,12 @@
     "build-storybook": "storybook build",
     "lint": "concurrently \"eslint --ext .ts,.tsx \"src/**/*.{ts,tsx}\"\" \"stylelint \"**/*.css\"\"",
     "lint:fix": "concurrently \"eslint --ext .ts,.tsx \"src/**/*.{ts,tsx}\" --quiet --fix\" \"stylelint \"**/*.css\" --fix\"",
+    "lint:staged": "concurrently \"eslint --quiet --fix\" \"stylelint --fix\"",
     "tokens-to-css": "npx style-dictionary build --config ./style-dictionary.json"
   },
   "lint-staged": {
     "*.{ts,tsx,css}": [
-      "npm run lint:fix",
+      "npm run lint:staged",
       "prettier --write"
     ],
     "*.{json,yml,md}": [

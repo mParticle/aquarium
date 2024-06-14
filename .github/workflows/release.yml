@@ -2,6 +2,10 @@ name: Release Aquarium
 
 on:
   workflow_dispatch:
+    inputs:
+      confirm:
+        description: "In case that's a release from main, have you aligned in #aquarium? Type 'yes' or 'n/a' to confirm."
+        required: true
 
 jobs:
   release:
