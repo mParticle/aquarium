@@ -1,8 +1,8 @@
 import {
   AddIcon,
   AlicornIcon,
-  AnalyticsIconDuo,
-  C360IconDuo,
+  AnalyticsIcon,
+  C360Icon,
   CatalogIcon,
   ChartColumnIcon,
   ChartLineIcon,
@@ -10,7 +10,7 @@ import {
   CircleNodesIcon,
   CloudIcon,
   ConnectionsIcon,
-  DataPlatformDuo,
+  DataPlatform,
   DatabaseIcon,
   DsrIcon,
   EmptyIcon,
@@ -52,19 +52,14 @@ import {
   PremiumIcon,
   HelpVideoIcon,
   ConversionIcon,
-  PredictionsIconDuo,
+  SparklesIcon,
 } from 'src/components/icons'
 
-export const DuoIcons = {
-  analytics: AnalyticsIconDuo,
-  C360: C360IconDuo,
-  siteMap: DataPlatformDuo,
-  sparkles: PredictionsIconDuo,
-} as const
-
-export const LightIcons = {
+export const Icons = {
+  C360: C360Icon,
   add: AddIcon,
   alicorn: AlicornIcon,
+  analytics: AnalyticsIcon,
   catalog: CatalogIcon,
   chartColumn: ChartColumnIcon,
   chartLine: ChartLineIcon,
@@ -99,6 +94,8 @@ export const LightIcons = {
   segmentation: SegmentationIcon,
   shieldKeyhole: ShieldKeyholeIcon,
   signout: SignoutIcon,
+  siteMap: DataPlatform,
+  sparkles: SparklesIcon,
   predictions: PredictionsIconLight,
   split: SplitIcon,
   systemAlerts: SystemAlertsIcon,

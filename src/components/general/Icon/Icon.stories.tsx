@@ -1,5 +1,5 @@
 import { type Meta } from '@storybook/react'
-import React, { ReactNode } from 'react'
+import React, { type ReactNode } from 'react'
 import { Flex, Icon, type IIconProps } from 'src/components'
 import { Icons } from 'src/constants/Icons'
 
