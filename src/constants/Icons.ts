@@ -53,6 +53,9 @@ import {
   HelpVideoIcon,
   ConversionIcon,
   SparklesIcon,
+  NextIcon,
+  PreviousIcon,
+  OpenTabIcon,
 } from 'src/components/icons'
 
 export const Icons = {
@@ -110,4 +113,7 @@ export const Icons = {
   premium: PremiumIcon,
   helpVideo: HelpVideoIcon,
   conversion: ConversionIcon,
+  next: NextIcon,
+  previous: PreviousIcon,
+  openTab: OpenTabIcon,
 } as const
