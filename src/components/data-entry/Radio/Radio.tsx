@@ -1,8 +1,8 @@
 import { Radio as AntRadio } from 'antd'
 import { type RadioProps as AntRadioProps } from 'antd'
 import { ConfigProvider } from 'src/components'
-import { RadioGroup } from "./RadioGroup";
-import { RadioButton } from "./RadioButton";
+import { RadioGroup } from "src/components/data-entry/Radio/RadioGroup";
+import { RadioButton } from "src/components/data-entry/Radio/RadioButton";
 
 export interface IRadioProps extends AntRadioProps {}
 
