@@ -52,9 +52,9 @@ import ZoomOut from 'src/assets/svg/mp_act_lt_zoom-out.svg?react'
 import PremiumIcon from 'src/assets/svg/mp_info_lt_premium.svg?react'
 import ConversionIcon from 'src/assets/svg/mp_info_lt_conversion.svg?react'
 import HelpVideoIcon from 'src/assets/svg/mp_info_lt_help-video.svg?react'
-import NextIcon from 'src/assets/svg/mp_act_lt_next.svg'
-import OpenTabIcon from 'src/assets/svg/mp_act_lt_open-tab.svg'
-import PreviousIcon from 'src/assets/svg/mp_act_lt_previous.svg'
+import NextIcon from 'src/assets/svg/mp_act_lt_next.svg?react'
+import OpenTabIcon from 'src/assets/svg/mp_act_lt_open-tab.svg?react'
+import PreviousIcon from 'src/assets/svg/mp_act_lt_previous.svg?react'
 
 export {
   AddIcon,
