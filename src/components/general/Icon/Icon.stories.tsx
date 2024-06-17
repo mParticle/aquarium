@@ -4,22 +4,24 @@ import { Flex, Icon, type IIconProps } from 'src/components'
 import { Icons } from 'src/constants/Icons'
 
 export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', name }) => {
+  const allIcons = Object.keys(Icons) as Array<keyof typeof Icons>
+  const iconGridStyle = {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(6, 1fr)',
+    gap: '10px',
+    alignItems: 'center',
+    justifyItems: 'center',
+  }
+
   return (
-    <div
-      style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(6, 1fr)',
-        gap: '10px',
-        alignItems: 'center',
-        justifyItems: 'center',
-      }}>
+    <div style={iconGridStyle}>
       {name // render either a single selected icon, or all possible icons
-        ? renderIcon(name, size, color)
-        : (Object.keys(Icons) as Array<keyof typeof Icons>).map(iconName => renderIcon(iconName, size, color))}
+        ? renderIcon(name)
+        : allIcons.map(renderIcon)}
     </div>
   )
 
-  function renderIcon(iconName: IIconProps['name'], size: IIconProps['size'], color: IIconProps['color']): ReactNode {
+  function renderIcon(iconName: IIconProps['name']): ReactNode {
     return (
       <Flex vertical align="center" key={iconName}>
         <Icon name={iconName} size={size} color={color} key={iconName} />
