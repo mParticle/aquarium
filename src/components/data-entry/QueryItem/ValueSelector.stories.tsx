@@ -1,9 +1,12 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import ValueSelector from './ValueSelector'
+import type ValueSelector from './ValueSelector'
+import { Suspense, lazy } from 'react'
+
+const _ValueSelector = lazy(async () => await import('./ValueSelector'))
 
 const meta: Meta<typeof ValueSelector> = {
   title: 'Aquarium/Data Entry/QueryItem/ValueSelector',
-  component: ValueSelector,
+  component: _ValueSelector,
   parameters: {
     docs: {
       description: {
@@ -12,7 +15,13 @@ const meta: Meta<typeof ValueSelector> = {
       },
     },
   },
-
+  decorators: [
+    Story => (
+      <Suspense>
+        <Story />
+      </Suspense>
+    ),
+  ],
   args: {},
 }
 export default meta
