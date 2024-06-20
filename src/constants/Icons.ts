@@ -33,7 +33,7 @@ import {
   MpLogoIcon,
   ObservabilityIcon,
   OversightIcon,
-  PredictionsIcon,
+  PredictionsIconLight,
   RemoveIcon,
   SearchIcon,
   SegmentationIcon,
@@ -49,6 +49,13 @@ import {
   WrenchIcon,
   ZoomIn,
   ZoomOut,
+  PremiumIcon,
+  HelpVideoIcon,
+  ConversionIcon,
+  SparklesIcon,
+  NextIcon,
+  PreviousIcon,
+  OpenTabIcon,
 } from 'src/components/icons'
 
 export const Icons = {
@@ -91,7 +98,8 @@ export const Icons = {
   shieldKeyhole: ShieldKeyholeIcon,
   signout: SignoutIcon,
   siteMap: DataPlatform,
-  sparkles: PredictionsIcon,
+  sparkles: SparklesIcon,
+  predictions: PredictionsIconLight,
   split: SplitIcon,
   systemAlerts: SystemAlertsIcon,
   transformation: TransformationsIcon,
@@ -102,4 +110,10 @@ export const Icons = {
   wrench: WrenchIcon,
   zoomIn: ZoomIn,
   zoomOut: ZoomOut,
+  premium: PremiumIcon,
+  helpVideo: HelpVideoIcon,
+  conversion: ConversionIcon,
+  next: NextIcon,
+  previous: PreviousIcon,
+  openTab: OpenTabIcon,
 } as const
