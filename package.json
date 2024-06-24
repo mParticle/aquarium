@@ -61,7 +61,7 @@
     "prettier": "3.3.2",
     "storybook": "8.1.10",
     "stylelint": "16.2.0",
-    "stylelint-config-recommended": "14.0.0",
+    "stylelint-config-recommended": "14.0.1",
     "stylelint-config-standard": "36.0.0",
     "stylelint-no-indistinguishable-colors": "2.1.0",
     "type-fest": "^4.20.0",
