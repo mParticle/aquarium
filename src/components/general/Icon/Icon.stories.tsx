@@ -1,25 +1,35 @@
-import React from 'react'
 import { type Meta } from '@storybook/react'
-import { Icons } from 'src/constants/Icons'
+import React, { type ReactNode } from 'react'
 import { Flex, Icon, type IIconProps } from 'src/components'
+import { Icons } from 'src/constants/Icons'
 
-export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg' }) => (
-  <div
-    style={{
-      display: 'grid',
-      gridTemplateColumns: 'repeat(6, 1fr)',
-      gap: '10px',
-      alignItems: 'center',
-      justifyItems: 'center',
-    }}>
-    {(Object.keys(Icons) as Array<keyof typeof Icons>).map(iconName => (
+export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', name }) => {
+  const allIcons = Object.keys(Icons) as Array<keyof typeof Icons>
+  const iconGridStyle = {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(6, 1fr)',
+    gap: '10px',
+    alignItems: 'center',
+    justifyItems: 'center',
+  }
+
+  return (
+    <div style={iconGridStyle}>
+      {name // render either a single selected icon, or all possible icons
+        ? renderIcon(name)
+        : allIcons.map(renderIcon)}
+    </div>
+  )
+
+  function renderIcon(iconName: IIconProps['name']): ReactNode {
+    return (
       <Flex vertical align="center" key={iconName}>
         <Icon name={iconName} size={size} color={color} key={iconName} />
         <p style={{ fontFamily: 'monospace' }}>{iconName}</p>
       </Flex>
-    ))}
-  </div>
-)
+    )
+  }
+}
 
 const meta: Meta = {
   title: 'Aquarium/General/Icons',
