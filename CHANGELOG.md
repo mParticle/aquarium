@@ -1,3 +1,9 @@
+## [1.19.2](https://github.com/mParticle/aquarium/compare/v1.19.1...v1.19.2) (2024-06-21)
+
+### Bug Fixes
+
+- lazy load ValueSelector to fix Storybook test runner ([#298](https://github.com/mParticle/aquarium/issues/298)) ([4cd501b](https://github.com/mParticle/aquarium/commit/4cd501ba1299e53eb72f9f298946ad844a0f69b8))
+
 ## [1.19.2-chore-more-icons.2](https://github.com/mParticle/aquarium/compare/v1.19.2-chore-more-icons.1...v1.19.2-chore-more-icons.2) (2024-06-17)
 
 ## [1.19.2-chore-more-icons.1](https://github.com/mParticle/aquarium/compare/v1.19.1...v1.19.2-chore-more-icons.1) (2024-06-14)
