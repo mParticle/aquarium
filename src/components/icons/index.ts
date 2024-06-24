@@ -32,7 +32,8 @@ import MessageQuestionIcon from 'src/assets/svg/message-question.svg?react'
 import MpLogoIcon from 'src/assets/svg/mpLogo.svg?react'
 import ObservabilityIcon from 'src/assets/svg/mp_pm_lt_observability.svg?react'
 import OversightIcon from 'src/assets/svg/mp_pm_dt_oversight.svg?react'
-import PredictionsIcon from 'src/assets/svg/mp_pm_dt_predictions.svg?react'
+import PredictionsIconLight from 'src/assets/svg/mp_pm_lt_predictions.svg?react'
+import SparklesIcon from 'src/assets/svg/mp_pm_dt_predictions.svg?react'
 import RemoveIcon from 'src/assets/svg/remove.svg?react'
 import SearchIcon from 'src/assets/svg/search.svg?react'
 import SegmentationIcon from 'src/assets/svg/mp_pm_dt_segmentation.svg?react'
@@ -44,10 +45,16 @@ import TransformationsIcon from 'src/assets/svg/mp_pm_lt_transformations.svg?rea
 import UploadIcon from 'src/assets/svg/mp_act_it_upload.svg?react'
 import UserAttributeIcon from 'src/assets/svg/user-attribute.svg?react'
 import UserProfilesIcon from 'src/assets/svg/mp_pm_lt_userprofiles.svg?react'
-import UsersIcon from 'src/assets/svg/users.svg?react'
+import UsersIcon from 'src/assets/svg/mp_info_lt_users.svg?react'
 import WrenchIcon from 'src/assets/svg/wrench.svg?react'
 import ZoomIn from 'src/assets/svg/mp_act_lt_zoom-in.svg?react'
 import ZoomOut from 'src/assets/svg/mp_act_lt_zoom-out.svg?react'
+import PremiumIcon from 'src/assets/svg/mp_info_lt_premium.svg?react'
+import ConversionIcon from 'src/assets/svg/mp_info_lt_conversion.svg?react'
+import HelpVideoIcon from 'src/assets/svg/mp_info_lt_help-video.svg?react'
+import NextIcon from 'src/assets/svg/mp_act_lt_next.svg?react'
+import OpenTabIcon from 'src/assets/svg/mp_act_lt_open-tab.svg?react'
+import PreviousIcon from 'src/assets/svg/mp_act_lt_previous.svg?react'
 
 export {
   AddIcon,
@@ -75,6 +82,7 @@ export {
   GridIcon,
   HeartIcon,
   HelpIcon,
+  HelpVideoIcon,
   IdentityIcon,
   JumpToIcon,
   LightBulbIcon,
@@ -84,7 +92,8 @@ export {
   MpLogoIcon,
   ObservabilityIcon,
   OversightIcon,
-  PredictionsIcon,
+  SparklesIcon,
+  PredictionsIconLight,
   RemoveIcon,
   SearchIcon,
   SegmentationIcon,
@@ -100,4 +109,9 @@ export {
   WrenchIcon,
   ZoomIn,
   ZoomOut,
+  OpenTabIcon,
+  ConversionIcon,
+  PremiumIcon,
+  NextIcon,
+  PreviousIcon
 }
