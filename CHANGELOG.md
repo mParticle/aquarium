@@ -1,3 +1,9 @@
+## [1.19.3](https://github.com/mParticle/aquarium/compare/v1.19.2...v1.19.3) (2024-06-25)
+
+### Bug Fixes
+
+- rollback variables/style ([#310](https://github.com/mParticle/aquarium/issues/310)) ([efcaf5c](https://github.com/mParticle/aquarium/commit/efcaf5c0e3d2497a60298bb9fee6d22c65c6fbdf))
+
 ## [1.19.2](https://github.com/mParticle/aquarium/compare/v1.19.1...v1.19.2) (2024-06-21)
 
 ### Bug Fixes
