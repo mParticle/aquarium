@@ -6,6 +6,7 @@ interface INumberInputProps {
   value?: number
   disabled?: boolean
   errorMessage?: string
+  autoFocus: boolean
   placeholder?: string
   min?: number
   max?: number
@@ -27,6 +28,7 @@ const NumberInput = (props: INumberInputProps) => {
         disabled={props.disabled}
         className={inputClasses}
         value={props.value}
+        autoFocus={props.autoFocus}
         placeholder={props.placeholder}
         max={props.max}
         min={props.min}
@@ -37,8 +39,7 @@ const NumberInput = (props: INumberInputProps) => {
         }}
       />
 
-      {props.errorMessage &&
-       <Typography.Text type="danger">{props.errorMessage}</Typography.Text>}
+      {props.errorMessage && <Typography.Text type="danger">{props.errorMessage}</Typography.Text>}
     </>
   )
 }
