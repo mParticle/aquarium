@@ -60,3 +60,9 @@ export const Max: Story = {
     max: 100,
   },
 }
+
+export const AutoFocus: Story = {
+  args: {
+    autoFocus: true,
+  },
+}
