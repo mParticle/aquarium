@@ -9,7 +9,9 @@ interface INumberInputProps {
   placeholder?: string
   min?: number
   max?: number
+  step?: number
   onChange?: (value: number) => void
+  onPressEnter?: (e: React.KeyboardEvent<HTMLInputElement>) => void
 }
 
 const NumberInput = (props: INumberInputProps) => {
@@ -28,6 +30,8 @@ const NumberInput = (props: INumberInputProps) => {
         placeholder={props.placeholder}
         max={props.max}
         min={props.min}
+        step={props.step}
+        onPressEnter={props.onPressEnter}
         onChange={(value: string | number | null) => {
           props.onChange?.(parseFloat(value as string))
         }}

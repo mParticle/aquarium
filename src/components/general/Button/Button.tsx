@@ -12,7 +12,7 @@ export interface IButtonProps extends AntButtonProps {
 }
 export const Button = (props: IButtonProps) => {
   const classMap = {
-    'with-new-icon': 'u-display-flex u-align-items-center',
+    'with-new-icon': 'u-display-flex u-align-items-center u-justify-center',
   }
 
   return (

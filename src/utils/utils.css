@@ -10,6 +10,10 @@
   align-items: center !important;
 }
 
+.u-justify-center {
+  justify-content: center !important;
+}
+
 .u-padding-sm {
   padding:var(--padding-sm) !important;
 }
