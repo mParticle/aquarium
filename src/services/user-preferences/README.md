@@ -4,7 +4,7 @@ The `UserPreferencesService` class is a TypeScript module designed to manage use
 
 ## Features
 
-- **Initialization of Preferences**: Loads and initializes user preferences from storage.
+- **Initialization of Preferences**: Loads and initializes user preferences from storage (currently uses cookies).
 - **Opt-in Check**: Allows checking if a user has opted into a specific preference.
 - **Set Preference**: Enables setting a user's preference, including opt-in/opt-out functionality.
 - **Scoped Preferences**: Supports handling preferences within defined scopes to cater to different user segments or application areas.
