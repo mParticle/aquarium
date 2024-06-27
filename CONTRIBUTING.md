@@ -30,15 +30,18 @@ and install it directly from there with the following command:
 yarn add https://github.com/mParticle/aquarium#<branch-name>
 ```
 
+## Testing by releasing an ad-hoc version
+
+To test ad-hoc versions of the Aquarium we use `feat/`, `fix/` or `chore/` branchs on Github and their corresponding distribution channels on npm.
+This allows us to release specific versions for testing specific features and install them on the platforms. To release it,
+just run the Github Action from the the branch you want to release.
+
 ### Release Process
 
-We use semantic-release for releasing new versions of the library.
+We use semantic-release for releasing new versions of the library. You can use the Github Release Aquarium action from the `main` to release from it. 
 
-## Releasing feature versions
-
-To test feature versions of the Aquarium we use `feat/` branchs on Github and the `feature` distribution channel on npm.
-This allows us to release specific versions for testing specific features and install them on the platforms. To release it,
-just run the Github Action from the `feat/` branch you want to release.
+> [!IMPORTANT]  
+> Before releasing a version from main, send a message in the #aquarium Slack channel to align it and sync on other changes that can/should be included in the release.
 
 ## Commit conventions and PR titles
 
