@@ -1,4 +1,4 @@
-[\_variables.css](https://github.com/mParticle/aquarium/blob/main/src/styles/_variables.css) is a generated file, created from the design tokens in [GlobalTokens.json](https://github.com/mParticle/aquarium/blob/main/design/GlobalToken.json)
+The main style exports from the aquarium are one css [[variables.css](https://github.com/mParticle/aquarium/blob/main/src/styles/_variables.css)] and one typescript [[styles.ts](https://github.com/mParticle/aquarium/blob/main/src/styles/style.ts)] file, which are generated from the design tokens in [GlobalTokens.json](https://github.com/mParticle/aquarium/blob/main/design/GlobalToken.json)
 
 When design updates the source-of-truth variables in figma, run the `Theme Buddy for Ant Design` plugin, which exports the Config Provider diff between our styles and the ant default
 
