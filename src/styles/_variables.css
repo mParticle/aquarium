@@ -35,7 +35,7 @@
   --motion-ease-in-back: cubic-bezier(0.71, -0.46, 0.88, 0.6);
   --motion-ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
   --motion-ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
-  --border-radius: 8px;
+  --border-radius: 6px;
   --size-unit: 4px;
   --size-step: 4px;
   --size-popup-arrow: 16px;
@@ -84,7 +84,6 @@
   --color-info-text-hover: #5f29f8;
   --color-info-text: #2c00aa;
   --color-info-text-active: #20007a;
-  --border-radius-lg: 16px;
   --mp-brand-primary-1: #f8f6fb;
   --mp-brand-primary-2: #ebe8f8;
   --mp-brand-primary-3: #dbceff;
@@ -338,8 +337,9 @@
   --motion-duration-slow: 0.3s;
   --line-width-bold: 2px;
   --border-radius-xs: 2px;
-  --border-radius-sm: 6px;
-  --border-radius-outer: 6px;
+  --border-radius-sm: 4px;
+  --border-radius-lg: 8px;
+  --border-radius-outer: 4px;
   --color-fill-content: rgba(32, 0, 122, 0.06);
   --color-fill-content-hover: rgba(15, 14, 14, 0.15);
   --color-fill-alter: rgba(32, 0, 122, 0.03);
