@@ -56,6 +56,7 @@ import {
   NextIcon,
   PreviousIcon,
   OpenTabIcon,
+  DirectoryIcon,
 } from 'src/components/icons'
 
 export const Icons = {
@@ -116,4 +117,5 @@ export const Icons = {
   next: NextIcon,
   previous: PreviousIcon,
   openTab: OpenTabIcon,
+  directory: DirectoryIcon,
 } as const
