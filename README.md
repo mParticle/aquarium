@@ -2,6 +2,8 @@
 
 # mParticle Aquarium
 
+This is a test for 2024 AI Hackathon
+
 mParticle Component Library
 
 ## Contributing
