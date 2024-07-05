@@ -40,6 +40,9 @@ const meta: Meta<typeof Avatar> = {
         Sparkles: <Icon name="sparkles" />,
       },
     },
+    subtitle: {
+      control: 'text',
+    },
   },
 }
 export default meta
@@ -184,6 +187,18 @@ export const ExampleAutosetFontSize: Story = {
         <Button size="small" style={{ verticalAlign: 'middle' }} onClick={changeGap}>
           changeGap
         </Button>
+      </ExampleStory>
+    )
+  },
+}
+
+export const ExampleWithSubtitle: Story = {
+  render: args => {
+    const subtitle = args.subtitle ?? 'Bob Alice'
+
+    return (
+      <ExampleStory title="Show a subtitle underneath the Avatar. Text is limited to 10 characters">
+        <Avatar subtitle={subtitle}>{'BA'}</Avatar>
       </ExampleStory>
     )
   },
