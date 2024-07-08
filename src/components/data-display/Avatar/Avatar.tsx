@@ -2,6 +2,7 @@ import { Avatar as AntAvatar, Flex, Typography } from 'antd'
 import { type AvatarProps as AntAvatarProps } from 'antd'
 import { ConfigProvider } from 'src/components'
 import './Avatar.css'
+import { formatString, validString } from 'src/utils/utils'
 
 export interface IAvatarProps extends AntAvatarProps {
   subtitleOptions?: {
@@ -9,18 +10,6 @@ export interface IAvatarProps extends AntAvatarProps {
     /** Length of the subtitle to display before cutoff with ellipses */
     limit?: number
   }
-}
-
-export const validString = (str?: string) => {
-  return (str?.trim?.()?.length ?? 0) > 0
-}
-
-export const formatString = (str?: string, limit?: number) => {
-  const _str = str?.trim() ?? ''
-  if (limit !== undefined && _str.length > limit) {
-    return `${_str.substring(0, limit)}...`
-  }
-  return _str
 }
 
 export const Avatar = ({ className, subtitleOptions, ...props }: IAvatarProps) => {

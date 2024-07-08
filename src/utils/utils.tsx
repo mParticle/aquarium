@@ -63,3 +63,18 @@ export function buildLinkFromHrefOptions(label: ReactNode, hrefOptions?: HrefOpt
     </a>
   )
 }
+
+/** Returns `true` when a string has contents that are not just spaces */
+export const validString = (str?: string) => {
+  return (str?.trim?.()?.length ?? 0) > 0
+}
+
+/** Returns a string that is trimmed of extraneous spacing, and shortened to the `limit` if parameter provided/applicable */
+export const formatString = (str?: string, limit?: number) => {
+  const _str = str?.trim() ?? ''
+  const _limit = limit && Number.isInteger(limit) && limit >= 0 ? limit : undefined
+  if (_limit !== undefined && _str.length > _limit) {
+    return `${_str.substring(0, limit).trim()}...`
+  }
+  return _str
+}
