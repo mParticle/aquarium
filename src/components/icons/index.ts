@@ -55,6 +55,7 @@ import HelpVideoIcon from 'src/assets/svg/mp_info_lt_help-video.svg?react'
 import NextIcon from 'src/assets/svg/mp_act_lt_next.svg?react'
 import OpenTabIcon from 'src/assets/svg/mp_act_lt_open-tab.svg?react'
 import PreviousIcon from 'src/assets/svg/mp_act_lt_previous.svg?react'
+import DirectoryIcon from 'src/assets/svg//mp_pm_lt_directory.svg?react'
 
 export {
   AddIcon,
@@ -113,5 +114,6 @@ export {
   ConversionIcon,
   PremiumIcon,
   NextIcon,
-  PreviousIcon
+  PreviousIcon,
+  DirectoryIcon,
 }
