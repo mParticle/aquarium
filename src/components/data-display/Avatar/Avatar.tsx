@@ -6,7 +6,7 @@ import { formatString, validString } from 'src/utils/utils'
 
 export interface IAvatarProps extends AntAvatarProps {
   subtitleOptions?: {
-    text?: string
+    text: string
     /** Length of the subtitle to display before cutoff with ellipses */
     limit?: number
   }
