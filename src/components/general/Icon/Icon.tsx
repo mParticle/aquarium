@@ -22,14 +22,11 @@ export interface IIconProps {
 }
 
 export const Icon = (props: IIconProps) => {
+  const { color = 'default', size = 'lg' } = props
+
   const IconName = Icons[props.name]
-  const className = `icon-size-${props.size} icon-color-${props.color}`
+  const className = `icon-size-${size} icon-color-${color}`
   const iconId = `icon-${props.name}`
 
   return <IconName className={className} data-test={iconId} />
 }
-
-Icon.defaultProps = {
-  color: 'default',
-  size: 'lg',
-} satisfies Partial<IIconProps>
