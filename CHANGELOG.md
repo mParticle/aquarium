@@ -1,3 +1,9 @@
+# [1.20.0](https://github.com/mParticle/aquarium/compare/v1.19.3...v1.20.0) (2024-07-08)
+
+### Features
+
+- Add directory icon ([#319](https://github.com/mParticle/aquarium/issues/319)) ([a2b4132](https://github.com/mParticle/aquarium/commit/a2b41327a22f7bc2bfcc32ce797a1432b8a6042d))
+
 ## [1.19.3](https://github.com/mParticle/aquarium/compare/v1.19.2...v1.19.3) (2024-06-25)
 
 ### Bug Fixes
