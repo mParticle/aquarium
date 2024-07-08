@@ -9,13 +9,14 @@ import {
   type INavigationWorkspace,
   type IWorkspaceSelectorDisplayItem,
   Popover,
+  Typography,
 } from 'src/components'
 import { Flex } from 'src/components'
 import React, { type ChangeEvent, useRef, useState } from 'react'
 import { useCallback } from 'react'
 import { useEffect } from 'react'
 import { useMemo } from 'react'
-import { debounce, hasImageAtSrc } from 'src/utils/utils'
+import { debounce, hasContent, hasImageAtSrc, trimString } from 'src/utils/utils'
 import { getInitials } from 'src/utils/utils'
 
 import { type InputRef } from 'src/components'
@@ -61,6 +62,9 @@ function sortOrgsByActiveWorkspace(orgs: INavigationOrg[]): INavigationOrg[] {
 
   return orgs
 }
+
+/** Number of characters to show under the avatar */
+const WORKSPACE_LABEL_LIMIT = 7
 
 export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
   const [searchTerm, setSearchTerm] = useState<string>('')
@@ -109,6 +113,9 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
   }, [sortedOrgs])
 
   const workspaceInitials = getInitials(activeWorkspace?.label)
+  const workspaceLabel = hasContent(activeWorkspace?.label)
+    ? trimString(activeWorkspace?.label, WORKSPACE_LABEL_LIMIT)
+    : undefined
 
   const hasSearchInput = !!searchTerm || menuItems.filter(item => !!item.label).length > 5
 
@@ -152,9 +159,12 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
         onClick={e => {
           focusOnInput(true)
         }}>
-        <Avatar {...props.avatarOptions} className="workspaceSelector__avatar">
-          {getInitialsIfNoImage(hasImage, workspaceInitials)}
-        </Avatar>
+        <Flex vertical align="center" justify="center">
+          <Avatar {...props.avatarOptions} className="workspaceSelector__avatar">
+            {getInitialsIfNoImage(hasImage, workspaceInitials)}
+          </Avatar>
+          {workspaceLabel && <Typography.Text className="workspaceSelector__label">{workspaceLabel}</Typography.Text>}
+        </Flex>
       </div>
     </Popover>
   )

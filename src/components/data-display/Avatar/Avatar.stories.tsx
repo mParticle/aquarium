@@ -188,15 +188,3 @@ export const ExampleAutosetFontSize: Story = {
     )
   },
 }
-
-export const ExampleWithSubtitle: Story = {
-  render: args => {
-    const subtitleOptions = args.subtitleOptions ?? { text: 'Bob Alice', limit: 10 }
-
-    return (
-      <ExampleStory title="Show a subtitle underneath the Avatar. Text is limited to 10 characters">
-        <Avatar subtitleOptions={subtitleOptions}>{'BA'}</Avatar>
-      </ExampleStory>
-    )
-  },
-}
