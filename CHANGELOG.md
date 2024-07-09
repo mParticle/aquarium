@@ -1,3 +1,5 @@
+## [1.19.4-chore-better-types.1](https://github.com/mParticle/aquarium/compare/v1.19.3...v1.19.4-chore-better-types.1) (2024-07-09)
+
 ## [1.19.3](https://github.com/mParticle/aquarium/compare/v1.19.2...v1.19.3) (2024-06-25)
 
 ### Bug Fixes

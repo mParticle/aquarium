@@ -1,6 +1,6 @@
 {
   "name": "@mparticle/aquarium",
-  "version": "1.19.3",
+  "version": "1.19.4-chore-better-types.1",
   "description": "mParticle Component Library",
   "license": "Apache-2.0",
   "keywords": [
