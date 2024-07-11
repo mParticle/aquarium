@@ -35,7 +35,8 @@ const NumberInput = (props: INumberInputProps) => {
         step={props.step}
         onPressEnter={props.onPressEnter}
         onChange={(value: string | number | null | undefined) => {
-          props.onChange?.(parseFloat(value as string) || undefined)
+          const floatValue = parseFloat(value as string) || undefined
+          props.onChange?.(floatValue)
         }}
       />
 
