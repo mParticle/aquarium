@@ -2,7 +2,7 @@ import './query-item.css'
 import { InputNumber } from 'src/components'
 import { Typography } from 'src/components/general/Typography/Typography'
 
-interface INumberInputProps {
+export interface INumberInputProps {
   value?: number
   disabled?: boolean
   errorMessage?: string
