@@ -3,7 +3,7 @@ import { InputNumber } from 'src/components'
 import { Typography } from 'src/components/general/Typography/Typography'
 
 export interface INumberInputProps {
-  value?: number
+  value?: number | undefined
   disabled?: boolean
   errorMessage?: string
   autoFocus: boolean
@@ -21,6 +21,12 @@ const NumberInput = (props: INumberInputProps) => {
   let inputClasses = `query-item query-item--input-number`
   if (props.errorMessage) inputClasses += ' query-item--error'
 
+  const handleOnChange = (value: string | number | null | undefined) => {
+    const floatValue = parseFloat(value as string)
+    if (isNaN(floatValue)) return props.onChange?.(undefined)
+    props.onChange?.(floatValue)
+  }
+
   return (
     <>
       <InputNumber
@@ -34,10 +40,7 @@ const NumberInput = (props: INumberInputProps) => {
         min={props.min}
         step={props.step}
         onPressEnter={props.onPressEnter}
-        onChange={(value: string | number | null | undefined) => {
-          const floatValue = parseFloat(value as string) || undefined
-          props.onChange?.(floatValue)
-        }}
+        onChange={handleOnChange}
       />
 
       {props.errorMessage && <Typography.Text type="danger">{props.errorMessage}</Typography.Text>}
