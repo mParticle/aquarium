@@ -23,8 +23,7 @@ const NumberInput = (props: INumberInputProps) => {
 
   const handleOnChange = (value: string | number | null | undefined) => {
     const floatValue = parseFloat(value as string)
-    if (isNaN(floatValue)) return props.onChange?.(undefined)
-    props.onChange?.(floatValue)
+    isNaN(floatValue) ? props.onChange?.(undefined) : props.onChange?.(floatValue)
   }
 
   return (
