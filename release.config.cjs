@@ -3,17 +3,17 @@ module.exports = {
     {
       name: 'feat/*',
       channel: 'feature',
-      prerelease: "${name.split('/').slice(1).join('-').toLowerCase()}"
+      prerelease: "${name.split('/').slice(1).join('-').toLowerCase().replaceAll('_', '-')}"
     },
     {
       name: 'chore/*',
       channel: 'chore',
-      prerelease: "chore-${name.split('/').slice(1).join('-').toLowerCase()}"
+      prerelease: "chore-${name.split('/').slice(1).join('-').toLowerCase().replaceAll('_', '-')}"
     },
     {
       name: 'fix/*',
       channel: 'fix',
-      prerelease: "fix-${name.split('/').slice(1).join('-').toLowerCase()}"
+      prerelease: "fix-${name.split('/').slice(1).join('-').toLowerCase().replaceAll('_', '-')}"
     },
     
   ],
