@@ -2,8 +2,8 @@ import './query-item.css'
 import { InputNumber } from 'src/components'
 import { Typography } from 'src/components/general/Typography/Typography'
 
-interface INumberInputProps {
-  value?: number
+export interface INumberInputProps {
+  value?: number | undefined
   disabled?: boolean
   errorMessage?: string
   autoFocus: boolean
@@ -11,7 +11,7 @@ interface INumberInputProps {
   min?: number
   max?: number
   step?: number
-  onChange?: (value: number) => void
+  onChange?: (value: number | undefined) => void
   onPressEnter?: (e: React.KeyboardEvent<HTMLInputElement>) => void
 }
 
@@ -20,6 +20,11 @@ const NumberInput = (props: INumberInputProps) => {
 
   let inputClasses = `query-item query-item--input-number`
   if (props.errorMessage) inputClasses += ' query-item--error'
+
+  const handleOnChange = (value: string | number | null | undefined) => {
+    const floatValue = parseFloat(value as string)
+    isNaN(floatValue) ? props.onChange?.(undefined) : props.onChange?.(floatValue)
+  }
 
   return (
     <>
@@ -34,9 +39,7 @@ const NumberInput = (props: INumberInputProps) => {
         min={props.min}
         step={props.step}
         onPressEnter={props.onPressEnter}
-        onChange={(value: string | number | null) => {
-          props.onChange?.(parseFloat(value as string))
-        }}
+        onChange={handleOnChange}
       />
 
       {props.errorMessage && <Typography.Text type="danger">{props.errorMessage}</Typography.Text>}

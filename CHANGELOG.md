@@ -1,3 +1,9 @@
+# [1.21.0](https://github.com/mParticle/aquarium/compare/v1.20.0...v1.21.0) (2024-07-16)
+
+### Features
+
+- add workspace label to Workspace Selector ([#323](https://github.com/mParticle/aquarium/issues/323)) ([bdb3c70](https://github.com/mParticle/aquarium/commit/bdb3c70ebf8856f1e5cd436fc243ed47e335fbb4))
+
 # [1.20.0](https://github.com/mParticle/aquarium/compare/v1.19.3...v1.20.0) (2024-07-08)
 
 ### Features
