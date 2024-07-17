@@ -1,3 +1,9 @@
+## [1.21.1-fix-queryitem.valueselector.cascader-intial-value-validation.1](https://github.com/mParticle/aquarium/compare/v1.21.0...v1.21.1-fix-queryitem.valueselector.cascader-intial-value-validation.1) (2024-07-17)
+
+### Bug Fixes
+
+- extra validation added to cascader selectedDisplayValue state ([ed3e159](https://github.com/mParticle/aquarium/commit/ed3e15910a1485b4426b49b13a72c8e4fe1dbda3))
+
 # [1.21.0](https://github.com/mParticle/aquarium/compare/v1.20.0...v1.21.0) (2024-07-16)
 
 ### Features
