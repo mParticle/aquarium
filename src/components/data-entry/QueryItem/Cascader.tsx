@@ -46,6 +46,12 @@ const Cascader = (props: ICascaderProps) => {
     setItems(props.options)
   }, [props.options])
 
+  useEffect(() => {
+    if (props.value && props.value.length > 0) {
+      setSelectedValue(props.value)
+    }
+  }, [props.value])
+
   const onSearch = ({ target: { value } }: { target: { value: string } }) => {
     if (debouncedLoadData) {
       if (value.length > 3) {
