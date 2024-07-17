@@ -38,7 +38,7 @@ const Cascader = (props: ICascaderProps) => {
   const [searchValue, setSearchValue] = useState('')
   const [selectedValue, setSelectedValue] = useState<Array<number | string>>(props.value ?? [])
   const [selectedDisplayValue, setSelectedDisplayValue] = useState(
-    props.value ? (props.value.slice(-1)[0] as any).label : '',
+    props.value && props.value.length > 0 ? (props.value.slice(-1)[0] as any).label : '',
   )
   const [isOpen, setIsOpen] = useState(false)
 
