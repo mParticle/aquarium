@@ -1,3 +1,9 @@
+## [1.21.1-fix-queryitem.valueselector.cascader-intial-value-not-being-set.1](https://github.com/mParticle/aquarium/compare/v1.21.0...v1.21.1-fix-queryitem.valueselector.cascader-intial-value-not-being-set.1) (2024-07-17)
+
+### Bug Fixes
+
+- **Cascader.tsx:** extra validation added to preSelectedValue state ([c4806ab](https://github.com/mParticle/aquarium/commit/c4806ab3b6d3a2ca9e0820115f301c9ce9f9a857))
+
 # [1.21.0](https://github.com/mParticle/aquarium/compare/v1.20.0...v1.21.0) (2024-07-16)
 
 ### Features
