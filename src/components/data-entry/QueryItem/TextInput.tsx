@@ -8,6 +8,7 @@ interface ITextInputProps {
   errorMessage?: string
   placeholder?: string
   onChange?: (value: string) => void
+  className?: string
 }
 
 const TextInput = (props: ITextInputProps) => {
@@ -15,6 +16,7 @@ const TextInput = (props: ITextInputProps) => {
 
   let inputClasses = `query-item query-item--input-text`
   if (props.errorMessage) inputClasses += ' query-item--error'
+  if (props.className) inputClasses += ` ${props.className}`
 
   return (
     <>
