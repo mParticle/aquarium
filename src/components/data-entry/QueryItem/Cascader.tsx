@@ -28,6 +28,7 @@ export interface ICascaderProps {
   onChange?: (values: Array<number | string>, selectedOptions: any) => Promise<void>
   loadData?: (value: string) => void
   value?: Array<number | string>
+  classNameInput?: string
 }
 
 const Cascader = (props: ICascaderProps) => {
@@ -38,13 +39,19 @@ const Cascader = (props: ICascaderProps) => {
   const [searchValue, setSearchValue] = useState('')
   const [selectedValue, setSelectedValue] = useState<Array<number | string>>(props.value ?? [])
   const [selectedDisplayValue, setSelectedDisplayValue] = useState(
-    props.value ? (props.value.slice(-1)[0] as any).label : '',
+    props.value && props.value.length > 0 ? (props.value.slice(-1)[0] as any).label : '',
   )
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
     setItems(props.options)
   }, [props.options])
+
+  useEffect(() => {
+    if (props.value && props.value.length > 0) {
+      setSelectedValue(props.value)
+    }
+  }, [props.value])
 
   const onSearch = ({ target: { value } }: { target: { value: string } }) => {
     if (debouncedLoadData) {
@@ -117,6 +124,8 @@ const Cascader = (props: ICascaderProps) => {
   if (isOpen) inputClasses += ' query-item--open'
   if (selectedValue && selectedValue.length !== 0) inputClasses += ' query-item--selected'
   if (props.errorMessage) inputClasses += ' query-item--error'
+  if (props.classNameInput) inputClasses += ` ${props.classNameInput}`
+
   const displayValue = selectedDisplayValue ?? selectedValue.slice(-1)
 
   return (
