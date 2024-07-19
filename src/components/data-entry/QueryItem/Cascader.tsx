@@ -28,6 +28,7 @@ export interface ICascaderProps {
   onChange?: (values: Array<number | string>, selectedOptions: any) => Promise<void>
   loadData?: (value: string) => void
   value?: Array<number | string>
+  classNameInput?: string
 }
 
 const Cascader = (props: ICascaderProps) => {
@@ -123,6 +124,8 @@ const Cascader = (props: ICascaderProps) => {
   if (isOpen) inputClasses += ' query-item--open'
   if (selectedValue && selectedValue.length !== 0) inputClasses += ' query-item--selected'
   if (props.errorMessage) inputClasses += ' query-item--error'
+  if (props.classNameInput) inputClasses += ` ${props.classNameInput}`
+
   const displayValue = selectedDisplayValue ?? selectedValue.slice(-1)
 
   return (
