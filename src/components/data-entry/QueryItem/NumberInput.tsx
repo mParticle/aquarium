@@ -13,6 +13,7 @@ export interface INumberInputProps {
   step?: number
   onChange?: (value: number | undefined) => void
   onPressEnter?: (e: React.KeyboardEvent<HTMLInputElement>) => void
+  className?: string
 }
 
 const NumberInput = (props: INumberInputProps) => {
@@ -20,6 +21,7 @@ const NumberInput = (props: INumberInputProps) => {
 
   let inputClasses = `query-item query-item--input-number`
   if (props.errorMessage) inputClasses += ' query-item--error'
+  if (props.className) inputClasses += ` ${props.className}`
 
   const handleOnChange = (value: string | number | null | undefined) => {
     const floatValue = parseFloat(value as string)
