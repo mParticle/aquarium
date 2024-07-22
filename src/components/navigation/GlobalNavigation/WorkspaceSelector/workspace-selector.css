@@ -34,6 +34,14 @@
 
 .workspaceSelector__avatar {
   color: white !important;
+  top: 1px;
+  margin-top: 2px;
+}
+
+.workspaceSelector__label {
+  position: relative;
+  top: 2px;
+  padding-top: var(--padding-xxs);
 }
 
 .workspaceSelector__popover {
