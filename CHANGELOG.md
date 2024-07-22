@@ -1,3 +1,9 @@
+## [1.21.1-fix-signout-onclick-trigger.1](https://github.com/mParticle/aquarium/compare/v1.21.0...v1.21.1-fix-signout-onclick-trigger.1) (2024-07-22)
+
+### Bug Fixes
+
+- auto triggering of signout onClick when there are no orgs ([d2645fd](https://github.com/mParticle/aquarium/commit/d2645fd164a37557b0f8b475f093b2f0c6b35058))
+
 # [1.21.0](https://github.com/mParticle/aquarium/compare/v1.20.0...v1.21.0) (2024-07-16)
 
 ### Features
