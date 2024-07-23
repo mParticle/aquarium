@@ -1,3 +1,11 @@
+## [1.21.1-chore-queryitem.valueselector-adding-extra-functionality.1](https://github.com/mParticle/aquarium/compare/v1.21.0...v1.21.1-chore-queryitem.valueselector-adding-extra-functionality.1) (2024-07-23)
+
+### Bug Fixes
+
+- a useEffect Hook has been added to detect if the value received from parameter changed ([d8c6f10](https://github.com/mParticle/aquarium/commit/d8c6f10b7ed3df7e742b0fb23a0657bf0102e843))
+- extra validation added to cascader selectedDisplayValue state ([ed3e159](https://github.com/mParticle/aquarium/commit/ed3e15910a1485b4426b49b13a72c8e4fe1dbda3))
+- package.json changed, replacing the version by its original value ([469e2c5](https://github.com/mParticle/aquarium/commit/469e2c5e921f1b040071886db9782859c1e6acd6))
+
 ## [1.21.1-chore-queryitem.valueselector-adding-extra-functionality.1](https://github.com/mParticle/aquarium/compare/v1.21.0...v1.21.1-chore-queryitem.valueselector-adding-extra-functionality.1) (2024-07-19)
 
 ### Bug Fixes
