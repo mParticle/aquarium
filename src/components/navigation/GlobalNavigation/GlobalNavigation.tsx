@@ -72,7 +72,7 @@ export const GlobalNavigation = ({ showSuiteLogo = true, ...props }: IGlobalNavi
                 avatarOptions={props.avatarOptions}
               />
             ) : (
-              !!props.navigationButtonItemOptions?.onClick() && (
+              !!props.navigationButtonItemOptions?.onClick && (
                 <NavigationItem
                   type="link"
                   icon={<Icon name="signout" />}
