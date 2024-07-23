@@ -13,6 +13,7 @@ export interface IQueryItemQualifierProps {
   errorMessage?: string
   onChange?: (value: IQueryItemQualifierOption) => void
   value?: IQueryItemQualifierOption
+  className?: string
 }
 
 const Qualifier = (props: IQueryItemQualifierProps) => {
@@ -37,6 +38,7 @@ const Qualifier = (props: IQueryItemQualifierProps) => {
 
   let className = 'query-item'
   if (isOpen) className += ' query-item--open'
+  if (props.className) className += ` ${props.className}`
 
   return (
     <>
