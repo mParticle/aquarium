@@ -485,8 +485,12 @@ export const MP: Story = {
     orgs: mpOrgs,
     minimapOptions: {
       overviewHref: '/',
-      onLinkClick: link => alert(link.href),
-      onUnauthorizedClick: link => alert(`unauthorized ${link?.href} `),
+      onLinkClick: link => {
+        alert(link.href)
+      },
+      onUnauthorizedClick: link => {
+        alert(`unauthorized ${link?.href} `)
+      },
       unauthorizedLinks: ['dataPlatform'],
       activeLink: 'oversight',
       links: [
@@ -1014,6 +1018,27 @@ export const Cortex: Story = {
     orgs: cortexOrgs,
     onMpHomeClick: () => {
       alert('going to overview map')
+    },
+    navigationButtonItemOptions: {
+      label: 'Sign Out of mParticle',
+      onClick: () => {
+        alert('onSignout click')
+      },
+    },
+    minimapOptions: {
+      overviewHref: '/',
+      onLinkClick: link => {
+        if (link.linkId !== 'predictions') alert(link.href)
+      },
+      links: [
+        { linkId: 'oversight', href: '/oversight' },
+        { linkId: 'dataPlatform', href: '/data-platform' },
+        { linkId: 'customer360', href: '/customer-360' },
+        { linkId: 'predictions', href: '/predictions' },
+        { linkId: 'analytics', href: '/analytics' },
+        { linkId: 'segmentation', href: '/segmentation' },
+      ],
+      activeLink: 'predictions',
     },
   },
 }

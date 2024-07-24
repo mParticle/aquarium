@@ -1,6 +1,6 @@
 import type { ReactNode, type MouseEvent, ReactElement } from 'react'
 import { type HrefOptions } from 'src/utils/utils'
-import { Icons } from 'src/constants/Icons'
+import { type Icons } from 'src/constants/Icons'
 
 export interface IBaseGlobalNavigationItem {
   type?: 'menu' | 'link'
@@ -42,7 +42,7 @@ export interface IMiniMapOptions {
   overviewHref: string
   links: MiniMapLink[]
   onLinkClick: (link: MiniMapLink) => void
-  onUnauthorizedClick: (link?: MiniMapLink) => void
-  unauthorizedLinks: MiniMapLinks[]
+  onUnauthorizedClick?: (link?: MiniMapLink) => void
+  unauthorizedLinks?: MiniMapLinks[]
   activeLink: MiniMapLinks
 }

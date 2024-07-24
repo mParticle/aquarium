@@ -5,8 +5,11 @@ import { Button, ConfigProvider } from 'src/components'
 import Logo from 'src/assets/svg/mp-logo-wordmark.svg?react'
 import { minimap } from './minimap-svg'
 import { Flex } from 'src/components/layout/Flex/Flex'
-import { ISvgLink, SvgLinker } from 'src/components/navigation/MiniMap/SvgLinker'
-import { IMiniMapOptions, MiniMapLinks } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
+import { type ISvgLink, SvgLinker } from 'src/components/navigation/MiniMap/SvgLinker'
+import {
+  type IMiniMapOptions,
+  type MiniMapLinks,
+} from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 
 type IMiniMapProps = IMiniMapOptions
 
@@ -24,7 +27,7 @@ const Minimap = (props: IMiniMapProps) => {
     elementId: elementIdMap[link.linkId],
     href: link.href,
     variant: 'drop-shadow',
-    isUnauthorized: props.unauthorizedLinks.includes(link.linkId),
+    isUnauthorized: props.unauthorizedLinks?.includes(link.linkId),
     isActive: props.activeLink === link.linkId,
   }))
 
@@ -44,10 +47,12 @@ const Minimap = (props: IMiniMapProps) => {
     </ConfigProvider>
   )
   function handleLinkClick(svgLink: ISvgLink): void {
-    const miniMapLink = props.links.find(link => link.href === svgLink.href)!
+    const miniMapLink = props.links.find(link => link.href === svgLink.href)
 
-    if (svgLink.isUnauthorized) props.onUnauthorizedClick(miniMapLink)
-    else props.onLinkClick(miniMapLink)
+    if (miniMapLink) {
+      if (svgLink.isUnauthorized) props.onUnauthorizedClick?.(miniMapLink)
+      else props.onLinkClick(miniMapLink)
+    }
   }
 }
 
