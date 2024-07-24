@@ -28,7 +28,7 @@ import {
   JumpToIcon,
   LightBulbIcon,
   LiveStreamIcon,
-  LockIcon,
+  PaywallIcon,
   MessageQuestionIcon,
   MpLogoIcon,
   ObservabilityIcon,
@@ -57,6 +57,8 @@ import {
   PreviousIcon,
   OpenTabIcon,
   DirectoryIcon,
+  LockIcon,
+  UnlockIcon,
 } from 'src/components/icons'
 
 export const Icons = {
@@ -88,7 +90,7 @@ export const Icons = {
   jumpTo: JumpToIcon,
   lightBulb: LightBulbIcon,
   liveStream: LiveStreamIcon,
-  lock: LockIcon,
+  paywall: PaywallIcon,
   messageQuestion: MessageQuestionIcon,
   mpLogo: MpLogoIcon,
   observability: ObservabilityIcon,
@@ -118,4 +120,6 @@ export const Icons = {
   previous: PreviousIcon,
   openTab: OpenTabIcon,
   directory: DirectoryIcon,
+  lock: LockIcon,
+  unlock: UnlockIcon,
 } as const
