@@ -84,11 +84,11 @@ const Cascader = (props: ICascaderProps) => {
       }
     },
     dropdownRender: menu => (
-      <div className={'query-item__dropdown'}>
+      <div className="query-item__dropdown">
         <Input
           allowClear
           value={searchValue}
-          className={'query-item__input-search'}
+          className="query-item__input-search"
           placeholder="Search"
           onChange={a => {
             onSearch(a)
