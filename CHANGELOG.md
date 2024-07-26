@@ -1,3 +1,9 @@
+# [1.22.0](https://github.com/mParticle/aquarium/compare/v1.21.1...v1.22.0) (2024-07-26)
+
+### Features
+
+- add lock/unlock icons; rename previous lock to paywall ([#340](https://github.com/mParticle/aquarium/issues/340)) ([eaf6998](https://github.com/mParticle/aquarium/commit/eaf6998130bd79e7d10a09609beda6adf0a4c21f))
+
 ## [1.21.1](https://github.com/mParticle/aquarium/compare/v1.21.0...v1.21.1) (2024-07-24)
 
 ### Bug Fixes
