@@ -22,6 +22,7 @@ export { Transfer, type ITransferProps } from './data-entry/Transfer/Transfer'
 export { QueryItem } from './data-entry/QueryItem/QueryItem'
 export type { IQueryItemQualifierOption } from './data-entry/QueryItem/Qualifier'
 export type { INumberInputProps } from './data-entry/QueryItem/NumberInput'
+export type { ITextInputProps } from './data-entry/QueryItem/TextInput'
 export { Collapse, type ICollapseProps } from './data-display/Collapse/Collapse'
 export { Timeline, type ITimelineProps } from './data-display/Timeline/Timeline'
 export { Calendar, type ICalendarProps } from './data-display/Calendar/Calendar'
@@ -39,7 +40,14 @@ export { Badge, type IBadgeProps } from './data-display/Badge/Badge'
 export { Card, type ICardProps } from './data-display/Card/Card'
 export { Avatar, type IAvatarProps } from './data-display/Avatar/Avatar'
 export { Descriptions, type IDescriptionsProps } from './data-display/Descriptions/Descriptions'
-export { Table, type ITableProps, type ColumnsType, type ExpandableConfig, type ColumnType, type TableProps } from './data-display/Table/Table'
+export {
+  Table,
+  type ITableProps,
+  type ColumnsType,
+  type ExpandableConfig,
+  type ColumnType,
+  type TableProps,
+} from './data-display/Table/Table'
 export { Empty, type IEmptyProps } from './data-display/Empty/Empty'
 export { Popover, type IPopoverProps } from './data-display/Popover/Popover'
 export { List, type IListProps } from './data-display/List/List'
