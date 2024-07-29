@@ -59,6 +59,7 @@ import {
   DirectoryIcon,
   LockIcon,
   UnlockIcon,
+  NotificationIcon,
 } from 'src/components/icons'
 
 export const Icons = {
@@ -122,4 +123,5 @@ export const Icons = {
   directory: DirectoryIcon,
   lock: LockIcon,
   unlock: UnlockIcon,
+  notification: NotificationIcon,
 } as const
