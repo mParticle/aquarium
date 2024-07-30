@@ -18,6 +18,7 @@ const Action = (props: IActionProps) => {
     type: props.type === 'disabled' ? 'default' : 'primary',
     disabled: props.type === 'disabled',
     onClick: props.onClick,
+    loading: props.loading,
   }
 
   let iconColor: 'primary' | 'default' = 'primary'
