@@ -21,6 +21,7 @@ export { TimePicker, type ITimePickerProps } from './data-entry/TimePicker/TimeP
 export { Transfer, type ITransferProps } from './data-entry/Transfer/Transfer'
 export { QueryItem } from './data-entry/QueryItem/QueryItem'
 export type { IQueryItemQualifierOption } from './data-entry/QueryItem/Qualifier'
+export type { IQueryItemCascaderProps } from './data-entry/QueryItem/Cascader'
 export type { INumberInputProps } from './data-entry/QueryItem/NumberInput'
 export { Collapse, type ICollapseProps } from './data-display/Collapse/Collapse'
 export { Timeline, type ITimelineProps } from './data-display/Timeline/Timeline'
