@@ -1,4 +1,3 @@
-
 import { Icon, Button, type IButtonProps } from 'src/components'
 import './query-item.css'
 
@@ -6,6 +5,7 @@ export interface IActionProps {
   type?: 'disabled' | 'primary' | 'default'
   text?: string
   onClick?: () => void
+  loading?: IButtonProps['loading']
 }
 
 const Action = (props: IActionProps) => {
