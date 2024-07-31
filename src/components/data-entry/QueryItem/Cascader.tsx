@@ -20,7 +20,7 @@ export interface ICascaderOption {
   disabled?: boolean
 }
 
-export interface ICascaderProps {
+export interface IQueryItemCascaderProps {
   options: ICascaderOption[]
   icon?: keyof Pick<typeof Icons, 'empty' | 'event' | 'userAttribute' | 'eventAttribute'>
   errorMessage?: string
@@ -30,7 +30,7 @@ export interface ICascaderProps {
   value?: Array<number | string>
 }
 
-const Cascader = (props: ICascaderProps) => {
+const Cascader = (props: IQueryItemCascaderProps) => {
   type DefaultOptionType = GetProp<IBaseCascaderProps, 'options'>[number]
 
   const options: ICascaderOption[] = []
@@ -74,7 +74,7 @@ const Cascader = (props: ICascaderProps) => {
 
   const baseProps: IBaseCascaderProps = {
     getPopupContainer: triggerNode => triggerNode.parentElement,
-    searchValue: searchValue,
+    searchValue,
     value: selectedValue,
     onChange: (values: Array<number | string>, selectedOptions: any): void => {
       setSelectedValue(values as string[])

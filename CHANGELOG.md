@@ -1,4 +1,10 @@
-# [1.22.0](https://github.com/mParticle/aquarium/compare/v1.21.1...v1.22.0) (2024-07-26)
+# [1.23.0](https://github.com/mParticle/aquarium/compare/v1.22.0...v1.23.0) (2024-07-31)
+
+### Features
+
+- Add notification icon ([#345](https://github.com/mParticle/aquarium/issues/345)) ([2c9d13e](https://github.com/mParticle/aquarium/commit/2c9d13efdb00c7cf4cc4a28e2ef7efee6a2482dd))
+
+# [1.22.0-chore-loading-prop-queryitem-action.1](https://github.com/mParticle/aquarium/compare/v1.21.1...v1.22.0-chore-loading-prop-queryitem-action.1) (2024-07-30)
 
 ### Features
 

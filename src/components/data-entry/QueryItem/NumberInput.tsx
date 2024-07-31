@@ -1,11 +1,12 @@
 import './query-item.css'
+import type { ReactNode } from 'react'
 import { InputNumber } from 'src/components'
 import { Typography } from 'src/components/general/Typography/Typography'
 
 export interface INumberInputProps {
   value?: number | undefined
   disabled?: boolean
-  errorMessage?: string
+  errorMessage?: ReactNode
   autoFocus: boolean
   placeholder?: string
   min?: number
