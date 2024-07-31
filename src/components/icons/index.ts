@@ -27,7 +27,7 @@ import IdentityIcon from 'src/assets/svg/mp_pm_lt_identity.svg?react'
 import JumpToIcon from 'src/assets/svg/mp_act_lt_jump-to.svg?react'
 import LightBulbIcon from 'src/assets/svg/lightbulb.svg?react'
 import LiveStreamIcon from 'src/assets/svg/mp_pm_lt_live-stream.svg?react'
-import LockIcon from 'src/assets/svg/lock.svg?react'
+import PaywallIcon from 'src/assets/svg/paywall.svg?react'
 import MessageQuestionIcon from 'src/assets/svg/message-question.svg?react'
 import MpLogoIcon from 'src/assets/svg/mpLogo.svg?react'
 import ObservabilityIcon from 'src/assets/svg/mp_pm_lt_observability.svg?react'
@@ -55,6 +55,10 @@ import HelpVideoIcon from 'src/assets/svg/mp_info_lt_help-video.svg?react'
 import NextIcon from 'src/assets/svg/mp_act_lt_next.svg?react'
 import OpenTabIcon from 'src/assets/svg/mp_act_lt_open-tab.svg?react'
 import PreviousIcon from 'src/assets/svg/mp_act_lt_previous.svg?react'
+import DirectoryIcon from 'src/assets/svg/mp_pm_lt_directory.svg?react'
+import LockIcon from 'src/assets/svg/mp_act_lt_lock.svg?react'
+import UnlockIcon from 'src/assets/svg/mp_act_lt_unlock.svg?react'
+import NotificationIcon from 'src/assets/svg/mp_pm_lt_notification.svg?react'
 
 export {
   AddIcon,
@@ -87,7 +91,7 @@ export {
   JumpToIcon,
   LightBulbIcon,
   LiveStreamIcon,
-  LockIcon,
+  PaywallIcon,
   MessageQuestionIcon,
   MpLogoIcon,
   ObservabilityIcon,
@@ -113,5 +117,9 @@ export {
   ConversionIcon,
   PremiumIcon,
   NextIcon,
-  PreviousIcon
+  PreviousIcon,
+  DirectoryIcon,
+  LockIcon,
+  UnlockIcon,
+  NotificationIcon,
 }

@@ -49,3 +49,10 @@ export const OnClick: Story = {
     },
   },
 }
+export const Loading: Story = {
+  args: {
+    text: 'Loading',
+    type: 'disabled',
+    loading: true,
+  },
+}

@@ -2,7 +2,7 @@ import './query-item.css'
 import { Input } from 'src/components'
 import { Typography } from 'src/components/general/Typography/Typography'
 
-interface ITextInputProps {
+export interface ITextInputProps {
   value?: string
   disabled?: boolean
   errorMessage?: string

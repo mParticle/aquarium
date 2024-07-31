@@ -1,5 +1,6 @@
 :root {
   --nav-item-height: 56px;
+  --nav-item-height-large: 94px;
   --nav-item-width: 82px;
   --nav-width: 90px;
   --suite-logo-height: 82px;
@@ -90,6 +91,10 @@
   margin: 0 !important;
   background-color: transparent !important;
   cursor: revert !important;
+}
+
+.globalNavigation__item.workspaceSelector__menuItem{
+  height: var(--nav-item-height-large) !important;
 }
 
 .globalNavigation__item .ant-menu-title-content {

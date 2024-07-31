@@ -20,7 +20,7 @@ export interface ICascaderOption {
   disabled?: boolean
 }
 
-export interface ICascaderProps {
+export interface IQueryItemCascaderProps {
   options: ICascaderOption[]
   icon?: keyof Pick<typeof Icons, 'empty' | 'event' | 'userAttribute' | 'eventAttribute'>
   errorMessage?: string
@@ -30,7 +30,7 @@ export interface ICascaderProps {
   value?: Array<number | string>
 }
 
-const Cascader = (props: ICascaderProps) => {
+const Cascader = (props: IQueryItemCascaderProps) => {
   type DefaultOptionType = GetProp<IBaseCascaderProps, 'options'>[number]
 
   const options: ICascaderOption[] = []
@@ -38,13 +38,19 @@ const Cascader = (props: ICascaderProps) => {
   const [searchValue, setSearchValue] = useState('')
   const [selectedValue, setSelectedValue] = useState<Array<number | string>>(props.value ?? [])
   const [selectedDisplayValue, setSelectedDisplayValue] = useState(
-    props.value ? (props.value.slice(-1)[0] as any).label : '',
+    props.value && props.value.length > 0 ? (props.value.slice(-1)[0] as any).label : '',
   )
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
     setItems(props.options)
   }, [props.options])
+
+  useEffect(() => {
+    if (props.value && props.value.length > 0) {
+      setSelectedValue(props.value)
+    }
+  }, [props.value])
 
   const onSearch = ({ target: { value } }: { target: { value: string } }) => {
     if (debouncedLoadData) {
@@ -68,7 +74,7 @@ const Cascader = (props: ICascaderProps) => {
 
   const baseProps: IBaseCascaderProps = {
     getPopupContainer: triggerNode => triggerNode.parentElement,
-    searchValue: searchValue,
+    searchValue,
     value: selectedValue,
     onChange: (values: Array<number | string>, selectedOptions: any): void => {
       setSelectedValue(values as string[])
@@ -78,11 +84,11 @@ const Cascader = (props: ICascaderProps) => {
       }
     },
     dropdownRender: menu => (
-      <div className={'query-item__dropdown'}>
+      <div className="query-item__dropdown">
         <Input
           allowClear
           value={searchValue}
-          className={'query-item__input-search'}
+          className="query-item__input-search"
           placeholder="Search"
           onChange={a => {
             onSearch(a)

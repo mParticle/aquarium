@@ -4,7 +4,7 @@ export { Icon, type IIconProps } from './general/Icon/Icon'
 export { Rate, type IRateProps } from './data-entry/Rate/Rate'
 export { Form, type IFormProps } from './data-entry/Form/Form'
 export { TreeSelect, type ITreeSelectProps } from './data-entry/TreeSelect/TreeSelect'
-export { Select, type ISelectProps } from './data-entry/Select/Select'
+export { Select, type ISelectProps, type DefaultOptionType } from './data-entry/Select/Select'
 export { Mentions, type IMentionsProps } from './data-entry/Mentions/Mentions'
 export { Radio, type IRadioProps } from './data-entry/Radio/Radio'
 export { ColorPicker, type IColorPickerProps } from './data-entry/ColorPicker/ColorPicker'
@@ -21,6 +21,9 @@ export { TimePicker, type ITimePickerProps } from './data-entry/TimePicker/TimeP
 export { Transfer, type ITransferProps } from './data-entry/Transfer/Transfer'
 export { QueryItem } from './data-entry/QueryItem/QueryItem'
 export type { IQueryItemQualifierOption } from './data-entry/QueryItem/Qualifier'
+export type { IQueryItemCascaderProps } from './data-entry/QueryItem/Cascader'
+export type { INumberInputProps } from './data-entry/QueryItem/NumberInput'
+export type { ITextInputProps } from './data-entry/QueryItem/TextInput'
 export { Collapse, type ICollapseProps } from './data-display/Collapse/Collapse'
 export { Timeline, type ITimelineProps } from './data-display/Timeline/Timeline'
 export { Calendar, type ICalendarProps } from './data-display/Calendar/Calendar'
@@ -38,7 +41,14 @@ export { Badge, type IBadgeProps } from './data-display/Badge/Badge'
 export { Card, type ICardProps } from './data-display/Card/Card'
 export { Avatar, type IAvatarProps } from './data-display/Avatar/Avatar'
 export { Descriptions, type IDescriptionsProps } from './data-display/Descriptions/Descriptions'
-export { Table, type ITableProps, type ColumnsType, type ExpandableConfig, type ColumnType, type TableProps } from './data-display/Table/Table'
+export {
+  Table,
+  type ITableProps,
+  type ColumnsType,
+  type ExpandableConfig,
+  type ColumnType,
+  type TableProps,
+} from './data-display/Table/Table'
 export { Empty, type IEmptyProps } from './data-display/Empty/Empty'
 export { Popover, type IPopoverProps } from './data-display/Popover/Popover'
 export { List, type IListProps } from './data-display/List/List'

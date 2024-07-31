@@ -1,3 +1,41 @@
+# [1.23.0](https://github.com/mParticle/aquarium/compare/v1.22.0...v1.23.0) (2024-07-31)
+
+### Features
+
+- Add notification icon ([#345](https://github.com/mParticle/aquarium/issues/345)) ([2c9d13e](https://github.com/mParticle/aquarium/commit/2c9d13efdb00c7cf4cc4a28e2ef7efee6a2482dd))
+
+# [1.22.0-chore-loading-prop-queryitem-action.1](https://github.com/mParticle/aquarium/compare/v1.21.1...v1.22.0-chore-loading-prop-queryitem-action.1) (2024-07-30)
+
+### Features
+
+- add lock/unlock icons; rename previous lock to paywall ([#340](https://github.com/mParticle/aquarium/issues/340)) ([eaf6998](https://github.com/mParticle/aquarium/commit/eaf6998130bd79e7d10a09609beda6adf0a4c21f))
+
+## [1.21.1](https://github.com/mParticle/aquarium/compare/v1.21.0...v1.21.1) (2024-07-24)
+
+### Bug Fixes
+
+- a useEffect Hook has been added to detect if the value received … ([#339](https://github.com/mParticle/aquarium/issues/339)) ([0e1ab5d](https://github.com/mParticle/aquarium/commit/0e1ab5d0e8d8150d879ee232df78203f88145dcb))
+- signout onclick being triggered on render when there are no orgs ([#337](https://github.com/mParticle/aquarium/issues/337)) ([77f2b1a](https://github.com/mParticle/aquarium/commit/77f2b1ae5136fbb5ad3baa8756ef5e7abb2f94fa))
+- workspace selector positioning ([#338](https://github.com/mParticle/aquarium/issues/338)) ([9561a49](https://github.com/mParticle/aquarium/commit/9561a4978f6ffbaf319f2dccecc98f1626f7a1a7))
+
+## [1.21.1-fix-signout-onclick-trigger.1](https://github.com/mParticle/aquarium/compare/v1.21.0...v1.21.1-fix-signout-onclick-trigger.1) (2024-07-22)
+
+### Bug Fixes
+
+- auto triggering of signout onClick when there are no orgs ([d2645fd](https://github.com/mParticle/aquarium/commit/d2645fd164a37557b0f8b475f093b2f0c6b35058))
+
+# [1.21.0](https://github.com/mParticle/aquarium/compare/v1.20.0...v1.21.0) (2024-07-16)
+
+### Features
+
+- add workspace label to Workspace Selector ([#323](https://github.com/mParticle/aquarium/issues/323)) ([bdb3c70](https://github.com/mParticle/aquarium/commit/bdb3c70ebf8856f1e5cd436fc243ed47e335fbb4))
+
+# [1.20.0](https://github.com/mParticle/aquarium/compare/v1.19.3...v1.20.0) (2024-07-08)
+
+### Features
+
+- Add directory icon ([#319](https://github.com/mParticle/aquarium/issues/319)) ([a2b4132](https://github.com/mParticle/aquarium/commit/a2b41327a22f7bc2bfcc32ce797a1432b8a6042d))
+
 ## [1.19.3](https://github.com/mParticle/aquarium/compare/v1.19.2...v1.19.3) (2024-06-25)
 
 ### Bug Fixes

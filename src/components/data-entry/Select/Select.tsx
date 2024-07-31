@@ -3,6 +3,8 @@ import { type SelectProps as AntSelectProps } from 'antd'
 import { type BaseOptionType, type DefaultOptionType } from 'antd/es/select'
 import { ConfigProvider } from 'src/components'
 
+export type { DefaultOptionType }
+
 export interface ISelectProps<
   ValueType = any,
   OptionType extends BaseOptionType | DefaultOptionType = DefaultOptionType,
