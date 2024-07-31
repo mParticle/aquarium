@@ -1,3 +1,9 @@
+# [1.24.0](https://github.com/mParticle/aquarium/compare/v1.23.0...v1.24.0) (2024-07-31)
+
+### Features
+
+- add premiumDt icon ([#346](https://github.com/mParticle/aquarium/issues/346)) ([b3e2817](https://github.com/mParticle/aquarium/commit/b3e281763e13bb315ab3d84a439b116fe2e679bc))
+
 # [1.23.0](https://github.com/mParticle/aquarium/compare/v1.22.0...v1.23.0) (2024-07-31)
 
 ### Features
