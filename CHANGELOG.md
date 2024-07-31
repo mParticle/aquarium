@@ -1,4 +1,4 @@
-# [1.22.0](https://github.com/mParticle/aquarium/compare/v1.21.1...v1.22.0) (2024-07-26)
+# [1.22.0-chore-loading-prop-queryitem-action.1](https://github.com/mParticle/aquarium/compare/v1.21.1...v1.22.0-chore-loading-prop-queryitem-action.1) (2024-07-30)
 
 ### Features
 
