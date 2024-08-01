@@ -5,7 +5,7 @@ import { LightTheme } from 'design/LightTheme'
 export interface IConfigProviderProps extends AntConfigProviderProps {}
 
 export const ConfigProvider = (props: IConfigProviderProps) => {
-  return <AntConfigProvider {...props} theme={LightTheme} />
+  return <AntConfigProvider theme={LightTheme} {...props} />
 }
 
 ConfigProvider.ConfigContext = AntConfigProvider.ConfigContext
