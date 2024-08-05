@@ -1,4 +1,5 @@
-import { icons } from 'src/constants/Icons'
+import React from 'react'
+import { Icons, IconVariant, IconDictionary } from 'src/constants/Icons'
 import './icon.css'
 
 type IconSize = 'xxxxl' | 'xxxl' | 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs'
@@ -15,44 +16,37 @@ export type IconColor =
   | 'strong'
   | 'brand'
 
-export type IconVariant = 'light' | 'duo-tone'
-
 export interface IIconProps {
-  name: string
+  name: keyof typeof Icons
   color?: IconColor
   size?: IconSize
   variant?: IconVariant
 }
 
-const deprecatedIcons = ['sparkles']
+const deprecatedIcons: Array<keyof typeof Icons> = ['sparkles']
 
-export const Icon = (props: IIconProps) => {
-  const { name, color = 'default', size = 'lg', variant = 'light' } = props
-
+export const Icon: React.FC<IIconProps> = ({ name, color = 'default', size = 'lg', variant }) => {
   if (deprecatedIcons.includes(name)) {
     console.warn(`Icon with name "${name}" is deprecated. Please use a different icon.`)
   }
 
-  let iconData = icons.find(icon => icon.name === name && icon.variant === variant)
+  const iconVariants = Icons[name]
 
-  if (!iconData) {
-    const fallbackVariant = variant === 'light' ? 'duo-tone' : 'light'
-    iconData = icons.find(icon => icon.name === name && icon.variant === fallbackVariant)
-  }
-
-  if (!iconData) {
-    console.warn(`Icon with name "${name}" not found with specified or fallback variant. Using any available variant.`)
-    iconData = icons.find(icon => icon.name === name)
-  }
-
-  if (!iconData) {
-    console.error(`Icon with name "${name}" not found in any variant.`)
+  if (!iconVariants) {
+    console.error(`Icon with name "${name}" not found.`)
     return null
   }
 
-  const IconComponent = iconData.component
+  const iconVariant = variant || iconVariants.default
+  const IconComponent = iconVariants[iconVariant] || iconVariants[iconVariants.default]
+
+  if (!IconComponent) {
+    console.error(`Icon with name "${name}" and variant "${iconVariant}" not found.`)
+    return null
+  }
+
   const className = `icon-size-${size} icon-color-${color}`
-  const iconId = `icon-${name}-${variant}`
+  const iconId = `icon-${name}-${iconVariant}`
 
   return <IconComponent className={className} data-test={iconId} />
 }

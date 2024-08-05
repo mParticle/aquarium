@@ -1,133 +1,320 @@
-import {
-  AddIcon,
-  AlicornIcon,
-  AnalyticsIconDt,
-  C360IconDt,
-  CatalogIcon,
-  ChartColumnIcon,
-  ChartLineIcon,
-  CheckIcon,
-  CircleNodesIcon,
-  CloudIcon,
-  ConnectionsIcon,
-  DataPlatformIconDt,
-  DatabaseIcon,
-  DsrIcon,
-  EmptyIcon,
-  EnrichmentIcon,
-  EventAttributeIcon,
-  EventIcon,
-  FitToScreen,
-  FolderClosedIcon,
-  ForwardingIcon,
-  GearIcon,
-  GridIcon,
-  HeartIcon,
-  HelpIcon,
-  IdentityIcon,
-  JumpToIcon,
-  LightBulbIcon,
-  LiveStreamIcon,
-  PaywallIcon,
-  MessageQuestionIcon,
-  MpLogoIcon,
-  ObservabilityIcon,
-  OversightIconDt,
-  PredictionsIcon,
-  RemoveIcon,
-  SearchIcon,
-  SegmentationIconDt,
-  ShieldKeyholeIcon,
-  SignoutIcon,
-  SplitIcon,
-  SystemAlertsIcon,
-  TransformationsIcon,
-  UploadIcon,
-  UserAttributeIcon,
-  UserProfilesIcon,
-  UsersIcon,
-  WrenchIcon,
-  ZoomIn,
-  ZoomOut,
-  PremiumIcon,
-  HelpVideoIcon,
-  ConversionIcon,
-  PredictionsIconDt,
-  NextIcon,
-  PreviousIcon,
-  OpenTabIcon,
-  DirectoryIcon,
-  LockIcon,
-  UnlockIcon,
-  NotificationIcon,
-} from 'src/components/icons'
+import AddIcon from 'src/assets/svg/add.svg?react'
+import AlicornIcon from 'src/assets/svg/alicorn.svg?react'
+import AnalyticsIconDt from 'src/assets/svg/mp_pm_dt_analytics.svg?react'
+import C360IconDt from 'src/assets/svg/mp_pm_dt_c360.svg?react'
+import CatalogIcon from 'src/assets/svg/mp_pm_lt_catalog.svg?react'
+import ChartColumnIcon from 'src/assets/svg/chart-column.svg?react'
+import ChartLineIcon from 'src/assets/svg/chart-line.svg?react'
+import CheckIcon from 'src/assets/svg/check.svg?react'
+import CircleNodesIcon from 'src/assets/svg/circle-nodes.svg?react'
+import CloudIcon from 'src/assets/svg/cloud.svg?react'
+import ConnectionsIcon from 'src/assets/svg/connections.svg?react'
+import DataPlatformIconDt from 'src/assets/svg/mp_pm_dt_data-platform.svg?react'
+import DatabaseIcon from 'src/assets/svg/database.svg?react'
+import DsrIcon from 'src/assets/svg/mp_pm_lt_dsr.svg?react'
+import EmptyIcon from 'src/assets/svg/empty.svg?react'
+import EnrichmentIcon from 'src/assets/svg/mp_pm_lt_enrichment.svg?react'
+import EventAttributeIcon from 'src/assets/svg/event-attribute.svg?react'
+import EventIcon from 'src/assets/svg/event.svg?react'
+import FitToScreen from 'src/assets/svg/mp_act_lt_fit-to-screen.svg?react'
+import FolderClosedIcon from 'src/assets/svg/folder-closed.svg?react'
+import ForwardingIcon from 'src/assets/svg/mp_pm_lt_forwarding.svg?react'
+import GearIcon from 'src/assets/svg/gear.svg?react'
+import GridIcon from 'src/assets/svg/grid.svg?react'
+import HeartIcon from 'src/assets/svg/heart.svg?react'
+import HelpIcon from 'src/assets/svg/help.svg?react'
+import IdentityIcon from 'src/assets/svg/mp_pm_lt_identity.svg?react'
+import JumpToIcon from 'src/assets/svg/mp_act_lt_jump-to.svg?react'
+import LightBulbIcon from 'src/assets/svg/lightbulb.svg?react'
+import LiveStreamIcon from 'src/assets/svg/mp_pm_lt_live-stream.svg?react'
+import PaywallIcon from 'src/assets/svg/paywall.svg?react'
+import MessageQuestionIcon from 'src/assets/svg/message-question.svg?react'
+import MpLogoIcon from 'src/assets/svg/mpLogo.svg?react'
+import ObservabilityIcon from 'src/assets/svg/mp_pm_lt_observability.svg?react'
+import OversightIconDt from 'src/assets/svg/mp_pm_dt_oversight.svg?react'
+import PredictionsIcon from 'src/assets/svg/mp_pm_lt_predictions.svg?react'
+import PredictionsIconDt from 'src/assets/svg/mp_pm_dt_predictions.svg?react'
+import RemoveIcon from 'src/assets/svg/remove.svg?react'
+import SearchIcon from 'src/assets/svg/search.svg?react'
+import SegmentationIconDt from 'src/assets/svg/mp_pm_dt_segmentation.svg?react'
+import ShieldKeyholeIcon from 'src/assets/svg/shield-keyhole.svg?react'
+import SignoutIcon from 'src/assets/svg/signout.svg?react'
+import SplitIcon from 'src/assets/svg/split.svg?react'
+import SystemAlertsIcon from 'src/assets/svg/mp_pm_lt_system-alerts.svg?react'
+import TransformationsIcon from 'src/assets/svg/mp_pm_lt_transformations.svg?react'
+import UploadIcon from 'src/assets/svg/mp_act_it_upload.svg?react'
+import UserAttributeIcon from 'src/assets/svg/user-attribute.svg?react'
+import UserProfilesIcon from 'src/assets/svg/mp_pm_lt_userprofiles.svg?react'
+import UsersIcon from 'src/assets/svg/mp_info_lt_users.svg?react'
+import WrenchIcon from 'src/assets/svg/wrench.svg?react'
+import ZoomIn from 'src/assets/svg/mp_act_lt_zoom-in.svg?react'
+import ZoomOut from 'src/assets/svg/mp_act_lt_zoom-out.svg?react'
+import PremiumIcon from 'src/assets/svg/mp_info_lt_premium.svg?react'
+import ConversionIcon from 'src/assets/svg/mp_info_lt_conversion.svg?react'
+import HelpVideoIcon from 'src/assets/svg/mp_info_lt_help-video.svg?react'
+import NextIcon from 'src/assets/svg/mp_act_lt_next.svg?react'
+import OpenTabIcon from 'src/assets/svg/mp_act_lt_open-tab.svg?react'
+import PreviousIcon from 'src/assets/svg/mp_act_lt_previous.svg?react'
+import DirectoryIcon from 'src/assets/svg/mp_pm_lt_directory.svg?react'
+import LockIcon from 'src/assets/svg/mp_act_lt_lock.svg?react'
+import UnlockIcon from 'src/assets/svg/mp_act_lt_unlock.svg?react'
+import NotificationIcon from 'src/assets/svg/mp_pm_lt_notification.svg?react'
+import PremiumIconDt from 'src/assets/svg/mp_pm_lt_notification.svg?react'
 
-/**
- * @deprecated This icon is old
- * Use this icon only for legacy purposes. This will be removed once all icons are updated.
- */
-const SparklesIcon = PredictionsIcon
-export const icons = [
-  { name: 'add', component: AddIcon, variant: 'light', category: 'general' },
-  { name: 'alicorn', component: AlicornIcon, variant: 'light', category: 'general' },
-  { name: 'analytics', component: AnalyticsIconDt, variant: 'duo-tone', category: 'pm' },
-  { name: 'c360', component: C360IconDt, variant: 'duo-tone', category: 'pm' },
-  { name: 'catalog', component: CatalogIcon, variant: 'light', category: 'pm' },
-  { name: 'chartColumn', component: ChartColumnIcon, variant: 'light', category: 'general' },
-  { name: 'chartLine', component: ChartLineIcon, variant: 'light', category: 'general' },
-  { name: 'check', component: CheckIcon, variant: 'light', category: 'general' },
-  { name: 'circleNodes', component: CircleNodesIcon, variant: 'light', category: 'general' },
-  { name: 'cloud', component: CloudIcon, variant: 'light', category: 'general' },
-  { name: 'connections', component: ConnectionsIcon, variant: 'light', category: 'general' },
-  { name: 'dataPlatform', component: DataPlatformIconDt, variant: 'duo-tone', category: 'pm' },
-  { name: 'database', component: DatabaseIcon, variant: 'light', category: 'general' },
-  { name: 'dsr', component: DsrIcon, variant: 'light', category: 'pm' },
-  { name: 'empty', component: EmptyIcon, variant: 'light', category: 'general' },
-  { name: 'enrichment', component: EnrichmentIcon, variant: 'light', category: 'pm' },
-  { name: 'eventAttribute', component: EventAttributeIcon, variant: 'light', category: 'general' },
-  { name: 'event', component: EventIcon, variant: 'light', category: 'general' },
-  { name: 'fitToScreen', component: FitToScreen, variant: 'light', category: 'general' },
-  { name: 'folderClosed', component: FolderClosedIcon, variant: 'light', category: 'general' },
-  { name: 'forwarding', component: ForwardingIcon, variant: 'light', category: 'pm' },
-  { name: 'gear', component: GearIcon, variant: 'light', category: 'general' },
-  { name: 'grid', component: GridIcon, variant: 'light', category: 'general' },
-  { name: 'heart', component: HeartIcon, variant: 'light', category: 'general' },
-  { name: 'help', component: HelpIcon, variant: 'light', category: 'general' },
-  { name: 'identity', component: IdentityIcon, variant: 'light', category: 'pm' },
-  { name: 'jumpTo', component: JumpToIcon, variant: 'light', category: 'general' },
-  { name: 'lightBulb', component: LightBulbIcon, variant: 'light', category: 'general' },
-  { name: 'liveStream', component: LiveStreamIcon, variant: 'light', category: 'pm' },
-  { name: 'paywall', component: PaywallIcon, variant: 'light', category: 'general' },
-  { name: 'messageQuestion', component: MessageQuestionIcon, variant: 'light', category: 'general' },
-  { name: 'mpLogo', component: MpLogoIcon, variant: 'light', category: 'general' },
-  { name: 'observability', component: ObservabilityIcon, variant: 'light', category: 'pm' },
-  { name: 'oversight', component: OversightIconDt, variant: 'duo-tone', category: 'pm' },
-  { name: 'sparkles', component: SparklesIcon, variant: 'light', category: 'general' },
-  { name: 'predictions', component: PredictionsIcon, variant: 'light', category: 'general' },
-  { name: 'predictions', component: PredictionsIconDt, variant: 'duo-tone', category: 'general' },
-  { name: 'remove', component: RemoveIcon, variant: 'light', category: 'general' },
-  { name: 'search', component: SearchIcon, variant: 'light', category: 'general' },
-  { name: 'segmentation', component: SegmentationIconDt, variant: 'duo-tone', category: 'pm' },
-  { name: 'shieldKeyhole', component: ShieldKeyholeIcon, variant: 'light', category: 'general' },
-  { name: 'signout', component: SignoutIcon, variant: 'light', category: 'general' },
-  { name: 'split', component: SplitIcon, variant: 'light', category: 'general' },
-  { name: 'systemAlerts', component: SystemAlertsIcon, variant: 'light', category: 'pm' },
-  { name: 'transformations', component: TransformationsIcon, variant: 'light', category: 'pm' },
-  { name: 'upload', component: UploadIcon, variant: 'light', category: 'general' },
-  { name: 'userAttribute', component: UserAttributeIcon, variant: 'light', category: 'general' },
-  { name: 'userProfiles', component: UserProfilesIcon, variant: 'light', category: 'pm' },
-  { name: 'users', component: UsersIcon, variant: 'light', category: 'general' },
-  { name: 'wrench', component: WrenchIcon, variant: 'light', category: 'general' },
-  { name: 'zoomIn', component: ZoomIn, variant: 'light', category: 'general' },
-  { name: 'zoomOut', component: ZoomOut, variant: 'light', category: 'general' },
-  { name: 'premium', component: PremiumIcon, variant: 'light', category: 'general' },
-  { name: 'helpVideo', component: HelpVideoIcon, variant: 'light', category: 'general' },
-  { name: 'conversion', component: ConversionIcon, variant: 'light', category: 'general' },
-  { name: 'next', component: NextIcon, variant: 'light', category: 'general' },
-  { name: 'previous', component: PreviousIcon, variant: 'light', category: 'general' },
-  { name: 'openTab', component: OpenTabIcon, variant: 'light', category: 'general' },
-  { name: 'directory', component: DirectoryIcon, variant: 'light', category: 'general' },
-  { name: 'lock', component: LockIcon, variant: 'light', category: 'general' },
-  { name: 'unlock', component: UnlockIcon, variant: 'light', category: 'general' },
-  { name: 'notification', component: NotificationIcon, variant: 'light', category: 'general' },
-]
+export type IconVariant = 'light' | 'duo-tone'
+
+export interface IconVariants {
+  light?: React.ComponentType<React.SVGProps<SVGSVGElement>>
+  'duo-tone'?: React.ComponentType<React.SVGProps<SVGSVGElement>>
+  default: IconVariant
+}
+
+export type IconDictionary = {
+  [key: string]: IconVariants
+}
+
+export const Icons: IconDictionary = {
+  add: {
+    light: AddIcon,
+    'duo-tone': AddIcon,
+    default: 'duo-tone',
+  },
+  alicorn: {
+    light: AlicornIcon,
+    default: 'light',
+  },
+  analytics: {
+    'duo-tone': AnalyticsIconDt,
+    default: 'duo-tone',
+  },
+  C360: {
+    'duo-tone': C360IconDt,
+    default: 'duo-tone',
+  },
+  catalog: {
+    light: CatalogIcon,
+    default: 'light',
+  },
+  chartColumn: {
+    light: ChartColumnIcon,
+    default: 'light',
+  },
+  chartLine: {
+    light: ChartLineIcon,
+    default: 'light',
+  },
+  check: {
+    light: CheckIcon,
+    default: 'light',
+  },
+  circleNodes: {
+    light: CircleNodesIcon,
+    default: 'light',
+  },
+  cloud: {
+    light: CloudIcon,
+    default: 'light',
+  },
+  connections: {
+    light: ConnectionsIcon,
+    default: 'light',
+  },
+  database: {
+    light: DatabaseIcon,
+    default: 'light',
+  },
+  dsr: {
+    light: DsrIcon,
+    default: 'light',
+  },
+  empty: {
+    light: EmptyIcon,
+    default: 'light',
+  },
+  enrichment: {
+    light: EnrichmentIcon,
+    default: 'light',
+  },
+  event: {
+    light: EventIcon,
+    default: 'light',
+  },
+  eventAttribute: {
+    light: EventAttributeIcon,
+    default: 'light',
+  },
+  fitToScreen: {
+    light: FitToScreen,
+    default: 'light',
+  },
+  folderClosed: {
+    light: FolderClosedIcon,
+    default: 'light',
+  },
+  forwarding: {
+    light: ForwardingIcon,
+    default: 'light',
+  },
+  gear: {
+    light: GearIcon,
+    default: 'light',
+  },
+  grid: {
+    light: GridIcon,
+    default: 'light',
+  },
+  heart: {
+    light: HeartIcon,
+    default: 'light',
+  },
+  help: {
+    light: HelpIcon,
+    default: 'light',
+  },
+  identity: {
+    light: IdentityIcon,
+    default: 'light',
+  },
+  jumpTo: {
+    light: JumpToIcon,
+    default: 'light',
+  },
+  lightBulb: {
+    light: LightBulbIcon,
+    default: 'light',
+  },
+  liveStream: {
+    light: LiveStreamIcon,
+    default: 'light',
+  },
+  paywall: {
+    light: PaywallIcon,
+    default: 'light',
+  },
+  messageQuestion: {
+    light: MessageQuestionIcon,
+    default: 'light',
+  },
+  mpLogo: {
+    light: MpLogoIcon,
+    default: 'light',
+  },
+  observability: {
+    light: ObservabilityIcon,
+    default: 'light',
+  },
+  oversight: {
+    'duo-tone': OversightIconDt,
+    default: 'duo-tone',
+  },
+  remove: {
+    light: RemoveIcon,
+    default: 'light',
+  },
+  search: {
+    light: SearchIcon,
+    default: 'light',
+  },
+  segmentation: {
+    'duo-tone': SegmentationIconDt,
+    default: 'duo-tone',
+  },
+  shieldKeyhole: {
+    light: ShieldKeyholeIcon,
+    default: 'light',
+  },
+  signout: {
+    light: SignoutIcon,
+    default: 'light',
+  },
+  siteMap: {
+    'duo-tone': DataPlatformIconDt,
+    default: 'duo-tone',
+  },
+  sparkles: {
+    light: PredictionsIcon,
+    'duo-tone': PredictionsIconDt,
+    default: 'light',
+  },
+  split: {
+    light: SplitIcon,
+    default: 'light',
+  },
+  systemAlerts: {
+    light: SystemAlertsIcon,
+    default: 'light',
+  },
+  transformation: {
+    light: TransformationsIcon,
+    default: 'light',
+  },
+  upload: {
+    light: UploadIcon,
+    default: 'light',
+  },
+  userAttribute: {
+    light: UserAttributeIcon,
+    default: 'light',
+  },
+  userProfiles: {
+    light: UserProfilesIcon,
+    default: 'light',
+  },
+  users: {
+    light: UsersIcon,
+    default: 'light',
+  },
+  wrench: {
+    light: WrenchIcon,
+    default: 'light',
+  },
+  zoomIn: {
+    light: ZoomIn,
+    default: 'light',
+  },
+  zoomOut: {
+    light: ZoomOut,
+    default: 'light',
+  },
+  premium: {
+    light: PremiumIcon,
+    'duo-tone': PremiumIconDt,
+    default: 'light',
+  },
+  helpVideo: {
+    light: HelpVideoIcon,
+    default: 'light',
+  },
+  conversion: {
+    light: ConversionIcon,
+    default: 'light',
+  },
+  next: {
+    light: NextIcon,
+    default: 'light',
+  },
+  previous: {
+    light: PreviousIcon,
+    default: 'light',
+  },
+  openTab: {
+    light: OpenTabIcon,
+    default: 'light',
+  },
+  directory: {
+    light: DirectoryIcon,
+    default: 'light',
+  },
+  lock: {
+    light: LockIcon,
+    default: 'light',
+  },
+  unlock: {
+    light: UnlockIcon,
+    default: 'light',
+  },
+  notification: {
+    light: NotificationIcon,
+    default: 'light',
+  },
+} as const
