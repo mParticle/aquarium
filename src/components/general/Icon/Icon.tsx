@@ -1,6 +1,6 @@
 import React from 'react'
 import { Icons } from 'src/constants/Icons'
-import { IconOptions, IconVariant, IconNames } from 'src/types/iconTypes'
+import type { IconOptions, IconVariant, IconNames } from 'src/types/icons'
 import './icon.css'
 
 type IconSize = 'xxxxl' | 'xxxl' | 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs'
@@ -25,14 +25,14 @@ export interface IIconProps {
 }
 
 export const Icon: React.FC<IIconProps> = ({ name, color = 'default', size = 'lg', variant }) => {
-  const iconVariants = Icons[name] as IconOptions
+  const iconVariants: IconOptions = Icons[name]
 
   if (iconVariants?.deprecated) {
-    console.warn(`Icon with name "${name}" is deprecated. Please use "predictions" instead.`)
+    console.warn(`Icon with name "${name}" is deprecated. Please use ${iconVariants?.deprecated} instead.`)
   }
 
-  const iconVariant = variant || iconVariants.default
-  const IconComponent = iconVariants[iconVariant] || iconVariants[iconVariants.default]
+  const iconVariant = variant ?? iconVariants.default
+  const IconComponent = iconVariants[iconVariant] ?? iconVariants[iconVariants.default]
 
   if (!IconComponent) {
     console.error(`Icon with name "${name}" and variant "${iconVariant}" not found.`)
