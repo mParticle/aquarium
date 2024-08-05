@@ -9,7 +9,7 @@ export type IconOptions = RequireAtLeastOne<
     default: IconVariant
     deprecated?: boolean
   },
-  'light' | 'duo-tone'
+  IconVariant
 >
 
 /**
