@@ -1,6 +1,6 @@
-import { Meta } from '@storybook/react'
-import React, { ReactNode } from 'react'
-import { Flex, Icon, IIconProps } from 'src/components'
+import { type Meta } from '@storybook/react'
+import React, { type ReactNode } from 'react'
+import { Flex, Icon, type IIconProps } from 'src/components'
 import { Icons } from 'src/constants/Icons'
 
 export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', name, variant }) => {
@@ -30,6 +30,32 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
   }
 }
 
+const iconTableDocumentation = `
+### Icon Component Documentation
+
+The \`IconTable\` component is used to display a table of all available icons in the project. 
+
+#### Props
+- \`name\`: The name of the icon 
+- \`color\`: The color of the icon. Available options are \`default\`, \`primary\`, \`success\`, \`warning\`, \`error\`, \`info\`, \`white\`, \`black\`, \`text\`, \`strong\`, \`brand\`.
+- \`size\`: The size of the icon. Available options are \`xxxxl\`, \`xxxl\`, \`xxl\`, \`xl\`, \`lg\`, \`md\`, \`sm\`, \`xs\`.
+- \`variant\`: The variant of the icon. Available options are \`light\` and \`duo-tone\`.
+
+#### Updating Icons
+To update the icons:
+
+1. **Add New Icons**: Add the new icon SVGs to the \`src/constants/Icons\` directory. The icons should be curated by Design and the svg must be minified. 
+2. **Update Icon Constants**: Update the \`Icons\` object in \`src/constants/Icons\` to include the new icons.
+3. **Use Icons**: Use the updated icons in your components by referencing their names.
+
+#### Example Usage
+\`\`\`jsx
+<Icon name="new-icon" size="lg" color="primary" variant="light" />
+\`\`\`
+
+This will render the new icon with the specified size, color, and variant.
+`
+
 const meta: Meta = {
   title: 'Aquarium/General/Icons',
   component: IconTable,
@@ -57,6 +83,13 @@ const meta: Meta = {
     variant: {
       control: 'select',
       options: ['light', 'duo-tone'],
+    },
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: iconTableDocumentation,
+      },
     },
   },
 }
