@@ -1,10 +1,11 @@
 import { type Meta } from '@storybook/react'
 import React, { type ReactNode } from 'react'
 import { Flex, Icon, type IIconProps } from 'src/components'
-import { Icons } from 'src/constants/Icons'
+import { icons } from 'src/constants/Icons'
 
-export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', name }) => {
-  const allIcons = Object.keys(Icons) as Array<keyof typeof Icons>
+export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', name, variant = 'light' }) => {
+  const filteredIcons = icons.filter(icon => icon.variant === variant) // Filtrar iconos por variante
+  const allIcons = filteredIcons.map(icon => icon.name) // Extraer nombres de iconos filtrados
   const iconGridStyle = {
     display: 'grid',
     gridTemplateColumns: 'repeat(6, 1fr)',
@@ -13,18 +14,12 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
     justifyItems: 'center',
   }
 
-  return (
-    <div style={iconGridStyle}>
-      {name // render either a single selected icon, or all possible icons
-        ? renderIcon(name)
-        : allIcons.map(renderIcon)}
-    </div>
-  )
+  return <div style={iconGridStyle}>{name ? renderIcon(name) : allIcons.map(renderIcon)}</div>
 
-  function renderIcon(iconName: IIconProps['name']): ReactNode {
+  function renderIcon(iconName: string): ReactNode {
     return (
       <Flex vertical align="center" key={iconName}>
-        <Icon name={iconName} size={size} color={color} key={iconName} />
+        <Icon name={iconName} size={size} color={color} variant={variant} />
         <p style={{ fontFamily: 'monospace' }}>{iconName}</p>
       </Flex>
     )
@@ -54,6 +49,10 @@ const meta: Meta = {
         'strong',
         'brand',
       ],
+    },
+    variant: {
+      control: 'select',
+      options: ['light', 'duo-tone'],
     },
   },
 }

@@ -1,4 +1,4 @@
-import { Icons } from 'src/constants/Icons'
+import { icons } from 'src/constants/Icons'
 import './icon.css'
 
 type IconSize = 'xxxxl' | 'xxxl' | 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs'
@@ -15,18 +15,33 @@ export type IconColor =
   | 'strong'
   | 'brand'
 
+export type IconVariant = 'light' | 'duo-tone'
+
 export interface IIconProps {
-  name: keyof typeof Icons
+  name: string
   color?: IconColor
   size?: IconSize
+  variant?: IconVariant
 }
 
 export const Icon = (props: IIconProps) => {
-  const { color = 'default', size = 'lg' } = props
+  const { name, color = 'default', size = 'lg', variant = 'light' } = props
 
-  const IconName = Icons[props.name]
+  let iconData = icons.find(icon => icon.name === name && icon.variant === variant)
+
+  if (!iconData) {
+    const fallbackVariant = variant === 'light' ? 'duo-tone' : 'light'
+    console.log(`Icon not found with variant ${variant}. Falling back to ${fallbackVariant}`)
+    iconData = icons.find(icon => icon.name === name && icon.variant === fallbackVariant)
+  }
+
+  if (!iconData) {
+    return null
+  }
+
+  const IconComponent = iconData.component
   const className = `icon-size-${size} icon-color-${color}`
-  const iconId = `icon-${props.name}`
+  const iconId = `icon-${name}-${variant}`
 
-  return <IconName className={className} data-test={iconId} />
+  return <IconComponent className={className} data-test={iconId} />
 }

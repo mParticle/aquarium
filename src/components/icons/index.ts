@@ -1,7 +1,7 @@
 import AddIcon from 'src/assets/svg/add.svg?react'
 import AlicornIcon from 'src/assets/svg/alicorn.svg?react'
-import AnalyticsIcon from 'src/assets/svg/mp_pm_dt_analytics.svg?react'
-import C360Icon from 'src/assets/svg/mp_pm_dt_c360.svg?react'
+import AnalyticsIconDt from 'src/assets/svg/mp_pm_dt_analytics.svg?react'
+import C360IconDt from 'src/assets/svg/mp_pm_dt_c360.svg?react'
 import CatalogIcon from 'src/assets/svg/mp_pm_lt_catalog.svg?react'
 import ChartColumnIcon from 'src/assets/svg/chart-column.svg?react'
 import ChartLineIcon from 'src/assets/svg/chart-line.svg?react'
@@ -9,7 +9,7 @@ import CheckIcon from 'src/assets/svg/check.svg?react'
 import CircleNodesIcon from 'src/assets/svg/circle-nodes.svg?react'
 import CloudIcon from 'src/assets/svg/cloud.svg?react'
 import ConnectionsIcon from 'src/assets/svg/connections.svg?react'
-import DataPlatform from 'src/assets/svg/mp_pm_dt_data-platform.svg?react'
+import DataPlatformIconDt from 'src/assets/svg/mp_pm_dt_data-platform.svg?react'
 import DatabaseIcon from 'src/assets/svg/database.svg?react'
 import DsrIcon from 'src/assets/svg/mp_pm_lt_dsr.svg?react'
 import EmptyIcon from 'src/assets/svg/empty.svg?react'
@@ -31,12 +31,12 @@ import PaywallIcon from 'src/assets/svg/paywall.svg?react'
 import MessageQuestionIcon from 'src/assets/svg/message-question.svg?react'
 import MpLogoIcon from 'src/assets/svg/mpLogo.svg?react'
 import ObservabilityIcon from 'src/assets/svg/mp_pm_lt_observability.svg?react'
-import OversightIcon from 'src/assets/svg/mp_pm_dt_oversight.svg?react'
-import PredictionsIconLight from 'src/assets/svg/mp_pm_lt_predictions.svg?react'
-import SparklesIcon from 'src/assets/svg/mp_pm_dt_predictions.svg?react'
+import OversightIconDt from 'src/assets/svg/mp_pm_dt_oversight.svg?react'
+import PredictionsIcon from 'src/assets/svg/mp_pm_lt_predictions.svg?react'
+import PredictionsIconDt from 'src/assets/svg/mp_pm_dt_predictions.svg?react'
 import RemoveIcon from 'src/assets/svg/remove.svg?react'
 import SearchIcon from 'src/assets/svg/search.svg?react'
-import SegmentationIcon from 'src/assets/svg/mp_pm_dt_segmentation.svg?react'
+import SegmentationIconDt from 'src/assets/svg/mp_pm_dt_segmentation.svg?react'
 import ShieldKeyholeIcon from 'src/assets/svg/shield-keyhole.svg?react'
 import SignoutIcon from 'src/assets/svg/signout.svg?react'
 import SplitIcon from 'src/assets/svg/split.svg?react'
@@ -64,8 +64,8 @@ import PremiumDtIcon from 'src/assets/svg/mp_info_dt_premium.svg?react'
 export {
   AddIcon,
   AlicornIcon,
-  AnalyticsIcon,
-  C360Icon,
+  AnalyticsIconDt,
+  C360IconDt,
   CatalogIcon,
   ChartColumnIcon,
   ChartLineIcon,
@@ -73,7 +73,7 @@ export {
   CircleNodesIcon,
   CloudIcon,
   ConnectionsIcon,
-  DataPlatform,
+  DataPlatformIconDt,
   DatabaseIcon,
   DsrIcon,
   EmptyIcon,
@@ -96,12 +96,12 @@ export {
   MessageQuestionIcon,
   MpLogoIcon,
   ObservabilityIcon,
-  OversightIcon,
-  SparklesIcon,
-  PredictionsIconLight,
+  OversightIconDt,
+  PredictionsIconDt,
+  PredictionsIcon,
   RemoveIcon,
   SearchIcon,
-  SegmentationIcon,
+  SegmentationIconDt,
   ShieldKeyholeIcon,
   SignoutIcon,
   SplitIcon,
