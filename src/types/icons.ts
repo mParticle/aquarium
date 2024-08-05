@@ -7,7 +7,7 @@ export type IconOptions = RequireAtLeastOne<
     light?: React.ComponentType<React.SVGProps<SVGSVGElement>>
     'duo-tone'?: React.ComponentType<React.SVGProps<SVGSVGElement>>
     default: IconVariant
-    deprecated?: boolean
+    deprecated?: string
   },
   IconVariant
 >
