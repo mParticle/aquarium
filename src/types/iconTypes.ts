@@ -1,4 +1,4 @@
-import { RequireAtLeastOne } from 'type-fest'
+import type { RequireAtLeastOne } from 'type-fest'
 
 export type IconVariant = 'light' | 'duo-tone'
 

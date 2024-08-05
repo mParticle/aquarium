@@ -1,4 +1,4 @@
-import { IconOptions, IconNames } from 'src/types/iconTypes'
+import { type IconOptions, type IconNames } from 'src/types/iconTypes'
 
 import AddIcon from 'src/assets/svg/add.svg?react'
 import AlicornIcon from 'src/assets/svg/alicorn.svg?react'
@@ -61,7 +61,7 @@ import DirectoryIcon from 'src/assets/svg/mp_pm_lt_directory.svg?react'
 import LockIcon from 'src/assets/svg/mp_act_lt_lock.svg?react'
 import UnlockIcon from 'src/assets/svg/mp_act_lt_unlock.svg?react'
 import NotificationIcon from 'src/assets/svg/mp_pm_lt_notification.svg?react'
-import PremiumIconDt from 'src/assets/svg/mp_pm_lt_notification.svg?react'
+import PremiumIconDt from 'src/assets/svg/mp_info_dt_premium.svg?react'
 
 export const Icons: Record<IconNames, IconOptions> = {
   add: {
