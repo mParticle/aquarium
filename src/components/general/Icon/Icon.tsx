@@ -23,18 +23,16 @@ export interface IIconProps {
   variant?: IconVariant
 }
 
-const deprecatedIcons: Array<keyof typeof Icons> = ['sparkles']
-
 export const Icon: React.FC<IIconProps> = ({ name, color = 'default', size = 'lg', variant }) => {
-  if (deprecatedIcons.includes(name)) {
-    console.warn(`Icon with name "${name}" is deprecated. Please use a different icon.`)
-  }
-
   const iconVariants = Icons[name]
 
   if (!iconVariants) {
     console.error(`Icon with name "${name}" not found.`)
     return null
+  }
+
+  if (iconVariants.deprecated) {
+    console.warn(`Icon with name "${name}" is deprecated. Please use a different icon.`)
   }
 
   const iconVariant = variant || iconVariants.default

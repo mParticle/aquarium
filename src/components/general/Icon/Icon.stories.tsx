@@ -17,10 +17,14 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
   return <div style={iconGridStyle}>{name ? renderIcon(name) : allIcons.map(renderIcon)}</div>
 
   function renderIcon(iconName: keyof typeof Icons): ReactNode {
+    const icon = Icons[iconName]
+    const isDeprecated = icon.deprecated
+    const textStyle = isDeprecated ? { textDecoration: 'line-through' } : {}
+
     return (
       <Flex vertical align="center" key={iconName}>
         <Icon name={iconName} size={size} color={color} variant={variant} />
-        <p style={{ fontFamily: 'monospace' }}>{iconName}</p>
+        <p style={{ fontFamily: 'monospace', ...textStyle }}>{iconName}</p>
       </Flex>
     )
   }

@@ -67,6 +67,7 @@ export interface IconVariants {
   light?: React.ComponentType<React.SVGProps<SVGSVGElement>>
   'duo-tone'?: React.ComponentType<React.SVGProps<SVGSVGElement>>
   default: IconVariant
+  deprecated?: boolean
 }
 
 export type IconDictionary = {
@@ -231,7 +232,17 @@ export const Icons: IconDictionary = {
     'duo-tone': DataPlatformIconDt,
     default: 'duo-tone',
   },
+  /**
+   * @deprecated This icon is old. Use "predictions" instead.
+   * This will be removed once all icons are updated.
+   */
   sparkles: {
+    light: PredictionsIcon,
+    'duo-tone': PredictionsIconDt,
+    default: 'light',
+    deprecated: true,
+  },
+  predictions: {
     light: PredictionsIcon,
     'duo-tone': PredictionsIconDt,
     default: 'light',
