@@ -1,5 +1,5 @@
 import React from 'react'
-import { Icons, IconVariant, IconDictionary } from 'src/constants/Icons'
+import { Icons, IconVariant } from 'src/constants/Icons'
 import './icon.css'
 
 type IconSize = 'xxxxl' | 'xxxl' | 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs'
@@ -31,12 +31,12 @@ export const Icon: React.FC<IIconProps> = ({ name, color = 'default', size = 'lg
     return null
   }
 
-  if (iconVariants.deprecated) {
-    console.warn(`Icon with name "${name}" is deprecated. Please use a different icon.`)
+  if (iconVariants?.deprecated) {
+    console.warn(`Icon with name "${name}" is deprecated. Please use "predictions" instead.`)
   }
 
   const iconVariant = variant || iconVariants.default
-  const IconComponent = iconVariants[iconVariant] || iconVariants[iconVariants.default]
+  const IconComponent = iconVariants[iconVariant] || iconVariants[iconVariants?.default]
 
   if (!IconComponent) {
     console.error(`Icon with name "${name}" and variant "${iconVariant}" not found.`)

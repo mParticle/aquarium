@@ -70,11 +70,7 @@ export interface IconVariants {
   deprecated?: boolean
 }
 
-export type IconDictionary = {
-  [key: string]: IconVariants
-}
-
-export const Icons: IconDictionary = {
+export const Icons: Record<string, IconVariants> = {
   add: {
     light: AddIcon,
     'duo-tone': AddIcon,
