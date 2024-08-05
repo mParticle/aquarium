@@ -59,7 +59,7 @@ import DirectoryIcon from 'src/assets/svg/mp_pm_lt_directory.svg?react'
 import LockIcon from 'src/assets/svg/mp_act_lt_lock.svg?react'
 import UnlockIcon from 'src/assets/svg/mp_act_lt_unlock.svg?react'
 import NotificationIcon from 'src/assets/svg/mp_pm_lt_notification.svg?react'
-import PremiumIconDt from 'src/assets/svg/mp_pm_lt_notification.svg?react'
+import PremiumIconDt from 'src/assets/svg/mp_info_dt_premium.svg?react'
 
 export {
   AddIcon,
