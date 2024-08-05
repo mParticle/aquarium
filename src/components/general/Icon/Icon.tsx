@@ -24,18 +24,29 @@ export interface IIconProps {
   variant?: IconVariant
 }
 
+const deprecatedIcons = ['sparkles']
+
 export const Icon = (props: IIconProps) => {
   const { name, color = 'default', size = 'lg', variant = 'light' } = props
+
+  if (deprecatedIcons.includes(name)) {
+    console.warn(`Icon with name "${name}" is deprecated. Please use a different icon.`)
+  }
 
   let iconData = icons.find(icon => icon.name === name && icon.variant === variant)
 
   if (!iconData) {
     const fallbackVariant = variant === 'light' ? 'duo-tone' : 'light'
-    console.log(`Icon not found with variant ${variant}. Falling back to ${fallbackVariant}`)
     iconData = icons.find(icon => icon.name === name && icon.variant === fallbackVariant)
   }
 
   if (!iconData) {
+    console.warn(`Icon with name "${name}" not found with specified or fallback variant. Using any available variant.`)
+    iconData = icons.find(icon => icon.name === name)
+  }
+
+  if (!iconData) {
+    console.error(`Icon with name "${name}" not found in any variant.`)
     return null
   }
 

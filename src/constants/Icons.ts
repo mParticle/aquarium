@@ -62,6 +62,11 @@ import {
   NotificationIcon,
 } from 'src/components/icons'
 
+/**
+ * @deprecated This icon is old
+ * Use this icon only for legacy purposes. This will be removed once all icons are updated.
+ */
+const SparklesIcon = PredictionsIcon
 export const icons = [
   { name: 'add', component: AddIcon, variant: 'light', category: 'general' },
   { name: 'alicorn', component: AlicornIcon, variant: 'light', category: 'general' },
@@ -97,12 +102,7 @@ export const icons = [
   { name: 'mpLogo', component: MpLogoIcon, variant: 'light', category: 'general' },
   { name: 'observability', component: ObservabilityIcon, variant: 'light', category: 'pm' },
   { name: 'oversight', component: OversightIconDt, variant: 'duo-tone', category: 'pm' },
-  /**
-   * @deprecated This name is old
-   * Use this variant only with new icons to align the icon and text centered.
-   * This will be removed once all icons are updated.
-   */
-  { name: 'sparkles', component: PredictionsIcon, variant: 'light', category: 'general' },
+  { name: 'sparkles', component: SparklesIcon, variant: 'light', category: 'general' },
   { name: 'predictions', component: PredictionsIcon, variant: 'light', category: 'general' },
   { name: 'predictions', component: PredictionsIconDt, variant: 'duo-tone', category: 'general' },
   { name: 'remove', component: RemoveIcon, variant: 'light', category: 'general' },
