@@ -1,3 +1,9 @@
+# [1.25.0-chore-add-disabled-state-queryitem-cascader.1](https://github.com/mParticle/aquarium/compare/v1.24.0...v1.25.0-chore-add-disabled-state-queryitem-cascader.1) (2024-08-05)
+
+### Features
+
+- Allow override theme for ConfigProvider ([#354](https://github.com/mParticle/aquarium/issues/354)) ([29cc614](https://github.com/mParticle/aquarium/commit/29cc614fe5869e80801646b33e71f3f52c640516))
+
 # [1.24.0](https://github.com/mParticle/aquarium/compare/v1.23.0...v1.24.0) (2024-07-31)
 
 ### Features
