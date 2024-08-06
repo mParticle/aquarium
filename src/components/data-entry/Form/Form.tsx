@@ -7,7 +7,7 @@ export interface IFormProps<Values = any> extends AntFormProps<Values> {
   children: ReactNode
 }
 
-export const Form = <Values = any>(props: IFormProps<Values>) => {
+export const Form = <Values = any,>(props: IFormProps<Values>) => {
   return (
     <ConfigProvider>
       <AntForm {...props}>{props.children}</AntForm>
