@@ -230,7 +230,7 @@ export const Icons: Record<IconNames, IconOptions> = {
   sparkles: {
     light: PredictionsIcon,
     'duo-tone': PredictionsIconDt,
-    default: 'light',
+    default: 'duo-tone',
     deprecated: 'predictions',
   },
   predictions: {
