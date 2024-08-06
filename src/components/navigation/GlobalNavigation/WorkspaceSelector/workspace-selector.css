@@ -42,7 +42,7 @@
   position: relative;
   top: 2px;
   padding-top: var(--padding-xxs);
-  font-size: 10px;
+  font-size: var(--label-size);
 }
 
 .workspaceSelector__popover {

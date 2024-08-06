@@ -7,6 +7,7 @@
   --color-scrollbar-handle: rgb(0 0 0 / 15%);
   --color-scrollbar-track: transparent;
   --size-scrollbar-handle: 6px;
+  --label-size: 10px
 }
 
 .globalNavigation {
@@ -251,7 +252,7 @@
 
 .globalNavigation__iconLabel {
   color: var(--color-text);
-  font-size: 10px;
+  font-size: var(--label-size);
 }
 
 .globalNavigation__badge {
