@@ -1,3 +1,9 @@
+# [1.24.0-chore-cascader-loading-state.1](https://github.com/mParticle/aquarium/compare/v1.23.0...v1.24.0-chore-cascader-loading-state.1) (2024-08-06)
+
+### Features
+
+- adds README for UPS ([#302](https://github.com/mParticle/aquarium/issues/302)) ([f80ea27](https://github.com/mParticle/aquarium/commit/f80ea2735c6cc5e41cf5a718b5c0a5c01d04496f))
+
 # [1.23.0](https://github.com/mParticle/aquarium/compare/v1.22.0...v1.23.0) (2024-07-31)
 
 ### Features
