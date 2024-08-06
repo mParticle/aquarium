@@ -1,25 +1,7 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { QueryItem } from 'src/components'
+import { type IQueryItemCascaderProps, QueryItem } from 'src/components'
 
-const meta: Meta<typeof QueryItem.ValueSelector.Cascader> = {
-  title: 'Aquarium/Data Entry/QueryItem/ValueSelector/Cascader',
-  component: QueryItem.ValueSelector.Cascader,
-  parameters: {
-    docs: {
-      description: {
-        component:
-          'This is the "Action" component of the QueryItem component group. This component is currently meant to trigger a single action, but will eventually support a list of actions via a dropdown list interface.',
-      },
-    },
-  },
-
-  args: {},
-}
-export default meta
-
-type Story = StoryObj<typeof QueryItem.ValueSelector.Cascader>
-
-const exampleOptions = [
+const options: IQueryItemCascaderProps['options'] = [
   {
     value: 'United States1',
     label: 'United States',
@@ -72,16 +54,35 @@ const exampleOptions = [
   },
 ]
 
+const meta: Meta<typeof QueryItem.ValueSelector.Cascader> = {
+  title: 'Aquarium/Data Entry/QueryItem/ValueSelector/Cascader',
+  component: QueryItem.ValueSelector.Cascader,
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'This is the "Action" component of the QueryItem component group. This component is currently meant to trigger a single action, but will eventually support a list of actions via a dropdown list interface.',
+      },
+    },
+  },
+
+  args: {
+    options,
+  },
+}
+export default meta
+
+type Story = StoryObj<typeof QueryItem.ValueSelector.Cascader>
+
 export const Default: Story = {
   args: {
-    placeholder: 'QueryItem.ValueSelector.Cascader Default',
-    options: exampleOptions,
+    placeholder: 'Default',
   },
 }
 
 export const SimpleList: Story = {
   args: {
-    placeholder: 'QueryItem.ValueSelector.Cascader Simple',
+    placeholder: 'Simple List',
     options: [
       {
         value: 'United States',
@@ -97,24 +98,21 @@ export const SimpleList: Story = {
 
 export const Error: Story = {
   args: {
-    placeholder: 'QueryItem.ValueSelector.Cascader Error',
-    options: exampleOptions,
+    placeholder: 'Error',
     errorMessage: 'test error',
   },
 }
 
 export const WithIcon: Story = {
   args: {
-    placeholder: 'QueryItem.ValueSelector.Cascader Icon',
-    options: exampleOptions,
+    placeholder: 'With Icon',
     icon: 'event',
   },
 }
 
 export const OnSelect: Story = {
   args: {
-    placeholder: 'QueryItem.ValueSelector.Cascader Error',
-    options: exampleOptions,
+    placeholder: 'On Select',
     onChange: async value => {
       console.log(value)
     },
@@ -123,8 +121,7 @@ export const OnSelect: Story = {
 
 export const PreSelectedValue: Story = {
   args: {
-    placeholder: 'QueryItem.ValueSelector.Cascader PreSelected',
-    options: exampleOptions,
+    placeholder: 'PreSelected',
     value: ['Canada1', 'Ontario1', 'Toronto1'],
     onChange: async (values, _) => {
       console.log(values)
@@ -134,10 +131,23 @@ export const PreSelectedValue: Story = {
 
 export const LoadData: Story = {
   args: {
-    placeholder: 'QueryItem.ValueSelector.Cascader Load',
-    options: exampleOptions,
-    loadData: (value: string) => {
+    placeholder: 'Load',
+    loadData: async (value: string) => {
       console.log(value)
+    },
+  },
+}
+
+export const Loading: Story = {
+  args: {
+    placeholder: 'Loading Story',
+    options: undefined,
+    loadData: async (value: string) => {
+      await new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve(options)
+        }, 3000)
+      })
     },
   },
 }
