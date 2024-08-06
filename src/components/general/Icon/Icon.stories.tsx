@@ -24,7 +24,10 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
     return (
       <Flex vertical align="center" key={iconName}>
         <Icon name={iconName} size={size} color={color} variant={variant} />
-        <p style={{ fontFamily: 'monospace', ...textStyle }}>{iconName}</p>
+        <p style={{ fontFamily: 'monospace', ...textStyle }}>
+          {isDeprecated ? 'deprecated ' : ''}
+          {iconName}
+        </p>
       </Flex>
     )
   }

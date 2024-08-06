@@ -25,14 +25,14 @@ export interface IIconProps {
 }
 
 export const Icon: React.FC<IIconProps> = ({ name, color = 'default', size = 'lg', variant }) => {
-  const iconVariants: IconOptions = Icons[name]
+  const icon: IconOptions = Icons[name]
 
-  if (iconVariants?.deprecated) {
-    console.warn(`Icon with name "${name}" is deprecated. Please use ${iconVariants?.deprecated} instead.`)
+  if (icon?.deprecated) {
+    console.warn(`Icon with name "${name}" is deprecated. Please use ${icon?.deprecated} instead.`)
   }
 
-  const iconVariant = variant ?? iconVariants.default
-  const IconComponent = iconVariants[iconVariant] ?? iconVariants[iconVariants.default]
+  const iconVariant = variant ?? icon.default
+  const IconComponent = icon[iconVariant] ?? icon[icon.default]
 
   if (!IconComponent) {
     console.error(`Icon with name "${name}" and variant "${iconVariant}" not found.`)

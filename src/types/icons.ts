@@ -12,73 +12,68 @@ export type IconOptions = RequireAtLeastOne<
   IconVariant
 >
 
-/**
- * @deprecated Use "predictions" instead.
- */
-export type DeprecatedIconNames = 'sparkles'
+// TODO: Mark icon names as @deprecated in ticket UNI-838.
 
-export const iconNamesArray = [
-  'add',
-  'alicorn',
-  'analytics',
-  'C360',
-  'catalog',
-  'chartColumn',
-  'chartLine',
-  'check',
-  'circleNodes',
-  'cloud',
-  'connections',
-  'database',
-  'dsr',
-  'empty',
-  'enrichment',
-  'event',
-  'eventAttribute',
-  'fitToScreen',
-  'folderClosed',
-  'forwarding',
-  'gear',
-  'grid',
-  'heart',
-  'help',
-  'identity',
-  'jumpTo',
-  'lightBulb',
-  'liveStream',
-  'paywall',
-  'messageQuestion',
-  'mpLogo',
-  'observability',
-  'oversight',
-  'predictions',
-  'remove',
-  'search',
-  'segmentation',
-  'shieldKeyhole',
-  'signout',
-  'siteMap',
-  'sparkles', // Deprecated
-  'split',
-  'systemAlerts',
-  'transformation',
-  'upload',
-  'userAttribute',
-  'userProfiles',
-  'users',
-  'wrench',
-  'zoomIn',
-  'zoomOut',
-  'premium',
-  'helpVideo',
-  'conversion',
-  'next',
-  'previous',
-  'openTab',
-  'directory',
-  'lock',
-  'unlock',
-  'notification',
-] as const
-
-export type IconNames = (typeof iconNamesArray)[number]
+export type IconNames =
+  | 'add'
+  | 'alicorn'
+  | 'analytics'
+  | 'C360'
+  | 'catalog'
+  | 'chartColumn'
+  | 'chartLine'
+  | 'check'
+  | 'circleNodes'
+  | 'cloud'
+  | 'connections'
+  | 'database'
+  | 'dsr'
+  | 'empty'
+  | 'enrichment'
+  | 'event'
+  | 'eventAttribute'
+  | 'fitToScreen'
+  | 'folderClosed'
+  | 'forwarding'
+  | 'gear'
+  | 'grid'
+  | 'heart'
+  | 'help'
+  | 'identity'
+  | 'jumpTo'
+  | 'lightBulb'
+  | 'liveStream'
+  | 'paywall'
+  | 'messageQuestion'
+  | 'mpLogo'
+  | 'observability'
+  | 'oversight'
+  | 'predictions'
+  | 'remove'
+  | 'search'
+  | 'segmentation'
+  | 'shieldKeyhole'
+  | 'signout'
+  | 'siteMap'
+  | 'sparkles'
+  | 'premiumDt'
+  | 'split'
+  | 'systemAlerts'
+  | 'transformation'
+  | 'upload'
+  | 'userAttribute'
+  | 'userProfiles'
+  | 'users'
+  | 'wrench'
+  | 'zoomIn'
+  | 'zoomOut'
+  | 'premium'
+  | 'helpVideo'
+  | 'conversion'
+  | 'next'
+  | 'previous'
+  | 'openTab'
+  | 'directory'
+  | 'lock'
+  | 'unlock'
+  | 'notification'

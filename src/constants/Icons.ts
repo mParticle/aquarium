@@ -283,6 +283,12 @@ export const Icons: Record<IconNames, IconOptions> = {
     'duo-tone': PremiumIconDt,
     default: 'light',
   },
+  premiumDt: {
+    light: PremiumIcon,
+    'duo-tone': PremiumIconDt,
+    default: 'duo-tone',
+    deprecated: 'premium',
+  },
   helpVideo: {
     light: HelpVideoIcon,
     default: 'light',
