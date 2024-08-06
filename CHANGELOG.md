@@ -1,8 +1,14 @@
-# [1.24.0-chore-cascader-loading-state.1](https://github.com/mParticle/aquarium/compare/v1.23.0...v1.24.0-chore-cascader-loading-state.1) (2024-08-06)
+# [1.25.0](https://github.com/mParticle/aquarium/compare/v1.24.0...v1.25.0) (2024-08-06)
 
 ### Features
 
-- adds README for UPS ([#302](https://github.com/mParticle/aquarium/issues/302)) ([f80ea27](https://github.com/mParticle/aquarium/commit/f80ea2735c6cc5e41cf5a718b5c0a5c01d04496f))
+- Allow override theme for ConfigProvider ([#354](https://github.com/mParticle/aquarium/issues/354)) ([29cc614](https://github.com/mParticle/aquarium/commit/29cc614fe5869e80801646b33e71f3f52c640516))
+
+# [1.24.0](https://github.com/mParticle/aquarium/compare/v1.23.0...v1.24.0) (2024-07-31)
+
+### Features
+
+- add premiumDt icon ([#346](https://github.com/mParticle/aquarium/issues/346)) ([b3e2817](https://github.com/mParticle/aquarium/commit/b3e281763e13bb315ab3d84a439b116fe2e679bc))
 
 # [1.23.0](https://github.com/mParticle/aquarium/compare/v1.22.0...v1.23.0) (2024-07-31)
 
