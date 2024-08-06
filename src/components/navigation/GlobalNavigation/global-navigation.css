@@ -95,7 +95,7 @@
 }
 
 .globalNavigation__item.workspaceSelector__menuItem{
-  height: var(--nav-item-height-large) !important;
+  height: calc(var(--control-height-lg) * 2) !important;
 }
 
 .globalNavigation__item .ant-menu-title-content {
