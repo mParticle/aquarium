@@ -64,7 +64,7 @@ function sortOrgsByActiveWorkspace(orgs: INavigationOrg[]): INavigationOrg[] {
 }
 
 /** Number of characters to show under the avatar */
-const WORKSPACE_LABEL_LIMIT = 7
+const WORKSPACE_LABEL_LIMIT = 8
 
 export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
   const [searchTerm, setSearchTerm] = useState<string>('')
