@@ -1,3 +1,11 @@
+## [1.25.1](https://github.com/mParticle/aquarium/compare/v1.25.0...v1.25.1) (2024-08-06)
+
+# [1.25.0](https://github.com/mParticle/aquarium/compare/v1.24.0...v1.25.0) (2024-08-06)
+
+### Features
+
+- Allow override theme for ConfigProvider ([#354](https://github.com/mParticle/aquarium/issues/354)) ([29cc614](https://github.com/mParticle/aquarium/commit/29cc614fe5869e80801646b33e71f3f52c640516))
+
 # [1.25.0-icons-variant.1](https://github.com/mParticle/aquarium/compare/v1.24.0...v1.25.0-icons-variant.1) (2024-08-06)
 
 ### Bug Fixes
