@@ -155,6 +155,7 @@ const Cascader = (props: IQueryItemCascaderProps) => {
     <>
       <BaseCascader {...baseProps}>
         <Input
+          disabled={props.disabled}
           readOnly
           placeholder={props.placeholder}
           status={props.errorMessage ? 'error' : undefined}
