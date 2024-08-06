@@ -28,6 +28,7 @@ export interface IQueryItemCascaderProps {
   onChange?: (values: Array<number | string>, selectedOptions: any) => Promise<void>
   loadData?: (value: string) => void
   value?: Array<number | string>
+  disabled?: boolean
 }
 
 const Cascader = (props: IQueryItemCascaderProps) => {
@@ -129,6 +130,7 @@ const Cascader = (props: IQueryItemCascaderProps) => {
     <>
       <BaseCascader {...baseProps}>
         <Input
+          disabled={props.disabled}
           readOnly
           placeholder={props.placeholder}
           status={props.errorMessage ? 'error' : undefined}
