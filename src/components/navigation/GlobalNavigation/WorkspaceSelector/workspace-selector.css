@@ -42,6 +42,7 @@
   position: relative;
   top: 2px;
   padding-top: var(--padding-xxs);
+  font-size: var(--font-size-sm);
 }
 
 .workspaceSelector__popover {
