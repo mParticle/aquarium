@@ -6,6 +6,20 @@
 
 - Allow override theme for ConfigProvider ([#354](https://github.com/mParticle/aquarium/issues/354)) ([29cc614](https://github.com/mParticle/aquarium/commit/29cc614fe5869e80801646b33e71f3f52c640516))
 
+# [1.25.0-icons-variant.1](https://github.com/mParticle/aquarium/compare/v1.24.0...v1.25.0-icons-variant.1) (2024-08-06)
+
+### Bug Fixes
+
+- imports of icons ([9f5ac6c](https://github.com/mParticle/aquarium/commit/9f5ac6c047acea4bdee181f3d21e1bc080b52994))
+
+### Features
+
+- Allow override theme for ConfigProvider ([#354](https://github.com/mParticle/aquarium/issues/354)) ([29cc614](https://github.com/mParticle/aquarium/commit/29cc614fe5869e80801646b33e71f3f52c640516))
+- icon-variants: update premium icon ([d7681d4](https://github.com/mParticle/aquarium/commit/d7681d49a0b63cc6aebb7874e72c0fb89afb8679))
+- icons-variant cleanup code ([bf83485](https://github.com/mParticle/aquarium/commit/bf83485b0867df3ee169e6b5e3ddf682f20245c0))
+- icons-variant cleanup code ([54dfc77](https://github.com/mParticle/aquarium/commit/54dfc77b8d28a9fcc0a55e9de5bdd919f607f0a3))
+- icons-variant: add documentation for icons ([28ffcc9](https://github.com/mParticle/aquarium/commit/28ffcc912eb183ee9ad16ca06149ca03ffe39544))
+
 # [1.24.0](https://github.com/mParticle/aquarium/compare/v1.23.0...v1.24.0) (2024-07-31)
 
 ### Features
