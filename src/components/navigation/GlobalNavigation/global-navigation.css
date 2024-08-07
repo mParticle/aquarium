@@ -1,12 +1,12 @@
 :root {
   --nav-item-height: 56px;
-  --nav-item-height-large: 94px;
   --nav-item-width: 82px;
   --nav-width: 90px;
   --suite-logo-height: 82px;
   --color-scrollbar-handle: rgb(0 0 0 / 15%);
   --color-scrollbar-track: transparent;
   --size-scrollbar-handle: 6px;
+  --label-size: 10px
 }
 
 .globalNavigation {
@@ -94,7 +94,7 @@
 }
 
 .globalNavigation__item.workspaceSelector__menuItem{
-  height: var(--nav-item-height-large) !important;
+  height: calc(var(--control-height-lg) * 2) !important;
 }
 
 .globalNavigation__item .ant-menu-title-content {
@@ -251,7 +251,7 @@
 
 .globalNavigation__iconLabel {
   color: var(--color-text);
-  font-size: 10px;
+  font-size: var(--label-size);
 }
 
 .globalNavigation__badge {
