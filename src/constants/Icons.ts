@@ -223,10 +223,6 @@ export const Icons: Record<IconNames, IconOptions> = {
     'duo-tone': DataPlatformIconDt,
     default: 'duo-tone',
   },
-  /**
-   * @deprecated This icon is old. Use "predictions" instead.
-   * This will be removed once all icons are updated.
-   */
   sparkles: {
     light: PredictionsIcon,
     'duo-tone': PredictionsIconDt,
