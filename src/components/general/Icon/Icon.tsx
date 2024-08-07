@@ -16,6 +16,7 @@ export type IconColor =
   | 'text'
   | 'strong'
   | 'brand'
+  | 'inherit'
 
 export interface IIconProps {
   name: IconNames
