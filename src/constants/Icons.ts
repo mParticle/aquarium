@@ -63,6 +63,7 @@ import {
   UnlockIcon,
   NotificationIcon,
   PremiumIconDt,
+  OverviewIconDt,
 } from 'src/components/icons'
 
 export const Icons: Record<IconNames, IconOptions> = {
@@ -320,5 +321,9 @@ export const Icons: Record<IconNames, IconOptions> = {
   notification: {
     light: NotificationIcon,
     default: 'light',
+  },
+  overview: {
+    'duo-tone': OverviewIconDt,
+    default: 'duo-tone',
   },
 } as const

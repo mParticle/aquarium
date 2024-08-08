@@ -77,3 +77,4 @@ export type IconNames =
   | 'lock'
   | 'unlock'
   | 'notification'
+  | 'overview'
