@@ -89,3 +89,7 @@
 .icon-color-black {
   color: black;
 }
+
+.icon-color-inherit {
+  color: inherit;
+}
