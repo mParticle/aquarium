@@ -1,3 +1,14 @@
+# [1.26.0](https://github.com/mParticle/aquarium/compare/v1.25.1...v1.26.0) (2024-08-07)
+
+### Bug Fixes
+
+- make the workspace-selector label smaller ([#359](https://github.com/mParticle/aquarium/issues/359)) ([05c4338](https://github.com/mParticle/aquarium/commit/05c4338469c0ba21ae72a935f4823b3eb69f1fb9))
+- Revert design tokens update ([#361](https://github.com/mParticle/aquarium/issues/361)) ([cd9dbc9](https://github.com/mParticle/aquarium/commit/cd9dbc9512b8a74bbdf9b7e6b5cf8df54ff4e624))
+
+### Features
+
+- add variants to icons ([#355](https://github.com/mParticle/aquarium/issues/355)) ([1112674](https://github.com/mParticle/aquarium/commit/1112674e6e5649229f3c9028a94f2115c97a1f8c))
+
 ## [1.25.1](https://github.com/mParticle/aquarium/compare/v1.25.0...v1.25.1) (2024-08-06)
 
 # [1.25.0](https://github.com/mParticle/aquarium/compare/v1.24.0...v1.25.0) (2024-08-06)
