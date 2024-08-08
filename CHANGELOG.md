@@ -1,3 +1,5 @@
+## [1.26.1-fix-design-tokens.1](https://github.com/mParticle/aquarium/compare/v1.26.0...v1.26.1-fix-design-tokens.1) (2024-08-08)
+
 # [1.26.0](https://github.com/mParticle/aquarium/compare/v1.25.1...v1.26.0) (2024-08-07)
 
 ### Bug Fixes
