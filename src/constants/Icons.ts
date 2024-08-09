@@ -104,12 +104,27 @@ export const Icons: Record<IconNames, IconOptions> = {
   check: {
     light: CheckIcon,
     default: 'light',
+    deprecated: 'selected',
+  },
+  selected: {
+    light: CheckIcon,
+    default: 'light',
   },
   circleNodes: {
     light: CircleNodesIcon,
     default: 'light',
+    deprecated: 'pipelines',
+  },
+  pipelines: {
+    light: CircleNodesIcon,
+    default: 'light',
   },
   cloud: {
+    light: CloudIcon,
+    default: 'light',
+    deprecated: 'api',
+  },
+  api: {
     light: CloudIcon,
     default: 'light',
   },
@@ -148,6 +163,11 @@ export const Icons: Record<IconNames, IconOptions> = {
   folderClosed: {
     light: FolderClosedIcon,
     default: 'light',
+    deprecated: 'savedProjects',
+  },
+  savedProjects: {
+    light: FolderClosedIcon,
+    default: 'light',
   },
   forwarding: {
     light: ForwardingIcon,
@@ -165,10 +185,21 @@ export const Icons: Record<IconNames, IconOptions> = {
   grid: {
     light: GridIcon,
     default: 'light',
+    deprecated: 'myHub',
+  },
+  myHub: {
+    light: GridIcon,
+    default: 'light',
   },
   heart: {
     light: HeartIcon,
     default: 'light',
+    deprecated: 'favorite',
+  },
+  favorite: {
+    light: HeartIcon,
+    default: 'light',
+    deprecated: 'favorite',
   },
   help: {
     light: HelpIcon,
@@ -183,6 +214,11 @@ export const Icons: Record<IconNames, IconOptions> = {
     default: 'light',
   },
   lightBulb: {
+    light: LightBulbIcon,
+    default: 'light',
+    deprecated: 'insights',
+  },
+  insights: {
     light: LightBulbIcon,
     default: 'light',
   },
