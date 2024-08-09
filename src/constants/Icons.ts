@@ -95,6 +95,11 @@ export const Icons: Record<IconNames, IconOptions> = {
   chartLine: {
     light: ChartLineIcon,
     default: 'light',
+    deprecated: 'trends',
+  },
+  trends: {
+    light: ChartLineIcon,
+    default: 'light',
   },
   check: {
     light: CheckIcon,
@@ -151,6 +156,11 @@ export const Icons: Record<IconNames, IconOptions> = {
   gear: {
     light: GearIcon,
     default: 'light',
+    deprecated: 'settings',
+  },
+  settings: {
+    light: GearIcon,
+    default: 'light',
   },
   grid: {
     light: GridIcon,
@@ -187,6 +197,11 @@ export const Icons: Record<IconNames, IconOptions> = {
   messageQuestion: {
     light: MessageQuestionIcon,
     default: 'light',
+    deprecated: 'support',
+  },
+  support: {
+    light: MessageQuestionIcon,
+    default: 'light',
   },
   mpLogo: {
     light: MpLogoIcon,
@@ -204,6 +219,10 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: RemoveIcon,
     default: 'light',
   },
+  close: {
+    light: RemoveIcon,
+    default: 'light',
+  },
   search: {
     light: SearchIcon,
     default: 'light',
@@ -215,12 +234,27 @@ export const Icons: Record<IconNames, IconOptions> = {
   shieldKeyhole: {
     light: ShieldKeyholeIcon,
     default: 'light',
+    deprecated: 'privacy',
+  },
+  privacy: {
+    light: ShieldKeyholeIcon,
+    default: 'light',
   },
   signout: {
     light: SignoutIcon,
     default: 'light',
+    deprecated: 'logout',
+  },
+  logout: {
+    light: SignoutIcon,
+    default: 'light',
   },
   siteMap: {
+    'duo-tone': DataPlatformIconDt,
+    default: 'duo-tone',
+    deprecated: 'dataPlatform',
+  },
+  dataPlatform: {
     'duo-tone': DataPlatformIconDt,
     default: 'duo-tone',
   },
@@ -236,6 +270,11 @@ export const Icons: Record<IconNames, IconOptions> = {
     default: 'light',
   },
   split: {
+    light: SplitIcon,
+    default: 'light',
+    deprecated: 'journeys',
+  },
+  journeys: {
     light: SplitIcon,
     default: 'light',
   },
@@ -263,7 +302,16 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: UsersIcon,
     default: 'light',
   },
+  audiences: {
+    light: UsersIcon,
+    default: 'light',
+  },
   wrench: {
+    light: WrenchIcon,
+    default: 'light',
+    deprecated: 'setup',
+  },
+  setup: {
     light: WrenchIcon,
     default: 'light',
   },
