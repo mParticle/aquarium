@@ -14,6 +14,7 @@ export interface IGlobalNavigationLogo extends IBaseGlobalNavigationItem {
   onSuiteLogoClick: () => void
   type?: 'default' | 'background-solid' | 'custom-size'
   icon?: ReactElement | keyof typeof Icons
+  navSwitcherTourOptions?: INavSwitcherTourOptions
 }
 
 export interface IGlobalNavigationMenu extends IBaseGlobalNavigationItem {
@@ -45,4 +46,9 @@ export interface IMiniMapOptions {
   onUnauthorizedClick?: (link?: MiniMapLink) => void
   unauthorizedLinks?: MiniMapLinks[]
   activeLink: MiniMapLinks
+}
+
+export interface INavSwitcherTourOptions {
+  isOpen: boolean
+  onClose: () => void
 }
