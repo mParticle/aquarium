@@ -17,3 +17,7 @@
 .u-padding-sm {
   padding:var(--padding-sm) !important;
 }
+
+.u-padding-xxs {
+  padding: var(--padding-xxs) !important;
+}

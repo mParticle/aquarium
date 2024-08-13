@@ -53,7 +53,7 @@ export const GlobalNavigation = ({ showSuiteLogo = true, ...props }: IGlobalNavi
           <div>
             {showSuiteLogo && (
               <>
-                <SuiteLogo {...props.logo} />
+                <SuiteLogo {...props.logo} minimapOptions={props.minimapOptions} />
                 <div className="globalNavigation__divider" />
               </>
             )}
@@ -82,9 +82,7 @@ export const GlobalNavigation = ({ showSuiteLogo = true, ...props }: IGlobalNavi
                 />
               )
             )}
-            {!props.hideMpHome && (
-              <HomeButton onMpHomeClick={props.onMpHomeClick} minimapOptions={props.minimapOptions} />
-            )}
+            {!props.hideMpHome && <HomeButton onMpHomeClick={props.onMpHomeClick} />}
           </div>
         </Flex>
       </Layout.Sider>
