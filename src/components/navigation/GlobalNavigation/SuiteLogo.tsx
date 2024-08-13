@@ -24,23 +24,11 @@ export function SuiteLogo({
 }: IGlobalNavigationLogo) {
   const logoRef = useRef(null)
 
-  const navSwitcherStep: ITourProps['steps'] = [
-    {
-      title: 'Navigate mParticle effortlessly!',
-      description: 'Switch between product suites anytime using this selector.',
-      placement: 'right',
-      target: () => logoRef.current,
-      nextButtonProps: {
-        children: 'Close',
-      },
-    },
-  ]
-
   return (
     <>
       <div ref={logoRef}>
         {renderNavLogo()}
-        {navSwitcherTourOptions && renderNavTour(navSwitcherStep, navSwitcherTourOptions)}
+        {navSwitcherTourOptions && renderNavTour(navSwitcherTourOptions)}
       </div>
     </>
   )
@@ -73,10 +61,26 @@ export function SuiteLogo({
     )
   }
 
-  function renderNavTour(steps: ITourProps['steps'], props: INavSwitcherTourOptions) {
+  function renderNavTour(props: INavSwitcherTourOptions) {
+    const DefaultTitle = 'Navigate mParticle effortlessly!' as const
+    const DefaultDescription = 'Switch between product suites anytime using this selector.' as const
+    const DefaultPlacement = 'right' as const
+
+    const navSwitcherStep: ITourProps['steps'] = [
+      {
+        title: DefaultTitle,
+        description: DefaultDescription,
+        placement: DefaultPlacement,
+        target: () => logoRef.current,
+        nextButtonProps: {
+          children: 'Close',
+        },
+      },
+    ]
+
     return (
       <>
-        <Tour mask={false} type="primary" steps={steps} open={props.isOpen} onClose={props.onClose} />
+        <Tour mask={false} type="primary" steps={navSwitcherStep} open={props.isOpen} onClose={props.onClose} />
       </>
     )
   }
