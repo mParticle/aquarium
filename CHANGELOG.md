@@ -1,3 +1,15 @@
+# [1.27.0-global-nav-switcher-tour-component.1](https://github.com/mParticle/aquarium/compare/v1.26.0...v1.27.0-global-nav-switcher-tour-component.1) (2024-08-13)
+
+### Bug Fixes
+
+- add width auto to be able to manage the wdith from the component ([#368](https://github.com/mParticle/aquarium/issues/368)) ([b47c45f](https://github.com/mParticle/aquarium/commit/b47c45f029f49428eb22576971d2e6299ab9acc7))
+- icon color not changing on button hover ([#363](https://github.com/mParticle/aquarium/issues/363)) ([aa07067](https://github.com/mParticle/aquarium/commit/aa07067eecca986208a9b7ff4737077193c83d41))
+
+### Features
+
+- add overview dt icon ([#362](https://github.com/mParticle/aquarium/issues/362)) ([78d7854](https://github.com/mParticle/aquarium/commit/78d7854eec0b7ad0762aa95dd7310d187102e12b))
+- update SuiteLogo to render nav switcher tour ([6098374](https://github.com/mParticle/aquarium/commit/609837455f3f8c3014b9cd007b5efab9d096ff63))
+
 # [1.26.0](https://github.com/mParticle/aquarium/compare/v1.25.1...v1.26.0) (2024-08-07)
 
 ### Bug Fixes
