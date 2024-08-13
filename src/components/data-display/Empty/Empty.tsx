@@ -1,6 +1,7 @@
 import { Empty as AntEmpty } from 'antd'
 import { type EmptyProps as AntEmptyProps } from 'antd'
 import { ConfigProvider } from 'src/components'
+import './empty.css'
 
 export interface IEmptyProps extends AntEmptyProps {}
 
