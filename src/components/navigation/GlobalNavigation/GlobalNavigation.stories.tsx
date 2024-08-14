@@ -1,6 +1,6 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { expect, fn, screen, userEvent } from '@storybook/test'
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Center, Flex, GlobalNavigation, Icon, type INavigationCreateProps, Space } from 'src/components'
 import { Badge } from 'src/components/data-display/Badge/Badge'
 import {
@@ -1178,5 +1178,51 @@ export const MPWithoutCustomSizeLogo: Story = {
       alt: 'avatar',
     },
     showSuiteLogo: true,
+  },
+}
+
+export const MPWithNavSwitcherTour: Story = {
+  render: () => {
+    const [open, setOpen] = useState<boolean>(false)
+
+    const navigationButtonItemOptions = {
+      label: 'Sign Out of mParticle',
+      onClick: () => {
+        alert('Signout!')
+      },
+    }
+
+    const mpLogoWithTour: IGlobalNavigationLogo = {
+      label: 'Data Platform',
+      icon: 'catalog',
+      type: 'background-solid',
+      onSuiteLogoClick: () => {
+        setOpen(currentOpen => !currentOpen)
+      },
+      navSwitcherTourOptions: {
+        open,
+        onClose: () => {
+          setOpen(false)
+        },
+      },
+    }
+
+    return (
+      <div style={{ width: 800 }}>
+        <GlobalNavigation
+          onSearchClick={() => {
+            alert('Searching!')
+          }}
+          logo={mpLogoWithTour}
+          tools={mpTools}
+          management={mpManagement}
+          orgs={mpOrgs}
+          onMpHomeClick={() => {
+            alert('going to overview map')
+          }}
+          navigationButtonItemOptions={navigationButtonItemOptions}
+        />
+      </div>
+    )
   },
 }
