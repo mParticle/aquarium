@@ -1200,7 +1200,7 @@ export const MPWithNavSwitcherTour: Story = {
         setOpen(currentOpen => !currentOpen)
       },
       navSwitcherTourOptions: {
-        isOpen: open,
+        open,
         onClose: () => {
           setOpen(false)
         },

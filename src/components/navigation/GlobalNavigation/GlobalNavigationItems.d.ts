@@ -50,7 +50,7 @@ export interface IMiniMapOptions {
 }
 
 export interface INavSwitcherTourOptions extends ITourProps {
-  isOpen: boolean
+  open: boolean
   onClose: () => void
   title?: string
   description?: string

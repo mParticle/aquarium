@@ -80,7 +80,7 @@ export function SuiteLogo({
 
     return (
       <>
-        <Tour mask={false} type="primary" steps={navSwitcherStep} open={props.isOpen} onClose={props.onClose} />
+        <Tour mask={false} type="primary" steps={navSwitcherStep} {...props} />
       </>
     )
   }
