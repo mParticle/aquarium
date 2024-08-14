@@ -1,4 +1,5 @@
 import type { ReactNode, type MouseEvent, ReactElement } from 'react'
+import { type ITourProps } from 'src/components'
 import { type HrefOptions } from 'src/utils/utils'
 import { type Icons } from 'src/constants/Icons'
 
@@ -48,7 +49,9 @@ export interface IMiniMapOptions {
   activeLink: MiniMapLinks
 }
 
-export interface INavSwitcherTourOptions {
+export interface INavSwitcherTourOptions extends ITourProps {
   isOpen: boolean
   onClose: () => void
+  title?: string
+  description?: string
 }

@@ -1197,7 +1197,7 @@ export const MPWithNavSwitcherTour: Story = {
       icon: 'catalog',
       type: 'background-solid',
       onSuiteLogoClick: () => {
-        setOpen(!open)
+        setOpen(currentOpen => !currentOpen)
       },
       navSwitcherTourOptions: {
         isOpen: open,

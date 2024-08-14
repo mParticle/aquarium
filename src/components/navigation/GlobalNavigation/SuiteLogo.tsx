@@ -68,8 +68,8 @@ export function SuiteLogo({
 
     const navSwitcherStep: ITourProps['steps'] = [
       {
-        title: DefaultTitle,
-        description: DefaultDescription,
+        title: props.title ?? DefaultTitle,
+        description: props.description ?? DefaultDescription,
         placement: DefaultPlacement,
         target: () => logoRef.current,
         nextButtonProps: {
