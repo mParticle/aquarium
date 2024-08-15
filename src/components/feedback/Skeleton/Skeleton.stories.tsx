@@ -249,7 +249,7 @@ export const ExampleList: Story = {
                   ? [
                       <IconText icon={<Icon name="alicorn"></Icon>} text="156" key="list-vertical-star-o" />,
                       <IconText icon={<Icon name="users" />} text="156" key="list-vertical-like-o" />,
-                      <IconText icon={<Icon name="gear" />} text="2" key="list-vertical-message" />,
+                      <IconText icon={<Icon name="setup" />} text="2" key="list-vertical-message" />,
                     ]
                   : undefined
               }

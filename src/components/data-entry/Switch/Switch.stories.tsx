@@ -121,8 +121,8 @@ export const ExampleTextAndIcon: Story = {
           <Switch checkedChildren="Checked Text" unCheckedChildren="Unchecked Text" defaultChecked />
           <Switch checkedChildren="1" unCheckedChildren="0" />
           <Switch
-            checkedChildren={<Icon name="check" />}
-            unCheckedChildren={<Icon name="messageQuestion" />}
+            checkedChildren={<Icon name="selected" />}
+            unCheckedChildren={<Icon name="support" />}
             defaultChecked
           />
         </Space>

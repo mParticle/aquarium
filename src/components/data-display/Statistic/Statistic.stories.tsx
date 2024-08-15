@@ -37,9 +37,9 @@ const meta: Meta<typeof Statistic> = {
       control: 'select',
       options: ['check', 'alicorn', 'wrench'],
       mapping: {
-        check: <Icon name="check" />,
+        check: <Icon name="selected" />,
         alicorn: <Icon name="alicorn" />,
-        wrench: <Icon name="wrench" />,
+        wrench: <Icon name="setup" />,
       },
     },
     suffix: {
@@ -96,7 +96,7 @@ export const CustomPrecision: Story = {
 
 export const CustomPrefix: Story = {
   args: {
-    prefix: <Icon name="check" />,
+    prefix: <Icon name="selected" />,
   },
 }
 
@@ -194,7 +194,7 @@ export const ExampleWithCard: Story = {
                 value={9.3}
                 precision={2}
                 valueStyle={{ color: ColorError }}
-                prefix={<Icon name="wrench" />}
+                prefix={<Icon name="setup" />}
                 suffix="%"
               />
             </Card>

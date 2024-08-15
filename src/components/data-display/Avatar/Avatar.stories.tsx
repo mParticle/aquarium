@@ -37,7 +37,7 @@ const meta: Meta<typeof Avatar> = {
       options: ['Users', 'Sparkles'],
       mapping: {
         Users: <Icon name="users" />,
-        Sparkles: <Icon name="sparkles" />,
+        Sparkles: <Icon name="predictions" variant="duo-tone" />,
       },
     },
   },
