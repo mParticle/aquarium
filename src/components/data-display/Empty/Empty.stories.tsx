@@ -55,7 +55,7 @@ export const NoImage: Story = {
 export const AltImage: Story = {
   args: {
     image: Empty.PRESENTED_IMAGE_SIMPLE,
-    imageStyle: { width: '100px', height: '62px', margin: 'auto' },
+    imageStyle: { width: '100px', height: '62px' },
   },
 }
 
