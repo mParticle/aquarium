@@ -6,6 +6,7 @@ import { Badge } from 'src/components/data-display/Badge/Badge'
 import {
   type IGlobalNavigationItem,
   type IGlobalNavigationLogo,
+  type IMiniMapOptions,
 } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { generateOrgs } from 'src/components/navigation/GlobalNavigation/stories-utils'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'
@@ -1207,6 +1208,26 @@ export const MPWithNavSwitcherTour: Story = {
       },
     }
 
+    const minimapOptions: IMiniMapOptions = {
+      overviewHref: '/',
+      onLinkClick: link => {
+        alert(link.href)
+      },
+      onUnauthorizedClick: link => {
+        alert(`unauthorized ${link?.href} `)
+      },
+      unauthorizedLinks: ['dataPlatform'],
+      activeLink: 'oversight',
+      links: [
+        { linkId: 'oversight', href: '/oversight' },
+        { linkId: 'dataPlatform', href: '/data-platform' },
+        { linkId: 'customer360', href: '/customer-360' },
+        { linkId: 'predictions', href: '/predictions' },
+        { linkId: 'analytics', href: '/analytics' },
+        { linkId: 'segmentation', href: '/segmentation' },
+      ],
+    }
+
     return (
       <div style={{ width: 800 }}>
         <GlobalNavigation
@@ -1221,6 +1242,7 @@ export const MPWithNavSwitcherTour: Story = {
             alert('going to overview map')
           }}
           navigationButtonItemOptions={navigationButtonItemOptions}
+          minimapOptions={minimapOptions}
         />
       </div>
     )

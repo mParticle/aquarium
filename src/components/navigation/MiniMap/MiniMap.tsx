@@ -2,7 +2,6 @@ import 'src/styles/_variables.css'
 import './miniMap.css'
 import React from 'react'
 import { Button, ConfigProvider } from 'src/components'
-import Logo from 'src/assets/svg/mp-logo-wordmark.svg?react'
 import { minimap } from './minimap-svg'
 import { Flex } from 'src/components/layout/Flex/Flex'
 import { type ISvgLink, SvgLinker } from 'src/components/navigation/MiniMap/SvgLinker'
@@ -33,15 +32,14 @@ const Minimap = (props: IMiniMapProps) => {
 
   return (
     <ConfigProvider>
-      <div className="u-padding-sm">
+      <div className="u-padding-xxs">
         <Flex align="normal" component="div" flex="0 1 auto" gap="small" justify="stretch" vertical wrap="nowrap">
-          <Flex align="center" justify="space-between">
-            <Logo />
-            <Button href={props.overviewHref || '/'}>Go to overview</Button>
-          </Flex>
           <SvgLinker links={svgLinks} onLinkClick={handleLinkClick}>
             {minimap}
           </SvgLinker>
+          <Flex align="center" justify="end">
+            <Button href={props.overviewHref || '/'}>Go to overview</Button>
+          </Flex>
         </Flex>
       </div>
     </ConfigProvider>

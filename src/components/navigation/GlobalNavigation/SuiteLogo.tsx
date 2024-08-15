@@ -1,15 +1,22 @@
-import React, { type ReactNode, useRef } from 'react'
-import { Center, Icon, type ITourProps, Tour } from 'src/components'
+import React, { type ReactNode, useRef, useState } from 'react'
+import { Center, Icon, type ITourProps, Popover, Tour } from 'src/components'
 import { NavigationIcon } from 'src/components/navigation/GlobalNavigation/NavigationIcon'
+import MiniMap from 'src/components/navigation/MiniMap/MiniMap'
 import { type Icons } from 'src/constants/Icons'
 import {
   type IGlobalNavigationLogo,
+  type IMiniMapOptions,
   type INavSwitcherTourOptions,
+  type MiniMapLink,
 } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IconColor } from 'src/components/general/Icon/Icon'
 
 // custom-size is the default size to prevent breaking changes.
 type IconColorOptions = 'default' | 'background-solid' | 'custom-size'
+
+interface SuiteLogoProps extends IGlobalNavigationLogo {
+  minimapOptions?: IMiniMapOptions
+}
 
 function isStringIcon(icon: ReactNode | string): icon is keyof typeof Icons {
   return typeof icon === 'string'
@@ -21,17 +28,67 @@ export function SuiteLogo({
   type = 'custom-size',
   onSuiteLogoClick,
   navSwitcherTourOptions,
-}: IGlobalNavigationLogo) {
+  minimapOptions,
+}: SuiteLogoProps) {
   const logoRef = useRef(null)
 
+  if (!minimapOptions || navSwitcherTourOptions?.open) {
+    return <SuiteLogoContent />
+  }
+
   return (
-    <>
-      <div ref={logoRef}>
-        {renderNavLogo()}
-        {navSwitcherTourOptions && renderNavTour(navSwitcherTourOptions)}
-      </div>
-    </>
+    <MinimapWithPopover
+      onUnauthorizedClick={minimapOptions.onUnauthorizedClick}
+      overviewHref={minimapOptions.overviewHref}
+      links={minimapOptions.links}
+      onLinkClick={minimapOptions.onLinkClick}
+      unauthorizedLinks={minimapOptions.unauthorizedLinks}
+      activeLink={minimapOptions.activeLink}
+    />
   )
+
+  function SuiteLogoContent() {
+    return (
+      <>
+        <div ref={logoRef}>
+          {renderNavLogo()}
+          {navSwitcherTourOptions && renderNavTour(navSwitcherTourOptions)}
+        </div>
+      </>
+    )
+  }
+
+  function MinimapWithPopover(props: IMiniMapOptions) {
+    const [isPopoverOpen, setIsPopoverOpen] = useState(false)
+    const handleLinkClick = (link: MiniMapLink) => {
+      setIsPopoverOpen(false)
+      props.onLinkClick(link)
+    }
+    const handlePopoverOpenChange = (newPopoverState: boolean) => {
+      setIsPopoverOpen(newPopoverState)
+    }
+
+    return (
+      <Popover
+        content={
+          <MiniMap
+            overviewHref={props.overviewHref}
+            onUnauthorizedClick={props.onUnauthorizedClick}
+            links={props.links}
+            onLinkClick={handleLinkClick}
+            unauthorizedLinks={props.unauthorizedLinks}
+            activeLink={props.activeLink}
+          />
+        }
+        placement="bottomLeft"
+        open={isPopoverOpen}
+        trigger="hover"
+        onOpenChange={handlePopoverOpenChange}
+        arrow={false}>
+        <SuiteLogoContent />
+      </Popover>
+    )
+  }
 
   function renderNavLogo() {
     const classMap = {
