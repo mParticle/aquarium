@@ -1,3 +1,9 @@
+# [1.28.0](https://github.com/mParticle/aquarium/compare/v1.27.0...v1.28.0) (2024-08-15)
+
+### Features
+
+- move minimap to suite logo ([#369](https://github.com/mParticle/aquarium/issues/369)) ([f2d2437](https://github.com/mParticle/aquarium/commit/f2d2437dfe777e5c1db75346913448513581b3b5))
+
 # [1.27.0](https://github.com/mParticle/aquarium/compare/v1.26.0...v1.27.0) (2024-08-14)
 
 ### Bug Fixes
