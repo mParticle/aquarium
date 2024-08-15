@@ -1,11 +1,12 @@
-import React, { type ReactNode, useState } from 'react'
-import { Center, Icon, Popover } from 'src/components'
+import React, { type ReactNode, useRef, useState } from 'react'
+import { Center, Icon, type ITourProps, Popover, Tour } from 'src/components'
 import { NavigationIcon } from 'src/components/navigation/GlobalNavigation/NavigationIcon'
 import MiniMap from 'src/components/navigation/MiniMap/MiniMap'
 import { type Icons } from 'src/constants/Icons'
 import {
   type IGlobalNavigationLogo,
   type IMiniMapOptions,
+  type INavSwitcherTourOptions,
   type MiniMapLink,
 } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IconColor } from 'src/components/general/Icon/Icon'
@@ -21,9 +22,17 @@ function isStringIcon(icon: ReactNode | string): icon is keyof typeof Icons {
   return typeof icon === 'string'
 }
 
-export function SuiteLogo({ icon, label, type = 'custom-size', onSuiteLogoClick, minimapOptions }: SuiteLogoProps) {
-  // TODO: || navSwitcherTourOptions?.isOpen
-  if (!minimapOptions) {
+export function SuiteLogo({
+  icon,
+  label,
+  type = 'custom-size',
+  onSuiteLogoClick,
+  navSwitcherTourOptions,
+  minimapOptions,
+}: SuiteLogoProps) {
+  const logoRef = useRef(null)
+
+  if (!minimapOptions || navSwitcherTourOptions?.open) {
     return <SuiteLogoContent />
   }
 
@@ -39,7 +48,14 @@ export function SuiteLogo({ icon, label, type = 'custom-size', onSuiteLogoClick,
   )
 
   function SuiteLogoContent() {
-    return <>{renderNavLogo()}</>
+    return (
+      <>
+        <div ref={logoRef}>
+          {renderNavLogo()}
+          {navSwitcherTourOptions && renderNavTour(navSwitcherTourOptions)}
+        </div>
+      </>
+    )
   }
 
   function MinimapWithPopover(props: IMiniMapOptions) {
@@ -99,6 +115,30 @@ export function SuiteLogo({ icon, label, type = 'custom-size', onSuiteLogoClick,
         <NavigationIcon icon={getIcon()} label="" hideLabel className={classMap[type]} />
         {label}
       </Center>
+    )
+  }
+
+  function renderNavTour(props: INavSwitcherTourOptions) {
+    const DefaultTitle = 'Navigate mParticle effortlessly!' as const
+    const DefaultDescription = 'Switch between product suites anytime using this selector.' as const
+    const DefaultPlacement = 'right' as const
+
+    const navSwitcherStep: ITourProps['steps'] = [
+      {
+        title: props.title ?? DefaultTitle,
+        description: props.description ?? DefaultDescription,
+        placement: DefaultPlacement,
+        target: () => logoRef.current,
+        nextButtonProps: {
+          children: 'Close',
+        },
+      },
+    ]
+
+    return (
+      <>
+        <Tour mask={false} type="primary" steps={navSwitcherStep} {...props} />
+      </>
     )
   }
 }

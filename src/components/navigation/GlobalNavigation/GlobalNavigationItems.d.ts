@@ -1,4 +1,5 @@
 import type { ReactNode, type MouseEvent, ReactElement } from 'react'
+import { type ITourProps } from 'src/components'
 import { type HrefOptions } from 'src/utils/utils'
 import { type Icons } from 'src/constants/Icons'
 
@@ -14,6 +15,7 @@ export interface IGlobalNavigationLogo extends IBaseGlobalNavigationItem {
   onSuiteLogoClick: () => void
   type?: 'default' | 'background-solid' | 'custom-size'
   icon?: ReactElement | keyof typeof Icons
+  navSwitcherTourOptions?: INavSwitcherTourOptions
 }
 
 export interface IGlobalNavigationMenu extends IBaseGlobalNavigationItem {
@@ -45,4 +47,11 @@ export interface IMiniMapOptions {
   onUnauthorizedClick?: (link?: MiniMapLink) => void
   unauthorizedLinks?: MiniMapLinks[]
   activeLink: MiniMapLinks
+}
+
+export interface INavSwitcherTourOptions extends ITourProps {
+  open: boolean
+  onClose: () => void
+  title?: string
+  description?: string
 }

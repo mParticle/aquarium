@@ -1,16 +1,23 @@
-import { type IWorkspaceSelectorDisplayItem } from 'src/components'
+import { type IWorkspaceSelectorDisplayItem, List } from 'src/components'
+import VirtualList from 'rc-virtual-list'
 
 type WorkspaceSelectorContentItemsProps = {
   menuItems: IWorkspaceSelectorDisplayItem[]
 }
+
+const CONTAINER_HEIGHT = 324
+const ITEM_HEIGHT = 20
+
 export function WorkspaceSelectorContentItems({ menuItems }: WorkspaceSelectorContentItemsProps) {
   return (
-    <ul className="workspaceSelector__itemsList">
-      {menuItems.map(item => (
-        <li key={item.key} className={item.className} onClick={item.onClick}>
-          {item.label}
-        </li>
-      ))}
-    </ul>
+    <List className="workspaceSelector__itemsList">
+      <VirtualList data={menuItems} height={CONTAINER_HEIGHT} itemHeight={ITEM_HEIGHT} itemKey="key">
+        {item => (
+          <li key={item.key} className={item.className} onClick={item.onClick}>
+            {item.label}
+          </li>
+        )}
+      </VirtualList>
+    </List>
   )
 }
