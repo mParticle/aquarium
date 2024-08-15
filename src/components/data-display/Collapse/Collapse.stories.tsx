@@ -339,7 +339,7 @@ export const ExampleExtraNode: Story = {
           // If you don't want click extra trigger collapse, you can prevent this:
           event.stopPropagation()
         }}>
-        <Icon name="gear" />
+        <Icon name="settings" />
       </span>
     )
 
