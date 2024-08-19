@@ -1,11 +1,12 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { expect, fn, screen, userEvent } from '@storybook/test'
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Center, Flex, GlobalNavigation, Icon, type INavigationCreateProps, Space } from 'src/components'
 import { Badge } from 'src/components/data-display/Badge/Badge'
 import {
   type IGlobalNavigationItem,
   type IGlobalNavigationLogo,
+  type IMiniMapOptions,
 } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { generateOrgs } from 'src/components/navigation/GlobalNavigation/stories-utils'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'
@@ -1178,5 +1179,72 @@ export const MPWithoutCustomSizeLogo: Story = {
       alt: 'avatar',
     },
     showSuiteLogo: true,
+  },
+}
+
+export const MPWithNavSwitcherTour: Story = {
+  render: () => {
+    const [open, setOpen] = useState<boolean>(false)
+
+    const navigationButtonItemOptions = {
+      label: 'Sign Out of mParticle',
+      onClick: () => {
+        alert('Signout!')
+      },
+    }
+
+    const mpLogoWithTour: IGlobalNavigationLogo = {
+      label: 'Data Platform',
+      icon: 'catalog',
+      type: 'background-solid',
+      onSuiteLogoClick: () => {
+        setOpen(currentOpen => !currentOpen)
+      },
+      navSwitcherTourOptions: {
+        open,
+        onClose: () => {
+          setOpen(false)
+        },
+      },
+    }
+
+    const minimapOptions: IMiniMapOptions = {
+      overviewHref: '/',
+      onLinkClick: link => {
+        alert(link.href)
+      },
+      onUnauthorizedClick: link => {
+        alert(`unauthorized ${link?.href} `)
+      },
+      unauthorizedLinks: ['dataPlatform'],
+      activeLink: 'oversight',
+      links: [
+        { linkId: 'oversight', href: '/oversight' },
+        { linkId: 'dataPlatform', href: '/data-platform' },
+        { linkId: 'customer360', href: '/customer-360' },
+        { linkId: 'predictions', href: '/predictions' },
+        { linkId: 'analytics', href: '/analytics' },
+        { linkId: 'segmentation', href: '/segmentation' },
+      ],
+    }
+
+    return (
+      <div style={{ width: 800 }}>
+        <GlobalNavigation
+          onSearchClick={() => {
+            alert('Searching!')
+          }}
+          logo={mpLogoWithTour}
+          tools={mpTools}
+          management={mpManagement}
+          orgs={mpOrgs}
+          onMpHomeClick={() => {
+            alert('going to overview map')
+          }}
+          navigationButtonItemOptions={navigationButtonItemOptions}
+          minimapOptions={minimapOptions}
+        />
+      </div>
+    )
   },
 }
