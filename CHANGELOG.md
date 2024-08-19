@@ -1,8 +1,10 @@
-# [1.28.0](https://github.com/mParticle/aquarium/compare/v1.27.0...v1.28.0) (2024-08-15)
+## [1.27.1-fix-icons-name.1](https://github.com/mParticle/aquarium/compare/v1.27.0...v1.27.1-fix-icons-name.1) (2024-08-15)
 
-### Features
+### Bug Fixes
 
-- move minimap to suite logo ([#369](https://github.com/mParticle/aquarium/issues/369)) ([f2d2437](https://github.com/mParticle/aquarium/commit/f2d2437dfe777e5c1db75346913448513581b3b5))
+- icons rename ([d4bc4db](https://github.com/mParticle/aquarium/commit/d4bc4db9c27c641820afb3b650cb74ac527fc61f))
+- icons rename some icons ([8e3d310](https://github.com/mParticle/aquarium/commit/8e3d310f1bf34ab06d802b03de7004d8b7cdb78f))
+- update deprecated icons ([a84954d](https://github.com/mParticle/aquarium/commit/a84954d5cdbb682efa280552d6c8d4b63147f671))
 
 # [1.27.0](https://github.com/mParticle/aquarium/compare/v1.26.0...v1.27.0) (2024-08-14)
 
