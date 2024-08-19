@@ -91,7 +91,7 @@ export const Icons: Record<IconNames, IconOptions> = {
   chartColumn: {
     light: ChartColumnIcon,
     default: 'light',
-    deprecated: 'this icon is not used anymore',
+    deprecated: 'trends',
   },
   chartLine: {
     light: ChartLineIcon,
@@ -132,12 +132,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   connections: {
     light: ConnectionsIcon,
     default: 'light',
-    deprecated: 'this icon is not used anymore',
   },
   database: {
     light: DatabaseIcon,
     default: 'light',
-    deprecated: 'this icon is not used anymore',
   },
   dsr: {
     light: DsrIcon,

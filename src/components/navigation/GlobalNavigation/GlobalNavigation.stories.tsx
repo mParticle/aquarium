@@ -25,7 +25,7 @@ const defaultTools: IGlobalNavigationItem[] = [
   {
     label: 'Tool 1',
     isActive: true,
-    icon: <Icon name="shieldKeyhole" />,
+    icon: <Icon name="privacy" />,
     type: 'menu',
     children: [
       { label: 'option 1', hrefOptions: { href: '/' } },
@@ -898,7 +898,7 @@ const cortexTools: IGlobalNavigationItem[] = [
   },
   {
     label: 'Insights',
-    icon: <Icon name="lightBulb" />,
+    icon: <Icon name="insights" />,
     hrefOptions: { href: '/' },
   },
 ]

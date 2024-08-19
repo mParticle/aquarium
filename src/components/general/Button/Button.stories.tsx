@@ -131,7 +131,7 @@ export const WithIconDefaultColorSM: Story = {
 
 export const RoundIconButton: Story = {
   args: {
-    icon: <Icon name="siteMap" size="xl" />,
+    icon: <Icon name="dataPlatform" size="xl" />,
     children: ' ',
     type: 'default',
     shape: 'round',
