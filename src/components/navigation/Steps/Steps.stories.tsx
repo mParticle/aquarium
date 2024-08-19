@@ -185,7 +185,7 @@ export const ExampleIcon: Story = {
             {
               title: 'Verification',
               status: 'finish',
-              icon: <Icon name="gear" />,
+              icon: <Icon name="settings" />,
             },
             {
               title: 'Pay',
@@ -195,7 +195,7 @@ export const ExampleIcon: Story = {
             {
               title: 'Done',
               status: 'wait',
-              icon: <Icon name="check" size="sm" />,
+              icon: <Icon name="selected" size="sm" />,
             },
           ]}
         />

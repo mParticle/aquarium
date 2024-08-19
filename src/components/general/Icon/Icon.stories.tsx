@@ -24,7 +24,7 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
     return (
       <Flex vertical align="center" key={iconName}>
         <Icon name={iconName} size={size} color={color} variant={variant} />
-        <p style={{ fontFamily: 'monospace', ...textStyle }}>
+        <p style={{ fontFamily: 'monospace', textAlign: 'center', ...textStyle }}>
           {isDeprecated ? 'deprecated ' : ''}
           {iconName}
         </p>
@@ -45,7 +45,8 @@ The \`IconTable\` component is used to display a table of all available icons in
 - \`variant\`: The variant of the icon. Available options are \`light\` and \`duo-tone\`.
 
 #### Updating Icons
-To update the icons:
+
+The icon SVG and icon name are provided by the Design team. and the svg must be minified.
 
 1. **Add New Icons**: Add the new icon SVGs to the \`src/constants/Icons\` directory. The icons should be curated by Design and the svg must be minified. 
 2. **Update Icon Constants**: Update the \`Icons\` object in \`src/constants/Icons\` to include the new icons.
