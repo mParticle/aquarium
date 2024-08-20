@@ -71,7 +71,7 @@
 }
 
 .icon-color-default {
-  color: var(--color-icon);
+  color: var(--mp-color-icon-strong);
 }
 
 .icon-color-brand {
