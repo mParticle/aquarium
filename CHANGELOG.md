@@ -1,3 +1,11 @@
+## [1.28.1](https://github.com/mParticle/aquarium/compare/v1.28.0...v1.28.1) (2024-08-20)
+
+### Bug Fixes
+
+- add current color fill to icon ([#374](https://github.com/mParticle/aquarium/issues/374)) ([12c698c](https://github.com/mParticle/aquarium/commit/12c698c174d0862e9b6809d1c56519649dfc158e))
+- rename icons ([#364](https://github.com/mParticle/aquarium/issues/364)) ([223c47d](https://github.com/mParticle/aquarium/commit/223c47dbb8b7592024b3c38fc70ae5f504870b56))
+- update design tokens ([#375](https://github.com/mParticle/aquarium/issues/375)) ([e818591](https://github.com/mParticle/aquarium/commit/e818591210d161056febe306a997b0d394178750))
+
 # [1.28.0](https://github.com/mParticle/aquarium/compare/v1.27.0...v1.28.0) (2024-08-15)
 
 ### Features
