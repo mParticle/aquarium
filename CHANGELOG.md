@@ -1,3 +1,54 @@
+## [1.28.1](https://github.com/mParticle/aquarium/compare/v1.28.0...v1.28.1) (2024-08-20)
+
+### Bug Fixes
+
+- add current color fill to icon ([#374](https://github.com/mParticle/aquarium/issues/374)) ([12c698c](https://github.com/mParticle/aquarium/commit/12c698c174d0862e9b6809d1c56519649dfc158e))
+- rename icons ([#364](https://github.com/mParticle/aquarium/issues/364)) ([223c47d](https://github.com/mParticle/aquarium/commit/223c47dbb8b7592024b3c38fc70ae5f504870b56))
+- update design tokens ([#375](https://github.com/mParticle/aquarium/issues/375)) ([e818591](https://github.com/mParticle/aquarium/commit/e818591210d161056febe306a997b0d394178750))
+
+# [1.28.0](https://github.com/mParticle/aquarium/compare/v1.27.0...v1.28.0) (2024-08-15)
+
+### Features
+
+- move minimap to suite logo ([#369](https://github.com/mParticle/aquarium/issues/369)) ([f2d2437](https://github.com/mParticle/aquarium/commit/f2d2437dfe777e5c1db75346913448513581b3b5))
+
+# [1.27.0](https://github.com/mParticle/aquarium/compare/v1.26.0...v1.27.0) (2024-08-14)
+
+### Bug Fixes
+
+- add width auto to be able to manage the wdith from the component ([#368](https://github.com/mParticle/aquarium/issues/368)) ([b47c45f](https://github.com/mParticle/aquarium/commit/b47c45f029f49428eb22576971d2e6299ab9acc7))
+- icon color not changing on button hover ([#363](https://github.com/mParticle/aquarium/issues/363)) ([aa07067](https://github.com/mParticle/aquarium/commit/aa07067eecca986208a9b7ff4737077193c83d41))
+- improve workspace selector performace ([#370](https://github.com/mParticle/aquarium/issues/370)) ([590e231](https://github.com/mParticle/aquarium/commit/590e231fb7b086530fd23eaa70986bfb6eca48b0))
+- update empty component ([#371](https://github.com/mParticle/aquarium/issues/371)) ([655e252](https://github.com/mParticle/aquarium/commit/655e2527b06c55cda2b18af889d143b0ceacad3d))
+
+### Features
+
+- add overview dt icon ([#362](https://github.com/mParticle/aquarium/issues/362)) ([78d7854](https://github.com/mParticle/aquarium/commit/78d7854eec0b7ad0762aa95dd7310d187102e12b))
+- update SuiteLogo in GlobalNav to render nav switcher Tour ([#367](https://github.com/mParticle/aquarium/issues/367)) ([a3920af](https://github.com/mParticle/aquarium/commit/a3920afb53ea5af159ea66d5394f35baf3b7be48))
+
+# [1.27.0-global-nav-switcher-tour-component.1](https://github.com/mParticle/aquarium/compare/v1.26.0...v1.27.0-global-nav-switcher-tour-component.1) (2024-08-13)
+
+### Bug Fixes
+
+- add width auto to be able to manage the wdith from the component ([#368](https://github.com/mParticle/aquarium/issues/368)) ([b47c45f](https://github.com/mParticle/aquarium/commit/b47c45f029f49428eb22576971d2e6299ab9acc7))
+- icon color not changing on button hover ([#363](https://github.com/mParticle/aquarium/issues/363)) ([aa07067](https://github.com/mParticle/aquarium/commit/aa07067eecca986208a9b7ff4737077193c83d41))
+
+### Features
+
+- add overview dt icon ([#362](https://github.com/mParticle/aquarium/issues/362)) ([78d7854](https://github.com/mParticle/aquarium/commit/78d7854eec0b7ad0762aa95dd7310d187102e12b))
+- update SuiteLogo to render nav switcher tour ([6098374](https://github.com/mParticle/aquarium/commit/609837455f3f8c3014b9cd007b5efab9d096ff63))
+
+# [1.26.0](https://github.com/mParticle/aquarium/compare/v1.25.1...v1.26.0) (2024-08-07)
+
+### Bug Fixes
+
+- make the workspace-selector label smaller ([#359](https://github.com/mParticle/aquarium/issues/359)) ([05c4338](https://github.com/mParticle/aquarium/commit/05c4338469c0ba21ae72a935f4823b3eb69f1fb9))
+- Revert design tokens update ([#361](https://github.com/mParticle/aquarium/issues/361)) ([cd9dbc9](https://github.com/mParticle/aquarium/commit/cd9dbc9512b8a74bbdf9b7e6b5cf8df54ff4e624))
+
+### Features
+
+- add variants to icons ([#355](https://github.com/mParticle/aquarium/issues/355)) ([1112674](https://github.com/mParticle/aquarium/commit/1112674e6e5649229f3c9028a94f2115c97a1f8c))
+
 ## [1.25.1](https://github.com/mParticle/aquarium/compare/v1.25.0...v1.25.1) (2024-08-06)
 
 # [1.25.0](https://github.com/mParticle/aquarium/compare/v1.24.0...v1.25.0) (2024-08-06)

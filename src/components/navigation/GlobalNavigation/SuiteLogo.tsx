@@ -1,41 +1,144 @@
-import React, { ReactElement, ReactNode } from 'react'
-import { Center, Icon } from 'src/components'
+import React, { type ReactNode, useRef, useState } from 'react'
+import { Center, Icon, type ITourProps, Popover, Tour } from 'src/components'
 import { NavigationIcon } from 'src/components/navigation/GlobalNavigation/NavigationIcon'
-import { Icons } from 'src/constants/Icons'
-import { type IGlobalNavigationLogo } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
-import { IconColor } from 'src/components/general/Icon/Icon'
+import MiniMap from 'src/components/navigation/MiniMap/MiniMap'
+import { type Icons } from 'src/constants/Icons'
+import {
+  type IGlobalNavigationLogo,
+  type IMiniMapOptions,
+  type INavSwitcherTourOptions,
+  type MiniMapLink,
+} from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
+import { type IconColor } from 'src/components/general/Icon/Icon'
 
 // custom-size is the default size to prevent breaking changes.
 type IconColorOptions = 'default' | 'background-solid' | 'custom-size'
+
+interface SuiteLogoProps extends IGlobalNavigationLogo {
+  minimapOptions?: IMiniMapOptions
+}
 
 function isStringIcon(icon: ReactNode | string): icon is keyof typeof Icons {
   return typeof icon === 'string'
 }
 
-export function SuiteLogo({ icon, label, type = 'custom-size', onSuiteLogoClick }: IGlobalNavigationLogo) {
-  const classMap = {
-    default: '',
-    'custom-size': 'globalNavigation__icon--suiteLogo',
-    'background-solid': 'globalNavigation__icon--suiteBackground',
-  }
+export function SuiteLogo({
+  icon,
+  label,
+  type = 'custom-size',
+  onSuiteLogoClick,
+  navSwitcherTourOptions,
+  minimapOptions,
+}: SuiteLogoProps) {
+  const logoRef = useRef(null)
 
-  const iconColorMap: { [key in IconColorOptions]: IconColor } = {
-    default: 'default',
-    'background-solid': 'brand',
-    'custom-size': 'default',
-  }
-
-  const getIcon = () => {
-    if (isStringIcon(icon)) {
-      return <Icon name={icon} color={iconColorMap[type]} size="xl" />
-    }
-    return icon
+  if (!minimapOptions || navSwitcherTourOptions?.open) {
+    return <SuiteLogoContent />
   }
 
   return (
-    <Center vertical className="globalNavigation__suiteLogo" onClick={onSuiteLogoClick}>
-      <NavigationIcon icon={getIcon()} label="" hideLabel className={classMap[type]} />
-      {label}
-    </Center>
+    <MinimapWithPopover
+      onUnauthorizedClick={minimapOptions.onUnauthorizedClick}
+      overviewHref={minimapOptions.overviewHref}
+      links={minimapOptions.links}
+      onLinkClick={minimapOptions.onLinkClick}
+      unauthorizedLinks={minimapOptions.unauthorizedLinks}
+      activeLink={minimapOptions.activeLink}
+    />
   )
+
+  function SuiteLogoContent() {
+    return (
+      <>
+        <div ref={logoRef}>
+          {renderNavLogo()}
+          {navSwitcherTourOptions && renderNavTour(navSwitcherTourOptions)}
+        </div>
+      </>
+    )
+  }
+
+  function MinimapWithPopover(props: IMiniMapOptions) {
+    const [isPopoverOpen, setIsPopoverOpen] = useState(false)
+    const handleLinkClick = (link: MiniMapLink) => {
+      setIsPopoverOpen(false)
+      props.onLinkClick(link)
+    }
+    const handlePopoverOpenChange = (newPopoverState: boolean) => {
+      setIsPopoverOpen(newPopoverState)
+    }
+
+    return (
+      <Popover
+        content={
+          <MiniMap
+            overviewHref={props.overviewHref}
+            onUnauthorizedClick={props.onUnauthorizedClick}
+            links={props.links}
+            onLinkClick={handleLinkClick}
+            unauthorizedLinks={props.unauthorizedLinks}
+            activeLink={props.activeLink}
+          />
+        }
+        placement="bottomLeft"
+        open={isPopoverOpen}
+        trigger="hover"
+        onOpenChange={handlePopoverOpenChange}
+        arrow={false}>
+        <SuiteLogoContent />
+      </Popover>
+    )
+  }
+
+  function renderNavLogo() {
+    const classMap = {
+      default: '',
+      'custom-size': 'globalNavigation__icon--suiteLogo',
+      'background-solid': 'globalNavigation__icon--suiteBackground',
+    }
+
+    const iconColorMap: { [key in IconColorOptions]: IconColor } = {
+      default: 'default',
+      'background-solid': 'brand',
+      'custom-size': 'default',
+    }
+
+    const getIcon = () => {
+      if (isStringIcon(icon)) {
+        return <Icon name={icon} color={iconColorMap[type]} size="xl" />
+      }
+      return icon
+    }
+
+    return (
+      <Center vertical className="globalNavigation__suiteLogo" onClick={onSuiteLogoClick}>
+        <NavigationIcon icon={getIcon()} label="" hideLabel className={classMap[type]} />
+        {label}
+      </Center>
+    )
+  }
+
+  function renderNavTour(props: INavSwitcherTourOptions) {
+    const DefaultTitle = 'Navigate mParticle effortlessly!' as const
+    const DefaultDescription = 'Switch between product suites anytime using this selector.' as const
+    const DefaultPlacement = 'right' as const
+
+    const navSwitcherStep: ITourProps['steps'] = [
+      {
+        title: props.title ?? DefaultTitle,
+        description: props.description ?? DefaultDescription,
+        placement: DefaultPlacement,
+        target: () => logoRef.current,
+        nextButtonProps: {
+          children: 'Close',
+        },
+      },
+    ]
+
+    return (
+      <>
+        <Tour mask={false} type="primary" steps={navSwitcherStep} {...props} />
+      </>
+    )
+  }
 }

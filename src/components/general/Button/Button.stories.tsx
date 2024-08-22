@@ -6,7 +6,7 @@ import React from 'react'
 
 const meta: Meta<typeof Button> = {
   title: 'Aquarium/General/Button',
-  component: props => <Button {...props}>{props.children || 'Button Label'}</Button>,
+  component: props => <Button {...props}>{props.children ?? 'Button Label'}</Button>,
 
   args: {
     block: false,
@@ -121,9 +121,17 @@ export const WithIconSM: Story = {
   },
 }
 
+export const WithIconDefaultColorSM: Story = {
+  args: {
+    type: 'default',
+    icon: <Icon name="mpLogo" size="sm" color="default" />,
+    variant: 'with-new-icon',
+  },
+}
+
 export const RoundIconButton: Story = {
   args: {
-    icon: <Icon name="siteMap" size="xl" />,
+    icon: <Icon name="dataPlatform" size="xl" />,
     children: ' ',
     type: 'default',
     shape: 'round',

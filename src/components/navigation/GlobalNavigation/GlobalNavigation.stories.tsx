@@ -1,11 +1,12 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { expect, fn, screen, userEvent } from '@storybook/test'
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Center, Flex, GlobalNavigation, Icon, type INavigationCreateProps, Space } from 'src/components'
 import { Badge } from 'src/components/data-display/Badge/Badge'
 import {
   type IGlobalNavigationItem,
   type IGlobalNavigationLogo,
+  type IMiniMapOptions,
 } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { generateOrgs } from 'src/components/navigation/GlobalNavigation/stories-utils'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'
@@ -24,7 +25,7 @@ const defaultTools: IGlobalNavigationItem[] = [
   {
     label: 'Tool 1',
     isActive: true,
-    icon: <Icon name="shieldKeyhole" />,
+    icon: <Icon name="privacy" />,
     type: 'menu',
     children: [
       { label: 'option 1', hrefOptions: { href: '/' } },
@@ -34,7 +35,7 @@ const defaultTools: IGlobalNavigationItem[] = [
   },
   {
     label: 'Tool 2',
-    icon: <Icon name="heart" />,
+    icon: <Icon name="favorite" />,
     type: 'menu',
     children: [
       { label: 'option 1', hrefOptions: { href: '/' } },
@@ -53,13 +54,13 @@ const defaultManagement: IGlobalNavigationItem[] = [
   {
     label: 'Notifications',
     hideLabel: true,
-    icon: <Icon name="cloud" />,
+    icon: <Icon name="api" />,
     hrefOptions: { href: '/' },
   },
   {
     label: 'Support',
     hideLabel: true,
-    icon: <Icon name="messageQuestion" />,
+    icon: <Icon name="support" />,
     type: 'menu',
     children: [
       { label: 'option 1', hrefOptions: { href: '/' } },
@@ -70,7 +71,7 @@ const defaultManagement: IGlobalNavigationItem[] = [
   {
     label: 'Settings',
     hideLabel: true,
-    icon: <Icon name="gear" />,
+    icon: <Icon name="settings" />,
     type: 'menu',
     children: [
       { label: 'option 1', hrefOptions: { href: '/' } },
@@ -163,7 +164,7 @@ export const Primary: Story = {
 
 const mpLogo: IGlobalNavigationLogo = {
   label: 'Data Platform',
-  icon: <Icon name="siteMap" />,
+  icon: <Icon name="dataPlatform" />,
   onSuiteLogoClick: () => {
     alert('Going to mP Home!')
   },
@@ -199,7 +200,7 @@ function Beta(label: string) {
 const mpTools: IGlobalNavigationItem[] = [
   {
     label: 'Activity',
-    icon: <Icon name="chartLine" />,
+    icon: <Icon name="trends" />,
     type: 'menu',
     children: [
       { hrefOptions: { href: '/' }, label: 'Platform Trends' },
@@ -251,7 +252,7 @@ const mpTools: IGlobalNavigationItem[] = [
   },
   {
     label: 'Setup',
-    icon: <Icon name="wrench" />,
+    icon: <Icon name="setup" />,
     type: 'menu',
     children: [
       { hrefOptions: { href: '/' }, label: 'Inputs' },
@@ -262,7 +263,7 @@ const mpTools: IGlobalNavigationItem[] = [
   },
   {
     label: 'Directory',
-    icon: <Icon name="grid" />,
+    icon: <Icon name="myHub" />,
     hrefOptions: { href: '/' },
   },
 ]
@@ -272,7 +273,7 @@ const mpManagement: IGlobalNavigationItem[] = [
     isActive: true,
     label: 'Support',
     hideLabel: true,
-    icon: <Icon name="messageQuestion" />,
+    icon: <Icon name="support" />,
     type: 'menu',
     children: [
       { label: 'option 1', hrefOptions: { href: '/' } },
@@ -283,7 +284,7 @@ const mpManagement: IGlobalNavigationItem[] = [
   {
     label: 'Settings',
     hideLabel: true,
-    icon: <Icon name="gear" />,
+    icon: <Icon name="settings" />,
     type: 'menu',
     children: [
       { hrefOptions: { href: '/' }, label: 'Platform Settings' },
@@ -546,13 +547,13 @@ const indLogo: IGlobalNavigationLogo = {
 const indTools: IGlobalNavigationItem[] = [
   {
     label: 'My Hub',
-    icon: <Icon name="grid" />,
+    icon: <Icon name="myHub" />,
     isActive: true,
     hrefOptions: { href: '/' },
   },
   {
     label: 'Saved',
-    icon: <Icon name="folderClosed" />,
+    icon: <Icon name="savedProjects" />,
     hrefOptions: { href: '/' },
   },
   {
@@ -566,7 +567,7 @@ const indManagement: IGlobalNavigationItem[] = [
   {
     label: 'Support',
     hideLabel: true,
-    icon: <Icon name="messageQuestion" />,
+    icon: <Icon name="support" />,
     type: 'menu',
     children: [
       { label: 'option 1', hrefOptions: { href: '/' } },
@@ -577,7 +578,7 @@ const indManagement: IGlobalNavigationItem[] = [
   {
     label: 'Settings',
     hideLabel: true,
-    icon: <Icon name="gear" />,
+    icon: <Icon name="settings" />,
     type: 'menu',
     children: [
       { label: 'option 1', hrefOptions: { href: '/' } },
@@ -866,7 +867,7 @@ export const Indicative: Story = {
 
 const cortexLogo: IGlobalNavigationLogo = {
   label: 'Predictions',
-  icon: 'sparkles',
+  icon: 'predictions',
   type: 'background-solid',
   onSuiteLogoClick: () => {
     alert('Going to Predictions Home!')
@@ -876,12 +877,12 @@ const cortexLogo: IGlobalNavigationLogo = {
 const cortexTools: IGlobalNavigationItem[] = [
   {
     label: 'Pipelines',
-    icon: <Icon name="circleNodes" />,
+    icon: <Icon name="predictions" variant="duo-tone" />,
     hrefOptions: { href: '/' },
   },
   {
     label: 'Projects',
-    icon: <Icon name="split" />,
+    icon: <Icon name="journeys" />,
     hrefOptions: { href: '/' },
     isActive: true,
   },
@@ -892,12 +893,12 @@ const cortexTools: IGlobalNavigationItem[] = [
   },
   {
     label: 'API',
-    icon: <Icon name="cloud" />,
+    icon: <Icon name="predictions" variant="duo-tone" />,
     hrefOptions: { href: '/' },
   },
   {
     label: 'Insights',
-    icon: <Icon name="lightBulb" />,
+    icon: <Icon name="insights" />,
     hrefOptions: { href: '/' },
   },
 ]
@@ -906,7 +907,7 @@ const cortexManagement: IGlobalNavigationItem[] = [
   {
     label: 'Support',
     hideLabel: true,
-    icon: <Icon name="messageQuestion" />,
+    icon: <Icon name="support" />,
     type: 'menu',
     children: [
       { label: 'option 1', hrefOptions: { href: '/' } },
@@ -917,7 +918,7 @@ const cortexManagement: IGlobalNavigationItem[] = [
   {
     label: 'Settings',
     hideLabel: true,
-    icon: <Icon name="gear" />,
+    icon: <Icon name="settings" />,
     type: 'menu',
     children: [
       { label: 'option 1', hrefOptions: { href: '/' } },
@@ -1178,5 +1179,72 @@ export const MPWithoutCustomSizeLogo: Story = {
       alt: 'avatar',
     },
     showSuiteLogo: true,
+  },
+}
+
+export const MPWithNavSwitcherTour: Story = {
+  render: () => {
+    const [open, setOpen] = useState<boolean>(false)
+
+    const navigationButtonItemOptions = {
+      label: 'Sign Out of mParticle',
+      onClick: () => {
+        alert('Signout!')
+      },
+    }
+
+    const mpLogoWithTour: IGlobalNavigationLogo = {
+      label: 'Data Platform',
+      icon: 'catalog',
+      type: 'background-solid',
+      onSuiteLogoClick: () => {
+        setOpen(currentOpen => !currentOpen)
+      },
+      navSwitcherTourOptions: {
+        open,
+        onClose: () => {
+          setOpen(false)
+        },
+      },
+    }
+
+    const minimapOptions: IMiniMapOptions = {
+      overviewHref: '/',
+      onLinkClick: link => {
+        alert(link.href)
+      },
+      onUnauthorizedClick: link => {
+        alert(`unauthorized ${link?.href} `)
+      },
+      unauthorizedLinks: ['dataPlatform'],
+      activeLink: 'oversight',
+      links: [
+        { linkId: 'oversight', href: '/oversight' },
+        { linkId: 'dataPlatform', href: '/data-platform' },
+        { linkId: 'customer360', href: '/customer-360' },
+        { linkId: 'predictions', href: '/predictions' },
+        { linkId: 'analytics', href: '/analytics' },
+        { linkId: 'segmentation', href: '/segmentation' },
+      ],
+    }
+
+    return (
+      <div style={{ width: 800 }}>
+        <GlobalNavigation
+          onSearchClick={() => {
+            alert('Searching!')
+          }}
+          logo={mpLogoWithTour}
+          tools={mpTools}
+          management={mpManagement}
+          orgs={mpOrgs}
+          onMpHomeClick={() => {
+            alert('going to overview map')
+          }}
+          navigationButtonItemOptions={navigationButtonItemOptions}
+          minimapOptions={minimapOptions}
+        />
+      </div>
+    )
   },
 }

@@ -63,6 +63,7 @@ import {
   UnlockIcon,
   NotificationIcon,
   PremiumIconDt,
+  OverviewIconDt,
 } from 'src/components/icons'
 
 export const Icons: Record<IconNames, IconOptions> = {
@@ -90,20 +91,41 @@ export const Icons: Record<IconNames, IconOptions> = {
   chartColumn: {
     light: ChartColumnIcon,
     default: 'light',
+    deprecated: 'trends',
   },
   chartLine: {
+    light: ChartLineIcon,
+    default: 'light',
+    deprecated: 'trends',
+  },
+  trends: {
     light: ChartLineIcon,
     default: 'light',
   },
   check: {
     light: CheckIcon,
     default: 'light',
+    deprecated: 'selected',
+  },
+  selected: {
+    light: CheckIcon,
+    default: 'light',
   },
   circleNodes: {
     light: CircleNodesIcon,
     default: 'light',
+    deprecated: 'pipelines',
+  },
+  pipelines: {
+    light: CircleNodesIcon,
+    default: 'light',
   },
   cloud: {
+    light: CloudIcon,
+    default: 'light',
+    deprecated: 'api',
+  },
+  api: {
     light: CloudIcon,
     default: 'light',
   },
@@ -142,6 +164,11 @@ export const Icons: Record<IconNames, IconOptions> = {
   folderClosed: {
     light: FolderClosedIcon,
     default: 'light',
+    deprecated: 'savedProjects',
+  },
+  savedProjects: {
+    light: FolderClosedIcon,
+    default: 'light',
   },
   forwarding: {
     light: ForwardingIcon,
@@ -150,12 +177,27 @@ export const Icons: Record<IconNames, IconOptions> = {
   gear: {
     light: GearIcon,
     default: 'light',
+    deprecated: 'settings',
+  },
+  settings: {
+    light: GearIcon,
+    default: 'light',
   },
   grid: {
     light: GridIcon,
     default: 'light',
+    deprecated: 'myHub',
+  },
+  myHub: {
+    light: GridIcon,
+    default: 'light',
   },
   heart: {
+    light: HeartIcon,
+    default: 'light',
+    deprecated: 'favorite',
+  },
+  favorite: {
     light: HeartIcon,
     default: 'light',
   },
@@ -174,6 +216,11 @@ export const Icons: Record<IconNames, IconOptions> = {
   lightBulb: {
     light: LightBulbIcon,
     default: 'light',
+    deprecated: 'insights',
+  },
+  insights: {
+    light: LightBulbIcon,
+    default: 'light',
   },
   liveStream: {
     light: LiveStreamIcon,
@@ -184,6 +231,11 @@ export const Icons: Record<IconNames, IconOptions> = {
     default: 'light',
   },
   messageQuestion: {
+    light: MessageQuestionIcon,
+    default: 'light',
+    deprecated: 'support',
+  },
+  support: {
     light: MessageQuestionIcon,
     default: 'light',
   },
@@ -203,6 +255,10 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: RemoveIcon,
     default: 'light',
   },
+  close: {
+    light: RemoveIcon,
+    default: 'light',
+  },
   search: {
     light: SearchIcon,
     default: 'light',
@@ -214,12 +270,27 @@ export const Icons: Record<IconNames, IconOptions> = {
   shieldKeyhole: {
     light: ShieldKeyholeIcon,
     default: 'light',
+    deprecated: 'privacy',
+  },
+  privacy: {
+    light: ShieldKeyholeIcon,
+    default: 'light',
   },
   signout: {
     light: SignoutIcon,
     default: 'light',
+    deprecated: 'logout',
+  },
+  logout: {
+    light: SignoutIcon,
+    default: 'light',
   },
   siteMap: {
+    'duo-tone': DataPlatformIconDt,
+    default: 'duo-tone',
+    deprecated: 'dataPlatform',
+  },
+  dataPlatform: {
     'duo-tone': DataPlatformIconDt,
     default: 'duo-tone',
   },
@@ -235,6 +306,11 @@ export const Icons: Record<IconNames, IconOptions> = {
     default: 'light',
   },
   split: {
+    light: SplitIcon,
+    default: 'light',
+    deprecated: 'journeys',
+  },
+  journeys: {
     light: SplitIcon,
     default: 'light',
   },
@@ -262,7 +338,16 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: UsersIcon,
     default: 'light',
   },
+  audiences: {
+    light: UsersIcon,
+    default: 'light',
+  },
   wrench: {
+    light: WrenchIcon,
+    default: 'light',
+    deprecated: 'setup',
+  },
+  setup: {
     light: WrenchIcon,
     default: 'light',
   },
@@ -320,5 +405,9 @@ export const Icons: Record<IconNames, IconOptions> = {
   notification: {
     light: NotificationIcon,
     default: 'light',
+  },
+  overview: {
+    'duo-tone': OverviewIconDt,
+    default: 'duo-tone',
   },
 } as const

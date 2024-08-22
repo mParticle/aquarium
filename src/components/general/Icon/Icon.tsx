@@ -16,6 +16,7 @@ export type IconColor =
   | 'text'
   | 'strong'
   | 'brand'
+  | 'inherit'
 
 export interface IIconProps {
   name: IconNames
@@ -28,7 +29,7 @@ export const Icon: React.FC<IIconProps> = ({ name, color = 'default', size = 'lg
   const icon: IconOptions = Icons[name]
 
   if (icon?.deprecated) {
-    console.warn(`Icon with name "${name}" is deprecated. Please use ${icon?.deprecated} instead.`)
+    console.warn(`Icon with name "${name}" is deprecated. Please use "${icon?.deprecated}" instead.`)
   }
 
   const iconVariant = variant ?? icon.default
