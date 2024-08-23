@@ -125,7 +125,7 @@
 
 .globalNavigation__item.globalNavigation__item--active {
   border-left-color: var(--color-primary);
-  background-color: var(--color-bg-text-hover);
+  background-color: var(--control-item-bg-active);
 }
 
 .globalNavigation__search {
@@ -305,7 +305,7 @@
 .globalNavigation__icon.globalNavigation__icon--suiteLogo svg {
   width: 36px;
   height: 36px;
-  
+
 }
 
 .globalNavigation__divider {
