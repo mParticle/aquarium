@@ -64,6 +64,9 @@ import {
   NotificationIcon,
   PremiumIconDt,
   OverviewIconDt,
+  FilterIcon,
+  ActiveIcon,
+  LinkIcon,
 } from 'src/components/icons'
 
 export const Icons: Record<IconNames, IconOptions> = {
@@ -409,5 +412,17 @@ export const Icons: Record<IconNames, IconOptions> = {
   overview: {
     'duo-tone': OverviewIconDt,
     default: 'duo-tone',
+  },
+  filter: {
+    light: FilterIcon,
+    default: 'light',
+  },
+  active: {
+    light: ActiveIcon,
+    default: 'light',
+  },
+  link: {
+    light: LinkIcon,
+    default: 'light',
   },
 } as const
