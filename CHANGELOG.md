@@ -1,3 +1,14 @@
+# [1.29.0-chore-cascader-updates.1](https://github.com/mParticle/aquarium/compare/v1.28.1...v1.29.0-chore-cascader-updates.1) (2024-08-26)
+
+### Bug Fixes
+
+- allow any component as a Label, include placement prop in base cascader ([16f9d0d](https://github.com/mParticle/aquarium/commit/16f9d0d75ed8ef2bd27652af76b783490b242bc9))
+- update nav link active background color ([#376](https://github.com/mParticle/aquarium/issues/376)) ([3965e60](https://github.com/mParticle/aquarium/commit/3965e607f4071b1bef72850bfd10db92fdc1a3fa))
+
+### Features
+
+- adds README for UPS ([#302](https://github.com/mParticle/aquarium/issues/302)) ([f80ea27](https://github.com/mParticle/aquarium/commit/f80ea2735c6cc5e41cf5a718b5c0a5c01d04496f))
+
 ## [1.28.1](https://github.com/mParticle/aquarium/compare/v1.28.0...v1.28.1) (2024-08-20)
 
 ### Bug Fixes
