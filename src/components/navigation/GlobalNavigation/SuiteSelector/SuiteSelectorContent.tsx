@@ -19,6 +19,7 @@ export function SuiteSelectorContent(props: ISuiteSelectorContentProps) {
       else props.onLinkClick(link)
     }
   }
+
   return (
     <ConfigProvider>
       <div className="u-padding-xxs">
