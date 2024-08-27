@@ -288,7 +288,7 @@
 .globalNavigation__suiteLogo {
   min-height: var(--suite-logo-height);
   min-width: var(--nav-width);
-  padding: var(--padding-md) 0;
+  padding: var(--padding-md) 0 0;
   color: black;
   font-size: var(--font-size-sm);
   font-weight: 400;
@@ -302,6 +302,12 @@
   border-radius: 100%;
 }
 
+.globalNavigation__suiteLogo:hover .globalNavigation__icon--suiteBackground  {
+  svg {
+    fill: var(--mp-brand-primary-7);
+  }
+}
+
 .globalNavigation__icon.globalNavigation__icon--suiteLogo svg {
   width: 36px;
   height: 36px;
@@ -310,9 +316,7 @@
 
 .globalNavigation__divider {
   border-bottom: 1px solid var(--color-border-secondary);
-  margin-right: var(--margin-sm);
-  margin-left: var(--margin-sm);
-  margin-bottom: var(--margin-md);
+  margin: var(--margin-md) var(--margin-sm);
 }
 
 .globalNavigation__mpHome {
