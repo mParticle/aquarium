@@ -1,7 +1,7 @@
 import React, { type ReactNode, useRef, useState } from 'react'
-import { Center, Icon, type ITourProps, Popover, Tour } from 'src/components'
+import { Center, Icon, type ITourProps, Tour } from 'src/components'
 import { NavigationIcon } from 'src/components/navigation/GlobalNavigation/NavigationIcon'
-import MiniMap from 'src/components/navigation/MiniMap/MiniMap'
+import { SuiteSelector } from 'src/components/navigation/GlobalNavigation/SuiteSelector/SuiteSelector'
 import { type Icons } from 'src/constants/Icons'
 import {
   type IGlobalNavigationLogo,
@@ -36,21 +36,12 @@ export function SuiteLogo({
     return <SuiteLogoContent />
   }
 
-  return (
-    <MinimapWithPopover
-      onUnauthorizedClick={minimapOptions.onUnauthorizedClick}
-      overviewHref={minimapOptions.overviewHref}
-      links={minimapOptions.links}
-      onLinkClick={minimapOptions.onLinkClick}
-      unauthorizedLinks={minimapOptions.unauthorizedLinks}
-      activeLink={minimapOptions.activeLink}
-    />
-  )
+  return <LogoWithSuiteSelector {...minimapOptions} />
 
-  function SuiteLogoContent() {
+  function SuiteLogoContent({ onLogoClick }: { onLogoClick?: () => void }) {
     return (
       <>
-        <div ref={logoRef}>
+        <div ref={logoRef} onClick={onLogoClick}>
           {renderNavLogo()}
           {navSwitcherTourOptions && renderNavTour(navSwitcherTourOptions)}
         </div>
@@ -58,35 +49,30 @@ export function SuiteLogo({
     )
   }
 
-  function MinimapWithPopover(props: IMiniMapOptions) {
+  function LogoWithSuiteSelector(props: IMiniMapOptions) {
     const [isPopoverOpen, setIsPopoverOpen] = useState(false)
+
     const handleLinkClick = (link: MiniMapLink) => {
       setIsPopoverOpen(false)
       props.onLinkClick(link)
     }
+
     const handlePopoverOpenChange = (newPopoverState: boolean) => {
       setIsPopoverOpen(newPopoverState)
     }
 
+    const handleLogoClick = () => {
+      setIsPopoverOpen(prevPopoverState => !prevPopoverState)
+    }
+
     return (
-      <Popover
-        content={
-          <MiniMap
-            overviewHref={props.overviewHref}
-            onUnauthorizedClick={props.onUnauthorizedClick}
-            links={props.links}
-            onLinkClick={handleLinkClick}
-            unauthorizedLinks={props.unauthorizedLinks}
-            activeLink={props.activeLink}
-          />
-        }
-        placement="bottomLeft"
+      <SuiteSelector
         open={isPopoverOpen}
-        trigger="hover"
         onOpenChange={handlePopoverOpenChange}
-        arrow={false}>
-        <SuiteLogoContent />
-      </Popover>
+        onLinkClick={handleLinkClick}
+        minimapOptions={props}>
+        <SuiteLogoContent onLogoClick={handleLogoClick} />
+      </SuiteSelector>
     )
   }
 

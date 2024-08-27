@@ -1184,6 +1184,8 @@ export const MPWithoutCustomSizeLogo: Story = {
 
 export const MPWithNavSwitcherTour: Story = {
   render: () => {
+    // Show Tour on first suite logo click, show suite selector on second click
+    const [tourOpenedOnce, setTourOpenedOnce] = useState<boolean>(false)
     const [open, setOpen] = useState<boolean>(false)
 
     const navigationButtonItemOptions = {
@@ -1194,11 +1196,13 @@ export const MPWithNavSwitcherTour: Story = {
     }
 
     const mpLogoWithTour: IGlobalNavigationLogo = {
-      label: 'Data Platform',
-      icon: 'catalog',
+      label: 'Overview',
+      icon: 'overview',
       type: 'background-solid',
       onSuiteLogoClick: () => {
-        setOpen(currentOpen => !currentOpen)
+        if (tourOpenedOnce) return
+        setOpen(true)
+        setTourOpenedOnce(true)
       },
       navSwitcherTourOptions: {
         open,
