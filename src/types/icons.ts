@@ -98,3 +98,4 @@ export type IconNames =
   | 'filter'
   | 'active'
   | 'link'
+  | 'info'

@@ -64,6 +64,7 @@ import OverviewIconDt from 'src/assets/svg/mp_pm_dt_overview.svg?react'
 import FilterIcon from 'src/assets/svg/mp_act_lt_filter.svg?react'
 import ActiveIcon from 'src/assets/svg/mp_info_lt_active.svg?react'
 import LinkIcon from 'src/assets/svg/mp_info_link.svg?react'
+import InfoIcon from 'src/assets/svg/mp_info_lt_info.svg?react'
 
 export {
   AddIcon,
@@ -132,4 +133,5 @@ export {
   FilterIcon,
   LinkIcon,
   ActiveIcon,
+  InfoIcon,
 }
