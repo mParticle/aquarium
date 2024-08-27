@@ -12,7 +12,7 @@ export interface IBaseGlobalNavigationItem {
 }
 
 export interface IGlobalNavigationLogo extends IBaseGlobalNavigationItem {
-  onSuiteLogoClick: () => void
+  onSuiteLogoClick?: () => void
   type?: 'default' | 'background-solid' | 'custom-size'
   icon?: ReactElement | keyof typeof Icons
   navSwitcherTourOptions?: INavSwitcherTourOptions

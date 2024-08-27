@@ -165,9 +165,6 @@ export const Primary: Story = {
 const mpLogo: IGlobalNavigationLogo = {
   label: 'Data Platform',
   icon: <Icon name="dataPlatform" />,
-  onSuiteLogoClick: () => {
-    alert('Going to mP Home!')
-  },
 }
 
 const mpLogoWithBackground: IGlobalNavigationLogo = {
