@@ -67,6 +67,7 @@ import {
   FilterIcon,
   ActiveIcon,
   LinkIcon,
+  InfoIcon,
 } from 'src/components/icons'
 
 export const Icons: Record<IconNames, IconOptions> = {
@@ -423,6 +424,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   link: {
     light: LinkIcon,
+    default: 'light',
+  },
+  info: {
+    light: InfoIcon,
     default: 'light',
   },
 } as const
