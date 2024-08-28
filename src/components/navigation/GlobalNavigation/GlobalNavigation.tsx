@@ -17,7 +17,7 @@ import { NavigationCreate } from 'src/components/navigation/GlobalNavigation/Nav
 import { WorkspaceSelector } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelector'
 import {
   type IGlobalNavigationItem,
-  type IMiniMapOptions,
+  type ISuiteSelectorOptions,
 } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
 import { useNewExperienceReminder } from 'src/hooks/NewExperienceReminder/useNewExperienceReminder'
@@ -40,7 +40,12 @@ export interface IGlobalNavigationProps {
     onClick: () => void
     withoutContainer?: boolean
   }
-  minimapOptions?: IMiniMapOptions
+  suiteSelectorOptions?: ISuiteSelectorOptions
+  /**
+   * @deprecated This variant is a temporary fix for new component.
+   * This will be removed once all the apps updated.
+   */
+  minimapOptions?: ISuiteSelectorOptions
 }
 
 export const GlobalNavWidth = 90 as const
@@ -53,7 +58,7 @@ export const GlobalNavigation = ({ showSuiteLogo = true, ...props }: IGlobalNavi
           <div>
             {showSuiteLogo && (
               <>
-                <SuiteLogo {...props.logo} minimapOptions={props.minimapOptions} />
+                <SuiteLogo {...props.logo} suiteSelectorOptions={props.minimapOptions ?? props.suiteSelectorOptions} />
                 <div className="globalNavigation__divider" />
               </>
             )}

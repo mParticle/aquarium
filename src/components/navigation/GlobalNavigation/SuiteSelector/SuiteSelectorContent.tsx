@@ -3,15 +3,15 @@ import { ConfigProvider } from 'antd'
 import React from 'react'
 import { Button, Col, Flex, Row } from 'src/components'
 import {
-  type IMiniMapOptions,
-  type MiniMapLink,
+  type ISuiteSelectorOptions,
+  type SuiteLink,
 } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { SuiteSelectorSuiteLink } from 'src/components/navigation/GlobalNavigation/SuiteSelector/SuiteSelectorSuiteLink'
 
-type ISuiteSelectorContentProps = IMiniMapOptions
+type ISuiteSelectorContentProps = ISuiteSelectorOptions
 
 export function SuiteSelectorContent(props: ISuiteSelectorContentProps) {
-  const handleLinkClick = (link: MiniMapLink): void => {
+  const handleLinkClick = (link: SuiteLink): void => {
     const isLinkUnauthorized = props.unauthorizedLinks?.includes(link.linkId)
 
     if (link) {

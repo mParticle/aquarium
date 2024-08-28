@@ -1,17 +1,17 @@
 import React from 'react'
 import { Center, Flex, Icon } from 'src/components'
-import { type MiniMapLink, type MiniMapLinks } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
+import { type SuiteLink, type SuiteLinks } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { NavigationIcon } from 'src/components/navigation/GlobalNavigation/NavigationIcon'
 import type { IconNames } from 'src/types/icons'
 
 interface ISuiteSelectorSuiteLinkProps {
-  link: MiniMapLink
-  onLinkClick: (link: MiniMapLink) => void
-  unauthorizedLinks?: MiniMapLinks[]
-  activeLink: MiniMapLinks
+  link: SuiteLink
+  onLinkClick: (link: SuiteLink) => void
+  unauthorizedLinks?: SuiteLinks[]
+  activeLink: SuiteLinks
 }
 
-const elementNameMap: Record<MiniMapLinks, string> = {
+const elementNameMap: Record<SuiteLinks, string> = {
   oversight: 'Oversight',
   dataPlatform: 'Data Platform',
   customer360: 'Customer 360',
@@ -20,7 +20,7 @@ const elementNameMap: Record<MiniMapLinks, string> = {
   segmentation: 'Segmentation',
 } as const
 
-const elementIconMap: Record<MiniMapLinks, IconNames> = {
+const elementIconMap: Record<SuiteLinks, IconNames> = {
   oversight: 'oversight',
   dataPlatform: 'dataPlatform',
   customer360: 'C360',
@@ -30,7 +30,7 @@ const elementIconMap: Record<MiniMapLinks, IconNames> = {
 } as const
 
 export function SuiteSelectorSuiteLink(props: ISuiteSelectorSuiteLinkProps) {
-  const getLinkClass = (link: MiniMapLink): string => {
+  const getLinkClass = (link: SuiteLink): string => {
     const isActiveClass = props.activeLink === link.linkId ? ' suiteSelector__link--active' : ''
     const isUnauthorizedClass = props.unauthorizedLinks?.includes(link.linkId) ? ' suiteSelector__link--disabled' : ''
     const linkStateClass = isActiveClass || isUnauthorizedClass

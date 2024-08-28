@@ -1,11 +1,14 @@
 import React, { type ReactNode } from 'react'
 import { type IPopoverProps, Popover } from 'src/components'
-import type { IMiniMapOptions, MiniMapLink } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
+import {
+  type ISuiteSelectorOptions,
+  type SuiteLink,
+} from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { SuiteSelectorContent } from 'src/components/navigation/GlobalNavigation/SuiteSelector/SuiteSelectorContent'
 
 interface ISuiteSelectorProps extends IPopoverProps {
-  minimapOptions: IMiniMapOptions
-  onLinkClick: (link: MiniMapLink) => void
+  suiteSelectorOptions: ISuiteSelectorOptions
+  onLinkClick: (link: SuiteLink) => void
   children: ReactNode
 }
 
@@ -14,12 +17,12 @@ export function SuiteSelector(props: ISuiteSelectorProps) {
     <Popover
       content={
         <SuiteSelectorContent
-          overviewHref={props.minimapOptions.overviewHref}
-          onUnauthorizedClick={props.minimapOptions.onUnauthorizedClick}
-          links={props.minimapOptions.links}
+          overviewHref={props.suiteSelectorOptions.overviewHref}
+          onUnauthorizedClick={props.suiteSelectorOptions.onUnauthorizedClick}
+          links={props.suiteSelectorOptions.links}
           onLinkClick={props.onLinkClick}
-          unauthorizedLinks={props.minimapOptions.unauthorizedLinks}
-          activeLink={props.minimapOptions.activeLink}
+          unauthorizedLinks={props.suiteSelectorOptions.unauthorizedLinks}
+          activeLink={props.suiteSelectorOptions.activeLink}
         />
       }
       placement="bottomLeft"

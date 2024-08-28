@@ -1275,7 +1275,7 @@ export const MPWithSuiteSelector: Story = {
       alt: 'avatar',
     },
     showSuiteLogo: true,
-    minimapOptions: {
+    suiteSelectorOptions: {
       overviewHref: '/',
       onLinkClick: link => {
         alert(link.href)

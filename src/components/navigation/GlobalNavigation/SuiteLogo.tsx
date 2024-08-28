@@ -5,9 +5,9 @@ import { SuiteSelector } from 'src/components/navigation/GlobalNavigation/SuiteS
 import { type Icons } from 'src/constants/Icons'
 import {
   type IGlobalNavigationLogo,
-  type IMiniMapOptions,
   type INavSwitcherTourOptions,
-  type MiniMapLink,
+  type ISuiteSelectorOptions,
+  type SuiteLink,
 } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IconColor } from 'src/components/general/Icon/Icon'
 
@@ -15,7 +15,7 @@ import { type IconColor } from 'src/components/general/Icon/Icon'
 type IconColorOptions = 'default' | 'background-solid' | 'custom-size'
 
 interface SuiteLogoProps extends IGlobalNavigationLogo {
-  minimapOptions?: IMiniMapOptions
+  suiteSelectorOptions?: ISuiteSelectorOptions
 }
 
 function isStringIcon(icon: ReactNode | string): icon is keyof typeof Icons {
@@ -28,15 +28,15 @@ export function SuiteLogo({
   type = 'custom-size',
   onSuiteLogoClick,
   navSwitcherTourOptions,
-  minimapOptions,
+  suiteSelectorOptions,
 }: SuiteLogoProps) {
   const logoRef = useRef(null)
 
-  if (!minimapOptions || navSwitcherTourOptions?.open) {
+  if (!suiteSelectorOptions || navSwitcherTourOptions?.open) {
     return <SuiteLogoContent onLogoClick={onSuiteLogoClick} />
   }
 
-  return <LogoWithSuiteSelector {...minimapOptions} />
+  return <LogoWithSuiteSelector {...suiteSelectorOptions} />
 
   function SuiteLogoContent({ onLogoClick }: { onLogoClick?: () => void }) {
     return (
@@ -49,10 +49,10 @@ export function SuiteLogo({
     )
   }
 
-  function LogoWithSuiteSelector(props: IMiniMapOptions) {
+  function LogoWithSuiteSelector(props: ISuiteSelectorOptions) {
     const [isPopoverOpen, setIsPopoverOpen] = useState(false)
 
-    const handleLinkClick = (link: MiniMapLink) => {
+    const handleLinkClick = (link: SuiteLink) => {
       setIsPopoverOpen(false)
       props.onLinkClick(link)
     }
@@ -70,7 +70,7 @@ export function SuiteLogo({
         open={isPopoverOpen}
         onOpenChange={handlePopoverOpenChange}
         onLinkClick={handleLinkClick}
-        minimapOptions={props}>
+        suiteSelectorOptions={props}>
         <NavLogo onLogoClick={handleLogoClick} />
       </SuiteSelector>
     )
