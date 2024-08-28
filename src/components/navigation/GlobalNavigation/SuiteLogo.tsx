@@ -33,7 +33,7 @@ export function SuiteLogo({
   const logoRef = useRef(null)
 
   if (!minimapOptions || navSwitcherTourOptions?.open) {
-    return <SuiteLogoContent />
+    return <SuiteLogoContent onLogoClick={onSuiteLogoClick} />
   }
 
   return <LogoWithSuiteSelector {...minimapOptions} />
@@ -41,8 +41,8 @@ export function SuiteLogo({
   function SuiteLogoContent({ onLogoClick }: { onLogoClick?: () => void }) {
     return (
       <>
-        <div ref={logoRef} onClick={onLogoClick}>
-          {renderNavLogo()}
+        <div ref={logoRef}>
+          <NavLogo onLogoClick={onLogoClick} />
           {navSwitcherTourOptions && renderNavTour(navSwitcherTourOptions)}
         </div>
       </>
@@ -71,12 +71,12 @@ export function SuiteLogo({
         onOpenChange={handlePopoverOpenChange}
         onLinkClick={handleLinkClick}
         minimapOptions={props}>
-        <SuiteLogoContent onLogoClick={handleLogoClick} />
+        <NavLogo onLogoClick={handleLogoClick} />
       </SuiteSelector>
     )
   }
 
-  function renderNavLogo() {
+  function NavLogo({ onLogoClick }: { onLogoClick?: () => void }) {
     const classMap = {
       default: '',
       'custom-size': 'globalNavigation__icon--suiteLogo',
@@ -97,7 +97,7 @@ export function SuiteLogo({
     }
 
     return (
-      <Center vertical className="globalNavigation__suiteLogo" onClick={onSuiteLogoClick}>
+      <Center vertical className="globalNavigation__suiteLogo" onClick={onLogoClick}>
         <NavigationIcon icon={getIcon()} label="" hideLabel className={classMap[type]} />
         {label}
       </Center>

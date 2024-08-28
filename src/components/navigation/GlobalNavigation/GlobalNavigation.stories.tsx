@@ -6,7 +6,6 @@ import { Badge } from 'src/components/data-display/Badge/Badge'
 import {
   type IGlobalNavigationItem,
   type IGlobalNavigationLogo,
-  type IMiniMapOptions,
 } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { generateOrgs } from 'src/components/navigation/GlobalNavigation/stories-utils'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'
@@ -168,8 +167,8 @@ const mpLogo: IGlobalNavigationLogo = {
 }
 
 const mpLogoWithBackground: IGlobalNavigationLogo = {
-  label: 'Data Platform',
-  icon: 'catalog',
+  label: 'Overview',
+  icon: 'overview',
   type: 'background-solid',
   onSuiteLogoClick: () => {
     alert('Going to mP Home!')
@@ -862,6 +861,40 @@ export const Indicative: Story = {
   },
 }
 
+export const IndicativeWithSuiteSwitcher: Story = {
+  args: {
+    logo: indLogo,
+    tools: indTools,
+    management: indManagement,
+    createItems: indCreateItems,
+    orgs: indOrgs,
+    minimapOptions: {
+      overviewHref: '/',
+      onLinkClick: link => {
+        if (link.linkId !== 'analytics') alert(link.href)
+      },
+      links: [
+        { linkId: 'oversight', href: '/oversight' },
+        { linkId: 'dataPlatform', href: '/data-platform' },
+        { linkId: 'customer360', href: '/customer-360' },
+        { linkId: 'predictions', href: '/predictions' },
+        { linkId: 'analytics', href: '/analytics' },
+        { linkId: 'segmentation', href: '/segmentation' },
+      ],
+      activeLink: 'analytics',
+    },
+    navigationButtonItemOptions: {
+      label: 'Custom Signout Label',
+      onClick: () => {
+        alert('Signout!')
+      },
+    },
+    onMpHomeClick: () => {
+      alert('going to overview map')
+    },
+  },
+}
+
 const cortexLogo: IGlobalNavigationLogo = {
   label: 'Predictions',
   icon: 'predictions',
@@ -1181,8 +1214,6 @@ export const MPWithoutCustomSizeLogo: Story = {
 
 export const MPWithNavSwitcherTour: Story = {
   render: () => {
-    // Show Tour on first suite logo click, show suite selector on second click
-    const [tourOpenedOnce, setTourOpenedOnce] = useState<boolean>(false)
     const [open, setOpen] = useState<boolean>(false)
 
     const navigationButtonItemOptions = {
@@ -1193,13 +1224,11 @@ export const MPWithNavSwitcherTour: Story = {
     }
 
     const mpLogoWithTour: IGlobalNavigationLogo = {
-      label: 'Overview',
-      icon: 'overview',
+      label: 'Data Platform',
+      icon: 'catalog',
       type: 'background-solid',
       onSuiteLogoClick: () => {
-        if (tourOpenedOnce) return
-        setOpen(true)
-        setTourOpenedOnce(true)
+        setOpen(currentOpen => !currentOpen)
       },
       navSwitcherTourOptions: {
         open,
@@ -1209,7 +1238,44 @@ export const MPWithNavSwitcherTour: Story = {
       },
     }
 
-    const minimapOptions: IMiniMapOptions = {
+    return (
+      <div style={{ width: 800 }}>
+        <GlobalNavigation
+          onSearchClick={() => {
+            alert('Searching!')
+          }}
+          logo={mpLogoWithTour}
+          tools={mpTools}
+          management={mpManagement}
+          orgs={mpOrgs}
+          onMpHomeClick={() => {
+            alert('going to overview map')
+          }}
+          navigationButtonItemOptions={navigationButtonItemOptions}
+        />
+      </div>
+    )
+  },
+}
+
+export const MPWithSuiteSelector: Story = {
+  args: {
+    onSearchClick: () => {
+      alert('Searching!')
+    },
+    logo: mpLogoWithBackground,
+    tools: mpTools,
+    management: mpManagement,
+    orgs: mpOrgs,
+    onMpHomeClick: () => {
+      alert('going to overview map')
+    },
+    avatarOptions: {
+      // src: "https://static-qa1.qa.corp.mparticle.com/appimg/logo_af_916397d2-9732-8de6-77cc-80e3bba120ca.png",
+      alt: 'avatar',
+    },
+    showSuiteLogo: true,
+    minimapOptions: {
       overviewHref: '/',
       onLinkClick: link => {
         alert(link.href)
@@ -1227,25 +1293,6 @@ export const MPWithNavSwitcherTour: Story = {
         { linkId: 'analytics', href: '/analytics' },
         { linkId: 'segmentation', href: '/segmentation' },
       ],
-    }
-
-    return (
-      <div style={{ width: 800 }}>
-        <GlobalNavigation
-          onSearchClick={() => {
-            alert('Searching!')
-          }}
-          logo={mpLogoWithTour}
-          tools={mpTools}
-          management={mpManagement}
-          orgs={mpOrgs}
-          onMpHomeClick={() => {
-            alert('going to overview map')
-          }}
-          navigationButtonItemOptions={navigationButtonItemOptions}
-          minimapOptions={minimapOptions}
-        />
-      </div>
-    )
+    },
   },
 }
