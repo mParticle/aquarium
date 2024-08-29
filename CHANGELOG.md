@@ -1,3 +1,9 @@
+# [1.29.0-chore-cascader-updates.2](https://github.com/mParticle/aquarium/compare/v1.29.0-chore-cascader-updates.1...v1.29.0-chore-cascader-updates.2) (2024-08-29)
+
+### Features
+
+- add searchLabel to queryItemCascader, and defaultOpen prop ([bb80cdc](https://github.com/mParticle/aquarium/commit/bb80cdc40ac9296ad59055ead60bbeb7b5fc8b73))
+
 # [1.29.0-chore-cascader-updates.1](https://github.com/mParticle/aquarium/compare/v1.28.1...v1.29.0-chore-cascader-updates.1) (2024-08-26)
 
 ### Bug Fixes
