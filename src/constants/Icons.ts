@@ -68,6 +68,7 @@ import {
   ActiveIcon,
   LinkIcon,
   InfoIcon,
+  Placeholder,
 } from 'src/components/icons'
 
 export const Icons: Record<IconNames, IconOptions> = {
@@ -428,6 +429,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   info: {
     light: InfoIcon,
+    default: 'light',
+  },
+  placeholder: {
+    light: Placeholder,
     default: 'light',
   },
 } as const

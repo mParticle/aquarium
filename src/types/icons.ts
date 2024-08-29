@@ -99,3 +99,4 @@ export type IconNames =
   | 'active'
   | 'link'
   | 'info'
+  | 'placeholder'
