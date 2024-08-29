@@ -18,7 +18,7 @@ import { debounce } from 'src/utils/utils'
 export interface ICascaderOption {
   value: string
   label: ReactNode
-  searchLabel: string
+  searchLabel?: string
   children?: ICascaderOption[]
   disabled?: boolean
 }
@@ -133,12 +133,16 @@ const Cascader = (props: IQueryItemCascaderProps) => {
       render: (inputValue: string, paths: ICascaderOption[]): ReactNode => {
         return (
           <>
-            {paths.map((path: ICascaderOption, index) => (
-              <>
-                {highlightMatches(path.searchLabel, inputValue.toLowerCase())}
-                {index < paths.length - 1 ? ' > ' : ''}
-              </>
-            ))}
+            {paths.map((path: ICascaderOption, index) => {
+              const searchText: string =
+                path.searchLabel ?? typeof path.label === 'string' ? (path.label as string) : ''
+              return (
+                <>
+                  {highlightMatches(searchText, inputValue.toLowerCase())}
+                  {index < paths.length - 1 ? ' > ' : ''}
+                </>
+              )
+            })}
           </>
         )
       },
