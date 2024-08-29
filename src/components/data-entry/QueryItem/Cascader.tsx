@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import './query-item.css'
 import { type GetProp } from 'antd'
+import { type DefaultOptionType } from 'antd/es/select'
 import { type ReactNode, useCallback, useEffect, useState } from 'react'
 import {
   Cascader as BaseCascader,
@@ -15,7 +16,7 @@ import { type Icons } from 'src/constants/Icons'
 import { useMount } from 'src/hooks/useMount'
 import { debounce } from 'src/utils/utils'
 
-export interface ICascaderOption {
+export interface ICascaderOption extends DefaultOptionType {
   value: string
   label: ReactNode
   searchLabel?: string
@@ -37,7 +38,7 @@ export interface IQueryItemCascaderProps {
 }
 
 const Cascader = (props: IQueryItemCascaderProps) => {
-  type DefaultOptionType = GetProp<IBaseCascaderProps, 'options'>[number]
+  type ICascaderOption = GetProp<IBaseCascaderProps, 'options'>[number]
 
   const options: ICascaderOption[] = []
   const [items, setItems] = useState(props.options ?? options)
@@ -82,9 +83,11 @@ const Cascader = (props: IQueryItemCascaderProps) => {
     setSearchValue(value)
   }
 
-  const filter = (inputValue: string, path: DefaultOptionType[]) => {
-    return path.some(option => (option.label as string).toLowerCase().includes(inputValue.toLowerCase()))
-  }
+  const getSearchValue = (option: ICascaderOption): string =>
+    option.searchLabel ?? (typeof option.label === 'string' ? (option.label as string) : '')
+
+  const filter = (inputValue: string, path: ICascaderOption[]) =>
+    path.some(option => getSearchValue(option).toLowerCase().includes(inputValue.toLowerCase()))
 
   let debouncedLoadData: (value: string) => void
   if (props.loadData) {
@@ -116,6 +119,7 @@ const Cascader = (props: IQueryItemCascaderProps) => {
           <>
             <Input
               allowClear
+              autoFocus
               value={searchValue}
               className="query-item__input-search"
               placeholder="Search"
@@ -130,22 +134,16 @@ const Cascader = (props: IQueryItemCascaderProps) => {
     ),
     showSearch: {
       filter,
-      render: (inputValue: string, paths: ICascaderOption[]): ReactNode => {
-        return (
-          <>
-            {paths.map((path: ICascaderOption, index) => {
-              const searchText: string =
-                path.searchLabel ?? typeof path.label === 'string' ? (path.label as string) : ''
-              return (
-                <>
-                  {highlightMatches(searchText, inputValue.toLowerCase())}
-                  {index < paths.length - 1 ? ' > ' : ''}
-                </>
-              )
-            })}
-          </>
-        )
-      },
+      render: (inputValue: string, options: ICascaderOption[]): ReactNode => (
+        <>
+          {options.map((option: ICascaderOption, index) => (
+            <>
+              {highlightMatches(getSearchValue(option), inputValue.toLowerCase())}
+              {index < options.length - 1 ? ' > ' : ''}
+            </>
+          ))}
+        </>
+      ),
     },
     options: items,
     onDropdownVisibleChange: value => {
@@ -198,11 +196,8 @@ const Cascader = (props: IQueryItemCascaderProps) => {
     )
   }
 
-  function transformOptionsToPaths(
-    options: DefaultOptionType[],
-    prefixPath: DefaultOptionType[],
-  ): DefaultOptionType[][] {
-    let result: DefaultOptionType[][] = []
+  function transformOptionsToPaths(options: ICascaderOption[], prefixPath: ICascaderOption[]): ICascaderOption[][] {
+    let result: ICascaderOption[][] = []
     options.forEach(option => {
       if (option.children && option.children.length > 0) {
         const newPrefix = prefixPath.concat([{ label: option.label, value: option.value }])

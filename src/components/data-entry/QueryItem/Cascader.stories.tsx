@@ -1,5 +1,5 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { type IQueryItemCascaderProps, QueryItem } from 'src/components'
+import { Flex, Icon, type IQueryItemCascaderProps, QueryItem, Typography } from 'src/components'
 
 const options: IQueryItemCascaderProps['options'] = [
   {
@@ -149,5 +149,37 @@ export const Loading: Story = {
         }, 3000)
       })
     },
+  },
+}
+
+export const SearchLabel: Story = {
+  args: {
+    options: [
+      ...options,
+      {
+        value: 'G',
+        label: 'G',
+        children: [
+          {
+            value: 'H',
+            label: 'H',
+            children: [
+              {
+                value: 'IJK',
+                label: (
+                  <>
+                    <Flex>
+                      <Icon name="alicorn" />
+                      <Typography.Text>IJK</Typography.Text>
+                    </Flex>
+                  </>
+                ),
+                searchLabel: 'IJK',
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
 }
