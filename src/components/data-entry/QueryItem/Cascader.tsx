@@ -16,8 +16,9 @@ import { useMount } from 'src/hooks/useMount'
 import { debounce } from 'src/utils/utils'
 
 export interface ICascaderOption {
-  value: string | number
-  label?: React.ReactNode
+  value: string
+  label: ReactNode
+  searchLabel: string
   children?: ICascaderOption[]
   disabled?: boolean
 }
@@ -32,6 +33,7 @@ export interface IQueryItemCascaderProps {
   value?: Array<number | string>
   disabled?: boolean
   placement?: IBaseCascaderProps['placement']
+  defaultOpen?: IBaseCascaderProps['defaultOpen']
 }
 
 const Cascader = (props: IQueryItemCascaderProps) => {
@@ -99,6 +101,7 @@ const Cascader = (props: IQueryItemCascaderProps) => {
     searchValue,
     disabled: props.disabled,
     value: selectedValue,
+    defaultOpen: props.defaultOpen,
     placement: props.placement ?? 'bottomLeft',
     onChange: (values: Array<number | string>, selectedOptions: any): void => {
       setSelectedValue(values as string[])
@@ -132,7 +135,7 @@ const Cascader = (props: IQueryItemCascaderProps) => {
           <>
             {paths.map((path: ICascaderOption, index) => (
               <>
-                {highlightMatches(path.label as string, inputValue.toLowerCase())}
+                {highlightMatches(path.searchLabel, inputValue.toLowerCase())}
                 {index < paths.length - 1 ? ' > ' : ''}
               </>
             ))}
