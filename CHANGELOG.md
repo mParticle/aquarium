@@ -1,3 +1,15 @@
+# [1.30.0-chore-cascader-updates.1](https://github.com/mParticle/aquarium/compare/v1.29.0...v1.30.0-chore-cascader-updates.1) (2024-08-30)
+
+### Bug Fixes
+
+- allow any component as a Label, include placement prop in base cascader ([16f9d0d](https://github.com/mParticle/aquarium/commit/16f9d0d75ed8ef2bd27652af76b783490b242bc9))
+- input display when selecting a reactNode label ([b691903](https://github.com/mParticle/aquarium/commit/b69190357e685d5fe14c43d2c161cda975e78849))
+
+### Features
+
+- add searchLabel to queryItemCascader, and defaultOpen prop ([bb80cdc](https://github.com/mParticle/aquarium/commit/bb80cdc40ac9296ad59055ead60bbeb7b5fc8b73))
+- adds README for UPS ([#302](https://github.com/mParticle/aquarium/issues/302)) ([f80ea27](https://github.com/mParticle/aquarium/commit/f80ea2735c6cc5e41cf5a718b5c0a5c01d04496f))
+
 # [1.29.0](https://github.com/mParticle/aquarium/compare/v1.28.1...v1.29.0) (2024-08-30)
 
 ### Bug Fixes
