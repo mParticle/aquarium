@@ -1,29 +1,14 @@
-# [1.29.0-chore-cascader-updates.5](https://github.com/mParticle/aquarium/compare/v1.29.0-chore-cascader-updates.4...v1.29.0-chore-cascader-updates.5) (2024-08-30)
+# [1.29.0](https://github.com/mParticle/aquarium/compare/v1.28.1...v1.29.0) (2024-08-30)
 
 ### Bug Fixes
 
-- input display when selecting a reactNode label ([b691903](https://github.com/mParticle/aquarium/commit/b69190357e685d5fe14c43d2c161cda975e78849))
-
-# [1.29.0-chore-cascader-updates.4](https://github.com/mParticle/aquarium/compare/v1.29.0-chore-cascader-updates.3...v1.29.0-chore-cascader-updates.4) (2024-08-29)
-
-# [1.29.0-chore-cascader-updates.3](https://github.com/mParticle/aquarium/compare/v1.29.0-chore-cascader-updates.2...v1.29.0-chore-cascader-updates.3) (2024-08-29)
-
-# [1.29.0-chore-cascader-updates.2](https://github.com/mParticle/aquarium/compare/v1.29.0-chore-cascader-updates.1...v1.29.0-chore-cascader-updates.2) (2024-08-29)
-
-### Features
-
-- add searchLabel to queryItemCascader, and defaultOpen prop ([bb80cdc](https://github.com/mParticle/aquarium/commit/bb80cdc40ac9296ad59055ead60bbeb7b5fc8b73))
-
-# [1.29.0-chore-cascader-updates.1](https://github.com/mParticle/aquarium/compare/v1.28.1...v1.29.0-chore-cascader-updates.1) (2024-08-26)
-
-### Bug Fixes
-
-- allow any component as a Label, include placement prop in base cascader ([16f9d0d](https://github.com/mParticle/aquarium/commit/16f9d0d75ed8ef2bd27652af76b783490b242bc9))
+- add info icon ([#381](https://github.com/mParticle/aquarium/issues/381)) ([d3aa957](https://github.com/mParticle/aquarium/commit/d3aa957198078ec49ad65fef4d6721becf0ea0d9))
+- add new icons ([#380](https://github.com/mParticle/aquarium/issues/380)) ([db88c4e](https://github.com/mParticle/aquarium/commit/db88c4e3bfb31bd1537dd6ba112a709205391ba5))
 - update nav link active background color ([#376](https://github.com/mParticle/aquarium/issues/376)) ([3965e60](https://github.com/mParticle/aquarium/commit/3965e607f4071b1bef72850bfd10db92fdc1a3fa))
 
 ### Features
 
-- adds README for UPS ([#302](https://github.com/mParticle/aquarium/issues/302)) ([f80ea27](https://github.com/mParticle/aquarium/commit/f80ea2735c6cc5e41cf5a718b5c0a5c01d04496f))
+- icons placeholder ([#385](https://github.com/mParticle/aquarium/issues/385)) ([2503af1](https://github.com/mParticle/aquarium/commit/2503af17a575f6084ae19b8d5697be413e7c56e7))
 
 ## [1.28.1](https://github.com/mParticle/aquarium/compare/v1.28.0...v1.28.1) (2024-08-20)
 

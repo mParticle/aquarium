@@ -95,3 +95,8 @@ export type IconNames =
   | 'myHub'
   | 'favorite'
   | 'insights'
+  | 'filter'
+  | 'active'
+  | 'link'
+  | 'info'
+  | 'placeholder'
