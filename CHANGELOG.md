@@ -1,3 +1,15 @@
+# [1.29.0](https://github.com/mParticle/aquarium/compare/v1.28.1...v1.29.0) (2024-08-30)
+
+### Bug Fixes
+
+- add info icon ([#381](https://github.com/mParticle/aquarium/issues/381)) ([d3aa957](https://github.com/mParticle/aquarium/commit/d3aa957198078ec49ad65fef4d6721becf0ea0d9))
+- add new icons ([#380](https://github.com/mParticle/aquarium/issues/380)) ([db88c4e](https://github.com/mParticle/aquarium/commit/db88c4e3bfb31bd1537dd6ba112a709205391ba5))
+- update nav link active background color ([#376](https://github.com/mParticle/aquarium/issues/376)) ([3965e60](https://github.com/mParticle/aquarium/commit/3965e607f4071b1bef72850bfd10db92fdc1a3fa))
+
+### Features
+
+- icons placeholder ([#385](https://github.com/mParticle/aquarium/issues/385)) ([2503af1](https://github.com/mParticle/aquarium/commit/2503af17a575f6084ae19b8d5697be413e7c56e7))
+
 ## [1.28.1](https://github.com/mParticle/aquarium/compare/v1.28.0...v1.28.1) (2024-08-20)
 
 ### Bug Fixes
