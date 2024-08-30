@@ -19,7 +19,7 @@ import { debounce } from 'src/utils/utils'
 export interface ICascaderOption extends DefaultOptionType {
   value: string
   label: ReactNode
-  searchLabel?: string
+  searchLabel?: string // useful when label is a reactNode and not a string
   children?: ICascaderOption[]
   disabled?: boolean
 }
@@ -45,8 +45,8 @@ const Cascader = (props: IQueryItemCascaderProps) => {
   const [searchValue, setSearchValue] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [selectedValue, setSelectedValue] = useState<Array<number | string>>(props.value ?? [])
-  const [selectedDisplayValue, setSelectedDisplayValue] = useState(
-    props.value && props.value.length > 0 ? (props.value.slice(-1)[0] as any).label : '',
+  const [selectedOption, setSelectedOption] = useState<ICascaderOption>(
+    props.value?.length ? props.value.slice(-1)[0] : undefined,
   )
   const [isOpen, setIsOpen] = useState(false)
 
@@ -108,7 +108,7 @@ const Cascader = (props: IQueryItemCascaderProps) => {
     placement: props.placement ?? 'bottomLeft',
     onChange: (values: Array<number | string>, selectedOptions: any): void => {
       setSelectedValue(values as string[])
-      setSelectedDisplayValue(selectedOptions.slice(-1)[0].label)
+      setSelectedOption(selectedOptions.slice(-1)[0])
       void props.onChange?.(values, selectedOptions)
     },
     dropdownRender: menu => (
@@ -156,7 +156,7 @@ const Cascader = (props: IQueryItemCascaderProps) => {
   if (isOpen) inputClasses += ' query-item--open'
   if (selectedValue && selectedValue.length !== 0) inputClasses += ' query-item--selected'
   if (props.errorMessage) inputClasses += ' query-item--error'
-  const displayValue = selectedDisplayValue ?? selectedValue.slice(-1)
+  const displayValue = (selectedOption ? getSearchValue(selectedOption) : selectedValue.slice(-1)) as string
 
   return (
     <>
