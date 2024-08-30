@@ -1,3 +1,9 @@
+# [1.29.0-chore-cascader-updates.5](https://github.com/mParticle/aquarium/compare/v1.29.0-chore-cascader-updates.4...v1.29.0-chore-cascader-updates.5) (2024-08-30)
+
+### Bug Fixes
+
+- input display when selecting a reactNode label ([b691903](https://github.com/mParticle/aquarium/commit/b69190357e685d5fe14c43d2c161cda975e78849))
+
 # [1.29.0-chore-cascader-updates.4](https://github.com/mParticle/aquarium/compare/v1.29.0-chore-cascader-updates.3...v1.29.0-chore-cascader-updates.4) (2024-08-29)
 
 # [1.29.0-chore-cascader-updates.3](https://github.com/mParticle/aquarium/compare/v1.29.0-chore-cascader-updates.2...v1.29.0-chore-cascader-updates.3) (2024-08-29)
