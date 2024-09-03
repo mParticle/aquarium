@@ -1,3 +1,9 @@
+## [1.30.1-fix-css-in-nancy.1](https://github.com/mParticle/aquarium/compare/v1.30.0...v1.30.1-fix-css-in-nancy.1) (2024-09-03)
+
+### Bug Fixes
+
+- unnest css ([78bc479](https://github.com/mParticle/aquarium/commit/78bc479a5bb292cc525190ad6b5ef842e846d58a))
+
 # [1.30.0](https://github.com/mParticle/aquarium/compare/v1.29.0...v1.30.0) (2024-09-03)
 
 ### Features
