@@ -1,3 +1,9 @@
+# [1.30.0](https://github.com/mParticle/aquarium/compare/v1.29.0...v1.30.0) (2024-09-03)
+
+### Features
+
+- replace minimap with suiteSelector component ([#383](https://github.com/mParticle/aquarium/issues/383)) ([2ab27ca](https://github.com/mParticle/aquarium/commit/2ab27ca1bf7d0f6049498ca166469b5b57c914b1))
+
 # [1.29.0](https://github.com/mParticle/aquarium/compare/v1.28.1...v1.29.0) (2024-08-30)
 
 ### Bug Fixes
