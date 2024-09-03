@@ -302,10 +302,8 @@
   border-radius: 100%;
 }
 
-.globalNavigation__suiteLogo:hover .globalNavigation__icon--suiteBackground  {
-  svg {
-    fill: var(--mp-brand-primary-7);
-  }
+.globalNavigation__suiteLogo:hover .globalNavigation__icon--suiteBackground svg {
+  fill: var(--mp-brand-primary-7);
 }
 
 .globalNavigation__icon.globalNavigation__icon--suiteLogo svg {
