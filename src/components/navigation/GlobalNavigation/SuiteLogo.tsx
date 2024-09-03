@@ -1,13 +1,13 @@
 import React, { type ReactNode, useRef, useState } from 'react'
-import { Center, Icon, type ITourProps, Popover, Tour } from 'src/components'
+import { Center, Icon, type ITourProps, Tour } from 'src/components'
 import { NavigationIcon } from 'src/components/navigation/GlobalNavigation/NavigationIcon'
-import MiniMap from 'src/components/navigation/MiniMap/MiniMap'
+import { SuiteSelector } from 'src/components/navigation/GlobalNavigation/SuiteSelector/SuiteSelector'
 import { type Icons } from 'src/constants/Icons'
 import {
   type IGlobalNavigationLogo,
-  type IMiniMapOptions,
   type INavSwitcherTourOptions,
-  type MiniMapLink,
+  type ISuiteSelectorOptions,
+  type SuiteLink,
 } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type IconColor } from 'src/components/general/Icon/Icon'
 
@@ -15,7 +15,7 @@ import { type IconColor } from 'src/components/general/Icon/Icon'
 type IconColorOptions = 'default' | 'background-solid' | 'custom-size'
 
 interface SuiteLogoProps extends IGlobalNavigationLogo {
-  minimapOptions?: IMiniMapOptions
+  suiteSelectorOptions?: ISuiteSelectorOptions
 }
 
 function isStringIcon(icon: ReactNode | string): icon is keyof typeof Icons {
@@ -28,69 +28,55 @@ export function SuiteLogo({
   type = 'custom-size',
   onSuiteLogoClick,
   navSwitcherTourOptions,
-  minimapOptions,
+  suiteSelectorOptions,
 }: SuiteLogoProps) {
   const logoRef = useRef(null)
 
-  if (!minimapOptions || navSwitcherTourOptions?.open) {
-    return <SuiteLogoContent />
+  if (!suiteSelectorOptions || navSwitcherTourOptions?.open) {
+    return <SuiteLogoContent onLogoClick={onSuiteLogoClick} />
   }
 
-  return (
-    <MinimapWithPopover
-      onUnauthorizedClick={minimapOptions.onUnauthorizedClick}
-      overviewHref={minimapOptions.overviewHref}
-      links={minimapOptions.links}
-      onLinkClick={minimapOptions.onLinkClick}
-      unauthorizedLinks={minimapOptions.unauthorizedLinks}
-      activeLink={minimapOptions.activeLink}
-    />
-  )
+  return <LogoWithSuiteSelector {...suiteSelectorOptions} />
 
-  function SuiteLogoContent() {
+  function SuiteLogoContent({ onLogoClick }: { onLogoClick?: () => void }) {
     return (
       <>
         <div ref={logoRef}>
-          {renderNavLogo()}
+          <NavLogo onLogoClick={onLogoClick} />
           {navSwitcherTourOptions && renderNavTour(navSwitcherTourOptions)}
         </div>
       </>
     )
   }
 
-  function MinimapWithPopover(props: IMiniMapOptions) {
+  function LogoWithSuiteSelector(props: ISuiteSelectorOptions) {
     const [isPopoverOpen, setIsPopoverOpen] = useState(false)
-    const handleLinkClick = (link: MiniMapLink) => {
+
+    const handleLinkClick = (link: SuiteLink) => {
       setIsPopoverOpen(false)
       props.onLinkClick(link)
     }
+
     const handlePopoverOpenChange = (newPopoverState: boolean) => {
       setIsPopoverOpen(newPopoverState)
     }
 
+    const handleLogoClick = () => {
+      setIsPopoverOpen(prevPopoverState => !prevPopoverState)
+    }
+
     return (
-      <Popover
-        content={
-          <MiniMap
-            overviewHref={props.overviewHref}
-            onUnauthorizedClick={props.onUnauthorizedClick}
-            links={props.links}
-            onLinkClick={handleLinkClick}
-            unauthorizedLinks={props.unauthorizedLinks}
-            activeLink={props.activeLink}
-          />
-        }
-        placement="bottomLeft"
+      <SuiteSelector
         open={isPopoverOpen}
-        trigger="hover"
         onOpenChange={handlePopoverOpenChange}
-        arrow={false}>
-        <SuiteLogoContent />
-      </Popover>
+        onLinkClick={handleLinkClick}
+        suiteSelectorOptions={props}>
+        <NavLogo onLogoClick={handleLogoClick} />
+      </SuiteSelector>
     )
   }
 
-  function renderNavLogo() {
+  function NavLogo({ onLogoClick }: { onLogoClick?: () => void }) {
     const classMap = {
       default: '',
       'custom-size': 'globalNavigation__icon--suiteLogo',
@@ -111,7 +97,7 @@ export function SuiteLogo({
     }
 
     return (
-      <Center vertical className="globalNavigation__suiteLogo" onClick={onSuiteLogoClick}>
+      <Center vertical className="globalNavigation__suiteLogo" onClick={onLogoClick}>
         <NavigationIcon icon={getIcon()} label="" hideLabel className={classMap[type]} />
         {label}
       </Center>
