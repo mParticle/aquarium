@@ -325,9 +325,9 @@
   background-color: black;
   color: white;
   cursor: pointer;
+}
 
-  svg {
-    width: 28px;
-    height: var(--size-lg);
-  }
+.globalNavigation__mpHome svg {
+  width: 28px;
+  height: var(--size-lg);
 }
