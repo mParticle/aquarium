@@ -1,4 +1,4 @@
-# [1.29.0-new-nav-suite-selector.1](https://github.com/mParticle/aquarium/compare/v1.28.1...v1.29.0-new-nav-suite-selector.1) (2024-08-29)
+# [1.29.0](https://github.com/mParticle/aquarium/compare/v1.28.1...v1.29.0) (2024-08-30)
 
 ### Bug Fixes
 
@@ -8,7 +8,7 @@
 
 ### Features
 
-- replace minimap with suite selector ([9d20a9a](https://github.com/mParticle/aquarium/commit/9d20a9a7185a27f75500ecd7f64b35803d1070c1))
+- icons placeholder ([#385](https://github.com/mParticle/aquarium/issues/385)) ([2503af1](https://github.com/mParticle/aquarium/commit/2503af17a575f6084ae19b8d5697be413e7c56e7))
 
 ## [1.28.1](https://github.com/mParticle/aquarium/compare/v1.28.0...v1.28.1) (2024-08-20)
 
