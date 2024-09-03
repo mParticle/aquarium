@@ -316,7 +316,7 @@
 
 .globalNavigation__divider {
   border-bottom: 1px solid var(--color-border-secondary);
-  margin: var(--margin-md) var(--margin-sm);
+  margin: var(--margin-md) var(--margin-xxs) 0 var(--margin-xxs);
 }
 
 .globalNavigation__mpHome {
