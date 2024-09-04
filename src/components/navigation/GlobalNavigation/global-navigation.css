@@ -6,7 +6,8 @@
   --color-scrollbar-handle: rgb(0 0 0 / 15%);
   --color-scrollbar-track: transparent;
   --size-scrollbar-handle: 6px;
-  --label-size: 10px
+  --label-size: 10px;
+  --suite-selector-content-max-width: 272px;
 }
 
 .globalNavigation {
