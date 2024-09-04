@@ -1,7 +1,3 @@
-:root {
-  --suite-selector-content-max-width: 272px;
-}
-
 .suiteSelector__content {
   max-width: var(--suite-selector-content-max-width);
   margin-bottom: var(--margin-xs);

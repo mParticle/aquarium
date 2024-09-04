@@ -6,7 +6,8 @@
   --color-scrollbar-handle: rgb(0 0 0 / 15%);
   --color-scrollbar-track: transparent;
   --size-scrollbar-handle: 6px;
-  --label-size: 10px
+  --label-size: 10px;
+  --suite-selector-content-max-width: 272px;
 }
 
 .globalNavigation {
@@ -302,10 +303,8 @@
   border-radius: 100%;
 }
 
-.globalNavigation__suiteLogo:hover .globalNavigation__icon--suiteBackground  {
-  svg {
-    fill: var(--mp-brand-primary-7);
-  }
+.globalNavigation__suiteLogo:hover .globalNavigation__icon--suiteBackground svg {
+  fill: var(--mp-brand-primary-7);
 }
 
 .globalNavigation__icon.globalNavigation__icon--suiteLogo svg {
@@ -327,9 +326,9 @@
   background-color: black;
   color: white;
   cursor: pointer;
+}
 
-  svg {
-    width: 28px;
-    height: var(--size-lg);
-  }
+.globalNavigation__mpHome svg {
+  width: 28px;
+  height: var(--size-lg);
 }
