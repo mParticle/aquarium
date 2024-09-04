@@ -1,3 +1,9 @@
+## [1.30.1](https://github.com/mParticle/aquarium/compare/v1.30.0...v1.30.1) (2024-09-04)
+
+### Bug Fixes
+
+- unnest css ([#390](https://github.com/mParticle/aquarium/issues/390)) ([03d3ccb](https://github.com/mParticle/aquarium/commit/03d3ccb8b018a1f183c5312112c7d59c348b06c5))
+
 ## [1.30.1-fix-css-in-nancy.2](https://github.com/mParticle/aquarium/compare/v1.30.1-fix-css-in-nancy.1...v1.30.1-fix-css-in-nancy.2) (2024-09-04)
 
 ### Bug Fixes
