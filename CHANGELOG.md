@@ -1,3 +1,9 @@
+## [1.30.1-fix-css-in-nancy.2](https://github.com/mParticle/aquarium/compare/v1.30.1-fix-css-in-nancy.1...v1.30.1-fix-css-in-nancy.2) (2024-09-04)
+
+### Bug Fixes
+
+- home logo svg unnested ([3eb695b](https://github.com/mParticle/aquarium/commit/3eb695bf73aca2a2e84f3601e0a6e96422750382))
+
 ## [1.30.1-fix-css-in-nancy.1](https://github.com/mParticle/aquarium/compare/v1.30.0...v1.30.1-fix-css-in-nancy.1) (2024-09-03)
 
 ### Bug Fixes
