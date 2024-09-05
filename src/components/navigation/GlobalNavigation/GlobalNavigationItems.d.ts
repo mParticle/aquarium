@@ -12,7 +12,7 @@ export interface IBaseGlobalNavigationItem {
 }
 
 export interface IGlobalNavigationLogo extends IBaseGlobalNavigationItem {
-  onSuiteLogoClick: () => void
+  onSuiteLogoClick?: () => void
   type?: 'default' | 'background-solid' | 'custom-size'
   icon?: ReactElement | keyof typeof Icons
   navSwitcherTourOptions?: INavSwitcherTourOptions
@@ -34,19 +34,19 @@ export interface IGlobalNavigationLink extends IBaseGlobalNavigationItem {
 
 export type IGlobalNavigationItem = IGlobalNavigationMenu | IGlobalNavigationLink
 
-export type MiniMapLinks = 'oversight' | 'dataPlatform' | 'customer360' | 'predictions' | 'analytics' | 'segmentation'
-export type MiniMapLink = {
-  linkId: MiniMapLinks
+export type SuiteLinks = 'oversight' | 'dataPlatform' | 'customer360' | 'predictions' | 'analytics' | 'segmentation'
+export type SuiteLink = {
+  linkId: SuiteLinks
   href: string
 }
 
-export interface IMiniMapOptions {
+export interface ISuiteSelectorOptions {
   overviewHref: string
-  links: MiniMapLink[]
-  onLinkClick: (link: MiniMapLink) => void
-  onUnauthorizedClick?: (link?: MiniMapLink) => void
-  unauthorizedLinks?: MiniMapLinks[]
-  activeLink: MiniMapLinks
+  links: SuiteLink[]
+  onLinkClick: (link: SuiteLink) => void
+  onUnauthorizedClick?: (link?: SuiteLink) => void
+  unauthorizedLinks?: SuiteLinks[]
+  activeLink: SuiteLinks
 }
 
 export interface INavSwitcherTourOptions extends ITourProps {
