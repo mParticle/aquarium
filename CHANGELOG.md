@@ -1,26 +1,14 @@
-## [1.30.1](https://github.com/mParticle/aquarium/compare/v1.30.0...v1.30.1) (2024-09-04)
+# [1.30.0-chore-cascader-updates.1](https://github.com/mParticle/aquarium/compare/v1.29.0...v1.30.0-chore-cascader-updates.1) (2024-08-30)
 
 ### Bug Fixes
 
-- unnest css ([#390](https://github.com/mParticle/aquarium/issues/390)) ([03d3ccb](https://github.com/mParticle/aquarium/commit/03d3ccb8b018a1f183c5312112c7d59c348b06c5))
-
-## [1.30.1-fix-css-in-nancy.2](https://github.com/mParticle/aquarium/compare/v1.30.1-fix-css-in-nancy.1...v1.30.1-fix-css-in-nancy.2) (2024-09-04)
-
-### Bug Fixes
-
-- home logo svg unnested ([3eb695b](https://github.com/mParticle/aquarium/commit/3eb695bf73aca2a2e84f3601e0a6e96422750382))
-
-## [1.30.1-fix-css-in-nancy.1](https://github.com/mParticle/aquarium/compare/v1.30.0...v1.30.1-fix-css-in-nancy.1) (2024-09-03)
-
-### Bug Fixes
-
-- unnest css ([78bc479](https://github.com/mParticle/aquarium/commit/78bc479a5bb292cc525190ad6b5ef842e846d58a))
-
-# [1.30.0](https://github.com/mParticle/aquarium/compare/v1.29.0...v1.30.0) (2024-09-03)
+- allow any component as a Label, include placement prop in base cascader ([16f9d0d](https://github.com/mParticle/aquarium/commit/16f9d0d75ed8ef2bd27652af76b783490b242bc9))
+- input display when selecting a reactNode label ([b691903](https://github.com/mParticle/aquarium/commit/b69190357e685d5fe14c43d2c161cda975e78849))
 
 ### Features
 
-- replace minimap with suiteSelector component ([#383](https://github.com/mParticle/aquarium/issues/383)) ([2ab27ca](https://github.com/mParticle/aquarium/commit/2ab27ca1bf7d0f6049498ca166469b5b57c914b1))
+- add searchLabel to queryItemCascader, and defaultOpen prop ([bb80cdc](https://github.com/mParticle/aquarium/commit/bb80cdc40ac9296ad59055ead60bbeb7b5fc8b73))
+- adds README for UPS ([#302](https://github.com/mParticle/aquarium/issues/302)) ([f80ea27](https://github.com/mParticle/aquarium/commit/f80ea2735c6cc5e41cf5a718b5c0a5c01d04496f))
 
 # [1.29.0](https://github.com/mParticle/aquarium/compare/v1.28.1...v1.29.0) (2024-08-30)
 
