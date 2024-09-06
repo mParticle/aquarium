@@ -22,7 +22,7 @@ export function SuiteSelectorContent(props: ISuiteSelectorContentProps) {
   return (
     <>
       <div className="u-padding-xxs">
-        <Row gutter={[0, 4]} className="suiteSelector__content">
+        <Row gutter={[4, 4]} className="suiteSelector__content">
           {props.links.map(link => (
             <Col span={8} key={link.linkId}>
               <SuiteSelectorSuiteLink
