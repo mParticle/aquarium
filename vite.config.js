@@ -35,15 +35,5 @@ export default defineConfig({
         },
       },
     },
-    plugins: [
-      {
-        name: 'exclude-fonts',
-        resolveId(source) {
-          if (source.includes('.woff') || source.includes('.woff2') || source.includes('.ttf')) {
-            return { id: source, external: true }
-          }
-        },
-      },
-    ],
   },
 })
