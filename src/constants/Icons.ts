@@ -80,6 +80,8 @@ import {
   Cohort,
   Annotation,
   Delete,
+  DropdownOpen,
+  DropdownClose,
 } from 'src/components/icons'
 
 export const Icons: Record<IconNames, IconOptions> = {
@@ -488,6 +490,14 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   delete: {
     light: Delete,
+    default: 'light',
+  },
+  dropdownClose: {
+    light: DropdownClose,
+    default: 'light',
+  },
+  dropdownOpen: {
+    light: DropdownOpen,
     default: 'light',
   },
 } as const

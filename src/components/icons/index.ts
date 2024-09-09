@@ -77,6 +77,8 @@ import Funnel from 'src/assets/svg/mp_info_lt_funnel.svg?react'
 import Cohort from 'src/assets/svg/mp_info_lt_cohort.svg?react'
 import Annotation from 'src/assets/svg/mp_info_lt_annotation.svg?react'
 import Delete from 'src/assets/svg/mp_act_lt_delete.svg?react'
+import DropdownClose from 'src/assets/svg/mp_act_lt_dropdown-close.svg?react'
+import DropdownOpen from 'src/assets/svg/mp_act_lt_dropdown-open.svg?react'
 
 export {
   AddIcon,
@@ -158,4 +160,6 @@ export {
   Cohort,
   Annotation,
   Delete,
+  DropdownClose,
+  DropdownOpen,
 }

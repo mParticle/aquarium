@@ -111,3 +111,5 @@ export type IconNames =
   | 'cohort'
   | 'annotation'
   | 'delete'
+  | 'dropdownClose'
+  | 'dropdownOpen'
