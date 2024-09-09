@@ -1,4 +1,4 @@
-import { type ThemeConfig } from 'antd'
+import { ThemeConfig } from 'antd'
 
 export type IMpThemeConfig = ThemeConfig & {
   token: {
