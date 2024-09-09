@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'GT America';
+    font-weight: 100;
+    font-style: normal;
+    src: url("../assets/fonts/gtamerica/GT-America-Standard-Light.woff") format("woff");
+}
+
+@font-face {
+    font-family: 'GT America';
+    font-weight: 100;
+    font-style: italic;
+    src: url("../assets/fonts/gtamerica/GT-America-Standard-Light-Italic.woff") format("woff");
+}
+
+@font-face {
+    font-family: 'GT America';
+    font-weight: normal;
+    font-style: normal;
+    src: url("../assets/fonts/gtamerica/GT-America-Standard-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: 'Gt America';
+    font-weight: normal;
+    font-style: italic;
+    src: url("../assets/fonts/gtamerica/GT-America-Standard-Regular-Italic.woff") format("woff");
+}
+
+@font-face {
+    font-family: 'Gt America';
+    font-weight: 600;
+    font-style: normal;
+    src: url("../assets/fonts/gtamerica/GT-America-Standard-Medium.woff") format("woff");
+
+}
+
+@font-face {
+    font-family: 'Gt America';
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gt America';
+    font-weight: bold;
+    font-style: normal;
+    src: url("../assets/fonts/gtamerica/GT-America-Standard-Bold.woff") format("woff");
+}
+
+@font-face {
+    font-family: 'Gt America';
+    font-weight: bold;
+    font-style: italic;
+    src: url("../assets/fonts/gtamerica/GT-America-Standard-Bold-Italic.woff") format("woff");
+}
