@@ -66,6 +66,17 @@ import ActiveIcon from 'src/assets/svg/mp_info_lt_active.svg?react'
 import LinkIcon from 'src/assets/svg/mp_info_link.svg?react'
 import InfoIcon from 'src/assets/svg/mp_info_lt_info.svg?react'
 import Placeholder from 'src/assets/svg/mp_info_lt_placeholder.svg?react'
+import Organization from 'src/assets/svg/mp_pm_lt_organization.svg?react'
+import Analysis from 'src/assets/svg/mp_pm_lt_journey-analysis.svg?react'
+import Dashboard from 'src/assets/svg/mp_pm_lt_dashboard.svg?react'
+import Account from 'src/assets/svg/mp_pm_lt_account.svg?react'
+import TextWidget from 'src/assets/svg/mp_info_lt_text-widget.svg?react'
+import RefreshFrequency from 'src/assets/svg/mp_info_lt_refresh-frequency.svg?react'
+import Privileges from 'src/assets/svg/mp_info_lt_privileges.svg?react'
+import Funnel from 'src/assets/svg/mp_info_lt_funnel.svg?react'
+import Cohort from 'src/assets/svg/mp_info_lt_cohort.svg?react'
+import Annotation from 'src/assets/svg/mp_info_lt_annotation.svg?react'
+import Delete from 'src/assets/svg/mp_act_lt_delete.svg?react'
 
 export {
   AddIcon,
@@ -136,4 +147,15 @@ export {
   ActiveIcon,
   InfoIcon,
   Placeholder,
+  Organization,
+  Analysis,
+  Dashboard,
+  Account,
+  TextWidget,
+  RefreshFrequency,
+  Privileges,
+  Funnel,
+  Cohort,
+  Annotation,
+  Delete,
 }
