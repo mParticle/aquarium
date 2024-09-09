@@ -101,7 +101,7 @@ export type IconNames =
   | 'info'
   | 'placeholder'
   | 'organization'
-  | 'analysis'
+  | 'journeyAnalysis'
   | 'dashboard'
   | 'account'
   | 'textWidget'

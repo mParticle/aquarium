@@ -70,7 +70,7 @@ import {
   InfoIcon,
   Placeholder,
   Organization,
-  Analysis,
+  JourneyAnalysis,
   Dashboard,
   Account,
   TextWidget,
@@ -450,8 +450,8 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: Organization,
     default: 'light',
   },
-  analysis: {
-    light: Analysis,
+  journeyAnalysis: {
+    light: JourneyAnalysis,
     default: 'light',
   },
   dashboard: {

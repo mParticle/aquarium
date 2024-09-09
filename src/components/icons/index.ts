@@ -67,7 +67,7 @@ import LinkIcon from 'src/assets/svg/mp_info_link.svg?react'
 import InfoIcon from 'src/assets/svg/mp_info_lt_info.svg?react'
 import Placeholder from 'src/assets/svg/mp_info_lt_placeholder.svg?react'
 import Organization from 'src/assets/svg/mp_pm_lt_organization.svg?react'
-import Analysis from 'src/assets/svg/mp_pm_lt_journey-analysis.svg?react'
+import JourneyAnalysis from 'src/assets/svg/mp_pm_lt_journey-analysis.svg?react'
 import Dashboard from 'src/assets/svg/mp_pm_lt_dashboard.svg?react'
 import Account from 'src/assets/svg/mp_pm_lt_account.svg?react'
 import TextWidget from 'src/assets/svg/mp_info_lt_text-widget.svg?react'
@@ -148,7 +148,7 @@ export {
   InfoIcon,
   Placeholder,
   Organization,
-  Analysis,
+  JourneyAnalysis,
   Dashboard,
   Account,
   TextWidget,
