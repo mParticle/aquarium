@@ -69,6 +69,19 @@ import {
   LinkIcon,
   InfoIcon,
   Placeholder,
+  Organization,
+  JourneyAnalysis,
+  Dashboard,
+  Account,
+  TextWidget,
+  RefreshFrequency,
+  Privileges,
+  Funnel,
+  Cohort,
+  Annotation,
+  Delete,
+  DropdownOpen,
+  DropdownClose,
 } from 'src/components/icons'
 
 export const Icons: Record<IconNames, IconOptions> = {
@@ -433,6 +446,58 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   placeholder: {
     light: Placeholder,
+    default: 'light',
+  },
+  organization: {
+    light: Organization,
+    default: 'light',
+  },
+  journeyAnalysis: {
+    light: JourneyAnalysis,
+    default: 'light',
+  },
+  dashboard: {
+    light: Dashboard,
+    default: 'light',
+  },
+  account: {
+    light: Account,
+    default: 'light',
+  },
+  textWidget: {
+    light: TextWidget,
+    default: 'light',
+  },
+  refreshFrequency: {
+    light: RefreshFrequency,
+    default: 'light',
+  },
+  privileges: {
+    light: Privileges,
+    default: 'light',
+  },
+  funnel: {
+    light: Funnel,
+    default: 'light',
+  },
+  cohort: {
+    light: Cohort,
+    default: 'light',
+  },
+  annotation: {
+    light: Annotation,
+    default: 'light',
+  },
+  delete: {
+    light: Delete,
+    default: 'light',
+  },
+  dropdownClose: {
+    light: DropdownClose,
+    default: 'light',
+  },
+  dropdownOpen: {
+    light: DropdownOpen,
     default: 'light',
   },
 } as const
