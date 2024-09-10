@@ -1,3 +1,10 @@
+## [1.30.2](https://github.com/mParticle/aquarium/compare/v1.30.1...v1.30.2) (2024-09-10)
+
+### Bug Fixes
+
+- add horizontal gap in suite selector ([#391](https://github.com/mParticle/aquarium/issues/391)) ([74a43d0](https://github.com/mParticle/aquarium/commit/74a43d0adb02f20df2b6ca93d962c47323708d01))
+- Add Icons in Aquarium ([#395](https://github.com/mParticle/aquarium/issues/395)) ([d554ed5](https://github.com/mParticle/aquarium/commit/d554ed50d505029c7d766a09e62428915d27bd0a))
+
 ## [1.30.1](https://github.com/mParticle/aquarium/compare/v1.30.0...v1.30.1) (2024-09-04)
 
 ### Bug Fixes
