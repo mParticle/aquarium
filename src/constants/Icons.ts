@@ -82,6 +82,11 @@ import {
   Delete,
   DropdownOpen,
   DropdownClose,
+  SegmentationAnalysis,
+  ScheduledReport,
+  FullScreen,
+  Edit,
+  Copy,
 } from 'src/components/icons'
 
 export const Icons: Record<IconNames, IconOptions> = {
@@ -498,6 +503,26 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   dropdownOpen: {
     light: DropdownOpen,
+    default: 'light',
+  },
+  segmentationAnalysis: {
+    light: SegmentationAnalysis,
+    default: 'light',
+  },
+  scheduledReport: {
+    light: ScheduledReport,
+    default: 'light',
+  },
+  fullScreen: {
+    light: FullScreen,
+    default: 'light',
+  },
+  edit: {
+    light: Edit,
+    default: 'light',
+  },
+  copy: {
+    light: Copy,
     default: 'light',
   },
 } as const

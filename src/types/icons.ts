@@ -113,3 +113,8 @@ export type IconNames =
   | 'delete'
   | 'dropdownClose'
   | 'dropdownOpen'
+  | 'segmentationAnalysis'
+  | 'scheduledReport'
+  | 'fullScreen'
+  | 'edit'
+  | 'copy'
