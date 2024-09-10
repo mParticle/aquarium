@@ -1,11 +1,3 @@
-# [1.31.0-chore-cascader-updates.2](https://github.com/mParticle/aquarium/compare/v1.31.0-chore-cascader-updates.1...v1.31.0-chore-cascader-updates.2) (2024-09-10)
-
-### Bug Fixes
-
-- add horizontal gap in suite selector ([#391](https://github.com/mParticle/aquarium/issues/391)) ([74a43d0](https://github.com/mParticle/aquarium/commit/74a43d0adb02f20df2b6ca93d962c47323708d01))
-- add icons ([#399](https://github.com/mParticle/aquarium/issues/399)) ([3343c26](https://github.com/mParticle/aquarium/commit/3343c2604e375b805febae1aa92ff505a226c2c0))
-- Add Icons in Aquarium ([#395](https://github.com/mParticle/aquarium/issues/395)) ([d554ed5](https://github.com/mParticle/aquarium/commit/d554ed50d505029c7d766a09e62428915d27bd0a))
-
 ## [1.30.3](https://github.com/mParticle/aquarium/compare/v1.30.2...v1.30.3) (2024-09-10)
 
 ### Bug Fixes
