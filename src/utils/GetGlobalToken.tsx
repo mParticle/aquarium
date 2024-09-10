@@ -7,6 +7,8 @@ import { LightTheme } from 'design/LightTheme'
 
 export function GetGlobalToken(): React.ReactNode {
   const { getDesignToken } = theme
+  const fontFallback =
+    "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"
 
   function wrapValuesInObject(obj: AliasToken) {
     return Object.fromEntries(
@@ -25,6 +27,10 @@ export function GetGlobalToken(): React.ReactNode {
           // remove newlines [from properties like box-shadow]
           if (typeof value === 'string') value = value.replace(/[\r\n]/gm, '')
 
+          // Add font fallback for font-related properties
+          if (key.toLowerCase().includes('fontfamily')) {
+            value = `${value}, ${fontFallback}`
+          }
           // remove deprecated color key syntax - https://ant.design/changelog#530
           const regex = /-([1-9]|10)$/
           if (regex.test(key)) {
@@ -37,6 +43,7 @@ export function GetGlobalToken(): React.ReactNode {
     )
   }
 
+  /* eslint-disable @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-explicit-any */
   const globalToken = wrapValuesInObject(getDesignToken(LightTheme))
 
   return <>{JSON.stringify(globalToken, null, 1)}</>
