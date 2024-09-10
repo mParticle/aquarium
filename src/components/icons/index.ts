@@ -79,6 +79,11 @@ import Annotation from 'src/assets/svg/mp_info_lt_annotation.svg?react'
 import Delete from 'src/assets/svg/mp_act_lt_delete.svg?react'
 import DropdownClose from 'src/assets/svg/mp_act_lt_dropdown-close.svg?react'
 import DropdownOpen from 'src/assets/svg/mp_act_lt_dropdown-open.svg?react'
+import SegmentationAnalysis from 'src/assets/svg/mp_pm_lt_segmentation-analysis.svg?react'
+import ScheduledReport from 'src/assets/svg/mp_pm_lt_scheduled-report.svg?react'
+import FullScreen from 'src/assets/svg/mp_act_lt_full-screen.svg?react'
+import Edit from 'src/assets/svg/mp_act_lt_edit.svg?react'
+import Copy from 'src/assets/svg/mp_act_lt_copy.svg?react'
 
 export {
   AddIcon,
@@ -162,4 +167,9 @@ export {
   Delete,
   DropdownClose,
   DropdownOpen,
+  SegmentationAnalysis,
+  ScheduledReport,
+  FullScreen,
+  Edit,
+  Copy,
 }
