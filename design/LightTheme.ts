@@ -37,8 +37,9 @@ export const LightTheme: IMpThemeConfig = {
     colorPrimaryText: '#2c00aa',
     colorPrimaryTextActive: '#20007a',
     controlOutline: 'rgba(54, 0, 209, 0.1)',
-    fontFamily: 'GT America',
-    fontFamilyCode: 'Roboto Mono',
+    fontFamily:
+      "'GT America', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+    fontFamilyCode: "'Roboto Mono', Consolas, 'Liberation Mono', Menlo, Courier, monospace",
     fontWeightStrong: 500,
     colorFillAlterSolid: '#f8f6fb',
     colorFilledHandleBg: '#ebe8f8',
