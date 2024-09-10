@@ -69,6 +69,24 @@ import {
   LinkIcon,
   InfoIcon,
   Placeholder,
+  Organization,
+  JourneyAnalysis,
+  Dashboard,
+  Account,
+  TextWidget,
+  RefreshFrequency,
+  Privileges,
+  Funnel,
+  Cohort,
+  Annotation,
+  Delete,
+  DropdownOpen,
+  DropdownClose,
+  SegmentationAnalysis,
+  ScheduledReport,
+  FullScreen,
+  Edit,
+  Copy,
 } from 'src/components/icons'
 
 export const Icons: Record<IconNames, IconOptions> = {
@@ -433,6 +451,78 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   placeholder: {
     light: Placeholder,
+    default: 'light',
+  },
+  organization: {
+    light: Organization,
+    default: 'light',
+  },
+  journeyAnalysis: {
+    light: JourneyAnalysis,
+    default: 'light',
+  },
+  dashboard: {
+    light: Dashboard,
+    default: 'light',
+  },
+  account: {
+    light: Account,
+    default: 'light',
+  },
+  textWidget: {
+    light: TextWidget,
+    default: 'light',
+  },
+  refreshFrequency: {
+    light: RefreshFrequency,
+    default: 'light',
+  },
+  privileges: {
+    light: Privileges,
+    default: 'light',
+  },
+  funnel: {
+    light: Funnel,
+    default: 'light',
+  },
+  cohort: {
+    light: Cohort,
+    default: 'light',
+  },
+  annotation: {
+    light: Annotation,
+    default: 'light',
+  },
+  delete: {
+    light: Delete,
+    default: 'light',
+  },
+  dropdownClose: {
+    light: DropdownClose,
+    default: 'light',
+  },
+  dropdownOpen: {
+    light: DropdownOpen,
+    default: 'light',
+  },
+  segmentationAnalysis: {
+    light: SegmentationAnalysis,
+    default: 'light',
+  },
+  scheduledReport: {
+    light: ScheduledReport,
+    default: 'light',
+  },
+  fullScreen: {
+    light: FullScreen,
+    default: 'light',
+  },
+  edit: {
+    light: Edit,
+    default: 'light',
+  },
+  copy: {
+    light: Copy,
     default: 'light',
   },
 } as const
