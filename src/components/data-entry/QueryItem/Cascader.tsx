@@ -171,7 +171,7 @@ const Cascader = (props: IQueryItemCascaderProps) => {
           prefix={getIcon()}
         />
       </BaseCascader>
-      {props.errorMessage && <Typography.Text type={'danger'}>{props.errorMessage}</Typography.Text>}
+      {props.errorMessage && <Typography.Text type="danger">{props.errorMessage}</Typography.Text>}
     </>
   )
 
