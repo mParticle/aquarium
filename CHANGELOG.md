@@ -1,3 +1,9 @@
+## [1.30.3](https://github.com/mParticle/aquarium/compare/v1.30.2...v1.30.3) (2024-09-10)
+
+### Bug Fixes
+
+- add icons ([#399](https://github.com/mParticle/aquarium/issues/399)) ([3343c26](https://github.com/mParticle/aquarium/commit/3343c2604e375b805febae1aa92ff505a226c2c0))
+
 ## [1.30.2](https://github.com/mParticle/aquarium/compare/v1.30.1...v1.30.2) (2024-09-10)
 
 ### Bug Fixes
