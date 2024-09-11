@@ -1,5 +1,7 @@
 <img src="https://static.mparticle.com/sdk/mp_logo_black.svg" width="280"><br>
 
+<a href="https://mparticle.github.io/aquarium/" target="_blank"><img src="https://raw.githubusercontent.com/storybooks/brand/master/badge/badge-storybook.svg"></a>
+
 # mParticle Aquarium
 
 mParticle Component Library
