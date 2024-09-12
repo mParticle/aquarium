@@ -1,4 +1,4 @@
-import { Menu } from 'src/components'
+import { type IMenuProps, Menu } from 'src/components'
 import type { MenuItemGroupType } from 'antd/es/menu/hooks/useItems'
 import { NavigationIcon } from 'src/components/navigation/GlobalNavigation/NavigationIcon'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
@@ -11,6 +11,8 @@ import { NavigationButtonItem } from 'src/components/navigation/GlobalNavigation
 
 export interface INavigationListProps {
   items: IGlobalNavigationItem[]
+  disableInteractions?: boolean
+  onOpenChange?: IMenuProps['onOpenChange']
 }
 
 export function NavigationList(props: INavigationListProps) {
@@ -19,9 +21,17 @@ export function NavigationList(props: INavigationListProps) {
       {props.items.map((item, i) => (
         <Fragment key={i}>
           {item.type === 'menu' ? (
-            <Menu key={i} expandIcon={null} className="globalNavigation__menu" items={[generateMenuItem(item, i)]} />
+            <Menu
+              mode="vertical"
+              key={i}
+              expandIcon={null}
+              className="globalNavigation__menu"
+              items={[generateMenuItem(item, i)]}
+              disabled={props.disableInteractions}
+              onOpenChange={props.onOpenChange}
+            />
           ) : (
-            <NavigationItem {...item} type="link" key={i} />
+            <NavigationItem {...item} type="link" key={i} disabled={props.disableInteractions} />
           )}
         </Fragment>
       ))}

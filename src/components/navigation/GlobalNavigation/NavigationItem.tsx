@@ -13,11 +13,14 @@ export interface INavigationItemProps {
   isActive?: boolean
   onClick?: (e: MouseEvent) => void // link only
   hrefOptions?: HrefOptions // link only
+  disabled?: boolean
 }
+
+const noop = () => {}
 
 export function NavigationItem(props: INavigationItemProps) {
   if (props.type === 'menu' && props.items) {
-    return <NavigationList items={props.items} />
+    return <NavigationList items={props.items} disableInteractions={props.disabled} />
   }
 
   const navigationIcon = (
@@ -27,8 +30,9 @@ export function NavigationItem(props: INavigationItemProps) {
       }`}
       icon={props.icon}
       label={props.label}
-      onClick={props.onClick}
+      onClick={!props.disabled ? props.onClick : noop}
       hideLabel={props.hideLabel}
+      disabled={props.disabled}
     />
   )
 

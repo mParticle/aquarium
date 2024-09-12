@@ -895,6 +895,44 @@ export const IndicativeWithSuiteSwitcher: Story = {
   },
 }
 
+export const IndicativeWithDisabledInteractions: Story = {
+  args: {
+    disableInteractions: true,
+    tempGlobalOnClick: () => {
+      console.log('Global On Click')
+    },
+    logo: indLogo,
+    tools: indTools,
+    management: indManagement,
+    createItems: indCreateItems,
+    orgs: indOrgs,
+    minimapOptions: {
+      overviewHref: '/',
+      onLinkClick: link => {
+        if (link.linkId !== 'analytics') alert(link.href)
+      },
+      links: [
+        { linkId: 'oversight', href: '/oversight' },
+        { linkId: 'dataPlatform', href: '/data-platform' },
+        { linkId: 'customer360', href: '/customer-360' },
+        { linkId: 'predictions', href: '/predictions' },
+        { linkId: 'analytics', href: '/analytics' },
+        { linkId: 'segmentation', href: '/segmentation' },
+      ],
+      activeLink: 'analytics',
+    },
+    navigationButtonItemOptions: {
+      label: 'Custom Signout Label',
+      onClick: () => {
+        alert('Signout!')
+      },
+    },
+    onMpHomeClick: () => {
+      alert('going to overview map')
+    },
+  },
+}
+
 const cortexLogo: IGlobalNavigationLogo = {
   label: 'Predictions',
   icon: 'predictions',
@@ -1260,6 +1298,49 @@ export const MPWithNavSwitcherTour: Story = {
 
 export const MPWithSuiteSelector: Story = {
   args: {
+    onSearchClick: () => {
+      alert('Searching!')
+    },
+    logo: mpLogoWithBackground,
+    tools: mpTools,
+    management: mpManagement,
+    orgs: mpOrgs,
+    onMpHomeClick: () => {
+      alert('going to overview map')
+    },
+    avatarOptions: {
+      // src: "https://static-qa1.qa.corp.mparticle.com/appimg/logo_af_916397d2-9732-8de6-77cc-80e3bba120ca.png",
+      alt: 'avatar',
+    },
+    showSuiteLogo: true,
+    suiteSelectorOptions: {
+      overviewHref: '/',
+      onLinkClick: link => {
+        alert(link.href)
+      },
+      onUnauthorizedClick: link => {
+        alert(`unauthorized ${link?.href} `)
+      },
+      unauthorizedLinks: ['dataPlatform'],
+      activeLink: 'oversight',
+      links: [
+        { linkId: 'oversight', href: '/oversight' },
+        { linkId: 'dataPlatform', href: '/data-platform' },
+        { linkId: 'customer360', href: '/customer-360' },
+        { linkId: 'predictions', href: '/predictions' },
+        { linkId: 'analytics', href: '/analytics' },
+        { linkId: 'segmentation', href: '/segmentation' },
+      ],
+    },
+  },
+}
+
+export const MPWithDisabledInteractions: Story = {
+  args: {
+    disableInteractions: true,
+    tempGlobalOnClick: () => {
+      console.log('Global On Click')
+    },
     onSearchClick: () => {
       alert('Searching!')
     },

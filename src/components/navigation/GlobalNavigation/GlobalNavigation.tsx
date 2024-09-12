@@ -22,6 +22,7 @@ import {
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
 import { useNewExperienceReminder } from 'src/hooks/NewExperienceReminder/useNewExperienceReminder'
 import { HomeButton } from 'src/components/navigation/GlobalNavigation/HomeButton'
+import { type MouseEventHandler } from 'react'
 
 export interface IGlobalNavigationProps {
   logo: IGlobalNavigationLogo
@@ -40,12 +41,15 @@ export interface IGlobalNavigationProps {
     onClick: () => void
     withoutContainer?: boolean
   }
+  disableInteractions?: boolean
+  onNavigationItemHover?: (item: IGlobalNavigationItem) => void
   suiteSelectorOptions?: ISuiteSelectorOptions
   /**
    * @deprecated This variant is a temporary fix for new component.
    * This will be removed once all the apps updated.
    */
   minimapOptions?: ISuiteSelectorOptions
+  tempGlobalOnClick?: MouseEventHandler<HTMLDivElement>
 }
 
 export const GlobalNavWidth = 90 as const
@@ -53,7 +57,7 @@ export const GlobalNavWidth = 90 as const
 export const GlobalNavigation = ({ showSuiteLogo = true, ...props }: IGlobalNavigationProps) => {
   return (
     <Layout className="globalNavigation">
-      <Layout.Sider className="globalNavigation__sider" width={GlobalNavWidth}>
+      <Layout.Sider className="globalNavigation__sider" width={GlobalNavWidth} onClick={props.tempGlobalOnClick}>
         <Flex vertical justify="space-between" style={{ height: '100%' }}>
           <div>
             {showSuiteLogo && (
@@ -66,10 +70,10 @@ export const GlobalNavigation = ({ showSuiteLogo = true, ...props }: IGlobalNavi
               {props.onSearchClick && <NavigationSearch onClick={props.onSearchClick} />}
               {props.createItems && <NavigationCreate createItems={props.createItems} />}
             </Center>
-            <NavigationList items={props.tools} />
+            <NavigationList items={props.tools} disableInteractions={props.disableInteractions} />
           </div>
           <div>
-            <NavigationList items={props.management} />
+            <NavigationList items={props.management} disableInteractions={props.disableInteractions} />
             {props.orgs ? (
               <WorkspaceSelector
                 orgs={props.orgs}
