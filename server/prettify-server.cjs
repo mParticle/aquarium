@@ -1,8 +1,8 @@
+const fs = require('fs');
 const http = require('http');
 const path = require('path');
 const multer = require('multer');
 const { prettifySVG, savePrettifiedSVG } = require('../src/utils/svg-prettifier/prettifier.cjs'); // Ensure correct path
-const { v4: uuidv4 } = require('uuid');  // UUID for unique file naming
 
 const port = 8000;
 
@@ -12,11 +12,12 @@ const upload = multer({ storage: storage });
 
 const server = http.createServer((req, res) => {
   // Add CORS headers
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Origin', '*');  // Allow requests from any origin
+  res.setHeader('Access-Control-Allow-Methods', 'POST');  // Allow POST requests
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');  // Allow content-type header
 
   if (req.method === 'OPTIONS') {
+    // Handle preflight requests
     res.writeHead(204);
     res.end();
     return;
@@ -25,63 +26,62 @@ const server = http.createServer((req, res) => {
   if (req.method === 'POST' && req.url === '/api') {
     upload.array('files')(req, res, err => {
       if (err) {
-        console.error('Multer error:', err);
-        res.writeHead(500, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ message: 'Error uploading files', error: err.message }));
+        console.error('Error uploading file:', err);
+        res.writeHead(500, { 'Content-Type': 'text/plain' });
+        res.end('Error uploading file');
         return;
       }
 
-      // Handle cases where no files are uploaded
-      if (!req.files || req.files.length === 0) {
-        res.writeHead(400, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ message: 'No files uploaded' }));
-        return;
-      }
+      // Accumulate success or error messages
+      const results = [];
+      let hasErrors = false; // Flag to check if any file failed
 
       // Process each uploaded file
-      try {
-        req.files.forEach(file => prettifyFile(file, res));
-      } catch (error) {
-        console.error('Error processing files:', error);
-        res.writeHead(500, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ message: 'Error processing files', error: error.message }));
+      req.files.forEach(file => {
+        try {
+          const content = file.buffer.toString('utf8'); // Get the file content from memory
+          const prettifiedSVG = prettifySVG(content);
+
+          // Destination path for the prettified SVG
+          const filePath = path.join(__dirname, '../src/assets/svg/', file.originalname);
+
+          // Check if the file already exists
+          if (fs.existsSync(filePath)) {
+            // If a file with the same name exists, return an error
+            results.push({ file: file.originalname, status: 'error', message: 'File already exists' });
+            hasErrors = true; // Mark that there is an error
+            return;
+          }
+
+          // Save the prettified SVG to the destination folder
+          savePrettifiedSVG(filePath, prettifiedSVG);
+
+          // Add success message
+          results.push({ file: file.originalname, status: 'success' });
+        } catch (error) {
+          console.error(`Error prettifying file ${file.originalname}:`, error);
+          hasErrors = true; // Mark that there is an error
+
+          // Add error message
+          results.push({ file: file.originalname, status: 'error', message: error.message });
+        }
+      });
+
+      // If there are errors, return a 400 Bad Request status
+      if (hasErrors) {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+      } else {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
       }
+
+      res.end(JSON.stringify(results)); // Send results as JSON
     });
   } else {
-    res.writeHead(404, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ message: 'Endpoint not found' }));
+    res.writeHead(404, { 'Content-Type': 'text/plain' });
+    res.end('Not found');
   }
 });
 
 server.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
 });
-
-function prettifyFile(file, res) {
-  try {
-    // Validate the file type (SVG only)
-    if (!file.mimetype || file.mimetype !== 'image/svg+xml') {
-      throw new Error(`Invalid file type: ${file.mimetype}. Only SVG files are allowed.`);
-    }
-
-    const content = file.buffer.toString('utf8');  // Get the file content from memory
-    const prettifiedSVG = prettifySVG(content);
-
-    // Generate a unique filename by appending a UUID or timestamp
-    const uniqueFileName = `${path.parse(file.originalname).name}-${uuidv4()}.svg`;
-
-    // Define where the prettified SVG should be saved
-    const filePath = path.join(__dirname, '../src/assets/svg/', uniqueFileName);
-
-    // Attempt to save the prettified SVG
-    savePrettifiedSVG(filePath, prettifiedSVG);
-
-    // Send a success response if everything worked fine
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ message: `File ${uniqueFileName} prettified and saved successfully` }));
-  } catch (error) {
-    console.error(`Error prettifying file ${file.originalname}:`, error);
-    res.writeHead(500, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ message: `Error prettifying file: ${file.originalname}`, error: error.message }));
-  }
-}

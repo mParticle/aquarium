@@ -1,19 +1,25 @@
-import { useState } from 'react'
-import { Upload, Button, List, Space } from 'antd'
-import { UploadOutlined, CheckOutlined } from '@ant-design/icons'
-import type { UploadFile } from 'antd/es/upload/interface' // Import UploadFile type
+import React, { useState } from 'react'
+import { Upload, Button, List, Space } from 'src/components'
+import type { UploadFile } from 'antd/es/upload/interface'
+
+type FileResult = {
+  file: string
+  status: 'success' | 'error'
+  message?: string // Optional message, only needed if there is an error
+}
 
 export const SVGPrettifier = () => {
   const [files, setFiles] = useState<UploadFile[]>([]) // Specify the type for files
   const [prettifying, setPrettifying] = useState(false)
   const [statusMessage, setStatusMessage] = useState('') // State to hold success/error messages
   const [statusType, setStatusType] = useState('') // State to hold success/error type (for styling)
+  const [fileResults, setFileResults] = useState<FileResult[]>([]) // Correctly typed file results
 
   const handleUpload = ({ fileList }: { fileList: UploadFile[] }) => {
     setFiles(fileList ?? []) // Use nullish coalescing to ensure fileList is an array
 
     // Set status message below
-    const fileNames = (fileList ?? []).map(file => file.name ?? 'Unknown').join(', ')
+    const fileNames = (fileList ?? []).map(file => file.name).join(', ')
     setStatusMessage(`Files uploaded successfully: ${fileNames}`)
     setStatusType('success') // Set message type to success
   }
@@ -39,20 +45,22 @@ export const SVGPrettifier = () => {
         body: formData,
       })
 
-      if (!response.ok) {
-        // Define the structure of the expected error response
-        type ErrorResponse = { message?: string }
+      const results: FileResult[] = await response.json() // Expecting an array of results
+      setFileResults(results)
 
-        const errorData: ErrorResponse = await response.json() // Expecting server to send JSON error
-        const errorMessage = errorData.message ?? 'Error processing files' // Safely access the message
-        throw new Error(errorMessage)
+      // Handle overall status message
+      if (!response.ok) {
+        // If 400 error, show a general error message
+        setStatusMessage('Some files could not be processed. See details below.')
+        setStatusType('error')
+      } else {
+        setStatusMessage('All files prettified successfully!')
+        setStatusType('success')
       }
 
-      setStatusMessage('All files have been prettified and saved successfully!')
-      setStatusType('success')
-
-      // Clear the files from the UI
-      setFiles([]) // Reset the file state to clear the list in the UI
+      // Clear the files from the UI if all were successful
+      const hasErrors = results.some((result: { status: string }) => result.status === 'error')
+      if (!hasErrors) setFiles([])
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred'
       setStatusMessage(`Error prettifying the files: ${errorMessage}`)
@@ -80,10 +88,7 @@ export const SVGPrettifier = () => {
           }}
           showUploadList={true} // Show uploaded files automatically
           style={{ width: '100%' }}>
-          <Button
-            icon={<UploadOutlined onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />}
-            disabled={prettifying}
-            style={{ width: '100%' }}>
+          <Button disabled={prettifying} style={{ width: '100%' }}>
             Select SVG Files
           </Button>
         </Upload>
@@ -108,9 +113,21 @@ export const SVGPrettifier = () => {
           </div>
         )}
 
+        {fileResults.length > 0 && (
+          <List
+            header={<div>File Results</div>}
+            bordered
+            dataSource={fileResults}
+            renderItem={result => (
+              <List.Item style={{ color: result.status === 'error' ? 'red' : 'green' }}>
+                {result.file}: {result.status === 'success' ? 'Prettified' : `Error - ${result.message}`}
+              </List.Item>
+            )}
+          />
+        )}
+
         <Button
           type="primary"
-          icon={<CheckOutlined onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />}
           onClick={() => {
             handlePrettify().catch(console.error) // Correct async handling
           }}
