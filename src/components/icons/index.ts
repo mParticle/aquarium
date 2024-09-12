@@ -84,6 +84,7 @@ import ScheduledReport from 'src/assets/svg/mp_pm_lt_scheduled-report.svg?react'
 import FullScreen from 'src/assets/svg/mp_act_lt_full-screen.svg?react'
 import Edit from 'src/assets/svg/mp_act_lt_edit.svg?react'
 import Copy from 'src/assets/svg/mp_act_lt_copy.svg?react'
+import MoreActions from 'src/assets/svg/mp_act_lt_more-actions.svg?react'
 
 export {
   AddIcon,
@@ -172,4 +173,5 @@ export {
   FullScreen,
   Edit,
   Copy,
+  MoreActions,
 }
