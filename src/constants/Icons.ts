@@ -87,6 +87,7 @@ import {
   FullScreen,
   Edit,
   Copy,
+  More,
 } from 'src/components/icons'
 
 export const Icons: Record<IconNames, IconOptions> = {
@@ -523,6 +524,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   copy: {
     light: Copy,
+    default: 'light',
+  },
+  more: {
+    light: More,
     default: 'light',
   },
 } as const
