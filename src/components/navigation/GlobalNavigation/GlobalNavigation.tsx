@@ -9,6 +9,8 @@ import {
   type IAvatarProps,
   Icon,
   Layout,
+  Drawer,
+  type IDrawerProps,
 } from 'src/components'
 import { SuiteLogo } from 'src/components/navigation/GlobalNavigation/SuiteLogo'
 import { NavigationSearch } from 'src/components/navigation/GlobalNavigation/NavigationSearch'
@@ -23,6 +25,9 @@ import { NavigationItem } from 'src/components/navigation/GlobalNavigation/Navig
 import { useNewExperienceReminder } from 'src/hooks/NewExperienceReminder/useNewExperienceReminder'
 import { HomeButton } from 'src/components/navigation/GlobalNavigation/HomeButton'
 import { type MouseEventHandler } from 'react'
+import { type DrawerStyles } from 'antd/es/drawer/DrawerPanel'
+
+// type DrawerOptions = Omit<IDrawerProps, 'key' | 'placement' | 'styles' | 'getContainer' | 'closeIcon'>
 
 export interface IGlobalNavigationProps {
   logo: IGlobalNavigationLogo
@@ -50,9 +55,27 @@ export interface IGlobalNavigationProps {
    */
   minimapOptions?: ISuiteSelectorOptions
   tempGlobalOnClick?: MouseEventHandler<HTMLDivElement>
+  drawerOptions?: IDrawerProps
 }
 
 export const GlobalNavWidth = 90 as const
+
+const WIDTH = '300px' as const
+const OPACITY = '0' as const
+const PADDING = 0 as const
+
+const drawerStyles: DrawerStyles = {
+  mask: {
+    opacity: OPACITY,
+  },
+  wrapper: {
+    width: WIDTH,
+    marginLeft: GlobalNavWidth,
+  },
+  body: {
+    padding: PADDING,
+  },
+} as const
 
 export const GlobalNavigation = ({ showSuiteLogo = true, ...props }: IGlobalNavigationProps) => {
   return (
@@ -95,6 +118,15 @@ export const GlobalNavigation = ({ showSuiteLogo = true, ...props }: IGlobalNavi
           </div>
         </Flex>
       </Layout.Sider>
+      <Drawer
+        key="globalNavigation__leftDrawer"
+        styles={drawerStyles}
+        closeIcon={false}
+        placement="left"
+        forceRender
+        {...props.drawerOptions}>
+        {props.drawerOptions?.children ?? null}
+      </Drawer>
     </Layout>
   )
 }
