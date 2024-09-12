@@ -118,4 +118,4 @@ export type IconNames =
   | 'fullScreen'
   | 'edit'
   | 'copy'
-  | 'more'
+  | 'moreActions'
