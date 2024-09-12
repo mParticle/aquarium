@@ -1,3 +1,13 @@
+# [1.31.0-nav-disabled-interactions-poc.1](https://github.com/mParticle/aquarium/compare/v1.30.3...v1.31.0-nav-disabled-interactions-poc.1) (2024-09-12)
+
+### Bug Fixes
+
+- add more icon ([#403](https://github.com/mParticle/aquarium/issues/403)) ([3abc3b7](https://github.com/mParticle/aquarium/commit/3abc3b71916ab5a7db3c4f93e06ad2bd5845e1bf))
+
+### Features
+
+- testing a disabled state to validate notifications project requirements ([440150c](https://github.com/mParticle/aquarium/commit/440150c3458d88873a058ad2755f73f59ca45e4b))
+
 ## [1.30.3](https://github.com/mParticle/aquarium/compare/v1.30.2...v1.30.3) (2024-09-10)
 
 ### Bug Fixes
