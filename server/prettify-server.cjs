@@ -1,10 +1,16 @@
 const fs = require('fs');
-const http = require('http');
+const https = require('https');
 const path = require('path');
 const multer = require('multer');
 const sanitizeFilename = require('sanitize-filename');
+const { readFileSync } = require('fs');
+const { prettifySVG, savePrettifiedSVG } = require('../src/utils/svg-prettifier/prettifier.cjs');
 
-const { prettifySVG, savePrettifiedSVG } = require('../src/utils/svg-prettifier/prettifier.cjs'); // Ensure correct path
+// Provide SSL certificates (self-signed or from a CA)
+const options = {
+  key: readFileSync('path/to/your/server.key'),
+  cert: readFileSync('path/to/your/server.cert'),
+};
 
 const port = 8000;
 
@@ -12,7 +18,7 @@ const port = 8000;
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
-const server = http.createServer((req, res) => {
+const server = https.createServer(options, (req, res) => {
   // Add CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');  // Allow requests from any origin
   res.setHeader('Access-Control-Allow-Methods', 'POST');  // Allow POST requests
@@ -28,7 +34,7 @@ const server = http.createServer((req, res) => {
   if (req.method === 'POST' && req.url === '/api') {
     upload.array('files')(req, res, err => {
       if (err) {
-        console.error('Error uploading file:', err);
+        console.error('Error uploading file: %s', err);
         res.writeHead(500, { 'Content-Type': 'text/plain' });
         res.end('Error uploading file');
         return;
@@ -41,7 +47,6 @@ const server = http.createServer((req, res) => {
       // Process each uploaded file
       req.files.forEach(file => {
         try {
-          const sanitizeFilename = require('sanitize-filename'); // Import the function
           const safeFileName = sanitizeFilename(file.originalname); // Sanitize the filename
           const content = file.buffer.toString('utf8'); // Get the file content from memory
           const prettifiedSVG = prettifySVG(content);
@@ -62,14 +67,13 @@ const server = http.createServer((req, res) => {
           // Add success message
           results.push({ file: file.originalname, status: 'success' });
         } catch (error) {
-          console.error(`Error prettifying file ${file.originalname}:`, error);
+          console.error('Error prettifying file %s: %s', file.originalname, error);
           hasErrors = true; // Mark that there is an error
 
           // Add error message
           results.push({ file: file.originalname, status: 'error', message: error.message });
         }
       });
-
 
       // If there are errors, return a 400 Bad Request status
       if (hasErrors) {
