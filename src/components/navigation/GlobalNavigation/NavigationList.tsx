@@ -47,7 +47,7 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
     const childrenWithExpandedIcons = item.children.map(({ hrefOptions, ...child }, index) => ({
       ...child,
       key: `${String(child.label)}${index}`,
-      label: buildLinkFromHrefOptions(child.label, hrefOptions),
+      label: child.type === 'button' ? child.label : buildLinkFromHrefOptions(child.label, hrefOptions),
     }))
 
     childrenWithExpandedIcons.forEach((child, index) => {
