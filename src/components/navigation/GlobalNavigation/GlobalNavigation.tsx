@@ -28,7 +28,6 @@ import { type MouseEventHandler } from 'react'
 import { type DrawerStyles } from 'antd/es/drawer/DrawerPanel'
 
 // type DrawerOptions = Omit<IDrawerProps, 'key' | 'placement' | 'styles' | 'getContainer' | 'closeIcon'>
-
 export interface IGlobalNavigationProps {
   logo: IGlobalNavigationLogo
   tools: IGlobalNavigationItem[]
@@ -118,15 +117,18 @@ export const GlobalNavigation = ({ showSuiteLogo = true, ...props }: IGlobalNavi
           </div>
         </Flex>
       </Layout.Sider>
+      {/* <div style={{ height: '100px', width: '100px' }}> */}
       <Drawer
         key="globalNavigation__leftDrawer"
         styles={drawerStyles}
         closeIcon={false}
         placement="left"
         forceRender
+        // getContainer={false}
         {...props.drawerOptions}>
         {props.drawerOptions?.children ?? null}
       </Drawer>
+      {/* </div> */}
     </Layout>
   )
 }

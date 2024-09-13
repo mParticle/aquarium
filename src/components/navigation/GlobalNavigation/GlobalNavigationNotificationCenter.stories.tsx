@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from 'react'
+import React, { useMemo, useState } from 'react'
 import {
   Center,
   GlobalNavigation,
@@ -142,9 +142,7 @@ type Story = StoryObj<typeof GlobalNavigation>
 
 export const MPWithDisabledInteractions: Story = {
   render: props => {
-    // const [isNotificationCenterOpen, setIsNotificationCenterOpen] = useState(false)
-    const notificationCenterRef = useRef(true)
-    console.log('rendering...')
+    const [isNotificationCenterOpen, setIsNotificationCenterOpen] = useState(false)
     const management = useMemo(
       () => [
         {
@@ -154,7 +152,7 @@ export const MPWithDisabledInteractions: Story = {
           type: 'link',
           isActive: false,
           onClick: () => {
-            notificationCenterRef.current = !notificationCenterRef.current
+            setIsNotificationCenterOpen(prev => !prev)
           },
         } satisfies IGlobalNavigationLink,
         ...defaultManagement,
@@ -163,12 +161,15 @@ export const MPWithDisabledInteractions: Story = {
     )
 
     return (
-      <div style={{ width: 800 }}>
+      <div>
         <GlobalNavigation
           {...props}
           drawerOptions={{
             title: 'Notifications',
-            open: notificationCenterRef.current,
+            open: isNotificationCenterOpen,
+            onClose: () => {
+              setIsNotificationCenterOpen(false)
+            },
           }}
           logo={defaultLogo}
           tools={defaultTools}
