@@ -1,17 +1,18 @@
 const fs = require('fs');
-const http = require('http');
+const http = require('http');  // Using HTTP since this is only for local development
 const path = require('path');
 const multer = require('multer');
 const sanitizeFilename = require('sanitize-filename');
 const { prettifySVG, savePrettifiedSVG } = require('../src/utils/svg-prettifier/prettifier.cjs');
 
 const port = 8000;
+const host = '127.0.0.1';  // Restricting server to localhost to ensure it only runs locally
 
 // Use memory storage for uploaded files
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
-const server = http.createServer((req, res) => {  // Cambiado a HTTP
+const requestHandler = (req, res) => {
   // Add CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');  // Allow requests from any origin
   res.setHeader('Access-Control-Allow-Methods', 'POST');  // Allow POST requests
@@ -81,8 +82,16 @@ const server = http.createServer((req, res) => {  // Cambiado a HTTP
     res.writeHead(404, { 'Content-Type': 'text/plain' });
     res.end('Not found');
   }
+};
+
+// Start server and restrict it to localhost to ensure it only runs locally
+server.listen(port, host, () => {
+  console.log(`Server is listening on http://${host}:${port}`);
 });
 
-server.listen(port, () => {
-  console.log(`Server is listening on port ${port}`);
+// Always use localhost for the fetch call as this is for local development
+const url = 'http://localhost:8000/api';
+const response = await fetch(url, {
+  method: 'POST',
+  body: formData,
 });
