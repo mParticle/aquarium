@@ -1,3 +1,5 @@
+# [1.31.0-nav-disabled-interactions-poc.3](https://github.com/mParticle/aquarium/compare/v1.31.0-nav-disabled-interactions-poc.2...v1.31.0-nav-disabled-interactions-poc.3) (2024-09-13)
+
 # [1.31.0-nav-disabled-interactions-poc.2](https://github.com/mParticle/aquarium/compare/v1.31.0-nav-disabled-interactions-poc.1...v1.31.0-nav-disabled-interactions-poc.2) (2024-09-12)
 
 # [1.31.0-nav-disabled-interactions-poc.1](https://github.com/mParticle/aquarium/compare/v1.30.3...v1.31.0-nav-disabled-interactions-poc.1) (2024-09-12)
