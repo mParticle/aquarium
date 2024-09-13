@@ -1,3 +1,9 @@
+# [1.31.0-nav-disabled-interactions-poc.4](https://github.com/mParticle/aquarium/compare/v1.31.0-nav-disabled-interactions-poc.3...v1.31.0-nav-disabled-interactions-poc.4) (2024-09-13)
+
+### Bug Fixes
+
+- avoid nested anchor when child is button ([1e179fa](https://github.com/mParticle/aquarium/commit/1e179fad102726029691f12582f5d7e0a4beed16))
+
 # [1.31.0-nav-disabled-interactions-poc.3](https://github.com/mParticle/aquarium/compare/v1.31.0-nav-disabled-interactions-poc.2...v1.31.0-nav-disabled-interactions-poc.3) (2024-09-13)
 
 # [1.31.0-nav-disabled-interactions-poc.2](https://github.com/mParticle/aquarium/compare/v1.31.0-nav-disabled-interactions-poc.1...v1.31.0-nav-disabled-interactions-poc.2) (2024-09-12)
