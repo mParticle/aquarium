@@ -91,7 +91,7 @@ server.listen(port, host, () => {
   console.log(`Server is listening on http://${host}:${port}`);
 });
 
-// Always use localhost for the fetch call as this is for local development
+// semgrep ignore typescript.react.security.react-insecure-request.react-insecure-request: Local development,
 const url = 'http://localhost:8000/api';
 const response = await fetch(url, {
   method: 'POST',
