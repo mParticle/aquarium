@@ -9,8 +9,8 @@ import {
   type IAvatarProps,
   Icon,
   Layout,
-  Drawer,
   type IDrawerProps,
+  type IPopoverProps,
 } from 'src/components'
 import { SuiteLogo } from 'src/components/navigation/GlobalNavigation/SuiteLogo'
 import { NavigationSearch } from 'src/components/navigation/GlobalNavigation/NavigationSearch'
@@ -25,9 +25,14 @@ import { NavigationItem } from 'src/components/navigation/GlobalNavigation/Navig
 import { useNewExperienceReminder } from 'src/hooks/NewExperienceReminder/useNewExperienceReminder'
 import { HomeButton } from 'src/components/navigation/GlobalNavigation/HomeButton'
 import { type MouseEventHandler } from 'react'
-import { type DrawerStyles } from 'antd/es/drawer/DrawerPanel'
+import { Button, Popover, Space, Typography } from 'antd'
 
 // type DrawerOptions = Omit<IDrawerProps, 'key' | 'placement' | 'styles' | 'getContainer' | 'closeIcon'>
+export interface NotificationActions {
+  onClose?: () => void
+  onPreferencesClick?: () => void
+}
+
 export interface IGlobalNavigationProps {
   logo: IGlobalNavigationLogo
   tools: IGlobalNavigationItem[]
@@ -55,26 +60,30 @@ export interface IGlobalNavigationProps {
   minimapOptions?: ISuiteSelectorOptions
   tempGlobalOnClick?: MouseEventHandler<HTMLDivElement>
   drawerOptions?: IDrawerProps
+  notification?: {
+    options?: IPopoverProps
+    actions?: NotificationActions
+  }
 }
 
 export const GlobalNavWidth = 90 as const
 
-const WIDTH = '300px' as const
-const OPACITY = '0' as const
-const PADDING = 0 as const
+// const WIDTH = '300px' as const
+// const OPACITY = '0' as const
+// const PADDING = 0 as const
 
-const drawerStyles: DrawerStyles = {
-  mask: {
-    opacity: OPACITY,
-  },
-  wrapper: {
-    width: WIDTH,
-    marginLeft: GlobalNavWidth,
-  },
-  body: {
-    padding: PADDING,
-  },
-} as const
+// const drawerStyles: DrawerStyles = {
+//   mask: {
+//     opacity: OPACITY,
+//   },
+//   wrapper: {
+//     width: WIDTH,
+//     marginLeft: GlobalNavWidth,
+//   },
+//   body: {
+//     padding: PADDING,
+//   },
+// } as const
 
 export const GlobalNavigation = ({ showSuiteLogo = true, ...props }: IGlobalNavigationProps) => {
   return (
@@ -95,6 +104,47 @@ export const GlobalNavigation = ({ showSuiteLogo = true, ...props }: IGlobalNavi
             <NavigationList items={props.tools} disableInteractions={props.disableInteractions} />
           </div>
           <div>
+            <Popover
+              trigger="click"
+              placement="right"
+              arrow={false}
+              overlayStyle={{ height: '100%', width: '300px', zIndex: 9999, left: GlobalNavWidth }}
+              overlayInnerStyle={{ height: '100vh', padding: 0, borderRadius: 0 }}
+              title={
+                <Flex
+                  justify="space-between"
+                  align="center"
+                  style={{
+                    padding: '16px 24px',
+                    borderBottom: '1px solid rgba(44, 22, 11, 0.09)',
+                  }}>
+                  <Typography.Text strong={true}>Notifications</Typography.Text>
+                  <Space>
+                    <Button
+                      type="text"
+                      shape="circle"
+                      icon={<Icon name="settings" />}
+                      onClick={props.notification?.actions?.onPreferencesClick}
+                    />
+                    <Button
+                      type="text"
+                      shape="circle"
+                      icon={<Icon name="remove" />}
+                      onClick={props.notification?.actions?.onClose}
+                    />
+                  </Space>
+                </Flex>
+              }
+              {...props.notification?.options}>
+              <div>
+                <NavigationItem
+                  key="notificaitonCenter"
+                  type="link"
+                  isActive={props.notification?.options?.open}
+                  icon={<Icon name="notification" />}
+                />
+              </div>
+            </Popover>
             <NavigationList items={props.management} disableInteractions={props.disableInteractions} />
             {props.orgs ? (
               <WorkspaceSelector
@@ -118,7 +168,7 @@ export const GlobalNavigation = ({ showSuiteLogo = true, ...props }: IGlobalNavi
         </Flex>
       </Layout.Sider>
       {/* <div style={{ height: '100px', width: '100px' }}> */}
-      <Drawer
+      {/* <Drawer
         key="globalNavigation__leftDrawer"
         styles={drawerStyles}
         closeIcon={false}
@@ -127,7 +177,7 @@ export const GlobalNavigation = ({ showSuiteLogo = true, ...props }: IGlobalNavi
         // getContainer={false}
         {...props.drawerOptions}>
         {props.drawerOptions?.children ?? null}
-      </Drawer>
+      </Drawer> */}
       {/* </div> */}
     </Layout>
   )

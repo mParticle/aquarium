@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import {
   Center,
   GlobalNavigation,
@@ -8,7 +8,6 @@ import {
   type INavigationOrg,
 } from 'src/components'
 import type { Meta, StoryObj } from '@storybook/react'
-import { type IGlobalNavigationLink } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',
@@ -144,27 +143,57 @@ export const MPWithDisabledInteractions: Story = {
   render: props => {
     const [isNotificationCenterOpen, setIsNotificationCenterOpen] = useState(false)
     const management = [
-      {
-        label: 'Notifications',
-        hideLabel: true,
-        icon: <Icon name="notification" />,
-        type: 'link',
-        isActive: false,
-        onClick: () => {
-          setIsNotificationCenterOpen(prev => !prev)
-        },
-      } satisfies IGlobalNavigationLink,
+      // {
+      //   label: 'Notifications',
+      //   hideLabel: true,
+      //   icon: <Icon name="notification" />,
+      //   type: 'link',
+      //   isActive: false,
+      //   onClick: () => {
+      //     setIsNotificationCenterOpen(prev => !prev)
+      //   },
+      // } satisfies IGlobalNavigationLink,
       ...defaultManagement,
     ]
     return (
       <div>
         <GlobalNavigation
           {...props}
-          drawerOptions={{
-            title: 'Notifications',
-            open: isNotificationCenterOpen,
-            onClose: () => {
-              setIsNotificationCenterOpen(false)
+          notification={{
+            options: {
+              // open: true,
+              open: isNotificationCenterOpen,
+              onOpenChange: (newOpen: boolean) => {
+                console.log(`change to ${newOpen}... It'll take a while first time :(`)
+                setIsNotificationCenterOpen(newOpen)
+              },
+              content: (
+                <div>
+                  <div
+                    onClick={() => {
+                      alert('Close')
+                    }}>
+                    Content
+                  </div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                </div>
+              ),
+            },
+            actions: {
+              onClose: () => {
+                setIsNotificationCenterOpen(false)
+              },
+              onPreferencesClick: () => {
+                setIsNotificationCenterOpen(false)
+              },
             },
           }}
           logo={defaultLogo}
