@@ -2,6 +2,8 @@ const fs = require('fs');
 const http = require('http');
 const path = require('path');
 const multer = require('multer');
+const sanitizeFilename = require('sanitize-filename');
+
 const { prettifySVG, savePrettifiedSVG } = require('../src/utils/svg-prettifier/prettifier.cjs'); // Ensure correct path
 
 const port = 8000;
@@ -39,21 +41,22 @@ const server = http.createServer((req, res) => {
       // Process each uploaded file
       req.files.forEach(file => {
         try {
+          const sanitizeFilename = require('sanitize-filename'); // Import the function
+          const safeFileName = sanitizeFilename(file.originalname); // Sanitize the filename
           const content = file.buffer.toString('utf8'); // Get the file content from memory
           const prettifiedSVG = prettifySVG(content);
 
           // Destination path for the prettified SVG
-          const filePath = path.join(__dirname, '../src/assets/svg/', file.originalname);
+          const filePath = path.join(__dirname, '../src/assets/svg/', safeFileName);
 
           // Check if the file already exists
           if (fs.existsSync(filePath)) {
-            // If a file with the same name exists, return an error
             results.push({ file: file.originalname, status: 'error', message: 'File already exists' });
             hasErrors = true; // Mark that there is an error
             return;
           }
 
-          // Save the prettified SVG to the destination folder
+          // Save the prettified SVG
           savePrettifiedSVG(filePath, prettifiedSVG);
 
           // Add success message
@@ -66,6 +69,7 @@ const server = http.createServer((req, res) => {
           results.push({ file: file.originalname, status: 'error', message: error.message });
         }
       });
+
 
       // If there are errors, return a 400 Bad Request status
       if (hasErrors) {
