@@ -1,4 +1,4 @@
-// semgrep ignore typescript.react.security.react-insecure-request.react-insecure-request: Local development fetch
+// semgrep ignore typescript.react.security.react-insecure-request.react-insecure-request: Fetching from localhost during development
 
 import React, { useState } from 'react'
 import { Upload, Button, List, Space } from 'src/components'

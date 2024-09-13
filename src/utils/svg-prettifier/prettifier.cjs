@@ -1,6 +1,7 @@
 const { JSDOM } = require('jsdom')
 const fs = require('fs')
 const path = require('path')
+const sanitizeFilename = require('sanitize-filename')
 
 function prettifySVG(content) {
   const { window } = new JSDOM(content)
@@ -35,7 +36,9 @@ function savePrettifiedSVG(filePath, content) {
     fs.mkdirSync(targetDirectory, { recursive: true })
   }
 
-  fs.writeFileSync(path.join(targetDirectory, `${fileName}.svg`), content)
+  // Sanitize the file name to avoid path traversal
+  const safeFileName = sanitizeFilename(fileName)
+  fs.writeFileSync(path.join(targetDirectory, `${safeFileName}.svg`), content)
 }
 
 module.exports = { prettifySVG, savePrettifiedSVG }

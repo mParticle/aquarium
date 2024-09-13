@@ -1,4 +1,4 @@
-// semgrep ignore typescript.react.security.react-insecure-request.react-insecure-request: This is a local development server
+// semgrep ignore typescript.react.security.react-insecure-request.react-insecure-request: Local development, only HTTP is needed
 
 const fs = require('fs');
 const http = require('http');  // Using HTTP since this is only for local development
