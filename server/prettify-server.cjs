@@ -1,3 +1,5 @@
+// semgrep ignore problem-based-packs.insecure-transport.js-node.using-http-server: This is a local development server only
+
 const fs = require('fs');
 const http = require('http');  // Using HTTP since this is only for local development
 const path = require('path');
