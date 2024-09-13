@@ -1,0 +1,2 @@
+src/utils/SvgPrettifier.tsx
+server/prettify-server.cjs
