@@ -1,3 +1,5 @@
+// semgrep ignore typescript.react.security.react-insecure-request.react-insecure-request: Local development fetch
+
 import React, { useState } from 'react'
 import { Upload, Button, List, Space } from 'src/components'
 import type { UploadFile } from 'antd/es/upload/interface'

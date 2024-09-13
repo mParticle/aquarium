@@ -1,4 +1,4 @@
-// semgrep ignore problem-based-packs.insecure-transport.js-node.using-http-server: This is a local development server only
+// semgrep ignore typescript.react.security.react-insecure-request.react-insecure-request: This is a local development server
 
 const fs = require('fs');
 const http = require('http');  // Using HTTP since this is only for local development
