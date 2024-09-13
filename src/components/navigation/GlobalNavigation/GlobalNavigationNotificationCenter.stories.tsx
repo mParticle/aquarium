@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import React, { useState } from 'react'
 import {
   Center,
   GlobalNavigation,
@@ -143,23 +143,19 @@ type Story = StoryObj<typeof GlobalNavigation>
 export const MPWithDisabledInteractions: Story = {
   render: props => {
     const [isNotificationCenterOpen, setIsNotificationCenterOpen] = useState(false)
-    const management = useMemo(
-      () => [
-        {
-          label: 'Notifications',
-          hideLabel: true,
-          icon: <Icon name="notification" />,
-          type: 'link',
-          isActive: false,
-          onClick: () => {
-            setIsNotificationCenterOpen(prev => !prev)
-          },
-        } satisfies IGlobalNavigationLink,
-        ...defaultManagement,
-      ],
-      [],
-    )
-
+    const management = [
+      {
+        label: 'Notifications',
+        hideLabel: true,
+        icon: <Icon name="notification" />,
+        type: 'link',
+        isActive: false,
+        onClick: () => {
+          setIsNotificationCenterOpen(prev => !prev)
+        },
+      } satisfies IGlobalNavigationLink,
+      ...defaultManagement,
+    ]
     return (
       <div>
         <GlobalNavigation
