@@ -1,16 +1,9 @@
 const fs = require('fs');
-const https = require('https');
+const http = require('http');
 const path = require('path');
 const multer = require('multer');
 const sanitizeFilename = require('sanitize-filename');
-const { readFileSync } = require('fs');
 const { prettifySVG, savePrettifiedSVG } = require('../src/utils/svg-prettifier/prettifier.cjs');
-
-// Provide SSL certificates (self-signed or from a CA)
-const options = {
-  key: readFileSync('path/to/your/server.key'),
-  cert: readFileSync('path/to/your/server.cert'),
-};
 
 const port = 8000;
 
@@ -18,7 +11,7 @@ const port = 8000;
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
-const server = https.createServer(options, (req, res) => {
+const server = http.createServer((req, res) => {  // Cambiado a HTTP
   // Add CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');  // Allow requests from any origin
   res.setHeader('Access-Control-Allow-Methods', 'POST');  // Allow POST requests
