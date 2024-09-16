@@ -108,8 +108,14 @@ export const GlobalNavigation = ({ showSuiteLogo = true, ...props }: IGlobalNavi
               trigger="click"
               placement="right"
               arrow={false}
-              overlayStyle={{ height: '100%', width: '300px', zIndex: 9999, left: GlobalNavWidth }}
-              overlayInnerStyle={{ height: '100vh', padding: 0, borderRadius: 0 }}
+              overlayStyle={{ height: '100%', width: '300px', left: GlobalNavWidth }}
+              overlayInnerStyle={{
+                display: 'flex',
+                flexDirection: 'column',
+                height: '100vh',
+                padding: 0,
+                borderRadius: 0,
+              }}
               title={
                 <Flex
                   justify="space-between"

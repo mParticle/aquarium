@@ -333,3 +333,9 @@
   width: 28px;
   height: var(--size-lg);
 }
+
+.ant-popover-inner-content {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+

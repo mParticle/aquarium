@@ -8,6 +8,7 @@ import {
   type INavigationOrg,
 } from 'src/components'
 import type { Meta, StoryObj } from '@storybook/react'
+import { Modal } from 'antd'
 
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',
@@ -142,6 +143,7 @@ type Story = StoryObj<typeof GlobalNavigation>
 export const MPWithDisabledInteractions: Story = {
   render: props => {
     const [isNotificationCenterOpen, setIsNotificationCenterOpen] = useState(false)
+    const [isModalOpen, setIsModalOpen] = useState(false)
     const management = [
       // {
       //   label: 'Notifications',
@@ -157,24 +159,41 @@ export const MPWithDisabledInteractions: Story = {
     ]
     return (
       <div>
+        <Modal
+          // open={true}
+          open={isModalOpen}
+          maskClosable={false}
+          destroyOnClose={true}
+          onCancel={() => {
+            setIsModalOpen(false)
+          }}
+          centered={true}>
+          <div>
+            <p>Message Title</p>
+            <p>Message Description</p>
+          </div>
+        </Modal>
         <GlobalNavigation
           {...props}
           notification={{
             options: {
               // open: true,
               open: isNotificationCenterOpen,
+              zIndex: 9999,
               onOpenChange: (newOpen: boolean) => {
                 console.log(`change to ${newOpen}... It'll take a while first time :(`)
                 setIsNotificationCenterOpen(newOpen)
               },
               content: (
-                <div>
+                <div style={{}}>
                   <div
-                    onClick={() => {
-                      alert('Close')
-                    }}>
-                    Content
+                  // onClick={() => {
+                  //   setIsModalOpen(true)
+                  // }}
+                  >
+                    Open Modal
                   </div>
+                  {/* <div>Content</div>
                   <div>Content</div>
                   <div>Content</div>
                   <div>Content</div>
@@ -184,6 +203,42 @@ export const MPWithDisabledInteractions: Story = {
                   <div>Content</div>
                   <div>Content</div>
                   <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div> */}
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content End</div>
                 </div>
               ),
             },
