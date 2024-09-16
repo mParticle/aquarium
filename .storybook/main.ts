@@ -13,10 +13,14 @@ const config: StorybookConfig & StorybookVitePlugins = {
 
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(ts|tsx)'],
 
-  addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-interactions'],
+  addons: [
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/addon-interactions',
+    '@storybook/addon-docs',
+  ],
 
   docs: {
-    autodocs: true,
     defaultName: 'Documentation',
   },
 
