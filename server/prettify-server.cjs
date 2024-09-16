@@ -41,9 +41,9 @@ const server = http.createServer((req, res) => {
       // Process each uploaded file
       req.files.forEach(file => {
         try {
-          const sanitizeFilename = require('sanitize-filename'); // Import the function
-          const safeFileName = sanitizeFilename(file.originalname); // Sanitize the filename
-          const content = file.buffer.toString('utf8'); // Get the file content from memory
+          const sanitizeFilename = require('sanitize-filename');
+          const safeFileName = sanitizeFilename(file.originalname);
+          const content = file.buffer.toString('utf8');
           const prettifiedSVG = prettifySVG(content);
 
           // Destination path for the prettified SVG
