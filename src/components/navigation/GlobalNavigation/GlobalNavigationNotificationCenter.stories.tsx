@@ -367,7 +367,7 @@ export const MPWithOpenModal: Story = {
   render: props => {
     const [isNotificationCenterOpen, setIsNotificationCenterOpen] = useState(false)
     const [isModalOpen, setIsModalOpen] = useState(false)
-    const [zIndex, setZIndex] = useState<number>(NotificationCenterZIndex)
+    const [zIndex, setZIndex] = useState(NotificationCenterZIndex)
     return (
       <div>
         <Modal

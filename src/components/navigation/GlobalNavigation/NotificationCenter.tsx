@@ -16,7 +16,7 @@ export interface INotificationCenterProps {
   actions?: INotificationActions
 }
 
-export const NotificationCenterZIndex = 9999 as const
+export const NotificationCenterZIndex = 9999
 
 export function NotificationCenter(props: INotificationCenterProps) {
   return (
@@ -28,7 +28,7 @@ export function NotificationCenter(props: INotificationCenterProps) {
       overlayClassName="notificationCenter__popover"
       title={
         <Flex className="notificationCenter__header" justify="space-between" align="center">
-          <Typography.Text strong={true}>Notifications</Typography.Text>
+          <Typography.Text strong>Notifications</Typography.Text>
           <Space>
             {props.actions?.onPreferencesClick && (
               <Button
