@@ -14,9 +14,9 @@ const upload = multer({ storage: storage });
 
 const server = http.createServer((req, res) => {
   // Add CORS headers
-  res.setHeader('Access-Control-Allow-Origin', '*');  // Allow requests from any origin
-  res.setHeader('Access-Control-Allow-Methods', 'POST');  // Allow POST requests
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');  // Allow content-type header
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   if (req.method === 'OPTIONS') {
     // Handle preflight requests
