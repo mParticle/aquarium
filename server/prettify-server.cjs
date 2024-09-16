@@ -2,7 +2,6 @@ const fs = require('fs')
 const http = require('http')
 const path = require('path')
 const multer = require('multer')
-const sanitizeFilename = require('sanitize-filename')
 
 const { prettifySVG, savePrettifiedSVG } = require('../src/utils/svg-prettifier/prettifier.cjs') // Ensure correct path
 
@@ -11,6 +10,11 @@ const port = 8000
 // Use memory storage for uploaded files
 const storage = multer.memoryStorage()
 const upload = multer({ storage: storage })
+
+// Custom filename sanitizer
+function sanitizeFileName(filename) {
+  return filename.replace(/[^a-z0-9\.\-_]/gi, '_') // Replace any non-alphanumeric characters (except . - _) with an underscore
+}
 
 const server = http.createServer((req, res) => {
   // Add CORS headers
@@ -41,8 +45,7 @@ const server = http.createServer((req, res) => {
       // Process each uploaded file
       req.files.forEach(file => {
         try {
-          const sanitizeFilename = require('sanitize-filename')
-          const safeFileName = sanitizeFilename(file.originalname)
+          const safeFileName = sanitizeFileName(file.originalname) // Use custom sanitizer
           const content = file.buffer.toString('utf8')
           const prettifiedSVG = prettifySVG(content)
 
