@@ -12,11 +12,14 @@ const config: StorybookConfig & StorybookVitePlugins = {
   },
 
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(ts|tsx)'],
-
-  addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-interactions'],
+  addons: [
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/addon-interactions',
+    '@chromatic-com/storybook',
+  ],
 
   docs: {
-    autodocs: true,
     defaultName: 'Documentation',
   },
 
@@ -31,6 +34,10 @@ const config: StorybookConfig & StorybookVitePlugins = {
 
   core: {
     disableTelemetry: true, // requested by security
+  },
+
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
   },
 }
 
