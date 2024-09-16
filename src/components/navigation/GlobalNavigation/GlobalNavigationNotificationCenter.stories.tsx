@@ -9,6 +9,10 @@ import {
 } from 'src/components'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Modal } from 'antd'
+import {
+  type INotificationCenterProps,
+  NotificationCenterZIndex,
+} from 'src/components/navigation/GlobalNavigation/NavigationCenter'
 
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',
@@ -112,6 +116,25 @@ const defaultOrgs: INavigationOrg[] = [
   },
 ]
 
+const defaultNotificationCenter: INotificationCenterProps = {
+  options: {
+    open: false,
+    content: (
+      <div>
+        <div>Content</div>
+        <div>Content</div>
+        <div>Content</div>
+        <div>Content</div>
+        <div>Content</div>
+      </div>
+    ),
+  },
+  actions: {
+    onClose: () => {},
+    onPreferencesClick: () => {},
+  },
+}
+
 const meta: Meta<typeof GlobalNavigation> = {
   title: 'Aquarium/Navigation/GlobalNavigationNotificationCenter',
   component: props => (
@@ -121,79 +144,77 @@ const meta: Meta<typeof GlobalNavigation> = {
   ),
 
   args: {
-    logo: defaultLogo,
-    tools: defaultTools,
-    management: defaultManagement,
-    orgs: defaultOrgs,
-    navigationButtonItemOptions: {
-      label: 'Sign Out of mParticle',
-      onClick: () => {
-        alert('signing out!')
-      },
-    },
-    onMpHomeClick: () => {
-      alert('Going to mP!')
-    },
+    notificationCenter: defaultNotificationCenter,
   },
 }
 export default meta
 
 type Story = StoryObj<typeof GlobalNavigation>
 
-export const MPWithDisabledInteractions: Story = {
+export const MP: Story = {
   render: props => {
-    const [isNotificationCenterOpen, setIsNotificationCenterOpen] = useState(false)
-    const [isModalOpen, setIsModalOpen] = useState(false)
-    const management = [
-      // {
-      //   label: 'Notifications',
-      //   hideLabel: true,
-      //   icon: <Icon name="notification" />,
-      //   type: 'link',
-      //   isActive: false,
-      //   onClick: () => {
-      //     setIsNotificationCenterOpen(prev => !prev)
-      //   },
-      // } satisfies IGlobalNavigationLink,
-      ...defaultManagement,
-    ]
     return (
       <div>
-        <Modal
-          // open={true}
-          open={isModalOpen}
-          maskClosable={false}
-          destroyOnClose={true}
-          onCancel={() => {
-            setIsModalOpen(false)
-          }}
-          centered={true}>
-          <div>
-            <p>Message Title</p>
-            <p>Message Description</p>
-          </div>
-        </Modal>
         <GlobalNavigation
           {...props}
-          notification={{
+          notificationCenter={{
             options: {
-              // open: true,
-              open: isNotificationCenterOpen,
-              zIndex: 9999,
-              onOpenChange: (newOpen: boolean) => {
-                console.log(`change to ${newOpen}... It'll take a while first time :(`)
-                setIsNotificationCenterOpen(newOpen)
-              },
+              open: true,
               content: (
-                <div style={{}}>
-                  <div
-                  // onClick={() => {
-                  //   setIsModalOpen(true)
-                  // }}
-                  >
-                    Open Modal
-                  </div>
-                  {/* <div>Content</div>
+                <div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                </div>
+              ),
+            },
+          }}
+          logo={defaultLogo}
+          tools={defaultTools}
+          management={defaultManagement}
+          orgs={defaultOrgs}
+          showSuiteLogo={true}
+          onSearchClick={() => {
+            alert('Searching!')
+          }}
+          suiteSelectorOptions={{
+            overviewHref: '/',
+            onLinkClick: link => {
+              alert(link.href)
+            },
+            onUnauthorizedClick: link => {
+              alert(`unauthorized ${link?.href} `)
+            },
+            unauthorizedLinks: ['dataPlatform'],
+            activeLink: 'oversight',
+            links: [
+              { linkId: 'oversight', href: '/oversight' },
+              { linkId: 'dataPlatform', href: '/data-platform' },
+              { linkId: 'customer360', href: '/customer-360' },
+              { linkId: 'predictions', href: '/predictions' },
+              { linkId: 'analytics', href: '/analytics' },
+              { linkId: 'segmentation', href: '/segmentation' },
+            ],
+          }}
+        />
+      </div>
+    )
+  },
+}
+
+export const MPWithLongContent: Story = {
+  render: props => {
+    return (
+      <div>
+        <GlobalNavigation
+          {...props}
+          notificationCenter={{
+            options: {
+              open: true,
+              content: (
+                <div>
                   <div>Content</div>
                   <div>Content</div>
                   <div>Content</div>
@@ -219,7 +240,8 @@ export const MPWithDisabledInteractions: Story = {
                   <div>Content</div>
                   <div>Content</div>
                   <div>Content</div>
-                  <div>Content</div> */}
+                  <div>Content</div>
+                  <div>Content</div>
                   <div>Content</div>
                   <div>Content</div>
                   <div>Content</div>
@@ -242,6 +264,63 @@ export const MPWithDisabledInteractions: Story = {
                 </div>
               ),
             },
+          }}
+          logo={defaultLogo}
+          tools={defaultTools}
+          management={defaultManagement}
+          orgs={defaultOrgs}
+          showSuiteLogo={true}
+          onSearchClick={() => {
+            alert('Searching!')
+          }}
+          suiteSelectorOptions={{
+            overviewHref: '/',
+            onLinkClick: link => {
+              alert(link.href)
+            },
+            onUnauthorizedClick: link => {
+              alert(`unauthorized ${link?.href} `)
+            },
+            unauthorizedLinks: ['dataPlatform'],
+            activeLink: 'oversight',
+            links: [
+              { linkId: 'oversight', href: '/oversight' },
+              { linkId: 'dataPlatform', href: '/data-platform' },
+              { linkId: 'customer360', href: '/customer-360' },
+              { linkId: 'predictions', href: '/predictions' },
+              { linkId: 'analytics', href: '/analytics' },
+              { linkId: 'segmentation', href: '/segmentation' },
+            ],
+          }}
+        />
+      </div>
+    )
+  },
+}
+
+export const MPWithToggleShow: Story = {
+  render: props => {
+    const [isNotificationCenterOpen, setIsNotificationCenterOpen] = useState(false)
+    return (
+      <div>
+        <GlobalNavigation
+          {...props}
+          notificationCenter={{
+            options: {
+              open: isNotificationCenterOpen,
+              onOpenChange: (newOpen: boolean) => {
+                setIsNotificationCenterOpen(newOpen)
+              },
+              content: (
+                <div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                </div>
+              ),
+            },
             actions: {
               onClose: () => {
                 setIsNotificationCenterOpen(false)
@@ -253,7 +332,98 @@ export const MPWithDisabledInteractions: Story = {
           }}
           logo={defaultLogo}
           tools={defaultTools}
-          management={management}
+          management={defaultManagement}
+          orgs={defaultOrgs}
+          showSuiteLogo={true}
+          onSearchClick={() => {
+            alert('Searching!')
+          }}
+          suiteSelectorOptions={{
+            overviewHref: '/',
+            onLinkClick: link => {
+              alert(link.href)
+            },
+            onUnauthorizedClick: link => {
+              alert(`unauthorized ${link?.href} `)
+            },
+            unauthorizedLinks: ['dataPlatform'],
+            activeLink: 'oversight',
+            links: [
+              { linkId: 'oversight', href: '/oversight' },
+              { linkId: 'dataPlatform', href: '/data-platform' },
+              { linkId: 'customer360', href: '/customer-360' },
+              { linkId: 'predictions', href: '/predictions' },
+              { linkId: 'analytics', href: '/analytics' },
+              { linkId: 'segmentation', href: '/segmentation' },
+            ],
+          }}
+        />
+      </div>
+    )
+  },
+}
+
+export const MPWithOpenModal: Story = {
+  render: props => {
+    const [isNotificationCenterOpen, setIsNotificationCenterOpen] = useState(false)
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [zIndex, setZIndex] = useState<number>(NotificationCenterZIndex)
+    return (
+      <div>
+        <Modal
+          open={isModalOpen}
+          maskClosable={false}
+          destroyOnClose={true}
+          onCancel={() => {
+            setZIndex(NotificationCenterZIndex)
+            setIsModalOpen(false)
+          }}
+          centered={true}>
+          <div>
+            <p>Message Title</p>
+            <p>Message Description</p>
+          </div>
+        </Modal>
+        <GlobalNavigation
+          {...props}
+          notificationCenter={{
+            options: {
+              open: isNotificationCenterOpen,
+              zIndex: zIndex,
+              onOpenChange: (newOpen: boolean) => {
+                if (isModalOpen) {
+                  return
+                }
+                setIsNotificationCenterOpen(newOpen)
+              },
+              content: (
+                <div>
+                  <div
+                    onClick={() => {
+                      setZIndex(0)
+                      setIsModalOpen(true)
+                    }}>
+                    Open Modal
+                  </div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                  <div>Content</div>
+                </div>
+              ),
+            },
+            actions: {
+              onClose: () => {
+                setIsNotificationCenterOpen(false)
+              },
+              onPreferencesClick: () => {
+                setIsNotificationCenterOpen(false)
+              },
+            },
+          }}
+          logo={defaultLogo}
+          tools={defaultTools}
+          management={defaultManagement}
           orgs={defaultOrgs}
           showSuiteLogo={true}
           onSearchClick={() => {
