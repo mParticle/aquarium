@@ -7,7 +7,7 @@ The Design team provides SVG files with the final icon names. These SVG files mu
 #### Steps to Add a New Icon:
 
 1. **Prettify the SVG**:  
-   Use the `SVGPrettifier` script or UI to clean up the SVG file and ensure it meets the necessary formatting standards (size, properties, etc.). This feature will be available soon within the Aquarium project.
+   Use the SVGPrettifier Story to clean up the SVG file and ensure it meets the necessary formatting standards (size, properties, etc.).
 
 2. **Update the Icon Type**:  
    Add the new icon name to the TypeScript type definition in the [src/types/icons](https://github.com/mParticle/aquarium/blob/3abc3b71916ab5a7db3c4f93e06ad2bd5845e1bf/src/types/icons.ts) file.
