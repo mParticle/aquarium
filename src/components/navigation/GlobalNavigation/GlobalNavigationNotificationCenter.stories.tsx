@@ -12,7 +12,7 @@ import { Modal } from 'antd'
 import {
   type INotificationCenterProps,
   NotificationCenterZIndex,
-} from 'src/components/navigation/GlobalNavigation/NavigationCenter'
+} from 'src/components/navigation/GlobalNavigation/NotificationCenter'
 
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',

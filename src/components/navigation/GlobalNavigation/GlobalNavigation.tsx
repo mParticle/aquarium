@@ -25,7 +25,7 @@ import { HomeButton } from 'src/components/navigation/GlobalNavigation/HomeButto
 import {
   CreateNotificationCenter,
   type INotificationCenterProps,
-} from 'src/components/navigation/GlobalNavigation/NavigationCenter'
+} from 'src/components/navigation/GlobalNavigation/NotificationCenter'
 
 export interface NotificationActions {
   onClose?: () => void

@@ -1,8 +1,6 @@
-import { Popover as AntPopver, type PopoverProps as AntPopoverProps, Flex, Typography, Space, Button } from 'antd'
-import { Icon, ConfigProvider } from 'src/components'
+import { Flex, Typography, Space, Button } from 'antd'
+import { Icon, type IPopoverProps, Popover } from 'src/components'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
-
-export interface IPopoverProps extends AntPopoverProps {}
 
 export type INotificationOptions = Omit<
   IPopoverProps,
@@ -16,14 +14,6 @@ export interface INotificationActions {
 export interface INotificationCenterProps {
   options?: INotificationOptions
   actions?: INotificationActions
-}
-
-export const Popover = (props: IPopoverProps) => {
-  return (
-    <ConfigProvider>
-      <AntPopver {...props} />
-    </ConfigProvider>
-  )
 }
 
 export const NotificationCenterZIndex = 9999 as const
