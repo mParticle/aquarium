@@ -30,13 +30,17 @@ export function CreateNotificationCenter(props: INotificationCenterProps) {
         <Flex className="notificationCenter__header" justify="space-between" align="center">
           <Typography.Text strong={true}>Notifications</Typography.Text>
           <Space>
-            <Button
-              type="text"
-              shape="circle"
-              icon={<Icon name="settings" />}
-              onClick={props.actions?.onPreferencesClick}
-            />
-            <Button type="text" shape="circle" icon={<Icon name="remove" />} onClick={props.actions?.onClose} />
+            {props.actions?.onPreferencesClick && (
+              <Button
+                type="text"
+                shape="circle"
+                icon={<Icon name="settings" />}
+                onClick={props.actions?.onPreferencesClick}
+              />
+            )}
+            {props.actions?.onClose && (
+              <Button type="text" shape="circle" icon={<Icon name="remove" />} onClick={props.actions?.onClose} />
+            )}
           </Space>
         </Flex>
       }
