@@ -23,7 +23,7 @@ import { NavigationItem } from 'src/components/navigation/GlobalNavigation/Navig
 import { useNewExperienceReminder } from 'src/hooks/NewExperienceReminder/useNewExperienceReminder'
 import { HomeButton } from 'src/components/navigation/GlobalNavigation/HomeButton'
 import {
-  CreateNotificationCenter,
+  NotificationCenter,
   type INotificationCenterProps,
 } from 'src/components/navigation/GlobalNavigation/NotificationCenter'
 
@@ -80,7 +80,7 @@ export const GlobalNavigation = ({ showSuiteLogo = true, ...props }: IGlobalNavi
           </div>
           <div>
             {props.notificationCenter && (
-              <CreateNotificationCenter
+              <NotificationCenter
                 options={props.notificationCenter.options}
                 actions={props.notificationCenter.actions}
               />

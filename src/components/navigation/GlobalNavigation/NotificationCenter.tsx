@@ -18,7 +18,7 @@ export interface INotificationCenterProps {
 
 export const NotificationCenterZIndex = 9999 as const
 
-export function CreateNotificationCenter(props: INotificationCenterProps) {
+export function NotificationCenter(props: INotificationCenterProps) {
   return (
     <Popover
       trigger="click"
