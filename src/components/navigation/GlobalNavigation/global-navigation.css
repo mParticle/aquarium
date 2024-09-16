@@ -335,7 +335,7 @@
 }
 
 .notificationCenter__popover {
-  left: 90px !important;
+  left: var(--nav-width) !important;
   height: 100%;
   width: 300px;
 }
