@@ -47,7 +47,7 @@ export function CreateNotificationCenter(props: INotificationCenterProps) {
       {...props.options}>
       <div>
         <NavigationItem
-          key="notificaitonCenter"
+          key="notificationCenter"
           type="link"
           isActive={props.options?.open}
           icon={<Icon name="notification" />}
