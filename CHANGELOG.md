@@ -1,3 +1,9 @@
+# [1.31.0-nav-disabled-interactions-poc.8](https://github.com/mParticle/aquarium/compare/v1.31.0-nav-disabled-interactions-poc.7...v1.31.0-nav-disabled-interactions-poc.8) (2024-09-16)
+
+### Bug Fixes
+
+- add Drawer component back ([4703322](https://github.com/mParticle/aquarium/commit/4703322b2cd0d836b0e2e63a7b7661f85ff32533))
+
 # [1.31.0-nav-disabled-interactions-poc.7](https://github.com/mParticle/aquarium/compare/v1.31.0-nav-disabled-interactions-poc.6...v1.31.0-nav-disabled-interactions-poc.7) (2024-09-16)
 
 # [1.31.0-nav-disabled-interactions-poc.6](https://github.com/mParticle/aquarium/compare/v1.31.0-nav-disabled-interactions-poc.5...v1.31.0-nav-disabled-interactions-poc.6) (2024-09-16)
