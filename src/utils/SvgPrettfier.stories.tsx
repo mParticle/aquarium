@@ -6,7 +6,7 @@ const svgPrettifierDocumentation = `
 ### SVG Prettifier Documentation
 
 The \`SVGPrettifier\` component is used to upload and prettify SVG files. Each SVG must follow the project's styling guidelines and must have a **unique name** to avoid overwriting existing icons.
-This only works locally
+** This only works locally.** 
 
 #### Starting the Server
 To process the uploaded SVGs, a server must be running. You can start the server by following these steps:
