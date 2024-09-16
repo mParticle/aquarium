@@ -49,7 +49,6 @@ export interface IGlobalNavigationProps {
     onClick: () => void
     withoutContainer?: boolean
   }
-  disableInteractions?: boolean
   suiteSelectorOptions?: ISuiteSelectorOptions
   /**
    * @deprecated This variant is a temporary fix for new component.
@@ -77,7 +76,7 @@ export const GlobalNavigation = ({ showSuiteLogo = true, ...props }: IGlobalNavi
               {props.onSearchClick && <NavigationSearch onClick={props.onSearchClick} />}
               {props.createItems && <NavigationCreate createItems={props.createItems} />}
             </Center>
-            <NavigationList items={props.tools} disableInteractions={props.disableInteractions} />
+            <NavigationList items={props.tools} />
           </div>
           <div>
             {props.notificationCenter && (
@@ -86,7 +85,7 @@ export const GlobalNavigation = ({ showSuiteLogo = true, ...props }: IGlobalNavi
                 actions={props.notificationCenter.actions}
               />
             )}
-            <NavigationList items={props.management} disableInteractions={props.disableInteractions} />
+            <NavigationList items={props.management} />
             {props.orgs ? (
               <WorkspaceSelector
                 orgs={props.orgs}
