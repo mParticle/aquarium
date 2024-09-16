@@ -13,7 +13,7 @@ To process the uploaded SVGs, a server must be running. You can start the server
 
 1. Navigate to the project root folder.
 2. Run the following command to start the server:
-   \`\`\`bash
+   \`\`\` #run
    npm run icons-prettifier
    \`\`\`
 3. The server will start on **port 8000**. Ensure this port is available or update the port configuration in the server script.
