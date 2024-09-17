@@ -1,11 +1,11 @@
 import { Flex, Typography, Space, Button } from 'antd'
-import { Icon, type IPopoverProps, Popover } from 'src/components'
+import { type IButtonProps, Icon, type IPopoverProps, Popover } from 'src/components'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
 
 export interface INotificationCenterProps
   extends Omit<IPopoverProps, 'key' | 'trigger' | 'placement' | 'arrow' | 'overlayClassName' | 'title'> {
-  onClose?: () => void
-  onPreferencesClick?: () => void
+  onClose?: IButtonProps['onClick']
+  onPreferencesClick?: IButtonProps['onClick']
 }
 
 export const NotificationCenterZIndex = 9999
