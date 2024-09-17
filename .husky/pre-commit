@@ -1,2 +1,1 @@
-npm run tokens-to-css
 npx lint-staged
