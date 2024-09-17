@@ -79,12 +79,7 @@ export const GlobalNavigation = ({ showSuiteLogo = true, ...props }: IGlobalNavi
             <NavigationList items={props.tools} />
           </div>
           <div>
-            {props.notificationCenter && (
-              <NotificationCenter
-                options={props.notificationCenter.options}
-                actions={props.notificationCenter.actions}
-              />
-            )}
+            {props.notificationCenter && <NotificationCenter {...props.notificationCenter} />}
             <NavigationList items={props.management} />
             {props.orgs ? (
               <WorkspaceSelector
