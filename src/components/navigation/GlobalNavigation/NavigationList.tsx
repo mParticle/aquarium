@@ -34,11 +34,10 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
     { label: item.label, type: 'group', key: String(item.label) + '_groupTitle' },
   ]
   if (item.type === 'menu') {
-    const childrenWithExpandedIcons = item.children.map((child, index) => ({
+    const childrenWithExpandedIcons = item.children.map(({ hrefOptions, ...child }, index) => ({
       ...child,
-      expandIcon: null,
       key: `${String(child.label)}${index}`,
-      label: buildLinkFromHrefOptions(child.label, child.hrefOptions),
+      label: child.type === 'button' ? child.label : buildLinkFromHrefOptions(child.label, hrefOptions),
     }))
 
     childrenWithExpandedIcons.forEach((child, index) => {

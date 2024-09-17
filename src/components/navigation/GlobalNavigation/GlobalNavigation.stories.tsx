@@ -1,12 +1,16 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { expect, fn, screen, userEvent } from '@storybook/test'
 import React, { useState } from 'react'
-import { Button, Center, Flex, GlobalNavigation, Icon, type INavigationCreateProps, Space } from 'src/components'
+import { Button, Center, Flex, GlobalNavigation, Icon, type INavigationCreateProps, Modal, Space } from 'src/components'
 import { Badge } from 'src/components/data-display/Badge/Badge'
 import {
   type IGlobalNavigationItem,
   type IGlobalNavigationLogo,
 } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
+import {
+  type INotificationCenterProps,
+  NotificationCenterZIndex,
+} from 'src/components/navigation/GlobalNavigation/NotificationCenter'
 import { generateOrgs } from 'src/components/navigation/GlobalNavigation/stories-utils'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'
 import { useNewExperienceReminder } from 'src/hooks/NewExperienceReminder/useNewExperienceReminder'
@@ -113,6 +117,13 @@ const defaultOrgs: INavigationOrg[] = [
   },
 ]
 
+const defaultNotificationCenter: INotificationCenterProps = {
+  open: false,
+  content: () => <div></div>,
+  onClose: () => {},
+  onPreferencesClick: () => {},
+}
+
 const meta: Meta<typeof GlobalNavigation> = {
   title: 'Aquarium/Navigation/GlobalNavigation',
   component: props => (
@@ -126,6 +137,7 @@ const meta: Meta<typeof GlobalNavigation> = {
     tools: defaultTools,
     management: defaultManagement,
     orgs: defaultOrgs,
+    notificationCenter: defaultNotificationCenter,
     navigationButtonItemOptions: {
       label: 'Sign Out of mParticle',
       onClick: () => {
@@ -134,6 +146,17 @@ const meta: Meta<typeof GlobalNavigation> = {
     },
     onMpHomeClick: () => {
       alert('Going to mP!')
+    },
+  },
+
+  argTypes: {
+    notificationCenter: {
+      content: {
+        control: 'string',
+        table: {
+          type: { summary: 'ReactNode or RenderFunction to render the content' },
+        },
+      },
     },
   },
 }
@@ -1294,5 +1317,248 @@ export const MPWithSuiteSelector: Story = {
         { linkId: 'segmentation', href: '/segmentation' },
       ],
     },
+  },
+}
+
+export const MPWithNotificationCenter: Story = {
+  render: props => {
+    const [isNotificationCenterOpen, setIsNotificationCenterOpen] = useState(false)
+    return (
+      <div>
+        <GlobalNavigation
+          {...props}
+          notificationCenter={{
+            open: isNotificationCenterOpen,
+            onOpenChange: (newOpen: boolean) => {
+              setIsNotificationCenterOpen(newOpen)
+            },
+            content: () => (
+              <div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+              </div>
+            ),
+          }}
+          logo={defaultLogo}
+          tools={defaultTools}
+          management={defaultManagement}
+          orgs={defaultOrgs}
+          showSuiteLogo={true}
+          onSearchClick={() => {
+            alert('Searching!')
+          }}
+          suiteSelectorOptions={{
+            overviewHref: '/',
+            onLinkClick: link => {
+              alert(link.href)
+            },
+            onUnauthorizedClick: link => {
+              alert(`unauthorized ${link?.href} `)
+            },
+            unauthorizedLinks: ['dataPlatform'],
+            activeLink: 'oversight',
+            links: [
+              { linkId: 'oversight', href: '/oversight' },
+              { linkId: 'dataPlatform', href: '/data-platform' },
+              { linkId: 'customer360', href: '/customer-360' },
+              { linkId: 'predictions', href: '/predictions' },
+              { linkId: 'analytics', href: '/analytics' },
+              { linkId: 'segmentation', href: '/segmentation' },
+            ],
+          }}
+        />
+      </div>
+    )
+  },
+}
+
+export const MPWithNotificationCenterLongContent: Story = {
+  render: props => {
+    const [isNotificationCenterOpen, setIsNotificationCenterOpen] = useState(false)
+    return (
+      <div>
+        <GlobalNavigation
+          {...props}
+          notificationCenter={{
+            open: isNotificationCenterOpen,
+            onOpenChange: (newOpen: boolean) => {
+              setIsNotificationCenterOpen(newOpen)
+            },
+            content: () => (
+              <div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content End</div>
+              </div>
+            ),
+          }}
+          logo={defaultLogo}
+          tools={defaultTools}
+          management={defaultManagement}
+          orgs={defaultOrgs}
+          showSuiteLogo={true}
+          onSearchClick={() => {
+            alert('Searching!')
+          }}
+          suiteSelectorOptions={{
+            overviewHref: '/',
+            onLinkClick: link => {
+              alert(link.href)
+            },
+            onUnauthorizedClick: link => {
+              alert(`unauthorized ${link?.href} `)
+            },
+            unauthorizedLinks: ['dataPlatform'],
+            activeLink: 'oversight',
+            links: [
+              { linkId: 'oversight', href: '/oversight' },
+              { linkId: 'dataPlatform', href: '/data-platform' },
+              { linkId: 'customer360', href: '/customer-360' },
+              { linkId: 'predictions', href: '/predictions' },
+              { linkId: 'analytics', href: '/analytics' },
+              { linkId: 'segmentation', href: '/segmentation' },
+            ],
+          }}
+        />
+      </div>
+    )
+  },
+}
+
+export const MPWithNotificationCenterMessageModal: Story = {
+  render: props => {
+    const [isNotificationCenterOpen, setIsNotificationCenterOpen] = useState(false)
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [zIndex, setZIndex] = useState(NotificationCenterZIndex)
+    return (
+      <div>
+        <Modal
+          open={isModalOpen}
+          maskClosable={false}
+          destroyOnClose={true}
+          onCancel={() => {
+            setIsModalOpen(false)
+          }}
+          onOk={() => {
+            setIsModalOpen(false)
+          }}
+          afterClose={() => {
+            setZIndex(NotificationCenterZIndex)
+          }}
+          centered={true}>
+          <div>
+            <p>Message Title</p>
+            <p>Message Description</p>
+          </div>
+        </Modal>
+        <GlobalNavigation
+          {...props}
+          notificationCenter={{
+            open: isNotificationCenterOpen,
+            zIndex: zIndex,
+            onOpenChange: (newOpen: boolean) => {
+              if (isModalOpen) {
+                return
+              }
+              setIsNotificationCenterOpen(newOpen)
+            },
+            content: () => (
+              <div>
+                <div
+                  onClick={() => {
+                    setZIndex(0)
+                    setIsModalOpen(true)
+                  }}>
+                  Open Modal
+                </div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+              </div>
+            ),
+            onClose: () => {
+              setIsNotificationCenterOpen(false)
+            },
+            onPreferencesClick: () => {
+              setIsNotificationCenterOpen(false)
+            },
+          }}
+          logo={defaultLogo}
+          tools={defaultTools}
+          management={defaultManagement}
+          orgs={defaultOrgs}
+          showSuiteLogo={true}
+          onSearchClick={() => {
+            alert('Searching!')
+          }}
+          suiteSelectorOptions={{
+            overviewHref: '/',
+            onLinkClick: link => {
+              alert(link.href)
+            },
+            onUnauthorizedClick: link => {
+              alert(`unauthorized ${link?.href} `)
+            },
+            unauthorizedLinks: ['dataPlatform'],
+            activeLink: 'oversight',
+            links: [
+              { linkId: 'oversight', href: '/oversight' },
+              { linkId: 'dataPlatform', href: '/data-platform' },
+              { linkId: 'customer360', href: '/customer-360' },
+              { linkId: 'predictions', href: '/predictions' },
+              { linkId: 'analytics', href: '/analytics' },
+              { linkId: 'segmentation', href: '/segmentation' },
+            ],
+          }}
+        />
+      </div>
+    )
   },
 }
