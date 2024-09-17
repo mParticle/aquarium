@@ -1,6 +1,6 @@
 {
   "name": "@mparticle/aquarium",
-  "version": "1.31.1-fix-notification-center-props.1",
+  "version": "1.31.0",
   "description": "mParticle Component Library",
   "license": "Apache-2.0",
   "keywords": [
