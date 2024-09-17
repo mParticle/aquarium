@@ -1,3 +1,15 @@
+# [1.31.0](https://github.com/mParticle/aquarium/compare/v1.30.3...v1.31.0) (2024-09-17)
+
+### Bug Fixes
+
+- add more icon ([#403](https://github.com/mParticle/aquarium/issues/403)) ([3abc3b7](https://github.com/mParticle/aquarium/commit/3abc3b71916ab5a7db3c4f93e06ad2bd5845e1bf))
+
+### Features
+
+- add mp colors to storybook and remove token to css from pre com… ([#405](https://github.com/mParticle/aquarium/issues/405)) ([40dffbf](https://github.com/mParticle/aquarium/commit/40dffbf1eb2a480d2470dc70338118934f96cfa7))
+- add notification center ([#416](https://github.com/mParticle/aquarium/issues/416)) ([4c44206](https://github.com/mParticle/aquarium/commit/4c44206c3d668d575e832262fc0f5582700672c7))
+- add prettifier ([#404](https://github.com/mParticle/aquarium/issues/404)) ([a99793f](https://github.com/mParticle/aquarium/commit/a99793f264f2d1609343d4d83c11acdb0b005668))
+
 # [1.31.0-nav-disabled-interactions-poc.8](https://github.com/mParticle/aquarium/compare/v1.31.0-nav-disabled-interactions-poc.7...v1.31.0-nav-disabled-interactions-poc.8) (2024-09-16)
 
 ### Bug Fixes
