@@ -1,3 +1,9 @@
+## [1.31.1](https://github.com/mParticle/aquarium/compare/v1.31.0...v1.31.1) (2024-09-18)
+
+### Bug Fixes
+
+- export notification center props ([#418](https://github.com/mParticle/aquarium/issues/418)) ([2ea78c2](https://github.com/mParticle/aquarium/commit/2ea78c2cf64662070a4ed11587270105b61ebf71))
+
 ## [1.31.1-fix-notification-center-props.1](https://github.com/mParticle/aquarium/compare/v1.31.0...v1.31.1-fix-notification-center-props.1) (2024-09-17)
 
 ### Bug Fixes
