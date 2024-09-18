@@ -1,3 +1,59 @@
+## [1.31.1](https://github.com/mParticle/aquarium/compare/v1.31.0...v1.31.1) (2024-09-18)
+
+### Bug Fixes
+
+- export notification center props ([#418](https://github.com/mParticle/aquarium/issues/418)) ([2ea78c2](https://github.com/mParticle/aquarium/commit/2ea78c2cf64662070a4ed11587270105b61ebf71))
+
+## [1.31.1-fix-notification-center-props.1](https://github.com/mParticle/aquarium/compare/v1.31.0...v1.31.1-fix-notification-center-props.1) (2024-09-17)
+
+### Bug Fixes
+
+- export notification center props ([abaa4ba](https://github.com/mParticle/aquarium/commit/abaa4baf3532d168314711a8d1e598d0f0084492))
+
+# [1.31.0](https://github.com/mParticle/aquarium/compare/v1.30.3...v1.31.0) (2024-09-17)
+
+### Bug Fixes
+
+- add more icon ([#403](https://github.com/mParticle/aquarium/issues/403)) ([3abc3b7](https://github.com/mParticle/aquarium/commit/3abc3b71916ab5a7db3c4f93e06ad2bd5845e1bf))
+
+### Features
+
+- add mp colors to storybook and remove token to css from pre com… ([#405](https://github.com/mParticle/aquarium/issues/405)) ([40dffbf](https://github.com/mParticle/aquarium/commit/40dffbf1eb2a480d2470dc70338118934f96cfa7))
+- add notification center ([#416](https://github.com/mParticle/aquarium/issues/416)) ([4c44206](https://github.com/mParticle/aquarium/commit/4c44206c3d668d575e832262fc0f5582700672c7))
+- add prettifier ([#404](https://github.com/mParticle/aquarium/issues/404)) ([a99793f](https://github.com/mParticle/aquarium/commit/a99793f264f2d1609343d4d83c11acdb0b005668))
+
+# [1.31.0-nav-disabled-interactions-poc.8](https://github.com/mParticle/aquarium/compare/v1.31.0-nav-disabled-interactions-poc.7...v1.31.0-nav-disabled-interactions-poc.8) (2024-09-16)
+
+### Bug Fixes
+
+- add Drawer component back ([4703322](https://github.com/mParticle/aquarium/commit/4703322b2cd0d836b0e2e63a7b7661f85ff32533))
+
+# [1.31.0-nav-disabled-interactions-poc.7](https://github.com/mParticle/aquarium/compare/v1.31.0-nav-disabled-interactions-poc.6...v1.31.0-nav-disabled-interactions-poc.7) (2024-09-16)
+
+# [1.31.0-nav-disabled-interactions-poc.6](https://github.com/mParticle/aquarium/compare/v1.31.0-nav-disabled-interactions-poc.5...v1.31.0-nav-disabled-interactions-poc.6) (2024-09-16)
+
+# [1.31.0-nav-disabled-interactions-poc.5](https://github.com/mParticle/aquarium/compare/v1.31.0-nav-disabled-interactions-poc.4...v1.31.0-nav-disabled-interactions-poc.5) (2024-09-13)
+
+# [1.31.0-nav-disabled-interactions-poc.4](https://github.com/mParticle/aquarium/compare/v1.31.0-nav-disabled-interactions-poc.3...v1.31.0-nav-disabled-interactions-poc.4) (2024-09-13)
+
+### Bug Fixes
+
+- avoid nested anchor when child is button ([1e179fa](https://github.com/mParticle/aquarium/commit/1e179fad102726029691f12582f5d7e0a4beed16))
+
+# [1.31.0-nav-disabled-interactions-poc.3](https://github.com/mParticle/aquarium/compare/v1.31.0-nav-disabled-interactions-poc.2...v1.31.0-nav-disabled-interactions-poc.3) (2024-09-13)
+
+# [1.31.0-nav-disabled-interactions-poc.2](https://github.com/mParticle/aquarium/compare/v1.31.0-nav-disabled-interactions-poc.1...v1.31.0-nav-disabled-interactions-poc.2) (2024-09-12)
+
+# [1.31.0-nav-disabled-interactions-poc.1](https://github.com/mParticle/aquarium/compare/v1.30.3...v1.31.0-nav-disabled-interactions-poc.1) (2024-09-12)
+
+### Bug Fixes
+
+- add more icon ([#403](https://github.com/mParticle/aquarium/issues/403)) ([3abc3b7](https://github.com/mParticle/aquarium/commit/3abc3b71916ab5a7db3c4f93e06ad2bd5845e1bf))
+
+### Features
+
+- testing a disabled state to validate notifications project requirements ([440150c](https://github.com/mParticle/aquarium/commit/440150c3458d88873a058ad2755f73f59ca45e4b))
+
 ## [1.30.3](https://github.com/mParticle/aquarium/compare/v1.30.2...v1.30.3) (2024-09-10)
 
 ### Bug Fixes

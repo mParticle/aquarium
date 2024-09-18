@@ -23,6 +23,7 @@
   /* allow vertical scroll */
   position: absolute;
   top: 0;
+  left: 0;
   bottom: 0;
   overflow: hidden auto;
 }
@@ -331,4 +332,32 @@
 .globalNavigation__mpHome svg {
   width: 28px;
   height: var(--size-lg);
+}
+
+.notificationCenter__popover {
+  left: var(--nav-width) !important;
+  height: 100%;
+  width: 300px;
+}
+
+.notificationCenter__popover .ant-popover-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 0;
+  border-radius: 0;
+}
+
+.notificationCenter__popover .ant-popover-inner-content {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.notificationCenter__popover .ant-popover-title {
+  margin: 0;
+}
+
+.notificationCenter__header {
+  padding: var(--padding-content-vertical-lg) var(--padding-content-horizontal-lg);
+  border-bottom: 1px solid var(--color-border-secondary);
 }

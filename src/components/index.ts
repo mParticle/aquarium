@@ -109,6 +109,10 @@ export type {
   IWorkspaceSelectorDisplayItem,
   IWorkspaceSelectorItem,
 } from './navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'
+export type {
+  INotificationCenterProps,
+  NotificationCenterZIndex,
+} from './navigation/GlobalNavigation/NotificationCenter'
 export { SuiteLogo } from './navigation/GlobalNavigation/SuiteLogo'
 export { Typography } from './general/Typography/Typography'
 

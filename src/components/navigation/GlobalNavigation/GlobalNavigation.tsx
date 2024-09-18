@@ -22,6 +22,15 @@ import {
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
 import { useNewExperienceReminder } from 'src/hooks/NewExperienceReminder/useNewExperienceReminder'
 import { HomeButton } from 'src/components/navigation/GlobalNavigation/HomeButton'
+import {
+  NotificationCenter,
+  type INotificationCenterProps,
+} from 'src/components/navigation/GlobalNavigation/NotificationCenter'
+
+export interface NotificationActions {
+  onClose?: () => void
+  onPreferencesClick?: () => void
+}
 
 export interface IGlobalNavigationProps {
   logo: IGlobalNavigationLogo
@@ -46,6 +55,7 @@ export interface IGlobalNavigationProps {
    * This will be removed once all the apps updated.
    */
   minimapOptions?: ISuiteSelectorOptions
+  notificationCenter?: INotificationCenterProps
 }
 
 export const GlobalNavWidth = 90 as const
@@ -69,6 +79,7 @@ export const GlobalNavigation = ({ showSuiteLogo = true, ...props }: IGlobalNavi
             <NavigationList items={props.tools} />
           </div>
           <div>
+            {props.notificationCenter && <NotificationCenter {...props.notificationCenter} />}
             <NavigationList items={props.management} />
             {props.orgs ? (
               <WorkspaceSelector
