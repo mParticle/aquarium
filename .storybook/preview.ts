@@ -7,12 +7,7 @@ const preview: Preview = {
       storySort: {
         order: [
           'About',
-          ['Introduction', 'Contributing', 'Changelog', 'FAQ'],
-          'Components',
-          'Foundations',
-          ['Colors', 'Typography', 'Icons', 'Errors', 'Loading'],
-          'Candidate Components',
-          'Design Templates',
+          ['Introduction', 'Changelog', 'FAQ'],
           'Component Process',
           [
             'Introduction',
@@ -22,6 +17,13 @@ const preview: Preview = {
             ['Introducing new ones', 'Using existing ones', 'Promoting to a component'],
             'Design Templates',
           ],
+          'Components',
+          'Foundations',
+          ['Colors', 'Typography', 'Icons', 'Errors', 'Loading'],
+          'Candidate Components',
+          'Design Templates',
+          'Contributing',
+          ['Introduction', 'Commits', 'Testing in the platforms', 'Release Process', 'Maintainers'],
         ],
       },
     },
