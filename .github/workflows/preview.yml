@@ -29,6 +29,7 @@ jobs:
         run: |
           npm install
           npm run build-storybook
+          touch ./storybook-static/.nojekyll
 
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1
