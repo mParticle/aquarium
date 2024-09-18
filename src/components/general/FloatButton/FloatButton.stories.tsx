@@ -2,7 +2,7 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { FloatButton } from 'src/components/general/FloatButton/FloatButton'
 
 const meta: Meta<typeof FloatButton> = {
-  title: 'Aquarium/General/FloatButton',
+  title: 'Components/General/FloatButton',
   component: FloatButton,
 
   args: {

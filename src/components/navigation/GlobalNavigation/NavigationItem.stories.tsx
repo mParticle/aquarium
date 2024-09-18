@@ -4,7 +4,7 @@ import { NavigationItem } from 'src/components/navigation/GlobalNavigation/Navig
 import { Icon } from 'src/components'
 
 const meta: Meta<typeof NavigationItem> = {
-  title: 'Aquarium/Navigation/NavigationItem',
+  title: 'Components/Navigation/NavigationItem',
   component: props => <NavigationItem {...props}></NavigationItem>,
 
   args: {

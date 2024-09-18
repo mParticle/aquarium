@@ -2,7 +2,7 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { QueryItem } from 'src/components'
 
 const meta: Meta<typeof QueryItem.Action> = {
-  title: 'Aquarium/Data Entry/QueryItem/Action',
+  title: 'Components/Data Entry/QueryItem/Action',
   component: QueryItem.Action,
   parameters: {
     docs: {

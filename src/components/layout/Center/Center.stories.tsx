@@ -3,7 +3,7 @@ import { type StoryObj } from '@storybook/react'
 import { Center } from 'src/components/layout/Center/Center'
 
 const meta: Meta<typeof Center> = {
-  title: 'Aquarium/Layout/Center',
+  title: 'Components/Layout/Center',
   component: Center,
 
   args: {},

@@ -38,7 +38,7 @@ const layoutStyle = {
 }
 
 const meta: Meta<typeof Layout> = {
-  title: 'Aquarium/Layout/Layout',
+  title: 'Components/Layout/Layout',
   component: Layout,
 
   args: {

@@ -8,7 +8,7 @@ import { ColorError, ColorInfoBg, ColorSuccess, PaddingXl } from 'src/styles/sty
 import { ExampleStory } from 'src/utils/ExampleStory'
 
 const meta: Meta<typeof Statistic> = {
-  title: 'Aquarium/Data Display/Statistic',
+  title: 'Components/Data Display/Statistic',
   component: Statistic,
 
   args: {

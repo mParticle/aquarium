@@ -3,7 +3,7 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { Button } from 'src/components/general/Button/Button'
 
 const meta: Meta<typeof Popover> = {
-  title: 'Aquarium/Data Display/Popover',
+  title: 'Components/Data Display/Popover',
   component: Popover,
 
   args: {},

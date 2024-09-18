@@ -8,7 +8,7 @@ import { useState } from 'react'
 import { expect } from '@storybook/test'
 
 const meta: Meta<typeof Typography.Text> = {
-  title: 'Aquarium/General/Typography.Text',
+  title: 'Components/General/Typography.Text',
   component: props => <Typography.Text {...props}>Example Text</Typography.Text>,
 
   args: {

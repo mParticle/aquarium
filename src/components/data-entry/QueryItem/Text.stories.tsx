@@ -2,13 +2,12 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { QueryItem } from 'src/components'
 
 const meta: Meta<typeof QueryItem.Text> = {
-  title: 'Aquarium/Data Entry/QueryItem/Text',
+  title: 'Components/Data Entry/QueryItem/Text',
   component: QueryItem.Text,
   parameters: {
     docs: {
       description: {
-        component:
-          'This is the "Text" component of the QueryItem component group.',
+        component: 'This is the "Text" component of the QueryItem component group.',
       },
     },
   },
@@ -25,7 +24,6 @@ export const Primary: Story = {
     disabled: false,
   },
 }
-
 
 export const Disabled: Story = {
   args: {

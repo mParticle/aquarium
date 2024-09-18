@@ -16,7 +16,7 @@ import { Modal } from 'src/components'
 import { Drawer } from 'src/components'
 
 const meta: Meta<typeof Watermark> = {
-  title: 'Aquarium/Feedback/Watermark',
+  title: 'Components/Feedback/Watermark',
   component: props => (
     <Watermark {...props}>
       <div style={{ height: 500, width: 500 }} />
@@ -153,8 +153,8 @@ export const ExampleConfig: Story = {
           <Watermark {...watermarkProps}>
             <Typography.Paragraph>
               The light-speed iteration of the digital world makes products more complex. However, human consciousness
-              and attention resources are limited. Facing this design contradiction, the pursuit of natural
-              interaction will be the consistent direction of Ant Design.
+              and attention resources are limited. Facing this design contradiction, the pursuit of natural interaction
+              will be the consistent direction of Ant Design.
             </Typography.Paragraph>
             <Typography.Paragraph>
               Natural user cognition: According to cognitive psychology, about 80% of external information is obtained
@@ -169,8 +169,8 @@ export const ExampleConfig: Story = {
               relationship between users, system roles, and task objectives, and also contextually organize system
               functions and services. At the same time, a series of methods such as behavior analysis, artificial
               intelligence and sensors could be applied to assist users to make effective decisions and reduce extra
-              operations of users, to save users&apos; mental and physical resources and make human-computer
-              interaction more natural.
+              operations of users, to save users&apos; mental and physical resources and make human-computer interaction
+              more natural.
             </Typography.Paragraph>
             <img
               style={{ zIndex: 10, width: '100%', maxWidth: 800, position: 'relative' }}

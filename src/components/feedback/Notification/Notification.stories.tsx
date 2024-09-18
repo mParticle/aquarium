@@ -3,7 +3,7 @@ import { Notification } from 'src/components/feedback/Notification/Notification'
 import { Button } from 'src/components/general/Button/Button'
 
 const meta: Meta<typeof Notification> = {
-  title: 'Aquarium/Feedback/Notification',
+  title: 'Components/Feedback/Notification',
   component: Notification,
 
   args: {

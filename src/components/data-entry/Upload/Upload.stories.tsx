@@ -4,7 +4,7 @@ import { Upload } from 'src/components/data-entry/Upload/Upload'
 import { Button } from 'src/components/general/Button/Button'
 
 const meta: Meta<typeof Upload> = {
-  title: 'Aquarium/Data Entry/Upload',
+  title: 'Components/Data Entry/Upload',
   component: props => (
     <Upload {...props}>
       <Button icon={<Icon name="mpLogo" />}>Click to Upload</Button>

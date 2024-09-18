@@ -7,7 +7,7 @@ import { useState } from 'react'
 import { Tooltip } from 'src/components'
 
 const meta: Meta<typeof Progress> = {
-  title: 'Aquarium/Feedback/Progress',
+  title: 'Components/Feedback/Progress',
   component: Progress,
 
   args: {

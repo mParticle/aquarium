@@ -5,7 +5,7 @@ import { Typography } from 'src/components/general/Typography/Typography'
 import { ExampleStory } from 'src/utils/ExampleStory'
 
 const meta: Meta<typeof Typography.Link> = {
-  title: 'Aquarium/General/Link',
+  title: 'Components/General/Link',
   component: props => <Typography.Link {...props}>Example Link</Typography.Link>,
 
   args: {

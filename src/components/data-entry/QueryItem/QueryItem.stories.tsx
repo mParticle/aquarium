@@ -2,7 +2,7 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { QueryItem } from 'src/components'
 
 const meta: Meta<typeof QueryItem> = {
-  title: 'Aquarium/Data Entry/QueryItem',
+  title: 'Components/Data Entry/QueryItem',
   component: QueryItem,
   parameters: {
     docs: {
