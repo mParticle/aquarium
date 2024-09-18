@@ -1,5 +1,4 @@
-# .github/workflows/preview.yml
-name: Deploy PR previews
+name: Deploy Storybook PR preview
 
 on:
   pull_request:
