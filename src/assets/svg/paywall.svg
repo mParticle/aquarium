@@ -1,8 +1,0 @@
-<svg  viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g clip-path="url(#clip0_1_38)">
-        <path d="M10.3958 1.6875C8.17917 1.6875 6.4375 3.42917 6.4375 5.64583V8.02083H14.3542V5.64583C14.3542 3.42917 12.6125 1.6875 10.3958 1.6875Z" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="square"/>
-        <path d="M16.7292 8.02084H4.0625V19.1042H16.7292V8.02084Z" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="square"/>
-        <path d="M10.3958 14.3542C11.2703 14.3542 11.9792 13.6453 11.9792 12.7708C11.9792 11.8964 11.2703 11.1875 10.3958 11.1875C9.52138 11.1875 8.8125 11.8964 8.8125 12.7708C8.8125 13.6453 9.52138 14.3542 10.3958 14.3542Z" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="square"/>
-        <path d="M10.3958 14.3542V15.9375" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="square"/>
-    </g>
-</svg>
