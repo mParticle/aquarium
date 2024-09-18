@@ -1,3 +1,9 @@
+# [1.32.0-chore-cascader-suffix.1](https://github.com/mParticle/aquarium/compare/v1.31.1...v1.32.0-chore-cascader-suffix.1) (2024-09-18)
+
+### Features
+
+- add datepicker example ([#408](https://github.com/mParticle/aquarium/issues/408)) ([0b4b46b](https://github.com/mParticle/aquarium/commit/0b4b46b201986cc240224142a308e76186133821))
+
 ## [1.31.1](https://github.com/mParticle/aquarium/compare/v1.31.0...v1.31.1) (2024-09-18)
 
 ### Bug Fixes
