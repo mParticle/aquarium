@@ -1,3 +1,13 @@
+# [1.32.0-fix-notification-center-export-zindex.1](https://github.com/mParticle/aquarium/compare/v1.31.1...v1.32.0-fix-notification-center-export-zindex.1) (2024-09-20)
+
+### Bug Fixes
+
+- export zIndex ([dc4fede](https://github.com/mParticle/aquarium/commit/dc4fede4cfb350de5dbeb2587e8d7599ffc0df04))
+
+### Features
+
+- add datepicker example ([#408](https://github.com/mParticle/aquarium/issues/408)) ([0b4b46b](https://github.com/mParticle/aquarium/commit/0b4b46b201986cc240224142a308e76186133821))
+
 ## [1.31.1](https://github.com/mParticle/aquarium/compare/v1.31.0...v1.31.1) (2024-09-18)
 
 ### Bug Fixes
