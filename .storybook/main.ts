@@ -12,7 +12,7 @@ const config: StorybookConfig & StorybookVitePlugins = {
     options: {},
   },
 
-  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(ts|tsx)', '../docs/**/*.mdx'],
+  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(ts|tsx)', '../docs/**/*.stories.@(ts|tsx)', '../docs/**/*.mdx'],
 
   addons: [
     '@storybook/addon-links',
