@@ -1,3 +1,10 @@
+# [1.32.0-fix-notification-center-export-zindex.2](https://github.com/mParticle/aquarium/compare/v1.32.0-fix-notification-center-export-zindex.1...v1.32.0-fix-notification-center-export-zindex.2) (2024-09-20)
+
+### Reverts
+
+- package version ([c74a701](https://github.com/mParticle/aquarium/commit/c74a7012fa7eeb067b479368f7e9f38c7d4ff4fa))
+- package-lock version ([3e95f90](https://github.com/mParticle/aquarium/commit/3e95f9014d6359f8104f33a6a7b079e4c2b1e986))
+
 # [1.32.0-fix-notification-center-export-zindex.1](https://github.com/mParticle/aquarium/compare/v1.31.1...v1.32.0-fix-notification-center-export-zindex.1) (2024-09-20)
 
 ### Bug Fixes
