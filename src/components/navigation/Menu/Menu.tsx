@@ -1,13 +1,12 @@
-import { Menu as AntMenu } from 'antd'
+import { Menu as AntMenu, type MenuProps } from 'antd'
 import { type MenuProps as AntMenuProps } from 'antd'
-import {
-  type MenuItemType as AndMenuItemType,
-  type MenuItemGroupType as AndMenuItemGroupType,
-  type MenuDividerType as AndMenuDividerType,
-  type SubMenuType as AndSubMenuType,
-} from 'antd/es/menu/hooks/useItems'
 import { type MenuInfo as RCMenuInfo } from 'rc-menu/lib/interface'
 import { ConfigProvider } from 'src/components'
+
+export type AndMenuItemType = Required<MenuProps>['items'][number]
+export type AndMenuItemGroupType = Required<MenuProps>['items'][number] // Same type used for menu groups
+export type AndMenuDividerType = Required<MenuProps>['items'][number] // Menu divider uses the same type
+export type AndSubMenuType = Required<MenuProps>['items'][number] // Submenu is also part of 'items'
 
 export interface IMenuProps extends AntMenuProps {}
 

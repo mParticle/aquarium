@@ -114,7 +114,7 @@ export const ExampleMultiline: Story = {
 
 export const ExampleConfig: Story = {
   render: () => {
-    type Color = GetProp<IColorPickerProps, 'color'>
+    type Color = GetProp<IColorPickerProps, 'value'>
 
     interface WatermarkConfig {
       content: string
@@ -144,7 +144,15 @@ export const ExampleConfig: Story = {
       rotate,
       gap,
       offset,
-      font: { color: typeof color === 'string' ? color : color.toRgbString(), fontSize },
+      font: {
+        color:
+          typeof color === 'string'
+            ? color
+            : typeof color === 'object' && 'toRgbString' in color
+              ? color.toRgbString()
+              : String(color),
+        fontSize,
+      },
     }
 
     return (
@@ -153,8 +161,8 @@ export const ExampleConfig: Story = {
           <Watermark {...watermarkProps}>
             <Typography.Paragraph>
               The light-speed iteration of the digital world makes products more complex. However, human consciousness
-              and attention resources are limited. Facing this design contradiction, the pursuit of natural
-              interaction will be the consistent direction of Ant Design.
+              and attention resources are limited. Facing this design contradiction, the pursuit of natural interaction
+              will be the consistent direction of Ant Design.
             </Typography.Paragraph>
             <Typography.Paragraph>
               Natural user cognition: According to cognitive psychology, about 80% of external information is obtained
@@ -169,8 +177,8 @@ export const ExampleConfig: Story = {
               relationship between users, system roles, and task objectives, and also contextually organize system
               functions and services. At the same time, a series of methods such as behavior analysis, artificial
               intelligence and sensors could be applied to assist users to make effective decisions and reduce extra
-              operations of users, to save users&apos; mental and physical resources and make human-computer
-              interaction more natural.
+              operations of users, to save users&apos; mental and physical resources and make human-computer interaction
+              more natural.
             </Typography.Paragraph>
             <img
               style={{ zIndex: 10, width: '100%', maxWidth: 800, position: 'relative' }}

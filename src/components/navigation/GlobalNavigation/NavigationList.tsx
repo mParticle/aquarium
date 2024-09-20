@@ -1,5 +1,5 @@
 import { Menu } from 'src/components'
-import type { MenuItemGroupType } from 'antd/es/menu/hooks/useItems'
+import { type MenuProps } from 'antd'
 import { NavigationIcon } from 'src/components/navigation/GlobalNavigation/NavigationIcon'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
 import { Center } from 'src/components'
@@ -8,6 +8,8 @@ import { type IGlobalNavigationLink } from 'src/components/navigation/GlobalNavi
 import { Fragment } from 'react'
 import { buildLinkFromHrefOptions } from 'src/utils/utils'
 import { NavigationButtonItem } from 'src/components/navigation/GlobalNavigation/NavigationButtonItem'
+
+export type MenuItemGroupType = Required<MenuProps>['items'][number] // This works for both groups and items
 
 export interface INavigationListProps {
   items: IGlobalNavigationItem[]
@@ -44,7 +46,7 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
       if (child.type !== 'button') {
         children.push(child)
       } else {
-        const buttonKey = `submenu-button-${children.filter(c => c.type === 'button').length}-${index}`
+        const buttonKey = `submenu-button-${children.filter(c => c !== null && c.type === 'button').length}-${index}`
 
         children.push({
           className: 'globalNavigation__buttonItem',
