@@ -1,3 +1,16 @@
+# [1.32.0-ant-update.1](https://github.com/mParticle/aquarium/compare/v1.31.1...v1.32.0-ant-update.1) (2024-09-23)
+
+### Bug Fixes
+
+- fix ts erros ([90864de](https://github.com/mParticle/aquarium/commit/90864de25d875953f7279542797d6a35d4d3b55e))
+- remove @esbuild/darwin-arm64@0.23.1 ([54c96e6](https://github.com/mParticle/aquarium/commit/54c96e6d51d5ce0ab407d076a8567d96d11f3e45))
+
+### Features
+
+- add datepicker example ([#408](https://github.com/mParticle/aquarium/issues/408)) ([0b4b46b](https://github.com/mParticle/aquarium/commit/0b4b46b201986cc240224142a308e76186133821))
+- antd upgrade ([e3bb862](https://github.com/mParticle/aquarium/commit/e3bb862ce26a75c27387cfb888a6c1419c6b7bfb))
+- upgrade style ([8d61675](https://github.com/mParticle/aquarium/commit/8d6167573ed29844b4dcdd08cc9aaaebbb4cc8e0))
+
 ## [1.31.1](https://github.com/mParticle/aquarium/compare/v1.31.0...v1.31.1) (2024-09-18)
 
 ### Bug Fixes

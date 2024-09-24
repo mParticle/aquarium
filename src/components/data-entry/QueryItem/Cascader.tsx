@@ -35,6 +35,7 @@ export interface IQueryItemCascaderProps {
   disabled?: boolean
   placement?: IBaseCascaderProps['placement']
   defaultOpen?: IBaseCascaderProps['defaultOpen']
+  suffixIcon?: IBaseCascaderProps['suffixIcon']
 }
 
 const Cascader = (props: IQueryItemCascaderProps) => {
@@ -102,6 +103,7 @@ const Cascader = (props: IQueryItemCascaderProps) => {
   const baseProps: IBaseCascaderProps = {
     getPopupContainer: triggerNode => triggerNode.parentElement,
     searchValue,
+    suffixIcon: props.suffixIcon,
     disabled: props.disabled,
     value: selectedValue,
     defaultOpen: props.defaultOpen,
@@ -169,6 +171,7 @@ const Cascader = (props: IQueryItemCascaderProps) => {
             status={props.errorMessage ? 'error' : undefined}
             className={inputClasses}
             value={displayValue}
+            suffix={props.suffixIcon}
             prefix={getIcon()}
           />
         </Flex>
