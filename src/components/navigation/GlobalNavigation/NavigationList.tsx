@@ -1,5 +1,4 @@
-import { Menu } from 'src/components'
-import { type MenuProps } from 'antd'
+import { Menu, type MenuItemGroupType } from 'src/components'
 import { NavigationIcon } from 'src/components/navigation/GlobalNavigation/NavigationIcon'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
 import { Center } from 'src/components'
@@ -8,8 +7,6 @@ import { type IGlobalNavigationLink } from 'src/components/navigation/GlobalNavi
 import { Fragment } from 'react'
 import { buildLinkFromHrefOptions } from 'src/utils/utils'
 import { NavigationButtonItem } from 'src/components/navigation/GlobalNavigation/NavigationButtonItem'
-
-export type MenuItemGroupType = Required<MenuProps>['items'][number] // This works for both groups and items
 
 export interface INavigationListProps {
   items: IGlobalNavigationItem[]

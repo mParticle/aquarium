@@ -1,6 +1,4 @@
-import { type MenuProps } from 'antd'
-
-import { Icon } from 'src/components'
+import { Icon, type MenuItemGroupType, type MenuItemType } from 'src/components'
 import { Center } from 'src/components'
 import { Menu } from 'src/components'
 import type { IMenuProps } from 'src/components'
@@ -10,8 +8,6 @@ import { Tooltip } from 'src/components'
 import { Spin } from 'src/components'
 import { type IMenuInfo } from 'src/components'
 
-export type MenuItemType = Required<MenuProps>['items'][number]
-export type MenuItemGroupType = Required<MenuProps>['items'][number] // Same as menu item type
 export interface INavigationCreateProps {
   createItems: Array<INavigationCreateItem | INavigationCreateGroup>
 }

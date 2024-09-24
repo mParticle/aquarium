@@ -1,22 +1,22 @@
-# [1.32.0-ant-update.2](https://github.com/mParticle/aquarium/compare/v1.32.0-ant-update.1...v1.32.0-ant-update.2) (2024-09-24)
+# [1.32.0](https://github.com/mParticle/aquarium/compare/v1.31.1...v1.32.0) (2024-09-23)
 
 ### Bug Fixes
 
-- update cascader dropdown postion ([d855a09](https://github.com/mParticle/aquarium/commit/d855a09eebada16614428c8ce637a9db8df731ae))
-- update dropdown ([660663b](https://github.com/mParticle/aquarium/commit/660663b19c65a7a76d71d09d9e90b115e58f309a))
-
-# [1.32.0-ant-update.1](https://github.com/mParticle/aquarium/compare/v1.31.1...v1.32.0-ant-update.1) (2024-09-23)
-
-### Bug Fixes
-
-- fix ts erros ([90864de](https://github.com/mParticle/aquarium/commit/90864de25d875953f7279542797d6a35d4d3b55e))
-- remove @esbuild/darwin-arm64@0.23.1 ([54c96e6](https://github.com/mParticle/aquarium/commit/54c96e6d51d5ce0ab407d076a8567d96d11f3e45))
+- notification center export z-index ([#422](https://github.com/mParticle/aquarium/issues/422)) ([ce01227](https://github.com/mParticle/aquarium/commit/ce012272401ab507473ef3d2c91cbaa5af8b5a30))
 
 ### Features
 
 - add datepicker example ([#408](https://github.com/mParticle/aquarium/issues/408)) ([0b4b46b](https://github.com/mParticle/aquarium/commit/0b4b46b201986cc240224142a308e76186133821))
-- antd upgrade ([e3bb862](https://github.com/mParticle/aquarium/commit/e3bb862ce26a75c27387cfb888a6c1419c6b7bfb))
-- upgrade style ([8d61675](https://github.com/mParticle/aquarium/commit/8d6167573ed29844b4dcdd08cc9aaaebbb4cc8e0))
+
+# [1.32.0-fix-notification-center-export-zindex.1](https://github.com/mParticle/aquarium/compare/v1.31.1...v1.32.0-fix-notification-center-export-zindex.1) (2024-09-20)
+
+### Bug Fixes
+
+- export zIndex ([dc4fede](https://github.com/mParticle/aquarium/commit/dc4fede4cfb350de5dbeb2587e8d7599ffc0df04))
+
+### Features
+
+- add datepicker example ([#408](https://github.com/mParticle/aquarium/issues/408)) ([0b4b46b](https://github.com/mParticle/aquarium/commit/0b4b46b201986cc240224142a308e76186133821))
 
 ## [1.31.1](https://github.com/mParticle/aquarium/compare/v1.31.0...v1.31.1) (2024-09-18)
 
