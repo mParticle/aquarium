@@ -1,3 +1,10 @@
+# [1.32.0-ant-update.2](https://github.com/mParticle/aquarium/compare/v1.32.0-ant-update.1...v1.32.0-ant-update.2) (2024-09-24)
+
+### Bug Fixes
+
+- update cascader dropdown postion ([d855a09](https://github.com/mParticle/aquarium/commit/d855a09eebada16614428c8ce637a9db8df731ae))
+- update dropdown ([660663b](https://github.com/mParticle/aquarium/commit/660663b19c65a7a76d71d09d9e90b115e58f309a))
+
 # [1.32.0-ant-update.1](https://github.com/mParticle/aquarium/compare/v1.31.1...v1.32.0-ant-update.1) (2024-09-23)
 
 ### Bug Fixes
