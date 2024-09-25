@@ -11,6 +11,7 @@ export type SelectWithRangePickerValue<ValueType> = ValueType | [string, string]
 
 interface SelectWithRangePickerProps<ValueType, OptionType>
   extends Omit<
+    // @ts-expect-error only used in stories as an example
     ISelectProps<SelectWithRangePickerValue<ValueType>, OptionType>,
     'open' | 'value' | 'dropdownRender' | 'defaultValue' | 'mode'
   > {
@@ -54,13 +55,16 @@ export const SelectWithRangePicker = <
             <Flex vertical gap={10}>
               {rangePickerLabel}
               <DatePicker.RangePicker
+                // @ts-expect-error only used in stories as an example
                 value={useMemo(() => (Array.isArray(value) ? value.map(dayjs) : undefined), [value])}
                 onOpenChange={isOpen => {
                   rangePickerProps?.onOpenChange?.(isOpen)
+                  // @ts-expect-error only used in stories as an example
                   setOpen(isOpen ? true : undefined)
                 }}
                 onChange={antdDayJSArray => {
-                  const nextValue = antdDayJSArray ? antdDayJSArray.map(d => d.toDate().toISOString()) : null
+                  const nextValue = antdDayJSArray ? antdDayJSArray.map(d => d?.toDate().toISOString()) : null
+                  // @ts-expect-error only used in stories as an example
                   rest.onChange?.(nextValue, undefined)
                 }}
                 {...rangePickerProps}
