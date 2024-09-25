@@ -138,6 +138,12 @@ export const LoadData: Story = {
   },
 }
 
+export const SuffixIcon: Story = {
+  args: {
+    suffixIcon: <Icon name="dropdownOpen" size="sm" />,
+  },
+}
+
 export const Loading: Story = {
   args: {
     placeholder: 'Loading Story',
