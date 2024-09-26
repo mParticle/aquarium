@@ -36,3 +36,18 @@ To process the uploaded SVGs with the `SVGPrettifier`, a server must be running 
    ```bash
    npm run icons-prettifier
    ```
+
+### FAQ:
+
+Q: What if an icon in Figma has a FontAwesome name or doesn't follow the standard naming format? Should I name it myself?
+A: Please contact the design team. They'll provide the correct name and make sure the icon is properly reflected in the design library.
+
+Q: When do we use mParticle custom icons instead of default Ant Design (AntD) icons?
+A: In our design system, Ant Design (AntD) icons are the primary choice across components. However, custom mParticle icons are used in the following scenarios:
+
+Q: When do we use mParticle custom icons instead of default Ant Design (AntD) icons?
+A: In our design system, Ant Design (AntD) icons are the primary choice across components. However, custom mParticle icons are used in the following scenarios:
+
+- When the design team explicitly requests a customized icon.
+- When the AntD library does not offer a suitable icon for a specific use case.
+- When an existing AntD icon does not align with mParticle’s design or functional requirements.
