@@ -55,6 +55,10 @@
 .globalNavigation__sider {
   min-height: 100%;
   background-color: white !important;
+
+  div {
+    background-color: red !important;
+  }
 }
 
 .globalNavigation__item {
