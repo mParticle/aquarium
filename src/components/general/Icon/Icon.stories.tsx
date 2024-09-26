@@ -61,7 +61,7 @@ This will render the new icon with the specified size, color, and variant.
 `
 
 const meta: Meta = {
-  title: 'Aquarium/General/Icons',
+  title: 'Components/General/Icons',
   component: IconTable,
   argTypes: {
     size: {

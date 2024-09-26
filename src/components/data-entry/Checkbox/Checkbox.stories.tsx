@@ -9,7 +9,7 @@ import { userEvent } from '@storybook/test'
 import { expect } from '@storybook/test'
 
 const meta: Meta<typeof Checkbox> = {
-  title: 'Aquarium/Data Entry/Checkbox',
+  title: 'Components/Data Entry/Checkbox',
   component: props => {
     const [checked, setChecked] = useState<boolean>(props.checked ?? props.defaultChecked ?? false)
     return (

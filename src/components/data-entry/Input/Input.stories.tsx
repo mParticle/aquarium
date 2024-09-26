@@ -7,7 +7,7 @@ import { Space } from 'src/components'
 import { expect, userEvent } from '@storybook/test'
 
 const meta: Meta<typeof Input> = {
-  title: 'Aquarium/Data Entry/Input',
+  title: 'Components/Data Entry/Input',
   component: Input,
 
   args: {

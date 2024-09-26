@@ -2,7 +2,7 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { Popconfirm } from 'src/components/feedback/Popconfirm/Popconfirm'
 
 const meta: Meta<typeof Popconfirm> = {
-  title: 'Aquarium/Feedback/Popconfirm',
+  title: 'Components/Feedback/Popconfirm',
   component: Popconfirm,
 
   args: {},

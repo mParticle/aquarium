@@ -9,7 +9,7 @@ import { Margin } from 'src/styles/style'
 import { useState } from 'react'
 
 const meta: Meta<typeof Spin> = {
-  title: 'Aquarium/Feedback/Spin',
+  title: 'Components/Feedback/Spin',
   component: Spin,
 
   args: {

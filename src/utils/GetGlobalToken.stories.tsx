@@ -3,7 +3,7 @@ import { type StoryObj } from '@storybook/react'
 import { GetGlobalToken } from 'src/utils/GetGlobalToken'
 
 const meta: Meta<typeof GetGlobalToken> = {
-  title: 'Aquarium/Other/GetGlobalToken',
+  title: 'Components/Other/GetGlobalToken',
   component: GetGlobalToken,
 
   args: {},

@@ -52,7 +52,7 @@ const DatePickerWithDisabledYears: React.FC = () => {
 }
 
 const meta: Meta<typeof DatePicker> = {
-  title: 'Aquarium/Data Entry/Date Picker',
+  title: 'Components/Data Entry/Date Picker',
   component: DatePicker,
   args: {},
 }

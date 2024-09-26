@@ -16,7 +16,7 @@ const contentStyle: React.CSSProperties = {
 }
 
 const meta: Meta<typeof Carousel> = {
-  title: 'Aquarium/Data Display/Carousel',
+  title: 'Components/Data Display/Carousel',
   component: props => (
     <Carousel {...props} style={{ maxWidth: '800px' }}>
       <div>

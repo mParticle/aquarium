@@ -11,7 +11,7 @@ import { Skeleton } from 'src/components'
 import { Icon } from 'src/components'
 
 const meta: Meta<typeof Card> = {
-  title: 'Aquarium/Data Display/Card',
+  title: 'Components/Data Display/Card',
   component: props => <Card {...props}>{props.children}</Card>,
 
   args: {

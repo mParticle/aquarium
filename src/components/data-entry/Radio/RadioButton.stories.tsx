@@ -2,7 +2,7 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { Radio } from 'src/components/data-entry/Radio/Radio'
 
 const meta: Meta<typeof Radio.Button> = {
-  title: 'Aquarium/Data Entry/Radio/RadioButton',
+  title: 'Components/Data Entry/Radio/RadioButton',
   component: Radio.Button,
 
   args: {

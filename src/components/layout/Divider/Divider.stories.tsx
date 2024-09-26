@@ -2,7 +2,7 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { Divider } from 'src/components/layout/Divider/Divider'
 
 const meta: Meta<typeof Divider> = {
-  title: 'Aquarium/Layout/Divider',
+  title: 'Components/Layout/Divider',
 
   component: props => (
     <>

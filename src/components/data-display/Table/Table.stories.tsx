@@ -2,7 +2,7 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { Table } from 'src/components/data-display/Table/Table'
 
 const meta: Meta<typeof Table> = {
-  title: 'Aquarium/Data Display/Table',
+  title: 'Components/Data Display/Table',
   component: Table,
 
   args: {},

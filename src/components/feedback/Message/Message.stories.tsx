@@ -3,7 +3,7 @@ import { Message } from 'src/components/feedback/Message/Message'
 import { Button } from 'src/components/general/Button/Button'
 
 const meta: Meta<typeof Message> = {
-  title: 'Aquarium/Feedback/Message',
+  title: 'Components/Feedback/Message',
   component: Message,
 
   args: {

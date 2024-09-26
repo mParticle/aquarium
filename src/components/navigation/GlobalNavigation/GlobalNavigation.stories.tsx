@@ -125,7 +125,7 @@ const defaultNotificationCenter: INotificationCenterProps = {
 }
 
 const meta: Meta<typeof GlobalNavigation> = {
-  title: 'Aquarium/Navigation/GlobalNavigation',
+  title: 'Components/Navigation/GlobalNavigation',
   component: props => (
     <Center style={{ minHeight: '800px' }}>
       <GlobalNavigation {...props}></GlobalNavigation>

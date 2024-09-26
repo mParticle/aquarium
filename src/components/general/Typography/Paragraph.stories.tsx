@@ -10,7 +10,7 @@ import { Slider } from 'src/components'
 import { Icon } from 'src/components'
 
 const meta: Meta<typeof Typography.Paragraph> = {
-  title: 'Aquarium/General/Typography.Paragraph',
+  title: 'Components/General/Typography.Paragraph',
   component: props => <Typography.Paragraph {...props}>Paragraph text goes here</Typography.Paragraph>,
 
   args: {
@@ -235,7 +235,9 @@ export const ExampleEditable: Story = {
           }}>
           {noEnterIconStr}
         </Typography.Paragraph>
-        <Typography.Paragraph editable={{ tooltip: false, onChange: setHideTooltipStr }}>{hideTooltipStr}</Typography.Paragraph>
+        <Typography.Paragraph editable={{ tooltip: false, onChange: setHideTooltipStr }}>
+          {hideTooltipStr}
+        </Typography.Paragraph>
         <Typography.Paragraph
           editable={{
             onChange: setLengthLimitedStr,

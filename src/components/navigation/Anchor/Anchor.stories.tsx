@@ -8,7 +8,7 @@ import { useState } from 'react'
 import { useRef } from 'react'
 
 const meta: Meta<typeof Anchor> = {
-  title: 'Aquarium/Navigation/Anchor',
+  title: 'Components/Navigation/Anchor',
   component: Anchor,
 
   args: {
