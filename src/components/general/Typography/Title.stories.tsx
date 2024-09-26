@@ -4,7 +4,7 @@ import { Typography } from 'src/components/general/Typography/Typography'
 import { ExampleStory } from 'src/utils/ExampleStory'
 
 const meta: Meta<typeof Typography.Title> = {
-  title: 'Aquarium/General/Title',
+  title: 'Components/General/Title',
   component: Typography.Title,
 
   args: {},

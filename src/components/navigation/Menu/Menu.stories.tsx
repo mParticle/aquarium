@@ -56,7 +56,7 @@ const items: IMenuProps['items'] = [
 ]
 
 const meta: Meta<typeof Menu> = {
-  title: 'Aquarium/Navigation/Menu',
+  title: 'Components/Navigation/Menu',
   component: props => (
     <>
       {' '}

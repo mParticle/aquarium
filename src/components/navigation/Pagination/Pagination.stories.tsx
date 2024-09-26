@@ -6,7 +6,7 @@ import { type IPaginationProps } from 'src/components/navigation/Pagination/Pagi
 import { useState } from 'react'
 
 const meta: Meta<typeof Pagination> = {
-  title: 'Aquarium/Navigation/Pagination',
+  title: 'Components/Navigation/Pagination',
   component: Pagination,
 
   args: {

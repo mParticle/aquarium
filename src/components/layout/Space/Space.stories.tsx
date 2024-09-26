@@ -4,7 +4,7 @@ import { Divider } from 'src/components/layout/Divider/Divider'
 import { Button } from 'src/components/general/Button/Button'
 
 const meta: Meta<typeof Space> = {
-  title: 'Aquarium/Layout/Space',
+  title: 'Components/Layout/Space',
   component: props => (
     <>
       <Space {...props}>

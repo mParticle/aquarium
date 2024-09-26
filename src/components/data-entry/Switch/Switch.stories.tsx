@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { Button } from 'src/components'
 
 const meta: Meta<typeof Switch> = {
-  title: 'Aquarium/Data Entry/Switch',
+  title: 'Components/Data Entry/Switch',
   component: Switch,
 
   args: {

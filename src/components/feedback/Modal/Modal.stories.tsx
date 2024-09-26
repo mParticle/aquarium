@@ -4,7 +4,7 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { Button } from 'src/components/general/Button/Button'
 
 const meta: Meta<typeof Modal> = {
-  title: 'Aquarium/Feedback/Modal',
+  title: 'Components/Feedback/Modal',
   component: Modal,
 
   args: {},

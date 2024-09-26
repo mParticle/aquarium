@@ -4,7 +4,7 @@ import { Avatar, Badge, Button, Icon, Space } from 'src/components'
 import { ExampleStory } from 'src/utils/ExampleStory'
 
 const meta: Meta<typeof Avatar> = {
-  title: 'Aquarium/Data Display/Avatar',
+  title: 'Components/Data Display/Avatar',
   component: Avatar,
 
   args: {

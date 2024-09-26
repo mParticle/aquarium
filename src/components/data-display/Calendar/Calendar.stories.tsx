@@ -3,7 +3,7 @@ import { Calendar } from 'src/components/data-display/Calendar/Calendar'
 import dayjs from 'dayjs'
 
 const meta: Meta<typeof Calendar> = {
-  title: 'Aquarium/Data Display/Calendar',
+  title: 'Components/Data Display/Calendar',
   component: Calendar,
 
   args: {

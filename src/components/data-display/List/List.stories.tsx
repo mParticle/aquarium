@@ -2,7 +2,7 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { List } from 'src/components/data-display/List/List'
 
 const meta: Meta<typeof List> = {
-  title: 'Aquarium/Data Display/List',
+  title: 'Components/Data Display/List',
   component: props => <List {...props}></List>,
 
   args: {

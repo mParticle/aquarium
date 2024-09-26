@@ -2,7 +2,7 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { Radio } from 'src/components/data-entry/Radio/Radio'
 
 const meta: Meta<typeof Radio.Group> = {
-  title: 'Aquarium/Data Entry/Radio/RadioGroup',
+  title: 'Components/Data Entry/Radio/RadioGroup',
   component: Radio.Group,
 
   args: {
@@ -15,7 +15,7 @@ const meta: Meta<typeof Radio.Group> = {
     size: 'middle',
     value: undefined,
     onChange: undefined,
-    children: undefined
+    children: undefined,
   },
 }
 export default meta
@@ -35,12 +35,20 @@ export const WithOptionsAndOptionType: Story = {
 
 export const WithRadioButtons: Story = {
   args: {
-    defaultValue: "a",
+    defaultValue: 'a',
     children: [
-      <Radio.Button value="a">Hangzhou</Radio.Button>,
-      <Radio.Button value="b">Shanghai</Radio.Button>,
-      <Radio.Button value="c">Beijing</Radio.Button>,
-      <Radio.Button value="d">Chengdu</Radio.Button>
-    ]
+      <Radio.Button key="a" value="a">
+        Hangzhou
+      </Radio.Button>,
+      <Radio.Button key="b" value="b">
+        Shanghai
+      </Radio.Button>,
+      <Radio.Button key="c" value="c">
+        Beijing
+      </Radio.Button>,
+      <Radio.Button key="d" value="d">
+        Chengdu
+      </Radio.Button>,
+    ],
   },
 }

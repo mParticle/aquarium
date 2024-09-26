@@ -11,7 +11,7 @@ import { Space } from 'antd'
 import { Icon } from 'src/components'
 
 const meta: Meta<typeof Mentions> = {
-  title: 'Aquarium/Data Entry/Mentions',
+  title: 'Components/Data Entry/Mentions',
   component: Mentions,
 
   args: {},

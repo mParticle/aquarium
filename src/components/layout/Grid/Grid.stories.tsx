@@ -2,7 +2,7 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { type Grid, Row, Col } from 'antd'
 
 const meta: Meta<typeof Grid> = {
-  title: 'Aquarium/Layout/Grid',
+  title: 'Components/Layout/Grid',
   // component: Grid,
 
   args: {},

@@ -42,7 +42,7 @@ const options: ICascaderProps['options'] = [
 ]
 
 const meta: Meta<typeof Cascader> = {
-  title: 'Aquarium/Data Entry/Cascader',
+  title: 'Components/Data Entry/Cascader',
   component: Cascader,
 
   args: {

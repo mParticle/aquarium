@@ -50,7 +50,7 @@ const menu: IDropdownProps['menu'] = {
 } as const
 
 const meta: Meta<typeof Dropdown> = {
-  title: 'Aquarium/Navigation/Dropdown',
+  title: 'Components/Navigation/Dropdown',
   component: Dropdown,
 
   args: {
