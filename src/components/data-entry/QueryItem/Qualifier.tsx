@@ -33,6 +33,10 @@ const Qualifier = (props: IQueryItemQualifierProps) => {
     options: props.options,
     disabled: props.disabled,
     value: props.value,
+    dropdownAlign: {
+      points: ['tl', 'bl'],
+      offset: [0, 0],
+    },
   }
 
   let className = 'query-item'
@@ -40,7 +44,7 @@ const Qualifier = (props: IQueryItemQualifierProps) => {
 
   return (
     <>
-      <Select className={className} {...selectProps}></Select>
+      <Select className={className} {...selectProps} />
       {props.errorMessage && <Typography.Text type="danger">{props.errorMessage}</Typography.Text>}
     </>
   )
