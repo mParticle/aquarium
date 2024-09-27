@@ -1,18 +1,12 @@
 # Testing in the platforms
 
-## Testing in the CDP
-
 In order to test your changes, you will need to link the local version of the library. To do this, run the following commands:
 
-- Make sure to have the library built by running `npx vite build`. The linked version will use the build files from _dist/_ folder.
-- Make sure the `resolve.symlinks` property in you webpack config is set to `false`
-- `yarn link` in the root of the library
-- `yarn link @mparticle/aquarium` in the root of Nancy
+- Make sure to have the library built by running `npm run build`. The linked version will use the build files from _dist/_ folder.
+**A new build is required whenever you make changes** to the library code!
+- `yarn link` for Nancy, `npm link` Indicative, in the root of the library
+- `yarn link @mparticle/aquarium` for Nancy, `npm link @mparticle/aquarium` for Indicative in the root of the platforms
 - Make sure your _/node_modules/@mparticle/aquarium_ folder contains all of the Aquarium code
-
-## Testing in Analytics
-
-TODO
 
 ## Testing by installing from a branch
 
