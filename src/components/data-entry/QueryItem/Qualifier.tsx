@@ -35,7 +35,7 @@ const Qualifier = (props: IQueryItemQualifierProps) => {
     value: props.value,
     dropdownAlign: {
       points: ['tl', 'bl'],
-      offset: [0, 0],
+      offset: [-5, 7],
     },
   }
 
