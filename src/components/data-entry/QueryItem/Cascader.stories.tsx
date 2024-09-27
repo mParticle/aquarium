@@ -55,7 +55,7 @@ const options: IQueryItemCascaderProps['options'] = [
 ]
 
 const meta: Meta<typeof QueryItem.ValueSelector.Cascader> = {
-  title: 'Aquarium/Data Entry/QueryItem/ValueSelector/Cascader',
+  title: 'Components/Data Entry/QueryItem/ValueSelector/Cascader',
   component: QueryItem.ValueSelector.Cascader,
   parameters: {
     docs: {

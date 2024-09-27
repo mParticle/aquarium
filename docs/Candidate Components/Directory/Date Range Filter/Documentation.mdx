@@ -1,0 +1,47 @@
+import { Meta, Story } from '@storybook/blocks';
+
+import * as SelectWithRangePickerStories from './SelectWithRangePicker.stories';
+
+<Meta of={SelectWithRangePickerStories} />
+
+# Date Range Filter
+
+**Overview**
+
+The Date Range Filter is used when a user needs to narrow down the dataset they are working with to a specific date 
+and/or time window, allowing users to focus on data relevant to the selected timeframe.
+
+**Key Components**
+
+The Date Range Filter consists of two main components:
+
+- [Select Component](?path=/docs/components-data-entry-select--documentation)
+- [Range Picker](https://ant.design/components/date-picker#date-picker-demo-range-picker)
+
+**mParticle Usage**
+
+The Date Range Filter can be used in dashboards, reports, or any interfaces where users interact with time-based data.
+
+<Story of={SelectWithRangePickerStories.DateRangeFilter} />
+
+<br />
+
+## Current usages
+
+**9/25/2024 - Observability Project in CDP**
+
+<ul>
+  <li>
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      <img src="https://badgen.net/badge/icon/Figma?icon=libraries&label&color=purple" alt="Repo" style={{ marginRight: 8 }}/>
+      <a href="https://www.figma.com/design/hDSxMHoLlMlLeYbgvT3A6d/Observability-Exploration?node-id=2733-147740&node-type=canvas&t=WfJOqsHGC3JStCh3-0" target="_top" rel="nofollow" className="sbdocs sbdocs-a">Specs</a>
+    </div>
+  </li>
+  <li>
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      <img src="https://badgen.net/badge/icon/GitHub?icon=github&label" alt="Repo" style={{ marginRight: 8 }}/>
+      <a href="https://git.corp.mparticle.com/mParticle/mPServer/blob/main/src/UI/MP.UI.Web.Nancy/Assets/private/aurelia/src/viewmodels/observability/trace/components/SelectWithRangePicker/SelectWithRangePicker.tsx" target="_top" rel="nofollow" className="sbdocs sbdocs-a">mPServer Example</a>
+    </div>
+  </li>
+</ul>
+

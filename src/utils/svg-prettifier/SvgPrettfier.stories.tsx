@@ -22,7 +22,7 @@ To process the uploaded SVGs, a server must be running. You can start the server
 For more information on the icon component and usage, please refer to the [Icons Documentation](?path=/docs/aquarium-general-icons--documentation).
 `
 const meta: Meta<typeof SVGPrettifier> = {
-  title: 'Aquarium/Other/SVGPrettifier',
+  title: 'Components/Other/SVGPrettifier',
   component: SVGPrettifier,
   parameters: {
     docs: {

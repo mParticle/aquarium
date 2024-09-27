@@ -22,7 +22,7 @@ const items = [
 ]
 
 const meta: Meta<typeof Steps> = {
-  title: 'Aquarium/Navigation/Steps',
+  title: 'Components/Navigation/Steps',
   component: Steps,
 
   args: {

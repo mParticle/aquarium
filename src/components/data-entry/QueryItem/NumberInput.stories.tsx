@@ -2,7 +2,7 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { QueryItem } from 'src/components'
 
 const meta: Meta<typeof QueryItem.ValueSelector.NumberInput> = {
-  title: 'Aquarium/Data Entry/QueryItem/ValueSelector/NumberInput',
+  title: 'Components/Data Entry/QueryItem/ValueSelector/NumberInput',
   component: QueryItem.ValueSelector.NumberInput,
   parameters: {
     docs: {

@@ -2,7 +2,7 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { ConfigProvider } from 'src/components/other/ConfigProvider/ConfigProvider'
 
 const meta: Meta<typeof ConfigProvider> = {
-  title: 'Aquarium/Other/ConfigProvider',
+  title: 'Components/Other/ConfigProvider',
   component: ConfigProvider,
 
   args: {},

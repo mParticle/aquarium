@@ -10,7 +10,7 @@ import { Divider } from 'src/components'
 import { createElement } from 'react'
 
 const meta: Meta<typeof Skeleton> = {
-  title: 'Aquarium/Feedback/Skeleton',
+  title: 'Components/Feedback/Skeleton',
   component: props => <Skeleton {...props} style={{ height: '200px', width: '200px' }}></Skeleton>,
 
   args: {

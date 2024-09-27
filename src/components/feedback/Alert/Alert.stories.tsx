@@ -7,7 +7,7 @@ import { useState } from 'react'
 import { Button } from 'src/components'
 
 const meta: Meta<typeof Alert> = {
-  title: 'Aquarium/Feedback/Alert',
+  title: 'Components/Feedback/Alert',
   component: Alert,
 
   args: {

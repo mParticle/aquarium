@@ -14,7 +14,7 @@ import { List } from 'src/components'
 import { useState } from 'react'
 
 const meta: Meta<typeof Empty> = {
-  title: 'Aquarium/Data Display/Empty',
+  title: 'Components/Data Display/Empty',
   component: Empty,
 
   args: {

@@ -1,0 +1,24 @@
+# Testing in the platforms
+
+In order to test your changes, you will need to link the local version of the library. To do this, run the following commands:
+
+- Make sure to have the library built by running `npm run build`. The linked version will use the build files from _dist/_ folder.
+**A new build is required whenever you make changes** to the library code!
+- `yarn link` for Nancy, `npm link` Indicative, in the root of the library
+- `yarn link @mparticle/aquarium` for Nancy, `npm link @mparticle/aquarium` for Indicative in the root of the platforms
+- Make sure your _/node_modules/@mparticle/aquarium_ folder contains all of the Aquarium code
+
+## Testing by installing from a branch
+
+Another way to test your changes is by installing the library from a branch. To do this, we need to push the _dist/_ folder to the remote
+and install it directly from there with the following command:
+
+```
+yarn add https://github.com/mParticle/aquarium#<branch-name>
+```
+
+## Testing by releasing an ad-hoc version
+
+To test ad-hoc versions of the Aquarium we use `feat/`, `fix/` or `chore/` branchs on Github and their corresponding distribution channels on npm.
+This allows us to release specific versions for testing specific features and install them on the platforms. To release it,
+just run the Github Action from the the branch you want to release.

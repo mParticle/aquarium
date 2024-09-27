@@ -5,7 +5,7 @@ import { PaddingXs } from 'src/styles/style'
 import { ExampleStory } from 'src/utils/ExampleStory'
 
 const meta: Meta<typeof Breadcrumb> = {
-  title: 'Aquarium/Navigation/Breadcrumb',
+  title: 'Components/Navigation/Breadcrumb',
   component: Breadcrumb,
 
   args: {

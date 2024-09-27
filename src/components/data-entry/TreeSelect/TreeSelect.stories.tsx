@@ -2,7 +2,7 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { TreeSelect } from 'src/components/data-entry/TreeSelect/TreeSelect'
 
 const meta: Meta<typeof TreeSelect> = {
-  title: 'Aquarium/Data Entry/TreeSelect',
+  title: 'Components/Data Entry/TreeSelect',
   component: TreeSelect,
 
   args: {},

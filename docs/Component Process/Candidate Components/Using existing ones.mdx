@@ -1,0 +1,19 @@
+import { Mermaid } from 'mdx-mermaid/Mermaid';
+
+# Using existings candidate components
+
+<Mermaid chart={`graph TD;
+    classDef product stroke:#ddd;
+    classDef design fill:#E4CCFF, stroke:gray;
+    classDef engineering fill:#0D99FF, stroke:gray, color:white;
+
+    A[Project is prioritized for design]:::product --> B
+
+    B[Designer reviews the project needs and identifies a needs for customization or componetization]:::design --> C
+    
+    C[Unify: Trigger source of truth update by creating a ticket to Unify squad for updating  Storybook. Start tracking usage in the rule of 3.]:::engineering --> D
+    
+    D[Design Handoff. Designer communicates to the project team that  a new  component candidate is introduced in the handoff]:::design --> E
+    
+    E[Implement it using Aquarium atoms directly in the platforms]:::engineering
+`} />

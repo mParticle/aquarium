@@ -5,7 +5,7 @@ type Story = StoryObj<typeof QueryItem.Qualifier>
 
 // default
 const meta: Meta<typeof QueryItem.Qualifier> = {
-  title: 'Aquarium/Data Entry/QueryItem/Qualifier',
+  title: 'Components/Data Entry/QueryItem/Qualifier',
   component: QueryItem.Qualifier,
   args: {},
 }
@@ -25,7 +25,7 @@ export const Empty: Story = {}
 
 export const Simple: Story = {
   args: {
-    options: defaultOptions
+    options: defaultOptions,
   },
 }
 
@@ -42,7 +42,6 @@ export const Disabled: Story = {
     options: defaultOptions,
   },
 }
-
 
 export const PreSelected: Story = {
   args: {
