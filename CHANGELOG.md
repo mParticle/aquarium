@@ -1,3 +1,10 @@
+# [1.33.0](https://github.com/mParticle/aquarium/compare/v1.32.0...v1.33.0) (2024-09-30)
+
+### Features
+
+- ant upgrade to 5.20 ([#421](https://github.com/mParticle/aquarium/issues/421)) ([49b4bf8](https://github.com/mParticle/aquarium/commit/49b4bf86db0ec8f59ea75d34cb3c0ad6034da34e))
+- New storybook documentation structure ([#419](https://github.com/mParticle/aquarium/issues/419)) ([1a870bc](https://github.com/mParticle/aquarium/commit/1a870bc5828e80a798db6783a721dff7c28f99e3))
+
 # [1.33.0-ant-update.1](https://github.com/mParticle/aquarium/compare/v1.32.0...v1.33.0-ant-update.1) (2024-09-30)
 
 ### Bug Fixes
