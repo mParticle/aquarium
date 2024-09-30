@@ -22,6 +22,7 @@ export interface INavigationWorkspace extends IWorkspaceSelectorItem {
 }
 
 export interface IWorkspaceSelectorDisplayItem extends MenuItemType {
+  key: string | null | undefined
   type: 'org' | 'account' | 'workspace'
   className: string
   label: ReactNode

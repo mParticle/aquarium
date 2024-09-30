@@ -1,6 +1,4 @@
-import type { MenuItemType } from 'antd/es/menu/hooks/useItems'
-import type { MenuItemGroupType } from 'antd/es/menu/hooks/useItems'
-import { Icon } from 'src/components'
+import { Icon, type MenuItemGroupType, type MenuItemType } from 'src/components'
 import { Center } from 'src/components'
 import { Menu } from 'src/components'
 import type { IMenuProps } from 'src/components'
@@ -20,6 +18,7 @@ export interface INavigationCreateGroup extends Omit<MenuItemGroupType, 'key'> {
 }
 
 export interface INavigationCreateItem extends Omit<MenuItemType, 'key'> {
+  disabled?: boolean
   title: string
   description: string
   type?: undefined

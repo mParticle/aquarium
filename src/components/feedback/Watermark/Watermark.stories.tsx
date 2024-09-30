@@ -114,7 +114,7 @@ export const ExampleMultiline: Story = {
 
 export const ExampleConfig: Story = {
   render: () => {
-    type Color = GetProp<IColorPickerProps, 'color'>
+    type Color = GetProp<IColorPickerProps, 'value'>
 
     interface WatermarkConfig {
       content: string
@@ -144,7 +144,15 @@ export const ExampleConfig: Story = {
       rotate,
       gap,
       offset,
-      font: { color: typeof color === 'string' ? color : color.toRgbString(), fontSize },
+      font: {
+        color:
+          typeof color === 'string'
+            ? color
+            : typeof color === 'object' && 'toRgbString' in color
+              ? color.toRgbString()
+              : String(color),
+        fontSize,
+      },
     }
 
     return (

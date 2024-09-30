@@ -1,23 +1,22 @@
-import { Menu as AntMenu } from 'antd'
+import { Menu as AntMenu, type MenuProps } from 'antd'
 import { type MenuProps as AntMenuProps } from 'antd'
-import {
-  type MenuItemType as AndMenuItemType,
-  type MenuItemGroupType as AndMenuItemGroupType,
-  type MenuDividerType as AndMenuDividerType,
-  type SubMenuType as AndSubMenuType,
-} from 'antd/es/menu/hooks/useItems'
 import { type MenuInfo as RCMenuInfo } from 'rc-menu/lib/interface'
 import { ConfigProvider } from 'src/components'
+
+type AntDMenuItemType = Required<MenuProps>['items'][number]
+type AntDMenuItemGroupType = Required<MenuProps>['items'][number]
+type AntDMenuDividerType = Required<MenuProps>['items'][number]
+type AntDSubMenuType = Required<MenuProps>['items'][number]
 
 export interface IMenuProps extends AntMenuProps {}
 
 export interface IMenuInfo extends RCMenuInfo {}
 
 export {
-  type AndMenuItemType as MenuItemType,
-  type AndMenuItemGroupType as MenuItemGroupType,
-  type AndMenuDividerType as MenuDividerType,
-  type AndSubMenuType as SubMenuType,
+  type AntDMenuItemType as MenuItemType,
+  type AntDMenuItemGroupType as MenuItemGroupType,
+  type AntDMenuDividerType as MenuDividerType,
+  type AntDSubMenuType as SubMenuType,
 }
 
 export const Menu = (props: IMenuProps) => {

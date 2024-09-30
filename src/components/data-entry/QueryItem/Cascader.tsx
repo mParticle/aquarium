@@ -163,16 +163,18 @@ const Cascader = (props: IQueryItemCascaderProps) => {
   return (
     <>
       <BaseCascader {...baseProps}>
-        <Input
-          disabled={props.disabled}
-          readOnly
-          placeholder={props.placeholder}
-          status={props.errorMessage ? 'error' : undefined}
-          className={inputClasses}
-          value={displayValue}
-          suffix={props.suffixIcon}
-          prefix={getIcon()}
-        />
+        <Flex>
+          <Input
+            disabled={props.disabled}
+            readOnly
+            placeholder={props.placeholder}
+            status={props.errorMessage ? 'error' : undefined}
+            className={inputClasses}
+            value={displayValue}
+            suffix={props.suffixIcon}
+            prefix={getIcon()}
+          />
+        </Flex>
       </BaseCascader>
       {props.errorMessage && <Typography.Text type="danger">{props.errorMessage}</Typography.Text>}
     </>

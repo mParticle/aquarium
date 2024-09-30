@@ -1,3 +1,23 @@
+# [1.33.0-ant-update.1](https://github.com/mParticle/aquarium/compare/v1.32.0...v1.33.0-ant-update.1) (2024-09-30)
+
+### Bug Fixes
+
+- fix qualifier alignment ([4ff5f32](https://github.com/mParticle/aquarium/commit/4ff5f32638650eb1a5750ba43156c74064d0158f))
+- fix ts erros ([90864de](https://github.com/mParticle/aquarium/commit/90864de25d875953f7279542797d6a35d4d3b55e))
+- merge main ([30dbb30](https://github.com/mParticle/aquarium/commit/30dbb304316dbd270851949e34fc73d035c8444a))
+- remove @esbuild/darwin-arm64@0.23.1 ([54c96e6](https://github.com/mParticle/aquarium/commit/54c96e6d51d5ce0ab407d076a8567d96d11f3e45))
+- solve merge conflicts, types cleanup ([0978c40](https://github.com/mParticle/aquarium/commit/0978c40630f9b6586d4801ab3b5aa01f743c1298))
+- update button interface ([442e0ec](https://github.com/mParticle/aquarium/commit/442e0ec170b3c0a0e909f4c74104492874fe1950))
+- update cascader dropdown postion ([d855a09](https://github.com/mParticle/aquarium/commit/d855a09eebada16614428c8ce637a9db8df731ae))
+- update dropdown ([660663b](https://github.com/mParticle/aquarium/commit/660663b19c65a7a76d71d09d9e90b115e58f309a))
+- update qualifier position ([65cd477](https://github.com/mParticle/aquarium/commit/65cd4776cc0ecd45658aee49fa041b000331415a))
+
+### Features
+
+- antd upgrade ([e3bb862](https://github.com/mParticle/aquarium/commit/e3bb862ce26a75c27387cfb888a6c1419c6b7bfb))
+- New storybook documentation structure ([#419](https://github.com/mParticle/aquarium/issues/419)) ([1a870bc](https://github.com/mParticle/aquarium/commit/1a870bc5828e80a798db6783a721dff7c28f99e3))
+- upgrade style ([8d61675](https://github.com/mParticle/aquarium/commit/8d6167573ed29844b4dcdd08cc9aaaebbb4cc8e0))
+
 # [1.32.0](https://github.com/mParticle/aquarium/compare/v1.31.1...v1.32.0) (2024-09-23)
 
 ### Bug Fixes

@@ -1,4 +1,4 @@
-import { ThemeConfig } from 'antd'
+import { type ThemeConfig } from 'antd'
 
 export type IMpThemeConfig = ThemeConfig & {
   token: {
@@ -58,14 +58,29 @@ export type IMpThemeConfig = ThemeConfig & {
     mpQueryItem_shadow: string
     mpQueryItem_borderColor_focus: string
     mpQueryItem_borderColor_hover: string
+    colorFillAlterSolid: string
+    colorFilledHandleBg: string
   }
   components: {
-    Select: { mpColorBorderDisabled: string }
-    Input: { mpColorBorderDisabled: string }
-    Checkbox: { mpColorBorderDisabled: string }
-    Radio: { mpColorBorderDisabled: string }
-    DatePicker: { mpColorBorderDisabled: string }
-    TimePicker: { mpColorBorderDisabled: string }
-    InputNumber: { mpColorBorderDisabled: string }
+    Steps: {
+      colorPrimary: string
+    }
+    Progress: {
+      defaultColor: string
+    }
+    Button: {
+      borderColorDisabled: string
+      primaryShadow: string
+      defaultShadow: string
+      dangerShadow: string
+    }
+    Input: {
+      activeShadow: string
+      errorActiveShadow: string
+      warningActiveShadow: string
+    }
+    Cascader: {
+      colorHighlight: string
+    }
   }
 }

@@ -6,7 +6,7 @@ import type { IIconProps } from 'src/components'
 import { ConfigProvider } from 'src/components/other/ConfigProvider/ConfigProvider'
 import { type ReactNode } from 'react'
 
-export interface IButtonProps extends AntButtonProps {
+export interface IButtonProps extends Omit<AntButtonProps, 'variant'> {
   /**
    * @deprecated This variant is a temporary fix for new icons.
    * Use this variant only with new icons to align the icon and text centered.
@@ -27,12 +27,13 @@ export const Button = (props: IButtonProps) => {
       props.icon
     )
 
+  const extraClass = props.variant === 'with-new-icon' ? classMap['with-new-icon'] : ''
+
+  const { variant, ...restProps } = props
+
   return (
     <ConfigProvider>
-      <AntButton
-        {...props}
-        icon={buttonIcon}
-        className={`${props.className}${props.variant ? ` ${classMap[props.variant]}` : ''}`}>
+      <AntButton {...restProps} icon={buttonIcon} className={`${props.className ?? ''} ${extraClass}`}>
         {props.children}
       </AntButton>
     </ConfigProvider>

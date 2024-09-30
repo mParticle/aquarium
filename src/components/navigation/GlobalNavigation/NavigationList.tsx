@@ -1,5 +1,4 @@
-import { Menu } from 'src/components'
-import type { MenuItemGroupType } from 'antd/es/menu/hooks/useItems'
+import { Menu, type MenuItemGroupType } from 'src/components'
 import { NavigationIcon } from 'src/components/navigation/GlobalNavigation/NavigationIcon'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
 import { Center } from 'src/components'
@@ -44,7 +43,7 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
       if (child.type !== 'button') {
         children.push(child)
       } else {
-        const buttonKey = `submenu-button-${children.filter(c => c.type === 'button').length}-${index}`
+        const buttonKey = `submenu-button-${children.filter(c => c !== null && c.type === 'button').length}-${index}`
 
         children.push({
           className: 'globalNavigation__buttonItem',

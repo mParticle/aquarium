@@ -3,10 +3,11 @@ import { type StoryObj } from '@storybook/react'
 import { Checkbox, Divider } from 'src/components'
 import { useState } from 'react'
 import { ExampleStory } from 'src/utils/ExampleStory'
-import { type CheckboxValueType } from 'antd/es/checkbox/Group'
 import { type ICheckboxProps } from 'src/components/data-entry/Checkbox/Checkbox'
 import { userEvent } from '@storybook/test'
 import { expect } from '@storybook/test'
+
+export type CheckboxValueType = string | number | boolean
 
 const meta: Meta<typeof Checkbox> = {
   title: 'Components/Data Entry/Checkbox',
