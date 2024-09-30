@@ -2,6 +2,7 @@ import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 import svgr from 'vite-plugin-svgr'
+import postcssNesting from 'postcss-nesting'
 
 export default defineConfig({
   test: {
@@ -16,11 +17,16 @@ export default defineConfig({
 
   plugins: [svgr(), dts({ include: 'src/components', rollupTypes: true })],
 
+  css: {
+    postcss: {
+      plugins: [postcssNesting()],
+    },
+  },
+
   build: {
     target: 'es6',
     outDir: 'dist',
     lib: {
-      // Could also be a dictionary or array of multiple entry points
       entry: resolve(__dirname, 'src/components/index.ts'),
       name: 'aquarium',
       formats: ['es', 'umd'],
