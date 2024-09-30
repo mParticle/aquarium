@@ -1,3 +1,13 @@
+# [1.33.0-fix-nested-css-error.1](https://github.com/mParticle/aquarium/compare/v1.32.0...v1.33.0-fix-nested-css-error.1) (2024-09-30)
+
+### Bug Fixes
+
+- add a background color to test css ([9ef257e](https://github.com/mParticle/aquarium/commit/9ef257e08152ac852d8de0b28ca869a2ec25be31))
+
+### Features
+
+- New storybook documentation structure ([#419](https://github.com/mParticle/aquarium/issues/419)) ([1a870bc](https://github.com/mParticle/aquarium/commit/1a870bc5828e80a798db6783a721dff7c28f99e3))
+
 # [1.32.0](https://github.com/mParticle/aquarium/compare/v1.31.1...v1.32.0) (2024-09-23)
 
 ### Bug Fixes
