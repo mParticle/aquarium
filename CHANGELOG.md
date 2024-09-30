@@ -1,3 +1,10 @@
+# [1.33.0-fix-nested-css-error.2](https://github.com/mParticle/aquarium/compare/v1.33.0-fix-nested-css-error.1...v1.33.0-fix-nested-css-error.2) (2024-09-30)
+
+### Bug Fixes
+
+- compile nested css ([3f1136d](https://github.com/mParticle/aquarium/commit/3f1136dc3499dac1d0ba6705169010148d0e3992))
+- merge main ([beb4ecd](https://github.com/mParticle/aquarium/commit/beb4ecd4813512f3ca33803c64d087332be1dc14))
+
 # [1.33.0-fix-nested-css-error.1](https://github.com/mParticle/aquarium/compare/v1.32.0...v1.33.0-fix-nested-css-error.1) (2024-09-30)
 
 ### Bug Fixes
