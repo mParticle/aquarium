@@ -7,19 +7,15 @@ Thanks for contributing! Please read this document to follow our conventions for
 - Clone the repository and run `npm install`
 - Run `npm start` to start storybook
 
-## Testing in Nancy codebase
+## Testing in the platforms using linking
 
 In order to test your changes, you will need to link the local version of the library. To do this, run the following commands:
 
-- Make sure to have the library built by running `npx vite build`. The linked version will use the build files from _dist/_ folder.
-- Make sure the `resolve.symlinks` property in you webpack config is set to `false`
-- `yarn link` in the root of the library
-- `yarn link @mparticle/aquarium` in the root of Nancy
+- Make sure to have the library built by running `npm run build`. The linked version will use the build files from _dist/_ folder.
+  **A new build is required whenever you make changes** to the library code!
+- `yarn link` for Nancy, `npm link` Indicative, in the root of the library
+- `yarn link @mparticle/aquarium` for Nancy, `npm link @mparticle/aquarium` for Indicative in the root of the platforms
 - Make sure your _/node_modules/@mparticle/aquarium_ folder contains all of the Aquarium code
-
-## Testing in Indicative codebase
-
-TODO
 
 ## Testing by installing from a branch
 
@@ -38,7 +34,7 @@ just run the Github Action from the the branch you want to release.
 
 ### Release Process
 
-We use semantic-release for releasing new versions of the library. You can use the Github Release Aquarium action from the `main` to release from it. 
+We use semantic-release for releasing new versions of the library. You can use the Github Release Aquarium action from the `main` to release from it.
 
 > [!IMPORTANT]  
 > Before releasing a version from main, send a message in the #aquarium Slack channel to align it and sync on other changes that can/should be included in the release.
