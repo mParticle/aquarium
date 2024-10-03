@@ -24,9 +24,10 @@
     "dist/style.ts"
   ],
   "peerDependencies": {
-    "antd": ">=5.20.0",
+    "antd": "5.20.x",
     "react": ">=17.0.2",
-    "react-dom": ">=17.0.2"
+    "react-dom": ">=17.0.2",
+    "dayjs": "1.11.x"
   },
   "devDependencies": {
     "@commitlint/cli": "19.2.1",
