@@ -11,6 +11,7 @@ const config: StorybookConfig & StorybookVitePlugins = {
     name: '@storybook/react-vite',
     options: {},
   },
+  staticDirs: [{ from: './public/images', to: 'images' }],
 
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(ts|tsx)', '../docs/**/*.stories.@(ts|tsx)', '../docs/**/*.mdx'],
 
