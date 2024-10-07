@@ -22,6 +22,7 @@ const preview: Preview = {
           ['Colors', 'Typography', 'Icons', 'Errors', 'Loading'],
           'Candidate Components',
           'Design Templates',
+          ['Table', ['Documentation', 'Filters'], 'Observability', 'Directory'],
           'Contributing',
           ['Introduction', 'Commits', 'Testing in the platforms', 'Release Process', 'Maintainers'],
         ],
