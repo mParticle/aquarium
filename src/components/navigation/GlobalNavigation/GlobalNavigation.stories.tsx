@@ -308,7 +308,11 @@ const mpManagement: IGlobalNavigationItem[] = [
     children: [
       { hrefOptions: { href: '/' }, label: 'Platform Settings' },
       { hrefOptions: { href: '/' }, label: 'User Settings' },
-      { hrefOptions: { href: '/' }, label: <Button type="primary">Switch to Legacy UI</Button> },
+      {
+        hrefOptions: { href: '/' },
+        type: 'button',
+        label: 'Switch to Legacy UI',
+      },
     ],
   },
 ]

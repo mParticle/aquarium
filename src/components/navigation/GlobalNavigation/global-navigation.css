@@ -172,6 +172,7 @@
 }
 
 .globalNavigation__buttonItem {
+  width: 100%;
   padding: 0 !important;
   margin: 0 auto !important;
   color: var(--mp-brand-secondary-1) !important;
@@ -373,10 +374,6 @@
   margin-left: -3px;
 }
 
-.workspaceSelector__signoutButtonContainer {
-  width: 100%;
-}
-
 .globalNavigation__newExperienceReminder .ant-btn-link span {
   color: var(--color-primary);
   font-weight: 600;
@@ -404,5 +401,3 @@
   max-width: unset;
   font-weight: unset;
 }
-
-

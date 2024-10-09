@@ -122,7 +122,7 @@
 }
 
 .workspaceSelector__signoutButtonContainer {
-  width: calc(100% - var(--padding-xs));
+  width: inherit;
   position: absolute;
   bottom: 0;
   left: 0;
