@@ -1,3 +1,10 @@
+## [1.33.1-chore-add-styles-from-nancy.2](https://github.com/mParticle/aquarium/compare/v1.33.1-chore-add-styles-from-nancy.1...v1.33.1-chore-add-styles-from-nancy.2) (2024-10-09)
+
+### Bug Fixes
+
+- align button on global nav ([d40a067](https://github.com/mParticle/aquarium/commit/d40a06710e2821de760cbafab3d1602432be54ba))
+- trigger Build ([437f4e8](https://github.com/mParticle/aquarium/commit/437f4e84e5345ce4400d5b7dc02801ba7c4716a5))
+
 # [1.33.0](https://github.com/mParticle/aquarium/compare/v1.32.0...v1.33.0) (2024-09-30)
 
 ### Features
