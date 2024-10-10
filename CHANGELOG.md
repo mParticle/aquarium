@@ -1,3 +1,9 @@
+## [1.33.1-chore-add-styles-from-nancy.3](https://github.com/mParticle/aquarium/compare/v1.33.1-chore-add-styles-from-nancy.2...v1.33.1-chore-add-styles-from-nancy.3) (2024-10-10)
+
+### Bug Fixes
+
+- worskpace selector button styles ([5c4f54d](https://github.com/mParticle/aquarium/commit/5c4f54da5fffaacb0f86ba7734624b94c3302a05))
+
 ## [1.33.1-chore-add-styles-from-nancy.2](https://github.com/mParticle/aquarium/compare/v1.33.1-chore-add-styles-from-nancy.1...v1.33.1-chore-add-styles-from-nancy.2) (2024-10-09)
 
 ### Bug Fixes
