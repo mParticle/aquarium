@@ -17,11 +17,7 @@
   "main": "dist/aquarium.umd.cjs",
   "module": "dist/aquarium.js",
   "files": [
-    "dist/aquarium.umd.cjs",
-    "dist/aquarium.js",
-    "dist/index.d.ts",
-    "dist/style.css",
-    "dist/style.ts"
+    "dist"
   ],
   "peerDependencies": {
     "antd": ">=5.20.0",
