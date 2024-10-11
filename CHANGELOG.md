@@ -1,3 +1,9 @@
+## [1.33.1-fix-exported-types.2](https://github.com/mParticle/aquarium/compare/v1.33.1-fix-exported-types.1...v1.33.1-fix-exported-types.2) (2024-10-11)
+
+### Bug Fixes
+
+- trying to include the src folder manually ([9549606](https://github.com/mParticle/aquarium/commit/9549606e0deb49e35cf9937215fdae8854f9cdcf))
+
 ## [1.33.1-fix-exported-types.1](https://github.com/mParticle/aquarium/compare/v1.33.0...v1.33.1-fix-exported-types.1) (2024-10-11)
 
 ### Bug Fixes
