@@ -1,3 +1,9 @@
+## [1.33.1-chore-add-styles-from-nancy.5](https://github.com/mParticle/aquarium/compare/v1.33.1-chore-add-styles-from-nancy.4...v1.33.1-chore-add-styles-from-nancy.5) (2024-10-11)
+
+### Bug Fixes
+
+- update build plugin to include types and utils ([822be84](https://github.com/mParticle/aquarium/commit/822be8470928ee1dc3a0de8b5f50f7ce80d733c5))
+
 ## [1.33.1-chore-add-styles-from-nancy.4](https://github.com/mParticle/aquarium/compare/v1.33.1-chore-add-styles-from-nancy.3...v1.33.1-chore-add-styles-from-nancy.4) (2024-10-11)
 
 ### Bug Fixes
