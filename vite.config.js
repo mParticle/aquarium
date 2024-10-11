@@ -14,7 +14,7 @@ export default defineConfig({
     },
   },
 
-  plugins: [svgr(), dts({ include: 'src/components', rollupTypes: true })],
+  plugins: [svgr(), dts({ include: ['src/components', 'src/types', 'src/utils'], rollupTypes: true })],
 
   build: {
     target: 'es6',
