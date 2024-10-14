@@ -1,4 +1,30 @@
-## [1.33.1-chore-fixing-peer-dependencies.1](https://github.com/mParticle/aquarium/compare/v1.33.0...v1.33.1-chore-fixing-peer-dependencies.1) (2024-10-04)
+## [1.33.1-fix-exported-types.1](https://github.com/mParticle/aquarium/compare/v1.33.0...v1.33.1-fix-exported-types.1) (2024-10-11)
+
+### Bug Fixes
+
+- fix issue on prettifier ([#446](https://github.com/mParticle/aquarium/issues/446)) ([03668b6](https://github.com/mParticle/aquarium/commit/03668b6743aafd4a2ae40ceeec1411792427e392))
+- trying to include the src folder manually ([9549606](https://github.com/mParticle/aquarium/commit/9549606e0deb49e35cf9937215fdae8854f9cdcf))
+- update icons that did not obey the color prop ([#445](https://github.com/mParticle/aquarium/issues/445)) ([68006e3](https://github.com/mParticle/aquarium/commit/68006e36843ec2e9e367d225bd6d2080bc2fcc19))
+
+## [1.33.1-fix-exported-types.2](https://github.com/mParticle/aquarium/compare/v1.33.1-fix-exported-types.1...v1.33.1-fix-exported-types.2) (2024-10-11)
+
+### Bug Fixes
+
+- trying to include the src folder manually ([9549606](https://github.com/mParticle/aquarium/commit/9549606e0deb49e35cf9937215fdae8854f9cdcf))
+
+## [1.33.1-fix-exported-types.1](https://github.com/mParticle/aquarium/compare/v1.33.0...v1.33.1-fix-exported-types.1) (2024-10-11)
+
+### Bug Fixes
+
+- fix issue on prettifier ([#446](https://github.com/mParticle/aquarium/issues/446)) ([03668b6](https://github.com/mParticle/aquarium/commit/03668b6743aafd4a2ae40ceeec1411792427e392))
+- update icons that did not obey the color prop ([#445](https://github.com/mParticle/aquarium/issues/445)) ([68006e3](https://github.com/mParticle/aquarium/commit/68006e36843ec2e9e367d225bd6d2080bc2fcc19))
+
+## [1.33.1-chore-better-types-2.1](https://github.com/mParticle/aquarium/compare/v1.33.0...v1.33.1-chore-better-types-2.1) (2024-10-11)
+
+### Bug Fixes
+
+- fix issue on prettifier ([#446](https://github.com/mParticle/aquarium/issues/446)) ([03668b6](https://github.com/mParticle/aquarium/commit/03668b6743aafd4a2ae40ceeec1411792427e392))
+- update icons that did not obey the color prop ([#445](https://github.com/mParticle/aquarium/issues/445)) ([68006e3](https://github.com/mParticle/aquarium/commit/68006e36843ec2e9e367d225bd6d2080bc2fcc19))
 
 # [1.33.0](https://github.com/mParticle/aquarium/compare/v1.32.0...v1.33.0) (2024-09-30)
 
