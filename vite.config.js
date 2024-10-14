@@ -14,7 +14,8 @@ export default defineConfig({
     },
   },
 
-  plugins: [svgr(), dts({ include: 'src/', exclude: '**/*.stories.*', rollupTypes: false, insertTypesEntry: true })],
+  plugins: [svgr(), dts({ include: 'src/components', rollupTypes: true })],
+
   build: {
     target: 'es6',
     outDir: 'dist',
