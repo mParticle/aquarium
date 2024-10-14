@@ -1,3 +1,11 @@
+## [1.33.1](https://github.com/mParticle/aquarium/compare/v1.33.0...v1.33.1) (2024-10-14)
+
+### Bug Fixes
+
+- exported types ([#448](https://github.com/mParticle/aquarium/issues/448)) ([a978175](https://github.com/mParticle/aquarium/commit/a978175bec1e7a78ee9a4195ae4501f995d91266))
+- fix issue on prettifier ([#446](https://github.com/mParticle/aquarium/issues/446)) ([03668b6](https://github.com/mParticle/aquarium/commit/03668b6743aafd4a2ae40ceeec1411792427e392))
+- update icons that did not obey the color prop ([#445](https://github.com/mParticle/aquarium/issues/445)) ([68006e3](https://github.com/mParticle/aquarium/commit/68006e36843ec2e9e367d225bd6d2080bc2fcc19))
+
 ## [1.33.1-fix-exported-types.1](https://github.com/mParticle/aquarium/compare/v1.33.0...v1.33.1-fix-exported-types.1) (2024-10-11)
 
 ### Bug Fixes
