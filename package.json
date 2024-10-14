@@ -77,7 +77,9 @@
     "vite-plugin-dts": "3.7.2",
     "vite-plugin-svgr": "4.2.0",
     "vitest": "1.3.1",
-    "wait-on": "7.2.0"
+    "wait-on": "7.2.0",
+    "postcss": "8.4.47",
+    "postcss-nested": "6.2.0"
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "4.18.0",
@@ -91,7 +93,7 @@
     "test-storybook": "test-storybook",
     "test-storybook:ci": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"npm run build-storybook --quiet && NODE_NO_WARNINGS=1 npx http-server storybook-static --port 6006 --silent\" \"wait-on tcp:127.0.0.1:6006 && npm run test-storybook\"",
     "test-unit": "vitest",
-    "build": "vite build && npm run tokens-to-css && postcss src/styles/*.css -d dist && shx cp src/styles/style.ts dist",
+    "build": "vite build && npm run tokens-to-css && shx cp src/styles/*.css dist && shx cp src/styles/style.ts dist",
     "build-dist": "sh ./scripts/build-dist.sh",
     "build-storybook": "storybook build",
     "lint": "concurrently \"eslint --ext .ts,.tsx \"src/**/*.{ts,tsx}\"\" \"stylelint \"**/*.css\"\"",
@@ -119,9 +121,6 @@
     }
   },
   "dependencies": {
-    "@esbuild/darwin-arm64": "^0.24.0",
-    "lodash.clonedeep": "4.5.0",
-    "postcss": "^8.4.47",
-    "postcss-nested": "^6.2.0"
+    "lodash.clonedeep": "4.5.0"
   }
 }
