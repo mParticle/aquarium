@@ -2,6 +2,7 @@ import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 import svgr from 'vite-plugin-svgr'
+import postcssNested from 'postcss-nested'
 
 export default defineConfig({
   test: {
@@ -15,6 +16,12 @@ export default defineConfig({
   },
 
   plugins: [svgr(), dts({ include: 'src/components', rollupTypes: true })],
+
+  css: {
+    postcss: {
+      plugins: [postcssNested()], // Use the ESM import here
+    },
+  },
 
   build: {
     target: 'es6',
