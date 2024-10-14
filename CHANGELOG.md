@@ -1,3 +1,5 @@
+## [1.33.1-chore-add-styles-from-nancy.7](https://github.com/mParticle/aquarium/compare/v1.33.1-chore-add-styles-from-nancy.6...v1.33.1-chore-add-styles-from-nancy.7) (2024-10-14)
+
 ## [1.33.1-chore-add-styles-from-nancy.6](https://github.com/mParticle/aquarium/compare/v1.33.1-chore-add-styles-from-nancy.5...v1.33.1-chore-add-styles-from-nancy.6) (2024-10-14)
 
 ### Bug Fixes
