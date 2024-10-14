@@ -21,7 +21,8 @@
     "dist/aquarium.js",
     "dist/index.d.ts",
     "dist/style.css",
-    "dist/style.ts"
+    "dist/style.ts",
+    "dist/src"
   ],
   "peerDependencies": {
     "antd": ">=5.20.0",
