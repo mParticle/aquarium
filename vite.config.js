@@ -19,7 +19,7 @@ export default defineConfig({
 
   css: {
     postcss: {
-      plugins: [postcssNested()], // Use the ESM import here
+      plugins: [postcssNested()],
     },
   },
 
