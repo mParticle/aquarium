@@ -1,38 +1,38 @@
-## [1.33.1-chore-add-styles-from-nancy.7](https://github.com/mParticle/aquarium/compare/v1.33.1-chore-add-styles-from-nancy.6...v1.33.1-chore-add-styles-from-nancy.7) (2024-10-14)
-
-## [1.33.1-chore-add-styles-from-nancy.6](https://github.com/mParticle/aquarium/compare/v1.33.1-chore-add-styles-from-nancy.5...v1.33.1-chore-add-styles-from-nancy.6) (2024-10-14)
+## [1.33.1](https://github.com/mParticle/aquarium/compare/v1.33.0...v1.33.1) (2024-10-14)
 
 ### Bug Fixes
 
-- solve conflicts ([375110a](https://github.com/mParticle/aquarium/commit/375110a3d1ec12ae55e1e647a4c6edf01fe83942))
+- exported types ([#448](https://github.com/mParticle/aquarium/issues/448)) ([a978175](https://github.com/mParticle/aquarium/commit/a978175bec1e7a78ee9a4195ae4501f995d91266))
+- fix issue on prettifier ([#446](https://github.com/mParticle/aquarium/issues/446)) ([03668b6](https://github.com/mParticle/aquarium/commit/03668b6743aafd4a2ae40ceeec1411792427e392))
+- update icons that did not obey the color prop ([#445](https://github.com/mParticle/aquarium/issues/445)) ([68006e3](https://github.com/mParticle/aquarium/commit/68006e36843ec2e9e367d225bd6d2080bc2fcc19))
 
-## [1.33.1-chore-fixing-peer-dependencies.1](https://github.com/mParticle/aquarium/compare/v1.33.0...v1.33.1-chore-fixing-peer-dependencies.1) (2024-10-04)
-
-## [1.33.1-chore-add-styles-from-nancy.5](https://github.com/mParticle/aquarium/compare/v1.33.1-chore-add-styles-from-nancy.4...v1.33.1-chore-add-styles-from-nancy.5) (2024-10-11)
+## [1.33.1-fix-exported-types.1](https://github.com/mParticle/aquarium/compare/v1.33.0...v1.33.1-fix-exported-types.1) (2024-10-11)
 
 ### Bug Fixes
 
-- update build plugin to include types and utils ([822be84](https://github.com/mParticle/aquarium/commit/822be8470928ee1dc3a0de8b5f50f7ce80d733c5))
+- fix issue on prettifier ([#446](https://github.com/mParticle/aquarium/issues/446)) ([03668b6](https://github.com/mParticle/aquarium/commit/03668b6743aafd4a2ae40ceeec1411792427e392))
+- trying to include the src folder manually ([9549606](https://github.com/mParticle/aquarium/commit/9549606e0deb49e35cf9937215fdae8854f9cdcf))
+- update icons that did not obey the color prop ([#445](https://github.com/mParticle/aquarium/issues/445)) ([68006e3](https://github.com/mParticle/aquarium/commit/68006e36843ec2e9e367d225bd6d2080bc2fcc19))
 
-## [1.33.1-chore-add-styles-from-nancy.4](https://github.com/mParticle/aquarium/compare/v1.33.1-chore-add-styles-from-nancy.3...v1.33.1-chore-add-styles-from-nancy.4) (2024-10-11)
+## [1.33.1-fix-exported-types.2](https://github.com/mParticle/aquarium/compare/v1.33.1-fix-exported-types.1...v1.33.1-fix-exported-types.2) (2024-10-11)
+
+### Bug Fixes
+
+- trying to include the src folder manually ([9549606](https://github.com/mParticle/aquarium/commit/9549606e0deb49e35cf9937215fdae8854f9cdcf))
+
+## [1.33.1-fix-exported-types.1](https://github.com/mParticle/aquarium/compare/v1.33.0...v1.33.1-fix-exported-types.1) (2024-10-11)
 
 ### Bug Fixes
 
 - fix issue on prettifier ([#446](https://github.com/mParticle/aquarium/issues/446)) ([03668b6](https://github.com/mParticle/aquarium/commit/03668b6743aafd4a2ae40ceeec1411792427e392))
 - update icons that did not obey the color prop ([#445](https://github.com/mParticle/aquarium/issues/445)) ([68006e3](https://github.com/mParticle/aquarium/commit/68006e36843ec2e9e367d225bd6d2080bc2fcc19))
 
-## [1.33.1-chore-add-styles-from-nancy.3](https://github.com/mParticle/aquarium/compare/v1.33.1-chore-add-styles-from-nancy.2...v1.33.1-chore-add-styles-from-nancy.3) (2024-10-10)
+## [1.33.1-chore-better-types-2.1](https://github.com/mParticle/aquarium/compare/v1.33.0...v1.33.1-chore-better-types-2.1) (2024-10-11)
 
 ### Bug Fixes
 
-- worskpace selector button styles ([5c4f54d](https://github.com/mParticle/aquarium/commit/5c4f54da5fffaacb0f86ba7734624b94c3302a05))
-
-## [1.33.1-chore-add-styles-from-nancy.2](https://github.com/mParticle/aquarium/compare/v1.33.1-chore-add-styles-from-nancy.1...v1.33.1-chore-add-styles-from-nancy.2) (2024-10-09)
-
-### Bug Fixes
-
-- align button on global nav ([d40a067](https://github.com/mParticle/aquarium/commit/d40a06710e2821de760cbafab3d1602432be54ba))
-- trigger Build ([437f4e8](https://github.com/mParticle/aquarium/commit/437f4e84e5345ce4400d5b7dc02801ba7c4716a5))
+- fix issue on prettifier ([#446](https://github.com/mParticle/aquarium/issues/446)) ([03668b6](https://github.com/mParticle/aquarium/commit/03668b6743aafd4a2ae40ceeec1411792427e392))
+- update icons that did not obey the color prop ([#445](https://github.com/mParticle/aquarium/issues/445)) ([68006e3](https://github.com/mParticle/aquarium/commit/68006e36843ec2e9e367d225bd6d2080bc2fcc19))
 
 # [1.33.0](https://github.com/mParticle/aquarium/compare/v1.32.0...v1.33.0) (2024-09-30)
 

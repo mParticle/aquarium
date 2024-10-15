@@ -1,6 +1,6 @@
 {
   "name": "@mparticle/aquarium",
-  "version": "1.33.1-chore-add-styles-from-nancy.7",
+  "version": "1.33.1",
   "description": "mParticle Component Library",
   "license": "Apache-2.0",
   "keywords": [
@@ -21,7 +21,8 @@
     "dist/aquarium.js",
     "dist/index.d.ts",
     "dist/style.css",
-    "dist/style.ts"
+    "dist/style.ts",
+    "dist/src"
   ],
   "peerDependencies": {
     "antd": "5.20.x",
