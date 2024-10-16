@@ -139,7 +139,7 @@ export function WorkspaceSelector(props: IWorkspaceSelectorProps) {
     <Popover
       arrow={false}
       placement="right"
-      overlayInnerStyle={{ padding: PaddingXxs }}
+      overlayInnerStyle={{ padding: PaddingXxs, width: '100%' }}
       overlayClassName="workspaceSelector__popover"
       onOpenChange={focusOnInput}
       afterOpenChange={focusOnInput}
