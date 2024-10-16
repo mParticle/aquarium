@@ -1,3 +1,11 @@
+## [1.33.2-fix-unnested-css.1](https://github.com/mParticle/aquarium/compare/v1.33.1...v1.33.2-fix-unnested-css.1) (2024-10-15)
+
+### Bug Fixes
+
+- add postcss lib to un-nest css on build ([106ad0a](https://github.com/mParticle/aquarium/commit/106ad0a3f9b8a4465f7899ccf70a127712fa9b43))
+- add postcss to build for unnesting styles ([3fc13d9](https://github.com/mParticle/aquarium/commit/3fc13d9590d996bc1ea6fa8fcfc98d787c4f60cc))
+- trigger rebuild ([9bdc1b7](https://github.com/mParticle/aquarium/commit/9bdc1b715e70142cac74c3831b4d5118c3aaf4d5))
+
 ## [1.33.1](https://github.com/mParticle/aquarium/compare/v1.33.0...v1.33.1) (2024-10-14)
 
 ### Bug Fixes
