@@ -1,4 +1,3 @@
-import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { SelectWithRangePicker as Component } from './SelectWithRangePicker'
 import { fn } from '@storybook/test'
