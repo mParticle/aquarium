@@ -252,6 +252,11 @@
   margin-top: var(--margin-xxs);
 }
 
+.globalNavigation__iconLabel {
+  color: var(--color-text);
+  font-size: var(--label-size);
+}
+
 .globalNavigation__badge {
   border: solid 1px var(--color-border);
   border-radius: var(--border-radius-sm);
