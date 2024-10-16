@@ -1,26 +1,37 @@
-import { Meta, Story } from '@storybook/blocks';
+import { Meta, Story } from '@storybook/blocks'
 
-{/* // import * as TableStories from './Table.stories'; */}
+import * as TableStories from './Table.stories'
 
-{/* <Meta of={TableStories.default} /> */}
+<Meta of={TableStories} />
 
-{/* <Story of={TableStories.default} /> */}
+# Table
 
-# Table 
+<br />
 
-#### Overview
+### Overview
+
 Tables present and organize data in a structured, readable format, ranging from basic displays to complex interfaces that support queries and data manipulation.
 
-#### Basic Table
+---
 
-##### Header
+### Basic Table
+
+<br />
+
+<Story of={TableStories.Primary} />
+
+### Header
+
 A typical table header contains column titles that describe the data in each column. It includes functionality for sorting columns and may feature help icons with tooltips to provide additional information on each column’s purpose.
 
-##### Pagination
+### Pagination
+
 Use pagination in tables to improve performance and reduce load times by fetching only the data needed for the current page.
 
-##### Cell Types
+### Cell Types
+
 Table cells support various formats and are designed to display data in clear, readable ways.
+
 - Numbers (Coming Soon)
 - Date / Time (Coming Soon)
 - CTA Buttons (Coming Soon)
@@ -31,7 +42,8 @@ Table cells support various formats and are designed to display data in clear, r
 
 [View Example](#link)
 
-#### Tables with Filters
+### Tables with Filters
+
 Filters help users refine large datasets within tables. The mParticle table supports a range of filter types, including:
 
 - [Search](#link-to-search)
@@ -39,15 +51,8 @@ Filters help users refine large datasets within tables. The mParticle table supp
 - [Basic Filters](#link-to-basic-filters)
 - [Filters with an Apply button](#link-to-apply-button-filters)
 
+### Related Links
 
-
-#### Related Links
-| Type   | Resource |
-| ------ | -------- |
-| Eames  | [Figma Templates](https://www.figma.com/design/yCPszaTtkCFxRHaSkkJFR9/Eames-Templates-%5BInternal%5D?node-id=2114-9632&node-type=frame&t=Aa9XxcKyme3ud4cb-0) |
-
-
-
-#### Example basic table image (To be changed)
-
-<img src="images/basic-table.png" />
+| Type  | Resource                                                                                                                                                     |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Eames | [Figma Templates](https://www.figma.com/design/yCPszaTtkCFxRHaSkkJFR9/Eames-Templates-%5BInternal%5D?node-id=2114-9632&node-type=frame&t=Aa9XxcKyme3ud4cb-0) |
