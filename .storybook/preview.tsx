@@ -29,7 +29,7 @@ const preview: Preview = {
             'Navigation',
             'Other',
             'Unused',
-            ['Documentation'],
+            ['Documentation', 'Calendar', 'Carousel', 'ColorPicker', 'QRCode', 'Rate', 'Watermark'],
           ],
           'Candidate Components',
           'UX Patterns',
