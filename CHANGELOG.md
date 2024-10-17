@@ -1,3 +1,9 @@
+## [1.33.2-fix-design-tokens-fix.2](https://github.com/mParticle/aquarium/compare/v1.33.2-fix-design-tokens-fix.1...v1.33.2-fix-design-tokens-fix.2) (2024-10-17)
+
+### Bug Fixes
+
+- (styles) override lineheight on icons ([015268f](https://github.com/mParticle/aquarium/commit/015268ffb2d631825561ec7f31af5524a2db7a36))
+
 ## [1.33.2-fix-design-tokens-fix.1](https://github.com/mParticle/aquarium/compare/v1.33.1...v1.33.2-fix-design-tokens-fix.1) (2024-10-17)
 
 ### Bug Fixes
