@@ -1,3 +1,10 @@
+## [1.33.2-fix-design-tokens-fix.1](https://github.com/mParticle/aquarium/compare/v1.33.1...v1.33.2-fix-design-tokens-fix.1) (2024-10-17)
+
+### Bug Fixes
+
+- (styles) remove shadow of the buttons and update suite selector hover color ([7502b54](https://github.com/mParticle/aquarium/commit/7502b54a03128be280cd5942cc54e6a795c88442))
+- ensure PostCSS handles CSS unnesting in Vite config ([#457](https://github.com/mParticle/aquarium/issues/457)) ([1978e65](https://github.com/mParticle/aquarium/commit/1978e657bec3a360be45ea4f8a4a52653cd79640))
+
 ## [1.33.2-fix-unnested-css.1](https://github.com/mParticle/aquarium/compare/v1.33.1...v1.33.2-fix-unnested-css.1) (2024-10-15)
 
 ### Bug Fixes
