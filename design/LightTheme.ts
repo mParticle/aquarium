@@ -108,9 +108,6 @@ export const LightTheme: IMpThemeConfig = {
     },
     Button: {
       borderColorDisabled: '#dcdcd8',
-      primaryShadow: '0 2px 0 rgba(44, 0, 170, 0.4)',
-      defaultShadow: '0 2px 0 rgba(44, 0, 170, 0.2)',
-      dangerShadow: '0 2px 0 rgba(44, 0, 170, 0.3)',
     },
     Input: {
       activeShadow: '0 0 0 2px rgba(54, 0, 209, 0.1)',

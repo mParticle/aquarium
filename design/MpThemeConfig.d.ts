@@ -70,9 +70,6 @@ export type IMpThemeConfig = ThemeConfig & {
     }
     Button: {
       borderColorDisabled: string
-      primaryShadow: string
-      defaultShadow: string
-      dangerShadow: string
     }
     Input: {
       activeShadow: string

@@ -1,3 +1,7 @@
+.anticon >* {
+  line-height: 0 !important;
+}
+
 .icon-size-xxxxl {
   width: var(--mp-icon-size-xxxxl);
   min-width: var(--mp-icon-size-xxxxl);
