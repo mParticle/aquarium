@@ -1,3 +1,5 @@
+## [1.33.3-chore-dependency-upgrades.1](https://github.com/mParticle/aquarium/compare/v1.33.2...v1.33.3-chore-dependency-upgrades.1) (2024-10-18)
+
 ## [1.33.2](https://github.com/mParticle/aquarium/compare/v1.33.1...v1.33.2) (2024-10-18)
 
 ### Bug Fixes
