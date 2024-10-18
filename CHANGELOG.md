@@ -1,3 +1,67 @@
+## [1.33.2](https://github.com/mParticle/aquarium/compare/v1.33.1...v1.33.2) (2024-10-18)
+
+### Bug Fixes
+
+- Design tokens update + icons alignment fix ([#460](https://github.com/mParticle/aquarium/issues/460)) ([9c93165](https://github.com/mParticle/aquarium/commit/9c931656b7ef4133f3225bdf1924741d9058df93))
+- ensure PostCSS handles CSS unnesting in Vite config ([#457](https://github.com/mParticle/aquarium/issues/457)) ([1978e65](https://github.com/mParticle/aquarium/commit/1978e657bec3a360be45ea4f8a4a52653cd79640))
+
+## [1.33.2-fix-design-tokens-fix.2](https://github.com/mParticle/aquarium/compare/v1.33.2-fix-design-tokens-fix.1...v1.33.2-fix-design-tokens-fix.2) (2024-10-17)
+
+### Bug Fixes
+
+- (styles) override lineheight on icons ([015268f](https://github.com/mParticle/aquarium/commit/015268ffb2d631825561ec7f31af5524a2db7a36))
+
+## [1.33.2-fix-design-tokens-fix.1](https://github.com/mParticle/aquarium/compare/v1.33.1...v1.33.2-fix-design-tokens-fix.1) (2024-10-17)
+
+### Bug Fixes
+
+- (styles) remove shadow of the buttons and update suite selector hover color ([7502b54](https://github.com/mParticle/aquarium/commit/7502b54a03128be280cd5942cc54e6a795c88442))
+- ensure PostCSS handles CSS unnesting in Vite config ([#457](https://github.com/mParticle/aquarium/issues/457)) ([1978e65](https://github.com/mParticle/aquarium/commit/1978e657bec3a360be45ea4f8a4a52653cd79640))
+
+## [1.33.2-fix-unnested-css.1](https://github.com/mParticle/aquarium/compare/v1.33.1...v1.33.2-fix-unnested-css.1) (2024-10-15)
+
+### Bug Fixes
+
+- add postcss lib to un-nest css on build ([106ad0a](https://github.com/mParticle/aquarium/commit/106ad0a3f9b8a4465f7899ccf70a127712fa9b43))
+- add postcss to build for unnesting styles ([3fc13d9](https://github.com/mParticle/aquarium/commit/3fc13d9590d996bc1ea6fa8fcfc98d787c4f60cc))
+- trigger rebuild ([9bdc1b7](https://github.com/mParticle/aquarium/commit/9bdc1b715e70142cac74c3831b4d5118c3aaf4d5))
+
+## [1.33.1](https://github.com/mParticle/aquarium/compare/v1.33.0...v1.33.1) (2024-10-14)
+
+### Bug Fixes
+
+- exported types ([#448](https://github.com/mParticle/aquarium/issues/448)) ([a978175](https://github.com/mParticle/aquarium/commit/a978175bec1e7a78ee9a4195ae4501f995d91266))
+- fix issue on prettifier ([#446](https://github.com/mParticle/aquarium/issues/446)) ([03668b6](https://github.com/mParticle/aquarium/commit/03668b6743aafd4a2ae40ceeec1411792427e392))
+- update icons that did not obey the color prop ([#445](https://github.com/mParticle/aquarium/issues/445)) ([68006e3](https://github.com/mParticle/aquarium/commit/68006e36843ec2e9e367d225bd6d2080bc2fcc19))
+
+## [1.33.1-fix-exported-types.1](https://github.com/mParticle/aquarium/compare/v1.33.0...v1.33.1-fix-exported-types.1) (2024-10-11)
+
+### Bug Fixes
+
+- fix issue on prettifier ([#446](https://github.com/mParticle/aquarium/issues/446)) ([03668b6](https://github.com/mParticle/aquarium/commit/03668b6743aafd4a2ae40ceeec1411792427e392))
+- trying to include the src folder manually ([9549606](https://github.com/mParticle/aquarium/commit/9549606e0deb49e35cf9937215fdae8854f9cdcf))
+- update icons that did not obey the color prop ([#445](https://github.com/mParticle/aquarium/issues/445)) ([68006e3](https://github.com/mParticle/aquarium/commit/68006e36843ec2e9e367d225bd6d2080bc2fcc19))
+
+## [1.33.1-fix-exported-types.2](https://github.com/mParticle/aquarium/compare/v1.33.1-fix-exported-types.1...v1.33.1-fix-exported-types.2) (2024-10-11)
+
+### Bug Fixes
+
+- trying to include the src folder manually ([9549606](https://github.com/mParticle/aquarium/commit/9549606e0deb49e35cf9937215fdae8854f9cdcf))
+
+## [1.33.1-fix-exported-types.1](https://github.com/mParticle/aquarium/compare/v1.33.0...v1.33.1-fix-exported-types.1) (2024-10-11)
+
+### Bug Fixes
+
+- fix issue on prettifier ([#446](https://github.com/mParticle/aquarium/issues/446)) ([03668b6](https://github.com/mParticle/aquarium/commit/03668b6743aafd4a2ae40ceeec1411792427e392))
+- update icons that did not obey the color prop ([#445](https://github.com/mParticle/aquarium/issues/445)) ([68006e3](https://github.com/mParticle/aquarium/commit/68006e36843ec2e9e367d225bd6d2080bc2fcc19))
+
+## [1.33.1-chore-better-types-2.1](https://github.com/mParticle/aquarium/compare/v1.33.0...v1.33.1-chore-better-types-2.1) (2024-10-11)
+
+### Bug Fixes
+
+- fix issue on prettifier ([#446](https://github.com/mParticle/aquarium/issues/446)) ([03668b6](https://github.com/mParticle/aquarium/commit/03668b6743aafd4a2ae40ceeec1411792427e392))
+- update icons that did not obey the color prop ([#445](https://github.com/mParticle/aquarium/issues/445)) ([68006e3](https://github.com/mParticle/aquarium/commit/68006e36843ec2e9e367d225bd6d2080bc2fcc19))
+
 # [1.33.0](https://github.com/mParticle/aquarium/compare/v1.32.0...v1.33.0) (2024-09-30)
 
 ### Features
