@@ -1,5 +1,5 @@
 import { Watermark as AntWatermark } from 'antd'
-import { type WatermarkProps as AntWatermarkProps } from 'antd'
+import type { WatermarkProps as AntWatermarkProps } from 'antd'
 import { ConfigProvider } from 'src/components'
 
 export interface IWatermarkProps extends AntWatermarkProps {}

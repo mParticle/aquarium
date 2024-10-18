@@ -1,5 +1,5 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { Carousel } from 'src/components/data-display/Carousel/Carousel'
+import { Carousel } from 'src/components/unused/Carousel/Carousel'
 import { ExampleStory } from 'src/utils/ExampleStory'
 import { type RadioChangeEvent } from 'antd'
 import { type CarouselProps } from 'antd'
@@ -16,7 +16,7 @@ const contentStyle: React.CSSProperties = {
 }
 
 const meta: Meta<typeof Carousel> = {
-  title: 'Components/Data Display/Carousel',
+  title: 'Components/Unused/Carousel',
   component: props => (
     <Carousel {...props} style={{ maxWidth: '800px' }}>
       <div>
