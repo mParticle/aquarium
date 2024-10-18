@@ -1,6 +1,6 @@
 {
   "name": "@mparticle/aquarium",
-  "version": "1.33.2-fix-design-tokens-fix.2",
+  "version": "1.33.2",
   "description": "mParticle Component Library",
   "license": "Apache-2.0",
   "keywords": [
