@@ -18,6 +18,7 @@ import {
   Tooltip,
 } from 'src/components'
 import { DatePickerWithDisabledYears } from 'src/components/data-entry/DatePicker/DatePicker.stories'
+import { SelectWithRangePicker } from 'docs/Candidate Components/Directory/Date Range Filter/SelectWithRangePicker'
 
 interface DataType {
   key: string
@@ -181,11 +182,11 @@ function createMockRow(): DataType {
 }
 
 const data: DataType[] = faker.helpers.multiple(createMockRow, {
-  count: 45,
+  count: 3,
 })
 
 const meta: Meta<typeof Table> = {
-  title: 'UX Patterns/Table/Table',
+  title: 'UX Patterns/Table/Filters',
   component: Table,
 
   args: {},
@@ -195,14 +196,73 @@ export default meta
 
 type Story = StoryObj<typeof Table>
 
-export const BasicTable: Story = {
-  name: 'Basic Table',
+export const WithBasicFilters: Story = {
+  name: 'Basic',
   render: () => (
     <Space direction="vertical" style={{ width: '100%' }}>
       <Space direction="vertical" style={{ width: '100%' }}>
         <Flex align={'center'} justify={'space-between'}>
           <Flex gap={10}>
             <DatePickerWithDisabledYears />
+          </Flex>
+          <Input
+            allowClear
+            prefix={<Icon size="sm" color="brand" name="search" />}
+            placeholder="Search"
+            style={{ width: '240px' }}
+          />
+        </Flex>
+      </Space>
+      <Table<DataType> columns={columns} dataSource={data} scroll={{ x: 'max-content' }} />
+    </Space>
+  ),
+}
+
+const TIME_OPTIONS = [
+  {
+    value: 'last12hours',
+    label: 'Last 12 hours',
+  } as const,
+  {
+    value: 'last7days',
+    label: 'Last 7 days',
+  } as const,
+  {
+    value: 'last14days',
+    label: 'Last 14 days',
+  } as const,
+]
+
+export const WithComplexFilters: Story = {
+  name: 'Complex',
+  render: () => (
+    <Space direction="vertical" style={{ width: '100%' }}>
+      <Space direction="vertical" style={{ width: '100%' }}>
+        <Flex align={'center'} justify={'space-between'}>
+          <Flex gap={10}>
+            <SelectWithRangePicker
+              value={'last14days'}
+              placeholder={'Choose Time'}
+              options={TIME_OPTIONS}
+              formatOptions={{
+                dateStyle: 'short',
+                timeStyle: 'short',
+                hour12: false,
+              }}
+              dropdownStyle={{ minWidth: 400 }}
+              // eslint-disable-next-line @typescript-eslint/no-shadow
+              // onChange={(time) => onUpdateFilters({ time })}
+              rangePickerProps={{
+                showTime: true,
+                showHour: true,
+                showMinute: true,
+                showSecond: false,
+                disabledDate: antdDayJS => {
+                  const fourteenDaysInMs = 14 * 24 * 60 * 60 * 1000
+                  return antdDayJS.isBefore(new Date(Date.now() - fourteenDaysInMs))
+                },
+              }}
+            />
           </Flex>
           <Input
             allowClear
