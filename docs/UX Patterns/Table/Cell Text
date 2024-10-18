@@ -1,15 +1,1 @@
-# Table Cells 
 
-### Text 
-
-Text cells support 1 or 2 lines of text. Single-line text cells are typically used for concise information like names, identifiers, or short labels. Two-line text cells are used when additional context is needed and can include entry type or ID, allowing for more detailed information without consuming excessive space.
-
-[Insert 2 lines example]
-
-#### Case
-
-We use sentence case for everything except for titles, which use title case. Exceptions are allowed based on a specific project requirements.
-
-#### Truncating Long names
-
-[Insert Example]
