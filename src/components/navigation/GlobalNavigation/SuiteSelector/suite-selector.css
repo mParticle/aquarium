@@ -18,7 +18,7 @@
 }
 
 .suiteSelector__link:not(.suiteSelector__link--active, .suiteSelector__link--disabled):hover .suiteSelector__suiteLogo {
-  background-color: var(--control-item-bg-hover);
+  background-color: var(--color-white);
 }
 
 .suiteSelector__link.suiteSelector__link--active {

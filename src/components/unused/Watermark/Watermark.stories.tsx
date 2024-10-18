@@ -1,11 +1,11 @@
-import { type Meta, type StoryObj } from '@storybook/react'
-import { Watermark } from 'src/components/feedback/Watermark/Watermark'
+import type { Meta, StoryObj } from '@storybook/react'
+import { Watermark } from 'src/components/unused/Watermark/Watermark'
 import { ExampleStory } from 'src/utils/ExampleStory'
 import { Flex, Form } from 'src/components'
 import { type GetProp } from 'antd'
 import { useState } from 'react'
 import { type IColorPickerProps } from 'src/components'
-import { type IWatermarkProps } from 'src/components/feedback/Watermark/Watermark'
+import { type IWatermarkProps } from 'src/components/unused/Watermark/Watermark'
 import { InputNumber } from 'src/components'
 import { Typography } from 'src/components/general/Typography/Typography'
 import { Input } from 'src/components'
@@ -16,7 +16,7 @@ import { Modal } from 'src/components'
 import { Drawer } from 'src/components'
 
 const meta: Meta<typeof Watermark> = {
-  title: 'Components/Feedback/Watermark',
+  title: 'Components/Unused/Watermark',
   component: props => (
     <Watermark {...props}>
       <div style={{ height: 500, width: 500 }} />
@@ -181,13 +181,23 @@ export const ExampleConfig: Story = {
               more natural.
             </Typography.Paragraph>
             <img
-              style={{ zIndex: 10, width: '100%', maxWidth: 800, position: 'relative' }}
+              style={{
+                zIndex: 10,
+                width: '100%',
+                maxWidth: 800,
+                position: 'relative',
+              }}
               src="https://gw.alipayobjects.com/mdn/rms_08e378/afts/img/A*zx7LTI_ECSAAAAAAAAAAAABkARQnAQ"
               alt="img"
             />
           </Watermark>
           <Form
-            style={{ width: 280, flexShrink: 0, borderLeft: '1px solid #eee', paddingInlineStart: 16 }}
+            style={{
+              width: 280,
+              flexShrink: 0,
+              borderLeft: '1px solid #eee',
+              paddingInlineStart: 16,
+            }}
             form={form}
             layout="vertical"
             initialValues={config}
