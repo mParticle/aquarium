@@ -1,9 +1,9 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { Calendar } from 'src/components/data-display/Calendar/Calendar'
+import { Calendar } from 'src/components/unused/Calendar/Calendar'
 import dayjs from 'dayjs'
 
 const meta: Meta<typeof Calendar> = {
-  title: 'Components/Data Display/Calendar',
+  title: 'Components/Unused/Calendar',
   component: Calendar,
 
   args: {

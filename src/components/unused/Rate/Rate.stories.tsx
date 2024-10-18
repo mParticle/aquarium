@@ -1,8 +1,8 @@
-import { type Meta, type StoryObj } from '@storybook/react'
-import { Rate } from 'src/components/data-entry/Rate/Rate'
+import type { Meta, StoryObj } from '@storybook/react'
+import { Rate } from 'src/components/unused/Rate/Rate'
 
 const meta: Meta<typeof Rate> = {
-  title: 'Components/Data Entry/Rate',
+  title: 'Components/Unused/Rate',
   component: Rate,
 
   args: {},
