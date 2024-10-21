@@ -46,6 +46,16 @@ jobs:
       - name: Build dist
         run: npm run build-dist
 
+      # Delete existing assets before release
+      - name: Delete existing release assets
+        uses: mknejp/delete-release-assets@v1
+        with:
+          token: ${{ secrets.MP_SEMANTIC_RELEASE_BOT }}
+          tag: ${{ github.ref_name }}
+          assets: |
+            index.d.ts
+
+      # Run semantic-release to publish new assets
       - name: Release
         run: |
           npx semantic-release
