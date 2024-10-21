@@ -5,6 +5,7 @@ import { Icon } from 'src/components'
 import type { IIconProps } from 'src/components'
 import { ConfigProvider } from 'src/components/other/ConfigProvider/ConfigProvider'
 import { type ReactNode } from 'react'
+import './button.css'
 
 export interface IButtonProps extends Omit<AntButtonProps, 'variant'> {
   /**
