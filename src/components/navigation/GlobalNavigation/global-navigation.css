@@ -362,3 +362,7 @@
   padding: var(--padding-content-vertical-lg) var(--padding-content-horizontal-lg);
   border-bottom: 1px solid var(--color-border-secondary);
 }
+
+.ant-menu .ant-menu-submenu-title .ant-menu-item-icon svg {
+  line-height: 0 !important;
+}
