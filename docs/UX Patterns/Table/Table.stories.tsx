@@ -18,6 +18,7 @@ import {
   Tooltip,
 } from 'src/components'
 import { DatePickerWithDisabledYears } from 'src/components/data-entry/DatePicker/DatePicker.stories'
+import { ColorPrimary, ColorSuccess, ColorTextPlaceholder } from 'src/styles/style'
 
 interface DataType {
   key: string
@@ -30,19 +31,17 @@ interface DataType {
   mpId: string
 }
 
-type Environment = 'unknown' | 'development' | 'production'
+type Environment = 'development' | 'production'
 type Status = 'draft' | 'error' | 'ready'
 
 const EnvironmentColors: Record<Environment, ITagProps['color']> = {
   production: 'blue',
   development: 'purple',
-  unknown: 'default',
 }
 
 const EnvironmentNames: Record<Environment, string> = {
   production: 'Prod',
   development: 'Dev',
-  unknown: 'Unknown',
 }
 
 const getTagColorForEnvironment = (env: Environment): ITagProps['color'] => EnvironmentColors[env]
@@ -50,9 +49,9 @@ const getTagColorForEnvironment = (env: Environment): ITagProps['color'] => Envi
 const getNameForEnvironment = (env: Environment) => EnvironmentNames[env]
 
 const StatusColors: Record<Status, IBadgeProps['color']> = {
-  draft: 'cyan',
-  error: 'red',
-  ready: 'green',
+  draft: ColorTextPlaceholder,
+  error: ColorPrimary,
+  ready: ColorSuccess,
 }
 
 const StatusNames: Record<Status, string> = {
@@ -80,20 +79,20 @@ const columns: TableProps<DataType>['columns'] = [
   },
   {
     title: () => (
-      <Tooltip
-        title={
-          <>
-            <Typography.Text style={{ color: 'white' }}>Help lorem ipsum. </Typography.Text>
-            <Typography.Link href="/" style={{ color: 'white', textDecoration: 'underline' }}>
-              Learn More
-            </Typography.Link>
-          </>
-        }>
-        <Flex align="center" gap={2}>
-          <Typography.Text>ID</Typography.Text>
+      <Flex align="center" gap={2}>
+        <Typography.Text>ID</Typography.Text>
+        <Tooltip
+          title={
+            <>
+              <Typography.Text style={{ color: 'white' }}>Help lorem ipsum. </Typography.Text>
+              <Typography.Link href="/" style={{ color: 'white', textDecoration: 'underline' }}>
+                Learn More
+              </Typography.Link>
+            </>
+          }>
           <Icon name="help" size="sm" />
-        </Flex>
-      </Tooltip>
+        </Tooltip>
+      </Flex>
     ),
     dataIndex: 'id',
     key: 'id',
@@ -151,6 +150,7 @@ const columns: TableProps<DataType>['columns'] = [
         suffixIcon={<Icon name="moreActions" />}
         variant="borderless"
         dropdownStyle={{ width: '200px' }}
+        value={null}
         options={[
           { label: 'Option 1', value: 'option1' },
           { label: 'Option 2', value: 'option2' },
@@ -175,7 +175,7 @@ function createMockRow(): DataType {
     timestamp: faker.date.recent().valueOf() * 1000 * 1000,
     mpId: faker.number.int({ max: 9_999_999_999 }).toString(),
     output: faker.helpers.arrayElement(['Braze', 'mP Analytics', 'Cortex', 'Applytics', 'Google Analytics']),
-    environment: faker.helpers.arrayElement(['unknown', 'development', 'production']),
+    environment: faker.helpers.arrayElement(['development', 'production']),
     status: faker.helpers.arrayElement(['draft', 'error', 'ready']),
   }
 }
