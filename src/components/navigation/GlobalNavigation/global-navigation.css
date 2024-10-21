@@ -258,9 +258,10 @@
 }
 
 .globalNavigation__badge {
+  margin-left: 4px;
   border: solid 1px var(--color-border);
   border-radius: var(--border-radius-sm);
-  padding: 1px var(--padding-content-vertical-sm);
+  padding: 0;
   box-shadow: none !important;
 }
 
