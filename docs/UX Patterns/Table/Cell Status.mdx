@@ -1,0 +1,23 @@
+import { Meta, Story } from '@storybook/blocks'
+
+import * as TableStories from './Table.stories'
+
+<Meta of={TableStories} />
+
+# Table Cells
+
+### Status
+
+Always use badge components for system status. Reserve tags for actual tags, labels, and environment descriptions (e.g., prod, dev). This ensures clear visual distinction between different information types.
+
+#### Do
+
+<img src="images/basic-table.png" />
+
+#### Don't
+
+<img src="images/basic-table.png" />
+
+### Cell Aligment
+
+Statuses are left-aligned to create a cohesive and organized table layout.
