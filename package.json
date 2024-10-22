@@ -24,17 +24,6 @@
     "dist/style.ts",
     "dist/src"
   ],
-  "release": {
-    "plugins": [
-      "@semantic-release/github",
-      {
-        "assets": [
-          "dist/**/*",
-          "!dist/index.d.ts"
-        ]
-      }
-    ]
-  },
   "peerDependencies": {
     "antd": "5.20.x",
     "dayjs": "1.11.x",
