@@ -172,7 +172,6 @@
 }
 
 .globalNavigation__buttonItem {
-  width: 100%;
   padding: 0 !important;
   margin: 0 auto !important;
   color: var(--mp-brand-secondary-1) !important;
