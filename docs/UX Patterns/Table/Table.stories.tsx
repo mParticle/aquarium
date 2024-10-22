@@ -18,7 +18,7 @@ import {
   Tooltip,
 } from 'src/components'
 import { DatePickerWithDisabledYears } from 'src/components/data-entry/DatePicker/DatePicker.stories'
-import { ColorPrimary, ColorSuccess, ColorTextPlaceholder } from 'src/styles/style'
+import { ColorError, ColorSuccess, ColorTextPlaceholder } from 'src/styles/style'
 
 interface DataType {
   key: string
@@ -50,7 +50,7 @@ const getNameForEnvironment = (env: Environment) => EnvironmentNames[env]
 
 const StatusColors: Record<Status, IBadgeProps['color']> = {
   draft: ColorTextPlaceholder,
-  error: ColorPrimary,
+  error: ColorError,
   ready: ColorSuccess,
 }
 
@@ -153,7 +153,19 @@ const columns: TableProps<DataType>['columns'] = [
         value={null}
         options={[
           { label: 'Option 1', value: 'option1' },
-          { label: 'Option 2', value: 'option2' },
+          {
+            label: (
+              <Tooltip title="Explaining of why this is disabled" placement="right">
+                <span>Option 2</span>
+              </Tooltip>
+            ),
+            value: 'option2',
+            disabled: true,
+          },
+          {
+            label: <span style={{ color: ColorError }}>Delete</span>,
+            value: 'option2',
+          },
         ]}
       />
     ),
