@@ -30,10 +30,10 @@ const config: StorybookConfig & StorybookVitePlugins = {
         },
       },
     },
+    '@chromatic-com/storybook',
   ],
 
   docs: {
-    autodocs: true,
     defaultName: 'Documentation',
   },
 
@@ -48,6 +48,10 @@ const config: StorybookConfig & StorybookVitePlugins = {
 
   core: {
     disableTelemetry: true, // requested by security
+  },
+
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
   },
 }
 
