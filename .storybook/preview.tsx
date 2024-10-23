@@ -38,7 +38,7 @@ const preview: Preview = {
           ],
           'Candidate Components',
           'UX Patterns',
-          ['Table', ['Documentation', 'Filters'], 'Observability', 'Directory'],
+          ['Table', ['Table', 'Filters']],
           'Contributing',
           ['Introduction', 'Commits', 'Testing in the platforms', 'Release Process', 'Maintainers'],
         ],

@@ -18,7 +18,7 @@ import {
   Tooltip,
 } from 'src/components'
 import { DatePickerWithDisabledYears } from 'src/components/data-entry/DatePicker/DatePicker.stories'
-import { ColorError, ColorSuccess, ColorTextPlaceholder } from 'src/styles/style'
+import { SelectWithRangePicker } from 'docs/Candidate Components/Directory/Date Range Filter/SelectWithRangePicker'
 
 interface DataType {
   key: string
@@ -31,17 +31,19 @@ interface DataType {
   mpId: string
 }
 
-type Environment = 'development' | 'production'
+type Environment = 'unknown' | 'development' | 'production'
 type Status = 'draft' | 'error' | 'ready'
 
 const EnvironmentColors: Record<Environment, ITagProps['color']> = {
   production: 'blue',
   development: 'purple',
+  unknown: 'default',
 }
 
 const EnvironmentNames: Record<Environment, string> = {
   production: 'Prod',
   development: 'Dev',
+  unknown: 'Unknown',
 }
 
 const getTagColorForEnvironment = (env: Environment): ITagProps['color'] => EnvironmentColors[env]
@@ -49,9 +51,9 @@ const getTagColorForEnvironment = (env: Environment): ITagProps['color'] => Envi
 const getNameForEnvironment = (env: Environment) => EnvironmentNames[env]
 
 const StatusColors: Record<Status, IBadgeProps['color']> = {
-  draft: ColorTextPlaceholder,
-  error: ColorError,
-  ready: ColorSuccess,
+  draft: 'cyan',
+  error: 'red',
+  ready: 'green',
 }
 
 const StatusNames: Record<Status, string> = {
@@ -79,20 +81,20 @@ const columns: TableProps<DataType>['columns'] = [
   },
   {
     title: () => (
-      <Flex align="center" gap={2}>
-        <Typography.Text>ID</Typography.Text>
-        <Tooltip
-          title={
-            <>
-              <Typography.Text style={{ color: 'white' }}>Help lorem ipsum. </Typography.Text>
-              <Typography.Link href="/" style={{ color: 'white', textDecoration: 'underline' }}>
-                Learn More
-              </Typography.Link>
-            </>
-          }>
+      <Tooltip
+        title={
+          <>
+            <Typography.Text style={{ color: 'white' }}>Help lorem ipsum. </Typography.Text>
+            <Typography.Link href="/" style={{ color: 'white', textDecoration: 'underline' }}>
+              Learn More
+            </Typography.Link>
+          </>
+        }>
+        <Flex align="center" gap={2}>
+          <Typography.Text>ID</Typography.Text>
           <Icon name="help" size="sm" />
-        </Tooltip>
-      </Flex>
+        </Flex>
+      </Tooltip>
     ),
     dataIndex: 'id',
     key: 'id',
@@ -150,22 +152,9 @@ const columns: TableProps<DataType>['columns'] = [
         suffixIcon={<Icon name="moreActions" />}
         variant="borderless"
         dropdownStyle={{ width: '200px' }}
-        value={null}
         options={[
           { label: 'Option 1', value: 'option1' },
-          {
-            label: (
-              <Tooltip title="Explaining of why this is disabled" placement="right">
-                <span>Option 2</span>
-              </Tooltip>
-            ),
-            value: 'option2',
-            disabled: true,
-          },
-          {
-            label: <span style={{ color: ColorError }}>Delete</span>,
-            value: 'option2',
-          },
+          { label: 'Option 2', value: 'option2' },
         ]}
       />
     ),
@@ -187,17 +176,17 @@ function createMockRow(): DataType {
     timestamp: faker.date.recent().valueOf() * 1000 * 1000,
     mpId: faker.number.int({ max: 9_999_999_999 }).toString(),
     output: faker.helpers.arrayElement(['Braze', 'mP Analytics', 'Cortex', 'Applytics', 'Google Analytics']),
-    environment: faker.helpers.arrayElement(['development', 'production']),
+    environment: faker.helpers.arrayElement(['unknown', 'development', 'production']),
     status: faker.helpers.arrayElement(['draft', 'error', 'ready']),
   }
 }
 
 const data: DataType[] = faker.helpers.multiple(createMockRow, {
-  count: 45,
+  count: 3,
 })
 
 const meta: Meta<typeof Table> = {
-  title: 'UX Patterns/Table/Table',
+  title: 'UX Patterns/Table/Filters',
   component: Table,
 
   args: {},
@@ -207,14 +196,73 @@ export default meta
 
 type Story = StoryObj<typeof Table>
 
-export const BasicTable: Story = {
-  name: 'Basic Table',
+export const WithBasicFilters: Story = {
+  name: 'Basic',
   render: () => (
     <Space direction="vertical" style={{ width: '100%' }}>
       <Space direction="vertical" style={{ width: '100%' }}>
         <Flex align={'center'} justify={'space-between'}>
           <Flex gap={10}>
             <DatePickerWithDisabledYears />
+          </Flex>
+          <Input
+            allowClear
+            prefix={<Icon size="sm" color="brand" name="search" />}
+            placeholder="Search"
+            style={{ width: '240px' }}
+          />
+        </Flex>
+      </Space>
+      <Table<DataType> columns={columns} dataSource={data} scroll={{ x: 'max-content' }} />
+    </Space>
+  ),
+}
+
+const TIME_OPTIONS = [
+  {
+    value: 'last12hours',
+    label: 'Last 12 hours',
+  } as const,
+  {
+    value: 'last7days',
+    label: 'Last 7 days',
+  } as const,
+  {
+    value: 'last14days',
+    label: 'Last 14 days',
+  } as const,
+]
+
+export const WithComplexFilters: Story = {
+  name: 'Complex',
+  render: () => (
+    <Space direction="vertical" style={{ width: '100%' }}>
+      <Space direction="vertical" style={{ width: '100%' }}>
+        <Flex align={'center'} justify={'space-between'}>
+          <Flex gap={10}>
+            <SelectWithRangePicker
+              value={'last14days'}
+              placeholder={'Choose Time'}
+              options={TIME_OPTIONS}
+              formatOptions={{
+                dateStyle: 'short',
+                timeStyle: 'short',
+                hour12: false,
+              }}
+              dropdownStyle={{ minWidth: 400 }}
+              // eslint-disable-next-line @typescript-eslint/no-shadow
+              // onChange={(time) => onUpdateFilters({ time })}
+              rangePickerProps={{
+                showTime: true,
+                showHour: true,
+                showMinute: true,
+                showSecond: false,
+                disabledDate: antdDayJS => {
+                  const fourteenDaysInMs = 14 * 24 * 60 * 60 * 1000
+                  return antdDayJS.isBefore(new Date(Date.now() - fourteenDaysInMs))
+                },
+              }}
+            />
           </Flex>
           <Input
             allowClear

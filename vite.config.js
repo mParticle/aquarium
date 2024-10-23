@@ -1,4 +1,4 @@
-import { resolve } from 'path'
+import { resolve } from 'node:path'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 import svgr from 'vite-plugin-svgr'
@@ -11,6 +11,7 @@ export default defineConfig({
   resolve: {
     alias: {
       src: '/src',
+      docs: '/docs',
       design: '/design',
     },
   },
