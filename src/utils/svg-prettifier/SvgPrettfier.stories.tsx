@@ -1,4 +1,4 @@
-import { type Meta, type StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import { SVGPrettifier } from './SvgPrettifier'
 
 // SVG Prettifier Documentation
@@ -22,7 +22,7 @@ To process the uploaded SVGs, a server must be running. You can start the server
 For more information on the icon component and usage, please refer to the [Icons Documentation](?path=/docs/aquarium-general-icons--documentation).
 `
 const meta: Meta<typeof SVGPrettifier> = {
-  title: 'Components/Other/SVGPrettifier',
+  title: 'Contributing/Tooling/SVGPrettifier',
   component: SVGPrettifier,
   parameters: {
     docs: {
