@@ -1,3 +1,10 @@
+## [1.33.3-fix-github-release-error.1](https://github.com/mParticle/aquarium/compare/v1.33.2...v1.33.3-fix-github-release-error.1) (2024-10-21)
+
+### Bug Fixes
+
+- (release error) try fetching dynamic tag ([0d9f919](https://github.com/mParticle/aquarium/commit/0d9f919a9d69e15aee345d4465321b75925b9b02))
+- update release.yml to fix error ([0274fc0](https://github.com/mParticle/aquarium/commit/0274fc068e2f8de6a0ec6a031764617b1d722866))
+
 ## [1.33.2](https://github.com/mParticle/aquarium/compare/v1.33.1...v1.33.2) (2024-10-18)
 
 ### Bug Fixes
