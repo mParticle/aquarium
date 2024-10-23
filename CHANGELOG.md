@@ -1,3 +1,5 @@
+## [1.33.3-chore-docs-restructuring.1](https://github.com/mParticle/aquarium/compare/v1.33.2...v1.33.3-chore-docs-restructuring.1) (2024-10-23)
+
 ## [1.33.2](https://github.com/mParticle/aquarium/compare/v1.33.1...v1.33.2) (2024-10-18)
 
 ### Bug Fixes
