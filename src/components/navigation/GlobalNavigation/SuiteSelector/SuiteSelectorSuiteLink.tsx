@@ -45,12 +45,12 @@ export function SuiteSelectorSuiteLink(props: ISuiteSelectorSuiteLinkProps) {
 
   return (
     <>
-      <div onClick={handleContainerClick} className={getLinkClass(props.link)}>
+      <a href={props.link.href} onClick={handleContainerClick} className={getLinkClass(props.link)}>
         <Flex vertical align="center" gap="small">
           <NavigationIcon icon={renderLogo(elementIconMap[props.link.linkId])} label="" hideLabel />
           {elementNameMap[props.link.linkId]}
         </Flex>
-      </div>
+      </a>
     </>
   )
 
