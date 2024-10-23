@@ -30,7 +30,6 @@ const config: StorybookConfig & StorybookVitePlugins = {
         },
       },
     },
-    '@chromatic-com/storybook',
   ],
 
   docs: {
