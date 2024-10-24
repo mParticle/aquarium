@@ -1,7 +1,7 @@
 import { Modal as AntModal } from 'antd'
 import { type ModalProps as AntModalProps } from 'antd'
 import { ConfigProvider } from 'src/components'
-
+import './modal.css'
 export interface IModalProps extends AntModalProps {}
 
 export const Modal = (props: IModalProps) => {
