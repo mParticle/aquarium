@@ -29,6 +29,7 @@
 }
 
 .suiteSelector__link.suiteSelector__link--disabled {
+  pointer-events: none;
   cursor: default;
   color: var(--color-text-disabled);
 }
