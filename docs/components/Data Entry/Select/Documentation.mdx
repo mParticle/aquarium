@@ -1,15 +1,31 @@
-import { Meta, Canvas } from '@storybook/blocks';
+import { Meta, Canvas } from '@storybook/blocks'
 
-import * as SelectStories from '../../../../src/components/data-entry/Select/Select.stories';
+import * as SelectStories from '../../../../src/components/data-entry/Select/Select.stories'
 
 <Meta of={SelectStories} />
 
-{/* Documentation goes here */}
-
 # Select
 
-This is the documentation for the select component
+### Overview
 
-{/* Documentation goes here */}
+Select component allows users to select the necessary record from a list.
 
 <Canvas meta={SelectStories.default} />
+
+### When to use:
+
+- When users need to filter or refine data views based on specific criteria (e.g., selecting records by status or category).
+- When there are distinct categories or options that users must choose from during data entry
+- When the list of options is too long to display effectively with buttons, checkboxes, or radio buttons, allowing for a compact, scrollable dropdown.
+
+### Related Components:
+
+- Multiselect [Insert Link]
+- Select with Search [Insert Link]
+- Select with Autocomplete [Insert Link]
+
+#### Related Links
+
+| Type  | Resource                                                                                                                                               |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Eames | [Select Component](https://www.figma.com/design/veXnmignQnJz8StIq10VJ5/Eames-2.0---Foundations-%26-Components?node-id=1217-31707&t=5iHsAw2QyK8Lx8zt-4) |
