@@ -1,7 +1,7 @@
-import { type ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import { cloneElement } from 'react'
 import { useState } from 'react'
-import { type Meta, type StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from 'src/components/general/Button/Button'
 import { Dropdown, type IDropdownProps } from 'src/components/navigation/Dropdown/Dropdown'
 import { ExampleStory } from 'src/utils/ExampleStory'
@@ -9,7 +9,7 @@ import { Tooltip, type IMenuProps, Icon } from 'src/components'
 import { Space } from 'src/components'
 import { Divider } from 'src/components'
 import { theme } from 'antd'
-import { type MenuProps } from 'antd'
+import type { MenuProps } from 'antd'
 import { Typography } from 'src/components/general/Typography/Typography'
 
 const menu: IDropdownProps['menu'] = {
@@ -93,7 +93,9 @@ type Story = StoryObj<typeof Dropdown>
   Customize the stories based on specific requirements.
 */
 
-export const Primary: Story = {}
+export const Primary: Story = {
+  tags: ['deprecated'],
+}
 
 export const WithArrow: Story = {
   args: {
