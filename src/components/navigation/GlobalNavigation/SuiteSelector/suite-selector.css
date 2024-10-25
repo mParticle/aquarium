@@ -4,6 +4,7 @@
 }
 
 .suiteSelector__link {
+  display: block;
   padding: var(--padding-sm) 0;
   border-radius: var(--border-radius-lg);
   color: var(--color-text-base);
@@ -15,6 +16,7 @@
 .suiteSelector__link:not(.suiteSelector__link--active, .suiteSelector__link--disabled):hover {
   background-color: var(--color-primary-bg-hover);
   border-color: var(--color-primary-bg-hover);
+  color: var(--color-text-base);
 }
 
 .suiteSelector__link:not(.suiteSelector__link--active, .suiteSelector__link--disabled):hover .suiteSelector__suiteLogo {
@@ -23,9 +25,11 @@
 
 .suiteSelector__link.suiteSelector__link--active {
   border-color: var(--color-border);
+  color: var(--color-text-base);
 }
 
 .suiteSelector__link.suiteSelector__link--disabled {
+  pointer-events: none;
   cursor: default;
   color: var(--color-text-disabled);
 }

@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { type Meta, type StoryObj } from '@storybook/react'
 import { type CellRender as RcPickerCellRender, type CellRenderInfo } from 'rc-picker/lib/interface'
 
-const DatePickerWithDisabledYears: React.FC = () => {
+export const DatePickerWithDisabledYears: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState<Dayjs | null>(null)
   const disabledDate = (current: Dayjs): boolean => current && current.year() < 2023
   const handleChange = (date: Dayjs | null) => {

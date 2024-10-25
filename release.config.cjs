@@ -1,21 +1,21 @@
 module.exports = {
-  branches: ['main', 
+  branches: [
+    'main',
     {
       name: 'feat/*',
       channel: 'feature',
-      prerelease: "${name.split('/').slice(1).join('-').toLowerCase().replaceAll('_', '-')}"
+      prerelease: "${name.split('/').slice(1).join('-').toLowerCase().replaceAll('_', '-')}",
     },
     {
       name: 'chore/*',
       channel: 'chore',
-      prerelease: "chore-${name.split('/').slice(1).join('-').toLowerCase().replaceAll('_', '-')}"
+      prerelease: "chore-${name.split('/').slice(1).join('-').toLowerCase().replaceAll('_', '-')}",
     },
     {
       name: 'fix/*',
       channel: 'fix',
-      prerelease: "fix-${name.split('/').slice(1).join('-').toLowerCase().replaceAll('_', '-')}"
+      prerelease: "fix-${name.split('/').slice(1).join('-').toLowerCase().replaceAll('_', '-')}",
     },
-    
   ],
   tagFormat: 'v${version}',
   repositoryUrl: 'https://github.com/mParticle/aquarium',

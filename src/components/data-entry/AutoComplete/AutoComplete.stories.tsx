@@ -14,7 +14,7 @@ const baseOptions = [
 ]
 
 const meta: Meta<typeof AutoComplete> = {
-  title: 'Components/Data Entry/AutoComplete',
+  title: 'Components/Data Entry/Auto Complete',
   component: props => {
     const [value, setValue] = useState<IAutoCompleteProps['value']>('')
     const [options, setOptions] = useState<IAutoCompleteProps['options']>([])
