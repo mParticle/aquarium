@@ -48,6 +48,8 @@ jobs:
 
       - name: Release
         run: |
+          # Enable debug mode for semantic-release
+          export DEBUG="semantic-release:*"
           npx semantic-release
 
       - name: Archive npm failure logs

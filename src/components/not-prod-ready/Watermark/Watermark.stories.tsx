@@ -62,8 +62,8 @@ export const Content: Story = {
 export const Font: Story = {
   args: {
     font: {
-      fontFamily: 'Helvetica',
-      fontSize: 16,
+      fontFamily: 'Arial',
+      fontSize: 30,
       color: 'rgba(255, 0, 0, 0.2)',
       textAlign: 'right',
     },
