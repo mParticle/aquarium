@@ -1,3 +1,12 @@
+## [1.33.3-fix-semantic-release.4](https://github.com/mParticle/aquarium/compare/v1.33.3-fix-semantic-release.3...v1.33.3-fix-semantic-release.4) (2024-10-28)
+
+### Bug Fixes
+
+- test new config on release.config.cjs ([d14fa84](https://github.com/mParticle/aquarium/commit/d14fa845dede9ea04fdbf4b7af713371a1543b40))
+- update release.config.cjs ([859b3bb](https://github.com/mParticle/aquarium/commit/859b3bb61b5c511877f9ec1cdbb59610b2cd4e4a))
+- update release.config.cjs tag format version ([93ee2ec](https://github.com/mParticle/aquarium/commit/93ee2ecc46f9c472ce71b2d86e83dd5e6012b727))
+- use unique tags ([61d7886](https://github.com/mParticle/aquarium/commit/61d788672281ec7d909e3afcb7822edc4279b05e))
+
 # 1.0.0-fix-semantic-release.1 (2024-10-28)
 
 ### Bug Fixes
