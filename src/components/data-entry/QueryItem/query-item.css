@@ -5,12 +5,12 @@
  * _defaults_
  */
 .query-item {
-  border-width: var(--mp-query-item-border-width) !important;
-  border-color: var(--mp-query-item-border-color) !important;
-  border-radius: var(--mp-query-item-border-radius);
-  background-color: var(--mp-query-item-bg-color) !important;
-  padding: var(--mp-query-item-padding) !important;
-  height: var(--mp-query-item-height) !important;
+  border-width: 0 0 var(--line-width) 0 !important;
+  border-color: var(--color-border) !important;
+  border-radius: var(--border-radius-xs);
+  background-color: var(--color-bg-container) !important;
+  padding: var(--padding-xxs) !important;
+  height: var(--control-height) !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,85 +19,85 @@
 }
 
 .query-item:hover {
-  border-color: var(--mp-query-item-border-color-active) !important;
-  background-color: var(--mp-query-item-bg-color-hover) !important;
+  border-color: var(--color-primary) !important;
+  background-color: var(--control-item-bg-active) !important;
 }
 
 .query-item:focus {
-  border-color: var(--mp-query-item-border-color-active) !important;
-  box-shadow: var(--mp-query-item-shadow-focus);
-  background-color: var(--mp-query-item-bg-color) !important;
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 0 2px var(--control-outline);
+  background-color: var(--color-bg-container) !important;
 }
 
 .query-item:active {
-  border-color: var(--mp-query-item-border-color-active) !important;
-  border-width: var(--mp-query-item-border-width-active) !important;
-  background-color: var(--mp-query-item-bg-color-active) !important;
-  box-shadow: var(--mp-query-item-shadow-active);
+  border-color: var(--color-primary) !important;
+  border-width: 0 0 var(--line-width-bold) 0 !important;
+  background-color: var(--control-item-bg-active-hover) !important;
+  box-shadow: 0 0 0 2px var(--control-outline);
 }
 
 .query-item[disabled] {
-  color: var(--mp-query-item-color-disabled) !important;
-  background-color: var(--mp-query-item-bg-color) !important;
-  border-color: var(--mp-query-item-border-color-disabled) !important;
+  color: var(--color-text-disabled) !important;
+  background-color: var(--color-bg-container) !important;
+  border-color: var(--mp-color-border-disabled) !important;
 }
 
-.query-item.query-item--input-text, 
+.query-item.query-item--input-text,
 .query-item.query-item--input-number {
-  color: var(--mp-query-item-value-selector-color);
-  font-weight: var(--mp-query-item-value-selector-font-weight);
+  color: var(--color-primary-text-active);
+  font-weight: var(--font-weight-strong);
 }
 
-.query-item.query-item--input-text::placeholder, 
+.query-item.query-item--input-text::placeholder,
 .query-item.query-item--input-number::placeholder {
   font-weight: normal;
 }
 
 .query-item.query-item--action {
-  color: var(--mp-query-item-action-primary-color) !important;
-  gap: var(--mp-query-item-gap);
+  color: var(--color-link) !important;
+  gap: var(--margin-xxs);
 }
 
 .query-item.query-item--secondary {
-  color: var(--mp-query-item-action-secondary-color) !important;
+  color: var(--color-text-tertiary) !important;
 }
 
 .query-item.query-item--secondary:hover {
-  background-color: var(--mp-query-item-bg-color-hover) !important;
+  background-color: var(--control-item-bg-active) !important;
 }
 
 .query-item.query-item--secondary:active {
-  border-width: var(--mp-query-item-border-width-active);
-  background-color: var(--mp-query-item-bg-color-active) !important;
+  border-width: 0 0 var(--line-width-bold) 0;
+  background-color: var(--control-item-bg-active-hover) !important;
 }
 
 .query-item.query-item--disabled {
-  color: var(--mp-query-item-action-secondary-color) !important;
+  color: var(--color-text-tertiary) !important;
 }
 
 .query-item.query-item--disabled:hover {
-  background-color: var(--mp-query-item-bg-color) !important;
+  background-color: var(--color-bg-container) !important;
 }
 
 .query-item.query-item--disabled:active {
-  border-width: var(--mp-query-item-border-width) !important;
-  background-color: var(--mp-query-item-bg-color) !important;
+  border-width: 0 0 var(--line-width) 0 !important;
+  background-color: var(--color-bg-container) !important;
   box-shadow: none !important;
 }
 
 .query-item.query-item--selected > input {
-  color: var(--mp-query-item-value-selector-color) !important;
-  font-weight: var(--mp-query-item-value-selector-font-weight) !important;
+  color: var(--color-primary-text-active) !important;
+  font-weight: var(--font-weight-strong) !important;
 }
 
 .query-item.query-item--error {
-  border-color: var(--mp-query-item-border-color-error) !important;
+  border-color: var(--color-error) !important;
 }
 
 .query-item.query-item--open {
-  border-color: var(--mp-query-item-border-color-active) !important;
-  border-width: var(--mp-query-item-border-width-active) !important;
-  background-color: var(--mp-query-item-bg-color-active) !important;
+  border-color: var(--color-primary) !important;
+  border-width: 0 0 var(--line-width-bold) 0 !important;
+  background-color: var(--control-item-bg-active-hover) !important;
 }
 
 .query-item .ant-select-selector {
@@ -105,7 +105,7 @@
 }
 
 .query-item__search-highlight {
-  color: var(--mp-query-item-action-primary-color);
+  color: var(--color-link);
 }
 
 /* This is temporary until the new icon component is available where sizes can be controlled without CSS */
