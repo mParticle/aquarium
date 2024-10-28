@@ -1,3 +1,9 @@
+## [1.33.3-fix-semantic-release.2](https://github.com/mParticle/aquarium/compare/v1.33.3-fix-semantic-release.1...v1.33.3-fix-semantic-release.2) (2024-10-28)
+
+### Bug Fixes
+
+- update release.yml to test semantic release ([5dcf0a7](https://github.com/mParticle/aquarium/commit/5dcf0a7070b481208625b833c1e481b1f94744e5))
+
 ## [1.33.3-fix-semantic-release.1](https://github.com/mParticle/aquarium/compare/v1.33.2...v1.33.3-fix-semantic-release.1) (2024-10-25)
 
 ## [1.33.2](https://github.com/mParticle/aquarium/compare/v1.33.1...v1.33.2) (2024-10-18)
