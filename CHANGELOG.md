@@ -1,3 +1,9 @@
+## [1.33.3-fix-semantic-release.3](https://github.com/mParticle/aquarium/compare/v1.33.3-fix-semantic-release.2...v1.33.3-fix-semantic-release.3) (2024-10-28)
+
+### Bug Fixes
+
+- remove -t patch from sem release ([fa41baa](https://github.com/mParticle/aquarium/commit/fa41baae5f88247aab1cdd8fa35aeb2fa9fdc92d))
+
 ## [1.33.3-fix-semantic-release.2](https://github.com/mParticle/aquarium/compare/v1.33.3-fix-semantic-release.1...v1.33.3-fix-semantic-release.2) (2024-10-28)
 
 ### Bug Fixes
