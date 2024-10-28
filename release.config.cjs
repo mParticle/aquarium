@@ -17,7 +17,7 @@ module.exports = {
       prerelease: "fix-${name.split('/').slice(1).join('-').toLowerCase().replaceAll('_', '-')}",
     },
   ],
-  tagFormat: "v${version}-${Date.now()}",
+  tagFormat: 'v${version}',
   repositoryUrl: 'https://github.com/mParticle/aquarium',
   plugins: [
     [
@@ -54,7 +54,7 @@ module.exports = {
     [
       '@semantic-release/github',
       {
-        assets: ['dist/**'],
+        assets: ['dist/aquarium.umd.cjs', 'dist/aquarium.js', 'dist/style.css', 'dist/index.d.ts']
       },
     ],
     [
