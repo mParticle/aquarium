@@ -1,3 +1,17 @@
+## [1.33.3-chore-remove-workspace-button-override.1](https://github.com/mParticle/aquarium/compare/v1.33.2...v1.33.3-chore-remove-workspace-button-override.1) (2024-10-28)
+
+### Bug Fixes
+
+- (styles) update global nav icon label text styles ([047c42b](https://github.com/mParticle/aquarium/commit/047c42b48b780f3ce554519e04a4b259b2406a8d))
+- align button on global nav ([d40a067](https://github.com/mParticle/aquarium/commit/d40a06710e2821de760cbafab3d1602432be54ba))
+- global nav styles cleanup ([d6d64fc](https://github.com/mParticle/aquarium/commit/d6d64fc3243d39d476c71c6a2820aa6c8dd11220))
+- solve conflicts ([375110a](https://github.com/mParticle/aquarium/commit/375110a3d1ec12ae55e1e647a4c6edf01fe83942))
+- trigger Build ([437f4e8](https://github.com/mParticle/aquarium/commit/437f4e84e5345ce4400d5b7dc02801ba7c4716a5))
+- update build plugin to include types and utils ([822be84](https://github.com/mParticle/aquarium/commit/822be8470928ee1dc3a0de8b5f50f7ce80d733c5))
+- update modal font weight ([882fa80](https://github.com/mParticle/aquarium/commit/882fa80db426cd76c3e9b771faa8336cfea36ad6))
+- update package json to try fixing release error ([e6c13c4](https://github.com/mParticle/aquarium/commit/e6c13c46d6381d6d061b6fbd0544c7b42bd2b1d4))
+- worskpace selector button styles ([5c4f54d](https://github.com/mParticle/aquarium/commit/5c4f54da5fffaacb0f86ba7734624b94c3302a05))
+
 ## [1.33.2](https://github.com/mParticle/aquarium/compare/v1.33.1...v1.33.2) (2024-10-18)
 
 ### Bug Fixes
