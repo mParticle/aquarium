@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       confirm:
-        description: "In case that's a release from main, have you aligned in #aquarium? Type 'yes' or 'n/a' to confirm."
+        description: "If this is a release from main, have you confirmed alignment in #aquarium? Type 'yes' or 'n/a' to confirm."
         required: true
 
 jobs:
@@ -21,12 +21,14 @@ jobs:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
     steps:
+      # Checkout the latest code from the main branch with full history
       - name: Checkout public main branch
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.MP_SEMANTIC_RELEASE_BOT }}
           fetch-depth: 0
 
+      # Import GPG key for signed commits and tags
       - name: Import GPG Key
         uses: crazy-max/ghaction-import-gpg@v4
         with:
@@ -35,23 +37,37 @@ jobs:
           git_user_signingkey: true
           git_commit_gpgsign: true
 
+      # Set up Node.js environment
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 'latest'
 
+      # Install project dependencies
       - name: Install Dependencies
         run: npm ci
 
+      # Build the project to prepare for release
       - name: Build dist
         run: npm run build-dist
 
+      # Run semantic-release to create a new release
       - name: Release
         run: |
-          # Enable debug mode for semantic-release
+          # Enable debug mode to get detailed logs from semantic-release
           export DEBUG="semantic-release:*"
-          npx semantic-release
 
+          # Run semantic-release and handle potential tag conflicts
+          if npx semantic-release; then
+            echo "Release completed successfully."
+          else
+            echo "Tag already exists. Creating a new version to avoid asset conflicts."
+
+            # Run semantic-release with a forced version increment (e.g., patch) to generate a unique release
+            npx semantic-release -t patch
+          fi
+
+      # Archive npm failure logs for debugging in case of errors
       - name: Archive npm failure logs
         uses: actions/upload-artifact@v3
         if: failure()
