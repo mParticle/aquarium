@@ -57,15 +57,8 @@ jobs:
           # Enable debug mode to get detailed logs from semantic-release
           export DEBUG="semantic-release:*"
 
-          # Run semantic-release and handle potential tag conflicts
-          if npx semantic-release; then
-            echo "Release completed successfully."
-          else
-            echo "Tag already exists. Creating a new version to avoid asset conflicts."
-
-            # Run semantic-release with a forced version increment (e.g., patch) to generate a unique release
-            npx semantic-release -t patch
-          fi
+          # Run semantic-release to handle versioning and release
+          npx semantic-release
 
       # Archive npm failure logs for debugging in case of errors
       - name: Archive npm failure logs
