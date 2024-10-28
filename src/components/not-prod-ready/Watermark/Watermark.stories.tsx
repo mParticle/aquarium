@@ -65,7 +65,7 @@ export const Font: Story = {
       fontFamily: 'Arial',
       fontSize: 30,
       color: 'rgba(255, 0, 0, 0.2)',
-      textAlign: 'right',
+      textAlign: 'center',
     },
   },
 }

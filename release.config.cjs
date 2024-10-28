@@ -17,7 +17,7 @@ module.exports = {
       prerelease: "fix-${name.split('/').slice(1).join('-').toLowerCase().replaceAll('_', '-')}",
     },
   ],
-  tagFormat: 'v${version}',
+  tagFormat: 'v${version}-${branch}',
   repositoryUrl: 'https://github.com/mParticle/aquarium',
   plugins: [
     [
