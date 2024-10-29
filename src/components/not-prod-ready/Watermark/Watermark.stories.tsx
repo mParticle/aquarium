@@ -62,10 +62,10 @@ export const Content: Story = {
 export const Font: Story = {
   args: {
     font: {
-      fontFamily: 'Arial',
-      fontSize: 30,
+      fontFamily: 'Helvetica',
+      fontSize: 16,
       color: 'rgba(255, 0, 0, 0.2)',
-      textAlign: 'center',
+      textAlign: 'right',
     },
   },
 }
