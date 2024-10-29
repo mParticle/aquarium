@@ -48,6 +48,7 @@ module.exports = {
       '@semantic-release/changelog',
       {
         changelogFile: 'CHANGELOG.md',
+        skip: (branch) => branch !== 'main'
       },
     ],
     ['@semantic-release/npm'],
