@@ -1,3 +1,9 @@
+# [1.34.0](https://github.com/mParticle/aquarium/compare/v1.33.2...v1.34.0) (2024-10-29)
+
+### Features
+
+- deprecate mp-query-item tokens ([#476](https://github.com/mParticle/aquarium/issues/476)) ([d8b1faf](https://github.com/mParticle/aquarium/commit/d8b1faf6756ad0b4faea5ff5f789f5084f1dabbf))
+
 ## [1.33.3-fix-semantic-release.4](https://github.com/mParticle/aquarium/compare/v1.33.3-fix-semantic-release.3...v1.33.3-fix-semantic-release.4) (2024-10-28)
 
 ### Bug Fixes
