@@ -1,3 +1,5 @@
+const isMainBranch = process.env.GITHUB_REF === 'refs/heads/main';
+
 module.exports = {
   branches: [
     'main',
@@ -44,13 +46,14 @@ module.exports = {
         preset: 'angular',
       },
     ],
-    [
-      '@semantic-release/changelog',
-      {
-        changelogFile: 'CHANGELOG.md',
-        branches: ['main']
-      },
-    ],
+    ...(isMainBranch ? [
+      [
+        '@semantic-release/changelog',
+        {
+          changelogFile: 'CHANGELOG.md',
+        },
+      ],
+    ] : []),
     ['@semantic-release/npm'],
     [
       '@semantic-release/github',
