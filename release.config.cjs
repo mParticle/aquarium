@@ -1,5 +1,3 @@
-const isMainBranch = process.env.GITHUB_REF === 'refs/heads/main' || process.env.GITHUB_REF === 'refs/heads/chore';
-
 module.exports = {
   branches: [
     'main',
@@ -46,14 +44,13 @@ module.exports = {
         preset: 'angular',
       },
     ],
-    ...(isMainBranch ? [
-      [
-        '@semantic-release/changelog',
-        {
-          changelogFile: 'CHANGELOG.md',
-        },
-      ],
-    ] : []),
+    [
+      '@semantic-release/changelog',
+      {
+        changelogFile: 'CHANGELOG.md',
+        branches: ['main', 'chore/*']
+      },
+    ],
     ['@semantic-release/npm'],
     [
       '@semantic-release/github',
