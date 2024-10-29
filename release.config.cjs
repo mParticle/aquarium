@@ -1,4 +1,4 @@
-const isMainBranch = process.env.GITHUB_REF_NAME === 'chore/dependency-upgrades';
+const isMainBranch = process.env.GITHUB_REF_NAME === 'main';
 
 module.exports = {
   branches: [
