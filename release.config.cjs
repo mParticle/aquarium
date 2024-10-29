@@ -1,6 +1,4 @@
-const isMainBranch = process.env.GITHUB_REF === 'refs/heads/main';
-console.log("Is main branch:", isMainBranch);
-console.log("Is main branch:",  process.env); // This will output true or false based on the branch
+const isMainBranch = process.env.GITHUB_REF_NAME === 'chore/dependency-upgrades';
 
 module.exports = {
   branches: [
