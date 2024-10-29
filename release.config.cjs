@@ -1,3 +1,7 @@
+const isMainBranch = process.env.GITHUB_REF === 'refs/heads/main';
+console.log("Is main branch:", isMainBranch);
+console.log("Is main branch:",  process.env); // This will output true or false based on the branch
+
 module.exports = {
   branches: [
     'main',
@@ -44,18 +48,19 @@ module.exports = {
         preset: 'angular',
       },
     ],
-    [
-      '@semantic-release/changelog',
-      {
-        changelogFile: 'CHANGELOG.md',
-        branches: ['main'],
-      },
-    ],
+    ...(isMainBranch ? [
+      [
+        '@semantic-release/changelog',
+        {
+          changelogFile: 'CHANGELOG.md',
+        },
+      ],
+    ] : []),
     ['@semantic-release/npm'],
     [
       '@semantic-release/github',
       {
-        assets: ['dist/**'],
+        assets: ['dist/aquarium.umd.cjs', 'dist/aquarium.js', 'dist/style.css', 'dist/index.d.ts']
       },
     ],
     [
