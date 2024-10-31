@@ -1,4 +1,4 @@
-const isMainBranch = process.env.GITHUB_REF === 'refs/heads/main';
+const isMainBranch = process.env.GITHUB_REF_NAME === 'main';
 
 module.exports = {
   branches: [
