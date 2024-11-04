@@ -1,3 +1,8 @@
+.ant-modal p,
+.ant-modal span {
+    font-weight: 400;
+}
+
 .ant-modal .ant-modal-title {
     font-weight: var(--font-weight-strong)
 }
