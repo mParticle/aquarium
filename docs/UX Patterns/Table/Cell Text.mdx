@@ -4,7 +4,7 @@ import * as TableStories from './Table.stories'
 
 <Meta of={TableStories} />
 
-# Table Cells
+# Table Cells Types
 
 ### Text
 
@@ -46,3 +46,15 @@ To ensure clarity for both US and EU audiences, all dates and times should follo
 - **Mix Date Formats**: Do not use different formats such as `MM/DD/YYYY` (e.g., 09/12/2024, which could be interpreted as either September 12 or December 9) or `DD/MM/YYYY` (e.g., 12/09/2024, which can also cause confusion). Stick to the global format `MMM DD, YYYY` (e.g., Sep 12, 2024).
 - **Omit the Time Zone**: Never omit the time zone when displaying times, especially when it might lead to user confusion. Example: Instead of just showing "14:30", show "14:30 UTC".
 - **Repeat UTC for Each Entry**: Avoid repeating "UTC" in every row of a table or list. Example: Instead of labeling every row "Sep 12, 2024 (UTC)", use a clear table header like `Date (UTC)` to indicate the time zone for all rows.
+
+
+### Status
+
+Always use badge components for system status. Reserve tags for actual tags, labels, and environment descriptions (e.g., prod, dev). This ensures clear visual distinction between different information types.
+
+
+-> Insert Example
+
+### Cell Aligment
+
+Statuses are left-aligned to create a cohesive and organized table layout.
