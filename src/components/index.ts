@@ -136,3 +136,4 @@ export {
   type INewExperienceReminderOptions,
   type NewExperienceReminderHook,
 } from '../hooks/NewExperienceReminder/useNewExperienceReminder'
+export * from '../hooks/useToken'
