@@ -1,189 +1,33 @@
-import type { ReactNode } from 'react'
-import { CopyOutlined } from '@ant-design/icons'
-import { faker } from '@faker-js/faker'
 import type { Meta, StoryObj } from '@storybook/react'
 import {
   Flex,
   Icon,
   Input,
-  Select,
-  Badge,
-  type IBadgeProps,
   Table,
-  type TableProps,
-  Tag,
-  type ITagProps,
-  Typography,
   Space,
-  Tooltip,
+  Button,
+  Modal,
+  Typography,
+  Select,
+  Divider,
+  type ICollapseProps,
+  ConfigProvider,
+  Collapse,
+  Checkbox,
 } from 'src/components'
 import { DatePickerWithDisabledYears } from 'src/components/data-entry/DatePicker/DatePicker.stories'
 import { SelectWithRangePicker } from 'docs/Candidate Components/Directory/Date Range Filter/SelectWithRangePicker'
-
-interface DataType {
-  key: string
-  name: string
-  id: string
-  timestamp: number
-  output: string
-  environment: Environment
-  status: Status
-  mpId: string
-}
-
-type Environment = 'unknown' | 'development' | 'production'
-type Status = 'draft' | 'error' | 'ready'
-
-const EnvironmentColors: Record<Environment, ITagProps['color']> = {
-  production: 'blue',
-  development: 'purple',
-  unknown: 'default',
-}
-
-const EnvironmentNames: Record<Environment, string> = {
-  production: 'Prod',
-  development: 'Dev',
-  unknown: 'Unknown',
-}
-
-const getTagColorForEnvironment = (env: Environment): ITagProps['color'] => EnvironmentColors[env]
-
-const getNameForEnvironment = (env: Environment) => EnvironmentNames[env]
-
-const StatusColors: Record<Status, IBadgeProps['color']> = {
-  draft: 'cyan',
-  error: 'red',
-  ready: 'green',
-}
-
-const StatusNames: Record<Status, string> = {
-  draft: 'Draft',
-  error: 'Error',
-  ready: 'Ready',
-}
-
-const getStatusColor = (status: Status) => StatusColors[status]
-
-const getStatusName = (status: Status) => StatusNames[status]
-
-const columns: TableProps<DataType>['columns'] = [
-  {
-    title: 'Name',
-    dataIndex: 'name',
-    key: 'name',
-    render: (name: string) => {
-      const path = window.location.pathname.split('/')
-      path.pop()
-      const route = `${path.join('/')}/${name}`
-
-      return <Typography.Link href={route}>{name}</Typography.Link>
-    },
-  },
-  {
-    title: () => (
-      <Tooltip
-        title={
-          <>
-            <Typography.Text style={{ color: 'white' }}>Help lorem ipsum. </Typography.Text>
-            <Typography.Link href="/" style={{ color: 'white', textDecoration: 'underline' }}>
-              Learn More
-            </Typography.Link>
-          </>
-        }>
-        <Flex align="center" gap={2}>
-          <Typography.Text>ID</Typography.Text>
-          <Icon name="help" size="sm" />
-        </Flex>
-      </Tooltip>
-    ),
-    dataIndex: 'id',
-    key: 'id',
-  },
-  {
-    title: 'Timestamp (UTC)',
-    dataIndex: 'timestamp',
-    key: 'timestamp',
-    render: (timestampInMicroseconds: number): string => {
-      return new Date(timestampInMicroseconds / (1000 * 1000)).toLocaleString(undefined, {
-        month: 'short',
-        day: '2-digit',
-        year: 'numeric',
-        hour: 'numeric',
-        minute: '2-digit',
-        second: '2-digit',
-        timeZone: 'UTC',
-        hour12: false,
-      })
-    },
-  },
-  {
-    title: 'mPID',
-    dataIndex: 'mpId',
-    key: 'mpId',
-    render: (mpId: string): ReactNode => {
-      return <Typography.Text copyable={{ icon: <CopyOutlined aria-label="Copy mPID" /> }}>{mpId}</Typography.Text>
-    },
-  },
-  {
-    title: 'Output',
-    dataIndex: 'output',
-    key: 'output',
-  },
-  {
-    title: 'Environment',
-    key: 'environment',
-    dataIndex: 'environment',
-    render: (env: Environment): React.ReactNode => {
-      return <Tag color={getTagColorForEnvironment(env)}>{getNameForEnvironment(env)}</Tag>
-    },
-  },
-  {
-    title: 'Status',
-    dataIndex: 'status',
-    key: 'status',
-    render: (status: Status): React.ReactNode => <Badge color={getStatusColor(status)} text={getStatusName(status)} />,
-  },
-  {
-    title: 'Actions',
-    dataIndex: 'actions',
-    key: 'actions',
-    render: (): ReactNode => (
-      <Select
-        suffixIcon={<Icon name="moreActions" />}
-        variant="borderless"
-        dropdownStyle={{ width: '200px' }}
-        options={[
-          { label: 'Option 1', value: 'option1' },
-          { label: 'Option 2', value: 'option2' },
-        ]}
-      />
-    ),
-  },
-]
-
-function createMockRow(): DataType {
-  return {
-    id: `JNBSK-${faker.number.int({ min: 1000, max: 9999 }).toString()}`,
-    key: faker.string.uuid(),
-    name: faker.helpers.arrayElement([
-      'NBCU',
-      'Remarkable Foods',
-      'Lulo Bank',
-      'Shift',
-      'Marks and Spencer',
-      "Zaxby's",
-    ]),
-    timestamp: faker.date.recent().valueOf() * 1000 * 1000,
-    mpId: faker.number.int({ max: 9_999_999_999 }).toString(),
-    output: faker.helpers.arrayElement(['Braze', 'mP Analytics', 'Cortex', 'Applytics', 'Google Analytics']),
-    environment: faker.helpers.arrayElement(['unknown', 'development', 'production']),
-    status: faker.helpers.arrayElement(['draft', 'error', 'ready']),
-  }
-}
-
-const data: DataType[] = faker.helpers.multiple(createMockRow, {
-  count: 3,
-})
+import { useState } from 'react'
+import {
+  DEFAULT_FILTERS,
+  tableColumns,
+  tableData,
+  type TableDataType,
+  type TableDataTypeFilters,
+} from './TableStoryUtils'
+import { ColorTextDescription } from 'src/styles/style'
+import MinusSquareOutlined from '@ant-design/icons/MinusSquareOutlined'
+import PlusSquareOutlined from '@ant-design/icons/PlusSquareOutlined'
 
 const meta: Meta<typeof Table> = {
   title: 'UX Patterns/Table/Filters',
@@ -213,7 +57,7 @@ export const WithBasicFilters: Story = {
           />
         </Flex>
       </Space>
-      <Table<DataType> columns={columns} dataSource={data} scroll={{ x: 'max-content' }} />
+      <Table<TableDataType> columns={tableColumns} dataSource={tableData} scroll={{ x: 'max-content' }} />
     </Space>
   ),
 }
@@ -233,46 +77,313 @@ const TIME_OPTIONS = [
   } as const,
 ]
 
+interface IUseSortAndFiltersModalProps {
+  initialValues: TableDataTypeFilters
+  onFinish: (values: TableDataTypeFilters) => void
+}
+
+const FormSectionHeader = ({ label }: { label: string }) => (
+  <Typography.Text
+    style={{
+      marginBottom: '10px',
+      display: 'block',
+      color: ColorTextDescription,
+    }}
+    size="sm"
+    strong>
+    {label}
+  </Typography.Text>
+)
+
+interface IMultipleCheckboxItem {
+  name: string
+  value: unknown
+}
+
+interface IMultipleCheckboxesProps {
+  label: string
+  fieldName: string
+  items: IMultipleCheckboxItem[]
+  defaultOpen?: boolean
+}
+
+type ICollapsibleFormSectionProps = ICollapseProps['items'][0] & {
+  defaultOpen?: boolean
+}
+
+const CollapsibleFormSection = ({ defaultOpen, ...item }: ICollapsibleFormSectionProps): React.JSX.Element => {
+  return (
+    <ConfigProvider
+      theme={{
+        components: {
+          Collapse: {
+            headerPadding: '2px 0',
+            contentPadding: '0 24px',
+          },
+        },
+      }}>
+      <Collapse
+        defaultActiveKey={defaultOpen ? 'item' : undefined}
+        ghost
+        expandIcon={({ isActive }): React.JSX.Element => (isActive ? <MinusSquareOutlined /> : <PlusSquareOutlined />)}
+        items={[{ ...item, key: 'item' }]}
+      />
+    </ConfigProvider>
+  )
+}
+
+const MultipleCheckboxes = ({ label, fieldName, items, defaultOpen }: IMultipleCheckboxesProps) => (
+  <CollapsibleFormSection
+    defaultOpen={defaultOpen}
+    label={label}
+    extra={
+      // <Form.Item noStyle shouldUpdate={(prev, next) => prev[fieldName] !== next[fieldName]}>
+      //   {({ getFieldValue }) => {
+      //     const selected = getFieldValue(fieldName) ?? []
+      //     if (!selected.length) {
+      //       return null
+      //     }
+      //     return (
+      //       <Typography.Text style={{ cursor: 'text' }} disabled>
+      //         {selected.length} selected
+      //       </Typography.Text>
+      //     )
+      //   }}
+      // </Form.Item>
+      <Typography.Text style={{ cursor: 'text' }} disabled>
+        1 selected
+      </Typography.Text>
+    }>
+    {/* <Form.Item noStyle shouldUpdate={(prev, next) => prev[fieldName] !== next[fieldName]}>
+      {({ getFieldValue }) => {
+        const fieldValue = getFieldValue(fieldName) ?? []
+
+        return (
+          <Space direction="vertical">
+            {items.map(({ name, value }) => {
+              return (
+                <Form.Item
+                  key={name}
+                  name={fieldName}
+                  getValueProps={(currValue = []) => ({
+                    checked: currValue.includes(value),
+                  })}
+                  getValueFromEvent={e => {
+                    if (e.target.checked) {
+                      return [...fieldValue, value]
+                    }
+
+                    return fieldValue.filter((currValue: unknown) => currValue !== value)
+                  }}
+                  noStyle>
+                  <Checkbox>{name}</Checkbox>
+                </Form.Item>
+              )
+            })}
+          </Space>
+        )
+      }}
+    </Form.Item> */}
+    <Space direction="vertical">
+      {items.map(({ name, value }) => (
+        <Checkbox key={name}>{name}</Checkbox>
+      ))}
+    </Space>
+  </CollapsibleFormSection>
+)
+
+function useModal({ initialValues, onFinish }: IUseSortAndFiltersModalProps): [() => void, React.ReactElement] {
+  const [open, setOpen] = useState(false)
+  const [openSection, setOpenSection] = useState<keyof TableDataTypeFilters>()
+  // const [form] = Form.useForm()
+
+  const context = (
+    <Modal
+      open={open}
+      destroyOnClose
+      onCancel={() => {
+        setOpen(false)
+      }}
+      cancelText={'Cancel'}
+      // onOk={form.submit}
+      onOk={() => setOpen(false)}
+      okText={'Apply'}
+      width={'580px'}
+      style={{ maxHeight: '80vh' }}
+      closable
+      title={
+        <Typography.Text strong={false} size="xl">
+          Sort & Filters
+        </Typography.Text>
+      }>
+      {/* <Form<TableDataTypeFilters>
+        // form={form}
+        layout="horizontal"
+        colon={false}
+        labelAlign="left"
+        labelCol={{ span: 12 }}
+        wrapperCol={{ span: 12 }}
+        initialValues={initialValues}
+        onFinish={values => {
+          console.log('values', values)
+          setOpen(false)
+          onFinish(values)
+        }}> */}
+      <Flex vertical style={{ overflow: 'auto', maxHeight: '80vh' }}>
+        <FormSectionHeader label="Sorting" />
+        {/* <Form.Item<TableDataTypeFilters> name={'sortAscending'} label={'Order'}>
+           
+          </Form.Item> */}
+        <Select>
+          <Select.Option value={'false'}>Recent first</Select.Option>
+          <Select.Option value={'true'}>Oldest first</Select.Option>
+        </Select>
+        <Divider style={{ margin: '4px 0' }} />
+        <CollapsibleFormSection defaultOpen={openSection === 'name'} label="Name">
+          <Select
+            showSearch
+            style={{ width: '100%' }}
+            placeholder="Select name"
+            filterOption={(input, option) => (option?.label ?? '').toLowerCase().includes(input.toLowerCase())}
+            options={[
+              { value: 'NBCU', label: 'NBCU' },
+              { value: 'Remarkable Foods', label: 'Remarkable Foods' },
+              { value: 'Lulo Bank', label: 'Lulo Bank' },
+              { value: 'Shift', label: 'Shift' },
+              { value: 'Marks and Spencer', label: 'Marks and Spencer' },
+              { value: "Zaxby's", label: "Zaxby's" },
+            ]}
+          />
+        </CollapsibleFormSection>
+        <Divider style={{ margin: '4px 0' }} />
+        <CollapsibleFormSection defaultOpen={openSection === 'environments'} label="Environment">
+          {/* <Form.Item wrapperCol={{ flex: 1 }} name={'environments'}>
+              
+            </Form.Item> */}
+          <Select
+            style={{ width: '100%' }}
+            options={[
+              { value: 'development', label: 'Development' },
+              { value: 'production', label: 'Production' },
+            ]}
+          />
+        </CollapsibleFormSection>
+        <Divider style={{ margin: '4px 0' }} />
+        <MultipleCheckboxes
+          defaultOpen={openSection === 'statuses'}
+          fieldName="statuses"
+          label={'Status'}
+          items={[
+            { name: 'Draft', value: 'draft' },
+            { name: 'Error', value: 'error' },
+            { name: 'Production', value: 'production' },
+          ]}
+        />
+        <Divider style={{ margin: '4px 0' }} />
+        <CollapsibleFormSection defaultOpen={openSection === 'mpId'} label={'mPID'}>
+          {/* <Form.Item wrapperCol={{ flex: 1 }} name={'mpId'}>
+            <Input placeholder="mPID" allowClear />
+          </Form.Item> */}
+          <Input placeholder="mPID" allowClear />
+        </CollapsibleFormSection>
+        <Divider style={{ margin: '4px 0' }} />
+        <CollapsibleFormSection defaultOpen={openSection === 'output'} label={'Output'}>
+          {/* <Form.Item wrapperCol={{ flex: 1 }} name={'output'}>
+          </Form.Item> */}
+          <Select
+            mode="tags"
+            style={{ width: '100%' }}
+            options={[
+              { value: 'Braze', label: 'Braze' },
+              { value: 'mP Analytics', label: 'mP Analytics' },
+              { value: 'Cortex', label: 'Cortex' },
+              { value: 'Applytics', label: 'Applytics' },
+              { value: 'Google Analytics', label: 'Google Analytics' },
+            ]}
+          />
+        </CollapsibleFormSection>
+      </Flex>
+      {/* </Form> */}
+    </Modal>
+  )
+
+  const showModal = (openSection?: keyof TableDataTypeFilters): void => {
+    // form.setFieldsValue(initialValues)
+    setOpen(true)
+    setOpenSection(openSection)
+  }
+
+  return [showModal, context] as const
+}
+
 export const WithComplexFilters: Story = {
   name: 'Complex',
-  render: () => (
-    <Space direction="vertical" style={{ width: '100%' }}>
-      <Space direction="vertical" style={{ width: '100%' }}>
-        <Flex align={'center'} justify={'space-between'}>
-          <Flex gap={10}>
-            <SelectWithRangePicker
-              value={'last14days'}
-              placeholder={'Choose Time'}
-              options={TIME_OPTIONS}
-              formatOptions={{
-                dateStyle: 'short',
-                timeStyle: 'short',
-                hour12: false,
-              }}
-              dropdownStyle={{ minWidth: 400 }}
-              // eslint-disable-next-line @typescript-eslint/no-shadow
-              // onChange={(time) => onUpdateFilters({ time })}
-              rangePickerProps={{
-                showTime: true,
-                showHour: true,
-                showMinute: true,
-                showSecond: false,
-                disabledDate: antdDayJS => {
-                  const fourteenDaysInMs = 14 * 24 * 60 * 60 * 1000
-                  return antdDayJS.isBefore(new Date(Date.now() - fourteenDaysInMs))
-                },
-              }}
-            />
-          </Flex>
-          <Input
-            allowClear
-            prefix={<Icon size="sm" color="brand" name="search" />}
-            placeholder="Search"
-            style={{ width: '240px' }}
-          />
-        </Flex>
-      </Space>
-      <Table<DataType> columns={columns} dataSource={data} scroll={{ x: 'max-content' }} />
-    </Space>
-  ),
+  render: () => {
+    const [filters, setFilters] = useState<TableDataTypeFilters>(() => {
+      return {
+        ...DEFAULT_FILTERS,
+      }
+    })
+
+    const [showModal, context] = useModal({
+      initialValues: filters,
+      onFinish: newFilters => {
+        setFilters(existing => ({
+          ...existing,
+          ...newFilters,
+        }))
+      },
+    })
+
+    return (
+      <>
+        {context}
+        <Space direction="vertical" style={{ width: '100%' }}>
+          <Space direction="vertical" style={{ width: '100%' }}>
+            <Flex align={'center'} justify={'space-between'}>
+              <Flex gap={10}>
+                <SelectWithRangePicker
+                  value={'last14days'}
+                  placeholder={'Choose Time'}
+                  options={TIME_OPTIONS}
+                  formatOptions={{
+                    dateStyle: 'short',
+                    timeStyle: 'short',
+                    hour12: false,
+                  }}
+                  dropdownStyle={{ minWidth: 400 }}
+                  // eslint-disable-next-line @typescript-eslint/no-shadow
+                  // onChange={(time) => onUpdateFilters({ time })}
+                  rangePickerProps={{
+                    showTime: true,
+                    showHour: true,
+                    showMinute: true,
+                    showSecond: false,
+                    disabledDate: antdDayJS => {
+                      const fourteenDaysInMs = 14 * 24 * 60 * 60 * 1000
+                      return antdDayJS.isBefore(new Date(Date.now() - fourteenDaysInMs))
+                    },
+                  }}
+                />
+                <Button onClick={() => showModal()}>
+                  <Flex align="center" gap={5}>
+                    <Icon color="inherit" name={'filter'} size="sm" />
+                    <span>Sort & Filters</span>
+                    <Icon color="inherit" name={'dropdownOpen'} size="sm" />
+                  </Flex>
+                </Button>
+              </Flex>
+              <Input
+                allowClear
+                prefix={<Icon size="sm" color="brand" name="search" />}
+                placeholder="Search"
+                style={{ width: '240px' }}
+              />
+            </Flex>
+          </Space>
+          <Table<TableDataType> columns={tableColumns} dataSource={tableData} scroll={{ x: 'max-content' }} />
+        </Space>
+      </>
+    )
+  },
 }
