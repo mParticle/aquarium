@@ -257,7 +257,7 @@ export const WithComplexFilters: Story = {
                 showHour: true,
                 showMinute: true,
                 showSecond: false,
-                disabledDate: antdDayJS => {
+                disabledDate: (antdDayJS: any) => {
                   const fourteenDaysInMs = 14 * 24 * 60 * 60 * 1000
                   return antdDayJS.isBefore(new Date(Date.now() - fourteenDaysInMs))
                 },
