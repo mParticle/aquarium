@@ -305,14 +305,12 @@ export const WithComplexFilters: Story = {
                     hour12: false,
                   }}
                   dropdownStyle={{ minWidth: 400 }}
-                  // eslint-disable-next-line @typescript-eslint/no-shadow
-                  // onChange={(time) => onUpdateFilters({ time })}
                   rangePickerProps={{
                     showTime: true,
                     showHour: true,
                     showMinute: true,
                     showSecond: false,
-                    disabledDate: antdDayJS => {
+                    disabledDate: (antdDayJS: any) => {
                       const fourteenDaysInMs = 14 * 24 * 60 * 60 * 1000
                       return antdDayJS.isBefore(new Date(Date.now() - fourteenDaysInMs))
                     },

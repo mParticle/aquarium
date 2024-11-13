@@ -21,6 +21,8 @@ const Qualifier = (props: IQueryItemQualifierProps) => {
     defaultValue: props.options?.length ? props.options[0].value : undefined,
     menuItemSelectedIcon: node =>
       node.isSelected ? <CheckIcon className="query-item-qualifier__item-selected-icon" /> : null,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error Introduced when we properly typed the Select value and option generics from Aquarium. Need to double check to fix this.
     onChange: props.onChange,
     onDropdownVisibleChange: () => {
       setIsOpen(!isOpen)
