@@ -175,7 +175,9 @@ function useModal(): [() => void, React.ReactElement] {
             showSearch
             style={{ width: '100%' }}
             placeholder="Select name"
-            filterOption={(input, option) => (option?.label ?? '').toLowerCase().includes(input.toLowerCase())}
+            filterOption={(input, option) =>
+              typeof option?.label === 'string' && option.label.toLowerCase().includes(input.toLowerCase())
+            }
             options={[
               { value: 'NBCU', label: 'NBCU' },
               { value: 'Remarkable Foods', label: 'Remarkable Foods' },
