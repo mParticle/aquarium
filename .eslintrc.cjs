@@ -124,6 +124,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'import/no-duplicates': 'off',
     'react/jsx-boolean-value': 'warn',
+    '@typescript-eslint/no-confusing-void-expression': ['error', { ignoreArrowShorthand: true }],
   },
   globals: {
     React: true,

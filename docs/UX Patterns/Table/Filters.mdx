@@ -1,8 +1,8 @@
 import { Meta, Story } from '@storybook/blocks'
 
-import * as FiltersStories from './Filters.stories'
+import * as TableStories from './Table.stories'
 
-<Meta of={FiltersStories} />
+<Meta of={TableStories} />
 
 # Filters
 
@@ -11,24 +11,20 @@ import * as FiltersStories from './Filters.stories'
 _Note: This section covers filters specifically for tables. For query-related filters, please refer to the [Analytics Filters - Coming Soon](#coming)._
 
 #### Filter Search
+
 Located above the table on the right, the search filter allows users to quickly find specific data within the table by entering keywords.
 
 #### **Simple Filters**
 
 Simple filters are ideal when there are only a few filter options. These are straightforward and quick to use and appearing as dropdowns above the table. For examples, refer to the [Select Component](https://mparticle.github.io/aquarium/?path=/docs/components-data-entry-select--documentation).
 
-Examples:
-
-<Story of={FiltersStories.WithBasicFilters} />
-
 #### **Filters with Apply Button**
 
 Complex filters provide more advanced filtering options, allowing users to apply multiple criteria at once. These filters often include dropdowns, checkboxes, and text fields. Complex filters are particularly useful when multiple filters need to be applied simultaneously or when load times might be a concern.
 
-- daterange
-- modal: sorting, filters: one of each input type: checkboxes, input, tree select and placeholder for tags
+Example:
 
-<Story of={FiltersStories.WithComplexFilters} />
+<Story of={TableStories.WithComplexFilters} />
 
 #### **Date Range Filters**
 
