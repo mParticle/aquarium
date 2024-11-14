@@ -14,6 +14,7 @@ import {
   ConnectionsIcon,
   DataPlatformIconDt,
   DatabaseIcon,
+  DragAndDropIcon,
   DsrIcon,
   EmptyIcon,
   EnrichmentIcon,
@@ -528,6 +529,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   moreActions: {
     light: MoreActions,
+    default: 'light',
+  },
+  dragAndDrop: {
+    light: DragAndDropIcon,
     default: 'light',
   },
 } as const

@@ -119,3 +119,4 @@ export type IconNames =
   | 'edit'
   | 'copy'
   | 'moreActions'
+  | 'dragAndDrop'

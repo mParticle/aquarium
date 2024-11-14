@@ -11,6 +11,7 @@ import CloudIcon from 'src/assets/svg/cloud.svg?react'
 import ConnectionsIcon from 'src/assets/svg/connections.svg?react'
 import DataPlatformIconDt from 'src/assets/svg/mp_pm_dt_data-platform.svg?react'
 import DatabaseIcon from 'src/assets/svg/database.svg?react'
+import DragAndDropIcon from 'src/assets/svg/mp_act_lt_dragandrop.svg?react'
 import DsrIcon from 'src/assets/svg/mp_pm_lt_dsr.svg?react'
 import EmptyIcon from 'src/assets/svg/empty.svg?react'
 import EnrichmentIcon from 'src/assets/svg/mp_pm_lt_enrichment.svg?react'
@@ -100,6 +101,7 @@ export {
   ConnectionsIcon,
   DataPlatformIconDt,
   DatabaseIcon,
+  DragAndDropIcon,
   DsrIcon,
   EmptyIcon,
   EnrichmentIcon,
