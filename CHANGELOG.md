@@ -1,3 +1,14 @@
+# [1.35.0](https://github.com/mParticle/aquarium/compare/v1.34.0...v1.35.0) (2024-11-15)
+
+### Bug Fixes
+
+- (styles) update font weight of modal ([#484](https://github.com/mParticle/aquarium/issues/484)) ([c2842ac](https://github.com/mParticle/aquarium/commit/c2842ac5494d2ec22e9bee9c0ff980922a67e2f4))
+- update release env variable ([#483](https://github.com/mParticle/aquarium/issues/483)) ([180c043](https://github.com/mParticle/aquarium/commit/180c0437c66578de3f0e8af25741f708c76c2845))
+
+### Features
+
+- DragAndDrop icon ([#492](https://github.com/mParticle/aquarium/issues/492)) ([fd2872d](https://github.com/mParticle/aquarium/commit/fd2872d7f19c50bd438da216685d4edf07efee71))
+
 # [1.34.0](https://github.com/mParticle/aquarium/compare/v1.33.2...v1.34.0) (2024-10-29)
 
 ### Features
