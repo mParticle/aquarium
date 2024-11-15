@@ -4,7 +4,12 @@ export { Icon, type IIconProps } from './general/Icon/Icon'
 export { Rate, type IRateProps } from './not-prod-ready/Rate/Rate'
 export { Form, type IFormProps, type FormInstance } from './data-entry/Form/Form'
 export { TreeSelect, type ITreeSelectProps } from './data-entry/TreeSelect/TreeSelect'
-export { Select, type ISelectProps, type DefaultOptionType } from './data-entry/Select/Select'
+export {
+  Select,
+  type ISelectProps,
+  type SelectDefaultOptionType,
+  type SelectBaseOptionType,
+} from './data-entry/Select/Select'
 export { Mentions, type IMentionsProps } from './not-prod-ready/Mentions/Mentions'
 export { Radio, type IRadioProps } from './data-entry/Radio/Radio'
 export { ColorPicker, type IColorPickerProps } from './not-prod-ready/ColorPicker/ColorPicker'

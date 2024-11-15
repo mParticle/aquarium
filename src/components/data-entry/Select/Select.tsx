@@ -1,19 +1,25 @@
 import { Select as AntSelect } from 'antd'
-import { type SelectProps as AntSelectProps } from 'antd'
-import { type BaseOptionType, type DefaultOptionType } from 'antd/es/select'
-import { ConfigProvider } from 'src/components'
+import type { SelectProps as AntSelectProps } from 'antd'
+import type { BaseOptionType as AntBaseOptionType, DefaultOptionType as AntDefaultOptionType } from 'antd/es/select'
+import { ConfigProvider, Icon } from 'src/components'
 
-export type { DefaultOptionType }
+export type SelectBaseOptionType = AntBaseOptionType
+export type SelectDefaultOptionType = AntDefaultOptionType
 
 export interface ISelectProps<
-  ValueType = any,
-  OptionType extends BaseOptionType | DefaultOptionType = DefaultOptionType,
-> extends AntSelectProps<ValueType, OptionType> {}
+  SelectValueType = unknown,
+  SelectOptionType extends SelectBaseOptionType | SelectDefaultOptionType = SelectDefaultOptionType,
+> extends AntSelectProps<SelectValueType, SelectOptionType> {}
 
-export const Select = (props: ISelectProps) => {
+export const Select = <
+  SelectValueType,
+  SelectOptionType extends SelectBaseOptionType | SelectDefaultOptionType = SelectDefaultOptionType,
+>(
+  props: ISelectProps<SelectValueType, SelectOptionType>,
+) => {
   return (
     <ConfigProvider>
-      <AntSelect {...props} />
+      <AntSelect suffixIcon={<Icon name="dropdownOpen" size="sm" />} {...props} />
     </ConfigProvider>
   )
 }
