@@ -27,16 +27,6 @@ const getLineHeight = (size: TypographySize): number => {
   return 1.4
 }
 
-/**
- * @v-gtiburcio some feedback regarding the link component that migh be useful for aquarium documentation.
- * a) there is no size prop to control the font-size 😢
- * b) if you want to match link color to be the same as the Typography.Text,
- * the only way is to override the style. but it removes the hover state. so here I wanted something that looks like Typography.Text,
- * but behaves like Typography.Link. for both options I had to do some sacrifices 😅
- *
- * @v-gtiburcio awesome! 2 main things I've noticed re: link component are changing color to match with the text or adjusting font size
- */
-
 interface InternalTypographyProps {
   size?: TypographySize
   color?: TypographyColor
