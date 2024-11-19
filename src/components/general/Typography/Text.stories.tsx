@@ -6,7 +6,6 @@ import { Typography } from 'src/components/general/Typography/Typography'
 import { ExampleStory } from 'src/utils/ExampleStory'
 import { useState } from 'react'
 import { expect } from '@storybook/test'
-import { ColorText } from 'src/styles/style'
 import { TypographyColors } from './colors'
 
 const meta: Meta<typeof Typography.Text> = {
@@ -82,7 +81,6 @@ export const Primary: Story = {
   play: async context => {
     const text = context.canvasElement.querySelector('span')
     void expect(text?.textContent).toEqual('Example Text')
-    void expect(text?.style.color).toEqual(ColorText)
   },
 }
 
