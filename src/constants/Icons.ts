@@ -89,9 +89,14 @@ import {
   Edit,
   Copy,
   MoreActions,
+  AbSplit,
 } from 'src/components/icons'
 
 export const Icons: Record<IconNames, IconOptions> = {
+  abSplit: {
+    light: AbSplit,
+    default: 'light',
+  },
   account: {
     light: Account,
     default: 'light',

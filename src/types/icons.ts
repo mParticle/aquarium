@@ -15,6 +15,7 @@ export type IconOptions = RequireAtLeastOne<
 // TODO: Mark icon names as @deprecated in ticket UNI-838.
 
 export type IconNames =
+  | 'abSplit'
   | 'account'
   | 'active'
   | 'add'
