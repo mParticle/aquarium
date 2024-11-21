@@ -14,6 +14,7 @@ import {
   ConnectionsIcon,
   DataPlatformIconDt,
   DatabaseIcon,
+  DragAndDropIcon,
   DsrIcon,
   EmptyIcon,
   EnrichmentIcon,
@@ -91,6 +92,14 @@ import {
 } from 'src/components/icons'
 
 export const Icons: Record<IconNames, IconOptions> = {
+  account: {
+    light: Account,
+    default: 'light',
+  },
+  active: {
+    light: ActiveIcon,
+    default: 'light',
+  },
   add: {
     light: AddIcon,
     'duo-tone': AddIcon,
@@ -103,6 +112,18 @@ export const Icons: Record<IconNames, IconOptions> = {
   analytics: {
     'duo-tone': AnalyticsIconDt,
     default: 'duo-tone',
+  },
+  annotation: {
+    light: Annotation,
+    default: 'light',
+  },
+  api: {
+    light: CloudIcon,
+    default: 'light',
+  },
+  audiences: {
+    light: UsersIcon,
+    default: 'light',
   },
   C360: {
     'duo-tone': C360IconDt,
@@ -122,26 +143,18 @@ export const Icons: Record<IconNames, IconOptions> = {
     default: 'light',
     deprecated: 'trends',
   },
-  trends: {
-    light: ChartLineIcon,
-    default: 'light',
-  },
   check: {
     light: CheckIcon,
     default: 'light',
     deprecated: 'selected',
-  },
-  selected: {
-    light: CheckIcon,
-    default: 'light',
   },
   circleNodes: {
     light: CircleNodesIcon,
     default: 'light',
     deprecated: 'pipelines',
   },
-  pipelines: {
-    light: CircleNodesIcon,
+  close: {
+    light: RemoveIcon,
     default: 'light',
   },
   cloud: {
@@ -149,20 +162,60 @@ export const Icons: Record<IconNames, IconOptions> = {
     default: 'light',
     deprecated: 'api',
   },
-  api: {
-    light: CloudIcon,
+  cohort: {
+    light: Cohort,
     default: 'light',
   },
   connections: {
     light: ConnectionsIcon,
     default: 'light',
   },
+  conversion: {
+    light: ConversionIcon,
+    default: 'light',
+  },
+  copy: {
+    light: Copy,
+    default: 'light',
+  },
+  dashboard: {
+    light: Dashboard,
+    default: 'light',
+  },
   database: {
     light: DatabaseIcon,
     default: 'light',
   },
+  dataPlatform: {
+    'duo-tone': DataPlatformIconDt,
+    default: 'duo-tone',
+  },
+  delete: {
+    light: Delete,
+    default: 'light',
+  },
+  directory: {
+    light: DirectoryIcon,
+    default: 'light',
+  },
+  dragAndDrop: {
+    light: DragAndDropIcon,
+    default: 'light',
+  },
+  dropdownClose: {
+    light: DropdownClose,
+    default: 'light',
+  },
+  dropdownOpen: {
+    light: DropdownOpen,
+    default: 'light',
+  },
   dsr: {
     light: DsrIcon,
+    default: 'light',
+  },
+  edit: {
+    light: Edit,
     default: 'light',
   },
   empty: {
@@ -181,6 +234,14 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: EventAttributeIcon,
     default: 'light',
   },
+  favorite: {
+    light: HeartIcon,
+    default: 'light',
+  },
+  filter: {
+    light: FilterIcon,
+    default: 'light',
+  },
   fitToScreen: {
     light: FitToScreen,
     default: 'light',
@@ -190,12 +251,16 @@ export const Icons: Record<IconNames, IconOptions> = {
     default: 'light',
     deprecated: 'savedProjects',
   },
-  savedProjects: {
-    light: FolderClosedIcon,
-    default: 'light',
-  },
   forwarding: {
     light: ForwardingIcon,
+    default: 'light',
+  },
+  fullScreen: {
+    light: FullScreen,
+    default: 'light',
+  },
+  funnel: {
+    light: Funnel,
     default: 'light',
   },
   gear: {
@@ -203,34 +268,42 @@ export const Icons: Record<IconNames, IconOptions> = {
     default: 'light',
     deprecated: 'settings',
   },
-  settings: {
-    light: GearIcon,
-    default: 'light',
-  },
   grid: {
     light: GridIcon,
     default: 'light',
     deprecated: 'myHub',
-  },
-  myHub: {
-    light: GridIcon,
-    default: 'light',
   },
   heart: {
     light: HeartIcon,
     default: 'light',
     deprecated: 'favorite',
   },
-  favorite: {
-    light: HeartIcon,
-    default: 'light',
-  },
   help: {
     light: HelpIcon,
     default: 'light',
   },
+  helpVideo: {
+    light: HelpVideoIcon,
+    default: 'light',
+  },
   identity: {
     light: IdentityIcon,
+    default: 'light',
+  },
+  info: {
+    light: InfoIcon,
+    default: 'light',
+  },
+  insights: {
+    light: LightBulbIcon,
+    default: 'light',
+  },
+  journeyAnalysis: {
+    light: JourneyAnalysis,
+    default: 'light',
+  },
+  journeys: {
+    light: SplitIcon,
     default: 'light',
   },
   jumpTo: {
@@ -242,16 +315,20 @@ export const Icons: Record<IconNames, IconOptions> = {
     default: 'light',
     deprecated: 'insights',
   },
-  insights: {
-    light: LightBulbIcon,
+  link: {
+    light: LinkIcon,
     default: 'light',
   },
   liveStream: {
     light: LiveStreamIcon,
     default: 'light',
   },
-  paywall: {
-    light: PaywallIcon,
+  lock: {
+    light: LockIcon,
+    default: 'light',
+  },
+  logout: {
+    light: SignoutIcon,
     default: 'light',
   },
   messageQuestion: {
@@ -259,28 +336,100 @@ export const Icons: Record<IconNames, IconOptions> = {
     default: 'light',
     deprecated: 'support',
   },
-  support: {
-    light: MessageQuestionIcon,
+  moreActions: {
+    light: MoreActions,
     default: 'light',
   },
   mpLogo: {
     light: MpLogoIcon,
     default: 'light',
   },
+  myHub: {
+    light: GridIcon,
+    default: 'light',
+  },
+  next: {
+    light: NextIcon,
+    default: 'light',
+  },
+  notification: {
+    light: NotificationIcon,
+    default: 'light',
+  },
   observability: {
     light: ObservabilityIcon,
+    default: 'light',
+  },
+  openTab: {
+    light: OpenTabIcon,
+    default: 'light',
+  },
+  organization: {
+    light: Organization,
     default: 'light',
   },
   oversight: {
     'duo-tone': OversightIconDt,
     default: 'duo-tone',
   },
+  overview: {
+    'duo-tone': OverviewIconDt,
+    default: 'duo-tone',
+  },
+  paywall: {
+    light: PaywallIcon,
+    default: 'light',
+  },
+  pipelines: {
+    light: CircleNodesIcon,
+    default: 'light',
+  },
+  placeholder: {
+    light: Placeholder,
+    default: 'light',
+  },
+  predictions: {
+    light: PredictionsIcon,
+    'duo-tone': PredictionsIconDt,
+    default: 'light',
+  },
+  premium: {
+    light: PremiumIcon,
+    'duo-tone': PremiumIconDt,
+    default: 'light',
+  },
+  premiumDt: {
+    light: PremiumIcon,
+    'duo-tone': PremiumIconDt,
+    default: 'duo-tone',
+    deprecated: 'premium',
+  },
+  previous: {
+    light: PreviousIcon,
+    default: 'light',
+  },
+  privacy: {
+    light: ShieldKeyholeIcon,
+    default: 'light',
+  },
+  privileges: {
+    light: Privileges,
+    default: 'light',
+  },
+  refreshFrequency: {
+    light: RefreshFrequency,
+    default: 'light',
+  },
   remove: {
     light: RemoveIcon,
     default: 'light',
   },
-  close: {
-    light: RemoveIcon,
+  savedProjects: {
+    light: FolderClosedIcon,
+    default: 'light',
+  },
+  scheduledReport: {
+    light: ScheduledReport,
     default: 'light',
   },
   search: {
@@ -291,32 +440,36 @@ export const Icons: Record<IconNames, IconOptions> = {
     'duo-tone': SegmentationIconDt,
     default: 'duo-tone',
   },
+  segmentationAnalysis: {
+    light: SegmentationAnalysis,
+    default: 'light',
+  },
+  selected: {
+    light: CheckIcon,
+    default: 'light',
+  },
+  settings: {
+    light: GearIcon,
+    default: 'light',
+  },
+  setup: {
+    light: WrenchIcon,
+    default: 'light',
+  },
   shieldKeyhole: {
     light: ShieldKeyholeIcon,
     default: 'light',
     deprecated: 'privacy',
-  },
-  privacy: {
-    light: ShieldKeyholeIcon,
-    default: 'light',
   },
   signout: {
     light: SignoutIcon,
     default: 'light',
     deprecated: 'logout',
   },
-  logout: {
-    light: SignoutIcon,
-    default: 'light',
-  },
   siteMap: {
     'duo-tone': DataPlatformIconDt,
     default: 'duo-tone',
     deprecated: 'dataPlatform',
-  },
-  dataPlatform: {
-    'duo-tone': DataPlatformIconDt,
-    default: 'duo-tone',
   },
   sparkles: {
     light: PredictionsIcon,
@@ -324,26 +477,33 @@ export const Icons: Record<IconNames, IconOptions> = {
     default: 'duo-tone',
     deprecated: 'predictions',
   },
-  predictions: {
-    light: PredictionsIcon,
-    'duo-tone': PredictionsIconDt,
-    default: 'light',
-  },
   split: {
     light: SplitIcon,
     default: 'light',
     deprecated: 'journeys',
   },
-  journeys: {
-    light: SplitIcon,
+  support: {
+    light: MessageQuestionIcon,
     default: 'light',
   },
   systemAlerts: {
     light: SystemAlertsIcon,
     default: 'light',
   },
+  textWidget: {
+    light: TextWidget,
+    default: 'light',
+  },
   transformation: {
     light: TransformationsIcon,
+    default: 'light',
+  },
+  trends: {
+    light: ChartLineIcon,
+    default: 'light',
+  },
+  unlock: {
+    light: UnlockIcon,
     default: 'light',
   },
   upload: {
@@ -362,18 +522,10 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: UsersIcon,
     default: 'light',
   },
-  audiences: {
-    light: UsersIcon,
-    default: 'light',
-  },
   wrench: {
     light: WrenchIcon,
     default: 'light',
     deprecated: 'setup',
-  },
-  setup: {
-    light: WrenchIcon,
-    default: 'light',
   },
   zoomIn: {
     light: ZoomIn,
@@ -381,153 +533,6 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   zoomOut: {
     light: ZoomOut,
-    default: 'light',
-  },
-  premium: {
-    light: PremiumIcon,
-    'duo-tone': PremiumIconDt,
-    default: 'light',
-  },
-  premiumDt: {
-    light: PremiumIcon,
-    'duo-tone': PremiumIconDt,
-    default: 'duo-tone',
-    deprecated: 'premium',
-  },
-  helpVideo: {
-    light: HelpVideoIcon,
-    default: 'light',
-  },
-  conversion: {
-    light: ConversionIcon,
-    default: 'light',
-  },
-  next: {
-    light: NextIcon,
-    default: 'light',
-  },
-  previous: {
-    light: PreviousIcon,
-    default: 'light',
-  },
-  openTab: {
-    light: OpenTabIcon,
-    default: 'light',
-  },
-  directory: {
-    light: DirectoryIcon,
-    default: 'light',
-  },
-  lock: {
-    light: LockIcon,
-    default: 'light',
-  },
-  unlock: {
-    light: UnlockIcon,
-    default: 'light',
-  },
-  notification: {
-    light: NotificationIcon,
-    default: 'light',
-  },
-  overview: {
-    'duo-tone': OverviewIconDt,
-    default: 'duo-tone',
-  },
-  filter: {
-    light: FilterIcon,
-    default: 'light',
-  },
-  active: {
-    light: ActiveIcon,
-    default: 'light',
-  },
-  link: {
-    light: LinkIcon,
-    default: 'light',
-  },
-  info: {
-    light: InfoIcon,
-    default: 'light',
-  },
-  placeholder: {
-    light: Placeholder,
-    default: 'light',
-  },
-  organization: {
-    light: Organization,
-    default: 'light',
-  },
-  journeyAnalysis: {
-    light: JourneyAnalysis,
-    default: 'light',
-  },
-  dashboard: {
-    light: Dashboard,
-    default: 'light',
-  },
-  account: {
-    light: Account,
-    default: 'light',
-  },
-  textWidget: {
-    light: TextWidget,
-    default: 'light',
-  },
-  refreshFrequency: {
-    light: RefreshFrequency,
-    default: 'light',
-  },
-  privileges: {
-    light: Privileges,
-    default: 'light',
-  },
-  funnel: {
-    light: Funnel,
-    default: 'light',
-  },
-  cohort: {
-    light: Cohort,
-    default: 'light',
-  },
-  annotation: {
-    light: Annotation,
-    default: 'light',
-  },
-  delete: {
-    light: Delete,
-    default: 'light',
-  },
-  dropdownClose: {
-    light: DropdownClose,
-    default: 'light',
-  },
-  dropdownOpen: {
-    light: DropdownOpen,
-    default: 'light',
-  },
-  segmentationAnalysis: {
-    light: SegmentationAnalysis,
-    default: 'light',
-  },
-  scheduledReport: {
-    light: ScheduledReport,
-    default: 'light',
-  },
-  fullScreen: {
-    light: FullScreen,
-    default: 'light',
-  },
-  edit: {
-    light: Edit,
-    default: 'light',
-  },
-  copy: {
-    light: Copy,
-    default: 'light',
-  },
-  moreActions: {
-    light: MoreActions,
     default: 'light',
   },
 } as const
