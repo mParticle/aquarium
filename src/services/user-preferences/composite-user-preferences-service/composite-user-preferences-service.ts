@@ -11,14 +11,14 @@ import { UserPreferenceScopeType } from 'src/services/user-preferences/models/de
 import cloneDeep from 'lodash/cloneDeep'
 import { type UserPreferenceDefinition } from 'src/services/user-preferences/models/definitions/user-preference-definition'
 
-export class CompositeUserPreferencesService<TPreferenceIds extends PropertyKey> {
+export class CompositeUserPreferencesService<TPreferenceIds extends PropertyKey, T> {
   public getScopedUserPreferences(
-    storedPreferences: UserPreferences<TPreferenceIds>,
+    storedPreferences: UserPreferences<TPreferenceIds, T>,
     currentScope: UserPreferenceScope,
-    definitions: UserPreferenceDefinitions<TPreferenceIds>,
-  ): CompositeUserPreferences<TPreferenceIds> {
+    definitions: UserPreferenceDefinitions<TPreferenceIds, T>,
+  ): CompositeUserPreferences<TPreferenceIds, T> {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-    const entriesByIdAndUserPreference = Object.entries(definitions).map<[TPreferenceIds, UserPreference]>(
+    const entriesByIdAndUserPreference = Object.entries(definitions).map<[TPreferenceIds, UserPreference<T>]>(
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-expect-error
       this.createUserPreferenceEntryFromDefinition.bind(this, storedPreferences, currentScope),
@@ -30,11 +30,11 @@ export class CompositeUserPreferencesService<TPreferenceIds extends PropertyKey>
   public getUpdatedUserPreferenceStorageObject(
     preferenceId: TPreferenceIds,
     isOptedIn: boolean,
-    data: any,
+    data: T,
     currentScope: UserPreferenceScope,
-    currentPreferences: UserPreferences<TPreferenceIds>,
+    currentPreferences: UserPreferences<TPreferenceIds, T>,
     allowedScope: UserPreferenceScopeType,
-  ): UserPreferences<TPreferenceIds> {
+  ): UserPreferences<TPreferenceIds, T> {
     const userPreferencesToUpdate = currentPreferences ? cloneDeep(currentPreferences) : {}
 
     const effectiveScope = this.getEffectiveScope(currentScope, allowedScope)
@@ -53,10 +53,10 @@ export class CompositeUserPreferencesService<TPreferenceIds extends PropertyKey>
   }
 
   private createUserPreferenceEntryFromDefinition(
-    storedPreferences: UserPreferences<TPreferenceIds>,
+    storedPreferences: UserPreferences<TPreferenceIds, T>,
     currentScope: UserPreferenceScope,
-    [definedUserPreferenceId, definition]: [TPreferenceIds, UserPreferenceDefinition],
-  ): [TPreferenceIds, UserPreference] {
+    [definedUserPreferenceId, definition]: [TPreferenceIds, UserPreferenceDefinition<T>],
+  ): [TPreferenceIds, UserPreference<T>] {
     if (!storedPreferences) {
       const userPreferenceDefault = { optedIn: definition.isOptedInByDefault, data: definition.defaultData }
       return this.createPreferenceEntry(definedUserPreferenceId, userPreferenceDefault)
@@ -112,25 +112,25 @@ export class CompositeUserPreferencesService<TPreferenceIds extends PropertyKey>
 
   private createPreferenceEntry(
     userPreferenceId: TPreferenceIds,
-    userPreference: UserPreference,
-  ): [TPreferenceIds, UserPreference] {
+    userPreference: UserPreference<T>,
+  ): [TPreferenceIds, UserPreference<T>] {
     return [userPreferenceId, userPreference]
   }
 
   // TODO: Should be replaced with Object.fromEntries when the transpiler is updated
   private createCompositePreferencesFromEntries(
-    entries: Array<[TPreferenceIds, UserPreference]>,
-  ): CompositeUserPreferences<TPreferenceIds> {
+    entries: Array<[TPreferenceIds, UserPreference<T>]>,
+  ): CompositeUserPreferences<TPreferenceIds, T> {
     return entries.reduce(
       (
-        composite: CompositeUserPreferences<TPreferenceIds>,
-        [userPreferenceId, preference]: [TPreferenceIds, UserPreference],
+        composite: CompositeUserPreferences<TPreferenceIds, T>,
+        [userPreferenceId, preference]: [TPreferenceIds, UserPreference<T>],
       ) => {
         composite[userPreferenceId] = preference
         return composite
       },
       // eslint-disable-next-line
-      {} as CompositeUserPreferences<TPreferenceIds>,
+      {} as CompositeUserPreferences<TPreferenceIds, T>,
     )
   }
 }

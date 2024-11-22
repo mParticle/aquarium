@@ -1,4 +1,4 @@
-export interface UserPreference {
+export interface UserPreference<T> {
   optedIn: boolean
-  data?: any
+  data?: T
 }

@@ -12,20 +12,26 @@ import { type Sync } from 'factory.ts'
 import { faker } from '@faker-js/faker'
 
 describe('When testing the User Preferences Service', () => {
-  let userPreferencesService: UserPreferencesService<TestUserPreferenceId>
+  let userPreferencesService: UserPreferencesService<TestUserPreferenceId, TestUserPreference>
   const cookieKey = 'mp_u_p'
   const lowLevelScope: UserPreferenceScope = '1-1-1'
-  let userPreferences: UserPreferences<TestUserPreferenceId>
+  let userPreferences: UserPreferences<TestUserPreferenceId, TestUserPreference>
 
-  let definitions: UserPreferenceDefinitions<TestUserPreferenceId>
-  const compositeUserPreferencesService = new CompositeUserPreferencesService<TestUserPreferenceId>()
+  let definitions: UserPreferenceDefinitions<TestUserPreferenceId, TestUserPreference>
+  const compositeUserPreferencesService = new CompositeUserPreferencesService<
+    TestUserPreferenceId,
+    TestUserPreference
+  >()
 
   function setupPreferencesWithScope(
-    definition: UserPreferenceDefinitions<TestUserPreferenceId>,
+    definition: UserPreferenceDefinitions<TestUserPreferenceId, TestUserPreference>,
     scope: UserPreferenceScope | undefined,
   ): void {
     const scopedPreference = makeBuilderFromDefinition(definition, scope)
-    userPreferences = TestUserPreferencesFakeFactory([scopedPreference]) as UserPreferences<TestUserPreferenceId>
+    userPreferences = TestUserPreferencesFakeFactory([scopedPreference]) as UserPreferences<
+      TestUserPreferenceId,
+      TestUserPreference
+    >
 
     Cookies.putObject(cookieKey, userPreferences)
   }
@@ -44,11 +50,11 @@ describe('When testing the User Preferences Service', () => {
       definitions = TestUserPreferenceDefinitionsFakeFactory([
         { id: TestUserPreferenceId.Default, allowedScope },
         { id: TestUserPreferenceId.PreferenceOne, allowedScope },
-      ]) as UserPreferenceDefinitions<TestUserPreferenceId>
+      ]) as UserPreferenceDefinitions<TestUserPreferenceId, TestUserPreference>
 
       setupPreferencesWithScope(definitions, lowLevelScope)
 
-      userPreferencesService = new UserPreferencesService<TestUserPreferenceId>(
+      userPreferencesService = new UserPreferencesService<TestUserPreferenceId, TestUserPreference>(
         definitions,
         compositeUserPreferencesService,
         lowLevelScope,
@@ -76,13 +82,16 @@ describe('When testing the User Preferences Service', () => {
 
     it('it should read preferences when there are no scoped prefs', async () => {
       // arrange
-      definitions = TestUserPreferenceDefinitionsFakeFactory() as UserPreferenceDefinitions<TestUserPreferenceId>
+      definitions = TestUserPreferenceDefinitionsFakeFactory() as UserPreferenceDefinitions<
+        TestUserPreferenceId,
+        TestUserPreference
+      >
 
       const someScope = '1'
       setupPreferencesWithScope(definitions, someScope)
 
       const currentScope = '2'
-      userPreferencesService = new UserPreferencesService<TestUserPreferenceId>(
+      userPreferencesService = new UserPreferencesService<TestUserPreferenceId, TestUserPreference>(
         definitions,
         compositeUserPreferencesService,
         currentScope,
@@ -108,12 +117,15 @@ describe('When testing the User Preferences Service', () => {
 
     it("it should throw when the preference can't be found", async () => {
       // arrange
-      definitions = TestUserPreferenceDefinitionsFakeFactory() as UserPreferenceDefinitions<TestUserPreferenceId>
+      definitions = TestUserPreferenceDefinitionsFakeFactory() as UserPreferenceDefinitions<
+        TestUserPreferenceId,
+        TestUserPreference
+      >
 
       const someScope = '1'
       setupPreferencesWithScope(definitions, someScope)
 
-      userPreferencesService = new UserPreferencesService<TestUserPreferenceId>(
+      userPreferencesService = new UserPreferencesService<TestUserPreferenceId, TestUserPreference>(
         definitions,
         compositeUserPreferencesService,
         someScope,
@@ -154,11 +166,11 @@ describe('When testing the User Preferences Service', () => {
         const testData = { test: 'test-data' }
         definitions = TestUserPreferenceDefinitionsFakeFactory([
           { id: userPreferenceId, allowedScope, isOptedInByDefault: testOptedInState, defaultData: testData },
-        ]) as UserPreferenceDefinitions<TestUserPreferenceId>
+        ]) as UserPreferenceDefinitions<TestUserPreferenceId, TestUserPreference>
 
         setupPreferencesWithScope(definitions, expectedScope as UserPreferenceScope)
 
-        userPreferencesService = new UserPreferencesService<TestUserPreferenceId>(
+        userPreferencesService = new UserPreferencesService<TestUserPreferenceId, TestUserPreference>(
           definitions,
           compositeUserPreferencesService,
           lowLevelScope,
@@ -194,9 +206,9 @@ describe('When testing the User Preferences Service', () => {
       const testData = { test: 'test-data' }
       definitions = TestUserPreferenceDefinitionsFakeFactory([
         { id: userPreferenceId, allowedScope, isOptedInByDefault: testOptedInState, defaultData: testData },
-      ]) as UserPreferenceDefinitions<TestUserPreferenceId>
+      ]) as UserPreferenceDefinitions<TestUserPreferenceId, TestUserPreference>
 
-      userPreferencesService = new UserPreferencesService<TestUserPreferenceId>(
+      userPreferencesService = new UserPreferencesService<TestUserPreferenceId, TestUserPreference>(
         definitions,
         compositeUserPreferencesService,
         lowLevelScope,
@@ -229,6 +241,10 @@ export enum TestUserPreferenceId {
   PreferenceOne = 'preference-one',
 }
 
+export type TestUserPreference = {
+  test: string
+}
+
 export function TestUserPreferenceDefinitionsFakeFactory(
   config?: Array<{
     id: TestUserPreferenceId
@@ -237,8 +253,8 @@ export function TestUserPreferenceDefinitionsFakeFactory(
     allowedScope?: UserPreferenceScopeType
   }>,
 ): Sync.Builder<
-  UserPreferenceDefinitions<TestUserPreferenceId>,
-  keyof UserPreferenceDefinitions<TestUserPreferenceId>
+  UserPreferenceDefinitions<TestUserPreferenceId, TestUserPreference>,
+  keyof UserPreferenceDefinitions<TestUserPreferenceId, TestUserPreference>
 > {
   if (!config) {
     config = Object.values(TestUserPreferenceId).map(id => ({ id }))
@@ -276,7 +292,7 @@ export interface TestUserPreferencesFakeBuilder {
 }
 
 export function makeBuilderFromDefinition(
-  definitions: UserPreferenceDefinitions<TestUserPreferenceId>,
+  definitions: UserPreferenceDefinitions<TestUserPreferenceId, TestUserPreference>,
   scope?: UserPreferenceScope,
 ): TestUserPreferencesFakeBuilder {
   return {
@@ -292,7 +308,10 @@ export function makeBuilderFromDefinition(
 
 export function TestUserPreferencesFakeFactory(
   scopes: TestUserPreferencesFakeBuilder[] = [],
-): Sync.Builder<UserPreferences<TestUserPreferenceId>, keyof UserPreferences<TestUserPreferenceId>> {
+): Sync.Builder<
+  UserPreferences<TestUserPreferenceId, TestUserPreference>,
+  keyof UserPreferences<TestUserPreferenceId, TestUserPreference>
+> {
   return scopes.reduce(
     (scopedPreferences, { wantsRandom = false, scope, userPreferenceIds, optedIns, defaultDatas }) => {
       const effectiveScope = scope ?? getRandomScope({ excludeGlobal: true })
@@ -324,7 +343,7 @@ export function TestUserPreferencesFakeFactory(
       return scopedPreferences
     },
     {},
-  ) as UserPreferences<TestUserPreferenceId>
+  ) as UserPreferences<TestUserPreferenceId, TestUserPreference>
 }
 
 function getRandomScope({ maxScope = 3, excludeGlobal = false }): UserPreferenceScope {

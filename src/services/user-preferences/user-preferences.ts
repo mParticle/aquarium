@@ -7,15 +7,15 @@ import { type CompositeUserPreferencesService } from 'src/services/user-preferen
 import * as Cookies from 'src/utils/Cookies'
 import { type CookieOptions } from 'src/utils/Cookies'
 
-export class UserPreferencesService<TUserPreferenceId extends PropertyKey> {
-  public preferences!: CompositeUserPreferences<TUserPreferenceId>
+export class UserPreferencesService<TUserPreferenceId extends PropertyKey, T> {
+  public preferences!: CompositeUserPreferences<TUserPreferenceId, T>
 
   constructor(
-    private readonly definitions: UserPreferenceDefinitions<TUserPreferenceId>,
-    private readonly compositeUserPreferencesService: CompositeUserPreferencesService<TUserPreferenceId>,
+    private readonly definitions: UserPreferenceDefinitions<TUserPreferenceId, T>,
+    private readonly compositeUserPreferencesService: CompositeUserPreferencesService<TUserPreferenceId, T>,
     private readonly currentScope: UserPreferenceScope,
     private readonly cookieOptions: CookieOptions & { key: string },
-    private readonly onUpdate?: (resolvedPreferences: CompositeUserPreferences<TUserPreferenceId>) => void,
+    private readonly onUpdate?: (resolvedPreferences: CompositeUserPreferences<TUserPreferenceId, T>) => void,
   ) {}
 
   public async init(): Promise<void> {
@@ -30,7 +30,7 @@ export class UserPreferencesService<TUserPreferenceId extends PropertyKey> {
     this.onUpdate?.(this.preferences)
   }
 
-  public async getData(userPreferenceId: TUserPreferenceId): Promise<boolean | undefined> {
+  public async getData(userPreferenceId: TUserPreferenceId): Promise<T | undefined> {
     const userPreference = this.preferences[userPreferenceId]
 
     if (!userPreference) await Promise.reject(new Error(`Invalid Operation. A user preference could not be found.`))
@@ -47,7 +47,7 @@ export class UserPreferencesService<TUserPreferenceId extends PropertyKey> {
   }
 
   // TODO: data should be generic
-  public async setPreference(userPreferenceId: TUserPreferenceId, isOptedIn: boolean, data: any): Promise<void> {
+  public async setPreference(userPreferenceId: TUserPreferenceId, isOptedIn: boolean, data: T): Promise<void> {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error
     const { allowedScope } = this.definitions[userPreferenceId]
@@ -59,7 +59,7 @@ export class UserPreferencesService<TUserPreferenceId extends PropertyKey> {
       isOptedIn,
       data,
       this.currentScope,
-      currentStoredPreferences as unknown as UserPreferences<TUserPreferenceId>,
+      currentStoredPreferences as unknown as UserPreferences<TUserPreferenceId, T>,
       // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       allowedScope,
     )
@@ -78,11 +78,11 @@ export class UserPreferencesService<TUserPreferenceId extends PropertyKey> {
     return Promise.resolve()
   }
 
-  private async getStoredPreferences(): Promise<UserPreferences<TUserPreferenceId>> {
+  private async getStoredPreferences(): Promise<UserPreferences<TUserPreferenceId, T>> {
     return await Promise.resolve(Cookies.getObject(this.cookieOptions.key) ?? {})
   }
 
-  private async setStoredPreferences(storedPreferences: UserPreferences<TUserPreferenceId>): Promise<void> {
+  private async setStoredPreferences(storedPreferences: UserPreferences<TUserPreferenceId, T>): Promise<void> {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     Cookies.putObject(this.cookieOptions.key, storedPreferences, this.cookieOptions)
 
