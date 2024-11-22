@@ -17,6 +17,7 @@ export class CompositeUserPreferencesService<TPreferenceIds extends PropertyKey>
     currentScope: UserPreferenceScope,
     definitions: UserPreferenceDefinitions<TPreferenceIds>,
   ): CompositeUserPreferences<TPreferenceIds> {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     const entriesByIdAndUserPreference = Object.entries(definitions).map<[TPreferenceIds, UserPreference]>(
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-expect-error
@@ -29,6 +30,7 @@ export class CompositeUserPreferencesService<TPreferenceIds extends PropertyKey>
   public getUpdatedUserPreferenceStorageObject(
     preferenceId: TPreferenceIds,
     isOptedIn: boolean,
+    data: any,
     currentScope: UserPreferenceScope,
     currentPreferences: UserPreferences<TPreferenceIds>,
     allowedScope: UserPreferenceScopeType,
@@ -41,7 +43,7 @@ export class CompositeUserPreferencesService<TPreferenceIds extends PropertyKey>
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error
-    scopedUserPreferences[preferenceId] = { optedIn: isOptedIn }
+    scopedUserPreferences[preferenceId] = { optedIn: isOptedIn, data }
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error
@@ -56,7 +58,7 @@ export class CompositeUserPreferencesService<TPreferenceIds extends PropertyKey>
     [definedUserPreferenceId, definition]: [TPreferenceIds, UserPreferenceDefinition],
   ): [TPreferenceIds, UserPreference] {
     if (!storedPreferences) {
-      const userPreferenceDefault = { optedIn: definition.isOptedInByDefault }
+      const userPreferenceDefault = { optedIn: definition.isOptedInByDefault, data: definition.defaultData }
       return this.createPreferenceEntry(definedUserPreferenceId, userPreferenceDefault)
     }
 
@@ -71,7 +73,8 @@ export class CompositeUserPreferencesService<TPreferenceIds extends PropertyKey>
     const userPreferenceForCurrentDefinition: UserPreference = scopedUserPreferences?.[definedUserPreferenceId]
 
     const optedIn = userPreferenceForCurrentDefinition?.optedIn ?? definition.isOptedInByDefault
-    const userPreference = { optedIn }
+    const data = userPreferenceForCurrentDefinition?.data ?? definition.defaultData
+    const userPreference = { optedIn, data }
     return this.createPreferenceEntry(definedUserPreferenceId, userPreference)
   }
 

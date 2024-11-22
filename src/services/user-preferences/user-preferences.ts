@@ -30,6 +30,14 @@ export class UserPreferencesService<TUserPreferenceId extends PropertyKey> {
     this.onUpdate?.(this.preferences)
   }
 
+  public async getData(userPreferenceId: TUserPreferenceId): Promise<boolean | undefined> {
+    const userPreference = this.preferences[userPreferenceId]
+
+    if (!userPreference) await Promise.reject(new Error(`Invalid Operation. A user preference could not be found.`))
+
+    return userPreference.data
+  }
+
   public async isOptedIn(userPreferenceId: TUserPreferenceId): Promise<boolean | undefined> {
     const userPreference = this.preferences[userPreferenceId]
 
@@ -38,7 +46,8 @@ export class UserPreferencesService<TUserPreferenceId extends PropertyKey> {
     return userPreference.optedIn
   }
 
-  public async setPreference(userPreferenceId: TUserPreferenceId, isOptedIn: boolean): Promise<void> {
+  // TODO: data should be generic
+  public async setPreference(userPreferenceId: TUserPreferenceId, isOptedIn: boolean, data: any): Promise<void> {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error
     const { allowedScope } = this.definitions[userPreferenceId]
@@ -48,6 +57,7 @@ export class UserPreferencesService<TUserPreferenceId extends PropertyKey> {
     const storedPreferences = this.compositeUserPreferencesService.getUpdatedUserPreferenceStorageObject(
       userPreferenceId,
       isOptedIn,
+      data,
       this.currentScope,
       currentStoredPreferences as unknown as UserPreferences<TUserPreferenceId>,
       // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
@@ -73,6 +83,7 @@ export class UserPreferencesService<TUserPreferenceId extends PropertyKey> {
   }
 
   private async setStoredPreferences(storedPreferences: UserPreferences<TUserPreferenceId>): Promise<void> {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     Cookies.putObject(this.cookieOptions.key, storedPreferences, this.cookieOptions)
 
     await Promise.resolve()

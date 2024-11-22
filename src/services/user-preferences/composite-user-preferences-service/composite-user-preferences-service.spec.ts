@@ -41,9 +41,10 @@ describe('When testing CompositeUserPreferencesService', () => {
       )
 
       // assert
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       Object.entries(actualScopedUserPreferences).forEach(([preferenceId, actualPreference]) => {
         const definition = definitions[preferenceId as TestUserPreferenceId]
-        const expectedScopedUserPreferences = { optedIn: definition?.isOptedInByDefault }
+        const expectedScopedUserPreferences = { optedIn: definition?.isOptedInByDefault, data: definition?.defaultData }
         expect(actualPreference).toEqual(expectedScopedUserPreferences)
       })
     })
@@ -125,11 +126,17 @@ describe('When testing CompositeUserPreferencesService', () => {
       ) => {
         // arrange
         const testPreferenceValue = true
+        const testPreferenceData = { test: 'test-data' }
         const { preferenceId: builderPreferenceId } = getFirstDefinition(definitions)
         const updatingId = builderPreferenceId
 
         const userPreferencesBuilder: TestUserPreferencesFakeBuilder[] = [
-          { scope: expectedScope, userPreferenceIds: [updatingId], optedIns: [testPreferenceValue] },
+          {
+            scope: expectedScope,
+            userPreferenceIds: [updatingId],
+            optedIns: [testPreferenceValue],
+            defaultDatas: [testPreferenceData],
+          },
           { wantsRandom: true },
           { wantsRandom: true },
         ]
@@ -139,9 +146,11 @@ describe('When testing CompositeUserPreferencesService', () => {
 
         // act
         const expectedPreferenceValue = !testPreferenceValue
+        const expectedData = { test: 'test-data-2' }
         const actualUserPreferences = compositeUserPreferencesService.getUpdatedUserPreferenceStorageObject(
           updatingId,
           expectedPreferenceValue,
+          expectedData,
           currentScope,
           userPreferences,
           allowedScope,
@@ -170,6 +179,7 @@ describe('When testing CompositeUserPreferencesService', () => {
       ) => {
         // arrange
         const expectedPreferenceValue = true
+        const expectedData = { test: 'test-data' }
         const updatingId = TestUserPreferenceId.Default
 
         userPreferences = {} satisfies UserPreferences<TestUserPreferenceId>
@@ -178,6 +188,7 @@ describe('When testing CompositeUserPreferencesService', () => {
         const actualUserPreferences = compositeUserPreferencesService.getUpdatedUserPreferenceStorageObject(
           updatingId,
           expectedPreferenceValue,
+          expectedData,
           expectedScope,
           userPreferences,
           allowedScope,
@@ -196,6 +207,7 @@ function getFirstDefinition(definitions: UserPreferenceDefinitions<TestUserPrefe
   definition?: UserPreferenceDefinition
   preferenceId: TestUserPreferenceId
 } {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   const preferenceId = Object.keys(definitions)[0] as TestUserPreferenceId
   const definition = definitions[preferenceId]
 

@@ -62,11 +62,15 @@ describe('When testing the User Preferences Service', () => {
       for (const [id, preference] of Object.entries(scopedPreferences)) {
         // act
         const isOptedIn = await userPreferencesService.isOptedIn(id as TestUserPreferenceId)
+        const data = await userPreferencesService.getData(id as TestUserPreferenceId)
 
         // assert
         const expectedIsOptedIn = preference.optedIn
+        const expectedData = preference.data
         expect(isOptedIn).not.toBeNull()
         expect(isOptedIn).toBe(expectedIsOptedIn)
+        expect(data).not.toBeNull()
+        expect(data).toEqual(expectedData)
       }
     })
 
@@ -86,14 +90,19 @@ describe('When testing the User Preferences Service', () => {
       )
       await userPreferencesService.init()
 
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       for (const [id, definition] of Object.entries(definitions)) {
         // act
         const isOptedIn = await userPreferencesService.isOptedIn(id as TestUserPreferenceId)
+        const data = await userPreferencesService.getData(id as TestUserPreferenceId)
 
         // assert
         const expectedIsOptedIn = definition.isOptedInByDefault
+        const expectedData = definition.defaultData
         expect(isOptedIn).not.toBeNull()
         expect(isOptedIn).toBe(expectedIsOptedIn)
+        expect(data).not.toBeNull()
+        expect(data).toEqual(expectedData)
       }
     })
 
@@ -119,9 +128,15 @@ describe('When testing the User Preferences Service', () => {
         // @ts-expect-error - we are testing an incorrect usage
         unknownId,
       )
+      const getDataDelegate = userPreferencesService.getData.bind(
+        userPreferencesService,
+        // @ts-expect-error - we are testing an incorrect usage
+        unknownId,
+      )
 
       // assert
       await expect(isOptedInDelegate).rejects.toThrow(`Invalid Operation. A user preference could not be found.`)
+      await expect(getDataDelegate).rejects.toThrow(`Invalid Operation. A user preference could not be found.`)
     })
   })
 
@@ -136,8 +151,9 @@ describe('When testing the User Preferences Service', () => {
         // arrange
         const userPreferenceId = TestUserPreferenceId.Default
         const testOptedInState = true
+        const testData = { test: 'test-data' }
         definitions = TestUserPreferenceDefinitionsFakeFactory([
-          { id: userPreferenceId, allowedScope, isOptedInByDefault: testOptedInState },
+          { id: userPreferenceId, allowedScope, isOptedInByDefault: testOptedInState, defaultData: testData },
         ]) as UserPreferenceDefinitions<TestUserPreferenceId>
 
         setupPreferencesWithScope(definitions, expectedScope as UserPreferenceScope)
@@ -152,17 +168,21 @@ describe('When testing the User Preferences Service', () => {
 
         // pre-assert
         const testState = await userPreferencesService.isOptedIn(userPreferenceId)
-
         expect(testState).toBe(testOptedInState)
+        const testDataState = await userPreferencesService.getData(userPreferenceId)
+        expect(testData).toEqual(testDataState)
 
         // act
         const expectedOptedInState = !testOptedInState
-        await userPreferencesService.setPreference(userPreferenceId, expectedOptedInState)
+        const expectedDataState = { test: 'test-data-2' }
+
+        await userPreferencesService.setPreference(userPreferenceId, expectedOptedInState, expectedDataState)
 
         // assert
         const actualState = await userPreferencesService.isOptedIn(userPreferenceId)
-
         expect(actualState).toBe(expectedOptedInState)
+        const actualDataState = await userPreferencesService.getData(userPreferenceId)
+        expect(actualDataState).toEqual(expectedDataState)
       },
     )
 
@@ -171,8 +191,9 @@ describe('When testing the User Preferences Service', () => {
       const userPreferenceId = TestUserPreferenceId.Default
       const allowedScope = UserPreferenceScopeType.LevelThreeScope
       const testOptedInState = true
+      const testData = { test: 'test-data' }
       definitions = TestUserPreferenceDefinitionsFakeFactory([
-        { id: userPreferenceId, allowedScope, isOptedInByDefault: testOptedInState },
+        { id: userPreferenceId, allowedScope, isOptedInByDefault: testOptedInState, defaultData: testData },
       ]) as UserPreferenceDefinitions<TestUserPreferenceId>
 
       userPreferencesService = new UserPreferencesService<TestUserPreferenceId>(
@@ -185,17 +206,20 @@ describe('When testing the User Preferences Service', () => {
 
       // pre-assert
       const testState = await userPreferencesService.isOptedIn(userPreferenceId)
-
       expect(testState).toBe(testOptedInState)
+      const testDataState = await userPreferencesService.getData(userPreferenceId)
+      expect(testDataState).toEqual(testData)
 
       // act
       const expectedOptedInState = !testOptedInState
-      await userPreferencesService.setPreference(userPreferenceId, expectedOptedInState)
+      const expectedDataState = { test: 'test-data-2' }
+      await userPreferencesService.setPreference(userPreferenceId, expectedOptedInState, expectedDataState)
 
       // assert
       const actualState = await userPreferencesService.isOptedIn(userPreferenceId)
-
       expect(actualState).toBe(expectedOptedInState)
+      const actualDataState = await userPreferencesService.getData(userPreferenceId)
+      expect(actualDataState).toEqual(expectedDataState)
     })
   })
 })
@@ -209,6 +233,7 @@ export function TestUserPreferenceDefinitionsFakeFactory(
   config?: Array<{
     id: TestUserPreferenceId
     isOptedInByDefault?: boolean
+    defaultData?: any
     allowedScope?: UserPreferenceScopeType
   }>,
 ): Sync.Builder<
@@ -219,10 +244,10 @@ export function TestUserPreferenceDefinitionsFakeFactory(
     config = Object.values(TestUserPreferenceId).map(id => ({ id }))
   }
 
-  return config.reduce((definitions, { id, isOptedInByDefault, allowedScope }) => {
+  return config.reduce((definitions, { id, isOptedInByDefault, defaultData, allowedScope }) => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error
-    definitions[id] = createDefinition({ isOptedInByDefault, allowedScope })
+    definitions[id] = createDefinition({ isOptedInByDefault, defaultData, allowedScope })
 
     return definitions
   }, {})
@@ -230,12 +255,14 @@ export function TestUserPreferenceDefinitionsFakeFactory(
 
 type Definition = {
   isOptedInByDefault?: boolean
+  defaultData?: any
   allowedScope?: UserPreferenceScopeType
 }
 
-function createDefinition({ isOptedInByDefault, allowedScope }: Definition = {}): Definition {
+function createDefinition({ isOptedInByDefault, defaultData, allowedScope }: Definition = {}): Definition {
   return {
     isOptedInByDefault: isOptedInByDefault ?? faker.datatype.boolean(),
+    defaultData: defaultData ?? { test: faker.string.alpha({ length: 10 }) },
     allowedScope: allowedScope ?? faker.helpers.enumValue(UserPreferenceScopeType),
   }
 }
@@ -245,6 +272,7 @@ export interface TestUserPreferencesFakeBuilder {
   scope?: UserPreferenceScope
   userPreferenceIds?: TestUserPreferenceId[]
   optedIns?: boolean[]
+  defaultDatas?: any[]
 }
 
 export function makeBuilderFromDefinition(
@@ -253,39 +281,50 @@ export function makeBuilderFromDefinition(
 ): TestUserPreferencesFakeBuilder {
   return {
     scope: scope ?? getRandomScope({ excludeGlobal: true }),
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     userPreferenceIds: Object.keys(definitions) as TestUserPreferenceId[],
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     optedIns: Object.values(definitions).map(({ isOptedInByDefault }) => isOptedInByDefault),
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    defaultDatas: Object.values(definitions).map(({ defaultData }) => defaultData),
   }
 }
 
 export function TestUserPreferencesFakeFactory(
   scopes: TestUserPreferencesFakeBuilder[] = [],
 ): Sync.Builder<UserPreferences<TestUserPreferenceId>, keyof UserPreferences<TestUserPreferenceId>> {
-  return scopes.reduce((scopedPreferences, { wantsRandom = false, scope, userPreferenceIds, optedIns }) => {
-    const effectiveScope = scope ?? getRandomScope({ excludeGlobal: true })
-    if (wantsRandom) {
-      const numberOfValues = faker.number.int({ max: Object.keys(TestUserPreferenceId).length, min: 1 })
-      userPreferenceIds = Array.from({ length: numberOfValues }, () => faker.helpers.enumValue(TestUserPreferenceId))
-      optedIns = Array.from({ length: numberOfValues }, () => faker.datatype.boolean())
-    }
+  return scopes.reduce(
+    (scopedPreferences, { wantsRandom = false, scope, userPreferenceIds, optedIns, defaultDatas }) => {
+      const effectiveScope = scope ?? getRandomScope({ excludeGlobal: true })
+      const fakeData = (): { test: string } => ({ test: faker.string.alpha({ length: 10 }) })
 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
-    scopedPreferences[effectiveScope] = userPreferenceIds.reduce((preferences, userPreferenceId, index) => {
-      const effectiveId = userPreferenceId ?? TestUserPreferenceId.Default
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-expect-error
-      const effectiveOptedInState = optedIns[index] ?? faker.datatype.boolean()
+      if (wantsRandom) {
+        const numberOfValues = faker.number.int({ max: Object.keys(TestUserPreferenceId).length, min: 1 })
+        userPreferenceIds = Array.from({ length: numberOfValues }, () => faker.helpers.enumValue(TestUserPreferenceId))
+        optedIns = Array.from({ length: numberOfValues }, () => faker.datatype.boolean())
+        defaultDatas = Array.from({ length: numberOfValues }, () => fakeData())
+      }
 
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-expect-error
-      preferences[effectiveId] = { optedIn: effectiveOptedInState }
+      scopedPreferences[effectiveScope] = userPreferenceIds.reduce((preferences, userPreferenceId, index) => {
+        const effectiveId = userPreferenceId ?? TestUserPreferenceId.Default
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error
+        const effectiveOptedInState = optedIns[index] ?? faker.datatype.boolean()
+        const effectiveDataState = defaultDatas?.[index] ?? fakeData()
 
-      return preferences
-    }, {})
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error
+        preferences[effectiveId] = { optedIn: effectiveOptedInState, data: effectiveDataState }
 
-    return scopedPreferences
-  }, {}) as UserPreferences<TestUserPreferenceId>
+        return preferences
+      }, {})
+
+      return scopedPreferences
+    },
+    {},
+  ) as UserPreferences<TestUserPreferenceId>
 }
 
 function getRandomScope({ maxScope = 3, excludeGlobal = false }): UserPreferenceScope {
