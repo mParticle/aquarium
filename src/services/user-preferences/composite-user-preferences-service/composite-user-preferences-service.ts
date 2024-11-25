@@ -29,7 +29,7 @@ export class CompositeUserPreferencesService<TPreferenceIds extends PropertyKey>
   public getUpdatedUserPreferenceStorageObject(
     preferenceId: TPreferenceIds,
     isOptedIn: boolean,
-    data: any,
+    data: unknown | undefined,
     currentScope: UserPreferenceScope,
     currentPreferences: UserPreferences<TPreferenceIds>,
     allowedScope: UserPreferenceScopeType,

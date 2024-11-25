@@ -47,7 +47,7 @@ export class UserPreferencesService<TUserPreferenceId extends PropertyKey> {
     return userPreference.optedIn
   }
 
-  public async setPreference(userPreferenceId: TUserPreferenceId, isOptedIn: boolean, data: any): Promise<void> {
+  public async setPreference(userPreferenceId: TUserPreferenceId, isOptedIn: boolean, data: unknown): Promise<void> {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error
     const { allowedScope } = this.definitions[userPreferenceId]
