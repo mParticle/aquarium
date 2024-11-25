@@ -41,7 +41,6 @@ describe('When testing CompositeUserPreferencesService', () => {
       )
 
       // assert
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       Object.entries(actualScopedUserPreferences).forEach(([preferenceId, actualPreference]) => {
         const definition = definitions[preferenceId as TestUserPreferenceId]
         const expectedScopedUserPreferences = { optedIn: definition?.isOptedInByDefault, data: definition?.defaultData }

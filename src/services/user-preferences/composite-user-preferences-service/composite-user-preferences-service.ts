@@ -17,7 +17,6 @@ export class CompositeUserPreferencesService<TPreferenceIds extends PropertyKey>
     currentScope: UserPreferenceScope,
     definitions: UserPreferenceDefinitions<TPreferenceIds>,
   ): CompositeUserPreferences<TPreferenceIds> {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     const entriesByIdAndUserPreference = Object.entries(definitions).map<[TPreferenceIds, UserPreference]>(
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-expect-error

@@ -47,7 +47,6 @@ export class UserPreferencesService<TUserPreferenceId extends PropertyKey> {
     return userPreference.optedIn
   }
 
-  // TODO: data should be generic
   public async setPreference(userPreferenceId: TUserPreferenceId, isOptedIn: boolean, data: any): Promise<void> {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error
@@ -84,7 +83,6 @@ export class UserPreferencesService<TUserPreferenceId extends PropertyKey> {
   }
 
   private async setStoredPreferences(storedPreferences: UserPreferences<TUserPreferenceId>): Promise<void> {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     Cookies.putObject(this.cookieOptions.key, storedPreferences, this.cookieOptions)
 
     await Promise.resolve()
