@@ -30,12 +30,13 @@ export class UserPreferencesService<TUserPreferenceId extends PropertyKey> {
     this.onUpdate?.(this.preferences)
   }
 
-  public async getData(userPreferenceId: TUserPreferenceId): Promise<boolean | undefined> {
+  /** There is no type guarantee on the data retrieved */
+  public async getData<T>(userPreferenceId: TUserPreferenceId): Promise<Partial<T> | undefined> {
     const userPreference = this.preferences[userPreferenceId]
 
     if (!userPreference) await Promise.reject(new Error(`Invalid Operation. A user preference could not be found.`))
 
-    return userPreference.data
+    return userPreference.data as Partial<T>
   }
 
   public async isOptedIn(userPreferenceId: TUserPreferenceId): Promise<boolean | undefined> {
