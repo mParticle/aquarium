@@ -80,6 +80,7 @@ export type IconNames =
   | 'next'
   | 'notification'
   | 'notificationSubscriptions'
+  | 'notificationSubscribe'
   | 'observability'
   | 'openTab'
   | 'organization'
