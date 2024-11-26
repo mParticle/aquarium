@@ -31,12 +31,12 @@ export class UserPreferencesService<TUserPreferenceId extends PropertyKey> {
   }
 
   /** There is no type guarantee on the data retrieved */
-  public async getData<T>(userPreferenceId: TUserPreferenceId): Promise<Partial<T> | undefined> {
+  public async getData(userPreferenceId: TUserPreferenceId): Promise<Record<string, unknown> | undefined> {
     const userPreference = this.preferences[userPreferenceId]
 
     if (!userPreference) await Promise.reject(new Error(`Invalid Operation. A user preference could not be found.`))
 
-    return userPreference.data as Partial<T>
+    return userPreference.data as Record<string, unknown>
   }
 
   public async isOptedIn(userPreferenceId: TUserPreferenceId): Promise<boolean | undefined> {
@@ -47,7 +47,11 @@ export class UserPreferencesService<TUserPreferenceId extends PropertyKey> {
     return userPreference.optedIn
   }
 
-  public async setPreference(userPreferenceId: TUserPreferenceId, isOptedIn: boolean, data?: unknown): Promise<void> {
+  public async setPreference(
+    userPreferenceId: TUserPreferenceId,
+    isOptedIn: boolean,
+    data?: Record<string, unknown>,
+  ): Promise<void> {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error
     const { allowedScope } = this.definitions[userPreferenceId]
