@@ -1,15 +1,15 @@
-import { UserPreferenceScopeType } from 'src/services/user-preferences/models/definitions'
+import {
+  type UserPreferenceDefinition,
+  UserPreferenceScopeType,
+  type UserPreferenceDefinitions,
+} from 'src/services/user-preferences/models/definitions'
 import {
   USER_PREFERENCE_SCOPE_SEPARATOR,
   UserPreferenceGlobalScope,
   type UserPreferenceScope,
 } from 'src/services/user-preferences/models/storage-models'
 import cloneDeep from 'lodash/cloneDeep'
-import {
-  type UserPreferenceDefinition,
-  type UserPreferenceDefinitions,
-  type UserPreferencesPerScope,
-} from '../user-preferences-service'
+import { type UserPreferencesPerScope } from '../models/definitions/user-preference-per-scope'
 
 export class CompositeUserPreferencesService<T extends Record<string, unknown>> {
   public getScopedUserPreferences(

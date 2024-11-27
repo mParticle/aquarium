@@ -1,31 +1,31 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import { CompositeUserPreferencesService } from 'src/services/user-preferences/composite-user-preferences-service'
-import { type UserPreferences } from 'src/services/user-preferences/models/storage-models/user-preferences'
 import { type UserPreferenceScope } from 'src/services/user-preferences/models/storage-models/user-preference-scope'
-import { type UserPreferenceDefinitions } from 'src/services/user-preferences/models/definitions/user-preference-definitions'
 import { UserPreferenceScopeType } from 'src/services/user-preferences/models/definitions/user-preference-scope-type'
 import { type UserPreferenceDefinition } from 'src/services/user-preferences/models/definitions/user-preference-definition'
 import {
   makeBuilderFromDefinition,
+  type TestType,
   TestUserPreferenceDefinitionsFakeFactory,
-  TestUserPreferenceId,
   type TestUserPreferencesFakeBuilder,
   TestUserPreferencesFakeFactory,
 } from 'src/services/user-preferences/user-preferences-service.spec'
+import { type UserPreferenceDefinitions } from 'src/components'
+import { type UserPreferencesPerScope } from '../models/definitions/user-preference-per-scope'
 
 describe('When testing CompositeUserPreferencesService', () => {
-  let compositeUserPreferencesService: CompositeUserPreferencesService<TestUserPreferenceId>
-  let userPreferences: UserPreferences<TestUserPreferenceId>
+  let compositeUserPreferencesService: CompositeUserPreferencesService<TestType>
+  let userPreferences: UserPreferencesPerScope<TestType>
   let expectedScope: UserPreferenceScope
-  let definitions: UserPreferenceDefinitions<TestUserPreferenceId>
+  let definitions: UserPreferenceDefinitions<TestType>
 
   beforeEach(() => {
-    definitions = TestUserPreferenceDefinitionsFakeFactory() as UserPreferenceDefinitions<TestUserPreferenceId>
+    definitions = TestUserPreferenceDefinitionsFakeFactory() as UserPreferenceDefinitions<TestType>
     const prefsBuilder = makeBuilderFromDefinition(definitions)
-    userPreferences = TestUserPreferencesFakeFactory([prefsBuilder]) as UserPreferences<TestUserPreferenceId>
+    userPreferences = TestUserPreferencesFakeFactory([prefsBuilder]) as UserPreferencesPerScope<TestType>
     expectedScope = Object.keys(userPreferences)[0] as UserPreferenceScope
 
-    compositeUserPreferencesService = new CompositeUserPreferencesService<TestUserPreferenceId>()
+    compositeUserPreferencesService = new CompositeUserPreferencesService<TestType>()
   })
 
   describe('and getting scoped user preferences', () => {
@@ -42,8 +42,8 @@ describe('When testing CompositeUserPreferencesService', () => {
 
       // assert
       Object.entries(actualScopedUserPreferences).forEach(([preferenceId, actualPreference]) => {
-        const definition = definitions[preferenceId as TestUserPreferenceId]
-        const expectedScopedUserPreferences = { optedIn: definition?.isOptedInByDefault, data: definition?.defaultData }
+        const definition = definitions[preferenceId as keyof TestType]
+        const expectedScopedUserPreferences = definition.defaultValue
         expect(actualPreference).toEqual(expectedScopedUserPreferences)
       })
     })
@@ -77,21 +77,26 @@ describe('When testing CompositeUserPreferencesService', () => {
         allowedScope: UserPreferenceScopeType,
       ) => {
         // arrange
+        const { preferenceId: builderPreferenceId } = getFirstDefinition(definitions)
+        const updatingId = builderPreferenceId
+
         const userPreferencesBuilder: TestUserPreferencesFakeBuilder[] = [
-          { scope: expectedScope, userPreferenceIds: [TestUserPreferenceId.Default], optedIns: [true] },
+          {
+            scope: expectedScope,
+            keys: [updatingId],
+            defaultValues: [{ isOptedIn: true }],
+          },
           { wantsRandom: true },
           { wantsRandom: true },
         ]
-        userPreferences = TestUserPreferencesFakeFactory(
-          userPreferencesBuilder,
-        ) as UserPreferences<TestUserPreferenceId>
+        userPreferences = TestUserPreferencesFakeFactory(userPreferencesBuilder) as UserPreferencesPerScope<TestType>
         definitions = TestUserPreferenceDefinitionsFakeFactory([
           {
-            id: TestUserPreferenceId.Default,
+            id: 'Default',
             isOptedInByDefault: true,
             allowedScope,
           },
-        ]) as UserPreferenceDefinitions<TestUserPreferenceId>
+        ]) as UserPreferenceDefinitions<TestType>
 
         // act
         const actualScopedUserPreferences = compositeUserPreferencesService.getScopedUserPreferences(
@@ -124,32 +129,26 @@ describe('When testing CompositeUserPreferencesService', () => {
         allowedScope: UserPreferenceScopeType,
       ) => {
         // arrange
-        const testPreferenceValue = true
-        const testPreferenceData = { test: 'test-data' }
+        const testPreferenceValues = { isOptedIn: true }
         const { preferenceId: builderPreferenceId } = getFirstDefinition(definitions)
         const updatingId = builderPreferenceId
 
         const userPreferencesBuilder: TestUserPreferencesFakeBuilder[] = [
           {
             scope: expectedScope,
-            userPreferenceIds: [updatingId],
-            optedIns: [testPreferenceValue],
-            defaultDatas: [testPreferenceData],
+            keys: [updatingId],
+            defaultValues: [testPreferenceValues],
           },
           { wantsRandom: true },
           { wantsRandom: true },
         ]
-        userPreferences = TestUserPreferencesFakeFactory(
-          userPreferencesBuilder,
-        ) as UserPreferences<TestUserPreferenceId>
+        userPreferences = TestUserPreferencesFakeFactory(userPreferencesBuilder) as UserPreferencesPerScope<TestType>
 
         // act
-        const expectedPreferenceValue = !testPreferenceValue
-        const expectedData = { test: 'test-data-2' }
+        const expectedValues = { isOptedIn: false }
         const actualUserPreferences = compositeUserPreferencesService.getUpdatedUserPreferenceStorageObject(
           updatingId,
-          expectedPreferenceValue,
-          expectedData,
+          expectedValues,
           currentScope,
           userPreferences,
           allowedScope,
@@ -157,7 +156,7 @@ describe('When testing CompositeUserPreferencesService', () => {
 
         // assert
         const actualUserPreference = actualUserPreferences?.[expectedScope]?.[updatingId]
-        expect(actualUserPreference?.optedIn).toEqual(expectedPreferenceValue)
+        expect(actualUserPreference?.isOptedIn).toEqual(expectedValues.isOptedIn)
         expect(actualUserPreference).not.toBe(userPreferences)
       },
     )
@@ -177,17 +176,16 @@ describe('When testing CompositeUserPreferencesService', () => {
         allowedScope: UserPreferenceScopeType,
       ) => {
         // arrange
-        const expectedPreferenceValue = true
-        const expectedData = { test: 'test-data' }
-        const updatingId = TestUserPreferenceId.Default
+        const expectedValues = { isOptedIn: true }
+        const { preferenceId: builderPreferenceId } = getFirstDefinition(definitions)
+        const updatingId = builderPreferenceId
 
-        userPreferences = {} satisfies UserPreferences<TestUserPreferenceId>
+        userPreferences = {} satisfies UserPreferencesPerScope<TestType>
 
         // act
         const actualUserPreferences = compositeUserPreferencesService.getUpdatedUserPreferenceStorageObject(
           updatingId,
-          expectedPreferenceValue,
-          expectedData,
+          expectedValues,
           expectedScope,
           userPreferences,
           allowedScope,
@@ -195,20 +193,19 @@ describe('When testing CompositeUserPreferencesService', () => {
 
         // assert
         const actualUserPreference = actualUserPreferences?.[expectedScope]?.[updatingId]
-        expect(actualUserPreference?.optedIn).toEqual(expectedPreferenceValue)
+        expect(actualUserPreference?.isOptedIn).toEqual(expectedValues.isOptedIn)
         expect(actualUserPreference).not.toBe(userPreferences)
       },
     )
   })
 })
 
-function getFirstDefinition(definitions: UserPreferenceDefinitions<TestUserPreferenceId>): {
-  definition?: UserPreferenceDefinition
-  preferenceId: TestUserPreferenceId
+function getFirstDefinition(definitions: UserPreferenceDefinitions<TestType>): {
+  definition: UserPreferenceDefinition<TestType>
+  preferenceId: keyof TestType
 } {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-  const preferenceId = Object.keys(definitions)[0] as TestUserPreferenceId
-  const definition = definitions[preferenceId]
+  const preferenceId = Object.keys(definitions)[0] as keyof TestType
+  const definition = definitions[preferenceId] as unknown as UserPreferenceDefinition<TestType>
 
   return { definition, preferenceId }
 }
