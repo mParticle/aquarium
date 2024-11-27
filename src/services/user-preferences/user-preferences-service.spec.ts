@@ -2,17 +2,15 @@
 import * as Cookies from '../../utils/Cookies'
 
 import { describe, afterEach, it, expect } from 'vitest'
-import {
-  type UserPreferencesPerScope,
-  UserPreferencesService,
-  type UserPreferenceDefinitions,
-} from 'src/services/user-preferences/user-preferences-service'
+import { UserPreferencesService } from 'src/services/user-preferences/user-preferences-service'
 import { type UserPreferenceScope } from 'src/services/user-preferences/models/storage-models/user-preference-scope'
 import { UserPreferenceScopeType } from 'src/services/user-preferences/models/definitions/user-preference-scope-type'
 import { type Sync } from 'factory.ts'
 import { faker } from '@faker-js/faker'
+import { type UserPreferenceDefinitions } from 'src/components'
+import { type UserPreferencesPerScope } from './models/definitions/user-preference-per-scope'
 
-type TestType = {
+export type TestType = {
   Default: { isOptedIn: boolean }
   PreferenceOne: { isOptedIn: boolean }
 }

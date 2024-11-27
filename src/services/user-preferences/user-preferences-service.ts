@@ -1,21 +1,9 @@
-import { type UserPreferenceScopeType } from 'src/services/user-preferences/models/definitions'
 import { type UserPreferenceScope } from 'src/services/user-preferences/models/storage-models'
 import * as Cookies from 'src/utils/Cookies'
 import { type CookieOptions } from 'src/utils/Cookies'
 import { CompositeUserPreferencesService } from './composite-user-preferences-service'
-
-export type UserPreferenceDefinition<T> = {
-  allowedScope: UserPreferenceScopeType
-  defaultValue: T
-}
-
-export type UserPreferenceDefinitions<T> = {
-  [P in keyof T]: UserPreferenceDefinition<T[P]>
-}
-
-export type UserPreferencesPerScope<T> = {
-  [K in UserPreferenceScope]?: T
-}
+import { type UserPreferenceDefinitions } from 'src/components'
+import { type UserPreferencesPerScope } from './models/definitions/user-preference-per-scope'
 
 export class UserPreferencesService<T extends Record<string, unknown>> {
   private preferences!: T
