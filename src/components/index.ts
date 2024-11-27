@@ -121,16 +121,16 @@ export { SuiteLogo } from './navigation/GlobalNavigation/SuiteLogo'
 export { Typography } from './general/Typography/Typography'
 
 // UPS
-export { UserPreferencesService } from '../services/user-preferences/user-preferences'
+export { UserPreferencesService } from '../services/user-preferences/user-preferences-service'
 export { CompositeUserPreferencesService } from '../services/user-preferences/composite-user-preferences-service'
 export { type CompositeUserPreferences } from '../services/user-preferences/models/user-preferences/composite-user-preferences'
 export {
   UserPreferenceScopeType,
   type UserPreferenceDefinition,
   type UserPreferenceDefinitions,
+  type UserPreferencesPerScope,
 } from '../services/user-preferences/models/definitions'
 export {
-  type UserPreferences,
   USER_PREFERENCE_SCOPE_SEPARATOR,
   UserPreferenceGlobalScope,
   type UserPreference,
