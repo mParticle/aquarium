@@ -123,7 +123,6 @@ export { Typography } from './general/Typography/Typography'
 // UPS
 export { UserPreferencesService } from '../services/user-preferences'
 export { CompositeUserPreferencesService } from '../services/user-preferences/composite-user-preferences-service'
-export { type CompositeUserPreferences } from '../services/user-preferences/models/user-preferences/composite-user-preferences'
 export {
   UserPreferenceScopeType,
   type UserPreferenceDefinition,
@@ -133,7 +132,6 @@ export {
 export {
   USER_PREFERENCE_SCOPE_SEPARATOR,
   UserPreferenceGlobalScope,
-  type UserPreference,
   type UserPreferenceScope,
 } from '../services/user-preferences/models/storage-models'
 export {
