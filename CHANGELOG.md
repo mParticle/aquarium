@@ -1,3 +1,15 @@
+# [1.36.0](https://github.com/mParticle/aquarium/compare/v1.35.0...v1.36.0) (2024-11-28)
+
+### Bug Fixes
+
+- typography component updates ([#497](https://github.com/mParticle/aquarium/issues/497)) ([d32d390](https://github.com/mParticle/aquarium/commit/d32d3900c3d89406a0f88bccd967ed356e8edfe5))
+
+### Features
+
+- add abSplit icon ([#499](https://github.com/mParticle/aquarium/issues/499)) ([8776f1c](https://github.com/mParticle/aquarium/commit/8776f1c2fced9cc75af92fb74960510b4e56833a))
+- add notificationSubscriptions icon ([#505](https://github.com/mParticle/aquarium/issues/505)) ([b4976bc](https://github.com/mParticle/aquarium/commit/b4976bca3878813fadb453ff2426154b7fa1ef04))
+- utilize generics in UserPreferencesService ([#504](https://github.com/mParticle/aquarium/issues/504)) ([4838a86](https://github.com/mParticle/aquarium/commit/4838a86929bd743f606688ceefeaf13ebf5b1f9d))
+
 # [1.35.0](https://github.com/mParticle/aquarium/compare/v1.34.0...v1.35.0) (2024-11-15)
 
 ### Bug Fixes
