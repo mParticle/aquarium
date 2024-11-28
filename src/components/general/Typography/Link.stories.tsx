@@ -1,34 +1,73 @@
-import { type Meta } from '@storybook/react'
-import { type StoryObj } from '@storybook/react'
-import { Space } from 'src/components'
+import type { Meta } from '@storybook/react'
+import type { StoryObj } from '@storybook/react'
+import { Flex, Icon, Space, Tooltip } from 'src/components'
 import { Typography } from 'src/components/general/Typography/Typography'
 import { ExampleStory } from 'src/utils/ExampleStory'
+import { TypographyColors } from './colors'
 
 const meta: Meta<typeof Typography.Link> = {
-  title: 'Components/General/Link',
+  title: 'Components/General/Typography/Link',
   component: props => <Typography.Link {...props}>Example Link</Typography.Link>,
 
   args: {
+    children: 'Example Text',
+    type: undefined,
+    color: undefined,
+    size: 'base',
     code: false,
     copyable: false,
     delete: false,
     disabled: false,
     editable: false,
     ellipsis: false,
-    keyboard: false,
     mark: false,
     strong: false,
     italic: false,
-    type: undefined,
     underline: false,
-    onClick: (event: React.MouseEvent) => {
-      console.log('Link Clicked')
-    },
   },
   argTypes: {
+    children: {
+      control: 'text',
+      name: 'text',
+    },
     type: {
       control: 'select',
       options: ['secondary', 'success', 'warning', 'danger'],
+    },
+    size: {
+      control: 'select',
+      options: ['base', 'sm', 'lg', 'xl'],
+    },
+    color: {
+      control: 'select',
+      options: TypographyColors,
+    },
+    copyable: {
+      control: 'boolean',
+    },
+    delete: {
+      control: 'boolean',
+    },
+    disabled: {
+      control: 'boolean',
+    },
+    editable: {
+      control: 'boolean',
+    },
+    ellipsis: {
+      control: 'boolean',
+    },
+    mark: {
+      control: 'boolean',
+    },
+    strong: {
+      control: 'boolean',
+    },
+    italic: {
+      control: 'boolean',
+    },
+    code: {
+      control: 'boolean',
     },
   },
 }
@@ -43,95 +82,28 @@ type Story = StoryObj<typeof Typography.Link>
 
 export const Primary: Story = {}
 
-export const Code: Story = {
-  args: {
-    code: true,
-  },
-}
-
-export const Copyable: Story = {
-  args: {
-    copyable: true,
-  },
-}
-
-export const Deleted: Story = {
-  args: {
-    delete: true,
-  },
-}
-
-export const Disabled: Story = {
-  args: {
-    disabled: true,
-  },
-}
-
-export const Editable: Story = {
-  args: {
-    editable: true,
-  },
-}
-
-export const Keyboard: Story = {
-  args: {
-    keyboard: true,
-  },
-}
-
-export const Marked: Story = {
-  args: {
-    mark: true,
-  },
-}
-
-export const Strong: Story = {
-  args: {
-    strong: true,
-  },
-}
-
-export const Italic: Story = {
-  args: {
-    italic: true,
-  },
-}
-
-export const Success: Story = {
-  args: {
-    type: 'success',
-  },
-}
-
-export const Secondary: Story = {
-  args: {
-    type: 'secondary',
-  },
-}
-
-export const Warning: Story = {
-  args: {
-    type: 'warning',
-  },
-}
-
-export const Danger: Story = {
-  args: {
-    type: 'danger',
-  },
-}
-
-export const Underline: Story = {
-  args: {
-    underline: true,
-  },
-}
-
-export const CustomOnClick: Story = {
-  args: {
-    onClick: event => {
-      alert('Custom Click Handler')
-    },
+export const InsideTooltip: Story = {
+  render: () => {
+    return (
+      <ExampleStory title="Link inside a Tooltip">
+        <Flex align="center" gap={2}>
+          <Typography.Text>Typography inside of a tooltip, hover icon to see</Typography.Text>
+          <Tooltip
+            title={
+              <>
+                <Typography.Text tooltip>
+                  Help lorem ipsum{' '}
+                  <Typography.Link href="/" tooltip>
+                    Learn More
+                  </Typography.Link>
+                </Typography.Text>
+              </>
+            }>
+            <Icon name="help" size="sm" />
+          </Tooltip>
+        </Flex>
+      </ExampleStory>
+    )
   },
 }
 

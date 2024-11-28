@@ -1,5 +1,5 @@
-import { type Meta } from '@storybook/react'
-import { type StoryObj } from '@storybook/react'
+import type { Meta } from '@storybook/react'
+import type { StoryObj } from '@storybook/react'
 import { Typography } from 'src/components/general/Typography/Typography'
 import { ExampleStory } from 'src/utils/ExampleStory'
 import { useMemo } from 'react'
@@ -8,12 +8,16 @@ import { Radio } from 'src/components'
 import { Switch } from 'src/components'
 import { Slider } from 'src/components'
 import { Icon } from 'src/components'
+import { TypographyColors } from './colors'
 
 const meta: Meta<typeof Typography.Paragraph> = {
-  title: 'Components/General/Typography.Paragraph',
+  title: 'Components/General/Typography/Paragraph',
   component: props => <Typography.Paragraph {...props}>Paragraph text goes here</Typography.Paragraph>,
-
   args: {
+    children: 'Example Text',
+    type: undefined,
+    color: undefined,
+    size: 'base',
     code: false,
     copyable: false,
     delete: false,
@@ -23,16 +27,51 @@ const meta: Meta<typeof Typography.Paragraph> = {
     mark: false,
     strong: false,
     italic: false,
-    type: undefined,
     underline: false,
-    onClick: event => {
-      console.log('Paragraph Clicked')
-    },
   },
   argTypes: {
+    children: {
+      control: 'text',
+      name: 'text',
+    },
     type: {
       control: 'select',
       options: ['secondary', 'success', 'warning', 'danger'],
+    },
+    size: {
+      control: 'select',
+      options: ['base', 'sm', 'lg', 'xl'],
+    },
+    color: {
+      control: 'select',
+      options: TypographyColors,
+    },
+    copyable: {
+      control: 'boolean',
+    },
+    delete: {
+      control: 'boolean',
+    },
+    disabled: {
+      control: 'boolean',
+    },
+    editable: {
+      control: 'boolean',
+    },
+    ellipsis: {
+      control: 'boolean',
+    },
+    mark: {
+      control: 'boolean',
+    },
+    strong: {
+      control: 'boolean',
+    },
+    italic: {
+      control: 'boolean',
+    },
+    code: {
+      control: 'boolean',
     },
   },
 }
@@ -46,98 +85,6 @@ type Story = StoryObj<typeof Typography.Paragraph>
 */
 
 export const Primary: Story = {}
-
-export const Code: Story = {
-  args: {
-    code: true,
-  },
-}
-
-export const Copyable: Story = {
-  args: {
-    copyable: true,
-  },
-}
-
-export const DeletedLine: Story = {
-  args: {
-    delete: true,
-  },
-}
-
-export const Disabled: Story = {
-  args: {
-    disabled: true,
-  },
-}
-
-export const Editable: Story = {
-  args: {
-    editable: true,
-  },
-}
-
-export const Ellipsis: Story = {
-  args: {
-    ellipsis: true,
-  },
-}
-
-export const Marked: Story = {
-  args: {
-    mark: true,
-  },
-}
-
-export const Strong: Story = {
-  args: {
-    strong: true,
-  },
-}
-
-export const Italic: Story = {
-  args: {
-    italic: true,
-  },
-}
-
-export const Success: Story = {
-  args: {
-    type: 'success',
-  },
-}
-
-export const Secondary: Story = {
-  args: {
-    type: 'secondary',
-  },
-}
-
-export const Warning: Story = {
-  args: {
-    type: 'warning',
-  },
-}
-
-export const Danger: Story = {
-  args: {
-    type: 'danger',
-  },
-}
-
-export const Underline: Story = {
-  args: {
-    underline: true,
-  },
-}
-
-export const CustomOnClick: Story = {
-  args: {
-    onClick: event => {
-      alert('Custom Click Handler')
-    },
-  },
-}
 
 export const ExampleEditable: Story = {
   render: () => {

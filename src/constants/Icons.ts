@@ -63,6 +63,8 @@ import {
   LockIcon,
   UnlockIcon,
   NotificationIcon,
+  NotificationSubscriptionsIcon,
+  NotificationSubscribeIcon,
   PremiumIconDt,
   OverviewIconDt,
   FilterIcon,
@@ -359,6 +361,14 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   notification: {
     light: NotificationIcon,
+    default: 'light',
+  },
+  notificationSubscriptions: {
+    light: NotificationSubscriptionsIcon,
+    default: 'light',
+  },
+  notificationSubscribe: {
+    light: NotificationSubscribeIcon,
     default: 'light',
   },
   observability: {
