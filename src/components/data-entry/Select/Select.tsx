@@ -19,7 +19,7 @@ export const Select = <
 ) => {
   return (
     <ConfigProvider>
-      <AntSelect suffixIcon={<Icon name="dropdownOpen" size="sm" />} {...props} />
+      <AntSelect popupMatchSelectWidth={false} suffixIcon={<Icon name="dropdownOpen" size="sm" />} {...props} />
     </ConfigProvider>
   )
 }
