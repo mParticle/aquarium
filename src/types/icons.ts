@@ -79,7 +79,7 @@ export type IconNames =
   | 'myHub'
   | 'next'
   | 'notification'
-  | 'notificationSubscriptions'
+  | 'notificationSubscribed'
   | 'notificationSubscribe'
   | 'observability'
   | 'openTab'
