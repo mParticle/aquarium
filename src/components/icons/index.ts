@@ -60,7 +60,7 @@ import DirectoryIcon from 'src/assets/svg/mp_pm_lt_directory.svg?react'
 import LockIcon from 'src/assets/svg/mp_act_lt_lock.svg?react'
 import UnlockIcon from 'src/assets/svg/mp_act_lt_unlock.svg?react'
 import NotificationIcon from 'src/assets/svg/mp_pm_lt_notification.svg?react'
-import NotificationSubscriptionsIcon from 'src/assets/svg/mp_pm_lt_notification_subscriptions.svg?react'
+import NotificationSubscribedIcon from 'src/assets/svg/mp_pm_lt_notification_subscribed.svg?react'
 import NotificationSubscribeIcon from 'src/assets/svg/mp_pm_lt_notification_subscribe.svg?react'
 import PremiumIconDt from 'src/assets/svg/mp_info_dt_premium.svg?react'
 import OverviewIconDt from 'src/assets/svg/mp_pm_dt_overview.svg?react'
@@ -147,7 +147,7 @@ export {
   MpLogoIcon,
   NextIcon,
   NotificationIcon,
-  NotificationSubscriptionsIcon,
+  NotificationSubscribedIcon,
   NotificationSubscribeIcon,
   ObservabilityIcon,
   OpenTabIcon,
