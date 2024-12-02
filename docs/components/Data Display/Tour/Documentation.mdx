@@ -1,6 +1,6 @@
 import { Meta, Canvas } from '@storybook/blocks'
 
-import * as TourStories from '../../../../src/components/data-display/Tour/Tour.stories'
+import TourMeta, * as TourStories from '../../../../src/components/data-display/Tour/Tour.stories';
 
 <Meta of={TourStories} />
 
@@ -24,4 +24,4 @@ Use the Tour component when:
 
 {/* Documentation goes here */}
 
-<Canvas meta={TourStories.default} />
+<Canvas of={TourStories.ExampleNavLogo} />
