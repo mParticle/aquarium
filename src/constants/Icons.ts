@@ -11,6 +11,7 @@ import {
   CheckIcon,
   CircleNodesIcon,
   CloudIcon,
+  CrosshairIcon,
   ConnectionsIcon,
   DataPlatformIconDt,
   DatabaseIcon,
@@ -183,6 +184,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   copy: {
     light: Copy,
+    default: 'light',
+  },
+  crosshair: {
+    light: CrosshairIcon,
     default: 'light',
   },
   dashboard: {

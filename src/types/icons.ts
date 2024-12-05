@@ -36,6 +36,7 @@ export type IconNames =
   | 'connections'
   | 'conversion'
   | 'copy'
+  | 'crosshair'
   | 'dashboard'
   | 'database'
   | 'dataPlatform'
