@@ -1,3 +1,9 @@
+## [1.36.1](https://github.com/mParticle/aquarium/compare/v1.36.0...v1.36.1) (2024-12-06)
+
+### Bug Fixes
+
+- rename notification icons ([#508](https://github.com/mParticle/aquarium/issues/508)) ([98ea06f](https://github.com/mParticle/aquarium/commit/98ea06f1c0f66d7ca469f77158b1d4cf75cb8f6f))
+
 # [1.36.0](https://github.com/mParticle/aquarium/compare/v1.35.0...v1.36.0) (2024-11-28)
 
 ### Bug Fixes
