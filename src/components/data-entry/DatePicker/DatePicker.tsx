@@ -1,7 +1,9 @@
 import { DatePicker as AntDatePicker, type DatePickerProps as AntDatePickerProps } from 'antd'
+import type { RangePickerProps as AntRangePickerProps } from 'antd/es/date-picker'
 import { ConfigProvider } from 'src/components'
 
 export interface IDatePickerProps extends AntDatePickerProps {}
+export interface IRangePickerProps extends AntRangePickerProps {}
 
 export const DatePicker = (props: IDatePickerProps) => {
   return (
