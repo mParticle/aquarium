@@ -87,7 +87,7 @@ import Edit from 'src/assets/svg/mp_act_lt_edit.svg?react'
 import Copy from 'src/assets/svg/mp_act_lt_copy.svg?react'
 import MoreActions from 'src/assets/svg/mp_act_lt_more-actions.svg?react'
 import AbSplit from 'src/assets/svg/mp_info_lt_ab-split.svg?react'
-import BannerFreemium from 'src/assets/svg/banner-freemium.svg?react'
+import BannerFreemium from 'src/assets/svg/mp_info_dt_sampled.svg?react'
 
 export {
   AbSplit,
