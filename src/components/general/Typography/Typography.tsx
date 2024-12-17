@@ -1,29 +1,14 @@
-import {
-  Typography as AntTypography,
-  type TypographyProps as AntTypographyProps,
-  ConfigProvider as AntConfigProvider,
-} from 'antd'
+import { Typography as AntTypography } from 'antd'
 import { ConfigProvider } from 'src/components'
-import { type ReactNode } from 'react'
-import { type TextProps as AntTextProps } from 'antd/es/typography/Text'
-import { type TitleProps as AntTitleProps } from 'antd/es/typography/Title'
-import { type LinkProps as AntLinkProps } from 'antd/es/typography/Link'
-import { type ParagraphProps as AntParagraphProps } from 'antd/es/typography/Paragraph'
+import type { ReactNode } from 'react'
+import type { TextProps as AntTextProps } from 'antd/es/typography/Text'
+import type { TitleProps as AntTitleProps } from 'antd/es/typography/Title'
+import type { LinkProps as AntLinkProps } from 'antd/es/typography/Link'
+import type { ParagraphProps as AntParagraphProps } from 'antd/es/typography/Paragraph'
+import { getColorFromStyles, type TypographyColor } from './colors'
+import { ColorTextLightSolid } from 'src/styles/style'
 
-export interface ITypographyProps extends AntTypographyProps {
-  children: ReactNode
-}
-
-export const Typography = (props: ITypographyProps) => (
-  <ConfigProvider>
-    <AntTypography {...props}>{props.children}</AntTypography>
-  </ConfigProvider>
-)
-
-type TypographySize = 'base' | 'sm' | 'lg' | 'xl'
-export interface ITextProps extends AntTextProps {
-  size?: TypographySize
-}
+type TypographySize = 'base' | 'sm' | 'lg' | 'xl' | number
 
 // TODO: Replace hardcoded values in getFontSize and getLineHeight with tokens when design is ready
 // These values are currently coming from https://www.figma.com/design/LffDbOUjeYqDMZ3djs9Cga/mParticle-Foundation-v1.0.1?node-id=3745-8164&m=dev
@@ -31,7 +16,8 @@ const getFontSize = (size: TypographySize): number => {
   if (size === 'base') return 14
   if (size === 'sm') return 12
   if (size === 'lg') return 16
-  return 20
+  if (size === 'xl') return 20
+  return size
 }
 
 const getLineHeight = (size: TypographySize): number => {
@@ -41,50 +27,106 @@ const getLineHeight = (size: TypographySize): number => {
   return 1.4
 }
 
-const Text = ({ size = 'base', ...props }: ITextProps) => {
-  const fontSize = getFontSize(size)
-  const lineHeight = getLineHeight(size)
+interface InternalTypographyProps {
+  size?: TypographySize
+  color?: TypographyColor
+  children: ReactNode
+}
+
+export const Typography = () => {
+  return <>DO NOT USE</>
+}
+
+type InternalTextProps = InternalTypographyProps & AntTextProps
+type InternalTitleProps = InternalTypographyProps & AntTitleProps
+type InternalLinkProps = InternalTypographyProps & AntLinkProps
+type InternalParagraphProps = InternalTypographyProps & AntParagraphProps
+
+export interface ITextProps extends InternalTextProps {
+  tooltip?: boolean
+}
+
+export interface ITitleProps extends InternalTitleProps {}
+
+export interface ILinkProps extends InternalLinkProps {
+  tooltip?: boolean
+}
+
+export interface IParagraphProps extends InternalParagraphProps {}
+
+// Tried generalizing into a higher order component but couldn't do it type-safely, so just repeated the code
+const Text = (props: ITextProps) => {
+  const { size, color, type, tooltip, children, ...rest } = props
+
+  const fontSize = size ? getFontSize(size) : undefined
+  const lineHeight = size ? getLineHeight(size) : undefined
+  const fontColor = !type && color ? getColorFromStyles(color) : tooltip ? ColorTextLightSolid : undefined
 
   return (
     <ConfigProvider>
-      <AntConfigProvider theme={{ components: { Typography: { fontSize, lineHeight } } }}>
-        <AntTypography.Text {...props}>{props.children}</AntTypography.Text>
-      </AntConfigProvider>
+      <AntTypography.Text style={{ color: fontColor, fontSize, lineHeight, ...props.style }} type={type} {...rest}>
+        {children}
+      </AntTypography.Text>
     </ConfigProvider>
   )
 }
 
 Typography.Text = Text
 
-interface ITitleProps extends AntTitleProps {
-  children: ReactNode
+const Title = (props: ITitleProps) => {
+  const { size, color, type, children, ...rest } = props
+
+  const fontSize = size ? getFontSize(size) : undefined
+  const lineHeight = size ? getLineHeight(size) : undefined
+  const fontColor = !type && color ? getColorFromStyles(color) : undefined
+
+  return (
+    <ConfigProvider>
+      <AntTypography.Title style={{ color: fontColor, fontSize, lineHeight, ...props.style }} type={type} {...rest}>
+        {children}
+      </AntTypography.Title>
+    </ConfigProvider>
+  )
 }
 
-const Title = (props: ITitleProps) => (
-  <ConfigProvider>
-    <AntTypography.Title {...props}>{props.children}</AntTypography.Title>
-  </ConfigProvider>
-)
 Typography.Title = Title
 
-export interface ILinkProps extends AntLinkProps {
-  children: ReactNode
+const Link = (props: ILinkProps) => {
+  const { size, color, type, tooltip, underline, children, ...rest } = props
+
+  const fontSize = size ? getFontSize(size) : undefined
+  const lineHeight = size ? getLineHeight(size) : undefined
+  const fontColor = !type && color ? getColorFromStyles(color) : tooltip ? ColorTextLightSolid : undefined
+
+  return (
+    <ConfigProvider>
+      <AntTypography.Link
+        style={{ color: fontColor, fontSize, lineHeight, ...props.style }}
+        type={type}
+        underline={tooltip ?? underline}
+        {...rest}>
+        {children}
+      </AntTypography.Link>
+    </ConfigProvider>
+  )
 }
 
-const Link = (props: ILinkProps) => (
-  <ConfigProvider>
-    <AntTypography.Link {...props}>{props.children}</AntTypography.Link>
-  </ConfigProvider>
-)
 Typography.Link = Link
 
-export interface IParagraphProps extends AntParagraphProps {
-  children: ReactNode
+const Paragraph = (props: IParagraphProps) => {
+  const { size, color, type, children, ...rest } = props
+
+  const fontSize = size ? getFontSize(size) : undefined
+  const lineHeight = size ? getLineHeight(size) : undefined
+  const fontColor = !type && color ? getColorFromStyles(color) : undefined
+
+  return (
+    <ConfigProvider>
+      <AntTypography.Paragraph style={{ color: fontColor, fontSize, lineHeight, ...props.style }} type={type} {...rest}>
+        {children}
+      </AntTypography.Paragraph>
+    </ConfigProvider>
+  )
 }
 
-const Paragraph = (props: IParagraphProps) => (
-  <ConfigProvider>
-    <AntTypography.Paragraph {...props}>{props.children}</AntTypography.Paragraph>
-  </ConfigProvider>
-)
 Typography.Paragraph = Paragraph

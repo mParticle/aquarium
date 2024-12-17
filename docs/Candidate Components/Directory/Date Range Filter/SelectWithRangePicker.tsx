@@ -1,11 +1,10 @@
 import React from 'react'
-import { Select } from 'antd'
 import { useMemo, useState } from 'react'
 import { DateRangeString, type IDateRangeStringProps } from './DateRangeString'
-import type { RangePickerProps } from 'antd/es/date-picker'
-import type { BaseOptionType, DefaultOptionType } from 'antd/es/select'
 import dayjs from 'dayjs'
-import { DatePicker, Divider, Flex, type ISelectProps, Typography } from 'src/components'
+import { Select, DatePicker, Divider, Flex, type ISelectProps, Typography } from 'src/components'
+import type { IRangePickerProps } from 'src/components/data-entry/DatePicker/DatePicker'
+import type { SelectBaseOptionType, SelectDefaultOptionType } from 'src/components/data-entry/Select/Select'
 
 export type SelectWithRangePickerValue<ValueType> = ValueType | [string, string] | null
 
@@ -16,7 +15,7 @@ interface SelectWithRangePickerProps<ValueType, OptionType>
     'open' | 'value' | 'dropdownRender' | 'defaultValue' | 'mode'
   > {
   value: SelectWithRangePickerValue<ValueType>
-  rangePickerProps?: Omit<RangePickerProps, 'value' | 'onChange'>
+  rangePickerProps?: Omit<IRangePickerProps, 'value' | 'onChange'>
   rangePickerLabel?: React.ReactNode
   formatOptions?: IDateRangeStringProps['formatOptions']
 }
@@ -25,7 +24,7 @@ const DEFAULT_PICKER_LABEL = <Typography.Text>Custom date range</Typography.Text
 
 export const SelectWithRangePicker = <
   ValueType = SelectWithRangePickerValue<unknown>,
-  OptionType extends BaseOptionType | DefaultOptionType = DefaultOptionType,
+  OptionType extends SelectBaseOptionType | SelectDefaultOptionType = SelectDefaultOptionType,
 >({
   value,
   rangePickerProps = {},

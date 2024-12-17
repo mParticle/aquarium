@@ -1,6 +1,6 @@
 import { type UserPreferenceScopeType } from './user-preference-scope-type'
 
-export interface UserPreferenceDefinition {
-  isOptedInByDefault: boolean
+export type UserPreferenceDefinition<T> = {
   allowedScope: UserPreferenceScopeType
+  defaultValue: T
 }

@@ -8,9 +8,11 @@ import ChartLineIcon from 'src/assets/svg/chart-line.svg?react'
 import CheckIcon from 'src/assets/svg/check.svg?react'
 import CircleNodesIcon from 'src/assets/svg/circle-nodes.svg?react'
 import CloudIcon from 'src/assets/svg/cloud.svg?react'
+import CrosshairIcon from 'src/assets/svg/crosshair.svg?react'
 import ConnectionsIcon from 'src/assets/svg/connections.svg?react'
 import DataPlatformIconDt from 'src/assets/svg/mp_pm_dt_data-platform.svg?react'
 import DatabaseIcon from 'src/assets/svg/database.svg?react'
+import DragAndDropIcon from 'src/assets/svg/mp_act_lt_dragandrop.svg?react'
 import DsrIcon from 'src/assets/svg/mp_pm_lt_dsr.svg?react'
 import EmptyIcon from 'src/assets/svg/empty.svg?react'
 import EnrichmentIcon from 'src/assets/svg/mp_pm_lt_enrichment.svg?react'
@@ -59,6 +61,8 @@ import DirectoryIcon from 'src/assets/svg/mp_pm_lt_directory.svg?react'
 import LockIcon from 'src/assets/svg/mp_act_lt_lock.svg?react'
 import UnlockIcon from 'src/assets/svg/mp_act_lt_unlock.svg?react'
 import NotificationIcon from 'src/assets/svg/mp_pm_lt_notification.svg?react'
+import NotificationSubscribedIcon from 'src/assets/svg/mp_pm_lt_notification_subscribed.svg?react'
+import NotificationSubscribeIcon from 'src/assets/svg/mp_pm_lt_notification_subscribe.svg?react'
 import PremiumIconDt from 'src/assets/svg/mp_info_dt_premium.svg?react'
 import OverviewIconDt from 'src/assets/svg/mp_pm_dt_overview.svg?react'
 import FilterIcon from 'src/assets/svg/mp_act_lt_filter.svg?react'
@@ -85,11 +89,16 @@ import FullScreen from 'src/assets/svg/mp_act_lt_full-screen.svg?react'
 import Edit from 'src/assets/svg/mp_act_lt_edit.svg?react'
 import Copy from 'src/assets/svg/mp_act_lt_copy.svg?react'
 import MoreActions from 'src/assets/svg/mp_act_lt_more-actions.svg?react'
+import AbSplit from 'src/assets/svg/mp_info_lt_ab-split.svg?react'
 
 export {
+  AbSplit,
+  Account,
+  ActiveIcon,
   AddIcon,
   AlicornIcon,
   AnalyticsIconDt,
+  Annotation,
   C360IconDt,
   CatalogIcon,
   ChartColumnIcon,
@@ -97,41 +106,77 @@ export {
   CheckIcon,
   CircleNodesIcon,
   CloudIcon,
+  CrosshairIcon,
+  Cohort,
   ConnectionsIcon,
-  DataPlatformIconDt,
+  ConversionIcon,
+  Copy,
+  Dashboard,
   DatabaseIcon,
+  DataPlatformIconDt,
+  Delete,
+  DirectoryIcon,
+  DragAndDropIcon,
+  DropdownClose,
+  DropdownOpen,
   DsrIcon,
+  Edit,
   EmptyIcon,
   EnrichmentIcon,
   EventAttributeIcon,
   EventIcon,
+  FilterIcon,
   FitToScreen,
   FolderClosedIcon,
   ForwardingIcon,
+  FullScreen,
+  Funnel,
   GearIcon,
   GridIcon,
   HeartIcon,
   HelpIcon,
   HelpVideoIcon,
   IdentityIcon,
+  InfoIcon,
+  JourneyAnalysis,
   JumpToIcon,
   LightBulbIcon,
+  LinkIcon,
   LiveStreamIcon,
-  PaywallIcon,
+  LockIcon,
   MessageQuestionIcon,
+  MoreActions,
   MpLogoIcon,
+  NextIcon,
+  NotificationIcon,
+  NotificationSubscribedIcon,
+  NotificationSubscribeIcon,
   ObservabilityIcon,
+  OpenTabIcon,
+  Organization,
   OversightIconDt,
-  PredictionsIconDt,
+  OverviewIconDt,
+  PaywallIcon,
+  Placeholder,
   PredictionsIcon,
+  PredictionsIconDt,
+  PremiumIcon,
+  PremiumIconDt,
+  PreviousIcon,
+  Privileges,
+  RefreshFrequency,
   RemoveIcon,
+  ScheduledReport,
   SearchIcon,
+  SegmentationAnalysis,
   SegmentationIconDt,
   ShieldKeyholeIcon,
   SignoutIcon,
   SplitIcon,
   SystemAlertsIcon,
+  TextWidget,
   TransformationsIcon,
+  UnlockIcon,
   UploadIcon,
   UserAttributeIcon,
   UserProfilesIcon,
@@ -139,39 +184,4 @@ export {
   WrenchIcon,
   ZoomIn,
   ZoomOut,
-  OpenTabIcon,
-  ConversionIcon,
-  PremiumIcon,
-  NextIcon,
-  PreviousIcon,
-  DirectoryIcon,
-  LockIcon,
-  UnlockIcon,
-  NotificationIcon,
-  PremiumIconDt,
-  OverviewIconDt,
-  FilterIcon,
-  LinkIcon,
-  ActiveIcon,
-  InfoIcon,
-  Placeholder,
-  Organization,
-  JourneyAnalysis,
-  Dashboard,
-  Account,
-  TextWidget,
-  RefreshFrequency,
-  Privileges,
-  Funnel,
-  Cohort,
-  Annotation,
-  Delete,
-  DropdownClose,
-  DropdownOpen,
-  SegmentationAnalysis,
-  ScheduledReport,
-  FullScreen,
-  Edit,
-  Copy,
-  MoreActions,
 }
