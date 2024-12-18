@@ -94,7 +94,7 @@ type Story = StoryObj<typeof Dropdown>
 */
 
 export const Primary: Story = {
-  tags: ['deprecated'],
+  // tags: ['deprecated'],
 }
 
 export const WithArrow: Story = {
