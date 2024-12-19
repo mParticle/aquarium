@@ -8,8 +8,25 @@ const meta: Meta<typeof List> = {
   component: props => <List {...props}></List>,
 
   args: {
+    bordered: false,
+    split: false,
+    size: 'default',
     dataSource: ['item1', 'item2', 'item3'],
     renderItem: item => <List.Item>{item as string}</List.Item>,
+  },
+  argTypes: {
+    bordered: {
+      control: 'boolean',
+      description: 'Toggle whether the list is bordered',
+    },
+    split: {
+      control: 'boolean',
+      description: 'Toggle whether list items are split by a divider',
+    },
+    size: {
+      control: 'select',
+      options: ['default', 'large', 'small'],
+    },
   },
 }
 export default meta
@@ -21,12 +38,31 @@ type Story = StoryObj<typeof List>
   Customize the stories based on specific requirements.
 */
 
-export const Primary: Story = {}
-
-export const CustomHeader: Story = {
+export const Primary: Story = {
   args: {
     header: <Typography.Text strong>List Header</Typography.Text>,
-    dataSource: ['item1', 'item2', 'item3'],
+    bordered: true,
+    split: true,
+    size: 'default',
+  },
+  render: args => {
+    const dataSource = [
+      'Racing car sprays burning fuel into crowd.',
+      'Japanese princess to wed commoner.',
+      'Australian walks 100km after outback crash.',
+      'Man charged over missing wedding girl.',
+      'Los Angeles battles huge wildfires.',
+    ]
+
+    return (
+      <List
+        {...args}
+        header={<div>List Header</div>}
+        footer={<div>List Footer</div>}
+        dataSource={dataSource}
+        renderItem={item => <List.Item>{item}</List.Item>}
+      />
+    )
   },
 }
 

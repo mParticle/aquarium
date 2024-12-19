@@ -6,7 +6,7 @@ const meta: Meta<typeof Empty> = {
   component: Empty,
 
   args: {
-    description: 'Default Message',
+    description: 'No Data',
     image: Empty.PRESENTED_IMAGE_DEFAULT,
     imageStyle: undefined,
   },

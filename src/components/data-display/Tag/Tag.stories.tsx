@@ -1,5 +1,6 @@
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
+import { Space } from 'src/components'
 import { Tag } from 'src/components/data-display/Tag/Tag'
 
 const meta: Meta<typeof Tag> = {
@@ -25,5 +26,14 @@ export const Primary: Story = {
       control: 'select',
       options: ['success', 'processing', 'default', 'error', 'warning'],
     },
+  },
+  render: () => {
+    return (
+      <Space direction="vertical">
+        <Tag color="blue">Prod</Tag>
+        <Tag color="purple">Dev</Tag>
+        <Tag color="default">Default</Tag>
+      </Space>
+    )
   },
 }

@@ -6,11 +6,7 @@ const meta: Meta<typeof Descriptions> = {
   component: Descriptions,
 
   args: {
-    items: [
-      { label: 'Item 1', children: 'Value 1' },
-      { label: 'Item 2', children: 'Value 2' },
-      { label: 'Item 3', children: 'Value 3' },
-    ],
+    items: [{ label: 'Item 1', children: 'Value 1' }],
   },
 }
 export default meta

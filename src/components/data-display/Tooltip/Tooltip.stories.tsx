@@ -1,13 +1,15 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { Tooltip } from 'src/components'
+import { Flex, Tooltip, Typography } from 'src/components'
 import { Button } from 'src/components'
 
 const meta: Meta<typeof Tooltip> = {
   title: 'Components/Data Display/Tooltip',
   component: props => (
-    <Tooltip {...props}>
-      <Button>Tooltip element</Button>
-    </Tooltip>
+    <Flex align="center" gap={2}>
+      <Tooltip {...props}>
+        <Button>Tooltip element</Button>
+      </Tooltip>
+    </Flex>
   ),
 }
 export default meta
@@ -42,6 +44,28 @@ export const Primary: Story = {
       control: 'select',
       options: ['hover', 'focus', 'click', 'contextMenu'],
     },
+  },
+}
+
+export const WithLink: Story = {
+  render: () => {
+    return (
+      <Flex align="center" gap={2}>
+        <Tooltip
+          title={
+            <>
+              <Typography.Text tooltip>
+                Help lorem ipsum{' '}
+                <Typography.Link href="/" tooltip>
+                  Learn More
+                </Typography.Link>
+              </Typography.Text>
+            </>
+          }>
+          <Button>Tooltip with a link</Button>
+        </Tooltip>
+      </Flex>
+    )
   },
 }
 

@@ -1,6 +1,6 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { Card } from 'src/components/data-display/Card/Card'
-import { Flex, Form, QueryItem, Typography } from 'src/components'
+import { Button, Flex, Form, QueryItem, Typography } from 'src/components'
 import { MarginSm, MpBrandSecondary2, PaddingXs } from 'src/styles/style'
 import { ExampleStory } from 'src/utils/ExampleStory'
 
@@ -30,11 +30,9 @@ type Story = StoryObj<typeof Card>
   Customize the stories based on specific requirements.
 */
 
-export const Primary: Story = {}
-
-export const WithTitle: Story = {
+export const Primary: Story = {
   args: {
-    title: 'Card Title',
+    title: <Button>Any React Component</Button>,
   },
 }
 

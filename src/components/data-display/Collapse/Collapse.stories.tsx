@@ -1,5 +1,3 @@
-import MinusSquareOutlined from '@ant-design/icons/MinusSquareOutlined'
-import PlusSquareOutlined from '@ant-design/icons/PlusSquareOutlined'
 import { type Meta, type StoryObj } from '@storybook/react'
 import { ConfigProvider, Select } from 'src/components'
 import { Collapse } from 'src/components/data-display/Collapse/Collapse'
@@ -46,7 +44,6 @@ const meta: Meta<typeof Collapse> = {
 
   args: {
     defaultActiveKey: undefined,
-    expandIcon: undefined,
     ghost: false,
     items,
     onChange: (key: string | string[]) => {
@@ -75,13 +72,9 @@ export const GhostCollapse: Story = {
             },
           },
         }}>
-        <Collapse
-          ghost
-          expandIcon={({ isActive }): React.JSX.Element =>
-            isActive ? <MinusSquareOutlined /> : <PlusSquareOutlined />
-          }
-          items={items}
-        />
+        <div style={{ width: '400px' }}>
+          <Collapse ghost items={items} />
+        </div>
       </ConfigProvider>
     )
   },

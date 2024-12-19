@@ -11,6 +11,7 @@ const items: ITabsProps['items'] = [
     key: '2',
     label: 'Tab 2',
     children: 'Content of Tab Pane 2',
+    disabled: true,
   },
   {
     key: '3',

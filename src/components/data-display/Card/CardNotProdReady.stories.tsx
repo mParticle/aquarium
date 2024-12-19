@@ -93,12 +93,6 @@ export const WithCover: Story = {
   },
 }
 
-export const CustomTitle: Story = {
-  args: {
-    title: <Button>Any React Component</Button>,
-  },
-}
-
 export const InnerStyle: Story = {
   args: {
     type: 'inner',
