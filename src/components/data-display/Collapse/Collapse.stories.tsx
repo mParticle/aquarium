@@ -1,7 +1,7 @@
-import { type Meta, type StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import { Collapse } from 'src/components/data-display/Collapse/Collapse'
 import { ExampleStory } from 'src/utils/ExampleStory'
-import { type ICollapseProps } from 'src/components/data-display/Collapse/Collapse'
+import type { ICollapseProps } from 'src/components/data-display/Collapse/Collapse'
 import { Divider, Icon, Space } from 'src/components'
 import { theme } from 'antd'
 import { Select } from 'src/components'
@@ -42,7 +42,6 @@ const meta: Meta<typeof Collapse> = {
     collapsible: undefined,
     defaultActiveKey: undefined,
     destroyInactivePanel: false,
-    expandIcon: undefined,
     expandIconPosition: undefined,
     ghost: false,
     size: 'middle',
