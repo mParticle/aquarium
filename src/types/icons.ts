@@ -15,6 +15,7 @@ export type IconOptions = RequireAtLeastOne<
 // TODO: Mark icon names as @deprecated in ticket UNI-838.
 
 export type IconNames =
+  | 'abSplit'
   | 'account'
   | 'active'
   | 'add'
@@ -35,6 +36,7 @@ export type IconNames =
   | 'connections'
   | 'conversion'
   | 'copy'
+  | 'crosshair'
   | 'dashboard'
   | 'database'
   | 'dataPlatform'
@@ -78,6 +80,8 @@ export type IconNames =
   | 'myHub'
   | 'next'
   | 'notification'
+  | 'notificationSubscribed'
+  | 'notificationSubscribe'
   | 'observability'
   | 'openTab'
   | 'organization'

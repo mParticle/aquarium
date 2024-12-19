@@ -11,6 +11,7 @@ import {
   CheckIcon,
   CircleNodesIcon,
   CloudIcon,
+  CrosshairIcon,
   ConnectionsIcon,
   DataPlatformIconDt,
   DatabaseIcon,
@@ -63,6 +64,8 @@ import {
   LockIcon,
   UnlockIcon,
   NotificationIcon,
+  NotificationSubscribedIcon,
+  NotificationSubscribeIcon,
   PremiumIconDt,
   OverviewIconDt,
   FilterIcon,
@@ -89,9 +92,14 @@ import {
   Edit,
   Copy,
   MoreActions,
+  AbSplit,
 } from 'src/components/icons'
 
 export const Icons: Record<IconNames, IconOptions> = {
+  abSplit: {
+    light: AbSplit,
+    default: 'light',
+  },
   account: {
     light: Account,
     default: 'light',
@@ -176,6 +184,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   copy: {
     light: Copy,
+    default: 'light',
+  },
+  crosshair: {
+    light: CrosshairIcon,
     default: 'light',
   },
   dashboard: {
@@ -354,6 +366,14 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   notification: {
     light: NotificationIcon,
+    default: 'light',
+  },
+  notificationSubscribed: {
+    light: NotificationSubscribedIcon,
+    default: 'light',
+  },
+  notificationSubscribe: {
+    light: NotificationSubscribeIcon,
     default: 'light',
   },
   observability: {
