@@ -84,7 +84,12 @@ type Story = StoryObj<typeof Typography.Paragraph>
   Customize the stories based on specific requirements.
 */
 
-export const Primary: Story = {}
+export const Primary: Story = {
+  args: {
+    code: false,
+    delete: false,
+  },
+}
 
 export const ExampleEditable: Story = {
   render: () => {

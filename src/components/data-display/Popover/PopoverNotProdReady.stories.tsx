@@ -3,7 +3,7 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { Button } from 'src/components/general/Button/Button'
 
 const meta: Meta<typeof Popover> = {
-  title: 'Components/Data Display/Popover',
+  title: 'Components/Not Prod Ready/Data Display/Popover',
   component: Popover,
 
   args: {},
@@ -28,13 +28,12 @@ const PrimaryTemplate = (args: IPopoverProps) => {
   )
 }
 
-export const Primary: Story = {
-  args: { trigger: 'click', children: 'Button with popover' },
-  argTypes: {
-    trigger: {
-      control: 'select',
-      options: ['click', 'hover', 'focus'],
-    },
-  },
+export const Hover: Story = {
+  args: { trigger: 'hover', children: 'Hover Me' },
+  render: PrimaryTemplate,
+}
+
+export const Focus: Story = {
+  args: { trigger: 'focus', children: 'Focus Me' },
   render: PrimaryTemplate,
 }

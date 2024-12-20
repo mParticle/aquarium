@@ -49,6 +49,10 @@ type Story = StoryObj<typeof Button>
 */
 
 export const Primary: Story = {
+  args: {
+    block: true,
+  },
+
   play: async context => {
     const button = context.canvasElement.querySelector('button')
     if (button) {
