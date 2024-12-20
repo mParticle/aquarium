@@ -1,13 +1,18 @@
 import { Collapse as AntCollapse } from 'antd'
 import type { CollapseProps as AntCollapseProps } from 'antd'
-import { ConfigProvider } from 'src/components'
+import { ConfigProvider, Icon } from 'src/components'
 
 export interface ICollapseProps extends AntCollapseProps {}
 
 export const Collapse = (props: ICollapseProps) => {
   return (
     <ConfigProvider>
-      <AntCollapse {...props} />
+      <AntCollapse
+        expandIcon={({ isActive }): React.JSX.Element =>
+          isActive ? <Icon name="dropdownOpen" size="sm" /> : <Icon name="next" size="sm" />
+        }
+        {...props}
+      />
     </ConfigProvider>
   )
 }
