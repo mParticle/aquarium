@@ -104,26 +104,3 @@ export const DisabledUpload: Story = {
     disabled: true,
   },
 }
-
-// <Upload
-//   multiple={false}
-//   showUploadList={{
-//     showDownloadIcon: false,
-//     showRemoveIcon: false,
-//   }}
-//   maxCount={1}
-//   fileList={fileList}
-//   className={`${getUploadClass()}`}
-//   beforeUpload={handleBeforeUpload}
-//   accept="text/csv"
-//   data-test="upload-bulk-update__upload"
-// >
-//   <Button
-//     icon={<Icon name="upload" size="sm" />}
-//     hidden={!isInitialState()}
-//     variant="with-new-icon"
-//     data-test="upload-bulk-update__upload_button"
-//   >
-//     Upload
-//   </Button>
-// </Upload>

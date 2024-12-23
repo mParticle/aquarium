@@ -128,5 +128,3 @@ export const ExampleTextAndIcon: Story = {
     )
   },
 }
-
-// <Switch data-test={`column-organizer__column-${id}-toggle`} disabled={isDisabled} checked={column.isVisible} onClick={() => !isDisabled && toggleColumnVisible(column)} />
