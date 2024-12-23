@@ -4,7 +4,7 @@ import { Upload } from 'src/components/data-entry/Upload/Upload'
 import { Button } from 'src/components/general/Button/Button'
 
 const meta: Meta<typeof Upload> = {
-  title: 'Components/Data Entry/Upload',
+  title: 'Components/Not Prod Ready/Data Entry/Upload',
   component: props => (
     <Upload {...props}>
       <Button icon={<Icon name="mpLogo" />}>Click to Upload</Button>
@@ -71,20 +71,59 @@ type Story = StoryObj<typeof Upload>
   Customize the stories based on specific requirements.
 */
 
-export const Primary: Story = {
-  render: () => {
-    return (
-      <Upload
-        multiple={false}
-        showUploadList={{
-          showDownloadIcon: false,
-          showRemoveIcon: false,
-        }}
-        maxCount={1}
-        fileList={[]}
-        accept="text/csv">
-        <Button icon={<Icon name="upload" size="sm" />}>Upload</Button>
-      </Upload>
-    )
+export const Primary: Story = {}
+
+export const CustomListType: Story = {
+  args: {
+    listType: 'picture-card',
   },
 }
+
+export const DragAndDropUpload: Story = {
+  args: {
+    onDrop: event => {
+      alert('File Drop:')
+    },
+  },
+}
+
+export const CustomProgress: Story = {
+  args: {
+    progress: { strokeWidth: 5, showInfo: true },
+  },
+}
+
+export const CustomAcceptFileType: Story = {
+  args: {
+    accept: '.pdf,.docx',
+  },
+}
+
+export const DisabledUpload: Story = {
+  args: {
+    disabled: true,
+  },
+}
+
+// <Upload
+//   multiple={false}
+//   showUploadList={{
+//     showDownloadIcon: false,
+//     showRemoveIcon: false,
+//   }}
+//   maxCount={1}
+//   fileList={fileList}
+//   className={`${getUploadClass()}`}
+//   beforeUpload={handleBeforeUpload}
+//   accept="text/csv"
+//   data-test="upload-bulk-update__upload"
+// >
+//   <Button
+//     icon={<Icon name="upload" size="sm" />}
+//     hidden={!isInitialState()}
+//     variant="with-new-icon"
+//     data-test="upload-bulk-update__upload_button"
+//   >
+//     Upload
+//   </Button>
+// </Upload>
