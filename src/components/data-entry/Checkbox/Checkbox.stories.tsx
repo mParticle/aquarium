@@ -1,11 +1,7 @@
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
-import { Checkbox, Divider } from 'src/components'
+import { Checkbox } from 'src/components'
 import { useState } from 'react'
-import { ExampleStory } from 'src/utils/ExampleStory'
-import { type ICheckboxProps } from 'src/components/data-entry/Checkbox/Checkbox'
-import { userEvent } from '@storybook/test'
-import { expect } from '@storybook/test'
 
 export type CheckboxValueType = string | number | boolean
 
@@ -25,13 +21,15 @@ const meta: Meta<typeof Checkbox> = {
   },
 
   args: {
-    autoFocus: false,
-    checked: false,
-    defaultChecked: false,
+    defaultChecked: true,
     disabled: false,
-    indeterminate: false,
-    onChange: e => {
-      alert(`checked = ${e.target.checked}`)
+  },
+  argTypes: {
+    defaultChecked: {
+      control: 'boolean',
+    },
+    disabled: {
+      control: 'boolean',
     },
   },
 }
@@ -44,67 +42,9 @@ type Story = StoryObj<typeof Checkbox>
   Customize the stories based on specific requirements.
 */
 
-export const Primary: Story = {}
-
-export const WithAutoFocus: Story = {
+export const Primary: Story = {
   args: {
-    autoFocus: true,
-  },
-}
-
-export const DefaultChecked: Story = {
-  args: {
-    defaultChecked: true,
-  },
-}
-
-export const Disabled: Story = {
-  args: {
-    disabled: true,
-  },
-}
-
-export const Indeterminate: Story = {
-  args: {
-    indeterminate: true,
-  },
-}
-
-export const ExampleCheckAll: Story = {
-  render: () => {
-    const plainOptions = ['A', 'B', 'C']
-    const defaultCheckedList = ['A', 'C']
-
-    const [checkedList, setCheckedList] = useState<CheckboxValueType[]>(defaultCheckedList)
-
-    const checkAll = plainOptions.length === checkedList.length
-    const indeterminate = checkedList.length > 0 && checkedList.length < plainOptions.length
-
-    const onCheckAllChange: ICheckboxProps['onChange'] = e => {
-      setCheckedList(e.target.checked ? plainOptions : [])
-    }
-
-    return (
-      <>
-        <ExampleStory title="The `indeterminate` property can help achieve a 'check all' effect.">
-          <Checkbox indeterminate={indeterminate} checked={checkAll} onChange={onCheckAllChange}>
-            Check all
-          </Checkbox>
-          <Divider />
-          <Checkbox.Group options={plainOptions} value={checkedList} onChange={setCheckedList} />
-        </ExampleStory>
-      </>
-    )
-  },
-
-  play: async context => {
-    void expect(context.canvasElement.querySelectorAll('.ant-checkbox-checked').length).toBe(2)
-    const checkboxIndeterminate = context.canvasElement.querySelector('.ant-checkbox-indeterminate')
-    if (checkboxIndeterminate) {
-      await userEvent.click(checkboxIndeterminate)
-    } else {
-      throw new Error('Checkbox Indeterminate not found')
-    }
-    void expect(context.canvasElement.querySelectorAll('.ant-checkbox-checked').length).toBe(4)
+    disabled: false,
+    children: 'Don’t show this message again',
   },
 }

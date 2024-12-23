@@ -8,8 +8,14 @@ import * as QueryItemStories from '../../../../src/components/data-entry/QueryIt
 
 # QueryItem
 
-This is the documentation for the QueryItems component
-
-{/* Documentation goes here */}
+QueryItems are the essential elements used for query builders such as **Analysis Builder**, **Audience Builder**, or **Prediction Builder**. They work together to form clauses that power query logic.
+#### **Types of QueryItems**
+There are four types of QueryItems, each serving a specific purpose:
+1. **ValueSelector**: Used to select a specific value from a list or range.
+2. **Qualifier**: Defines conditions, such as operators (e.g., equals, greater than).
+3. **Text**: Allows free-form text input for custom queries or descriptions.
+4. **Action**: Provides interactive options, such as adding or removing query items.
+#### **When To Use**
+- To build queries for analytical tools like Audience Builder or Analysis Builder.
 
 <Canvas meta={QueryItemStories.default} />

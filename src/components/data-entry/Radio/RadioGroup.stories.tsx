@@ -6,13 +6,8 @@ const meta: Meta<typeof Radio.Group> = {
   component: Radio.Group,
 
   args: {
-    buttonStyle: undefined,
-    defaultValue: undefined,
     disabled: false,
-    name: undefined,
     options: undefined,
-    optionType: undefined,
-    size: 'middle',
     value: undefined,
     onChange: undefined,
     children: undefined,
@@ -22,33 +17,25 @@ export default meta
 
 type Story = StoryObj<typeof Radio.Group>
 
-export const WithOptionsAndOptionType: Story = {
+export const WithEnvOptions: Story = {
   args: {
     options: [
-      { label: 'Apple', value: 'Apple' },
-      { label: 'Pear', value: 'Pear' },
-      { label: 'Orange', value: 'Orange', title: 'Orange' },
+      { label: 'Production', value: 'production' },
+      { label: 'Development', value: 'development' },
+      { label: 'Production & Development', value: 'unknown' },
     ],
+    defaultValue: 'development',
     optionType: 'default',
   },
 }
 
-export const WithRadioButtons: Story = {
+export const WithButtonOptionsType: Story = {
   args: {
-    defaultValue: 'a',
-    children: [
-      <Radio.Button key="a" value="a">
-        Hangzhou
-      </Radio.Button>,
-      <Radio.Button key="b" value="b">
-        Shanghai
-      </Radio.Button>,
-      <Radio.Button key="c" value="c">
-        Beijing
-      </Radio.Button>,
-      <Radio.Button key="d" value="d">
-        Chengdu
-      </Radio.Button>,
+    options: [
+      { label: 'Overview', value: 'overview' },
+      { label: 'Connections', value: 'connections' },
     ],
+    defaultValue: 'overview',
+    optionType: 'button',
   },
 }

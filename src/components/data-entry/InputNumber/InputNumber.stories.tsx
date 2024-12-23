@@ -6,31 +6,19 @@ const meta: Meta<typeof InputNumber> = {
   component: InputNumber,
 
   args: {
-    addonAfter: undefined,
-    addonBefore: undefined,
-    autoFocus: false,
-    bordered: true,
-    changeOnBlur: true,
-    controls: true,
-    decimalSeparator: '.',
-    placeholder: 'Enter a number',
-    defaultValue: undefined,
-    disabled: false,
-    formatter: undefined,
-    keyboard: true,
     max: Number.MAX_SAFE_INTEGER,
     min: Number.MIN_SAFE_INTEGER,
-    parser: undefined,
-    precision: undefined,
-    readOnly: false,
+    placeholder: '',
+    autoFocus: false,
+    controls: true,
+    disabled: false,
     status: undefined,
-    prefix: undefined,
     size: 'middle',
+    decimalSeparator: '.',
     step: 1,
-    stringMode: false,
     value: undefined,
     onChange: value => {
-      alert('InputNumber changed: ' + value)
+      console.log('InputNumber changed: ' + value)
     },
     onPressEnter: e => {
       console.log('Enter key pressed:', e)
@@ -41,6 +29,9 @@ const meta: Meta<typeof InputNumber> = {
   },
 
   argTypes: {
+    autoFocus: {
+      control: 'boolean',
+    },
     size: {
       control: 'select',
       options: ['large', 'middle', 'small'],
@@ -60,86 +51,12 @@ type Story = StoryObj<typeof InputNumber>
   Customize the stories based on specific requirements.
 */
 
-export const Primary: Story = {}
-
-export const Small: Story = {
+export const Primary: Story = {
   args: {
-    size: 'small',
-  },
-}
-
-export const Large: Story = {
-  args: {
-    size: 'large',
-  },
-}
-
-export const Warning: Story = {
-  args: {
-    status: 'warning',
-  },
-}
-
-export const Error: Story = {
-  args: {
-    status: 'error',
-  },
-}
-
-export const Disabled: Story = {
-  args: {
-    disabled: true,
-    value: 42,
-  },
-}
-
-export const ReadOnly: Story = {
-  args: {
-    readOnly: true,
-    value: 123,
-  },
-}
-
-export const $Prefix: Story = {
-  args: {
-    prefix: '$',
-  },
-}
-export const StringMode: Story = {
-  args: {
-    stringMode: true,
-    value: '42.50',
-  },
-}
-
-export const WithControlsAndPrecision: Story = {
-  args: {
-    controls: true,
-    precision: 2,
-  },
-}
-
-export const DecimalSeparatorComma: Story = {
-  args: {
-    decimalSeparator: ',',
-  },
-}
-
-export const WithFormatter: Story = {
-  args: {
-    formatter: (value, info) => `$${value}`,
-  },
-}
-
-export const MinMaxConstraints: Story = {
-  args: {
-    min: 10,
-    max: 100,
-  },
-}
-
-export const Step05: Story = {
-  args: {
-    step: 0.5,
+    max: 90,
+    min: 1,
+    placeholder: 'number',
+    suffix: 'days',
+    style: { width: 120, textAlign: 'right' },
   },
 }
