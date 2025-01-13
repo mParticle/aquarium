@@ -1,22 +1,13 @@
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
 import { Alert } from 'src/components/feedback/Alert/Alert'
-import { ExampleStory } from 'src/utils/ExampleStory'
-import { Icon, Space } from 'src/components'
-import { useState } from 'react'
-import { Button } from 'src/components'
 
 const meta: Meta<typeof Alert> = {
   title: 'Components/Feedback/Alert',
   component: Alert,
 
   args: {
-    action: undefined,
     banner: false,
-    closeIcon: undefined,
-    description: undefined,
-    icon: undefined,
-    message: 'This is a simple alert message',
     showIcon: false,
     type: 'info',
     onClose: e => {
@@ -42,198 +33,37 @@ type Story = StoryObj<typeof Alert>
   Customize the stories based on specific requirements.
 */
 
-export const Primary: Story = {}
+export const Info: Story = {
+  args: {
+    type: 'info',
+    message: 'Note',
+    description: 'Audience size estimates are approximate.',
+  },
+}
 
 export const Success: Story = {
   args: {
     type: 'success',
+    closable: true,
+    message: 'The predictive attribute has been successfully created and now is being calculated.',
   },
 }
 
-export const ErrorType: Story = {
+export const Warning: Story = {
   args: {
-    type: 'error',
-  },
-}
-
-export const WarningBanner: Story = {
-  args: {
-    banner: true,
+    message: 'The default environment is Production.',
+    description:
+      "Ensure your audience's environment aligns with that of any parent audiences to avoid unexpected results.",
     type: 'warning',
+    showIcon: true,
+    closable: true,
   },
 }
 
-export const Description: Story = {
+export const Error: Story = {
   args: {
-    description: 'Additional content of the alert.',
-  },
-}
-
-export const CustomAction: Story = {
-  args: {
-    action: <a style={{ paddingLeft: '8px' }}>Click Me Link</a>,
-  },
-}
-
-export const CustomCloseIcon: Story = {
-  args: {
-    closeIcon: <Icon name="mpLogo" />,
-  },
-}
-
-export const ExampleAllTypes: Story = {
-  render: () => {
-    return (
-      <>
-        <ExampleStory title={<>There are 4 types of Alert: success, info, warning, error.</>}>
-          <Space direction="vertical" style={{ width: '100%' }}>
-            <Alert message="Success Text" type="success" />
-            <Alert message="Info Text" type="info" />
-            <Alert message="Warning Text" type="warning" />
-            <Alert message="Error Text" type="error" />
-          </Space>
-        </ExampleStory>
-      </>
-    )
-  },
-}
-
-export const ExampleClosable: Story = {
-  render: () => {
-    return (
-      <>
-        <ExampleStory title="With close button">
-          <Space direction="vertical" style={{ width: '100%' }}>
-            <Alert
-              message="Warning Text Warning Text Warning TextW arning Text Warning Text Warning TextWarning Text"
-              type="warning"
-              closable
-              onClose={e => {
-                alert('closed')
-              }}
-            />
-            <Alert
-              message="Error Text"
-              description="Error Description Error Description Error Description Error Description Error Description Error Description"
-              type="error"
-              closable
-              onClose={e => {
-                alert('closed')
-              }}
-            />
-          </Space>
-        </ExampleStory>
-      </>
-    )
-  },
-}
-
-export const ExampleBanner: Story = {
-  render: () => {
-    return (
-      <>
-        <ExampleStory title="Display Alert as a banner at top of page">
-          <Space direction="vertical" style={{ width: '100%' }}>
-            <Alert message="Warning text" banner />
-            <Alert message="Very long warning text warning text text text text text text text" banner closable />
-            <Alert showIcon={false} message="Warning text without icon" banner />
-            <Alert type="error" message="Error text" banner />
-          </Space>
-        </ExampleStory>
-      </>
-    )
-  },
-}
-
-export const ExampleCatchError: Story = {
-  render: () => {
-    const [error, setError] = useState<Error>()
-
-    const ThrowError: React.FC = () => {
-      const onClick = () => {
-        setError(new Error('An Uncaught Error'))
-      }
-      if (error) {
-        throw error
-      }
-      return (
-        <Button danger onClick={onClick}>
-          Click me to throw a error
-        </Button>
-      )
-    }
-
-    return (
-      <>
-        <ExampleStory title="ErrorBoundary Component for making error handling easier">
-          <Alert.ErrorBoundary>
-            <ThrowError />
-          </Alert.ErrorBoundary>
-        </ExampleStory>
-      </>
-    )
-  },
-}
-
-export const ExampleCustomActions: Story = {
-  render: () => {
-    return (
-      <>
-        <ExampleStory title="Custom CTAs">
-          <Space direction="vertical" style={{ width: '100%' }}>
-            <Alert
-              message="Success Tips"
-              type="success"
-              showIcon
-              closable
-              action={
-                <Button size="small" type="text">
-                  UNDO
-                </Button>
-              }
-            />
-            <Alert
-              message="Error Text"
-              showIcon
-              description="Error Description Error Description Error Description Error Description"
-              type="error"
-              action={
-                <Button size="small" danger>
-                  Detail
-                </Button>
-              }
-            />
-            <Alert
-              message="Warning Text"
-              type="warning"
-              closable
-              action={
-                <Space>
-                  <Button type="text" size="small" ghost>
-                    Done
-                  </Button>
-                </Space>
-              }
-            />
-            <Alert
-              message="Info Text"
-              description="Info Description Info Description Info Description Info Description"
-              type="info"
-              closable
-              action={
-                <Space direction="vertical">
-                  <Button size="small" type="primary">
-                    Accept
-                  </Button>
-                  <Button size="small" danger ghost>
-                    Decline
-                  </Button>
-                </Space>
-              }
-            />
-          </Space>
-        </ExampleStory>
-      </>
-    )
+    description: 'An error occurred creating the tracing configuration',
+    type: 'error',
+    showIcon: false,
   },
 }
