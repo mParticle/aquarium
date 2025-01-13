@@ -119,6 +119,7 @@ const defaultOrgs: INavigationOrg[] = [
 
 const defaultNotificationCenter: INotificationCenterProps = {
   open: false,
+  unreadMessages: 0,
   content: () => <div></div>,
   onClose: () => {},
   onPreferencesClick: () => {},
@@ -1518,6 +1519,108 @@ export const MPWithNotificationCenterMessageModal: Story = {
                   onClick={() => {
                     setZIndex(0)
                     setIsModalOpen(true)
+                  }}>
+                  Open Modal
+                </div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+                <div>Content</div>
+              </div>
+            ),
+            onClose: () => {
+              setIsNotificationCenterOpen(false)
+            },
+            onPreferencesClick: () => {
+              setIsNotificationCenterOpen(false)
+            },
+          }}
+          logo={defaultLogo}
+          tools={defaultTools}
+          management={defaultManagement}
+          orgs={defaultOrgs}
+          showSuiteLogo={true}
+          onSearchClick={() => {
+            alert('Searching!')
+          }}
+          suiteSelectorOptions={{
+            overviewHref: '/',
+            onLinkClick: link => {
+              alert(link.href)
+            },
+            onUnauthorizedClick: link => {
+              alert(`unauthorized ${link?.href} `)
+            },
+            unauthorizedLinks: ['dataPlatform'],
+            activeLink: 'oversight',
+            links: [
+              { linkId: 'oversight', href: '/oversight' },
+              { linkId: 'dataPlatform', href: '/data-platform' },
+              { linkId: 'customer360', href: '/customer-360' },
+              { linkId: 'predictions', href: '/predictions' },
+              { linkId: 'analytics', href: '/analytics' },
+              { linkId: 'segmentation', href: '/segmentation' },
+            ],
+          }}
+        />
+      </div>
+    )
+  },
+}
+
+export const MPWithNotificationCenterUnreadNotifications: Story = {
+  args: {
+    notificationCenter: {
+      ...defaultNotificationCenter,
+      unreadMessages: 1,
+    },
+  },
+
+  render: props => {
+    const [isNotificationCenterOpen, setIsNotificationCenterOpen] = useState(false)
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [zIndex, setZIndex] = useState(NotificationCenterZIndex)
+    const [unreadMessages, setUnreadMessages] = useState(1)
+    return (
+      <div>
+        <Modal
+          open={isModalOpen}
+          maskClosable={false}
+          destroyOnClose={true}
+          onCancel={() => {
+            setIsModalOpen(false)
+          }}
+          onOk={() => {
+            setIsModalOpen(false)
+          }}
+          afterClose={() => {
+            setZIndex(NotificationCenterZIndex)
+          }}
+          centered={true}>
+          <div>
+            <p>Message Title</p>
+            <p>Unread Messages: {unreadMessages}</p>
+          </div>
+        </Modal>
+        <GlobalNavigation
+          {...props}
+          notificationCenter={{
+            open: isNotificationCenterOpen,
+            zIndex: zIndex,
+            unreadMessages: unreadMessages,
+            onOpenChange: (newOpen: boolean) => {
+              if (isModalOpen) {
+                return
+              }
+              setIsNotificationCenterOpen(newOpen)
+            },
+            content: () => (
+              <div>
+                <div
+                  onClick={() => {
+                    setZIndex(0)
+                    setIsModalOpen(true)
+                    setUnreadMessages(prev => (prev > 0 ? prev - 1 : 0))
                   }}>
                   Open Modal
                 </div>
