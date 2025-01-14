@@ -1,7 +1,7 @@
 import { Button } from 'src/components/general/Button/Button'
 import { type Meta, type StoryObj } from '@storybook/react'
 import { userEvent } from '@storybook/test'
-import { Divider, Flex, Icon } from 'src/components'
+import { Divider, Flex, Icon, Typography } from 'src/components'
 import React from 'react'
 
 const meta: Meta<typeof Button> = {
@@ -115,7 +115,7 @@ export const IconOnly: Story = {
       <>
         <Flex gap="small" align="center">
           <Button icon={<Icon name="zoomOut" />} />
-          <span>100%</span>
+          <Typography.Text>100%</Typography.Text>
           <Button icon={<Icon name="zoomIn" />} />
           <Divider type="vertical" />
           <Button icon={<Icon name="fitToScreen" />} />
