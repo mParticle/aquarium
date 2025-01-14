@@ -11,4 +11,13 @@ export default meta
 
 type Story = StoryObj<typeof Image>
 
-export const Primary: Story = {}
+export const Primary: Story = {
+  args: {
+    src: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
+    preview: false,
+    width: 100,
+    height: 100,
+  },
+}
+
+// <Image src={src} alt={text} width={140} height={100} preview={false} />

@@ -1,10 +1,10 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import React, { useRef, useState } from 'react'
 import { type ITourProps, Tour } from 'src/components/data-display/Tour/Tour'
-import { Icon, SuiteLogo } from 'src/components'
+import { Button } from 'src/components'
 
 const meta: Meta<typeof Tour> = {
-  title: 'Components/Data Display/Tour',
+  title: 'Components/Not Prod Ready/Data Display/Tour',
   component: Tour,
 
   args: {},
@@ -13,16 +13,29 @@ export default meta
 
 type Story = StoryObj<typeof Tour>
 
-export const ExampleNavLogo: Story = {
+export const Primary: Story = {}
+
+export const ExamplePlacement: Story = {
   render: () => {
     const ref = useRef(null)
-    const [open, setOpen] = useState<boolean>(true)
+    const [open, setOpen] = useState<boolean>(false)
 
     const steps: ITourProps['steps'] = [
       {
-        title: 'Navigate mParticle effortlessly!',
-        description: 'Switch between product suites anytime using this selector.',
+        title: 'Center',
+        description: 'Displayed in the center of screen.',
+        target: null,
+      },
+      {
+        title: 'Right',
+        description: 'On the right of target.',
         placement: 'right',
+        target: () => ref.current,
+      },
+      {
+        title: 'Top',
+        description: 'On the top of target.',
+        placement: 'top',
         target: () => ref.current,
       },
     ]
@@ -30,18 +43,16 @@ export const ExampleNavLogo: Story = {
     return (
       <>
         <div ref={ref}>
-          <SuiteLogo
-            label="Data Platform"
-            icon={<Icon name="siteMap" />}
-            onSuiteLogoClick={() => {
+          <Button
+            type="primary"
+            onClick={() => {
               setOpen(true)
-            }}
-          />
+            }}>
+            Begin Tour
+          </Button>
         </div>
 
         <Tour
-          mask={false}
-          type="primary"
           open={open}
           onClose={() => {
             setOpen(false)
