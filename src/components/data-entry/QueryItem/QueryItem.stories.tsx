@@ -19,4 +19,4 @@ export default meta
 
 type Story = StoryObj<typeof QueryItem>
 
-export const DontUseThisOrYouWillBeFired: Story = {}
+export const Primary: Story = {}

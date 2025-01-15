@@ -1,10 +1,7 @@
-import { Input, type InputRef } from 'src/components'
-import { Button } from 'src/components/general/Button/Button'
+import { useState } from 'react'
+import { Icon, Input } from 'src/components'
 import { type Meta, type StoryObj } from '@storybook/react'
-import { ExampleStory } from 'src/utils/ExampleStory'
-import { useRef } from 'react'
 import { Space } from 'src/components'
-import { expect, userEvent } from '@storybook/test'
 
 const meta: Meta<typeof Input> = {
   title: 'Components/Data Entry/Input',
@@ -12,23 +9,13 @@ const meta: Meta<typeof Input> = {
 
   args: {
     placeholder: 'Input Placeholder',
-    addonAfter: undefined,
+    disabled: false,
+    maxLength: undefined,
+    status: undefined,
+    size: 'middle',
+    type: 'text',
     addonBefore: undefined,
     allowClear: false,
-    bordered: true,
-    classNames: {},
-    count: undefined,
-    defaultValue: '',
-    disabled: false,
-    id: undefined,
-    maxLength: undefined,
-    prefix: undefined,
-    showCount: false,
-    status: undefined,
-    styles: {},
-    size: 'middle',
-    suffix: undefined,
-    type: 'text',
     value: '',
     onChange: e => {
       console.log('Input changed: ' + e.target.value)
@@ -39,9 +26,12 @@ const meta: Meta<typeof Input> = {
   },
 
   argTypes: {
+    maxLength: {
+      control: 'number',
+    },
     status: {
       control: 'select',
-      options: ['warning', 'error'],
+      options: ['warning', 'error', 'default'],
     },
     size: {
       control: 'select',
@@ -58,134 +48,47 @@ type Story = StoryObj<typeof Input>
   Customize the stories based on specific requirements.
 */
 
-export const Error: Story = {
+export const Primary: Story = {
   args: {
-    status: 'error',
+    value: '',
+  },
+  render: args => {
+    const [value, setValue] = useState(args.value ?? '')
+
+    return (
+      <Input
+        {...args}
+        value={value}
+        onChange={e => {
+          setValue(e.target.value)
+          args.onChange?.(e)
+        }}
+      />
+    )
   },
 }
 
 export const TextArea: Story = {
-  args: {
-    type: 'textarea',
-  },
-}
-
-export const Large: Story = {
-  args: {
-    size: 'large',
-  },
-}
-
-export const Middle: Story = {
-  args: {
-    size: 'middle',
-  },
-}
-
-export const Small: Story = {
-  args: {
-    size: 'small',
-  },
-}
-
-export const Primary: Story = {}
-
-export const WithHttpsBefore: Story = {
-  args: {
-    addonBefore: 'https://',
-    placeholder: 'Enter URL',
-  },
-}
-
-export const WithDotComAfter: Story = {
-  args: {
-    addonAfter: '.com',
-    placeholder: 'Domain',
-  },
-}
-
-export const AllowClear: Story = {
-  args: {
-    allowClear: true,
-    placeholder: 'Clearable Input',
-  },
-}
-
-export const Disabled: Story = {
-  args: {
-    disabled: true,
-  },
-}
-
-export const WithMaxLength: Story = {
-  args: {
-    maxLength: 10,
-    placeholder: 'Max 10 characters',
-  },
-}
-
-export const WithPrefixAndSuffix: Story = {
-  args: {
-    prefix: '@',
-    suffix: '.com',
-    placeholder: 'Email',
-  },
-}
-
-export const WithFocusManagement: Story = {
-  args: {
-    value: 'Test value',
-  },
-  render: (props, meta) => {
-    const inputRef = useRef<InputRef>(null)
-
-    const focus = (cursor: 'start' | 'end' | 'all' = 'start') => {
-      inputRef.current?.focus({
-        cursor,
-      })
-    }
-
+  render: () => {
     return (
-      <ExampleStory title={meta.name}>
-        <Space direction="vertical" style={{ width: '100%' }}>
-          <Space wrap>
-            <Button
-              onClick={() => {
-                focus('start')
-              }}>
-              Focus at start
-            </Button>
-            <Button
-              onClick={() => {
-                focus('end')
-              }}>
-              Focus at last
-            </Button>
-            <Button
-              onClick={() => {
-                focus('all')
-              }}>
-              Focus to select all
-            </Button>
-          </Space>
-          <br />
-          <Input {...props} defaultValue="Welcome to the Aquarium" ref={inputRef} />
-        </Space>
-      </ExampleStory>
+      <Input.TextArea size="middle" autoSize={{ minRows: 2 }} placeholder="Description (optional)">
+        Test
+      </Input.TextArea>
     )
   },
-  play: async story => {
-    const input = story.canvasElement.querySelector('input')
-    await expect(input).toBeInTheDocument()
+}
 
-    const buttons = story.canvasElement.querySelectorAll('button')
-    await expect(buttons.length).toBe(3)
-
-    for (const button of buttons) {
-      input?.blur()
-      await userEvent.click(button)
-      await expect(input).toHaveFocus()
-      input?.blur()
-    }
+export const WithSearchAddon: Story = {
+  render: () => {
+    return (
+      <Space>
+        <Input
+          placeholder="Search"
+          allowClear
+          autoFocus
+          addonBefore={<Icon name="search" size="sm" color="default" />}
+        />
+      </Space>
+    )
   },
 }

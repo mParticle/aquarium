@@ -2,10 +2,11 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { Radio } from 'src/components/data-entry/Radio/Radio'
 
 const meta: Meta<typeof Radio> = {
-  title: 'Components/Data Entry/Radio',
+  title: 'Components/Not Prod Ready/Data Entry/Radio',
   component: Radio,
 
   args: {
+    autoFocus: false,
     checked: false,
     defaultChecked: false,
     disabled: false,
@@ -22,9 +23,34 @@ type Story = StoryObj<typeof Radio>
   Customize the stories based on specific requirements.
 */
 
-export const Primary: Story = {
+export const WithAutoFocus: Story = {
+  args: {
+    autoFocus: true,
+  },
+}
+
+export const Checked: Story = {
   args: {
     checked: true,
-    children: 'All users',
+  },
+}
+
+export const DefaultChecked: Story = {
+  args: {
+    defaultChecked: true,
+  },
+}
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+  },
+}
+
+export const WithOnChange: Story = {
+  args: {
+    onChange: () => {
+      alert('Radio Changed')
+    },
   },
 }

@@ -11,4 +11,14 @@ export default meta
 
 type Story = StoryObj<typeof Select>
 
-export const Primary: Story = {}
+export const Primary: Story = {
+  args: {
+    placeholder: 'Select Environment',
+    options: [
+      { label: 'All', value: 'all' },
+      { label: 'Prod', value: 'prod' },
+      { label: 'Dev', value: 'dev' },
+    ],
+    style: { width: '180px' },
+  },
+}
