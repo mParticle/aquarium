@@ -4,7 +4,7 @@ import { Button } from 'src/components/general/Button/Button'
 import { LoadingModal, type ILoadingModalProps } from 'src/components/feedback/LoadingModal/LoadingModal'
 
 const meta: Meta<typeof LoadingModal> = {
-  title: 'Components/Feedback/Loading Modal',
+  title: 'Components/Not Prod Ready/Feedback/Loading Modal',
   component: LoadingModal,
 
   args: {},
