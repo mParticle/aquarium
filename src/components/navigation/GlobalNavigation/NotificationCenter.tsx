@@ -1,16 +1,23 @@
 import { Flex, Typography, Space, Button } from 'antd'
-import { type IButtonProps, Icon, type IPopoverProps, Popover } from 'src/components'
+import { Badge, type IButtonProps, Icon, type IPopoverProps, Popover } from 'src/components'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
 
 export interface INotificationCenterProps
   extends Omit<IPopoverProps, 'key' | 'trigger' | 'placement' | 'arrow' | 'overlayClassName' | 'title'> {
+  unreadMessages?: number
   onClose?: IButtonProps['onClick']
   onPreferencesClick?: IButtonProps['onClick']
 }
 
 export const NotificationCenterZIndex = 9999
 
-export function NotificationCenter({ zIndex, onClose, onPreferencesClick, ...props }: INotificationCenterProps) {
+export function NotificationCenter({
+  zIndex,
+  onClose,
+  onPreferencesClick,
+  unreadMessages,
+  ...props
+}: INotificationCenterProps) {
   return (
     <Popover
       trigger="click"
@@ -35,7 +42,11 @@ export function NotificationCenter({ zIndex, onClose, onPreferencesClick, ...pro
           key="notificationCenter"
           type="link"
           isActive={props?.open}
-          icon={<Icon name="notification" />}
+          icon={
+            <Badge dot count={Math.max(unreadMessages ?? 0, 0)}>
+              <Icon name="notification" />
+            </Badge>
+          }
         />
       </div>
     </Popover>
