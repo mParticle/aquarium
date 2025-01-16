@@ -1,21 +1,24 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { Space } from 'src/components'
 import { Notification } from 'src/components/feedback/Notification/Notification'
 import { Button } from 'src/components/general/Button/Button'
-import { FontWeightStrong } from 'src/styles/style'
 
 const meta: Meta<typeof Notification> = {
-  title: 'Components/Feedback/Notification',
+  title: 'Components/Not Prod Ready/Feedback/Notification',
   component: Notification,
 
   args: {
+    type: 'info',
     children: <Button type="primary">Show Notification</Button>,
     message: 'Message',
     description: 'Description goes here',
     duration: 0,
     btn: undefined,
+    className: undefined,
+    closeIcon: true,
+    icon: undefined,
     key: undefined,
     placement: 'topRight',
+    style: undefined,
     role: 'alert',
     onClick: function () {
       alert('Notification Clicked')
@@ -44,21 +47,34 @@ type Story = StoryObj<typeof Notification>
   Customize the stories based on specific requirements.
 */
 
-export const Primary: Story = {
+export const Primary: Story = {}
+
+export const Short: Story = {
   args: {
-    placement: 'bottomLeft',
-    message: <span style={{ fontWeight: FontWeightStrong }}>Join the new mParticle Experience!</span>,
-    description:
-      'Managing your data is easier than ever with the new mParticle experience. Try out the latest features with ease, and switch back to the classic experience anytime from the side navigation.',
-    btn: (
-      <Space>
-        <Button type="link" size="small">
-          Remind me later
-        </Button>
-        <Button type="primary" size="small">
-          Take me there
-        </Button>
-      </Space>
-    ),
+    duration: 1,
+  },
+}
+
+export const Info: Story = {
+  args: {
+    type: 'info',
+  },
+}
+
+export const Warning: Story = {
+  args: {
+    type: 'warning',
+  },
+}
+
+export const Success: Story = {
+  args: {
+    type: 'success',
+  },
+}
+
+export const Error: Story = {
+  args: {
+    type: 'error',
   },
 }

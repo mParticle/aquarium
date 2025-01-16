@@ -1,21 +1,27 @@
 import { Button } from 'src/components/general/Button/Button'
 import { type Meta, type StoryObj } from '@storybook/react'
 import { userEvent } from '@storybook/test'
-import { Divider, Flex, Icon, Typography } from 'src/components'
+import { Icon } from 'src/components'
 import React from 'react'
 
 const meta: Meta<typeof Button> = {
-  title: 'Components/General/Button',
+  title: 'Components/Not Prod Ready/General/Button',
   component: props => <Button {...props}>{props.children ?? 'Button Label'}</Button>,
 
   args: {
+    block: false,
     danger: false,
     disabled: false,
     ghost: false,
+    href: undefined,
+    htmlType: 'button',
+    icon: undefined,
     loading: false,
     shape: 'default',
     size: 'middle',
+    target: undefined,
     type: 'primary',
+    onClick: undefined,
   },
 
   argTypes: {
@@ -43,10 +49,6 @@ type Story = StoryObj<typeof Button>
 */
 
 export const Primary: Story = {
-  args: {
-    type: 'primary',
-    children: 'Create',
-  },
   play: async context => {
     const button = context.canvasElement.querySelector('button')
     if (button) {
@@ -57,70 +59,99 @@ export const Primary: Story = {
   },
 }
 
-export const PrimaryWithIcon: Story = {
-  args: {
-    type: 'primary',
-    icon: <Icon name="add" size="sm" />,
-    children: 'Add',
-  },
-}
-
-export const Default: Story = {
-  args: {
-    type: 'default',
-    children: 'Cancel',
-  },
-}
-
-export const DefaultWithIcon: Story = {
-  args: {
-    type: 'default',
-    icon: <Icon size="sm" name="transformation" />,
-    children: 'View Columns',
-  },
-}
-
 export const Dashed: Story = {
   args: {
     type: 'dashed',
   },
 }
 
-export const DashedWithIcon: Story = {
+export const Text: Story = {
   args: {
-    type: 'dashed',
-    icon: <Icon size="sm" name="add" />,
-    children: 'Connect Output',
+    type: 'text',
   },
 }
 
 export const Link: Story = {
   args: {
     type: 'link',
-    children: 'Retry',
   },
 }
 
-export const LinkWithIcon: Story = {
+export const WithDanger: Story = {
   args: {
-    type: 'link',
-    icon: <Icon name="add" />,
-    children: 'Add Audience Criteria',
+    danger: true,
   },
 }
 
-export const IconOnly: Story = {
-  render: () => {
-    return (
-      <>
-        <Flex gap="small" align="center">
-          <Button icon={<Icon name="zoomOut" />} />
-          <Typography.Text>100%</Typography.Text>
-          <Button icon={<Icon name="zoomIn" />} />
-          <Divider type="vertical" />
-          <Button icon={<Icon name="fitToScreen" />} />
-        </Flex>
-      </>
-    )
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+  },
+}
+
+export const Ghost: Story = {
+  args: {
+    ghost: true,
+  },
+}
+
+export const Block: Story = {
+  args: {
+    block: true,
+  },
+}
+
+export const WithIconDefaultColorSM: Story = {
+  args: {
+    type: 'default',
+    icon: <Icon name="mpLogo" size="sm" color="default" />,
+    variant: 'with-new-icon',
+  },
+}
+
+export const RoundIconButton: Story = {
+  args: {
+    icon: <Icon name="dataPlatform" size="xl" />,
+    children: ' ',
+    type: 'default',
+    shape: 'round',
+    variant: 'with-new-icon',
+  },
+}
+export const Loading: Story = {
+  args: {
+    loading: true,
+  },
+}
+
+export const Circle: Story = {
+  args: {
+    shape: 'circle',
+  },
+}
+
+export const Round: Story = {
+  args: {
+    shape: 'round',
+  },
+}
+
+export const Large: Story = {
+  args: {
+    size: 'large',
+  },
+}
+
+export const Small: Story = {
+  args: {
+    size: 'small',
+  },
+}
+
+export const PrimaryButtonWithClick: Story = {
+  args: {
+    onClick: e => {
+      alert('Button Clicked')
+    },
   },
 }

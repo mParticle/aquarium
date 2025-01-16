@@ -1,4 +1,5 @@
 import { type Meta, type StoryObj } from '@storybook/react'
+import { Button, Icon, Typography } from 'src/components'
 import { Result } from 'src/components/feedback/Result/Result'
 
 const meta: Meta<typeof Result> = {
@@ -11,26 +12,39 @@ export default meta
 
 type Story = StoryObj<typeof Result>
 
-export const Primary: Story = {
+export const Info: Story = {
   args: {
-    status: 'success',
+    icon: <Icon name="premium" variant="duo-tone" size="xxxxl" color="brand" />,
+    title: (
+      <>
+        <Typography.Text type="secondary" size="lg" strong>
+          Premium Feature.
+        </Typography.Text>
+        <br />
+        <Typography.Title level={2}>Achieve next-level personalization with Predictive Attributes</Typography.Title>
+      </>
+    ),
+    extra: (
+      <>
+        <Button type="primary">Start Free Trial</Button>
+        <Button type="default">Learn More</Button>
+      </>
+    ),
   },
 }
 
 export const Error: Story = {
   args: {
     status: 'error',
-  },
-}
-
-export const Warning: Story = {
-  args: {
-    status: 'warning',
-  },
-}
-
-export const Info: Story = {
-  args: {
-    status: 'info',
+    title: 'We were unable to load the prediction details.',
+    subTitle: (
+      <>
+        Please{' '}
+        <Button type="link" style={{ padding: 0 }}>
+          refresh the page
+        </Button>{' '}
+        to try again. If the problem persists, <a>contact support</a>.
+      </>
+    ),
   },
 }
