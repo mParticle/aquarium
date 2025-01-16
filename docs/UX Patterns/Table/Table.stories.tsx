@@ -56,6 +56,27 @@ export const Primary: Story = {
   ),
 }
 
+export const FixedHeader: Story = {
+  render: () => (
+    <Space direction="vertical" style={{ width: '100%' }}>
+      <Space direction="vertical" style={{ width: '100%' }}>
+        <Flex align={'center'} justify={'space-between'}>
+          <Flex gap={10}>
+            <DatePickerWithDisabledYears />
+          </Flex>
+          <Input
+            allowClear
+            prefix={<Icon size="sm" color="brand" name="search" />}
+            placeholder="Search"
+            style={{ width: '240px' }}
+          />
+        </Flex>
+      </Space>
+      <Table<TableDataType> columns={tableColumns} dataSource={tableData} scroll={{ x: 'max-content' }} sticky={true} />
+    </Space>
+  ),
+}
+
 const TIME_OPTIONS = [
   {
     value: 'last12hours',
