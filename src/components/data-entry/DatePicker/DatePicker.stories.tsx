@@ -62,11 +62,11 @@ type Story = StoryObj<typeof DatePicker>
 
 export const Primary: Story = {}
 
-export const WithDatePickerWithDisabledYears: Story = {
+export const WithDisabledYears: Story = {
   render: () => <DatePickerWithDisabledYears />,
 }
 
-WithDatePickerWithDisabledYears.parameters = {
+WithDisabledYears.parameters = {
   docs: {
     source: {
       code: `

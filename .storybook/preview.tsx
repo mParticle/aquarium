@@ -1,17 +1,12 @@
 import type { Preview } from '@storybook/react'
-// import type { IndexEntry } from '@storybook/types'
 
 const preview: Preview = {
   parameters: {
     layout: 'centered',
     options: {
-      // TODO https://mparticle-eng.atlassian.net/browse/UNI-1214
-      // storySort: (a: IndexEntry, b: IndexEntry) => {
-      // console.log('Ordering stories', { a, b })
-      // const order = ['Documentation', 'Cell Types', 'Filters', 'Primary', 'Complex']
-      // return order.indexOf(a[1].name) - order.indexOf(b[1].name)
-      // },
       storySort: {
+        method: 'alphabetical',
+        includeNames: true,
         order: [
           'About',
           ['Introduction', 'Changelog', 'Feedback', 'Component Process'],
@@ -21,7 +16,9 @@ const preview: Preview = {
           [
             'Data Display',
             'Data Entry',
+            ['QueryItem', ['Documentation']],
             'General',
+            ['Button', ['Documentation']],
             'Feedback',
             'Layout',
             'Navigation',
