@@ -1,6 +1,6 @@
 import type { StorybookConfig } from '@storybook/react-vite'
 import react from '@vitejs/plugin-react'
-import { PluginOption, Plugin } from 'vite'
+import type { PluginOption, Plugin } from 'vite'
 import { withoutVitePlugins } from '@storybook/builder-vite'
 import remarkGfm from 'remark-gfm'
 
