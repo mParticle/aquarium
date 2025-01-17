@@ -66,7 +66,7 @@ export const Primary: Story = {
   ),
 }
 
-export const FixedHeader: Story = {
+export const FixedHeaderAndStickyColumns: Story = {
   render: () => (
     <Space direction="vertical" style={{ width: '100%' }}>
       <Space direction="vertical" style={{ width: '100%' }}>
