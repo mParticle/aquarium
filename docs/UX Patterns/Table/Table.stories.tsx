@@ -24,6 +24,16 @@ import { SelectWithRangePicker } from 'docs/Candidate Components/Directory/Date 
 import { useState } from 'react'
 import { ColorTextDescription } from 'src/styles/style'
 
+const fixedColumns = tableColumns?.map((col, i) => {
+  if (i === 0 || i === (tableColumns?.length ?? 0) - 1) {
+    return {
+      ...col,
+      fixed: true,
+    }
+  }
+  return col
+})
+
 const meta: Meta<typeof Table> = {
   title: 'UX Patterns/Table/Table',
   component: Table,
@@ -72,7 +82,14 @@ export const FixedHeader: Story = {
           />
         </Flex>
       </Space>
-      <Table<TableDataType> columns={tableColumns} dataSource={tableData} scroll={{ x: 'max-content' }} sticky={true} />
+      <Table<TableDataType>
+        columns={fixedColumns}
+        dataSource={tableData}
+        scroll={{ x: 'max-content' }}
+        sticky
+        pagination={false}
+        tableLayout="auto"
+      />
     </Space>
   ),
 }
