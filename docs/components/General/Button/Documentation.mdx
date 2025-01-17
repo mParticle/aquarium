@@ -1,0 +1,91 @@
+import { Meta, Canvas } from '@storybook/blocks'
+
+import * as ButtonStories from '../../../../src/components/general/Button/Button.stories'
+
+<Meta of={ButtonStories} />
+
+{/* Documentation goes here */}
+
+# Button
+
+#### Overview
+
+The **Button** component is used to trigger actions or navigate the interface. It supports various styles, sizes, and states to fit different use cases.
+
+#### Key Features
+
+- **Variants:** Includes primary, default, dashed, text, and link buttons for different use cases.
+- **Sizes:** Supports small, medium (default), and large sizes.
+- **States:** Disabled, loading, and hover states to indicate action availability.
+- **Icons:** Easily integrate icons for visual clarity and emphasis.
+
+
+### Button Variants and Use Cases
+
+#### Primary Button
+
+**Use Case**: For the main action on a page or section.
+- **Example:** Submitting a form, saving changes, or initiating a key process.
+
+**Examples**:
+
+- **With Icon**:
+<Canvas of={ButtonStories.PrimaryWithIcon} />
+
+- **Without Icon**:
+<Canvas of={ButtonStories.Primary} />
+
+#### Default Button
+
+**Use Case**: For secondary actions that complement the primary task.
+- **Example:** Canceling an action, opening a dialog, or performing less important tasks.
+
+**Examples**:
+
+- **With Icon**:
+<Canvas of={ButtonStories.DefaultWithIcon} />
+
+- **Without Icon**:
+<Canvas of={ButtonStories.Default} />
+
+#### Dashed Button
+
+**Use Case**: For tertiary actions in the visual hierarchy.
+
+**Examples**:
+
+- **With Icon**:
+<Canvas of={ButtonStories.DashedWithIcon} />
+
+- **Without Icon**:
+<Canvas of={ButtonStories.Dashed} />
+
+#### Link Button
+
+**Use Case**: Ideal for triggering an actions that don't require heavy visual emphasis.
+- **Example:** Viewing errors, navigating to documentation
+When navigating to a new URL or external page, always use [Typography.Link](https://mparticle.github.io/aquarium/?path=/story/components-general-typography-link--primary) instead of a Link Button.
+
+**Examples**:
+
+- **With Icon**:
+<Canvas of={ButtonStories.LinkWithIcon} />
+
+- **Without Icon**:
+<Canvas of={ButtonStories.Link} />
+
+#### Icon-Only Button
+
+**Use Case**: For compact controls where only an icon is needed.
+- **Example:** Toolbar controls, close buttons, or quick actions.
+
+**Examples**:
+<Canvas of={ButtonStories.IconOnly} />
+
+
+#### Related Links
+
+| Type  | Resource                                                                                                                                               |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Eames | [Button Component](https://www.figma.com/design/veXnmignQnJz8StIq10VJ5/Eames-2.0---Foundations-%26-Components?node-id=368-430&p=f&t=1Pi9thxrLJt7TsHN-0) |
+| AntD | [Button Component](https://ant.design/components/button) |

@@ -1,28 +1,27 @@
 import { type Meta, type StoryObj } from '@storybook/react'
+import { Flex, Typography } from 'src/components'
 import { List } from 'src/components/data-display/List/List'
+import { ExampleStory } from 'src/utils/ExampleStory'
 
 const meta: Meta<typeof List> = {
   title: 'Components/Data Display/List',
   component: props => <List {...props}></List>,
 
   args: {
+    bordered: false,
+    split: false,
+    size: 'default',
     dataSource: ['item1', 'item2', 'item3'],
     renderItem: item => <List.Item>{item as string}</List.Item>,
-    bordered: false,
-    footer: undefined,
-    grid: undefined,
-    header: undefined,
-    itemLayout: 'horizontal',
-    loading: false,
-    locale: { emptyText: 'No Data' },
-    pagination: false,
-    size: 'default',
-    split: true,
   },
   argTypes: {
-    itemLayout: {
-      control: 'select',
-      options: ['horizontal', 'vertical'],
+    bordered: {
+      control: 'boolean',
+      description: 'Toggle whether the list is bordered',
+    },
+    split: {
+      control: 'boolean',
+      description: 'Toggle whether list items are split by a divider',
     },
     size: {
       control: 'select',
@@ -39,52 +38,69 @@ type Story = StoryObj<typeof List>
   Customize the stories based on specific requirements.
 */
 
-export const Primary: Story = {}
-
-export const BorderedList: Story = {
+export const Primary: Story = {
   args: {
+    header: <Typography.Text strong>List Header</Typography.Text>,
     bordered: true,
+    split: true,
+    size: 'default',
+  },
+  render: args => {
+    const dataSource = [
+      'Racing car sprays burning fuel into crowd.',
+      'Japanese princess to wed commoner.',
+      'Australian walks 100km after outback crash.',
+      'Man charged over missing wedding girl.',
+      'Los Angeles battles huge wildfires.',
+    ]
+
+    return (
+      <List
+        {...args}
+        header={<div>List Header</div>}
+        footer={<div>List Footer</div>}
+        dataSource={dataSource}
+        renderItem={item => <List.Item>{item}</List.Item>}
+      />
+    )
   },
 }
 
-export const VerticalLayout: Story = {
-  args: {
-    itemLayout: 'vertical',
-  },
-}
+export const WithMetaItems: Story = {
+  render: () => {
+    const dataSource = [
+      {
+        title: 'item1',
+        description: 'description1',
+      },
+      {
+        title: 'item2',
+        description: 'description2',
+      },
+      {
+        title: 'item3',
+        description: 'description3',
+      },
+    ]
 
-export const LoadingIndicator: Story = {
-  args: {
-    loading: true,
-  },
-}
-
-export const CustomPagination: Story = {
-  args: {
-    pagination: { current: 1, total: 50, pageSize: 10 },
-  },
-}
-
-export const CustomGrid: Story = {
-  args: {
-    grid: { gutter: 16, column: 4 },
-  },
-}
-
-export const LargeSizeList: Story = {
-  args: {
-    size: 'large',
-  },
-}
-
-export const CustomFooter: Story = {
-  args: {
-    footer: <>Custom Footer</>,
-  },
-}
-
-export const NoSplitUnderListItem: Story = {
-  args: {
-    split: false,
+    return (
+      <ExampleStory title="A List that supports title and description.">
+        <List
+          dataSource={dataSource}
+          itemLayout="vertical"
+          renderItem={item => (
+            <List.Item key={item.title}>
+              <Flex gap="middle">
+                <List.Item.Meta
+                  title={<Typography.Text strong>{item.title}</Typography.Text>}
+                  description={item.description}
+                  className="u-margin-bottom-none"
+                />
+              </Flex>
+            </List.Item>
+          )}
+        />
+      </ExampleStory>
+    )
   },
 }

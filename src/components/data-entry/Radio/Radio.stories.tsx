@@ -6,7 +6,6 @@ const meta: Meta<typeof Radio> = {
   component: Radio,
 
   args: {
-    autoFocus: false,
     checked: false,
     defaultChecked: false,
     disabled: false,
@@ -23,36 +22,9 @@ type Story = StoryObj<typeof Radio>
   Customize the stories based on specific requirements.
 */
 
-export const Primary: Story = {}
-
-export const WithAutoFocus: Story = {
-  args: {
-    autoFocus: true,
-  },
-}
-
-export const Checked: Story = {
+export const Primary: Story = {
   args: {
     checked: true,
-  },
-}
-
-export const DefaultChecked: Story = {
-  args: {
-    defaultChecked: true,
-  },
-}
-
-export const Disabled: Story = {
-  args: {
-    disabled: true,
-  },
-}
-
-export const WithOnChange: Story = {
-  args: {
-    onChange: () => {
-      alert('Radio Changed')
-    },
+    children: 'All users',
   },
 }

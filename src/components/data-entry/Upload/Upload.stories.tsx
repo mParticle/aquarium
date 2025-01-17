@@ -71,36 +71,20 @@ type Story = StoryObj<typeof Upload>
   Customize the stories based on specific requirements.
 */
 
-export const Primary: Story = {}
-
-export const CustomListType: Story = {
-  args: {
-    listType: 'picture-card',
-  },
-}
-
-export const DragAndDropUpload: Story = {
-  args: {
-    onDrop: event => {
-      alert('File Drop:')
-    },
-  },
-}
-
-export const CustomProgress: Story = {
-  args: {
-    progress: { strokeWidth: 5, showInfo: true },
-  },
-}
-
-export const CustomAcceptFileType: Story = {
-  args: {
-    accept: '.pdf,.docx',
-  },
-}
-
-export const DisabledUpload: Story = {
-  args: {
-    disabled: true,
+export const Primary: Story = {
+  render: () => {
+    return (
+      <Upload
+        multiple={false}
+        showUploadList={{
+          showDownloadIcon: false,
+          showRemoveIcon: false,
+        }}
+        maxCount={1}
+        fileList={[]}
+        accept="text/csv">
+        <Button icon={<Icon name="upload" size="sm" />}>Upload</Button>
+      </Upload>
+    )
   },
 }

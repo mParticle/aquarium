@@ -23,8 +23,6 @@ import { tableColumns, tableData, type TableDataType } from './TableStoryUtils'
 import { SelectWithRangePicker } from 'docs/Candidate Components/Directory/Date Range Filter/SelectWithRangePicker'
 import { useState } from 'react'
 import { ColorTextDescription } from 'src/styles/style'
-import MinusSquareOutlined from '@ant-design/icons/MinusSquareOutlined'
-import PlusSquareOutlined from '@ant-design/icons/PlusSquareOutlined'
 
 const meta: Meta<typeof Table> = {
   title: 'UX Patterns/Table/Table',
@@ -110,11 +108,7 @@ const CollapsibleSection = ({ ...item }: ICollapsibleFormSectionProps): React.JS
           },
         },
       }}>
-      <Collapse
-        ghost
-        expandIcon={({ isActive }): React.JSX.Element => (isActive ? <MinusSquareOutlined /> : <PlusSquareOutlined />)}
-        items={[{ ...item, key: 'item' }]}
-      />
+      <Collapse ghost items={[{ ...item, key: 'item' }]} />
     </ConfigProvider>
   )
 }
