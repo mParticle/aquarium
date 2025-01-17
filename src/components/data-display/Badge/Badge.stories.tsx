@@ -24,7 +24,7 @@ export const DotBadge: Story = {
   },
 }
 
-export const BadgeStatus: Story = {
+export const StatusBadge: Story = {
   argTypes: {
     status: {
       control: 'select',
