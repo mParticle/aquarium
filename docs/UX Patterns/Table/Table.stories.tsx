@@ -28,7 +28,7 @@ const fixedColumns = tableColumns?.map((col, i) => {
   if (i === 0 || i === (tableColumns?.length ?? 0) - 1) {
     return {
       ...col,
-      fixed: true,
+      fixed: i === 0 ? 'left' : 'right',
     }
   }
   return col
@@ -68,22 +68,9 @@ export const Primary: Story = {
 
 export const FixedHeaderAndStickyColumns: Story = {
   render: () => (
-    <Space direction="vertical" style={{ width: '100%' }}>
-      <Space direction="vertical" style={{ width: '100%' }}>
-        <Flex align={'center'} justify={'space-between'}>
-          <Flex gap={10}>
-            <DatePickerWithDisabledYears />
-          </Flex>
-          <Input
-            allowClear
-            prefix={<Icon size="sm" color="brand" name="search" />}
-            placeholder="Search"
-            style={{ width: '240px' }}
-          />
-        </Flex>
-      </Space>
+    <Space direction="vertical" style={{ width: '750px' }}>
       <Table<TableDataType>
-        columns={fixedColumns}
+        columns={fixedColumns as any}
         dataSource={tableData}
         scroll={{ x: 'max-content' }}
         sticky
