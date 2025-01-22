@@ -1,3 +1,9 @@
+## [1.37.1](https://github.com/mParticle/aquarium/compare/v1.37.0...v1.37.1) (2025-01-22)
+
+### Bug Fixes
+
+- double scroll on Table ([#530](https://github.com/mParticle/aquarium/issues/530)) ([2ae5258](https://github.com/mParticle/aquarium/commit/2ae5258bd777e8176a12601df3d701d63f099578))
+
 # [1.37.0](https://github.com/mParticle/aquarium/compare/v1.36.1...v1.37.0) (2025-01-17)
 
 ### Features
