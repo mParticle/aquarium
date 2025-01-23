@@ -11,7 +11,6 @@ import {
   CheckIcon,
   CircleNodesIcon,
   CloudIcon,
-  CrosshairIcon,
   ConnectionsIcon,
   DataPlatformIconDt,
   DatabaseIcon,
@@ -38,6 +37,7 @@ import {
   MpLogoIcon,
   ObservabilityIcon,
   OversightIconDt,
+  PrecisionIcon,
   PredictionsIconDt,
   PredictionsIcon,
   RemoveIcon,
@@ -185,10 +185,6 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   copy: {
     light: Copy,
-    default: 'light',
-  },
-  crosshair: {
-    light: CrosshairIcon,
     default: 'light',
   },
   dashboard: {
@@ -407,6 +403,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   placeholder: {
     light: Placeholder,
+    default: 'light',
+  },
+  precision: {
+    light: PrecisionIcon,
     default: 'light',
   },
   predictions: {

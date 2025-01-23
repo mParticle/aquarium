@@ -23,8 +23,16 @@ import { tableColumns, tableData, type TableDataType } from './TableStoryUtils'
 import { SelectWithRangePicker } from 'docs/Candidate Components/Directory/Date Range Filter/SelectWithRangePicker'
 import { useState } from 'react'
 import { ColorTextDescription } from 'src/styles/style'
-import MinusSquareOutlined from '@ant-design/icons/MinusSquareOutlined'
-import PlusSquareOutlined from '@ant-design/icons/PlusSquareOutlined'
+
+const fixedColumns = tableColumns?.map((col, i) => {
+  if (i === 0 || i === (tableColumns?.length ?? 0) - 1) {
+    return {
+      ...col,
+      fixed: i === 0 ? 'left' : 'right',
+    }
+  }
+  return col
+})
 
 const meta: Meta<typeof Table> = {
   title: 'UX Patterns/Table/Table',
@@ -54,6 +62,21 @@ export const Primary: Story = {
         </Flex>
       </Space>
       <Table<TableDataType> columns={tableColumns} dataSource={tableData} scroll={{ x: 'max-content' }} />
+    </Space>
+  ),
+}
+
+export const FixedHeaderAndStickyColumns: Story = {
+  render: () => (
+    <Space direction="vertical" style={{ width: '750px' }}>
+      <Table<TableDataType>
+        columns={fixedColumns as any}
+        dataSource={tableData}
+        scroll={{ x: 'max-content' }}
+        sticky
+        pagination={false}
+        tableLayout="auto"
+      />
     </Space>
   ),
 }
@@ -110,11 +133,7 @@ const CollapsibleSection = ({ ...item }: ICollapsibleFormSectionProps): React.JS
           },
         },
       }}>
-      <Collapse
-        ghost
-        expandIcon={({ isActive }): React.JSX.Element => (isActive ? <MinusSquareOutlined /> : <PlusSquareOutlined />)}
-        items={[{ ...item, key: 'item' }]}
-      />
+      <Collapse ghost items={[{ ...item, key: 'item' }]} />
     </ConfigProvider>
   )
 }

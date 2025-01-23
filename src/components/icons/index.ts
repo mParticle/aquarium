@@ -8,7 +8,6 @@ import ChartLineIcon from 'src/assets/svg/chart-line.svg?react'
 import CheckIcon from 'src/assets/svg/check.svg?react'
 import CircleNodesIcon from 'src/assets/svg/circle-nodes.svg?react'
 import CloudIcon from 'src/assets/svg/cloud.svg?react'
-import CrosshairIcon from 'src/assets/svg/crosshair.svg?react'
 import ConnectionsIcon from 'src/assets/svg/connections.svg?react'
 import DataPlatformIconDt from 'src/assets/svg/mp_pm_dt_data-platform.svg?react'
 import DatabaseIcon from 'src/assets/svg/database.svg?react'
@@ -34,6 +33,7 @@ import MessageQuestionIcon from 'src/assets/svg/message-question.svg?react'
 import MpLogoIcon from 'src/assets/svg/mpLogo.svg?react'
 import ObservabilityIcon from 'src/assets/svg/mp_pm_lt_observability.svg?react'
 import OversightIconDt from 'src/assets/svg/mp_pm_dt_oversight.svg?react'
+import PrecisionIcon from 'src/assets/svg/precision.svg?react'
 import PredictionsIcon from 'src/assets/svg/mp_pm_lt_predictions.svg?react'
 import PredictionsIconDt from 'src/assets/svg/mp_pm_dt_predictions.svg?react'
 import RemoveIcon from 'src/assets/svg/remove.svg?react'
@@ -107,7 +107,6 @@ export {
   CheckIcon,
   CircleNodesIcon,
   CloudIcon,
-  CrosshairIcon,
   Cohort,
   ConnectionsIcon,
   ConversionIcon,
@@ -159,6 +158,7 @@ export {
   OverviewIconDt,
   PaywallIcon,
   Placeholder,
+  PrecisionIcon,
   PredictionsIcon,
   PredictionsIconDt,
   PremiumIcon,

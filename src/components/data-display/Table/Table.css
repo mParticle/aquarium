@@ -1,0 +1,16 @@
+.antd-table-override--disableStickyScroll .ant-table-sticky-scroll {
+    display: none !important;
+}
+
+.antd-table-override--disableStickyScroll .ant-table-body::-webkit-scrollbar {
+    display: none;
+}
+
+.antd-table-override--disableStickyScroll .ant-table-body {
+    -ms-overflow-style: none;
+
+    /* IE and Edge */
+    scrollbar-width: none;
+
+    /* Firefox */
+}

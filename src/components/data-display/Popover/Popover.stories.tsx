@@ -29,16 +29,12 @@ const PrimaryTemplate = (args: IPopoverProps) => {
 }
 
 export const Primary: Story = {
-  args: { trigger: 'click', children: 'Click Me' },
-  render: PrimaryTemplate,
-}
-
-export const Hover: Story = {
-  args: { trigger: 'hover', children: 'Hover Me' },
-  render: PrimaryTemplate,
-}
-
-export const Focus: Story = {
-  args: { trigger: 'focus', children: 'Focus Me' },
+  args: { trigger: 'click', children: 'Button with popover' },
+  argTypes: {
+    trigger: {
+      control: 'select',
+      options: ['click', 'hover', 'focus'],
+    },
+  },
   render: PrimaryTemplate,
 }
