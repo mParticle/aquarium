@@ -93,6 +93,7 @@ import {
   Copy,
   MoreActions,
   AbSplit,
+  BannerFreemium,
 } from 'src/components/icons'
 
 export const Icons: Record<IconNames, IconOptions> = {
@@ -554,5 +555,9 @@ export const Icons: Record<IconNames, IconOptions> = {
   zoomOut: {
     light: ZoomOut,
     default: 'light',
+  },
+  bannerFreemium: {
+    'duo-tone': BannerFreemium,
+    default: 'duo-tone',
   },
 } as const

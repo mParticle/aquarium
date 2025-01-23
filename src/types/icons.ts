@@ -124,3 +124,4 @@ export type IconNames =
   | 'wrench'
   | 'zoomIn'
   | 'zoomOut'
+  | 'bannerFreemium'
