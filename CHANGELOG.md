@@ -1,3 +1,9 @@
+## [1.37.2](https://github.com/mParticle/aquarium/compare/v1.37.1...v1.37.2) (2025-01-27)
+
+### Bug Fixes
+
+- ensure single horizontal scroll on Table when sticky ([#533](https://github.com/mParticle/aquarium/issues/533)) ([f08c5ee](https://github.com/mParticle/aquarium/commit/f08c5eea1753a6f001f53ecf25fd46b2f0820656))
+
 ## [1.37.1](https://github.com/mParticle/aquarium/compare/v1.37.0...v1.37.1) (2025-01-22)
 
 ### Bug Fixes
