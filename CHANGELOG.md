@@ -1,3 +1,9 @@
+# [1.38.0](https://github.com/mParticle/aquarium/compare/v1.37.2...v1.38.0) (2025-01-31)
+
+### Features
+
+- highcharts configs ([#534](https://github.com/mParticle/aquarium/issues/534)) ([588bebe](https://github.com/mParticle/aquarium/commit/588bebe98b82ab26b86c6dfed5f61149257742d2))
+
 ## [1.37.2](https://github.com/mParticle/aquarium/compare/v1.37.1...v1.37.2) (2025-01-27)
 
 ### Bug Fixes
