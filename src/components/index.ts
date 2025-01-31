@@ -139,3 +139,5 @@ export {
   type INewExperienceReminderOptions,
   type NewExperienceReminderHook,
 } from '../hooks/NewExperienceReminder/useNewExperienceReminder'
+export { ChartConfig, ChartAxisStyle } from '../constants/ChartConfig'
+export { ChartColors } from '../constants/ChartColors'
