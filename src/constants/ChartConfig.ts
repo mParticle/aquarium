@@ -11,8 +11,8 @@ export const ChartAxisStyle = {
 export const ChartConfig: Options = {
   chart: {
     animation: true,
-    backgroundColor: null,
-    plotBackgroundColor: null,
+    backgroundColor: undefined,
+    plotBackgroundColor: undefined,
     plotBorderWidth: 0,
     plotShadow: false,
     borderRadius: 0,
@@ -24,7 +24,7 @@ export const ChartConfig: Options = {
       marker: {
         enabled: true,
         lineWidth: 2,
-        lineColor: null,
+        lineColor: undefined,
         radius: 3,
         symbol: 'circle',
         states: {
