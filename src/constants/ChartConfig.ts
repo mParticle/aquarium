@@ -1,3 +1,4 @@
+import { type Options } from 'highcharts'
 const ChartFontFamily = "'GT America', Helvetica, Arial, sans-serif"
 
 export const ChartAxisStyle = {
@@ -7,7 +8,7 @@ export const ChartAxisStyle = {
   color: 'rgba(56, 60, 67, 0.7)',
 } as const
 
-export const ChartConfig = {
+export const ChartConfig: Options = {
   chart: {
     animation: true,
     backgroundColor: null,
