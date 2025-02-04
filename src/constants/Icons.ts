@@ -94,6 +94,9 @@ import {
   MoreActions,
   AbSplit,
   BannerFreemium,
+  StateEmpty,
+  StateError,
+  StateNoResults,
 } from 'src/components/icons'
 
 export const Icons: Record<IconNames, IconOptions> = {
@@ -559,5 +562,17 @@ export const Icons: Record<IconNames, IconOptions> = {
   bannerFreemium: {
     'duo-tone': BannerFreemium,
     default: 'duo-tone',
+  },
+  stateEmpty: {
+    light: StateEmpty,
+    default: 'light',
+  },
+  stateError: {
+    light: StateError,
+    default: 'light',
+  },
+  stateNoResults: {
+    light: StateNoResults,
+    default: 'light',
   },
 } as const

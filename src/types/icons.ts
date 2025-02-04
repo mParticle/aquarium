@@ -125,3 +125,6 @@ export type IconNames =
   | 'zoomIn'
   | 'zoomOut'
   | 'bannerFreemium'
+  | 'stateEmpty'
+  | 'stateError'
+  | 'stateNoResults'
