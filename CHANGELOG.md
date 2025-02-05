@@ -1,3 +1,9 @@
+# [1.39.0](https://github.com/mParticle/aquarium/compare/v1.38.0...v1.39.0) (2025-02-05)
+
+### Features
+
+- add state icons ([#537](https://github.com/mParticle/aquarium/issues/537)) ([31a3aa5](https://github.com/mParticle/aquarium/commit/31a3aa5820736ebaf2340fa8e5ac1eba75e04c1c))
+
 # [1.38.0](https://github.com/mParticle/aquarium/compare/v1.37.2...v1.38.0) (2025-01-31)
 
 ### Features
