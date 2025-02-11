@@ -141,3 +141,6 @@ export {
 } from '../hooks/NewExperienceReminder/useNewExperienceReminder'
 export { ChartConfig, ChartAxisStyle } from '../constants/ChartConfig'
 export { ChartColors } from '../constants/ChartColors'
+
+export { RoutesAuthorizationManager } from '../shared/RoutesAuthorizationManager'
+export { initUserPreferences } from '../shared/UserPreferences'
