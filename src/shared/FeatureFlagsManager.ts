@@ -51,6 +51,8 @@ export class FeatureFlagsManager {
      * @returns true if the feature is enabled, otherwise false.
      **/
     public static isEnabled(feature: FeatureFlag): boolean {
-        throw new Error("implement");
+        return window.mParticleConfig.workspaceFeatureSettings.some((featureSettings) => {
+            return featureSettings.name === feature;
+        });
     }
 }
