@@ -22,7 +22,7 @@ const userPreferenceDefinitions : UserPreferenceDefinitions<Preferences> = {
     },
 }
 
-async function init(): Promise<void> {
+export async function init(): Promise<void> {
     const cookieOptions = {
         permanent: true,
         domain: getCookieDomain(),
