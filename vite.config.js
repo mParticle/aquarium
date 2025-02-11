@@ -29,10 +29,13 @@ export default defineConfig({
     outDir: 'dist',
     lib: {
       // Could also be a dictionary or array of multiple entry points
-      entry: resolve(__dirname, 'src/components/index.ts'),
+      entry: {
+        "aquarium": resolve(__dirname, 'src/components/index.ts'),
+        "aquarium-shared": resolve(__dirname, 'src/shared/index.ts'),
+      },
       name: 'aquarium',
-      formats: ['es', 'umd'],
-      fileName: 'aquarium',
+      formats: ['es'],
+      fileName: (format, entryName) => entryName,
     },
     rollupOptions: {
       external: ['react', 'react/jsx-runtime', 'antd'],
