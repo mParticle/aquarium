@@ -1,4 +1,4 @@
-import { BaseSuiteAuthorizations } from "./RouteAuthorizations/base-suite-authorizations";
+import { BaseRoutesAuthorizations } from "./RouteAuthorizations/base-routes-authorizations";
 import { Paths } from "./Paths";
 import { Suite } from "./Suite";
 import { Customer360Authorizations } from "./RouteAuthorizations/customer-360-authorizations";
@@ -23,9 +23,9 @@ export class RoutesAuthorizationManager {
             new OversightAuthorizations(),
             new RootAuthorizations(),
             new SegmentationAuthorizations(),
-        ] as BaseSuiteAuthorizations[];
+        ] as BaseRoutesAuthorizations[];
         
-        suiteAuthorizations.forEach((r) => this.registerRoutesAuthorizations(r.getRoutesAuthorizationsForSuite()));
+        suiteAuthorizations.forEach((r) => this.registerRoutesAuthorizations(r.getRoutesAuthorizations()));
     }
 
     private registerRoutesAuthorizations(routesAuthorizations: RouteAuthorization[]) {

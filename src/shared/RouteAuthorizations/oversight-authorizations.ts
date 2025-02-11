@@ -1,14 +1,14 @@
-import { BaseSuiteAuthorizations } from "../RouteAuthorizations/base-suite-authorizations";
+import { BaseRoutesAuthorizations } from "./base-routes-authorizations";
 import { Suite } from "../Suite";
 import { Paths } from "../Paths";
 import { Operation } from "../Operation";
 import { AuthorizationManager } from "../AuthorizationManager";
 import { FeatureFlagsManager, FeatureFlag } from "../FeatureFlagsManager";
 
-export class OversightAuthorizations extends BaseSuiteAuthorizations {
+export class OversightAuthorizations extends BaseRoutesAuthorizations {
     protected suite: Suite = Suite.Oversight;
 
-    protected getRoutesAuthorizations(): Record<string, boolean> {
+    protected getAuthorizations(): Record<string, boolean> {
         return {
             [Paths.Oversight.DSR]: this.canViewDSR(),
             [Paths.Oversight.PrivacySettings]: this.canViewPrivacy(),

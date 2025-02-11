@@ -1,13 +1,13 @@
-import { BaseSuiteAuthorizations } from "./base-suite-authorizations";
+import { BaseRoutesAuthorizations } from "./base-routes-authorizations";
 import { Suite } from "../Suite";
 import { Paths } from "../Paths";
 import { Operation } from "../Operation";
 import { AuthorizationManager } from "../AuthorizationManager";
 
-export class DataPlatformAuthorizations extends BaseSuiteAuthorizations {
+export class DataPlatformAuthorizations extends BaseRoutesAuthorizations {
     protected suite: Suite = Suite.DataPlatform;
 
-    protected getRoutesAuthorizations(): Record<string, boolean> {
+    protected getAuthorizations(): Record<string, boolean> {
         return {
             [Paths.DataPlatform.Trends]: this.canViewPlatformTrends(),
             [Paths.DataPlatform.Livestream]: this.canViewLiveStream(),

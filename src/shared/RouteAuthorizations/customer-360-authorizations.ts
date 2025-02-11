@@ -1,14 +1,14 @@
 import { Suite } from "../Suite";
-import { BaseSuiteAuthorizations } from "../RouteAuthorizations/base-suite-authorizations";
+import { BaseRoutesAuthorizations } from "./base-routes-authorizations";
 import { Paths } from "../Paths";
 import { Operation } from "../Operation";
 import { AuthorizationManager } from "../AuthorizationManager";
 import { FeatureFlagsManager, FeatureFlag } from "../FeatureFlagsManager";
 
-export class Customer360Authorizations extends BaseSuiteAuthorizations {
+export class Customer360Authorizations extends BaseRoutesAuthorizations {
     protected suite: Suite = Suite.Customer360;
 
-    protected getRoutesAuthorizations(): Record<string, boolean> {
+    protected getAuthorizations(): Record<string, boolean> {
         return {
             [Paths.Customer360.Identity.Root]: this.canViewUserGroups(),
             [Paths.Customer360.Identity.GroupIdentities]: this.canViewUserGroups(),

@@ -1,4 +1,4 @@
-import { BaseSuiteAuthorizations } from "../RouteAuthorizations/base-suite-authorizations";
+import { BaseRoutesAuthorizations } from "./base-routes-authorizations";
 import { Suite } from "../Suite";
 import { Paths } from "../Paths";
 import { Operation } from "../Operation";
@@ -6,10 +6,10 @@ import { AuthorizationManager } from "../AuthorizationManager";
 import { FeatureFlagsManager, FeatureFlag } from "../FeatureFlagsManager";
 import { AudiencePermissionsService } from "../AudiencePermissionsService";
 
-export class RootAuthorizations extends BaseSuiteAuthorizations {
+export class RootAuthorizations extends BaseRoutesAuthorizations {
     protected suite: Suite = Suite.Root;
 
-    protected getRoutesAuthorizations(): Record<string, boolean> {
+    protected getAuthorizations(): Record<string, boolean> {
         const playgroundRoutesAuth = Object.keys(Paths.Root.Playground).reduce(
             (acc, route) => {
                 acc[route] = this.canViewPlayground();
