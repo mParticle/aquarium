@@ -23,8 +23,27 @@ const items: ITabsProps['items'] = [
 const meta: Meta<typeof Tabs> = {
   title: 'Components/Data Display/Tabs',
   component: Tabs,
-
-  args: {},
+  args: {
+    defaultActiveKey: '1',
+    items: [
+      {
+        label: 'Tab 1',
+        key: '1',
+        children: 'Tab 1',
+      },
+      {
+        label: 'Tab 2',
+        key: '2',
+        children: 'Tab 2',
+        disabled: true,
+      },
+      {
+        label: 'Tab 3',
+        key: '3',
+        children: 'Tab 3',
+      },
+    ],
+  },
 }
 export default meta
 
