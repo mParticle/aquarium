@@ -56,7 +56,7 @@ export interface IParagraphProps extends InternalParagraphProps {}
 
 // Tried generalizing into a higher order component but couldn't do it type-safely, so just repeated the code
 const Text = (props: ITextProps) => {
-  const { size, color, type, tooltip, children, ...rest } = props
+  const { size, color, type, tooltip, children, style, ...rest } = props
 
   const fontSize = size ? getFontSize(size) : undefined
   const lineHeight = size ? getLineHeight(size) : undefined
@@ -64,7 +64,7 @@ const Text = (props: ITextProps) => {
 
   return (
     <ConfigProvider>
-      <AntTypography.Text style={{ color: fontColor, fontSize, lineHeight, ...props.style }} type={type} {...rest}>
+      <AntTypography.Text style={{ color: fontColor, fontSize, lineHeight, ...style }} type={type} {...rest}>
         {children}
       </AntTypography.Text>
     </ConfigProvider>
