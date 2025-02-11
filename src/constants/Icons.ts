@@ -97,6 +97,7 @@ import {
   StateEmpty,
   StateError,
   StateNoResults,
+  Back,
 } from 'src/components/icons'
 
 export const Icons: Record<IconNames, IconOptions> = {
@@ -573,6 +574,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   stateNoResults: {
     light: StateNoResults,
+    default: 'light',
+  },
+  back: {
+    light: Back,
     default: 'light',
   },
 } as const

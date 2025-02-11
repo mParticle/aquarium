@@ -128,3 +128,4 @@ export type IconNames =
   | 'stateEmpty'
   | 'stateError'
   | 'stateNoResults'
+  | 'back'
