@@ -74,7 +74,7 @@ const Text = (props: ITextProps) => {
 Typography.Text = Text
 
 const Title = (props: ITitleProps) => {
-  const { size, color, type, children, ...rest } = props
+  const { size, color, type, children, style, ...rest } = props
 
   const fontSize = size ? getFontSize(size) : undefined
   const lineHeight = size ? getLineHeight(size) : undefined
@@ -82,7 +82,7 @@ const Title = (props: ITitleProps) => {
 
   return (
     <ConfigProvider>
-      <AntTypography.Title style={{ color: fontColor, fontSize, lineHeight, ...props.style }} type={type} {...rest}>
+      <AntTypography.Title style={{ color: fontColor, fontSize, lineHeight, ...style }} type={type} {...rest}>
         {children}
       </AntTypography.Title>
     </ConfigProvider>
@@ -92,7 +92,7 @@ const Title = (props: ITitleProps) => {
 Typography.Title = Title
 
 const Link = (props: ILinkProps) => {
-  const { size, color, type, tooltip, underline, children, ...rest } = props
+  const { size, color, type, tooltip, underline, children, style, ...rest } = props
 
   const fontSize = size ? getFontSize(size) : undefined
   const lineHeight = size ? getLineHeight(size) : undefined
@@ -101,7 +101,7 @@ const Link = (props: ILinkProps) => {
   return (
     <ConfigProvider>
       <AntTypography.Link
-        style={{ color: fontColor, fontSize, lineHeight, ...props.style }}
+        style={{ color: fontColor, fontSize, lineHeight, ...style }}
         type={type}
         underline={tooltip ?? underline}
         {...rest}>
@@ -114,7 +114,7 @@ const Link = (props: ILinkProps) => {
 Typography.Link = Link
 
 const Paragraph = (props: IParagraphProps) => {
-  const { size, color, type, children, ...rest } = props
+  const { size, color, type, children, style, ...rest } = props
 
   const fontSize = size ? getFontSize(size) : undefined
   const lineHeight = size ? getLineHeight(size) : undefined
@@ -122,7 +122,7 @@ const Paragraph = (props: IParagraphProps) => {
 
   return (
     <ConfigProvider>
-      <AntTypography.Paragraph style={{ color: fontColor, fontSize, lineHeight, ...props.style }} type={type} {...rest}>
+      <AntTypography.Paragraph style={{ color: fontColor, fontSize, lineHeight, ...style }} type={type} {...rest}>
         {children}
       </AntTypography.Paragraph>
     </ConfigProvider>
