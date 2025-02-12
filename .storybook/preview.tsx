@@ -1,4 +1,14 @@
 import type { Preview } from '@storybook/react'
+import { initUserPreferences } from "../src/shared/UserPreferences";
+
+window.mParticleConfig = {
+  workspaceFeatureSettings: [],
+  operations: [],
+  accountLimits: {},
+  organizationPolicy: {}
+}
+
+await initUserPreferences();
 
 const preview: Preview = {
   parameters: {

@@ -4,11 +4,13 @@ import { type HrefOptions } from 'src/utils/utils'
 import { type Icons } from 'src/constants/Icons'
 
 export interface IBaseGlobalNavigationItem {
+  id?: string,
   type?: 'menu' | 'link'
   label: ReactNode
   icon?: ReactNode
   hideLabel?: boolean
   isActive?: boolean
+  disabled?: boolean
 }
 
 export interface IGlobalNavigationLogo extends IBaseGlobalNavigationItem {
@@ -20,7 +22,7 @@ export interface IGlobalNavigationLogo extends IBaseGlobalNavigationItem {
 
 export interface IGlobalNavigationMenu extends IBaseGlobalNavigationItem {
   type: 'menu'
-  children: IGlobalNavigationLink[]
+  children: IGlobalNavigationItem[]
 }
 
 export interface IGlobalNavigationLink extends IBaseGlobalNavigationItem {

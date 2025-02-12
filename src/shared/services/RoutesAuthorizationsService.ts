@@ -7,38 +7,31 @@ import { OversightAuthorizations } from "./routeAuthorizations/oversight-authori
 import { RootAuthorizations } from "./routeAuthorizations/root-authorizations";
 import { SegmentationAuthorizations } from "./routeAuthorizations/segmentation-authorizations";
 
-export type RouteAuthorization = {
+type RouteAuthorization = {
     suite: Suite;
     route: string;
     authorized: boolean;
 };
 
+const suiteAuthorizations = [
+    new Customer360Authorizations(),
+    new DataPlatformAuthorizations(),
+    new OversightAuthorizations(),
+    new RootAuthorizations(),
+    new SegmentationAuthorizations(),
+] as BaseRoutesAuthorizations[];
+
+const routesAuthorizations: RouteAuthorization[] = [];
+suiteAuthorizations.forEach((r) => routesAuthorizations.push(...r.getRoutesAuthorizations()));
+
 export class RoutesAuthorizationsService {
-    private routesAuthorizations: RouteAuthorization[] = [];
-
-    constructor() {
-        const suiteAuthorizations = [
-            new Customer360Authorizations(),
-            new DataPlatformAuthorizations(),
-            new OversightAuthorizations(),
-            new RootAuthorizations(),
-            new SegmentationAuthorizations(),
-        ] as BaseRoutesAuthorizations[];
-        
-        suiteAuthorizations.forEach((r) => this.registerRoutesAuthorizations(r.getRoutesAuthorizations()));
-    }
-
-    private registerRoutesAuthorizations(routesAuthorizations: RouteAuthorization[]) {
-        this.routesAuthorizations.push(...routesAuthorizations);
-    }
-
-    public isRouteAuthorized(route: string): boolean {
-        const authorizationConfig = this.routesAuthorizations.find((r) => this.routeMatches(route, r));
+    public static isRouteAuthorized(route: string): boolean {
+        const authorizationConfig = routesAuthorizations.find((r) => this.routeMatches(route, r));
 
         return authorizationConfig?.authorized ?? false;
     }
 
-    private routeMatches(route: string, routeAuthorization: RouteAuthorization): boolean {
+    private static routeMatches(route: string, routeAuthorization: RouteAuthorization): boolean {
         const suiteBaseRoute = Paths[routeAuthorization.suite].Root;
         const fullAuthorizedRoute = routeAuthorization.route
             ? `${suiteBaseRoute}/${routeAuthorization.route}`

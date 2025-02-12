@@ -14,6 +14,7 @@ import {
 import { generateOrgs } from 'src/components/navigation/GlobalNavigation/stories-utils'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'
 import { useNewExperienceReminder } from 'src/hooks/NewExperienceReminder/useNewExperienceReminder'
+import { NavigationItemsProvider } from "src/shared/NavigationItemsProvider";
 
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',
@@ -27,7 +28,7 @@ const defaultLogo: IGlobalNavigationLogo = {
 const defaultTools: IGlobalNavigationItem[] = [
   {
     label: 'Tool 1',
-    isActive: true,
+    disabled: true,
     icon: <Icon name="privacy" />,
     type: 'menu',
     children: [
@@ -290,7 +291,7 @@ const mpTools: IGlobalNavigationItem[] = [
 
 const mpManagement: IGlobalNavigationItem[] = [
   {
-    isActive: true,
+    disabled: true,
     label: 'Support',
     hideLabel: true,
     icon: <Icon name="support" />,
@@ -505,7 +506,7 @@ export const MP: Story = {
       alert('Searching!')
     },
     logo: mpLogo,
-    tools: mpTools,
+    tools: NavigationItemsProvider.navigationItems,
     management: mpManagement,
     orgs: mpOrgs,
     minimapOptions: {
@@ -572,7 +573,7 @@ const indTools: IGlobalNavigationItem[] = [
   {
     label: 'My Hub',
     icon: <Icon name="myHub" />,
-    isActive: true,
+    disabled: true,
     hrefOptions: { href: '/' },
   },
   {
@@ -942,7 +943,7 @@ const cortexTools: IGlobalNavigationItem[] = [
     label: 'Projects',
     icon: <Icon name="journeys" />,
     hrefOptions: { href: '/' },
-    isActive: true,
+    disabled: true,
   },
   {
     label: 'Data',
