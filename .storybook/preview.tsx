@@ -1,5 +1,7 @@
 import type { Preview } from '@storybook/react'
 import { initUserPreferences } from "../src/shared/UserPreferences";
+import { NavigationItemsProvider } from "../src/shared/NavigationItemsProvider";
+import { RoutesAuthorizationsService } from "../src/shared/services/RoutesAuthorizationsService";
 
 window.mParticleConfig = {
   workspaceFeatureSettings: [],
@@ -9,6 +11,8 @@ window.mParticleConfig = {
 }
 
 await initUserPreferences();
+RoutesAuthorizationsService.init();
+NavigationItemsProvider.init();
 
 const preview: Preview = {
   parameters: {

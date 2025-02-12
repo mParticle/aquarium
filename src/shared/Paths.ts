@@ -68,12 +68,15 @@ export const Paths = {
     [Suite.DataPlatform]: {
         Trends: "data-platform/trends",
         Setup: {
+            Root: "data-platform/setup",
             Connections: "data-platform/setup/connections",
             Inputs: {
+                Root: "data-platform/setup/inputs",
                 Feeds: "data-platform/setup/inputs/feeds",
                 Apps: "data-platform/setup/inputs/apps",
             },
             Outputs: {
+                Root: "data-platform/setup/outputs",
                 Event: "data-platform/setup/outputs/event",
                 Audience: "data-platform/setup/outputs/audience",
                 CookieSync: "data-platform/setup/outputs/cookiesync",
@@ -84,6 +87,7 @@ export const Paths = {
                 Crm: "data-platform/setup/outputs/crm",
             },
             Directory: {
+                Root: "data-platform/setup/directory",
                 Listing: "data-platform/setup/directory/listing",
             },
             WarehouseSync: "data-platform/setup/warehouse-sync",
@@ -91,9 +95,11 @@ export const Paths = {
         Livestream: "data-platform/livestream",
         DataCatalog: "data-platform/data-catalog",
         Transformations: {
+            Root: "data-platform/transformations",
             Rules: "data-platform/transformations/rules",
             Plans: "data-platform/transformations/plans",
             Filters: {
+                Root: "data-platform/transformations/filters",
                 Platform: "data-platform/transformations/filters/platform",
                 Feed: "data-platform/transformations/filters/feed",
             },
@@ -103,10 +109,12 @@ export const Paths = {
 
     [Suite.Customer360]: {
         Identity: {
+            Root: "customer-360/identity",
             GroupIdentities: "customer-360/identity/group-identities",
         },
         UserProfile: "customer-360/user-profile",
         Enrichment: {
+            Root: "customer-360/enrichment",
             CalculatedAttributes: "customer-360/enrichment/calculated-attributes",
             PredictiveAttributes: "customer-360/enrichment/predictive-attributes",
             PredictiveAttributesNew: "customer-360/enrichment/predictive-attributes/new",
@@ -116,6 +124,7 @@ export const Paths = {
 
     [Suite.Segmentation]: {
         Audiences: {
+            Root: "segmentation/audiences",
             RealTime: "segmentation/audiences/real-time",
             Standard: "segmentation/audiences/standard",
             Shared: "segmentation/audiences/shared",
@@ -129,6 +138,7 @@ export const Paths = {
     [Suite.Oversight]: {
         SystemAlerts: "oversight/system-alerts",
         Observability: {
+            Root: "oversight/observability",
             List: "oversight/observability/trace/activity",
             Requests: "oversight/observability/trace/configurations"
         },

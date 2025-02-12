@@ -123,7 +123,7 @@ const customer360: IGlobalNavigationItem = {
                 {
                     id: NavigationItemId.GroupIdentity,
                     label: "Group Identity",
-                    hrefOptions: { href: Paths.Customer360.Identity.Root }
+                    hrefOptions: { href: Paths.Customer360.Identity.GroupIdentities }
                 }
             ]
         },
@@ -171,17 +171,17 @@ const dataPlatform: IGlobalNavigationItem = {
                 {
                     id: NavigationItemId.Inputs,
                     label: "Inputs",
-                    hrefOptions: { href: Paths.DataPlatform.Setup.Inputs.Root }
+                    hrefOptions: { href: Paths.DataPlatform.Setup.Inputs.Apps }
                 },
                 {
                     id: NavigationItemId.Outputs,
                     label: "Outputs",
-                    hrefOptions: { href: Paths.DataPlatform.Setup.Inputs.Root }
+                    hrefOptions: { href: Paths.DataPlatform.Setup.Outputs.Event }
                 },
                 {
                     id: NavigationItemId.Directory,
                     label: "Directory",
-                    hrefOptions: { href: Paths.DataPlatform.Setup.Directory.Root }
+                    hrefOptions: { href: Paths.DataPlatform.Setup.Directory.Listing }
                 }
             ]
         },
@@ -326,26 +326,30 @@ const allNavigationItems: IGlobalNavigationItem[] = [
     predictions
 ];
 
-const checkAuthorization = (item: IGlobalNavigationItem): void => {
-    if (item.type === "link" && item.hrefOptions?.href) {
-        const isAuthorized = RoutesAuthorizationsService.isRouteAuthorized(item.hrefOptions.href);
-        if (!isAuthorized) {
-            item.disabled = true;
-        }
-    }
-    if (item.type === 'menu' && item.children) {
-        for (const child of item.children) {
-            checkAuthorization(child);
-        }
-    }
-};
-
-for (const item of allNavigationItems) {
-    checkAuthorization(item);
-}
-
 export class NavigationItemsProvider {
-    public static navigationItems = allNavigationItems;
+    public static navigationItems: IGlobalNavigationItem[];
+    
+    public static init() {
+        const checkAuthorization = (item: IGlobalNavigationItem): void => {
+            if (item.type === "link" && item.hrefOptions?.href) {
+                const isAuthorized = RoutesAuthorizationsService.isRouteAuthorized(item.hrefOptions.href);
+                if (!isAuthorized) {
+                    item.disabled = true;
+                }
+            }
+            if (item.type === 'menu' && item.children) {
+                for (const child of item.children) {
+                    checkAuthorization(child);
+                }
+            }
+        };
+
+        for (const item of allNavigationItems) {
+            checkAuthorization(item);
+        }
+        
+        this.navigationItems = allNavigationItems;
+    }
     
     public static findItemById(id: NavigationItemId): IGlobalNavigationItem | undefined {
         const findItem = (items: IGlobalNavigationItem[]): IGlobalNavigationItem | undefined => {
