@@ -1,7 +1,6 @@
 import { Suite } from "./Suite";
 
 export const Paths = {
-    // Suite routes
     [Suite.Root]: {
         Overview: {
             Root: "mp/overview",
