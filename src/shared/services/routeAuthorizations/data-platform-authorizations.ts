@@ -1,8 +1,8 @@
 import { BaseRoutesAuthorizations } from "./base-routes-authorizations";
-import { Suite } from "../Suite";
-import { Paths } from "../Paths";
-import { Operation } from "../Operation";
-import { AuthorizationManager } from "../AuthorizationManager";
+import { Suite } from "../../Suite";
+import { Paths } from "../../Paths";
+import { Operation } from "../../Operation";
+import { AuthorizationsService } from "../AuthorizationsService";
 
 export class DataPlatformAuthorizations extends BaseRoutesAuthorizations {
     protected suite: Suite = Suite.DataPlatform;
@@ -59,43 +59,43 @@ export class DataPlatformAuthorizations extends BaseRoutesAuthorizations {
     }
 
     private canViewPlatformTrends(): boolean {
-        return AuthorizationManager.isAuthorized(Operation.REPORT_LIST);
+        return AuthorizationsService.isAuthorized(Operation.REPORT_LIST);
     }
 
     private canViewLiveStream(): boolean {
         return (
-            AuthorizationManager.isAuthorized(Operation.REPORT_LIST) &&
-            AuthorizationManager.isAuthorized(Operation.EVENT_STREAM)
+            AuthorizationsService.isAuthorized(Operation.REPORT_LIST) &&
+            AuthorizationsService.isAuthorized(Operation.EVENT_STREAM)
         );
     }
 
     private canViewEventForwarding(): boolean {
-        return AuthorizationManager.isAuthorized(Operation.REPORT_LIST);
+        return AuthorizationsService.isAuthorized(Operation.REPORT_LIST);
     }
 
     private canViewConnections(): boolean {
-        return AuthorizationManager.isAuthorized(Operation.SUBSCRIPTIONS_LIST);
+        return AuthorizationsService.isAuthorized(Operation.SUBSCRIPTIONS_LIST);
     }
 
     private canViewInputs(): boolean {
-        return AuthorizationManager.isAuthorized([Operation.INPUTS_LIST, Operation.INPUTS_VIEW]);
+        return AuthorizationsService.isAuthorized([Operation.INPUTS_LIST, Operation.INPUTS_VIEW]);
     }
 
     private canViewOutputs(): boolean {
-        return AuthorizationManager.isAuthorized([Operation.OUTPUTS_LIST]);
+        return AuthorizationsService.isAuthorized([Operation.OUTPUTS_LIST]);
     }
 
     public canViewDataWarehouse(): boolean {
         return (
-            AuthorizationManager.isAuthorized(Operation.REDSHIFT) ||
-            AuthorizationManager.isAuthorized(Operation.GOOGLEBIGQUERYVIEW) ||
-            AuthorizationManager.isAuthorized(Operation.SNOWFLAKE) ||
-            AuthorizationManager.isAuthorized(Operation.DATABRICKSVIEW)
+            AuthorizationsService.isAuthorized(Operation.REDSHIFT) ||
+            AuthorizationsService.isAuthorized(Operation.GOOGLEBIGQUERYVIEW) ||
+            AuthorizationsService.isAuthorized(Operation.SNOWFLAKE) ||
+            AuthorizationsService.isAuthorized(Operation.DATABRICKSVIEW)
         );
     }
 
     private canViewWarehouseSync(): boolean {
-        return AuthorizationManager.isAuthorized(Operation.DATA_INGEST_VIEW);
+        return AuthorizationsService.isAuthorized(Operation.DATA_INGEST_VIEW);
     }
 
     public canViewCrm(): boolean {
@@ -103,22 +103,22 @@ export class DataPlatformAuthorizations extends BaseRoutesAuthorizations {
     }
 
     private canViewDirectory(): boolean {
-        return AuthorizationManager.isAuthorized(Operation.PROVIDER_LIST);
+        return AuthorizationsService.isAuthorized(Operation.PROVIDER_LIST);
     }
 
     private canViewDataCatalog(): boolean {
-        return AuthorizationManager.isAuthorized(Operation.DATAMANAGER_VIEW);
+        return AuthorizationsService.isAuthorized(Operation.DATAMANAGER_VIEW);
     }
 
     private canViewRules(): boolean {
-        return AuthorizationManager.isAuthorized(Operation.RULE_LIST);
+        return AuthorizationsService.isAuthorized(Operation.RULE_LIST);
     }
 
     private canViewPlans(): boolean {
-        return AuthorizationManager.isAuthorized(Operation.DATAPLAN_VIEW);
+        return AuthorizationsService.isAuthorized(Operation.DATAPLAN_VIEW);
     }
 
     private canViewFilters(): boolean {
-        return AuthorizationManager.isAuthorized(Operation.FILTERS_LIST);
+        return AuthorizationsService.isAuthorized(Operation.FILTERS_LIST);
     }
 }

@@ -1,4 +1,4 @@
-import { generateUniversalHash } from "./utils";
+import { generateUniversalHash } from "./Utils";
 import { UserPreferencesService } from "src/services/user-preferences";
 import { UserPreferenceDefinitions, UserPreferenceScopeType } from "src/services/user-preferences/models/definitions";
 import { UserPreferenceScope } from "src/services/user-preferences/models/storage-models";

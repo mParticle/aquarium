@@ -1,11 +1,11 @@
-import { BaseRoutesAuthorizations } from "./RouteAuthorizations/base-routes-authorizations";
-import { Paths } from "./Paths";
-import { Suite } from "./Suite";
-import { Customer360Authorizations } from "./RouteAuthorizations/customer-360-authorizations";
-import { DataPlatformAuthorizations } from "./RouteAuthorizations/data-platform-authorizations";
-import { OversightAuthorizations } from "./RouteAuthorizations/oversight-authorizations";
-import { RootAuthorizations } from "./RouteAuthorizations/root-authorizations";
-import { SegmentationAuthorizations } from "./RouteAuthorizations/segmentation-authorizations";
+import { BaseRoutesAuthorizations } from "./routeAuthorizations/base-routes-authorizations";
+import { Paths } from "../Paths";
+import { Suite } from "../Suite";
+import { Customer360Authorizations } from "./routeAuthorizations/customer-360-authorizations";
+import { DataPlatformAuthorizations } from "./routeAuthorizations/data-platform-authorizations";
+import { OversightAuthorizations } from "./routeAuthorizations/oversight-authorizations";
+import { RootAuthorizations } from "./routeAuthorizations/root-authorizations";
+import { SegmentationAuthorizations } from "./routeAuthorizations/segmentation-authorizations";
 
 export type RouteAuthorization = {
     suite: Suite;
@@ -13,7 +13,7 @@ export type RouteAuthorization = {
     authorized: boolean;
 };
 
-export class RoutesAuthorizationManager {
+export class RoutesAuthorizationsService {
     private routesAuthorizations: RouteAuthorization[] = [];
 
     constructor() {

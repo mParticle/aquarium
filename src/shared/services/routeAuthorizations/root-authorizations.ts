@@ -1,9 +1,9 @@
 import { BaseRoutesAuthorizations } from "./base-routes-authorizations";
-import { Suite } from "../Suite";
-import { Paths } from "../Paths";
-import { Operation } from "../Operation";
-import { AuthorizationManager } from "../AuthorizationManager";
-import { FeatureFlagsManager, FeatureFlag } from "../FeatureFlagsManager";
+import { Suite } from "../../Suite";
+import { Paths } from "../../Paths";
+import { Operation } from "../../Operation";
+import { AuthorizationsService } from "../AuthorizationsService";
+import { FeatureFlagsService, FeatureFlag } from "../FeatureFlagsService";
 import { AudiencePermissionsService } from "../AudiencePermissionsService";
 
 export class RootAuthorizations extends BaseRoutesAuthorizations {
@@ -35,7 +35,7 @@ export class RootAuthorizations extends BaseRoutesAuthorizations {
     }
 
     private canViewWorkspacesSettings(): boolean {
-        return AuthorizationManager.isAuthorized(Operation.WORKSPACE_SETTINGS);
+        return AuthorizationsService.isAuthorized(Operation.WORKSPACE_SETTINGS);
     }
 
     private canViewPredictions(): boolean {
@@ -52,8 +52,8 @@ export class RootAuthorizations extends BaseRoutesAuthorizations {
 
     private canViewUsageReport(): boolean {
         return (
-            FeatureFlagsManager.isEnabled(FeatureFlag.VBPUsageReportV2) &&
-            AuthorizationManager.isAuthorized(Operation.VIEW_VBP_BILLING_REPORT)
+            FeatureFlagsService.isEnabled(FeatureFlag.VBPUsageReportV2) &&
+            AuthorizationsService.isAuthorized(Operation.VIEW_VBP_BILLING_REPORT)
         );
     }
 }

@@ -1,7 +1,7 @@
-import { AuthorizationManager } from "./AuthorizationManager";
-import { Operation } from "./Operation";
-import { FeatureFlag, FeatureFlagsManager } from "./FeatureFlagsManager";
-import { mParticleUserPreferenceIds, userPreferences } from "./UserPreferences";
+import { AuthorizationsService } from "./AuthorizationsService";
+import { Operation } from "../Operation";
+import { FeatureFlag, FeatureFlagsService } from "./FeatureFlagsService";
+import { mParticleUserPreferenceIds, userPreferences } from "../UserPreferences";
 
 export class AudiencePermissionsService {
     public static isAudienceLookbackEnabled(): boolean {
@@ -52,11 +52,11 @@ export class AudiencePermissionsService {
     }
 
     public static canUserViewAudiences(): boolean {
-        return AuthorizationManager.isAuthorized(Operation.AUDIENCE_VIEW);
+        return AuthorizationsService.isAuthorized(Operation.AUDIENCE_VIEW);
     }
 
     public static canUserActivateAudience(): boolean {
-        return AuthorizationManager.isAuthorized(Operation.AUDIENCE_ACTIVATE);
+        return AuthorizationsService.isAuthorized(Operation.AUDIENCE_ACTIVATE);
     }
 
     public static isOfflineAudienceEnabled(): boolean {
@@ -77,34 +77,34 @@ export class AudiencePermissionsService {
     }
 
     public static canUserCreateAudienceSubscription(): boolean {
-        return AuthorizationManager.isAuthorized(Operation.AUDIENCE_SUBSCRIPTION_CREATE);
+        return AuthorizationsService.isAuthorized(Operation.AUDIENCE_SUBSCRIPTION_CREATE);
     }
 
     public static canUserDeleteAudienceSubscription(): boolean {
-        return AuthorizationManager.isAuthorized(Operation.AUDIENCE_SUBSCRIPTION_DELETE);
+        return AuthorizationsService.isAuthorized(Operation.AUDIENCE_SUBSCRIPTION_DELETE);
     }
 
     public static canUserEditAudienceSubscription(): boolean {
-        return AuthorizationManager.isAuthorized(Operation.AUDIENCE_SUBSCRIPTION_EDIT);
+        return AuthorizationsService.isAuthorized(Operation.AUDIENCE_SUBSCRIPTION_EDIT);
     }
 
     public static isPredictiveAudiencesEnabled(): boolean {
-        return !FeatureFlagsManager.isEnabled(FeatureFlag.PredictiveAudiencesDisabled);
+        return !FeatureFlagsService.isEnabled(FeatureFlag.PredictiveAudiencesDisabled);
     }
 
     public static isPredictiveAudiencesPLDEnabled(): boolean {
-        return !FeatureFlagsManager.isEnabled(FeatureFlag.PredictiveAudiencesPLDDisabled);
+        return !FeatureFlagsService.isEnabled(FeatureFlag.PredictiveAudiencesPLDDisabled);
     }
 
     public static canUserCreateAudience(): boolean {
-        return AuthorizationManager.isAuthorized(Operation.AUDIENCE_CREATE);
+        return AuthorizationsService.isAuthorized(Operation.AUDIENCE_CREATE);
     }
 
     public static isJourneysSharedRealTimeAudiencesEnabled(): boolean {
         return (
             window.mParticleConfig.allowResourceSharing &&
             userPreferences[mParticleUserPreferenceIds.IsJourneysUnified].optedIn &&
-            !FeatureFlagsManager.isEnabled(FeatureFlag.JourneysSharedRealTimeAudiencesDisabled)
+            !FeatureFlagsService.isEnabled(FeatureFlag.JourneysSharedRealTimeAudiencesDisabled)
         );
     }
 }

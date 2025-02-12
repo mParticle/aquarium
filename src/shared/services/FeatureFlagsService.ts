@@ -44,7 +44,7 @@ export enum FeatureFlag {
 }
 
 // the features are enabled per workspace.
-export class FeatureFlagsManager {
+export class FeatureFlagsService {
     /**
      * Checks whether a feature is enabled or not in the currently active workspace.
      * @param feature The feature to check for.

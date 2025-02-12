@@ -1,10 +1,10 @@
 import { BaseRoutesAuthorizations } from "./base-routes-authorizations";
-import { Suite } from "../Suite";
-import { Paths } from "../Paths";
-import { Operation } from "../Operation";
-import { AuthorizationManager } from "../AuthorizationManager";
+import { Suite } from "../../Suite";
+import { Paths } from "../../Paths";
+import { Operation } from "../../Operation";
+import { AuthorizationsService } from "../AuthorizationsService";
 import { AudiencePermissionsService } from "../AudiencePermissionsService";
-import { mParticleUserPreferenceIds, userPreferences } from "../UserPreferences";
+import { mParticleUserPreferenceIds, userPreferences } from "../../UserPreferences";
 
 export class SegmentationAuthorizations extends BaseRoutesAuthorizations {
     protected suite: Suite = Suite.Segmentation;
@@ -33,7 +33,7 @@ export class SegmentationAuthorizations extends BaseRoutesAuthorizations {
     }
 
     private canViewAudiencesShare(): boolean {
-        return AuthorizationManager.isAuthorized([Operation.AUDIENCESHAREVIEW]);
+        return AuthorizationsService.isAuthorized([Operation.AUDIENCESHAREVIEW]);
     }
 
     private canViewRealTimeSharedAudiences(): boolean {

@@ -1,9 +1,9 @@
-import { Suite } from "../Suite";
+import { Suite } from "../../Suite";
 import { BaseRoutesAuthorizations } from "./base-routes-authorizations";
-import { Paths } from "../Paths";
-import { Operation } from "../Operation";
-import { AuthorizationManager } from "../AuthorizationManager";
-import { FeatureFlagsManager, FeatureFlag } from "../FeatureFlagsManager";
+import { Paths } from "../../Paths";
+import { Operation } from "../../Operation";
+import { AuthorizationsService } from "../AuthorizationsService";
+import { FeatureFlagsService, FeatureFlag } from "../FeatureFlagsService";
 
 export class Customer360Authorizations extends BaseRoutesAuthorizations {
     protected suite: Suite = Suite.Customer360;
@@ -23,28 +23,28 @@ export class Customer360Authorizations extends BaseRoutesAuthorizations {
 
     private canViewUserGroups(): boolean {
         return (
-            FeatureFlagsManager.isEnabled(FeatureFlag.GroupingUI) &&
-            AuthorizationManager.isAuthorized(Operation.USER_GROUPS_VIEW)
+            FeatureFlagsService.isEnabled(FeatureFlag.GroupingUI) &&
+            AuthorizationsService.isAuthorized(Operation.USER_GROUPS_VIEW)
         );
     }
 
     private canViewUserActivity(): boolean {
         return (
-            AuthorizationManager.isAuthorized(Operation.REPORT_LIST) &&
-            AuthorizationManager.isAuthorized(Operation.USERACTIVITY_VIEW) &&
+            AuthorizationsService.isAuthorized(Operation.REPORT_LIST) &&
+            AuthorizationsService.isAuthorized(Operation.USERACTIVITY_VIEW) &&
             window.mParticleConfig.isUAVEnabled
         );
     }
 
     private canViewCalculatedAttributes(): boolean {
-        return AuthorizationManager.isAuthorized(Operation.CALCULATEDATTRIBUTES_LIST);
+        return AuthorizationsService.isAuthorized(Operation.CALCULATEDATTRIBUTES_LIST);
     }
     
     private canViewCreatePredictiveAttribute (): boolean {
-        return !FeatureFlagsManager.isEnabled(FeatureFlag.PredictiveAttributesCreationDisabled);
+        return !FeatureFlagsService.isEnabled(FeatureFlag.PredictiveAttributesCreationDisabled);
     };
     
     private canViewNextBestAction(): boolean {
-        return FeatureFlagsManager.isEnabled(FeatureFlag.PredictiveAttributesNextBestActionEnabled);
+        return FeatureFlagsService.isEnabled(FeatureFlag.PredictiveAttributesNextBestActionEnabled);
     };
 }

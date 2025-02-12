@@ -1,5 +1,5 @@
-import { Suite } from "../Suite";
-import { RouteAuthorization } from "../RoutesAuthorizationManager";
+import { Suite } from "../../Suite";
+import { RouteAuthorization } from "../RoutesAuthorizationsService";
 
 export abstract class BaseRoutesAuthorizations {
     protected abstract suite: Suite;
