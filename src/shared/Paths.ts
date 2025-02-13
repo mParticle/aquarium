@@ -147,9 +147,9 @@ export const Paths = {
     },
     
     [Suite.Analytics]: {
-        MyHub: "info",
-        Saved: "saved",
-        Data: "data",
-        Favorites: "saved/favorites"
+        MyHub: "#/info",
+        Saved: "#/saved",
+        Data: "#/data",
+        Favorites: "#/saved/favorites"
     }
 } as const;

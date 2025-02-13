@@ -302,26 +302,26 @@ const analytics: IGlobalNavigationItem = {
             label: "My Hub",
             type: "link",
             visible: !Utils.isMobile(),
-            hrefOptions: { href: `#/${Paths.Analytics.MyHub}` }
+            hrefOptions: { href: Paths.Analytics.MyHub }
         },
         {
             id: NavigationItemId.Analytics_Saved,
             label: "Saved",
             type: "link",
-            hrefOptions: { href: `#/${Paths.Analytics.Saved}` }
+            hrefOptions: { href: Paths.Analytics.Saved }
         },
         {
             id: NavigationItemId.Analytics_Data,
             label: "Data",
             type: "link",
             visible: !Utils.isMobile(),
-            hrefOptions: { href: `#/${Paths.Analytics.Data}` }
+            hrefOptions: { href: Paths.Analytics.Data }
         },
         {
             id: NavigationItemId.Analytics_Favorites,
             label: "Favorites",
             type: "link",
-            hrefOptions: { href: `#/${Paths.Analytics.Favorites}` }
+            hrefOptions: { href: Paths.Analytics.Favorites }
         }
     ]
 }
