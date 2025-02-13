@@ -348,7 +348,7 @@ export class NavigationItemsService {
     public static get navigationItems() { return allNavigationItems }
     
     public static initialize() {
-        this.traverseItems(allNavigationItems, (item) => {
+        this.traverseAllItems((item) => {
             if (item.type === "link" && item.hrefOptions?.href) {
                 item.disabled = !RoutesAuthorizationsService.isRouteAuthorized(item.hrefOptions.href);
             }
@@ -382,5 +382,9 @@ export class NavigationItemsService {
                 this.traverseItems(item.children, callback);
             }
         }
+    }
+    
+    public static traverseAllItems(callback: (item: IGlobalNavigationItem) => void) {
+        this.traverseItems(allNavigationItems, callback);
     }
 }
