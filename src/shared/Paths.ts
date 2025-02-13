@@ -145,4 +145,11 @@ export const Paths = {
         DSR: "oversight/data-subject-requests",
         PrivacySettings: "oversight/privacy-settings",
     },
+    
+    [Suite.Analytics]: {
+        MyHub: "info",
+        Saved: "saved",
+        Data: "data",
+        Favorites: "saved/favorites"
+    }
 } as const;

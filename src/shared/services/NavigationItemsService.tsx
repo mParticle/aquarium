@@ -1,4 +1,4 @@
-import { Icon, IGlobalNavigationItem, RoutesAuthorizationsService } from "src/components";
+import { Icon, IGlobalNavigationItem, RoutesAuthorizationsService, Utils } from "src/components";
 import { Paths } from "src/shared/Paths";
 
 export enum NavigationItemId {
@@ -298,34 +298,30 @@ const analytics: IGlobalNavigationItem = {
     icon: <Icon name="analytics" />,
     children: [
         {
-            id: NavigationItemId.Analytics_CreateAnalysis,
-            label: "Create Analysis",
-            type: "button",
-            buttonOptions: { href: "" }
-        },
-        {
             id: NavigationItemId.Analytics_MyHub,
             label: "My Hub",
             type: "link",
-            hrefOptions: { href: "" }
+            visible: !Utils.isMobile(),
+            hrefOptions: { href: `#/${Paths.Analytics.MyHub}` }
         },
         {
             id: NavigationItemId.Analytics_Saved,
             label: "Saved",
             type: "link",
-            hrefOptions: { href: "" }
+            hrefOptions: { href: `#/${Paths.Analytics.Saved}` }
         },
         {
             id: NavigationItemId.Analytics_Data,
             label: "Data",
             type: "link",
-            hrefOptions: { href: "" }
+            visible: !Utils.isMobile(),
+            hrefOptions: { href: `#/${Paths.Analytics.Data}` }
         },
         {
             id: NavigationItemId.Analytics_Favorites,
             label: "Favorites",
             type: "link",
-            hrefOptions: { href: "" }
+            hrefOptions: { href: `#/${Paths.Analytics.Favorites}` }
         }
     ]
 }

@@ -1,4 +1,4 @@
-import { generateUniversalHash } from "./Utils";
+import { Utils } from "./Utils";
 import { UserPreferencesService } from "src/services/user-preferences";
 import { UserPreferenceDefinitions, UserPreferenceScopeType } from "src/services/user-preferences/models/definitions";
 import { UserPreferenceScope } from "src/services/user-preferences/models/storage-models";
@@ -49,7 +49,7 @@ function getCurrentScope() {
 
 function getCookieKey() {
     const email = window.mParticleConfig.email;
-    return `mp_up_${email ? generateUniversalHash(email) : ""}`
+    return `mp_up_${email ? Utils.generateUniversalHash(email) : ""}`
 }
 
 function getCookieDomain(){

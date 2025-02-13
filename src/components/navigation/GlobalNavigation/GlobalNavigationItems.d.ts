@@ -11,6 +11,7 @@ export interface IBaseGlobalNavigationItem {
   hideLabel?: boolean
   isActive?: boolean
   disabled?: boolean
+  visible?: boolean
 }
 
 export interface IGlobalNavigationLogo extends IBaseGlobalNavigationItem {

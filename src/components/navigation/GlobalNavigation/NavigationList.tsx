@@ -15,7 +15,7 @@ export interface INavigationListProps {
 export function NavigationList(props: INavigationListProps) {
   return (
     <Center vertical>
-      {props.items.map((item, i) => (
+      {props.items.filter(i => i.visible !== false).map((item, i) => (
         <Fragment key={i}>
           {item.type === 'menu' ? (
             <Menu key={i} expandIcon={null} className="globalNavigation__menu" items={[generateMenuItem(item, i)]} />
@@ -33,7 +33,7 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
     { label: item.label, type: 'group', key: String(item.label) + '_groupTitle' },
   ]
   if (item.type === 'menu') {
-    const childrenWithExpandedIcons = item.children.map(({ hrefOptions, ...child }, index) => ({
+    const childrenWithExpandedIcons = item.children.filter(i => i.visible !== false).map(({ hrefOptions, ...child }, index) => ({
       ...child,
       key: `${String(child.label)}${index}`,
       label: child.type === 'button' ? child.label : buildLinkFromHrefOptions(child.label, hrefOptions),
