@@ -94,6 +94,7 @@ import BannerFreemium from 'src/assets/svg/mp_info_dt_sampled.svg?react'
 import StateEmpty from 'src/assets/svg/mp_info_lt_state-empty.svg?react'
 import StateError from 'src/assets/svg/mp_info_lt_state-error.svg?react'
 import StateNoResults from 'src/assets/svg/mp_info_lt_state-no-results.svg?react'
+import Back from 'src/assets/svg/mp_act_lt_back.svg?react'
 
 export {
   AbSplit,
@@ -192,4 +193,5 @@ export {
   StateEmpty,
   StateError,
   StateNoResults,
+  Back,
 }
