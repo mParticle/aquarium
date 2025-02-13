@@ -78,7 +78,7 @@ function isNavigationItemActive(item: IGlobalNavigationItem): boolean {
     return item.children.some(child => isNavigationItemActive(child))
   }
   else if(item.type === "link" && item.hrefOptions) {
-    return window.location.pathname.includes(item.hrefOptions.href);
+    return window.location.href.includes(item.hrefOptions.href);
   }
   
   return false;
