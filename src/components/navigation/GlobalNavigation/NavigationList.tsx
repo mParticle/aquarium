@@ -15,7 +15,7 @@ export interface INavigationListProps {
 export function NavigationList(props: INavigationListProps) {
   return (
     <Center vertical>
-      {props.items.map((item, i) => (
+      {props.items.filter(i => i.visible !== false).map((item, i) => (
         <Fragment key={i}>
           {item.type === 'menu' ? (
             <Menu key={i} expandIcon={null} className="globalNavigation__menu" items={[generateMenuItem(item, i)]} />
@@ -33,7 +33,7 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
     { label: item.label, type: 'group', key: String(item.label) + '_groupTitle' },
   ]
   if (item.type === 'menu') {
-    const childrenWithExpandedIcons = item.children.map(({ hrefOptions, ...child }, index) => ({
+    const childrenWithExpandedIcons = item.children.filter(i => i.visible !== false).map(({ hrefOptions, ...child }, index) => ({
       ...child,
       key: `${String(child.label)}${index}`,
       label: child.type === 'button' ? child.label : buildLinkFromHrefOptions(child.label, hrefOptions),
@@ -62,12 +62,24 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
       hideLabel={item.hideLabel}
     />
   )
-
+  
+  const isActive = isNavigationItemActive(item);
   return {
     icon: navigationIcon,
     popupClassName: 'globalNavigation__popup',
-    className: 'globalNavigation__item' + (item.isActive ? ' globalNavigation__item--active' : ''),
+    className: 'globalNavigation__item' + (isActive ? ' globalNavigation__item--active' : ''),
     key: `${String(item.label)}${i}`,
     children,
   }
+}
+
+function isNavigationItemActive(item: IGlobalNavigationItem): boolean {
+  if(item.type === "menu" && item.children) {
+    return item.children.some(child => isNavigationItemActive(child))
+  }
+  else if(item.type === "link" && item.hrefOptions) {
+    return window.location.href.includes(item.hrefOptions.href);
+  }
+  
+  return false;
 }

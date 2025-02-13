@@ -1,4 +1,14 @@
 import type { Preview } from '@storybook/react'
+import { InitializationService } from "../src/shared/services/InitializationService";
+
+window.mParticleConfig = {
+  workspaceFeatureSettings: [],
+  operations: [],
+  accountLimits: {},
+  organizationPolicy: {}
+}
+
+await InitializationService.initialize();
 
 const preview: Preview = {
   parameters: {
