@@ -5,6 +5,7 @@ import { DataPlatformAuthorizations } from "./routeAuthorizations/data-platform-
 import { OversightAuthorizations } from "./routeAuthorizations/oversight-authorizations";
 import { RootAuthorizations } from "./routeAuthorizations/root-authorizations";
 import { SegmentationAuthorizations } from "./routeAuthorizations/segmentation-authorizations";
+import { AnalyticsAuthorizations } from "src/shared/services/routeAuthorizations/anaytics-authorizations";
 
 export type RouteAuthorization = {
     suite: Suite;
@@ -22,6 +23,7 @@ export class RoutesAuthorizationsService {
             new OversightAuthorizations(),
             new RootAuthorizations(),
             new SegmentationAuthorizations(),
+            new AnalyticsAuthorizations(),
         ] as BaseRoutesAuthorizations[];
 
         this.routesAuthorizations = suiteAuthorizations.flatMap((r) => r.getRoutesAuthorizations());
