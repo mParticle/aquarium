@@ -58,6 +58,7 @@ const oversight: IGlobalNavigationItem = {
         {
             id: NavigationItemId.SystemAlerts,
             label: "System Alerts",
+            type: "link",
             hrefOptions: { href: Paths.Oversight.SystemAlerts }
         },
         {
@@ -68,11 +69,13 @@ const oversight: IGlobalNavigationItem = {
                 {
                     id: NavigationItemId.TraceActivity,
                     label: "Trace Activity",
+                    type: "link",
                     hrefOptions: { href: Paths.Oversight.Observability.List }
                 },
                 {
                     id: NavigationItemId.TraceConfigurations,
                     label: "Trace Configurations",
+                    type: "link",
                     hrefOptions: { href: Paths.Oversight.Observability.Requests }
                 },
             ]
@@ -85,11 +88,13 @@ const oversight: IGlobalNavigationItem = {
                 {
                     id: NavigationItemId.DSRs,
                     label: "DSRs",
+                    type: "link",
                     hrefOptions: { href: Paths.Oversight.DSR }
                 },
                 {
                     id: NavigationItemId.PrivacySettings,
                     label: "Trace Configurations",
+                    type: "link",
                     hrefOptions: { href: Paths.Oversight.PrivacySettings }
                 },
             ]
@@ -101,6 +106,7 @@ const predictions: IGlobalNavigationItem = {
     id: NavigationItemId.Predictions,
     label: "Predictions",
     icon: <Icon name="predictions" />,
+    type: "link",
     hrefOptions: { href: "" }
 };
 
@@ -113,6 +119,7 @@ const customer360: IGlobalNavigationItem = {
         {
             id: NavigationItemId.UserProfiles,
             label: "User Profiles",
+            type: "link",
             hrefOptions: { href: Paths.Customer360.UserProfile }
         },
         {
@@ -123,6 +130,7 @@ const customer360: IGlobalNavigationItem = {
                 {
                     id: NavigationItemId.GroupIdentity,
                     label: "Group Identity",
+                    type: "link",
                     hrefOptions: { href: Paths.Customer360.Identity.GroupIdentities }
                 }
             ]
@@ -135,11 +143,13 @@ const customer360: IGlobalNavigationItem = {
                 {
                     id: NavigationItemId.CalculatedAttributes,
                     label: "Calculated Attributes",
+                    type: "link",
                     hrefOptions: { href: Paths.Customer360.Enrichment.CalculatedAttributes }
                 },
                 {
                     id: NavigationItemId.PredictiveAttributes,
                     label: "Predictive Attributes",
+                    type: "link",
                     hrefOptions: { href: Paths.Customer360.Enrichment.PredictiveAttributes }
                 }
             ]
@@ -156,6 +166,7 @@ const dataPlatform: IGlobalNavigationItem = {
         {
             id: NavigationItemId.Trends,
             label: "Trends",
+            type: "link",
             hrefOptions: { href: Paths.DataPlatform.Trends }
         },
         {
@@ -166,21 +177,25 @@ const dataPlatform: IGlobalNavigationItem = {
                 {
                     id: NavigationItemId.Connections,
                     label: "Connections",
+                    type: "link",
                     hrefOptions: { href: Paths.DataPlatform.Setup.Connections }
                 },
                 {
                     id: NavigationItemId.Inputs,
                     label: "Inputs",
+                    type: "link",
                     hrefOptions: { href: Paths.DataPlatform.Setup.Inputs.Apps }
                 },
                 {
                     id: NavigationItemId.Outputs,
                     label: "Outputs",
+                    type: "link",
                     hrefOptions: { href: Paths.DataPlatform.Setup.Outputs.Event }
                 },
                 {
                     id: NavigationItemId.Directory,
                     label: "Directory",
+                    type: "link",
                     hrefOptions: { href: Paths.DataPlatform.Setup.Directory.Listing }
                 }
             ]
@@ -188,11 +203,13 @@ const dataPlatform: IGlobalNavigationItem = {
         {
             id: NavigationItemId.LiveStream,
             label: "Live Stream",
+            type: "link",
             hrefOptions: { href: Paths.DataPlatform.Livestream }
         },
         {
             id: NavigationItemId.DataCatalog,
             label: "Data Catalog",
+            type: "link",
             hrefOptions: { href: Paths.DataPlatform.DataCatalog }
         },
         {
@@ -203,11 +220,13 @@ const dataPlatform: IGlobalNavigationItem = {
                 {
                     id: NavigationItemId.Rules,
                     label: "Rules",
+                    type: "link",
                     hrefOptions: { href: Paths.DataPlatform.Transformations.Rules }
                 },
                 {
                     id: NavigationItemId.Plans,
                     label: "Plans",
+                    type: "link",
                     hrefOptions: { href: Paths.DataPlatform.Transformations.Plans }
                 },
                 {
@@ -218,11 +237,13 @@ const dataPlatform: IGlobalNavigationItem = {
                         {
                             id: NavigationItemId.PlatformFilters,
                             label: "Platform Filters",
+                            type: "link",
                             hrefOptions: { href: Paths.DataPlatform.Transformations.Filters.Platform }
                         },
                         {
                             id: NavigationItemId.FeedFilters,
                             label: "Feed Filters",
+                            type: "link",
                             hrefOptions: { href: Paths.DataPlatform.Transformations.Filters.Feed }
                         }
                     ]
@@ -232,6 +253,7 @@ const dataPlatform: IGlobalNavigationItem = {
         {
             id: NavigationItemId.EventForwarding,
             label: "Event Forwarding",
+            type: "link",
             hrefOptions: { href: Paths.DataPlatform.EventForwarding }
         }
     ]
@@ -246,6 +268,7 @@ const segmentation: IGlobalNavigationItem = {
         {
             id: NavigationItemId.Journeys,
             label: "Journeys",
+            type: "link",
             hrefOptions: { href: Paths.Segmentation.Journeys }
         },
         {
@@ -256,16 +279,19 @@ const segmentation: IGlobalNavigationItem = {
                 {
                     id: NavigationItemId.Standard,
                     label: "Standard",
+                    type: "link",
                     hrefOptions: { href: Paths.Segmentation.Audiences.Standard }
                 },
                 {
                     id: NavigationItemId.Shared,
                     label: "Shared",
+                    type: "link",
                     hrefOptions: { href: Paths.Segmentation.Audiences.Shared }
                 },
                 {
                     id: NavigationItemId.RealTime,
                     label: "Real-time",
+                    type: "link",
                     hrefOptions: { href: Paths.Segmentation.Audiences.RealTime }
                 }
             ]
@@ -288,21 +314,25 @@ const analytics: IGlobalNavigationItem = {
         {
             id: NavigationItemId.MyHub,
             label: "My Hub",
+            type: "link",
             hrefOptions: { href: "" }
         },
         {
             id: NavigationItemId.Saved,
             label: "Saved",
+            type: "link",
             hrefOptions: { href: "" }
         },
         {
             id: NavigationItemId.Data,
             label: "Data",
+            type: "link",
             hrefOptions: { href: "" }
         },
         {
             id: NavigationItemId.Favorites,
             label: "Favorites",
+            type: "link",
             hrefOptions: { href: "" }
         }
     ]
@@ -332,15 +362,14 @@ export class NavigationItemsProvider {
     public static init() {
         const checkAuthorization = (item: IGlobalNavigationItem): void => {
             if (item.type === "link" && item.hrefOptions?.href) {
-                const isAuthorized = RoutesAuthorizationsService.isRouteAuthorized(item.hrefOptions.href);
-                if (!isAuthorized) {
-                    item.disabled = true;
-                }
+                item.disabled = !RoutesAuthorizationsService.isRouteAuthorized(item.hrefOptions.href);
             }
-            if (item.type === 'menu' && item.children) {
+            else if (item.type === 'menu' && item.children) {
                 for (const child of item.children) {
                     checkAuthorization(child);
                 }
+                
+                item.disabled = item.children.every(child => child.disabled);
             }
         };
 
