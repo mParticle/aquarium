@@ -20,8 +20,8 @@ export class InitializationService {
         window.mParticleConfig = await userSessionResponse.json() as mParticleConfig;
     }
     
-    static async initialize(): Promise<void> {
-        await this.loadMParticleConfig();
+    static async initialize(baseUrl: string = ""): Promise<void> {
+        await this.loadMParticleConfig(baseUrl);
         
         await initializeUserPreferences();
         RoutesAuthorizationsService.initialize();
