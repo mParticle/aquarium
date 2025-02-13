@@ -123,17 +123,10 @@ const customer360: IGlobalNavigationItem = {
             hrefOptions: { href: Paths.Customer360.UserProfile }
         },
         {
-            id: NavigationItemId.Identity,
-            label: "Identity",
-            type: "menu",
-            children: [
-                {
-                    id: NavigationItemId.GroupIdentity,
-                    label: "Group Identity",
-                    type: "link",
-                    hrefOptions: { href: Paths.Customer360.Identity.GroupIdentities }
-                }
-            ]
+            id: NavigationItemId.GroupIdentity,
+            label: "Group Identity",
+            type: "link",
+            hrefOptions: { href: Paths.Customer360.Identity.GroupIdentities }
         },
         {
             id: NavigationItemId.Enrichment,
@@ -368,8 +361,6 @@ export class NavigationItemsService {
                 for (const child of item.children) {
                     checkAuthorization(child);
                 }
-                
-                item.disabled = item.children.every(child => child.disabled);
             }
         };
 
