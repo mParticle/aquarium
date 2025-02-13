@@ -10,11 +10,10 @@ export class InitializationService {
         
         const userSessionResponse = await fetch(`${baseUrl}/api/user/session`, {
             headers: {
-                "Content-Type": "application/json; charset=utf-8",
-                "x-requested-by": Cookies.get("x-csrf") ?? ""
+                "Content-Type": "application/json; charset=utf-8"
             },
             method: "GET",
-            credentials: "same-origin"
+            credentials: "include"
         });
 
         window.mParticleConfig = await userSessionResponse.json() as mParticleConfig;
