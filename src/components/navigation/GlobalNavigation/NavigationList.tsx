@@ -62,12 +62,24 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
       hideLabel={item.hideLabel}
     />
   )
-
+  
+  const isActive = isNavigationItemActive(item);
   return {
     icon: navigationIcon,
     popupClassName: 'globalNavigation__popup',
-    className: 'globalNavigation__item' + (item.isActive ? ' globalNavigation__item--active' : ''),
+    className: 'globalNavigation__item' + (isActive ? ' globalNavigation__item--active' : ''),
     key: `${String(item.label)}${i}`,
     children,
   }
+}
+
+function isNavigationItemActive(item: IGlobalNavigationItem): boolean {
+  if(item.type === "menu" && item.children) {
+    return item.children.some(child => isNavigationItemActive(child))
+  }
+  else if(item.type === "link" && item.hrefOptions) {
+    return window.location.pathname.includes(item.hrefOptions.href);
+  }
+  
+  return false;
 }

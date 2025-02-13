@@ -345,25 +345,14 @@ const allNavigationItems: IGlobalNavigationItem[] = [
 ];
 
 export class NavigationItemsService {
-    public static navigationItems: IGlobalNavigationItem[];
+    public static get navigationItems() { return allNavigationItems }
     
     public static initialize() {
-        const checkAuthorization = (item: IGlobalNavigationItem): void => {
+        this.traverseItems(allNavigationItems, (item) => {
             if (item.type === "link" && item.hrefOptions?.href) {
                 item.disabled = !RoutesAuthorizationsService.isRouteAuthorized(item.hrefOptions.href);
             }
-            else if (item.type === 'menu' && item.children) {
-                for (const child of item.children) {
-                    checkAuthorization(child);
-                }
-            }
-        };
-
-        for (const item of allNavigationItems) {
-            checkAuthorization(item);
-        }
-        
-        this.navigationItems = allNavigationItems;
+        });
     }
     
     public static findItemById(id: NavigationItemId): IGlobalNavigationItem | undefined {
@@ -384,5 +373,14 @@ export class NavigationItemsService {
         };
 
         return findItem(allNavigationItems);
+    }
+    
+    private static traverseItems(items: IGlobalNavigationItem[], callback: (item: IGlobalNavigationItem) => void) {
+        for (const item of items) {
+            callback(item);
+            if (item.type === "menu" && item.children) {
+                this.traverseItems(item.children, callback);
+            }
+        }
     }
 }

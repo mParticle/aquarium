@@ -9,7 +9,6 @@ export interface IBaseGlobalNavigationItem {
   label: ReactNode
   icon?: ReactNode
   hideLabel?: boolean
-  isActive?: boolean
   disabled?: boolean
   visible?: boolean
 }
