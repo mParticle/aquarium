@@ -144,3 +144,4 @@ export { ChartColors } from '../constants/ChartColors'
 
 export { RoutesAuthorizationsService } from '../shared/services/RoutesAuthorizationsService'
 export { InitializationService } from '../shared/services/InitializationService'
+export { NavigationItemsService } from '../shared/services/NavigationItemsService'
