@@ -143,6 +143,4 @@ export { ChartConfig, ChartAxisStyle } from '../constants/ChartConfig'
 export { ChartColors } from '../constants/ChartColors'
 
 export { RoutesAuthorizationsService } from '../shared/services/RoutesAuthorizationsService'
-export { initUserPreferences } from '../shared/UserPreferences'
-export { InitialDataService } from '../shared/services/InitialDataService'
-export { NavigationItemsProvider } from '../shared/NavigationItemsProvider'
+export { InitializationService } from '../shared/services/InitializationService'

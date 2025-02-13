@@ -15,7 +15,7 @@ export type RouteAuthorization = {
 export class RoutesAuthorizationsService {
     private static routesAuthorizations: RouteAuthorization[];
     
-    static init() {
+    static initialize() {
         const suiteAuthorizations = [
             new Customer360Authorizations(),
             new DataPlatformAuthorizations(),

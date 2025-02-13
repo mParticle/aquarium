@@ -14,7 +14,7 @@ import {
 import { generateOrgs } from 'src/components/navigation/GlobalNavigation/stories-utils'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'
 import { useNewExperienceReminder } from 'src/hooks/NewExperienceReminder/useNewExperienceReminder'
-import { NavigationItemsProvider } from "src/shared/NavigationItemsProvider";
+import { NavigationItemsService } from "src/shared/services/NavigationItemsService";
 
 const defaultLogo: IGlobalNavigationLogo = {
   label: 'Aqua',
@@ -506,7 +506,7 @@ export const MP: Story = {
       alert('Searching!')
     },
     logo: mpLogo,
-    tools: NavigationItemsProvider.navigationItems,
+    tools: NavigationItemsService.navigationItems,
     management: mpManagement,
     orgs: mpOrgs,
     minimapOptions: {

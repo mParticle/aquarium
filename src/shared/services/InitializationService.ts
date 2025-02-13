@@ -1,7 +1,10 @@
 import * as Cookies from 'src/utils/Cookies'
+import { initializeUserPreferences } from "../UserPreferences";
+import { RoutesAuthorizationsService } from "./RoutesAuthorizationsService";
+import { NavigationItemsService } from "./NavigationItemsService";
 
-export class InitialDataService {
-    static async loadMParticleConfig(baseUrl?: string): Promise<void> {
+export class InitializationService {
+    static async loadMParticleConfig(baseUrl: string = ""): Promise<void> {
         if(window.mParticleConfig)
             return;
         
@@ -15,5 +18,13 @@ export class InitialDataService {
         });
 
         window.mParticleConfig = await userSessionResponse.json() as mParticleConfig;
+    }
+    
+    static async initialize(): Promise<void> {
+        await this.loadMParticleConfig();
+        
+        await initializeUserPreferences();
+        RoutesAuthorizationsService.initialize();
+        NavigationItemsService.initialize();
     }
 }

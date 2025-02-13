@@ -356,10 +356,10 @@ const allNavigationItems: IGlobalNavigationItem[] = [
     predictions
 ];
 
-export class NavigationItemsProvider {
+export class NavigationItemsService {
     public static navigationItems: IGlobalNavigationItem[];
     
-    public static init() {
+    public static initialize() {
         const checkAuthorization = (item: IGlobalNavigationItem): void => {
             if (item.type === "link" && item.hrefOptions?.href) {
                 item.disabled = !RoutesAuthorizationsService.isRouteAuthorized(item.hrefOptions.href);
