@@ -48,300 +48,286 @@ export enum NavigationItemId {
     Analytics_Favorites = 'analytics_favorites'
 }
 
-const oversight: IGlobalNavigationItem = {
-    id: NavigationItemId.Oversight,
-    label: "Oversight",
-    type: "menu",
-    icon: <Icon name="oversight"/>,
-    children: [
-        {
-            id: NavigationItemId.Oversight_SystemAlerts,
-            label: "System Alerts",
-            type: "link",
-            hrefOptions: { href: Paths.Oversight.SystemAlerts }
-        },
-        {
-            id: NavigationItemId.Oversight_Observability,
-            label: "Observability",
-            type: "menu",
-            children: [
-                {
-                    id: NavigationItemId.Oversight_Observability_TraceActivity,
-                    label: "Trace Activity",
-                    type: "link",
-                    hrefOptions: { href: Paths.Oversight.Observability.List }
-                },
-                {
-                    id: NavigationItemId.Oversight_Observability_TraceConfigurations,
-                    label: "Trace Configurations",
-                    type: "link",
-                    hrefOptions: { href: Paths.Oversight.Observability.Requests }
-                },
-            ]
-        },
-        {
-            id: NavigationItemId.Oversight_Privacy,
-            label: "Privacy",
-            type: "menu",
-            children: [
-                {
-                    id: NavigationItemId.Oversight_Privacy_DSRs,
-                    label: "DSRs",
-                    type: "link",
-                    hrefOptions: { href: Paths.Oversight.DSR }
-                },
-                {
-                    id: NavigationItemId.Oversight_Privacy_PrivacySettings,
-                    label: "Trace Configurations",
-                    type: "link",
-                    hrefOptions: { href: Paths.Oversight.PrivacySettings }
-                },
-            ]
-        },
-    ],
-}
-
-const predictions: IGlobalNavigationItem = {
-    id: NavigationItemId.Predictions,
-    label: "Predictions",
-    icon: <Icon name="predictions" />,
-    type: "link",
-    hrefOptions: { href: "" }
-};
-
-const customer360: IGlobalNavigationItem = {
-    id: NavigationItemId.Customer360,
-    label: "Customer 360",
-    type: "menu",
-    icon: <Icon name="C360"/>,
-    children: [
-        {
-            id: NavigationItemId.Customer360_UserProfiles,
-            label: "User Profiles",
-            type: "link",
-            hrefOptions: { href: Paths.Customer360.UserProfile }
-        },
-        {
-            id: NavigationItemId.Customer360_GroupIdentity,
-            label: "Group Identity",
-            type: "link",
-            hrefOptions: { href: Paths.Customer360.Identity.GroupIdentities }
-        },
-        {
-            id: NavigationItemId.Customer360_Enrichment,
-            label: "Enrichment",
-            type: "menu",
-            children: [
-                {
-                    id: NavigationItemId.Customer360_Enrichment_CalculatedAttributes,
-                    label: "Calculated Attributes",
-                    type: "link",
-                    hrefOptions: { href: Paths.Customer360.Enrichment.CalculatedAttributes }
-                },
-                {
-                    id: NavigationItemId.Customer360_Enrichment_PredictiveAttributes,
-                    label: "Predictive Attributes",
-                    type: "link",
-                    hrefOptions: { href: Paths.Customer360.Enrichment.PredictiveAttributes }
-                }
-            ]
-        }
-    ]
-}
-
-const dataPlatform: IGlobalNavigationItem = {
-    id: NavigationItemId.DataPlatform,
-    label: "DataPlatform",
-    type: "menu",
-    icon:  <Icon name="dataPlatform"/>,
-    children: [
-        {
-            id: NavigationItemId.DataPlatform_Trends,
-            label: "Trends",
-            type: "link",
-            hrefOptions: { href: Paths.DataPlatform.Trends }
-        },
-        {
-            id: NavigationItemId.DataPlatform_Setup,
-            label: "Setup",
-            type: "menu",
-            children: [
-                {
-                    id: NavigationItemId.DataPlatform_Setup_Connections,
-                    label: "Connections",
-                    type: "link",
-                    hrefOptions: { href: Paths.DataPlatform.Setup.Connections }
-                },
-                {
-                    id: NavigationItemId.DataPlatform_Setup_Inputs,
-                    label: "Inputs",
-                    type: "link",
-                    hrefOptions: { href: Paths.DataPlatform.Setup.Inputs.Apps }
-                },
-                {
-                    id: NavigationItemId.DataPlatform_Setup_Outputs,
-                    label: "Outputs",
-                    type: "link",
-                    hrefOptions: { href: Paths.DataPlatform.Setup.Outputs.Event }
-                },
-                {
-                    id: NavigationItemId.DataPlatform_Setup_Directory,
-                    label: "Directory",
-                    type: "link",
-                    hrefOptions: { href: Paths.DataPlatform.Setup.Directory.Listing }
-                }
-            ]
-        },
-        {
-            id: NavigationItemId.DataPlatform_LiveStream,
-            label: "Live Stream",
-            type: "link",
-            hrefOptions: { href: Paths.DataPlatform.Livestream }
-        },
-        {
-            id: NavigationItemId.DataPlatform_DataCatalog,
-            label: "Data Catalog",
-            type: "link",
-            hrefOptions: { href: Paths.DataPlatform.DataCatalog }
-        },
-        {
-            id: NavigationItemId.DataPlatform_Transformations,
-            label: "Transformations",
-            type: "menu",
-            children: [
-                {
-                    id: NavigationItemId.DataPlatform_Transformations_Rules,
-                    label: "Rules",
-                    type: "link",
-                    hrefOptions: { href: Paths.DataPlatform.Transformations.Rules }
-                },
-                {
-                    id: NavigationItemId.DataPlatform_Transformations_Plans,
-                    label: "Plans",
-                    type: "link",
-                    hrefOptions: { href: Paths.DataPlatform.Transformations.Plans }
-                },
-                {
-                    id: NavigationItemId.DataPlatform_Transformations_Filters,
-                    label: "Filters",
-                    type: "menu",
-                    children: [
-                        {
-                            id: NavigationItemId.DataPlatform_Transformations_Filters_PlatformFilters,
-                            label: "Platform Filters",
-                            type: "link",
-                            hrefOptions: { href: Paths.DataPlatform.Transformations.Filters.Platform }
-                        },
-                        {
-                            id: NavigationItemId.DataPlatform_Transformations_Filters_FeedFilters,
-                            label: "Feed Filters",
-                            type: "link",
-                            hrefOptions: { href: Paths.DataPlatform.Transformations.Filters.Feed }
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            id: NavigationItemId.DataPlatform_EventForwarding,
-            label: "Event Forwarding",
-            type: "link",
-            hrefOptions: { href: Paths.DataPlatform.EventForwarding }
-        }
-    ]
-}
-
-const segmentation: IGlobalNavigationItem = {
-    id: NavigationItemId.Segmentation,
-    label: "Segmentation",
-    type: "menu",
-    icon: <Icon name="segmentation" />,
-    children: [
-        {
-            id: NavigationItemId.Segmentation_Journeys,
-            label: "Journeys",
-            type: "link",
-            hrefOptions: { href: Paths.Segmentation.Journeys }
-        },
-        {
-            id: NavigationItemId.Segmentation_Audiences,
-            label: "Audiences",
-            type: "menu",
-            children: [
-                {
-                    id: NavigationItemId.Segmentation_Audiences_Standard,
-                    label: "Standard",
-                    type: "link",
-                    hrefOptions: { href: Paths.Segmentation.Audiences.Standard }
-                },
-                {
-                    id: NavigationItemId.Segmentation_Audiences_Shared,
-                    label: "Shared",
-                    type: "link",
-                    hrefOptions: { href: Paths.Segmentation.Audiences.Shared }
-                },
-                {
-                    id: NavigationItemId.Segmentation_Audiences_RealTime,
-                    label: "Real-time",
-                    type: "link",
-                    hrefOptions: { href: Paths.Segmentation.Audiences.RealTime }
-                }
-            ]
-        }
-    ]
-}
-
-const analytics: IGlobalNavigationItem = {
-    id: NavigationItemId.Analytics,
-    label: "Analytics",
-    type: "menu",
-    icon: <Icon name="analytics" />,
-    children: [
-        {
-            id: NavigationItemId.Analytics_MyHub,
-            label: "My Hub",
-            type: "link",
-            visible: !Utils.isMobile(),
-            hrefOptions: { href: Paths.Analytics.MyHub }
-        },
-        {
-            id: NavigationItemId.Analytics_Saved,
-            label: "Saved",
-            type: "link",
-            hrefOptions: { href: Paths.Analytics.Saved }
-        },
-        {
-            id: NavigationItemId.Analytics_Data,
-            label: "Data",
-            type: "link",
-            visible: !Utils.isMobile(),
-            hrefOptions: { href: Paths.Analytics.Data }
-        },
-        {
-            id: NavigationItemId.Analytics_Favorites,
-            label: "Favorites",
-            type: "link",
-            hrefOptions: { href: Paths.Analytics.Favorites }
-        }
-    ]
-}
-
-const overview: IGlobalNavigationItem = {
-    id: NavigationItemId.Overview,
-    label: "Overview",
-    type: "link",
-    icon: <Icon name="trends"/>,
-    hrefOptions: { href: Paths.Root.Overview.Root },
-}
-
 const allNavigationItems: IGlobalNavigationItem[] = [
-    overview,
-    oversight,
-    customer360,
-    dataPlatform,
-    segmentation,
-    analytics,
-    predictions
+    {
+        id: NavigationItemId.Overview,
+        label: "Overview",
+        type: "link",
+        icon: <Icon name="trends"/>,
+        hrefOptions: { href: Paths.Root.Overview.Root },
+    },
+    {
+        id: NavigationItemId.Oversight,
+        label: "Oversight",
+        type: "menu",
+        icon: <Icon name="oversight"/>,
+        children: [
+            {
+                id: NavigationItemId.Oversight_SystemAlerts,
+                label: "System Alerts",
+                type: "link",
+                hrefOptions: { href: Paths.Oversight.SystemAlerts }
+            },
+            {
+                id: NavigationItemId.Oversight_Observability,
+                label: "Observability",
+                type: "menu",
+                children: [
+                    {
+                        id: NavigationItemId.Oversight_Observability_TraceActivity,
+                        label: "Trace Activity",
+                        type: "link",
+                        hrefOptions: { href: Paths.Oversight.Observability.List }
+                    },
+                    {
+                        id: NavigationItemId.Oversight_Observability_TraceConfigurations,
+                        label: "Trace Configurations",
+                        type: "link",
+                        hrefOptions: { href: Paths.Oversight.Observability.Requests }
+                    },
+                ]
+            },
+            {
+                id: NavigationItemId.Oversight_Privacy,
+                label: "Privacy",
+                type: "menu",
+                children: [
+                    {
+                        id: NavigationItemId.Oversight_Privacy_DSRs,
+                        label: "DSRs",
+                        type: "link",
+                        hrefOptions: { href: Paths.Oversight.DSR }
+                    },
+                    {
+                        id: NavigationItemId.Oversight_Privacy_PrivacySettings,
+                        label: "Trace Configurations",
+                        type: "link",
+                        hrefOptions: { href: Paths.Oversight.PrivacySettings }
+                    },
+                ]
+            },
+        ],
+    },
+    {
+        id: NavigationItemId.Customer360,
+        label: "Customer 360",
+        type: "menu",
+        icon: <Icon name="C360"/>,
+        children: [
+            {
+                id: NavigationItemId.Customer360_UserProfiles,
+                label: "User Profiles",
+                type: "link",
+                hrefOptions: { href: Paths.Customer360.UserProfile }
+            },
+            {
+                id: NavigationItemId.Customer360_GroupIdentity,
+                label: "Group Identity",
+                type: "link",
+                hrefOptions: { href: Paths.Customer360.Identity.GroupIdentities }
+            },
+            {
+                id: NavigationItemId.Customer360_Enrichment,
+                label: "Enrichment",
+                type: "menu",
+                children: [
+                    {
+                        id: NavigationItemId.Customer360_Enrichment_CalculatedAttributes,
+                        label: "Calculated Attributes",
+                        type: "link",
+                        hrefOptions: { href: Paths.Customer360.Enrichment.CalculatedAttributes }
+                    },
+                    {
+                        id: NavigationItemId.Customer360_Enrichment_PredictiveAttributes,
+                        label: "Predictive Attributes",
+                        type: "link",
+                        hrefOptions: { href: Paths.Customer360.Enrichment.PredictiveAttributes }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: NavigationItemId.DataPlatform,
+        label: "DataPlatform",
+        type: "menu",
+        icon:  <Icon name="dataPlatform"/>,
+        children: [
+            {
+                id: NavigationItemId.DataPlatform_Trends,
+                label: "Trends",
+                type: "link",
+                hrefOptions: { href: Paths.DataPlatform.Trends }
+            },
+            {
+                id: NavigationItemId.DataPlatform_Setup,
+                label: "Setup",
+                type: "menu",
+                children: [
+                    {
+                        id: NavigationItemId.DataPlatform_Setup_Connections,
+                        label: "Connections",
+                        type: "link",
+                        hrefOptions: { href: Paths.DataPlatform.Setup.Connections }
+                    },
+                    {
+                        id: NavigationItemId.DataPlatform_Setup_Inputs,
+                        label: "Inputs",
+                        type: "link",
+                        hrefOptions: { href: Paths.DataPlatform.Setup.Inputs.Apps }
+                    },
+                    {
+                        id: NavigationItemId.DataPlatform_Setup_Outputs,
+                        label: "Outputs",
+                        type: "link",
+                        hrefOptions: { href: Paths.DataPlatform.Setup.Outputs.Event }
+                    },
+                    {
+                        id: NavigationItemId.DataPlatform_Setup_Directory,
+                        label: "Directory",
+                        type: "link",
+                        hrefOptions: { href: Paths.DataPlatform.Setup.Directory.Listing }
+                    }
+                ]
+            },
+            {
+                id: NavigationItemId.DataPlatform_LiveStream,
+                label: "Live Stream",
+                type: "link",
+                hrefOptions: { href: Paths.DataPlatform.Livestream }
+            },
+            {
+                id: NavigationItemId.DataPlatform_DataCatalog,
+                label: "Data Catalog",
+                type: "link",
+                hrefOptions: { href: Paths.DataPlatform.DataCatalog }
+            },
+            {
+                id: NavigationItemId.DataPlatform_Transformations,
+                label: "Transformations",
+                type: "menu",
+                children: [
+                    {
+                        id: NavigationItemId.DataPlatform_Transformations_Rules,
+                        label: "Rules",
+                        type: "link",
+                        hrefOptions: { href: Paths.DataPlatform.Transformations.Rules }
+                    },
+                    {
+                        id: NavigationItemId.DataPlatform_Transformations_Plans,
+                        label: "Plans",
+                        type: "link",
+                        hrefOptions: { href: Paths.DataPlatform.Transformations.Plans }
+                    },
+                    {
+                        id: NavigationItemId.DataPlatform_Transformations_Filters,
+                        label: "Filters",
+                        type: "menu",
+                        children: [
+                            {
+                                id: NavigationItemId.DataPlatform_Transformations_Filters_PlatformFilters,
+                                label: "Platform Filters",
+                                type: "link",
+                                hrefOptions: { href: Paths.DataPlatform.Transformations.Filters.Platform }
+                            },
+                            {
+                                id: NavigationItemId.DataPlatform_Transformations_Filters_FeedFilters,
+                                label: "Feed Filters",
+                                type: "link",
+                                hrefOptions: { href: Paths.DataPlatform.Transformations.Filters.Feed }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: NavigationItemId.DataPlatform_EventForwarding,
+                label: "Event Forwarding",
+                type: "link",
+                hrefOptions: { href: Paths.DataPlatform.EventForwarding }
+            }
+        ]
+    },
+    {
+        id: NavigationItemId.Segmentation,
+        label: "Segmentation",
+        type: "menu",
+        icon: <Icon name="segmentation" />,
+        children: [
+            {
+                id: NavigationItemId.Segmentation_Journeys,
+                label: "Journeys",
+                type: "link",
+                hrefOptions: { href: Paths.Segmentation.Journeys }
+            },
+            {
+                id: NavigationItemId.Segmentation_Audiences,
+                label: "Audiences",
+                type: "menu",
+                children: [
+                    {
+                        id: NavigationItemId.Segmentation_Audiences_Standard,
+                        label: "Standard",
+                        type: "link",
+                        hrefOptions: { href: Paths.Segmentation.Audiences.Standard }
+                    },
+                    {
+                        id: NavigationItemId.Segmentation_Audiences_Shared,
+                        label: "Shared",
+                        type: "link",
+                        hrefOptions: { href: Paths.Segmentation.Audiences.Shared }
+                    },
+                    {
+                        id: NavigationItemId.Segmentation_Audiences_RealTime,
+                        label: "Real-time",
+                        type: "link",
+                        hrefOptions: { href: Paths.Segmentation.Audiences.RealTime }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: NavigationItemId.Analytics,
+        label: "Analytics",
+        type: "menu",
+        icon: <Icon name="analytics" />,
+        children: [
+            {
+                id: NavigationItemId.Analytics_MyHub,
+                label: "My Hub",
+                type: "link",
+                visible: !Utils.isMobile(),
+                hrefOptions: { href: Paths.Analytics.MyHub }
+            },
+            {
+                id: NavigationItemId.Analytics_Saved,
+                label: "Saved",
+                type: "link",
+                hrefOptions: { href: Paths.Analytics.Saved }
+            },
+            {
+                id: NavigationItemId.Analytics_Data,
+                label: "Data",
+                type: "link",
+                visible: !Utils.isMobile(),
+                hrefOptions: { href: Paths.Analytics.Data }
+            },
+            {
+                id: NavigationItemId.Analytics_Favorites,
+                label: "Favorites",
+                type: "link",
+                hrefOptions: { href: Paths.Analytics.Favorites }
+            }
+        ]
+    },
+    {
+        id: NavigationItemId.Predictions,
+        label: "Predictions",
+        icon: <Icon name="predictions" />,
+        type: "link",
+        hrefOptions: { href: "" }
+    }
 ];
 
 export class NavigationItemsService {
