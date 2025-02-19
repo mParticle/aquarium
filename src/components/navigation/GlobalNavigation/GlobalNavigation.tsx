@@ -1,7 +1,6 @@
 import 'src/styles/_variables.css'
 import './global-navigation.css'
 import {
-  type IGlobalNavigationLogo,
   type INavigationOrg,
   type INavigationCreateProps,
   Center,
@@ -17,23 +16,16 @@ import { NavigationCreate } from 'src/components/navigation/GlobalNavigation/Nav
 import { WorkspaceSelector } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelector'
 import {
   type IGlobalNavigationItem,
-  type ISuiteSelectorOptions,
 } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
 import { useNewExperienceReminder } from 'src/hooks/NewExperienceReminder/useNewExperienceReminder'
-import { HomeButton } from 'src/components/navigation/GlobalNavigation/HomeButton'
 import {
   NotificationCenter,
   type INotificationCenterProps,
 } from 'src/components/navigation/GlobalNavigation/NotificationCenter'
-
-export interface NotificationActions {
-  onClose?: () => void
-  onPreferencesClick?: () => void
-}
+import React from "react";
 
 export interface IGlobalNavigationProps {
-  logo: IGlobalNavigationLogo
   tools: IGlobalNavigationItem[]
   management: IGlobalNavigationItem[]
   orgs?: INavigationOrg[]
@@ -41,37 +33,27 @@ export interface IGlobalNavigationProps {
   onSearchClick?: () => void
   onSuiteLogoClick?: () => void
   onMpHomeClick: () => void
-  hideMpHome?: boolean
-  showSuiteLogo?: boolean
   avatarOptions?: IAvatarProps
   navigationButtonItemOptions?: {
     label: string
     onClick: () => void
     withoutContainer?: boolean
   }
-  suiteSelectorOptions?: ISuiteSelectorOptions
-  /**
-   * @deprecated This variant is a temporary fix for new component.
-   * This will be removed once all the apps updated.
-   */
-  minimapOptions?: ISuiteSelectorOptions
   notificationCenter?: INotificationCenterProps
 }
 
 export const GlobalNavWidth = 90 as const
 
-export const GlobalNavigation = ({ showSuiteLogo = true, ...props }: IGlobalNavigationProps) => {
+export const GlobalNavigation = (props: IGlobalNavigationProps) => {
   return (
     <Layout className="globalNavigation">
       <Layout.Sider className="globalNavigation__sider" width={GlobalNavWidth}>
         <Flex vertical justify="space-between" style={{ height: '100%' }}>
           <div>
-            {showSuiteLogo && (
-              <>
-                <SuiteLogo {...props.logo} suiteSelectorOptions={props.minimapOptions ?? props.suiteSelectorOptions} />
-                <div className="globalNavigation__divider" />
-              </>
-            )}
+            <Center className="globalNavigation__mpHome">
+              <Icon name="mpLogo" size="lg" color="white" />
+            </Center>
+            
             <Center vertical>
               {props.onSearchClick && <NavigationSearch onClick={props.onSearchClick} />}
               {props.createItems && <NavigationCreate createItems={props.createItems} />}
@@ -98,7 +80,6 @@ export const GlobalNavigation = ({ showSuiteLogo = true, ...props }: IGlobalNavi
                 />
               )
             )}
-            {!props.hideMpHome && <HomeButton onMpHomeClick={props.onMpHomeClick} />}
           </div>
         </Flex>
       </Layout.Sider>

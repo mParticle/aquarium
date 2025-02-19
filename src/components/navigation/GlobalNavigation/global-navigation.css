@@ -327,7 +327,6 @@
   height: var(--nav-item-height);
   background-color: black;
   color: white;
-  cursor: pointer;
 }
 
 .globalNavigation__mpHome svg {

@@ -7,53 +7,61 @@ import { type IGlobalNavigationLink } from 'src/components/navigation/GlobalNavi
 import { Fragment } from 'react'
 import { buildLinkFromHrefOptions } from 'src/utils/utils'
 import { NavigationButtonItem } from 'src/components/navigation/GlobalNavigation/NavigationButtonItem'
+import { ItemType } from "antd/lib/menu/interface";
 
 export interface INavigationListProps {
   items: IGlobalNavigationItem[]
 }
 
 export function NavigationList(props: INavigationListProps) {
+  const visibleItems = props.items.filter(item => item.visible !== false);
+  
   return (
     <Center vertical>
-      {props.items.filter(i => i.visible !== false).map((item, i) => (
-        <Fragment key={i}>
+      {visibleItems.map((item) => 
+        <Fragment key={item.id}>
           {item.type === 'menu' ? (
-            <Menu key={i} expandIcon={null} className="globalNavigation__menu" items={[generateMenuItem(item, i)]} />
+            <Menu expandIcon={null} className="globalNavigation__menu" items={[generateMenuItem(item)]} />
           ) : (
-            <NavigationItem {...item} type="link" key={i} />
+            <NavigationItem {...item} isActive={isNavigationItemActive(item)} type="link" />
           )}
         </Fragment>
-      ))}
+      )}
     </Center>
   )
 }
 
-function generateMenuItem(item: IGlobalNavigationItem, i: number) {
-  const children: Array<IGlobalNavigationLink | MenuItemGroupType> = [
-    { label: item.label, type: 'group', key: String(item.label) + '_groupTitle' },
-  ]
-  if (item.type === 'menu') {
-    const childrenWithExpandedIcons = item.children.filter(i => i.visible !== false).map(({ hrefOptions, ...child }, index) => ({
-      ...child,
-      key: `${String(child.label)}${index}`,
-      label: child.type === 'button' ? child.label : buildLinkFromHrefOptions(child.label, hrefOptions),
-    }))
+function generateMenuChild(item: IGlobalNavigationItem): ItemType {
+    const baseItem = {
+        disabled: item.disabled,
+        key: item.id,
+        label: item.label,
+    }
 
-    childrenWithExpandedIcons.forEach((child, index) => {
-      if (child.type !== 'button') {
-        children.push(child)
-      } else {
-        const buttonKey = `submenu-button-${children.filter(c => c !== null && c.type === 'button').length}-${index}`
+    switch (item.type) {
+        case 'link':
+            return {
+                ...baseItem,
+                label: buildLinkFromHrefOptions(item.label, item.hrefOptions)
+            };
+        case 'button':
+            return {
+                ...baseItem,
+                className: 'globalNavigation__buttonItem',
+                label: <NavigationButtonItem withoutContainer={false} label={item.label} {...item.buttonOptions} />
+            };
+        case 'menu':
+            return {
+                ...baseItem,
+                type: "group",
+                children: item.children.filter(item => item.visible !== false).map(generateMenuChild)
+            };
+        default:
+            return baseItem;
+    }
+}
 
-        children.push({
-          className: 'globalNavigation__buttonItem',
-          key: buttonKey,
-          label: <NavigationButtonItem withoutContainer={false} label={child.label} {...child.buttonOptions} />,
-        })
-      }
-    })
-  }
-
+function generateMenuItem(item: IGlobalNavigationItem): ItemType {
   const navigationIcon = (
     <NavigationIcon
       icon={item.icon}
@@ -68,8 +76,8 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
     icon: navigationIcon,
     popupClassName: 'globalNavigation__popup',
     className: 'globalNavigation__item' + (isActive ? ' globalNavigation__item--active' : ''),
-    key: `${String(item.label)}${i}`,
-    children,
+    key: item.id,
+    children: item.type === 'menu' ? item.children.filter(item => item.visible !== false).map(generateMenuChild) : undefined,
   }
 }
 

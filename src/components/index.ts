@@ -99,7 +99,6 @@ export {
 export type {
   IBaseGlobalNavigationItem,
   IGlobalNavigationItem,
-  IGlobalNavigationLogo,
 } from './navigation/GlobalNavigation/GlobalNavigationItems'
 export type {
   INavigationCreateProps,
