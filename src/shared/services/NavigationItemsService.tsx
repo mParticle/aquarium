@@ -100,7 +100,7 @@ const allNavigationItems: IGlobalNavigationItem[] = [
                     },
                     {
                         id: NavigationItemId.Oversight_Privacy_PrivacySettings,
-                        label: "Trace Configurations",
+                        label: "Privacy Settings",
                         type: "link",
                         hrefOptions: { href: Paths.Oversight.PrivacySettings }
                     },
@@ -326,7 +326,7 @@ const allNavigationItems: IGlobalNavigationItem[] = [
         label: "Predictions",
         icon: <Icon name="predictions" />,
         type: "link",
-        hrefOptions: { href: "" }
+        hrefOptions: { href: Paths.Root.Predictions }
     }
 ];
 

@@ -322,7 +322,6 @@
 
 .globalNavigation__mpHome {
   padding: var(--padding-lg, 20px); /* TODO: dependency between padding-lg/md and 20 from figma... */
-  margin-top: var(--margin-xs);
   width: var(--nav-width);
   height: var(--nav-item-height);
   background-color: black;
