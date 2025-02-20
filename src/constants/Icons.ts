@@ -3,7 +3,9 @@ import { type IconOptions, type IconNames } from 'src/types/icons'
 import {
   AddIcon,
   AlicornIcon,
+  AnalyticsIcon,
   AnalyticsIconDt,
+  C360Icon,
   C360IconDt,
   CatalogIcon,
   ChartColumnIcon,
@@ -12,6 +14,7 @@ import {
   CircleNodesIcon,
   CloudIcon,
   ConnectionsIcon,
+  DataPlatformIcon,
   DataPlatformIconDt,
   DatabaseIcon,
   DragAndDropIcon,
@@ -36,6 +39,7 @@ import {
   MessageQuestionIcon,
   MpLogoIcon,
   ObservabilityIcon,
+  OversightIcon,
   OversightIconDt,
   PrecisionIcon,
   PredictionsIconDt,
@@ -67,6 +71,7 @@ import {
   NotificationSubscribedIcon,
   NotificationSubscribeIcon,
   PremiumIconDt,
+  OverviewIcon,
   OverviewIconDt,
   FilterIcon,
   ActiveIcon,
@@ -97,6 +102,7 @@ import {
   StateEmpty,
   StateError,
   StateNoResults,
+  Back,
 } from 'src/components/icons'
 
 export const Icons: Record<IconNames, IconOptions> = {
@@ -122,6 +128,7 @@ export const Icons: Record<IconNames, IconOptions> = {
     default: 'light',
   },
   analytics: {
+    light: AnalyticsIcon,
     'duo-tone': AnalyticsIconDt,
     default: 'duo-tone',
   },
@@ -138,6 +145,7 @@ export const Icons: Record<IconNames, IconOptions> = {
     default: 'light',
   },
   C360: {
+    light: C360Icon,
     'duo-tone': C360IconDt,
     default: 'duo-tone',
   },
@@ -199,6 +207,7 @@ export const Icons: Record<IconNames, IconOptions> = {
     default: 'light',
   },
   dataPlatform: {
+    light: DataPlatformIcon,
     'duo-tone': DataPlatformIconDt,
     default: 'duo-tone',
   },
@@ -389,10 +398,12 @@ export const Icons: Record<IconNames, IconOptions> = {
     default: 'light',
   },
   oversight: {
+    light: OversightIcon,
     'duo-tone': OversightIconDt,
     default: 'duo-tone',
   },
   overview: {
+    light: OverviewIcon,
     'duo-tone': OverviewIconDt,
     default: 'duo-tone',
   },
@@ -573,6 +584,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   stateNoResults: {
     light: StateNoResults,
+    default: 'light',
+  },
+  back: {
+    light: Back,
     default: 'light',
   },
 } as const

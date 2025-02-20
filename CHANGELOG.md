@@ -1,3 +1,9 @@
+# [1.40.0](https://github.com/mParticle/aquarium/compare/v1.39.0...v1.40.0) (2025-02-13)
+
+### Features
+
+- add back icon ([#540](https://github.com/mParticle/aquarium/issues/540)) ([d129626](https://github.com/mParticle/aquarium/commit/d1296265c22590f5405d691dcd4d340c5039b9d3))
+
 # [1.39.0](https://github.com/mParticle/aquarium/compare/v1.38.0...v1.39.0) (2025-02-05)
 
 ### Features

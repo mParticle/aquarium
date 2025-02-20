@@ -3,6 +3,7 @@ import type { StoryObj } from '@storybook/react'
 import { Space } from 'src/components'
 import { Switch } from 'src/components'
 import { Typography } from 'src/components/general/Typography/Typography'
+import { PaddingLg } from 'src/styles/style'
 import { ExampleStory } from 'src/utils/ExampleStory'
 import { useState } from 'react'
 import { expect } from '@storybook/test'
@@ -102,6 +103,20 @@ export const ExampleTexts: Story = {
           <Typography.Text delete>Aquarium (delete)</Typography.Text>
           <Typography.Text strong>Aquarium (strong)</Typography.Text>
           <Typography.Text italic>Aquarium (italic)</Typography.Text>
+        </Space>
+      </ExampleStory>
+    )
+  },
+}
+
+export const ExampleProps: Story = {
+  render: () => {
+    return (
+      <ExampleStory title={<> </>}>
+        <Space direction="vertical">
+          <Typography.Text size="sm" color="ColorPrimaryText" style={{ paddingLeft: PaddingLg }}>
+            Aquarium props test
+          </Typography.Text>
         </Space>
       </ExampleStory>
     )
