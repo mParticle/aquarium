@@ -1,6 +1,8 @@
 import AddIcon from 'src/assets/svg/add.svg?react'
 import AlicornIcon from 'src/assets/svg/alicorn.svg?react'
+import AnalyticsIcon from 'src/assets/svg/mp_pm_lt_analytcis.svg?react'
 import AnalyticsIconDt from 'src/assets/svg/mp_pm_dt_analytics.svg?react'
+import C360Icon from 'src/assets/svg/mp_pm_lt_c360.svg?react'
 import C360IconDt from 'src/assets/svg/mp_pm_dt_c360.svg?react'
 import CatalogIcon from 'src/assets/svg/mp_pm_lt_catalog.svg?react'
 import ChartColumnIcon from 'src/assets/svg/chart-column.svg?react'
@@ -9,6 +11,7 @@ import CheckIcon from 'src/assets/svg/check.svg?react'
 import CircleNodesIcon from 'src/assets/svg/circle-nodes.svg?react'
 import CloudIcon from 'src/assets/svg/cloud.svg?react'
 import ConnectionsIcon from 'src/assets/svg/connections.svg?react'
+import DataPlatformIcon from 'src/assets/svg/mp_pm_lt_data-paltform.svg?react'
 import DataPlatformIconDt from 'src/assets/svg/mp_pm_dt_data-platform.svg?react'
 import DatabaseIcon from 'src/assets/svg/database.svg?react'
 import DragAndDropIcon from 'src/assets/svg/mp_act_lt_dragandrop.svg?react'
@@ -32,6 +35,7 @@ import PaywallIcon from 'src/assets/svg/paywall.svg?react'
 import MessageQuestionIcon from 'src/assets/svg/message-question.svg?react'
 import MpLogoIcon from 'src/assets/svg/mpLogo.svg?react'
 import ObservabilityIcon from 'src/assets/svg/mp_pm_lt_observability.svg?react'
+import OversightIcon from 'src/assets/svg/mp_pm_lt_oversight.svg?react'
 import OversightIconDt from 'src/assets/svg/mp_pm_dt_oversight.svg?react'
 import PrecisionIcon from 'src/assets/svg/precision.svg?react'
 import PredictionsIcon from 'src/assets/svg/mp_pm_lt_predictions.svg?react'
@@ -64,6 +68,7 @@ import NotificationIcon from 'src/assets/svg/mp_pm_lt_notification.svg?react'
 import NotificationSubscribedIcon from 'src/assets/svg/mp_pm_lt_notification_subscribed.svg?react'
 import NotificationSubscribeIcon from 'src/assets/svg/mp_pm_lt_notification_subscribe.svg?react'
 import PremiumIconDt from 'src/assets/svg/mp_info_dt_premium.svg?react'
+import OverviewIcon from 'src/assets/svg/mp_pm_lt_overview.svg?react'
 import OverviewIconDt from 'src/assets/svg/mp_pm_dt_overview.svg?react'
 import FilterIcon from 'src/assets/svg/mp_act_lt_filter.svg?react'
 import ActiveIcon from 'src/assets/svg/mp_info_lt_active.svg?react'
@@ -102,8 +107,10 @@ export {
   ActiveIcon,
   AddIcon,
   AlicornIcon,
+  AnalyticsIcon,
   AnalyticsIconDt,
   Annotation,
+  C360Icon,
   C360IconDt,
   CatalogIcon,
   ChartColumnIcon,
@@ -117,6 +124,7 @@ export {
   Copy,
   Dashboard,
   DatabaseIcon,
+  DataPlatformIcon,
   DataPlatformIconDt,
   Delete,
   DirectoryIcon,
@@ -158,7 +166,9 @@ export {
   ObservabilityIcon,
   OpenTabIcon,
   Organization,
+  OversightIcon,
   OversightIconDt,
+  OverviewIcon,
   OverviewIconDt,
   PaywallIcon,
   Placeholder,
