@@ -328,7 +328,7 @@ const allNavigationItems: IGlobalNavigationItem[] = [
         type: "link",
         hrefOptions: { href: Paths.Root.Predictions }
     }
-];
+]
 
 export class NavigationItemsService {
     public static get navigationItems() { return allNavigationItems }
