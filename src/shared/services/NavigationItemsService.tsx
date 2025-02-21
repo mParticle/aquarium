@@ -186,7 +186,7 @@ const allNavigationItems: IGlobalNavigationItem[] = [
                         id: NavigationItemId.DataPlatform_Setup_Directory,
                         label: "Directory",
                         type: "link",
-                        hrefOptions: { href: Paths.DataPlatform.Setup.Directory.Listing }
+                        hrefOptions: { href: Paths.DataPlatform.Setup.Directory.Root }
                     }
                 ]
             },
