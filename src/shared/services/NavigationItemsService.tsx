@@ -1,4 +1,4 @@
-import { Icon, IGlobalNavigationItem, RoutesAuthorizationsService, Utils } from "src/components";
+import { Icon, type IGlobalNavigationItem, RoutesAuthorizationsService, Utils } from "src/components";
 import { Paths } from "src/shared/Paths";
 
 export enum NavigationItemId {
@@ -331,6 +331,7 @@ const allNavigationItems: IGlobalNavigationItem[] = [
     }
 ];
 
+// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class NavigationItemsService {
     public static get navigationItems() { return allNavigationItems }
 
@@ -349,7 +350,7 @@ export class NavigationItemsService {
                     return item;
                 }
 
-                if (item.type == "menu" && item.children) {
+                if (item.type === "menu" && item.children) {
                     const found = findItem(item.children);
                     if (found) {
                         return found;

@@ -152,6 +152,31 @@
   padding-inline: var(--padding-xs) var(--padding-xs) !important;
 }
 
+
+/* For browsers that support `scrollbar-*` properties */
+@supports (scrollbar-color: auto) {
+  .globalNavigation__popup {
+    scrollbar-color: var(--color-scrollbar-handle) var(--color-scrollbar-track);
+    scrollbar-width: thin;
+  }
+}
+
+/* Otherwise, use `::-webkit-scrollbar-*` pseudo-elements */
+.globalNavigation__popup::-webkit-scrollbar {
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-appearance: none;
+  width: var(--size-scrollbar-handle);
+  height: var(--size-scrollbar-handle);
+}
+
+.globalNavigation__popup::-webkit-scrollbar-track {
+  background-color: var(--color-scrollbar-track);
+}
+
+.globalNavigation__popup::-webkit-scrollbar-thumb {
+  background-color: var(--color-scrollbar-handle);
+}
+
 .globalNavigation__popup .ant-menu-item-group-title {
   margin: 0 var(--margin-xxs) !important;
   padding: var(--padding-xs) var(--padding) 0 !important;
@@ -323,7 +348,7 @@
 .globalNavigation__mpHome {
   height: 80px;
   cursor: pointer;
-  padding: var(--padding-lg, 20px); /* TODO: dependency between padding-lg/md and 20 from figma... */
+  padding: var(--padding-md); /* TODO: dependency between padding-lg/md and 20 from figma... */
   width: var(--nav-width);
   /*height: var(--nav-item-height);*/
   background-color: black;
@@ -331,7 +356,7 @@
 }
 
 .globalNavigation__mpHome svg {
-  width: var(--mp-icon-size-xl);
+  width: var(--mp-icon-size-xxl);
   /*width: 28px;*/
   height: var(--size-lg);
 }
