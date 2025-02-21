@@ -13,6 +13,7 @@ export interface IBaseGlobalNavigationItem {
 
 export interface IGlobalNavigationMenu extends IBaseGlobalNavigationItem {
   type: 'menu'
+  hrefOptions?: HrefOptions // we should be able to navigate to the menus
   children: IGlobalNavigationItem[]
 }
 

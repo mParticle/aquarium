@@ -48,19 +48,20 @@ export enum NavigationItemId {
     Analytics_Favorites = 'analytics_favorites'
 }
 
+// TODO: update icons (ideally, I'd love them to be handled on the client side..I think)
 const allNavigationItems: IGlobalNavigationItem[] = [
     {
         id: NavigationItemId.Overview,
         label: "Overview",
         type: "link",
-        icon: <Icon name="trends"/>,
+        icon: <Icon name="overview" variant="light"/>,
         hrefOptions: { href: Paths.Root.Overview.Root },
     },
     {
         id: NavigationItemId.Oversight,
         label: "Oversight",
         type: "menu",
-        icon: <Icon name="oversight"/>,
+        icon: <Icon name="oversight" variant="light"/>,
         children: [
             {
                 id: NavigationItemId.Oversight_SystemAlerts,
@@ -112,7 +113,7 @@ const allNavigationItems: IGlobalNavigationItem[] = [
         id: NavigationItemId.Customer360,
         label: "Customer 360",
         type: "menu",
-        icon: <Icon name="C360"/>,
+        icon: <Icon name="C360" variant="light"/>,
         children: [
             {
                 id: NavigationItemId.Customer360_UserProfiles,
@@ -151,7 +152,7 @@ const allNavigationItems: IGlobalNavigationItem[] = [
         id: NavigationItemId.DataPlatform,
         label: "DataPlatform",
         type: "menu",
-        icon:  <Icon name="dataPlatform"/>,
+        icon:  <Icon name="dataPlatform" variant="light"/>,
         children: [
             {
                 id: NavigationItemId.DataPlatform_Trends,
@@ -252,7 +253,7 @@ const allNavigationItems: IGlobalNavigationItem[] = [
         id: NavigationItemId.Segmentation,
         label: "Segmentation",
         type: "menu",
-        icon: <Icon name="segmentation" />,
+        icon: <Icon name="audiences" variant="light" />,
         children: [
             {
                 id: NavigationItemId.Segmentation_Journeys,
@@ -291,7 +292,7 @@ const allNavigationItems: IGlobalNavigationItem[] = [
         id: NavigationItemId.Analytics,
         label: "Analytics",
         type: "menu",
-        icon: <Icon name="analytics" />,
+        icon: <Icon name="analytics" variant="light"/>,
         children: [
             {
                 id: NavigationItemId.Analytics_MyHub,
@@ -324,7 +325,7 @@ const allNavigationItems: IGlobalNavigationItem[] = [
     {
         id: NavigationItemId.Predictions,
         label: "Predictions",
-        icon: <Icon name="predictions" />,
+        icon: <Icon name="predictions" variant="light" />,
         type: "link",
         hrefOptions: { href: Paths.Root.Predictions }
     }
@@ -332,7 +333,7 @@ const allNavigationItems: IGlobalNavigationItem[] = [
 
 export class NavigationItemsService {
     public static get navigationItems() { return allNavigationItems }
-    
+
     public static initialize() {
         this.traverseAllItems((item) => {
             if (item.type === "link" && item.hrefOptions?.href) {
@@ -340,14 +341,14 @@ export class NavigationItemsService {
             }
         });
     }
-    
+
     public static findItemById(id: NavigationItemId): IGlobalNavigationItem | undefined {
         const findItem = (items: IGlobalNavigationItem[]): IGlobalNavigationItem | undefined => {
             for (const item of items) {
                 if (item.id === id) {
                     return item;
                 }
-                
+
                 if (item.type == "menu" && item.children) {
                     const found = findItem(item.children);
                     if (found) {
@@ -360,7 +361,7 @@ export class NavigationItemsService {
 
         return findItem(allNavigationItems);
     }
-    
+
     private static traverseItems(items: IGlobalNavigationItem[], callback: (item: IGlobalNavigationItem) => void) {
         for (const item of items) {
             callback(item);
@@ -369,7 +370,7 @@ export class NavigationItemsService {
             }
         }
     }
-    
+
     public static traverseAllItems(callback: (item: IGlobalNavigationItem) => void) {
         this.traverseItems(allNavigationItems, callback);
     }

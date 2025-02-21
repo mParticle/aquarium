@@ -321,15 +321,18 @@
 }
 
 .globalNavigation__mpHome {
+  height: 80px;
+  cursor: pointer;
   padding: var(--padding-lg, 20px); /* TODO: dependency between padding-lg/md and 20 from figma... */
   width: var(--nav-width);
-  height: var(--nav-item-height);
+  /*height: var(--nav-item-height);*/
   background-color: black;
   color: white;
 }
 
 .globalNavigation__mpHome svg {
-  width: 28px;
+  width: var(--mp-icon-size-xl);
+  /*width: 28px;*/
   height: var(--size-lg);
 }
 
@@ -363,4 +366,31 @@
 
 .ant-menu .ant-menu-submenu-title .ant-menu-item-icon svg {
   line-height: 0 !important;
+}
+
+/* UNIFIED NAV */
+.unifiedNavigation__childItem {
+  font-size: var(--font-size) !important;
+}
+
+.unifiedNavigation__menu .ant-menu-item-group-title {
+  height: 40px !important;
+  border-radius: var(--border-radius-sm);
+  color: var(--color-text) !important;
+  font-size: var(--font-size) !important;
+  font-weight: 400 !important;
+}
+
+.unifiedNavigation__menu .ant-menu-item-group-title:hover {
+  cursor: pointer;
+  background-color: var(--color-bg-text-hover);
+}
+
+.unifiedNavigation__menu.unifiedNavigation__menu--disabled .ant-menu-item-group-title {
+  color: var(--color-text-disabled) !important;
+  cursor: not-allowed !important;
+}
+
+.unifiedNavigation__menu .unifiedNavigation__childItem {
+  font-size: var(--font-size-sm) !important;
 }
