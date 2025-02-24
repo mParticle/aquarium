@@ -100,6 +100,7 @@ import StateEmpty from 'src/assets/svg/mp_info_lt_state-empty.svg?react'
 import StateError from 'src/assets/svg/mp_info_lt_state-error.svg?react'
 import StateNoResults from 'src/assets/svg/mp_info_lt_state-no-results.svg?react'
 import Back from 'src/assets/svg/mp_act_lt_back.svg?react'
+import Flag from 'src/assets/svg/flag.svg?react'
 
 export {
   AbSplit,
@@ -139,6 +140,7 @@ export {
   EventIcon,
   FilterIcon,
   FitToScreen,
+  Flag,
   FolderClosedIcon,
   ForwardingIcon,
   FullScreen,
