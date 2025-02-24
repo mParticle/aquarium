@@ -4,7 +4,7 @@ import { type HrefOptions } from 'src/utils/utils'
 import { type Icons } from 'src/constants/Icons'
 
 export interface IBaseGlobalNavigationItem {
-  id: string
+  id?: string
   type?: 'menu' | 'link'
   label: ReactNode
   icon?: ReactNode
