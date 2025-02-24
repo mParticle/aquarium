@@ -343,6 +343,7 @@
 
 .globalNavigation__mpHome.globalNavigation__mpHome--unified svg {
   width: var(--mp-icon-size-xxl);
+  height: var(--mp-icon-size-xl);
 }
 
 .notificationCenter__popover {
