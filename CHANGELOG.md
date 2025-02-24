@@ -1,3 +1,10 @@
+# [1.41.0](https://github.com/mParticle/aquarium/compare/v1.40.0...v1.41.0) (2025-02-24)
+
+### Features
+
+- add light variants of suite icons ([#543](https://github.com/mParticle/aquarium/issues/543)) ([4d4bb91](https://github.com/mParticle/aquarium/commit/4d4bb91b7a074a8b35c6d42c0d88aeff7560d6ed))
+- Introduce temp shared folder ([#544](https://github.com/mParticle/aquarium/issues/544)) ([b3b5afe](https://github.com/mParticle/aquarium/commit/b3b5afedeb404dec54133a8729341caaca0cf268))
+
 # [1.40.0](https://github.com/mParticle/aquarium/compare/v1.39.0...v1.40.0) (2025-02-13)
 
 ### Features
