@@ -33,7 +33,7 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
     { label: item.label, type: 'group', key: String(item.label) + '_groupTitle' },
   ]
   if (item.type === 'menu') {
-    const childrenWithExpandedIcons = item.children.map(({ hrefOptions, ...child }, index) => ({
+    const childrenWithExpandedIcons = item.children.map(c => c as IGlobalNavigationLink).map(({ hrefOptions, ...child }, index) => ({
       ...child,
       key: `${String(child.label)}${index}`,
       label: child.type === 'button' ? child.label : buildLinkFromHrefOptions(child.label, hrefOptions),
@@ -41,7 +41,7 @@ function generateMenuItem(item: IGlobalNavigationItem, i: number) {
 
     childrenWithExpandedIcons.forEach((child, index) => {
       if (child.type !== 'button') {
-        children.push(child)
+        children.push(child as IGlobalNavigationLink)
       } else {
         const buttonKey = `submenu-button-${children.filter(c => c !== null && c.type === 'button').length}-${index}`
 
