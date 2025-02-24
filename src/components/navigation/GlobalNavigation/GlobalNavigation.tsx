@@ -1,5 +1,6 @@
 import 'src/styles/_variables.css'
 import './global-navigation.css'
+import React from 'react'
 import {
   type IGlobalNavigationLogo,
   type INavigationOrg,
@@ -33,15 +34,27 @@ export interface NotificationActions {
 }
 
 export interface IGlobalNavigationProps {
+  /**
+   * @deprecated
+   * This will be removed once all the apps updated with unified nav.
+   */
   logo: IGlobalNavigationLogo
   tools: IGlobalNavigationItem[]
   management: IGlobalNavigationItem[]
   orgs?: INavigationOrg[]
   createItems?: INavigationCreateProps['createItems']
   onSearchClick?: () => void
+  /**
+   * @deprecated
+   * This will be removed once all the apps updated with unified nav.
+   */
   onSuiteLogoClick?: () => void
   onMpHomeClick: () => void
   hideMpHome?: boolean
+  /**
+   * @deprecated
+   * This will be removed once all the apps updated with unified nav.
+   */
   showSuiteLogo?: boolean
   avatarOptions?: IAvatarProps
   navigationButtonItemOptions?: {
@@ -49,6 +62,10 @@ export interface IGlobalNavigationProps {
     onClick: () => void
     withoutContainer?: boolean
   }
+  /**
+   * @deprecated
+   * This will be removed once all the apps updated with unified nav.
+   */
   suiteSelectorOptions?: ISuiteSelectorOptions
   /**
    * @deprecated This variant is a temporary fix for new component.
@@ -56,54 +73,108 @@ export interface IGlobalNavigationProps {
    */
   minimapOptions?: ISuiteSelectorOptions
   notificationCenter?: INotificationCenterProps
+  showUnifiedNavigation?: boolean
 }
 
 export const GlobalNavWidth = 90 as const
 
-export const GlobalNavigation = ({ showSuiteLogo = true, ...props }: IGlobalNavigationProps) => {
-  return (
-    <Layout className="globalNavigation">
-      <Layout.Sider className="globalNavigation__sider" width={GlobalNavWidth}>
-        <Flex vertical justify="space-between" style={{ height: '100%' }}>
-          <div>
-            {showSuiteLogo && (
-              <>
-                <SuiteLogo {...props.logo} suiteSelectorOptions={props.minimapOptions ?? props.suiteSelectorOptions} />
-                <div className="globalNavigation__divider" />
-              </>
-            )}
-            <Center vertical>
-              {props.onSearchClick && <NavigationSearch onClick={props.onSearchClick} />}
-              {props.createItems && <NavigationCreate createItems={props.createItems} />}
-            </Center>
-            <NavigationList items={props.tools} />
-          </div>
-          <div>
-            {props.notificationCenter && <NotificationCenter {...props.notificationCenter} />}
-            <NavigationList items={props.management} />
-            {props.orgs ? (
-              <WorkspaceSelector
-                orgs={props.orgs}
-                navigationButtonItemOptions={props.navigationButtonItemOptions}
-                avatarOptions={props.avatarOptions}
-              />
-            ) : (
-              !!props.navigationButtonItemOptions?.onClick && (
-                <NavigationItem
-                  type="link"
-                  icon={<Icon name="signout" />}
-                  label="Sign Out"
-                  hideLabel
-                  onClick={props.navigationButtonItemOptions?.onClick}
+export const GlobalNavigation = ({
+  showSuiteLogo = true,
+  showUnifiedNavigation = false,
+  ...props
+}: IGlobalNavigationProps) => {
+  return showUnifiedNavigation ? renderUnifiedNavigation() : renderSuitesClassicNavigation()
+
+  function renderUnifiedNavigation() {
+    return (
+      <Layout className="globalNavigation">
+        <Layout.Sider className="globalNavigation__sider" width={GlobalNavWidth}>
+          <Flex vertical justify="space-between" style={{ height: '100%' }}>
+            <div>
+              <Center
+                className="globalNavigation__mpHome globalNavigation__mpHome--unified"
+                onClick={props.onMpHomeClick}>
+                <Icon name="mpLogo" size="lg" color="white" />
+              </Center>
+
+              <Center vertical>
+                {props.onSearchClick && <NavigationSearch onClick={props.onSearchClick} />}
+                {props.createItems && <NavigationCreate createItems={props.createItems} />}
+              </Center>
+              <NavigationList items={props.tools} />
+            </div>
+            <div>
+              {props.notificationCenter && <NotificationCenter {...props.notificationCenter} />}
+              <NavigationList items={props.management} />
+              {props.orgs ? (
+                <WorkspaceSelector
+                  orgs={props.orgs}
+                  navigationButtonItemOptions={props.navigationButtonItemOptions}
+                  avatarOptions={props.avatarOptions}
                 />
-              )
-            )}
-            {!props.hideMpHome && <HomeButton onMpHomeClick={props.onMpHomeClick} />}
-          </div>
-        </Flex>
-      </Layout.Sider>
-    </Layout>
-  )
+              ) : (
+                !!props.navigationButtonItemOptions?.onClick && (
+                  <NavigationItem
+                    type="link"
+                    icon={<Icon name="signout" />}
+                    label="Sign Out"
+                    hideLabel
+                    onClick={props.navigationButtonItemOptions?.onClick}
+                  />
+                )
+              )}
+            </div>
+          </Flex>
+        </Layout.Sider>
+      </Layout>
+    )
+  }
+
+  function renderSuitesClassicNavigation() {
+    return (
+      <Layout className="globalNavigation">
+        <Layout.Sider className="globalNavigation__sider" width={GlobalNavWidth}>
+          <Flex vertical justify="space-between" style={{ height: '100%' }}>
+            <div>
+              {showSuiteLogo && (
+                <>
+                  <SuiteLogo {...props.logo} suiteSelectorOptions={props.suiteSelectorOptions} />
+                  <div className="globalNavigation__divider" />
+                </>
+              )}
+              <Center vertical>
+                {props.onSearchClick && <NavigationSearch onClick={props.onSearchClick} />}
+                {props.createItems && <NavigationCreate createItems={props.createItems} />}
+              </Center>
+              <NavigationList items={props.tools} />
+            </div>
+            <div>
+              {props.notificationCenter && <NotificationCenter {...props.notificationCenter} />}
+              <NavigationList items={props.management} />
+              {props.orgs ? (
+                <WorkspaceSelector
+                  orgs={props.orgs}
+                  navigationButtonItemOptions={props.navigationButtonItemOptions}
+                  avatarOptions={props.avatarOptions}
+                />
+              ) : (
+                !!props.navigationButtonItemOptions?.onClick && (
+                  <NavigationItem
+                    type="link"
+                    icon={<Icon name="signout" />}
+                    label="Sign Out"
+                    hideLabel
+                    onClick={props.navigationButtonItemOptions?.onClick}
+                  />
+                )
+              )}
+              {!props.hideMpHome && <HomeButton onMpHomeClick={props.onMpHomeClick} />}
+            </div>
+          </Flex>
+        </Layout.Sider>
+      </Layout>
+    )
+  }
 }
 
 GlobalNavigation.useNewExperienceReminder = useNewExperienceReminder

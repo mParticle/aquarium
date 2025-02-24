@@ -3,6 +3,7 @@
   --nav-item-width: 82px;
   --nav-width: 90px;
   --suite-logo-height: 82px;
+  --mp-logo-height: 80px;
   --color-scrollbar-handle: rgb(0 0 0 / 15%);
   --color-scrollbar-track: transparent;
   --size-scrollbar-handle: 6px;
@@ -330,9 +331,19 @@
   cursor: pointer;
 }
 
+.globalNavigation__mpHome.globalNavigation__mpHome--unified {
+  margin-top: 0;
+  height: var(--mp-logo-height);
+}
+
 .globalNavigation__mpHome svg {
   width: 28px;
   height: var(--size-lg);
+}
+
+.globalNavigation__mpHome.globalNavigation__mpHome--unified svg {
+  width: var(--mp-icon-size-xxl);
+  height: var(--mp-icon-size-xl);
 }
 
 .notificationCenter__popover {
