@@ -1,40 +1,10 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import React from 'react'
-import { Center, GlobalNavigation, Icon, Space } from 'src/components'
-import { Badge } from 'src/components/data-display/Badge/Badge'
+import { Center, GlobalNavigation, Icon } from 'src/components'
 import { type IGlobalNavigationItem } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type INotificationCenterProps } from 'src/components/navigation/GlobalNavigation/NotificationCenter'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'
-// import { NavigationItemsService } from "src/shared/services/NavigationItemsService";
-
-const defaultTools: IGlobalNavigationItem[] = [
-  {
-    label: 'Tool 1',
-    // disabled: true,
-    icon: <Icon name="privacy" />,
-    type: 'menu',
-    children: [
-      { label: 'option 1', hrefOptions: { href: '/' } },
-      { label: 'option 2', hrefOptions: { href: '/' } },
-      { label: 'option 3', hrefOptions: { href: '/' } },
-    ],
-  },
-  {
-    label: 'Tool 2',
-    icon: <Icon name="favorite" />,
-    type: 'menu',
-    children: [
-      { label: 'option 1', hrefOptions: { href: '/' } },
-      { label: 'option 2', hrefOptions: { href: '/' } },
-      { label: 'option 3', hrefOptions: { href: '/' } },
-    ],
-  },
-  {
-    label: 'Tool 3',
-    icon: <Icon name="connections" />,
-    hrefOptions: { href: '/' },
-  },
-]
+import { NavigationItemsService } from 'src/shared/services/NavigationItemsService'
 
 const defaultManagement: IGlobalNavigationItem[] = [
   {
@@ -117,7 +87,7 @@ const meta: Meta<typeof GlobalNavigation> = {
   ),
 
   args: {
-    tools: defaultTools,
+    tools: NavigationItemsService.navigationItems,
     management: defaultManagement,
     orgs: defaultOrgs,
     notificationCenter: defaultNotificationCenter,
@@ -146,86 +116,6 @@ const meta: Meta<typeof GlobalNavigation> = {
 export default meta
 
 type Story = StoryObj<typeof GlobalNavigation>
-
-function Beta(label: string) {
-  return (
-    <Space>
-      {label}
-      <Badge color="blue" count="Beta" className="globalNavigation__badge" />
-    </Space>
-  )
-}
-
-const mpTools: IGlobalNavigationItem[] = [
-  {
-    label: 'Activity',
-    icon: <Icon name="trends" />,
-    type: 'menu',
-    children: [
-      { hrefOptions: { href: '/' }, label: 'Platform Trends' },
-      {
-        hrefOptions: { href: '/' },
-        label: (
-          <Space>
-            System Alerts
-            <Badge color="red" />
-          </Space>
-        ),
-      },
-      { hrefOptions: { href: '/' }, label: 'Event Forwarding' },
-      { hrefOptions: { href: '/' }, label: Beta('Observability') },
-    ],
-  },
-  {
-    label: 'Data Master',
-    icon: <Icon name="database" />,
-    type: 'menu',
-    children: [
-      { hrefOptions: { href: '/' }, label: 'Catalog' },
-      { hrefOptions: { href: '/' }, label: 'Plans' },
-      { hrefOptions: { href: '/' }, label: 'Live Stream' },
-      { hrefOptions: { href: '/' }, label: Beta('User Groups') },
-      { hrefOptions: { href: '/' }, label: 'Calculated Attributes' },
-      { hrefOptions: { href: '/' }, label: 'Rules' },
-    ],
-  },
-  {
-    label: 'Audiences',
-    icon: <Icon name="users" />,
-    type: 'menu',
-    children: [
-      { hrefOptions: { href: '/' }, label: 'Real-time' },
-      { hrefOptions: { href: '/' }, label: 'Standard' },
-      { hrefOptions: { href: '/' }, label: 'Journeys' },
-    ],
-  },
-  {
-    label: 'Connections',
-    icon: <Icon name="connections" />,
-    type: 'menu',
-    children: [
-      { hrefOptions: { href: '/' }, label: 'Connect' },
-      { hrefOptions: { href: '/' }, label: 'Platform Filters' },
-      { hrefOptions: { href: '/' }, label: 'Feed Filters' },
-    ],
-  },
-  {
-    label: 'Setup',
-    icon: <Icon name="setup" />,
-    type: 'menu',
-    children: [
-      { hrefOptions: { href: '/' }, label: 'Inputs' },
-      { hrefOptions: { href: '/' }, label: 'Outputs' },
-      { hrefOptions: { href: '/' }, label: 'Data Warehouse' },
-      { hrefOptions: { href: '/' }, label: 'CRM' },
-    ],
-  },
-  {
-    label: 'Directory',
-    icon: <Icon name="myHub" />,
-    hrefOptions: { href: '/' },
-  },
-]
 
 const mpManagement: IGlobalNavigationItem[] = [
   {
@@ -444,8 +334,7 @@ export const Unified: Story = {
     onSearchClick: () => {
       alert('Searching!')
     },
-    // tools: NavigationItemsService.navigationItems,
-    tools: mpTools,
+    tools: NavigationItemsService.navigationItems,
     management: mpManagement,
     orgs: mpOrgs,
     onMpHomeClick: () => {
