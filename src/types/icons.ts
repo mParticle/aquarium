@@ -53,6 +53,7 @@ export type IconNames =
   | 'favorite'
   | 'filter'
   | 'fitToScreen'
+  | 'flag'
   | 'folderClosed'
   | 'forwarding'
   | 'fullScreen'
