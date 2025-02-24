@@ -35,8 +35,8 @@ export interface NotificationActions {
 
 export interface IGlobalNavigationProps {
   /**
-   * @deprecated This variant is a temporary fix for new component.
-   * This will be removed once all the apps updated.
+   * @deprecated
+   * This will be removed once all the apps updated with unified nav.
    */
   logo: IGlobalNavigationLogo
   tools: IGlobalNavigationItem[]
@@ -45,15 +45,15 @@ export interface IGlobalNavigationProps {
   createItems?: INavigationCreateProps['createItems']
   onSearchClick?: () => void
   /**
-   * @deprecated This variant is a temporary fix for new component.
-   * This will be removed once all the apps updated.
+   * @deprecated
+   * This will be removed once all the apps updated with unified nav.
    */
   onSuiteLogoClick?: () => void
   onMpHomeClick: () => void
   hideMpHome?: boolean
   /**
-   * @deprecated This variant is a temporary fix for new component.
-   * This will be removed once all the apps updated.
+   * @deprecated
+   * This will be removed once all the apps updated with unified nav.
    */
   showSuiteLogo?: boolean
   avatarOptions?: IAvatarProps
@@ -63,8 +63,8 @@ export interface IGlobalNavigationProps {
     withoutContainer?: boolean
   }
   /**
-   * @deprecated This variant is a temporary fix for new component.
-   * This will be removed once all the apps updated.
+   * @deprecated
+   * This will be removed once all the apps updated with unified nav.
    */
   suiteSelectorOptions?: ISuiteSelectorOptions
   /**
