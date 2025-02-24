@@ -103,6 +103,7 @@ import {
   StateError,
   StateNoResults,
   Back,
+  Flag,
 } from 'src/components/icons'
 
 export const Icons: Record<IconNames, IconOptions> = {
@@ -265,6 +266,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   fitToScreen: {
     light: FitToScreen,
+    default: 'light',
+  },
+  flag: {
+    light: Flag,
     default: 'light',
   },
   folderClosed: {
