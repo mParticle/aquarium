@@ -1,3 +1,11 @@
+# [1.42.0](https://github.com/mParticle/aquarium/compare/v1.41.1...v1.42.0) (2025-02-25)
+
+### Features
+
+- change routes order based on the feedback ([#559](https://github.com/mParticle/aquarium/issues/559)) ([f6ca93a](https://github.com/mParticle/aquarium/commit/f6ca93aa3af699c1d175934423f0da3f42ac9e9c))
+- Unified Nav/add prop to render unified nav and introduce the new nav structure ([#555](https://github.com/mParticle/aquarium/issues/555)) ([b119018](https://github.com/mParticle/aquarium/commit/b119018a361d86533ac143749bba71cfc9044a5e))
+- Unified Nav/Update w/ 3-level nested menus ([#558](https://github.com/mParticle/aquarium/issues/558)) ([a28e3c0](https://github.com/mParticle/aquarium/commit/a28e3c0353322a12fa1008cec78995e902a3c71b))
+
 ## [1.41.1](https://github.com/mParticle/aquarium/compare/v1.41.0...v1.41.1) (2025-02-24)
 
 # [1.41.0](https://github.com/mParticle/aquarium/compare/v1.40.0...v1.41.0) (2025-02-24)
