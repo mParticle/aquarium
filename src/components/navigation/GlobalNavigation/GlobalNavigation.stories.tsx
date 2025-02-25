@@ -508,7 +508,7 @@ export const MP: Story = {
     tools: mpTools,
     management: mpManagement,
     orgs: mpOrgs,
-    minimapOptions: {
+    suiteSelectorOptions: {
       overviewHref: '/',
       onLinkClick: link => {
         alert(link.href)
@@ -896,7 +896,7 @@ export const IndicativeWithSuiteSwitcher: Story = {
     management: indManagement,
     createItems: indCreateItems,
     orgs: indOrgs,
-    minimapOptions: {
+    suiteSelectorOptions: {
       overviewHref: '/',
       onLinkClick: link => {
         if (link.linkId !== 'analytics') alert(link.href)
@@ -1084,7 +1084,7 @@ export const Cortex: Story = {
         alert('onSignout click')
       },
     },
-    minimapOptions: {
+    suiteSelectorOptions: {
       overviewHref: '/',
       onLinkClick: link => {
         if (link.linkId !== 'predictions') alert(link.href)
