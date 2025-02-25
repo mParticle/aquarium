@@ -109,45 +109,6 @@ const allNavigationItems: IGlobalNavigationItem[] = [
     ],
   },
   {
-    id: NavigationItemId.Customer360,
-    label: 'Customer 360',
-    type: 'menu',
-    icon: <Icon name="C360" variant="light" />,
-    children: [
-      {
-        id: NavigationItemId.Customer360_UserProfiles,
-        label: 'User Profiles',
-        type: 'link',
-        hrefOptions: { href: Paths.Customer360.UserProfile },
-      },
-      {
-        id: NavigationItemId.Customer360_GroupIdentity,
-        label: 'Group Identity',
-        type: 'link',
-        hrefOptions: { href: Paths.Customer360.Identity.GroupIdentities },
-      },
-      {
-        id: NavigationItemId.Customer360_Enrichment,
-        label: 'Enrichment',
-        type: 'menu',
-        children: [
-          {
-            id: NavigationItemId.Customer360_Enrichment_CalculatedAttributes,
-            label: 'Calculated Attributes',
-            type: 'link',
-            hrefOptions: { href: Paths.Customer360.Enrichment.CalculatedAttributes },
-          },
-          {
-            id: NavigationItemId.Customer360_Enrichment_PredictiveAttributes,
-            label: 'Predictive Attributes',
-            type: 'link',
-            hrefOptions: { href: Paths.Customer360.Enrichment.PredictiveAttributes },
-          },
-        ],
-      },
-    ],
-  },
-  {
     id: NavigationItemId.DataPlatform,
     label: 'Data Platform',
     type: 'menu',
@@ -203,22 +164,22 @@ const allNavigationItems: IGlobalNavigationItem[] = [
         hrefOptions: { href: Paths.DataPlatform.DataCatalog },
       },
       {
-        id: NavigationItemId.DataPlatform_Transformations,
-        label: 'Transformations',
+        id: NavigationItemId.DataPlatform_Transformations_Rules,
+        label: 'Rules',
+        type: 'link',
+        hrefOptions: { href: Paths.DataPlatform.Transformations.Rules },
+      },
+      {
+        id: NavigationItemId.DataPlatform_Transformations_Plans,
+        label: 'Plans',
+        type: 'link',
+        hrefOptions: { href: Paths.DataPlatform.Transformations.Plans },
+      },
+      {
+        id: NavigationItemId.DataPlatform_Transformations_Filters,
+        label: 'Filters',
         type: 'menu',
         children: [
-          {
-            id: NavigationItemId.DataPlatform_Transformations_Rules,
-            label: 'Rules',
-            type: 'link',
-            hrefOptions: { href: Paths.DataPlatform.Transformations.Rules },
-          },
-          {
-            id: NavigationItemId.DataPlatform_Transformations_Plans,
-            label: 'Plans',
-            type: 'link',
-            hrefOptions: { href: Paths.DataPlatform.Transformations.Plans },
-          },
           {
             id: NavigationItemId.DataPlatform_Transformations_Filters_PlatformFilters,
             label: 'Platform Filters',
@@ -238,6 +199,45 @@ const allNavigationItems: IGlobalNavigationItem[] = [
         label: 'Event Forwarding',
         type: 'link',
         hrefOptions: { href: Paths.DataPlatform.EventForwarding },
+      },
+    ],
+  },
+  {
+    id: NavigationItemId.Customer360,
+    label: 'Customer 360',
+    type: 'menu',
+    icon: <Icon name="C360" variant="light" />,
+    children: [
+      {
+        id: NavigationItemId.Customer360_UserProfiles,
+        label: 'User Profiles',
+        type: 'link',
+        hrefOptions: { href: Paths.Customer360.UserProfile },
+      },
+      {
+        id: NavigationItemId.Customer360_GroupIdentity,
+        label: 'Group Identity',
+        type: 'link',
+        hrefOptions: { href: Paths.Customer360.Identity.GroupIdentities },
+      },
+      {
+        id: NavigationItemId.Customer360_Enrichment,
+        label: 'Enrichment',
+        type: 'menu',
+        children: [
+          {
+            id: NavigationItemId.Customer360_Enrichment_CalculatedAttributes,
+            label: 'Calculated Attributes',
+            type: 'link',
+            hrefOptions: { href: Paths.Customer360.Enrichment.CalculatedAttributes },
+          },
+          {
+            id: NavigationItemId.Customer360_Enrichment_PredictiveAttributes,
+            label: 'Predictive Attributes',
+            type: 'link',
+            hrefOptions: { href: Paths.Customer360.Enrichment.PredictiveAttributes },
+          },
+        ],
       },
     ],
   },
@@ -281,6 +281,13 @@ const allNavigationItems: IGlobalNavigationItem[] = [
     ],
   },
   {
+    id: NavigationItemId.Predictions,
+    label: 'Predictions',
+    icon: <Icon name="predictions" variant="light" />,
+    type: 'link',
+    hrefOptions: { href: Paths.Root.Predictions },
+  },
+  {
     id: NavigationItemId.Analytics,
     label: 'Analytics',
     type: 'menu',
@@ -313,13 +320,6 @@ const allNavigationItems: IGlobalNavigationItem[] = [
         hrefOptions: { href: Paths.Analytics.Favorites },
       },
     ],
-  },
-  {
-    id: NavigationItemId.Predictions,
-    label: 'Predictions',
-    icon: <Icon name="predictions" variant="light" />,
-    type: 'link',
-    hrefOptions: { href: Paths.Root.Predictions },
   },
 ]
 
