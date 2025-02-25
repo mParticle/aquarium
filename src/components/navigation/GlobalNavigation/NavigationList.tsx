@@ -50,8 +50,8 @@ function generateMenuChild(item: IGlobalNavigationItem): ItemType {
         className: `unifiedNavigation__childItem${item.disabled ? ' unifiedNavigation__childItem--disabled' : ''}`,
         label: (
           <Flex align="center" gap={4}>
-            {item.disabled && <Icon name="unlock" size="xs" />}
             {buildLinkFromHrefOptions(item.label, item.hrefOptions)}
+            {item.disabled && <Icon name="unlock" size="xs" />}
           </Flex>
         ),
       }
