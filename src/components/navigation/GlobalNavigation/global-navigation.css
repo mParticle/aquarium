@@ -68,6 +68,7 @@
   border-left: solid 3px transparent;
   border-right: solid 3px transparent;
   transition: none !important;
+  cursor: pointer;
 }
 
 .globalNavigation__item.globalNavigation__link {
@@ -255,6 +256,10 @@
 .globalNavigation__iconLabel {
   color: var(--color-text);
   font-size: var(--label-size);
+}
+
+.globalNavigation__childItem.globalNavigation__childItem--active {
+  background-color: var(--color-bg-text-hover);
 }
 
 .globalNavigation__badge {

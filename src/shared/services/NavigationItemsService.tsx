@@ -220,23 +220,16 @@ const allNavigationItems: IGlobalNavigationItem[] = [
             hrefOptions: { href: Paths.DataPlatform.Transformations.Plans },
           },
           {
-            id: NavigationItemId.DataPlatform_Transformations_Filters,
-            label: 'Filters',
-            type: 'menu',
-            children: [
-              {
-                id: NavigationItemId.DataPlatform_Transformations_Filters_PlatformFilters,
-                label: 'Platform Filters',
-                type: 'link',
-                hrefOptions: { href: Paths.DataPlatform.Transformations.Filters.Platform },
-              },
-              {
-                id: NavigationItemId.DataPlatform_Transformations_Filters_FeedFilters,
-                label: 'Feed Filters',
-                type: 'link',
-                hrefOptions: { href: Paths.DataPlatform.Transformations.Filters.Feed },
-              },
-            ],
+            id: NavigationItemId.DataPlatform_Transformations_Filters_PlatformFilters,
+            label: 'Platform Filters',
+            type: 'link',
+            hrefOptions: { href: Paths.DataPlatform.Transformations.Filters.Platform },
+          },
+          {
+            id: NavigationItemId.DataPlatform_Transformations_Filters_FeedFilters,
+            label: 'Feed Filters',
+            type: 'link',
+            hrefOptions: { href: Paths.DataPlatform.Transformations.Filters.Feed },
           },
         ],
       },

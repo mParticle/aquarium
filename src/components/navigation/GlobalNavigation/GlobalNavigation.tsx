@@ -11,6 +11,7 @@ import {
   Icon,
   Layout,
 } from 'src/components'
+import { NavigationMenu } from 'src/components/navigation/GlobalNavigation/NavigationMenu'
 import { SuiteLogo } from 'src/components/navigation/GlobalNavigation/SuiteLogo'
 import { NavigationSearch } from 'src/components/navigation/GlobalNavigation/NavigationSearch'
 import { NavigationList } from 'src/components/navigation/GlobalNavigation/NavigationList'
@@ -67,11 +68,6 @@ export interface IGlobalNavigationProps {
    * This will be removed once all the apps updated with unified nav.
    */
   suiteSelectorOptions?: ISuiteSelectorOptions
-  /**
-   * @deprecated This variant is a temporary fix for new component.
-   * This will be removed once all the apps updated.
-   */
-  minimapOptions?: ISuiteSelectorOptions
   notificationCenter?: INotificationCenterProps
   showUnifiedNavigation?: boolean
 }
@@ -101,7 +97,7 @@ export const GlobalNavigation = ({
                 {props.onSearchClick && <NavigationSearch onClick={props.onSearchClick} />}
                 {props.createItems && <NavigationCreate createItems={props.createItems} />}
               </Center>
-              <NavigationList items={props.tools} />
+              <NavigationMenu items={props.tools} />
             </div>
             <div>
               {props.notificationCenter && <NotificationCenter {...props.notificationCenter} />}
