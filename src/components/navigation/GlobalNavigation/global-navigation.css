@@ -97,6 +97,14 @@
   cursor: revert !important;
 }
 
+.globalNavigation__submenu.globalNavigation__submenu--active .ant-menu-submenu-title {
+  color: var(--color-primary) !important;
+}
+
+.globalNavigation__childItem.globalNavigation__childItem--active {
+  background-color: var(--control-item-bg-active) !important;
+}
+
 .globalNavigation__item.workspaceSelector__menuItem{
   height: calc(var(--control-height-lg) * 2) !important;
 }
@@ -256,10 +264,6 @@
 .globalNavigation__iconLabel {
   color: var(--color-text);
   font-size: var(--label-size);
-}
-
-.globalNavigation__childItem.globalNavigation__childItem--active {
-  background-color: var(--color-bg-text-hover);
 }
 
 .globalNavigation__badge {

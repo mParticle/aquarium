@@ -35,10 +35,6 @@ export interface NotificationActions {
 }
 
 export interface IGlobalNavigationProps {
-  /**
-   * @deprecated
-   * This will be removed once all the apps updated with unified nav.
-   */
   logo: IGlobalNavigationLogo
   tools: IGlobalNavigationItem[]
   management: IGlobalNavigationItem[]

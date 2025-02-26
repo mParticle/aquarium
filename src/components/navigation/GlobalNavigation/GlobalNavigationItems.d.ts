@@ -26,6 +26,11 @@ export interface IGlobalNavigationMenu extends IBaseGlobalNavigationItem {
   children: IGlobalNavigationItem[]
 }
 
+export interface IGlobalNavigationSubmenu extends IBaseGlobalNavigationItem {
+  type: 'submenu'
+  children: IGlobalNavigationItem[]
+}
+
 export interface IGlobalNavigationLink extends IBaseGlobalNavigationItem {
   type?: 'link' | 'button'
   label: ReactNode
@@ -35,7 +40,7 @@ export interface IGlobalNavigationLink extends IBaseGlobalNavigationItem {
   buttonOptions?: { onClick?: () => void; href?: string; target?: '_self' | '_blank' }
 }
 
-export type IGlobalNavigationItem = IGlobalNavigationMenu | IGlobalNavigationLink
+export type IGlobalNavigationItem = IGlobalNavigationMenu | IGlobalNavigationSubmenu | IGlobalNavigationLink
 
 export type SuiteLinks = 'oversight' | 'dataPlatform' | 'customer360' | 'predictions' | 'analytics' | 'segmentation'
 export type SuiteLink = {
