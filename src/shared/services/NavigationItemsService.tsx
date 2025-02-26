@@ -347,6 +347,7 @@ export class NavigationItemsService {
           }
         }
       }
+      
       return undefined
     }
 
