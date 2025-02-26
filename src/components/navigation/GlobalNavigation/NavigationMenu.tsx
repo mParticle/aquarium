@@ -1,4 +1,4 @@
-import { Flex, Icon, Menu } from 'src/components'
+import { Flex, Icon, Menu, NavigationItemId } from 'src/components'
 import { NavigationIcon } from 'src/components/navigation/GlobalNavigation/NavigationIcon'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
 import { Center } from 'src/components'
@@ -110,7 +110,11 @@ function isNavigationItemActive(item: IGlobalNavigationItem): boolean {
   if ((item.type === 'menu' || item.type === 'submenu') && item.children) {
     return item.children.some(child => isNavigationItemActive(child))
   } else if (item.type === 'link' && item.hrefOptions) {
-    return window.location.href.includes(item.hrefOptions.href)
+    const { href } = item.hrefOptions
+
+    return item.id === NavigationItemId.Overview
+      ? window.location.pathname === '/' || window.location.href.includes(href)
+      : window.location.href.includes(href)
   }
 
   return false
