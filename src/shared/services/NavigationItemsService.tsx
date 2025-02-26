@@ -1,6 +1,6 @@
 import { Icon, type IGlobalNavigationItem, RoutesAuthorizationsService, Utils } from 'src/components'
 import { Paths } from 'src/shared/Paths'
-import { mParticleUserPreferenceIds, userPreferences } from "src/shared/UserPreferences";
+import { mParticleUserPreferenceIds, userPreferences } from 'src/shared/UserPreferences'
 
 export enum NavigationItemId {
   Overview = 'overview',
@@ -92,7 +92,7 @@ const allNavigationItems: IGlobalNavigationItem[] = [
         children: [
           {
             id: NavigationItemId.Oversight_Privacy_DSRs,
-            label: 'DSRs',
+            label: 'Data Subject Requests',
             type: 'link',
             hrefOptions: { href: Paths.Oversight.DSR },
           },
@@ -240,39 +240,6 @@ const allNavigationItems: IGlobalNavigationItem[] = [
     ],
   },
   {
-    id: NavigationItemId.Segmentation,
-    label: 'Segmentation',
-    type: 'menu',
-    icon: <Icon name="audiences" variant="light" />,
-    children: [
-      {
-        id: NavigationItemId.Segmentation_Journeys,
-        label: 'Journeys',
-        type: 'link',
-        hrefOptions: { href: Paths.Segmentation.Journeys },
-      },
-      {
-        id: NavigationItemId.Segmentation_Audiences,
-        label: 'Audiences',
-        type: 'menu',
-        children: [
-          {
-            id: NavigationItemId.Segmentation_Audiences_Standard,
-            label: 'Standard',
-            type: 'link',
-            hrefOptions: { href: Paths.Segmentation.Audiences.Standard },
-          },
-          {
-            id: NavigationItemId.Segmentation_Audiences_RealTime,
-            label: 'Real-time',
-            type: 'link',
-            hrefOptions: { href: Paths.Segmentation.Audiences.RealTime },
-          },
-        ],
-      },
-    ],
-  },
-  {
     id: NavigationItemId.Predictions,
     label: 'Predictions',
     icon: <Icon name="predictions" variant="light" />,
@@ -313,6 +280,39 @@ const allNavigationItems: IGlobalNavigationItem[] = [
       },
     ],
   },
+  {
+    id: NavigationItemId.Segmentation,
+    label: 'Segmentation',
+    type: 'menu',
+    icon: <Icon name="audiences" variant="light" />,
+    children: [
+      {
+        id: NavigationItemId.Segmentation_Journeys,
+        label: 'Journeys',
+        type: 'link',
+        hrefOptions: { href: Paths.Segmentation.Journeys },
+      },
+      {
+        id: NavigationItemId.Segmentation_Audiences,
+        label: 'Audiences',
+        type: 'menu',
+        children: [
+          {
+            id: NavigationItemId.Segmentation_Audiences_Standard,
+            label: 'Standard',
+            type: 'link',
+            hrefOptions: { href: Paths.Segmentation.Audiences.Standard },
+          },
+          {
+            id: NavigationItemId.Segmentation_Audiences_RealTime,
+            label: 'Real-time',
+            type: 'link',
+            hrefOptions: { href: Paths.Segmentation.Audiences.RealTime },
+          },
+        ],
+      },
+    ],
+  },
 ]
 
 // eslint-disable-next-line @typescript-eslint/no-extraneous-class
@@ -327,9 +327,10 @@ export class NavigationItemsService {
         item.disabled = !RoutesAuthorizationsService.isRouteAuthorized(item.hrefOptions.href)
       }
     })
-    
-    const realtimeAudience = this.findItemById(NavigationItemId.Segmentation_Audiences_RealTime);
-    realtimeAudience!.visible = !userPreferences[mParticleUserPreferenceIds.IsJourneysUnified].optedIn;
+
+    const realtimeAudience = this.findItemById(NavigationItemId.Segmentation_Audiences_RealTime)
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    realtimeAudience!.visible = !userPreferences[mParticleUserPreferenceIds.IsJourneysUnified].optedIn
   }
 
   public static findItemById(id: NavigationItemId): IGlobalNavigationItem | undefined {
