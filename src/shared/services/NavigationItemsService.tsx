@@ -1,5 +1,6 @@
 import { Icon, type IGlobalNavigationItem, RoutesAuthorizationsService, Utils } from 'src/components'
 import { Paths } from 'src/shared/Paths'
+import { mParticleUserPreferenceIds, userPreferences } from "src/shared/UserPreferences";
 
 export enum NavigationItemId {
   Overview = 'overview',
@@ -27,7 +28,6 @@ export enum NavigationItemId {
   DataPlatform_Setup_Directory = 'dataPlatform_setup_directory',
   DataPlatform_LiveStream = 'dataPlatform_liveStream',
   DataPlatform_DataCatalog = 'dataPlatform_dataCatalog',
-  DataPlatform_Transformations = 'dataPlatform_transformations',
   DataPlatform_Transformations_Rules = 'dataPlatform_transformations_rules',
   DataPlatform_Transformations_Plans = 'dataPlatform_transformations_plans',
   DataPlatform_Transformations_Filters = 'dataPlatform_transformations_filters',
@@ -38,10 +38,8 @@ export enum NavigationItemId {
   Segmentation_Journeys = 'segmentation_journeys',
   Segmentation_Audiences = 'segmentation_audiences',
   Segmentation_Audiences_Standard = 'segmentation_audiences_standard',
-  Segmentation_Audiences_Shared = 'segmentation_audiences_shared',
   Segmentation_Audiences_RealTime = 'segmentation_audiences_realTime',
   Analytics = 'analytics',
-  Analytics_CreateAnalysis = 'analytics_createAnalysis',
   Analytics_MyHub = 'analytics_myHub',
   Analytics_Saved = 'analytics_saved',
   Analytics_Data = 'analytics_data',
@@ -265,12 +263,6 @@ const allNavigationItems: IGlobalNavigationItem[] = [
             hrefOptions: { href: Paths.Segmentation.Audiences.Standard },
           },
           {
-            id: NavigationItemId.Segmentation_Audiences_Shared,
-            label: 'Shared',
-            type: 'link',
-            hrefOptions: { href: Paths.Segmentation.Audiences.Shared },
-          },
-          {
             id: NavigationItemId.Segmentation_Audiences_RealTime,
             label: 'Real-time',
             type: 'link',
@@ -335,6 +327,9 @@ export class NavigationItemsService {
         item.disabled = !RoutesAuthorizationsService.isRouteAuthorized(item.hrefOptions.href)
       }
     })
+    
+    const realtimeAudience = this.findItemById(NavigationItemId.Segmentation_Audiences_RealTime);
+    realtimeAudience!.visible = !userPreferences[mParticleUserPreferenceIds.IsJourneysUnified].optedIn;
   }
 
   public static findItemById(id: NavigationItemId): IGlobalNavigationItem | undefined {
