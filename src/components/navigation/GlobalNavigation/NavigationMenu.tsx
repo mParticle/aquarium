@@ -70,6 +70,7 @@ function generateMenuChild(item: IGlobalNavigationItem): ItemType {
       return {
         ...baseItem,
         type: 'submenu',
+        className: `globalNavigation__submenu${isNavigationItemActive(item) ? ' globalNavigation__submenu--active' : ''}`,
         label: (
           <span>
             {item.label}
@@ -106,7 +107,7 @@ function generateMenuItem(item: IGlobalNavigationItem): ItemType {
 }
 
 function isNavigationItemActive(item: IGlobalNavigationItem): boolean {
-  if (item.type === 'menu' && item.children) {
+  if ((item.type === 'menu' || item.type === 'submenu') && item.children) {
     return item.children.some(child => isNavigationItemActive(child))
   } else if (item.type === 'link' && item.hrefOptions) {
     return window.location.href.includes(item.hrefOptions.href)
