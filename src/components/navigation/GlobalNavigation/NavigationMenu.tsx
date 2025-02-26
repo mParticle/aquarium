@@ -50,8 +50,13 @@ function generateMenuChild(item: IGlobalNavigationItem): ItemType {
         className: `globalNavigation__childItem${isNavigationItemActive(item) ? ' globalNavigation__childItem--active' : ''}`,
         label: (
           <Flex align="center" gap={4}>
-            {buildLinkFromHrefOptions(item.label, item.hrefOptions)}
-            {item.disabled && <Icon name="unlock" size="xs" />}
+            {item.disabled ? (
+              <>
+                {item.label} <Icon name="unlock" size="xs" />
+              </>
+            ) : (
+              buildLinkFromHrefOptions(item.label, item.hrefOptions)
+            )}
           </Flex>
         ),
       }
