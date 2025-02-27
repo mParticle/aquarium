@@ -1,3 +1,9 @@
+## [1.42.1](https://github.com/mParticle/aquarium/compare/v1.42.0...v1.42.1) (2025-02-27)
+
+### Bug Fixes
+
+- active state for analytics and remove enrichment links group ([#561](https://github.com/mParticle/aquarium/issues/561)) ([8471105](https://github.com/mParticle/aquarium/commit/847110537463a6f4fff385e3d141ce1312f810e7))
+
 # [1.42.0](https://github.com/mParticle/aquarium/compare/v1.41.1...v1.42.0) (2025-02-25)
 
 ### Features
