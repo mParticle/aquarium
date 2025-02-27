@@ -219,23 +219,16 @@ const allNavigationItems: IGlobalNavigationItem[] = [
         hrefOptions: { href: Paths.Customer360.Identity.GroupIdentities },
       },
       {
-        id: NavigationItemId.Customer360_Enrichment,
-        label: 'Enrichment',
-        type: 'menu',
-        children: [
-          {
-            id: NavigationItemId.Customer360_Enrichment_CalculatedAttributes,
-            label: 'Calculated Attributes',
-            type: 'link',
-            hrefOptions: { href: Paths.Customer360.Enrichment.CalculatedAttributes },
-          },
-          {
-            id: NavigationItemId.Customer360_Enrichment_PredictiveAttributes,
-            label: 'Predictive Attributes',
-            type: 'link',
-            hrefOptions: { href: Paths.Customer360.Enrichment.PredictiveAttributes },
-          },
-        ],
+        id: NavigationItemId.Customer360_Enrichment_CalculatedAttributes,
+        label: 'Calculated Attributes',
+        type: 'link',
+        hrefOptions: { href: Paths.Customer360.Enrichment.CalculatedAttributes },
+      },
+      {
+        id: NavigationItemId.Customer360_Enrichment_PredictiveAttributes,
+        label: 'Predictive Attributes',
+        type: 'link',
+        hrefOptions: { href: Paths.Customer360.Enrichment.PredictiveAttributes },
       },
     ],
   },
@@ -347,7 +340,7 @@ export class NavigationItemsService {
           }
         }
       }
-      
+
       return undefined
     }
 
