@@ -1,4 +1,4 @@
-import { Flex, Icon, Menu, NavigationItemId } from 'src/components'
+import { Flex, Icon, Menu } from 'src/components'
 import { NavigationIcon } from 'src/components/navigation/GlobalNavigation/NavigationIcon'
 import { NavigationItem } from 'src/components/navigation/GlobalNavigation/NavigationItem'
 import { Center } from 'src/components'
@@ -28,7 +28,7 @@ export function NavigationMenu(props: INavigationMenuProps) {
               items={[generateMenuItem(item)]}
             />
           ) : (
-            <NavigationItem {...item} isActive={isNavigationItemActive(item)} type="link" />
+            <NavigationItem {...item} isActive={getItemActiveState(item)} type="link" />
           )}
         </Fragment>
       ))}
@@ -42,12 +42,14 @@ function generateMenuChild(item: IGlobalNavigationItem): ItemType {
     label: item.label,
   }
 
+  const isActive = getItemActiveState(item)
+
   switch (item.type) {
     case 'link':
       return {
         ...baseItem,
         disabled: item.disabled,
-        className: `globalNavigation__childItem${isNavigationItemActive(item) ? ' globalNavigation__childItem--active' : ''}`,
+        className: `globalNavigation__childItem${isActive ? ' globalNavigation__childItem--active' : ''}`,
         label: (
           <Flex align="center" gap={4}>
             {item.disabled ? (
@@ -70,7 +72,7 @@ function generateMenuChild(item: IGlobalNavigationItem): ItemType {
       return {
         ...baseItem,
         type: 'submenu',
-        className: `globalNavigation__submenu${isNavigationItemActive(item) ? ' globalNavigation__submenu--active' : ''}`,
+        className: `globalNavigation__submenu${isActive ? ' globalNavigation__submenu--active' : ''}`,
         label: (
           <span>
             {item.label}
@@ -94,7 +96,7 @@ function generateMenuItem(item: IGlobalNavigationItem): ItemType {
     />
   )
 
-  const isActive = isNavigationItemActive(item)
+  const isActive = getItemActiveState(item)
 
   return {
     icon: navigationIcon,
@@ -106,15 +108,16 @@ function generateMenuItem(item: IGlobalNavigationItem): ItemType {
   }
 }
 
+function getItemActiveState(item: IGlobalNavigationItem): boolean {
+  return item.isActive ?? isNavigationItemActive(item)
+}
+
 function isNavigationItemActive(item: IGlobalNavigationItem): boolean {
   if ((item.type === 'menu' || item.type === 'submenu') && item.children) {
     return item.children.some(child => isNavigationItemActive(child))
   } else if (item.type === 'link' && item.hrefOptions) {
     const { href } = item.hrefOptions
-
-    return item.id === NavigationItemId.Overview
-      ? window.location.pathname === '/' || window.location.href.includes(href)
-      : window.location.href.includes(href)
+    return window.location.href.includes(href)
   }
 
   return false
