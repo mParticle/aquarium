@@ -27,7 +27,11 @@ type Story = StoryObj<typeof Message>
   Customize the stories based on specific requirements.
 */
 
-export const Primary: Story = {}
+export const Primary: Story = {
+  args: {
+    type: 'success',
+  },
+}
 
 export const Short: Story = {
   args: {

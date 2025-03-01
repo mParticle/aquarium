@@ -1,18 +1,28 @@
-import { Meta, Canvas } from '@storybook/blocks';
+import { Meta, Story } from '@storybook/blocks'
 
 import * as AlertStories from '../../../../src/components/feedback/Alert/Alert.stories';
 
 <Meta of={AlertStories} />
 
-{/* Documentation goes here */}
-
 # Alert
 
-This is the documentation for the Alert component
+#### Overview
 
-{/* Documentation goes here */}
+The **Alert** component is used to display important messages, warnings, or confirmations to users. It helps provide contextual feedback in response to user actions or system events.
 
-<Canvas meta={AlertStories.default} />
+### When to Use
+- When you need to show alert messages to users.
+- When you need a persistent, static container that can be dismissed by user actions.
+- Use Message if the content should dismiss automatically
+
+Info:
+<Story of={AlertStories.Info} />
+
+Error:
+<Story of={AlertStories.Error} />
+
+Success:
+<Story of={AlertStories.Success} />
 
 ### Related Links
 

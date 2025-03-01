@@ -3,7 +3,7 @@ import { Pagination } from 'src/components/navigation/Pagination/Pagination'
 import { ExampleStory } from 'src/utils/ExampleStory'
 
 const meta: Meta<typeof Pagination> = {
-  title: 'Components/Navigation/Pagination',
+  title: 'Components/Not Prod Ready/Navigation/Pagination',
   component: Pagination,
 
   args: {

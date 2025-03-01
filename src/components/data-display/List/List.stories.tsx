@@ -41,7 +41,7 @@ type Story = StoryObj<typeof List>
 export const Primary: Story = {
   args: {
     header: <Typography.Text strong>List Header</Typography.Text>,
-    bordered: true,
+    bordered: false,
     split: true,
     size: 'default',
   },

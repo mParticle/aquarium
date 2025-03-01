@@ -1,0 +1,27 @@
+import { Meta, Story } from '@storybook/blocks'
+
+import * as MessageStories from '../../../../src/components/feedback/Message/Message.stories';
+
+<Meta of={MessageStories} />
+
+# Message
+
+#### Overview
+
+A **Message** is used to provide feedback to users, such as success, warning, error, or informational updates. It appears at the top and center of the screen and is automatically dismissed, meaning it does not require user action.
+
+#### When to use
+- When you need to provide quick, temporary feedback without disrupting the user’s workflow.
+- When the information is not critical and does not require immediate action.
+- For system notifications like form submissions or confirmations.
+
+Use an [Alert](https://mparticle.github.io/aquarium/?path=/story/components-feedback-alert--error) if the message is **critical** and needs to be **persistent until the user dismisses or acts on it**.
+
+<Story of={MessageStories.Primary} />
+
+#### Related Links
+
+| Type  | Resource                                                                                                                                               |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Eames | [Message Component](https://www.figma.com/design/veXnmignQnJz8StIq10VJ5/Eames-2.0---Foundations-%26-Components?node-id=421-14512&p=f&t=MjtT5wHFTpYddueZ-0) |
+| AntD | [Message Component](https://ant.design/components/message) |

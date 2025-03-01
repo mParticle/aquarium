@@ -1,7 +1,17 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { expect, fn, screen, userEvent } from '@storybook/test'
 import React, { useState } from 'react'
-import { Button, Center, Flex, GlobalNavigation, Icon, type INavigationCreateProps, Modal, Space } from 'src/components'
+import {
+  Button,
+  Center,
+  Flex,
+  GlobalNavigation,
+  Icon,
+  type INavigationCreateProps,
+  Modal,
+  NavigationItemsService,
+  Space,
+} from 'src/components'
 import { Badge } from 'src/components/data-display/Badge/Badge'
 import {
   type IGlobalNavigationItem,
@@ -498,6 +508,24 @@ const mpOrgs: INavigationOrg[] = [
     ],
   },
 ]
+
+export const Unified: Story = {
+  args: {
+    showUnifiedNavigation: true,
+    onSearchClick: () => {
+      alert('Searching!')
+    },
+    tools: NavigationItemsService.navigationItems,
+    management: mpManagement,
+    orgs: mpOrgs,
+    onMpHomeClick: () => {
+      alert('going to overview map')
+    },
+    avatarOptions: {
+      alt: 'avatar',
+    },
+  },
+}
 
 export const MP: Story = {
   args: {

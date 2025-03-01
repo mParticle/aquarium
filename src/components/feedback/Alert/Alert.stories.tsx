@@ -62,7 +62,7 @@ export const Warning: Story = {
 
 export const Error: Story = {
   args: {
-    description: 'An error occurred creating the tracing configuration',
+    message: 'An error occurred creating the tracing configuration',
     type: 'error',
     showIcon: false,
   },

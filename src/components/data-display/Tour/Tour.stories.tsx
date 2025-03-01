@@ -4,7 +4,7 @@ import { type ITourProps, Tour } from 'src/components/data-display/Tour/Tour'
 import { Icon, SuiteLogo } from 'src/components'
 
 const meta: Meta<typeof Tour> = {
-  title: 'Components/Data Display/Tour',
+  title: 'Components/Not Prod Ready/Data Display/Tour',
   component: Tour,
 
   args: {},
