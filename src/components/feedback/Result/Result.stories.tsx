@@ -3,7 +3,7 @@ import { Button, Icon, Typography } from 'src/components'
 import { Result } from 'src/components/feedback/Result/Result'
 
 const meta: Meta<typeof Result> = {
-  title: 'Components/Feedback/Result',
+  title: 'Components/Not Prod Ready/Feedback/Result',
   component: Result,
 
   args: {},
@@ -46,5 +46,17 @@ export const Error: Story = {
         to try again. If the problem persists, <a>contact support</a>.
       </>
     ),
+  },
+}
+
+export const Primary: Story = {
+  args: {
+    status: 'success',
+  },
+}
+
+export const Warning: Story = {
+  args: {
+    status: 'warning',
   },
 }

@@ -10,7 +10,6 @@ export default create({
   textColor: LightTheme.token.colorText,
   textInverseColor: LightTheme.token.colorTextQuaternary,
   brandTitle: 'Aquarium',
-  brandImage:
-    'https://raw.githubusercontent.com/mParticle/aquarium/3abc3b71916ab5a7db3c4f93e06ad2bd5845e1bf/src/assets/svg/mp-logo-wordmark.svg',
+  brandImage: '/images/mParticle_by_Rokt-Blk.svg',
   brandUrl: 'https://github.com/mParticle/aquarium/',
 })

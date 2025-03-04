@@ -22,7 +22,7 @@ const items = [
 ]
 
 const meta: Meta<typeof Steps> = {
-  title: 'Components/Navigation/Steps',
+  title: 'Components/Not Prod Ready/Navigation/Steps',
   component: Steps,
 
   args: {
