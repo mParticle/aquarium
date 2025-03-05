@@ -32,7 +32,10 @@ export const Primary: Story = {
   render: args => {
     const [checked, setChecked] = useState(args.checked ?? false)
 
-    const handleChange = (checkedValue: boolean, event: React.MouseEvent<HTMLButtonElement>) => {
+    const handleChange = (
+      checkedValue: boolean,
+      event: React.MouseEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLButtonElement>,
+    ) => {
       setChecked(checkedValue)
       if (args.onChange) {
         args.onChange(checkedValue, event)
