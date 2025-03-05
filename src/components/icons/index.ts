@@ -101,6 +101,7 @@ import StateError from 'src/assets/svg/mp_info_lt_state-error.svg?react'
 import StateNoResults from 'src/assets/svg/mp_info_lt_state-no-results.svg?react'
 import Back from 'src/assets/svg/mp_act_lt_back.svg?react'
 import Flag from 'src/assets/svg/flag.svg?react'
+import SubmitFeedback from 'src/assets/svg/mp_act_lt_submit-feedback.svg?react'
 
 export {
   AbSplit,
@@ -190,6 +191,7 @@ export {
   ShieldKeyholeIcon,
   SignoutIcon,
   SplitIcon,
+  SubmitFeedback,
   SystemAlertsIcon,
   TextWidget,
   TransformationsIcon,
