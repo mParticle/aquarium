@@ -133,13 +133,13 @@ const allNavigationItems: IGlobalNavigationItem[] = [
             id: NavigationItemId.DataPlatform_Setup_Inputs,
             label: 'Inputs',
             type: 'link',
-            hrefOptions: { href: Paths.DataPlatform.Setup.Inputs.Apps },
+            hrefOptions: { href: Paths.DataPlatform.Setup.Inputs.Root },
           },
           {
             id: NavigationItemId.DataPlatform_Setup_Outputs,
             label: 'Outputs',
             type: 'link',
-            hrefOptions: { href: Paths.DataPlatform.Setup.Outputs.Event },
+            hrefOptions: { href: Paths.DataPlatform.Setup.Outputs.Root },
           },
           {
             id: NavigationItemId.DataPlatform_Setup_Directory,

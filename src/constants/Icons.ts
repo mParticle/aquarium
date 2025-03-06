@@ -104,6 +104,7 @@ import {
   StateNoResults,
   Back,
   Flag,
+  SubmitFeedback,
 } from 'src/components/icons'
 
 export const Icons: Record<IconNames, IconOptions> = {
@@ -593,6 +594,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   back: {
     light: Back,
+    default: 'light',
+  },
+  submitFeedback: {
+    light: SubmitFeedback,
     default: 'light',
   },
 } as const
