@@ -281,7 +281,7 @@ const allNavigationItems: IGlobalNavigationItem[] = [
     children: [
       {
         id: NavigationItemId.Segmentation_Journeys,
-        label: 'Journeys',
+        label: 'Audience Groups',
         type: 'link',
         hrefOptions: { href: Paths.Segmentation.Journeys },
       },
