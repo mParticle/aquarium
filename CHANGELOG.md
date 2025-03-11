@@ -1,3 +1,9 @@
+# [1.43.0](https://github.com/mParticle/aquarium/compare/v1.42.2...v1.43.0) (2025-03-11)
+
+### Features
+
+- add boost icon ([#570](https://github.com/mParticle/aquarium/issues/570)) ([a9e5eca](https://github.com/mParticle/aquarium/commit/a9e5ecae45a45d2efe29d055b10ce50328d9a43f))
+
 ## [1.42.2](https://github.com/mParticle/aquarium/compare/v1.42.1...v1.42.2) (2025-03-06)
 
 ## [1.42.1](https://github.com/mParticle/aquarium/compare/v1.42.0...v1.42.1) (2025-02-27)
