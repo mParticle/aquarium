@@ -281,24 +281,24 @@ const allNavigationItems: IGlobalNavigationItem[] = [
     children: [
       {
         id: NavigationItemId.Segmentation_Journeys,
-        label: 'Audience Groups',
+        label: 'Audiences',
         type: 'link',
         hrefOptions: { href: Paths.Segmentation.Journeys },
       },
       {
         id: NavigationItemId.Segmentation_Audiences,
-        label: 'Audiences',
+        label: 'Classic Audiences',
         type: 'menu',
         children: [
           {
             id: NavigationItemId.Segmentation_Audiences_Standard,
-            label: 'Standard',
+            label: 'Standard Audiences',
             type: 'link',
             hrefOptions: { href: Paths.Segmentation.Audiences.Standard },
           },
           {
             id: NavigationItemId.Segmentation_Audiences_RealTime,
-            label: 'Real-time',
+            label: 'Real-time Audiences',
             type: 'link',
             hrefOptions: { href: Paths.Segmentation.Audiences.RealTime },
           },
