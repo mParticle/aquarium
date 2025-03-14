@@ -1,3 +1,9 @@
+# [1.44.0](https://github.com/mParticle/aquarium/compare/v1.43.1...v1.44.0) (2025-03-14)
+
+### Features
+
+- use temporarily unified experience flag ([#573](https://github.com/mParticle/aquarium/issues/573)) ([d4aaa56](https://github.com/mParticle/aquarium/commit/d4aaa562621dbbba675b412503ca956e5d27fb80))
+
 ## [1.43.1](https://github.com/mParticle/aquarium/compare/v1.43.0...v1.43.1) (2025-03-12)
 
 # [1.43.0](https://github.com/mParticle/aquarium/compare/v1.42.2...v1.43.0) (2025-03-11)
