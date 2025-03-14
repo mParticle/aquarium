@@ -323,10 +323,15 @@ export class NavigationItemsService {
     })
 
     const realtimeAudience = this.findItemById(NavigationItemId.Segmentation_Audiences_RealTime)
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    realtimeAudience!.visible = FeatureFlagsService.isEnabled(FeatureFlag.TemporarilyUnifiedExperience)
+
+    const isInNewExperience = FeatureFlagsService.isEnabled(FeatureFlag.TemporarilyUnifiedExperience)
       ? userPreferences[mParticleUserPreferenceIds.IsOnTemporarilyUnifiedExperience].optedIn
       : userPreferences[mParticleUserPreferenceIds.IsJourneysUnified].optedIn
+
+    const isRealTimeEnabled = window.mParticleConfig.organizationPolicy.uiEnableAudiencesRealTime
+
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    realtimeAudience!.visible = isRealTimeEnabled || !isInNewExperience
   }
 
   public static findItemById(id: NavigationItemId): IGlobalNavigationItem | undefined {
