@@ -324,9 +324,9 @@ export class NavigationItemsService {
 
     const realtimeAudience = this.findItemById(NavigationItemId.Segmentation_Audiences_RealTime)
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    realtimeAudience!.visible = FeatureFlagsService.isEnabled(FeatureFlag.TemporarilyUnifiedExperience) ? 
-      !userPreferences[mParticleUserPreferenceIds.IsOnTemporarilyUnifiedExperience].optedIn :
-      !userPreferences[mParticleUserPreferenceIds.IsJourneysUnified].optedIn
+    realtimeAudience!.visible = FeatureFlagsService.isEnabled(FeatureFlag.TemporarilyUnifiedExperience)
+      ? userPreferences[mParticleUserPreferenceIds.IsOnTemporarilyUnifiedExperience].optedIn
+      : userPreferences[mParticleUserPreferenceIds.IsJourneysUnified].optedIn
   }
 
   public static findItemById(id: NavigationItemId): IGlobalNavigationItem | undefined {
