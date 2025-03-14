@@ -7,11 +7,15 @@ export let userPreferences: Preferences;
 
 export enum mParticleUserPreferenceIds {
     IsJourneysUnified = "is-journeys-unified",
+    IsOnTemporarilyUnifiedExperience = "is-on-temporarily-unified-experience"
 }
 
 type Preferences = {
     [mParticleUserPreferenceIds.IsJourneysUnified]: {
         optedIn: boolean 
+    },
+    [mParticleUserPreferenceIds.IsOnTemporarilyUnifiedExperience]: {
+        optedIn: boolean
     }
 }
 
@@ -19,6 +23,10 @@ const userPreferenceDefinitions : UserPreferenceDefinitions<Preferences> = {
     [mParticleUserPreferenceIds.IsJourneysUnified]: {
         defaultValue: { optedIn: false },
         allowedScope: UserPreferenceScopeType.LevelTwoScope,
+    },
+    [mParticleUserPreferenceIds.IsOnTemporarilyUnifiedExperience]: {
+        defaultValue: { optedIn: true },
+        allowedScope: UserPreferenceScopeType.Global,
     },
 }
 
