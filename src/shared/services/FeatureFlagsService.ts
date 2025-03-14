@@ -38,6 +38,7 @@ export enum FeatureFlag {
     JourneysEnvironmentSelectionDisabled = "Journeys.EnvironmentSelection.Disabled",
     AudienceInsightsPreviewTabEnabled = "AudienceInsightsPreviewTab.Enabled",
     JourneyAudienceRefreshCadence = "JourneyAudienceRefreshCadence",
+    TemporarilyUnifiedExperience = "Unify.TemporarilyUnifiedExperience",
     // The following flags are pseudo-flags that are not in the WorkspaceFeatureSetting table.
     DataManagerOptimizationDataCatalogDetails = "DataManagerOptimization.DataCatalogDetails",
     JourneysMilestoneWithAudienceNode = "Journeys.MilestoneWithAudienceNode",
