@@ -328,10 +328,10 @@ export class NavigationItemsService {
       ? userPreferences[mParticleUserPreferenceIds.IsOnTemporarilyUnifiedExperience].optedIn
       : userPreferences[mParticleUserPreferenceIds.IsJourneysUnified].optedIn
 
-    const isRealTimeEnabled = window.mParticleConfig.organizationPolicy.uiEnableAudiencesRealTime
+    const isJourneysEnabled = isInNewExperience || !window.mParticleConfig.organizationPolicy.uiEnableAudiencesRealTime
 
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    realtimeAudience!.visible = isRealTimeEnabled || !isInNewExperience
+    realtimeAudience!.visible = !isJourneysEnabled
   }
 
   public static findItemById(id: NavigationItemId): IGlobalNavigationItem | undefined {
