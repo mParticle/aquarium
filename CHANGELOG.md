@@ -1,3 +1,9 @@
+## [1.44.2](https://github.com/mParticle/aquarium/compare/v1.44.1...v1.44.2) (2025-03-18)
+
+### Bug Fixes
+
+- fix segmentation perms ([#577](https://github.com/mParticle/aquarium/issues/577)) ([d82df0c](https://github.com/mParticle/aquarium/commit/d82df0cc381715ca5c7e49c192db6d08b6e6dc1e))
+
 ## [1.44.1](https://github.com/mParticle/aquarium/compare/v1.44.0...v1.44.1) (2025-03-18)
 
 ### Bug Fixes
