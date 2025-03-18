@@ -40,6 +40,7 @@ export enum NavigationItemId {
   Segmentation_Audiences = 'segmentation_audiences',
   Segmentation_Audiences_Standard = 'segmentation_audiences_standard',
   Segmentation_Audiences_RealTime = 'segmentation_audiences_realTime',
+  Segmentation_Audiences_SharedByAccount = 'segmentation_audiences_sharedByAccount',
   Analytics = 'analytics',
   Analytics_MyHub = 'analytics_myHub',
   Analytics_Saved = 'analytics_saved',
@@ -296,6 +297,12 @@ const allNavigationItems: IGlobalNavigationItem[] = [
             label: 'Standard Audiences',
             type: 'link',
             hrefOptions: { href: Paths.Segmentation.Audiences.Standard },
+          },
+          {
+            id: NavigationItemId.Segmentation_Audiences_SharedByAccount,
+            label: 'Shared Audiences',
+            type: 'link',
+            hrefOptions: { href: Paths.Segmentation.Audiences.SharedByAccount },
           },
           {
             id: NavigationItemId.Segmentation_Audiences_RealTime,
