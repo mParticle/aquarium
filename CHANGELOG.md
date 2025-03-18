@@ -1,3 +1,9 @@
+## [1.44.1](https://github.com/mParticle/aquarium/compare/v1.44.0...v1.44.1) (2025-03-18)
+
+### Bug Fixes
+
+- update NavigationItemsService with shared audiences link ([#576](https://github.com/mParticle/aquarium/issues/576)) ([e33091d](https://github.com/mParticle/aquarium/commit/e33091d3b6b2de77d9deeb886e89a1eca1b3e5c6))
+
 # [1.44.0](https://github.com/mParticle/aquarium/compare/v1.43.1...v1.44.0) (2025-03-14)
 
 ### Features
