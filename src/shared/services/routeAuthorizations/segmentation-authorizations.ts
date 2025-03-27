@@ -1,50 +1,55 @@
-import { BaseRoutesAuthorizations } from "./base-routes-authorizations";
-import { Suite } from "../../Suite";
-import { Paths } from "../../Paths";
-import { Operation } from "../../Operation";
-import { AuthorizationsService } from "../AuthorizationsService";
-import { AudiencePermissionsService } from "../AudiencePermissionsService";
-import { mParticleUserPreferenceIds, userPreferences } from "../../UserPreferences";
+import { BaseRoutesAuthorizations } from './base-routes-authorizations'
+import { Suite } from '../../Suite'
+import { Paths } from '../../Paths'
+import { Operation } from '../../Operation'
+import { AuthorizationsService } from '../AuthorizationsService'
+import { AudiencePermissionsService } from '../AudiencePermissionsService'
+import { mParticleUserPreferenceIds, userPreferences } from '../../UserPreferences'
+import { FeatureFlag, FeatureFlagsService } from 'src/shared/services/FeatureFlagsService'
 
 export class SegmentationAuthorizations extends BaseRoutesAuthorizations {
-    protected suite: Suite = Suite.Segmentation;
+  protected suite: Suite = Suite.Segmentation
 
-    protected getAuthorizations(): Record<string, boolean> {
-        const routes: Record<string, boolean> = {
-            [Paths.Segmentation.Audiences.Root]: true,
-            [Paths.Segmentation.Audiences.RealTime]: this.canViewRealTimeAudiences(),
-            [Paths.Segmentation.Audiences.Standard]: this.canViewStandardAudiences(),
-            [Paths.Segmentation.Audiences.P2P]: this.canViewAudiencesShare(),
-            [Paths.Segmentation.Audiences.Received]: this.canViewAudiencesShare(),
-            [Paths.Segmentation.Audiences.Shared]: this.canViewAudiencesShare(),
-            [Paths.Segmentation.Audiences.SharedByAccount]: this.canViewRealTimeSharedAudiences(),
-            [Paths.Segmentation.Journeys]: true,
-        };
-
-        Object.keys(routes).forEach(
-            (path) => (routes[path] = routes[path] && AudiencePermissionsService.isAudienceLeftNavVisible()),
-        );
-
-        return routes;
+  protected getAuthorizations(): Record<string, boolean> {
+    const routes: Record<string, boolean> = {
+      [Paths.Segmentation.Audiences.Root]: true,
+      [Paths.Segmentation.Audiences.RealTime]: this.canViewRealTimeAudiences(),
+      [Paths.Segmentation.Audiences.Standard]: this.canViewStandardAudiences(),
+      [Paths.Segmentation.Audiences.P2P]: this.canViewAudiencesShare(),
+      [Paths.Segmentation.Audiences.Received]: this.canViewAudiencesShare(),
+      [Paths.Segmentation.Audiences.Shared]: this.canViewAudiencesShare(),
+      [Paths.Segmentation.Audiences.SharedByAccount]: this.canViewRealTimeSharedAudiences(),
+      [Paths.Segmentation.Journeys]: true,
     }
 
-    private canViewStandardAudiences(): boolean {
-        return AudiencePermissionsService.isOfflineAudienceEnabled();
-    }
+    Object.keys(routes).forEach(
+      path => (routes[path] = routes[path] && AudiencePermissionsService.isAudienceLeftNavVisible()),
+    )
 
-    private canViewAudiencesShare(): boolean {
-        return AuthorizationsService.isAuthorized([Operation.AUDIENCESHAREVIEW]);
-    }
+    return routes
+  }
 
-    private canViewRealTimeSharedAudiences(): boolean {
-        return AudiencePermissionsService.isJourneysSharedRealTimeAudiencesEnabled();
-    }
+  private canViewStandardAudiences(): boolean {
+    return AudiencePermissionsService.isOfflineAudienceEnabled()
+  }
 
-    private canViewRealTimeAudiences(): boolean {
-        const isJourneysUnified = userPreferences[mParticleUserPreferenceIds.IsJourneysUnified].optedIn;
-        return (
-            (AudiencePermissionsService.isAudienceRealtimeEnabled() && !isJourneysUnified) ||
-            (AudiencePermissionsService.isJourneysSharedRealTimeAudiencesEnabled() && isJourneysUnified)
-        );
-    }
+  private canViewAudiencesShare(): boolean {
+    return AuthorizationsService.isAuthorized([Operation.AUDIENCESHAREVIEW])
+  }
+
+  private canViewRealTimeSharedAudiences(): boolean {
+    return AudiencePermissionsService.isJourneysSharedRealTimeAudiencesEnabled()
+  }
+
+  private canViewRealTimeAudiences(): boolean {
+    const isInNewExperience = FeatureFlagsService.isEnabled(FeatureFlag.TemporarilyUnifiedExperience)
+      ? userPreferences[mParticleUserPreferenceIds.IsOnTemporarilyUnifiedExperience].optedIn
+      : userPreferences[mParticleUserPreferenceIds.IsJourneysUnified].optedIn
+
+    const isJourneysUnified = isInNewExperience || !window.mParticleConfig.organizationPolicy.uiEnableAudiencesRealTime
+    return (
+      (AudiencePermissionsService.isAudienceRealtimeEnabled() && !isJourneysUnified) ||
+      (AudiencePermissionsService.isJourneysSharedRealTimeAudiencesEnabled() && isJourneysUnified)
+    )
+  }
 }

@@ -34,9 +34,15 @@ export class AudiencePermissionsService {
     }
 
     public static isJourneysSharedRealTimeAudiencesEnabled(): boolean {
+        const isInNewExperience = FeatureFlagsService.isEnabled(FeatureFlag.TemporarilyUnifiedExperience)
+            ? userPreferences[mParticleUserPreferenceIds.IsOnTemporarilyUnifiedExperience].optedIn
+            : userPreferences[mParticleUserPreferenceIds.IsJourneysUnified].optedIn
+
+        const isJourneysEnabled = isInNewExperience || !window.mParticleConfig.organizationPolicy.uiEnableAudiencesRealTime
+        
         return (
             window.mParticleConfig.allowResourceSharing &&
-            userPreferences[mParticleUserPreferenceIds.IsJourneysUnified].optedIn &&
+            isJourneysEnabled &&
             !FeatureFlagsService.isEnabled(FeatureFlag.JourneysSharedRealTimeAudiencesDisabled)
         );
     }
