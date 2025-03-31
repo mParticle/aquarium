@@ -23,6 +23,7 @@ import { tableColumns, tableData, type TableDataType } from './TableStoryUtils'
 import { SelectWithRangePicker } from 'docs/Candidate Components/Directory/Date Range Filter/SelectWithRangePicker'
 import { useState } from 'react'
 import { ColorTextDescription } from 'src/styles/style'
+import { faker } from '@faker-js/faker'
 
 const fixedColumns = tableColumns?.map((col, i) => {
   if (i === 0 || i === (tableColumns?.length ?? 0) - 1) {
@@ -197,14 +198,10 @@ function useModal(): [() => void, React.ReactElement] {
             filterOption={(input, option) =>
               typeof option?.label === 'string' && option.label.toLowerCase().includes(input.toLowerCase())
             }
-            options={[
-              { value: 'NBCU', label: 'NBCU' },
-              { value: 'Remarkable Foods', label: 'Remarkable Foods' },
-              { value: 'Lulo Bank', label: 'Lulo Bank' },
-              { value: 'Shift', label: 'Shift' },
-              { value: 'Marks and Spencer', label: 'Marks and Spencer' },
-              { value: "Zaxby's", label: "Zaxby's" },
-            ]}
+            options={Array.from({ length: 6 }, () => {
+              const companyName = faker.company.name()
+              return { value: companyName, label: companyName }
+            })}
           />
         </CollapsibleSection>
         <Divider style={{ margin: '4px 0' }} />
