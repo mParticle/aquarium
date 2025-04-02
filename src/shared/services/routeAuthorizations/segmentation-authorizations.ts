@@ -4,8 +4,7 @@ import { Paths } from '../../Paths'
 import { Operation } from '../../Operation'
 import { AuthorizationsService } from '../AuthorizationsService'
 import { AudiencePermissionsService } from '../AudiencePermissionsService'
-import { mParticleUserPreferenceIds, userPreferences } from '../../UserPreferences'
-import { FeatureFlag, FeatureFlagsService } from 'src/shared/services/FeatureFlagsService'
+import { isSegmentationNewExperience } from '../../UserPreferences'
 
 export class SegmentationAuthorizations extends BaseRoutesAuthorizations {
   protected suite: Suite = Suite.Segmentation
@@ -42,14 +41,11 @@ export class SegmentationAuthorizations extends BaseRoutesAuthorizations {
   }
 
   private canViewRealTimeAudiences(): boolean {
-    const isInNewExperience = FeatureFlagsService.isEnabled(FeatureFlag.TemporarilyUnifiedExperience)
-      ? userPreferences[mParticleUserPreferenceIds.IsOnTemporarilyUnifiedExperience].optedIn
-      : userPreferences[mParticleUserPreferenceIds.IsJourneysUnified].optedIn
+    const isSegmentationNewExp = isSegmentationNewExperience()
 
-    const isJourneysUnified = isInNewExperience || !window.mParticleConfig.organizationPolicy.uiEnableAudiencesRealTime
     return (
-      (AudiencePermissionsService.isAudienceRealtimeEnabled() && !isJourneysUnified) ||
-      (AudiencePermissionsService.isJourneysSharedRealTimeAudiencesEnabled() && isJourneysUnified)
+      (AudiencePermissionsService.isAudienceRealtimeEnabled() && !isSegmentationNewExp) ||
+      (AudiencePermissionsService.isJourneysSharedRealTimeAudiencesEnabled() && isSegmentationNewExp)
     )
   }
 }

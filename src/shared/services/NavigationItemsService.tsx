@@ -1,7 +1,6 @@
 import { Icon, type IGlobalNavigationItem, RoutesAuthorizationsService, Utils } from 'src/components'
 import { Paths } from 'src/shared/Paths'
-import { mParticleUserPreferenceIds, userPreferences } from 'src/shared/UserPreferences'
-import { FeatureFlagsService, FeatureFlag } from 'src/shared/services/FeatureFlagsService'
+import { isSegmentationNewExperience } from 'src/shared/UserPreferences'
 
 export enum NavigationItemId {
   Overview = 'overview',
@@ -331,14 +330,8 @@ export class NavigationItemsService {
 
     const realtimeAudience = this.findItemById(NavigationItemId.Segmentation_Audiences_RealTime)
 
-    const isInNewExperience = FeatureFlagsService.isEnabled(FeatureFlag.TemporarilyUnifiedExperience)
-      ? userPreferences[mParticleUserPreferenceIds.IsOnTemporarilyUnifiedExperience].optedIn
-      : userPreferences[mParticleUserPreferenceIds.IsJourneysUnified].optedIn
-
-    const isJourneysEnabled = isInNewExperience || !window.mParticleConfig.organizationPolicy.uiEnableAudiencesRealTime
-
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    realtimeAudience!.visible = !isJourneysEnabled
+    realtimeAudience!.visible = !isSegmentationNewExperience()
   }
 
   public static findItemById(id: NavigationItemId): IGlobalNavigationItem | undefined {
