@@ -1,7 +1,7 @@
 import { AuthorizationsService } from './AuthorizationsService'
 import { Operation } from '../Operation'
 import { FeatureFlag, FeatureFlagsService } from './FeatureFlagsService'
-import { mParticleUserPreferenceIds, userPreferences } from '../UserPreferences'
+import { isSegmentationNewExperience } from '../UserPreferences'
 
 // eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class AudiencePermissionsService {
@@ -32,13 +32,9 @@ export class AudiencePermissionsService {
   }
 
   public static isJourneysSharedRealTimeAudiencesEnabled(): boolean {
-    const isJourneysEnabled =
-      userPreferences[mParticleUserPreferenceIds.IsSegmentationNewExperience].optedIn ||
-      !window.mParticleConfig.organizationPolicy.uiEnableAudiencesRealTime
-
     return (
       window.mParticleConfig.allowResourceSharing &&
-      isJourneysEnabled &&
+      isSegmentationNewExperience() &&
       !FeatureFlagsService.isEnabled(FeatureFlag.JourneysSharedRealTimeAudiencesDisabled)
     )
   }

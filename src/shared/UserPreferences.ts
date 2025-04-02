@@ -63,3 +63,10 @@ function getCookieDomain() {
 
   return shouldUseCookieDomain ? 'mparticle.com' : undefined
 }
+
+export function isSegmentationNewExperience(): boolean {
+  return (
+    userPreferences[mParticleUserPreferenceIds.IsSegmentationNewExperience].optedIn ||
+    !window.mParticleConfig.organizationPolicy.uiEnableAudiencesRealTime
+  )
+}
