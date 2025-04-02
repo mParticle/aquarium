@@ -1,6 +1,6 @@
 {
   "name": "@mparticle/aquarium",
-  "version": "1.44.3-chore-remove-temp-new-exp.2",
+  "version": "1.44.3",
   "description": "mParticle Component Library",
   "license": "Apache-2.0",
   "keywords": [
