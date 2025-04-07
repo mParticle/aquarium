@@ -159,16 +159,9 @@ export const tableColumns: TableProps<TableDataType>['columns'] = [
 
 function createMockRow(): TableDataType {
   return {
-    id: `JNBSK-${faker.number.int({ min: 1000, max: 9999 }).toString()}`,
+    id: `ID-${faker.number.int({ min: 1000, max: 9999 }).toString()}`,
     key: faker.string.uuid(),
-    name: faker.helpers.arrayElement([
-      'NBCU',
-      'Remarkable Foods',
-      'Lulo Bank',
-      'Shift',
-      'Marks and Spencer',
-      "Zaxby's",
-    ]),
+    name: faker.company.name(),
     timestamp: faker.date.recent().valueOf() * 1000 * 1000,
     mpId: faker.number.int({ max: 9_999_999_999 }).toString(),
     output: faker.helpers.arrayElement(['Braze', 'mP Analytics', 'Cortex', 'Applytics', 'Google Analytics']),

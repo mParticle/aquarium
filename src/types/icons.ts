@@ -130,3 +130,5 @@ export type IconNames =
   | 'stateError'
   | 'stateNoResults'
   | 'back'
+  | 'submitFeedback'
+  | 'boost'

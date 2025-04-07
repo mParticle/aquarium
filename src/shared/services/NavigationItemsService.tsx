@@ -1,6 +1,6 @@
 import { Icon, type IGlobalNavigationItem, RoutesAuthorizationsService, Utils } from 'src/components'
 import { Paths } from 'src/shared/Paths'
-import { mParticleUserPreferenceIds, userPreferences } from 'src/shared/UserPreferences'
+import { isSegmentationNewExperience } from 'src/shared/UserPreferences'
 
 export enum NavigationItemId {
   Overview = 'overview',
@@ -39,6 +39,7 @@ export enum NavigationItemId {
   Segmentation_Audiences = 'segmentation_audiences',
   Segmentation_Audiences_Standard = 'segmentation_audiences_standard',
   Segmentation_Audiences_RealTime = 'segmentation_audiences_realTime',
+  Segmentation_Audiences_SharedByAccount = 'segmentation_audiences_sharedByAccount',
   Analytics = 'analytics',
   Analytics_MyHub = 'analytics_myHub',
   Analytics_Saved = 'analytics_saved',
@@ -133,13 +134,13 @@ const allNavigationItems: IGlobalNavigationItem[] = [
             id: NavigationItemId.DataPlatform_Setup_Inputs,
             label: 'Inputs',
             type: 'link',
-            hrefOptions: { href: Paths.DataPlatform.Setup.Inputs.Apps },
+            hrefOptions: { href: Paths.DataPlatform.Setup.Inputs.Root },
           },
           {
             id: NavigationItemId.DataPlatform_Setup_Outputs,
             label: 'Outputs',
             type: 'link',
-            hrefOptions: { href: Paths.DataPlatform.Setup.Outputs.Event },
+            hrefOptions: { href: Paths.DataPlatform.Setup.Outputs.Root },
           },
           {
             id: NavigationItemId.DataPlatform_Setup_Directory,
@@ -281,24 +282,30 @@ const allNavigationItems: IGlobalNavigationItem[] = [
     children: [
       {
         id: NavigationItemId.Segmentation_Journeys,
-        label: 'Journeys',
+        label: 'Audiences',
         type: 'link',
         hrefOptions: { href: Paths.Segmentation.Journeys },
       },
       {
         id: NavigationItemId.Segmentation_Audiences,
-        label: 'Audiences',
+        label: 'Classic Audiences',
         type: 'menu',
         children: [
           {
             id: NavigationItemId.Segmentation_Audiences_Standard,
-            label: 'Standard',
+            label: 'Standard Audiences',
             type: 'link',
             hrefOptions: { href: Paths.Segmentation.Audiences.Standard },
           },
           {
+            id: NavigationItemId.Segmentation_Audiences_SharedByAccount,
+            label: 'Shared Audiences',
+            type: 'link',
+            hrefOptions: { href: Paths.Segmentation.Audiences.SharedByAccount },
+          },
+          {
             id: NavigationItemId.Segmentation_Audiences_RealTime,
-            label: 'Real-time',
+            label: 'Real-time Audiences',
             type: 'link',
             hrefOptions: { href: Paths.Segmentation.Audiences.RealTime },
           },
@@ -322,8 +329,9 @@ export class NavigationItemsService {
     })
 
     const realtimeAudience = this.findItemById(NavigationItemId.Segmentation_Audiences_RealTime)
+
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    realtimeAudience!.visible = !userPreferences[mParticleUserPreferenceIds.IsJourneysUnified].optedIn
+    realtimeAudience!.visible = !isSegmentationNewExperience()
   }
 
   public static findItemById(id: NavigationItemId): IGlobalNavigationItem | undefined {

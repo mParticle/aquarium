@@ -1,3 +1,33 @@
+## [1.44.3](https://github.com/mParticle/aquarium/compare/v1.44.2...v1.44.3) (2025-04-02)
+
+## [1.44.2](https://github.com/mParticle/aquarium/compare/v1.44.1...v1.44.2) (2025-03-18)
+
+### Bug Fixes
+
+- fix segmentation perms ([#577](https://github.com/mParticle/aquarium/issues/577)) ([d82df0c](https://github.com/mParticle/aquarium/commit/d82df0cc381715ca5c7e49c192db6d08b6e6dc1e))
+
+## [1.44.1](https://github.com/mParticle/aquarium/compare/v1.44.0...v1.44.1) (2025-03-18)
+
+### Bug Fixes
+
+- update NavigationItemsService with shared audiences link ([#576](https://github.com/mParticle/aquarium/issues/576)) ([e33091d](https://github.com/mParticle/aquarium/commit/e33091d3b6b2de77d9deeb886e89a1eca1b3e5c6))
+
+# [1.44.0](https://github.com/mParticle/aquarium/compare/v1.43.1...v1.44.0) (2025-03-14)
+
+### Features
+
+- use temporarily unified experience flag ([#573](https://github.com/mParticle/aquarium/issues/573)) ([d4aaa56](https://github.com/mParticle/aquarium/commit/d4aaa562621dbbba675b412503ca956e5d27fb80))
+
+## [1.43.1](https://github.com/mParticle/aquarium/compare/v1.43.0...v1.43.1) (2025-03-12)
+
+# [1.43.0](https://github.com/mParticle/aquarium/compare/v1.42.2...v1.43.0) (2025-03-11)
+
+### Features
+
+- add boost icon ([#570](https://github.com/mParticle/aquarium/issues/570)) ([a9e5eca](https://github.com/mParticle/aquarium/commit/a9e5ecae45a45d2efe29d055b10ce50328d9a43f))
+
+## [1.42.2](https://github.com/mParticle/aquarium/compare/v1.42.1...v1.42.2) (2025-03-06)
+
 ## [1.42.1](https://github.com/mParticle/aquarium/compare/v1.42.0...v1.42.1) (2025-02-27)
 
 ### Bug Fixes
