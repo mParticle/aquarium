@@ -31,7 +31,6 @@ export enum FeatureFlag {
     NotificationCenterV0InboxTemp = "NotificationCenter.V0.InboxTemp",
     DataManagerOptimizationCA = "DataManagerOptimization.CA",
     DataManagerOptimizationDataCatalog = "DataManagerOptimization.DataCatalog",
-    JourneysSharedRealTimeAudiencesDisabled = "Journeys.SharedRealTimeAudiences.Disabled",
     VBPUsageReportV2 = "VBP.UsageReport.V2",
     UAVNewTabletsReadMethod = "UAVNewTabletsReadMethod",
     PredictiveAttributesNextBestActionEnabled = "PredictiveAttributes.NextBestAction.Enabled",
@@ -47,11 +46,11 @@ export enum FeatureFlag {
 // the features are enabled per workspace.
 export class FeatureFlagsService {
     private static enabledFeatures: FeatureFlag[] = [];
-    
+
     public static initialize(enabledFeatures: FeatureFlag[]): void {
          this.enabledFeatures = enabledFeatures;
     }
-    
+
     /**
      * Checks whether a feature is enabled or not in the currently active workspace.
      * @param feature The feature to check for.
