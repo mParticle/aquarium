@@ -1,6 +1,6 @@
 {
   "name": "@mparticle/aquarium",
-  "version": "1.44.3",
+  "version": "1.44.4-chore-ant-dependency-update.1",
   "description": "mParticle Component Library",
   "license": "Apache-2.0",
   "keywords": [
@@ -25,7 +25,7 @@
     "dist/src"
   ],
   "peerDependencies": {
-    "antd": "5.20.x",
+    "antd": "5.24.x",
     "dayjs": "1.11.x",
     "react": ">=17.0.2",
     "react-dom": ">=17.0.2"
