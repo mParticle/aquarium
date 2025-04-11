@@ -1,3 +1,9 @@
+## [1.44.4](https://github.com/mParticle/aquarium/compare/v1.44.3...v1.44.4) (2025-04-11)
+
+### Bug Fixes
+
+- users not able to access Shared Audiences in the new experience ([#591](https://github.com/mParticle/aquarium/issues/591)) ([75b603d](https://github.com/mParticle/aquarium/commit/75b603d0fc42d086d9577423bde03cafa137a7f7))
+
 ## [1.44.3](https://github.com/mParticle/aquarium/compare/v1.44.2...v1.44.3) (2025-04-02)
 
 ## [1.44.2](https://github.com/mParticle/aquarium/compare/v1.44.1...v1.44.2) (2025-03-18)
