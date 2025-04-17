@@ -103,6 +103,7 @@ import Back from 'src/assets/svg/mp_act_lt_back.svg?react'
 import Flag from 'src/assets/svg/flag.svg?react'
 import SubmitFeedback from 'src/assets/svg/mp_act_lt_submit-feedback.svg?react'
 import Boost from 'src/assets/svg/mp_info_lt_boost.svg?react'
+import Clone from 'src/assets/svg/mp_act_lt_clone.svg?react'
 
 export {
   AbSplit,
@@ -210,4 +211,5 @@ export {
   StateNoResults,
   Back,
   Boost,
+  Clone
 }
