@@ -14,6 +14,8 @@ import ConnectionsIcon from 'src/assets/svg/connections.svg?react'
 import DataPlatformIcon from 'src/assets/svg/mp_pm_lt_data-paltform.svg?react'
 import DataPlatformIconDt from 'src/assets/svg/mp_pm_dt_data-platform.svg?react'
 import DatabaseIcon from 'src/assets/svg/database.svg?react'
+import DateIcon from 'src/assets/svg/mp_pm_lt_date.svg?react'
+import DevicesIcon from 'src/assets/svg/mp_pm_lt_devices.svg?react'
 import DragAndDropIcon from 'src/assets/svg/mp_act_lt_dragandrop.svg?react'
 import DsrIcon from 'src/assets/svg/mp_pm_lt_dsr.svg?react'
 import EmptyIcon from 'src/assets/svg/empty.svg?react'
@@ -129,7 +131,9 @@ export {
   DatabaseIcon,
   DataPlatformIcon,
   DataPlatformIconDt,
+  DateIcon,
   Delete,
+  DevicesIcon,
   DirectoryIcon,
   DragAndDropIcon,
   DropdownClose,
