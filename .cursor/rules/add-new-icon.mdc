@@ -1,0 +1,71 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+ # Adding a New Icon to the Aquarium Component Library
+
+## Setup Prerequisites
+1. Start the prettifier server in a terminal:
+   ```bash
+   npm run icons-prettifier
+   ```
+
+2. Start Storybook in another terminal:
+   ```bash
+   npm run storybook
+   ```
+
+## Step 1: Prettify the SVG
+- Navigate to "Contributing/Tooling/SVGPrettifier" in Storybook
+- Upload your SVG file (must have viewBox="0 0 20 20")
+- Click "Prettify" to process the file
+- The file will be saved to `src/assets/svg/` with the naming convention:
+  - Light icons: `mp_pm_lt_[name].svg`
+  - Duo-tone icons: `mp_pm_dt_[name].svg`
+
+## Step 2: Update Icons Index
+- Open `src/components/icons/index.ts`
+- Add import in alphabetical order:
+  ```typescript
+  import NameIcon from 'src/assets/svg/mp_pm_lt_name.svg?react'
+  ```
+- Add to exports list in alphabetical order:
+  ```typescript
+  NameIcon,
+  ```
+
+## Step 3: Update Icons Constant
+- Open `src/constants/Icons.ts`
+- Add to imports list in alphabetical order:
+  ```typescript
+  NameIcon,
+  ```
+- Add new entry to Icons record in alphabetical order:
+  ```typescript
+  name: {
+    light: NameIcon,
+    default: 'light',
+  },
+  ```
+- For duo-tone icons, use:
+  ```typescript
+  name: {
+    light: NameIcon,
+    'duo-tone': NameIconDt,
+    default: 'duo-tone',
+  },
+  ```
+
+## Step 4: Update Icon Types
+- Open `src/types/icons.ts`
+- Add the icon name to IconNames in alphabetical order:
+  ```typescript
+  | 'name'
+  ```
+
+## Naming Conventions
+- Light icons: Use `mp_pm_lt_` prefix in filename
+- Duo-tone icons: Use `mp_pm_dt_` prefix in filename
+- PascalCase for the imported component name (e.g., `DateIcon`)
+- camelCase for the icon key in the Icons constant (e.g., `date`)

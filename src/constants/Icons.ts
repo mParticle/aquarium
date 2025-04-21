@@ -17,6 +17,8 @@ import {
   DataPlatformIcon,
   DataPlatformIconDt,
   DatabaseIcon,
+  DateIcon,
+  DevicesIcon,
   DragAndDropIcon,
   DsrIcon,
   EmptyIcon,
@@ -214,8 +216,16 @@ export const Icons: Record<IconNames, IconOptions> = {
     'duo-tone': DataPlatformIconDt,
     default: 'duo-tone',
   },
+  date: {
+    light: DateIcon,
+    default: 'light',
+  },
   delete: {
     light: Delete,
+    default: 'light',
+  },
+  devices: {
+    light: DevicesIcon,
     default: 'light',
   },
   directory: {
