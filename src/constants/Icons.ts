@@ -7,6 +7,7 @@ import {
   AnalyticsIconDt,
   C360Icon,
   C360IconDt,
+  CalculatedAttributeIcon,
   CatalogIcon,
   ChartColumnIcon,
   ChartLineIcon,
@@ -140,6 +141,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   annotation: {
     light: Annotation,
+    default: 'light',
+  },
+  calculatedAttribute: {
+    light: CalculatedAttributeIcon,
     default: 'light',
   },
   api: {

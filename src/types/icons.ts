@@ -25,6 +25,7 @@ export type IconNames =
   | 'api'
   | 'audiences'
   | 'C360'
+  | 'calculatedAttribute'
   | 'catalog'
   | 'chartColumn'
   | 'chartLine'
