@@ -1,9 +1,4 @@
----
-description: 
-globs: 
-alwaysApply: false
----
- # Adding a New Icon to the Aquarium Component Library
+# Adding a New Icon to the Aquarium Component Library
 
 ## Setup Prerequisites
 1. Start the prettifier server in a terminal:
@@ -23,6 +18,8 @@ alwaysApply: false
 - The file will be saved to `src/assets/svg/` with the naming convention:
   - Light icons: `mp_pm_lt_[name].svg`
   - Duo-tone icons: `mp_pm_dt_[name].svg`
+  - Info icons: `mp_info_lt_[name].svg`
+  - Action icons: `mp_act_lt_[name].svg`
 
 ## Step 2: Update Icons Index
 - Open `src/components/icons/index.ts`
@@ -35,7 +32,15 @@ alwaysApply: false
   NameIcon,
   ```
 
-## Step 3: Update Icons Constant
+## Step 3: Update Icon Types
+- Open `src/types/icons.ts`
+- Add the icon name to IconNames in alphabetical order:
+  ```typescript
+  | 'name'
+  ```
+- **Important**: This step must be completed before updating the Icons constant to avoid TypeScript errors
+
+## Step 4: Update Icons Constant
 - Open `src/constants/Icons.ts`
 - Add to imports list in alphabetical order:
   ```typescript
@@ -57,15 +62,29 @@ alwaysApply: false
   },
   ```
 
-## Step 4: Update Icon Types
-- Open `src/types/icons.ts`
-- Add the icon name to IconNames in alphabetical order:
-  ```typescript
-  | 'name'
-  ```
+## Step 5: Verify the Icon
+- Navigate to "Components/General/Icons" in Storybook
+- Check the Icon Table to ensure your new icon appears correctly
+- If the icon doesn't appear, verify:
+  - The SVG file has the correct viewBox attribute
+  - All files have been updated correctly
+  - The icon name is added to all necessary files
+
 
 ## Naming Conventions
 - Light icons: Use `mp_pm_lt_` prefix in filename
 - Duo-tone icons: Use `mp_pm_dt_` prefix in filename
+- Info icons: Use `mp_info_lt_` prefix in filename
+- Action icons: Use `mp_act_lt_` prefix in filename
 - PascalCase for the imported component name (e.g., `DateIcon`)
 - camelCase for the icon key in the Icons constant (e.g., `date`)
+
+## Troubleshooting
+- If TypeScript errors occur, ensure the icon name is added to `src/types/icons.ts` before updating `src/constants/Icons.ts`
+- If the icon doesn't appear in Storybook, check the SVG file format and viewBox attribute
+- If changes aren't reflected, try restarting the Storybook server
+
+## Cleanup
+- When finished, stop both servers:
+  - Press Ctrl+C in each terminal to stop the servers
+  - This ensures proper cleanup of resources

@@ -7,6 +7,7 @@ import {
   AnalyticsIconDt,
   C360Icon,
   C360IconDt,
+  CalculatedAttributeIcon,
   CatalogIcon,
   ChartColumnIcon,
   ChartLineIcon,
@@ -30,6 +31,7 @@ import {
   ForwardingIcon,
   GearIcon,
   GridIcon,
+  GroupIcon,
   HeartIcon,
   HelpIcon,
   HelpVideoIcon,
@@ -139,6 +141,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   annotation: {
     light: Annotation,
+    default: 'light',
+  },
+  calculatedAttribute: {
+    light: CalculatedAttributeIcon,
     default: 'light',
   },
   api: {
@@ -310,6 +316,10 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: GridIcon,
     default: 'light',
     deprecated: 'myHub',
+  },
+  group: {
+    light: GroupIcon,
+    default: 'light',
   },
   heart: {
     light: HeartIcon,
