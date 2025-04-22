@@ -62,6 +62,7 @@ export type IconNames =
   | 'funnel'
   | 'gear'
   | 'grid'
+  | 'group'
   | 'heart'
   | 'help'
   | 'helpVideo'

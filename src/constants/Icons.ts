@@ -30,6 +30,7 @@ import {
   ForwardingIcon,
   GearIcon,
   GridIcon,
+  GroupIcon,
   HeartIcon,
   HelpIcon,
   HelpVideoIcon,
@@ -310,6 +311,10 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: GridIcon,
     default: 'light',
     deprecated: 'myHub',
+  },
+  group: {
+    light: GroupIcon,
+    default: 'light',
   },
   heart: {
     light: HeartIcon,

@@ -27,6 +27,7 @@ import FolderClosedIcon from 'src/assets/svg/folder-closed.svg?react'
 import ForwardingIcon from 'src/assets/svg/mp_pm_lt_forwarding.svg?react'
 import GearIcon from 'src/assets/svg/gear.svg?react'
 import GridIcon from 'src/assets/svg/grid.svg?react'
+import GroupIcon from 'src/assets/svg/mp_info_lt_group.svg?react'
 import HeartIcon from 'src/assets/svg/heart.svg?react'
 import HelpIcon from 'src/assets/svg/help.svg?react'
 import IdentityIcon from 'src/assets/svg/mp_pm_lt_identity.svg?react'
@@ -153,6 +154,7 @@ export {
   Funnel,
   GearIcon,
   GridIcon,
+  GroupIcon,
   HeartIcon,
   HelpIcon,
   HelpVideoIcon,
