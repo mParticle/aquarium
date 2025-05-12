@@ -110,6 +110,7 @@ import {
   Flag,
   SubmitFeedback,
   Boost,
+  Clone
 } from 'src/components/icons'
 
 export const Icons: Record<IconNames, IconOptions> = {
@@ -625,4 +626,8 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: Boost,
     default: 'light',
   },
+  clone: {
+    light: Clone,
+    default: 'light',
+  }
 } as const

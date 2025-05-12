@@ -136,3 +136,4 @@ export type IconNames =
   | 'back'
   | 'submitFeedback'
   | 'boost'
+  | 'clone'
