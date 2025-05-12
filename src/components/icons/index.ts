@@ -4,6 +4,7 @@ import AnalyticsIcon from 'src/assets/svg/mp_pm_lt_analytcis.svg?react'
 import AnalyticsIconDt from 'src/assets/svg/mp_pm_dt_analytics.svg?react'
 import C360Icon from 'src/assets/svg/mp_pm_lt_c360.svg?react'
 import C360IconDt from 'src/assets/svg/mp_pm_dt_c360.svg?react'
+import CalculatedAttributeIcon from 'src/assets/svg/mp_info_lt_calculated-attribute.svg?react'
 import CatalogIcon from 'src/assets/svg/mp_pm_lt_catalog.svg?react'
 import ChartColumnIcon from 'src/assets/svg/chart-column.svg?react'
 import ChartLineIcon from 'src/assets/svg/chart-line.svg?react'
@@ -14,6 +15,8 @@ import ConnectionsIcon from 'src/assets/svg/connections.svg?react'
 import DataPlatformIcon from 'src/assets/svg/mp_pm_lt_data-paltform.svg?react'
 import DataPlatformIconDt from 'src/assets/svg/mp_pm_dt_data-platform.svg?react'
 import DatabaseIcon from 'src/assets/svg/database.svg?react'
+import DateIcon from 'src/assets/svg/mp_pm_lt_date.svg?react'
+import DevicesIcon from 'src/assets/svg/mp_pm_lt_devices.svg?react'
 import DragAndDropIcon from 'src/assets/svg/mp_act_lt_dragandrop.svg?react'
 import DsrIcon from 'src/assets/svg/mp_pm_lt_dsr.svg?react'
 import EmptyIcon from 'src/assets/svg/empty.svg?react'
@@ -25,6 +28,7 @@ import FolderClosedIcon from 'src/assets/svg/folder-closed.svg?react'
 import ForwardingIcon from 'src/assets/svg/mp_pm_lt_forwarding.svg?react'
 import GearIcon from 'src/assets/svg/gear.svg?react'
 import GridIcon from 'src/assets/svg/grid.svg?react'
+import GroupIcon from 'src/assets/svg/mp_info_lt_group.svg?react'
 import HeartIcon from 'src/assets/svg/heart.svg?react'
 import HelpIcon from 'src/assets/svg/help.svg?react'
 import IdentityIcon from 'src/assets/svg/mp_pm_lt_identity.svg?react'
@@ -116,6 +120,7 @@ export {
   Annotation,
   C360Icon,
   C360IconDt,
+  CalculatedAttributeIcon,
   CatalogIcon,
   ChartColumnIcon,
   ChartLineIcon,
@@ -130,7 +135,9 @@ export {
   DatabaseIcon,
   DataPlatformIcon,
   DataPlatformIconDt,
+  DateIcon,
   Delete,
+  DevicesIcon,
   DirectoryIcon,
   DragAndDropIcon,
   DropdownClose,
@@ -150,6 +157,7 @@ export {
   Funnel,
   GearIcon,
   GridIcon,
+  GroupIcon,
   HeartIcon,
   HelpIcon,
   HelpVideoIcon,

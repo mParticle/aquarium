@@ -7,6 +7,7 @@ import {
   AnalyticsIconDt,
   C360Icon,
   C360IconDt,
+  CalculatedAttributeIcon,
   CatalogIcon,
   ChartColumnIcon,
   ChartLineIcon,
@@ -17,6 +18,8 @@ import {
   DataPlatformIcon,
   DataPlatformIconDt,
   DatabaseIcon,
+  DateIcon,
+  DevicesIcon,
   DragAndDropIcon,
   DsrIcon,
   EmptyIcon,
@@ -28,6 +31,7 @@ import {
   ForwardingIcon,
   GearIcon,
   GridIcon,
+  GroupIcon,
   HeartIcon,
   HelpIcon,
   HelpVideoIcon,
@@ -140,6 +144,10 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: Annotation,
     default: 'light',
   },
+  calculatedAttribute: {
+    light: CalculatedAttributeIcon,
+    default: 'light',
+  },
   api: {
     light: CloudIcon,
     default: 'light',
@@ -215,8 +223,16 @@ export const Icons: Record<IconNames, IconOptions> = {
     'duo-tone': DataPlatformIconDt,
     default: 'duo-tone',
   },
+  date: {
+    light: DateIcon,
+    default: 'light',
+  },
   delete: {
     light: Delete,
+    default: 'light',
+  },
+  devices: {
+    light: DevicesIcon,
     default: 'light',
   },
   directory: {
@@ -301,6 +317,10 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: GridIcon,
     default: 'light',
     deprecated: 'myHub',
+  },
+  group: {
+    light: GroupIcon,
+    default: 'light',
   },
   heart: {
     light: HeartIcon,
