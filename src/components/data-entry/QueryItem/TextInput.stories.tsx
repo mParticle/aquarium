@@ -41,3 +41,11 @@ export const ErrorMessage: Story = {
     errorMessage: 'Required field!',
   },
 }
+
+export const OnBlur: Story = {
+  args: {
+    onBlur: () => {
+      console.log('onBlur')
+    },
+  },
+}

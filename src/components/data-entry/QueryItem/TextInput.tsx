@@ -1,8 +1,8 @@
 import './query-item.css'
-import { Input } from 'src/components'
+import { IInputProps, Input } from 'src/components'
 import { Typography } from 'src/components/general/Typography/Typography'
 
-export interface ITextInputProps {
+export type ITextInputProps = Omit<IInputProps, 'onChange'> & {
   value?: string
   disabled?: boolean
   errorMessage?: string
@@ -10,26 +10,27 @@ export interface ITextInputProps {
   onChange?: (value: string) => void
 }
 
-const TextInput = (props: ITextInputProps) => {
-  const isErrorStatus: boolean = !!props.errorMessage && !props.disabled
+const TextInput = ({ value, disabled, errorMessage, placeholder, onChange, ...inputProps }: ITextInputProps) => {
+  const isErrorStatus: boolean = !!errorMessage && !disabled
 
   let inputClasses = `query-item query-item--input-text`
-  if (props.errorMessage) inputClasses += ' query-item--error'
+  if (errorMessage) inputClasses += ' query-item--error'
 
   return (
     <>
       <Input
         status={isErrorStatus ? 'error' : undefined}
-        disabled={props.disabled}
+        disabled={disabled}
         className={inputClasses}
-        value={props.value}
-        placeholder={props.placeholder}
+        value={value}
+        placeholder={placeholder}
         onChange={e => {
-          props.onChange?.(e.target.value)
+          onChange?.(e.target.value)
         }}
+        {...inputProps}
       />
 
-      {props.errorMessage && <Typography.Text type="danger">{props.errorMessage}</Typography.Text>}
+      {errorMessage && <Typography.Text type="danger">{errorMessage}</Typography.Text>}
     </>
   )
 }
