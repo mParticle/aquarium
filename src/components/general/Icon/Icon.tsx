@@ -43,5 +43,5 @@ export const Icon: React.FC<IIconProps> = ({ name, color = 'default', size = 'lg
   const className = `icon-size-${size} icon-color-${color}`
   const iconId = `icon-${name}-${iconVariant}`
 
-  return <IconComponent className={className} data-test={iconId} />
+  return <IconComponent className={className} data-testid={iconId} />
 }
