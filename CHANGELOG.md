@@ -1,3 +1,9 @@
+# [1.45.0](https://github.com/mParticle/aquarium/compare/v1.44.5...v1.45.0) (2025-05-26)
+
+### Features
+
+- Add clone Icon ([#607](https://github.com/mParticle/aquarium/issues/607)) ([971a0ad](https://github.com/mParticle/aquarium/commit/971a0ad737ee0901e344559a93fbe1ec64eb5604))
+
 ## [1.44.5](https://github.com/mParticle/aquarium/compare/v1.44.4...v1.44.5) (2025-04-22)
 
 ## [1.44.4](https://github.com/mParticle/aquarium/compare/v1.44.3...v1.44.4) (2025-04-11)
