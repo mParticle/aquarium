@@ -108,6 +108,7 @@ import Flag from 'src/assets/svg/flag.svg?react'
 import SubmitFeedback from 'src/assets/svg/mp_act_lt_submit-feedback.svg?react'
 import Boost from 'src/assets/svg/mp_info_lt_boost.svg?react'
 import Clone from 'src/assets/svg/mp_act_lt_clone.svg?react'
+import Reorder from 'src/assets/svg/mp_act_lt_reorder.svg?react'
 
 export {
   AbSplit,
@@ -193,6 +194,7 @@ export {
   PreviousIcon,
   Privileges,
   RefreshFrequency,
+  Reorder,
   RemoveIcon,
   ScheduledReport,
   SearchIcon,
@@ -219,5 +221,5 @@ export {
   StateNoResults,
   Back,
   Boost,
-  Clone
+  Clone,
 }
