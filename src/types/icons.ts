@@ -137,3 +137,4 @@ export type IconNames =
   | 'submitFeedback'
   | 'boost'
   | 'clone'
+  | 'reorder'

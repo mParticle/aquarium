@@ -110,7 +110,8 @@ import {
   Flag,
   SubmitFeedback,
   Boost,
-  Clone
+  Clone,
+  Reorder,
 } from 'src/components/icons'
 
 export const Icons: Record<IconNames, IconOptions> = {
@@ -483,6 +484,10 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: RefreshFrequency,
     default: 'light',
   },
+  reorder: {
+    light: Reorder,
+    default: 'light',
+  },
   remove: {
     light: RemoveIcon,
     default: 'light',
@@ -629,5 +634,5 @@ export const Icons: Record<IconNames, IconOptions> = {
   clone: {
     light: Clone,
     default: 'light',
-  }
+  },
 } as const
