@@ -1,3 +1,9 @@
+# [1.46.0](https://github.com/mParticle/aquarium/compare/v1.45.0...v1.46.0) (2025-05-29)
+
+### Features
+
+- add reorder icon ([#610](https://github.com/mParticle/aquarium/issues/610)) ([039c337](https://github.com/mParticle/aquarium/commit/039c3375a85b31d5f1884748fc2cbd346316bbd3))
+
 # [1.45.0](https://github.com/mParticle/aquarium/compare/v1.44.5...v1.45.0) (2025-05-26)
 
 ### Features
