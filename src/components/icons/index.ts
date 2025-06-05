@@ -1,5 +1,7 @@
 import AddIcon from 'src/assets/svg/add.svg?react'
 import AlicornIcon from 'src/assets/svg/alicorn.svg?react'
+import RateDownIcon from 'src/assets/svg/rate_down.svg?react'
+import RateUpIcon from 'src/assets/svg/rate_up.svg?react'
 import AnalyticsIcon from 'src/assets/svg/mp_pm_lt_analytcis.svg?react'
 import AnalyticsIconDt from 'src/assets/svg/mp_pm_dt_analytics.svg?react'
 import C360Icon from 'src/assets/svg/mp_pm_lt_c360.svg?react'
@@ -116,6 +118,8 @@ export {
   ActiveIcon,
   AddIcon,
   AlicornIcon,
+  RateDownIcon,
+  RateUpIcon,
   AnalyticsIcon,
   AnalyticsIconDt,
   Annotation,
