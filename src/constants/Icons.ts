@@ -3,6 +3,8 @@ import { type IconOptions, type IconNames } from 'src/types/icons'
 import {
   AddIcon,
   AlicornIcon,
+  RateDownIcon,
+  RateUpIcon,
   AnalyticsIcon,
   AnalyticsIconDt,
   C360Icon,
@@ -482,6 +484,14 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   refreshFrequency: {
     light: RefreshFrequency,
+    default: 'light',
+  },
+  rateDown: {
+    light: RateDownIcon,
+    default: 'light',
+  },
+  rateUp: {
+    light: RateUpIcon,
     default: 'light',
   },
   reorder: {
