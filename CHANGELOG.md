@@ -1,3 +1,9 @@
+# [1.47.0](https://github.com/mParticle/aquarium/compare/v1.46.0...v1.47.0) (2025-06-05)
+
+### Features
+
+- Add Rate Icons ([#611](https://github.com/mParticle/aquarium/issues/611)) ([5367aa3](https://github.com/mParticle/aquarium/commit/5367aa305e71ddffed68fe27f69606b424a56287))
+
 # [1.46.0](https://github.com/mParticle/aquarium/compare/v1.45.0...v1.46.0) (2025-05-29)
 
 ### Features
