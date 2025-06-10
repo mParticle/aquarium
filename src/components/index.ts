@@ -91,6 +91,7 @@ export {
 } from './navigation/Menu/Menu'
 export { ConfigProvider, type IConfigProviderProps } from './other/ConfigProvider/ConfigProvider'
 export { Affix, type IAffixProps } from './not-prod-ready/Affix/Affix'
+export { Splitter, type ISplitterProps, type ISplitterPanelProps } from './general/Splitter/Splitter'
 export {
   GlobalNavigation,
   GlobalNavWidth,
