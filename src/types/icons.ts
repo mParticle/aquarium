@@ -102,6 +102,8 @@ export type IconNames =
   | 'privacy'
   | 'privileges'
   | 'refreshFrequency'
+  | 'rateDown'
+  | 'rateUp'
   | 'remove'
   | 'savedProjects'
   | 'scheduledReport'
