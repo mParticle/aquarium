@@ -3,7 +3,7 @@ import { Splitter } from './Splitter'
 import { PaddingMd } from 'src/styles/style'
 
 const meta: Meta<typeof Splitter> = {
-  title: 'Components/General/Splitter',
+  title: 'Components/Layout/Splitter',
   component: Splitter,
 
   args: {},
