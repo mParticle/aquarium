@@ -1,0 +1,64 @@
+import { Meta, Canvas } from '@storybook/blocks'
+
+import * as SplitterStories from '../../../../src/components/layout/Splitter/Splitter.stories'
+
+<Meta of={SplitterStories} />
+
+{/* Documentation goes here */}
+
+# Splitter
+
+#### Overview
+
+The **Splitter** component divides content into resizable panels, allowing users to adjust the layout dynamically. It provides a flexible way to create split-pane interfaces for dashboards, editors, and other complex layouts.
+
+#### Key Features
+
+- **Resizable Panels:** Users can drag the splitter handle to resize panels interactively.
+- **Layout Options:** Supports both horizontal (default) and vertical layouts.
+- **Panel Configuration:** Individual panels can be configured with size constraints, default sizes, and collapsible behavior.
+- **Flexible Sizing:** Supports percentage-based, pixel-based, and auto-sizing options.
+
+### Splitter Variants and Use Cases
+
+#### Horizontal Splitter
+
+**Use Case**: For side-by-side content layouts.
+- **Example:** Main content area with a sidebar, code editor with file browser, or dashboard with navigation panel.
+
+**Examples**:
+
+<Canvas of={SplitterStories.Primary} />
+
+#### Vertical Splitter
+
+**Use Case**: For stacked content layouts.
+- **Example:** Editor with console output, header/content/footer layouts, or top/bottom dashboard sections.
+
+**Examples**:
+
+<Canvas of={SplitterStories.Vertical} />
+
+### Panel Configuration
+
+The `Splitter.Panel` component accepts the following key props:
+
+- **`defaultSize`**: Initial size of the panel (string or number)
+- **`size`**: Controlled size of the panel
+- **`min`**: Minimum size constraint
+- **`max`**: Maximum size constraint  
+- **`collapsible`**: Whether the panel can be collapsed
+- **`resizable`**: Whether the panel can be resized
+
+### Best Practices
+
+- Use percentage-based sizing for responsive layouts
+- Set appropriate minimum sizes to prevent panels from becoming unusable
+- Consider the content hierarchy when determining default panel sizes
+- Use collapsible panels sparingly to avoid interface complexity
+
+#### Related Links
+
+| Type  | Resource                                                                                                                                               |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| AntD | [Splitter Component](https://ant.design/components/splitter) |
