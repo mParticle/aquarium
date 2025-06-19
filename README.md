@@ -6,6 +6,8 @@
 
 mParticle Component Library
 
+_Components That Scale_
+
 ## Contributing
 
 See [CONTRIBUTING.md](https://github.com/mParticle/aquarium/blob/main/CONTRIBUTING.md).
