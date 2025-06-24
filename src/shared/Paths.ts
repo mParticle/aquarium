@@ -94,6 +94,7 @@ export const Paths = {
     },
     Livestream: '/data-platform/livestream',
     DataCatalog: '/data-platform/data-catalog',
+    DataModels: '/data-platform/data-models',
     Transformations: {
       Root: '/data-platform/transformations',
       Rules: '/data-platform/transformations/rules',

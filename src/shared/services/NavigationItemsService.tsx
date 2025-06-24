@@ -28,6 +28,7 @@ export enum NavigationItemId {
   DataPlatform_Setup_Directory = 'dataPlatform_setup_directory',
   DataPlatform_LiveStream = 'dataPlatform_liveStream',
   DataPlatform_DataCatalog = 'dataPlatform_dataCatalog',
+  DataPlatform_DataModels = 'dataPlatform_dataModels',
   DataPlatform_Transformations_Rules = 'dataPlatform_transformations_rules',
   DataPlatform_Transformations_Plans = 'dataPlatform_transformations_plans',
   DataPlatform_Transformations_Filters = 'dataPlatform_transformations_filters',
@@ -161,6 +162,12 @@ const allNavigationItems: IGlobalNavigationItem[] = [
         label: 'Data Catalog',
         type: 'link',
         hrefOptions: { href: Paths.DataPlatform.DataCatalog },
+      },
+      {
+        id: NavigationItemId.DataPlatform_DataModels,
+        label: 'Data Models',
+        type: 'link',
+        hrefOptions: { href: Paths.DataPlatform.DataModels },
       },
       {
         id: NavigationItemId.DataPlatform_Transformations_Rules,
