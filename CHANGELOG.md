@@ -1,3 +1,9 @@
+# [1.48.0](https://github.com/mParticle/aquarium/compare/v1.47.0...v1.48.0) (2025-06-24)
+
+### Features
+
+- exporting the Splitter component ([#613](https://github.com/mParticle/aquarium/issues/613)) ([9fa639b](https://github.com/mParticle/aquarium/commit/9fa639b5e501211832f943caca782f57c8b7ad81))
+
 # [1.47.0](https://github.com/mParticle/aquarium/compare/v1.46.0...v1.47.0) (2025-06-05)
 
 ### Features
