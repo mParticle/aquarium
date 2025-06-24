@@ -22,6 +22,7 @@ export enum NavigationItemId {
   DataPlatform = 'dataPlatform',
   DataPlatform_Trends = 'dataPlatform_trends',
   DataPlatform_Setup = 'dataPlatform_setup',
+  DataPlatform_Setup_DataModels = 'dataPlatform_setup_dataModels',
   DataPlatform_Setup_Connections = 'dataPlatform_setup_connections',
   DataPlatform_Setup_Inputs = 'dataPlatform_setup_inputs',
   DataPlatform_Setup_Outputs = 'dataPlatform_setup_outputs',
@@ -126,6 +127,12 @@ const allNavigationItems: IGlobalNavigationItem[] = [
         type: 'menu',
         children: [
           {
+            id: NavigationItemId.DataPlatform_Setup_DataModels,
+            label: 'Data Models',
+            type: 'link',
+            hrefOptions: { href: Paths.DataPlatform.Setup.DataModels },
+          },
+          {
             id: NavigationItemId.DataPlatform_Setup_Connections,
             label: 'Connections',
             type: 'link',
@@ -162,12 +169,6 @@ const allNavigationItems: IGlobalNavigationItem[] = [
         label: 'Data Catalog',
         type: 'link',
         hrefOptions: { href: Paths.DataPlatform.DataCatalog },
-      },
-      {
-        id: NavigationItemId.DataPlatform_DataModels,
-        label: 'Data Models',
-        type: 'link',
-        hrefOptions: { href: Paths.DataPlatform.DataModels },
       },
       {
         id: NavigationItemId.DataPlatform_Transformations_Rules,

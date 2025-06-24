@@ -13,10 +13,9 @@ export class DataPlatformAuthorizations extends BaseRoutesAuthorizations {
       [Paths.DataPlatform.Livestream]: this.canViewLiveStream(),
       [Paths.DataPlatform.EventForwarding]: this.canViewEventForwarding(),
       [Paths.DataPlatform.DataCatalog]: this.canViewDataCatalog(),
-      [Paths.DataPlatform.DataModels]: this.canViewDataModels(),
 
+      [Paths.DataPlatform.Setup.DataModels]: this.canViewDataModels(),
       [Paths.DataPlatform.Setup.Connections]: this.canViewConnections(),
-
       [Paths.DataPlatform.Setup.Root]: this.canViewSetup(),
       [Paths.DataPlatform.Setup.Inputs.Root]: this.canViewInputs(),
       [Paths.DataPlatform.Setup.Inputs.Feeds]: this.canViewInputs(),
@@ -74,6 +73,10 @@ export class DataPlatformAuthorizations extends BaseRoutesAuthorizations {
     return AuthorizationsService.isAuthorized(Operation.REPORT_LIST)
   }
 
+  private canViewDataModels(): boolean {
+    return AuthorizationsService.isAuthorized(Operation.DATA_INGEST_VIEW)
+  }
+
   private canViewConnections(): boolean {
     return AuthorizationsService.isAuthorized(Operation.SUBSCRIPTIONS_LIST)
   }
@@ -109,10 +112,6 @@ export class DataPlatformAuthorizations extends BaseRoutesAuthorizations {
 
   private canViewDataCatalog(): boolean {
     return AuthorizationsService.isAuthorized(Operation.DATAMANAGER_VIEW)
-  }
-
-  private canViewDataModels(): boolean {
-    return AuthorizationsService.isAuthorized(Operation.DATA_INGEST_VIEW)
   }
 
   private canViewRules(): boolean {
