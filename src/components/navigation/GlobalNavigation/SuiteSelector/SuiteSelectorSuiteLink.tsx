@@ -14,6 +14,7 @@ interface ISuiteSelectorSuiteLinkProps {
 const elementNameMap: Record<SuiteLinks, string> = {
   oversight: 'Oversight',
   dataPlatform: 'Data Platform',
+  dataWarehouse: 'Data Warehouse',
   customer360: 'Customer 360',
   predictions: 'Predictions',
   analytics: 'Analytics',
@@ -23,6 +24,7 @@ const elementNameMap: Record<SuiteLinks, string> = {
 const elementIconMap: Record<SuiteLinks, IconNames> = {
   oversight: 'oversight',
   dataPlatform: 'dataPlatform',
+  dataWarehouse: 'database',
   customer360: 'C360',
   predictions: 'predictions',
   analytics: 'analytics',

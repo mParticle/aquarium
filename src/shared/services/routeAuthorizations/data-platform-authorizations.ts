@@ -14,8 +14,8 @@ export class DataPlatformAuthorizations extends BaseRoutesAuthorizations {
       [Paths.DataPlatform.EventForwarding]: this.canViewEventForwarding(),
       [Paths.DataPlatform.DataCatalog]: this.canViewDataCatalog(),
 
-      [Paths.DataPlatform.Setup.DataModels]: this.canViewDataModels(),
       [Paths.DataPlatform.Setup.Connections]: this.canViewConnections(),
+
       [Paths.DataPlatform.Setup.Root]: this.canViewSetup(),
       [Paths.DataPlatform.Setup.Inputs.Root]: this.canViewInputs(),
       [Paths.DataPlatform.Setup.Inputs.Feeds]: this.canViewInputs(),
@@ -71,10 +71,6 @@ export class DataPlatformAuthorizations extends BaseRoutesAuthorizations {
 
   private canViewEventForwarding(): boolean {
     return AuthorizationsService.isAuthorized(Operation.REPORT_LIST)
-  }
-
-  private canViewDataModels(): boolean {
-    return AuthorizationsService.isAuthorized(Operation.DATA_INGEST_VIEW)
   }
 
   private canViewConnections(): boolean {
