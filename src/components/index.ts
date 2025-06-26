@@ -147,3 +147,5 @@ export { Utils } from '../shared/Utils'
 export { RoutesAuthorizationsService } from '../shared/services/RoutesAuthorizationsService'
 export { InitializationService } from '../shared/services/InitializationService'
 export { NavigationItemsService, NavigationItemId } from '../shared/services/NavigationItemsService'
+
+export { Suite } from '../shared/Suite'
