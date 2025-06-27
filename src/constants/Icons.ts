@@ -32,6 +32,7 @@ import {
   FolderClosedIcon,
   ForwardingIcon,
   GearIcon,
+  GenericIcon,
   GridIcon,
   GroupIcon,
   HeartIcon,
@@ -315,6 +316,10 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: GearIcon,
     default: 'light',
     deprecated: 'settings',
+  },
+  generic: {
+    light: GenericIcon,
+    default: 'light',
   },
   grid: {
     light: GridIcon,
