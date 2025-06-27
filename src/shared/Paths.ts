@@ -69,7 +69,6 @@ export const Paths = {
     Trends: '/data-platform/trends',
     Setup: {
       Root: '/data-platform/setup',
-      DataModels: '/data-platform/setup/data-models',
       Connections: '/data-platform/setup/connections',
       Inputs: {
         Root: '/data-platform/setup/inputs',
@@ -109,6 +108,7 @@ export const Paths = {
   },
 
   [Suite.DataWarehouse]: {
+    Root: '/data-warehouse',
     WarehouseIngest: '/data-warehouse/warehouse-ingest',
     External: {
       Connections: '/data-warehouse/external/connections',
