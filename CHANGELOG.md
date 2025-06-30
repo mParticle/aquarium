@@ -1,3 +1,9 @@
+# [1.49.0](https://github.com/mParticle/aquarium/compare/v1.48.0...v1.49.0) (2025-06-30)
+
+### Features
+
+- generic icon ([#619](https://github.com/mParticle/aquarium/issues/619)) ([6d4fe01](https://github.com/mParticle/aquarium/commit/6d4fe01acc0cde76ec6d3991d84ba64efc0aa8ae))
+
 # [1.48.0](https://github.com/mParticle/aquarium/compare/v1.47.0...v1.48.0) (2025-06-24)
 
 ### Features
