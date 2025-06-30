@@ -42,7 +42,14 @@ export interface IGlobalNavigationLink extends IBaseGlobalNavigationItem {
 
 export type IGlobalNavigationItem = IGlobalNavigationMenu | IGlobalNavigationSubmenu | IGlobalNavigationLink
 
-export type SuiteLinks = 'oversight' | 'dataPlatform' | 'customer360' | 'predictions' | 'analytics' | 'segmentation'
+export type SuiteLinks =
+  | 'oversight'
+  | 'dataPlatform'
+  | 'dataWarehouse'
+  | 'customer360'
+  | 'predictions'
+  | 'analytics'
+  | 'segmentation'
 export type SuiteLink = {
   linkId: SuiteLinks
   href: string

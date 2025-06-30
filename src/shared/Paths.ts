@@ -107,6 +107,16 @@ export const Paths = {
     EventForwarding: '/data-platform/event-forwarding',
   },
 
+  [Suite.DataWarehouse]: {
+    Root: '/data-warehouse',
+    WarehouseIngest: '/data-warehouse/warehouse-ingest',
+    Activation: {
+      Connections: '/data-warehouse/activation/connections',
+      DataModels: '/data-warehouse/activation/data-models',
+    },
+    WarehouseOutput: '/data-warehouse/warehouse-output',
+  },
+
   [Suite.Customer360]: {
     Identity: {
       Root: '/customer-360/identity',
