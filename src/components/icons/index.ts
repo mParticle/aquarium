@@ -111,6 +111,7 @@ import SubmitFeedback from 'src/assets/svg/mp_act_lt_submit-feedback.svg?react'
 import Boost from 'src/assets/svg/mp_info_lt_boost.svg?react'
 import Clone from 'src/assets/svg/mp_act_lt_clone.svg?react'
 import Reorder from 'src/assets/svg/mp_act_lt_reorder.svg?react'
+import GenericIcon from 'src/assets/svg/mp_info_lt_generic.svg?react'
 
 export {
   AbSplit,
@@ -161,6 +162,7 @@ export {
   FullScreen,
   Funnel,
   GearIcon,
+  GenericIcon,
   GridIcon,
   GroupIcon,
   HeartIcon,

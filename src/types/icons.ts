@@ -62,6 +62,7 @@ export type IconNames =
   | 'fullScreen'
   | 'funnel'
   | 'gear'
+  | 'generic'
   | 'grid'
   | 'group'
   | 'heart'
