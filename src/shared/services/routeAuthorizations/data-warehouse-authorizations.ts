@@ -10,8 +10,8 @@ export class DataWarehouseAuthorizations extends BaseRoutesAuthorizations {
   protected getAuthorizations(): Record<string, boolean> {
     return {
       [Paths.DataWarehouse.WarehouseIngest]: this.canViewWarehouseIngest(),
-      [Paths.DataWarehouse.External.Connections]: this.canViewConnections(),
-      [Paths.DataWarehouse.External.DataModels]: this.canViewDataModels(),
+      [Paths.DataWarehouse.Activation.Connections]: this.canViewConnections(),
+      [Paths.DataWarehouse.Activation.DataModels]: this.canViewDataModels(),
       [Paths.DataWarehouse.WarehouseOutput]: this.canViewWarehouseOutput(),
     }
   }

@@ -110,9 +110,9 @@ export const Paths = {
   [Suite.DataWarehouse]: {
     Root: '/data-warehouse',
     WarehouseIngest: '/data-warehouse/warehouse-ingest',
-    External: {
-      Connections: '/data-warehouse/external/connections',
-      DataModels: '/data-warehouse/external/data-models',
+    Activation: {
+      Connections: '/data-warehouse/activation/connections',
+      DataModels: '/data-warehouse/activation/data-models',
     },
     WarehouseOutput: '/data-warehouse/warehouse-output',
   },
