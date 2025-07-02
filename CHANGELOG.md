@@ -1,3 +1,9 @@
+# [1.50.0](https://github.com/mParticle/aquarium/compare/v1.49.0...v1.50.0) (2025-07-02)
+
+### Features
+
+- refresh icon ([#620](https://github.com/mParticle/aquarium/issues/620)) ([d3074c7](https://github.com/mParticle/aquarium/commit/d3074c79adc1d505cbbc19587b8ed277ca07dee2))
+
 # [1.49.0](https://github.com/mParticle/aquarium/compare/v1.48.0...v1.49.0) (2025-06-30)
 
 ### Features
