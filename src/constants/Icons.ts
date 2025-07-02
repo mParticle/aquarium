@@ -115,6 +115,7 @@ import {
   Boost,
   Clone,
   Reorder,
+  RefreshIcon,
 } from 'src/components/icons'
 
 export const Icons: Record<IconNames, IconOptions> = {
@@ -648,6 +649,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   clone: {
     light: Clone,
+    default: 'light',
+  },
+  refresh: {
+    light: RefreshIcon,
     default: 'light',
   },
 } as const

@@ -141,3 +141,4 @@ export type IconNames =
   | 'boost'
   | 'clone'
   | 'reorder'
+  | 'refresh'
