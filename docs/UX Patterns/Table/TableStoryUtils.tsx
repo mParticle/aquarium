@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import { faker } from '@faker-js/faker'
 import { CopyOutlined } from '@ant-design/icons'
-import { type TableProps, Typography, Flex, Tooltip, Tag, Badge, Select } from 'src/components'
+import { type TableProps, Typography, Flex, Tooltip, Tag, Badge, Dropdown } from 'src/components'
 import { type ITagProps, type IBadgeProps, Icon } from 'src/components'
 import { ColorTextPlaceholder, ColorError, ColorSuccess } from 'src/styles/style'
 
@@ -130,30 +130,45 @@ export const tableColumns: TableProps<TableDataType>['columns'] = [
     title: 'Actions',
     dataIndex: 'actions',
     key: 'actions',
-    render: (): ReactNode => (
-      <Select
-        suffixIcon={<Icon name="moreActions" />}
-        variant="borderless"
-        dropdownStyle={{ width: '200px' }}
-        value={null}
-        options={[
-          { label: 'Option 1', value: 'option1' },
-          {
-            label: (
-              <Tooltip title="Explaining of why this is disabled" placement="right">
-                <span>Option 2</span>
-              </Tooltip>
-            ),
-            value: 'option2',
-            disabled: true,
+    align: 'center',
+    width: '90px',
+    render: (): ReactNode => {
+      const menuItems = {
+        menu: {
+          items: [
+            {
+              key: 'option1',
+              label: 'Option 1',
+            },
+            {
+              key: 'option2',
+              label: (
+                <Tooltip title="Explaining of why this is disabled" placement="right">
+                  <span>Option 2</span>
+                </Tooltip>
+              ),
+              disabled: true,
+            },
+            {
+              key: 'delete',
+              label: 'Delete',
+              danger: true,
+            },
+          ],
+          onClick: ({ key }: { key: string }) => {
+            console.log('Menu item clicked:', key)
           },
-          {
-            label: <span style={{ color: ColorError }}>Delete</span>,
-            value: 'option2',
-          },
-        ]}
-      />
-    ),
+        },
+      }
+
+      return (
+        <Dropdown {...menuItems} placement="bottom">
+          <a onClick={e => e.preventDefault()}>
+            <Icon name="moreActions" size="lg" color="default" />
+          </a>
+        </Dropdown>
+      )
+    },
   },
 ]
 
