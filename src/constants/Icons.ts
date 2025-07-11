@@ -4,7 +4,11 @@ import {
   AddIcon,
   AlicornIcon,
   RateDownIcon,
+  RateDownIconDt,
+  RateStarIcon,
+  RateStarIconDt,
   RateUpIcon,
+  RateUpIconDt,
   AnalyticsIcon,
   AnalyticsIconDt,
   C360Icon,
@@ -82,6 +86,7 @@ import {
   OverviewIconDt,
   FilterIcon,
   ActiveIcon,
+  AgentCopilotIcon,
   LinkIcon,
   InfoIcon,
   Placeholder,
@@ -130,6 +135,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   active: {
     light: ActiveIcon,
     default: 'light',
+  },
+  agentCopilot: {
+    'duo-tone': AgentCopilotIcon,
+    default: 'duo-tone',
   },
   add: {
     light: AddIcon,
@@ -494,10 +503,17 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   rateDown: {
     light: RateDownIcon,
+    'duo-tone': RateDownIconDt,
+    default: 'light',
+  },
+  rateStar: {
+    light: RateStarIcon,
+    'duo-tone': RateStarIconDt,
     default: 'light',
   },
   rateUp: {
     light: RateUpIcon,
+    'duo-tone': RateUpIconDt,
     default: 'light',
   },
   reorder: {

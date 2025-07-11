@@ -1,7 +1,11 @@
 import AddIcon from 'src/assets/svg/add.svg?react'
 import AlicornIcon from 'src/assets/svg/alicorn.svg?react'
 import RateDownIcon from 'src/assets/svg/rate_down.svg?react'
+import RateDownIconDt from 'src/assets/svg/mp_act_dt_rate-down.svg?react'
+import RateStarIcon from 'src/assets/svg/mp_act_lt_rate-star.svg?react'
+import RateStarIconDt from 'src/assets/svg/mp_act_dt_rate-star.svg?react'
 import RateUpIcon from 'src/assets/svg/rate_up.svg?react'
+import RateUpIconDt from 'src/assets/svg/mp_act_dt_rate-up.svg?react'
 import AnalyticsIcon from 'src/assets/svg/mp_pm_lt_analytcis.svg?react'
 import AnalyticsIconDt from 'src/assets/svg/mp_pm_dt_analytics.svg?react'
 import C360Icon from 'src/assets/svg/mp_pm_lt_c360.svg?react'
@@ -78,6 +82,7 @@ import OverviewIcon from 'src/assets/svg/mp_pm_lt_overview.svg?react'
 import OverviewIconDt from 'src/assets/svg/mp_pm_dt_overview.svg?react'
 import FilterIcon from 'src/assets/svg/mp_act_lt_filter.svg?react'
 import ActiveIcon from 'src/assets/svg/mp_info_lt_active.svg?react'
+import AgentCopilotIcon from 'src/assets/svg/mp_info_dt_agent-copilot.svg?react'
 import LinkIcon from 'src/assets/svg/mp_info_link.svg?react'
 import InfoIcon from 'src/assets/svg/mp_info_lt_info.svg?react'
 import Placeholder from 'src/assets/svg/mp_info_lt_placeholder.svg?react'
@@ -118,10 +123,15 @@ export {
   AbSplit,
   Account,
   ActiveIcon,
+  AgentCopilotIcon,
   AddIcon,
   AlicornIcon,
   RateDownIcon,
+  RateDownIconDt,
+  RateStarIcon,
+  RateStarIconDt,
   RateUpIcon,
+  RateUpIconDt,
   AnalyticsIcon,
   AnalyticsIconDt,
   Annotation,
