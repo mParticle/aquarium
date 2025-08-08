@@ -21,6 +21,7 @@ export type IconNames =
   | 'agentCopilot'
   | 'add'
   | 'alicorn'
+  | 'audienceGroup'
   | 'analytics'
   | 'annotation'
   | 'api'

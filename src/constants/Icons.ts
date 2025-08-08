@@ -87,6 +87,7 @@ import {
   FilterIcon,
   ActiveIcon,
   AgentCopilotIcon,
+  AudienceGroupIcon,
   LinkIcon,
   InfoIcon,
   Placeholder,
@@ -168,6 +169,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   audiences: {
     light: UsersIcon,
+    default: 'light',
+  },
+  audienceGroup: {
+    light: AudienceGroupIcon,
     default: 'light',
   },
   C360: {

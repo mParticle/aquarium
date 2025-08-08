@@ -83,6 +83,7 @@ import OverviewIconDt from 'src/assets/svg/mp_pm_dt_overview.svg?react'
 import FilterIcon from 'src/assets/svg/mp_act_lt_filter.svg?react'
 import ActiveIcon from 'src/assets/svg/mp_info_lt_active.svg?react'
 import AgentCopilotIcon from 'src/assets/svg/mp_info_dt_agent-copilot.svg?react'
+import AudienceGroupIcon from 'src/assets/svg/mp_info_lt_audience-group.svg?react'
 import LinkIcon from 'src/assets/svg/mp_info_link.svg?react'
 import InfoIcon from 'src/assets/svg/mp_info_lt_info.svg?react'
 import Placeholder from 'src/assets/svg/mp_info_lt_placeholder.svg?react'
@@ -125,6 +126,7 @@ export {
   ActiveIcon,
   AgentCopilotIcon,
   AddIcon,
+  AudienceGroupIcon,
   AlicornIcon,
   RateDownIcon,
   RateDownIconDt,
