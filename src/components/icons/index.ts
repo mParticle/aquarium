@@ -1,3 +1,4 @@
+import AcceptIcon from 'src/assets/svg/mp_act_lt_accept.svg?react'
 import AddIcon from 'src/assets/svg/add.svg?react'
 import AlicornIcon from 'src/assets/svg/alicorn.svg?react'
 import RateDownIcon from 'src/assets/svg/rate_down.svg?react'
@@ -121,6 +122,7 @@ import RefreshIcon from 'src/assets/svg/refresh.svg?react'
 
 export {
   AbSplit,
+  AcceptIcon,
   Account,
   ActiveIcon,
   AgentCopilotIcon,

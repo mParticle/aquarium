@@ -1,6 +1,7 @@
 import { type IconOptions, type IconNames } from 'src/types/icons'
 
 import {
+  AcceptIcon,
   AddIcon,
   AlicornIcon,
   RateDownIcon,
@@ -126,6 +127,10 @@ import {
 export const Icons: Record<IconNames, IconOptions> = {
   abSplit: {
     light: AbSplit,
+    default: 'light',
+  },
+  accept: {
+    light: AcceptIcon,
     default: 'light',
   },
   account: {
