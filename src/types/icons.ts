@@ -16,6 +16,7 @@ export type IconOptions = RequireAtLeastOne<
 
 export type IconNames =
   | 'abSplit'
+  | 'accept'
   | 'account'
   | 'active'
   | 'agentCopilot'
