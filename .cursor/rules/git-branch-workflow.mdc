@@ -1,0 +1,157 @@
+# Git Branch Workflow and Naming Conventions
+
+## 🎯 For Claude: Always Start New Work with Proper Branch Setup
+
+**When someone asks to make ANY change to the aquarium project, ALWAYS:**
+
+1. **Ask about their technical comfort level first**
+2. **Set up a proper git branch before making any changes**
+3. **Use conventional naming based on the type of change**
+
+---
+
+## 🌿 Branch Creation Workflow
+
+### Step 1: Get to Clean State
+```bash
+# Switch to main branch
+git checkout main
+
+# Pull latest changes
+git pull origin main
+```
+
+### Step 2: Create New Branch with Conventional Name
+```bash
+git checkout -b [type]/[description]
+```
+
+---
+
+## 📋 Branch Naming Conventions
+
+### Format: `[type]/[description-in-kebab-case]`
+
+| Type | When to Use | Examples |
+|------|-------------|----------|
+| **`feat/`** | New features, components, or major functionality | `feat/user-dashboard`<br>`feat/new-table-component`<br>`feat/advanced-search` |
+| **`fix/`** | Bug fixes, corrections, broken functionality | `fix/button-hover-state`<br>`fix/table-sorting-issue`<br>`fix/mobile-layout-bug` |
+| **`docs/`** | Documentation updates, copy changes, README updates | `docs/update-installation-guide`<br>`docs/fix-api-examples`<br>`docs/add-component-usage` |
+| **`chore/`** | Maintenance, icons, dependencies, cleanup | `chore/add-shopping-cart-icon`<br>`chore/update-dependencies`<br>`chore/cleanup-unused-files` |
+
+### Description Guidelines:
+- Use **kebab-case** (lowercase with hyphens)
+- Be **descriptive but concise**
+- Focus on **what** you're doing, not **how**
+- Avoid generic names like `fix/bug` or `feat/new-stuff`
+
+---
+
+## 🤖 For Claude: How to Handle Branch Creation
+
+### Always Ask First:
+```
+"Before we start, I need to set up a proper git branch for this change.
+Let me pull the latest changes and create a branch with the right naming convention."
+```
+
+### Determine Branch Type:
+**Ask yourself:** What type of change is this?
+
+- **Copy/text changes, typos, documentation** → `docs/`
+- **Broken functionality, bugs, errors** → `fix/`
+- **New components, features, major additions** → `feat/`
+- **Icons, dependencies, maintenance, cleanup** → `chore/`
+
+### Create Descriptive Names:
+**Good examples:**
+- `docs/fix-installation-typo`
+- `docs/update-button-examples`
+- `fix/table-header-alignment`
+- `feat/add-user-profile-section`
+- `chore/add-delete-icon`
+
+**Bad examples:**
+- `fix/bug` (too generic)
+- `docs/changes` (not descriptive)
+- `feat/new-thing` (unclear)
+- `update/stuff` (wrong type and unclear)
+
+### For Non-Technical Users:
+```
+"I'm setting up a git branch for your changes. This keeps your work
+separate from the main code until it's ready. I'll call it
+'docs/fix-installation-typo' - this follows the project's naming
+conventions and describes what we're doing."
+```
+
+### For Technical Users:
+```
+"Let's create a proper branch for this. Based on your description,
+this looks like a [docs/fix/feat/chore] change, so I'd suggest:
+git checkout -b [type]/[suggested-name]
+
+Does that naming look good to you?"
+```
+
+---
+
+## 🔄 Complete Workflow Example
+
+### Example: User wants to fix a typo in the README
+
+**Claude's approach:**
+1. **Identify type:** Documentation change → `docs/`
+2. **Create descriptive name:** `docs/fix-readme-typo`
+3. **Execute workflow:**
+   ```bash
+   git checkout main
+   git pull origin main
+   git checkout -b docs/fix-readme-typo
+   ```
+4. **Explain to user:** "I've created a branch called 'docs/fix-readme-typo' for this change"
+
+### Example: User wants to add a new icon
+
+**Claude's approach:**
+1. **Identify type:** Maintenance/icon → `chore/`
+2. **Create descriptive name:** `chore/add-shopping-cart-icon`
+3. **Execute workflow:**
+   ```bash
+   git checkout main
+   git pull origin main
+   git checkout -b chore/add-shopping-cart-icon
+   ```
+
+---
+
+## ⚠️ Important Rules
+
+### Always Do This:
+- ✅ Pull latest changes before creating branch
+- ✅ Use conventional naming (feat/fix/docs/chore)
+- ✅ Use kebab-case for descriptions
+- ✅ Make branch names descriptive
+- ✅ Explain what you're doing to non-technical users
+
+### Never Do This:
+- ❌ Start work without creating a branch
+- ❌ Work directly on main branch
+- ❌ Use generic branch names
+- ❌ Skip pulling latest changes
+- ❌ Use spaces or special characters in branch names
+
+---
+
+## 🎯 Quick Reference for Claude
+
+**When someone asks to make changes:**
+
+1. **"Let me set up a proper git branch for this change..."**
+2. **Determine type:** docs/fix/feat/chore
+3. **Create descriptive name:** `[type]/[what-they-want-to-do]`
+4. **Execute:** checkout main → pull → create branch
+5. **Explain:** Tell them what branch you created and why
+6. **Then proceed** with their actual request
+
+This ensures every contribution follows proper git workflow and naming conventions!

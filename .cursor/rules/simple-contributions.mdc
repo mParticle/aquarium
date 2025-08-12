@@ -1,0 +1,156 @@
+# Simple Contributions to Aquarium
+
+## 🎯 Choose Your Workflow Based on Comfort Level
+
+**When someone asks for help with ANY contribution, always ask first:**
+
+```
+"I'd be happy to help you with that! First, let me understand your comfort level:
+
+Are you:
+A) New to coding/git and prefer step-by-step guidance?
+B) Comfortable with development and want to work more independently?
+C) Not sure - just want the easiest approach?
+
+This helps me provide the right level of support for your [copy change/icon addition/bug fix/etc.]."
+```
+
+---
+
+## 🤖 Guided AI Workflow (Recommended for Non-Technical Users)
+
+**Perfect for:**
+- Copy/text changes in documentation
+- Fixing typos or updating content
+- Adding simple content
+- Small UI text updates
+- Any change that doesn't require deep technical knowledge
+
+**Just tell Claude:**
+```
+"I need to [fix a typo/update some text/change documentation] in the aquarium project.
+I'm not very technical. Can you help me?"
+```
+
+**Claude will automatically:**
+1. Ask about your comfort level and what you want to change
+2. Set up proper git branch with conventional naming
+3. Help you locate the right files
+4. Make the changes for you (or guide you through them)
+5. Verify everything looks correct
+6. Create proper commit messages following project conventions
+7. Push the branch to GitHub
+8. Guide you through creating a Pull Request
+
+**You just need to:**
+- Describe what you want to change
+- Point out the specific text or location
+- Review the changes to make sure they're correct
+
+---
+
+## 🛠️ Manual Technical Workflow (For Experienced Developers)
+
+### Git Setup
+```bash
+# Choose appropriate branch type:
+git checkout main
+git pull origin main
+
+# For copy/content changes:
+git checkout -b docs/update-[description]
+
+# For bug fixes:
+git checkout -b fix/[description]
+
+# For new features:
+git checkout -b feat/[description]
+
+# For maintenance (icons, deps, etc.):
+git checkout -b chore/[description]
+```
+
+### Make Your Changes
+- Edit the relevant files
+- Test your changes locally if needed
+- Follow project conventions
+
+### Commit and Push
+```bash
+git add .
+git commit -m "docs: update installation instructions"
+# or
+git commit -m "fix: correct typo in button component"
+# or
+git commit -m "feat: add new user dashboard section"
+
+git push origin [your-branch-name]
+```
+
+---
+
+## 🎯 For Claude: Handling Different Request Types
+
+### Copy/Text Changes (Most Common for Non-Technical Users)
+**Examples:** "Fix typo in README", "Update installation docs", "Change button text"
+
+**Approach:**
+1. Ask comfort level first
+2. For non-technical: Handle all git operations automatically
+3. Help locate the exact file and text to change
+4. Make the change or guide them through it
+5. Show before/after comparison
+6. Handle commit with proper conventional message format
+
+### Icon Additions
+**Examples:** "Add shopping cart icon", "Need new user profile icon"
+
+**Approach:**
+1. Ask comfort level first
+2. For non-technical: Handle full workflow including prettifier setup
+3. Guide through SVG upload and processing
+4. Handle all file updates (types, constants, exports)
+5. Verify icon appears in Storybook
+
+### Bug Fixes
+**Examples:** "Button doesn't work", "Component looks wrong"
+
+**Approach:**
+1. Ask comfort level first
+2. Help identify the issue and locate relevant files
+3. For non-technical: Make fixes and explain what was wrong
+4. Test the fix if possible
+5. Use `fix/` branch naming
+
+### Small Feature Additions
+**Examples:** "Add new prop to component", "Add simple functionality"
+
+**Approach:**
+1. Ask comfort level first
+2. Assess if it's truly simple or needs more planning
+3. For non-technical: Handle implementation details
+4. Use `feat/` branch naming
+
+---
+
+## 🔧 Key Principles for All Contributions
+
+**Always:**
+- Use conventional branch naming (`feat/`, `fix/`, `docs/`, `chore/`)
+- Create proper conventional commit messages
+- Pull latest changes before creating branch
+- Guide through PR creation process
+- Verify changes work as expected
+
+**For non-technical users:**
+- Take full control of git operations
+- Explain what you're doing in simple terms
+- Show before/after comparisons
+- Verify their intent before making changes
+- Make the process feel safe and guided
+
+**For technical users:**
+- Provide project-specific guidance
+- Focus on conventions and best practices
+- Let them execute commands but verify approach
+- Offer suggestions rather than taking control
