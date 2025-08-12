@@ -2,6 +2,16 @@
 
 Thanks for contributing! Please read this document to follow our conventions for contributing to the mParticle Aquarium Library.
 
+## Quick Start: Making Any Change
+
+**Before you start coding**, use the Cursor rule `@contribution-workflow.mdc` to get guided through:
+
+- ✅ Proper git branch setup and naming
+- ✅ Conventional commit messages
+- ✅ Pull request creation process
+
+This ensures consistency across all contributions and saves time on reviews!
+
 ## Setting Up
 
 - Clone the repository and run `npm install`
@@ -36,7 +46,7 @@ just run the Github Action from the the branch you want to release.
 
 We use semantic-release for releasing new versions of the library. You can use the Github Release Aquarium action from the `main` to release from it.
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > Before releasing a version from main, send a message in the #aquarium Slack channel to align it and sync on other changes that can/should be included in the release.
 
 ## Commit conventions and PR titles

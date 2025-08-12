@@ -6,15 +6,22 @@
 
 The Design team provides SVG files with the final icon names. These SVG files must be minified and follow the project's styling guidelines. You can prettify them using the SVGPrettifier tool, which ensures the correct size and properties are applied to the SVG.
 
+### Quick Start: Adding a New Icon
 
-### Steps to Add a New Icon:
+**Use the Cursor rule `@add-new-icon.mdc` for step-by-step guidance!** This rule will:
+- Walk you through the complete process
+- Start the required servers (icons-prettifier and storybook)
+- Guide you through each file update in the correct order
+- Help you verify the icon works properly
+
+### Manual Steps to Add a New Icon:
 
 1. **Ensure name of icon follows the desired principles**:
   <details>
     <summary style={{ fontFamily: "'Nunito Sans', sans-serif" }}>Here's the naming principles all icons should follow</summary>
-  
+
     Names should be semantic, describing the pattern rather than the shape. For instance, "mp_act_lt_delete" describes an action icon in light style for deletion. Even though it may look like a "trash" icon, the name reflects the specific action (delete) rather than the object (trash).  Multiple icons may have the same shape but different names based on semantic meaning.
-  
+
     - Prefix: "mp"
     - Category (abbreviated):
     - act (UI Actions)
@@ -28,17 +35,17 @@ The Design team provides SVG files with the final icon names. These SVG files mu
     - Semantic description
   </details>
 
-2. **Ensure the icon svg structure is correct by using the Prettify tool**:  
-Use the [SVGPrettifier Story](?path=/docs/components-other-svgprettifier--documentation) to clean up the SVG file and ensure it meets the necessary formatting standards (size, properties, etc). 
+2. **Ensure the icon svg structure is correct by using the Prettify tool**:
+Use the [SVGPrettifier Story](?path=/docs/components-other-svgprettifier--documentation) to clean up the SVG file and ensure it meets the necessary formatting standards (size, properties, etc).
 The [SVGPrettifier](https://mparticle.github.io/aquarium/?path=/docs/components-other-svgprettifier--documentation) component is used to upload and prettify SVG files. Each SVG must follow the project's styling guidelines and have a unique name to avoid overwriting existing icons.
 
-3. **Update the Icon Type**:  
+3. **Update the Icon Type**:
 Add the new icon name to the TypeScript type definition in the [src/types/icons](https://github.com/mParticle/aquarium/blob/3abc3b71916ab5a7db3c4f93e06ad2bd5845e1bf/src/types/icons.ts) file.
 
-4. **Update Icon Components**:  
+4. **Update Icon Components**:
 Add the icon components in the [src/components/icons](https://github.com/mParticle/aquarium/blob/3abc3b71916ab5a7db3c4f93e06ad2bd5845e1bf/src/components/icons/index.ts) directory, where all icon components are stored.
 
-5. **Update the Icons Object**:  
+5. **Update the Icons Object**:
 Ensure the new icons are included in the Icons object located in [src/constants/Icons](https://github.com/mParticle/aquarium/blob/3abc3b71916ab5a7db3c4f93e06ad2bd5845e1bf/src/constants/Icons.ts). This object is used across the project to reference all available icons.
 
 
@@ -53,10 +60,10 @@ Ensure the new icons are included in the Icons object located in [src/constants/
 
 ### FAQ
 
-**Q:** What if an icon in Figma has a FontAwesome name or doesn't follow the standard naming format? Should I name it myself?  
+**Q:** What if an icon in Figma has a FontAwesome name or doesn't follow the standard naming format? Should I name it myself?
 **A:** Please contact the design team. They'll provide the correct name and make sure the icon is properly reflected in the design library.
 
-**Q:** When do we use mParticle custom icons instead of default Ant Design (AntD) icons?  
+**Q:** When do we use mParticle custom icons instead of default Ant Design (AntD) icons?
 **A:** In our design system Eames, Ant Design (AntD) icons are the primary choice across components. However, custom mParticle icons are used in the following scenarios:
 - When the design team explicitly requests a customized icon.
 - When the AntD library does not offer a suitable icon for a specific use case.

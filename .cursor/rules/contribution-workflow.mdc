@@ -6,7 +6,7 @@
 
 ### 1. Ask Comfort Level First
 ```
-"I'd be happy to help with that! Are you comfortable with git/development, 
+"I'd be happy to help with that! Are you comfortable with git/development,
 or would you prefer I handle the technical parts for you?"
 ```
 
@@ -17,11 +17,18 @@ git pull origin main
 git checkout -b [type]/[description]
 ```
 
-### 3. Choose Branch Type
-- **`docs/`** - Copy changes, typos, documentation updates
-- **`fix/`** - Bug fixes, broken functionality  
+### 3. Choose Branch Type (Must Start With One Of These)
 - **`feat/`** - New features, components, major additions
-- **`chore/`** - Icons, dependencies, maintenance, cleanup
+- **`ci/`** - CI/CD pipeline changes, build automation
+- **`fix/`** - Bug fixes, broken functionality
+- **`docs/`** - Copy changes, typos, documentation updates
+- **`test/`** - Adding or updating tests
+- **`refactor/`** - Code refactoring without changing functionality
+- **`style/`** - Code formatting, styling changes
+- **`build/`** - Build system changes, dependencies
+- **`chore/`** - Icons, maintenance, cleanup tasks
+- **`revert/`** - Reverting previous changes
+- **`dependabot/`** - Automated dependency updates
 
 ### 4. Make Descriptive Branch Names
 - Use kebab-case: `docs/fix-readme-typo`
@@ -39,7 +46,7 @@ git checkout -b [type]/[description]
 - **Show before/after** of changes
 - **Create proper commits** and push for them
 
-### For Technical Users:  
+### For Technical Users:
 - **Provide guidance** on project conventions
 - **Let them execute** commands
 - **Focus on** branch naming and commit message format
@@ -49,13 +56,16 @@ git checkout -b [type]/[description]
 
 ## 📋 Common Scenarios
 
-| User Says | Branch Type | Example Branch Name |
-|-----------|-------------|-------------------|
-| "Fix this typo" | `docs/` | `docs/fix-installation-typo` |
-| "Change button text" | `docs/` | `docs/update-button-copy` |
-| "Add new icon" | `chore/` | `chore/add-user-icon` |
-| "Button is broken" | `fix/` | `fix/button-hover-state` |
-| "Add new component" | `feat/` | `feat/user-dashboard` |
+| User Says | Branch Type | Example Branch Name | Commit Message |
+|-----------|-------------|-------------------|----------------|
+| "Fix this typo" | `docs/` | `docs/fix-installation-typo` | `docs: fix typo` |
+| "Change button text" | `docs/` | `docs/update-button-copy` | `docs: update button copy` |
+| "Add new icon" | `chore/` | `chore/add-user-icon` | `chore: add user icon` |
+| "Button is broken" | `fix/` | `fix/button-hover-state` | `fix: button hover state` |
+| "Add new component" | `feat/` | `feat/user-dashboard` | `feat: add user dashboard` |
+| "Update tests" | `test/` | `test/add-login-tests` | `test: add login tests` |
+| "Refactor utils" | `refactor/` | `refactor/clean-utils` | `refactor: clean utils` |
+| "Fix CSS spacing" | `style/` | `style/fix-button-spacing` | `style: fix button spacing` |
 
 ---
 
@@ -65,7 +75,7 @@ git checkout -b [type]/[description]
 2. **Create proper branch** - Never work on main
 3. **Use conventional naming** - Follow the type/description format
 4. **Pull latest first** - Always start from up-to-date main
-5. **Commit with conventional messages** - `type: description`
+5. **Commit with short, clear messages** - `type: short description` (under 7-8 words)
 6. **Push and guide PR creation** - Help them finish the process
 
 ---
@@ -78,7 +88,7 @@ git checkout -b [type]/[description]
 1. "Are you comfortable with git, or should I handle the technical parts?"
 2. Creates branch: `docs/fix-readme-typo`
 3. Finds and fixes the typo
-4. Commits: `docs: fix typo in README installation section`
+4. Commits: `docs: fix README typo`
 5. Pushes and provides PR link
 
 **That's it! Simple and consistent every time.**
