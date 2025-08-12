@@ -1,0 +1,36 @@
+import { Meta, Story } from '@storybook/blocks';
+
+import * as DeleteConfirmStories from './DeleteConfirm.stories';
+
+<Meta of={DeleteConfirmStories} />
+
+# Delete Confirm
+
+#### Overview
+
+A delete confirmation prompts users to confirm before performing destructive actions—especially those that are irreversible. These actions often affect systems or downstream processes and require deliberate confirmation. It typically appears in a modal with:
+
+- A clear warning
+- Details about what's being deleted
+- Options to confirm or cancel
+
+This pattern is triggered from the [More actions menu](?path=/story/components-feedback-modal-delete-confirm--ux-flow) in a table row or a card.
+
+### When to Use
+
+Use a delete confirmation when the action has significant impact or cannot be undone, such as:
+
+- Deleting a connection
+- Removing an audience
+- Deleting a data plan
+
+### When to Avoid
+
+Avoid confirmations for low-risk or easily reversible actions, where added friction slows the user down. Examples include:
+
+- Removing criteria from an audience
+- Clearing temporary filters or tags
+
+
+
+
