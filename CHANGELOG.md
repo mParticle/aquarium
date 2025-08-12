@@ -1,3 +1,9 @@
+# [1.51.0](https://github.com/mParticle/aquarium/compare/v1.50.1...v1.51.0) (2025-08-12)
+
+### Features
+
+- add delete confirm modal ([#627](https://github.com/mParticle/aquarium/issues/627)) ([8c81313](https://github.com/mParticle/aquarium/commit/8c81313850b5b69478cd2b8cdc327a121497ea80))
+
 ## [1.50.1](https://github.com/mParticle/aquarium/compare/v1.50.0...v1.50.1) (2025-07-14)
 
 # [1.50.0](https://github.com/mParticle/aquarium/compare/v1.49.0...v1.50.0) (2025-07-02)
