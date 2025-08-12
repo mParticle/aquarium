@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Modal, Button, Dropdown, Icon, Table, message } from 'src/components'
 import { type Meta, type StoryObj } from '@storybook/react'
+import { FontWeightStrong, ColorErrorText, Margin } from 'src/styles/style'
 
 const meta: Meta = {
   title: 'Components/Feedback/Modal/Delete Confirm',
@@ -134,15 +135,15 @@ const DeleteConfirmTemplate = () => {
         ]}>
         <div>
           <p>
-            This action will permanently delete{' '}
-            <span style={{ fontWeight: 'var(--font-weight-strong)' }}>Item Name</span> and all associated data. If this
-            item is currently being used in other areas of the system, those connections will be removed.
+            This action will permanently delete <span style={{ fontWeight: FontWeightStrong }}>Item Name</span> and all
+            associated data. If this item is currently being used in other areas of the system, those connections will
+            be removed.
           </p>
 
           <p
             style={{
-              color: 'var(--color-error-text)',
-              marginTop: '1rem',
+              color: ColorErrorText,
+              marginTop: Margin,
             }}>
             This action can&apos;t be undone.
           </p>
@@ -193,15 +194,15 @@ const SimpleDeleteConfirmTemplate = () => {
         ]}>
         <div>
           <p>
-            This action will permanently delete{' '}
-            <span style={{ fontWeight: 'var(--font-weight-strong)' }}>Item Name</span> and all associated data. If this
-            item is currently being used in other areas of the system, those connections will be removed.
+            This action will permanently delete <span style={{ fontWeight: FontWeightStrong }}>Item Name</span> and all
+            associated data. If this item is currently being used in other areas of the system, those connections will
+            be removed.
           </p>
 
           <p
             style={{
-              color: 'var(--color-error-text)',
-              marginTop: '1rem',
+              color: ColorErrorText,
+              marginTop: Margin,
             }}>
             This action can&apos;t be undone.
           </p>
