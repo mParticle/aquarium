@@ -54,7 +54,7 @@ export {
   type ColumnType,
   type TableProps,
 } from './data-display/Table/Table'
-export { Empty, type IEmptyProps } from './data-display/Empty/Empty'
+export { Empty, type IEmptyProps, type EmptyState } from './data-display/Empty/Empty'
 export { Popover, type IPopoverProps } from './data-display/Popover/Popover'
 export { List, type IListProps } from './data-display/List/List'
 export { Progress, type IProgressProps } from './feedback/Progress/Progress'

@@ -4,6 +4,11 @@ import { ConfigProvider } from 'src/components'
 
 export interface IResultProps extends AntResultProps {}
 
+/**
+ * @deprecated The Result component should not be used without design team permission.
+ * Please refer to the Empty component documentation for approved empty/error states.
+ * See: Components/Data Display/Empty
+ */
 export const Result = (props: IResultProps) => {
   return (
     <ConfigProvider>
