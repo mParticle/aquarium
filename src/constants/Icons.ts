@@ -72,6 +72,7 @@ import {
   ZoomIn,
   ZoomOut,
   OpenTabIcon,
+  OtherIcon,
   ConversionIcon,
   PremiumIcon,
   NextIcon,
@@ -451,6 +452,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   organization: {
     light: Organization,
+    default: 'light',
+  },
+  other: {
+    light: OtherIcon,
     default: 'light',
   },
   oversight: {

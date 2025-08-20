@@ -119,6 +119,7 @@ import Boost from 'src/assets/svg/mp_info_lt_boost.svg?react'
 import Clone from 'src/assets/svg/mp_act_lt_clone.svg?react'
 import Reorder from 'src/assets/svg/mp_act_lt_reorder.svg?react'
 import GenericIcon from 'src/assets/svg/mp_info_lt_generic.svg?react'
+import OtherIcon from 'src/assets/svg/mp_info_lt_other.svg?react'
 import RefreshIcon from 'src/assets/svg/refresh.svg?react'
 
 export {
@@ -201,6 +202,7 @@ export {
   ObservabilityIcon,
   OpenTabIcon,
   Organization,
+  OtherIcon,
   OversightIcon,
   OversightIconDt,
   OverviewIcon,
