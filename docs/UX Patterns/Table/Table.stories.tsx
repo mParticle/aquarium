@@ -20,7 +20,7 @@ import {
 } from 'src/components'
 import { DatePickerWithDisabledYears } from 'src/components/data-entry/DatePicker/DatePicker.stories'
 import { tableColumns, tableData, type TableDataType } from './TableStoryUtils'
-import { SelectWithRangePicker } from 'docs/Candidate Components/Directory/Date Range Filter/SelectWithRangePicker'
+import { SelectWithRangePicker } from 'docs/components/Data Entry/Date Picker/SelectWithRangePicker'
 import { useState } from 'react'
 import { ColorTextDescription } from 'src/styles/style'
 import { faker } from '@faker-js/faker'

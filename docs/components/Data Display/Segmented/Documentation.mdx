@@ -4,12 +4,30 @@ import * as SegmentedStories from '../../../../src/components/data-display/Segme
 
 <Meta of={SegmentedStories} />
 
-{/* Documentation goes here */}
-
 # Segmented
 
-This is the documentation for the Segmenteds component
+#### Overview
 
-{/* Documentation goes here */}
+The **Segmented** component is a compact switch that lets users pick one mode at a time.
 
-<Canvas meta={SegmentedStories.default} />
+#### When to use
+
+Use **Segmented** for switching between a small set of related modes, such as:
+
+- Cards vs. list view
+- Criteria vs. code mode  
+- Edit vs. code mode
+
+#### When to avoid
+
+- There are many modes
+- A toggle or checkbox is enough
+- For displaying multiple options (e.g., days of the week)
+
+<Canvas of={SegmentedStories.CodeExample} />
+
+#### Related Links
+
+| Type  | Resource                                                                                                                                               |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| AntD  | [Segmented Component](https://ant.design/components/segmented) |

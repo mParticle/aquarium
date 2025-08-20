@@ -4,7 +4,7 @@ import { fn } from '@storybook/test'
 import { useArgs } from '@storybook/preview-api'
 
 const meta: Meta<typeof Component> = {
-  title: 'Candidate Components/Directory/Date Range Filter',
+  title: 'Components/Data Entry/Date Picker/Date Range Filter',
   component: Component,
 }
 export default meta
