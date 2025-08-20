@@ -12,8 +12,8 @@ export interface IEmptyProps extends Omit<AntEmptyProps, 'description'> {
   state?: EmptyState
   /** Title text - will be rendered with proper Typography */
   title?: string
-  /** Description text - will be rendered with proper Typography */
-  description?: string
+  /** Description text - will be rendered with proper Typography, or JSX for custom content (legacy) */
+  description?: string | React.ReactNode
   /** Button configuration - legacy single button support */
   button?: {
     text: string
@@ -91,7 +91,12 @@ export const Empty = (props: IEmptyProps) => {
       <Flex vertical gap={16} align="center" style={{ marginTop: Margin }}>
         <Space direction="vertical" size={2}>
           {title && <Typography.Text size="lg">{title}</Typography.Text>}
-          {description && <Typography.Text color="ColorTextDescription">{description}</Typography.Text>}
+          {description &&
+            (typeof description === 'string' ? (
+              <Typography.Text color="ColorTextDescription">{description}</Typography.Text>
+            ) : (
+              description
+            ))}
         </Space>
 
         {renderButtons()}
