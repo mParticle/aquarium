@@ -93,6 +93,7 @@ export type IconNames =
   | 'observability'
   | 'openTab'
   | 'organization'
+  | 'other'
   | 'oversight'
   | 'overview'
   | 'paywall'
