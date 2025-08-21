@@ -9,10 +9,9 @@ export class DataWarehouseAuthorizations extends BaseRoutesAuthorizations {
 
   protected getAuthorizations(): Record<string, boolean> {
     return {
-      [Paths.DataWarehouse.WarehouseIngest]: this.canViewWarehouseIngest(),
-      [Paths.DataWarehouse.Activation.Connections]: this.canViewConnections(),
-      [Paths.DataWarehouse.Activation.DataModels]: this.canViewDataModels(),
-      [Paths.DataWarehouse.WarehouseOutput]: this.canViewWarehouseOutput(),
+      [Paths.DataWarehouse.Connections]: this.canViewConnections(),
+      [Paths.DataWarehouse.DataModels]: this.canViewDataModels(),
+      [Paths.DataWarehouse.Pipelines]: this.canViewPipelines(),
     }
   }
 
@@ -25,10 +24,6 @@ export class DataWarehouseAuthorizations extends BaseRoutesAuthorizations {
     )
   }
 
-  private canViewWarehouseIngest(): boolean {
-    return this.canViewDataWarehouse() && AuthorizationsService.isAuthorized(Operation.DATA_INGEST_VIEW)
-  }
-
   private canViewConnections(): boolean {
     return this.canViewDataWarehouse() && AuthorizationsService.isAuthorized(Operation.DATA_INGEST_VIEW)
   }
@@ -37,7 +32,7 @@ export class DataWarehouseAuthorizations extends BaseRoutesAuthorizations {
     return this.canViewDataWarehouse() && AuthorizationsService.isAuthorized(Operation.DATA_INGEST_VIEW)
   }
 
-  private canViewWarehouseOutput(): boolean {
+  private canViewPipelines(): boolean {
     return this.canViewDataWarehouse() && AuthorizationsService.isAuthorized(Operation.DATA_INGEST_VIEW)
   }
 }

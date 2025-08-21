@@ -109,12 +109,9 @@ export const Paths = {
 
   [Suite.DataWarehouse]: {
     Root: '/data-warehouse',
-    WarehouseIngest: '/data-warehouse/warehouse-ingest',
-    Activation: {
-      Connections: '/data-warehouse/activation/connections',
-      DataModels: '/data-warehouse/activation/data-models',
-    },
-    WarehouseOutput: '/data-warehouse/warehouse-output',
+    Connections: '/data-warehouse/activation/connections',
+    DataModels: '/data-warehouse/activation/data-models',
+    Pipelines: '/data-warehouse/activation/pipelines',
   },
 
   [Suite.Customer360]: {
