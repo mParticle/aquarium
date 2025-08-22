@@ -27,6 +27,7 @@ import DevicesIcon from 'src/assets/svg/mp_pm_lt_devices.svg?react'
 import DragAndDropIcon from 'src/assets/svg/mp_act_lt_dragandrop.svg?react'
 import DsrIcon from 'src/assets/svg/mp_pm_lt_dsr.svg?react'
 import EmptyIcon from 'src/assets/svg/empty.svg?react'
+import StateError from 'src/assets/svg/mp_info_lt_empty-error.svg?react'
 import EnrichmentIcon from 'src/assets/svg/mp_pm_lt_enrichment.svg?react'
 import EventAttributeIcon from 'src/assets/svg/event-attribute.svg?react'
 import EventIcon from 'src/assets/svg/event.svg?react'
@@ -110,7 +111,6 @@ import MoreActions from 'src/assets/svg/mp_act_lt_more-actions.svg?react'
 import AbSplit from 'src/assets/svg/mp_info_lt_ab-split.svg?react'
 import BannerFreemium from 'src/assets/svg/mp_info_dt_sampled.svg?react'
 import StateEmpty from 'src/assets/svg/mp_info_lt_state-empty.svg?react'
-import StateError from 'src/assets/svg/mp_info_lt_state-error.svg?react'
 import StateNoResults from 'src/assets/svg/mp_info_lt_state-no-results.svg?react'
 import Back from 'src/assets/svg/mp_act_lt_back.svg?react'
 import Flag from 'src/assets/svg/flag.svg?react'
@@ -167,6 +167,7 @@ export {
   DsrIcon,
   Edit,
   EmptyIcon,
+  StateError,
   EnrichmentIcon,
   EventAttributeIcon,
   EventIcon,
@@ -240,7 +241,6 @@ export {
   ZoomOut,
   BannerFreemium,
   StateEmpty,
-  StateError,
   StateNoResults,
   Back,
   Boost,
