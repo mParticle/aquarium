@@ -1,3 +1,10 @@
+# [1.52.0](https://github.com/mParticle/aquarium/compare/v1.51.0...v1.52.0) (2025-08-22)
+
+### Features
+
+- update data warehouse nav structure ([#632](https://github.com/mParticle/aquarium/issues/632)) ([d000000](https://github.com/mParticle/aquarium/commit/d000000e830d2c4bfe2bf95ebb806019c126c7ab))
+- update Empty component with the new design guidelines ([#630](https://github.com/mParticle/aquarium/issues/630)) ([0d13129](https://github.com/mParticle/aquarium/commit/0d1312919606c7821914ba0be17507c11d9db649))
+
 # [1.51.0](https://github.com/mParticle/aquarium/compare/v1.50.1...v1.51.0) (2025-08-12)
 
 ### Features
