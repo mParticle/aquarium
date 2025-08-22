@@ -657,6 +657,7 @@ export const Icons: Record<IconNames, IconOptions> = {
   stateEmpty: {
     light: StateEmpty,
     default: 'light',
+    deprecated: 'stateError',
   },
   stateError: {
     light: StateError,
