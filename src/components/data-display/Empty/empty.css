@@ -1,7 +1,34 @@
 .ant-empty-image {
     margin: auto !important;
+    width: 114px !important;
+    height: 72px !important;
 }
 
 .ant-empty-image > svg {
-    width: auto !important;
+    width: 114px !important;
+    height: 72px !important;
+}
+
+/* Error state icon sizing */
+.ant-empty-image .icon-size-lg.icon-color-error {
+    width: 72px !important;
+    height: 72px !important;
+    min-width: 72px !important;
+}
+
+.ant-empty-image .icon-size-lg.icon-color-error svg {
+    width: 72px !important;
+    height: 72px !important;
+}
+
+/* More specific targeting for the SVG icon */
+.ant-empty-image svg.icon-size-lg.icon-color-error {
+    width: 72px !important;
+    height: 72px !important;
+}
+
+/* Target any SVG within the empty image when it's an error state */
+.ant-empty-image svg[data-testid*="icon-stateError"] {
+    width: 72px !important;
+    height: 72px !important;
 }

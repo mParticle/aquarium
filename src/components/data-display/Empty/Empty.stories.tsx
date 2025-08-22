@@ -45,7 +45,7 @@ export const ErrorState: Story = {
     state: 'error',
     title: 'Something went wrong',
     description: 'We encountered an error while loading your data.',
-    primaryButton: {
+    defaultButton: {
       text: 'Try again',
       onClick: () => console.log('Try again clicked'),
     },
