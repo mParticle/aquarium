@@ -1,3 +1,9 @@
+:root {
+    --empty-img-large-width: 114px;
+    --empty-img-small-width: 72px;
+    --empty-img-height: 72px;
+}
+
 .ant-empty-image {
     /* Component-specific CSS variables */
     --empty-img-large-width: 114px;

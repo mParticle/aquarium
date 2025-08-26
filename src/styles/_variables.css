@@ -424,7 +424,4 @@
   --box-shadow-tabs-overflow-right: inset -10px 0 8px -8px rgba(0, 0, 0, 0.08);
   --box-shadow-tabs-overflow-top: inset 0 10px 8px -8px rgba(0, 0, 0, 0.08);
   --box-shadow-tabs-overflow-bottom: inset 0 -10px 8px -8px rgba(0, 0, 0, 0.08);
-  --empty-img-large-width: 114px;
-  --empty-img-small-width: 72px;
-  --empty-img-height: 72px;
 }
