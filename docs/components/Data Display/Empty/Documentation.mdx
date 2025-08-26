@@ -8,24 +8,56 @@ import * as EmptyStories from '../../../../src/components/data-display/Empty/Emp
 
 # Empty
 
-#### Overview
+### Overview
 
-The **Empty State** component provides feedback to users when there is no data or content to display. It often includes a message, icon, and possibly an action button to guide users on what to do next.
+The Empty State component provides users with context and guidance when no data is available to display. It can also handle Error States by surfacing actionable feedback when something goes wrong.
 
-### When to Use
-Use an Empty State when:
-- A user lands on a page with no data yet, such as an empty dashboard or list view.
-- A search returns no results.
-- A filter or selection has no matching data.
+### Empty State – Onboarding
+
+#### When to use
+
+Use Empty State – Onboarding when a user visits a section for the first time or has deleted all items, leaving the section blank until they create something new.
+
+#### Content Guidelines
+
+**Title:** You don't have any [X] yet (e.g., "You don't have any audiences yet.")  
+**Description:** Highlight the benefit of creating something new. (e.g., "Start targeting the customers who matter most and run smarter, more effective campaigns.")  
+**Primary Action:** "+ Create [X]"  
+**Secondary Action (optional):** "Learn more"
+
+<Canvas of={EmptyStories.ExampleEmptyOnboarding} />
+
+### Empty State – No Results
+
+#### When to use
+
+Use Empty State – No Results when a user action leads to an empty result and nothing matches.
+
+#### Content Guidelines
+
+**Title:** No [X] found (e.g., "No results found" or "No items match these filters.")  
+**Description:** Guide the user toward adjusting or refining their input. (e.g., "Try adjusting your filters or using different keywords.")  
+**Primary Action:** "Clear filters" / "Adjust search"
+
+<Canvas of={EmptyStories.ExampleNoResultsEmptyState} />
+
+### Error State
+
+#### When to use
+
+Use Error State when something prevents content from loading (e.g., server error, network issue, API error).
+
+#### Content Guidelines
+
+**Title:** Something went wrong (e.g., "Error loading [X]" if additional context is helpful)  
+**Description:** Provide context and clear next steps.  
+**Example phrasing:** "We couldn't load [X]. Please try again."  
+**Primary Action:** "Try again" / "Reload"
+
+<Canvas of={EmptyStories.ErrorEmptyState} />
 
 #### Related Links
 
 | Type  | Resource                                                                                                                                               |
 | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Eames | [Empty Component](https://www.figma.com/design/veXnmignQnJz8StIq10VJ5/Eames-2.0---Foundations-%26-Components?node-id=407-367&node-type=canvas&t=B6HJWqqDsUOypZQj-0) |
 | AntD | [Empty Component](https://ant.design/components/empty) |
-
-
-
-
-<Canvas meta={EmptyStories.default} />
