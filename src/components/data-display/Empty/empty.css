@@ -5,11 +5,6 @@
 }
 
 .ant-empty-image {
-    /* Component-specific CSS variables */
-    --empty-img-large-width: 114px;
-    --empty-img-small-width: 72px;
-    --empty-img-height: 72px;
-
     margin: auto !important;
     width: var(--empty-img-large-width) !important;
     height: var(--empty-img-height) !important;
