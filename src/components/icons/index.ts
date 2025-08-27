@@ -71,6 +71,7 @@ import PremiumIcon from 'src/assets/svg/mp_info_lt_premium.svg?react'
 import ConversionIcon from 'src/assets/svg/mp_info_lt_conversion.svg?react'
 import HelpVideoIcon from 'src/assets/svg/mp_info_lt_help-video.svg?react'
 import NextIcon from 'src/assets/svg/mp_act_lt_next.svg?react'
+import NumberIcon from 'src/assets/svg/mp_data_lt_number.svg?react'
 import OpenTabIcon from 'src/assets/svg/mp_act_lt_open-tab.svg?react'
 import PreviousIcon from 'src/assets/svg/mp_act_lt_previous.svg?react'
 import DirectoryIcon from 'src/assets/svg/mp_pm_lt_directory.svg?react'
@@ -109,7 +110,9 @@ import Edit from 'src/assets/svg/mp_act_lt_edit.svg?react'
 import Copy from 'src/assets/svg/mp_act_lt_copy.svg?react'
 import MoreActions from 'src/assets/svg/mp_act_lt_more-actions.svg?react'
 import AbSplit from 'src/assets/svg/mp_info_lt_ab-split.svg?react'
+import ArrayIcon from 'src/assets/svg/mp_data_dt_array.svg?react'
 import BannerFreemium from 'src/assets/svg/mp_info_dt_sampled.svg?react'
+import BooleanIcon from 'src/assets/svg/mp_data_lt_boolean.svg?react'
 import StateEmpty from 'src/assets/svg/mp_info_lt_state-empty.svg?react'
 import StateNoResults from 'src/assets/svg/mp_info_lt_state-no-results.svg?react'
 import Back from 'src/assets/svg/mp_act_lt_back.svg?react'
@@ -119,8 +122,12 @@ import Boost from 'src/assets/svg/mp_info_lt_boost.svg?react'
 import Clone from 'src/assets/svg/mp_act_lt_clone.svg?react'
 import Reorder from 'src/assets/svg/mp_act_lt_reorder.svg?react'
 import GenericIcon from 'src/assets/svg/mp_info_lt_generic.svg?react'
+import ListIcon from 'src/assets/svg/mp_data_dt_list.svg?react'
 import OtherIcon from 'src/assets/svg/mp_info_lt_other.svg?react'
+import OtherDataIcon from 'src/assets/svg/mp_data_dt_other.svg?react'
 import RefreshIcon from 'src/assets/svg/refresh.svg?react'
+import StringIcon from 'src/assets/svg/mp_data_dt_string.svg?react'
+import TimestampIcon from 'src/assets/svg/mp_data_dt_timestamp.svg?react'
 
 export {
   AbSplit,
@@ -129,8 +136,9 @@ export {
   ActiveIcon,
   AgentCopilotIcon,
   AddIcon,
-  AudienceGroupIcon,
   AlicornIcon,
+  ArrayIcon,
+  AudienceGroupIcon,
   RateDownIcon,
   RateDownIconDt,
   RateStarIcon,
@@ -243,7 +251,13 @@ export {
   StateEmpty,
   StateNoResults,
   Back,
+  BooleanIcon,
   Boost,
   Clone,
+  ListIcon,
+  NumberIcon,
+  OtherDataIcon,
   RefreshIcon,
+  StringIcon,
+  TimestampIcon,
 }

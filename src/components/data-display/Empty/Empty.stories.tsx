@@ -1,5 +1,6 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { Empty } from 'src/components/data-display/Empty/Empty'
+import { Icon } from 'src/components'
 
 const meta: Meta<typeof Empty> = {
   title: 'Components/Data Display/Empty',
@@ -28,42 +29,80 @@ export default meta
 
 type Story = StoryObj<typeof Empty>
 
-export const EmptyState: Story = {
+export const EmptyOnboarding: Story = {
   args: {
     state: 'empty',
-    title: 'No results found',
-    description: "Try adjusting your search or filter to find what you're looking for.",
+    title: "You don't have any content yet",
+    description: 'Start building and organizing your workspace to unlock powerful features and insights.',
     defaultButton: {
-      text: 'Clear filters',
-      onClick: () => console.log('Clear filters clicked'),
+      text: 'Learn more',
+      onClick: () => console.log('Learn more clicked'),
+    },
+    primaryButton: {
+      text: '+ Create content',
+      onClick: () => console.log('Create content clicked'),
     },
   },
 }
 
-export const ErrorState: Story = {
+export const ExampleEmptyOnboarding: Story = {
+  parameters: {
+    controls: { disable: true },
+  },
+  args: {
+    state: 'empty',
+    title: "You don't have any audiences yet",
+    description: 'Start targeting customers who matter the most and run smarter, more effective campaigns',
+    primaryButton: {
+      text: 'Create Audience',
+      icon: <Icon name="add" size="sm" />,
+      onClick: () => console.log('Create Audience clicked'),
+    },
+    defaultButton: {
+      text: 'Learn more',
+      onClick: () => console.log('Learn more clicked'),
+    },
+  },
+}
+
+export const ExampleNoResultsEmptyState: Story = {
+  parameters: {
+    controls: { disable: true },
+  },
+  args: {
+    state: 'empty',
+    title: 'No results found',
+    description: 'No items match your current filters. Try changing them to view results.',
+    defaultButton: {
+      text: 'Clear Filters',
+      onClick: () => console.log('Clear Filters clicked'),
+    },
+  },
+}
+
+export const ErrorEmptyState: Story = {
   args: {
     state: 'error',
     title: 'Something went wrong',
-    description: 'We encountered an error while loading your data.',
-    primaryButton: {
+    description: 'Explain what went wrong. Keep it short.',
+    defaultButton: {
       text: 'Try again',
       onClick: () => console.log('Try again clicked'),
     },
   },
 }
 
-export const TwoButtons: Story = {
+export const ExampleErrorApiFailure: Story = {
+  parameters: {
+    controls: { disable: true },
+  },
   args: {
-    state: 'empty',
-    title: 'Action required',
-    description: 'Choose how you would like to proceed.',
+    state: 'error',
+    title: 'Audience Preview Failed',
+    description: 'Unable to load a preview at this time. Please try again.',
     defaultButton: {
-      text: 'Cancel',
-      onClick: () => console.log('Cancel clicked'),
-    },
-    primaryButton: {
-      text: 'Continue',
-      onClick: () => console.log('Continue clicked'),
+      text: 'Try again',
+      onClick: () => console.log('Try again clicked'),
     },
   },
 }

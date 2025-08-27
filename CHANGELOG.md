@@ -1,3 +1,5 @@
+## [1.52.1](https://github.com/mParticle/aquarium/compare/v1.52.0...v1.52.1) (2025-08-26)
+
 # [1.52.0](https://github.com/mParticle/aquarium/compare/v1.51.0...v1.52.0) (2025-08-22)
 
 ### Features

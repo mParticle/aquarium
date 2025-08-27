@@ -4,6 +4,7 @@ import {
   AcceptIcon,
   AddIcon,
   AlicornIcon,
+  ArrayIcon,
   RateDownIcon,
   RateDownIconDt,
   RateStarIcon,
@@ -74,9 +75,11 @@ import {
   ZoomOut,
   OpenTabIcon,
   OtherIcon,
+  OtherDataIcon,
   ConversionIcon,
   PremiumIcon,
   NextIcon,
+  NumberIcon,
   PreviousIcon,
   DirectoryIcon,
   LockIcon,
@@ -92,6 +95,7 @@ import {
   AgentCopilotIcon,
   AudienceGroupIcon,
   LinkIcon,
+  ListIcon,
   InfoIcon,
   Placeholder,
   Organization,
@@ -115,6 +119,7 @@ import {
   MoreActions,
   AbSplit,
   BannerFreemium,
+  BooleanIcon,
   StateEmpty,
   StateNoResults,
   Back,
@@ -124,6 +129,8 @@ import {
   Clone,
   Reorder,
   RefreshIcon,
+  StringIcon,
+  TimestampIcon,
 } from 'src/components/icons'
 
 export const Icons: Record<IconNames, IconOptions> = {
@@ -164,6 +171,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   annotation: {
     light: Annotation,
     default: 'light',
+  },
+  array: {
+    'duo-tone': ArrayIcon,
+    default: 'duo-tone',
   },
   calculatedAttribute: {
     light: CalculatedAttributeIcon,
@@ -397,6 +408,10 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: LinkIcon,
     default: 'light',
   },
+  list: {
+    'duo-tone': ListIcon,
+    default: 'duo-tone',
+  },
   liveStream: {
     light: LiveStreamIcon,
     default: 'light',
@@ -434,6 +449,10 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: NotificationIcon,
     default: 'light',
   },
+  number: {
+    light: NumberIcon,
+    default: 'light',
+  },
   notificationSubscribed: {
     light: NotificationSubscribedIcon,
     default: 'light',
@@ -457,6 +476,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   other: {
     light: OtherIcon,
     default: 'light',
+  },
+  otherData: {
+    'duo-tone': OtherDataIcon,
+    default: 'duo-tone',
   },
   oversight: {
     light: OversightIcon,
@@ -597,6 +620,10 @@ export const Icons: Record<IconNames, IconOptions> = {
     default: 'light',
     deprecated: 'journeys',
   },
+  string: {
+    'duo-tone': StringIcon,
+    default: 'duo-tone',
+  },
   support: {
     light: MessageQuestionIcon,
     default: 'light',
@@ -608,6 +635,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   textWidget: {
     light: TextWidget,
     default: 'light',
+  },
+  timestamp: {
+    'duo-tone': TimestampIcon,
+    default: 'duo-tone',
   },
   transformation: {
     light: TransformationsIcon,
@@ -653,6 +684,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   bannerFreemium: {
     'duo-tone': BannerFreemium,
     default: 'duo-tone',
+  },
+  boolean: {
+    light: BooleanIcon,
+    default: 'light',
   },
   stateEmpty: {
     light: StateEmpty,

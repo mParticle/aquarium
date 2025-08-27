@@ -19,16 +19,19 @@ export interface IEmptyProps extends Omit<AntEmptyProps, 'description'> {
     text: string
     onClick: () => void
     type?: 'primary' | 'default'
+    icon?: React.ReactNode
   }
   /** Primary button configuration */
   primaryButton?: {
     text: string
     onClick: () => void
+    icon?: React.ReactNode
   }
   /** Default button configuration */
   defaultButton?: {
     text: string
     onClick: () => void
+    icon?: React.ReactNode
   }
 }
 
@@ -60,7 +63,7 @@ export const Empty = (props: IEmptyProps) => {
       // Legacy single button support
       if (button && !primaryButton && !defaultButton) {
         return (
-          <Button type={button.type ?? 'default'} onClick={button.onClick}>
+          <Button type={button.type ?? 'default'} onClick={button.onClick} icon={button.icon}>
             {button.text}
           </Button>
         )
@@ -70,7 +73,7 @@ export const Empty = (props: IEmptyProps) => {
 
       if (defaultButton) {
         buttons.push(
-          <Button key="default" type="default" onClick={defaultButton.onClick}>
+          <Button key="default" type="default" onClick={defaultButton.onClick} icon={defaultButton.icon}>
             {defaultButton.text}
           </Button>,
         )
@@ -78,7 +81,7 @@ export const Empty = (props: IEmptyProps) => {
 
       if (primaryButton) {
         buttons.push(
-          <Button key="primary" type="primary" onClick={primaryButton.onClick}>
+          <Button key="primary" type="primary" onClick={primaryButton.onClick} icon={primaryButton.icon}>
             {primaryButton.text}
           </Button>,
         )
