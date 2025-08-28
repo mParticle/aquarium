@@ -39,9 +39,9 @@ export const EmptyOnboarding: Story = {
       onClick: () => console.log('Learn more clicked'),
     },
     primaryButton: {
-      text: 'Create Item',
+      text: 'Add Item',
       icon: <Icon name="add" size="sm" />,
-      onClick: () => console.log('Create content clicked'),
+      onClick: () => console.log('Add content clicked'),
     },
   },
 }
@@ -55,9 +55,9 @@ export const ExampleEmptyOnboarding: Story = {
     title: 'There are no audiences yet',
     description: 'Start targeting customers who matter the most and run smarter, more effective campaigns',
     primaryButton: {
-      text: 'Create Audience',
+      text: 'Add Audience',
       icon: <Icon name="add" size="sm" />,
-      onClick: () => console.log('Create Audience clicked'),
+      onClick: () => console.log('Add Audience clicked'),
     },
     defaultButton: {
       text: 'Learn more',
