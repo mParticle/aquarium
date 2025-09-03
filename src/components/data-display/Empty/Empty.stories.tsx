@@ -32,15 +32,16 @@ type Story = StoryObj<typeof Empty>
 export const EmptyOnboarding: Story = {
   args: {
     state: 'empty',
-    title: "You don't have any content yet",
-    description: 'Start building and organizing your workspace to unlock powerful features and insights.',
+    title: 'Nothing here yet',
+    description: 'Get started by creating your first item to unlock powerful insights.',
     defaultButton: {
       text: 'Learn more',
       onClick: () => console.log('Learn more clicked'),
     },
     primaryButton: {
-      text: '+ Create content',
-      onClick: () => console.log('Create content clicked'),
+      text: 'Add Item',
+      icon: <Icon name="add" size="sm" />,
+      onClick: () => console.log('Add content clicked'),
     },
   },
 }
@@ -51,12 +52,12 @@ export const ExampleEmptyOnboarding: Story = {
   },
   args: {
     state: 'empty',
-    title: "You don't have any audiences yet",
+    title: 'There are no audiences yet',
     description: 'Start targeting customers who matter the most and run smarter, more effective campaigns',
     primaryButton: {
-      text: 'Create Audience',
+      text: 'Add Audience',
       icon: <Icon name="add" size="sm" />,
-      onClick: () => console.log('Create Audience clicked'),
+      onClick: () => console.log('Add Audience clicked'),
     },
     defaultButton: {
       text: 'Learn more',
