@@ -31,6 +31,7 @@ import {
   DragAndDropIcon,
   DsrIcon,
   EmptyIcon,
+  StateError,
   EnrichmentIcon,
   EventAttributeIcon,
   EventIcon,
@@ -120,7 +121,6 @@ import {
   BannerFreemium,
   BooleanIcon,
   StateEmpty,
-  StateError,
   StateNoResults,
   Back,
   Flag,
@@ -692,6 +692,7 @@ export const Icons: Record<IconNames, IconOptions> = {
   stateEmpty: {
     light: StateEmpty,
     default: 'light',
+    deprecated: 'stateError',
   },
   stateError: {
     light: StateError,
