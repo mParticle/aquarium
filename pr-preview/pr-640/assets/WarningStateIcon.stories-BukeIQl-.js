@@ -1,0 +1,5 @@
+var d=Object.defineProperty,g=Object.defineProperties;var l=Object.getOwnPropertyDescriptors;var s=Object.getOwnPropertySymbols;var u=Object.prototype.hasOwnProperty,f=Object.prototype.propertyIsEnumerable;var m=(o,e,t)=>e in o?d(o,e,{enumerable:!0,configurable:!0,writable:!0,value:t}):o[e]=t,r=(o,e)=>{for(var t in e||(e={}))u.call(e,t)&&m(o,t,e[t]);if(s)for(var t of s(e))f.call(e,t)&&m(o,t,e[t]);return o},a=(o,e)=>g(o,l(e));import{W as S}from"./WarningStateIcon-Branp5bh.js";import"./jsx-runtime-CVnACwZl.js";import"./index-3OP4wdng.js";import"./extends-CF3RwP-h.js";import"./presets-BrZHayqo.js";import"./Context-R5ee3nrF.js";const E={title:"Components/General/WarningStateIcon",component:S,parameters:{docs:{description:{component:"Warning State Icon component."}}}},n={args:{size:"lg"}};var p,c,i;n.parameters=a(r({},n.parameters),{docs:a(r({},(p=n.parameters)==null?void 0:p.docs),{source:r({originalSource:`{
+  args: {
+    size: 'lg'
+  }
+}`},(i=(c=n.parameters)==null?void 0:c.docs)==null?void 0:i.source)})});const G=["Default"];export{n as Default,G as __namedExportsOrder,E as default};
