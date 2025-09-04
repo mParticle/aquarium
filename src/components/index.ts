@@ -1,7 +1,7 @@
 export { Button, type IButtonProps } from './general/Button/Button'
 export { FloatButton, type IFloatButtonProps } from './general/FloatButton/FloatButton'
 export { Icon, type IIconProps } from './general/Icon/Icon'
-export { WarningStateIcon, type IWarningStateIconProps } from './general/WarningStateIcon/WarningStateIcon'
+export { ErrorStateIcon, type IErrorStateIconProps } from './general/Icon/ErrorStateIcon/ErrorStateIcon'
 export { Rate, type IRateProps } from './not-prod-ready/Rate/Rate'
 export { Form, type IFormProps, type FormInstance } from './data-entry/Form/Form'
 export { TreeSelect, type ITreeSelectProps } from './data-entry/TreeSelect/TreeSelect'

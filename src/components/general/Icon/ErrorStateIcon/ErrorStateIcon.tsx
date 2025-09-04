@@ -14,7 +14,7 @@ import {
 
 type IconSize = 'xxxxl' | 'xxxl' | 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs'
 
-export interface IWarningStateIconProps {
+export interface IErrorStateIconProps {
   size?: IconSize
   className?: string
   style?: React.CSSProperties
@@ -32,7 +32,7 @@ const sizeMap: Record<IconSize, string> = {
   xs: MpIconSizeXs,
 }
 
-export const WarningStateIcon: React.FC<IWarningStateIconProps> = ({ size = 'lg', className = '', style }) => {
+export const ErrorStateIcon: React.FC<IErrorStateIconProps> = ({ size = 'lg', className = '', style }) => {
   const iconSize = sizeMap[size]
 
   return (
