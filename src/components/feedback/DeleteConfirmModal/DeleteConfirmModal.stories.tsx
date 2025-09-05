@@ -1,15 +1,17 @@
-import { useState } from 'react'
-import { Modal, Button, Dropdown, Icon, Table, message } from 'src/components'
+import React, { useState } from 'react'
+import { Button, Dropdown, Icon, Table, message } from 'src/components'
 import { type Meta, type StoryObj } from '@storybook/react'
 import { FontWeightStrong, ColorErrorText, Margin } from 'src/styles/style'
+import { DeleteConfirmModal } from './DeleteConfirmModal'
 
 const meta: Meta = {
-  title: 'Components/Feedback/Modal/Delete Confirm',
-  component: Modal,
+  title: 'Components/feedback/Delete Confirm Modal',
+  component: DeleteConfirmModal,
+  args: {},
 }
 export default meta
 
-type Story = StoryObj
+type Story = StoryObj<typeof DeleteConfirmModal>
 
 const DeleteConfirmTemplate = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -120,19 +122,7 @@ const DeleteConfirmTemplate = () => {
         `}</style>
       </div>
 
-      <Modal
-        title="Delete item?"
-        open={isModalOpen}
-        onCancel={handleCancel}
-        mask={false}
-        footer={[
-          <Button key="cancel" onClick={handleCancel}>
-            Cancel
-          </Button>,
-          <Button key="delete" type="primary" danger onClick={handleDelete}>
-            Delete
-          </Button>,
-        ]}>
+      <DeleteConfirmModal title="Delete item?" open={isModalOpen} onCancel={handleCancel} onOk={handleDelete}>
         <div>
           <p>
             This action will permanently delete <span style={{ fontWeight: FontWeightStrong }}>Item Name</span> and all
@@ -140,15 +130,9 @@ const DeleteConfirmTemplate = () => {
             be removed.
           </p>
 
-          <p
-            style={{
-              color: ColorErrorText,
-              marginTop: Margin,
-            }}>
-            This action can&apos;t be undone.
-          </p>
+          <p style={{ color: ColorErrorText, marginTop: Margin }}>This action can&apos;t be undone.</p>
         </div>
-      </Modal>
+      </DeleteConfirmModal>
     </>
   )
 }
@@ -176,22 +160,10 @@ const SimpleDeleteConfirmTemplate = () => {
   return (
     <>
       <Button type="default" onClick={showModal}>
-        View Delete Confirm
+        View Delete Confirm Modal
       </Button>
 
-      <Modal
-        title="Delete item?"
-        open={isModalOpen}
-        onCancel={handleCancel}
-        mask={false}
-        footer={[
-          <Button key="cancel" onClick={handleCancel}>
-            Cancel
-          </Button>,
-          <Button key="delete" type="primary" danger onClick={handleDelete}>
-            Delete
-          </Button>,
-        ]}>
+      <DeleteConfirmModal title="Delete item?" open={isModalOpen} onCancel={handleCancel} onOk={handleDelete}>
         <div>
           <p>
             This action will permanently delete <span style={{ fontWeight: FontWeightStrong }}>Item Name</span> and all
@@ -207,7 +179,7 @@ const SimpleDeleteConfirmTemplate = () => {
             This action can&apos;t be undone.
           </p>
         </div>
-      </Modal>
+      </DeleteConfirmModal>
     </>
   )
 }
