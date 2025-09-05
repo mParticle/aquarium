@@ -1,3 +1,9 @@
+# [1.53.0](https://github.com/mParticle/aquarium/compare/v1.52.1...v1.53.0) (2025-09-05)
+
+### Features
+
+- implement DeleteConfirmModal component ([#638](https://github.com/mParticle/aquarium/issues/638)) ([57c9787](https://github.com/mParticle/aquarium/commit/57c978709de67d25d05a2c693d40f9ff3fadab3d))
+
 ## [1.52.1](https://github.com/mParticle/aquarium/compare/v1.52.0...v1.52.1) (2025-08-26)
 
 # [1.52.0](https://github.com/mParticle/aquarium/compare/v1.51.0...v1.52.0) (2025-08-22)
