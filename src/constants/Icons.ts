@@ -387,6 +387,7 @@ export const Icons: Record<IconNames, IconOptions> = {
   info: {
     light: InfoIcon,
     default: 'light',
+    deprecated: 'help',
   },
   insights: {
     light: LightBulbIcon,
