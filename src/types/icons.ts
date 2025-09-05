@@ -40,6 +40,7 @@ export type IconNames =
   | 'cohort'
   | 'connections'
   | 'conversion'
+  | 'criteriaGroup'
   | 'copy'
   | 'dashboard'
   | 'database'
