@@ -70,7 +70,10 @@ export { Notification, type INotificationProps, notification } from './feedback/
 export { Alert, type IAlertProps } from './feedback/Alert/Alert'
 export { Message, type IMessageProps, message } from './feedback/Message/Message'
 export { LoadingModal, type ILoadingModalProps } from './feedback/LoadingModal/LoadingModal'
-export { DeleteConfirmModal, type IDeleteConfirmModalProps } from './feedback/DeleteConfirmModal/DeleteConfirmModal'
+export {
+  DeleteConfirmModal,
+  type IDeleteConfirmModalProps,
+} from 'src/components/feedback/Modal/DeleteConfirmModal/DeleteConfirmModal'
 export { Flex, type IFlexProps } from './layout/Flex/Flex'
 export { Center } from './layout/Center/Center'
 export { Divider, type IDividerProps } from './layout/Divider/Divider'
