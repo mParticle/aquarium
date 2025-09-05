@@ -16,6 +16,7 @@ import {
   C360Icon,
   C360IconDt,
   CalculatedAttributeIcon,
+  CriteriaGroupIcon,
   CatalogIcon,
   ChartColumnIcon,
   ChartLineIcon,
@@ -240,6 +241,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   conversion: {
     light: ConversionIcon,
+    default: 'light',
+  },
+  criteriaGroup: {
+    light: CriteriaGroupIcon,
     default: 'light',
   },
   copy: {

@@ -12,6 +12,7 @@ import AnalyticsIconDt from 'src/assets/svg/mp_pm_dt_analytics.svg?react'
 import C360Icon from 'src/assets/svg/mp_pm_lt_c360.svg?react'
 import C360IconDt from 'src/assets/svg/mp_pm_dt_c360.svg?react'
 import CalculatedAttributeIcon from 'src/assets/svg/mp_info_lt_calculated-attribute.svg?react'
+import CriteriaGroupIcon from 'src/assets/svg/mp_info_lt_criteria-group.svg?react'
 import CatalogIcon from 'src/assets/svg/mp_pm_lt_catalog.svg?react'
 import ChartColumnIcon from 'src/assets/svg/chart-column.svg?react'
 import ChartLineIcon from 'src/assets/svg/chart-line.svg?react'
@@ -151,6 +152,7 @@ export {
   C360Icon,
   C360IconDt,
   CalculatedAttributeIcon,
+  CriteriaGroupIcon,
   CatalogIcon,
   ChartColumnIcon,
   ChartLineIcon,
