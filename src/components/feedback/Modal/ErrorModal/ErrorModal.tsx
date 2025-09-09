@@ -26,8 +26,8 @@ export function ErrorModal(props: IErrorModalProps): React.JSX.Element {
       }
       footer={
         <>
-          <Button type="primary" onClick={onOk}>
-            OK
+          <Button type="default" onClick={onOk}>
+            Close
           </Button>
         </>
       }
