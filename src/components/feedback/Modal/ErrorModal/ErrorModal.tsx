@@ -1,6 +1,7 @@
 import React from 'react'
 import { CloseCircleFilled } from '@ant-design/icons'
 import { Button, Flex, Modal, Typography, type IModalProps } from 'src/components'
+import { ColorError, MpIconSizeMd } from 'src/styles/style'
 
 export interface IErrorModalProps
   extends Omit<IModalProps, 'footer' | 'okText' | 'okButtonProps' | 'cancelText' | 'cancelButtonProps'> {
@@ -17,7 +18,7 @@ export function ErrorModal(props: IErrorModalProps): React.JSX.Element {
     <Modal
       title={
         <Flex align="center" gap="small">
-          <CloseCircleFilled style={{ color: '#ff4d4f', fontSize: '20px' }} />
+          <CloseCircleFilled style={{ color: ColorError, fontSize: MpIconSizeMd }} />
           <Typography.Text size="lg" strong>
             {props.title ?? 'Error'}
           </Typography.Text>
