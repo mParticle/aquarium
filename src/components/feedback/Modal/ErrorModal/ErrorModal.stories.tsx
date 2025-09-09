@@ -29,7 +29,7 @@ const ErrorModalTemplate = () => {
         Show Error Modal
       </Button>
 
-      <ErrorModal open={isModalOpen} onOk={handleOk}>
+      <ErrorModal open={isModalOpen} onClose={handleOk}>
         <div>
           <p>
             An unexpected error occurred while processing your request. Please try again or contact support if the
@@ -62,7 +62,7 @@ const CustomTitleErrorModalTemplate = () => {
         Show Custom Title Error Modal
       </Button>
 
-      <ErrorModal title="Connection Failed" open={isModalOpen} onOk={handleOk}>
+      <ErrorModal title="Connection Failed" open={isModalOpen} onClose={handleOk}>
         <div>
           <p>Unable to connect to the server. Please check your internet connection and try again.</p>
         </div>
