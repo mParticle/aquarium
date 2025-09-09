@@ -1,3 +1,9 @@
+# [1.54.0](https://github.com/mParticle/aquarium/compare/v1.53.0...v1.54.0) (2025-09-09)
+
+### Features
+
+- error modal ([#643](https://github.com/mParticle/aquarium/issues/643)) ([719a9af](https://github.com/mParticle/aquarium/commit/719a9af0c9792b90f555b5cf0f102b3a3ed4755e))
+
 # [1.53.0](https://github.com/mParticle/aquarium/compare/v1.52.1...v1.53.0) (2025-09-05)
 
 ### Features
