@@ -31,6 +31,7 @@ export function ErrorModal(props: IErrorModalProps): React.JSX.Element {
           </Button>
         </>
       }
+      onCancel={rest.onCancel ?? onOk}
       {...rest}>
       {props.children}
     </Modal>
