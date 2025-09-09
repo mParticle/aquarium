@@ -74,6 +74,7 @@ export {
   DeleteConfirmModal,
   type IDeleteConfirmModalProps,
 } from 'src/components/feedback/Modal/DeleteConfirmModal/DeleteConfirmModal'
+export { ErrorModal, type IErrorModalProps } from 'src/components/feedback/Modal/ErrorModal/ErrorModal'
 export { Flex, type IFlexProps } from './layout/Flex/Flex'
 export { Center } from './layout/Center/Center'
 export { Divider, type IDividerProps } from './layout/Divider/Divider'
