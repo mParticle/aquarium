@@ -1,3 +1,9 @@
+## [1.54.1](https://github.com/mParticle/aquarium/compare/v1.54.0...v1.54.1) (2025-09-09)
+
+### Bug Fixes
+
+- error modal props ([#644](https://github.com/mParticle/aquarium/issues/644)) ([879cca0](https://github.com/mParticle/aquarium/commit/879cca0c19a1222ee06504b28b3435347bee42ca))
+
 # [1.54.0](https://github.com/mParticle/aquarium/compare/v1.53.0...v1.54.0) (2025-09-09)
 
 ### Features
