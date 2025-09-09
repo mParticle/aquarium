@@ -4,15 +4,18 @@ import { Button, Flex, Modal, Typography, type IModalProps } from 'src/component
 import { ColorError, MpIconSizeMd } from 'src/styles/style'
 
 export interface IErrorModalProps
-  extends Omit<IModalProps, 'footer' | 'okText' | 'okButtonProps' | 'cancelText' | 'cancelButtonProps'> {
+  extends Omit<
+    IModalProps,
+    'footer' | 'okText' | 'okButtonProps' | 'cancelText' | 'cancelButtonProps' | 'onOk' | 'onCancel' | 'content'
+  > {
   open: boolean
   title?: string
   children: React.ReactNode
-  onOk: () => void
+  onClose: () => void
 }
 
 export function ErrorModal(props: IErrorModalProps): React.JSX.Element {
-  const { width, title, onOk, ...rest } = props
+  const { width, title, onClose, ...rest } = props
 
   return (
     <Modal
@@ -25,13 +28,11 @@ export function ErrorModal(props: IErrorModalProps): React.JSX.Element {
         </Flex>
       }
       footer={
-        <>
-          <Button type="default" onClick={onOk}>
-            Close
-          </Button>
-        </>
+        <Button type="default" onClick={onClose}>
+          Close
+        </Button>
       }
-      onCancel={rest.onCancel ?? onOk}
+      onCancel={onClose}
       {...rest}>
       {props.children}
     </Modal>
