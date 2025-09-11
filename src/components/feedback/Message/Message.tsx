@@ -1,7 +1,6 @@
-import { message as AntMessage } from 'antd'
-import { type MessageArgsProps as AntMessageArgsProps } from 'antd'
+import { message as AntMessage, type MessageArgsProps as AntMessageArgsProps } from 'antd'
+import React, { type ReactNode } from 'react'
 import { ConfigProvider } from 'src/components'
-
 export interface IMessageProps extends AntMessageArgsProps {
   children: React.ReactNode
 }
@@ -12,13 +11,21 @@ export const Message = (props: IMessageProps) => {
   const [messageApi, contextHolder] = AntMessage.useMessage()
 
   const open = (): void => {
-    void messageApi.open({ ...props })
+    const messageContextId = 'aqua-message-content' as const
+    const contentWithId: ReactNode = <span data-testid={messageContextId}>{props.content}</span>
+
+    void messageApi.open({
+      ...props,
+      content: contentWithId,
+    })
   }
 
   return (
     <ConfigProvider>
       {contextHolder}
-      <span onClick={open}>{props.children}</span>
+      <span onClick={open}>
+        {React.cloneElement(props.children as React.ReactElement, { 'data-testid': 'aqua-message' })}
+      </span>
     </ConfigProvider>
   )
 }

@@ -1,6 +1,7 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { Message } from 'src/components/feedback/Message/Message'
 import { Button } from 'src/components/general/Button/Button'
+import { Space } from 'src/components'
 
 const meta: Meta<typeof Message> = {
   title: 'Components/Feedback/Message',
@@ -39,6 +40,12 @@ export const Short: Story = {
   },
 }
 
+export const Long: Story = {
+  args: {
+    duration: 100,
+  },
+}
+
 export const CustomStyle: Story = {
   args: {
     style: { fontSize: '24px', color: '#959ee6' },
@@ -50,5 +57,18 @@ export const Clickable: Story = {
     onClick: () => {
       alert('Message clicked')
     },
+  },
+}
+
+export const CustomContent: Story = {
+  args: {
+    duration: 100,
+    content: (
+      <>
+        <Space size="large">
+          <Button>Button</Button> with Spacing
+        </Space>
+      </>
+    ),
   },
 }
