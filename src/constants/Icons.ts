@@ -706,6 +706,7 @@ export const Icons: Record<IconNames, IconOptions> = {
   bannerFreemium: {
     'duo-tone': BannerFreemium,
     default: 'duo-tone',
+    deprecated: 'premium',
   },
   boolean: {
     light: BooleanIcon,
