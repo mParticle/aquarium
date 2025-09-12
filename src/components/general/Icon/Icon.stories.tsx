@@ -360,7 +360,7 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
 
       {/* Navigation Icons Section */}
       <div style={sectionStyle}>
-        <Typography.Title level={4}>Navigation & Platform Icons ({navigationIcons.length})</Typography.Title>
+        <Typography.Title level={4}>Navigation ({navigationIcons.length})</Typography.Title>
         {renderSubSection('Light', navigationSplit.lightIcons)}
         {renderSubSection('Duotone', navigationSplit.duotoneIcons)}
       </div>
@@ -411,7 +411,7 @@ The \`IconTable\` component displays icons organized into logical categories for
 **UI Actions**: Interactive icons for user actions like add, edit, delete, play, pause, search, etc.
 **Informational Icons**: Icons that convey information, status, or context like help, notification, groups, states, etc.
 **Data Type Icons**: Icons representing different data types like array, boolean, number, string, timestamp, etc.
-**Navigation & Platform Icons**: Icons for navigation, platform features, and product areas like analytics, dashboard, identity, etc.
+**Navigation**: Icons for navigation and platform features like catalog, directory, observability, etc.
 **Deprecated Icons**: Icons that have been deprecated and should no longer be used in new implementations.
 
 #### Props
