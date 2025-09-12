@@ -723,6 +723,7 @@ export const Icons: Record<IconNames, IconOptions> = {
   stateNoResults: {
     light: StateNoResults,
     default: 'light',
+    deprecated: 'stateEmpty',
   },
   back: {
     light: Back,

@@ -1,6 +1,6 @@
 import { type Meta } from '@storybook/react'
 import React, { type ReactNode } from 'react'
-import { Flex, Icon, Typography, type IIconProps } from 'src/components'
+import { Flex, Icon, Typography, ErrorStateIcon, type IIconProps } from 'src/components'
 import { Icons } from 'src/constants/Icons'
 
 export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', name, variant }) => {
@@ -18,15 +18,52 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
     marginBottom: '32px',
   }
 
+  const subSectionStyle = {
+    marginBottom: '20px',
+  }
+
   // If showing a specific icon, use original behavior
   if (name) {
     return <div style={iconGridStyle}>{renderIcon(name)}</div>
   }
 
+  // Helper function to split icons by variant
+  const splitByVariant = (icons: Array<keyof typeof Icons>) => {
+    const lightIcons = icons.filter(iconName => {
+      const icon = Icons[iconName]
+      return icon.default === 'light' || (icon.light && !icon['duo-tone'])
+    })
+
+    const duotoneIcons = icons.filter(iconName => {
+      const icon = Icons[iconName]
+      return icon.default === 'duo-tone' || (icon['duo-tone'] && !icon.light)
+    })
+
+    const bothVariants = icons.filter(iconName => {
+      const icon = Icons[iconName]
+      return icon.light && icon['duo-tone']
+    })
+
+    return { lightIcons, duotoneIcons, bothVariants }
+  }
+
+  // Helper function to render subsection
+  const renderSubSection = (title: string, icons: Array<keyof typeof Icons>, titleLevel: 4 | 5 = 5) => {
+    if (icons.length === 0) return null
+
+    return (
+      <div style={subSectionStyle}>
+        <Typography.Title level={titleLevel}>
+          {title} ({icons.length})
+        </Typography.Title>
+        <div style={iconGridStyle}>{icons.sort().map(renderIcon)}</div>
+      </div>
+    )
+  }
+
   // Categorize icons
   const uiActionIcons = allIcons.filter(iconName => {
     const iconData = Icons[iconName]
-    // Check if icon file name contains 'act' (from mp_act_lt_ pattern)
     return (
       !iconData.deprecated &&
       (iconName.includes('accept') ||
@@ -64,7 +101,6 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
 
   const informationalIcons = allIcons.filter(iconName => {
     const iconData = Icons[iconName]
-    // Check if icon contains info-related terms or uses mp_info pattern
     return (
       !iconData.deprecated &&
       (iconName.includes('info') ||
@@ -89,16 +125,12 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
         iconName.includes('premium') ||
         iconName.includes('agentCopilot') ||
         iconName.includes('refreshFrequency') ||
-        iconName.includes('stateEmpty') ||
-        iconName.includes('stateError') ||
-        iconName.includes('stateNoResults') ||
         iconName.includes('bannerFreemium'))
     )
   })
 
   const dataTypeIcons = allIcons.filter(iconName => {
     const iconData = Icons[iconName]
-    // Check if icon is related to data types (uses mp_data pattern)
     return (
       !iconData.deprecated &&
       (iconName.includes('array') ||
@@ -107,13 +139,15 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
         iconName.includes('string') ||
         iconName.includes('timestamp') ||
         iconName.includes('list') ||
-        iconName.includes('otherData'))
+        iconName.includes('otherData') ||
+        iconName.includes('stateEmpty') ||
+        iconName.includes('stateError') ||
+        iconName.includes('stateNoResults'))
     )
   })
 
   const navigationIcons = allIcons.filter(iconName => {
     const iconData = Icons[iconName]
-    // Check if icon is navigation/platform related (uses mp_pm pattern)
     return (
       !iconData.deprecated &&
       (iconName.includes('analytics') ||
@@ -158,37 +192,60 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
     )
   })
 
+  // Split each category by variant
+  const uiActionSplit = splitByVariant(uiActionIcons)
+  const informationalSplit = splitByVariant(informationalIcons)
+  const dataTypeSplit = splitByVariant(dataTypeIcons)
+  const navigationSplit = splitByVariant(navigationIcons)
+  const otherSplit = splitByVariant(otherIcons)
+
   return (
     <div>
+      {/* Special Icons Section */}
+      <div style={sectionStyle}>
+        <Typography.Title level={4}>Special Icons (1)</Typography.Title>
+        <div style={iconGridStyle}>
+          <Flex vertical align="center" key="error-state-icon">
+            <ErrorStateIcon size={size} />
+            <p style={{ fontFamily: 'monospace', textAlign: 'center' }}>ErrorStateIcon</p>
+          </Flex>
+        </div>
+      </div>
+
       {/* UI Actions Section */}
       <div style={sectionStyle}>
         <Typography.Title level={4}>UI Actions ({uiActionIcons.length})</Typography.Title>
-        <div style={iconGridStyle}>{uiActionIcons.sort().map(renderIcon)}</div>
+        {renderSubSection('Light', [...uiActionSplit.lightIcons, ...uiActionSplit.bothVariants])}
+        {renderSubSection('Duotone', [...uiActionSplit.duotoneIcons, ...uiActionSplit.bothVariants])}
       </div>
 
       {/* Informational Icons Section */}
       <div style={sectionStyle}>
         <Typography.Title level={4}>Informational Icons ({informationalIcons.length})</Typography.Title>
-        <div style={iconGridStyle}>{informationalIcons.sort().map(renderIcon)}</div>
+        {renderSubSection('Light', [...informationalSplit.lightIcons, ...informationalSplit.bothVariants])}
+        {renderSubSection('Duotone', [...informationalSplit.duotoneIcons, ...informationalSplit.bothVariants])}
       </div>
 
       {/* Data Type Icons Section */}
       <div style={sectionStyle}>
         <Typography.Title level={4}>Data Type Icons ({dataTypeIcons.length})</Typography.Title>
-        <div style={iconGridStyle}>{dataTypeIcons.sort().map(renderIcon)}</div>
+        {renderSubSection('Light', [...dataTypeSplit.lightIcons, ...dataTypeSplit.bothVariants])}
+        {renderSubSection('Duotone', [...dataTypeSplit.duotoneIcons, ...dataTypeSplit.bothVariants])}
       </div>
 
       {/* Navigation Icons Section */}
       <div style={sectionStyle}>
         <Typography.Title level={4}>Navigation & Platform Icons ({navigationIcons.length})</Typography.Title>
-        <div style={iconGridStyle}>{navigationIcons.sort().map(renderIcon)}</div>
+        {renderSubSection('Light', [...navigationSplit.lightIcons, ...navigationSplit.bothVariants])}
+        {renderSubSection('Duotone', [...navigationSplit.duotoneIcons, ...navigationSplit.bothVariants])}
       </div>
 
       {/* Other Icons Section */}
       {otherIcons.length > 0 && (
         <div style={sectionStyle}>
           <Typography.Title level={4}>Other Icons ({otherIcons.length})</Typography.Title>
-          <div style={iconGridStyle}>{otherIcons.sort().map(renderIcon)}</div>
+          {renderSubSection('Light', [...otherSplit.lightIcons, ...otherSplit.bothVariants])}
+          {renderSubSection('Duotone', [...otherSplit.duotoneIcons, ...otherSplit.bothVariants])}
         </div>
       )}
 
