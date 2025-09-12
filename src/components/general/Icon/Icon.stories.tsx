@@ -243,6 +243,7 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
         iconName.includes('premium') ||
         iconName.includes('agentCopilot') ||
         iconName.includes('refreshFrequency') ||
+        iconName.includes('stateError') ||
         iconName.includes('bannerFreemium'))
     )
   })
@@ -259,7 +260,6 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
         iconName.includes('list') ||
         iconName.includes('otherData') ||
         iconName.includes('stateEmpty') ||
-        iconName.includes('stateError') ||
         iconName.includes('stateNoResults'))
     )
   })
