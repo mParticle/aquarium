@@ -454,6 +454,7 @@ export const Icons: Record<IconNames, IconOptions> = {
   myHub: {
     light: GridIcon,
     default: 'light',
+    deprecated: 'dashboard',
   },
   next: {
     light: NextIcon,
