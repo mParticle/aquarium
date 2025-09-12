@@ -88,7 +88,10 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
       'link',
       'organization',
       'other',
+      'paywall',
+      'pipelines',
       'placeholder',
+      'precision',
       'predictions',
       'privileges',
       'refreshFrequency',
@@ -286,7 +289,13 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
         iconName === 'flag' ||
         iconName === 'insights' ||
         iconName === 'link' ||
-        iconName === 'favorite')
+        iconName === 'favorite' ||
+        iconName === 'paywall' ||
+        iconName === 'pipelines' ||
+        iconName === 'precision' ||
+        iconName === 'rateDown' ||
+        iconName === 'rateStar' ||
+        iconName === 'rateUp')
     )
   })
 
