@@ -127,10 +127,14 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
       'observability',
       'organization',
       'oversight',
+      'privacy',
       'overview',
       'predictions',
+      'savedProjects',
       'scheduledReport',
       'segmentationAnalysis',
+      'setup',
+      'support',
       'systemAlerts',
       'transformation',
       'userAttribute',
@@ -338,7 +342,11 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
         iconName.includes('transformation') ||
         iconName.includes('userProfiles') ||
         iconName.includes('account') ||
-        iconName === 'connections')
+        iconName === 'connections' ||
+        iconName === 'savedProjects' ||
+        iconName === 'privacy' ||
+        iconName === 'setup' ||
+        iconName === 'support')
     )
   })
 
