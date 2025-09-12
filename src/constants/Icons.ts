@@ -11,6 +11,7 @@ import {
   RateStarIconDt,
   RateUpIcon,
   RateUpIconDt,
+  RunIcon,
   AnalyticsIcon,
   AnalyticsIconDt,
   C360Icon,
@@ -75,6 +76,8 @@ import {
   ZoomIn,
   ZoomOut,
   OpenTabIcon,
+  PauseIcon,
+  PlayIcon,
   OtherIcon,
   OtherDataIcon,
   ConversionIcon,
@@ -501,12 +504,20 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: PaywallIcon,
     default: 'light',
   },
+  pause: {
+    light: PauseIcon,
+    default: 'light',
+  },
   pipelines: {
     light: CircleNodesIcon,
     default: 'light',
   },
   placeholder: {
     light: Placeholder,
+    default: 'light',
+  },
+  play: {
+    light: PlayIcon,
     default: 'light',
   },
   precision: {
@@ -558,6 +569,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   rateUp: {
     light: RateUpIcon,
     'duo-tone': RateUpIconDt,
+    default: 'light',
+  },
+  run: {
+    light: RunIcon,
     default: 'light',
   },
   reorder: {
