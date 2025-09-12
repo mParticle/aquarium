@@ -200,6 +200,7 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: C360Icon,
     'duo-tone': C360IconDt,
     default: 'duo-tone',
+    deprecated: 'analytics',
   },
   catalog: {
     light: CatalogIcon,
@@ -500,6 +501,7 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: OverviewIcon,
     'duo-tone': OverviewIconDt,
     default: 'duo-tone',
+    deprecated: 'dashboard',
   },
   paywall: {
     light: PaywallIcon,

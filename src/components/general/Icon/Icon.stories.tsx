@@ -132,7 +132,7 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
     const duotonePatternIcons = ['agentCopilot', 'segmentation']
 
     // Icons that have both lt and dt variants (from Icons.ts config)
-    const bothVariantsPatternIcons = ['analytics', 'C360', 'dataPlatform', 'oversight', 'overview']
+    const bothVariantsPatternIcons = ['analytics', 'dataPlatform', 'oversight']
 
     const lightIcons = icons.filter(
       iconName => lightPatternIcons.includes(iconName) || bothVariantsPatternIcons.includes(iconName),
