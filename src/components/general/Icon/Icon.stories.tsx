@@ -228,6 +228,7 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
         iconName.includes('back') ||
         iconName.includes('openTab') ||
         iconName.includes('fullScreen') ||
+        iconName.includes('fitToScreen') ||
         iconName.includes('zoomIn') ||
         iconName.includes('zoomOut') ||
         iconName.includes('jumpTo') ||
