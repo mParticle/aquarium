@@ -41,7 +41,9 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
       'fitToScreen',
       'fullScreen',
       'jumpTo',
+      'link',
       'lock',
+      'logout',
       'moreActions',
       'next',
       'openTab',
@@ -82,6 +84,7 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
       'identity',
       'info',
       'insights',
+      'link',
       'organization',
       'other',
       'placeholder',
@@ -234,7 +237,8 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
         iconName.includes('clone') ||
         iconName.includes('boost') ||
         iconName.includes('submitFeedback') ||
-        iconName.includes('dropdown'))
+        iconName.includes('dropdown') ||
+        iconName.includes('logout'))
     )
   })
 
@@ -278,7 +282,8 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
         iconName === 'scheduledReport' ||
         iconName === 'segmentationAnalysis' ||
         iconName === 'flag' ||
-        iconName === 'insights')
+        iconName === 'insights' ||
+        iconName === 'link')
     )
   })
 
