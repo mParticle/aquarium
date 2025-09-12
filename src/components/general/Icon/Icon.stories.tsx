@@ -99,6 +99,7 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
       'analytics',
       'C360',
       'catalog',
+      'connections',
       'dashboard',
       'dataPlatform',
       'date',
@@ -311,7 +312,8 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
         iconName.includes('systemAlerts') ||
         iconName.includes('transformation') ||
         iconName.includes('userProfiles') ||
-        iconName.includes('account'))
+        iconName.includes('account') ||
+        iconName === 'connections')
     )
   })
 
