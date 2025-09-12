@@ -171,6 +171,7 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: AnalyticsIcon,
     'duo-tone': AnalyticsIconDt,
     default: 'duo-tone',
+    deprecated: 'dashboard',
   },
   annotation: {
     light: Annotation,
@@ -267,6 +268,7 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: DataPlatformIcon,
     'duo-tone': DataPlatformIconDt,
     default: 'duo-tone',
+    deprecated: 'catalog',
   },
   date: {
     light: DateIcon,
@@ -602,6 +604,7 @@ export const Icons: Record<IconNames, IconOptions> = {
   segmentation: {
     'duo-tone': SegmentationIconDt,
     default: 'duo-tone',
+    deprecated: 'segmentationAnalysis',
   },
   segmentationAnalysis: {
     light: SegmentationAnalysis,
