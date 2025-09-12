@@ -97,6 +97,7 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
       'refreshFrequency',
       'scheduledReport',
       'segmentationAnalysis',
+      'settings',
       'stateEmpty',
       'stateError',
       'stateNoResults',
@@ -295,7 +296,8 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
         iconName === 'precision' ||
         iconName === 'rateDown' ||
         iconName === 'rateStar' ||
-        iconName === 'rateUp')
+        iconName === 'rateUp' ||
+        iconName === 'settings')
     )
   })
 
