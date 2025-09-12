@@ -287,27 +287,15 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
     const iconData = Icons[iconName]
     return (
       !iconData.deprecated &&
-      (iconName.includes('analytics') ||
-        iconName.includes('C360') ||
-        iconName.includes('catalog') ||
-        iconName.includes('dashboard') ||
-        iconName.includes('dataPlatform') ||
-        iconName.includes('date') ||
-        iconName.includes('devices') ||
+      (iconName.includes('catalog') ||
         iconName.includes('directory') ||
         iconName.includes('dsr') ||
         iconName.includes('enrichment') ||
         iconName.includes('forwarding') ||
-        iconName.includes('identity') ||
         iconName.includes('journeyAnalysis') ||
         iconName.includes('liveStream') ||
         iconName.includes('observability') ||
-        iconName.includes('organization') ||
-        iconName.includes('oversight') ||
-        iconName.includes('overview') ||
-        iconName.includes('predictions') ||
         iconName.includes('scheduledReport') ||
-        iconName.includes('segmentation') ||
         iconName.includes('segmentationAnalysis') ||
         iconName.includes('systemAlerts') ||
         iconName.includes('transformation') ||
