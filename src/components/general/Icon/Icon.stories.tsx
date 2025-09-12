@@ -75,8 +75,10 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
       'helpVideo',
       'identity',
       'info',
+      'organization',
       'other',
       'placeholder',
+      'predictions',
       'privileges',
       'refreshFrequency',
       'stateEmpty',
@@ -259,7 +261,9 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
         iconName === 'dashboard' ||
         iconName === 'date' ||
         iconName === 'devices' ||
-        iconName === 'identity')
+        iconName === 'identity' ||
+        iconName === 'organization' ||
+        iconName === 'predictions')
     )
   })
 
