@@ -302,7 +302,8 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
         iconName === 'rateDown' ||
         iconName === 'rateStar' ||
         iconName === 'rateUp' ||
-        iconName === 'settings')
+        iconName === 'settings' ||
+        iconName === 'support')
     )
   })
 
@@ -345,8 +346,7 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
         iconName === 'connections' ||
         iconName === 'savedProjects' ||
         iconName === 'privacy' ||
-        iconName === 'setup' ||
-        iconName === 'support')
+        iconName === 'setup')
     )
   })
 
