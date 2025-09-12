@@ -1,6 +1,6 @@
 import { type Meta } from '@storybook/react'
 import React, { type ReactNode } from 'react'
-import { Flex, Icon, type IIconProps } from 'src/components'
+import { Flex, Icon, Typography, type IIconProps } from 'src/components'
 import { Icons } from 'src/constants/Icons'
 
 export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', name, variant }) => {
@@ -14,17 +14,8 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
     justifyItems: 'center',
   }
 
-  const sectionHeaderStyle = {
-    fontSize: '18px',
-    fontWeight: 'bold',
-    margin: '30px 0 15px 0',
-    color: '#1890ff',
-    borderBottom: '2px solid #1890ff',
-    paddingBottom: '5px',
-  }
-
   const sectionStyle = {
-    marginBottom: '40px',
+    marginBottom: '32px',
   }
 
   // If showing a specific icon, use original behavior
@@ -171,39 +162,41 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
     <div>
       {/* UI Actions Section */}
       <div style={sectionStyle}>
-        <h3 style={sectionHeaderStyle}>UI Actions ({uiActionIcons.length})</h3>
+        <Typography.Title level={3}>UI Actions ({uiActionIcons.length})</Typography.Title>
         <div style={iconGridStyle}>{uiActionIcons.sort().map(renderIcon)}</div>
       </div>
 
       {/* Informational Icons Section */}
       <div style={sectionStyle}>
-        <h3 style={sectionHeaderStyle}>Informational Icons ({informationalIcons.length})</h3>
+        <Typography.Title level={3}>Informational Icons ({informationalIcons.length})</Typography.Title>
         <div style={iconGridStyle}>{informationalIcons.sort().map(renderIcon)}</div>
       </div>
 
       {/* Data Type Icons Section */}
       <div style={sectionStyle}>
-        <h3 style={sectionHeaderStyle}>Data Type Icons ({dataTypeIcons.length})</h3>
+        <Typography.Title level={3}>Data Type Icons ({dataTypeIcons.length})</Typography.Title>
         <div style={iconGridStyle}>{dataTypeIcons.sort().map(renderIcon)}</div>
       </div>
 
       {/* Navigation Icons Section */}
       <div style={sectionStyle}>
-        <h3 style={sectionHeaderStyle}>Navigation & Platform Icons ({navigationIcons.length})</h3>
+        <Typography.Title level={3}>Navigation & Platform Icons ({navigationIcons.length})</Typography.Title>
         <div style={iconGridStyle}>{navigationIcons.sort().map(renderIcon)}</div>
       </div>
 
       {/* Other Icons Section */}
       {otherIcons.length > 0 && (
         <div style={sectionStyle}>
-          <h3 style={sectionHeaderStyle}>Other Icons ({otherIcons.length})</h3>
+          <Typography.Title level={3}>Other Icons ({otherIcons.length})</Typography.Title>
           <div style={iconGridStyle}>{otherIcons.sort().map(renderIcon)}</div>
         </div>
       )}
 
       {/* Deprecated Icons Section */}
       <div style={sectionStyle}>
-        <h3 style={sectionHeaderStyle}>Deprecated Icons ({deprecatedIcons.length})</h3>
+        <Typography.Title level={3} type="secondary">
+          Deprecated Icons ({deprecatedIcons.length})
+        </Typography.Title>
         <div style={iconGridStyle}>{deprecatedIcons.sort().map(renderIcon)}</div>
       </div>
     </div>
