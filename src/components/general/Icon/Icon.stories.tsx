@@ -81,6 +81,8 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
       'predictions',
       'privileges',
       'refreshFrequency',
+      'scheduledReport',
+      'segmentationAnalysis',
       'stateEmpty',
       'stateError',
       'stateNoResults',
@@ -263,7 +265,9 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
         iconName === 'devices' ||
         iconName === 'identity' ||
         iconName === 'organization' ||
-        iconName === 'predictions')
+        iconName === 'predictions' ||
+        iconName === 'scheduledReport' ||
+        iconName === 'segmentationAnalysis')
     )
   })
 
@@ -295,8 +299,6 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
         iconName.includes('journeyAnalysis') ||
         iconName.includes('liveStream') ||
         iconName.includes('observability') ||
-        iconName.includes('scheduledReport') ||
-        iconName.includes('segmentationAnalysis') ||
         iconName.includes('systemAlerts') ||
         iconName.includes('transformation') ||
         iconName.includes('userProfiles') ||
