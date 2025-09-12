@@ -126,7 +126,6 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
 
     // Icons that have both lt and dt variants (from Icons.ts config)
     const bothVariantsPatternIcons = [
-      'add',
       'analytics',
       'C360',
       'dataPlatform',
