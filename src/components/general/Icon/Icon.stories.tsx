@@ -110,6 +110,8 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
       // data patterns
       'boolean',
       'number',
+      // legacy icons that don't follow pattern but should be light
+      'add',
     ]
 
     // Icons that follow mp_*_dt_* pattern (duotone) based on SVG filenames
