@@ -66,6 +66,7 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
       'cohort',
       'conversion',
       'criteriaGroup',
+      'database',
       'funnel',
       'group',
       'helpVideo',
@@ -249,7 +250,8 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
         iconName.includes('stateError') ||
         iconName.includes('bannerFreemium') ||
         iconName === 'api' ||
-        iconName === 'audiences')
+        iconName === 'audiences' ||
+        iconName === 'database')
     )
   })
 
