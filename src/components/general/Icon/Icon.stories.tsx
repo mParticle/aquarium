@@ -246,7 +246,7 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
         iconName.includes('criteriaGroup') ||
         iconName.includes('audienceGroup') ||
         iconName.includes('abSplit') ||
-        iconName.includes('other') ||
+        (iconName.includes('other') && iconName !== 'otherData') ||
         iconName.includes('users') ||
         iconName.includes('premium') ||
         iconName.includes('agentCopilot') ||
