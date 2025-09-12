@@ -112,6 +112,8 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
       'number',
       // legacy icons that don't follow pattern but should be light
       'add',
+      'upload',
+      'link',
     ]
 
     // Icons that follow mp_*_dt_* pattern (duotone) based on SVG filenames
@@ -119,7 +121,6 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
       'agentCopilot',
       'array',
       'list',
-      'otherData',
       'string',
       'timestamp',
       'bannerFreemium',
