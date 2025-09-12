@@ -676,6 +676,7 @@ export const Icons: Record<IconNames, IconOptions> = {
   trends: {
     light: ChartLineIcon,
     default: 'light',
+    deprecated: 'insights',
   },
   unlock: {
     light: UnlockIcon,
