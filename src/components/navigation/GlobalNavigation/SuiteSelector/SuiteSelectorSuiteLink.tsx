@@ -2,7 +2,7 @@ import React from 'react'
 import { Center, Flex, Icon } from 'src/components'
 import { type SuiteLink, type SuiteLinks } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { NavigationIcon } from 'src/components/navigation/GlobalNavigation/NavigationIcon'
-import type { IconNames } from 'src/types/icons'
+import type { IconNames } from 'src/components/general/Icon/Icon'
 
 interface ISuiteSelectorSuiteLinkProps {
   link: SuiteLink

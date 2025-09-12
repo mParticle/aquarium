@@ -1,7 +1,10 @@
 import React from 'react'
 import { Icons } from 'src/constants/Icons'
-import type { IconOptions, IconVariant, IconNames } from 'src/types/icons'
+import type { IconOptions, IconVariant } from 'src/types/icons'
 import './icon.css'
+
+// Generate IconNames directly from the Icons constant to avoid import issues
+export type IconNames = keyof typeof Icons
 
 type IconSize = 'xxxxl' | 'xxxl' | 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs'
 export type IconColor =

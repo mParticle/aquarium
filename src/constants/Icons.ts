@@ -1,4 +1,4 @@
-import { type IconOptions, type IconNames } from 'src/types/icons'
+// Removed IconOptions import since we're letting TypeScript infer the type
 
 import {
   AcceptIcon,
@@ -137,7 +137,7 @@ import {
   TimestampIcon,
 } from 'src/components/icons'
 
-export const Icons: Record<IconNames, IconOptions> = {
+export const Icons = {
   abSplit: {
     light: AbSplit,
     default: 'light',
