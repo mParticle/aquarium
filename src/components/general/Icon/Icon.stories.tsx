@@ -56,6 +56,9 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
       'dragAndDrop',
       'dropdownClose',
       'dropdownOpen',
+      'empty',
+      'event',
+      'eventAttribute',
       'reorder',
       // info patterns
       'active',
@@ -286,7 +289,10 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
         iconName.includes('list') ||
         iconName.includes('otherData') ||
         iconName.includes('stateEmpty') ||
-        iconName.includes('stateNoResults'))
+        iconName.includes('stateNoResults') ||
+        iconName === 'empty' ||
+        iconName === 'event' ||
+        iconName === 'eventAttribute')
     )
   })
 
