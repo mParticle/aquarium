@@ -406,6 +406,7 @@ export const Icons: Record<IconNames, IconOptions> = {
   journeys: {
     light: SplitIcon,
     default: 'light',
+    deprecated: 'journeyAnalysis',
   },
   jumpTo: {
     light: JumpToIcon,
