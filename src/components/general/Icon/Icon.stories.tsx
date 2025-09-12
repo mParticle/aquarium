@@ -59,6 +59,7 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
       'empty',
       'event',
       'eventAttribute',
+      'flag',
       'reorder',
       // info patterns
       'active',
@@ -80,6 +81,7 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
       'helpVideo',
       'identity',
       'info',
+      'insights',
       'organization',
       'other',
       'placeholder',
@@ -274,7 +276,9 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
         iconName === 'organization' ||
         iconName === 'predictions' ||
         iconName === 'scheduledReport' ||
-        iconName === 'segmentationAnalysis')
+        iconName === 'segmentationAnalysis' ||
+        iconName === 'flag' ||
+        iconName === 'insights')
     )
   })
 
