@@ -407,6 +407,7 @@ export const Icons: Record<IconNames, IconOptions> = {
   jumpTo: {
     light: JumpToIcon,
     default: 'light',
+    deprecated: 'openTab',
   },
   lightBulb: {
     light: LightBulbIcon,

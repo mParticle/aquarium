@@ -162,39 +162,39 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
     <div>
       {/* UI Actions Section */}
       <div style={sectionStyle}>
-        <Typography.Title level={3}>UI Actions ({uiActionIcons.length})</Typography.Title>
+        <Typography.Title level={4}>UI Actions ({uiActionIcons.length})</Typography.Title>
         <div style={iconGridStyle}>{uiActionIcons.sort().map(renderIcon)}</div>
       </div>
 
       {/* Informational Icons Section */}
       <div style={sectionStyle}>
-        <Typography.Title level={3}>Informational Icons ({informationalIcons.length})</Typography.Title>
+        <Typography.Title level={4}>Informational Icons ({informationalIcons.length})</Typography.Title>
         <div style={iconGridStyle}>{informationalIcons.sort().map(renderIcon)}</div>
       </div>
 
       {/* Data Type Icons Section */}
       <div style={sectionStyle}>
-        <Typography.Title level={3}>Data Type Icons ({dataTypeIcons.length})</Typography.Title>
+        <Typography.Title level={4}>Data Type Icons ({dataTypeIcons.length})</Typography.Title>
         <div style={iconGridStyle}>{dataTypeIcons.sort().map(renderIcon)}</div>
       </div>
 
       {/* Navigation Icons Section */}
       <div style={sectionStyle}>
-        <Typography.Title level={3}>Navigation & Platform Icons ({navigationIcons.length})</Typography.Title>
+        <Typography.Title level={4}>Navigation & Platform Icons ({navigationIcons.length})</Typography.Title>
         <div style={iconGridStyle}>{navigationIcons.sort().map(renderIcon)}</div>
       </div>
 
       {/* Other Icons Section */}
       {otherIcons.length > 0 && (
         <div style={sectionStyle}>
-          <Typography.Title level={3}>Other Icons ({otherIcons.length})</Typography.Title>
+          <Typography.Title level={4}>Other Icons ({otherIcons.length})</Typography.Title>
           <div style={iconGridStyle}>{otherIcons.sort().map(renderIcon)}</div>
         </div>
       )}
 
       {/* Deprecated Icons Section */}
       <div style={sectionStyle}>
-        <Typography.Title level={3} type="secondary">
+        <Typography.Title level={4} type="secondary">
           Deprecated Icons ({deprecatedIcons.length})
         </Typography.Title>
         <div style={iconGridStyle}>{deprecatedIcons.sort().map(renderIcon)}</div>
@@ -222,7 +222,7 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
 const iconTableDocumentation = `
 ### Icon Library Documentation
 
-The \`IconTable\` component displays all available icons organized into logical categories for better discoverability and usage.
+The \`IconTable\` component displays icons organized into logical categories for better discoverability and usage.
 
 #### Icon Categories
 
