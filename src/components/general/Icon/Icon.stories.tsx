@@ -125,6 +125,7 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
       'list',
       'string',
       'timestamp',
+      'otherData',
     ]
 
     // Icons that follow mp_*_dt_* pattern (duotone) based on SVG filenames
