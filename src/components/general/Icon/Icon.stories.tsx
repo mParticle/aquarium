@@ -133,6 +133,7 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
       'segmentationAnalysis',
       'systemAlerts',
       'transformation',
+      'userAttribute',
       'userProfiles',
       // data patterns
       'boolean',
@@ -316,7 +317,8 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
         iconName.includes('stateNoResults') ||
         iconName === 'empty' ||
         iconName === 'event' ||
-        iconName === 'eventAttribute')
+        iconName === 'eventAttribute' ||
+        iconName === 'userAttribute')
     )
   })
 
