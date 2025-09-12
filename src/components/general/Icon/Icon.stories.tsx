@@ -120,6 +120,11 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
       'rateUp',
       'predictions',
       'premium',
+      // data type icons that are configured as duotone but appear visually light
+      'array',
+      'list',
+      'string',
+      'timestamp',
     ]
 
     // Icons that follow mp_*_dt_* pattern (duotone) based on SVG filenames
