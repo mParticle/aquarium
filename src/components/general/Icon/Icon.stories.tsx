@@ -27,21 +27,145 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
     return <div style={iconGridStyle}>{renderIcon(name)}</div>
   }
 
-  // Helper function to split icons by variant
+  // Helper function to split icons by variant based on SVG filename patterns
   const splitByVariant = (icons: Array<keyof typeof Icons>) => {
-    const lightIcons = icons.filter(iconName => {
-      const icon = Icons[iconName]
-      return icon.default === 'light' || (icon.light && !icon['duo-tone'])
-    })
+    // Icons that follow mp_*_lt_* pattern (light) based on SVG filenames
+    const lightPatternIcons = [
+      'accept',
+      'back',
+      'clone',
+      'copy',
+      'delete',
+      'edit',
+      'filter',
+      'fitToScreen',
+      'fullScreen',
+      'jumpTo',
+      'lock',
+      'moreActions',
+      'next',
+      'openTab',
+      'pause',
+      'play',
+      'previous',
+      'run',
+      'submitFeedback',
+      'unlock',
+      'zoomIn',
+      'zoomOut',
+      'dragAndDrop',
+      'reorder',
+      // info patterns
+      'active',
+      'annotation',
+      'audienceGroup',
+      'boost',
+      'calculatedAttribute',
+      'cohort',
+      'conversion',
+      'criteriaGroup',
+      'funnel',
+      'group',
+      'helpVideo',
+      'info',
+      'other',
+      'placeholder',
+      'privileges',
+      'refreshFrequency',
+      'stateEmpty',
+      'stateError',
+      'stateNoResults',
+      'textWidget',
+      'abSplit',
+      'users',
+      // pm patterns
+      'account',
+      'analytics',
+      'C360',
+      'catalog',
+      'dashboard',
+      'dataPlatform',
+      'date',
+      'devices',
+      'directory',
+      'dsr',
+      'enrichment',
+      'forwarding',
+      'identity',
+      'journeyAnalysis',
+      'liveStream',
+      'notification',
+      'notificationSubscribed',
+      'notificationSubscribe',
+      'observability',
+      'organization',
+      'oversight',
+      'overview',
+      'predictions',
+      'scheduledReport',
+      'segmentationAnalysis',
+      'systemAlerts',
+      'transformation',
+      'userProfiles',
+      // data patterns
+      'boolean',
+      'number',
+    ]
 
-    const duotoneIcons = icons.filter(iconName => {
-      const icon = Icons[iconName]
-      return icon.default === 'duo-tone' || (icon['duo-tone'] && !icon.light)
-    })
+    // Icons that follow mp_*_dt_* pattern (duotone) based on SVG filenames
+    const duotonePatternIcons = [
+      'agentCopilot',
+      'array',
+      'list',
+      'otherData',
+      'string',
+      'timestamp',
+      'bannerFreemium',
+      'segmentation',
+    ]
 
-    const bothVariants = icons.filter(iconName => {
+    // Icons that have both lt and dt variants (from Icons.ts config)
+    const bothVariantsPatternIcons = [
+      'add',
+      'analytics',
+      'C360',
+      'dataPlatform',
+      'oversight',
+      'overview',
+      'predictions',
+      'premium',
+      'rateDown',
+      'rateStar',
+      'rateUp',
+    ]
+
+    const lightIcons = icons.filter(
+      iconName => lightPatternIcons.includes(iconName) || bothVariantsPatternIcons.includes(iconName),
+    )
+
+    const duotoneIcons = icons.filter(
+      iconName => duotonePatternIcons.includes(iconName) || bothVariantsPatternIcons.includes(iconName),
+    )
+
+    // For icons with both variants, show them in both sections
+    const bothVariants = icons.filter(iconName => bothVariantsPatternIcons.includes(iconName))
+
+    // Fallback for icons that don't match patterns - use config-based logic
+    const unmatched = icons.filter(
+      iconName =>
+        !lightPatternIcons.includes(iconName) &&
+        !duotonePatternIcons.includes(iconName) &&
+        !bothVariantsPatternIcons.includes(iconName),
+    )
+
+    // Add unmatched to appropriate categories based on config
+    unmatched.forEach(iconName => {
       const icon = Icons[iconName]
-      return icon.light && icon['duo-tone']
+      if (icon.default === 'duo-tone' || (icon['duo-tone'] && !icon.light)) {
+        duotoneIcons.push(iconName)
+      } else {
+        lightIcons.push(iconName)
+      }
     })
 
     return { lightIcons, duotoneIcons, bothVariants }
@@ -215,37 +339,37 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
       {/* UI Actions Section */}
       <div style={sectionStyle}>
         <Typography.Title level={4}>UI Actions ({uiActionIcons.length})</Typography.Title>
-        {renderSubSection('Light', [...uiActionSplit.lightIcons, ...uiActionSplit.bothVariants])}
-        {renderSubSection('Duotone', [...uiActionSplit.duotoneIcons, ...uiActionSplit.bothVariants])}
+        {renderSubSection('Light', uiActionSplit.lightIcons)}
+        {renderSubSection('Duotone', uiActionSplit.duotoneIcons)}
       </div>
 
       {/* Informational Icons Section */}
       <div style={sectionStyle}>
         <Typography.Title level={4}>Informational Icons ({informationalIcons.length})</Typography.Title>
-        {renderSubSection('Light', [...informationalSplit.lightIcons, ...informationalSplit.bothVariants])}
-        {renderSubSection('Duotone', [...informationalSplit.duotoneIcons, ...informationalSplit.bothVariants])}
+        {renderSubSection('Light', informationalSplit.lightIcons)}
+        {renderSubSection('Duotone', informationalSplit.duotoneIcons)}
       </div>
 
       {/* Data Type Icons Section */}
       <div style={sectionStyle}>
         <Typography.Title level={4}>Data Type Icons ({dataTypeIcons.length})</Typography.Title>
-        {renderSubSection('Light', [...dataTypeSplit.lightIcons, ...dataTypeSplit.bothVariants])}
-        {renderSubSection('Duotone', [...dataTypeSplit.duotoneIcons, ...dataTypeSplit.bothVariants])}
+        {renderSubSection('Light', dataTypeSplit.lightIcons)}
+        {renderSubSection('Duotone', dataTypeSplit.duotoneIcons)}
       </div>
 
       {/* Navigation Icons Section */}
       <div style={sectionStyle}>
         <Typography.Title level={4}>Navigation & Platform Icons ({navigationIcons.length})</Typography.Title>
-        {renderSubSection('Light', [...navigationSplit.lightIcons, ...navigationSplit.bothVariants])}
-        {renderSubSection('Duotone', [...navigationSplit.duotoneIcons, ...navigationSplit.bothVariants])}
+        {renderSubSection('Light', navigationSplit.lightIcons)}
+        {renderSubSection('Duotone', navigationSplit.duotoneIcons)}
       </div>
 
       {/* Other Icons Section */}
       {otherIcons.length > 0 && (
         <div style={sectionStyle}>
           <Typography.Title level={4}>Other Icons ({otherIcons.length})</Typography.Title>
-          {renderSubSection('Light', [...otherSplit.lightIcons, ...otherSplit.bothVariants])}
-          {renderSubSection('Duotone', [...otherSplit.duotoneIcons, ...otherSplit.bothVariants])}
+          {renderSubSection('Light', otherSplit.lightIcons)}
+          {renderSubSection('Duotone', otherSplit.duotoneIcons)}
         </div>
       )}
 
