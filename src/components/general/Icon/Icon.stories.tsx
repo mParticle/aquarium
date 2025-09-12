@@ -119,13 +119,14 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
       'rateStar',
       'rateUp',
       'predictions',
+      'premium',
     ]
 
     // Icons that follow mp_*_dt_* pattern (duotone) based on SVG filenames
     const duotonePatternIcons = ['agentCopilot', 'bannerFreemium', 'segmentation']
 
     // Icons that have both lt and dt variants (from Icons.ts config)
-    const bothVariantsPatternIcons = ['analytics', 'C360', 'dataPlatform', 'oversight', 'overview', 'premium']
+    const bothVariantsPatternIcons = ['analytics', 'C360', 'dataPlatform', 'oversight', 'overview']
 
     const lightIcons = icons.filter(
       iconName => lightPatternIcons.includes(iconName) || bothVariantsPatternIcons.includes(iconName),
