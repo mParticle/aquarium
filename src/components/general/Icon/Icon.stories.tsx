@@ -54,6 +54,8 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
       'zoomIn',
       'zoomOut',
       'dragAndDrop',
+      'dropdownClose',
+      'dropdownOpen',
       'reorder',
       // info patterns
       'active',
@@ -225,7 +227,8 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
         iconName.includes('refresh') ||
         iconName.includes('clone') ||
         iconName.includes('boost') ||
-        iconName.includes('submitFeedback'))
+        iconName.includes('submitFeedback') ||
+        iconName.includes('dropdown'))
     )
   })
 
