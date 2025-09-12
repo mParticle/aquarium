@@ -496,6 +496,7 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: OversightIcon,
     'duo-tone': OversightIconDt,
     default: 'duo-tone',
+    deprecated: 'observability',
   },
   overview: {
     light: OverviewIcon,
