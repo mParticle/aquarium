@@ -58,7 +58,9 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
       // info patterns
       'active',
       'annotation',
+      'api',
       'audienceGroup',
+      'audiences',
       'boost',
       'calculatedAttribute',
       'cohort',
@@ -245,7 +247,9 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
         iconName.includes('agentCopilot') ||
         iconName.includes('refreshFrequency') ||
         iconName.includes('stateError') ||
-        iconName.includes('bannerFreemium'))
+        iconName.includes('bannerFreemium') ||
+        iconName === 'api' ||
+        iconName === 'audiences')
     )
   })
 
