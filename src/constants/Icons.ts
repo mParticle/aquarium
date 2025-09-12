@@ -166,13 +166,13 @@ export const Icons: Record<IconNames, IconOptions> = {
   alicorn: {
     light: AlicornIcon,
     default: 'light',
-    deprecated: 'premium',
+    deprecated: 'placeholder',
   },
   analytics: {
     light: AnalyticsIcon,
     'duo-tone': AnalyticsIconDt,
     default: 'duo-tone',
-    deprecated: 'dashboard',
+    deprecated: true,
   },
   annotation: {
     light: Annotation,
@@ -202,7 +202,7 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: C360Icon,
     'duo-tone': C360IconDt,
     default: 'duo-tone',
-    deprecated: 'analytics',
+    deprecated: true,
   },
   catalog: {
     light: CatalogIcon,
@@ -269,7 +269,7 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: DataPlatformIcon,
     'duo-tone': DataPlatformIconDt,
     default: 'duo-tone',
-    deprecated: 'catalog',
+    deprecated: true,
   },
   date: {
     light: DateIcon,
@@ -407,7 +407,7 @@ export const Icons: Record<IconNames, IconOptions> = {
   journeys: {
     light: SplitIcon,
     default: 'light',
-    deprecated: 'journeyAnalysis',
+    deprecated: true,
   },
   jumpTo: {
     light: JumpToIcon,
@@ -455,7 +455,7 @@ export const Icons: Record<IconNames, IconOptions> = {
   myHub: {
     light: GridIcon,
     default: 'light',
-    deprecated: 'dashboard',
+    deprecated: true,
   },
   next: {
     light: NextIcon,
@@ -501,13 +501,13 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: OversightIcon,
     'duo-tone': OversightIconDt,
     default: 'duo-tone',
-    deprecated: 'observability',
+    deprecated: true,
   },
   overview: {
     light: OverviewIcon,
     'duo-tone': OverviewIconDt,
     default: 'duo-tone',
-    deprecated: 'dashboard',
+    deprecated: true,
   },
   paywall: {
     light: PaywallIcon,
@@ -607,7 +607,7 @@ export const Icons: Record<IconNames, IconOptions> = {
   segmentation: {
     'duo-tone': SegmentationIconDt,
     default: 'duo-tone',
-    deprecated: 'segmentationAnalysis',
+    deprecated: true,
   },
   segmentationAnalysis: {
     light: SegmentationAnalysis,
@@ -678,7 +678,7 @@ export const Icons: Record<IconNames, IconOptions> = {
   trends: {
     light: ChartLineIcon,
     default: 'light',
-    deprecated: 'insights',
+    deprecated: true,
   },
   unlock: {
     light: UnlockIcon,
@@ -716,7 +716,7 @@ export const Icons: Record<IconNames, IconOptions> = {
   bannerFreemium: {
     'duo-tone': BannerFreemium,
     default: 'duo-tone',
-    deprecated: 'premium',
+    deprecated: true,
   },
   boolean: {
     light: BooleanIcon,
