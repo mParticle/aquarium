@@ -166,6 +166,7 @@ export const Icons: Record<IconNames, IconOptions> = {
   alicorn: {
     light: AlicornIcon,
     default: 'light',
+    deprecated: 'premium',
   },
   analytics: {
     light: AnalyticsIcon,
