@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Dropdown, Icon, Table, message } from 'src/components'
+import { Button, Dropdown, Icon, Table, message, Typography } from 'src/components'
 import { type Meta, type StoryObj } from '@storybook/react'
 import { FontWeightStrong, ColorErrorText, Margin } from 'src/styles/style'
 import { DeleteConfirmModal } from './DeleteConfirmModal'
@@ -186,4 +186,37 @@ const SimpleDeleteConfirmTemplate = () => {
 
 export const DeleteConfirm: Story = {
   render: SimpleDeleteConfirmTemplate,
+}
+
+// Simple story that shows clean component code with trigger button
+export const SimpleExample: Story = {
+  render: () => {
+    const [open, setOpen] = useState(false)
+
+    return (
+      <>
+        <Button danger onClick={() => setOpen(true)}>
+          Delete Item
+        </Button>
+
+        <DeleteConfirmModal
+          title="Delete item?"
+          open={open}
+          onCancel={() => setOpen(false)}
+          onOk={() => {
+            setOpen(false)
+            console.log('Item deleted')
+          }}>
+          <>
+            <Typography.Paragraph>
+              This action will permanently delete <Typography.Text strong>Item Name</Typography.Text> and all associated
+              data. If this item is currently being used in other areas of the system, those connections will be
+              removed.
+            </Typography.Paragraph>
+            <Typography.Text type="danger">This action can&apos;t be undone.</Typography.Text>
+          </>
+        </DeleteConfirmModal>
+      </>
+    )
+  },
 }

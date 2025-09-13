@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
 
 import * as DeleteConfirmStories from '../../../../../src/components/feedback/Modal/DeleteConfirmModal/DeleteConfirmModal.stories';
 
@@ -14,7 +14,7 @@ A delete confirmation prompts users to confirm before performing destructive act
 - Details about what's being deleted
 - Options to confirm or cancel
 
-This pattern is triggered from the [More actions menu](?path=/story/components-feedback-deleteconfirmmodal--ux-flow) in a table row or a card.
+This pattern is triggered from the [More actions menu](?path=/story/components-feedback-modal-delete-confirm-modal--ux-flow) in a table row or a card.
 
 ### When to Use
 
@@ -31,14 +31,5 @@ Avoid confirmations for low-risk or easily reversible actions, where added frict
 - Removing criteria from an audience
 - Clearing temporary filters or tags
 
-## Current usages
-
-<ul>
-  <li>
-    <div style={{ display: 'flex', alignItems: 'center' }}>
-      <img src="https://badgen.net/badge/icon/GitHub?icon=github&label" alt="Repo" style={{ marginRight: 8 }}/>
-      <a href="https://github.com/mparticle-by-rokt/mPServer/blob/main/src/UI/MP.UI.Web.Nancy/Assets/private/aurelia/src/components/aquarium-candidates/ConfirmDeleteModal/ConfirmDeleteModal.stories.tsx" target="_top" rel="nofollow" className="sbdocs sbdocs-a">Nancy Platform Examples</a>
-    </div>
-  </li>
-</ul>
+<Canvas of={DeleteConfirmStories.SimpleExample} />
 
