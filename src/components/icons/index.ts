@@ -7,6 +7,7 @@ import RateStarIcon from 'src/assets/svg/mp_act_lt_rate-star.svg?react'
 import RateStarIconDt from 'src/assets/svg/mp_act_dt_rate-star.svg?react'
 import RateUpIcon from 'src/assets/svg/rate_up.svg?react'
 import RateUpIconDt from 'src/assets/svg/mp_act_dt_rate-up.svg?react'
+import RunIcon from 'src/assets/svg/mp_act_lt_run.svg?react'
 import AnalyticsIcon from 'src/assets/svg/mp_pm_lt_analytcis.svg?react'
 import AnalyticsIconDt from 'src/assets/svg/mp_pm_dt_analytics.svg?react'
 import C360Icon from 'src/assets/svg/mp_pm_lt_c360.svg?react'
@@ -74,6 +75,8 @@ import HelpVideoIcon from 'src/assets/svg/mp_info_lt_help-video.svg?react'
 import NextIcon from 'src/assets/svg/mp_act_lt_next.svg?react'
 import NumberIcon from 'src/assets/svg/mp_data_lt_number.svg?react'
 import OpenTabIcon from 'src/assets/svg/mp_act_lt_open-tab.svg?react'
+import PauseIcon from 'src/assets/svg/mp_act_lt_pause.svg?react'
+import PlayIcon from 'src/assets/svg/mp_act_lt_play.svg?react'
 import PreviousIcon from 'src/assets/svg/mp_act_lt_previous.svg?react'
 import DirectoryIcon from 'src/assets/svg/mp_pm_lt_directory.svg?react'
 import LockIcon from 'src/assets/svg/mp_act_lt_lock.svg?react'
@@ -146,6 +149,7 @@ export {
   RateStarIconDt,
   RateUpIcon,
   RateUpIconDt,
+  RunIcon,
   AnalyticsIcon,
   AnalyticsIconDt,
   Annotation,
@@ -219,7 +223,9 @@ export {
   OverviewIcon,
   OverviewIconDt,
   PaywallIcon,
+  PauseIcon,
   Placeholder,
+  PlayIcon,
   PrecisionIcon,
   PredictionsIcon,
   PredictionsIconDt,
