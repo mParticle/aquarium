@@ -1,25 +1,147 @@
 import { type Meta } from '@storybook/react'
-import React, { type ReactNode } from 'react'
+import React, { type ReactNode, useMemo } from 'react'
 import { Flex, Icon, Typography, ErrorStateIcon, type IIconProps } from 'src/components'
+import { type IconColor } from 'src/components/general/Icon/Icon'
 import { Icons } from 'src/constants/Icons'
+import { MarginMd, MarginXl, Size } from 'src/styles/style'
+import type { IconNames } from 'src/types/icons'
+import { ICON_VARIANTS } from 'src/types/icons'
+
+// Storybook control constants
+const ICON_SIZES = ['xxxxl', 'xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs'] as const
+const ICON_COLORS: IconColor[] = [
+  'default',
+  'primary',
+  'success',
+  'warning',
+  'error',
+  'info',
+  'white',
+  'black',
+  'text',
+  'strong',
+  'brand',
+] as const
+
+// Icon categorization constants for better maintainability
+const ICON_CATEGORIES = {
+  UI_ACTION_PATTERNS: [
+    'accept',
+    'close',
+    'edit',
+    'delete',
+    'copy',
+    'add',
+    'remove',
+    'unlock',
+    'lock',
+    'play',
+    'pause',
+    'run',
+    'filter',
+    'search',
+    'upload',
+    'next',
+    'previous',
+    'back',
+    'openTab',
+    'fullScreen',
+    'fitToScreen',
+    'zoomIn',
+    'zoomOut',
+    'jumpTo',
+    'moreActions',
+    'dragAndDrop',
+    'reorder',
+    'refresh',
+    'clone',
+    'boost',
+    'submitFeedback',
+    'dropdown',
+    'logout',
+  ] as const,
+
+  INFORMATIONAL_PATTERNS: [
+    'info',
+    'help',
+    'notification',
+    'active',
+    'cohort',
+    'funnel',
+    'group',
+    'placeholder',
+    'privileges',
+    'textWidget',
+    'annotation',
+    'generic',
+    'calculatedAttribute',
+    'conversion',
+    'criteriaGroup',
+    'audienceGroup',
+    'abSplit',
+    'users',
+    'premium',
+    'agentCopilot',
+    'refreshFrequency',
+    'stateError',
+    'bannerFreemium',
+  ] as const,
+
+  DATA_TYPE_PATTERNS: [
+    'array',
+    'boolean',
+    'number',
+    'string',
+    'timestamp',
+    'list',
+    'otherData',
+    'stateEmpty',
+    'stateNoResults',
+  ] as const,
+
+  NAVIGATION_PATTERNS: [
+    'catalog',
+    'directory',
+    'dsr',
+    'enrichment',
+    'forwarding',
+    'journeyAnalysis',
+    'liveStream',
+    'observability',
+    'systemAlerts',
+    'transformation',
+    'userProfiles',
+    'account',
+  ] as const,
+} as const
+
+// Helper function to check if an icon matches any of the given patterns
+const iconMatchesPatterns = (iconName: IconNames, patterns: readonly string[]): boolean => {
+  return patterns.some(pattern => iconName.includes(pattern))
+}
+
+// Helper function to get non-deprecated icons
+const getNonDeprecatedIcons = (icons: IconNames[]): IconNames[] => {
+  return icons.filter(iconName => !Icons[iconName].deprecated)
+}
 
 export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', name, variant }) => {
-  const allIcons = Object.keys(Icons) as Array<keyof typeof Icons>
+  const allIcons = Object.keys(Icons) as IconNames[]
 
   const iconGridStyle = {
     display: 'grid',
     gridTemplateColumns: 'repeat(6, 1fr)',
-    gap: '10px',
+    gap: Size,
     alignItems: 'center',
     justifyItems: 'center',
   }
 
   const sectionStyle = {
-    marginBottom: '32px',
+    marginBottom: MarginXl,
   }
 
   const subSectionStyle = {
-    marginBottom: '20px',
+    marginBottom: MarginMd,
   }
 
   // If showing a specific icon, use original behavior
@@ -27,180 +149,27 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
     return <div style={iconGridStyle}>{renderIcon(name)}</div>
   }
 
-  // Helper function to split icons by variant based on SVG filename patterns
-  const splitByVariant = (icons: Array<keyof typeof Icons>) => {
-    // Icons that follow mp_*_lt_* pattern (light) based on SVG filenames
-    const lightPatternIcons = [
-      'accept',
-      'back',
-      'clone',
-      'copy',
-      'delete',
-      'edit',
-      'filter',
-      'fitToScreen',
-      'fullScreen',
-      'jumpTo',
-      'link',
-      'lock',
-      'logout',
-      'moreActions',
-      'next',
-      'openTab',
-      'pause',
-      'play',
-      'previous',
-      'run',
-      'submitFeedback',
-      'unlock',
-      'zoomIn',
-      'zoomOut',
-      'dragAndDrop',
-      'dropdownClose',
-      'dropdownOpen',
-      'empty',
-      'event',
-      'eventAttribute',
-      'favorite',
-      'flag',
-      'reorder',
-      // info patterns
-      'active',
-      'annotation',
-      'api',
-      'audienceGroup',
-      'audiences',
-      'boost',
-      'calculatedAttribute',
-      'cohort',
-      'conversion',
-      'criteriaGroup',
-      'dashboard',
-      'database',
-      'date',
-      'devices',
-      'funnel',
-      'group',
-      'helpVideo',
-      'identity',
-      'info',
-      'insights',
-      'link',
-      'organization',
-      'other',
-      'paywall',
-      'pipelines',
-      'placeholder',
-      'precision',
-      'predictions',
-      'privileges',
-      'refreshFrequency',
-      'scheduledReport',
-      'segmentationAnalysis',
-      'selected',
-      'settings',
-      'stateEmpty',
-      'stateError',
-      'stateNoResults',
-      'textWidget',
-      'abSplit',
-      'users',
-      // pm patterns
-      'account',
-      'analytics',
-      'C360',
-      'catalog',
-      'connections',
-      'dashboard',
-      'dataPlatform',
-      'date',
-      'devices',
-      'directory',
-      'dsr',
-      'enrichment',
-      'forwarding',
-      'identity',
-      'journeyAnalysis',
-      'liveStream',
-      'notification',
-      'notificationSubscribed',
-      'notificationSubscribe',
-      'observability',
-      'organization',
-      'oversight',
-      'privacy',
-      'overview',
-      'predictions',
-      'savedProjects',
-      'scheduledReport',
-      'segmentationAnalysis',
-      'setup',
-      'support',
-      'systemAlerts',
-      'transformation',
-      'userAttribute',
-      'userProfiles',
-      // data patterns
-      'boolean',
-      'number',
-      // legacy icons that don't follow pattern but should be light
-      'add',
-      'upload',
-      'link',
-      // icons that have duotone variants but appear as simple light icons
-      'rateDown',
-      'rateStar',
-      'rateUp',
-      'predictions',
-      'premium',
-      // data type icons that are configured as duotone but appear visually light
-      'array',
-      'list',
-      'string',
-      'timestamp',
-      'otherData',
-    ]
+  // Helper function to split icons by variant based on their default configuration
+  const splitByVariant = (icons: IconNames[]) => {
+    const lightIcons: IconNames[] = []
+    const duotoneIcons: IconNames[] = []
 
-    // Icons that follow mp_*_dt_* pattern (duotone) based on SVG filenames
-    const duotonePatternIcons = ['agentCopilot']
-
-    // Icons that have both lt and dt variants (from Icons.ts config)
-    const bothVariantsPatternIcons = []
-
-    const lightIcons = icons.filter(
-      iconName => lightPatternIcons.includes(iconName) || bothVariantsPatternIcons.includes(iconName),
-    )
-
-    const duotoneIcons = icons.filter(
-      iconName => duotonePatternIcons.includes(iconName) || bothVariantsPatternIcons.includes(iconName),
-    )
-
-    // For icons with both variants, show them in both sections
-    const bothVariants = icons.filter(iconName => bothVariantsPatternIcons.includes(iconName))
-
-    // Fallback for icons that don't match patterns - use config-based logic
-    const unmatched = icons.filter(
-      iconName =>
-        !lightPatternIcons.includes(iconName) &&
-        !duotonePatternIcons.includes(iconName) &&
-        !bothVariantsPatternIcons.includes(iconName),
-    )
-
-    // Add unmatched to appropriate categories based on config
-    unmatched.forEach(iconName => {
+    icons.forEach(iconName => {
       const icon = Icons[iconName]
-      if (icon.default === 'duo-tone' || (icon['duo-tone'] && !icon.light)) {
+
+      // Categorize based on the default variant using constants
+      if (icon.default === ICON_VARIANTS.DUO_TONE) {
         duotoneIcons.push(iconName)
       } else {
         lightIcons.push(iconName)
       }
     })
 
-    return { lightIcons, duotoneIcons, bothVariants }
+    return { lightIcons, duotoneIcons }
   }
 
   // Helper function to render subsection
-  const renderSubSection = (title: string, icons: Array<keyof typeof Icons>, titleLevel: 4 | 5 = 5) => {
+  const renderSubSection = (title: string, icons: IconNames[], titleLevel: 4 | 5 = 5) => {
     if (icons.length === 0) return null
 
     return (
@@ -213,164 +182,106 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
     )
   }
 
-  // Categorize icons
-  const uiActionIcons = allIcons.filter(iconName => {
-    const iconData = Icons[iconName]
-    return (
-      !iconData.deprecated &&
-      (iconName.includes('accept') ||
-        iconName.includes('close') ||
-        iconName.includes('edit') ||
-        iconName.includes('delete') ||
-        iconName.includes('copy') ||
-        iconName.includes('add') ||
-        iconName.includes('remove') ||
-        iconName.includes('unlock') ||
-        iconName.includes('lock') ||
-        iconName.includes('play') ||
-        iconName.includes('pause') ||
-        iconName.includes('run') ||
-        iconName.includes('filter') ||
-        iconName.includes('search') ||
-        iconName.includes('upload') ||
-        iconName.includes('next') ||
-        iconName.includes('previous') ||
-        iconName.includes('back') ||
-        iconName.includes('openTab') ||
-        iconName.includes('fullScreen') ||
-        iconName.includes('fitToScreen') ||
-        iconName.includes('zoomIn') ||
-        iconName.includes('zoomOut') ||
-        iconName.includes('jumpTo') ||
-        iconName.includes('moreActions') ||
-        iconName.includes('dragAndDrop') ||
-        iconName.includes('reorder') ||
-        iconName.includes('refresh') ||
-        iconName.includes('clone') ||
-        iconName.includes('boost') ||
-        iconName.includes('submitFeedback') ||
-        iconName.includes('dropdown') ||
-        iconName.includes('logout'))
-    )
-  })
+  // Categorize icons using helper functions and constants
+  const uiActionIcons = useMemo(
+    () =>
+      getNonDeprecatedIcons(
+        allIcons.filter(iconName => iconMatchesPatterns(iconName, ICON_CATEGORIES.UI_ACTION_PATTERNS)),
+      ),
+    [allIcons],
+  )
 
-  const informationalIcons = allIcons.filter(iconName => {
-    const iconData = Icons[iconName]
-    return (
-      !iconData.deprecated &&
-      (iconName.includes('info') ||
-        iconName.includes('help') ||
-        iconName.includes('notification') ||
-        iconName.includes('active') ||
-        iconName.includes('cohort') ||
-        iconName.includes('funnel') ||
-        iconName.includes('group') ||
-        iconName.includes('placeholder') ||
-        iconName.includes('privileges') ||
-        iconName.includes('textWidget') ||
-        iconName.includes('annotation') ||
-        iconName.includes('generic') ||
-        iconName.includes('calculatedAttribute') ||
-        iconName.includes('conversion') ||
-        iconName.includes('criteriaGroup') ||
-        iconName.includes('audienceGroup') ||
-        iconName.includes('abSplit') ||
-        (iconName.includes('other') && iconName !== 'otherData') ||
-        iconName.includes('users') ||
-        iconName.includes('premium') ||
-        iconName.includes('agentCopilot') ||
-        iconName.includes('refreshFrequency') ||
-        iconName.includes('stateError') ||
-        iconName.includes('bannerFreemium') ||
-        iconName === 'api' ||
-        iconName === 'audiences' ||
-        iconName === 'database' ||
-        iconName === 'dashboard' ||
-        iconName === 'date' ||
-        iconName === 'devices' ||
-        iconName === 'identity' ||
-        iconName === 'organization' ||
-        iconName === 'predictions' ||
-        iconName === 'scheduledReport' ||
-        iconName === 'segmentationAnalysis' ||
-        iconName === 'flag' ||
-        iconName === 'insights' ||
-        iconName === 'link' ||
-        iconName === 'favorite' ||
-        iconName === 'paywall' ||
-        iconName === 'pipelines' ||
-        iconName === 'precision' ||
-        iconName === 'rateDown' ||
-        iconName === 'rateStar' ||
-        iconName === 'rateUp' ||
-        iconName === 'settings' ||
-        iconName === 'support' ||
-        iconName === 'selected')
-    )
-  })
+  const informationalSpecificIcons: IconNames[] = [
+    'api',
+    'audiences',
+    'database',
+    'dashboard',
+    'date',
+    'devices',
+    'identity',
+    'organization',
+    'predictions',
+    'scheduledReport',
+    'segmentationAnalysis',
+    'flag',
+    'insights',
+    'link',
+    'favorite',
+    'paywall',
+    'pipelines',
+    'precision',
+    'rateDown',
+    'rateStar',
+    'rateUp',
+    'settings',
+    'support',
+    'selected',
+  ] as const
 
-  const dataTypeIcons = allIcons.filter(iconName => {
-    const iconData = Icons[iconName]
-    return (
-      !iconData.deprecated &&
-      (iconName.includes('array') ||
-        iconName.includes('boolean') ||
-        iconName.includes('number') ||
-        iconName.includes('string') ||
-        iconName.includes('timestamp') ||
-        iconName.includes('list') ||
-        iconName.includes('otherData') ||
-        iconName.includes('stateEmpty') ||
-        iconName.includes('stateNoResults') ||
-        iconName === 'empty' ||
-        iconName === 'event' ||
-        iconName === 'eventAttribute' ||
-        iconName === 'userAttribute')
-    )
-  })
+  const informationalIcons = useMemo(
+    () =>
+      getNonDeprecatedIcons(
+        allIcons.filter(
+          iconName =>
+            iconMatchesPatterns(iconName, ICON_CATEGORIES.INFORMATIONAL_PATTERNS) ||
+            informationalSpecificIcons.includes(iconName) ||
+            (iconName.includes('other') && iconName !== 'otherData'),
+        ),
+      ),
+    [allIcons],
+  )
 
-  const navigationIcons = allIcons.filter(iconName => {
-    const iconData = Icons[iconName]
-    return (
-      !iconData.deprecated &&
-      (iconName.includes('catalog') ||
-        iconName.includes('directory') ||
-        iconName.includes('dsr') ||
-        iconName.includes('enrichment') ||
-        iconName.includes('forwarding') ||
-        iconName.includes('journeyAnalysis') ||
-        iconName.includes('liveStream') ||
-        iconName.includes('observability') ||
-        iconName.includes('systemAlerts') ||
-        iconName.includes('transformation') ||
-        iconName.includes('userProfiles') ||
-        iconName.includes('account') ||
-        iconName === 'connections' ||
-        iconName === 'savedProjects' ||
-        iconName === 'privacy' ||
-        iconName === 'setup')
-    )
-  })
+  const dataTypeSpecificIcons: IconNames[] = ['empty', 'event', 'eventAttribute', 'userAttribute'] as const
 
-  const deprecatedIcons = allIcons.filter(iconName => Icons[iconName].deprecated)
+  const dataTypeIcons = useMemo(
+    () =>
+      getNonDeprecatedIcons(
+        allIcons.filter(
+          iconName =>
+            iconMatchesPatterns(iconName, ICON_CATEGORIES.DATA_TYPE_PATTERNS) ||
+            dataTypeSpecificIcons.includes(iconName),
+        ),
+      ),
+    [allIcons],
+  )
 
-  const otherIcons = allIcons.filter(iconName => {
-    const iconData = Icons[iconName]
-    return (
-      !iconData.deprecated &&
-      !uiActionIcons.includes(iconName) &&
-      !informationalIcons.includes(iconName) &&
-      !dataTypeIcons.includes(iconName) &&
-      !navigationIcons.includes(iconName)
-    )
-  })
+  const navigationSpecificIcons: IconNames[] = ['connections', 'savedProjects', 'privacy', 'setup'] as const
+
+  const navigationIcons = useMemo(
+    () =>
+      getNonDeprecatedIcons(
+        allIcons.filter(
+          iconName =>
+            iconMatchesPatterns(iconName, ICON_CATEGORIES.NAVIGATION_PATTERNS) ||
+            navigationSpecificIcons.includes(iconName),
+        ),
+      ),
+    [allIcons],
+  )
+
+  const deprecatedIcons = useMemo(() => allIcons.filter(iconName => Icons[iconName].deprecated), [allIcons])
+
+  const otherIcons = useMemo(
+    () =>
+      allIcons.filter(iconName => {
+        const iconData = Icons[iconName]
+        return (
+          !iconData.deprecated &&
+          !uiActionIcons.includes(iconName) &&
+          !informationalIcons.includes(iconName) &&
+          !dataTypeIcons.includes(iconName) &&
+          !navigationIcons.includes(iconName)
+        )
+      }),
+    [allIcons, uiActionIcons, informationalIcons, dataTypeIcons, navigationIcons],
+  )
 
   // Split each category by variant
-  const uiActionSplit = splitByVariant(uiActionIcons)
-  const informationalSplit = splitByVariant(informationalIcons)
-  const dataTypeSplit = splitByVariant(dataTypeIcons)
-  const navigationSplit = splitByVariant(navigationIcons)
-  const otherSplit = splitByVariant(otherIcons)
+  const uiActionSplit = useMemo(() => splitByVariant(uiActionIcons), [uiActionIcons])
+  const informationalSplit = useMemo(() => splitByVariant(informationalIcons), [informationalIcons])
+  const dataTypeSplit = useMemo(() => splitByVariant(dataTypeIcons), [dataTypeIcons])
+  const navigationSplit = useMemo(() => splitByVariant(navigationIcons), [navigationIcons])
+  const otherSplit = useMemo(() => splitByVariant(otherIcons), [otherIcons])
 
   return (
     <div>
@@ -432,7 +343,7 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
     </div>
   )
 
-  function renderIcon(iconName: keyof typeof Icons): ReactNode {
+  function renderIcon(iconName: IconNames): ReactNode {
     const icon = Icons[iconName]
     const isDeprecated = icon.deprecated
     const textStyle = isDeprecated ? { textDecoration: 'line-through' } : {}
@@ -463,10 +374,10 @@ The \`IconTable\` component displays icons organized into logical categories for
 **Deprecated Icons**: Icons that have been deprecated and should no longer be used in new implementations.
 
 #### Props
-- \`name\`: The name of the icon 
+- \`name\`: The name of the icon
 - \`color\`: The color of the icon. Available options are \`default\`, \`primary\`, \`success\`, \`warning\`, \`error\`, \`info\`, \`white\`, \`black\`, \`text\`, \`strong\`, \`brand\`.
 - \`size\`: The size of the icon. Available options are \`xxxxl\`, \`xxxl\`, \`xxl\`, \`xl\`, \`lg\`, \`md\`, \`sm\`, \`xs\`.
-- \`variant\`: The variant of the icon. Available options are \`light\` and \`duo-tone\`.
+- \`variant\`: The variant of the icon. Available options are \`${Object.values(ICON_VARIANTS).join('` and `')}\`.
 
 #### Icon Naming Conventions
 
@@ -478,7 +389,7 @@ Icons follow specific naming patterns based on their category:
 
 #### Example Usage
 \`\`\`jsx
-<Icon name="add" size="lg" color="primary" variant="light" />
+<Icon name="add" size="lg" color="primary" variant="${ICON_VARIANTS.LIGHT}" />
 <Icon name="info" size="md" color="info" />
 <Icon name="play" size="sm" color="success" />
 \`\`\`
@@ -497,27 +408,15 @@ const meta: Meta = {
   argTypes: {
     size: {
       control: 'select',
-      options: ['xxxxl', 'xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs'],
+      options: ICON_SIZES,
     },
     color: {
       control: 'select',
-      options: [
-        'default',
-        'primary',
-        'success',
-        'warning',
-        'error',
-        'info',
-        'white',
-        'black',
-        'text',
-        'strong',
-        'brand',
-      ],
+      options: ICON_COLORS,
     },
     variant: {
       control: 'select',
-      options: ['light', 'duo-tone'],
+      options: Object.values(ICON_VARIANTS),
     },
   },
   parameters: {

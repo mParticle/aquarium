@@ -161,7 +161,7 @@ export const Icons: Record<IconNames, IconOptions> = {
   add: {
     light: AddIcon,
     'duo-tone': AddIcon,
-    default: 'duo-tone',
+    default: 'light',
   },
   alicorn: {
     light: AlicornIcon,
@@ -179,8 +179,9 @@ export const Icons: Record<IconNames, IconOptions> = {
     default: 'light',
   },
   array: {
+    light: ArrayIcon,
     'duo-tone': ArrayIcon,
-    default: 'duo-tone',
+    default: 'light',
   },
   calculatedAttribute: {
     light: CalculatedAttributeIcon,
@@ -424,8 +425,9 @@ export const Icons: Record<IconNames, IconOptions> = {
     default: 'light',
   },
   list: {
+    light: ListIcon,
     'duo-tone': ListIcon,
-    default: 'duo-tone',
+    default: 'light',
   },
   liveStream: {
     light: LiveStreamIcon,
@@ -494,8 +496,9 @@ export const Icons: Record<IconNames, IconOptions> = {
     default: 'light',
   },
   otherData: {
+    light: OtherDataIcon,
     'duo-tone': OtherDataIcon,
-    default: 'duo-tone',
+    default: 'light',
   },
   oversight: {
     light: OversightIcon,
@@ -652,8 +655,9 @@ export const Icons: Record<IconNames, IconOptions> = {
     deprecated: 'journeys',
   },
   string: {
+    light: StringIcon,
     'duo-tone': StringIcon,
-    default: 'duo-tone',
+    default: 'light',
   },
   support: {
     light: MessageQuestionIcon,
@@ -668,8 +672,9 @@ export const Icons: Record<IconNames, IconOptions> = {
     default: 'light',
   },
   timestamp: {
+    light: TimestampIcon,
     'duo-tone': TimestampIcon,
-    default: 'duo-tone',
+    default: 'light',
   },
   transformation: {
     light: TransformationsIcon,
