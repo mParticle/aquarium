@@ -149,7 +149,7 @@ export type IconNames =
   | 'userAttribute'
   | 'userProfiles'
   | 'users'
-  // | 'viewOnly' // TODO: Re-upload
+  | 'viewOnly'
   | 'wrench'
   | 'zoomIn'
   | 'zoomOut'

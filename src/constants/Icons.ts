@@ -51,7 +51,6 @@ import {
   JumpToIcon,
   LightBulbIcon,
   LiveStreamIcon,
-  PaywallIcon,
   MessageQuestionIcon,
   MpLogoIcon,
   ObservabilityIcon,
@@ -72,7 +71,8 @@ import {
   UserAttributeIcon,
   UserProfilesIcon,
   UsersIcon,
-  // ViewOnlyIcon, // TODO: Re-upload
+  ViewOnlyIcon,
+  PaywallIcon,
   WrenchIcon,
   ZoomIn,
   ZoomOut,
@@ -706,10 +706,10 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: UsersIcon,
     default: 'light',
   },
-  // viewOnly: {
-  //   light: ViewOnlyIcon,
-  //   default: 'light',
-  // }, // TODO: Re-upload
+  viewOnly: {
+    light: ViewOnlyIcon,
+    default: 'light',
+  },
   wrench: {
     light: WrenchIcon,
     default: 'light',

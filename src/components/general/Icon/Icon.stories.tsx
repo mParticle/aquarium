@@ -81,7 +81,7 @@ const ICON_CATEGORIES = {
     'abSplit',
     'account',
     'users',
-    // 'viewOnly', // TODO: Re-upload
+    'viewOnly',
     'premium',
     'agentCopilot',
     'refreshFrequency',
