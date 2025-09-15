@@ -52,7 +52,6 @@ import {
   LightBulbIcon,
   LiveStreamIcon,
   PaywallIcon,
-  PrivateIcon,
   MessageQuestionIcon,
   MpLogoIcon,
   ObservabilityIcon,
@@ -516,10 +515,6 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   paywall: {
     light: PaywallIcon,
-    default: 'light',
-  },
-  private: {
-    light: PrivateIcon,
     default: 'light',
   },
   pause: {

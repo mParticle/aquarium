@@ -70,7 +70,6 @@ const ICON_CATEGORIES = {
     'funnel',
     'group',
     'placeholder',
-    'private',
     'privileges',
     'textWidget',
     'annotation',
