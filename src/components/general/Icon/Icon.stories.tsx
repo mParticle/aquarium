@@ -80,6 +80,7 @@ const ICON_CATEGORIES = {
     'criteriaGroup',
     'audienceGroup',
     'abSplit',
+    'account',
     'users',
     'viewOnly',
     'premium',
@@ -113,7 +114,6 @@ const ICON_CATEGORIES = {
     'systemAlerts',
     'transformation',
     'userProfiles',
-    'account',
   ] as const,
 } as const
 
@@ -176,9 +176,7 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
 
     return (
       <div style={subSectionStyle}>
-        <Typography.Title level={titleLevel}>
-          {title} ({icons.length})
-        </Typography.Title>
+        <Typography.Title level={titleLevel}>{title}</Typography.Title>
         <div style={iconGridStyle}>{icons.sort().map(renderIcon)}</div>
       </div>
     )
@@ -289,7 +287,7 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
     <div>
       {/* Special Icons Section */}
       <div style={sectionStyle}>
-        <Typography.Title level={4}>Special Icons (1)</Typography.Title>
+        <Typography.Title level={4}>Special Icons</Typography.Title>
         <div style={iconGridStyle}>
           <Flex vertical align="center" key="error-state-icon">
             <ErrorStateIcon size={size} />
@@ -300,28 +298,28 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
 
       {/* UI Actions Section */}
       <div style={sectionStyle}>
-        <Typography.Title level={4}>UI Actions ({uiActionIcons.length})</Typography.Title>
+        <Typography.Title level={4}>UI Actions</Typography.Title>
         {renderSubSection('Light', uiActionSplit.lightIcons)}
         {renderSubSection('Duotone', uiActionSplit.duotoneIcons)}
       </div>
 
       {/* Informational Icons Section */}
       <div style={sectionStyle}>
-        <Typography.Title level={4}>Informational Icons ({informationalIcons.length})</Typography.Title>
+        <Typography.Title level={4}>Informational Icons</Typography.Title>
         {renderSubSection('Light', informationalSplit.lightIcons)}
         {renderSubSection('Duotone', informationalSplit.duotoneIcons)}
       </div>
 
       {/* Data Type Icons Section */}
       <div style={sectionStyle}>
-        <Typography.Title level={4}>Data Type Icons ({dataTypeIcons.length})</Typography.Title>
+        <Typography.Title level={4}>Data Type Icons</Typography.Title>
         {renderSubSection('Light', dataTypeSplit.lightIcons)}
         {renderSubSection('Duotone', dataTypeSplit.duotoneIcons)}
       </div>
 
       {/* Navigation Icons Section */}
       <div style={sectionStyle}>
-        <Typography.Title level={4}>Navigation ({navigationIcons.length})</Typography.Title>
+        <Typography.Title level={4}>Navigation</Typography.Title>
         {renderSubSection('Light', navigationSplit.lightIcons)}
         {renderSubSection('Duotone', navigationSplit.duotoneIcons)}
       </div>
@@ -329,7 +327,7 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
       {/* Other Icons Section */}
       {otherIcons.length > 0 && (
         <div style={sectionStyle}>
-          <Typography.Title level={4}>Other Icons ({otherIcons.length})</Typography.Title>
+          <Typography.Title level={4}>Other Icons</Typography.Title>
           {renderSubSection('Light', otherSplit.lightIcons)}
           {renderSubSection('Duotone', otherSplit.duotoneIcons)}
         </div>
@@ -338,7 +336,7 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
       {/* Deprecated Icons Section */}
       <div style={sectionStyle}>
         <Typography.Title level={4} type="secondary">
-          Deprecated Icons ({deprecatedIcons.length})
+          Deprecated Icons
         </Typography.Title>
         <div style={iconGridStyle}>{deprecatedIcons.sort().map(renderIcon)}</div>
       </div>
