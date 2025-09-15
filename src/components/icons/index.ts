@@ -45,7 +45,6 @@ import IdentityIcon from 'src/assets/svg/mp_pm_lt_identity.svg?react'
 import JumpToIcon from 'src/assets/svg/mp_act_lt_jump-to.svg?react'
 import LightBulbIcon from 'src/assets/svg/lightbulb.svg?react'
 import LiveStreamIcon from 'src/assets/svg/mp_pm_lt_live-stream.svg?react'
-import PaywallIcon from 'src/assets/svg/paywall.svg?react'
 import MessageQuestionIcon from 'src/assets/svg/message-question.svg?react'
 import MpLogoIcon from 'src/assets/svg/mpLogo.svg?react'
 import ObservabilityIcon from 'src/assets/svg/mp_pm_lt_observability.svg?react'
@@ -65,11 +64,13 @@ import TransformationsIcon from 'src/assets/svg/mp_pm_lt_transformations.svg?rea
 import UploadIcon from 'src/assets/svg/mp_act_it_upload.svg?react'
 import UserAttributeIcon from 'src/assets/svg/user-attribute.svg?react'
 import UserProfilesIcon from 'src/assets/svg/mp_pm_lt_userprofiles.svg?react'
+import ViewOnlyIcon from 'src/assets/svg/mp_info_lt_view-only.svg?react'
 import UsersIcon from 'src/assets/svg/mp_info_lt_users.svg?react'
 import WrenchIcon from 'src/assets/svg/wrench.svg?react'
 import ZoomIn from 'src/assets/svg/mp_act_lt_zoom-in.svg?react'
 import ZoomOut from 'src/assets/svg/mp_act_lt_zoom-out.svg?react'
 import PremiumIcon from 'src/assets/svg/mp_info_lt_premium.svg?react'
+import PaywallIcon from 'src/assets/svg/mp_info_lt_paywall.svg?react'
 import ConversionIcon from 'src/assets/svg/mp_info_lt_conversion.svg?react'
 import HelpVideoIcon from 'src/assets/svg/mp_info_lt_help-video.svg?react'
 import NextIcon from 'src/assets/svg/mp_act_lt_next.svg?react'
@@ -222,7 +223,6 @@ export {
   OversightIconDt,
   OverviewIcon,
   OverviewIconDt,
-  PaywallIcon,
   PauseIcon,
   Placeholder,
   PlayIcon,
@@ -252,10 +252,12 @@ export {
   UserAttributeIcon,
   UserProfilesIcon,
   UsersIcon,
+  ViewOnlyIcon,
   WrenchIcon,
   ZoomIn,
   ZoomOut,
   BannerFreemium,
+  PaywallIcon,
   StateEmpty,
   StateNoResults,
   Back,
