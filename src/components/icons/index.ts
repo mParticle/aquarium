@@ -65,7 +65,7 @@ import TransformationsIcon from 'src/assets/svg/mp_pm_lt_transformations.svg?rea
 import UploadIcon from 'src/assets/svg/mp_act_it_upload.svg?react'
 import UserAttributeIcon from 'src/assets/svg/user-attribute.svg?react'
 import UserProfilesIcon from 'src/assets/svg/mp_pm_lt_userprofiles.svg?react'
-import ViewOnlyIcon from 'src/assets/svg/mp_pm_lt_view-only.svg?react'
+// import ViewOnlyIcon from 'src/assets/svg/mp_pm_lt_view-only.svg?react' // TODO: Re-upload
 import UsersIcon from 'src/assets/svg/mp_info_lt_users.svg?react'
 import WrenchIcon from 'src/assets/svg/wrench.svg?react'
 import ZoomIn from 'src/assets/svg/mp_act_lt_zoom-in.svg?react'
@@ -253,7 +253,7 @@ export {
   UserAttributeIcon,
   UserProfilesIcon,
   UsersIcon,
-  ViewOnlyIcon,
+  // ViewOnlyIcon, // TODO: Re-upload
   WrenchIcon,
   ZoomIn,
   ZoomOut,

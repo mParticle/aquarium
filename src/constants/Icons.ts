@@ -72,7 +72,7 @@ import {
   UserAttributeIcon,
   UserProfilesIcon,
   UsersIcon,
-  ViewOnlyIcon,
+  // ViewOnlyIcon, // TODO: Re-upload
   WrenchIcon,
   ZoomIn,
   ZoomOut,
@@ -706,10 +706,10 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: UsersIcon,
     default: 'light',
   },
-  viewOnly: {
-    light: ViewOnlyIcon,
-    default: 'light',
-  },
+  // viewOnly: {
+  //   light: ViewOnlyIcon,
+  //   default: 'light',
+  // }, // TODO: Re-upload
   wrench: {
     light: WrenchIcon,
     default: 'light',
