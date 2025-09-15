@@ -52,6 +52,7 @@ import {
   LightBulbIcon,
   LiveStreamIcon,
   PaywallIcon,
+  PrivateIcon,
   MessageQuestionIcon,
   MpLogoIcon,
   ObservabilityIcon,
@@ -72,6 +73,7 @@ import {
   UserAttributeIcon,
   UserProfilesIcon,
   UsersIcon,
+  ViewOnlyIcon,
   WrenchIcon,
   ZoomIn,
   ZoomOut,
@@ -516,6 +518,10 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: PaywallIcon,
     default: 'light',
   },
+  private: {
+    light: PrivateIcon,
+    default: 'light',
+  },
   pause: {
     light: PauseIcon,
     default: 'light',
@@ -703,6 +709,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   users: {
     light: UsersIcon,
+    default: 'light',
+  },
+  viewOnly: {
+    light: ViewOnlyIcon,
     default: 'light',
   },
   wrench: {
