@@ -63,6 +63,7 @@ import SystemAlertsIcon from 'src/assets/svg/mp_pm_lt_system-alerts.svg?react'
 import TransformationsIcon from 'src/assets/svg/mp_pm_lt_transformations.svg?react'
 import UploadIcon from 'src/assets/svg/mp_act_it_upload.svg?react'
 import UserAttributeIcon from 'src/assets/svg/user-attribute.svg?react'
+import UserIcon from 'src/assets/svg/mp_info_lt_user.svg?react'
 import UserProfilesIcon from 'src/assets/svg/mp_pm_lt_userprofiles.svg?react'
 import ViewOnlyIcon from 'src/assets/svg/mp_info_lt_view-only.svg?react'
 import UsersIcon from 'src/assets/svg/mp_info_lt_users.svg?react'
@@ -250,6 +251,7 @@ export {
   UnlockIcon,
   UploadIcon,
   UserAttributeIcon,
+  UserIcon,
   UserProfilesIcon,
   UsersIcon,
   ViewOnlyIcon,

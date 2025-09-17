@@ -146,6 +146,7 @@ export type IconNames =
   | 'trends'
   | 'unlock'
   | 'upload'
+  | 'user'
   | 'userAttribute'
   | 'userProfiles'
   | 'users'
