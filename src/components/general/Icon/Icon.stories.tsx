@@ -80,6 +80,7 @@ const ICON_CATEGORIES = {
     'audienceGroup',
     'abSplit',
     'account',
+    'user',
     'users',
     'viewOnly',
     'premium',

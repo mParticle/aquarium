@@ -69,6 +69,7 @@ import {
   TransformationsIcon,
   UploadIcon,
   UserAttributeIcon,
+  UserIcon,
   UserProfilesIcon,
   UsersIcon,
   ViewOnlyIcon,
@@ -692,6 +693,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   upload: {
     light: UploadIcon,
+    default: 'light',
+  },
+  user: {
+    light: UserIcon,
     default: 'light',
   },
   userAttribute: {
