@@ -1,3 +1,9 @@
+# [1.55.0](https://github.com/mParticle/aquarium/compare/v1.54.1...v1.55.0) (2025-09-17)
+
+### Features
+
+- add user icon to informational icons ([#651](https://github.com/mParticle/aquarium/issues/651)) ([27275a8](https://github.com/mParticle/aquarium/commit/27275a815ee7008294d4c431108dac30ff9c9fe2))
+
 ## [1.54.1](https://github.com/mParticle/aquarium/compare/v1.54.0...v1.54.1) (2025-09-09)
 
 ### Bug Fixes
