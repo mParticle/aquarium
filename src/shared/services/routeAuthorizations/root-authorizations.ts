@@ -4,7 +4,6 @@ import { Paths } from "../../Paths";
 import { Operation } from "../../Operation";
 import { AuthorizationsService } from "../AuthorizationsService";
 import { FeatureFlagsService, FeatureFlag } from "../FeatureFlagsService";
-import { AudiencePermissionsService } from "../AudiencePermissionsService";
 
 export class RootAuthorizations extends BaseRoutesAuthorizations {
     protected suite: Suite = Suite.Root;
@@ -20,7 +19,6 @@ export class RootAuthorizations extends BaseRoutesAuthorizations {
 
         return {
             [Paths.Root.Workspaces]: this.canViewWorkspacesSettings(),
-            [Paths.Root.Predictions]: this.canViewPredictions(),
             [Paths.Root.Analytics]: this.canViewAnalytics(),
 
             [Paths.Root.Overview.Root]: true,
@@ -36,10 +34,6 @@ export class RootAuthorizations extends BaseRoutesAuthorizations {
 
     private canViewWorkspacesSettings(): boolean {
         return AuthorizationsService.isAuthorized(Operation.WORKSPACE_SETTINGS);
-    }
-
-    private canViewPredictions(): boolean {
-        return AudiencePermissionsService.isPredictiveAudiencesPLDEnabled();
     }
 
     private canViewAnalytics(): boolean {

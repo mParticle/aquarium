@@ -41,6 +41,7 @@ export enum FeatureFlag {
     // The following flags are pseudo-flags that are not in the WorkspaceFeatureSetting table.
     DataManagerOptimizationDataCatalogDetails = "DataManagerOptimization.DataCatalogDetails",
     JourneysMilestoneWithAudienceNode = "Journeys.MilestoneWithAudienceNode",
+    AudienceUnificationEnabled = "Audience.Unification.Enabled",
 }
 
 // the features are enabled per workspace.
