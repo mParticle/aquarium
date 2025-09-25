@@ -1,3 +1,9 @@
+# [1.56.0](https://github.com/mParticle/aquarium/compare/v1.55.0...v1.56.0) (2025-09-25)
+
+### Features
+
+- remove predictions from nav panel ([#653](https://github.com/mParticle/aquarium/issues/653)) ([677255b](https://github.com/mParticle/aquarium/commit/677255be73b0a3bcbf02b1284045c856b99635fe))
+
 # [1.55.0](https://github.com/mParticle/aquarium/compare/v1.54.1...v1.55.0) (2025-09-17)
 
 ### Features
