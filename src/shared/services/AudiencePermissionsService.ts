@@ -32,6 +32,10 @@ export class AudiencePermissionsService {
   }
 
   public static isJourneysSharedRealTimeAudiencesEnabled(): boolean {
-    return window.mParticleConfig.allowResourceSharing && isSegmentationNewExperience() && !FeatureFlagsService.isEnabled(FeatureFlag.AudienceUnificationEnabled)
+    return (
+      window.mParticleConfig.allowResourceSharing &&
+      isSegmentationNewExperience() &&
+      !FeatureFlagsService.isEnabled(FeatureFlag.AudienceUnificationEnabled)
+    )
   }
 }
