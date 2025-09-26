@@ -1,3 +1,9 @@
+## [1.56.1](https://github.com/mParticle/aquarium/compare/v1.56.0...v1.56.1) (2025-09-26)
+
+### Bug Fixes
+
+- Icon types ([#652](https://github.com/mParticle/aquarium/issues/652)) ([e88907b](https://github.com/mParticle/aquarium/commit/e88907bb7b93000c10973390171a5dfc273378bb))
+
 # [1.56.0](https://github.com/mParticle/aquarium/compare/v1.55.0...v1.56.0) (2025-09-25)
 
 ### Features
