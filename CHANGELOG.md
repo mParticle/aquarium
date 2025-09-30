@@ -1,3 +1,9 @@
+## [1.56.2](https://github.com/mParticle/aquarium/compare/v1.56.1...v1.56.2) (2025-09-30)
+
+### Bug Fixes
+
+- missed script in build step when releasing ([#654](https://github.com/mParticle/aquarium/issues/654)) ([6160ca6](https://github.com/mParticle/aquarium/commit/6160ca6cc2cd5fe5f26dbe7693d5bfe6c581fc1d))
+
 ## [1.56.1](https://github.com/mParticle/aquarium/compare/v1.56.0...v1.56.1) (2025-09-26)
 
 ### Bug Fixes
