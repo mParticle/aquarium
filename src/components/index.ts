@@ -148,7 +148,11 @@ export {
 } from '../hooks/NewExperienceReminder/useNewExperienceReminder'
 export { ChartConfig, ChartAxisStyle } from '../constants/ChartConfig'
 export { ChartColors } from '../constants/ChartColors'
-export { MoreActionsButton, type IMoreActionsButtonProps } from './UXPatterns/MoreActionsButton/MoreActionsButton'
+export {
+  MoreActionsButton,
+  type IMoreActionsButtonProps,
+  type IMoreActionsButtonItem,
+} from './UXPatterns/MoreActionsButton/MoreActionsButton'
 
 export { Utils } from '../shared/Utils'
 export { RoutesAuthorizationsService } from '../shared/services/RoutesAuthorizationsService'

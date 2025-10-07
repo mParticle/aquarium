@@ -1,6 +1,8 @@
 import React from 'react'
 import { Button, Dropdown, Icon, type IDropdownProps, type IButtonProps, type IMenuProps } from 'src/components'
 
+export type IMoreActionsButtonItem = NonNullable<IMenuProps['items']>[number]
+
 export interface IMoreActionsButtonProps extends Omit<IDropdownProps, 'children' | 'menu'> {
   /**
    * Menu configuration for the dropdown - same as Dropdown component
