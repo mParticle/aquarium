@@ -1,3 +1,9 @@
+# [1.57.0](https://github.com/mParticle/aquarium/compare/v1.56.2...v1.57.0) (2025-10-07)
+
+### Features
+
+- more actions button component ([#656](https://github.com/mParticle/aquarium/issues/656)) ([e0bbff8](https://github.com/mParticle/aquarium/commit/e0bbff85699badcb230dd09b98af517da7605320))
+
 ## [1.56.2](https://github.com/mParticle/aquarium/compare/v1.56.1...v1.56.2) (2025-09-30)
 
 ### Bug Fixes
