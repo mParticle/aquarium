@@ -12,7 +12,6 @@ export enum NavigationItemId {
   Oversight_Privacy = 'oversight_privacy',
   Oversight_Privacy_DSRs = 'oversight_privacy_dsrs',
   Oversight_Privacy_PrivacySettings = 'oversight_privacy_privacySettings',
-  Predictions = 'predictions',
   Customer360 = 'customer360',
   Customer360_UserProfiles = 'customer360_userProfiles',
   Customer360_GroupIdentity = 'customer360_groupIdentity',
@@ -262,13 +261,6 @@ const allNavigationItems: IGlobalNavigationItem[] = [
         hrefOptions: { href: Paths.Customer360.Enrichment.PredictiveAttributes },
       },
     ],
-  },
-  {
-    id: NavigationItemId.Predictions,
-    label: 'Predictions',
-    icon: <Icon name="predictions" variant="light" />,
-    type: 'link',
-    hrefOptions: { href: Paths.Root.Predictions },
   },
   {
     id: NavigationItemId.Analytics,
