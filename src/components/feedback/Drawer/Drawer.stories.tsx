@@ -2,6 +2,15 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { useState } from 'react'
 import { Drawer } from 'src/components/feedback/Drawer/Drawer'
 import { Button, Icon, Tooltip } from 'src/components'
+import { Flex } from 'antd'
+import {
+  ColorFillTertiary,
+  ColorBorderSecondary,
+  BorderRadius,
+  ColorTextTertiary,
+  PaddingXxs,
+  ControlHeight,
+} from 'src/styles/style'
 
 const meta: Meta<typeof Drawer> = {
   title: 'Components/Feedback/Drawer',
@@ -27,21 +36,20 @@ export const Primary: Story = {
     return (
       <>
         <Button onClick={() => setOpen(true)}>Open Drawer</Button>
-        <Drawer title="Drawer Title" open={open} onClose={() => setOpen(false)} width={378} placement="right">
-          <div
+        <Drawer title="Drawer Title" open={open} onClose={() => setOpen(false)} placement="right">
+          <Flex
             style={{
               width: '100%',
               height: '100%',
-              backgroundColor: '#f5f5f5',
-              border: '1px solid #d9d9d9',
-              borderRadius: '6px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#666',
-            }}>
+              backgroundColor: ColorFillTertiary,
+              border: `1px solid ${ColorBorderSecondary}`,
+              borderRadius: BorderRadius,
+              color: ColorTextTertiary,
+            }}
+            align="center"
+            justify="center">
             Content
-          </div>
+          </Flex>
         </Drawer>
       </>
     )
@@ -49,7 +57,7 @@ export const Primary: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'A default drawer (378px width) perfect for settings panels and forms.',
+        story: 'A default drawer perfect for settings panels.',
       },
     },
   },
@@ -64,20 +72,19 @@ export const LargeDrawer: Story = {
       <>
         <Button onClick={() => setOpen(true)}>Open Drawer</Button>
         <Drawer title="Drawer Title" open={open} onClose={() => setOpen(false)} width={736} placement="right">
-          <div
+          <Flex
             style={{
               width: '100%',
               height: '100%',
-              backgroundColor: '#f5f5f5',
-              border: '1px solid #d9d9d9',
-              borderRadius: '6px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#666',
-            }}>
+              backgroundColor: ColorFillTertiary,
+              border: `1px solid ${ColorBorderSecondary}`,
+              borderRadius: BorderRadius,
+              color: ColorTextTertiary,
+            }}
+            align="center"
+            justify="center">
             Content
-          </div>
+          </Flex>
         </Drawer>
       </>
     )
@@ -92,7 +99,7 @@ export const LargeDrawer: Story = {
   },
 }
 
-export const DefaultDrawerWithIcon: Story = {
+export const DrawerWithLink: Story = {
   render: () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [open, setOpen] = useState(false)
@@ -103,13 +110,7 @@ export const DefaultDrawerWithIcon: Story = {
     }
 
     const customHeader = (
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          width: '100%',
-        }}>
+      <Flex justify="space-between" align="center" style={{ width: '100%' }}>
         <span>Drawer Title</span>
         <Tooltip title="Copy Link">
           <Button
@@ -117,37 +118,33 @@ export const DefaultDrawerWithIcon: Story = {
             size="small"
             onClick={handleCopyLink}
             style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: '4px',
-              minWidth: '32px',
-              height: '32px',
+              padding: PaddingXxs,
+              minWidth: ControlHeight,
+              height: ControlHeight,
             }}>
             <Icon name="link" size="sm" />
           </Button>
         </Tooltip>
-      </div>
+      </Flex>
     )
 
     return (
       <>
         <Button onClick={() => setOpen(true)}>Open Drawer</Button>
-        <Drawer title={customHeader} open={open} onClose={() => setOpen(false)} width={378} placement="right">
-          <div
+        <Drawer title={customHeader} open={open} onClose={() => setOpen(false)} placement="right">
+          <Flex
             style={{
               width: '100%',
               height: '100%',
-              backgroundColor: '#f5f5f5',
-              border: '1px solid #d9d9d9',
-              borderRadius: '6px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#666',
-            }}>
+              backgroundColor: ColorFillTertiary,
+              border: `1px solid ${ColorBorderSecondary}`,
+              borderRadius: BorderRadius,
+              color: ColorTextTertiary,
+            }}
+            align="center"
+            justify="center">
             Content
-          </div>
+          </Flex>
         </Drawer>
       </>
     )
@@ -155,7 +152,7 @@ export const DefaultDrawerWithIcon: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'A default drawer with a link icon in the header.',
+        story: 'A default drawer with a link icon in the header for sharing or bookmarking.',
       },
     },
   },
@@ -175,41 +172,34 @@ export const DrawerWithButtons: Story = {
     }
 
     const customHeader = (
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          width: '100%',
-        }}>
+      <Flex justify="space-between" align="center" style={{ width: '100%' }}>
         <span>Drawer Title</span>
-        <div style={{ display: 'flex', gap: '8px' }}>
+        <Flex gap="small">
           <Button onClick={handleReset}>Reset</Button>
           <Button type="primary" onClick={handleSave}>
             Save
           </Button>
-        </div>
-      </div>
+        </Flex>
+      </Flex>
     )
 
     return (
       <>
         <Button onClick={() => setOpen(true)}>Open Drawer</Button>
-        <Drawer title={customHeader} open={open} onClose={() => setOpen(false)} width={378} placement="right">
-          <div
+        <Drawer title={customHeader} open={open} onClose={() => setOpen(false)} placement="right">
+          <Flex
             style={{
               width: '100%',
               height: '100%',
-              backgroundColor: '#f5f5f5',
-              border: '1px solid #d9d9d9',
-              borderRadius: '6px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#666',
-            }}>
+              backgroundColor: ColorFillTertiary,
+              border: `1px solid ${ColorBorderSecondary}`,
+              borderRadius: BorderRadius,
+              color: ColorTextTertiary,
+            }}
+            align="center"
+            justify="center">
             Content
-          </div>
+          </Flex>
         </Drawer>
       </>
     )
