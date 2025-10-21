@@ -36,7 +36,7 @@ export const Primary: Story = {
     return (
       <>
         <Button onClick={() => setOpen(true)}>Open Drawer</Button>
-        <Drawer title="Drawer Title" open={open} onClose={() => setOpen(false)} placement="right">
+        <Drawer title="Drawer Title" open={open} onClose={() => setOpen(false)} >
           <Flex
             style={{
               width: '100%',
