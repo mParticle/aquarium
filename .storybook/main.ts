@@ -18,7 +18,7 @@ const config: StorybookConfig & StorybookVitePlugins = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    // '@storybook/addon-interactions', // Temporarily disabled due to module loading issues
+    '@storybook/addon-interactions',
     {
       name: '@storybook/addon-docs',
       options: {
