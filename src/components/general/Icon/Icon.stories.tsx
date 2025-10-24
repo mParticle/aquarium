@@ -72,6 +72,8 @@ const ICON_CATEGORIES = {
   INFORMATIONAL_PATTERNS: [
     'info',
     'help',
+    'helpVideo',
+    'history',
     'notification',
     'active',
     'cohort',
