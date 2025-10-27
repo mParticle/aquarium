@@ -72,6 +72,7 @@ const ICON_CATEGORIES = {
   INFORMATIONAL_PATTERNS: [
     'info',
     'help',
+    'history',
     'notification',
     'active',
     'cohort',
