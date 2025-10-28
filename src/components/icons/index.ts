@@ -134,6 +134,7 @@ import OtherDataIcon from 'src/assets/svg/mp_data_dt_other.svg?react'
 import RefreshIcon from 'src/assets/svg/refresh.svg?react'
 import StringIcon from 'src/assets/svg/mp_data_dt_string.svg?react'
 import TimestampIcon from 'src/assets/svg/mp_data_dt_timestamp.svg?react'
+import MoveToTop from 'src/assets/svg/mp_act_lt_move-to-top.svg?react'
 
 export {
   AbSplit,
@@ -272,4 +273,5 @@ export {
   RefreshIcon,
   StringIcon,
   TimestampIcon,
+  MoveToTop
 }

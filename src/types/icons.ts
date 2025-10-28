@@ -165,3 +165,4 @@ export type IconNames =
   | 'clone'
   | 'reorder'
   | 'refresh'
+  | 'moveToTop'
