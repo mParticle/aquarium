@@ -94,17 +94,6 @@ export const ErrorWithoutIcon: Story = {
   },
 }
 
-export const ErrorWithTitle: Story = {
-  args: {
-    message: 'Error',
-    description: 'This is an error message about copywriting.',
-    type: 'error',
-    showIcon: true,
-    icon: <CloseCircleFilled style={{ fontSize: MpIconSizeSm }} />,
-    style: { marginBottom: 0 },
-  },
-}
-
 export const ErrorWithExpandCollapse: Story = {
   render: () => {
     const [isExpanded, setIsExpanded] = useState(false)

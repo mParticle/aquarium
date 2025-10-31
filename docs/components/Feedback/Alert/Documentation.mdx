@@ -9,31 +9,24 @@ import * as AlertNotProdReadyStories from '../../../../src/components/feedback/A
 
 ### Overview
 
-The Alert component is used to display important messages, warnings, or confirmations to users, providing contextual feedback in response to user actions or system events. Alerts are persistent components that remain visible on the page until dismissed by the user and should be used for messages that require user acknowledgment or action.
+The Alert component is used to display important messages, warnings, or confirmations to users, providing contextual feedback in response to user actions or system events.
 
 <Story of={AlertNotProdReadyStories.StorybookNote} />
 
-### Types
+Alerts are persistent components that remain visible on the page until dismissed by the user and should be used for messages that require user acknowledgment or action. The Alert component supports four types: success, warning, and error, each with distinct visual styling to communicate the message's importance and nature. Any alert type can include a close button to allow users to dismiss the alert when they've read and acknowledged the message.
 
-The Alert component supports four types: success, warning, and error, each with distinct visual styling to communicate the message's importance and nature.
+<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
+  <Story of={AlertStories.Success} />
+  <Story of={AlertStories.Warning} />
+  <Story of={AlertStories.Error} />
+  <Story of={AlertStories.InfoWithoutIcon} />
+</div>
 
-Success:
-<Story of={AlertStories.Success} />
+Any alert type can include a close button to allow users to dismiss the alert when they've read and acknowledged the message.
 
-Warning:
-<Story of={AlertStories.Warning} />
-
-Error:
-<Story of={AlertStories.Error} />
-
-Info:
-<Story of={AlertStories.InfoWithoutIcon} />
-
-### Closable
-
-Any alert type can include a close button by setting the `closable` prop to `true`. This allows users to dismiss the alert when they've read and acknowledged the message.
-
-<Story of={AlertStories.WithCloseButton} />
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+  <Story of={AlertStories.WithCloseButton} />
+</div>
 
 ### Errors
 
