@@ -237,3 +237,33 @@ export const ExampleCustomActions: Story = {
     )
   },
 }
+
+export const StorybookNote: Story = {
+  render: () => {
+    return (
+      <Alert
+        message={
+          <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <span style={{ fontSize: '20px' }}>💡</span>
+            <span>
+              Use the{' '}
+              <a href="?path=/docs/components-feedback-message--docs" style={{ textDecoration: 'underline' }}>
+                Message component
+              </a>{' '}
+              if the notification should dismiss automatically.
+            </span>
+          </span>
+        }
+        showIcon={false}
+        type="info"
+        style={{
+          backgroundColor: '#ffffff',
+          border: '1px solid #d9d9d9',
+          borderRadius: '8px',
+          width: '100%',
+          marginBottom: 0,
+        }}
+      />
+    )
+  },
+}
