@@ -1,9 +1,7 @@
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
-import { useState } from 'react'
-import { CloseCircleFilled, InfoCircleFilled, CheckCircleFilled, ExclamationCircleFilled } from '@ant-design/icons'
 import { Alert } from 'src/components/feedback/Alert/Alert'
-import { MpIconSizeSm, FontSize, MarginXs, ColorText } from 'src/styles/style'
+import { Typography } from 'src/components/general/Typography/Typography'
 
 const meta: Meta<typeof Alert> = {
   title: 'Components/Feedback/Alert',
@@ -36,12 +34,41 @@ type Story = StoryObj<typeof Alert>
   Customize the stories based on specific requirements.
 */
 
+export const StorybookNote: Story = {
+  render: () => {
+    return (
+      <Alert
+        message={
+          <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <span style={{ fontSize: '20px' }}>💡</span>
+            <span>
+              Use the{' '}
+              <a href="?path=/docs/components-feedback-message--docs" style={{ textDecoration: 'underline' }}>
+                Message component
+              </a>{' '}
+              if the notification should dismiss automatically.
+            </span>
+          </span>
+        }
+        showIcon={false}
+        type="info"
+        style={{
+          backgroundColor: '#ffffff',
+          border: '1px solid #d9d9d9',
+          borderRadius: '8px',
+          width: '100%',
+          marginBottom: 0,
+        }}
+      />
+    )
+  },
+}
+
 export const Info: Story = {
   args: {
     type: 'info',
     message: 'This is an informational message.',
     showIcon: true,
-    icon: <InfoCircleFilled style={{ fontSize: MpIconSizeSm }} />,
     style: { marginBottom: 0, width: '600px' },
   },
 }
@@ -51,7 +78,6 @@ export const Success: Story = {
     type: 'success',
     message: 'This is a success message.',
     showIcon: true,
-    icon: <CheckCircleFilled style={{ fontSize: MpIconSizeSm }} />,
     style: { marginBottom: 0, width: '600px' },
   },
 }
@@ -61,7 +87,6 @@ export const Warning: Story = {
     message: 'This is a warning message.',
     type: 'warning',
     showIcon: true,
-    icon: <ExclamationCircleFilled style={{ fontSize: MpIconSizeSm }} />,
     style: { marginBottom: 0, width: '600px' },
   },
 }
@@ -71,7 +96,6 @@ export const Error: Story = {
     message: 'This is an error message.',
     type: 'error',
     showIcon: true,
-    icon: <CloseCircleFilled style={{ fontSize: MpIconSizeSm }} />,
     style: { marginBottom: 0, width: '600px' },
   },
 }
@@ -95,56 +119,12 @@ export const ErrorWithoutIcon: Story = {
 }
 
 export const ErrorWithExpandCollapse: Story = {
-  render: () => {
-    const [isExpanded, setIsExpanded] = useState(false)
-
-    const toggleExpand = () => {
-      setIsExpanded(!isExpanded)
-    }
-
-    return (
-      <Alert
-        message={
-          <span style={{ fontSize: FontSize }}>
-            This is an error message.{' '}
-            {!isExpanded && (
-              <a
-                onClick={toggleExpand}
-                style={{ cursor: 'pointer', textDecoration: 'underline', color: ColorText }}
-                onMouseDown={e => e.preventDefault()}>
-                View details
-              </a>
-            )}
-          </span>
-        }
-        description={
-          isExpanded ? (
-            <div style={{ fontSize: FontSize }}>
-              <div style={{ fontSize: FontSize }}>Error details go here</div>
-              <div style={{ marginTop: MarginXs }}>
-                <a
-                  onClick={toggleExpand}
-                  style={{
-                    cursor: 'pointer',
-                    textDecoration: 'underline',
-                    color: ColorText,
-                    fontSize: FontSize,
-                  }}
-                  onMouseDown={e => e.preventDefault()}>
-                  Hide details
-                </a>
-              </div>
-            </div>
-          ) : null
-        }
-        type="error"
-        showIcon
-        icon={<CloseCircleFilled style={{ fontSize: MpIconSizeSm }} />}
-        style={{ marginBottom: 0, width: '600px' }}
-        afterClose={() => {}}
-        onClose={() => {}}
-      />
-    )
+  args: {
+    type: 'error',
+    expandable: true,
+    message: 'This is an error message.',
+    expandableContent: <Typography.Text size="base">Error details go here</Typography.Text>,
+    style: { marginBottom: 0, width: '600px' },
   },
 }
 
@@ -153,7 +133,6 @@ export const WithCloseButton: Story = {
     type: 'warning',
     message: 'This is a warning message.',
     showIcon: true,
-    icon: <ExclamationCircleFilled style={{ fontSize: MpIconSizeSm }} />,
     closable: true,
     style: { marginBottom: 0, width: '600px' },
   },

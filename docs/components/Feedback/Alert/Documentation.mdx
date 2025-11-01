@@ -1,7 +1,6 @@
 import { Meta, Story, Canvas } from '@storybook/blocks'
 
 import * as AlertStories from '../../../../src/components/feedback/Alert/Alert.stories';
-import * as AlertNotProdReadyStories from '../../../../src/components/feedback/Alert/AlertNotProdReady.stories';
 
 <Meta of={AlertStories} />
 
@@ -11,7 +10,7 @@ import * as AlertNotProdReadyStories from '../../../../src/components/feedback/A
 
 The Alert component is used to display important messages, warnings, or confirmations to users, providing contextual feedback in response to user actions or system events.
 
-<Story of={AlertNotProdReadyStories.StorybookNote} />
+<Story of={AlertStories.StorybookNote} />
 
 Alerts are persistent components that remain visible on the page until dismissed by the user and should be used for messages that require user acknowledgment or action. The Alert component supports four types: success, warning, and error, each with distinct visual styling to communicate the message's importance and nature. Any alert type can include a close button to allow users to dismiss the alert when they've read and acknowledged the message.
 
@@ -40,7 +39,7 @@ Use for simple error messages that require immediate attention.
 
 #### Error with Expand/Collapse
 
-Use when you need to provide detailed error information that can be expanded on demand. This is useful for technical errors that may have verbose explanations or stack traces.
+Use when you need to provide detailed error information that can be expanded on demand. Set `expandable={true}` and provide `expandableContent`.
 
 <Canvas of={AlertStories.ErrorWithExpandCollapse} />
 
