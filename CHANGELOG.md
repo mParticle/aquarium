@@ -1,3 +1,40 @@
+# [1.59.0](https://github.com/mParticle/aquarium/compare/v1.58.0...v1.59.0) (2025-11-04)
+
+### Features
+
+- Expandable Alert, Color Palette and Typography foundation stories ([#662](https://github.com/mParticle/aquarium/issues/662)) ([562f777](https://github.com/mParticle/aquarium/commit/562f77718823f489f7001b107afcee5c8f0f9799))
+
+# [1.58.0](https://github.com/mParticle/aquarium/compare/v1.57.0...v1.58.0) (2025-10-27)
+
+### Features
+
+- add history icon to icon library ([#659](https://github.com/mParticle/aquarium/issues/659)) ([1dace1b](https://github.com/mParticle/aquarium/commit/1dace1b5186c9658a62dda677093e0402ec01ad1))
+- Updating data ingest operations ([#658](https://github.com/mParticle/aquarium/issues/658)) ([82300f4](https://github.com/mParticle/aquarium/commit/82300f4da2aae5b0c8a029c5706ea05c9a3e0c6d))
+
+# [1.57.0](https://github.com/mParticle/aquarium/compare/v1.56.2...v1.57.0) (2025-10-07)
+
+### Features
+
+- more actions button component ([#656](https://github.com/mParticle/aquarium/issues/656)) ([e0bbff8](https://github.com/mParticle/aquarium/commit/e0bbff85699badcb230dd09b98af517da7605320))
+
+## [1.56.2](https://github.com/mParticle/aquarium/compare/v1.56.1...v1.56.2) (2025-09-30)
+
+### Bug Fixes
+
+- missed script in build step when releasing ([#654](https://github.com/mParticle/aquarium/issues/654)) ([6160ca6](https://github.com/mParticle/aquarium/commit/6160ca6cc2cd5fe5f26dbe7693d5bfe6c581fc1d))
+
+## [1.56.1](https://github.com/mParticle/aquarium/compare/v1.56.0...v1.56.1) (2025-09-26)
+
+### Bug Fixes
+
+- Icon types ([#652](https://github.com/mParticle/aquarium/issues/652)) ([e88907b](https://github.com/mParticle/aquarium/commit/e88907bb7b93000c10973390171a5dfc273378bb))
+
+# [1.56.0](https://github.com/mParticle/aquarium/compare/v1.55.0...v1.56.0) (2025-09-25)
+
+### Features
+
+- remove predictions from nav panel ([#653](https://github.com/mParticle/aquarium/issues/653)) ([677255b](https://github.com/mParticle/aquarium/commit/677255be73b0a3bcbf02b1284045c856b99635fe))
+
 # [1.55.0](https://github.com/mParticle/aquarium/compare/v1.54.1...v1.55.0) (2025-09-17)
 
 ### Features

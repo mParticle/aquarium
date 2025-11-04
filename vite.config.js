@@ -16,7 +16,18 @@ export default defineConfig({
     },
   },
 
-  plugins: [svgr(), dts({ include: 'src/', exclude: '**/*.stories.*', rollupTypes: false, insertTypesEntry: true })],
+  plugins: [
+    svgr(), 
+    dts({ 
+      include: 'src/', 
+      exclude: '**/*.stories.*', 
+      rollupTypes: false,
+      insertTypesEntry: true,
+      pathsToAliases: false,
+      staticImport: true,
+      logDiagnostics: true,
+    })
+  ],
 
   css: {
     postcss: {

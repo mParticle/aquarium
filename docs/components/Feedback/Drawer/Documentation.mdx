@@ -6,11 +6,24 @@ import * as DrawerStories from '../../../../src/components/feedback/Drawer/Drawe
 
 # Drawer
 
-#### Overview
+A Drawer is a panel that slides in from the side of the screen, overlaying the main content while keeping the user in the same context.
 
-A **Drawer** is a panel that slides in from the side of the screen, overlaying the main content while keeping the user in the same context. It provides access to supplementary information or actions without requiring navigation to a new page.
+### Table Drawer
+Used to display row-level details from a table. Available in two sizes: 378 px (Default) and 736 px (Large).
 
-<Canvas meta={DrawerStories.default} />
+##### Default Drawer
+<Canvas of={DrawerStories.Primary} />
+
+##### Large Drawer
+<Canvas of={DrawerStories.LargeDrawer} />
+
+##### Drawer with Buttons in Header
+Includes actions in the header, such as Save or Reset.
+<Canvas of={DrawerStories.DrawerWithButtons} />
+
+##### Linkable Drawer
+Can be opened directly via a unique URL or link, allowing users to share or bookmark a specific drawer state.
+<Canvas of={DrawerStories.DrawerWithLink} />
 
 ### Related Links
 

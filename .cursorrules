@@ -1,0 +1,33 @@
+# Cursor AI Rules for Aquarium Project
+
+## Branch Naming Convention
+
+ALL branch names MUST start with one of these prefixes followed by a forward slash:
+
+- `feat/` - A new feature (automatic minor release)
+- `fix/` - A bug fix (automatic patch release)
+- `docs/` - Documentation only changes
+- `style/` - Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+- `refactor/` - A code change that neither fixes a bug nor adds a feature
+- `perf/` - A code change that improves performance
+- `test/` - Adding missing or correcting existing tests
+- `chore/` - Changes that don't modify src or test files
+- `ci/` - Changes to CI configuration files/scripts
+- `revert/` - Revert commit
+- `build/` - Changes that affect the build system or other dependencies
+
+### Examples:
+- ✅ `feat/expandable-alert`
+- ✅ `fix/button-hover-state`
+- ✅ `docs/update-readme`
+- ❌ `expandable-alert` (missing prefix)
+- ❌ `feat:expandable-alert` (wrong separator, use `/` not `:`)
+
+When creating any branch, always use this convention.
+
+## Commit Messages
+
+Commit messages should be short and clear, under 7-8 words, following conventional commit format:
+- Format: `type: description`
+- Example: `feat: add expandable alert component`
+

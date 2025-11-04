@@ -2,6 +2,8 @@ export { Button, type IButtonProps } from './general/Button/Button'
 export { FloatButton, type IFloatButtonProps } from './general/FloatButton/FloatButton'
 export { Icon, type IIconProps } from './general/Icon/Icon'
 export { ErrorStateIcon, type IErrorStateIconProps } from './general/Icon/ErrorStateIcon/ErrorStateIcon'
+export { SuccessStateIcon, type ISuccessStateIconProps } from './general/Icon/SuccessStateIcon/SuccessStateIcon'
+export { WarningStateIcon, type IWarningStateIconProps } from './general/Icon/WarningStateIcon/WarningStateIcon'
 export { Rate, type IRateProps } from './not-prod-ready/Rate/Rate'
 export { Form, type IFormProps, type FormInstance } from './data-entry/Form/Form'
 export { TreeSelect, type ITreeSelectProps } from './data-entry/TreeSelect/TreeSelect'
@@ -148,6 +150,11 @@ export {
 } from '../hooks/NewExperienceReminder/useNewExperienceReminder'
 export { ChartConfig, ChartAxisStyle } from '../constants/ChartConfig'
 export { ChartColors } from '../constants/ChartColors'
+export {
+  MoreActionsButton,
+  type IMoreActionsButtonProps,
+  type IMoreActionsButtonItem,
+} from './UXPatterns/MoreActionsButton/MoreActionsButton'
 
 export { Utils } from '../shared/Utils'
 export { RoutesAuthorizationsService } from '../shared/services/RoutesAuthorizationsService'

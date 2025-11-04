@@ -25,14 +25,14 @@ export class DataWarehouseAuthorizations extends BaseRoutesAuthorizations {
   }
 
   private canViewConnections(): boolean {
-    return this.canViewDataWarehouse() && AuthorizationsService.isAuthorized(Operation.DATA_INGEST_VIEW)
+    return this.canViewDataWarehouse() && AuthorizationsService.isAuthorized(Operation.DATA_INGEST_CONNECTION_VIEW)
   }
 
   private canViewDataModels(): boolean {
-    return this.canViewDataWarehouse() && AuthorizationsService.isAuthorized(Operation.DATA_INGEST_VIEW)
+    return this.canViewDataWarehouse() && AuthorizationsService.isAuthorized(Operation.DATA_INGEST_DATA_MODEL_VIEW)
   }
 
   private canViewPipelines(): boolean {
-    return this.canViewDataWarehouse() && AuthorizationsService.isAuthorized(Operation.DATA_INGEST_VIEW)
+    return this.canViewDataWarehouse() && AuthorizationsService.isAuthorized(Operation.DATA_INGEST_PIPELINE_VIEW)
   }
 }
