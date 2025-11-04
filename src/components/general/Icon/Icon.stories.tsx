@@ -59,6 +59,7 @@ const ICON_CATEGORIES = {
     'submitFeedback',
     'dropdown',
     'logout',
+    'moveToTop',
   ] as const,
 
   INFORMATIONAL_PATTERNS: [
