@@ -1,4 +1,9 @@
 .alert-expandable {
+  align-items: flex-start;
   padding: var(--padding-xs) var(--padding-sm);
+
+  & .ant-alert-close-icon {
+    margin-top: var(--margin-xxs);
+  }
 }
 

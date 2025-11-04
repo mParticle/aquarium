@@ -122,6 +122,7 @@ export const ErrorWithExpandCollapse: Story = {
   args: {
     type: 'error',
     expandable: true,
+    closable: true,
     message: 'This is an error message.',
     expandableContent: <Typography.Text size="base">Error details go here</Typography.Text>,
     style: { marginBottom: 0, width: '600px' },
