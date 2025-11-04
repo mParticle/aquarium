@@ -47,6 +47,7 @@ import {
   HeartIcon,
   HelpIcon,
   HelpVideoIcon,
+  HistoryIcon,
   IdentityIcon,
   JumpToIcon,
   LightBulbIcon,
@@ -389,6 +390,11 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   helpVideo: {
     light: HelpVideoIcon,
+    default: 'light',
+    deprecated: true,
+  },
+  history: {
+    light: HistoryIcon,
     default: 'light',
   },
   identity: {
