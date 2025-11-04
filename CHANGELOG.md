@@ -1,3 +1,9 @@
+# [1.59.0](https://github.com/mParticle/aquarium/compare/v1.58.0...v1.59.0) (2025-11-04)
+
+### Features
+
+- Expandable Alert, Color Palette and Typography foundation stories ([#662](https://github.com/mParticle/aquarium/issues/662)) ([562f777](https://github.com/mParticle/aquarium/commit/562f77718823f489f7001b107afcee5c8f0f9799))
+
 # [1.58.0](https://github.com/mParticle/aquarium/compare/v1.57.0...v1.58.0) (2025-10-27)
 
 ### Features
