@@ -1,7 +1,9 @@
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
 import { Alert } from 'src/components/feedback/Alert/Alert'
+import { Flex } from 'src/components/layout/Flex/Flex'
 import { Typography } from 'src/components/general/Typography/Typography'
+import { ColorWhite, ColorBorderSecondary, BorderRadiusLg, SizeXs } from 'src/styles/style'
 
 const meta: Meta<typeof Alert> = {
   title: 'Components/Feedback/Alert',
@@ -39,23 +41,23 @@ export const StorybookNote: Story = {
     return (
       <Alert
         message={
-          <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <span style={{ fontSize: '20px' }}>💡</span>
-            <span>
+          <Flex align="center" gap={SizeXs}>
+            <Typography.Text size="xl">💡</Typography.Text>
+            <Typography.Text size="base">
               Use the{' '}
-              <a href="?path=/docs/components-feedback-message--docs" style={{ textDecoration: 'underline' }}>
+              <Typography.Link href="?path=/docs/components-feedback-message--docs" underline>
                 Message component
-              </a>{' '}
+              </Typography.Link>{' '}
               if the notification should dismiss automatically.
-            </span>
-          </span>
+            </Typography.Text>
+          </Flex>
         }
         showIcon={false}
         type="info"
         style={{
-          backgroundColor: '#ffffff',
-          border: '1px solid #d9d9d9',
-          borderRadius: '8px',
+          backgroundColor: ColorWhite,
+          border: `1px solid ${ColorBorderSecondary}`,
+          borderRadius: BorderRadiusLg,
           width: '100%',
           marginBottom: 0,
         }}
