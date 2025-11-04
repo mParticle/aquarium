@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/blocks'
+import { Meta, Story, Canvas } from '@storybook/blocks'
 
 import * as AlertStories from '../../../../src/components/feedback/Alert/Alert.stories';
 
@@ -6,23 +6,42 @@ import * as AlertStories from '../../../../src/components/feedback/Alert/Alert.s
 
 # Alert
 
-#### Overview
+### Overview
 
-The **Alert** component is used to display important messages, warnings, or confirmations to users. It helps provide contextual feedback in response to user actions or system events.
+The Alert component is used to display important messages, warnings, or confirmations to users, providing contextual feedback in response to user actions or system events.
 
-### When to Use
-- When you need to show alert messages to users.
-- When you need a persistent, static container that can be dismissed by user actions.
-- Use Message if the content should dismiss automatically
+<Story of={AlertStories.StorybookNote} />
 
-Info:
-<Story of={AlertStories.Info} />
+Alerts are persistent components that remain visible on the page until dismissed by the user and should be used for messages that require user acknowledgment or action. The Alert component supports four types: success, warning, and error, each with distinct visual styling to communicate the message's importance and nature. Any alert type can include a close button to allow users to dismiss the alert when they've read and acknowledged the message.
 
-Error:
-<Story of={AlertStories.Error} />
+<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
+  <Story of={AlertStories.Success} />
+  <Story of={AlertStories.Warning} />
+  <Story of={AlertStories.Error} />
+  <Story of={AlertStories.InfoWithoutIcon} />
+</div>
 
-Success:
-<Story of={AlertStories.Success} />
+Any alert type can include a close button to allow users to dismiss the alert when they've read and acknowledged the message.
+
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+  <Story of={AlertStories.WithCloseButton} />
+</div>
+
+### Errors
+
+Error alerts are used to communicate critical issues or problems that require user attention. They should always include an icon and can be enhanced with titles and expandable details when additional context is needed.
+
+#### Basic Error
+
+Use for simple error messages that require immediate attention.
+
+<Canvas of={AlertStories.Error} />
+
+#### Error with Expand/Collapse
+
+Use when you need to provide detailed error information that can be expanded on demand. Set `expandable={true}` and provide `expandableContent`.
+
+<Canvas of={AlertStories.ErrorWithExpandCollapse} />
 
 ### Related Links
 
