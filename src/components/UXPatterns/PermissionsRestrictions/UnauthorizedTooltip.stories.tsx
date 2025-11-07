@@ -5,7 +5,7 @@ import { Button, Radio } from 'src/components'
 import { Margin } from 'src/styles/style'
 
 const meta: Meta<typeof UnauthorizedTooltip> = {
-  title: 'UX Patterns/UnauthorizedTooltip',
+  title: 'UX Patterns/PermissionsRestrictions',
   component: UnauthorizedTooltip,
   parameters: {
     layout: 'centered',
