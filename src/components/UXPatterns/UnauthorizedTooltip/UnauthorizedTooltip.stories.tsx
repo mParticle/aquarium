@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { useState } from 'react'
 import { UnauthorizedTooltip } from './UnauthorizedTooltip'
-import { Button } from 'src/components'
+import { Button, Radio } from 'src/components'
+import { Margin } from 'src/styles/style'
 
 const meta: Meta<typeof UnauthorizedTooltip> = {
   title: 'UX Patterns/UnauthorizedTooltip',
@@ -28,5 +30,33 @@ export const DisabledButton: Story = {
   args: {
     isAuthorized: false,
     children: <Button disabled>Delete</Button>,
+  },
+}
+
+export const ModalExample: Story = {
+  render: () => {
+    const [value, setValue] = useState('option2')
+
+    const unauthorizedMessage = (
+      <>
+        You don&apos;t have permissions for this action.{' '}
+        <a href="#" style={{ color: 'inherit', textDecoration: 'underline', cursor: 'pointer' }}>
+          Learn more.
+        </a>
+      </>
+    )
+
+    return (
+      <Radio.Group value={value} onChange={e => setValue(e.target.value as string)}>
+        <div style={{ marginBottom: Margin }}>
+          <UnauthorizedTooltip isAuthorized={false} unauthorizedMessage={unauthorizedMessage} placement="right">
+            <Radio value="option1" disabled>
+              Option 1
+            </Radio>
+          </UnauthorizedTooltip>
+        </div>
+        <Radio value="option2">Option 2</Radio>
+      </Radio.Group>
+    )
   },
 }
