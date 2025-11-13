@@ -97,7 +97,7 @@
     "prepare": "husky",
     "start": "npm run storybook",
     "storybook": "storybook dev -p 6006",
-    "test-storybook": "test-storybook",
+    "test-storybook": "test-storybook --localstorage-file=.storybook-localstorage",
     "test-storybook:ci": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"npm run build-storybook --quiet && NODE_NO_WARNINGS=1 npx http-server storybook-static --port 6006 --silent\" \"wait-on tcp:127.0.0.1:6006 && npm run test-storybook\"",
     "test-unit": "vitest",
     "build": "vite build && node scripts/fix-type-imports.js && npm run tokens-to-css && shx cp src/styles/*.css dist && shx cp src/styles/style.ts dist",
