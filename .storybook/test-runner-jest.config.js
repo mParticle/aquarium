@@ -5,5 +5,6 @@ const { getJestConfig } = require('@storybook/test-runner');
  */
 module.exports = {
   ...getJestConfig(),
+  testEnvironment: 'jsdom',
 };
 
