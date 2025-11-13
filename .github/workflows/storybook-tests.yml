@@ -20,8 +20,8 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Install Playwright
-        run: ./node_modules/.bin/playwright install --with-deps
+      - name: Install Playwright Browsers  
+        run: npx --yes playwright@1.56.1 install chromium --with-deps
 
       - name: Run Storybook Tests
         run: npm run test-storybook:ci
