@@ -167,3 +167,4 @@ export type IconNames =
   | 'reorder'
   | 'refresh'
   | 'toggleLogicBlocks'
+  | 'moveToTop'

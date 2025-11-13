@@ -155,6 +155,10 @@ export {
   type IMoreActionsButtonProps,
   type IMoreActionsButtonItem,
 } from './UXPatterns/MoreActionsButton/MoreActionsButton'
+export {
+  UnauthorizedTooltip,
+  type IUnauthorizedTooltipProps,
+} from './UXPatterns/UnauthorizedTooltip/UnauthorizedTooltip'
 
 export { Utils } from '../shared/Utils'
 export { RoutesAuthorizationsService } from '../shared/services/RoutesAuthorizationsService'

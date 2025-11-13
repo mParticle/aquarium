@@ -68,6 +68,7 @@ const ICON_CATEGORIES = {
     'dropdown',
     'logout',
     'toggleLogicBlocks',
+    'moveToTop',
   ] as const,
 
   INFORMATIONAL_PATTERNS: [
