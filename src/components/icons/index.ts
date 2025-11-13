@@ -135,6 +135,7 @@ import OtherDataIcon from 'src/assets/svg/mp_data_dt_other.svg?react'
 import RefreshIcon from 'src/assets/svg/refresh.svg?react'
 import StringIcon from 'src/assets/svg/mp_data_dt_string.svg?react'
 import TimestampIcon from 'src/assets/svg/mp_data_dt_timestamp.svg?react'
+import ToggleLogicBlocks from 'src/assets/svg/mp_act_lt_toggle-logic-blocks.svg?react'
 
 export {
   AbSplit,
@@ -274,4 +275,5 @@ export {
   RefreshIcon,
   StringIcon,
   TimestampIcon,
+  ToggleLogicBlocks,
 }
