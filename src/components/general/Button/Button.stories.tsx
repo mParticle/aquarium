@@ -1,7 +1,7 @@
 import { Button } from 'src/components/general/Button/Button'
 import { type Meta, type StoryObj } from '@storybook/react'
 import { userEvent } from '@storybook/test'
-import { Divider, Flex, Icon, Typography } from 'src/components'
+import { Divider, Flex, Icon, Typography, Tooltip } from 'src/components'
 import React from 'react'
 
 const meta: Meta<typeof Button> = {
@@ -119,6 +119,26 @@ export const IconOnly: Story = {
           <Button icon={<Icon name="zoomIn" />} />
           <Divider type="vertical" />
           <Button icon={<Icon name="fitToScreen" />} />
+        </Flex>
+      </>
+    )
+  },
+}
+
+export const Refresh: Story = {
+  render: () => {
+    return (
+      <>
+        <Flex gap="small" align="center">
+          <Tooltip title="Fetch new data from the server">
+            <Button type="text" icon={<Icon name="refresh" size="sm" color="text" />}>
+              Refresh
+            </Button>
+          </Tooltip>
+
+          <Tooltip title="Refresh and fetch latest data">
+            <Button type="text" icon={<Icon name="refresh" size="sm" color="strong" />} />
+          </Tooltip>
         </Flex>
       </>
     )

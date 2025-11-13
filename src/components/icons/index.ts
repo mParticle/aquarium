@@ -1,3 +1,4 @@
+import AcceptIcon from 'src/assets/svg/mp_act_lt_accept.svg?react'
 import AddIcon from 'src/assets/svg/add.svg?react'
 import AlicornIcon from 'src/assets/svg/alicorn.svg?react'
 import RateDownIcon from 'src/assets/svg/rate_down.svg?react'
@@ -6,11 +7,13 @@ import RateStarIcon from 'src/assets/svg/mp_act_lt_rate-star.svg?react'
 import RateStarIconDt from 'src/assets/svg/mp_act_dt_rate-star.svg?react'
 import RateUpIcon from 'src/assets/svg/rate_up.svg?react'
 import RateUpIconDt from 'src/assets/svg/mp_act_dt_rate-up.svg?react'
+import RunIcon from 'src/assets/svg/mp_act_lt_run.svg?react'
 import AnalyticsIcon from 'src/assets/svg/mp_pm_lt_analytcis.svg?react'
 import AnalyticsIconDt from 'src/assets/svg/mp_pm_dt_analytics.svg?react'
 import C360Icon from 'src/assets/svg/mp_pm_lt_c360.svg?react'
 import C360IconDt from 'src/assets/svg/mp_pm_dt_c360.svg?react'
 import CalculatedAttributeIcon from 'src/assets/svg/mp_info_lt_calculated-attribute.svg?react'
+import CriteriaGroupIcon from 'src/assets/svg/mp_info_lt_criteria-group.svg?react'
 import CatalogIcon from 'src/assets/svg/mp_pm_lt_catalog.svg?react'
 import ChartColumnIcon from 'src/assets/svg/chart-column.svg?react'
 import ChartLineIcon from 'src/assets/svg/chart-line.svg?react'
@@ -26,6 +29,7 @@ import DevicesIcon from 'src/assets/svg/mp_pm_lt_devices.svg?react'
 import DragAndDropIcon from 'src/assets/svg/mp_act_lt_dragandrop.svg?react'
 import DsrIcon from 'src/assets/svg/mp_pm_lt_dsr.svg?react'
 import EmptyIcon from 'src/assets/svg/empty.svg?react'
+import StateError from 'src/assets/svg/mp_info_lt_empty-error.svg?react'
 import EnrichmentIcon from 'src/assets/svg/mp_pm_lt_enrichment.svg?react'
 import EventAttributeIcon from 'src/assets/svg/event-attribute.svg?react'
 import EventIcon from 'src/assets/svg/event.svg?react'
@@ -37,11 +41,11 @@ import GridIcon from 'src/assets/svg/grid.svg?react'
 import GroupIcon from 'src/assets/svg/mp_info_lt_group.svg?react'
 import HeartIcon from 'src/assets/svg/heart.svg?react'
 import HelpIcon from 'src/assets/svg/help.svg?react'
+import HistoryIcon from 'src/assets/svg/mp_info_lt_history.svg?react'
 import IdentityIcon from 'src/assets/svg/mp_pm_lt_identity.svg?react'
 import JumpToIcon from 'src/assets/svg/mp_act_lt_jump-to.svg?react'
 import LightBulbIcon from 'src/assets/svg/lightbulb.svg?react'
 import LiveStreamIcon from 'src/assets/svg/mp_pm_lt_live-stream.svg?react'
-import PaywallIcon from 'src/assets/svg/paywall.svg?react'
 import MessageQuestionIcon from 'src/assets/svg/message-question.svg?react'
 import MpLogoIcon from 'src/assets/svg/mpLogo.svg?react'
 import ObservabilityIcon from 'src/assets/svg/mp_pm_lt_observability.svg?react'
@@ -60,16 +64,22 @@ import SystemAlertsIcon from 'src/assets/svg/mp_pm_lt_system-alerts.svg?react'
 import TransformationsIcon from 'src/assets/svg/mp_pm_lt_transformations.svg?react'
 import UploadIcon from 'src/assets/svg/mp_act_it_upload.svg?react'
 import UserAttributeIcon from 'src/assets/svg/user-attribute.svg?react'
+import UserIcon from 'src/assets/svg/mp_info_lt_user.svg?react'
 import UserProfilesIcon from 'src/assets/svg/mp_pm_lt_userprofiles.svg?react'
+import ViewOnlyIcon from 'src/assets/svg/mp_info_lt_view-only.svg?react'
 import UsersIcon from 'src/assets/svg/mp_info_lt_users.svg?react'
 import WrenchIcon from 'src/assets/svg/wrench.svg?react'
 import ZoomIn from 'src/assets/svg/mp_act_lt_zoom-in.svg?react'
 import ZoomOut from 'src/assets/svg/mp_act_lt_zoom-out.svg?react'
 import PremiumIcon from 'src/assets/svg/mp_info_lt_premium.svg?react'
+import PaywallIcon from 'src/assets/svg/mp_info_lt_paywall.svg?react'
 import ConversionIcon from 'src/assets/svg/mp_info_lt_conversion.svg?react'
 import HelpVideoIcon from 'src/assets/svg/mp_info_lt_help-video.svg?react'
 import NextIcon from 'src/assets/svg/mp_act_lt_next.svg?react'
+import NumberIcon from 'src/assets/svg/mp_data_lt_number.svg?react'
 import OpenTabIcon from 'src/assets/svg/mp_act_lt_open-tab.svg?react'
+import PauseIcon from 'src/assets/svg/mp_act_lt_pause.svg?react'
+import PlayIcon from 'src/assets/svg/mp_act_lt_play.svg?react'
 import PreviousIcon from 'src/assets/svg/mp_act_lt_previous.svg?react'
 import DirectoryIcon from 'src/assets/svg/mp_pm_lt_directory.svg?react'
 import LockIcon from 'src/assets/svg/mp_act_lt_lock.svg?react'
@@ -83,6 +93,7 @@ import OverviewIconDt from 'src/assets/svg/mp_pm_dt_overview.svg?react'
 import FilterIcon from 'src/assets/svg/mp_act_lt_filter.svg?react'
 import ActiveIcon from 'src/assets/svg/mp_info_lt_active.svg?react'
 import AgentCopilotIcon from 'src/assets/svg/mp_info_dt_agent-copilot.svg?react'
+import AudienceGroupIcon from 'src/assets/svg/mp_info_lt_audience-group.svg?react'
 import LinkIcon from 'src/assets/svg/mp_info_link.svg?react'
 import InfoIcon from 'src/assets/svg/mp_info_lt_info.svg?react'
 import Placeholder from 'src/assets/svg/mp_info_lt_placeholder.svg?react'
@@ -106,9 +117,10 @@ import Edit from 'src/assets/svg/mp_act_lt_edit.svg?react'
 import Copy from 'src/assets/svg/mp_act_lt_copy.svg?react'
 import MoreActions from 'src/assets/svg/mp_act_lt_more-actions.svg?react'
 import AbSplit from 'src/assets/svg/mp_info_lt_ab-split.svg?react'
+import ArrayIcon from 'src/assets/svg/mp_data_dt_array.svg?react'
 import BannerFreemium from 'src/assets/svg/mp_info_dt_sampled.svg?react'
+import BooleanIcon from 'src/assets/svg/mp_data_lt_boolean.svg?react'
 import StateEmpty from 'src/assets/svg/mp_info_lt_state-empty.svg?react'
-import StateError from 'src/assets/svg/mp_info_lt_state-error.svg?react'
 import StateNoResults from 'src/assets/svg/mp_info_lt_state-no-results.svg?react'
 import Back from 'src/assets/svg/mp_act_lt_back.svg?react'
 import Flag from 'src/assets/svg/flag.svg?react'
@@ -117,27 +129,38 @@ import Boost from 'src/assets/svg/mp_info_lt_boost.svg?react'
 import Clone from 'src/assets/svg/mp_act_lt_clone.svg?react'
 import Reorder from 'src/assets/svg/mp_act_lt_reorder.svg?react'
 import GenericIcon from 'src/assets/svg/mp_info_lt_generic.svg?react'
+import ListIcon from 'src/assets/svg/mp_data_dt_list.svg?react'
+import OtherIcon from 'src/assets/svg/mp_info_lt_other.svg?react'
+import OtherDataIcon from 'src/assets/svg/mp_data_dt_other.svg?react'
 import RefreshIcon from 'src/assets/svg/refresh.svg?react'
+import StringIcon from 'src/assets/svg/mp_data_dt_string.svg?react'
+import TimestampIcon from 'src/assets/svg/mp_data_dt_timestamp.svg?react'
+import MoveToTop from 'src/assets/svg/mp_act_lt_move-to-top.svg?react'
 
 export {
   AbSplit,
+  AcceptIcon,
   Account,
   ActiveIcon,
   AgentCopilotIcon,
   AddIcon,
   AlicornIcon,
+  ArrayIcon,
+  AudienceGroupIcon,
   RateDownIcon,
   RateDownIconDt,
   RateStarIcon,
   RateStarIconDt,
   RateUpIcon,
   RateUpIconDt,
+  RunIcon,
   AnalyticsIcon,
   AnalyticsIconDt,
   Annotation,
   C360Icon,
   C360IconDt,
   CalculatedAttributeIcon,
+  CriteriaGroupIcon,
   CatalogIcon,
   ChartColumnIcon,
   ChartLineIcon,
@@ -162,6 +185,7 @@ export {
   DsrIcon,
   Edit,
   EmptyIcon,
+  StateError,
   EnrichmentIcon,
   EventAttributeIcon,
   EventIcon,
@@ -179,6 +203,7 @@ export {
   HeartIcon,
   HelpIcon,
   HelpVideoIcon,
+  HistoryIcon,
   IdentityIcon,
   InfoIcon,
   JourneyAnalysis,
@@ -197,12 +222,14 @@ export {
   ObservabilityIcon,
   OpenTabIcon,
   Organization,
+  OtherIcon,
   OversightIcon,
   OversightIconDt,
   OverviewIcon,
   OverviewIconDt,
-  PaywallIcon,
+  PauseIcon,
   Placeholder,
+  PlayIcon,
   PrecisionIcon,
   PredictionsIcon,
   PredictionsIconDt,
@@ -227,17 +254,26 @@ export {
   UnlockIcon,
   UploadIcon,
   UserAttributeIcon,
+  UserIcon,
   UserProfilesIcon,
   UsersIcon,
+  ViewOnlyIcon,
   WrenchIcon,
   ZoomIn,
   ZoomOut,
   BannerFreemium,
+  PaywallIcon,
   StateEmpty,
-  StateError,
   StateNoResults,
   Back,
+  BooleanIcon,
   Boost,
   Clone,
+  ListIcon,
+  NumberIcon,
+  OtherDataIcon,
   RefreshIcon,
+  StringIcon,
+  TimestampIcon,
+  MoveToTop,
 }

@@ -1,0 +1,94 @@
+# Contribution Workflow for Aquarium
+
+## 🎯 For Claude: When Someone Asks to Make ANY Change
+
+**Always follow this simple process:**
+
+### 1. Ask Comfort Level First
+```
+"I'd be happy to help with that! Are you comfortable with git/development,
+or would you prefer I handle the technical parts for you?"
+```
+
+### 2. Set Up Git Branch (Always Do This)
+```bash
+git checkout main
+git pull origin main
+git checkout -b [type]/[description]
+```
+
+### 3. Choose Branch Type (Must Start With One Of These)
+- **`feat/`** - New features, components, major additions
+- **`ci/`** - CI/CD pipeline changes, build automation
+- **`fix/`** - Bug fixes, broken functionality
+- **`docs/`** - Copy changes, typos, documentation updates
+- **`test/`** - Adding or updating tests
+- **`refactor/`** - Code refactoring without changing functionality
+- **`style/`** - Code formatting, styling changes
+- **`build/`** - Build system changes, dependencies
+- **`chore/`** - Icons, maintenance, cleanup tasks
+- **`revert/`** - Reverting previous changes
+- **`dependabot/`** - Automated dependency updates
+
+### 4. Make Descriptive Branch Names
+- Use kebab-case: `docs/fix-readme-typo`
+- Be specific: `chore/add-shopping-cart-icon`
+- Avoid generic: ~~`fix/bug`~~ or ~~`docs/changes`~~
+
+---
+
+## 🤖 How to Adapt Based on User Comfort Level
+
+### For Non-Technical Users:
+- **Take full control** of all git operations
+- **Explain what you're doing** in simple terms
+- **Handle file updates** automatically
+- **Show before/after** of changes
+- **Create proper commits** and push for them
+
+### For Technical Users:
+- **Provide guidance** on project conventions
+- **Let them execute** commands
+- **Focus on** branch naming and commit message format
+- **Verify approach** but don't take over
+
+---
+
+## 📋 Common Scenarios
+
+| User Says | Branch Type | Example Branch Name | Commit Message |
+|-----------|-------------|-------------------|----------------|
+| "Fix this typo" | `docs/` | `docs/fix-installation-typo` | `docs: fix typo` |
+| "Change button text" | `docs/` | `docs/update-button-copy` | `docs: update button copy` |
+| "Add new icon" | `chore/` | `chore/add-user-icon` | `chore: add user icon` |
+| "Button is broken" | `fix/` | `fix/button-hover-state` | `fix: button hover state` |
+| "Add new component" | `feat/` | `feat/user-dashboard` | `feat: add user dashboard` |
+| "Update tests" | `test/` | `test/add-login-tests` | `test: add login tests` |
+| "Refactor utils" | `refactor/` | `refactor/clean-utils` | `refactor: clean utils` |
+| "Fix CSS spacing" | `style/` | `style/fix-button-spacing` | `style: fix button spacing` |
+
+---
+
+## ✅ Always Do This
+
+1. **Ask comfort level** - Adapt your approach accordingly
+2. **Create proper branch** - Never work on main
+3. **Use conventional naming** - Follow the type/description format
+4. **Pull latest first** - Always start from up-to-date main
+5. **Commit with short, clear messages** - `type: short description` (under 7-8 words)
+6. **Push and guide PR creation** - Help them finish the process
+
+---
+
+## 🚀 Quick Example
+
+**User:** "I want to fix a typo in the README"
+
+**Claude:**
+1. "Are you comfortable with git, or should I handle the technical parts?"
+2. Creates branch: `docs/fix-readme-typo`
+3. Finds and fixes the typo
+4. Commits: `docs: fix README typo`
+5. Pushes and provides PR link
+
+**That's it! Simple and consistent every time.**

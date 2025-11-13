@@ -11,8 +11,12 @@ export interface IQueryItemQualifierProps {
   options: IQueryItemQualifierOption[]
   disabled?: boolean
   errorMessage?: string
-  onChange?: (value: IQueryItemQualifierOption) => void
-  value?: IQueryItemQualifierOption
+  onChange?: (value: IQueryItemQualifierOption | string | number | boolean) => void
+  value?: IQueryItemQualifierOption | string | number | boolean
+  /**
+   * @deprecated Not being used by the component, included here to fix runtime typing problems. Needs to be worked on
+   */
+  className?: string
 }
 
 const Qualifier = (props: IQueryItemQualifierProps) => {

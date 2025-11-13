@@ -1,6 +1,9 @@
 export { Button, type IButtonProps } from './general/Button/Button'
 export { FloatButton, type IFloatButtonProps } from './general/FloatButton/FloatButton'
 export { Icon, type IIconProps } from './general/Icon/Icon'
+export { ErrorStateIcon, type IErrorStateIconProps } from './general/Icon/ErrorStateIcon/ErrorStateIcon'
+export { SuccessStateIcon, type ISuccessStateIconProps } from './general/Icon/SuccessStateIcon/SuccessStateIcon'
+export { WarningStateIcon, type IWarningStateIconProps } from './general/Icon/WarningStateIcon/WarningStateIcon'
 export { Rate, type IRateProps } from './not-prod-ready/Rate/Rate'
 export { Form, type IFormProps, type FormInstance } from './data-entry/Form/Form'
 export { TreeSelect, type ITreeSelectProps } from './data-entry/TreeSelect/TreeSelect'
@@ -54,7 +57,7 @@ export {
   type ColumnType,
   type TableProps,
 } from './data-display/Table/Table'
-export { Empty, type IEmptyProps } from './data-display/Empty/Empty'
+export { Empty, type IEmptyProps, type EmptyState } from './data-display/Empty/Empty'
 export { Popover, type IPopoverProps } from './data-display/Popover/Popover'
 export { List, type IListProps } from './data-display/List/List'
 export { Progress, type IProgressProps } from './feedback/Progress/Progress'
@@ -69,6 +72,11 @@ export { Notification, type INotificationProps, notification } from './feedback/
 export { Alert, type IAlertProps } from './feedback/Alert/Alert'
 export { Message, type IMessageProps, message } from './feedback/Message/Message'
 export { LoadingModal, type ILoadingModalProps } from './feedback/LoadingModal/LoadingModal'
+export {
+  DeleteConfirmModal,
+  type IDeleteConfirmModalProps,
+} from 'src/components/feedback/Modal/DeleteConfirmModal/DeleteConfirmModal'
+export { ErrorModal, type IErrorModalProps } from 'src/components/feedback/Modal/ErrorModal/ErrorModal'
 export { Flex, type IFlexProps } from './layout/Flex/Flex'
 export { Center } from './layout/Center/Center'
 export { Divider, type IDividerProps } from './layout/Divider/Divider'
@@ -142,6 +150,15 @@ export {
 } from '../hooks/NewExperienceReminder/useNewExperienceReminder'
 export { ChartConfig, ChartAxisStyle } from '../constants/ChartConfig'
 export { ChartColors } from '../constants/ChartColors'
+export {
+  MoreActionsButton,
+  type IMoreActionsButtonProps,
+  type IMoreActionsButtonItem,
+} from './UXPatterns/MoreActionsButton/MoreActionsButton'
+export {
+  UnauthorizedTooltip,
+  type IUnauthorizedTooltipProps,
+} from './UXPatterns/UnauthorizedTooltip/UnauthorizedTooltip'
 
 export { Utils } from '../shared/Utils'
 export { RoutesAuthorizationsService } from '../shared/services/RoutesAuthorizationsService'

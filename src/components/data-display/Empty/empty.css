@@ -1,7 +1,45 @@
+:root {
+    --empty-img-large-width: 114px;
+    --empty-img-small-width: 72px;
+    --empty-img-height: 72px;
+}
+
 .ant-empty-image {
+    /* Component-specific CSS variables */
+    --empty-img-large-width: 114px;
+    --empty-img-small-width: 72px;
+    --empty-img-height: 72px;
+
     margin: auto !important;
+    width: var(--empty-img-large-width) !important;
+    height: var(--empty-img-height) !important;
 }
 
 .ant-empty-image > svg {
-    width: auto !important;
+    width: var(--empty-img-large-width) !important;
+    height: var(--empty-img-height) !important;
+}
+
+/* Error state icon sizing */
+.ant-empty-image .icon-size-lg.icon-color-error {
+    width: var(--empty-img-small-width) !important;
+    height: var(--empty-img-small-width) !important;
+    min-width: var(--empty-img-small-width) !important;
+}
+
+.ant-empty-image .icon-size-lg.icon-color-error svg {
+    width: var(--empty-img-small-width) !important;
+    height: var(--empty-img-small-width) !important;
+}
+
+/* More specific targeting for the SVG icon */
+.ant-empty-image svg.icon-size-lg.icon-color-error {
+    width: var(--empty-img-small-width) !important;
+    height: var(--empty-img-small-width) !important;
+}
+
+/* Target any SVG within the empty image when it's an error state */
+.ant-empty-image svg[data-testid*="icon-stateError"] {
+    width: var(--empty-img-small-width) !important;
+    height: var(--empty-img-small-width) !important;
 }

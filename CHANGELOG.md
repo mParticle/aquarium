@@ -1,3 +1,79 @@
+# [1.59.0](https://github.com/mParticle/aquarium/compare/v1.58.0...v1.59.0) (2025-11-04)
+
+### Features
+
+- Expandable Alert, Color Palette and Typography foundation stories ([#662](https://github.com/mParticle/aquarium/issues/662)) ([562f777](https://github.com/mParticle/aquarium/commit/562f77718823f489f7001b107afcee5c8f0f9799))
+
+# [1.58.0](https://github.com/mParticle/aquarium/compare/v1.57.0...v1.58.0) (2025-10-27)
+
+### Features
+
+- add history icon to icon library ([#659](https://github.com/mParticle/aquarium/issues/659)) ([1dace1b](https://github.com/mParticle/aquarium/commit/1dace1b5186c9658a62dda677093e0402ec01ad1))
+- Updating data ingest operations ([#658](https://github.com/mParticle/aquarium/issues/658)) ([82300f4](https://github.com/mParticle/aquarium/commit/82300f4da2aae5b0c8a029c5706ea05c9a3e0c6d))
+
+# [1.57.0](https://github.com/mParticle/aquarium/compare/v1.56.2...v1.57.0) (2025-10-07)
+
+### Features
+
+- more actions button component ([#656](https://github.com/mParticle/aquarium/issues/656)) ([e0bbff8](https://github.com/mParticle/aquarium/commit/e0bbff85699badcb230dd09b98af517da7605320))
+
+## [1.56.2](https://github.com/mParticle/aquarium/compare/v1.56.1...v1.56.2) (2025-09-30)
+
+### Bug Fixes
+
+- missed script in build step when releasing ([#654](https://github.com/mParticle/aquarium/issues/654)) ([6160ca6](https://github.com/mParticle/aquarium/commit/6160ca6cc2cd5fe5f26dbe7693d5bfe6c581fc1d))
+
+## [1.56.1](https://github.com/mParticle/aquarium/compare/v1.56.0...v1.56.1) (2025-09-26)
+
+### Bug Fixes
+
+- Icon types ([#652](https://github.com/mParticle/aquarium/issues/652)) ([e88907b](https://github.com/mParticle/aquarium/commit/e88907bb7b93000c10973390171a5dfc273378bb))
+
+# [1.56.0](https://github.com/mParticle/aquarium/compare/v1.55.0...v1.56.0) (2025-09-25)
+
+### Features
+
+- remove predictions from nav panel ([#653](https://github.com/mParticle/aquarium/issues/653)) ([677255b](https://github.com/mParticle/aquarium/commit/677255be73b0a3bcbf02b1284045c856b99635fe))
+
+# [1.55.0](https://github.com/mParticle/aquarium/compare/v1.54.1...v1.55.0) (2025-09-17)
+
+### Features
+
+- add user icon to informational icons ([#651](https://github.com/mParticle/aquarium/issues/651)) ([27275a8](https://github.com/mParticle/aquarium/commit/27275a815ee7008294d4c431108dac30ff9c9fe2))
+
+## [1.54.1](https://github.com/mParticle/aquarium/compare/v1.54.0...v1.54.1) (2025-09-09)
+
+### Bug Fixes
+
+- error modal props ([#644](https://github.com/mParticle/aquarium/issues/644)) ([879cca0](https://github.com/mParticle/aquarium/commit/879cca0c19a1222ee06504b28b3435347bee42ca))
+
+# [1.54.0](https://github.com/mParticle/aquarium/compare/v1.53.0...v1.54.0) (2025-09-09)
+
+### Features
+
+- error modal ([#643](https://github.com/mParticle/aquarium/issues/643)) ([719a9af](https://github.com/mParticle/aquarium/commit/719a9af0c9792b90f555b5cf0f102b3a3ed4755e))
+
+# [1.53.0](https://github.com/mParticle/aquarium/compare/v1.52.1...v1.53.0) (2025-09-05)
+
+### Features
+
+- implement DeleteConfirmModal component ([#638](https://github.com/mParticle/aquarium/issues/638)) ([57c9787](https://github.com/mParticle/aquarium/commit/57c978709de67d25d05a2c693d40f9ff3fadab3d))
+
+## [1.52.1](https://github.com/mParticle/aquarium/compare/v1.52.0...v1.52.1) (2025-08-26)
+
+# [1.52.0](https://github.com/mParticle/aquarium/compare/v1.51.0...v1.52.0) (2025-08-22)
+
+### Features
+
+- update data warehouse nav structure ([#632](https://github.com/mParticle/aquarium/issues/632)) ([d000000](https://github.com/mParticle/aquarium/commit/d000000e830d2c4bfe2bf95ebb806019c126c7ab))
+- update Empty component with the new design guidelines ([#630](https://github.com/mParticle/aquarium/issues/630)) ([0d13129](https://github.com/mParticle/aquarium/commit/0d1312919606c7821914ba0be17507c11d9db649))
+
+# [1.51.0](https://github.com/mParticle/aquarium/compare/v1.50.1...v1.51.0) (2025-08-12)
+
+### Features
+
+- add delete confirm modal ([#627](https://github.com/mParticle/aquarium/issues/627)) ([8c81313](https://github.com/mParticle/aquarium/commit/8c81313850b5b69478cd2b8cdc327a121497ea80))
+
 ## [1.50.1](https://github.com/mParticle/aquarium/compare/v1.50.0...v1.50.1) (2025-07-14)
 
 # [1.50.0](https://github.com/mParticle/aquarium/compare/v1.49.0...v1.50.0) (2025-07-02)
