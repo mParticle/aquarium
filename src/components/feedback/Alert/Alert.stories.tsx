@@ -140,3 +140,107 @@ export const WithCloseButton: Story = {
     style: { marginBottom: 0, width: '600px' },
   },
 }
+
+export const SuccessWithCloseButton: Story = {
+  args: {
+    type: 'success',
+    message: 'This is a success message.',
+    showIcon: true,
+    closable: true,
+    style: { marginBottom: 0, width: '600px' },
+  },
+}
+
+export const InfoWithCloseButton: Story = {
+  args: {
+    type: 'info',
+    message: 'This is an informational message.',
+    showIcon: true,
+    closable: true,
+    style: { marginBottom: 0, width: '600px' },
+  },
+}
+
+export const WarningWithCloseButton: Story = {
+  args: {
+    type: 'warning',
+    message: 'This is a warning message.',
+    showIcon: true,
+    closable: true,
+    style: { marginBottom: 0, width: '600px' },
+  },
+}
+
+export const ErrorWithCloseButton: Story = {
+  args: {
+    type: 'error',
+    message: 'This is an error message.',
+    showIcon: true,
+    closable: true,
+    style: { marginBottom: 0, width: '600px' },
+  },
+}
+
+export const SuccessWithLink: Story = {
+  args: {
+    type: 'success',
+    message: (
+      <Typography.Text size="base">
+        Your changes have been saved successfully.{' '}
+        <Typography.Link color="ColorText" underline href="#">
+          View details
+        </Typography.Link>
+      </Typography.Text>
+    ),
+    showIcon: true,
+    style: { marginBottom: 0, width: '600px' },
+  },
+}
+
+export const InfoWithLink: Story = {
+  args: {
+    type: 'info',
+    message: (
+      <Typography.Text size="base">
+        This is an informational message.{' '}
+        <Typography.Link color="ColorText" underline href="#">
+          Learn more
+        </Typography.Link>
+      </Typography.Text>
+    ),
+    showIcon: true,
+    style: { marginBottom: 0, width: '600px' },
+  },
+}
+
+export const WarningWithLink: Story = {
+  args: {
+    type: 'warning',
+    message: (
+      <Typography.Text size="base">
+        This is a warning message.{' '}
+        <Typography.Link color="ColorText" underline href="#">
+          Review settings
+        </Typography.Link>
+      </Typography.Text>
+    ),
+    showIcon: true,
+    style: { marginBottom: 0, width: '600px' },
+  },
+}
+
+export const ErrorWithLink: Story = {
+  args: {
+    type: 'error',
+    message: (
+      <Typography.Text size="base">
+        An error occurred processing your request.{' '}
+        <Typography.Link color="ColorText" underline href="#">
+          Try again
+        </Typography.Link>
+      </Typography.Text>
+    ),
+    showIcon: true,
+    style: { marginBottom: 0, width: '600px' },
+  },
+}

@@ -18,13 +18,27 @@ Alerts are persistent components that remain visible on the page until dismissed
   <Story of={AlertStories.Success} />
   <Story of={AlertStories.Warning} />
   <Story of={AlertStories.Error} />
-  <Story of={AlertStories.InfoWithoutIcon} />
+  <Story of={AlertStories.Info} />
 </div>
 
 Any alert type can include a close button to allow users to dismiss the alert when they've read and acknowledged the message.
 
-<div style={{ display: 'flex', justifyContent: 'center' }}>
-  <Story of={AlertStories.WithCloseButton} />
+<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
+  <Story of={AlertStories.SuccessWithCloseButton} />
+  <Story of={AlertStories.InfoWithCloseButton} />
+  <Story of={AlertStories.WarningWithCloseButton} />
+  <Story of={AlertStories.ErrorWithCloseButton} />
+</div>
+
+### Alerts with Links
+
+Alerts can include links within the message text. Links should be styled with text color and underlined to maintain consistency with the alert's visual design.
+
+<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
+  <Story of={AlertStories.SuccessWithLink} />
+  <Story of={AlertStories.InfoWithLink} />
+  <Story of={AlertStories.WarningWithLink} />
+  <Story of={AlertStories.ErrorWithLink} />
 </div>
 
 ### Errors
