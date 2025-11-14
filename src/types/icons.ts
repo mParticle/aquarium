@@ -166,4 +166,5 @@ export type IconNames =
   | 'clone'
   | 'reorder'
   | 'refresh'
+  | 'toggleLogicBlocks'
   | 'moveToTop'
