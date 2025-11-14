@@ -42,7 +42,15 @@ Alerts can include links within the message text. Links should be styled with te
 
 <Canvas of={AlertStories.ErrorWithLink} />
 
-<Story of={AlertStories.NoBoldingOrTitlesNote} />
+### Placement in Modals
+
+Alerts can be placed inside modals to communicate important information that users need to be aware of. This is particularly useful for warnings about settings that cannot be changed once saved, or other important contextual information.
+
+<Canvas of={AlertStories.ErrorInModal} />
+
+Alerts can also be shown conditionally, such as displaying an error alert after a save attempt fails.
+
+<Canvas of={AlertStories.ErrorAfterSaveInModal} />
 
 ### Related Links
 

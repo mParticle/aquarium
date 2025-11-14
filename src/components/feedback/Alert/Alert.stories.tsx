@@ -1,6 +1,9 @@
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
+import { useState } from 'react'
 import { Alert } from 'src/components/feedback/Alert/Alert'
+import { Modal } from 'src/components/feedback/Modal/Modal'
+import { Button, Input } from 'src/components'
 import { Flex } from 'src/components/layout/Flex/Flex'
 import { Typography } from 'src/components/general/Typography/Typography'
 import { ColorWhite, ColorBorderSecondary, BorderRadiusLg, SizeXs } from 'src/styles/style'
@@ -266,5 +269,165 @@ export const ErrorWithLink: Story = {
     ),
     showIcon: true,
     style: { marginBottom: 0, width: '860px' },
+  },
+}
+
+export const ErrorInModal: Story = {
+  render: () => {
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [configName, setConfigName] = useState('')
+    const [apiKey, setApiKey] = useState('')
+    const [endpoint, setEndpoint] = useState('')
+
+    const handleOk = () => {
+      // In a real scenario, this would save and only close if there are no errors
+      setIsModalOpen(false)
+    }
+
+    const handleCancel = () => {
+      setIsModalOpen(false)
+    }
+
+    return (
+      <>
+        <Button type="default" onClick={() => setIsModalOpen(true)}>
+          Open Modal with Info Alert
+        </Button>
+        <Modal
+          title="Save Configuration"
+          open={isModalOpen}
+          onOk={handleOk}
+          onCancel={handleCancel}
+          width={600}
+          okText="Save">
+          <Flex vertical gap="middle">
+            <Typography.Text size="base">Please review the configuration settings below before saving.</Typography.Text>
+            <Flex vertical gap="small">
+              <div>
+                <Typography.Text size="base">Field 1</Typography.Text>
+                <Input
+                  value={configName}
+                  onChange={e => setConfigName(e.target.value)}
+                  placeholder="Enter value"
+                  style={{ marginTop: '8px' }}
+                />
+              </div>
+              <div>
+                <Typography.Text size="base">Field 2</Typography.Text>
+                <Input
+                  value={apiKey}
+                  onChange={e => setApiKey(e.target.value)}
+                  placeholder="Enter value"
+                  style={{ marginTop: '8px' }}
+                />
+              </div>
+              <div>
+                <Typography.Text size="base">Field 3</Typography.Text>
+                <Input
+                  value={endpoint}
+                  onChange={e => setEndpoint(e.target.value)}
+                  placeholder="Enter value"
+                  style={{ marginTop: '8px' }}
+                />
+              </div>
+            </Flex>
+            <Alert
+              type="info"
+              message="These settings cannot be changed once saved."
+              showIcon={true}
+              closable={false}
+              style={{ marginBottom: 0, marginTop: '16px' }}
+            />
+          </Flex>
+        </Modal>
+      </>
+    )
+  },
+}
+
+export const ErrorAfterSaveInModal: Story = {
+  render: () => {
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [showError, setShowError] = useState(false)
+    const [configName, setConfigName] = useState('')
+    const [apiKey, setApiKey] = useState('')
+    const [endpoint, setEndpoint] = useState('')
+
+    const handleOk = () => {
+      // Simulate a save failure
+      setShowError(true)
+      // In a real scenario, you would check for errors and only close if successful
+    }
+
+    const handleCancel = () => {
+      setIsModalOpen(false)
+      setShowError(false)
+      // Reset form
+      setConfigName('')
+      setApiKey('')
+      setEndpoint('')
+    }
+
+    const handleOpen = () => {
+      setIsModalOpen(true)
+      setShowError(false)
+    }
+
+    return (
+      <>
+        <Button type="default" onClick={handleOpen}>
+          Open Modal with Error on Save
+        </Button>
+        <Modal
+          title="Save Configuration"
+          open={isModalOpen}
+          onOk={handleOk}
+          onCancel={handleCancel}
+          width={600}
+          okText="Save">
+          <Flex vertical gap="middle">
+            <Typography.Text size="base">Please review the configuration settings below before saving.</Typography.Text>
+            <Flex vertical gap="small">
+              <div>
+                <Typography.Text size="base">Field 1</Typography.Text>
+                <Input
+                  value={configName}
+                  onChange={e => setConfigName(e.target.value)}
+                  placeholder="Enter value"
+                  style={{ marginTop: '8px' }}
+                />
+              </div>
+              <div>
+                <Typography.Text size="base">Field 2</Typography.Text>
+                <Input
+                  value={apiKey}
+                  onChange={e => setApiKey(e.target.value)}
+                  placeholder="Enter value"
+                  style={{ marginTop: '8px' }}
+                />
+              </div>
+              <div>
+                <Typography.Text size="base">Field 3</Typography.Text>
+                <Input
+                  value={endpoint}
+                  onChange={e => setEndpoint(e.target.value)}
+                  placeholder="Enter value"
+                  style={{ marginTop: '8px' }}
+                />
+              </div>
+            </Flex>
+            {showError && (
+              <Alert
+                type="error"
+                message="Unable to save. Please verify all required permissions are granted."
+                showIcon={true}
+                closable={false}
+                style={{ marginBottom: 0, marginTop: '16px' }}
+              />
+            )}
+          </Flex>
+        </Modal>
+      </>
+    )
   },
 }
