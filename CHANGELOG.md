@@ -1,3 +1,11 @@
+# [1.60.0](https://github.com/mParticle/aquarium/compare/v1.59.0...v1.60.0) (2025-11-14)
+
+### Features
+
+- add Unauthorized Tooltip component ([#664](https://github.com/mParticle/aquarium/issues/664)) ([7381436](https://github.com/mParticle/aquarium/commit/738143643e5b1f73b7af62f67fc55c0b470be2f3))
+- moveToTop Icon added! ([#660](https://github.com/mParticle/aquarium/issues/660)) ([4182816](https://github.com/mParticle/aquarium/commit/4182816840d5594e4b2c97257fb249f69e87bebe))
+- toggleLogicBlocks icon added ([#666](https://github.com/mParticle/aquarium/issues/666)) ([754a1d5](https://github.com/mParticle/aquarium/commit/754a1d5d35eed6acc4922be370a7d21c67981b9a))
+
 # [1.59.0](https://github.com/mParticle/aquarium/compare/v1.58.0...v1.59.0) (2025-11-04)
 
 ### Features
