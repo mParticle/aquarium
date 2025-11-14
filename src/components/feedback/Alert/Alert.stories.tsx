@@ -58,7 +58,31 @@ export const StorybookNote: Story = {
           backgroundColor: ColorWhite,
           border: `1px solid ${ColorBorderSecondary}`,
           borderRadius: BorderRadiusLg,
-          width: '100%',
+          width: '860px',
+          marginBottom: 0,
+        }}
+      />
+    )
+  },
+}
+
+export const NoBoldingOrTitlesNote: Story = {
+  render: () => {
+    return (
+      <Alert
+        message={
+          <Flex align="center" gap={SizeXs}>
+            <Typography.Text size="xl">💡</Typography.Text>
+            <Typography.Text size="base">We don&apos;t use bolding or titles for our alerts.</Typography.Text>
+          </Flex>
+        }
+        showIcon={false}
+        type="info"
+        style={{
+          backgroundColor: ColorWhite,
+          border: `1px solid ${ColorBorderSecondary}`,
+          borderRadius: BorderRadiusLg,
+          width: '860px',
           marginBottom: 0,
         }}
       />
@@ -71,7 +95,7 @@ export const Info: Story = {
     type: 'info',
     message: 'This is an informational message.',
     showIcon: true,
-    style: { marginBottom: 0, width: '600px' },
+    style: { marginBottom: 0, width: '860px' },
   },
 }
 
@@ -80,7 +104,7 @@ export const Success: Story = {
     type: 'success',
     message: 'This is a success message.',
     showIcon: true,
-    style: { marginBottom: 0, width: '600px' },
+    style: { marginBottom: 0, width: '860px' },
   },
 }
 
@@ -89,7 +113,7 @@ export const Warning: Story = {
     message: 'This is a warning message.',
     type: 'warning',
     showIcon: true,
-    style: { marginBottom: 0, width: '600px' },
+    style: { marginBottom: 0, width: '860px' },
   },
 }
 
@@ -98,7 +122,7 @@ export const Error: Story = {
     message: 'This is an error message.',
     type: 'error',
     showIcon: true,
-    style: { marginBottom: 0, width: '600px' },
+    style: { marginBottom: 0, width: '860px' },
   },
 }
 
@@ -107,7 +131,7 @@ export const InfoWithoutIcon: Story = {
     type: 'info',
     message: 'This is an informational message.',
     showIcon: false,
-    style: { marginBottom: 0, width: '600px' },
+    style: { marginBottom: 0, width: '860px' },
   },
 }
 
@@ -116,7 +140,7 @@ export const ErrorWithoutIcon: Story = {
     message: 'An error occurred creating the tracing configuration',
     type: 'error',
     showIcon: false,
-    style: { marginBottom: 0, width: '600px' },
+    style: { marginBottom: 0, width: '860px' },
   },
 }
 
@@ -127,7 +151,7 @@ export const ErrorWithExpandCollapse: Story = {
     closable: true,
     message: 'This is an error message.',
     expandableContent: <Typography.Text size="base">Error details go here</Typography.Text>,
-    style: { marginBottom: 0, width: '600px' },
+    style: { marginBottom: 0, width: '860px' },
   },
 }
 
@@ -137,7 +161,7 @@ export const WithCloseButton: Story = {
     message: 'This is a warning message.',
     showIcon: true,
     closable: true,
-    style: { marginBottom: 0, width: '600px' },
+    style: { marginBottom: 0, width: '860px' },
   },
 }
 
@@ -147,7 +171,7 @@ export const SuccessWithCloseButton: Story = {
     message: 'This is a success message.',
     showIcon: true,
     closable: true,
-    style: { marginBottom: 0, width: '600px' },
+    style: { marginBottom: 0, width: '860px' },
   },
 }
 
@@ -157,7 +181,7 @@ export const InfoWithCloseButton: Story = {
     message: 'This is an informational message.',
     showIcon: true,
     closable: true,
-    style: { marginBottom: 0, width: '600px' },
+    style: { marginBottom: 0, width: '860px' },
   },
 }
 
@@ -167,7 +191,7 @@ export const WarningWithCloseButton: Story = {
     message: 'This is a warning message.',
     showIcon: true,
     closable: true,
-    style: { marginBottom: 0, width: '600px' },
+    style: { marginBottom: 0, width: '860px' },
   },
 }
 
@@ -177,7 +201,7 @@ export const ErrorWithCloseButton: Story = {
     message: 'This is an error message.',
     showIcon: true,
     closable: true,
-    style: { marginBottom: 0, width: '600px' },
+    style: { marginBottom: 0, width: '860px' },
   },
 }
 
@@ -193,7 +217,7 @@ export const SuccessWithLink: Story = {
       </Typography.Text>
     ),
     showIcon: true,
-    style: { marginBottom: 0, width: '600px' },
+    style: { marginBottom: 0, width: '860px' },
   },
 }
 
@@ -209,7 +233,7 @@ export const InfoWithLink: Story = {
       </Typography.Text>
     ),
     showIcon: true,
-    style: { marginBottom: 0, width: '600px' },
+    style: { marginBottom: 0, width: '860px' },
   },
 }
 
@@ -225,7 +249,7 @@ export const WarningWithLink: Story = {
       </Typography.Text>
     ),
     showIcon: true,
-    style: { marginBottom: 0, width: '600px' },
+    style: { marginBottom: 0, width: '860px' },
   },
 }
 
@@ -241,6 +265,6 @@ export const ErrorWithLink: Story = {
       </Typography.Text>
     ),
     showIcon: true,
-    style: { marginBottom: 0, width: '600px' },
+    style: { marginBottom: 0, width: '860px' },
   },
 }
