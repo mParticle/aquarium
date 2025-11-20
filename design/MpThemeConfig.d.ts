@@ -1,7 +1,7 @@
 import { type ThemeConfig } from 'antd'
 
 export type IMpThemeConfig = ThemeConfig & {
-  token: {
+  token?: {
     'mpBrandPrimary.1': string
     ['mpBrandPrimary.2']: string
     ['mpBrandPrimary.3']: string
@@ -61,7 +61,7 @@ export type IMpThemeConfig = ThemeConfig & {
     colorFillAlterSolid: string
     colorFilledHandleBg: string
   }
-  components: {
+  components?: Partial<{
     Steps: {
       colorPrimary: string
     }
@@ -79,5 +79,5 @@ export type IMpThemeConfig = ThemeConfig & {
     Cascader: {
       colorHighlight: string
     }
-  }
+  }>
 }

@@ -1,14 +1,13 @@
-import { ConfigProvider as AntConfigProvider } from 'antd'
+import { ConfigProvider as AntConfigProvider, type ThemeConfig } from 'antd'
 import { type ConfigProviderProps as AntConfigProviderProps } from 'antd/es/config-provider'
-// import { LightTheme } from 'design/LightTheme'
+import { LightTheme } from 'design/LightTheme'
 import { type IMpThemeConfig } from 'design/MpThemeConfig'
-import { RoktTheme } from 'design/RoktTheme'
 
 export interface IConfigProviderProps extends Omit<AntConfigProviderProps, 'theme'> {
-  theme?: IMpThemeConfig
+  theme?: IMpThemeConfig | ThemeConfig
 }
 
-export const ConfigProvider = ({ theme = RoktTheme, ...props }: IConfigProviderProps) => {
+export const ConfigProvider = ({ theme = LightTheme, ...props }: IConfigProviderProps) => {
   return <AntConfigProvider theme={theme} {...props} />
 }
 
