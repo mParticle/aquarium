@@ -164,3 +164,8 @@ export { Utils } from '../shared/Utils'
 export { RoutesAuthorizationsService } from '../shared/services/RoutesAuthorizationsService'
 export { InitializationService } from '../shared/services/InitializationService'
 export { NavigationItemsService, NavigationItemId } from '../shared/services/NavigationItemsService'
+
+// Themes
+export { LightTheme } from 'design/LightTheme'
+export { RoktTheme } from 'design/RoktTheme'
+export type { IMpThemeConfig } from 'design/MpThemeConfig'
