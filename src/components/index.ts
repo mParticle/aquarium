@@ -98,6 +98,7 @@ export {
   type IMenuInfo,
 } from './navigation/Menu/Menu'
 export { ConfigProvider, type IConfigProviderProps } from './other/ConfigProvider/ConfigProvider'
+export { AquariumChat, type IAquariumChatProps } from './other/AquariumChat/AquariumChat'
 export { Affix, type IAffixProps } from './not-prod-ready/Affix/Affix'
 export { Splitter, type ISplitterProps, type ISplitterPanelProps } from './layout/Splitter/Splitter'
 export {
@@ -128,6 +129,7 @@ export {
 } from './navigation/GlobalNavigation/NotificationCenter'
 export { SuiteLogo } from './navigation/GlobalNavigation/SuiteLogo'
 export { Typography } from './general/Typography/Typography'
+export { ColorShowcase, type IColorShowcaseProps } from './other/ColorShowcase'
 
 // UPS
 export { UserPreferencesService } from '../services/user-preferences'
