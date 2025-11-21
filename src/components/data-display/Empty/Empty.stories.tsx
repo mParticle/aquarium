@@ -33,7 +33,7 @@ export const EmptyOnboarding: Story = {
   args: {
     state: 'empty',
     title: 'Nothing here yet',
-    description: 'Get started by creating your first item to unlock powerful insights.',
+    description: 'Get started by adding your first item to unlock powerful insights.',
     defaultButton: {
       text: 'Learn more',
       onClick: () => console.log('Learn more clicked'),

@@ -1,3 +1,54 @@
+# [1.60.0](https://github.com/mParticle/aquarium/compare/v1.59.0...v1.60.0) (2025-11-14)
+
+### Features
+
+- add Unauthorized Tooltip component ([#664](https://github.com/mParticle/aquarium/issues/664)) ([7381436](https://github.com/mParticle/aquarium/commit/738143643e5b1f73b7af62f67fc55c0b470be2f3))
+- moveToTop Icon added! ([#660](https://github.com/mParticle/aquarium/issues/660)) ([4182816](https://github.com/mParticle/aquarium/commit/4182816840d5594e4b2c97257fb249f69e87bebe))
+- toggleLogicBlocks icon added ([#666](https://github.com/mParticle/aquarium/issues/666)) ([754a1d5](https://github.com/mParticle/aquarium/commit/754a1d5d35eed6acc4922be370a7d21c67981b9a))
+
+# [1.59.0](https://github.com/mParticle/aquarium/compare/v1.58.0...v1.59.0) (2025-11-04)
+
+### Features
+
+- Expandable Alert, Color Palette and Typography foundation stories ([#662](https://github.com/mParticle/aquarium/issues/662)) ([562f777](https://github.com/mParticle/aquarium/commit/562f77718823f489f7001b107afcee5c8f0f9799))
+
+# [1.58.0](https://github.com/mParticle/aquarium/compare/v1.57.0...v1.58.0) (2025-10-27)
+
+### Features
+
+- add history icon to icon library ([#659](https://github.com/mParticle/aquarium/issues/659)) ([1dace1b](https://github.com/mParticle/aquarium/commit/1dace1b5186c9658a62dda677093e0402ec01ad1))
+- Updating data ingest operations ([#658](https://github.com/mParticle/aquarium/issues/658)) ([82300f4](https://github.com/mParticle/aquarium/commit/82300f4da2aae5b0c8a029c5706ea05c9a3e0c6d))
+
+# [1.57.0](https://github.com/mParticle/aquarium/compare/v1.56.2...v1.57.0) (2025-10-07)
+
+### Features
+
+- more actions button component ([#656](https://github.com/mParticle/aquarium/issues/656)) ([e0bbff8](https://github.com/mParticle/aquarium/commit/e0bbff85699badcb230dd09b98af517da7605320))
+
+## [1.56.2](https://github.com/mParticle/aquarium/compare/v1.56.1...v1.56.2) (2025-09-30)
+
+### Bug Fixes
+
+- missed script in build step when releasing ([#654](https://github.com/mParticle/aquarium/issues/654)) ([6160ca6](https://github.com/mParticle/aquarium/commit/6160ca6cc2cd5fe5f26dbe7693d5bfe6c581fc1d))
+
+## [1.56.1](https://github.com/mParticle/aquarium/compare/v1.56.0...v1.56.1) (2025-09-26)
+
+### Bug Fixes
+
+- Icon types ([#652](https://github.com/mParticle/aquarium/issues/652)) ([e88907b](https://github.com/mParticle/aquarium/commit/e88907bb7b93000c10973390171a5dfc273378bb))
+
+# [1.56.0](https://github.com/mParticle/aquarium/compare/v1.55.0...v1.56.0) (2025-09-25)
+
+### Features
+
+- remove predictions from nav panel ([#653](https://github.com/mParticle/aquarium/issues/653)) ([677255b](https://github.com/mParticle/aquarium/commit/677255be73b0a3bcbf02b1284045c856b99635fe))
+
+# [1.55.0](https://github.com/mParticle/aquarium/compare/v1.54.1...v1.55.0) (2025-09-17)
+
+### Features
+
+- add user icon to informational icons ([#651](https://github.com/mParticle/aquarium/issues/651)) ([27275a8](https://github.com/mParticle/aquarium/commit/27275a815ee7008294d4c431108dac30ff9c9fe2))
+
 ## [1.54.1](https://github.com/mParticle/aquarium/compare/v1.54.0...v1.54.1) (2025-09-09)
 
 ### Bug Fixes

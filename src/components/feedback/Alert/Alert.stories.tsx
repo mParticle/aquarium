@@ -1,6 +1,9 @@
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
 import { Alert } from 'src/components/feedback/Alert/Alert'
+import { Flex } from 'src/components/layout/Flex/Flex'
+import { Typography } from 'src/components/general/Typography/Typography'
+import { ColorWhite, ColorBorderSecondary, BorderRadiusLg, SizeXs } from 'src/styles/style'
 
 const meta: Meta<typeof Alert> = {
   title: 'Components/Feedback/Alert',
@@ -33,37 +36,107 @@ type Story = StoryObj<typeof Alert>
   Customize the stories based on specific requirements.
 */
 
+export const StorybookNote: Story = {
+  render: () => {
+    return (
+      <Alert
+        message={
+          <Flex align="center" gap={SizeXs}>
+            <Typography.Text size="xl">💡</Typography.Text>
+            <Typography.Text size="base">
+              Use the{' '}
+              <Typography.Link href="?path=/docs/components-feedback-message--docs" underline>
+                Message component
+              </Typography.Link>{' '}
+              if the notification should dismiss automatically.
+            </Typography.Text>
+          </Flex>
+        }
+        showIcon={false}
+        type="info"
+        style={{
+          backgroundColor: ColorWhite,
+          border: `1px solid ${ColorBorderSecondary}`,
+          borderRadius: BorderRadiusLg,
+          width: '100%',
+          marginBottom: 0,
+        }}
+      />
+    )
+  },
+}
+
 export const Info: Story = {
   args: {
     type: 'info',
-    message: 'Note',
-    description: 'Audience size estimates are approximate.',
+    message: 'This is an informational message.',
+    showIcon: true,
+    style: { marginBottom: 0, width: '600px' },
   },
 }
 
 export const Success: Story = {
   args: {
     type: 'success',
-    closable: true,
-    message: 'The predictive attribute has been successfully created and now is being calculated.',
+    message: 'This is a success message.',
+    showIcon: true,
+    style: { marginBottom: 0, width: '600px' },
   },
 }
 
 export const Warning: Story = {
   args: {
-    message: 'The default environment is Production.',
-    description:
-      "Ensure your audience's environment aligns with that of any parent audiences to avoid unexpected results.",
+    message: 'This is a warning message.',
     type: 'warning',
     showIcon: true,
-    closable: true,
+    style: { marginBottom: 0, width: '600px' },
   },
 }
 
 export const Error: Story = {
   args: {
+    message: 'This is an error message.',
+    type: 'error',
+    showIcon: true,
+    style: { marginBottom: 0, width: '600px' },
+  },
+}
+
+export const InfoWithoutIcon: Story = {
+  args: {
+    type: 'info',
+    message: 'This is an informational message.',
+    showIcon: false,
+    style: { marginBottom: 0, width: '600px' },
+  },
+}
+
+export const ErrorWithoutIcon: Story = {
+  args: {
     message: 'An error occurred creating the tracing configuration',
     type: 'error',
     showIcon: false,
+    style: { marginBottom: 0, width: '600px' },
+  },
+}
+
+export const ErrorWithExpandCollapse: Story = {
+  args: {
+    type: 'error',
+    expandable: true,
+    closable: true,
+    message: 'This is an error message.',
+    expandableContent: <Typography.Text size="base">Error details go here</Typography.Text>,
+    style: { marginBottom: 0, width: '600px' },
+  },
+}
+
+export const WithCloseButton: Story = {
+  args: {
+    type: 'warning',
+    message: 'This is a warning message.',
+    showIcon: true,
+    closable: true,
+    style: { marginBottom: 0, width: '600px' },
   },
 }

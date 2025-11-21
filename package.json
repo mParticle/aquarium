@@ -1,6 +1,6 @@
 {
   "name": "@mparticle/aquarium",
-  "version": "1.54.1",
+  "version": "1.60.0",
   "description": "mParticle Component Library",
   "license": "Apache-2.0",
   "keywords": [
@@ -100,7 +100,7 @@
     "test-storybook": "test-storybook",
     "test-storybook:ci": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"npm run build-storybook --quiet && NODE_NO_WARNINGS=1 npx http-server storybook-static --port 6006 --silent\" \"wait-on tcp:127.0.0.1:6006 && npm run test-storybook\"",
     "test-unit": "vitest",
-    "build": "vite build && npm run tokens-to-css && shx cp src/styles/*.css dist && shx cp src/styles/style.ts dist",
+    "build": "vite build && node scripts/fix-type-imports.js && npm run tokens-to-css && shx cp src/styles/*.css dist && shx cp src/styles/style.ts dist",
     "build-dist": "sh ./scripts/build-dist.sh",
     "build-storybook": "storybook build",
     "lint": "concurrently \"eslint --ext .ts,.tsx \"src/**/*.{ts,tsx}\"\" \"stylelint \"**/*.css\"\"",

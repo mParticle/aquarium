@@ -11,6 +11,7 @@ import {
   RateStarIconDt,
   RateUpIcon,
   RateUpIconDt,
+  RunIcon,
   AnalyticsIcon,
   AnalyticsIconDt,
   C360Icon,
@@ -46,11 +47,11 @@ import {
   HeartIcon,
   HelpIcon,
   HelpVideoIcon,
+  HistoryIcon,
   IdentityIcon,
   JumpToIcon,
   LightBulbIcon,
   LiveStreamIcon,
-  PaywallIcon,
   MessageQuestionIcon,
   MpLogoIcon,
   ObservabilityIcon,
@@ -69,12 +70,17 @@ import {
   TransformationsIcon,
   UploadIcon,
   UserAttributeIcon,
+  UserIcon,
   UserProfilesIcon,
   UsersIcon,
+  ViewOnlyIcon,
+  PaywallIcon,
   WrenchIcon,
   ZoomIn,
   ZoomOut,
   OpenTabIcon,
+  PauseIcon,
+  PlayIcon,
   OtherIcon,
   OtherDataIcon,
   ConversionIcon,
@@ -132,6 +138,8 @@ import {
   RefreshIcon,
   StringIcon,
   TimestampIcon,
+  ToggleLogicBlocks,
+  MoveToTop,
 } from 'src/components/icons'
 
 export const Icons: Record<IconNames, IconOptions> = {
@@ -158,24 +166,27 @@ export const Icons: Record<IconNames, IconOptions> = {
   add: {
     light: AddIcon,
     'duo-tone': AddIcon,
-    default: 'duo-tone',
+    default: 'light',
   },
   alicorn: {
     light: AlicornIcon,
     default: 'light',
+    deprecated: 'placeholder',
   },
   analytics: {
     light: AnalyticsIcon,
     'duo-tone': AnalyticsIconDt,
     default: 'duo-tone',
+    deprecated: true,
   },
   annotation: {
     light: Annotation,
     default: 'light',
   },
   array: {
+    light: ArrayIcon,
     'duo-tone': ArrayIcon,
-    default: 'duo-tone',
+    default: 'light',
   },
   calculatedAttribute: {
     light: CalculatedAttributeIcon,
@@ -197,6 +208,7 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: C360Icon,
     'duo-tone': C360IconDt,
     default: 'duo-tone',
+    deprecated: true,
   },
   catalog: {
     light: CatalogIcon,
@@ -263,6 +275,7 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: DataPlatformIcon,
     'duo-tone': DataPlatformIconDt,
     default: 'duo-tone',
+    deprecated: true,
   },
   date: {
     light: DateIcon,
@@ -379,6 +392,11 @@ export const Icons: Record<IconNames, IconOptions> = {
   helpVideo: {
     light: HelpVideoIcon,
     default: 'light',
+    deprecated: true,
+  },
+  history: {
+    light: HistoryIcon,
+    default: 'light',
   },
   identity: {
     light: IdentityIcon,
@@ -400,10 +418,12 @@ export const Icons: Record<IconNames, IconOptions> = {
   journeys: {
     light: SplitIcon,
     default: 'light',
+    deprecated: true,
   },
   jumpTo: {
     light: JumpToIcon,
     default: 'light',
+    deprecated: 'openTab',
   },
   lightBulb: {
     light: LightBulbIcon,
@@ -415,8 +435,9 @@ export const Icons: Record<IconNames, IconOptions> = {
     default: 'light',
   },
   list: {
+    light: ListIcon,
     'duo-tone': ListIcon,
-    default: 'duo-tone',
+    default: 'light',
   },
   liveStream: {
     light: LiveStreamIcon,
@@ -446,6 +467,7 @@ export const Icons: Record<IconNames, IconOptions> = {
   myHub: {
     light: GridIcon,
     default: 'light',
+    deprecated: true,
   },
   next: {
     light: NextIcon,
@@ -484,21 +506,28 @@ export const Icons: Record<IconNames, IconOptions> = {
     default: 'light',
   },
   otherData: {
+    light: OtherDataIcon,
     'duo-tone': OtherDataIcon,
-    default: 'duo-tone',
+    default: 'light',
   },
   oversight: {
     light: OversightIcon,
     'duo-tone': OversightIconDt,
     default: 'duo-tone',
+    deprecated: true,
   },
   overview: {
     light: OverviewIcon,
     'duo-tone': OverviewIconDt,
     default: 'duo-tone',
+    deprecated: true,
   },
   paywall: {
     light: PaywallIcon,
+    default: 'light',
+  },
+  pause: {
+    light: PauseIcon,
     default: 'light',
   },
   pipelines: {
@@ -507,6 +536,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   placeholder: {
     light: Placeholder,
+    default: 'light',
+  },
+  play: {
+    light: PlayIcon,
     default: 'light',
   },
   precision: {
@@ -560,6 +593,10 @@ export const Icons: Record<IconNames, IconOptions> = {
     'duo-tone': RateUpIconDt,
     default: 'light',
   },
+  run: {
+    light: RunIcon,
+    default: 'light',
+  },
   reorder: {
     light: Reorder,
     default: 'light',
@@ -583,6 +620,7 @@ export const Icons: Record<IconNames, IconOptions> = {
   segmentation: {
     'duo-tone': SegmentationIconDt,
     default: 'duo-tone',
+    deprecated: true,
   },
   segmentationAnalysis: {
     light: SegmentationAnalysis,
@@ -627,8 +665,9 @@ export const Icons: Record<IconNames, IconOptions> = {
     deprecated: 'journeys',
   },
   string: {
+    light: StringIcon,
     'duo-tone': StringIcon,
-    default: 'duo-tone',
+    default: 'light',
   },
   support: {
     light: MessageQuestionIcon,
@@ -643,8 +682,9 @@ export const Icons: Record<IconNames, IconOptions> = {
     default: 'light',
   },
   timestamp: {
+    light: TimestampIcon,
     'duo-tone': TimestampIcon,
-    default: 'duo-tone',
+    default: 'light',
   },
   transformation: {
     light: TransformationsIcon,
@@ -653,6 +693,7 @@ export const Icons: Record<IconNames, IconOptions> = {
   trends: {
     light: ChartLineIcon,
     default: 'light',
+    deprecated: true,
   },
   unlock: {
     light: UnlockIcon,
@@ -660,6 +701,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   upload: {
     light: UploadIcon,
+    default: 'light',
+  },
+  user: {
+    light: UserIcon,
     default: 'light',
   },
   userAttribute: {
@@ -672,6 +717,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   users: {
     light: UsersIcon,
+    default: 'light',
+  },
+  viewOnly: {
+    light: ViewOnlyIcon,
     default: 'light',
   },
   wrench: {
@@ -690,6 +739,7 @@ export const Icons: Record<IconNames, IconOptions> = {
   bannerFreemium: {
     'duo-tone': BannerFreemium,
     default: 'duo-tone',
+    deprecated: true,
   },
   boolean: {
     light: BooleanIcon,
@@ -707,6 +757,7 @@ export const Icons: Record<IconNames, IconOptions> = {
   stateNoResults: {
     light: StateNoResults,
     default: 'light',
+    deprecated: 'stateEmpty',
   },
   back: {
     light: Back,
@@ -726,6 +777,14 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   refresh: {
     light: RefreshIcon,
+    default: 'light',
+  },
+  toggleLogicBlocks: {
+    light: ToggleLogicBlocks,
+    default: 'light',
+  },
+  moveToTop: {
+    light: MoveToTop,
     default: 'light',
   },
 } as const
