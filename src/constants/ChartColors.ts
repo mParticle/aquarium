@@ -1,6 +1,6 @@
 const chartBaseColors = {
   primary: '#1cbc97',
-  purple: '#5206b8',
+  purple: '#a10863',
   cyan: '#00c2df',
   yellow: '#f7d40f',
   sapphire: '#223ce0',
@@ -10,7 +10,7 @@ const chartBaseColors = {
   lime: '#d2eff4',
 
   secondaryPrimary: '#19d1a7',
-  secondaryPurple: '#832bf8',
+  secondaryPurple: '#ef0b94',
   secondaryCoral: '#ff8666',
   secondaryPrimaryDark: '#00755a',
   secondaryCyan: '#00dafa',
