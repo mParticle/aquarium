@@ -1,13 +1,18 @@
 import type { RequireAtLeastOne } from 'type-fest'
 
-export type IconVariant = 'light' | 'duo-tone'
+export const ICON_VARIANTS = {
+  LIGHT: 'light',
+  DUO_TONE: 'duo-tone',
+} as const
+
+export type IconVariant = (typeof ICON_VARIANTS)[keyof typeof ICON_VARIANTS]
 
 export type IconOptions = RequireAtLeastOne<
   {
-    light?: React.ComponentType<React.SVGProps<SVGSVGElement>>
-    'duo-tone'?: React.ComponentType<React.SVGProps<SVGSVGElement>>
+    [ICON_VARIANTS.LIGHT]?: React.ComponentType<React.SVGProps<SVGSVGElement>>
+    [ICON_VARIANTS.DUO_TONE]?: React.ComponentType<React.SVGProps<SVGSVGElement>>
     default: IconVariant
-    deprecated?: string
+    deprecated?: string | boolean
   },
   IconVariant
 >
@@ -73,6 +78,7 @@ export type IconNames =
   | 'heart'
   | 'help'
   | 'helpVideo'
+  | 'history'
   | 'identity'
   | 'info'
   | 'insights'
@@ -102,8 +108,10 @@ export type IconNames =
   | 'oversight'
   | 'overview'
   | 'paywall'
+  | 'pause'
   | 'pipelines'
   | 'placeholder'
+  | 'play'
   | 'precision'
   | 'predictions'
   | 'premium'
@@ -115,6 +123,7 @@ export type IconNames =
   | 'rateDown'
   | 'rateStar'
   | 'rateUp'
+  | 'run'
   | 'remove'
   | 'savedProjects'
   | 'scheduledReport'
@@ -138,9 +147,11 @@ export type IconNames =
   | 'trends'
   | 'unlock'
   | 'upload'
+  | 'user'
   | 'userAttribute'
   | 'userProfiles'
   | 'users'
+  | 'viewOnly'
   | 'wrench'
   | 'zoomIn'
   | 'zoomOut'
@@ -155,3 +166,5 @@ export type IconNames =
   | 'clone'
   | 'reorder'
   | 'refresh'
+  | 'toggleLogicBlocks'
+  | 'moveToTop'

@@ -95,7 +95,11 @@ export class DataPlatformAuthorizations extends BaseRoutesAuthorizations {
   }
 
   private canViewWarehouseSync(): boolean {
-    return AuthorizationsService.isAuthorized(Operation.DATA_INGEST_VIEW)
+    return AuthorizationsService.isAuthorized([
+      Operation.DATA_INGEST_CONNECTION_VIEW,
+      Operation.DATA_INGEST_DATA_MODEL_VIEW,
+      Operation.DATA_INGEST_PIPELINE_VIEW,
+    ])
   }
 
   public canViewCrm(): boolean {

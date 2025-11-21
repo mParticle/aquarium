@@ -1,0 +1,18 @@
+import { Meta, Story } from '@storybook/blocks'
+
+import * as ColorPaletteStories from './ColorPalette.stories.tsx'
+
+<Meta of={ColorPaletteStories} />
+
+<div style={{ backgroundColor: '#ffffff', padding: '24px', minHeight: '100vh' }}>
+  <h1>Color Palette</h1>
+
+  <Story of={ColorPaletteStories.Primary} />
+
+  <Story of={ColorPaletteStories.Semantic} />
+
+  <Story of={ColorPaletteStories.Text} />
+
+  <Story of={ColorPaletteStories.Borders} />
+</div>
+

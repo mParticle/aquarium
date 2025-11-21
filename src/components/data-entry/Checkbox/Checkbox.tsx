@@ -1,6 +1,7 @@
 import { Checkbox as AntCheckbox } from 'antd'
 import { type CheckboxProps as AntCheckboxProps } from 'antd'
 import { ConfigProvider } from 'src/components'
+import './checkbox.css'
 
 export interface ICheckboxProps extends AntCheckboxProps {}
 
