@@ -1,0 +1,17 @@
+var m=Object.defineProperty,p=Object.defineProperties;var c=Object.getOwnPropertyDescriptors;var s=Object.getOwnPropertySymbols;var x=Object.prototype.hasOwnProperty,j=Object.prototype.propertyIsEnumerable;var o=(t,e,n)=>e in t?m(t,e,{enumerable:!0,configurable:!0,writable:!0,value:n}):t[e]=n,i=(t,e)=>{for(var n in e||(e={}))x.call(e,n)&&o(t,n,e[n]);if(s)for(var n of s(e))j.call(e,n)&&o(t,n,e[n]);return t},d=(t,e)=>p(t,c(e));import{j as r}from"./jsx-runtime-C9TrHvcC.js";import{useMDXComponents as l}from"./index-CkQzTg6q.js";import{ae as w,ag as a}from"./index-Ua-tRM8B.js";import{D as f,P as u,L as D,a as b,b as g}from"./Drawer.stories-D1OLSrYl.js";import"./index-3OP4wdng.js";import"./iframe-NHoGfnEA.js";import"../sb-preview/runtime.js";import"./index-DA79H6I3.js";import"./index-Cu4lwwaE.js";import"./extends-CF3RwP-h.js";import"./isNativeReflectConstruct-CWIsGhkf.js";import"./_baseClone-DwBCp-Ss.js";import"./index-dQMQm6Vu.js";import"./index-DrFu-skq.js";import"./NavigationItemsService-B4ZXk0yf.js";import"./ErrorStateIcon-WCZHDi6D.js";import"./style-BD6IdFH1.js";import"./WarningFilled-D6ijQqgK.js";import"./AntdIcon-DRQs8XP6.js";import"./presets-CQzyf-6F.js";import"./Context-R5ee3nrF.js";import"./SuccessStateIcon-BIRBbEV6.js";import"./WarningStateIcon-BdXkjhdf.js";import"./LightTheme-WtG2Efeh.js";import"./row-DlEJUZa0.js";import"./useToken-BIYN7ogo.js";function h(t){const e=i(i({a:"a",h1:"h1",h3:"h3",h5:"h5",p:"p",table:"table",tbody:"tbody",td:"td",th:"th",thead:"thead",tr:"tr"},l()),t.components);return r.jsxs(r.Fragment,{children:[r.jsx(w,{of:f}),`
+`,r.jsx(e.h1,{id:"drawer",children:"Drawer"}),`
+`,r.jsx(e.p,{children:"A Drawer is a panel that slides in from the side of the screen, overlaying the main content while keeping the user in the same context."}),`
+`,r.jsx(e.h3,{id:"table-drawer",children:"Table Drawer"}),`
+`,r.jsx(e.p,{children:"Used to display row-level details from a table. Available in two sizes: 378 px (Default) and 736 px (Large)."}),`
+`,r.jsx(e.h5,{id:"default-drawer",children:"Default Drawer"}),`
+`,r.jsx(a,{of:u}),`
+`,r.jsx(e.h5,{id:"large-drawer",children:"Large Drawer"}),`
+`,r.jsx(a,{of:D}),`
+`,r.jsx(e.h5,{id:"drawer-with-buttons-in-header",children:"Drawer with Buttons in Header"}),`
+`,r.jsx(e.p,{children:"Includes actions in the header, such as Save or Reset."}),`
+`,r.jsx(a,{of:b}),`
+`,r.jsx(e.h5,{id:"linkable-drawer",children:"Linkable Drawer"}),`
+`,r.jsx(e.p,{children:"Can be opened directly via a unique URL or link, allowing users to share or bookmark a specific drawer state."}),`
+`,r.jsx(a,{of:g}),`
+`,r.jsx(e.h3,{id:"related-links",children:"Related Links"}),`
+`,r.jsxs(e.table,{children:[r.jsx(e.thead,{children:r.jsxs(e.tr,{children:[r.jsx(e.th,{children:"Type"}),r.jsx(e.th,{children:"Resource"})]})}),r.jsxs(e.tbody,{children:[r.jsxs(e.tr,{children:[r.jsx(e.td,{children:"Eames"}),r.jsx(e.td,{children:r.jsx(e.a,{href:"https://www.figma.com/design/veXnmignQnJz8StIq10VJ5/Eames-2.0---Foundations-%26-Components?node-id=421-14499&p=f&t=tG2zSQspj1psOBHS-0",rel:"nofollow",children:"Drawer Component"})})]}),r.jsxs(e.tr,{children:[r.jsx(e.td,{children:"AntD"}),r.jsx(e.td,{children:r.jsx(e.a,{href:"https://ant.design/components/drawer",rel:"nofollow",children:"Drawer Component"})})]})]})]})]})}function K(t={}){const{wrapper:e}=i(i({},l()),t.components);return e?r.jsx(e,d(i({},t),{children:r.jsx(h,i({},t))})):h(t)}export{K as default};
