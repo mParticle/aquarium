@@ -2,7 +2,7 @@
 
 <a href="https://mparticle.github.io/aquarium/" target="_blank"><img src="https://raw.githubusercontent.com/storybooks/brand/master/badge/badge-storybook.svg"></a>
 &nbsp;&nbsp;
-<a href="https://raw.githubusercontent.com/mParticle/aquarium/main/LLM_SETUP_PROMPT.md" target="_blank"><img src="https://img.shields.io/badge/📋_Setup_with_LLM-blue?style=flat" alt="Setup with LLM"></a>
+<a href="https://github.com/mParticle/aquarium/blob/main/LLM_SETUP_PROMPT.md" target="_blank"><img src="https://img.shields.io/badge/📋_Setup_with_LLM-blue?style=flat" alt="Setup with LLM"></a>
 
 # mParticle Aquarium
 
