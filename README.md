@@ -16,30 +16,21 @@ _Components That Scale_
 
 | Dependency | Version    | Notes                    |
 | ---------- | ---------- | ------------------------ |
-| React      | `>=17.0.2` | React 17, 18, or 19      |
+| React      | `>=17.0.2` | React 17 or 18           |
 | React DOM  | `>=17.0.2` | Must match React version |
 | Node.js    | `>=18`     | For development          |
 
 ### Quick Start
 
 ```bash
-yarn add @mparticle/aquarium antd dayjs
+yarn add @mparticle/aquarium antd@5 dayjs@1
 ```
 
 Or with npm:
 
 ```bash
-npm install @mparticle/aquarium antd dayjs
+npm install @mparticle/aquarium antd@5 dayjs@1
 ```
-
-### Required Dependencies
-
-| Package               | Purpose                                                        |
-| --------------------- | -------------------------------------------------------------- |
-| `@mparticle/aquarium` | Main component library                                         |
-| `antd`                | Peer dependency - Ant Design UI framework                      |
-| `dayjs`               | Peer dependency - Date handling for DatePicker, Calendar, etc. |
-| `react` / `react-dom` | Peer dependency - Already in your project (v17.0.2+)           |
 
 ### Setup
 
@@ -53,6 +44,7 @@ import 'antd/dist/reset.css'
 
 ```tsx
 import { Button, Space, Typography } from '@mparticle/aquarium'
+import { PaddingSm } from '@mparticle/aquarium/dist/style'
 
 export const MyComponent = () => {
   return (
@@ -60,7 +52,9 @@ export const MyComponent = () => {
       <Typography.Title level={3}>Hello Aquarium</Typography.Title>
       <Typography.Text>Successfully installed!</Typography.Text>
       <Space>
-        <Button type="primary">Primary</Button>
+        <Button type="primary" style={{ paddingLeft: PaddingSm }}>
+          Primary
+        </Button>
         <Button>Default</Button>
       </Space>
     </Space>

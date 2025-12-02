@@ -9,7 +9,7 @@
 **Required Dependencies:**
 
 ```bash
-yarn add @mparticle/aquarium antd dayjs
+yarn add @mparticle/aquarium antd@5 dayjs@1
 ```
 
 **Dependency Matrix:**
@@ -18,8 +18,8 @@ yarn add @mparticle/aquarium antd dayjs
 | `@mparticle/aquarium` | ✅ Yes | Main Aquarium component library |
 | `antd` | ✅ Yes | Peer dependency - Ant Design UI framework |
 | `dayjs` | ✅ Yes | Peer dependency - Date handling for DatePicker, Calendar, etc. |
-| `react` | ✅ Yes | Peer dependency (>=16.8.0) |
-| `react-dom` | ✅ Yes | Peer dependency (>=16.8.0) |
+| `react` | ✅ Yes | Peer dependency (>=17.0.2) |
+| `react-dom` | ✅ Yes | Peer dependency (>=17.0.2) |
 
 **Post-Installation:**
 
@@ -33,7 +33,6 @@ import 'antd/dist/reset.css'
 
 ```tsx
 import { Button } from '@mparticle/aquarium'
-
 ;<Button type="primary">Test</Button>
 ```
 
@@ -43,3 +42,11 @@ import { Button } from '@mparticle/aquarium'
 | Styles not loading | Ensure `antd/dist/reset.css` is imported |
 | Date components fail | Verify `dayjs` is installed |
 | Type errors | Install `@types/react` if not present |
+
+**Self-Learning:**
+
+> Add new pitfalls and gotchas below as you encounter them:
+
+| Issue                         | Solution | Added By |
+| ----------------------------- | -------- | -------- |
+| <!-- Add new entries here --> |          |          |
