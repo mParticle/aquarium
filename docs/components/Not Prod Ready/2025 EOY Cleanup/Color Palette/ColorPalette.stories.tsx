@@ -41,14 +41,33 @@ import {
   ColorTextPlaceholder,
   ColorTextDisabled,
   ColorSuccessBg,
+  ColorSuccessBgHover,
   ColorSuccessBorder,
+  ColorSuccessBorderHover,
+  ColorSuccessHover,
+  ColorSuccessActive,
   ColorSuccessText,
+  ColorSuccessTextHover,
+  ColorSuccessTextActive,
   ColorErrorBg,
+  ColorErrorBgHover,
+  ColorErrorBgActive,
   ColorErrorBorder,
+  ColorErrorBorderHover,
+  ColorErrorHover,
+  ColorErrorActive,
   ColorErrorText,
+  ColorErrorTextHover,
+  ColorErrorTextActive,
   ColorWarningBg,
+  ColorWarningBgHover,
   ColorWarningBorder,
+  ColorWarningBorderHover,
+  ColorWarningHover,
+  ColorWarningActive,
   ColorWarningText,
+  ColorWarningTextHover,
+  ColorWarningTextActive,
   ColorBorder,
   ColorBorderSecondary,
 } from 'src/styles/style'
@@ -597,16 +616,52 @@ export const Semantic: Story = {
               value={ColorSuccessBg}
             />
             <ColorRow
+              swatch={ColorSuccessBgHover}
+              name="Success Background Hover"
+              tokenName="ColorSuccessBgHover"
+              value={ColorSuccessBgHover}
+            />
+            <ColorRow
               swatch={ColorSuccessBorder}
               name="Success Border"
               tokenName="ColorSuccessBorder"
               value={ColorSuccessBorder}
             />
             <ColorRow
+              swatch={ColorSuccessBorderHover}
+              name="Success Border Hover"
+              tokenName="ColorSuccessBorderHover"
+              value={ColorSuccessBorderHover}
+            />
+            <ColorRow
+              swatch={ColorSuccessHover}
+              name="Success Hover"
+              tokenName="ColorSuccessHover"
+              value={ColorSuccessHover}
+            />
+            <ColorRow
+              swatch={ColorSuccessActive}
+              name="Success Active"
+              tokenName="ColorSuccessActive"
+              value={ColorSuccessActive}
+            />
+            <ColorRow
+              swatch={ColorSuccessTextHover}
+              name="Success Text Hover"
+              tokenName="ColorSuccessTextHover"
+              value={ColorSuccessTextHover}
+            />
+            <ColorRow
               swatch={ColorSuccessText}
               name="Success Text"
               tokenName="ColorSuccessText"
               value={ColorSuccessText}
+            />
+            <ColorRow
+              swatch={ColorSuccessTextActive}
+              name="Success Text Active"
+              tokenName="ColorSuccessTextActive"
+              value={ColorSuccessTextActive}
             />
           </tbody>
         </table>
@@ -676,12 +731,49 @@ export const Semantic: Story = {
           <tbody>
             <ColorRow swatch={ColorErrorBg} name="Error Background" tokenName="ColorErrorBg" value={ColorErrorBg} />
             <ColorRow
+              swatch={ColorErrorBgHover}
+              name="Error Background Hover"
+              tokenName="ColorErrorBgHover"
+              value={ColorErrorBgHover}
+            />
+            <ColorRow
+              swatch={ColorErrorBgActive}
+              name="Error Background Active"
+              tokenName="ColorErrorBgActive"
+              value={ColorErrorBgActive}
+            />
+            <ColorRow
               swatch={ColorErrorBorder}
               name="Error Border"
               tokenName="ColorErrorBorder"
               value={ColorErrorBorder}
             />
+            <ColorRow
+              swatch={ColorErrorBorderHover}
+              name="Error Border Hover"
+              tokenName="ColorErrorBorderHover"
+              value={ColorErrorBorderHover}
+            />
+            <ColorRow swatch={ColorErrorHover} name="Error Hover" tokenName="ColorErrorHover" value={ColorErrorHover} />
+            <ColorRow
+              swatch={ColorErrorActive}
+              name="Error Active"
+              tokenName="ColorErrorActive"
+              value={ColorErrorActive}
+            />
+            <ColorRow
+              swatch={ColorErrorTextHover}
+              name="Error Text Hover"
+              tokenName="ColorErrorTextHover"
+              value={ColorErrorTextHover}
+            />
             <ColorRow swatch={ColorErrorText} name="Error Text" tokenName="ColorErrorText" value={ColorErrorText} />
+            <ColorRow
+              swatch={ColorErrorTextActive}
+              name="Error Text Active"
+              tokenName="ColorErrorTextActive"
+              value={ColorErrorTextActive}
+            />
           </tbody>
         </table>
 
@@ -755,16 +847,52 @@ export const Semantic: Story = {
               value={ColorWarningBg}
             />
             <ColorRow
+              swatch={ColorWarningBgHover}
+              name="Warning Background Hover"
+              tokenName="ColorWarningBgHover"
+              value={ColorWarningBgHover}
+            />
+            <ColorRow
               swatch={ColorWarningBorder}
               name="Warning Border"
               tokenName="ColorWarningBorder"
               value={ColorWarningBorder}
             />
             <ColorRow
+              swatch={ColorWarningBorderHover}
+              name="Warning Border Hover"
+              tokenName="ColorWarningBorderHover"
+              value={ColorWarningBorderHover}
+            />
+            <ColorRow
+              swatch={ColorWarningHover}
+              name="Warning Hover"
+              tokenName="ColorWarningHover"
+              value={ColorWarningHover}
+            />
+            <ColorRow
+              swatch={ColorWarningActive}
+              name="Warning Active"
+              tokenName="ColorWarningActive"
+              value={ColorWarningActive}
+            />
+            <ColorRow
+              swatch={ColorWarningTextHover}
+              name="Warning Text Hover"
+              tokenName="ColorWarningTextHover"
+              value={ColorWarningTextHover}
+            />
+            <ColorRow
               swatch={ColorWarningText}
               name="Warning Text"
               tokenName="ColorWarningText"
               value={ColorWarningText}
+            />
+            <ColorRow
+              swatch={ColorWarningTextActive}
+              name="Warning Text Active"
+              tokenName="ColorWarningTextActive"
+              value={ColorWarningTextActive}
             />
           </tbody>
         </table>
