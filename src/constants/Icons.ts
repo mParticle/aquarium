@@ -138,7 +138,8 @@ import {
   RefreshIcon,
   StringIcon,
   TimestampIcon,
-  MoveToTop
+  ToggleLogicBlocks,
+  MoveToTop,
 } from 'src/components/icons'
 
 export const Icons: Record<IconNames, IconOptions> = {
@@ -778,8 +779,12 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: RefreshIcon,
     default: 'light',
   },
+  toggleLogicBlocks: {
+    light: ToggleLogicBlocks,
+    default: 'light',
+  },
   moveToTop: {
     light: MoveToTop,
     default: 'light',
-  }
+  },
 } as const
