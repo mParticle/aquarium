@@ -491,7 +491,6 @@ export const Semantic: Story = {
   render: () => {
     const semanticRows = [
       { swatch: ColorPrimary, name: 'Primary', tokenName: 'ColorPrimary', value: ColorPrimary },
-      { swatch: ColorSuccess, name: 'Success', tokenName: 'ColorSuccess', value: ColorSuccess },
       { swatch: ColorWarning, name: 'Warning', tokenName: 'ColorWarning', value: ColorWarning },
       { swatch: ColorError, name: 'Error', tokenName: 'ColorError', value: ColorError },
       { swatch: ColorInfo, name: 'Info', tokenName: 'ColorInfo', value: ColorInfo },
@@ -499,6 +498,7 @@ export const Semantic: Story = {
     ]
 
     const successRows = [
+      { swatch: ColorSuccess, name: 'Success', tokenName: 'ColorSuccess', value: ColorSuccess },
       { swatch: ColorSuccessBg, name: 'Success Background', tokenName: 'ColorSuccessBg', value: ColorSuccessBg },
       {
         swatch: ColorSuccessBgHover,
