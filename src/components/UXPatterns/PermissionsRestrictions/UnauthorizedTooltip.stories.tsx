@@ -39,11 +39,13 @@ export const ModalExample: Story = {
 
     const unauthorizedMessage = (
       <>
-        You don&apos;t have permissions for this action.{' '}
-        <a href="#" style={{ color: 'inherit', textDecoration: 'underline', cursor: 'pointer' }}>
-          Learn more.
-        </a>
-      </>
+              <Typography.Text tooltip>
+                You don&apos;t have permissions for this action.{' '}
+                <Typography.Link href="/" tooltip>
+                  Learn More
+                </Typography.Link>
+              </Typography.Text>
+            </>
     )
 
     return (
