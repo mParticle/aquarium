@@ -259,14 +259,14 @@ const ColorSectionRow = ({ title }: { title: string }) => (
     <td
       colSpan={4}
       style={{
-        padding: '16px',
+        padding: '24px 16px 12px',
         borderBottom: '1px solid #f0f0f0',
         fontSize: FontSize,
         fontFamily: FontFamily,
         fontWeight: 600,
-        backgroundColor: '#fafafa',
+        backgroundColor: '#ffffff',
       }}>
-      {title}
+      <span style={{ display: 'inline-block', marginBottom: '4px' }}>{title}</span>
     </td>
   </tr>
 )
