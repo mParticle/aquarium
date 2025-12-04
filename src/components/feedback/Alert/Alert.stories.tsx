@@ -6,7 +6,7 @@ import { Modal } from 'src/components/feedback/Modal/Modal'
 import { Button, Input } from 'src/components'
 import { Flex } from 'src/components/layout/Flex/Flex'
 import { Typography } from 'src/components/general/Typography/Typography'
-import { ColorWhite, ColorBorderSecondary, BorderRadiusLg, SizeXs } from 'src/styles/style'
+import { ColorWhite, ColorBorderSecondary, BorderRadiusLg, Margin, MarginXs, SizeXs } from 'src/styles/style'
 
 const meta: Meta<typeof Alert> = {
   title: 'Components/Feedback/Alert',
@@ -309,7 +309,7 @@ export const ErrorInModal: Story = {
                   value={configName}
                   onChange={e => setConfigName(e.target.value)}
                   placeholder="Enter value"
-                  style={{ marginTop: '8px' }}
+                  style={{ marginTop: MarginXs }}
                 />
               </div>
               <div>
@@ -318,7 +318,7 @@ export const ErrorInModal: Story = {
                   value={apiKey}
                   onChange={e => setApiKey(e.target.value)}
                   placeholder="Enter value"
-                  style={{ marginTop: '8px' }}
+                  style={{ marginTop: MarginXs }}
                 />
               </div>
               <div>
@@ -327,7 +327,7 @@ export const ErrorInModal: Story = {
                   value={endpoint}
                   onChange={e => setEndpoint(e.target.value)}
                   placeholder="Enter value"
-                  style={{ marginTop: '8px' }}
+                  style={{ marginTop: MarginXs }}
                 />
               </div>
             </Flex>
@@ -336,7 +336,7 @@ export const ErrorInModal: Story = {
               message="These settings cannot be changed once saved."
               showIcon={true}
               closable={false}
-              style={{ marginBottom: 0, marginTop: '16px' }}
+              style={{ marginBottom: 0, marginTop: Margin }}
             />
           </Flex>
         </Modal>
@@ -394,7 +394,7 @@ export const ErrorAfterSaveInModal: Story = {
                   value={configName}
                   onChange={e => setConfigName(e.target.value)}
                   placeholder="Enter value"
-                  style={{ marginTop: '8px' }}
+                  style={{ marginTop: MarginXs }}
                 />
               </div>
               <div>
@@ -403,7 +403,7 @@ export const ErrorAfterSaveInModal: Story = {
                   value={apiKey}
                   onChange={e => setApiKey(e.target.value)}
                   placeholder="Enter value"
-                  style={{ marginTop: '8px' }}
+                  style={{ marginTop: MarginXs }}
                 />
               </div>
               <div>
@@ -412,7 +412,7 @@ export const ErrorAfterSaveInModal: Story = {
                   value={endpoint}
                   onChange={e => setEndpoint(e.target.value)}
                   placeholder="Enter value"
-                  style={{ marginTop: '8px' }}
+                  style={{ marginTop: MarginXs }}
                 />
               </div>
             </Flex>
@@ -422,7 +422,7 @@ export const ErrorAfterSaveInModal: Story = {
                 message="Unable to save. Please verify all required permissions are granted."
                 showIcon={true}
                 closable={false}
-                style={{ marginBottom: 0, marginTop: '16px' }}
+                style={{ marginBottom: 0, marginTop: Margin }}
               />
             )}
           </Flex>
