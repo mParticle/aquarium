@@ -1,0 +1,18 @@
+import { Meta, Canvas } from '@storybook/blocks';
+
+import * as UnauthorizedTooltipStories from '../../../../src/components/UXPatterns/PermissionsRestrictions/UnauthorizedTooltip.stories';
+
+<Meta of={UnauthorizedTooltipStories} />
+
+# Roles & Permission restrictions
+
+#### When To Use
+
+When users don't have access to specific functionality due to roles and permissions, disable rather than remove. Unavailable input fields are disabled, and a tooltip with an explanation is displayed on hover.
+
+#### Example
+
+<Canvas of={UnauthorizedTooltipStories.ModalExample} />
+
+<Canvas of={UnauthorizedTooltipStories.DisabledButton} />
+
