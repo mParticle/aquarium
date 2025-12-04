@@ -5,6 +5,7 @@ export interface IUnauthorizedTooltipProps extends Omit<ITooltipProps, 'title'> 
   isAuthorized: boolean
   children: React.ReactElement
   unauthorizedMessage?: string
+  unauthorizedMessage?: React.ReactNode
   maxWidth?: string
 }
 
