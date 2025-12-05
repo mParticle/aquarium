@@ -1,9 +1,12 @@
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
+import { useState } from 'react'
 import { Alert } from 'src/components/feedback/Alert/Alert'
+import { Modal } from 'src/components/feedback/Modal/Modal'
+import { Button, Input } from 'src/components'
 import { Flex } from 'src/components/layout/Flex/Flex'
 import { Typography } from 'src/components/general/Typography/Typography'
-import { ColorWhite, ColorBorderSecondary, BorderRadiusLg, SizeXs } from 'src/styles/style'
+import { ColorWhite, ColorBorderSecondary, BorderRadiusLg, Margin, MarginXs, SizeXs } from 'src/styles/style'
 
 const meta: Meta<typeof Alert> = {
   title: 'Components/Feedback/Alert',
@@ -58,7 +61,31 @@ export const StorybookNote: Story = {
           backgroundColor: ColorWhite,
           border: `1px solid ${ColorBorderSecondary}`,
           borderRadius: BorderRadiusLg,
-          width: '100%',
+          width: '860px',
+          marginBottom: 0,
+        }}
+      />
+    )
+  },
+}
+
+export const NoBoldingOrTitlesNote: Story = {
+  render: () => {
+    return (
+      <Alert
+        message={
+          <Flex align="center" gap={SizeXs}>
+            <Typography.Text size="xl">💡</Typography.Text>
+            <Typography.Text size="base">We don&apos;t use bolding or titles for our alerts.</Typography.Text>
+          </Flex>
+        }
+        showIcon={false}
+        type="info"
+        style={{
+          backgroundColor: ColorWhite,
+          border: `1px solid ${ColorBorderSecondary}`,
+          borderRadius: BorderRadiusLg,
+          width: '860px',
           marginBottom: 0,
         }}
       />
@@ -71,7 +98,7 @@ export const Info: Story = {
     type: 'info',
     message: 'This is an informational message.',
     showIcon: true,
-    style: { marginBottom: 0, width: '600px' },
+    style: { marginBottom: 0, width: '860px' },
   },
 }
 
@@ -80,7 +107,7 @@ export const Success: Story = {
     type: 'success',
     message: 'This is a success message.',
     showIcon: true,
-    style: { marginBottom: 0, width: '600px' },
+    style: { marginBottom: 0, width: '860px' },
   },
 }
 
@@ -89,7 +116,7 @@ export const Warning: Story = {
     message: 'This is a warning message.',
     type: 'warning',
     showIcon: true,
-    style: { marginBottom: 0, width: '600px' },
+    style: { marginBottom: 0, width: '860px' },
   },
 }
 
@@ -98,7 +125,7 @@ export const Error: Story = {
     message: 'This is an error message.',
     type: 'error',
     showIcon: true,
-    style: { marginBottom: 0, width: '600px' },
+    style: { marginBottom: 0, width: '860px' },
   },
 }
 
@@ -107,7 +134,7 @@ export const InfoWithoutIcon: Story = {
     type: 'info',
     message: 'This is an informational message.',
     showIcon: false,
-    style: { marginBottom: 0, width: '600px' },
+    style: { marginBottom: 0, width: '860px' },
   },
 }
 
@@ -116,7 +143,7 @@ export const ErrorWithoutIcon: Story = {
     message: 'An error occurred creating the tracing configuration',
     type: 'error',
     showIcon: false,
-    style: { marginBottom: 0, width: '600px' },
+    style: { marginBottom: 0, width: '860px' },
   },
 }
 
@@ -127,7 +154,7 @@ export const ErrorWithExpandCollapse: Story = {
     closable: true,
     message: 'This is an error message.',
     expandableContent: <Typography.Text size="base">Error details go here</Typography.Text>,
-    style: { marginBottom: 0, width: '600px' },
+    style: { marginBottom: 0, width: '860px' },
   },
 }
 
@@ -137,6 +164,270 @@ export const WithCloseButton: Story = {
     message: 'This is a warning message.',
     showIcon: true,
     closable: true,
-    style: { marginBottom: 0, width: '600px' },
+    style: { marginBottom: 0, width: '860px' },
+  },
+}
+
+export const SuccessWithCloseButton: Story = {
+  args: {
+    type: 'success',
+    message: 'This is a success message.',
+    showIcon: true,
+    closable: true,
+    style: { marginBottom: 0, width: '860px' },
+  },
+}
+
+export const InfoWithCloseButton: Story = {
+  args: {
+    type: 'info',
+    message: 'This is an informational message.',
+    showIcon: true,
+    closable: true,
+    style: { marginBottom: 0, width: '860px' },
+  },
+}
+
+export const WarningWithCloseButton: Story = {
+  args: {
+    type: 'warning',
+    message: 'This is a warning message.',
+    showIcon: true,
+    closable: true,
+    style: { marginBottom: 0, width: '860px' },
+  },
+}
+
+export const ErrorWithCloseButton: Story = {
+  args: {
+    type: 'error',
+    message: 'This is an error message.',
+    showIcon: true,
+    closable: true,
+    style: { marginBottom: 0, width: '860px' },
+  },
+}
+
+export const SuccessWithLink: Story = {
+  args: {
+    type: 'success',
+    message: (
+      <Typography.Text size="base">
+        Your changes have been saved successfully.{' '}
+        <Typography.Link color="ColorText" underline href="#">
+          View details
+        </Typography.Link>
+      </Typography.Text>
+    ),
+    showIcon: true,
+    style: { marginBottom: 0, width: '860px' },
+  },
+}
+
+export const InfoWithLink: Story = {
+  args: {
+    type: 'info',
+    message: (
+      <Typography.Text size="base">
+        This is an informational message.{' '}
+        <Typography.Link color="ColorText" underline href="#">
+          Learn more
+        </Typography.Link>
+      </Typography.Text>
+    ),
+    showIcon: true,
+    style: { marginBottom: 0, width: '860px' },
+  },
+}
+
+export const WarningWithLink: Story = {
+  args: {
+    type: 'warning',
+    message: (
+      <Typography.Text size="base">
+        This is a warning message.{' '}
+        <Typography.Link color="ColorText" underline href="#">
+          Review settings
+        </Typography.Link>
+      </Typography.Text>
+    ),
+    showIcon: true,
+    style: { marginBottom: 0, width: '860px' },
+  },
+}
+
+export const ErrorWithLink: Story = {
+  args: {
+    type: 'error',
+    message: (
+      <Typography.Text size="base">
+        An error occurred processing your request.{' '}
+        <Typography.Link color="ColorText" underline href="#">
+          Try again
+        </Typography.Link>
+      </Typography.Text>
+    ),
+    showIcon: true,
+    style: { marginBottom: 0, width: '860px' },
+  },
+}
+
+export const ErrorInModal: Story = {
+  render: () => {
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [configName, setConfigName] = useState('')
+    const [apiKey, setApiKey] = useState('')
+    const [endpoint, setEndpoint] = useState('')
+
+    const handleOk = () => {
+      // In a real scenario, this would save and only close if there are no errors
+      setIsModalOpen(false)
+    }
+
+    const handleCancel = () => {
+      setIsModalOpen(false)
+    }
+
+    return (
+      <>
+        <Button type="default" onClick={() => setIsModalOpen(true)}>
+          Open Modal with Info Alert
+        </Button>
+        <Modal
+          title="Save Configuration"
+          open={isModalOpen}
+          onOk={handleOk}
+          onCancel={handleCancel}
+          width={600}
+          okText="Save">
+          <Flex vertical gap="middle">
+            <Typography.Text size="base">Please review the configuration settings below before saving.</Typography.Text>
+            <Flex vertical gap="small">
+              <div>
+                <Typography.Text size="base">Field 1</Typography.Text>
+                <Input
+                  value={configName}
+                  onChange={e => setConfigName(e.target.value)}
+                  placeholder="Enter value"
+                  style={{ marginTop: MarginXs }}
+                />
+              </div>
+              <div>
+                <Typography.Text size="base">Field 2</Typography.Text>
+                <Input
+                  value={apiKey}
+                  onChange={e => setApiKey(e.target.value)}
+                  placeholder="Enter value"
+                  style={{ marginTop: MarginXs }}
+                />
+              </div>
+              <div>
+                <Typography.Text size="base">Field 3</Typography.Text>
+                <Input
+                  value={endpoint}
+                  onChange={e => setEndpoint(e.target.value)}
+                  placeholder="Enter value"
+                  style={{ marginTop: MarginXs }}
+                />
+              </div>
+            </Flex>
+            <Alert
+              type="info"
+              message="These settings cannot be changed once saved."
+              showIcon={true}
+              closable={false}
+              style={{ marginBottom: 0, marginTop: Margin }}
+            />
+          </Flex>
+        </Modal>
+      </>
+    )
+  },
+}
+
+export const ErrorAfterSaveInModal: Story = {
+  render: () => {
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [showError, setShowError] = useState(false)
+    const [configName, setConfigName] = useState('')
+    const [apiKey, setApiKey] = useState('')
+    const [endpoint, setEndpoint] = useState('')
+
+    const handleOk = () => {
+      // Simulate a save failure
+      setShowError(true)
+      // In a real scenario, you would check for errors and only close if successful
+    }
+
+    const handleCancel = () => {
+      setIsModalOpen(false)
+      setShowError(false)
+      // Reset form
+      setConfigName('')
+      setApiKey('')
+      setEndpoint('')
+    }
+
+    const handleOpen = () => {
+      setIsModalOpen(true)
+      setShowError(false)
+    }
+
+    return (
+      <>
+        <Button type="default" onClick={handleOpen}>
+          Open Modal with Error on Save
+        </Button>
+        <Modal
+          title="Save Configuration"
+          open={isModalOpen}
+          onOk={handleOk}
+          onCancel={handleCancel}
+          width={600}
+          okText="Save">
+          <Flex vertical gap="middle">
+            <Typography.Text size="base">Please review the configuration settings below before saving.</Typography.Text>
+            <Flex vertical gap="small">
+              <div>
+                <Typography.Text size="base">Field 1</Typography.Text>
+                <Input
+                  value={configName}
+                  onChange={e => setConfigName(e.target.value)}
+                  placeholder="Enter value"
+                  style={{ marginTop: MarginXs }}
+                />
+              </div>
+              <div>
+                <Typography.Text size="base">Field 2</Typography.Text>
+                <Input
+                  value={apiKey}
+                  onChange={e => setApiKey(e.target.value)}
+                  placeholder="Enter value"
+                  style={{ marginTop: MarginXs }}
+                />
+              </div>
+              <div>
+                <Typography.Text size="base">Field 3</Typography.Text>
+                <Input
+                  value={endpoint}
+                  onChange={e => setEndpoint(e.target.value)}
+                  placeholder="Enter value"
+                  style={{ marginTop: MarginXs }}
+                />
+              </div>
+            </Flex>
+            {showError && (
+              <Alert
+                type="error"
+                message="Unable to save. Please verify all required permissions are granted."
+                showIcon={true}
+                closable={false}
+                style={{ marginBottom: 0, marginTop: Margin }}
+              />
+            )}
+          </Flex>
+        </Modal>
+      </>
+    )
   },
 }

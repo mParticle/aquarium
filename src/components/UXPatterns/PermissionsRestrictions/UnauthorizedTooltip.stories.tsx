@@ -38,14 +38,12 @@ export const ModalExample: Story = {
     const [value, setValue] = useState('option2')
 
     const unauthorizedMessage = (
-      <>
-        <Typography.Text tooltip>
-          You don&apos;t have permissions for this action.{' '}
-          <Typography.Link href="/" tooltip>
-            Learn More
-          </Typography.Link>
-        </Typography.Text>
-      </>
+      <Typography.Text tooltip>
+        You don&apos;t have permissions for this action.{' '}
+        <Typography.Link href="/" tooltip>
+          Learn More
+        </Typography.Link>
+      </Typography.Text>
     )
 
     return (
