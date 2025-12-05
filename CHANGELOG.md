@@ -1,3 +1,11 @@
+# [1.61.0](https://github.com/mParticle/aquarium/compare/v1.60.0...v1.61.0) (2025-12-05)
+
+### Features
+
+- add icon and link examples to alert ([#667](https://github.com/mParticle/aquarium/issues/667)) ([e118f46](https://github.com/mParticle/aquarium/commit/e118f469056bb2bfe4efb4cb05cb226c7764bcdd))
+- hybrid icon ([#672](https://github.com/mParticle/aquarium/issues/672)) ([159e7d2](https://github.com/mParticle/aquarium/commit/159e7d28df9f79c41ad45e40f16cc0aa80675363))
+- permissions restrictions ([#665](https://github.com/mParticle/aquarium/issues/665)) ([b353d51](https://github.com/mParticle/aquarium/commit/b353d5153bf786eb3f42b89cc12fbbc47e3cd411))
+
 # [1.60.0](https://github.com/mParticle/aquarium/compare/v1.59.0...v1.60.0) (2025-11-14)
 
 ### Features
