@@ -48,6 +48,7 @@ import {
   HelpIcon,
   HelpVideoIcon,
   HistoryIcon,
+  HybridIcon,
   IdentityIcon,
   JumpToIcon,
   LightBulbIcon,
@@ -396,6 +397,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   history: {
     light: HistoryIcon,
+    default: 'light',
+  },
+  hybrid: {
+    light: HybridIcon,
     default: 'light',
   },
   identity: {
