@@ -70,6 +70,9 @@ import {
   ColorWarningTextActive,
   ColorBorder,
   ColorBorderSecondary,
+  MpColorIconBrand,
+  MpColorIconStrong,
+  MpColorBorderDisabled,
 } from 'src/styles/style'
 
 const meta: Meta = {
@@ -825,6 +828,92 @@ export const Text: Story = {
   },
 }
 
+export const Icons: Story = {
+  render: () => {
+    return (
+      <>
+        <h2>Icon Colors</h2>
+        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+          <thead>
+            <tr style={{ backgroundColor: '#fafafa' }}>
+              <th
+                style={{
+                  width: '25%',
+                  textAlign: 'left',
+                  padding: '12px 16px',
+                  borderBottom: '1px solid #f0f0f0',
+                  fontWeight: 600,
+                  fontSize: FontSize,
+                  color: 'rgba(0, 0, 0, 0.88)',
+                  background: '#fafafa',
+                  fontFamily: FontFamily,
+                }}>
+                Example
+              </th>
+              <th
+                style={{
+                  width: '25%',
+                  textAlign: 'left',
+                  padding: '12px 16px',
+                  borderBottom: '1px solid #f0f0f0',
+                  fontWeight: 600,
+                  fontSize: FontSize,
+                  color: 'rgba(0, 0, 0, 0.88)',
+                  background: '#fafafa',
+                  fontFamily: FontFamily,
+                }}>
+                Name
+              </th>
+              <th
+                style={{
+                  width: '25%',
+                  textAlign: 'left',
+                  padding: '12px 16px',
+                  borderBottom: '1px solid #f0f0f0',
+                  fontWeight: 600,
+                  fontSize: FontSize,
+                  color: 'rgba(0, 0, 0, 0.88)',
+                  background: '#fafafa',
+                  fontFamily: FontFamily,
+                }}>
+                Token name
+              </th>
+              <th
+                style={{
+                  width: '25%',
+                  textAlign: 'left',
+                  padding: '12px 16px',
+                  borderBottom: '1px solid #f0f0f0',
+                  fontWeight: 600,
+                  fontSize: FontSize,
+                  color: 'rgba(0, 0, 0, 0.88)',
+                  background: '#fafafa',
+                  fontFamily: FontFamily,
+                }}>
+                Value
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <ColorRow
+              swatch={MpColorIconStrong}
+              name="Icon Strong"
+              tokenName="MpColorIconStrong"
+              value={MpColorIconStrong}
+            />
+            <ColorRow
+              swatch={MpColorIconBrand}
+              name="Icon Brand"
+              tokenName="MpColorIconBrand"
+              value={MpColorIconBrand}
+            />
+          </tbody>
+        </table>
+      </>
+    )
+  },
+}
+
 export const Borders: Story = {
   render: () => {
     return (
@@ -898,6 +987,12 @@ export const Borders: Story = {
               name="Border Secondary"
               tokenName="ColorBorderSecondary"
               value={ColorBorderSecondary}
+            />
+            <ColorRow
+              swatch={MpColorBorderDisabled}
+              name="Border Disabled"
+              tokenName="MpColorBorderDisabled"
+              value={MpColorBorderDisabled}
             />
           </tbody>
         </table>
