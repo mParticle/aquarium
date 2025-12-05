@@ -1,6 +1,10 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { Message } from 'src/components/feedback/Message/Message'
 import { Button } from 'src/components/general/Button/Button'
+import { Alert } from 'src/components/feedback/Alert/Alert'
+import { Flex } from 'src/components/layout/Flex/Flex'
+import { Typography } from 'src/components/general/Typography/Typography'
+import { ColorWhite, BorderRadiusLg, SizeXs } from 'src/styles/style'
 
 const meta: Meta<typeof Message> = {
   title: 'Components/Feedback/Message',
@@ -27,28 +31,82 @@ type Story = StoryObj<typeof Message>
   Customize the stories based on specific requirements.
 */
 
-export const Primary: Story = {
-  args: {
-    type: 'success',
+export const StorybookNote: Story = {
+  render: () => {
+    return (
+      <div
+        style={{
+          padding: '1px',
+          background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.12) 100%)',
+          borderRadius: BorderRadiusLg,
+          width: '100%',
+        }}>
+        <Alert
+          message={
+            <Flex align="center" gap={SizeXs}>
+              <Typography.Text size="xl">💡</Typography.Text>
+              <Typography.Text size="base">
+                Use an{' '}
+                <Typography.Link href="?path=/docs/components-feedback-alert--docs" underline>
+                  Alert
+                </Typography.Link>{' '}
+                if the message is critical and needs to be persistent until the user dismisses or acts on it.
+              </Typography.Text>
+            </Flex>
+          }
+          showIcon={false}
+          type="info"
+          style={{
+            backgroundColor: ColorWhite,
+            border: 'none',
+            borderRadius: BorderRadiusLg,
+            width: '100%',
+            marginBottom: 0,
+          }}
+        />
+      </div>
+    )
   },
 }
 
-export const Short: Story = {
-  args: {
-    duration: 1,
+export const ConfirmationSuccess: Story = {
+  name: 'Action Success',
+  render: () => {
+    const handleSuccess = () => {
+      void Message.success({
+        content: 'Action completed successfully',
+        duration: 3,
+      })
+    }
+
+    return <Button onClick={handleSuccess}>Action Success</Button>
   },
 }
 
-export const CustomStyle: Story = {
-  args: {
-    style: { fontSize: '24px', color: '#959ee6' },
+export const ConfirmationFailure: Story = {
+  name: 'Action Failure',
+  render: () => {
+    const handleFailure = () => {
+      void Message.error({
+        content: 'Action failed. Please try again.',
+        duration: 3,
+      })
+    }
+
+    return <Button onClick={handleFailure}>Action Failure</Button>
   },
 }
 
-export const Clickable: Story = {
-  args: {
-    onClick: () => {
-      alert('Message clicked')
-    },
+export const ConfirmationWarning: Story = {
+  name: 'Action Warning',
+  render: () => {
+    const handleWarning = () => {
+      void Message.warning({
+        content: 'Please review your changes before proceeding.',
+        duration: 3,
+      })
+    }
+
+    return <Button onClick={handleWarning}>Action Warning</Button>
   },
 }
