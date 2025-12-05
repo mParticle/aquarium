@@ -79,6 +79,7 @@ export type IconNames =
   | 'help'
   | 'helpVideo'
   | 'history'
+  | 'hybrid'
   | 'identity'
   | 'info'
   | 'insights'

@@ -75,6 +75,7 @@ const ICON_CATEGORIES = {
     'info',
     'help',
     'history',
+    'hybrid',
     'notification',
     'active',
     'cohort',

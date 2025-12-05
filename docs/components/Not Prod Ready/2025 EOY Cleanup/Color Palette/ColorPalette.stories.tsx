@@ -41,14 +41,33 @@ import {
   ColorTextPlaceholder,
   ColorTextDisabled,
   ColorSuccessBg,
+  ColorSuccessBgHover,
   ColorSuccessBorder,
+  ColorSuccessBorderHover,
+  ColorSuccessHover,
+  ColorSuccessActive,
   ColorSuccessText,
+  ColorSuccessTextHover,
+  ColorSuccessTextActive,
   ColorErrorBg,
+  ColorErrorBgHover,
+  ColorErrorBgActive,
   ColorErrorBorder,
+  ColorErrorBorderHover,
+  ColorErrorHover,
+  ColorErrorActive,
   ColorErrorText,
+  ColorErrorTextHover,
+  ColorErrorTextActive,
   ColorWarningBg,
+  ColorWarningBgHover,
   ColorWarningBorder,
+  ColorWarningBorderHover,
+  ColorWarningHover,
+  ColorWarningActive,
   ColorWarningText,
+  ColorWarningTextHover,
+  ColorWarningTextActive,
   ColorBorder,
   ColorBorderSecondary,
   MpColorIconBrand,
@@ -237,6 +256,23 @@ const ColorRow = ({
     </tr>
   )
 }
+
+const ColorSectionRow = ({ title }: { title: string }) => (
+  <tr>
+    <td
+      colSpan={4}
+      style={{
+        padding: '24px 16px 12px',
+        borderBottom: '1px solid #f0f0f0',
+        fontSize: FontSize,
+        fontFamily: FontFamily,
+        fontWeight: 600,
+        backgroundColor: '#ffffff',
+      }}>
+      <span style={{ display: 'inline-block', marginBottom: '4px' }}>{title}</span>
+    </td>
+  </tr>
+)
 
 export const Primary: Story = {
   render: () => {
@@ -456,6 +492,137 @@ export const Primary: Story = {
 
 export const Semantic: Story = {
   render: () => {
+    const semanticRows = [
+      { swatch: ColorPrimary, name: 'Primary', tokenName: 'ColorPrimary', value: ColorPrimary },
+      { swatch: ColorWarning, name: 'Warning', tokenName: 'ColorWarning', value: ColorWarning },
+      { swatch: ColorError, name: 'Error', tokenName: 'ColorError', value: ColorError },
+      { swatch: ColorInfo, name: 'Info', tokenName: 'ColorInfo', value: ColorInfo },
+      { swatch: ColorLink, name: 'Link', tokenName: 'ColorLink', value: ColorLink },
+    ]
+
+    const successRows = [
+      { swatch: ColorSuccess, name: 'Success', tokenName: 'ColorSuccess', value: ColorSuccess },
+      { swatch: ColorSuccessBg, name: 'Success Background', tokenName: 'ColorSuccessBg', value: ColorSuccessBg },
+      {
+        swatch: ColorSuccessBgHover,
+        name: 'Success Background Hover',
+        tokenName: 'ColorSuccessBgHover',
+        value: ColorSuccessBgHover,
+      },
+      {
+        swatch: ColorSuccessBorder,
+        name: 'Success Border',
+        tokenName: 'ColorSuccessBorder',
+        value: ColorSuccessBorder,
+      },
+      {
+        swatch: ColorSuccessBorderHover,
+        name: 'Success Border Hover',
+        tokenName: 'ColorSuccessBorderHover',
+        value: ColorSuccessBorderHover,
+      },
+      { swatch: ColorSuccessHover, name: 'Success Hover', tokenName: 'ColorSuccessHover', value: ColorSuccessHover },
+      {
+        swatch: ColorSuccessActive,
+        name: 'Success Active',
+        tokenName: 'ColorSuccessActive',
+        value: ColorSuccessActive,
+      },
+      {
+        swatch: ColorSuccessTextHover,
+        name: 'Success Text Hover',
+        tokenName: 'ColorSuccessTextHover',
+        value: ColorSuccessTextHover,
+      },
+      { swatch: ColorSuccessText, name: 'Success Text', tokenName: 'ColorSuccessText', value: ColorSuccessText },
+      {
+        swatch: ColorSuccessTextActive,
+        name: 'Success Text Active',
+        tokenName: 'ColorSuccessTextActive',
+        value: ColorSuccessTextActive,
+      },
+    ]
+
+    const errorRows = [
+      { swatch: ColorErrorBg, name: 'Error Background', tokenName: 'ColorErrorBg', value: ColorErrorBg },
+      {
+        swatch: ColorErrorBgHover,
+        name: 'Error Background Hover',
+        tokenName: 'ColorErrorBgHover',
+        value: ColorErrorBgHover,
+      },
+      {
+        swatch: ColorErrorBgActive,
+        name: 'Error Background Active',
+        tokenName: 'ColorErrorBgActive',
+        value: ColorErrorBgActive,
+      },
+      { swatch: ColorErrorBorder, name: 'Error Border', tokenName: 'ColorErrorBorder', value: ColorErrorBorder },
+      {
+        swatch: ColorErrorBorderHover,
+        name: 'Error Border Hover',
+        tokenName: 'ColorErrorBorderHover',
+        value: ColorErrorBorderHover,
+      },
+      { swatch: ColorErrorHover, name: 'Error Hover', tokenName: 'ColorErrorHover', value: ColorErrorHover },
+      { swatch: ColorErrorActive, name: 'Error Active', tokenName: 'ColorErrorActive', value: ColorErrorActive },
+      {
+        swatch: ColorErrorTextHover,
+        name: 'Error Text Hover',
+        tokenName: 'ColorErrorTextHover',
+        value: ColorErrorTextHover,
+      },
+      { swatch: ColorErrorText, name: 'Error Text', tokenName: 'ColorErrorText', value: ColorErrorText },
+      {
+        swatch: ColorErrorTextActive,
+        name: 'Error Text Active',
+        tokenName: 'ColorErrorTextActive',
+        value: ColorErrorTextActive,
+      },
+    ]
+
+    const warningRows = [
+      { swatch: ColorWarningBg, name: 'Warning Background', tokenName: 'ColorWarningBg', value: ColorWarningBg },
+      {
+        swatch: ColorWarningBgHover,
+        name: 'Warning Background Hover',
+        tokenName: 'ColorWarningBgHover',
+        value: ColorWarningBgHover,
+      },
+      {
+        swatch: ColorWarningBorder,
+        name: 'Warning Border',
+        tokenName: 'ColorWarningBorder',
+        value: ColorWarningBorder,
+      },
+      {
+        swatch: ColorWarningBorderHover,
+        name: 'Warning Border Hover',
+        tokenName: 'ColorWarningBorderHover',
+        value: ColorWarningBorderHover,
+      },
+      { swatch: ColorWarningHover, name: 'Warning Hover', tokenName: 'ColorWarningHover', value: ColorWarningHover },
+      {
+        swatch: ColorWarningActive,
+        name: 'Warning Active',
+        tokenName: 'ColorWarningActive',
+        value: ColorWarningActive,
+      },
+      {
+        swatch: ColorWarningTextHover,
+        name: 'Warning Text Hover',
+        tokenName: 'ColorWarningTextHover',
+        value: ColorWarningTextHover,
+      },
+      { swatch: ColorWarningText, name: 'Warning Text', tokenName: 'ColorWarningText', value: ColorWarningText },
+      {
+        swatch: ColorWarningTextActive,
+        name: 'Warning Text Active',
+        tokenName: 'ColorWarningTextActive',
+        value: ColorWarningTextActive,
+      },
+    ]
+
     return (
       <>
         <h2>Semantic Colors</h2>
@@ -521,254 +688,21 @@ export const Semantic: Story = {
             </tr>
           </thead>
           <tbody>
-            <ColorRow swatch={ColorPrimary} name="Primary" tokenName="ColorPrimary" value={ColorPrimary} />
-            <ColorRow swatch={ColorSuccess} name="Success" tokenName="ColorSuccess" value={ColorSuccess} />
-            <ColorRow swatch={ColorWarning} name="Warning" tokenName="ColorWarning" value={ColorWarning} />
-            <ColorRow swatch={ColorError} name="Error" tokenName="ColorError" value={ColorError} />
-            <ColorRow swatch={ColorInfo} name="Info" tokenName="ColorInfo" value={ColorInfo} />
-            <ColorRow swatch={ColorLink} name="Link" tokenName="ColorLink" value={ColorLink} />
-          </tbody>
-        </table>
-
-        <h3 style={{ marginTop: '32px' }}>Success Colors</h3>
-        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-          <thead>
-            <tr style={{ backgroundColor: '#fafafa' }}>
-              <th
-                style={{
-                  width: '25%',
-                  textAlign: 'left',
-                  padding: '12px 16px',
-                  borderBottom: '1px solid #f0f0f0',
-                  fontWeight: 600,
-                  fontSize: FontSize,
-                  color: 'rgba(0, 0, 0, 0.88)',
-                  background: '#fafafa',
-                  fontFamily: FontFamily,
-                }}>
-                Example
-              </th>
-              <th
-                style={{
-                  width: '25%',
-                  textAlign: 'left',
-                  padding: '12px 16px',
-                  borderBottom: '1px solid #f0f0f0',
-                  fontWeight: 600,
-                  fontSize: FontSize,
-                  color: 'rgba(0, 0, 0, 0.88)',
-                  background: '#fafafa',
-                  fontFamily: FontFamily,
-                }}>
-                Name
-              </th>
-              <th
-                style={{
-                  width: '25%',
-                  textAlign: 'left',
-                  padding: '12px 16px',
-                  borderBottom: '1px solid #f0f0f0',
-                  fontWeight: 600,
-                  fontSize: FontSize,
-                  color: 'rgba(0, 0, 0, 0.88)',
-                  background: '#fafafa',
-                  fontFamily: FontFamily,
-                }}>
-                Token name
-              </th>
-              <th
-                style={{
-                  width: '25%',
-                  textAlign: 'left',
-                  padding: '12px 16px',
-                  borderBottom: '1px solid #f0f0f0',
-                  fontWeight: 600,
-                  fontSize: FontSize,
-                  color: 'rgba(0, 0, 0, 0.88)',
-                  background: '#fafafa',
-                  fontFamily: FontFamily,
-                }}>
-                Value
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <ColorRow
-              swatch={ColorSuccessBg}
-              name="Success Background"
-              tokenName="ColorSuccessBg"
-              value={ColorSuccessBg}
-            />
-            <ColorRow
-              swatch={ColorSuccessBorder}
-              name="Success Border"
-              tokenName="ColorSuccessBorder"
-              value={ColorSuccessBorder}
-            />
-            <ColorRow
-              swatch={ColorSuccessText}
-              name="Success Text"
-              tokenName="ColorSuccessText"
-              value={ColorSuccessText}
-            />
-          </tbody>
-        </table>
-
-        <h3 style={{ marginTop: '32px' }}>Error Colors</h3>
-        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-          <thead>
-            <tr style={{ backgroundColor: '#fafafa' }}>
-              <th
-                style={{
-                  width: '25%',
-                  textAlign: 'left',
-                  padding: '12px 16px',
-                  borderBottom: '1px solid #f0f0f0',
-                  fontWeight: 600,
-                  fontSize: FontSize,
-                  color: 'rgba(0, 0, 0, 0.88)',
-                  background: '#fafafa',
-                  fontFamily: FontFamily,
-                }}>
-                Example
-              </th>
-              <th
-                style={{
-                  width: '25%',
-                  textAlign: 'left',
-                  padding: '12px 16px',
-                  borderBottom: '1px solid #f0f0f0',
-                  fontWeight: 600,
-                  fontSize: FontSize,
-                  color: 'rgba(0, 0, 0, 0.88)',
-                  background: '#fafafa',
-                  fontFamily: FontFamily,
-                }}>
-                Name
-              </th>
-              <th
-                style={{
-                  width: '25%',
-                  textAlign: 'left',
-                  padding: '12px 16px',
-                  borderBottom: '1px solid #f0f0f0',
-                  fontWeight: 600,
-                  fontSize: FontSize,
-                  color: 'rgba(0, 0, 0, 0.88)',
-                  background: '#fafafa',
-                  fontFamily: FontFamily,
-                }}>
-                Token name
-              </th>
-              <th
-                style={{
-                  width: '25%',
-                  textAlign: 'left',
-                  padding: '12px 16px',
-                  borderBottom: '1px solid #f0f0f0',
-                  fontWeight: 600,
-                  fontSize: FontSize,
-                  color: 'rgba(0, 0, 0, 0.88)',
-                  background: '#fafafa',
-                  fontFamily: FontFamily,
-                }}>
-                Value
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <ColorRow swatch={ColorErrorBg} name="Error Background" tokenName="ColorErrorBg" value={ColorErrorBg} />
-            <ColorRow
-              swatch={ColorErrorBorder}
-              name="Error Border"
-              tokenName="ColorErrorBorder"
-              value={ColorErrorBorder}
-            />
-            <ColorRow swatch={ColorErrorText} name="Error Text" tokenName="ColorErrorText" value={ColorErrorText} />
-          </tbody>
-        </table>
-
-        <h3 style={{ marginTop: '32px' }}>Warning Colors</h3>
-        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-          <thead>
-            <tr style={{ backgroundColor: '#fafafa' }}>
-              <th
-                style={{
-                  width: '25%',
-                  textAlign: 'left',
-                  padding: '12px 16px',
-                  borderBottom: '1px solid #f0f0f0',
-                  fontWeight: 600,
-                  fontSize: FontSize,
-                  color: 'rgba(0, 0, 0, 0.88)',
-                  background: '#fafafa',
-                  fontFamily: FontFamily,
-                }}>
-                Example
-              </th>
-              <th
-                style={{
-                  width: '25%',
-                  textAlign: 'left',
-                  padding: '12px 16px',
-                  borderBottom: '1px solid #f0f0f0',
-                  fontWeight: 600,
-                  fontSize: FontSize,
-                  color: 'rgba(0, 0, 0, 0.88)',
-                  background: '#fafafa',
-                  fontFamily: FontFamily,
-                }}>
-                Name
-              </th>
-              <th
-                style={{
-                  width: '25%',
-                  textAlign: 'left',
-                  padding: '12px 16px',
-                  borderBottom: '1px solid #f0f0f0',
-                  fontWeight: 600,
-                  fontSize: FontSize,
-                  color: 'rgba(0, 0, 0, 0.88)',
-                  background: '#fafafa',
-                  fontFamily: FontFamily,
-                }}>
-                Token name
-              </th>
-              <th
-                style={{
-                  width: '25%',
-                  textAlign: 'left',
-                  padding: '12px 16px',
-                  borderBottom: '1px solid #f0f0f0',
-                  fontWeight: 600,
-                  fontSize: FontSize,
-                  color: 'rgba(0, 0, 0, 0.88)',
-                  background: '#fafafa',
-                  fontFamily: FontFamily,
-                }}>
-                Value
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <ColorRow
-              swatch={ColorWarningBg}
-              name="Warning Background"
-              tokenName="ColorWarningBg"
-              value={ColorWarningBg}
-            />
-            <ColorRow
-              swatch={ColorWarningBorder}
-              name="Warning Border"
-              tokenName="ColorWarningBorder"
-              value={ColorWarningBorder}
-            />
-            <ColorRow
-              swatch={ColorWarningText}
-              name="Warning Text"
-              tokenName="ColorWarningText"
-              value={ColorWarningText}
-            />
+            {semanticRows.map(row => (
+              <ColorRow key={row.tokenName} {...row} />
+            ))}
+            <ColorSectionRow title="Success Tokens" />
+            {successRows.map(row => (
+              <ColorRow key={row.tokenName} {...row} />
+            ))}
+            <ColorSectionRow title="Error Tokens" />
+            {errorRows.map(row => (
+              <ColorRow key={row.tokenName} {...row} />
+            ))}
+            <ColorSectionRow title="Warning Tokens" />
+            {warningRows.map(row => (
+              <ColorRow key={row.tokenName} {...row} />
+            ))}
           </tbody>
         </table>
       </>
