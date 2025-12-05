@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { useState } from 'react'
 import { UnauthorizedTooltip } from './UnauthorizedTooltip'
-import { Button, Radio } from 'src/components'
 import { Button, Radio, Typography } from 'src/components'
 import { Margin } from 'src/styles/style'
 
@@ -39,18 +38,12 @@ export const ModalExample: Story = {
     const [value, setValue] = useState('option2')
 
     const unauthorizedMessage = (
-      <>
+      <Typography.Text tooltip>
         You don&apos;t have permissions for this action.{' '}
-        <a href="#" style={{ color: 'inherit', textDecoration: 'underline', cursor: 'pointer' }}>
-          Learn more.
-        </a>
-        <Typography.Text tooltip>
-          You don&apos;t have permissions for this action.{' '}
-          <Typography.Link href="/" tooltip>
-            Learn More
-          </Typography.Link>
-        </Typography.Text>
-      </>
+        <Typography.Link href="/" tooltip>
+          Learn More
+        </Typography.Link>
+      </Typography.Text>
     )
 
     return (
