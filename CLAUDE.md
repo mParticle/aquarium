@@ -1,0 +1,1 @@
+- start all new branches with either fix/ feat/ chore/
