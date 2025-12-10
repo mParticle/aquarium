@@ -158,7 +158,7 @@ export {
 export {
   UnauthorizedTooltip,
   type IUnauthorizedTooltipProps,
-} from './UXPatterns/UnauthorizedTooltip/UnauthorizedTooltip'
+} from './UXPatterns/PermissionsRestrictions/UnauthorizedTooltip'
 
 export { Utils } from '../shared/Utils'
 export { RoutesAuthorizationsService } from '../shared/services/RoutesAuthorizationsService'
