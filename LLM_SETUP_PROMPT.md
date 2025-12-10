@@ -23,11 +23,10 @@ yarn add @mparticle/aquarium antd@5 dayjs@1
 
 **Post-Installation:**
 
-1. Add CSS reset to app entry point (`_app.tsx`, `layout.tsx`, or global entry):
+1. Add aquarium CSS to app styles entry point (ex `main.scss`, `style.less`, or global entry):
 
-```typescript
-import 'antd/dist/reset.css'
-```
+```less
+@import (inline) "../aurelia/node_modules/@mparticle/aquarium/dist/style.css";
 
 2. Verify with test component:
 
