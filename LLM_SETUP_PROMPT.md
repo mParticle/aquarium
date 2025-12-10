@@ -38,7 +38,7 @@ yarn add @mparticle/aquarium antd@5 dayjs@1
 
 ```tsx
 import { Button } from '@mparticle/aquarium'
-;<Button type="primary">Test</Button>
+;<Button type="primary">Hello Aquarium World</Button>
 ```
 
 **Troubleshooting:**
