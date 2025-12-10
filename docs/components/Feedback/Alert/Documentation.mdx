@@ -8,40 +8,49 @@ import * as AlertStories from '../../../../src/components/feedback/Alert/Alert.s
 
 ### Overview
 
-The Alert component is used to display important messages, warnings, or confirmations to users, providing contextual feedback in response to user actions or system events.
+Alerts are persistent UI components used to communicate important information to users. They remain visible on the page until manually dismissed or programmatically cleared. Alerts may be used to inform users of relevant system or process updates that don't require immediate action, or to prompt them to acknowledge or resolve an issue before proceeding.
 
 <Story of={AlertStories.StorybookNote} />
 
-Alerts are persistent components that remain visible on the page until dismissed by the user and should be used for messages that require user acknowledgment or action. The Alert component supports four types: success, warning, and error, each with distinct visual styling to communicate the message's importance and nature. Any alert type can include a close button to allow users to dismiss the alert when they've read and acknowledged the message.
+### Alert Types
 
-<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
-  <Story of={AlertStories.Success} />
-  <Story of={AlertStories.Warning} />
-  <Story of={AlertStories.Error} />
-  <Story of={AlertStories.InfoWithoutIcon} />
-</div>
+Four alert types are supported, each with distinct visual styling to convey the message's intent and importance: success, info, warning, and error.
 
-Any alert type can include a close button to allow users to dismiss the alert when they've read and acknowledged the message.
+<Canvas of={AlertStories.Success} />
 
-<div style={{ display: 'flex', justifyContent: 'center' }}>
-  <Story of={AlertStories.WithCloseButton} />
-</div>
+<Canvas of={AlertStories.Info} />
 
-### Errors
-
-Error alerts are used to communicate critical issues or problems that require user attention. They should always include an icon and can be enhanced with titles and expandable details when additional context is needed.
-
-#### Basic Error
-
-Use for simple error messages that require immediate attention.
+<Canvas of={AlertStories.Warning} />
 
 <Canvas of={AlertStories.Error} />
 
-#### Error with Expand/Collapse
+### Closable Alerts
 
-Use when you need to provide detailed error information that can be expanded on demand. Set `expandable={true}` and provide `expandableContent`.
+Alerts can be closable or not, depending on whether users need to dismiss them.
 
-<Canvas of={AlertStories.ErrorWithExpandCollapse} />
+<Canvas of={AlertStories.ErrorWithCloseButton} />
+
+### Alerts with Links
+
+Alerts can include links within the message text. Links should be styled with text color and underlined to maintain consistency with the alert's visual design.
+
+<Canvas of={AlertStories.SuccessWithLink} />
+
+<Canvas of={AlertStories.InfoWithLink} />
+
+<Canvas of={AlertStories.WarningWithLink} />
+
+<Canvas of={AlertStories.ErrorWithLink} />
+
+### Placement in Modals
+
+Alerts can be placed inside modals to communicate important information that users need to be aware of. This is particularly useful for warnings about settings that cannot be changed once saved, or other important contextual information.
+
+<Canvas of={AlertStories.ErrorInModal} />
+
+Alerts can also be shown conditionally, such as displaying an error alert after a save attempt fails.
+
+<Canvas of={AlertStories.ErrorAfterSaveInModal} />
 
 ### Related Links
 
