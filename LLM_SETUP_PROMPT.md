@@ -27,7 +27,7 @@ yarn add @mparticle/aquarium antd@5 dayjs@1
 
 ```less
 @import (inline) "../aurelia/node_modules/@mparticle/aquarium/dist/style.css";
-
+"```
 2. Verify with test component:
 
 ```tsx
