@@ -1,4 +1,4 @@
-**Task:** Install mParticle Aquarium component library in my React/Next.js project.
+**Task:** Install mParticle Aquarium component library in my React project.
 
 **Package Information:**
 
