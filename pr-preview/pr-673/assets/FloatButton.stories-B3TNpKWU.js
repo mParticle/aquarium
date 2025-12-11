@@ -1,0 +1,11 @@
+var S=Object.defineProperty,b=Object.defineProperties;var f=Object.getOwnPropertyDescriptors;var m=Object.getOwnPropertySymbols;var F=Object.prototype.hasOwnProperty,x=Object.prototype.propertyIsEnumerable;var c=(o,r,t)=>r in o?S(o,r,{enumerable:!0,configurable:!0,writable:!0,value:t}):o[r]=t,e=(o,r)=>{for(var t in r||(r={}))F.call(r,t)&&c(o,t,r[t]);if(m)for(var t of m(r))x.call(r,t)&&c(o,t,r[t]);return o},a=(o,r)=>b(o,f(r));import{ab as C}from"./NavigationItemsService-DGi5aRXP.js";import"./jsx-runtime-C9TrHvcC.js";import"./index-3OP4wdng.js";import"./ErrorStateIcon-DZ6wp4Tw.js";import"./style-BEITWmqT.js";import"./WarningFilled-D6ijQqgK.js";import"./extends-CF3RwP-h.js";import"./AntdIcon-DRQs8XP6.js";import"./presets-CQzyf-6F.js";import"./Context-R5ee3nrF.js";import"./SuccessStateIcon-CBwx1vqN.js";import"./WarningStateIcon-Dz0o7HU1.js";import"./LightTheme-BtoaoHMG.js";import"./row-DlEJUZa0.js";import"./useToken-BIYN7ogo.js";import"./index-DA79H6I3.js";import"./isNativeReflectConstruct-CWIsGhkf.js";import"./_baseClone-DwBCp-Ss.js";const K={title:"Components/Not Prod Ready/General/FloatButton",component:C,args:{description:"Float Button",tooltip:"Tooltip Text",type:"primary",shape:"circle",href:"",target:"",badge:void 0,onClick:o=>{alert("Float Button Clicked!")}},argTypes:{shape:{control:"select",options:["circle","square"]},type:{control:"select",options:["default","primary"]}}},s={},p={args:{badge:{count:5}}},i={args:{shape:"square"}};var n,d,l;s.parameters=a(e({},s.parameters),{docs:a(e({},(n=s.parameters)==null?void 0:n.docs),{source:e({originalSource:"{}"},(l=(d=s.parameters)==null?void 0:d.docs)==null?void 0:l.source)})});var u,g,y;p.parameters=a(e({},p.parameters),{docs:a(e({},(u=p.parameters)==null?void 0:u.docs),{source:e({originalSource:`{
+  args: {
+    badge: {
+      count: 5
+    }
+  }
+}`},(y=(g=p.parameters)==null?void 0:g.docs)==null?void 0:y.source)})});var h,B,q;i.parameters=a(e({},i.parameters),{docs:a(e({},(h=i.parameters)==null?void 0:h.docs),{source:e({originalSource:`{
+  args: {
+    shape: 'square'
+  }
+}`},(q=(B=i.parameters)==null?void 0:B.docs)==null?void 0:q.source)})});const L=["Primary","WithBadge","Square"];export{s as Primary,i as Square,p as WithBadge,L as __namedExportsOrder,K as default};
