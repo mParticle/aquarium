@@ -12,6 +12,8 @@ const preview: Preview = {
           ['Introduction', 'Changelog', 'Feedback', 'Component Process'],
           'Foundations',
           ['Typography', 'Icons', 'Color Palette'],
+          'UI Copy Styleguide',
+          ['Documentation'],
           'Components',
           [
             'Data Display',
