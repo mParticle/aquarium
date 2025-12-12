@@ -15,11 +15,11 @@ _Components That Scale_
 
 ### Requirements
 
-| Dependency | Version    | Notes                    |
-| ---------- | ---------- | ------------------------ |
-| React      | `>=17.0.2` | React 17 or 18           |
-| React DOM  | `>=17.0.2` | Must match React version |
-| Node.js    | `>=18`     | For development          |
+| Dependency | Version     | Notes                    |
+| ---------- | ----------- | ------------------------ |
+| React      | `>=17.0.2`  | React 17 or 18           |
+| React DOM  | `>=17.0.2`  | Must match React version |
+| Node.js    | `>=24.12.0` | For development          |
 
 ### Quick Start
 
