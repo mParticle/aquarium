@@ -1,5 +1,7 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { useState } from 'react'
+import { Flex, Tooltip, Typography } from 'src/components'
+import { SizeSm } from 'src/styles/style'
 import { Switch } from 'src/components/data-entry/Switch/Switch'
 
 const meta: Meta<typeof Switch> = {
@@ -42,6 +44,70 @@ export const Primary: Story = {
       }
     }
 
-    return <Switch {...args} checked={checked} onChange={handleChange} />
+    return <Switch {...args} checked={checked} onChange={handleChange} data-testid="switch-default" />
+  },
+}
+
+export const Small: Story = {
+  args: {
+    checked: false,
+    disabled: false,
+    size: 'small',
+  },
+  render: args => {
+    const [checked, setChecked] = useState(args.checked ?? false)
+
+    const handleChange = (
+      checkedValue: boolean,
+      event: React.MouseEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLButtonElement>,
+    ) => {
+      setChecked(checkedValue)
+      if (args.onChange) {
+        args.onChange(checkedValue, event)
+      }
+    }
+
+    return <Switch {...args} checked={checked} onChange={handleChange} data-testid="switch-small" />
+  },
+}
+
+export const Disabled: Story = {
+  args: {
+    defaultChecked: true,
+    disabled: true,
+  },
+  render: args => {
+    return (
+      <Tooltip title="You don't have permissions to change this setting.">
+        <Switch {...args} data-testid="switch-disabled" />
+      </Tooltip>
+    )
+  },
+}
+
+export const WithLabel: Story = {
+  args: {
+    checked: true,
+  },
+  render: args => {
+    const { checked: checkedArg, onChange, ...rest } = args
+    const [checked, setChecked] = useState(checkedArg ?? false)
+
+    const handleChange = (
+      checkedValue: boolean,
+      event: React.MouseEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLButtonElement>,
+    ) => {
+      setChecked(checkedValue)
+      onChange?.(checkedValue, event)
+    }
+
+    return (
+      <Flex align="center" gap={SizeSm}>
+        <Switch {...rest} checked={checked} onChange={handleChange} data-testid="switch-with-label" />
+        <Typography.Text color="ColorTextSecondary">
+          {checked ? 'Enabled state helper text' : 'Disabled state helper text'}
+        </Typography.Text>
+      </Flex>
+    )
   },
 }
