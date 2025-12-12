@@ -57,9 +57,15 @@ module.exports = {
     [
       '@semantic-release/npm',
       {
-        npmPublish: true,
+        npmPublish: false,
       },
     ],
+    [
+      '@semantic-release/exec',
+        {
+          publishCmd: isMainBranch ? 'npm publish' : 'npm publish --tag ${nextRelease.channel}',
+        },
+      ],
     [
       '@semantic-release/github',
       {
