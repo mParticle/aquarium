@@ -99,12 +99,30 @@ export const PercentageInput: Story = {
       }
     }
 
+    const formatPercentage: NonNullable<InputNumberProps['formatter']> = inputValue => {
+      if (inputValue === undefined || inputValue === null || inputValue === '') {
+        return ''
+      }
+
+      return `${inputValue}%`
+    }
+
+    const parsePercentage: NonNullable<InputNumberProps['parser']> = inputValue => {
+      return inputValue ? inputValue.replace('%', '') : ''
+    }
+
     return (
       <Space direction="vertical" size={4} style={{ maxWidth: 320 }}>
-        <Flex align="center" gap={8}>
-          <InputNumber min={0} max={100} value={value} onChange={handleChange} style={{ width: 140 }} controls />
-          <Typography.Text>%</Typography.Text>
-        </Flex>
+        <InputNumber
+          min={0}
+          max={100}
+          value={value}
+          onChange={handleChange}
+          formatter={formatPercentage}
+          parser={parsePercentage}
+          style={{ width: 140 }}
+          controls
+        />
       </Space>
     )
   },
@@ -131,21 +149,19 @@ export const DurationInput: Story = {
 
     return (
       <Space direction="vertical" size={4} style={{ maxWidth: 320 }}>
-        <Flex align="center" gap={8}>
-          <InputNumber
-            min={0}
-            value={value}
-            onChange={newValue => {
-              if (typeof newValue === 'number') {
-                setValue(newValue)
-              }
-            }}
-            placeholder="Enter number"
-            style={{ width: 140 }}
-            controls
-          />
-          {selectAfter}
-        </Flex>
+        <InputNumber
+          min={0}
+          value={value}
+          onChange={newValue => {
+            if (typeof newValue === 'number') {
+              setValue(newValue)
+            }
+          }}
+          addonAfter={selectAfter}
+          placeholder="Enter number"
+          style={{ width: 200 }}
+          controls
+        />
       </Space>
     )
   },
