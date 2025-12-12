@@ -1,13 +1,13 @@
 import type { Meta } from '@storybook/react'
 import type { StoryObj } from '@storybook/react'
-import { Flex, Icon, Space, Tooltip } from 'src/components'
+import { Alert, Flex, Icon, Tooltip } from 'src/components'
 import { Typography } from 'src/components/general/Typography/Typography'
-import { ExampleStory } from 'src/utils/ExampleStory'
 import { TypographyColors } from './colors'
+import { SizeXs } from 'src/styles/style'
 
 const meta: Meta<typeof Typography.Link> = {
   title: 'Components/General/Typography/Link',
-  component: props => <Typography.Link {...props}>Example Link</Typography.Link>,
+  component: Typography.Link,
 
   args: {
     children: 'Example Text',
@@ -80,53 +80,87 @@ type Story = StoryObj<typeof Typography.Link>
   Customize the stories based on specific requirements.
 */
 
-export const Primary: Story = {}
+export const Primary: Story = {
+  args: {
+    underline: true,
+  },
+}
 
 export const InsideTooltip: Story = {
   render: () => {
     return (
-      <ExampleStory title="Link inside a Tooltip">
-        <Flex align="center" gap={2}>
-          <Typography.Text>Typography inside of a tooltip, hover icon to see</Typography.Text>
-          <Tooltip
-            title={
-              <>
-                <Typography.Text tooltip>
-                  Help lorem ipsum{' '}
-                  <Typography.Link href="/" tooltip>
-                    Learn More
-                  </Typography.Link>
-                </Typography.Text>
-              </>
-            }>
-            <Icon name="help" size="sm" />
-          </Tooltip>
-        </Flex>
-      </ExampleStory>
+      <Tooltip
+        title={
+          <>
+            <Typography.Text tooltip>
+              Help lorem ipsum{' '}
+              <Typography.Link href="/" tooltip>
+                Learn More
+              </Typography.Link>
+            </Typography.Text>
+          </>
+        }>
+        <Icon name="help" size="sm" />
+      </Tooltip>
     )
   },
 }
 
-export const ExampleLinks: Story = {
+export const LongDescription: Story = {
   render: () => {
     return (
-      <ExampleStory title={<> </>}>
-        <Space direction="vertical">
-          <Typography.Link>Ant Design (default)</Typography.Link>
-          <Typography.Link type="secondary">Ant Design (secondary)</Typography.Link>
-          <Typography.Link type="success">Ant Design (success)</Typography.Link>
-          <Typography.Link type="warning">Ant Design (warning)</Typography.Link>
-          <Typography.Link type="danger">Ant Design (danger)</Typography.Link>
-          <Typography.Link disabled>Ant Design (disabled)</Typography.Link>
-          <Typography.Link mark>Ant Design (mark)</Typography.Link>
-          <Typography.Link code>Ant Design (code)</Typography.Link>
-          <Typography.Link keyboard>Ant Design (keyboard)</Typography.Link>
-          <Typography.Link underline>Ant Design (underline)</Typography.Link>
-          <Typography.Link delete>Ant Design (delete)</Typography.Link>
-          <Typography.Link strong>Ant Design (strong)</Typography.Link>
-          <Typography.Link italic>Ant Design (italic)</Typography.Link>
-        </Space>
-      </ExampleStory>
+      <Typography.Paragraph color="ColorTextDescription">
+        This is placeholder descriptive copy that illustrates how inline links sit alongside supporting content. The
+        paragraph spacing demonstrates how the link remains readable even within longer bodies of narrative.{' '}
+        <Typography.Link
+          href="https://mparticle.com/docs"
+          color="ColorTextDescription"
+          underline
+          target="_blank"
+          rel="noopener noreferrer">
+          Explore the documentation
+        </Typography.Link>{' '}
+        to learn more about this topic. Keep the surrounding text concise and focused so the call to action is easy to
+        scan. When possible, avoid stacking multiple links within the same sentence to maintain clarity.
+      </Typography.Paragraph>
+    )
+  },
+}
+
+export const WithInlineIcon: Story = {
+  render: () => {
+    return (
+      <Typography.Link
+        underline
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://docs.mparticle.com/"
+        color="ColorLink">
+        <Flex align="center" gap={SizeXs}>
+          <span>View documentation</span>
+          <Icon name="openTab" size="sm" color="primary" />
+        </Flex>
+      </Typography.Link>
+    )
+  },
+}
+
+export const InsideErrorAlert: Story = {
+  render: () => {
+    return (
+      <Alert
+        type="error"
+        showIcon
+        message={
+          <Typography.Text color="ColorText">
+            Something went wrong.{' '}
+            <Typography.Link color="ColorText" underline href="https://mparticle.com/support">
+              Contact support
+            </Typography.Link>{' '}
+            to get help.
+          </Typography.Text>
+        }
+      />
     )
   },
 }

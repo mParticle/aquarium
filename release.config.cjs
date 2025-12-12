@@ -54,7 +54,19 @@ module.exports = {
         },
       ],
     ] : []),
-    ['@semantic-release/npm'],
+    [
+      '@semantic-release/npm',
+      {
+        npmPublish: false,
+      },
+    ],
+    [
+      '@semantic-release/exec',
+        {
+          prepareCmd: 'sh ./scripts/release.sh',
+          publishCmd: 'npm publish',
+        },
+      ],
     [
       '@semantic-release/github',
       {
