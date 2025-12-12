@@ -10,7 +10,15 @@ on:
 jobs:
   release:
     name: Perform Release
-    runs-on: ubuntu-latest
+    runs-on:
+      ubuntu-latest
+
+      # OIDC permissions for npm trusted publishing
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write # Required for OIDC authentication with npm
 
     env:
       GITHUB_TOKEN: ${{ secrets.MP_SEMANTIC_RELEASE_BOT }}
@@ -45,6 +53,9 @@ jobs:
 
       - name: Build dist
         run: npm run build-dist
+
+      - name: Ensure npm CLI supports OIDC
+        run: npm install -g npm@latest
 
       - name: Release
         run: |
