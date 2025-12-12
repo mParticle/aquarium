@@ -1,14 +1,15 @@
-import { useState } from 'react'
-import { Icon, Input } from 'src/components'
+import React, { useState } from 'react'
+import { Flex, Form, Icon, Input, Select, Space, Typography } from 'src/components'
+import { Tooltip } from 'antd'
 import { type Meta, type StoryObj } from '@storybook/react'
-import { Space } from 'src/components'
+import { QuestionCircleOutlined } from '@ant-design/icons'
 
 const meta: Meta<typeof Input> = {
   title: 'Components/Data Entry/Input',
   component: Input,
 
   args: {
-    placeholder: 'Input Placeholder',
+    placeholder: 'Enter text',
     disabled: false,
     maxLength: undefined,
     status: undefined,
@@ -48,46 +49,175 @@ type Story = StoryObj<typeof Input>
   Customize the stories based on specific requirements.
 */
 
-export const Primary: Story = {
-  args: {
-    value: '',
-  },
-  render: args => {
-    const [value, setValue] = useState(args.value ?? '')
+const LabelWithTooltip = ({ label, tooltipMessage }: { label: string; tooltipMessage: string | React.ReactNode }) => (
+  <Flex align="center" gap={4}>
+    <Typography.Text>{label}</Typography.Text>
+    <Tooltip title={tooltipMessage}>
+      <QuestionCircleOutlined />
+    </Tooltip>
+  </Flex>
+)
 
+export const TextInput: Story = {
+  render: () => {
     return (
-      <Input
-        {...args}
-        value={value}
-        onChange={e => {
-          setValue(e.target.value)
-          args.onChange?.(e)
-        }}
+      <Space direction="vertical" size={4} style={{ maxWidth: 320 }}>
+        <Input placeholder="Enter text" type="text" style={{ width: 320 }} />
+      </Space>
+    )
+  },
+}
+
+export const NumberInput: Story = {
+  render: () => {
+    return (
+      <Space direction="vertical" size={4} style={{ maxWidth: 320 }}>
+        <Input
+          id="required-field"
+          placeholder="Enter number"
+          type="number"
+          min={0}
+          max={100}
+          required
+          aria-required
+          style={{ width: 320 }}
+        />
+      </Space>
+    )
+  },
+}
+
+export const PercentageInput: Story = {
+  render: () => {
+    return (
+      <Space direction="vertical" size={4} style={{ maxWidth: 320 }}>
+        <Input
+          id="percentage-field"
+          placeholder="0"
+          type="number"
+          min={0}
+          max={100}
+          addonAfter="%"
+          style={{ width: 160 }}
+        />
+      </Space>
+    )
+  },
+}
+
+export const DurationInput: Story = {
+  render: () => {
+    const [value, setValue] = useState<number>(30)
+    const [unit, setUnit] = useState<string>('hours')
+
+    const selectAfter = (
+      <Select
+        value={unit}
+        onChange={setUnit}
+        options={[
+          { label: 'Minutes', value: 'minutes' },
+          { label: 'Hours', value: 'hours' },
+          { label: 'Days', value: 'days' },
+        ]}
+        dropdownMatchSelectWidth={false}
+        style={{ width: 100 }}
       />
     )
-  },
-}
 
-export const TextArea: Story = {
-  render: () => {
     return (
-      <Input.TextArea size="middle" autoSize={{ minRows: 2 }} placeholder="Description (optional)">
-        Test
-      </Input.TextArea>
+      <Space direction="vertical" size={4} style={{ maxWidth: 320 }}>
+        <Input
+          type="number"
+          min={0}
+          value={value}
+          onChange={e => setValue(Number(e.target.value))}
+          addonAfter={selectAfter}
+          placeholder="Enter number"
+          style={{ width: 200 }}
+        />
+      </Space>
     )
   },
 }
 
-export const WithSearchAddon: Story = {
+export const SearchInput: Story = {
   render: () => {
     return (
-      <Space>
+      <Space direction="vertical" size={4} style={{ maxWidth: 320 }}>
         <Input
           placeholder="Search"
           allowClear
           autoFocus
           addonBefore={<Icon name="search" size="sm" color="default" />}
+          style={{ width: 320 }}
         />
+      </Space>
+    )
+  },
+}
+
+type FieldType = {
+  requiredTextInput?: string
+  optionalTextInput?: string
+  helpTextInput?: string
+  warehouseUsername?: string
+}
+
+export const RequiredTextInput: Story = {
+  render: () => {
+    return (
+      <Form<FieldType> layout="vertical" style={{ maxWidth: 320 }}>
+        <Form.Item<FieldType>
+          label="Required Text Input"
+          name="requiredTextInput"
+          rules={[{ required: true, message: 'Please enter a value.' }]}>
+          <Input placeholder="Enter text" style={{ width: 320 }} />
+        </Form.Item>
+      </Form>
+    )
+  },
+}
+
+export const OptionalInput: Story = {
+  render: () => {
+    return (
+      <Form<FieldType> layout="vertical" style={{ maxWidth: 320 }}>
+        <Form.Item<FieldType> label="Optional Text Input" name="optionalTextInput">
+          <Input placeholder="Enter text" style={{ width: 320 }} />
+        </Form.Item>
+      </Form>
+    )
+  },
+}
+
+export const HelpTextInput: Story = {
+  render: () => {
+    return (
+      <Form<FieldType> layout="vertical" style={{ maxWidth: 320 }}>
+        <Form.Item<FieldType>
+          label={<LabelWithTooltip label="Text Input with Help" tooltipMessage="Helpful description for this input" />}>
+          <Input placeholder="Enter text" style={{ width: 320 }} />
+        </Form.Item>
+      </Form>
+    )
+  },
+}
+
+export const TextAreaInput: Story = {
+  render: () => {
+    return (
+      <Space direction="vertical" size={4} style={{ maxWidth: 320 }}>
+        <Input.TextArea placeholder="Share feedback..." maxLength={500} rows={4} style={{ width: 320 }} />
+      </Space>
+    )
+  },
+}
+
+export const PasswordInput: Story = {
+  render: () => {
+    return (
+      <Space direction="vertical" size={4} style={{ maxWidth: 320 }}>
+        <Input.Password placeholder="Enter password" style={{ width: 320 }} />
       </Space>
     )
   },
