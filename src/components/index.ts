@@ -159,8 +159,3 @@ export {
   UnauthorizedTooltip,
   type IUnauthorizedTooltipProps,
 } from './UXPatterns/PermissionsRestrictions/UnauthorizedTooltip'
-
-export { Utils } from '../shared/Utils'
-export { RoutesAuthorizationsService } from '../shared/services/RoutesAuthorizationsService'
-export { InitializationService } from '../shared/services/InitializationService'
-export { NavigationItemsService, NavigationItemId } from '../shared/services/NavigationItemsService'
