@@ -3,7 +3,7 @@ import type { StoryObj } from '@storybook/react'
 import { Alert, Flex, Icon, Tooltip } from 'src/components'
 import { Typography } from 'src/components/general/Typography/Typography'
 import { TypographyColors } from './colors'
-import { MarginXs } from 'src/styles/style'
+import { SizeXs } from 'src/styles/style'
 
 const meta: Meta<typeof Typography.Link> = {
   title: 'Components/General/Typography/Link',
@@ -136,7 +136,7 @@ export const WithInlineIcon: Story = {
         rel="noopener noreferrer"
         href="https://docs.mparticle.com/"
         color="ColorLink">
-        <Flex as="span" align="center" gap={MarginXs}>
+        <Flex align="center" gap={SizeXs}>
           <span>View documentation</span>
           <Icon name="openTab" size="sm" color="primary" />
         </Flex>
