@@ -67,7 +67,6 @@ const ICON_CATEGORIES = {
     'submitFeedback',
     'dropdown',
     'logout',
-    'toggleLogicBlocks',
     'moveToTop',
   ] as const,
 
@@ -100,6 +99,7 @@ const ICON_CATEGORIES = {
     'refreshFrequency',
     'stateError',
     'bannerFreemium',
+    'toggleLogicBlocks',
   ] as const,
 
   DATA_TYPE_PATTERNS: [
