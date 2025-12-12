@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Flex, Form, Icon, Input, Select, Space, Typography } from 'src/components'
+import { Flex, Form, Icon, Input, InputNumber, Select, Space, Typography } from 'src/components'
 import { Tooltip } from 'antd'
 import { type Meta, type StoryObj } from '@storybook/react'
 import { QuestionCircleOutlined } from '@ant-design/icons'
@@ -72,16 +72,7 @@ export const NumberInput: Story = {
   render: () => {
     return (
       <Space direction="vertical" size={4} style={{ maxWidth: 320 }}>
-        <Input
-          id="required-field"
-          placeholder="Enter number"
-          type="number"
-          min={0}
-          max={100}
-          required
-          aria-required
-          style={{ width: 320 }}
-        />
+        <InputNumber min={0} max={100} placeholder="Enter number" style={{ width: 320 }} controls />
       </Space>
     )
   },
