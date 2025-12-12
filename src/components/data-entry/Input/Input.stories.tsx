@@ -101,10 +101,15 @@ export const PercentageInput: Story = {
 
     return (
       <Space direction="vertical" size={4} style={{ maxWidth: 320 }}>
-        <Flex align="center" gap={8}>
-          <InputNumber min={0} max={100} value={value} onChange={handleChange} style={{ width: 140 }} controls />
-          <Typography.Text>%</Typography.Text>
-        </Flex>
+        <InputNumber
+          min={0}
+          max={100}
+          value={value}
+          onChange={handleChange}
+          addonAfter="%"
+          style={{ width: 160 }}
+          controls
+        />
       </Space>
     )
   },
