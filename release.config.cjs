@@ -63,8 +63,7 @@ module.exports = {
     [
       '@semantic-release/exec',
         {
-          prepareCmd: 'sh ./scripts/release.sh',
-          publishCmd: 'npm publish',
+          publishCmd: isMainBranch ? 'npm publish' : 'npm publish --tag ${nextRelease.channel}',
         },
       ],
     [
