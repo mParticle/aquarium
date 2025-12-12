@@ -8,28 +8,39 @@ import * as TagStories from '../../../../src/components/data-display/Tag/Tag.sto
 
 # Tag
 
-#### Overview
+### Overview
 
 The Tags component displays small, labeled elements used to categorize, identify, or highlight content. Tags are versatile for indicating types or other identifiers and can include text, icons, or color coding to enhance readability and organization.
 
+<Canvas of={TagStories.TagOverviewCards} />
+
+### Borderless Tag
+
+<Canvas of={TagStories.BorderlessTagExample} />
+
+### Tag With Icon
+
+<Canvas of={TagStories.TagWithIconExample} />
+
+### Closable Tag
+
+<Canvas of={TagStories.ClosableTagExample} />
+
+### Clickable Tags
+
+<Canvas of={TagStories.ClickableTagExample} />
 
 ### Info Tags
-Used to indicate contextual information, such as environments or states. These tags are static, with the exception of optional additional info displayed on hover.
 
-#### Current Usage
+<Canvas of={TagStories.InfoTags} />
 
-[**Tables Usage:**](https://mparticle.github.io/aquarium/?path=/story/components-data-display-tag--table-usage) Used to indicate environment (e.g., production or development), priority, or health status.
+### Health Tags
 
-### Clicable Tags
+<Canvas of={TagStories.HealthTags} />
 
-Used as interactive elements that can function as filters or selection tools.
+### Environment Tags
 
-
-#### Current Usage
-
-**Search Modal**: Allows users to filter search results by clicking on a tag.
-
-{/* Documentation goes here */}
+<Canvas of={TagStories.EnvironmentTagsExample} />
 
 #### Related Links
 
@@ -37,5 +48,3 @@ Used as interactive elements that can function as filters or selection tools.
 | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Eames | [Tag Component](https://www.figma.com/design/veXnmignQnJz8StIq10VJ5/Eames-2.0---Foundations-%26-Components?m=auto&node-id=412-13377&t=BQax0YEp3gD4PyU6-1) |
 | AntD | [Tag Component](https://ant.design/components/tag) |
-
-<Canvas meta={TagStories.default} />
