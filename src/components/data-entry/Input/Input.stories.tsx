@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Flex, Form, Icon, Input, InputNumber, Select, Space, Typography } from 'src/components'
-import { Tooltip } from 'antd'
+import { Flex, Form, Icon, Input, Select, Space, Typography } from 'src/components'
+import { Tooltip, InputNumber, type InputNumberProps } from 'antd'
 import { type Meta, type StoryObj } from '@storybook/react'
 import { QuestionCircleOutlined } from '@ant-design/icons'
 
@@ -70,9 +70,20 @@ export const TextInput: Story = {
 
 export const NumberInput: Story = {
   render: () => {
+    const handleChange: InputNumberProps['onChange'] = value => {
+      console.log('InputNumber changed:', value)
+    }
+
     return (
       <Space direction="vertical" size={4} style={{ maxWidth: 320 }}>
-        <InputNumber min={0} max={100} placeholder="Enter number" style={{ width: 320 }} controls />
+        <InputNumber
+          min={0}
+          max={100}
+          placeholder="Enter number"
+          style={{ width: 320 }}
+          controls
+          onChange={handleChange}
+        />
       </Space>
     )
   },
