@@ -2,7 +2,7 @@
 
 We use [semantic-release](https://github.com/semantic-release/semantic-release) to automate the versioning and publishing of the mParticle Aquarium component library. Everything is handled by semantic-release, including determining the next version number, generating the release notes, and publishing to npm. You can use the Github Release Aquarium action from the `main` branch to release from it.
 
-> **Important:** Before releasing a version from main, send a message in the #aquarium Slack channel to align it and sync on other changes that can/should be included in the release.
+> **Important:** Before releasing a version from main, send a message in the [Aquarium Google Chat room](https://chat.google.com/room/AAQADRm8Au8?cls=7) to align and sync on other changes that can/should be included in the release.
 
 ## Step-by-Step Release Instructions
 
@@ -10,18 +10,20 @@ We use [semantic-release](https://github.com/semantic-release/semantic-release) 
 
 2. **Navigate to GitHub Actions**: Go to the Aquarium codebase and click on "Actions" tab
 
-![Image of Tabs with Action Tab](/images/Release_Images/Image1.png)
+<img src="/images/Release_Images/Image1.png" alt="Image of Tabs with Action Tab" width="600" />
 
 3. **Select Release Workflow**: On the left sidebar, click on "Release Aquarium"
 
-![Image of Side Panel with Release Aquarium](/images/Release_Images/Image2.png)
+<img src="/images/Release_Images/Image2.png" alt="Image of Side Panel with Release Aquarium" width="300" />
 
 4. **Run the workflow**: Click the "Run workflow" button and ensure you're running from the `main` branch
 
-![Image of Run Workflow Button ](/images/Release_Images/Image3.png)
+<img src="/images/Release_Images/Image3.png" alt="Image of Run Workflow Button" width="600" />
 
-5. **Clear Nexus cache** (CDP Platform only): After the workflow completes successfully:
-   - Go to Slack and send a message to "Doozer"
-   - Type: `clear nexus cache`
+5. **Update local dependencies**: In your frontend application repository, run `yarn install` or `npm install` to get the latest Aquarium changes
 
-6. **Update local dependencies**: In your frontend application repository, run `yarn install` or `npm install` to get the latest Aquarium changes
+### Optional (CDP Platform only)
+
+After the workflow completes successfully, clear the Nexus cache:
+- Go to Slack and send a message to "Doozer"
+- Type: `clear nexus cache`
