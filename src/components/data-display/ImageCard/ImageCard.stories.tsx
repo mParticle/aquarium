@@ -100,13 +100,25 @@ export const MultipleCards: Story = {
       },
       {
         id: 3,
-        src: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+        src: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
         tag: 'Live',
         tagColor: 'green',
       },
       {
         id: 4,
+        src: 'https://gw.alipayobjects.com/zos/antfincdn/aPkFc8Sj7n/method-draw-image.svg',
+        tag: 'Live',
+        tagColor: 'green',
+      },
+      {
+        id: 5,
         src: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
+        tag: 'Live',
+        tagColor: 'green',
+      },
+      {
+        id: 6,
+        src: 'https://gw.alipayobjects.com/zos/antfincdn/aPkFc8Sj7n/method-draw-image.svg',
         tag: 'Live',
         tagColor: 'green',
       },
