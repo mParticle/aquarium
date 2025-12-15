@@ -14,6 +14,7 @@ This ensures consistency across all contributions and saves time on reviews!
 
 ## Setting Up
 
+- Ensure you have Node.js 24.12.0+ installed (check with `node --version`)
 - Clone the repository and run `npm install`
 - Run `npm start` to start storybook
 
