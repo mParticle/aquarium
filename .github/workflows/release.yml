@@ -10,7 +10,15 @@ on:
 jobs:
   release:
     name: Perform Release
-    runs-on: ubuntu-latest
+    runs-on:
+      ubuntu-latest
+
+      # OIDC permissions for npm trusted publishing
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write # Required for OIDC authentication with npm
 
     env:
       GITHUB_TOKEN: ${{ secrets.MP_SEMANTIC_RELEASE_BOT }}
@@ -22,13 +30,13 @@ jobs:
 
     steps:
       - name: Checkout public main branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           token: ${{ secrets.MP_SEMANTIC_RELEASE_BOT }}
           fetch-depth: 0
 
       - name: Import GPG Key
-        uses: crazy-max/ghaction-import-gpg@v4
+        uses: crazy-max/ghaction-import-gpg@v6
         with:
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.GPG_PASSPHRASE }}
@@ -36,9 +44,9 @@ jobs:
           git_commit_gpgsign: true
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: 'latest'
+          node-version: '24.12.0'
 
       - name: Install Dependencies
         run: npm ci
@@ -46,12 +54,15 @@ jobs:
       - name: Build dist
         run: npm run build-dist
 
+      - name: Ensure npm CLI supports OIDC
+        run: npm install -g npm@latest
+
       - name: Release
         run: |
           npx semantic-release
 
       - name: Archive npm failure logs
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         if: failure()
         with:
           name: npm-logs
