@@ -10,10 +10,11 @@ const meta: Meta<typeof ImageCard> = {
   args: {
     src: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
     alt: 'Sample image',
-    width: 200,
-    height: 200,
+    size: 180,
     selected: false,
     loading: false,
+    title: 'Image Card',
+    description: 'This is a sample image card',
   },
   argTypes: {
     selected: {
@@ -61,6 +62,22 @@ export const SelectedWithTag: Story = {
   },
 }
 
+export const WithTitle: Story = {
+  args: {
+    title: 'Mountain Landscape',
+  },
+}
+
+export const WithTitleAndDescription: Story = {
+  args: {
+    title: 'Mountain Landscape',
+    description: 'A beautiful view of mountains at sunset',
+    selected: true,
+    tag: 'Featured',
+    tagColor: 'blue',
+  },
+}
+
 export const ControlledSelection: Story = {
   render: () => {
     const [selected, setSelected] = useState(false)
@@ -70,10 +87,11 @@ export const ControlledSelection: Story = {
         <ImageCard
           src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
           alt="Selectable image"
-          width={200}
-          height={200}
+          size={180}
           selected={selected}
           onChange={setSelected}
+          title="Selectable Card"
+          description="Click to toggle selection state"
         />
         <div style={{ marginTop: '16px' }}>Selected: {selected ? 'Yes' : 'No'}</div>
       </ExampleStory>
@@ -91,36 +109,44 @@ export const MultipleCards: Story = {
         src: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
         tag: 'Live',
         tagColor: 'green',
+        title: 'Product A',
+        description: 'First product option',
       },
       {
         id: 2,
         src: 'https://gw.alipayobjects.com/zos/antfincdn/aPkFc8Sj7n/method-draw-image.svg',
-        tag: 'Live',
-        tagColor: 'green',
+        title: 'Product B',
+        description: 'Second product option',
       },
       {
         id: 3,
         src: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
         tag: 'Live',
         tagColor: 'green',
+        title: 'Product C',
+        description: 'Third product option',
       },
       {
         id: 4,
         src: 'https://gw.alipayobjects.com/zos/antfincdn/aPkFc8Sj7n/method-draw-image.svg',
         tag: 'Live',
         tagColor: 'green',
+        title: 'Product D',
+        description: 'Fourth product option',
       },
       {
         id: 5,
         src: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
-        tag: 'Live',
-        tagColor: 'green',
+        title: 'Product E',
+        description: 'Fifth product option',
       },
       {
         id: 6,
         src: 'https://gw.alipayobjects.com/zos/antfincdn/aPkFc8Sj7n/method-draw-image.svg',
         tag: 'Live',
         tagColor: 'green',
+        title: 'Product F',
+        description: 'Sixth product option',
       },
     ]
 
@@ -136,14 +162,15 @@ export const MultipleCards: Story = {
               key={img.id}
               src={img.src}
               alt={img.tag}
-              width={200}
-              height={200}
+              size={180}
               selected={selectedIds.includes(img.id)}
               onChange={() => {
                 toggleSelection(img.id)
               }}
               tag={img.tag}
               tagColor={img.tagColor}
+              title={img.title}
+              description={img.description}
             />
           ))}
         </Space>
