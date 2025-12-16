@@ -53,12 +53,10 @@ export const ImageCard = (props: IImageCardProps): React.JSX.Element => {
   return (
     <Flex vertical gap={PaddingXs} style={{ width: 'fit-content' }}>
       <div
-        onClick={handleClick}
         style={{
           position: 'relative',
           height: size,
           width: size,
-          cursor: 'pointer',
           flexShrink: 0,
         }}
         data-testid={dataTestId}>
@@ -72,6 +70,17 @@ export const ImageCard = (props: IImageCardProps): React.JSX.Element => {
           }}
         />
 
+        {/* Clickable overlay */}
+        <div
+          onClick={handleClick}
+          style={{
+            position: 'absolute',
+            inset: 0,
+            cursor: 'pointer',
+            zIndex: 1,
+          }}
+        />
+
         {loading && (
           <div
             style={{
@@ -81,6 +90,7 @@ export const ImageCard = (props: IImageCardProps): React.JSX.Element => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
+              zIndex: 2,
             }}>
             <Spin />
           </div>
@@ -95,6 +105,7 @@ export const ImageCard = (props: IImageCardProps): React.JSX.Element => {
               padding: 2,
               borderRadius: BorderRadiusSm,
               backgroundColor: ColorBeetroot,
+              zIndex: 2,
             }}>
             <div
               style={{
@@ -113,7 +124,7 @@ export const ImageCard = (props: IImageCardProps): React.JSX.Element => {
         )}
 
         {tag && (
-          <div style={{ position: 'absolute', bottom: PaddingXs, right: PaddingXs }}>
+          <div style={{ position: 'absolute', bottom: PaddingXs, right: PaddingXs, zIndex: 2 }}>
             {typeof tag === 'string' ? (
               <Tag color={tagColor}>
                 <Flex gap={4} align="center">
