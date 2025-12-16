@@ -51,7 +51,7 @@ export const ImageCard = (props: IImageCardProps): React.JSX.Element => {
   }
 
   return (
-    <Flex vertical gap={PaddingXs}>
+    <Flex vertical gap={PaddingXs} style={{ width: 'fit-content' }}>
       <div
         onClick={handleClick}
         style={{
@@ -59,6 +59,7 @@ export const ImageCard = (props: IImageCardProps): React.JSX.Element => {
           height: size,
           width: size,
           cursor: 'pointer',
+          flexShrink: 0,
         }}
         data-testid={dataTestId}>
         <Card
@@ -134,7 +135,7 @@ export const ImageCard = (props: IImageCardProps): React.JSX.Element => {
         )}
       </div>
 
-      <Flex vertical>
+      <Flex vertical style={{ pointerEvents: 'none', userSelect: 'none', width: size }}>
         <Typography.Text
           style={{
             color: '#181D27',
