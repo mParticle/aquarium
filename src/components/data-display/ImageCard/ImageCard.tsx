@@ -5,9 +5,10 @@ import { Tag } from 'src/components/data-display/Tag/Tag'
 import { Spin } from 'src/components/feedback/Spin/Spin'
 import { CheckOutlined } from '@ant-design/icons'
 import { BorderRadiusSm, ColorBgBase, PaddingSm, PaddingXs } from 'src/styles/style'
-import { Flex, Typography } from 'antd'
+import { Flex } from 'src/components/layout/Flex/Flex'
+import { Typography } from 'src/components/general/Typography/Typography'
 
-const ColorBeetroot = '#A8203E'
+const ColorBeetroot = '#C20075'
 
 export interface IImageCardProps {
   src: string
@@ -128,7 +129,7 @@ export const ImageCard = (props: IImageCardProps): React.JSX.Element => {
         </Typography.Text>
         <Typography.Text
           style={{
-            color: '#A8203E',
+            color: ColorBeetroot,
             fontSize: '10px',
           }}>
           {description}
