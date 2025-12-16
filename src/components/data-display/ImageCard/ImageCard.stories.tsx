@@ -35,49 +35,6 @@ type Story = StoryObj<typeof ImageCard>
 
 export const Primary: Story = {}
 
-export const Selected: Story = {
-  args: {
-    selected: true,
-  },
-}
-
-export const WithTag: Story = {
-  args: {
-    tag: 'Featured',
-    tagColor: 'blue',
-  },
-}
-
-export const Loading: Story = {
-  args: {
-    loading: true,
-  },
-}
-
-export const SelectedWithTag: Story = {
-  args: {
-    selected: true,
-    tag: 'Premium',
-    tagColor: 'gold',
-  },
-}
-
-export const WithTitle: Story = {
-  args: {
-    title: 'Mountain Landscape',
-  },
-}
-
-export const WithTitleAndDescription: Story = {
-  args: {
-    title: 'Mountain Landscape',
-    description: 'A beautiful view of mountains at sunset',
-    selected: true,
-    tag: 'Featured',
-    tagColor: 'blue',
-  },
-}
-
 export const ControlledSelection: Story = {
   render: () => {
     const [selected, setSelected] = useState(false)
