@@ -107,7 +107,7 @@ export const MultipleCards: Story = {
       },
     ]
 
-    const toggleSelection = (id: number) => {
+    const toggleSelection = (id: number): void => {
       setSelectedIds(prev => (prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]))
     }
 

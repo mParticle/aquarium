@@ -51,7 +51,7 @@ export const ImageCard = (props: IImageCardProps): React.JSX.Element => {
   }
 
   return (
-    <div>
+    <Flex vertical gap={PaddingXs}>
       <div
         onClick={handleClick}
         style={{
@@ -113,7 +113,23 @@ export const ImageCard = (props: IImageCardProps): React.JSX.Element => {
 
         {tag && (
           <div style={{ position: 'absolute', bottom: PaddingXs, right: PaddingXs }}>
-            {typeof tag === 'string' ? <Tag color={tagColor}>{tag}</Tag> : tag}
+            {typeof tag === 'string' ? (
+              <Tag color={tagColor}>
+                <Flex gap={4} align="center">
+                  <div
+                    style={{
+                      width: 6,
+                      height: 6,
+                      borderRadius: '50%',
+                      backgroundColor: 'currentColor',
+                    }}
+                  />
+                  {tag}
+                </Flex>
+              </Tag>
+            ) : (
+              tag
+            )}
           </div>
         )}
       </div>
@@ -130,11 +146,11 @@ export const ImageCard = (props: IImageCardProps): React.JSX.Element => {
         <Typography.Text
           style={{
             color: ColorBeetroot,
-            fontSize: '10px',
+            fontSize: '11px',
           }}>
           {description}
         </Typography.Text>
       </Flex>
-    </div>
+    </Flex>
   )
 }
