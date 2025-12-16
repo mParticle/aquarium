@@ -1,0 +1,94 @@
+.manage-columns-drawer .ant-drawer-body {
+  padding: 0;
+}
+
+.manage-columns-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.manage-columns-description {
+  padding: 0 var(--padding-lg) var(--padding) var(--padding-lg);
+}
+
+.manage-columns-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.manage-columns-section__header {
+  padding: var(--padding-sm) var(--padding-lg) var(--padding-xs) var(--padding-lg);
+  background-color: var(--mp-brand-secondary-2);
+  border-top: var(--line-width) solid var(--color-border-secondary);
+  border-bottom: var(--line-width) solid var(--color-border-secondary);
+}
+
+.manage-columns-section__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.manage-columns-row {
+  display: flex;
+  align-items: center;
+  padding: var(--padding) var(--padding-lg);
+  gap: var(--padding-sm);
+  cursor: grab;
+  background-color: var(--color-bg-container);
+  border-bottom: var(--line-width) solid var(--color-border-secondary);
+  transition: background-color var(--motion-duration-mid) ease, box-shadow var(--motion-duration-mid) ease;
+}
+
+.manage-columns-row:hover {
+  background-color: var(--control-item-bg-hover);
+}
+
+.manage-columns-row:active {
+  cursor: grabbing;
+}
+
+.manage-columns-row--dragging {
+  opacity: 0.5;
+  background-color: var(--color-fill-tertiary);
+}
+
+.manage-columns-row--drag-over {
+  background-color: var(--color-primary-bg);
+  box-shadow: inset 0 calc(var(--line-width-bold) * -1) 0 0 var(--color-primary);
+}
+
+.manage-columns-row__drag-handle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-text-tertiary);
+}
+
+.manage-columns-row__label {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.manage-columns-row__actions {
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity var(--motion-duration-mid) ease;
+}
+
+.manage-columns-row:hover .manage-columns-row__actions {
+  opacity: 1;
+}
+
+.manage-columns-row__actions .ant-btn {
+  border: var(--line-width) solid var(--color-border-secondary);
+  border-radius: var(--border-radius-sm);
+}
+
+.manage-columns-row__actions .ant-btn:hover {
+  border-color: var(--color-primary-border);
+  background-color: var(--color-primary-bg);
+}
