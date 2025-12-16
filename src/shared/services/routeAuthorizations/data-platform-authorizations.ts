@@ -98,8 +98,8 @@ export class DataPlatformAuthorizations extends BaseRoutesAuthorizations {
     return AuthorizationsService.isAuthorized([
       Operation.DATA_INGEST_CONNECTION_VIEW,
       Operation.DATA_INGEST_DATA_MODEL_VIEW,
-      Operation.DATA_INGEST_PIPELINE_VIEW
-    ]);
+      Operation.DATA_INGEST_PIPELINE_VIEW,
+    ])
   }
 
   public canViewCrm(): boolean {

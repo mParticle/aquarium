@@ -1,32 +1,29 @@
 # Release Process
 
-We use [semantic-release](https://github.com/semantic-release/semantic-release) to automate the versioning and publishing 
-of the mParticle Aquarium component library. Everything is handled by semantic-release, including determining the next version number, 
-generating the release notes, and publishing to npm. You can use the Github Release Aquarium action from the `main` branch to release from it.
+We use [semantic-release](https://github.com/semantic-release/semantic-release) to automate the versioning and publishing of the mParticle Aquarium component library. Everything is handled by semantic-release, including determining the next version number, generating the release notes, and publishing to npm. You can use the Github Release Aquarium action from the `main` branch to release from it.
 
-> [!IMPORTANT]  
-> Before releasing a version from main, send a message in the #aquarium Slack channel to align it and sync on other changes that can/should be included in the release.
+> **Important:** Before releasing a version from main, send a message in the [Aquarium Google Chat room](https://chat.google.com/room/AAQADRm8Au8?cls=7) to align and sync on other changes that can/should be included in the release.
 
-## Contributing with the release process
+## Step-by-Step Release Instructions
 
-To make changes to the release process, you can use the `--dry-run` from semantic-release flag to test the release
-process without actually publishing a new version.
+1. **Verify your changes**: Check the [npm package page](https://www.npmjs.com/package/@mparticle/aquarium?activeTab=versions) or run `npm view @mparticle/aquarium versions` to confirm your changes haven't already been published in a new version
 
-You will need two environment variables to run the release process locally:
+2. **Navigate to GitHub Actions**: Go to the Aquarium codebase and click on "Actions" tab
 
-- NPM_TOKEN: You can create a personal npm account and use a personal token.
-Since we are using `--dry-run` it won't try to publish anything so having a valid read-only npm token works.
+<img src="/images/Release_Images/Image1.png" alt="Image of Tabs with Action Tab" width="600" />
 
-- GITHUB_TOKEN: Create a [github personal access token (classic)](https://github.com/settings/tokens)
-and give it access to the mParticle organization via "Configure SSO" button.
+3. **Select Release Workflow**: On the left sidebar, click on "Release Aquarium"
 
-After settings both variables locally, run the following locally:
+<img src="/images/Release_Images/Image2.png" alt="Image of Side Panel with Release Aquarium" width="300" />
 
-```
-npx semantic-release --dry-run
-```
+4. **Run the workflow**: Click the "Run workflow" button and ensure you're running from the `main` branch
 
-## Additional readings:
+<img src="/images/Release_Images/Image3.png" alt="Image of Run Workflow Button" width="600" />
 
-- [Semantic Release Workflow Configuration](https://github.com/semantic-release/semantic-release/blob/master/docs/usage/workflow-configuration.md#workflow-configuration)
-- [Understanding npm distribution channels](https://docs.npmjs.com/cli/v8/commands/npm-dist-tag#purpose)
+5. **Update local dependencies**: In your frontend application repository, run `yarn install` or `npm install` to get the latest Aquarium changes
+
+### Optional (CDP Platform only)
+
+After the workflow completes successfully, clear the Nexus cache:
+- Go to Slack and send a message to "Doozer"
+- Type: `clear nexus cache`
