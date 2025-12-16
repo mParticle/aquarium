@@ -1,39 +1,13 @@
 import React, { useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Button, message } from 'src/components'
-import { ManageColumnsDrawer, type IColumnItem, type IManageColumnsDrawerProps } from './ManageColumnsDrawer'
+import { ManageColumnsDrawer, type IColumnItem } from './ManageColumnsDrawer'
 
 const meta: Meta<typeof ManageColumnsDrawer> = {
   title: 'UX Patterns/ManageColumnsDrawer',
   component: ManageColumnsDrawer,
   parameters: {
     layout: 'fullscreen',
-  },
-  argTypes: {
-    open: {
-      control: 'boolean',
-      description: 'Whether the drawer is visible',
-    },
-    title: {
-      control: 'text',
-      description: 'Custom title for the drawer',
-    },
-    description: {
-      control: 'text',
-      description: 'Custom description text',
-    },
-    dimensionsLabel: {
-      control: 'text',
-      description: 'Label for the dimensions section',
-    },
-    metricsLabel: {
-      control: 'text',
-      description: 'Label for the metrics section',
-    },
-    width: {
-      control: 'number',
-      description: 'Width of the drawer',
-    },
   },
 }
 
@@ -54,7 +28,7 @@ const defaultMetrics: IColumnItem[] = [
   { id: 'conversions', label: 'Conversions' },
 ]
 
-const InteractiveTemplate = (props: Partial<IManageColumnsDrawerProps>) => {
+const DefaultTemplate = () => {
   const [open, setOpen] = useState(false)
   const [dimensions, setDimensions] = useState<IColumnItem[]>(defaultDimensions)
   const [metrics, setMetrics] = useState<IColumnItem[]>(defaultMetrics)
@@ -91,110 +65,16 @@ const InteractiveTemplate = (props: Partial<IManageColumnsDrawerProps>) => {
         onMetricsChange={setMetrics}
         onRenameColumn={handleRename}
         onRemoveColumn={handleRemove}
-        {...props}
       />
     </div>
   )
 }
 
 export const Default: Story = {
-  render: () => <InteractiveTemplate />,
+  render: () => <DefaultTemplate />,
 }
 
-export const CustomLabels: Story = {
-  render: () => (
-    <InteractiveTemplate
-      title="Configure Table Columns"
-      description="Drag and drop to reorder columns. Use the actions menu to rename or remove columns."
-      dimensionsLabel="Grouping columns"
-      metricsLabel="Value columns"
-    />
-  ),
-}
-
-const DimensionsOnlyTemplate = () => {
-  const [open, setOpen] = useState(false)
-  const [dimensions, setDimensions] = useState<IColumnItem[]>([
-    { id: 'country', label: 'Country' },
-    { id: 'region', label: 'Region' },
-    { id: 'city', label: 'City' },
-    { id: 'device', label: 'Device Type' },
-    { id: 'browser', label: 'Browser' },
-  ])
-
-  return (
-    <div style={{ padding: 24 }}>
-      <Button type="primary" onClick={() => setOpen(true)}>
-        Manage Dimensions
-      </Button>
-
-      <ManageColumnsDrawer
-        open={open}
-        onClose={() => setOpen(false)}
-        dimensions={dimensions}
-        metrics={[]}
-        onDimensionsChange={setDimensions}
-        onMetricsChange={() => {}}
-        onRenameColumn={id => {
-          void message.info(`Rename column: ${id}`)
-        }}
-        onRemoveColumn={id => {
-          setDimensions(prev => prev.filter(item => item.id !== id))
-          void message.success('Column removed')
-        }}
-        title="Manage Dimensions"
-        description="Reorder your grouping columns by dragging."
-      />
-    </div>
-  )
-}
-
-export const DimensionsOnly: Story = {
-  render: () => <DimensionsOnlyTemplate />,
-}
-
-const MetricsOnlyTemplate = () => {
-  const [open, setOpen] = useState(false)
-  const [metrics, setMetrics] = useState<IColumnItem[]>([
-    { id: 'revenue', label: 'Revenue' },
-    { id: 'cost', label: 'Cost' },
-    { id: 'profit', label: 'Profit' },
-    { id: 'roi', label: 'ROI' },
-    { id: 'ctr', label: 'CTR' },
-  ])
-
-  return (
-    <div style={{ padding: 24 }}>
-      <Button type="primary" onClick={() => setOpen(true)}>
-        Manage Metrics
-      </Button>
-
-      <ManageColumnsDrawer
-        open={open}
-        onClose={() => setOpen(false)}
-        dimensions={[]}
-        metrics={metrics}
-        onDimensionsChange={() => {}}
-        onMetricsChange={setMetrics}
-        onRenameColumn={id => {
-          void message.info(`Rename metric: ${id}`)
-        }}
-        onRemoveColumn={id => {
-          setMetrics(prev => prev.filter(item => item.id !== id))
-          void message.success('Metric removed')
-        }}
-        title="Manage Metrics"
-        description="Reorder your value columns by dragging."
-      />
-    </div>
-  )
-}
-
-export const MetricsOnly: Story = {
-  render: () => <MetricsOnlyTemplate />,
-}
-
-const ReadOnlyTemplate = () => {
+const ReorderOnlyTemplate = () => {
   const [open, setOpen] = useState(false)
   const [dimensions, setDimensions] = useState<IColumnItem[]>(defaultDimensions)
   const [metrics, setMetrics] = useState<IColumnItem[]>(defaultMetrics)
@@ -202,7 +82,7 @@ const ReadOnlyTemplate = () => {
   return (
     <div style={{ padding: 24 }}>
       <Button type="primary" onClick={() => setOpen(true)}>
-        View Columns (Reorder Only)
+        Reorder Columns
       </Button>
 
       <ManageColumnsDrawer
@@ -219,62 +99,5 @@ const ReadOnlyTemplate = () => {
 }
 
 export const ReorderOnly: Story = {
-  render: () => <ReadOnlyTemplate />,
-}
-
-const ManyColumnsTemplate = () => {
-  const [open, setOpen] = useState(false)
-  const [dimensions, setDimensions] = useState<IColumnItem[]>([
-    { id: 'date', label: 'Date' },
-    { id: 'campaign', label: 'Campaign' },
-    { id: 'ad_group', label: 'Ad Group' },
-    { id: 'ad', label: 'Ad' },
-    { id: 'keyword', label: 'Keyword' },
-    { id: 'device', label: 'Device' },
-    { id: 'location', label: 'Location' },
-  ])
-  const [metrics, setMetrics] = useState<IColumnItem[]>([
-    { id: 'impressions', label: 'Impressions' },
-    { id: 'clicks', label: 'Clicks' },
-    { id: 'ctr', label: 'CTR' },
-    { id: 'cost', label: 'Cost' },
-    { id: 'conversions', label: 'Conversions' },
-    { id: 'conversion_rate', label: 'Conversion Rate' },
-    { id: 'cost_per_conversion', label: 'Cost per Conversion' },
-    { id: 'revenue', label: 'Revenue' },
-    { id: 'roas', label: 'ROAS' },
-    { id: 'avg_position', label: 'Average Position' },
-  ])
-
-  return (
-    <div style={{ padding: 24 }}>
-      <Button type="primary" onClick={() => setOpen(true)}>
-        Manage Many Columns
-      </Button>
-
-      <ManageColumnsDrawer
-        open={open}
-        onClose={() => setOpen(false)}
-        dimensions={dimensions}
-        metrics={metrics}
-        onDimensionsChange={setDimensions}
-        onMetricsChange={setMetrics}
-        onRenameColumn={(id, type) => {
-          void message.info(`Rename ${type}: ${id}`)
-        }}
-        onRemoveColumn={(id, type) => {
-          if (type === 'dimension') {
-            setDimensions(prev => prev.filter(item => item.id !== id))
-          } else {
-            setMetrics(prev => prev.filter(item => item.id !== id))
-          }
-          void message.success('Column removed')
-        }}
-      />
-    </div>
-  )
-}
-
-export const ManyColumns: Story = {
-  render: () => <ManyColumnsTemplate />,
+  render: () => <ReorderOnlyTemplate />,
 }

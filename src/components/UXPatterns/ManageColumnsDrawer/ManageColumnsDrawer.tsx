@@ -102,8 +102,12 @@ const ColumnRow: React.FC<IColumnRowProps> = ({
         ? [
             {
               key: 'rename',
-              label: 'Rename',
-              icon: <Icon name="edit" size="sm" />,
+              label: (
+                <span style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 12 }}>
+                  <Icon name="edit" size="xs" />
+                  Rename
+                </span>
+              ),
               onClick: onRename,
             },
           ]
@@ -112,9 +116,13 @@ const ColumnRow: React.FC<IColumnRowProps> = ({
         ? [
             {
               key: 'remove',
-              label: 'Remove',
-              icon: <Icon name="delete" size="sm" />,
-              danger: true,
+              className: 'manage-columns-menu-item--remove',
+              label: (
+                <span style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 12 }}>
+                  <Icon name="delete" size="xs" />
+                  Remove
+                </span>
+              ),
               onClick: onRemove,
             },
           ]
