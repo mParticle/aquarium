@@ -7,7 +7,7 @@ import { ConfigProvider } from 'src/components/other/ConfigProvider/ConfigProvid
 import { type ReactNode } from 'react'
 import './button.css'
 
-export interface IButtonProps extends Omit<AntButtonProps, 'variant'> {
+export interface IButtonProps extends Omit<AntButtonProps, 'variant' | 'color'> {
   /**
    * @deprecated This variant is a temporary fix for new icons.
    * Use this variant only with new icons to align the icon and text centered.
@@ -15,6 +15,10 @@ export interface IButtonProps extends Omit<AntButtonProps, 'variant'> {
    */
   variant?: 'with-new-icon'
   icon?: ReactNode
+  /**
+   * Color of the button text. Use 'inherit' to inherit from parent element.
+   */
+  color?: 'inherit' | string
 }
 export const Button = (props: IButtonProps) => {
   const classMap = {
@@ -30,11 +34,17 @@ export const Button = (props: IButtonProps) => {
 
   const extraClass = props.variant === 'with-new-icon' ? classMap['with-new-icon'] : ''
 
-  const { variant, ...restProps } = props
+  const { variant, color, style, ...restProps } = props
+
+  const buttonStyle = color ? { ...style, color } : style
 
   return (
     <ConfigProvider>
-      <AntButton {...restProps} icon={buttonIcon} className={`${props.className ?? ''} ${extraClass}`}>
+      <AntButton
+        {...restProps}
+        icon={buttonIcon}
+        style={buttonStyle}
+        className={`${props.className ?? ''} ${extraClass}`}>
         {props.children}
       </AntButton>
     </ConfigProvider>

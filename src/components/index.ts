@@ -156,6 +156,7 @@ export {
   type IMoreActionsButtonProps,
   type IMoreActionsButtonItem,
 } from './UXPatterns/MoreActionsButton/MoreActionsButton'
+export { StatisticsCard, type IStatisticsCardProps } from './UXPatterns/StatisticsCard/StatisticsCard'
 export {
   UnauthorizedTooltip,
   type IUnauthorizedTooltipProps,

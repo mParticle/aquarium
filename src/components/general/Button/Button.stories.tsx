@@ -1,8 +1,9 @@
 import { Button } from 'src/components/general/Button/Button'
 import { type Meta, type StoryObj } from '@storybook/react'
 import { userEvent } from '@storybook/test'
-import { Alert, Flex, Icon, Typography, Tooltip } from 'src/components'
+import { Alert, Dropdown, Flex, Icon, Typography, Tooltip } from 'src/components'
 import React from 'react'
+import type { MenuProps } from 'antd'
 import { BorderRadiusLg, ColorBorderSecondary, ColorWhite, MarginMd, SizeXs } from 'src/styles/style'
 
 const meta: Meta<typeof Button> = {
@@ -264,6 +265,68 @@ export const Refresh: Story = {
           </Tooltip>
         </Flex>
       </>
+    )
+  },
+}
+
+export const With2Options: Story = {
+  render: () => {
+    const refreshMenu: MenuProps = {
+      items: [
+        {
+          key: 'refresh-columns',
+          label: 'Refresh Columns',
+        },
+        {
+          key: 'refresh-values',
+          label: 'Refresh Values',
+        },
+      ],
+      onClick: ({ key }) => {
+        console.log('Selected:', key)
+      },
+    }
+
+    return (
+      <Dropdown menu={refreshMenu}>
+        <Button icon={<Icon name="refresh" size="sm" />}>
+          <Typography.Text>Refresh Now</Typography.Text>
+        </Button>
+      </Dropdown>
+    )
+  },
+}
+
+export const LinkColorInheritance: Story = {
+  render: () => {
+    return (
+      <Flex vertical gap={MarginMd}>
+        <div style={{ color: '#52c41a' }}>
+          <Typography.Text>Button link inside green text container:</Typography.Text>
+          <Button type="link" color="inherit">
+            Inherits Green Color
+          </Button>
+        </div>
+
+        <div style={{ color: '#ff4d4f' }}>
+          <Typography.Text>Button link inside red text container:</Typography.Text>
+          <Button type="link" color="inherit">
+            Inherits Red Color
+          </Button>
+        </div>
+
+        <div style={{ color: '#1677ff' }}>
+          <Typography.Text>Button link inside blue text container:</Typography.Text>
+          <Button type="link" color="inherit">
+            Inherits Blue Color
+          </Button>
+        </div>
+
+        <Typography.Text type="secondary">
+          Without color prop (uses default link color):
+          <Button type="link">Default Link Color</Button>
+        </Typography.Text>
+      </Flex>
     )
   },
 }
