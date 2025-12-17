@@ -1,0 +1,29 @@
+/* Custom styling for message notifications */
+.ant-message .ant-message-notice-wrapper .message-notification-custom.ant-message-notice .ant-message-notice-content {
+  text-align: left;
+}
+
+/* Set flex start on custom content child */
+.ant-message .ant-message-notice-wrapper .message-notification-custom.ant-message-notice .ant-message-notice-content > .ant-message-custom-content {
+  display: flex;
+  align-items: flex-start !important;
+}
+
+/* Move icons down by 4px */
+.ant-message .ant-message-notice-wrapper .message-notification-custom.ant-message-notice .ant-message-custom-content .anticon {
+  margin-top: 4px;
+}
+
+/* Background colors for different message types */
+.ant-message .ant-message-notice-wrapper .message-notification-error.ant-message-notice .ant-message-notice-content {
+  background-color: var(--color-error-bg);
+}
+
+.ant-message .ant-message-notice-wrapper .message-notification-warning.ant-message-notice .ant-message-notice-content {
+  background-color: var(--color-warning-bg);
+}
+
+.ant-message .ant-message-notice-wrapper .message-notification-success.ant-message-notice .ant-message-notice-content {
+  background-color: var(--color-success-bg);
+}
+
