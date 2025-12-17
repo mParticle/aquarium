@@ -60,6 +60,7 @@ export {
 export { Empty, type IEmptyProps, type EmptyState } from './data-display/Empty/Empty'
 export { Popover, type IPopoverProps } from './data-display/Popover/Popover'
 export { List, type IListProps } from './data-display/List/List'
+export { MetricCard, type IMetricCardProps, type TrendDirection } from './data-display/MetricCard/MetricCard'
 export { Progress, type IProgressProps } from './feedback/Progress/Progress'
 export { Result, type IResultProps } from './feedback/Result/Result'
 export { Spin, type ISpinProps } from './feedback/Spin/Spin'
