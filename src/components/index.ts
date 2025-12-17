@@ -53,6 +53,7 @@ export { Image, type IImageProps } from './data-display/Image/Image'
 export { QRCode, type IQRCodeProps } from './not-prod-ready/QRCode/QRCode'
 export { Badge, type IBadgeProps } from './data-display/Badge/Badge'
 export { Card, type ICardProps } from './data-display/Card/Card'
+export { ImageCard, type IImageCardProps } from './data-display/ImageCard/ImageCard'
 export { Avatar, type IAvatarProps } from './data-display/Avatar/Avatar'
 export { Descriptions, type IDescriptionsProps } from './data-display/Descriptions/Descriptions'
 export {
@@ -165,6 +166,11 @@ export {
   UnauthorizedTooltip,
   type IUnauthorizedTooltipProps,
 } from './UXPatterns/PermissionsRestrictions/UnauthorizedTooltip'
+export {
+  ManageColumnsDrawer,
+  type IManageColumnsDrawerProps,
+  type IColumnItem,
+} from './UXPatterns/ManageColumnsDrawer/ManageColumnsDrawer'
 
 export { Utils } from '../shared/Utils'
 export { RoutesAuthorizationsService } from '../shared/services/RoutesAuthorizationsService'

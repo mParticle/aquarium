@@ -295,7 +295,7 @@
   height: var(--control-height-lg) !important;
   padding: 0 var(--padding-sm);
   border-radius: var(--border-radius-lg);
-  border: 1px solid var(--color-border, #c3aeff);
+  border: 1px solid var(--color-border, #ef76bf);
 }
 
 .globalNavigation__suiteLogo {

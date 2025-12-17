@@ -140,3 +140,6 @@ test/stub/test-stub-bundle.js
 
 dist/
 **/dist
+
+# Claude Code
+.claude/
