@@ -36,7 +36,7 @@ export const Primary: Story = {
     return (
       <>
         <Button onClick={() => setOpen(true)}>Open Drawer</Button>
-        <Drawer title="Drawer Title" open={open} onClose={() => setOpen(false)} >
+        <Drawer title="Drawer Title" open={open} onClose={() => setOpen(false)}>
           <Flex
             style={{
               width: '100%',
@@ -71,7 +71,7 @@ export const LargeDrawer: Story = {
     return (
       <>
         <Button onClick={() => setOpen(true)}>Open Drawer</Button>
-        <Drawer title="Drawer Title" open={open} onClose={() => setOpen(false)} width='large' placement="right">
+        <Drawer title="Drawer Title" open={open} onClose={() => setOpen(false)} width="large" placement="right">
           <Flex
             style={{
               width: '100%',
