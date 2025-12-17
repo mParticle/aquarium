@@ -296,37 +296,3 @@ export const With2Options: Story = {
     )
   },
 }
-
-export const LinkColorInheritance: Story = {
-  render: () => {
-    return (
-      <Flex vertical gap={MarginMd}>
-        <div style={{ color: '#52c41a' }}>
-          <Typography.Text>Button link inside green text container:</Typography.Text>
-          <Button type="link" color="inherit">
-            Inherits Green Color
-          </Button>
-        </div>
-
-        <div style={{ color: '#ff4d4f' }}>
-          <Typography.Text>Button link inside red text container:</Typography.Text>
-          <Button type="link" color="inherit">
-            Inherits Red Color
-          </Button>
-        </div>
-
-        <div style={{ color: '#1677ff' }}>
-          <Typography.Text>Button link inside blue text container:</Typography.Text>
-          <Button type="link" color="inherit">
-            Inherits Blue Color
-          </Button>
-        </div>
-
-        <Typography.Text type="secondary">
-          Without color prop (uses default link color):
-          <Button type="link">Default Link Color</Button>
-        </Typography.Text>
-      </Flex>
-    )
-  },
-}
