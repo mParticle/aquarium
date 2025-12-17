@@ -2,6 +2,7 @@ import React, { useState, useCallback } from 'react'
 import { Drawer, Icon, MoreActionsButton, type IDrawerProps } from 'src/components'
 import { Typography } from 'src/components/general/Typography/Typography'
 import './ManageColumnsDrawer.css'
+import { MarginXs, Padding, PaddingLg } from 'src/styles/style'
 
 export interface IColumnItem {
   /**
@@ -98,36 +99,20 @@ const ColumnRow: React.FC<IColumnRowProps> = ({
 }) => {
   const menuItems = {
     items: [
-      ...(onRename
-        ? [
-            {
-              key: 'rename',
-              label: (
-                <span style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 12 }}>
-                  <Icon name="edit" size="xs" />
-                  Rename
-                </span>
-              ),
-              onClick: onRename,
-            },
-          ]
-        : []),
-      ...(onRemove
-        ? [
-            {
-              key: 'remove',
-              className: 'manage-columns-menu-item--remove',
-              label: (
-                <span style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 12 }}>
-                  <Icon name="delete" size="xs" />
-                  Remove
-                </span>
-              ),
-              onClick: onRemove,
-            },
-          ]
-        : []),
-    ],
+      onRename && {
+        key: 'rename',
+        icon: <Icon name="edit" size="sm" />,
+        label: <span style={{ marginLeft: MarginXs }}>Rename</span>,
+        onClick: onRename,
+      },
+      onRemove && {
+        key: 'remove',
+        className: 'manage-columns-menu-item--remove',
+        icon: <Icon name="delete" size="sm" />,
+        label: <span style={{ marginLeft: MarginXs }}>Remove</span>,
+        onClick: onRemove,
+      },
+    ].filter((item): item is NonNullable<typeof item> => Boolean(item)),
   }
 
   const showMoreActions = onRename ?? onRemove
@@ -148,11 +133,7 @@ const ColumnRow: React.FC<IColumnRowProps> = ({
       <div className="manage-columns-row__label">
         <Typography.Text>{item.label}</Typography.Text>
       </div>
-      {showMoreActions && (
-        <div className="manage-columns-row__actions">
-          <MoreActionsButton menuItems={menuItems} />
-        </div>
-      )}
+      {showMoreActions && <MoreActionsButton menuItems={menuItems} />}
     </div>
   )
 }
@@ -281,20 +262,16 @@ export const ManageColumnsDrawer: React.FC<IManageColumnsDrawerProps> = ({
 
   return (
     <Drawer
-      title={
-        <Typography.Text size="lg" strong>
-          {title}
-        </Typography.Text>
-      }
+      title={<Typography.Text size="lg">{title}</Typography.Text>}
       open={open}
       onClose={onClose}
       width={width}
       className="manage-columns-drawer"
       {...drawerProps}>
       <div className="manage-columns-content">
-        <div className="manage-columns-description">
-          <Typography.Text type="secondary">{description}</Typography.Text>
-        </div>
+        <Typography.Text type="secondary" style={{ padding: `${Padding} ${PaddingLg}` }}>
+          {description}
+        </Typography.Text>
 
         {dimensions.length > 0 && renderSection(dimensions, 'dimension', dimensionsLabel)}
         {metrics.length > 0 && renderSection(metrics, 'metric', metricsLabel)}

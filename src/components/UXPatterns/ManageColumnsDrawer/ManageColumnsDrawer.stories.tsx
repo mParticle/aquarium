@@ -4,7 +4,7 @@ import { Button, message } from 'src/components'
 import { ManageColumnsDrawer, type IColumnItem } from './ManageColumnsDrawer'
 
 const meta: Meta<typeof ManageColumnsDrawer> = {
-  title: 'UX Patterns/ManageColumnsDrawer',
+  title: 'POC/ManageColumnsDrawer',
   component: ManageColumnsDrawer,
   parameters: {
     layout: 'fullscreen',
@@ -52,7 +52,7 @@ const DefaultTemplate = () => {
 
   return (
     <div style={{ padding: 24 }}>
-      <Button type="primary" onClick={() => setOpen(true)}>
+      <Button type="default" onClick={() => setOpen(true)}>
         Manage Columns
       </Button>
 
@@ -72,32 +72,4 @@ const DefaultTemplate = () => {
 
 export const Default: Story = {
   render: () => <DefaultTemplate />,
-}
-
-const ReorderOnlyTemplate = () => {
-  const [open, setOpen] = useState(false)
-  const [dimensions, setDimensions] = useState<IColumnItem[]>(defaultDimensions)
-  const [metrics, setMetrics] = useState<IColumnItem[]>(defaultMetrics)
-
-  return (
-    <div style={{ padding: 24 }}>
-      <Button type="primary" onClick={() => setOpen(true)}>
-        Reorder Columns
-      </Button>
-
-      <ManageColumnsDrawer
-        open={open}
-        onClose={() => setOpen(false)}
-        dimensions={dimensions}
-        metrics={metrics}
-        onDimensionsChange={setDimensions}
-        onMetricsChange={setMetrics}
-        description="Drag to reorder columns."
-      />
-    </div>
-  )
-}
-
-export const ReorderOnly: Story = {
-  render: () => <ReorderOnlyTemplate />,
 }

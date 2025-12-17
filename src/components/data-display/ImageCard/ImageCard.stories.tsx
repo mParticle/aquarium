@@ -5,7 +5,7 @@ import { Space } from 'src/components'
 import { ExampleStory } from 'src/utils/ExampleStory'
 
 const meta: Meta<typeof ImageCard> = {
-  title: 'Components/Data Display/ImageCard',
+  title: 'POC/ImageCard',
   component: ImageCard,
   args: {
     src: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
@@ -32,29 +32,6 @@ const meta: Meta<typeof ImageCard> = {
 export default meta
 
 type Story = StoryObj<typeof ImageCard>
-
-export const Primary: Story = {}
-
-export const ControlledSelection: Story = {
-  render: () => {
-    const [selected, setSelected] = useState(false)
-
-    return (
-      <ExampleStory title="Click to toggle selection">
-        <ImageCard
-          src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
-          alt="Selectable image"
-          size={180}
-          selected={selected}
-          onChange={setSelected}
-          title="Selectable Card"
-          description="Click to toggle selection state"
-        />
-        <div style={{ marginTop: '16px' }}>Selected: {selected ? 'Yes' : 'No'}</div>
-      </ExampleStory>
-    )
-  },
-}
 
 export const MultipleCards: Story = {
   render: () => {
@@ -131,7 +108,6 @@ export const MultipleCards: Story = {
             />
           ))}
         </Space>
-        <div style={{ marginTop: '16px' }}>Selected: {selectedIds.length > 0 ? selectedIds.join(', ') : 'None'}</div>
       </ExampleStory>
     )
   },

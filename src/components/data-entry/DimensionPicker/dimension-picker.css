@@ -59,19 +59,17 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 12px;
+  padding: 8px 12px;
   cursor: pointer;
-  transition: background-color 0.2s ease, border-left-color 0.2s ease;
-  border-left: 3px solid transparent;
+  transition: background-color 0.2s ease;
 }
 
 .dimension-picker__category-item:hover {
-  background-color: #f5f5f5;
+  background-color: #FAFAFA;
 }
 
 .dimension-picker__category-item--selected {
-  background-color: #f0f0f0;
-  border-left-color: #717368;
+  background-color: #FAFAFA;
 }
 
 .dimension-picker__category-label {
@@ -96,13 +94,13 @@
 }
 
 .dimension-picker__item {
-  padding: 4px 12px;
+  padding: 8px 12px;
   transition: background-color 0.15s ease;
 }
 
 .dimension-picker__item:hover,
 .dimension-picker__item--hovered {
-  background-color: #f8f6fb;
+  background-color: #FAFAFA;
 }
 
 .dimension-picker__item .ant-checkbox-wrapper {
@@ -153,7 +151,7 @@
 
 .dimension-picker__description-title {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .dimension-picker__description-content {

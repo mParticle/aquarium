@@ -150,7 +150,7 @@ export const DimensionPicker = ({
         <div className="dimension-picker__content">
           {/* Categories Panel */}
           <div className="dimension-picker__categories">
-            <Typography.Text size="sm" type="secondary" className="dimension-picker__categories-title">
+            <Typography.Text type="secondary" className="dimension-picker__categories-title">
               {categoryTitle}
             </Typography.Text>
             <ul className="dimension-picker__categories-list">
@@ -161,10 +161,8 @@ export const DimensionPicker = ({
                     key={category.key}
                     className={`dimension-picker__category-item ${isSelected ? 'dimension-picker__category-item--selected' : ''}`}
                     onClick={() => setSelectedCategory(category.key)}>
-                    {category.icon && <Icon name={category.icon} size="sm" color="default" />}
-                    <Typography.Text size="sm" className="dimension-picker__category-label">
-                      {category.label}
-                    </Typography.Text>
+                    {category.icon && <Icon name={category.icon} size="md" color="default" />}
+                    <Typography.Text className="dimension-picker__category-label">{category.label}</Typography.Text>
                   </li>
                 )
               })}
@@ -196,7 +194,7 @@ export const DimensionPicker = ({
                         checked={isChecked}
                         disabled={item.disabled}
                         onChange={() => handleItemToggle(item.key)}>
-                        <Typography.Text size="sm">{item.label}</Typography.Text>
+                        <Typography.Text>{item.label}</Typography.Text>
                       </Checkbox>
                     </li>
                   )
@@ -208,10 +206,10 @@ export const DimensionPicker = ({
           {/* Description Panel */}
           {showDescriptionPanel && (
             <div className="dimension-picker__description">
-              <Typography.Text size="sm" type="secondary" className="dimension-picker__description-title">
+              <Typography.Text type="secondary" className="dimension-picker__description-title">
                 {descriptionTitle}
               </Typography.Text>
-              <Typography.Paragraph size="sm" className="dimension-picker__description-content">
+              <Typography.Paragraph className="dimension-picker__description-content">
                 {hoveredItem?.description ?? 'Hover over a dimension to see its description.'}
               </Typography.Paragraph>
             </div>

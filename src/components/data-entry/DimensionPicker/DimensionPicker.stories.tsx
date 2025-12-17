@@ -79,7 +79,7 @@ const sampleItems: IDimensionItem[] = [
 ]
 
 const meta: Meta<typeof DimensionPicker> = {
-  title: 'Components/Data Entry/DimensionPicker',
+  title: 'POC/DimensionPicker',
   component: DimensionPicker,
   parameters: {
     layout: 'centered',
@@ -95,36 +95,6 @@ export default meta
 type Story = StoryObj<typeof DimensionPicker>
 
 export const Primary: Story = {
-  args: {
-    defaultValue: ['page-3', 'page-7'],
-  },
-  render: args => {
-    const [selected, setSelected] = useState<string[]>(args.defaultValue ?? [])
-    return (
-      <DimensionPicker
-        {...args}
-        value={selected}
-        onChange={setSelected}
-        onApply={keys => alert(`Applied ${keys.length} dimensions`)}
-      />
-    )
-  },
-}
-
-export const WithoutDescriptionPanel: Story = {
-  args: {
-    showDescriptionPanel: false,
-  },
-}
-
-export const WithoutFooter: Story = {
-  args: {
-    showApplyButton: false,
-    showClearAllButton: false,
-  },
-}
-
-export const Controlled: Story = {
   render: () => {
     const [selected, setSelected] = useState<string[]>(['campaign-1'])
     return (

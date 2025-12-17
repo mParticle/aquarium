@@ -150,15 +150,14 @@ export const ImageCard = (props: IImageCardProps): React.JSX.Element => {
         <Typography.Text
           style={{
             color: '#181D27',
-            fontSize: '12px',
             fontWeight: 600,
           }}>
           {title}
         </Typography.Text>
         <Typography.Text
+          size="sm"
           style={{
             color: ColorBeetroot,
-            fontSize: '11px',
           }}>
           {description}
         </Typography.Text>
