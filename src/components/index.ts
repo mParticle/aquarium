@@ -159,6 +159,11 @@ export {
   UnauthorizedTooltip,
   type IUnauthorizedTooltipProps,
 } from './UXPatterns/PermissionsRestrictions/UnauthorizedTooltip'
+export {
+  ManageColumnsDrawer,
+  type IManageColumnsDrawerProps,
+  type IColumnItem,
+} from './UXPatterns/ManageColumnsDrawer/ManageColumnsDrawer'
 
 export { Utils } from '../shared/Utils'
 export { RoutesAuthorizationsService } from '../shared/services/RoutesAuthorizationsService'
