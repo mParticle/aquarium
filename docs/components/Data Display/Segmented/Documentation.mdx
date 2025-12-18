@@ -4,12 +4,26 @@ import * as SegmentedStories from '../../../../src/components/data-display/Segme
 
 <Meta of={SegmentedStories} />
 
-{/* Documentation goes here */}
-
 # Segmented
 
-This is the documentation for the Segmenteds component
+#### Overview
 
-{/* Documentation goes here */}
+The **Segmented** component presents a compact set of mutually exclusive choices. Each option is easy to scan and the selected value is highlighted to confirm the current state.
 
-<Canvas meta={SegmentedStories.default} />
+#### Small segmented control
+
+Use the small size when the control sits inside dense layouts such as tables or cards with limited space.
+
+<Canvas of={SegmentedStories.Small} />
+
+#### Large segmented control
+
+Use the large size for standalone toggles where the segment labels need more breathing room and legibility.
+
+<Canvas of={SegmentedStories.Large} />
+
+#### Related links
+
+| Type | Resource |
+| ---- | -------- |
+| AntD | [Segmented Component](https://ant.design/components/segmented) |
