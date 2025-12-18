@@ -1,4 +1,6 @@
 .ant-checkbox-wrapper {
+    display: inline-flex;
+    align-items: flex-start;
     font-weight: 400;
 }
 
