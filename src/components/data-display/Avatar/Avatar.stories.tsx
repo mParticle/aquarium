@@ -1,9 +1,9 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { Avatar, Badge, Icon, Space } from 'src/components'
-import { ColorWhite, MpBrandSecondary3, MpBrandSecondary4, MpBrandSecondary8, Size } from 'src/styles/style'
+import { Avatar, Badge, Icon, Space, type IIconProps } from 'src/components'
+import { MpBrandSecondary3, MpBrandSecondary4, MpBrandSecondary8, Size } from 'src/styles/style'
 
 const neutralAvatarStyle = { backgroundColor: MpBrandSecondary4, color: MpBrandSecondary8 }
-const neutralIconProps = { name: 'userProfiles', size: 'lg' as const, color: ColorWhite }
+const neutralIconProps: IIconProps = { name: 'userProfiles', size: 'lg', color: 'white' }
 const spaceSize = parseInt(Size, 10)
 
 const meta: Meta<typeof Avatar> = {
