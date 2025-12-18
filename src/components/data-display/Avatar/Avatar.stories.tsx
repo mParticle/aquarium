@@ -3,7 +3,7 @@ import { Avatar, Badge, Icon, Space, type IIconProps } from 'src/components'
 import { MpBrandSecondary3, MpBrandSecondary4, MpBrandSecondary8, Size } from 'src/styles/style'
 
 const neutralAvatarStyle = { backgroundColor: MpBrandSecondary4, color: MpBrandSecondary8 }
-const neutralIconProps: IIconProps = { name: 'userProfiles', size: 'lg', color: 'white' }
+const neutralIconProps: IIconProps = { name: 'userProfiles', size: 'lg' }
 const spaceSize = parseInt(Size, 10)
 
 const meta: Meta<typeof Avatar> = {
@@ -107,10 +107,11 @@ export const WithGroup: Story = {
     return (
       <Space direction="vertical" size={spaceSize}>
         <Avatar.Group
-          maxCount={3}
-          maxPopoverTrigger="click"
-          maxPopoverPlacement="bottom"
-          maxStyle={{ color: MpBrandSecondary8, backgroundColor: MpBrandSecondary3 }}>
+          max={{
+            count: 3,
+            style: { color: MpBrandSecondary8, backgroundColor: MpBrandSecondary3 },
+            popover: { trigger: 'click', placement: 'bottom' },
+          }}>
           {teammates.map(teammate => {
             const style = teammate.initials != null ? neutralAvatarStyle : undefined
 
