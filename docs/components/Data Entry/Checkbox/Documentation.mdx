@@ -19,16 +19,38 @@ Use the **Checkbox** component when:
 - For binary options, especially when changes require saving.
 - For active agreements, such as accepting terms of service.
 
-When selecting a single option from a set of mutually exclusive choices, use **[Radio Buttons](https://mparticle.github.io/aquarium/?path=/story/components-data-entry-radio--primary)**.
+### Default checkbox
 
-Use **[switch](https://mparticle.github.io/aquarium/?path=/story/components-data-entry-switch--primary)** for cases like activation, filter controls, or subscriptions where there is a clear "on/off" state.
+Start with the standard checkbox for simple agree-or-disagree prompts.
 
-#### Related Links
+<Canvas of={CheckboxStories.Primary} />
 
-| Type  | Resource                                                                                                                                               |
-| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Eames | [Checkbox Component](https://www.figma.com/design/veXnmignQnJz8StIq10VJ5/Eames-2.0---Foundations-%26-Components?node-id=388-11036&p=f&t=zURbLpG60aM6aJiH-0) |
-| AntD | [Checkbox Component](https://ant.design/components/checkbox) |
+### Checkbox states
 
+Reference this overview to show each visual state side by side—interactive default, checked, indeterminate, and disabled.
 
-<Canvas meta={CheckboxStories.default} />
+<Canvas of={CheckboxStories.StatesShowcase} />
+
+### Checkbox groups
+
+Group related choices with `Checkbox.Group` so selections stay in sync. Pair the group with a leading Checkbox to provide a “Select all” control when the pattern fits the use case.
+
+<Canvas of={CheckboxStories.GroupSelection} />
+
+### Disabled with tooltip
+
+Pair a disabled checkbox with a tooltip so users understand why the option is locked or how to gain access.
+
+<Canvas of={CheckboxStories.DisabledWithTooltip} />
+
+### Stacked checkbox list
+
+Use individual Checkbox components when you need richer labels and supporting text. Keep the layout vertically aligned to make scanning easy.
+
+<Canvas of={CheckboxStories.MultipleOptions} />
+
+### Long consent copy
+
+Pair a checkbox with structured rich text for legal agreements. Highlight the primary sentence and keep supporting copy visually secondary.
+
+<Canvas of={CheckboxStories.LongFormConsent} />
