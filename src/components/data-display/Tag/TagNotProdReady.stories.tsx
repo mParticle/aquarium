@@ -106,7 +106,7 @@ export const ExampleColors: Story = {
     return (
       <>
         <ExampleStory title="Available colors">
-          <Divider orientation="left">Presets</Divider>
+          <Divider titlePlacement="left">Presets</Divider>
           <Space size={[0, 8]} wrap>
             <Tag color="magenta">magenta</Tag>
             <Tag color="red">red</Tag>
@@ -120,7 +120,7 @@ export const ExampleColors: Story = {
             <Tag color="geekblue">geekblue</Tag>
             <Tag color="purple">purple</Tag>
           </Space>
-          <Divider orientation="left">Custom</Divider>
+          <Divider titlePlacement="left">Custom</Divider>
           <Space size={[0, 8]} wrap>
             <Tag color="#f50">#f50</Tag>
             <Tag color="#2db7f5">#2db7f5</Tag>
@@ -138,7 +138,7 @@ export const ExampleStatusTags: Story = {
     return (
       <>
         <ExampleStory title="Basic status tags">
-          <Divider orientation="left">Without icon</Divider>
+          <Divider titlePlacement="left">Without icon</Divider>
           <Space size={[0, 8]} wrap>
             <Tag color="success">success</Tag>
             <Tag color="processing">processing</Tag>
@@ -146,7 +146,7 @@ export const ExampleStatusTags: Story = {
             <Tag color="warning">warning</Tag>
             <Tag color="default">default</Tag>
           </Space>
-          <Divider orientation="left">With icon</Divider>
+          <Divider titlePlacement="left">With icon</Divider>
           <Space size={[0, 8]} wrap>
             <Tag icon={<Icon name="mpLogo" />} color="success">
               success

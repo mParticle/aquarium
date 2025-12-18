@@ -87,7 +87,7 @@ export const ExampleBasic: Story = {
   render: () => {
     return (
       <ExampleStory title="Four sizes and two shapes are available.">
-        <Space direction="vertical" size={16}>
+        <Space orientation="vertical" size={16}>
           <Space wrap size={16}>
             <Avatar size={64} icon={<Icon name="alicorn" />} />
             <Avatar size="large" icon={<Icon name="alicorn" />} />

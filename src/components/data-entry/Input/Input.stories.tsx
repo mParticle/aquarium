@@ -61,7 +61,7 @@ const LabelWithTooltip = ({ label, tooltipMessage }: { label: string; tooltipMes
 export const TextInput: Story = {
   render: () => {
     return (
-      <Space direction="vertical" size={4} style={{ maxWidth: 320 }}>
+      <Space orientation="vertical" size={4} style={{ maxWidth: 320 }}>
         <Input placeholder="Enter text" type="text" style={{ width: 320 }} />
       </Space>
     )
@@ -75,7 +75,7 @@ export const NumberInput: Story = {
     }
 
     return (
-      <Space direction="vertical" size={4} style={{ maxWidth: 320 }}>
+      <Space orientation="vertical" size={4} style={{ maxWidth: 320 }}>
         <InputNumber
           min={0}
           max={100}
@@ -100,7 +100,7 @@ export const PercentageInput: Story = {
     }
 
     return (
-      <Space direction="vertical" size={4} style={{ maxWidth: 320 }}>
+      <Space orientation="vertical" size={4} style={{ maxWidth: 320 }}>
         <InputNumber
           min={0}
           max={100}
@@ -135,7 +135,7 @@ export const DurationInput: Story = {
     )
 
     return (
-      <Space direction="vertical" size={4} style={{ maxWidth: 320 }}>
+      <Space orientation="vertical" size={4} style={{ maxWidth: 320 }}>
         <InputNumber
           min={0}
           value={value}
@@ -157,7 +157,7 @@ export const DurationInput: Story = {
 export const SearchInput: Story = {
   render: () => {
     return (
-      <Space direction="vertical" size={4} style={{ maxWidth: 320 }}>
+      <Space orientation="vertical" size={4} style={{ maxWidth: 320 }}>
         <Input
           placeholder="Search"
           allowClear
@@ -220,7 +220,7 @@ export const HelpTextInput: Story = {
 export const TextAreaInput: Story = {
   render: () => {
     return (
-      <Space direction="vertical" size={4} style={{ maxWidth: 320 }}>
+      <Space orientation="vertical" size={4} style={{ maxWidth: 320 }}>
         <Input.TextArea placeholder="Share feedback..." maxLength={500} rows={4} style={{ width: 320 }} />
       </Space>
     )
@@ -230,7 +230,7 @@ export const TextAreaInput: Story = {
 export const PasswordInput: Story = {
   render: () => {
     return (
-      <Space direction="vertical" size={4} style={{ maxWidth: 320 }}>
+      <Space orientation="vertical" size={4} style={{ maxWidth: 320 }}>
         <Input.Password placeholder="Enter password" style={{ width: 320 }} />
       </Space>
     )
