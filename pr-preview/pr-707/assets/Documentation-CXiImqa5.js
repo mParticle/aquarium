@@ -1,0 +1,19 @@
+var c=Object.defineProperty,p=Object.defineProperties;var m=Object.getOwnPropertyDescriptors;var o=Object.getOwnPropertySymbols;var x=Object.prototype.hasOwnProperty,j=Object.prototype.propertyIsEnumerable;var a=(n,e,r)=>e in n?c(n,e,{enumerable:!0,configurable:!0,writable:!0,value:r}):n[e]=r,i=(n,e)=>{for(var r in e||(e={}))x.call(e,r)&&a(n,r,e[r]);if(o)for(var r of o(e))j.call(e,r)&&a(n,r,e[r]);return n},s=(n,e)=>p(n,m(e));import{j as t}from"./jsx-runtime-C9TrHvcC.js";import{useMDXComponents as l}from"./index-CkQzTg6q.js";import{ae as u,ag as d}from"./index-CbsTOkj0.js";import{A as g,m as v}from"./Avatar.stories-umiS_S1k.js";import"./index-3OP4wdng.js";import"./iframe-89vDuFq_.js";import"../sb-preview/runtime.js";import"./index-DA79H6I3.js";import"./index-Cu4lwwaE.js";import"./extends-CF3RwP-h.js";import"./isNativeReflectConstruct-CWIsGhkf.js";import"./_baseClone-DwBCp-Ss.js";import"./index-dQMQm6Vu.js";import"./index-DrFu-skq.js";import"./NavigationItemsService-BU8A66MO.js";import"./ErrorStateIcon-DsXQ2_7U.js";import"./style-DNNOPPWd.js";import"./WarningFilled-D6ijQqgK.js";import"./AntdIcon-DRQs8XP6.js";import"./presets-CQzyf-6F.js";import"./Context-R5ee3nrF.js";import"./SuccessStateIcon-BRYD07io.js";import"./WarningStateIcon-C9lXGXrT.js";import"./LightTheme-BtoaoHMG.js";import"./row-DlEJUZa0.js";import"./useToken-BIYN7ogo.js";function h(n){const e=i(i({a:"a",code:"code",h1:"h1",h4:"h4",li:"li",p:"p",strong:"strong",table:"table",tbody:"tbody",td:"td",th:"th",thead:"thead",tr:"tr",ul:"ul"},l()),n.components);return t.jsxs(t.Fragment,{children:[t.jsx(u,{of:g}),`
+`,t.jsx(e.h1,{id:"avatar",children:"Avatar"}),`
+`,t.jsx(e.h4,{id:"overview",children:"Overview"}),`
+`,t.jsxs(e.p,{children:["The ",t.jsx(e.strong,{children:"Avatar"})," component is used to display a profile image, initials, or an icon, commonly for identification purposes."]}),`
+`,t.jsx(e.h4,{id:"when-to-use",children:"When to use"}),`
+`,t.jsxs(e.ul,{children:[`
+`,t.jsx(e.li,{children:"To represent an account, organization, or workspace."}),`
+`,t.jsx(e.li,{children:"To represent a single user or as a placeholder when a user profile image isn’t available."}),`
+`]}),`
+`,t.jsx(e.h4,{id:"current-usage",children:"Current Usage"}),`
+`,t.jsxs(e.ul,{children:[`
+`,t.jsxs(e.li,{children:[t.jsx(e.strong,{children:t.jsx(e.a,{href:"https://mparticle.github.io/aquarium/?path=/story/components-navigation-globalnavigation--primary",rel:"nofollow",children:"Navigation"})})," – Avatar is used within the navigation sidebar to represent the selected workspace."]}),`
+`]}),`
+`,t.jsx(e.h4,{id:"square-avatar-badges",children:"Square avatar badges"}),`
+`,t.jsxs(e.p,{children:["Wrap a square ",t.jsx(e.code,{children:"Avatar"})," with the ",t.jsx(e.code,{children:"Badge"})," component to highlight unread items or online status. The ",t.jsx(e.code,{children:"WithSquareBadge"})," story shows both an icon-based avatar and a photo avatar using badges."]}),`
+`,t.jsx(d,{of:void 0}),`
+`,t.jsx(d,{meta:v}),`
+`,t.jsx(e.h4,{id:"related-links",children:"Related Links"}),`
+`,t.jsxs(e.table,{children:[t.jsx(e.thead,{children:t.jsxs(e.tr,{children:[t.jsx(e.th,{children:"Type"}),t.jsx(e.th,{children:"Resource"})]})}),t.jsxs(e.tbody,{children:[t.jsxs(e.tr,{children:[t.jsx(e.td,{children:"Eames"}),t.jsx(e.td,{children:t.jsx(e.a,{href:"https://www.figma.com/design/veXnmignQnJz8StIq10VJ5/Eames-2.0---Foundations-%26-Components?node-id=397-12044&node-type=canvas&t=B6HJWqqDsUOypZQj-0",rel:"nofollow",children:"Avatar Component"})})]}),t.jsxs(e.tr,{children:[t.jsx(e.td,{children:"AntD"}),t.jsx(e.td,{children:t.jsx(e.a,{href:"https://ant.design/components/avatar",rel:"nofollow",children:"Avatar Component"})})]})]})]})]})}function N(n={}){const{wrapper:e}=i(i({},l()),n.components);return e?t.jsx(e,s(i({},n),{children:t.jsx(h,i({},n))})):h(n)}export{N as default};
