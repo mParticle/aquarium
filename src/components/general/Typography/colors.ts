@@ -28,13 +28,18 @@ export const TypographyColors = [
   'ColorTextLabel',
   'ColorTextDescription',
   'ColorTextLightSolid',
+  'inherit',
 ] as const
 
 export type TypographyColor = (typeof TypographyColors)[number]
 
 export function getColorFromStyles(color: TypographyColor | string): string {
-  if (styles[color as TypographyColor]) {
-    return (styles as unknown as Record<TypographyColor, string>)[color as TypographyColor]
+  if (color === 'inherit') {
+    return 'inherit'
+  }
+
+  if (styles[color as keyof typeof styles]) {
+    return (styles as unknown as Record<string, string>)[color]
   }
 
   return color

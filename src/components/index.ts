@@ -41,6 +41,7 @@ export { Tag, type ITagProps } from './data-display/Tag/Tag'
 export { Tour, type ITourProps } from './data-display/Tour/Tour'
 export { Carousel, type ICarouselProps } from './not-prod-ready/Carousel/Carousel'
 export { Tooltip, type ITooltipProps } from './data-display/Tooltip/Tooltip'
+export { IconWithTooltip, type IIconWithTooltipProps } from './data-display/Tooltip/IconWithTooltip'
 export { Statistic, type IStatisticProps } from './not-prod-ready/Statistic/Statistic'
 export { Tree, type ITreeProps, type ITreeData } from './not-prod-ready/Tree/Tree'
 export { Image, type IImageProps } from './data-display/Image/Image'
@@ -155,6 +156,7 @@ export {
   type IMoreActionsButtonProps,
   type IMoreActionsButtonItem,
 } from './UXPatterns/MoreActionsButton/MoreActionsButton'
+export { StatisticsCard, type IStatisticsCardProps } from './UXPatterns/StatisticsCard/StatisticsCard'
 export {
   UnauthorizedTooltip,
   type IUnauthorizedTooltipProps,
