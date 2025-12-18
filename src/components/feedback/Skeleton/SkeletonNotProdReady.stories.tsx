@@ -189,7 +189,7 @@ export const ExampleSubComponent: Story = {
 
     return (
       <ExampleStory title="Skeleton contains sub component.">
-        <Space direction="vertical" style={{ width: '100%' }} size={16}>
+        <Space orientation="vertical" style={{ width: '100%' }} size={16}>
           <Skeleton loading={loading}>
             <h4 style={{ marginBottom: 16 }}>Ant Design, a design language</h4>
             <p>
