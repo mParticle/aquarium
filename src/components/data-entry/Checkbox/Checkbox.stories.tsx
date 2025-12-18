@@ -1,7 +1,8 @@
 import { type Meta } from '@storybook/react'
 import { type StoryObj } from '@storybook/react'
-import { Checkbox, Tooltip } from 'src/components'
-import { useState, type CSSProperties } from 'react'
+import { Checkbox, Tooltip, Typography, Flex } from 'src/components'
+import { useState } from 'react'
+import { SizeSm, SizeXs, SizeXl } from 'src/styles/style'
 
 export type CheckboxValueType = string | number | boolean
 
@@ -43,17 +44,11 @@ const featureOptions = [
   { label: 'Feature C', value: 'feature-c' },
 ]
 
-const statesContainerStyle = {
-  display: 'grid',
-  gap: '0.75rem',
-  maxWidth: '28rem',
-} satisfies CSSProperties
-
 const CheckboxStatesExample = () => {
   const [isChecked, setIsChecked] = useState(false)
 
   return (
-    <div style={statesContainerStyle}>
+    <div style={{ display: 'grid', gap: SizeSm, maxWidth: '448px' }}>
       <Checkbox
         checked={isChecked}
         onChange={event => {
@@ -73,35 +68,28 @@ const CheckboxStatesExample = () => {
 
 const CheckboxGroupExample = () => {
   const [selectedOptions, setSelectedOptions] = useState<CheckboxValueType[]>(['feature-a', 'feature-c'])
-  const containerStyle = {
-    display: 'grid',
-    gap: '0.75rem',
-    maxWidth: '22rem',
-  } satisfies CSSProperties
 
   const allValues = featureOptions.map(option => option.value)
   const isAllSelected = selectedOptions.length === featureOptions.length
   const isIndeterminate = selectedOptions.length > 0 && !isAllSelected
 
   return (
-    <div style={containerStyle}>
+    <div style={{ display: 'grid', gap: SizeSm, maxWidth: '448px' }}>
       <Checkbox
         indeterminate={isIndeterminate}
         checked={isAllSelected}
         onChange={event => {
           setSelectedOptions(event.target.checked ? allValues : [])
-        }}
-        style={{ color: '#1F2937' }}>
+        }}>
         Select all features
       </Checkbox>
-      <div style={{ display: 'grid', gap: '0.5rem', paddingLeft: '2rem' }}>
+      <div style={{ display: 'grid', gap: SizeXs, paddingLeft: SizeXl }}>
         <Checkbox.Group
           options={featureOptions}
           value={selectedOptions}
           onChange={(values: CheckboxValueType[]) => {
             setSelectedOptions(values)
           }}
-          style={{ display: 'grid', gap: '0.5rem' }}
         />
       </div>
     </div>
@@ -140,7 +128,7 @@ const CheckboxListExample = () => {
   }
 
   return (
-    <div style={{ display: 'grid', gap: '1rem', maxWidth: '32rem' }}>
+    <div style={{ display: 'grid', gap: SizeSm, maxWidth: '512px' }}>
       {preferenceOptions.map(option => {
         const isChecked = selectedValues.includes(option.value)
         return (
@@ -150,10 +138,10 @@ const CheckboxListExample = () => {
             onChange={event => {
               toggleValue(option.value, event.target.checked)
             }}>
-            <div style={{ display: 'grid', gap: '0.25rem' }}>
-              <span style={{ color: '#1F2937', lineHeight: 1.4 }}>{option.label}</span>
-              <span style={{ color: '#6B7280', fontSize: '0.875rem', lineHeight: 1.4 }}>{option.description}</span>
-            </div>
+            <Flex vertical>
+              <Typography.Text>{option.label}</Typography.Text>
+              <Typography.Text type="secondary">{option.description}</Typography.Text>
+            </Flex>
           </Checkbox>
         )
       })}
@@ -163,22 +151,18 @@ const CheckboxListExample = () => {
 
 const LongLegalCopyExample = () => {
   const [checked, setChecked] = useState(true)
-  const containerStyle = {
-    maxWidth: '48rem',
-  } satisfies CSSProperties
 
   return (
-    <div style={containerStyle}>
+    <div style={{ maxWidth: '512px' }}>
       <Checkbox
         checked={checked}
         onChange={event => {
           setChecked(event.target.checked)
-        }}
-        style={{ alignItems: 'flex-start' }}>
-        <div style={{ color: '#1F2937', lineHeight: 1.6 }}>
+        }}>
+        <Typography.Text>
           I agree to the terms, policies, and any other legal guidelines required to use this service, including matters
           related to privacy, data usage, third-party tools, cookies, and future updates to the agreement.
-        </div>
+        </Typography.Text>
       </Checkbox>
     </div>
   )

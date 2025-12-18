@@ -4,3 +4,7 @@
     font-weight: 400;
 }
 
+.ant-checkbox {
+    align-self: flex-start;
+    margin-top: var(--margin-xxs);
+}
