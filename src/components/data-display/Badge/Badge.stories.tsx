@@ -42,7 +42,7 @@ export const StatusBadge: Story = {
           <Badge status="warning" />
         </Space>
         <br />
-        <Space direction="vertical">
+        <Space orientation="vertical">
           <Badge status="success" text="Success" />
           <Badge status="error" text="Error" />
           <Badge status="default" text="Default" />

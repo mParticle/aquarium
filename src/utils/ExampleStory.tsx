@@ -9,14 +9,14 @@ interface IExampleStoryProps {
 export function ExampleStory(props: IExampleStoryProps) {
   return (
     <>
-      <Space direction="vertical" style={{ maxWidth: '800px' }}>
+      <Space orientation="vertical" style={{ maxWidth: '800px' }}>
         {props.title}
         <hr />
         <br />
         {props.children}
         {props.description && (
           <>
-            <Divider orientation="center"></Divider>
+            <Divider titlePlacement="center"></Divider>
             {props.description}
           </>
         )}

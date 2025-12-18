@@ -117,7 +117,7 @@ export const IconOnly: Story = {
           <Button icon={<Icon name="zoomOut" />} />
           <Typography.Text>100%</Typography.Text>
           <Button icon={<Icon name="zoomIn" />} />
-          <Divider type="vertical" />
+          <Divider orientation="vertical" />
           <Button icon={<Icon name="fitToScreen" />} />
         </Flex>
       </>

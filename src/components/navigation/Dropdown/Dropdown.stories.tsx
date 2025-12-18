@@ -246,7 +246,7 @@ export const ExamplePlacement: Story = {
     ]
     return (
       <ExampleStory title="Support 6 placements.">
-        <Space direction="vertical">
+        <Space orientation="vertical">
           <Space wrap>
             <Dropdown menu={{ items }} placement="bottomLeft">
               <Button>bottomLeft</Button>
@@ -575,7 +575,7 @@ export const ExampleLoading: Story = {
 
     return (
       <ExampleStory title="A loading indicator can be added to a button by setting the loading property on the Dropdown.Button.">
-        <Space direction="vertical">
+        <Space orientation="vertical">
           <Dropdown.Button type="primary" loading menu={{ items }}>
             Submit
           </Dropdown.Button>

@@ -247,7 +247,7 @@ export const ExampleProgressSize: Story = {
   render: () => {
     return (
       <ExampleStory title="The size of progress.">
-        <Space direction="vertical">
+        <Space orientation="vertical">
           <Progress percent={50} />
           <Progress percent={50} size="small" />
           <Progress percent={50} size={[300, 20]} />

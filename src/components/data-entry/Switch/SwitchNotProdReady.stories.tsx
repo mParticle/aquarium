@@ -76,7 +76,7 @@ export const ExampleDisabled: Story = {
     }
     return (
       <ExampleStory title="Press button to toggle disabled state.">
-        <Space direction="vertical">
+        <Space orientation="vertical">
           <Switch disabled={disabled} defaultChecked />
           <Button type="primary" onClick={toggle}>
             Toggle disabled
@@ -115,7 +115,7 @@ export const ExampleTextAndIcon: Story = {
   render: () => {
     return (
       <ExampleStory title="With text and icon.">
-        <Space direction="vertical">
+        <Space orientation="vertical">
           <Switch checkedChildren="Checked Text" unCheckedChildren="Unchecked Text" defaultChecked />
           <Switch checkedChildren="1" unCheckedChildren="0" />
           <Switch

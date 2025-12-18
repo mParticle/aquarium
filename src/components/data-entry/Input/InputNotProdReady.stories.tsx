@@ -147,7 +147,7 @@ export const WithFocusManagement: Story = {
 
     return (
       <ExampleStory title={meta.name}>
-        <Space direction="vertical" style={{ width: '100%' }}>
+        <Space orientation="vertical" style={{ width: '100%' }}>
           <Space wrap>
             <Button
               onClick={() => {
