@@ -25,9 +25,6 @@
     "dist/style.ts",
     "dist/src"
   ],
-  "engines": {
-    "node": ">=24.12.0"
-  },
   "peerDependencies": {
     "antd": "6.1.1",
     "dayjs": "1.11.x",
