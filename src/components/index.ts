@@ -15,6 +15,7 @@ export {
 } from './data-entry/Select/Select'
 export { Mentions, type IMentionsProps } from './not-prod-ready/Mentions/Mentions'
 export { Radio, type IRadioProps } from './data-entry/Radio/Radio'
+export { RadioCards, type RadioCardsProps, type RadioCardOption } from './data-entry/RadioCard/RadioCard'
 export { ColorPicker, type IColorPickerProps } from './not-prod-ready/ColorPicker/ColorPicker'
 export { Slider, type ISliderProps } from './not-prod-ready/Slider/Slider'
 export { Cascader, type ICascaderProps } from './data-entry/Cascader/Cascader'
