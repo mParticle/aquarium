@@ -14,7 +14,7 @@ const meta: Meta<typeof RadioCards> = {
 export default meta
 type Story = StoryObj<typeof RadioCards>
 
-export const VerticalRadioCardGroup: Story = {
+export const Vertical: Story = {
   render: () => {
     const [value, setValue] = useState('secret')
 
@@ -58,7 +58,7 @@ export const VerticalRadioCardGroup: Story = {
   },
 }
 
-export const HorizontalRadioCardGroup: Story = {
+export const Horizontal: Story = {
   render: () => {
     const [value, setValue] = useState('warehouse')
 
@@ -85,6 +85,37 @@ export const HorizontalRadioCardGroup: Story = {
             ]}
           />
         </Flex>
+      </Center>
+    )
+  },
+}
+
+export const Disabled: Story = {
+  render: () => {
+    const [value, setValue] = useState('standard')
+
+    return (
+      <Center>
+        <RadioCards
+          value={value}
+          onChange={setValue}
+          orientation="vertical"
+          radioAlign="start"
+          options={[
+            {
+              value: 'standard',
+              title: 'Standard Access',
+              description: 'Full access to all standard features and integrations.',
+            },
+            {
+              value: 'premium',
+              title: 'Premium Access',
+              description: 'Enhanced features with priority support and advanced analytics.',
+              disabled: true,
+              tooltipTitle: 'Premium access requires an upgraded subscription plan.',
+            },
+          ]}
+        />
       </Center>
     )
   },
