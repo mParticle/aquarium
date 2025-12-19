@@ -12,13 +12,9 @@ const config: StorybookConfig & StorybookVitePlugins = {
   },
   staticDirs: [{ from: './public/images', to: 'images' }],
 
-  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(ts|tsx)', '../docs/**/*.stories.@(ts|tsx)', '../docs/**/*.mdx'],
+  stories: ['../src/**/*.stories.@(ts|tsx)', '../docs/**/*.stories.@(ts|tsx)'],
 
   addons: [],
-
-  docs: {
-    defaultName: 'Documentation',
-  },
 
   plugins: [react()],
 
