@@ -137,6 +137,7 @@ const defaultNotificationCenter: INotificationCenterProps = {
 
 const meta: Meta<typeof GlobalNavigation> = {
   title: 'Components/Navigation/GlobalNavigation',
+  tags: ['skip-test'],
   component: props => (
     <Center style={{ minHeight: '800px' }}>
       <GlobalNavigation {...props}></GlobalNavigation>

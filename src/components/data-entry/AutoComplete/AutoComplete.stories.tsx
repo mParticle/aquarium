@@ -1,5 +1,6 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { useState } from 'react'
+import { expect, screen, userEvent, within } from 'storybook/test'
 import { AutoComplete } from 'src/components'
 import { type IAutoCompleteProps } from 'src/components/data-entry/AutoComplete/AutoComplete'
 
@@ -13,6 +14,7 @@ const baseOptions = [
 
 const meta: Meta<typeof AutoComplete> = {
   title: 'Components/Data Entry/Auto Complete',
+  tags: ['play-test-validation'],
   component: props => {
     const [value, setValue] = useState<IAutoCompleteProps['value']>('')
     const [options, setOptions] = useState<IAutoCompleteProps['options']>([])
@@ -89,5 +91,17 @@ export const Primary: Story = {
   args: {
     placeholder: '-Select-',
     style: { width: 200 },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const input = canvas.getByRole('combobox')
+
+    await userEvent.type(input, 'quick')
+
+    const dropdown = await screen.findByText('The quick brown fox jumps over the lazy dog')
+    await expect(dropdown).toBeInTheDocument()
+
+    await userEvent.click(dropdown)
+    await expect(input).toHaveValue('1')
   },
 }

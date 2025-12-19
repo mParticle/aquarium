@@ -1,4 +1,5 @@
 import { type Meta, type StoryObj } from '@storybook/react'
+import { expect, screen, userEvent } from 'storybook/test'
 import { Button, Flex } from 'src/components'
 import { Popconfirm } from 'src/components/feedback/Popconfirm/Popconfirm'
 import { Typography } from 'src/components/general/Typography/Typography'
@@ -6,7 +7,7 @@ import { Typography } from 'src/components/general/Typography/Typography'
 const meta: Meta<typeof Popconfirm> = {
   title: 'Components/Feedback/Popconfirm',
   component: Popconfirm,
-
+  tags: ['play-test-validation'],
   args: {},
 }
 export default meta
@@ -30,5 +31,14 @@ export const Primary: Story = {
     okText: 'Resume',
     overlayInnerStyle: { maxWidth: '320px' },
     children: <Button>Show popconfirm</Button>,
+  },
+  play: async () => {
+    const triggerButton = screen.getByText('Show popconfirm')
+    await userEvent.hover(triggerButton)
+
+    const resumeButton = await screen.findByText('Resume')
+    await expect(resumeButton).toBeInTheDocument()
+
+    await userEvent.click(resumeButton)
   },
 }
