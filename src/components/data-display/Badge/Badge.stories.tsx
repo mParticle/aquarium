@@ -1,8 +1,7 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { Badge } from 'src/components/data-display/Badge/Badge'
-import { ColorPrimary } from 'src/styles/style'
-import { ExampleStory } from 'src/utils/ExampleStory'
 import { Space } from 'src/components'
+import { ColorPrimary, ColorSuccess, ColorWarning, ColorError, ColorBorderSecondary } from 'src/styles/style'
 
 const meta: Meta<typeof Badge> = {
   title: 'Components/Data Display/Badge',
@@ -18,9 +17,22 @@ type Story = StoryObj<typeof Badge>
 */
 
 export const DotBadge: Story = {
-  args: {
-    dot: true,
-    color: ColorPrimary,
+  render: () => {
+    const colors = [
+      { label: 'Primary', value: ColorPrimary },
+      { label: 'Success', value: ColorSuccess },
+      { label: 'Warning', value: ColorWarning },
+      { label: 'Error', value: ColorError },
+      { label: 'Paused', value: ColorBorderSecondary },
+    ] as const
+
+    return (
+      <Space wrap size="large">
+        {colors.map(({ label, value }) => (
+          <Badge dot key={label} color={value} title={label} />
+        ))}
+      </Space>
+    )
   },
 }
 
@@ -33,23 +45,13 @@ export const StatusBadge: Story = {
   },
   render: () => {
     return (
-      <ExampleStory title="Standalone badge with status.">
-        <Space>
-          <Badge status="success" />
-          <Badge status="error" />
-          <Badge status="default" />
-          <Badge status="processing" />
-          <Badge status="warning" />
-        </Space>
-        <br />
-        <Space orientation="vertical">
-          <Badge status="success" text="Success" />
-          <Badge status="error" text="Error" />
-          <Badge status="default" text="Default" />
-          <Badge status="processing" text="Processing" />
-          <Badge status="warning" text="Warning" />
-        </Space>
-      </ExampleStory>
+      <Space direction="horizontal" wrap size="large">
+        <Badge status="success" text="Success" />
+        <Badge status="error" text="Error" />
+        <Badge status="default" text="Paused" />
+        <Badge status="processing" text="Processing" />
+        <Badge status="warning" text="Warning" />
+      </Space>
     )
   },
 }
