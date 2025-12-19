@@ -8,7 +8,7 @@ type WorkspaceSelectorContentProps = {
   onSearch: (e: ChangeEvent<HTMLInputElement>) => void
   searchTerm: string
   hasSearchInput: boolean
-  inputRef: RefObject<InputRef>
+  inputRef: RefObject<InputRef | null>
   hasNoResults: boolean
   menuItems: IWorkspaceSelectorDisplayItem[]
   navigationButtonItemOptions?: {

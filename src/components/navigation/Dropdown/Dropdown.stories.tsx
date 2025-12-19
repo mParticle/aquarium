@@ -111,7 +111,7 @@ export const Disabled: Story = {
 
 export const CustomDropdownRender: Story = {
   args: {
-    dropdownRender: (menus: ReactNode) => {
+    dropdownRender: (_menus: ReactNode) => {
       // Customize dropdown content as needed
       return <div> Custom Components Go Here</div>
     },
@@ -156,7 +156,7 @@ export const OpenDropdown: Story = {
 
 export const OnOpenChangeCallback: Story = {
   args: {
-    onOpenChange: (open: boolean, info: { source: 'trigger' | 'menu' }) => {
+    onOpenChange: (open: boolean, _info: { source: 'trigger' | 'menu' }) => {
       alert('Dropdown Open: ' + open)
     },
   },
@@ -471,7 +471,7 @@ export const ExampleCustomDropdown: Story = {
           menu={{ items }}
           dropdownRender={menu => (
             <div style={contentStyle}>
-              {cloneElement(menu as React.ReactElement, { style: menuStyle })}
+              {cloneElement(menu as React.ReactElement<{ style?: React.CSSProperties }>, { style: menuStyle })}
               <Divider style={{ margin: 0 }} />
               <Space style={{ padding: 8 }}>
                 <Button type="primary">Click me!</Button>
@@ -808,7 +808,7 @@ export const ExampleButtons: Story = {
               <Tooltip title="tooltip" key="leftButton">
                 {leftButton}
               </Tooltip>,
-              cloneElement(rightButton as React.ReactElement<any, string>, { loading: true }),
+              cloneElement(rightButton as React.ReactElement<{ loading?: boolean }>, { loading: true }),
             ]}>
             With Tooltip
           </Dropdown.Button>
