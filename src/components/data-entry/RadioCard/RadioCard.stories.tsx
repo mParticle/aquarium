@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { useState } from 'react'
 import { RadioCards } from './RadioCard'
-import { Center, Flex } from 'src/components'
+import { Center } from 'src/components'
 
 const meta: Meta<typeof RadioCards> = {
   title: 'Components/Data Entry/RadioCard',
@@ -64,27 +64,25 @@ export const Horizontal: Story = {
 
     return (
       <Center>
-        <Flex vertical style={{ maxWidth: '1200px', width: '100%' }}>
-          <RadioCards
-            value={value}
-            onChange={setValue}
-            orientation="horizontal"
-            radioAlign="center"
-            options={[
-              {
-                value: 'warehouse',
-                title: 'Warehouse Only',
-                description: "This audience membership won't be saved to mParticle user profiles.",
-              },
-              {
-                value: 'hybrid',
-                title: 'Enable for Hybrid Audiences',
-                description:
-                  'Add membership of this audience to in platform profiles and optionally enrich audience with in platform user data.',
-              },
-            ]}
-          />
-        </Flex>
+        <RadioCards
+          value={value}
+          onChange={setValue}
+          orientation="horizontal"
+          radioAlign="center"
+          options={[
+            {
+              value: 'warehouse',
+              title: 'Warehouse Only',
+              description: "This audience membership won't be saved to mParticle user profiles.",
+            },
+            {
+              value: 'hybrid',
+              title: 'Enable for Hybrid Audiences',
+              description:
+                'Add membership of this audience to in platform profiles and optionally enrich audience with in platform user data.',
+            },
+          ]}
+        />
       </Center>
     )
   },

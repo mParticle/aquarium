@@ -15,19 +15,6 @@ import {
   Padding,
 } from 'src/styles/style'
 
-interface RadioCardProps {
-  value: string
-  title: React.ReactNode
-  description?: React.ReactNode
-  disabled?: boolean
-}
-
-interface RadioCardInternalProps extends RadioCardProps {
-  checked?: boolean
-  onChange?: (value: string) => void
-  radioAlign?: 'start' | 'center'
-}
-
 export interface RadioCardOption<T extends React.Key> {
   value: T
   title: React.ReactNode
@@ -47,7 +34,17 @@ export interface RadioCardsProps<T extends React.Key> {
   gap?: number | string
 }
 
-const RadioCard: React.FC<RadioCardInternalProps> = ({
+interface RadioCardProps {
+  value: string
+  title: React.ReactNode
+  description?: React.ReactNode
+  disabled?: boolean
+  checked?: boolean
+  onChange?: (value: string) => void
+  radioAlign?: 'start' | 'center'
+}
+
+const RadioCard: React.FC<RadioCardProps> = ({
   title,
   description,
   value,
