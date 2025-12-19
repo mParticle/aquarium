@@ -29,10 +29,10 @@
     "node": ">=18.0.0"
   },
   "peerDependencies": {
-    "antd": "^6.1.1",
+    "antd": "6.1.1",
     "dayjs": "1.11.x",
-    "react": ">=18.0.0",
-    "react-dom": ">=18.0.0"
+    "react": ">=19.0.0",
+    "react-dom": ">=19.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "19.2.1",

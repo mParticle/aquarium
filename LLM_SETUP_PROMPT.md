@@ -8,19 +8,14 @@
 
 **Required Dependencies:**
 
-```bash
-yarn add @mparticle/aquarium antd@5 dayjs@1
-```
-
 **Dependency Matrix:**
 | Package | Required | Purpose |
 |---------|----------|---------|
 | `@mparticle/aquarium` | ✅ Yes | Main Aquarium component library |
-| `antd` | ✅ Yes | Peer dependency - Ant Design UI framework |
-| `dayjs` | ✅ Yes | Peer dependency - Date handling for DatePicker, Calendar, etc. |
-| `react` | ✅ Yes | Peer dependency (>=17.0.2) |
-| `react-dom` | ✅ Yes | Peer dependency (>=17.0.2) |
-
+| `antd` | ✅ Yes | Peer dependency (6.1.x) - Ant Design UI framework |
+| `dayjs` | ✅ Yes | Peer dependency (1.11.x) - Date handling for DatePicker, Calendar, etc. |
+| `react` | ✅ Yes | Peer dependency (>=19.0.2) |
+| `react-dom` | ✅ Yes | Peer dependency (>=19.0.0) |
 **Post-Installation:**
 
 1. Add aquarium CSS to app styles entry point (ex `main.scss`, `style.less`, or global entry):
