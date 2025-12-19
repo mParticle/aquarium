@@ -1,5 +1,5 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { expect, fn, screen, userEvent } from '@storybook/test'
+import { expect, fn, screen, userEvent } from 'storybook/test'
 import React, { useState } from 'react'
 import {
   Button,

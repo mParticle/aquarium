@@ -1,6 +1,6 @@
 import { Button } from 'src/components/general/Button/Button'
 import { type Meta, type StoryObj } from '@storybook/react'
-import { userEvent } from '@storybook/test'
+import { userEvent } from 'storybook/test'
 import { Alert, Flex, Icon, Typography, Tooltip } from 'src/components'
 import React from 'react'
 import { BorderRadiusLg, ColorBorderSecondary, ColorWhite, MarginMd, SizeXs } from 'src/styles/style'

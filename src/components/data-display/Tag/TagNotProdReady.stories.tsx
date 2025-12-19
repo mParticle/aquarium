@@ -4,8 +4,8 @@ import { Tag } from 'src/components/data-display/Tag/Tag'
 import { Divider, Flex, Space } from 'src/components'
 import { ExampleStory } from 'src/utils/ExampleStory'
 import { useState } from 'react'
-import { userEvent } from '@storybook/test'
-import { expect } from '@storybook/test'
+import { userEvent } from 'storybook/test'
+import { expect } from 'storybook/test'
 import { Icon } from 'src/components'
 
 const meta: Meta<typeof Tag> = {
@@ -17,7 +17,7 @@ const meta: Meta<typeof Tag> = {
     color: '',
     icon: null,
     bordered: true,
-    onClose: e => {
+    onClose: _e => {
       alert('Tag Closed')
     },
   },
@@ -60,7 +60,7 @@ export const WithoutBorder: Story = {
 export const WithOnCloseCallback: Story = {
   args: {
     closeIcon: true,
-    onClose: e => {
+    onClose: _e => {
       alert('Tag Closed')
     },
   },

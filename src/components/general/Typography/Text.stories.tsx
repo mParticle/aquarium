@@ -6,7 +6,7 @@ import { Typography } from 'src/components/general/Typography/Typography'
 import { PaddingLg } from 'src/styles/style'
 import { ExampleStory } from 'src/utils/ExampleStory'
 import { useState } from 'react'
-import { expect } from '@storybook/test'
+import { expect } from 'storybook/test'
 import { TypographyColors } from './colors'
 
 const meta: Meta<typeof Typography.Text> = {

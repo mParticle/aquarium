@@ -2,7 +2,6 @@ import type { StorybookConfig } from '@storybook/react-vite'
 import react from '@vitejs/plugin-react'
 import type { PluginOption, Plugin } from 'vite'
 import { withoutVitePlugins } from '@storybook/builder-vite'
-import remarkGfm from 'remark-gfm'
 
 type StorybookVitePlugins = { plugins: (PluginOption[] | Plugin)[] }
 
@@ -15,22 +14,7 @@ const config: StorybookConfig & StorybookVitePlugins = {
 
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(ts|tsx)', '../docs/**/*.stories.@(ts|tsx)', '../docs/**/*.mdx'],
 
-  addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@storybook/addon-interactions',
-    {
-      name: '@storybook/addon-docs',
-      options: {
-        mdxPluginOptions: {
-          mdxCompileOptions: {
-            // needed for rendering markdown tables in .mdx
-            remarkPlugins: [remarkGfm],
-          },
-        },
-      },
-    },
-  ],
+  addons: [],
 
   docs: {
     defaultName: 'Documentation',
@@ -46,7 +30,7 @@ const config: StorybookConfig & StorybookVitePlugins = {
   },
 
   core: {
-    disableTelemetry: true, // requested by security
+    disableTelemetry: true,
   },
 
   typescript: {
