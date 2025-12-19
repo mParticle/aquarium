@@ -14,7 +14,7 @@ const meta: Meta<typeof Checkbox> = {
       <Checkbox
         {...props}
         checked={checked}
-        onChange={e => {
+        onChange={_e => {
           setChecked(!checked)
         }}
       />

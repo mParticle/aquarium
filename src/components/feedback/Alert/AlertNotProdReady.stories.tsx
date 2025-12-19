@@ -86,7 +86,7 @@ export const ExampleAllTypes: Story = {
     return (
       <>
         <ExampleStory title={<>There are 4 types of Alert: success, info, warning, error.</>}>
-          <Space direction="vertical" style={{ width: '100%' }}>
+          <Space orientation="vertical" style={{ width: '100%' }}>
             <Alert message="Success Text" type="success" />
             <Alert message="Info Text" type="info" />
             <Alert message="Warning Text" type="warning" />
@@ -103,7 +103,7 @@ export const ExampleClosable: Story = {
     return (
       <>
         <ExampleStory title="With close button">
-          <Space direction="vertical" style={{ width: '100%' }}>
+          <Space orientation="vertical" style={{ width: '100%' }}>
             <Alert
               message="Warning Text Warning Text Warning TextW arning Text Warning Text Warning TextWarning Text"
               type="warning"
@@ -133,7 +133,7 @@ export const ExampleBanner: Story = {
     return (
       <>
         <ExampleStory title="Display Alert as a banner at top of page">
-          <Space direction="vertical" style={{ width: '100%' }}>
+          <Space orientation="vertical" style={{ width: '100%' }}>
             <Alert message="Warning text" banner />
             <Alert message="Very long warning text warning text text text text text text text" banner closable />
             <Alert showIcon={false} message="Warning text without icon" banner />
@@ -180,7 +180,7 @@ export const ExampleCustomActions: Story = {
     return (
       <>
         <ExampleStory title="Custom CTAs">
-          <Space direction="vertical" style={{ width: '100%' }}>
+          <Space orientation="vertical" style={{ width: '100%' }}>
             <Alert
               message="Success Tips"
               type="success"
@@ -221,7 +221,7 @@ export const ExampleCustomActions: Story = {
               type="info"
               closable
               action={
-                <Space direction="vertical">
+                <Space orientation="vertical">
                   <Button size="small" type="primary">
                     Accept
                   </Button>

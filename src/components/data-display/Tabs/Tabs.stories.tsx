@@ -1,4 +1,5 @@
 import { type Meta, type StoryObj } from '@storybook/react'
+import { expect, userEvent, within } from 'storybook/test'
 import { type ITabsProps, Tabs } from 'src/components/data-display/Tabs/Tabs'
 
 const items: ITabsProps['items'] = [
@@ -23,7 +24,7 @@ const items: ITabsProps['items'] = [
 const meta: Meta<typeof Tabs> = {
   title: 'Components/Data Display/Tabs',
   component: Tabs,
-
+  tags: ['play-test-validation'],
   args: {},
 }
 export default meta
@@ -34,5 +35,14 @@ export const Primary: Story = {
   args: {
     items,
     defaultActiveKey: '1',
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    await expect(canvas.getByText('Content of Tab Pane 1')).toBeInTheDocument()
+
+    await userEvent.click(canvas.getByText('Tab 3'))
+
+    await expect(canvas.getByText('Content of Tab Pane 3')).toBeInTheDocument()
   },
 }

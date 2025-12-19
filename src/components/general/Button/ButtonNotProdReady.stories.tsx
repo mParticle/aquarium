@@ -1,6 +1,6 @@
 import { Button } from 'src/components/general/Button/Button'
 import { type Meta, type StoryObj } from '@storybook/react'
-import { userEvent } from '@storybook/test'
+import { userEvent } from 'storybook/test'
 import { Icon } from 'src/components'
 import React from 'react'
 
@@ -150,7 +150,7 @@ export const Small: Story = {
 
 export const PrimaryButtonWithClick: Story = {
   args: {
-    onClick: e => {
+    onClick: _e => {
       alert('Button Clicked')
     },
   },

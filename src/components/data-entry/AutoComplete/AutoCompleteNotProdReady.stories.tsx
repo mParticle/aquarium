@@ -409,7 +409,7 @@ export const ExampleStatus: Story = {
 
     return (
       <ExampleStory title="Add status to AutoComplete with status, which could be error or warning.">
-        <Space direction="vertical" style={{ width: '100%' }}>
+        <Space orientation="vertical" style={{ width: '100%' }}>
           <AutoComplete
             placeholder="Error"
             options={options}

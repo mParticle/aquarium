@@ -1,6 +1,6 @@
 import { Button } from 'src/components/general/Button/Button'
 import { type Meta, type StoryObj } from '@storybook/react'
-import { userEvent } from '@storybook/test'
+import { userEvent } from 'storybook/test'
 import { Alert, Dropdown, Flex, Icon, Typography, Tooltip } from 'src/components'
 import React from 'react'
 import type { MenuProps } from 'antd'

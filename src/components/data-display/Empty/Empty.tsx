@@ -92,7 +92,7 @@ export const Empty = (props: IEmptyProps) => {
 
     return (
       <Flex vertical gap={16} align="center" style={{ marginTop: Margin }}>
-        <Space direction="vertical" size={2}>
+        <Space orientation="vertical" size={2}>
           {title && <Typography.Text size="lg">{title}</Typography.Text>}
           {description &&
             (typeof description === 'string' ? (

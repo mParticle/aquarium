@@ -2,20 +2,21 @@ import { DatePicker, Tooltip } from 'src/components'
 import dayjs, { type Dayjs } from 'dayjs'
 import React, { useState } from 'react'
 import { type Meta, type StoryObj } from '@storybook/react'
-import { type CellRender as RcPickerCellRender, type CellRenderInfo } from 'rc-picker/lib/interface'
+import { type CellRender as RcPickerCellRender, type CellRenderInfo } from '@rc-component/picker/lib/interface'
 
 export const DatePickerWithDisabledYears: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState<Dayjs | null>(null)
   const disabledDate = (current: Dayjs): boolean => current && current.year() < 2023
-  const handleChange = (date: Dayjs | null) => {
-    if (date && disabledDate(date)) {
+  const handleChange = (date: Dayjs | Dayjs[] | null) => {
+    const singleDate = Array.isArray(date) ? date[0] : date
+    if (singleDate && disabledDate(singleDate)) {
       setSelectedDate(null)
     } else {
-      setSelectedDate(date)
+      setSelectedDate(singleDate)
     }
   }
 
-  const cellRender: RcPickerCellRender<Dayjs> = (current, info: CellRenderInfo<Dayjs>) => {
+  const cellRender: RcPickerCellRender<Dayjs> = (current: Dayjs | number | string, info: CellRenderInfo<Dayjs>) => {
     if (!dayjs.isDayjs(current)) {
       return info.originNode
     }

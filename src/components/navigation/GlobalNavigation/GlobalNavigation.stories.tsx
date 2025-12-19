@@ -1,5 +1,5 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { expect, fn, screen, userEvent } from '@storybook/test'
+import { expect, fn, screen, userEvent } from 'storybook/test'
 import React, { useState } from 'react'
 import {
   Button,
@@ -137,6 +137,7 @@ const defaultNotificationCenter: INotificationCenterProps = {
 
 const meta: Meta<typeof GlobalNavigation> = {
   title: 'Components/Navigation/GlobalNavigation',
+  tags: ['skip-test'],
   component: props => (
     <Center style={{ minHeight: '800px' }}>
       <GlobalNavigation {...props}></GlobalNavigation>

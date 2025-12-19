@@ -1,7 +1,7 @@
 import React from 'react'
 import { Tooltip, type ITooltipProps } from 'src/components'
 
-export interface IUnauthorizedTooltipProps extends Omit<ITooltipProps, 'title'> {
+export interface IUnauthorizedTooltipProps extends Omit<ITooltipProps, 'title' | 'children'> {
   isAuthorized: boolean
   children: React.ReactElement
   unauthorizedMessage?: React.ReactNode
@@ -20,10 +20,10 @@ export const UnauthorizedTooltip: React.FC<IUnauthorizedTooltipProps> = ({
   ...tooltipProps
 }) => {
   const tooltipStyles = {
-    body: {
+    container: {
       maxWidth,
       textAlign: 'center' as const,
-      ...styles?.body,
+      ...(typeof styles === 'object' && styles?.container ? styles.container : {}),
     },
   }
 

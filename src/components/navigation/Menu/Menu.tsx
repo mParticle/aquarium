@@ -1,6 +1,6 @@
 import { Menu as AntMenu, type MenuProps } from 'antd'
 import { type MenuProps as AntMenuProps } from 'antd'
-import { type MenuInfo as RCMenuInfo } from 'rc-menu/lib/interface'
+import { type MenuInfo as RCMenuInfo } from '@rc-component/menu/lib/interface'
 import { ConfigProvider } from 'src/components'
 
 type AntDMenuItemType = Required<MenuProps>['items'][number]

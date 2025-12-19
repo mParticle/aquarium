@@ -32,9 +32,8 @@ export const Button = (props: IButtonProps) => {
       props.icon
     )
 
-  const extraClass = props.variant === 'with-new-icon' ? classMap['with-new-icon'] : ''
-
   const { variant, color, style, ...restProps } = props
+  const extraClass = variant === 'with-new-icon' ? classMap['with-new-icon'] : ''
 
   const buttonStyle = color ? { ...style, color } : style
 

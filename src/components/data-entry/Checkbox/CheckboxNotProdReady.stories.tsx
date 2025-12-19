@@ -4,8 +4,8 @@ import { Checkbox, Divider } from 'src/components'
 import { useState } from 'react'
 import { ExampleStory } from 'src/utils/ExampleStory'
 import { type ICheckboxProps } from 'src/components/data-entry/Checkbox/Checkbox'
-import { userEvent } from '@storybook/test'
-import { expect } from '@storybook/test'
+import { userEvent } from 'storybook/test'
+import { expect } from 'storybook/test'
 
 export type CheckboxValueType = string | number | boolean
 
@@ -17,7 +17,7 @@ const meta: Meta<typeof Checkbox> = {
       <Checkbox
         {...props}
         checked={checked}
-        onChange={e => {
+        onChange={_e => {
           setChecked(!checked)
         }}
       />

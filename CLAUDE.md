@@ -1,2 +1,1 @@
-- start all new branches with either fix/ feat/ chore/
 - Always read CONTRIBUTING.md before executing any git action
