@@ -32,10 +32,8 @@ export const Button = (props: IButtonProps) => {
       props.icon
     )
 
-  const extraClass = props.variant === 'with-new-icon' ? classMap['with-new-icon'] : ''
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { variant, color, style, ...restProps } = props
+  const extraClass = variant === 'with-new-icon' ? classMap['with-new-icon'] : ''
 
   const buttonStyle = color ? { ...style, color } : style
 
