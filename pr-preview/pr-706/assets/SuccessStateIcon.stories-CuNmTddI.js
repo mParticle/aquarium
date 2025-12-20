@@ -1,5 +1,0 @@
-var u=Object.defineProperty,d=Object.defineProperties;var l=Object.getOwnPropertyDescriptors;var c=Object.getOwnPropertySymbols;var S=Object.prototype.hasOwnProperty,g=Object.prototype.propertyIsEnumerable;var n=(t,e,o)=>e in t?u(t,e,{enumerable:!0,configurable:!0,writable:!0,value:o}):t[e]=o,r=(t,e)=>{for(var o in e||(e={}))S.call(e,o)&&n(t,o,e[o]);if(c)for(var o of c(e))g.call(e,o)&&n(t,o,e[o]);return t},a=(t,e)=>d(t,l(e));import{S as f}from"./SuccessStateIcon-CaXEMaF4.js";import"./jsx-runtime-GRP_BLAX.js";import"./index-CNk6hRaE.js";import"./style-C9UL_bK6.js";import"./AntdIcon-Bm4W6gxM.js";import"./Context-BUSkoOJ1.js";import"./presets-vy2ytAcW.js";const O={title:"Components/General/Icons/SuccessStateIcon",component:f,parameters:{docs:{description:{component:"Success State Icon component."}}}},s={args:{size:"lg"}};var m,p,i;s.parameters=a(r({},s.parameters),{docs:a(r({},(m=s.parameters)==null?void 0:m.docs),{source:r({originalSource:`{
-  args: {
-    size: 'lg'
-  }
-}`},(i=(p=s.parameters)==null?void 0:p.docs)==null?void 0:i.source)})});const b=["Default"];export{s as Default,b as __namedExportsOrder,O as default};

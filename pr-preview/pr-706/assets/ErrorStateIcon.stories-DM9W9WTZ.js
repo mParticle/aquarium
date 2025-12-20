@@ -1,5 +1,0 @@
-var d=Object.defineProperty,l=Object.defineProperties;var u=Object.getOwnPropertyDescriptors;var n=Object.getOwnPropertySymbols;var g=Object.prototype.hasOwnProperty,E=Object.prototype.propertyIsEnumerable;var m=(t,r,o)=>r in t?d(t,r,{enumerable:!0,configurable:!0,writable:!0,value:o}):t[r]=o,e=(t,r)=>{for(var o in r||(r={}))g.call(r,o)&&m(t,o,r[o]);if(n)for(var o of n(r))E.call(r,o)&&m(t,o,r[o]);return t},s=(t,r)=>l(t,u(r));import{E as f}from"./ErrorStateIcon-BDqumtIe.js";import"./jsx-runtime-GRP_BLAX.js";import"./index-CNk6hRaE.js";import"./style-C9UL_bK6.js";import"./WarningFilled-KKNPfhjt.js";import"./AntdIcon-Bm4W6gxM.js";import"./Context-BUSkoOJ1.js";import"./presets-vy2ytAcW.js";const b={title:"Components/General/Icons/ErrorStateIcon",component:f,parameters:{docs:{description:{component:"Error State Icon component."}}}},a={args:{size:"lg"}};var p,c,i;a.parameters=s(e({},a.parameters),{docs:s(e({},(p=a.parameters)==null?void 0:p.docs),{source:e({originalSource:`{
-  args: {
-    size: 'lg'
-  }
-}`},(i=(c=a.parameters)==null?void 0:c.docs)==null?void 0:i.source)})});const h=["Default"];export{a as Default,h as __namedExportsOrder,b as default};
