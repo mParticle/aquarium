@@ -6,18 +6,31 @@ import * as AvatarStories from '../../../../src/components/data-display/Avatar/A
 
 # Avatar
 
-#### Overview
+#### Shape
 
-The **Avatar** component is used to display a profile image, initials, or an icon, commonly for identification purposes.
+The default avatar is circular. Switch the `shape` prop to `square` when you need hard edges or when aligning with adjacent rectangular content.
 
-#### When to use
+<Canvas of={AvatarStories.ShapeExamples} />
 
-- To represent an account, organization, or workspace.
-- To represent a single user or as a placeholder when a user profile image isn’t available.
+#### Sizes
 
-#### Current Usage
+<Canvas of={AvatarStories.SizeExamples} />
 
-- **[Navigation](https://mparticle.github.io/aquarium/?path=/story/components-navigation-globalnavigation--primary)** – Avatar is used within the navigation sidebar to represent the selected workspace.
+#### Photo avatar
+
+<Canvas of={AvatarStories.TypePhoto} />
+
+#### Icon avatar
+
+<Canvas of={AvatarStories.TypeIcon} />
+
+#### Initial avatar
+
+<Canvas of={AvatarStories.TypeInitials} />
+
+#### Badge avatars
+
+<Canvas of={AvatarStories.WithBadge} />
 
 #### Related Links
 
@@ -26,7 +39,3 @@ The **Avatar** component is used to display a profile image, initials, or an ico
 | Eames | [Avatar Component](https://www.figma.com/design/veXnmignQnJz8StIq10VJ5/Eames-2.0---Foundations-%26-Components?node-id=397-12044&node-type=canvas&t=B6HJWqqDsUOypZQj-0) |
 | AntD | [Avatar Component](https://ant.design/components/avatar) |
 
-
-
-
-<Canvas meta={AvatarStories.default} />
