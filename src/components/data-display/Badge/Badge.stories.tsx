@@ -45,7 +45,7 @@ export const StatusBadge: Story = {
   },
   render: () => {
     return (
-      <Space direction="horizontal" wrap size="large">
+      <Space orientation="horizontal" wrap size="large">
         <Badge status="success" text="Success" />
         <Badge status="error" text="Error" />
         <Badge status="default" text="Paused" />

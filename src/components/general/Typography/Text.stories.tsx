@@ -89,7 +89,7 @@ export const ExampleTexts: Story = {
   render: () => {
     return (
       <ExampleStory title={<> </>}>
-        <Space direction="vertical">
+        <Space orientation="vertical">
           <Typography.Text>Aquarium (default)</Typography.Text>
           <Typography.Text type="secondary">Aquarium (secondary)</Typography.Text>
           <Typography.Text type="success">Aquarium (success)</Typography.Text>
@@ -113,7 +113,7 @@ export const ExampleProps: Story = {
   render: () => {
     return (
       <ExampleStory title={<> </>}>
-        <Space direction="vertical">
+        <Space orientation="vertical">
           <Typography.Text size="sm" color="ColorPrimaryText" style={{ paddingLeft: PaddingLg }}>
             Aquarium props test
           </Typography.Text>

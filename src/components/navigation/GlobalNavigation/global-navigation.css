@@ -159,6 +159,7 @@
 }
 
 .globalNavigation__searchButton {
+  width: 42px !important;
   padding-inline: var(--padding-xs) var(--padding-xs) !important;
 }
 

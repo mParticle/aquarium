@@ -377,7 +377,7 @@ export const ExampleStatus: Story = {
 
     return (
       <ExampleStory title="Add status to Mentions with status, which could be error or warning。">
-        <Space direction="vertical">
+        <Space orientation="vertical">
           <Mentions
             onChange={onChange}
             onSelect={console.log}
