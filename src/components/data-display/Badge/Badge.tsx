@@ -4,12 +4,12 @@ import { ConfigProvider } from 'src/components'
 import './Badge.css'
 
 export type BadgeVariant = 'default' | 'filled'
-export type BadgeSize = 'sm' | 'md' | 'lg'
+export type BadgeFilledSize = 'sm' | 'md' | 'lg'
 export type BadgeShape = 'pill' | 'square'
 
 export interface IBadgeProps extends Omit<AntBadgeProps, 'size'> {
   variant?: BadgeVariant
-  size?: BadgeSize
+  size?: BadgeFilledSize | 'default' | 'small'
   shape?: BadgeShape
 }
 
@@ -35,7 +35,7 @@ export const Badge = ({ variant = 'default', size = 'md', shape = 'pill', ...pro
 
   return (
     <ConfigProvider>
-      <AntBadge {...props} />
+      <AntBadge {...props} size={size as 'default' | 'small'} />
     </ConfigProvider>
   )
 }
