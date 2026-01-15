@@ -12,23 +12,21 @@ import * as BadgeStories from '../../../../src/components/data-display/Badge/Bad
 
 The **Badge** component provides visual indicators for an item’s status, available in two styles: a **dot** and a \*\*status badge" with text.
 
-### [Dot Badge](https://mparticle.github.io/aquarium/?path=/story/components-data-display-badge--dot-badge)
+#### Status badge
 
-#### When to use
+Use status badges to indicate where an item sits in a process with a clear beginning and end. Pair the dot with concise labels so the current state is obvious without extra context.
 
-Use **Badge** when a status needs to be displayed next to an element in a compact form.
+<Canvas of={BadgeStories.StatusBadge} />
 
-#### Current Usages
+#### Dot badge
 
-- **[Navigation](https://mparticle.github.io/aquarium/?path=/story/components-navigation-globalnavigation--primary)** – Badge is used within the navigation sidebar for notification use cases.
+Use dot badges to surface the current status of an item without additional copy. Each dot maps to the core status tokens, including the paused state for work that is temporarily on hold.
 
 <Canvas of={BadgeStories.DotBadge} />
 
-#### Related Links
+#### Related links
 
 | Type  | Resource                                                                                                                                                          |
 | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Eames | [Badge Component](https://www.figma.com/design/veXnmignQnJz8StIq10VJ5/Eames-2.0---Foundations-%26-Components?node-id=399-0&node-type=canvas&t=B6HJWqqDsUOypZQj-0) |
 | AntD  | [Badge Component](https://ant.design/components/badge)                                                                                                            |
-
-<Canvas of={BadgeStories.StatusBadge} />

@@ -1,8 +1,8 @@
 import { Button } from 'src/components/general/Button/Button'
 import { type Meta, type StoryObj } from '@storybook/react'
 import { userEvent } from '@storybook/test'
-import { Alert, Flex, Icon, Typography, Tooltip } from 'src/components'
-import React from 'react'
+import { Alert, Dropdown, Flex, Icon, Typography, Tooltip } from 'src/components'
+import type { MenuProps } from 'antd'
 import { BorderRadiusLg, ColorBorderSecondary, ColorWhite, MarginMd, SizeXs } from 'src/styles/style'
 
 const meta: Meta<typeof Button> = {
@@ -264,6 +264,34 @@ export const Refresh: Story = {
           </Tooltip>
         </Flex>
       </>
+    )
+  },
+}
+
+export const With2Options: Story = {
+  render: () => {
+    const refreshMenu: MenuProps = {
+      items: [
+        {
+          key: 'refresh-columns',
+          label: 'Refresh Columns',
+        },
+        {
+          key: 'refresh-values',
+          label: 'Refresh Values',
+        },
+      ],
+      onClick: ({ key }) => {
+        console.log('Selected:', key)
+      },
+    }
+
+    return (
+      <Dropdown menu={refreshMenu}>
+        <Button icon={<Icon name="refresh" size="sm" />}>
+          <Typography.Text>Refresh Now</Typography.Text>
+        </Button>
+      </Dropdown>
     )
   },
 }

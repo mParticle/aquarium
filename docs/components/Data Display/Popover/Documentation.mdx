@@ -1,6 +1,6 @@
 import { Meta, Canvas } from '@storybook/blocks'
 
-import * as PopoverStories from '../../../../src/components/data-display/Popover/Popover.stories'
+import PopoverStories, { Primary as PopoverPrimary } from '../../../../src/components/data-display/Popover/Popover.stories'
 
 <Meta of={PopoverStories} />
 
@@ -34,4 +34,4 @@ Use [Tooltip](https://mparticle.github.io/aquarium/?path=/story/components-data-
 | AntD | [Popover Component](https://ant.design/components/popover) |
 
 
-<Canvas meta={PopoverStories.default} />
+<Canvas of={PopoverPrimary} />
