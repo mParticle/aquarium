@@ -1,0 +1,47 @@
+/* Menu item padding overrides */
+.expandedSidebar__menu .ant-menu-item {
+  padding-left: var(--padding-sm) !important;
+  padding-right: var(--padding-sm) !important;
+  margin: 0 !important;
+}
+
+.expandedSidebar__menu .ant-menu-submenu-title {
+  padding-left: var(--padding-sm) !important;
+  padding-right: var(--padding-sm) !important;
+  margin: 0 !important;
+}
+
+.expandedSidebar__menu .ant-menu-item-group-title {
+  padding-left: var(--padding-sm) !important;
+  padding-right: var(--padding-sm) !important;
+
+  /* Let Typography.Text handle font styles */
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  color: inherit !important;
+}
+
+.expandedSidebar__menu .ant-menu-sub .ant-menu-item {
+  padding-left: calc(var(--padding-md) + 32px) !important;
+}
+
+.expandedSidebar__menu .ant-menu-sub {
+  background: transparent !important;
+}
+
+/* Ensure Sider children container fills height */
+.ant-layout-sider-children {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* User profile styles */
+.expandedSidebar__userProfile {
+  margin-top: auto;
+}
+
+.expandedSidebar__avatarWrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+

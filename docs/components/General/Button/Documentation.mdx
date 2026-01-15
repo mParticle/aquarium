@@ -1,4 +1,4 @@
-import { Meta, Canvas } from '@storybook/blocks'
+import { Meta, Canvas, Story } from '@storybook/blocks'
 
 import * as ButtonStories from '../../../../src/components/general/Button/Button.stories'
 
@@ -8,82 +8,59 @@ import * as ButtonStories from '../../../../src/components/general/Button/Button
 
 # Button
 
-#### Overview
+### Overview
 
 The **Button** component is used to trigger actions or navigate the interface. It supports various styles, sizes, and states to fit different use cases.
 
-#### Key Features
+### Button Types
 
-- **Variants:** Includes primary, default, dashed, text, and link buttons for different use cases.
-- **Sizes:** Supports small, medium (default), and large sizes.
-- **States:** Disabled, loading, and hover states to indicate action availability.
-- **Icons:** Easily integrate icons for visual clarity and emphasis.
+- **Primary** – High-emphasis actions like submitting or saving workflows.
+- **Secondary** – Supportive tasks such as canceling or opening supplemental dialogs.
+- **Tertiary** – Lower-priority options that should sit behind primary/secondary CTAs.
+- **Text** – Quiet inline affordances that should blend into surrounding content.
+- **Link** – Navigation-style actions that resemble hyperlinks within layouts.
 
+<Canvas of={ButtonStories.TypesOverview} />
 
-### Button Variants and Use Cases
+<Story of={ButtonStories.LinkUsageNote} />
 
-#### Primary Button
+### Button sizes
 
-**Use Case**: For the main action on a page or section.
-- **Example:** Submitting a form, saving changes, or initiating a key process.
+Buttons ship in three heights to support different layouts. The default is `middle`, shown alongside the smaller and larger options below.
 
-**Examples**:
+<Canvas of={ButtonStories.SizeExamples} />
 
-- **With Icon**:
-<Canvas of={ButtonStories.PrimaryWithIcon} />
+### Buttons with icons
 
-- **Without Icon**:
-<Canvas of={ButtonStories.Primary} />
+The icon-enabled variants mirror the same hierarchy while reinforcing meaning with glyphs.
 
-#### Default Button
+<Canvas of={ButtonStories.IconTypesOverview} />
 
-**Use Case**: For secondary actions that complement the primary task.
-- **Example:** Canceling an action, opening a dialog, or performing less important tasks.
+#### Icon-only buttons
 
-**Examples**:
+Icon-only buttons provide compact controls for toolbars and quick actions where text isn’t necessary.
 
-- **With Icon**:
-<Canvas of={ButtonStories.DefaultWithIcon} />
-
-- **Without Icon**:
-<Canvas of={ButtonStories.Default} />
-
-#### Dashed Button
-
-**Use Case**: For tertiary actions in the visual hierarchy.
-
-**Examples**:
-
-- **With Icon**:
-<Canvas of={ButtonStories.DashedWithIcon} />
-
-- **Without Icon**:
-<Canvas of={ButtonStories.Dashed} />
-
-#### Link Button
-
-**Use Case**: Ideal for triggering an actions that don't require heavy visual emphasis.
-- **Example:** Viewing errors, navigating to documentation
-When navigating to a new URL or external page, always use [Typography.Link](https://mparticle.github.io/aquarium/?path=/story/components-general-typography-link--primary) instead of a Link Button.
-
-**Examples**:
-
-- **With Icon**:
-<Canvas of={ButtonStories.LinkWithIcon} />
-
-- **Without Icon**:
-<Canvas of={ButtonStories.Link} />
-
-#### Icon-Only Button
-
-**Use Case**: For compact controls where only an icon is needed.
-- **Example:** Toolbar controls, close buttons, or quick actions.
-
-**Examples**:
 <Canvas of={ButtonStories.IconOnly} />
 
+### Loading state
 
-#### Related Links
+The loading variant keeps the user informed while an action finishes processing. Use concise labels that set expectations.
+
+<Canvas of={ButtonStories.Loading} />
+
+### Loading text button
+
+Use the text treatment for subtle “load more” affordances that need to display progress without taking extra visual weight.
+
+<Canvas of={ButtonStories.LoadingText} />
+
+### Destructive action
+
+Use the danger style to signal irreversible steps such as deletions. Pair it with clear language so users understand the impact.
+
+<Canvas of={ButtonStories.Danger} />
+
+### Related Links
 
 | Type  | Resource                                                                                                                                               |
 | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
