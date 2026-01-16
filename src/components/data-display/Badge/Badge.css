@@ -74,51 +74,25 @@
 /* Colors */
 .mp-badge-filled--success {
   background-color: var(--color-success-bg);
-  color: var(--color-success-text);
   border: 1px solid var(--color-success-border);
 }
 
 .mp-badge-filled--processing {
   background-color: var(--color-primary-bg);
-  color: var(--color-primary-text);
   border: 1px solid var(--color-primary-border);
 }
 
 .mp-badge-filled--error {
   background-color: var(--color-error-bg);
-  color: var(--color-error-text);
   border: 1px solid var(--color-error-border);
 }
 
 .mp-badge-filled--warning {
   background-color: var(--color-warning-bg);
-  color: var(--color-warning-text);
   border: 1px solid var(--color-warning-border);
 }
 
 .mp-badge-filled--default {
   background-color: var(--mp-brand-secondary-2);
-  color: var(--color-text-secondary);
   border: 1px solid var(--color-border-secondary);
-}
-
-/* Text colors */
-.mp-badge-filled--success .ant-badge-status-text {
-  color: var(--color-success-text) !important;
-}
-
-.mp-badge-filled--processing .ant-badge-status-text {
-  color: var(--color-primary-text) !important;
-}
-
-.mp-badge-filled--error .ant-badge-status-text {
-  color: var(--color-error-text) !important;
-}
-
-.mp-badge-filled--warning .ant-badge-status-text {
-  color: var(--color-warning-text) !important;
-}
-
-.mp-badge-filled--default .ant-badge-status-text {
-  color: var(--color-text-secondary) !important;
 }
