@@ -1,3 +1,19 @@
+# [1.62.0](https://github.com/mParticle/aquarium/compare/v1.61.0...v1.62.0) (2026-01-15)
+
+### Bug Fixes
+
+- theme checkbox group ([#711](https://github.com/mParticle/aquarium/issues/711)) ([ed50224](https://github.com/mParticle/aquarium/commit/ed502249c43d7dbda01d25bc28c9000a233ebb36))
+- update release process ([#692](https://github.com/mParticle/aquarium/issues/692)) ([ae8b57b](https://github.com/mParticle/aquarium/commit/ae8b57b9b2221eebe30eea5adfbdaeab4f1244be))
+
+### Features
+
+- add switch examples ([#674](https://github.com/mParticle/aquarium/issues/674)) ([dd40ffe](https://github.com/mParticle/aquarium/commit/dd40ffedb1b3ab718536e88649d52ad7f72fbd1f))
+- add switch examples ([#675](https://github.com/mParticle/aquarium/issues/675)) ([56f0200](https://github.com/mParticle/aquarium/commit/56f02001289cef9f5fb6d3979ba832fba9585e52))
+- eoy components clean up ([#703](https://github.com/mParticle/aquarium/issues/703)) ([a681d0b](https://github.com/mParticle/aquarium/commit/a681d0bfae9b819a68b9b0ee43eeca184b20f9c0))
+- fix release ([#682](https://github.com/mParticle/aquarium/issues/682)) ([5f0eff5](https://github.com/mParticle/aquarium/commit/5f0eff5bd3de6726bb40018c3ffa63a31cd4c97f))
+- radio group component ([#712](https://github.com/mParticle/aquarium/issues/712)) ([f49b1ff](https://github.com/mParticle/aquarium/commit/f49b1ffacf196fd4925b000b244c8508a861e9fe))
+- remove navigation code ([#677](https://github.com/mParticle/aquarium/issues/677)) ([27bee9d](https://github.com/mParticle/aquarium/commit/27bee9d6c46c81c70d690a626e574ef187e2a4a0))
+
 # [1.61.0](https://github.com/mParticle/aquarium/compare/v1.60.0...v1.61.0) (2025-12-05)
 
 ### Features
