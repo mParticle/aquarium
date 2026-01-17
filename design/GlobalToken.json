@@ -20,8 +20,10 @@
   "colorLink": { "value": "#3600d1" },
   "colorTextBase": { "value": "#000" },
   "colorBgBase": { "value": "#fff" },
-  "fontFamily": { "value": "'GT America', -system-ui, sans-serif" },
-  "fontFamilyCode": { "value": "‘Roboto Mono’, monospace" },
+  "fontFamily": { "value": "'Inter', -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" },
+  "fontFamilyCode": {
+    "value": "ui-monospace, 'Roboto Mono', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"
+  },
   "fontSize": { "value": "14px" },
   "lineWidth": { "value": "1px" },
   "lineType": { "value": "solid" },
