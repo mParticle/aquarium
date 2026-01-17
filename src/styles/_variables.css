@@ -1,3 +1,6 @@
+/* Import Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 :root {
   --blue: #1677FF;
   --purple: #722ED1;
@@ -20,8 +23,8 @@
   --color-link: #3600d1;
   --color-text-base: #000;
   --color-bg-base: #fff;
-  --font-family: 'GT America', -system-ui, sans-serif;
-  --font-family-code: ‘Roboto Mono’, monospace;
+  --font-family: 'Inter', -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-family-code: ui-monospace, 'Roboto Mono', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
   --font-size: 14px;
   --line-width: 1px;
   --line-type: solid;

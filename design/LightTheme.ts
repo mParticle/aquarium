@@ -37,8 +37,9 @@ export const LightTheme: IMpThemeConfig = {
     colorPrimaryText: '#2c00aa',
     colorPrimaryTextActive: '#20007a',
     controlOutline: 'rgba(54, 0, 209, 0.1)',
-    fontFamily: "'GT America', -system-ui, sans-serif",
-    fontFamilyCode: '‘Roboto Mono’, monospace',
+    fontFamily: "'Inter', -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    fontFamilyCode:
+      "ui-monospace, 'Roboto Mono', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
     fontWeightStrong: 500,
     colorFillAlterSolid: '#f8f6fb',
     colorFilledHandleBg: '#ebe8f8',

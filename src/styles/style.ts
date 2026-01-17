@@ -19,8 +19,9 @@ export const ColorInfo = '#3600d1'
 export const ColorLink = '#3600d1'
 export const ColorTextBase = '#000'
 export const ColorBgBase = '#fff'
-export const FontFamily = "'GT America', -system-ui, sans-serif"
-export const FontFamilyCode = '‘Roboto Mono’, monospace'
+export const FontFamily = "'Inter', -apple-system, 'Segoe UI', Roboto, Arial, sans-serif"
+export const FontFamilyCode =
+  "ui-monospace, 'Roboto Mono', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"
 export const FontSize = '14px'
 export const LineWidth = '1px'
 export const LineType = 'solid'
