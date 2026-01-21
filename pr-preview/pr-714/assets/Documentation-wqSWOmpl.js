@@ -1,0 +1,7 @@
+import{j as o}from"./jsx-runtime-u17CrQMm.js";import{useMDXComponents as r}from"./index-BdjsESbt.js";import{M as s,C as e}from"./blocks-p0hkTQkD.js";import{U as a,M as m,D as p}from"./UnauthorizedTooltip.stories-D4f-_3P5.js";import"./iframe-ZAwtOOsv.js";import"./preload-helper-PPVm8Dsz.js";import"./index-BkWt5-fR.js";import"./index-CKTaITbW.js";import"./UnauthorizedTooltip-C-uexwNG.js";import"./ErrorStateIcon-B6JkuEkJ.js";import"./style-BLGxefMg.js";import"./WarningFilled-DrGq8YeO.js";import"./AntdIcon-CLyLtIX5.js";import"./Context-D1vOXvMD.js";import"./presets-C7IxLGBr.js";import"./SuccessStateIcon-BoEEKEoh.js";import"./WarningStateIcon-DvK-CXgy.js";import"./LightTheme-BtoaoHMG.js";import"./row-_uEFDODe.js";import"./useToken-xerQhSdt.js";import"./client-D5Z-HDZA.js";function n(i){const t={h1:"h1",h4:"h4",p:"p",...r(),...i.components};return o.jsxs(o.Fragment,{children:[o.jsx(s,{of:a}),`
+`,o.jsx(t.h1,{id:"roles--permission-restrictions",children:"Roles & Permission restrictions"}),`
+`,o.jsx(t.h4,{id:"when-to-use",children:"When To Use"}),`
+`,o.jsx(t.p,{children:"When users don't have access to specific functionality due to roles and permissions, disable rather than remove. Unavailable input fields are disabled, and a tooltip with an explanation is displayed on hover."}),`
+`,o.jsx(t.h4,{id:"example",children:"Example"}),`
+`,o.jsx(e,{of:m}),`
+`,o.jsx(e,{of:p})]})}function _(i={}){const{wrapper:t}={...r(),...i.components};return t?o.jsx(t,{...i,children:o.jsx(n,{...i})}):n(i)}export{_ as default};

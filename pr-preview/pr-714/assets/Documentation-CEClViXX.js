@@ -1,0 +1,6 @@
+import{j as t}from"./jsx-runtime-u17CrQMm.js";import{useMDXComponents as m}from"./index-BdjsESbt.js";import{M as i,C as e}from"./blocks-p0hkTQkD.js";import{A as p,m as s}from"./Anchor.stories-CWZFTmz6.js";import"./iframe-ZAwtOOsv.js";import"./preload-helper-PPVm8Dsz.js";import"./index-BkWt5-fR.js";import"./index-CKTaITbW.js";import"./UnauthorizedTooltip-C-uexwNG.js";import"./ErrorStateIcon-B6JkuEkJ.js";import"./style-BLGxefMg.js";import"./WarningFilled-DrGq8YeO.js";import"./AntdIcon-CLyLtIX5.js";import"./Context-D1vOXvMD.js";import"./presets-C7IxLGBr.js";import"./SuccessStateIcon-BoEEKEoh.js";import"./WarningStateIcon-DvK-CXgy.js";import"./LightTheme-BtoaoHMG.js";import"./row-_uEFDODe.js";import"./useToken-xerQhSdt.js";import"./client-D5Z-HDZA.js";import"./ExampleStory-B49bSB_-.js";function n(o){const r={h1:"h1",p:"p",...m(),...o.components};return t.jsxs(t.Fragment,{children:[t.jsx(i,{of:p}),`
+`,`
+`,t.jsx(r.h1,{id:"anchor",children:"Anchor"}),`
+`,t.jsx(r.p,{children:"This is the documentation for the Anchor component"}),`
+`,`
+`,t.jsx(e,{meta:s})]})}function R(o={}){const{wrapper:r}={...m(),...o.components};return r?t.jsx(r,{...o,children:t.jsx(n,{...o})}):n(o)}export{R as default};

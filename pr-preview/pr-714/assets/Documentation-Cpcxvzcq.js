@@ -1,0 +1,15 @@
+import{j as n}from"./jsx-runtime-u17CrQMm.js";import{useMDXComponents as i}from"./index-BdjsESbt.js";import{M as s,S as o}from"./blocks-p0hkTQkD.js";import{C as d,P as a}from"./Card.stories-DiLafI12.js";import"./iframe-ZAwtOOsv.js";import"./preload-helper-PPVm8Dsz.js";import"./index-BkWt5-fR.js";import"./index-CKTaITbW.js";import"./UnauthorizedTooltip-C-uexwNG.js";import"./ErrorStateIcon-B6JkuEkJ.js";import"./style-BLGxefMg.js";import"./WarningFilled-DrGq8YeO.js";import"./AntdIcon-CLyLtIX5.js";import"./Context-D1vOXvMD.js";import"./presets-C7IxLGBr.js";import"./SuccessStateIcon-BoEEKEoh.js";import"./WarningStateIcon-DvK-CXgy.js";import"./LightTheme-BtoaoHMG.js";import"./row-_uEFDODe.js";import"./useToken-xerQhSdt.js";import"./client-D5Z-HDZA.js";import"./ExampleStory-B49bSB_-.js";function r(e){const t={h1:"h1",h2:"h2",h4:"h4",li:"li",p:"p",strong:"strong",ul:"ul",...i(),...e.components};return n.jsxs(n.Fragment,{children:[n.jsx(s,{of:d}),`
+`,n.jsx(t.h1,{id:"card",children:"Card"}),`
+`,n.jsx(t.h4,{id:"overview",children:"Overview"}),`
+`,n.jsxs(t.p,{children:["The ",n.jsx(t.strong,{children:"Card"})," component is a flexible container for displaying content related to a single subject. It combines elements like text, lists, and interactive actions into a visually distinct and structured layout."]}),`
+`,n.jsx(t.h2,{id:"key-features",children:"Key Features"}),`
+`,n.jsxs(t.ul,{children:[`
+`,n.jsxs(t.li,{children:[n.jsx(t.strong,{children:"Customizable Headers and Footers"})," Supports headers (title) and footers (extra) to add context or actions. Both header and footer is optional."]}),`
+`,n.jsxs(t.li,{children:[n.jsx(t.strong,{children:"Content Areas"})," Organize information into a visually distinct and structured layout."]}),`
+`,n.jsxs(t.li,{children:[n.jsx(t.strong,{children:"Actions"})," Built-in support for buttons, dropdowns, or custom controls to enhance interactivity."]}),`
+`,n.jsxs(t.li,{children:[n.jsx(t.strong,{children:"Responsive Layouts"})," Grid support for displaying multiple cards in a responsive and organized format."]}),`
+`,n.jsxs(t.li,{children:[n.jsx(t.strong,{children:"Inner Card"}),"The Inner Card is a specialized type of card designed for use within a parent card. It allows you to organize nested or related content, providing a clear hierarchy within the layout."]}),`
+`]}),`
+`,n.jsx(t.h4,{id:"related-links",children:"Related Links"}),`
+`,n.jsxs("table",{children:[n.jsx("thead",{children:n.jsxs("tr",{children:[n.jsx("th",{children:"Type"}),n.jsx("th",{children:"Resource"})]})}),n.jsxs("tbody",{children:[n.jsxs("tr",{children:[n.jsx("td",{children:"Eames"}),n.jsx("td",{children:n.jsx("a",{href:"https://www.figma.com/design/veXnmignQnJz8StIq10VJ5/Eames-2.0---Foundations-%26-Components?node-id=403-0&node-type=canvas&t=B6HJWqqDsUOypZQj-0",children:"Card Component"})})]}),n.jsxs("tr",{children:[n.jsx("td",{children:"AntD"}),n.jsx("td",{children:n.jsx("a",{href:"https://ant.design/components/card",children:"Card Component"})})]})]})]}),`
+`,n.jsx(o,{of:a})]})}function R(e={}){const{wrapper:t}={...i(),...e.components};return t?n.jsx(t,{...e,children:n.jsx(r,{...e})}):r(e)}export{R as default};

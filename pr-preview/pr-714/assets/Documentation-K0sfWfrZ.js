@@ -1,0 +1,6 @@
+import{j as t}from"./jsx-runtime-u17CrQMm.js";import{useMDXComponents as n}from"./index-BdjsESbt.js";import{M as i,C as e}from"./blocks-p0hkTQkD.js";import{B as p,m as s}from"./Breadcrumb.stories-CoiEMOwR.js";import"./iframe-ZAwtOOsv.js";import"./preload-helper-PPVm8Dsz.js";import"./index-BkWt5-fR.js";import"./index-CKTaITbW.js";import"./UnauthorizedTooltip-C-uexwNG.js";import"./ErrorStateIcon-B6JkuEkJ.js";import"./style-BLGxefMg.js";import"./WarningFilled-DrGq8YeO.js";import"./AntdIcon-CLyLtIX5.js";import"./Context-D1vOXvMD.js";import"./presets-C7IxLGBr.js";import"./SuccessStateIcon-BoEEKEoh.js";import"./WarningStateIcon-DvK-CXgy.js";import"./LightTheme-BtoaoHMG.js";import"./row-_uEFDODe.js";import"./useToken-xerQhSdt.js";import"./client-D5Z-HDZA.js";import"./ExampleStory-B49bSB_-.js";function m(o){const r={h1:"h1",p:"p",...n(),...o.components};return t.jsxs(t.Fragment,{children:[t.jsx(i,{of:p}),`
+`,`
+`,t.jsx(r.h1,{id:"breadcrumb",children:"Breadcrumb"}),`
+`,t.jsx(r.p,{children:"This is the documentation for the Breadcrumb component"}),`
+`,`
+`,t.jsx(e,{meta:s})]})}function L(o={}){const{wrapper:r}={...n(),...o.components};return r?t.jsx(r,{...o,children:t.jsx(m,{...o})}):m(o)}export{L as default};
