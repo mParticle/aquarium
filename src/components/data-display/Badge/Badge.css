@@ -1,0 +1,98 @@
+/* Local CSS constants for Badge filled variant */
+.mp-badge-filled {
+  display: inline-block;
+
+  /* TODO: update with design token when ready */
+  --border-radius-pill: 9999px;
+  --badge-padding-vertical: 2px;
+  --badge-line-height-sm: 18px;
+  --badge-padding-horizontal-sm-start: 6px;
+  --badge-padding-horizontal-md-start: 8px;
+  --badge-padding-horizontal-md-end: 10px;
+  --badge-padding-horizontal-lg-start: 10px;
+  --badge-margin-left-md: 6px;
+  --badge-margin-left-lg: 6px;
+}
+
+.mp-badge-filled .ant-badge {
+  display: inline-block;
+}
+
+/* Shape: Pill */
+.mp-badge-filled--pill {
+  border-radius: var(--border-radius-pill);
+}
+
+/* Shape: Square */
+.mp-badge-filled--square {
+  border-radius: var(--border-radius-sm);
+}
+
+/* Sizes */
+.mp-badge-filled--sm {
+  padding: var(--badge-padding-vertical) var(--padding-xs) var(--badge-padding-vertical) var(--badge-padding-horizontal-sm-start);
+}
+
+.mp-badge-filled--sm .ant-badge-status-text {
+  font-size: var(--font-size-sm) !important;
+  line-height: var(--badge-line-height-sm) !important;
+  margin-left: var(--margin-xxs) !important;
+}
+
+.mp-badge-filled--sm.mp-badge-filled--pill {
+  padding: var(--badge-padding-vertical) var(--padding-xs) var(--badge-padding-vertical) var(--badge-padding-horizontal-sm-start);
+}
+
+.mp-badge-filled--md {
+  padding: var(--badge-padding-vertical) var(--badge-padding-horizontal-md-end) var(--badge-padding-vertical) var(--badge-padding-horizontal-md-start);
+}
+
+.mp-badge-filled--md .ant-badge-status-text {
+  font-size: var(--font-size) !important;
+  line-height: var(--font-height-sm) !important;
+  margin-left: var(--badge-margin-left-md) !important;
+}
+
+.mp-badge-filled--md.mp-badge-filled--pill {
+  padding: var(--badge-padding-vertical) var(--badge-padding-horizontal-md-end) var(--badge-padding-vertical) var(--badge-padding-horizontal-md-start);
+}
+
+.mp-badge-filled--lg {
+  padding: var(--padding-xxs) var(--padding-sm) var(--padding-xxs) var(--badge-padding-horizontal-lg-start);
+}
+
+.mp-badge-filled--lg .ant-badge-status-text {
+  font-size: var(--font-size) !important;
+  line-height: var(--font-height-sm) !important;
+  margin-left: var(--badge-margin-left-lg) !important;
+}
+
+.mp-badge-filled--lg.mp-badge-filled--pill {
+  padding: var(--padding-xxs) var(--padding-sm) var(--padding-xxs) var(--badge-padding-horizontal-lg-start);
+}
+
+/* Colors */
+.mp-badge-filled--success {
+  background-color: var(--color-success-bg);
+  border: 1px solid var(--color-success-border);
+}
+
+.mp-badge-filled--processing {
+  background-color: var(--color-primary-bg);
+  border: 1px solid var(--color-primary-border);
+}
+
+.mp-badge-filled--error {
+  background-color: var(--color-error-bg);
+  border: 1px solid var(--color-error-border);
+}
+
+.mp-badge-filled--warning {
+  background-color: var(--color-warning-bg);
+  border: 1px solid var(--color-warning-border);
+}
+
+.mp-badge-filled--default {
+  background-color: var(--mp-brand-secondary-2);
+  border: 1px solid var(--color-border-secondary);
+}
