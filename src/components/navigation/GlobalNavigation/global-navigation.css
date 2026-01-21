@@ -110,7 +110,7 @@
 }
 
 .globalNavigation__item .ant-menu-title-content {
-  text-wrap: normal;
+  text-wrap: wrap;
   margin-inline-start: 0 !important;
   opacity: 1 !important;
 }
@@ -159,6 +159,7 @@
 }
 
 .globalNavigation__searchButton {
+  width: 42px !important;
   padding-inline: var(--padding-xs) var(--padding-xs) !important;
 }
 
