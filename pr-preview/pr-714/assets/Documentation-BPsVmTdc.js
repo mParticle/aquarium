@@ -1,6 +1,0 @@
-import{j as t}from"./jsx-runtime-u17CrQMm.js";import{useMDXComponents as r}from"./index-BdjsESbt.js";import{M as m,C as p}from"./blocks-p0hkTQkD.js";import{P as e,m as a}from"./Pagination.stories-CyjLxpmn.js";import"./iframe-ZAwtOOsv.js";import"./preload-helper-PPVm8Dsz.js";import"./index-BkWt5-fR.js";import"./index-CKTaITbW.js";import"./UnauthorizedTooltip-C-uexwNG.js";import"./ErrorStateIcon-B6JkuEkJ.js";import"./style-BLGxefMg.js";import"./WarningFilled-DrGq8YeO.js";import"./AntdIcon-CLyLtIX5.js";import"./Context-D1vOXvMD.js";import"./presets-C7IxLGBr.js";import"./SuccessStateIcon-BoEEKEoh.js";import"./WarningStateIcon-DvK-CXgy.js";import"./LightTheme-BtoaoHMG.js";import"./row-_uEFDODe.js";import"./useToken-xerQhSdt.js";import"./client-D5Z-HDZA.js";import"./ExampleStory-B49bSB_-.js";function i(o){const n={h1:"h1",p:"p",...r(),...o.components};return t.jsxs(t.Fragment,{children:[t.jsx(m,{of:e}),`
-`,`
-`,t.jsx(n.h1,{id:"pagination",children:"Pagination"}),`
-`,t.jsx(n.p,{children:"This is the documentation for the Pagination component"}),`
-`,`
-`,t.jsx(p,{meta:a})]})}function R(o={}){const{wrapper:n}={...r(),...o.components};return n?t.jsx(n,{...o,children:t.jsx(i,{...o})}):i(o)}export{R as default};

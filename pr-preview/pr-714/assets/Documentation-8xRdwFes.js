@@ -1,0 +1,6 @@
+import{j as o}from"./jsx-runtime-u17CrQMm.js";import{useMDXComponents as m}from"./index-BkeRIKkE.js";import{M as i,C as p}from"./blocks-Bd9Omxe-.js";import{D as e,m as s}from"./Dropdown.stories-00EMK6lH.js";import"./iframe-DPsSDxI5.js";import"./preload-helper-PPVm8Dsz.js";import"./index-C_XAaiqg.js";import"./index-BkHrRISK.js";import"./UnauthorizedTooltip-DInzTCbR.js";import"./ErrorStateIcon-N5tZzBSe.js";import"./style-C-7nCLOl.js";import"./WarningFilled-DE1WQ37c.js";import"./AntdIcon-DQ0RjuI5.js";import"./Context-BfWCYYV6.js";import"./presets-C7IxLGBr.js";import"./SuccessStateIcon-jdQomLYr.js";import"./WarningStateIcon-BOAINRnk.js";import"./LightTheme-BtoaoHMG.js";import"./row-D3EgDzJn.js";import"./useToken-D3WBQzQr.js";import"./client-Bm7MYF5w.js";import"./ExampleStory-D9NFb6Ax.js";import"./index-kMS0x76F.js";function n(t){const r={h1:"h1",p:"p",...m(),...t.components};return o.jsxs(o.Fragment,{children:[o.jsx(i,{of:e}),`
+`,`
+`,o.jsx(r.h1,{id:"dropdown",children:"Dropdown"}),`
+`,o.jsx(r.p,{children:"This is the documentation for the Dropdown component"}),`
+`,`
+`,o.jsx(p,{meta:s})]})}function T(t={}){const{wrapper:r}={...m(),...t.components};return r?o.jsx(r,{...t,children:o.jsx(n,{...t})}):n(t)}export{T as default};
