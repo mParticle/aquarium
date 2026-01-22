@@ -68,7 +68,7 @@ const meta: Meta<typeof AutoComplete> = {
     onChange: value => {
       alert(`Selected Value: ${value}`)
     },
-    onDropdownVisibleChange: open => {
+    onOpenChange: open => {
       console.log(`Dropdown Open: ${open}`)
     },
     onFocus: () => {

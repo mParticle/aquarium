@@ -64,6 +64,7 @@ export default defineConfig({
           antd: 'antd',
           dayjs: 'dayjs',
         },
+        assetFileNames: 'style[extname]',
       },
     },
   },

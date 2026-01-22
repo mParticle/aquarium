@@ -81,17 +81,17 @@ const meta: Meta<typeof Cascader> = {
     loadingIcon: undefined,
     showCheckedStrategy: Cascader.SHOW_PARENT,
     fieldNames: { label: 'label', value: 'value', children: 'children' },
-    displayRender: (label, selectedOptions) => label.join('/'),
+    displayRender: (label, _selectedOptions) => label.join('/'),
     onSearch: search => {
       console.log(`Search Value: ${search}`)
     },
-    onDropdownVisibleChange: visible => {
+    onOpenChange: visible => {
       console.log(`Dropdown Visible: ${visible}`)
     },
     onChange: (value, selectedOptions) => {
       alert(`Selected Value: ${String(value)}, Selected Options: ${JSON.stringify(selectedOptions)}`)
     },
-    getPopupContainer: triggerNode => document.body,
+    getPopupContainer: _triggerNode => document.body,
   },
 
   argTypes: {
@@ -174,7 +174,7 @@ export const SuffixIcon: Story = {
 
 export const DisplayRender: Story = {
   args: {
-    displayRender: (label, selectedOptions) => label.join(' -> '),
+    displayRender: (label, _selectedOptions) => label.join(' -> '),
   },
 }
 

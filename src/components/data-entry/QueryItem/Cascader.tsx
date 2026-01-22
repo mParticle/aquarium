@@ -29,7 +29,7 @@ export interface IQueryItemCascaderProps {
   icon?: keyof Pick<typeof Icons, 'empty' | 'event' | 'userAttribute' | 'eventAttribute'>
   errorMessage?: string
   placeholder?: string
-  onChange?: (values: Array<number | string>, selectedOptions: any) => Promise<void>
+  onChange?: (values: Array<number | string>, selectedOptions: ICascaderOption[]) => Promise<void>
   loadData?: (value: string) => Promise<void>
   value?: Array<number | string>
   disabled?: boolean
@@ -74,11 +74,9 @@ const Cascader = (props: IQueryItemCascaderProps) => {
   })
 
   const onSearch = ({ target: { value } }: { target: { value: string } }) => {
-    if (debouncedLoadData) {
-      if (value.length > 3) {
-        if (transformOptionsToPaths(items, []).filter(path => filter(value, path)).length === 0) {
-          debouncedLoadData(value)
-        }
+    if (props.loadData && value.length > 3) {
+      if (transformOptionsToPaths(items, []).filter(path => filter(value, path)).length === 0) {
+        debouncedLoadData(value)
       }
     }
     setSearchValue(value)
@@ -90,15 +88,14 @@ const Cascader = (props: IQueryItemCascaderProps) => {
   const filter = (inputValue: string, path: ICascaderOption[]) =>
     path.some(option => getSearchValue(option).toLowerCase().includes(inputValue.toLowerCase()))
 
-  let debouncedLoadData: (value: string) => void
-  if (props.loadData) {
-    debouncedLoadData = useCallback(
-      debounce((value: string) => {
-        void props.loadData?.(value)
-      }, 500),
-      [],
-    )
-  }
+  const debouncedLoadData = useCallback(
+    props.loadData
+      ? debounce((value: string) => {
+          void props.loadData?.(value)
+        }, 500)
+      : () => {},
+    [props.loadData],
+  )
 
   const baseProps: IBaseCascaderProps = {
     getPopupContainer: triggerNode => triggerNode.parentElement,
@@ -108,7 +105,7 @@ const Cascader = (props: IQueryItemCascaderProps) => {
     value: selectedValue,
     defaultOpen: props.defaultOpen,
     placement: props.placement ?? 'bottomLeft',
-    onChange: (values: Array<number | string>, selectedOptions: any): void => {
+    onChange: (values: Array<number | string>, selectedOptions: ICascaderOption[]): void => {
       setSelectedValue(values as string[])
       setSelectedOption(selectedOptions.slice(-1)[0])
       void props.onChange?.(values, selectedOptions)
@@ -148,7 +145,7 @@ const Cascader = (props: IQueryItemCascaderProps) => {
       ),
     },
     options: items,
-    onDropdownVisibleChange: value => {
+    onOpenChange: value => {
       setIsOpen(value)
       if (value) setSearchValue('')
     },

@@ -43,7 +43,7 @@ const meta: Meta<typeof Collapse> = {
     defaultActiveKey: undefined,
     destroyInactivePanel: false,
     expandIcon: undefined,
-    expandIconPosition: undefined,
+    expandIconPlacement: undefined,
     ghost: false,
     size: 'middle',
     items,
@@ -56,7 +56,7 @@ const meta: Meta<typeof Collapse> = {
       control: 'select',
       options: ['small', 'medium', 'large'],
     },
-    expandIconPosition: {
+    expandIconPlacement: {
       control: 'select',
       options: ['start', 'end'],
     },
@@ -321,12 +321,12 @@ export const ExampleExtraNode: Story = {
   it can be found as a welcome guest in many households across the world.
 `
 
-    type ExpandIconPosition = 'start' | 'end'
+    type ExpandIconPlacement = 'start' | 'end'
 
-    const [expandIconPosition, setExpandIconPosition] = useState<ExpandIconPosition>('start')
+    const [expandIconPlacement, setExpandIconPlacement] = useState<ExpandIconPlacement>('start')
 
-    const onPositionChange = (newExpandIconPosition: ExpandIconPosition) => {
-      setExpandIconPosition(newExpandIconPosition)
+    const onPlacementChange = (newExpandIconPlacement: ExpandIconPlacement) => {
+      setExpandIconPlacement(newExpandIconPlacement)
     }
 
     const onChange = (key: string | string[]) => {
@@ -366,10 +366,15 @@ export const ExampleExtraNode: Story = {
 
     return (
       <ExampleStory title={<> </>}>
-        <Collapse defaultActiveKey={['1']} onChange={onChange} expandIconPlacement={expandIconPosition} items={items} />
+        <Collapse
+          defaultActiveKey={['1']}
+          onChange={onChange}
+          expandIconPlacement={expandIconPlacement}
+          items={items}
+        />
         <br />
-        <span>Expand Icon Position: </span>
-        <Select value={expandIconPosition} style={{ margin: '0 8px' }} onChange={onPositionChange}>
+        <span>Expand Icon Placement: </span>
+        <Select value={expandIconPlacement} style={{ margin: '0 8px' }} onChange={onPlacementChange}>
           <Option value="start">start</Option>
           <Option value="end">end</Option>
         </Select>

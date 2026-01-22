@@ -23,9 +23,9 @@ const meta: Meta<typeof Pagination> = {
     showQuickJumper: false,
     showSizeChanger: false,
     showTitle: true,
-    showTotal: (total, range) => `Total ${total} items`,
+    showTotal: (total, _range) => `Total ${total} items`,
     simple: false,
-    size: 'default',
+    size: 'middle',
     total: 27,
     onChange: (page, pageSize) => {
       alert(`Page changed to ${page}, Page Size: ${pageSize}`)
