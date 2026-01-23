@@ -22,6 +22,18 @@ export type IMpThemeConfig = ThemeConfig & {
     ['mpBrandSecondary.8']: string
     ['mpBrandSecondary.9']: string
     ['mpBrandSecondary.10']: string
+    ['roktBrand.25']: string
+    ['roktBrand.50']: string
+    ['roktBrand.100']: string
+    ['roktBrand.200']: string
+    ['roktBrand.300']: string
+    ['roktBrand.400']: string
+    ['roktBrand.500']: string
+    ['roktBrand.600']: string
+    ['roktBrand.700']: string
+    ['roktBrand.800']: string
+    ['roktBrand.900']: string
+    ['roktBrand.950']: string
     mpColorBorderDisabled: string
     mpColorIconStrong: string
     mpColorIconBrand: string
