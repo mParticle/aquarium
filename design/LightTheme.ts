@@ -49,6 +49,8 @@ export const LightTheme: IMpThemeConfig = {
     'roktBrand.800': '#800a51',
     'roktBrand.900': '#640c41',
     'roktBrand.950': '#530e37',
+    colorFillAlterSolid: '#fcf3f8',
+    colorFilledHandleBg: '#f7d9eb',
     'mpBrandPrimary.1': '#f8f6fb',
     'mpBrandPrimary.2': '#ebe8f8',
     'mpBrandPrimary.3': '#dbceff',
