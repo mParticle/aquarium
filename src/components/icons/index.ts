@@ -139,6 +139,14 @@ import TimestampIcon from 'src/assets/svg/mp_data_dt_timestamp.svg?react'
 import ToggleLogicBlocks from 'src/assets/svg/mp_act_lt_toggle-logic-blocks.svg?react'
 import MoveToTop from 'src/assets/svg/mp_act_lt_move-to-top.svg?react'
 
+// Untitled UI Icons - selected commonly used icons with user-friendly names
+import { HelpCircle as UUIHelp } from '@untitledui/icons/HelpCircle'
+import { Plus as UUIPlus } from '@untitledui/icons/Plus'
+import { SearchSm as UUISearch } from '@untitledui/icons/SearchSm'
+import { Edit02 as UUIEdit } from '@untitledui/icons/Edit02'
+import { Trash04 as UUITrash } from '@untitledui/icons/Trash04'
+import { CheckCircle as UUICheckCircle } from '@untitledui/icons/CheckCircle'
+
 export {
   AbSplit,
   AcceptIcon,
@@ -280,4 +288,11 @@ export {
   TimestampIcon,
   ToggleLogicBlocks,
   MoveToTop,
+  // Untitled UI Icons
+  UUIHelp,
+  UUIPlus,
+  UUISearch,
+  UUIEdit,
+  UUITrash,
+  UUICheckCircle,
 }

@@ -1,6 +1,7 @@
 export { Button, type IButtonProps } from './general/Button/Button'
 export { FloatButton, type IFloatButtonProps } from './general/FloatButton/FloatButton'
 export { Icon, type IIconProps } from './general/Icon/Icon'
+export { UntitledIcon, type IUntitledIconProps } from './general/Icon/UntitledIcon'
 export { ErrorStateIcon, type IErrorStateIconProps } from './general/Icon/ErrorStateIcon/ErrorStateIcon'
 export { SuccessStateIcon, type ISuccessStateIconProps } from './general/Icon/SuccessStateIcon/SuccessStateIcon'
 export { WarningStateIcon, type IWarningStateIconProps } from './general/Icon/WarningStateIcon/WarningStateIcon'
