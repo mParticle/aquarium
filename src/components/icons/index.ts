@@ -140,12 +140,14 @@ import ToggleLogicBlocks from 'src/assets/svg/mp_act_lt_toggle-logic-blocks.svg?
 import MoveToTop from 'src/assets/svg/mp_act_lt_move-to-top.svg?react'
 
 // Untitled UI Icons - selected commonly used icons with user-friendly names
-import { HelpCircle as UUIHelp } from '@untitledui/icons/HelpCircle'
-import { Plus as UUIPlus } from '@untitledui/icons/Plus'
-import { SearchSm as UUISearch } from '@untitledui/icons/SearchSm'
-import { Edit02 as UUIEdit } from '@untitledui/icons/Edit02'
-import { Trash04 as UUITrash } from '@untitledui/icons/Trash04'
-import { CheckCircle as UUICheckCircle } from '@untitledui/icons/CheckCircle'
+import {
+  HelpCircle as UUIHelp,
+  Plus as UUIPlus,
+  SearchSm as UUISearch,
+  Edit02 as UUIEdit,
+  Trash04 as UUITrash,
+  CheckCircle as UUICheckCircle,
+} from '@untitledui/icons'
 
 export {
   AbSplit,
