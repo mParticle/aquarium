@@ -1,0 +1,5 @@
+import{aN as c,y as u,j as e,i as y}from"./iframe-B6Y2oegk.js";import"./preload-helper-PPVm8Dsz.js";const j={title:"Components/Not Prod Ready/Feedback/Loading Modal",component:c,args:{}},d=(r,a)=>{const[o,n]=u.useState(!1),i=()=>{n(!0)},m=()=>{n(!1)},l=()=>{n(!1)};return e.jsxs(e.Fragment,{children:[e.jsx(y,{type:"primary",onClick:i,children:"Open Loading Modal"}),o&&e.jsx(c,{fetchData:a,title:"Loading Modal",open:!0,onOk:m,onCancel:l,children:p=>e.jsxs(e.Fragment,{children:["Data resolved with - ",p+""]})})]})},g=r=>d(r,async()=>await new Promise((a,o)=>{setTimeout(()=>{a(!0)},1e3)})),x=r=>d(r,async()=>await new Promise((a,o)=>{setTimeout(()=>{o(new Error)},1e3)})),s={render:g},t={render:x};s.parameters={...s.parameters,docs:{...s.parameters?.docs,source:{originalSource:`{
+  render: PrimaryTemplate
+}`,...s.parameters?.docs?.source}}};t.parameters={...t.parameters,docs:{...t.parameters?.docs,source:{originalSource:`{
+  render: ErrorTemplate
+}`,...t.parameters?.docs?.source}}};const w=["Primary","ErrorStory"];export{t as ErrorStory,s as Primary,w as __namedExportsOrder,j as default};
