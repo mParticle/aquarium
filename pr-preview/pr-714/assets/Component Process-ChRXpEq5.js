@@ -1,5 +1,0 @@
-import{j as e}from"./iframe-D7Ys59RG.js";import{useMDXComponents as s}from"./index-BhKXPVJr.js";import"./preload-helper-PPVm8Dsz.js";function t(o){const n={a:"a",h1:"h1",p:"p",...s(),...o.components};return e.jsxs(e.Fragment,{children:[e.jsx(n.h1,{id:"component-process",children:"Component Process"}),`
-`,e.jsx(n.p,{children:`We have a process around introducing new components into the library. This process is designed to ensure that the components we add are well-designed,
-well-documented, and well-tested. See the link above to understand more about it.`}),`
-`,e.jsxs(n.p,{children:[e.jsx(n.a,{href:"https://www.figma.com/board/jRyvM0L4fWa8j1NmE5tZ7y/Component-Process",rel:"nofollow",children:"Component Process Figma"}),`
-`,e.jsx(n.a,{href:"https://docs.google.com/document/d/1VvnaEzl_IBSMBMmPdGMnkX1FScQWBs5D8QYY2NuS9GI/edit?tab=t.0#heading=h.2z05vt46ooti",rel:"nofollow",children:"Component Library & Custom Component Process"})]})]})}function a(o={}){const{wrapper:n}={...s(),...o.components};return n?e.jsx(n,{...o,children:e.jsx(t,{...o})}):t(o)}export{a as default};

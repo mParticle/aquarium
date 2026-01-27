@@ -1,1 +1,0 @@
-import{aC as o}from"./iframe-D7Ys59RG.js";import"./preload-helper-PPVm8Dsz.js";const t={title:"Components/Not Prod Ready/ColorPicker",component:o,args:{}},r={};r.parameters={...r.parameters,docs:{...r.parameters?.docs,source:{originalSource:"{}",...r.parameters?.docs?.source}}};const s=["Primary"];export{r as Primary,s as __namedExportsOrder,t as default};

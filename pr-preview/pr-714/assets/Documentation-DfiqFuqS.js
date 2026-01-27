@@ -1,0 +1,2 @@
+import{j as e}from"./iframe-_QPLlW2H.js";import{useMDXComponents as s}from"./index-D9zZkaA9.js";import"./preload-helper-PPVm8Dsz.js";function o(n){const t={h1:"h1",p:"p",...s(),...n.components};return e.jsxs(e.Fragment,{children:[e.jsx(t.h1,{id:"unused-components",children:"Unused components"}),`
+`,e.jsx(t.p,{children:"The following components are not used in mParticle but can still be browsed if needed."})]})}function m(n={}){const{wrapper:t}={...s(),...n.components};return t?e.jsx(t,{...n,children:e.jsx(o,{...n})}):o(n)}export{m as default};

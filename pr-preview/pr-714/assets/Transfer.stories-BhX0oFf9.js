@@ -1,1 +1,0 @@
-import{aI as e}from"./iframe-D7Ys59RG.js";import"./preload-helper-PPVm8Dsz.js";const s={title:"Components/Not Prod Ready/Transfer",component:e,args:{}},r={};r.parameters={...r.parameters,docs:{...r.parameters?.docs,source:{originalSource:"{}",...r.parameters?.docs?.source}}};const t=["Primary"];export{r as Primary,t as __namedExportsOrder,s as default};
