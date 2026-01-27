@@ -267,6 +267,8 @@ export const ExampleLazyLoad: Story = {
     const loadData = (selectedOptions: ICascaderProps['options']) => {
       const targetOption = selectedOptions?.[selectedOptions.length - 1]
 
+      if (!targetOption) return
+
       // load options lazily
       setTimeout(() => {
         targetOption.children = [
