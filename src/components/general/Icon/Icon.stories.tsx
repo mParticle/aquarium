@@ -7,7 +7,6 @@ import {
   ErrorStateIcon,
   SuccessStateIcon,
   WarningStateIcon,
-  UntitledIcon,
   type IIconProps,
 } from 'src/components'
 import { type IconColor } from 'src/components/general/Icon/Icon'
@@ -324,27 +323,27 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
         <Typography.Title level={4}>Untitled UI Icons</Typography.Title>
         <div style={iconGridStyle}>
           <Flex vertical align="center" key="untitled-help">
-            <UntitledIcon name={UUIHelp} size={size} color={color} />
+            <Icon name={UUIHelp} size={size} color={color} />
             <p style={{ fontFamily: 'monospace', textAlign: 'center' }}>UUIHelp</p>
           </Flex>
           <Flex vertical align="center" key="untitled-plus">
-            <UntitledIcon name={UUIPlus} size={size} color={color} />
+            <Icon name={UUIPlus} size={size} color={color} />
             <p style={{ fontFamily: 'monospace', textAlign: 'center' }}>UUIPlus</p>
           </Flex>
           <Flex vertical align="center" key="untitled-search">
-            <UntitledIcon name={UUISearch} size={size} color={color} />
+            <Icon name={UUISearch} size={size} color={color} />
             <p style={{ fontFamily: 'monospace', textAlign: 'center' }}>UUISearch</p>
           </Flex>
           <Flex vertical align="center" key="untitled-edit">
-            <UntitledIcon name={UUIEdit} size={size} color={color} />
+            <Icon name={UUIEdit} size={size} color={color} />
             <p style={{ fontFamily: 'monospace', textAlign: 'center' }}>UUIEdit</p>
           </Flex>
           <Flex vertical align="center" key="untitled-trash">
-            <UntitledIcon name={UUITrash} size={size} color={color} />
+            <Icon name={UUITrash} size={size} color={color} />
             <p style={{ fontFamily: 'monospace', textAlign: 'center' }}>UUITrash</p>
           </Flex>
           <Flex vertical align="center" key="untitled-check-circle">
-            <UntitledIcon name={UUICheckCircle} size={size} color={color} />
+            <Icon name={UUICheckCircle} size={size} color={color} />
             <p style={{ fontFamily: 'monospace', textAlign: 'center' }}>UUICheckCircle</p>
           </Flex>
         </div>

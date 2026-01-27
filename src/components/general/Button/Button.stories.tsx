@@ -1,7 +1,7 @@
 import { Button } from 'src/components/general/Button/Button'
 import { type Meta, type StoryObj } from '@storybook/react'
 import { userEvent } from '@storybook/test'
-import { Alert, Dropdown, Flex, Icon, Typography, Tooltip, UntitledIcon } from 'src/components'
+import { Alert, Dropdown, Flex, Icon, Typography, Tooltip } from 'src/components'
 import React from 'react'
 import type { MenuProps } from 'antd'
 import { BorderRadiusLg, ColorBorderSecondary, ColorWhite, MarginMd, SizeXs } from 'src/styles/style'
@@ -322,13 +322,13 @@ export const ButtonsWithUntitledUIIcons: Story = {
   render: () => {
     return (
       <Flex gap="middle" align="center" wrap="wrap">
-        <Button type="primary" icon={<UntitledIcon name={UUIPlus} size="sm" color="inherit" />}>
+        <Button type="primary" icon={<Icon name={UUIPlus} size="sm" />}>
           Add Item
         </Button>
-        <Button type="default" icon={<UntitledIcon name={UUIEdit} size="sm" color="inherit" />}>
+        <Button type="default" icon={<Icon name={UUIEdit} size="sm" />}>
           Edit
         </Button>
-        <Button type="default" danger icon={<UntitledIcon name={UUITrash} size="sm" color="inherit" />}>
+        <Button type="default" danger icon={<Icon name={UUITrash} size="sm" />}>
           Delete
         </Button>
       </Flex>
@@ -348,16 +348,16 @@ export const WithUntitledUIIcons: Story = {
         <div>
           <Typography.Title level={5}>Action Buttons</Typography.Title>
           <Flex wrap gap={MarginMd} align="center">
-            <Button type="primary" icon={<UntitledIcon name={UUIPlus} size="sm" color="inherit" />}>
+            <Button type="primary" icon={<Icon name={UUIPlus} size="sm" />}>
               Add Item
             </Button>
-            <Button type="default" icon={<UntitledIcon name={UUISearch} size="sm" color="inherit" />}>
+            <Button type="default" icon={<Icon name={UUISearch} size="sm" />}>
               Search
             </Button>
-            <Button type="default" icon={<UntitledIcon name={UUIEdit} size="sm" color="inherit" />}>
+            <Button type="default" icon={<Icon name={UUIEdit} size="sm" />}>
               Edit
             </Button>
-            <Button type="default" danger icon={<UntitledIcon name={UUITrash} size="sm" color="inherit" />}>
+            <Button type="default" danger icon={<Icon name={UUITrash} size="sm" />}>
               Delete
             </Button>
           </Flex>
@@ -367,16 +367,16 @@ export const WithUntitledUIIcons: Story = {
           <Typography.Title level={5}>Icon-Only Buttons</Typography.Title>
           <Flex wrap gap={MarginMd} align="center">
             <Tooltip title="Add new item">
-              <Button type="primary" icon={<UntitledIcon name={UUIPlus} size="sm" color="inherit" />} />
+              <Button type="primary" icon={<Icon name={UUIPlus} size="sm" />} />
             </Tooltip>
             <Tooltip title="Search">
-              <Button type="default" icon={<UntitledIcon name={UUISearch} size="sm" color="inherit" />} />
+              <Button type="default" icon={<Icon name={UUISearch} size="sm" />} />
             </Tooltip>
             <Tooltip title="Edit">
-              <Button type="default" icon={<UntitledIcon name={UUIEdit} size="sm" color="inherit" />} />
+              <Button type="default" icon={<Icon name={UUIEdit} size="sm" />} />
             </Tooltip>
             <Tooltip title="Delete">
-              <Button type="default" danger icon={<UntitledIcon name={UUITrash} size="sm" color="inherit" />} />
+              <Button type="default" danger icon={<Icon name={UUITrash} size="sm" />} />
             </Tooltip>
           </Flex>
         </div>
