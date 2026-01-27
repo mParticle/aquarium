@@ -1,21 +1,11 @@
 import { type Meta } from '@storybook/react'
 import React, { type ReactNode, useMemo } from 'react'
-import {
-  Flex,
-  Icon,
-  Typography,
-  ErrorStateIcon,
-  SuccessStateIcon,
-  WarningStateIcon,
-  type IIconProps,
-} from 'src/components'
+import { Flex, Icon, Typography, type IIconProps } from 'src/components'
 import { type IconColor } from 'src/components/general/Icon/Icon'
 import { Icons } from 'src/constants/Icons'
 import { MarginMd, MarginXl, Size } from 'src/styles/style'
 import type { IconNames } from 'src/types/icons'
 import { ICON_VARIANTS } from 'src/types/icons'
-// Import Untitled UI icons
-import { UUIHelp, UUIPlus, UUISearch, UUIEdit, UUITrash, UUICheckCircle } from 'src/components/icons'
 
 // Storybook control constants
 const ICON_SIZES = ['xxxxl', 'xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs'] as const
@@ -303,56 +293,6 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
 
   return (
     <div>
-      {/* Special Icons Section */}
-      <div style={sectionStyle}>
-        <Typography.Title level={4}>Special Icons</Typography.Title>
-        <div style={iconGridStyle}>
-          <Flex vertical align="center" key="error-state-icon">
-            <ErrorStateIcon size={size} />
-            <p style={{ fontFamily: 'monospace', textAlign: 'center' }}>ErrorStateIcon</p>
-          </Flex>
-          <Flex vertical align="center" key="warning-state-icon">
-            <WarningStateIcon size={size} />
-            <p style={{ fontFamily: 'monospace', textAlign: 'center' }}>WarningStateIcon</p>
-          </Flex>
-          <Flex vertical align="center" key="success-state-icon">
-            <SuccessStateIcon size={size} />
-            <p style={{ fontFamily: 'monospace', textAlign: 'center' }}>SuccessStateIcon</p>
-          </Flex>
-        </div>
-      </div>
-
-      {/* Untitled UI Icons Section */}
-      <div style={sectionStyle}>
-        <Typography.Title level={4}>Untitled UI Icons</Typography.Title>
-        <div style={iconGridStyle}>
-          <Flex vertical align="center" key="untitled-help">
-            <Icon name={UUIHelp} size={size} color={color} />
-            <p style={{ fontFamily: 'monospace', textAlign: 'center' }}>UUIHelp</p>
-          </Flex>
-          <Flex vertical align="center" key="untitled-plus">
-            <Icon name={UUIPlus} size={size} color={color} />
-            <p style={{ fontFamily: 'monospace', textAlign: 'center' }}>UUIPlus</p>
-          </Flex>
-          <Flex vertical align="center" key="untitled-search">
-            <Icon name={UUISearch} size={size} color={color} />
-            <p style={{ fontFamily: 'monospace', textAlign: 'center' }}>UUISearch</p>
-          </Flex>
-          <Flex vertical align="center" key="untitled-edit">
-            <Icon name={UUIEdit} size={size} color={color} />
-            <p style={{ fontFamily: 'monospace', textAlign: 'center' }}>UUIEdit</p>
-          </Flex>
-          <Flex vertical align="center" key="untitled-trash">
-            <Icon name={UUITrash} size={size} color={color} />
-            <p style={{ fontFamily: 'monospace', textAlign: 'center' }}>UUITrash</p>
-          </Flex>
-          <Flex vertical align="center" key="untitled-check-circle">
-            <Icon name={UUICheckCircle} size={size} color={color} />
-            <p style={{ fontFamily: 'monospace', textAlign: 'center' }}>UUICheckCircle</p>
-          </Flex>
-        </div>
-      </div>
-
       {/* UI Actions Section */}
       <div style={sectionStyle}>
         <Typography.Title level={4}>UI Actions</Typography.Title>
