@@ -14,6 +14,8 @@ import { Icons } from 'src/constants/Icons'
 import { MarginMd, MarginXl, Size } from 'src/styles/style'
 import type { IconNames } from 'src/types/icons'
 import { ICON_VARIANTS } from 'src/types/icons'
+// Import Untitled UI icons
+import { UUIHelp, UUIPlus, UUISearch, UUIEdit, UUITrash, UUICheckCircle } from 'src/components/icons'
 
 // Storybook control constants
 const ICON_SIZES = ['xxxxl', 'xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs'] as const
@@ -160,7 +162,11 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
 
   // If showing a specific icon, use original behavior
   if (name) {
-    return <div style={iconGridStyle}>{renderIcon(name)}</div>
+    // Only render if it's a string icon name (not a component)
+    if (typeof name === 'string') {
+      return <div style={iconGridStyle}>{renderIcon(name)}</div>
+    }
+    return null
   }
 
   // Helper function to split icons by variant based on their default configuration
@@ -312,6 +318,37 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
           <Flex vertical align="center" key="success-state-icon">
             <SuccessStateIcon size={size} />
             <p style={{ fontFamily: 'monospace', textAlign: 'center' }}>SuccessStateIcon</p>
+          </Flex>
+        </div>
+      </div>
+
+      {/* Untitled UI Icons Section */}
+      <div style={sectionStyle}>
+        <Typography.Title level={4}>Untitled UI Icons</Typography.Title>
+        <div style={iconGridStyle}>
+          <Flex vertical align="center" key="untitled-help">
+            <Icon name={UUIHelp} size={size} color={color} />
+            <p style={{ fontFamily: 'monospace', textAlign: 'center' }}>UUIHelp</p>
+          </Flex>
+          <Flex vertical align="center" key="untitled-plus">
+            <Icon name={UUIPlus} size={size} color={color} />
+            <p style={{ fontFamily: 'monospace', textAlign: 'center' }}>UUIPlus</p>
+          </Flex>
+          <Flex vertical align="center" key="untitled-search">
+            <Icon name={UUISearch} size={size} color={color} />
+            <p style={{ fontFamily: 'monospace', textAlign: 'center' }}>UUISearch</p>
+          </Flex>
+          <Flex vertical align="center" key="untitled-edit">
+            <Icon name={UUIEdit} size={size} color={color} />
+            <p style={{ fontFamily: 'monospace', textAlign: 'center' }}>UUIEdit</p>
+          </Flex>
+          <Flex vertical align="center" key="untitled-trash">
+            <Icon name={UUITrash} size={size} color={color} />
+            <p style={{ fontFamily: 'monospace', textAlign: 'center' }}>UUITrash</p>
+          </Flex>
+          <Flex vertical align="center" key="untitled-check-circle">
+            <Icon name={UUICheckCircle} size={size} color={color} />
+            <p style={{ fontFamily: 'monospace', textAlign: 'center' }}>UUICheckCircle</p>
           </Flex>
         </div>
       </div>

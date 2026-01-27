@@ -139,6 +139,16 @@ import TimestampIcon from 'src/assets/svg/mp_data_dt_timestamp.svg?react'
 import ToggleLogicBlocks from 'src/assets/svg/mp_act_lt_toggle-logic-blocks.svg?react'
 import MoveToTop from 'src/assets/svg/mp_act_lt_move-to-top.svg?react'
 
+// Untitled UI Icons
+import {
+  HelpCircle as UUIHelp,
+  Plus as UUIPlus,
+  SearchSm as UUISearch,
+  Edit02 as UUIEdit,
+  Trash04 as UUITrash,
+  CheckCircle as UUICheckCircle,
+} from '@untitledui/icons'
+
 export {
   AbSplit,
   AcceptIcon,
@@ -280,4 +290,11 @@ export {
   TimestampIcon,
   ToggleLogicBlocks,
   MoveToTop,
+  // Untitled UI Icons
+  UUIHelp,
+  UUIPlus,
+  UUISearch,
+  UUIEdit,
+  UUITrash,
+  UUICheckCircle,
 }
