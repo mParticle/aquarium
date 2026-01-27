@@ -147,6 +147,9 @@ import {
   Edit02 as UUIEdit,
   Trash04 as UUITrash,
   CheckCircle as UUICheckCircle,
+  ArrowLeft as UUIArrowLeft,
+  ArrowRight as UUIArrowRight,
+  Tag01 as UUITag01,
 } from '@untitledui/icons'
 
 export {
@@ -297,4 +300,7 @@ export {
   UUIEdit,
   UUITrash,
   UUICheckCircle,
+  UUIArrowLeft,
+  UUIArrowRight,
+  UUITag01,
 }
