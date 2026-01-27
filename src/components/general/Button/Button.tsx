@@ -20,7 +20,13 @@ export interface IButtonProps extends Omit<AntButtonProps, 'variant' | 'color'> 
    */
   color?: 'inherit' | string
 }
-export const Button = (props: IButtonProps) => {
+
+interface ButtonComponent
+  extends React.ForwardRefExoticComponent<IButtonProps & React.RefAttributes<HTMLButtonElement | HTMLAnchorElement>> {
+  Group: typeof AntButton.Group
+}
+
+export const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, IButtonProps>((props, ref) => {
   const classMap = {
     'with-new-icon': 'u-display-flex u-align-items-center u-justify-center',
   }
@@ -42,6 +48,7 @@ export const Button = (props: IButtonProps) => {
     <ConfigProvider>
       <AntButton
         {...restProps}
+        ref={ref}
         icon={buttonIcon}
         style={buttonStyle}
         className={`${props.className ?? ''} ${extraClass}`}>
@@ -49,6 +56,8 @@ export const Button = (props: IButtonProps) => {
       </AntButton>
     </ConfigProvider>
   )
-}
+}) as ButtonComponent
+
+Button.displayName = 'Button'
 
 Button.Group = AntButton.Group

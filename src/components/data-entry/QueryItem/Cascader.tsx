@@ -110,7 +110,7 @@ const Cascader = (props: IQueryItemCascaderProps) => {
       setSelectedOption(selectedOptions.slice(-1)[0])
       void props.onChange?.(values, selectedOptions)
     },
-    dropdownRender: menu => (
+    dropdownRender: (menu: any) => (
       <div className="query-item__dropdown">
         {isLoading ? (
           <Skeleton />
@@ -122,11 +122,14 @@ const Cascader = (props: IQueryItemCascaderProps) => {
               value={searchValue}
               className="query-item__input-search"
               placeholder="Search"
+              style={{ width: '100%' }}
               onChange={a => {
                 onSearch(a)
               }}
             />
-            <Flex justify="center">{menu}</Flex>
+            <Flex justify="center" style={{ backgroundColor: 'white' }}>
+              {menu}
+            </Flex>
           </>
         )}
       </div>
