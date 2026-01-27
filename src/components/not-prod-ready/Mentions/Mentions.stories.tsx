@@ -173,7 +173,7 @@ export const ExampleAsync: Story = {
   render: () => {
     const [loading, setLoading] = useState(false)
     const [users, setUsers] = useState<ItemType[]>([])
-    const ref = useRef<string>()
+    const ref = useRef<string>(undefined)
     const loadGithubUsers = (key: string) => {
       if (!key) {
         setUsers([])
@@ -235,7 +235,7 @@ export const ExampleForm: Story = {
       }
     }
 
-    const checkMention = async (_: any, value: string) => {
+    const checkMention = async (_: unknown, value: string) => {
       const mentions = Mentions.getMentions(value)
 
       if (mentions.length < 2) {
@@ -377,7 +377,7 @@ export const ExampleStatus: Story = {
 
     return (
       <ExampleStory title="Add status to Mentions with status, which could be error or warning。">
-        <Space direction="vertical">
+        <Space orientation="vertical">
           <Mentions
             onChange={onChange}
             onSelect={console.log}

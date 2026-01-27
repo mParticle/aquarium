@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { SelectWithRangePicker as Component } from './SelectWithRangePicker'
-import { fn } from '@storybook/test'
-import { useArgs } from '@storybook/preview-api'
+import { fn } from 'storybook/test'
+import { useArgs } from 'storybook/preview-api'
 
 const meta: Meta<typeof Component> = {
   title: 'Candidate Components/Directory/Date Range Filter',

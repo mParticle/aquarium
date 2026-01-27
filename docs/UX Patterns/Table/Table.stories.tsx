@@ -1,4 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import type { ColumnsType } from 'antd/es/table'
+import type { Dayjs } from 'dayjs'
 import {
   Flex,
   Icon,
@@ -48,8 +50,8 @@ type Story = StoryObj<typeof Table>
 
 export const Primary: Story = {
   render: () => (
-    <Space direction="vertical" style={{ width: '100%' }}>
-      <Space direction="vertical" style={{ width: '100%' }}>
+    <Space orientation="vertical" style={{ width: '100%' }}>
+      <Space orientation="vertical" style={{ width: '100%' }}>
         <Flex align={'center'} justify={'space-between'}>
           <Flex gap={10}>
             <DatePickerWithDisabledYears />
@@ -69,9 +71,9 @@ export const Primary: Story = {
 
 export const FixedHeaderAndStickyColumns: Story = {
   render: () => (
-    <Space direction="vertical" style={{ width: '750px' }}>
+    <Space orientation="vertical" style={{ width: '750px' }}>
       <Table<TableDataType>
-        columns={fixedColumns as any}
+        columns={fixedColumns as ColumnsType<TableDataType>}
         dataSource={tableData}
         scroll={{ x: 'max-content' }}
         sticky
@@ -147,8 +149,8 @@ const MultipleCheckboxes = ({ label, items }: IMultipleCheckboxesProps) => (
         1 selected
       </Typography.Text>
     }>
-    <Space direction="vertical">
-      {items.map(({ name, value }) => (
+    <Space orientation="vertical">
+      {items.map(({ name, value: _value }) => (
         <Checkbox key={name}>{name}</Checkbox>
       ))}
     </Space>
@@ -307,8 +309,8 @@ export const WithComplexFilters: Story = {
     return (
       <>
         {context}
-        <Space direction="vertical" style={{ width: '100%' }}>
-          <Space direction="vertical" style={{ width: '100%' }}>
+        <Space orientation="vertical" style={{ width: '100%' }}>
+          <Space orientation="vertical" style={{ width: '100%' }}>
             <Flex align={'center'} justify={'space-between'}>
               <Flex gap={10}>
                 <SelectWithRangePicker
@@ -326,7 +328,7 @@ export const WithComplexFilters: Story = {
                     showHour: true,
                     showMinute: true,
                     showSecond: false,
-                    disabledDate: (antdDayJS: any) => {
+                    disabledDate: (antdDayJS: Dayjs) => {
                       const fourteenDaysInMs = 14 * 24 * 60 * 60 * 1000
                       return antdDayJS.isBefore(new Date(Date.now() - fourteenDaysInMs))
                     },

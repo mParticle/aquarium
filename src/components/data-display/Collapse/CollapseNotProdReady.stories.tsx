@@ -43,7 +43,7 @@ const meta: Meta<typeof Collapse> = {
     defaultActiveKey: undefined,
     destroyInactivePanel: false,
     expandIcon: undefined,
-    expandIconPosition: undefined,
+    expandIconPlacement: undefined,
     ghost: false,
     size: 'middle',
     items,
@@ -56,7 +56,7 @@ const meta: Meta<typeof Collapse> = {
       control: 'select',
       options: ['small', 'medium', 'large'],
     },
-    expandIconPosition: {
+    expandIconPlacement: {
       control: 'select',
       options: ['start', 'end'],
     },
@@ -139,14 +139,14 @@ export const ExampleSize: Story = {
             the size property for a collapse with the default size.
           </>
         }>
-        <Divider orientation="left">Default Size</Divider>
+        <Divider titlePlacement="left">Default Size</Divider>
         <Collapse items={[{ key: '1', label: 'This is default size panel header', children: <p>{text}</p> }]} />
-        <Divider orientation="left">Small Size</Divider>
+        <Divider titlePlacement="left">Small Size</Divider>
         <Collapse
           size="small"
           items={[{ key: '1', label: 'This is small size panel header', children: <p>{text}</p> }]}
         />
-        <Divider orientation="left">Large Size</Divider>
+        <Divider titlePlacement="left">Large Size</Divider>
         <Collapse
           size="large"
           items={[{ key: '1', label: 'This is large size panel header', children: <p>{text}</p> }]}
@@ -321,12 +321,12 @@ export const ExampleExtraNode: Story = {
   it can be found as a welcome guest in many households across the world.
 `
 
-    type ExpandIconPosition = 'start' | 'end'
+    type ExpandIconPlacement = 'start' | 'end'
 
-    const [expandIconPosition, setExpandIconPosition] = useState<ExpandIconPosition>('start')
+    const [expandIconPlacement, setExpandIconPlacement] = useState<ExpandIconPlacement>('start')
 
-    const onPositionChange = (newExpandIconPosition: ExpandIconPosition) => {
-      setExpandIconPosition(newExpandIconPosition)
+    const onPlacementChange = (newExpandIconPlacement: ExpandIconPlacement) => {
+      setExpandIconPlacement(newExpandIconPlacement)
     }
 
     const onChange = (key: string | string[]) => {
@@ -366,10 +366,15 @@ export const ExampleExtraNode: Story = {
 
     return (
       <ExampleStory title={<> </>}>
-        <Collapse defaultActiveKey={['1']} onChange={onChange} expandIconPosition={expandIconPosition} items={items} />
+        <Collapse
+          defaultActiveKey={['1']}
+          onChange={onChange}
+          expandIconPlacement={expandIconPlacement}
+          items={items}
+        />
         <br />
-        <span>Expand Icon Position: </span>
-        <Select value={expandIconPosition} style={{ margin: '0 8px' }} onChange={onPositionChange}>
+        <span>Expand Icon Placement: </span>
+        <Select value={expandIconPlacement} style={{ margin: '0 8px' }} onChange={onPlacementChange}>
           <Option value="start">start</Option>
           <Option value="end">end</Option>
         </Select>
@@ -392,7 +397,7 @@ export const ExampleCollapsible: Story = {
   render: () => {
     return (
       <ExampleStory title="Specify the trigger area of collapsible by collapsible.">
-        <Space direction="vertical">
+        <Space orientation="vertical">
           <Collapse
             collapsible="header"
             defaultActiveKey={['1']}

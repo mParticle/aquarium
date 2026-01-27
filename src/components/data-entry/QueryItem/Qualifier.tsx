@@ -28,7 +28,7 @@ const Qualifier = (props: IQueryItemQualifierProps) => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error Introduced when we properly typed the Select value and option generics from Aquarium. Need to double check to fix this.
     onChange: props.onChange,
-    onDropdownVisibleChange: () => {
+    onOpenChange: () => {
       setIsOpen(!isOpen)
     },
     placement: 'bottomLeft',

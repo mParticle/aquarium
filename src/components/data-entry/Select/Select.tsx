@@ -6,10 +6,10 @@ import { ConfigProvider, Icon } from 'src/components'
 export type SelectBaseOptionType = AntBaseOptionType
 export type SelectDefaultOptionType = AntDefaultOptionType
 
-export interface ISelectProps<
+export type ISelectProps<
   SelectValueType = unknown,
   SelectOptionType extends SelectBaseOptionType | SelectDefaultOptionType = SelectDefaultOptionType,
-> extends AntSelectProps<SelectValueType, SelectOptionType> {}
+> = AntSelectProps<SelectValueType, SelectOptionType>
 
 export const Select = <
   SelectValueType,

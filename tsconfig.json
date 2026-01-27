@@ -11,8 +11,8 @@
     "jsx": "react-jsx",
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
-    "moduleResolution": "node",
-    "target": "es2015",
+    "moduleResolution": "bundler",
+    "target": "es2022",
 
     "noImplicitAny": true,
     "forceConsistentCasingInFileNames": true,
@@ -22,8 +22,19 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
+    "noUncheckedSideEffectImports": true,
 
     "types": ["vitest/globals"]
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.d.ts", "docs/**/*.ts", "docs/**/*.tsx", "vite.config.js"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.d.ts",
+    "docs/**/*.ts",
+    "docs/**/*.tsx",
+    ".storybook/**/*.ts",
+    ".storybook/**/*.tsx",
+    "vite.config.js",
+    "eslint.config.js"
+  ]
 }

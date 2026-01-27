@@ -1,5 +1,4 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import React from 'react'
 import { Center, GlobalNavigation, Icon } from 'src/components'
 import { type IGlobalNavigationItem } from 'src/components/navigation/GlobalNavigation/GlobalNavigationItems'
 import { type INavigationOrg } from 'src/components/navigation/GlobalNavigation/WorkspaceSelector/WorkspaceSelectorItems'

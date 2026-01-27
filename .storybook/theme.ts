@@ -1,4 +1,4 @@
-import { create } from '@storybook/theming'
+import { create } from 'storybook/theming'
 import { LightTheme } from '../design/LightTheme'
 
 export default create({

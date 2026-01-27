@@ -29,7 +29,7 @@ export interface IQueryItemCascaderProps {
   icon?: keyof Pick<typeof Icons, 'empty' | 'event' | 'userAttribute' | 'eventAttribute'>
   errorMessage?: string
   placeholder?: string
-  onChange?: (values: Array<number | string>, selectedOptions: any) => Promise<void>
+  onChange?: (values: Array<number | string>, selectedOptions: ICascaderOption[]) => Promise<void>
   loadData?: (value: string) => Promise<void>
   value?: Array<number | string>
   disabled?: boolean
@@ -46,9 +46,7 @@ const Cascader = (props: IQueryItemCascaderProps) => {
   const [searchValue, setSearchValue] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [selectedValue, setSelectedValue] = useState<Array<number | string>>(props.value ?? [])
-  const [selectedOption, setSelectedOption] = useState<ICascaderOption>(
-    props.value?.length ? props.value.slice(-1)[0] : undefined,
-  )
+  const [selectedOption, setSelectedOption] = useState<ICascaderOption | undefined>(undefined)
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
@@ -74,11 +72,9 @@ const Cascader = (props: IQueryItemCascaderProps) => {
   })
 
   const onSearch = ({ target: { value } }: { target: { value: string } }) => {
-    if (debouncedLoadData) {
-      if (value.length > 3) {
-        if (transformOptionsToPaths(items, []).filter(path => filter(value, path)).length === 0) {
-          debouncedLoadData(value)
-        }
+    if (props.loadData && value.length > 3) {
+      if (transformOptionsToPaths(items, []).filter(path => filter(value, path)).length === 0) {
+        debouncedLoadData(value)
       }
     }
     setSearchValue(value)
@@ -90,15 +86,14 @@ const Cascader = (props: IQueryItemCascaderProps) => {
   const filter = (inputValue: string, path: ICascaderOption[]) =>
     path.some(option => getSearchValue(option).toLowerCase().includes(inputValue.toLowerCase()))
 
-  let debouncedLoadData: (value: string) => void
-  if (props.loadData) {
-    debouncedLoadData = useCallback(
-      debounce((value: string) => {
-        void props.loadData?.(value)
-      }, 500),
-      [],
-    )
-  }
+  const debouncedLoadData = useCallback(
+    props.loadData
+      ? debounce((value: string) => {
+          void props.loadData?.(value)
+        }, 500)
+      : () => {},
+    [props.loadData],
+  )
 
   const baseProps: IBaseCascaderProps = {
     getPopupContainer: triggerNode => triggerNode.parentElement,
@@ -108,12 +103,13 @@ const Cascader = (props: IQueryItemCascaderProps) => {
     value: selectedValue,
     defaultOpen: props.defaultOpen,
     placement: props.placement ?? 'bottomLeft',
-    onChange: (values: Array<number | string>, selectedOptions: any): void => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    onChange: async (values: Array<number | string>, selectedOptions: any) => {
       setSelectedValue(values as string[])
       setSelectedOption(selectedOptions.slice(-1)[0])
-      void props.onChange?.(values, selectedOptions)
+      await props.onChange?.(values, selectedOptions)
     },
-    dropdownRender: menu => (
+    popupRender: (menu: ReactNode) => (
       <div className="query-item__dropdown">
         {isLoading ? (
           <Skeleton />
@@ -125,11 +121,14 @@ const Cascader = (props: IQueryItemCascaderProps) => {
               value={searchValue}
               className="query-item__input-search"
               placeholder="Search"
+              style={{ width: '100%' }}
               onChange={a => {
                 onSearch(a)
               }}
             />
-            <Flex justify="center">{menu}</Flex>
+            <Flex justify="center" style={{ backgroundColor: 'white' }}>
+              {menu}
+            </Flex>
           </>
         )}
       </div>
@@ -148,7 +147,7 @@ const Cascader = (props: IQueryItemCascaderProps) => {
       ),
     },
     options: items,
-    onDropdownVisibleChange: value => {
+    onOpenChange: value => {
       setIsOpen(value)
       if (value) setSearchValue('')
     },
@@ -163,7 +162,7 @@ const Cascader = (props: IQueryItemCascaderProps) => {
   return (
     <>
       <BaseCascader {...baseProps}>
-        <Flex>
+        <div>
           <Input
             disabled={props.disabled}
             readOnly
@@ -174,7 +173,7 @@ const Cascader = (props: IQueryItemCascaderProps) => {
             suffix={props.suffixIcon}
             prefix={getIcon()}
           />
-        </Flex>
+        </div>
       </BaseCascader>
       {props.errorMessage && <Typography.Text type="danger">{props.errorMessage}</Typography.Text>}
     </>

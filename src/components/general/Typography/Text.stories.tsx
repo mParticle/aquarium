@@ -6,7 +6,7 @@ import { Typography } from 'src/components/general/Typography/Typography'
 import { PaddingLg } from 'src/styles/style'
 import { ExampleStory } from 'src/utils/ExampleStory'
 import { useState } from 'react'
-import { expect } from '@storybook/test'
+import { expect } from 'storybook/test'
 import { TypographyColors } from './colors'
 
 const meta: Meta<typeof Typography.Text> = {
@@ -89,7 +89,7 @@ export const ExampleTexts: Story = {
   render: () => {
     return (
       <ExampleStory title={<> </>}>
-        <Space direction="vertical">
+        <Space orientation="vertical">
           <Typography.Text>Aquarium (default)</Typography.Text>
           <Typography.Text type="secondary">Aquarium (secondary)</Typography.Text>
           <Typography.Text type="success">Aquarium (success)</Typography.Text>
@@ -113,7 +113,7 @@ export const ExampleProps: Story = {
   render: () => {
     return (
       <ExampleStory title={<> </>}>
-        <Space direction="vertical">
+        <Space orientation="vertical">
           <Typography.Text size="sm" color="ColorPrimaryText" style={{ paddingLeft: PaddingLg }}>
             Aquarium props test
           </Typography.Text>

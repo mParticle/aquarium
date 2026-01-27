@@ -36,7 +36,7 @@ export default defineConfig({
   },
 
   build: {
-    target: 'es6',
+    target: 'esnext',
     outDir: 'dist',
     lib: {
       // Could also be a dictionary or array of multiple entry points
@@ -46,12 +46,25 @@ export default defineConfig({
       fileName: 'aquarium',
     },
     rollupOptions: {
-      external: ['react', 'react/jsx-runtime', 'antd'],
+      external: [
+        'react',
+        'react-dom',
+        'react/jsx-runtime',
+        'antd',
+        'dayjs',
+        /^@ant-design\//,
+        /^@rc-component\//,
+        /^rc-/,
+      ],
       output: {
         globals: {
-          antd: 'antd',
           react: 'React',
+          'react-dom': 'ReactDOM',
+          'react/jsx-runtime': 'jsxRuntime',
+          antd: 'antd',
+          dayjs: 'dayjs',
         },
+        assetFileNames: 'style[extname]',
       },
     },
   },
