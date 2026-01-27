@@ -1,3 +1,10 @@
+# [1.63.0](https://github.com/mParticle/aquarium/compare/v1.62.0...v1.63.0) (2026-01-27)
+
+### Features
+
+- add filled badge ([#716](https://github.com/mParticle/aquarium/issues/716)) ([1be2481](https://github.com/mParticle/aquarium/commit/1be2481f9847df90958896d4893195af6ee91769))
+- Untitled UI Icons ([#719](https://github.com/mParticle/aquarium/issues/719)) ([748d36f](https://github.com/mParticle/aquarium/commit/748d36f7b90d730580d8b6e5dc4e5bd705f78bad))
+
 # [1.62.0](https://github.com/mParticle/aquarium/compare/v1.61.0...v1.62.0) (2026-01-15)
 
 ### Bug Fixes
