@@ -162,7 +162,11 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
 
   // If showing a specific icon, use original behavior
   if (name) {
-    return <div style={iconGridStyle}>{renderIcon(name)}</div>
+    // Only render if it's a string icon name (not a component)
+    if (typeof name === 'string') {
+      return <div style={iconGridStyle}>{renderIcon(name)}</div>
+    }
+    return null
   }
 
   // Helper function to split icons by variant based on their default configuration
