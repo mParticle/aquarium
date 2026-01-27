@@ -149,7 +149,7 @@ import {
   CheckCircle as UUICheckCircle,
   ArrowLeft as UUIArrowLeft,
   ArrowRight as UUIArrowRight,
-  Tag01 as UUITag01,
+  Tag01 as UUITag,
 } from '@untitledui/icons'
 
 export {
@@ -302,5 +302,5 @@ export {
   UUICheckCircle,
   UUIArrowLeft,
   UUIArrowRight,
-  UUITag01,
+  UUITag,
 }
