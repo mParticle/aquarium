@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import './query-item.css'
 import { type GetProp } from 'antd'
-import { type DefaultOptionType } from 'antd/es/select'
+import { type DefaultOptionType, type BaseOptionType } from 'antd/es/select'
 import { type ReactNode, useCallback, useEffect, useState } from 'react'
 import {
   Cascader as BaseCascader,
@@ -46,9 +46,7 @@ const Cascader = (props: IQueryItemCascaderProps) => {
   const [searchValue, setSearchValue] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [selectedValue, setSelectedValue] = useState<Array<number | string>>(props.value ?? [])
-  const [selectedOption, setSelectedOption] = useState<ICascaderOption>(
-    props.value?.length ? props.value.slice(-1)[0] : undefined,
-  )
+  const [selectedOption, setSelectedOption] = useState<ICascaderOption | undefined>(undefined)
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
@@ -105,12 +103,12 @@ const Cascader = (props: IQueryItemCascaderProps) => {
     value: selectedValue,
     defaultOpen: props.defaultOpen,
     placement: props.placement ?? 'bottomLeft',
-    onChange: (values: Array<number | string>, selectedOptions: ICascaderOption[]): void => {
+    onChange: async (values: Array<number | string>, selectedOptions: any) => {
       setSelectedValue(values as string[])
       setSelectedOption(selectedOptions.slice(-1)[0])
-      void props.onChange?.(values, selectedOptions)
+      await props.onChange?.(values, selectedOptions)
     },
-    dropdownRender: (menu: any) => (
+    popupRender: (menu: ReactNode) => (
       <div className="query-item__dropdown">
         {isLoading ? (
           <Skeleton />
