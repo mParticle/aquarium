@@ -75,6 +75,6 @@ export const WithStyle: Story = {
 
 export const VerticalDivider: Story = {
   args: {
-    type: 'vertical',
+    orientation: 'vertical',
   },
 }
