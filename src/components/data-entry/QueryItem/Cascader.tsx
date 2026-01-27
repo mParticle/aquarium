@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import './query-item.css'
 import { type GetProp } from 'antd'
-import { type DefaultOptionType, type BaseOptionType } from 'antd/es/select'
+import { type DefaultOptionType } from 'antd/es/select'
 import { type ReactNode, useCallback, useEffect, useState } from 'react'
 import {
   Cascader as BaseCascader,
@@ -103,6 +103,7 @@ const Cascader = (props: IQueryItemCascaderProps) => {
     value: selectedValue,
     defaultOpen: props.defaultOpen,
     placement: props.placement ?? 'bottomLeft',
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     onChange: async (values: Array<number | string>, selectedOptions: any) => {
       setSelectedValue(values as string[])
       setSelectedOption(selectedOptions.slice(-1)[0])
@@ -161,7 +162,7 @@ const Cascader = (props: IQueryItemCascaderProps) => {
   return (
     <>
       <BaseCascader {...baseProps}>
-        <Flex>
+        <div>
           <Input
             disabled={props.disabled}
             readOnly
@@ -172,7 +173,7 @@ const Cascader = (props: IQueryItemCascaderProps) => {
             suffix={props.suffixIcon}
             prefix={getIcon()}
           />
-        </Flex>
+        </div>
       </BaseCascader>
       {props.errorMessage && <Typography.Text type="danger">{props.errorMessage}</Typography.Text>}
     </>
