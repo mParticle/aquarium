@@ -1,0 +1,7 @@
+import{j as n}from"./iframe-D7Ys59RG.js";import{useMDXComponents as o}from"./index-BhKXPVJr.js";import{M as r,C as a}from"./blocks-BJiGPWHH.js";import{M as d,m as i}from"./Primary.stories-BkcaDyje.js";import"./preload-helper-PPVm8Dsz.js";function s(e){const t={h1:"h1",h4:"h4",p:"p",strong:"strong",...o(),...e.components};return n.jsxs(n.Fragment,{children:[n.jsx(r,{of:d}),`
+`,`
+`,n.jsx(t.h1,{id:"modal",children:"Modal"}),`
+`,n.jsxs(t.p,{children:["A ",n.jsx(t.strong,{children:"Modal"})," displays a dialog box with a title, content area, and action buttons, appearing as a floating layer over the current page."]}),`
+`,n.jsx(a,{meta:i}),`
+`,n.jsx(t.h4,{id:"related-links",children:"Related Links"}),`
+`,n.jsxs("table",{children:[n.jsx("thead",{children:n.jsxs("tr",{children:[n.jsx("th",{children:"Type"}),n.jsx("th",{children:"Resource"})]})}),n.jsxs("tbody",{children:[n.jsxs("tr",{children:[n.jsx("td",{children:"Eames"}),n.jsx("td",{children:n.jsx("a",{href:"https://www.figma.com/design/veXnmignQnJz8StIq10VJ5/Eames-2.0---Foundations-%26-Components?node-id=421-14565&p=f&t=tG2zSQspj1psOBHS-0",children:"Modal Component"})})]}),n.jsxs("tr",{children:[n.jsx("td",{children:"AntD"}),n.jsx("td",{children:n.jsx("a",{href:"https://ant.design/components/modal",children:"Modal Component"})})]})]})]})]})}function j(e={}){const{wrapper:t}={...o(),...e.components};return t?n.jsx(t,{...e,children:n.jsx(s,{...e})}):s(e)}export{j as default};

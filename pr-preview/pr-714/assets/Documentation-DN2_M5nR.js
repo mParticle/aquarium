@@ -1,0 +1,5 @@
+import{j as e}from"./iframe-D7Ys59RG.js";import{useMDXComponents as r}from"./index-BhKXPVJr.js";import"./preload-helper-PPVm8Dsz.js";function s(t){const n={h1:"h1",h2:"h2",h4:"h4",p:"p",...r(),...t.components};return e.jsxs(e.Fragment,{children:[e.jsx(n.h1,{id:"landing-page",children:"Landing Page"}),`
+`,e.jsx(n.h4,{id:"overview",children:"Overview"}),`
+`,e.jsx(n.p,{children:"TBD"}),`
+`,e.jsx(n.h2,{id:"current-usages",children:"Current usages"}),`
+`,e.jsx("ul",{children:e.jsx("li",{children:e.jsxs("div",{style:{display:"flex",alignItems:"center"},children:[e.jsx("img",{src:"https://badgen.net/badge/icon/GitHub?icon=github&label",alt:"Repo",style:{marginRight:8}}),e.jsx("a",{href:"https://github.com/mparticle-by-rokt/mPServer/blob/main/src/UI/MP.UI.Web.Nancy/Assets/private/aurelia/src/patterns/promo-page/PromoPage.stories.tsx",target:"_top",rel:"nofollow",className:"sbdocs sbdocs-a",children:"Nancy Platform Examples"})]})})})]})}function c(t={}){const{wrapper:n}={...r(),...t.components};return n?e.jsx(n,{...t,children:e.jsx(s,{...t})}):s(t)}export{c as default};
