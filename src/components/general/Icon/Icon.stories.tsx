@@ -1,14 +1,6 @@
 import { type Meta } from '@storybook/react'
 import React, { type ReactNode, useMemo } from 'react'
-import {
-  Flex,
-  Icon,
-  Typography,
-  ErrorStateIcon,
-  SuccessStateIcon,
-  WarningStateIcon,
-  type IIconProps,
-} from 'src/components'
+import { Flex, Icon, Typography, type IIconProps } from 'src/components'
 import { type IconColor } from 'src/components/general/Icon/Icon'
 import { Icons } from 'src/constants/Icons'
 import { MarginMd, MarginXl, Size } from 'src/styles/style'
@@ -160,7 +152,11 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
 
   // If showing a specific icon, use original behavior
   if (name) {
-    return <div style={iconGridStyle}>{renderIcon(name)}</div>
+    // Only render if it's a string icon name (not a component)
+    if (typeof name === 'string') {
+      return <div style={iconGridStyle}>{renderIcon(name)}</div>
+    }
+    return null
   }
 
   // Helper function to split icons by variant based on their default configuration
@@ -297,25 +293,6 @@ export const IconTable: React.FC<IIconProps> = ({ color = 'black', size = 'lg', 
 
   return (
     <div>
-      {/* Special Icons Section */}
-      <div style={sectionStyle}>
-        <Typography.Title level={4}>Special Icons</Typography.Title>
-        <div style={iconGridStyle}>
-          <Flex vertical align="center" key="error-state-icon">
-            <ErrorStateIcon size={size} />
-            <p style={{ fontFamily: 'monospace', textAlign: 'center' }}>ErrorStateIcon</p>
-          </Flex>
-          <Flex vertical align="center" key="warning-state-icon">
-            <WarningStateIcon size={size} />
-            <p style={{ fontFamily: 'monospace', textAlign: 'center' }}>WarningStateIcon</p>
-          </Flex>
-          <Flex vertical align="center" key="success-state-icon">
-            <SuccessStateIcon size={size} />
-            <p style={{ fontFamily: 'monospace', textAlign: 'center' }}>SuccessStateIcon</p>
-          </Flex>
-        </div>
-      </div>
-
       {/* UI Actions Section */}
       <div style={sectionStyle}>
         <Typography.Title level={4}>UI Actions</Typography.Title>

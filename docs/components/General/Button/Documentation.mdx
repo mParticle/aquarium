@@ -42,6 +42,22 @@ Icon-only buttons provide compact controls for toolbars and quick actions where 
 
 <Canvas of={ButtonStories.IconOnly} />
 
+### Icon Comparison: Local vs Untitled UI
+
+Aquarium supports both local in-house icons and Untitled UI icons. Compare the two implementations below.
+
+#### Buttons with Local Icons
+
+Local icons use the `Icon` component with icon names from the Aquarium library.
+
+<Canvas of={ButtonStories.ButtonsWithLocalIcons} />
+
+#### Buttons with Untitled UI Icons
+
+Untitled UI icons use the same `Icon` component, but pass the imported icon component instead of a string name.
+
+<Canvas of={ButtonStories.ButtonsWithUntitledUIIcons} />
+
 ### Loading state
 
 The loading variant keeps the user informed while an action finishes processing. Use concise labels that set expectations.
