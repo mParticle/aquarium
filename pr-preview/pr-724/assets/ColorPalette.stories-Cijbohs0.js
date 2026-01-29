@@ -1,0 +1,1 @@
+import{B as e,I as t,P as o,S as r,T as a}from"./ColorPalette.stories-CJqSLmgD.js";const s={title:"Foundations/Color Palette"},n=["Primary","Semantic","Text","Icons","Borders"],i=Object.freeze(Object.defineProperty({__proto__:null,Borders:e,Icons:t,Primary:o,Semantic:r,Text:a,__namedExportsOrder:n,default:s},Symbol.toStringTag,{value:"Module"}));export{i as C};
