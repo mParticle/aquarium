@@ -32,7 +32,7 @@ export type IMpThemeConfig = ThemeConfig & {
     ['roktBrand.8']: string
     ['roktBrand.9']: string
     ['roktBrand.10']: string
-    ['roktGray.1']: string
+    'roktGray.1': string
     ['roktGray.2']: string
     ['roktGray.3']: string
     ['roktGray.4']: string
