@@ -1,0 +1,231 @@
+# Adding Untitled UI Icons to the Aquarium Component Library
+
+## Overview
+Untitled UI icons are used differently from mParticle SVG icons. They are imported directly from the `@untitledui/icons` package and passed as React components to the Icon component, not as string names.
+
+## Key Differences from mParticle Icons
+
+| Aspect | mParticle SVG Icons | Untitled UI Icons |
+|--------|-------------------|-------------------|
+| **Source** | Local SVG files in `src/assets/svg/` | `@untitledui/icons` npm package |
+| **Usage** | `<Icon name="edit" />` (string) | `<Icon name={UUIEdit} />` (component) |
+| **Add to IconNames type?** | ✅ Yes | ❌ No |
+| **Add to Icons constant?** | ✅ Yes | ❌ No |
+| **Files to update** | 4 files | 1-2 files |
+
+## When to Use Untitled UI Icons
+- When you need a standard UI icon that's available in the Untitled UI library
+- When you want to use Rokt's design system icons
+- When you don't have a custom mParticle SVG icon available
+
+## Step-by-Step Guide
+
+### Step 1: Find the Icon
+1. Browse the Untitled UI icons package documentation or source
+2. Identify the exact icon name (e.g., `HelpCircle`, `Plus`, `SearchSm`, `Edit02`, `Trash04`)
+3. Note: Icon names in the package use PascalCase
+
+### Step 2: Update `src/components/icons/index.ts`
+
+Add the import in the appropriate section:
+
+**For general Untitled UI icons** (lines 142-153):
+```typescript
+// Untitled UI Icons
+import {
+  HelpCircle as UUIHelp,
+  Plus as UUIPlus,
+  SearchSm as UUISearch,
+  Edit02 as UUIEdit,
+  Trash04 as UUITrash,
+  CheckCircle as UUICheckCircle,
+  ArrowLeft as UUIArrowLeft,
+  ArrowRight as UUIArrowRight,
+  Tag01 as UUITag,
+  // Add your new icon here, aliased with UUI prefix
+  YourIcon as UUIYourIcon,
+} from '@untitledui/icons'
+```
+
+**For Rokt-branded icons** (lines 155-200):
+```typescript
+// Rokt icons (from @untitledui/icons)
+import {
+  AlertCircle,
+  Announcement02,
+  ArrowDown,
+  // ... existing imports ...
+  // Add your new icon here
+  YourIcon,
+  // Or with alias if needed to avoid conflicts
+  YourIcon as RoktYourIcon,
+} from '@untitledui/icons'
+```
+
+**Add to exports** (lines 202-397):
+```typescript
+export {
+  // ... existing exports ...
+  
+  // In Untitled UI Icons section (around line 343)
+  UUIHelp,
+  UUIPlus,
+  UUISearch,
+  UUIEdit,
+  UUITrash,
+  UUICheckCircle,
+  UUIArrowLeft,
+  UUIArrowRight,
+  UUITag,
+  UUIYourIcon, // Add your export here
+  
+  // Or in Rokt icons section (around line 353)
+  AlertCircle,
+  // ... existing exports ...
+  YourIcon, // Or RoktYourIcon
+}
+```
+
+### Step 3 (Optional): Re-export from `src/components/index.ts`
+
+If you want to make the icon easily accessible from the main components export, add it to `src/components/index.ts`:
+
+At the end of the file (after line 165), add:
+```typescript
+// Export Untitled UI Icons
+export { 
+  UUIHelp, 
+  UUIPlus, 
+  UUISearch, 
+  UUIEdit, 
+  UUITrash, 
+  UUICheckCircle,
+  UUIYourIcon, // Add here
+} from './icons'
+```
+
+**Note:** This step is optional. If skipped, users can still import from `'@aquarium/icons'` path.
+
+### Step 4: Verify the Icon
+
+Check your icon works correctly in your component:
+
+```tsx
+import { Icon } from '@aquarium/components'
+import { UUIYourIcon } from '@aquarium/components' // or from '@aquarium/icons'
+
+// In your component
+<Icon name={UUIYourIcon} size="sm" color="primary" />
+```
+
+## Naming Conventions
+
+### Alias Prefixes
+- **UUI prefix**: For general Untitled UI icons (e.g., `UUIHelp`, `UUIPlus`)
+- **Rokt prefix**: For Rokt-specific icons that may conflict with existing names (e.g., `RoktCheck`, `RoktZoomIn`)
+- **No prefix**: For Rokt icons with unique names (e.g., `AlertCircle`, `ChevronDown`)
+
+### When to Use Aliases
+- Use `UUI` prefix for general-purpose Untitled UI icons
+- Use `Rokt` prefix when the icon name conflicts with existing mParticle icons
+- Use no prefix for unique icon names that won't conflict
+
+## Important Notes
+
+⚠️ **DO NOT** add Untitled UI icon names to:
+- `src/types/icons.ts` - This is only for mParticle SVG icons used as strings
+- `src/constants/Icons.ts` - This is only for local SVG icon mappings
+
+✅ **DO** add Untitled UI icons to:
+- `src/components/icons/index.ts` - Import and export the component
+- `src/components/index.ts` - (Optional) Re-export for convenience
+
+## Complete Example
+
+Let's say you want to add the `Download` icon from Untitled UI:
+
+**1. Update `src/components/icons/index.ts`:**
+
+```typescript
+// In the Untitled UI Icons section
+import {
+  HelpCircle as UUIHelp,
+  Plus as UUIPlus,
+  SearchSm as UUISearch,
+  Edit02 as UUIEdit,
+  Trash04 as UUITrash,
+  CheckCircle as UUICheckCircle,
+  ArrowLeft as UUIArrowLeft,
+  ArrowRight as UUIArrowRight,
+  Tag01 as UUITag,
+  Download as UUIDownload, // NEW
+} from '@untitledui/icons'
+
+// In the exports section
+export {
+  // ... existing exports ...
+  UUIHelp,
+  UUIPlus,
+  UUISearch,
+  UUIEdit,
+  UUITrash,
+  UUICheckCircle,
+  UUIArrowLeft,
+  UUIArrowRight,
+  UUITag,
+  UUIDownload, // NEW
+  // ... rest of exports ...
+}
+```
+
+**2. (Optional) Update `src/components/index.ts`:**
+
+```typescript
+// Export Untitled UI Icons
+export { 
+  UUIHelp, 
+  UUIPlus, 
+  UUISearch, 
+  UUIEdit, 
+  UUITrash, 
+  UUICheckCircle,
+  UUIDownload, // NEW
+} from './icons'
+```
+
+**3. Use in your code:**
+
+```tsx
+import { Icon, UUIDownload } from '@aquarium/components'
+
+function MyComponent() {
+  return (
+    <Button icon={<Icon name={UUIDownload} size="sm" />}>
+      Download File
+    </Button>
+  )
+}
+```
+
+## Troubleshooting
+
+**Icon not found when importing:**
+- Verify the icon name exists in `@untitledui/icons` package
+- Check that you've exported it from `src/components/icons/index.ts`
+- Check for typos in the import/export statements
+
+**TypeScript errors:**
+- The Icon component accepts `React.ComponentType<{ className?: string; size?: number; color?: string }>` for Untitled UI icons
+- No type updates needed - TypeScript will infer the correct type
+
+**Icon not displaying:**
+- Untitled UI icons use `currentColor` for their color, so they inherit from CSS classes
+- Ensure you're passing the component reference, not a string: `name={UUIIcon}` not `name="UUIIcon"`
+
+## Reference Files
+- Icon component implementation: `src/components/general/Icon/Icon.tsx`
+- Icon types: `src/types/icons.ts` (for mParticle icons only)
+- Icons index: `src/components/icons/index.ts`
+- Components index: `src/components/index.ts`
+- Icon documentation: `docs/Foundations/Icons/Rokt Icons.mdx`
+- SVG icons guide: `.cursor/rules/add-new-icon.mdc`
