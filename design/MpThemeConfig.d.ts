@@ -22,18 +22,26 @@ export type IMpThemeConfig = ThemeConfig & {
     ['mpBrandSecondary.8']: string
     ['mpBrandSecondary.9']: string
     ['mpBrandSecondary.10']: string
-    ['roktBrand.25']: string
-    ['roktBrand.50']: string
-    ['roktBrand.100']: string
-    ['roktBrand.200']: string
-    ['roktBrand.300']: string
-    ['roktBrand.400']: string
-    ['roktBrand.500']: string
-    ['roktBrand.600']: string
-    ['roktBrand.700']: string
-    ['roktBrand.800']: string
-    ['roktBrand.900']: string
-    ['roktBrand.950']: string
+    ['roktBrand.1']: string
+    ['roktBrand.2']: string
+    ['roktBrand.3']: string
+    ['roktBrand.4']: string
+    ['roktBrand.5']: string
+    ['roktBrand.6']: string
+    ['roktBrand.7']: string
+    ['roktBrand.8']: string
+    ['roktBrand.9']: string
+    ['roktBrand.10']: string
+    ['roktGray.1']: string
+    ['roktGray.2']: string
+    ['roktGray.3']: string
+    ['roktGray.4']: string
+    ['roktGray.5']: string
+    ['roktGray.6']: string
+    ['roktGray.7']: string
+    ['roktGray.8']: string
+    ['roktGray.9']: string
+    ['roktGray.10']: string
     mpColorBorderDisabled: string
     mpColorIconStrong: string
     mpColorIconBrand: string
@@ -76,12 +84,27 @@ export type IMpThemeConfig = ThemeConfig & {
   components: {
     Steps: {
       colorPrimary: string
+      colorPrimaryBorder?: string
+      colorPrimaryBg?: string
+      colorPrimaryHover?: string
+    }
+    Slider?: {
+      trackHoverBg?: string
+      trackBg?: string
+      handleColor?: string
+      handleActiveColor?: string
+      dotActiveBorderColor?: string
+      handleActiveOutlineColor?: string
     }
     Progress: {
       defaultColor: string
     }
     Button: {
       borderColorDisabled: string
+    }
+    Tooltip?: {
+      colorTextLightSolid?: string
+      colorBgSpotlight?: string
     }
     Input: {
       activeShadow: string
