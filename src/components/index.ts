@@ -162,3 +162,6 @@ export {
   UnauthorizedTooltip,
   type IUnauthorizedTooltipProps,
 } from './UXPatterns/PermissionsRestrictions/UnauthorizedTooltip'
+
+// Export Untitled UI Icons
+export { UUIHelp, UUIPlus, UUISearch, UUIEdit, UUITrash, UUICheckCircle } from './icons'
