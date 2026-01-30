@@ -80,6 +80,7 @@ export type IMpThemeConfig = ThemeConfig & {
     mpQueryItem_borderColor_hover: string
     colorFillAlterSolid: string
     colorFilledHandleBg: string
+    solidTextColor: string
   }
   components: {
     Steps: {

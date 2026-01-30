@@ -51,7 +51,6 @@ import {
   ColorSuccessTextActive,
   ColorErrorBg,
   ColorErrorBgHover,
-  ColorErrorBgActive,
   ColorErrorBorder,
   ColorErrorBorderHover,
   ColorErrorHover,
@@ -550,12 +549,6 @@ export const Semantic: Story = {
         name: 'Error Background Hover',
         tokenName: 'ColorErrorBgHover',
         value: ColorErrorBgHover,
-      },
-      {
-        swatch: ColorErrorBgActive,
-        name: 'Error Background Active',
-        tokenName: 'ColorErrorBgActive',
-        value: ColorErrorBgActive,
       },
       { swatch: ColorErrorBorder, name: 'Error Border', tokenName: 'ColorErrorBorder', value: ColorErrorBorder },
       {
