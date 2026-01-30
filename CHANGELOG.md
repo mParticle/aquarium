@@ -1,3 +1,9 @@
+## [1.63.1](https://github.com/mParticle/aquarium/compare/v1.63.0...v1.63.1) (2026-01-29)
+
+### Bug Fixes
+
+- rokt icons missed export ([#723](https://github.com/mParticle/aquarium/issues/723)) ([99a3432](https://github.com/mParticle/aquarium/commit/99a3432563867e7d484ed0535168a8be52e9b103))
+
 # [1.63.0](https://github.com/mParticle/aquarium/compare/v1.62.0...v1.63.0) (2026-01-27)
 
 ### Features
