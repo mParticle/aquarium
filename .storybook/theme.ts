@@ -1,15 +1,10 @@
 import { create } from '@storybook/theming'
-import { LightTheme } from '../design/LightTheme'
 
 export default create({
-  base: 'light',
-  colorPrimary: LightTheme.token.colorPrimary,
-  colorSecondary: LightTheme.token.colorPrimaryText,
-  appBg: LightTheme.token.colorPrimaryBgHover,
-  appContentBg: LightTheme.token.colorPrimaryBg,
-  textColor: LightTheme.token.colorText,
-  textInverseColor: LightTheme.token.colorTextQuaternary,
+  base: 'dark',
+  barBg: '#ffffff',
+  barTextColor: '#333333',
   brandTitle: 'Aquarium',
-  brandImage: './images/mParticle_by_Rokt-Blk.svg',
+  brandImage: './images/rokt_logo_white.svg',
   brandUrl: 'https://github.com/mParticle/aquarium/',
 })

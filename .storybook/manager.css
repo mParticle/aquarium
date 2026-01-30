@@ -1,3 +1,8 @@
+.sb-bar {
+  background-color: #fff !important;
+  color: #333 !important;
+}
+
 .componentTag__container--beta {
   position: static;
 }
