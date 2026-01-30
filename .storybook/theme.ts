@@ -2,6 +2,7 @@ import { create } from '@storybook/theming'
 
 export default create({
   base: 'dark',
+  colorPrimary: '#A10863',
   barBg: '#ffffff',
   barTextColor: '#333333',
   brandTitle: 'Aquarium',

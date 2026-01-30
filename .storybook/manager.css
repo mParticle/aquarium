@@ -3,6 +3,23 @@
   color: #333 !important;
 }
 
+#root [data-selected='true'],
+#storybook-root [data-selected='true'] {
+  background-color: #A10863 !important;
+}
+
+#root [data-selected='true']:hover,
+#root [data-selected='true']:focus,
+#storybook-root [data-selected='true']:hover,
+#storybook-root [data-selected='true']:focus {
+  background-color: #A10863 !important;
+}
+
+#root nav [data-ref-id]:hover,
+#storybook-root nav [data-ref-id]:hover {
+  background-color: rgb(161 8 99 / 14%) !important;
+}
+
 .componentTag__container--beta {
   position: static;
 }
