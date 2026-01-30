@@ -67,7 +67,21 @@
     <link href="./sb-addons/interactions-9/manager-bundle.js" rel="modulepreload" />
     
     <link href="./sb-addons/storybook-10/manager-bundle.js" rel="modulepreload" />
-       
+      <script>
+(function() {
+  var id = 'aquarium-sidebar-accent';
+  function inject() {
+    if (document.getElementById(id)) return;
+    var s = document.createElement('style');
+    s.id = id;
+    s.textContent = '#root [data-selected="true"],#storybook-root [data-selected="true"]{background-color:#A10863!important}#root [data-selected="true"]:hover,#storybook-root [data-selected="true"]:hover{background-color:#A10863!important}#root nav [data-ref-id]:hover,#storybook-root nav [data-ref-id]:hover{background-color:rgba(161,8,99,0.14)!important}';
+    document.head.appendChild(s);
+  }
+  document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', inject) : inject();
+  setTimeout(inject, 300);
+})();
+</script>
+ 
 
     <style>
       #storybook-root[hidden] {
