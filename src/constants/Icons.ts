@@ -4,7 +4,6 @@ import {
   AcceptIcon,
   AddIcon,
   AlicornIcon,
-  AlertCircle,
   ArrayIcon,
   RateDownIcon,
   RateDownIconDt,
@@ -15,9 +14,6 @@ import {
   RunIcon,
   AnalyticsIcon,
   AnalyticsIconDt,
-  Announcement02,
-  ArrowDown,
-  Asterisk02,
   C360Icon,
   C360IconDt,
   CalculatedAttributeIcon,
@@ -26,38 +22,26 @@ import {
   ChartColumnIcon,
   ChartLineIcon,
   CheckIcon,
-  CheckCircle,
-  ChevronDown,
-  ChevronLeft,
-  ChevronRight,
-  ChevronSelectorVertical,
   CircleNodesIcon,
-  Clock,
   CloudIcon,
-  CoinsHand,
   ConnectionsIcon,
-  Copy01,
   DataPlatformIcon,
   DataPlatformIconDt,
   DatabaseIcon,
   DateIcon,
   DevicesIcon,
-  DotsVertical,
   DragAndDropIcon,
   DsrIcon,
-  Edit01,
   EmptyIcon,
   StateError,
   EnrichmentIcon,
   EventAttributeIcon,
   EventIcon,
-  Eye,
   FitToScreen,
   FolderClosedIcon,
   ForwardingIcon,
   GearIcon,
   GenericIcon,
-  Globe01,
   GridIcon,
   GroupIcon,
   HeartIcon,
@@ -66,19 +50,10 @@ import {
   HistoryIcon,
   HybridIcon,
   IdentityIcon,
-  Image03,
-  InfoCircle,
   JumpToIcon,
-  LayoutAlt01,
   LightBulbIcon,
-  Lightbulb02,
-  LinkExternal01,
   LiveStreamIcon,
-  Mail01,
-  MarkerPin01,
-  MessageChatSquare,
   MessageQuestionIcon,
-  Monitor01,
   MpLogoIcon,
   ObservabilityIcon,
   OversightIcon,
@@ -86,39 +61,22 @@ import {
   PrecisionIcon,
   PredictionsIconDt,
   PredictionsIcon,
-  PhoneIncoming01,
-  RefreshCw02,
   RemoveIcon,
-  RoktCheck,
-  RoktEdit02,
-  RoktHelpCircle,
-  RoktPlus,
-  RoktSearchSm,
-  RoktZoomIn,
   SearchIcon,
-  SearchLg,
   SegmentationIconDt,
   ShieldKeyholeIcon,
-  ShoppingCart01,
   SignoutIcon,
   SplitIcon,
-  Stars01,
   SystemAlertsIcon,
   TransformationsIcon,
-  Trash01,
-  Trash02,
   UploadIcon,
-  User01,
   UserAttributeIcon,
-  UserCheck01,
   UserIcon,
   UserProfilesIcon,
   UsersIcon,
   ViewOnlyIcon,
   PaywallIcon,
   WrenchIcon,
-  X,
-  XClose,
   ZoomIn,
   ZoomOut,
   OpenTabIcon,
@@ -144,7 +102,6 @@ import {
   ActiveIcon,
   AgentCopilotIcon,
   AudienceGroupIcon,
-  Building05,
   LinkIcon,
   ListIcon,
   InfoIcon,
@@ -217,22 +174,6 @@ export const Icons: Record<IconNames, IconOptions> = {
     default: 'light',
     deprecated: 'placeholder',
   },
-  alertCircle: {
-    light: AlertCircle,
-    default: 'light',
-  },
-  announcement02: {
-    light: Announcement02,
-    default: 'light',
-  },
-  arrowDown: {
-    light: ArrowDown,
-    default: 'light',
-  },
-  asterisk02: {
-    light: Asterisk02,
-    default: 'light',
-  },
   analytics: {
     light: AnalyticsIcon,
     'duo-tone': AnalyticsIconDt,
@@ -264,10 +205,6 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: AudienceGroupIcon,
     default: 'light',
   },
-  building05: {
-    light: Building05,
-    default: 'light',
-  },
   C360: {
     light: C360Icon,
     'duo-tone': C360IconDt,
@@ -293,34 +230,10 @@ export const Icons: Record<IconNames, IconOptions> = {
     default: 'light',
     deprecated: 'selected',
   },
-  checkCircle: {
-    light: CheckCircle,
-    default: 'light',
-  },
-  chevronDown: {
-    light: ChevronDown,
-    default: 'light',
-  },
-  chevronLeft: {
-    light: ChevronLeft,
-    default: 'light',
-  },
-  chevronRight: {
-    light: ChevronRight,
-    default: 'light',
-  },
-  chevronSelectorVertical: {
-    light: ChevronSelectorVertical,
-    default: 'light',
-  },
   circleNodes: {
     light: CircleNodesIcon,
     default: 'light',
     deprecated: 'pipelines',
-  },
-  clock: {
-    light: Clock,
-    default: 'light',
   },
   close: {
     light: RemoveIcon,
@@ -333,10 +246,6 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   cohort: {
     light: Cohort,
-    default: 'light',
-  },
-  coinsHand: {
-    light: CoinsHand,
     default: 'light',
   },
   connections: {
@@ -353,10 +262,6 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   copy: {
     light: Copy,
-    default: 'light',
-  },
-  copy01: {
-    light: Copy01,
     default: 'light',
   },
   dashboard: {
@@ -389,10 +294,6 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: DirectoryIcon,
     default: 'light',
   },
-  dotsVertical: {
-    light: DotsVertical,
-    default: 'light',
-  },
   dragAndDrop: {
     light: DragAndDropIcon,
     default: 'light',
@@ -413,14 +314,6 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: Edit,
     default: 'light',
   },
-  edit01: {
-    light: Edit01,
-    default: 'light',
-  },
-  edit02: {
-    light: RoktEdit02,
-    default: 'light',
-  },
   empty: {
     light: EmptyIcon,
     default: 'light',
@@ -435,10 +328,6 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   eventAttribute: {
     light: EventAttributeIcon,
-    default: 'light',
-  },
-  eye: {
-    light: Eye,
     default: 'light',
   },
   favorite: {
@@ -483,10 +372,6 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: GenericIcon,
     default: 'light',
   },
-  globe01: {
-    light: Globe01,
-    default: 'light',
-  },
   grid: {
     light: GridIcon,
     default: 'light',
@@ -503,10 +388,6 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   help: {
     light: HelpIcon,
-    default: 'light',
-  },
-  helpCircle: {
-    light: RoktHelpCircle,
     default: 'light',
   },
   helpVideo: {
@@ -531,10 +412,6 @@ export const Icons: Record<IconNames, IconOptions> = {
     default: 'light',
     deprecated: 'help',
   },
-  infoCircle: {
-    light: InfoCircle,
-    default: 'light',
-  },
   insights: {
     light: LightBulbIcon,
     default: 'light',
@@ -553,29 +430,13 @@ export const Icons: Record<IconNames, IconOptions> = {
     default: 'light',
     deprecated: 'openTab',
   },
-  image03: {
-    light: Image03,
-    default: 'light',
-  },
-  layoutAlt01: {
-    light: LayoutAlt01,
-    default: 'light',
-  },
   lightBulb: {
     light: LightBulbIcon,
     default: 'light',
     deprecated: 'insights',
   },
-  lightbulb02: {
-    light: Lightbulb02,
-    default: 'light',
-  },
   link: {
     light: LinkIcon,
-    default: 'light',
-  },
-  linkExternal01: {
-    light: LinkExternal01,
     default: 'light',
   },
   list: {
@@ -595,26 +456,10 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: SignoutIcon,
     default: 'light',
   },
-  mail01: {
-    light: Mail01,
-    default: 'light',
-  },
-  markerPin01: {
-    light: MarkerPin01,
-    default: 'light',
-  },
-  messageChatSquare: {
-    light: MessageChatSquare,
-    default: 'light',
-  },
   messageQuestion: {
     light: MessageQuestionIcon,
     default: 'light',
     deprecated: 'support',
-  },
-  monitor01: {
-    light: Monitor01,
-    default: 'light',
   },
   moreActions: {
     light: MoreActions,
@@ -690,10 +535,6 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: PauseIcon,
     default: 'light',
   },
-  phoneIncoming01: {
-    light: PhoneIncoming01,
-    default: 'light',
-  },
   pipelines: {
     light: CircleNodesIcon,
     default: 'light',
@@ -704,10 +545,6 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   play: {
     light: PlayIcon,
-    default: 'light',
-  },
-  plus: {
-    light: RoktPlus,
     default: 'light',
   },
   precision: {
@@ -746,10 +583,6 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: RefreshFrequency,
     default: 'light',
   },
-  refreshCw02: {
-    light: RefreshCw02,
-    default: 'light',
-  },
   rateDown: {
     light: RateDownIcon,
     'duo-tone': RateDownIconDt,
@@ -767,14 +600,6 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   run: {
     light: RunIcon,
-    default: 'light',
-  },
-  roktCheck: {
-    light: RoktCheck,
-    default: 'light',
-  },
-  roktZoomIn: {
-    light: RoktZoomIn,
     default: 'light',
   },
   reorder: {
@@ -795,14 +620,6 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   search: {
     light: SearchIcon,
-    default: 'light',
-  },
-  searchLg: {
-    light: SearchLg,
-    default: 'light',
-  },
-  searchSm: {
-    light: RoktSearchSm,
     default: 'light',
   },
   segmentation: {
@@ -826,10 +643,6 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: WrenchIcon,
     default: 'light',
   },
-  shoppingCart01: {
-    light: ShoppingCart01,
-    default: 'light',
-  },
   shieldKeyhole: {
     light: ShieldKeyholeIcon,
     default: 'light',
@@ -850,10 +663,6 @@ export const Icons: Record<IconNames, IconOptions> = {
     'duo-tone': PredictionsIconDt,
     default: 'duo-tone',
     deprecated: 'predictions',
-  },
-  stars01: {
-    light: Stars01,
-    default: 'light',
   },
   split: {
     light: SplitIcon,
@@ -891,14 +700,6 @@ export const Icons: Record<IconNames, IconOptions> = {
     default: 'light',
     deprecated: true,
   },
-  trash01: {
-    light: Trash01,
-    default: 'light',
-  },
-  trash02: {
-    light: Trash02,
-    default: 'light',
-  },
   unlock: {
     light: UnlockIcon,
     default: 'light',
@@ -911,16 +712,8 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: UserIcon,
     default: 'light',
   },
-  user01: {
-    light: User01,
-    default: 'light',
-  },
   userAttribute: {
     light: UserAttributeIcon,
-    default: 'light',
-  },
-  userCheck01: {
-    light: UserCheck01,
     default: 'light',
   },
   userProfiles: {
@@ -939,14 +732,6 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: WrenchIcon,
     default: 'light',
     deprecated: 'setup',
-  },
-  x: {
-    light: X,
-    default: 'light',
-  },
-  xClose: {
-    light: XClose,
-    default: 'light',
   },
   zoomIn: {
     light: ZoomIn,
