@@ -81,6 +81,10 @@ export type IMpThemeConfig = ThemeConfig & {
     colorFillAlterSolid: string
     colorFilledHandleBg: string
     solidTextColor: string
+    transparent: string
+    colorBgSolid: string
+    colorBgSolidActive: string
+    colorBgSolidHover: string
   }
   components: {
     Steps: {
