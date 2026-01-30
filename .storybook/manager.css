@@ -20,6 +20,25 @@
   background-color: rgb(161 8 99 / 14%) !important;
 }
 
+#root nav,
+#storybook-root nav,
+#root nav a,
+#root nav button,
+#root nav .sidebar-item,
+#root nav .sidebar-subheading,
+#storybook-root nav a,
+#storybook-root nav button,
+#storybook-root nav .sidebar-item,
+#storybook-root nav .sidebar-subheading {
+  color: #b8b8b8 !important;
+}
+
+#root nav svg,
+#storybook-root nav svg {
+  color: #b8b8b8 !important;
+  fill: #b8b8b8 !important;
+}
+
 .componentTag__container--beta {
   position: static;
 }
