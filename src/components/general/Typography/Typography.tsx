@@ -6,7 +6,8 @@ import type { TitleProps as AntTitleProps } from 'antd/es/typography/Title'
 import type { LinkProps as AntLinkProps } from 'antd/es/typography/Link'
 import type { ParagraphProps as AntParagraphProps } from 'antd/es/typography/Paragraph'
 import { getColorFromStyles, type TypographyColor } from './colors'
-import { ColorTextLightSolid } from 'src/styles/style'
+import { ColorText } from 'src/styles/style'
+import './Typography.css'
 
 type TypographySize = 'base' | 'sm' | 'lg' | 'xl' | number
 
@@ -60,7 +61,7 @@ const Text = (props: ITextProps) => {
 
   const fontSize = size ? getFontSize(size) : undefined
   const lineHeight = size ? getLineHeight(size) : undefined
-  const fontColor = !type && color ? getColorFromStyles(color) : tooltip ? ColorTextLightSolid : undefined
+  const fontColor = !type && color ? getColorFromStyles(color) : tooltip ? ColorText : undefined
 
   return (
     <ConfigProvider>
@@ -92,15 +93,31 @@ const Title = (props: ITitleProps) => {
 Typography.Title = Title
 
 const Link = (props: ILinkProps) => {
-  const { size, color, type, tooltip, underline, children, style, ...rest } = props
+  const { size, color, type, tooltip, underline = true, children, style, className, ...rest } = props
 
   const fontSize = size ? getFontSize(size) : undefined
   const lineHeight = size ? getLineHeight(size) : undefined
-  const fontColor = !type && color ? getColorFromStyles(color) : tooltip ? ColorTextLightSolid : undefined
+
+  const isTooltipLink = tooltip === true
+  const hasUnderline = underline
+  const hasCustomColor = !type && color
+
+  const useDefaultUnderlinedStyle = hasUnderline && !isTooltipLink && !hasCustomColor
+  const linkClassName = useDefaultUnderlinedStyle ? `aquarium-underlined-link ${className ?? ''}`.trim() : className
+
+  let fontColor: string | undefined
+  if (isTooltipLink) {
+    fontColor = ColorText
+  } else if (hasCustomColor) {
+    fontColor = getColorFromStyles(color)
+  } else if (hasUnderline) {
+    fontColor = undefined
+  }
 
   return (
     <ConfigProvider>
       <AntTypography.Link
+        className={linkClassName}
         style={{ color: fontColor, fontSize, lineHeight, ...style }}
         type={type}
         underline={tooltip ?? underline}

@@ -10,11 +10,26 @@ import * as LinkStories from '../../../../src/components/general/Typography/Link
 
 Typography.Link provides an inline hyperlink that inherits typography styles. It is ideal for contextual navigation or secondary actions that live inside copy.
 
-### Default Link
+## Link Styles
+
+Links come in two styles:
+
+### Default Link (Underlined)
+
+By default, links are **underlined with black text**. This style is used for primary navigation within content.
 
 <Canvas of={LinkStories.Primary} />
 
+### Link Without Underline
+
+Links can be displayed **without underline in blue** by setting `underline={false}`. This style uses the theme's info color and includes hover states.
+<Canvas of={LinkStories.WithoutUnderline} />
+
+## Usage Examples
+
 ### Link Inside Tooltip
+
+Links inside tooltips always use black text to maintain readability on white backgrounds.
 
 <Canvas of={LinkStories.InsideTooltip} />
 

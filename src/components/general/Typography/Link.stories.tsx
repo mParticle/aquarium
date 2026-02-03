@@ -145,6 +145,16 @@ export const WithInlineIcon: Story = {
   },
 }
 
+export const WithoutUnderline: Story = {
+  render: () => {
+    return (
+      <Typography.Link underline={false} href="https://docs.mparticle.com/" target="_blank" rel="noopener noreferrer">
+        Example Text
+      </Typography.Link>
+    )
+  },
+}
+
 export const InsideErrorAlert: Story = {
   render: () => {
     return (

@@ -42,6 +42,9 @@ export type IMpThemeConfig = ThemeConfig & {
     ['roktGray.8']: string
     ['roktGray.9']: string
     ['roktGray.10']: string
+    roktColorLinkSecondary: string
+    roktColorLinkSecondaryHover: string
+    roktColorLinkSecondaryActive: string
     mpColorBorderDisabled: string
     mpColorIconStrong: string
     mpColorIconBrand: string
@@ -106,6 +109,9 @@ export type IMpThemeConfig = ThemeConfig & {
     }
     Button: {
       borderColorDisabled: string
+      colorLink?: string
+      colorLinkHover?: string
+      colorLinkActive?: string
     }
     Tooltip?: {
       colorTextLightSolid?: string
