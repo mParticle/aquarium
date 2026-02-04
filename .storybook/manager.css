@@ -1,3 +1,44 @@
+.sb-bar {
+  background-color: #fff !important;
+  color: #333 !important;
+}
+
+#root [data-selected='true'],
+#storybook-root [data-selected='true'] {
+  background-color: #A10863 !important;
+}
+
+#root [data-selected='true']:hover,
+#root [data-selected='true']:focus,
+#storybook-root [data-selected='true']:hover,
+#storybook-root [data-selected='true']:focus {
+  background-color: #A10863 !important;
+}
+
+#root nav [data-ref-id]:hover,
+#storybook-root nav [data-ref-id]:hover {
+  background-color: rgb(161 8 99 / 14%) !important;
+}
+
+#root nav,
+#storybook-root nav,
+#root nav a,
+#root nav button,
+#root nav .sidebar-item,
+#root nav .sidebar-subheading,
+#storybook-root nav a,
+#storybook-root nav button,
+#storybook-root nav .sidebar-item,
+#storybook-root nav .sidebar-subheading {
+  color: #b8b8b8 !important;
+}
+
+#root nav svg,
+#storybook-root nav svg {
+  color: #b8b8b8 !important;
+  fill: #b8b8b8 !important;
+}
+
 .componentTag__container--beta {
   position: static;
 }
