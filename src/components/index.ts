@@ -1,3 +1,7 @@
+// Import fonts
+import '@fontsource/inter'
+import '@fontsource/courier-prime'
+
 export { Button, type IButtonProps } from './general/Button/Button'
 export { FloatButton, type IFloatButtonProps } from './general/FloatButton/FloatButton'
 export { Icon, type IIconProps } from './general/Icon/Icon'

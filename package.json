@@ -38,6 +38,8 @@
     "@commitlint/cli": "19.2.1",
     "@commitlint/config-conventional": "19.1.0",
     "@faker-js/faker": "8.4.1",
+    "@fontsource/courier-prime": "^5.2.8",
+    "@fontsource/inter": "^5.2.8",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/exec": "7.1.0",
     "@semantic-release/git": "10.0.1",
