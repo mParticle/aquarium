@@ -1,19 +1,19 @@
-# Adding Untitled UI Icons to the Aquarium Component Library
+# Adding Rokt/Untitled UI Icons to the Aquarium Component Library
 
 ## Overview
-Untitled UI icons are used differently from mParticle SVG icons. They are imported directly from the `@untitledui/icons` package and passed as React components to the Icon component, not as string names.
+Rokt icons (from the `@untitledui/icons` package) are used differently from mParticle SVG icons. They are imported directly from the `@untitledui/icons` package and passed as React components to the Icon component, not as string names.
 
 ## Key Differences from mParticle Icons
 
-| Aspect | mParticle SVG Icons | Untitled UI Icons |
+| Aspect | mParticle SVG Icons | Rokt/Untitled UI Icons |
 |--------|-------------------|-------------------|
 | **Source** | Local SVG files in `src/assets/svg/` | `@untitledui/icons` npm package |
-| **Usage** | `<Icon name="edit" />` (string) | `<Icon name={UUIEdit} />` (component) |
+| **Usage** | `<Icon name="edit" />` (string) | `<Icon name={RoktEdit} />` (component) |
 | **Add to IconNames type?** | ✅ Yes | ❌ No |
 | **Add to Icons constant?** | ✅ Yes | ❌ No |
-| **Files to update** | 4 files | 1-2 files |
+| **Files to update** | 4 files | 3 files |
 
-## When to Use Untitled UI Icons
+## When to Use Rokt/Untitled UI Icons
 - When you need a standard UI icon that's available in the Untitled UI library
 - When you want to use Rokt's design system icons
 - When you don't have a custom mParticle SVG icon available
@@ -22,185 +22,159 @@ Untitled UI icons are used differently from mParticle SVG icons. They are import
 
 ### Step 1: Find the Icon
 1. Browse the Untitled UI icons package documentation or source
-2. Identify the exact icon name (e.g., `HelpCircle`, `Plus`, `SearchSm`, `Edit02`, `Trash04`)
+2. Identify the exact icon name (e.g., `HelpCircle`, `Plus`, `SearchSm`, `Edit02`, `Trash01`)
 3. Note: Icon names in the package use PascalCase
 
 ### Step 2: Update `src/components/icons/index.ts`
 
-Add the import in the appropriate section:
+Add the import with the `Rokt` prefix in the Rokt icons section (around lines 142-191):
 
-**For general Untitled UI icons** (lines 142-153):
-```typescript
-// Untitled UI Icons
-import {
-  HelpCircle as UUIHelp,
-  Plus as UUIPlus,
-  SearchSm as UUISearch,
-  Edit02 as UUIEdit,
-  Trash04 as UUITrash,
-  CheckCircle as UUICheckCircle,
-  ArrowLeft as UUIArrowLeft,
-  ArrowRight as UUIArrowRight,
-  Tag01 as UUITag,
-  // Add your new icon here, aliased with UUI prefix
-  YourIcon as UUIYourIcon,
-} from '@untitledui/icons'
-```
-
-**For Rokt-branded icons** (lines 155-200):
+**Import the icon:**
 ```typescript
 // Rokt icons (from @untitledui/icons)
 import {
-  AlertCircle,
-  Announcement02,
-  ArrowDown,
+  HelpCircle as RoktHelpCircle,
+  Plus as RoktPlus,
+  SearchSm as RoktSearchSm,
+  CheckCircle as RoktCheckCircle,
+  ArrowLeft as RoktArrowLeft,
   // ... existing imports ...
-  // Add your new icon here
-  YourIcon,
-  // Or with alias if needed to avoid conflicts
-  YourIcon as RoktYourIcon,
+  YourNewIcon as RoktYourNewIcon, // Add your new icon here
 } from '@untitledui/icons'
 ```
 
-**Add to exports** (lines 202-397):
+**Export the icon** (add to the export block before the closing brace around line 376):
 ```typescript
 export {
-  // ... existing exports ...
-  
-  // In Untitled UI Icons section (around line 343)
-  UUIHelp,
-  UUIPlus,
-  UUISearch,
-  UUIEdit,
-  UUITrash,
-  UUICheckCircle,
-  UUIArrowLeft,
-  UUIArrowRight,
-  UUITag,
-  UUIYourIcon, // Add your export here
-  
-  // Or in Rokt icons section (around line 353)
-  AlertCircle,
-  // ... existing exports ...
-  YourIcon, // Or RoktYourIcon
+  // ... all existing mParticle icon exports ...
+  MoveToTop,
+  // Rokt icons from @untitledui/icons
+  RoktHelpCircle,
+  RoktPlus,
+  RoktSearchSm,
+  RoktCheckCircle,
+  RoktArrowLeft,
+  // ... existing Rokt icon exports ...
+  RoktYourNewIcon, // Add your new icon here
 }
 ```
 
-### Step 3 (Optional): Re-export from `src/components/index.ts`
+### Step 3: Re-export from `src/components/index.ts`
 
-If you want to make the icon easily accessible from the main components export, add it to `src/components/index.ts`:
+Add the icon to the Rokt icons export section (around line 170):
 
-At the end of the file (after line 165), add:
 ```typescript
-// Export Untitled UI Icons
-export { 
-  UUIHelp, 
-  UUIPlus, 
-  UUISearch, 
-  UUIEdit, 
-  UUITrash, 
-  UUICheckCircle,
-  UUIYourIcon, // Add here
+// Export Rokt icons from @untitledui/icons
+export {
+  RoktHelpCircle,
+  RoktPlus,
+  RoktSearchSm,
+  RoktCheckCircle,
+  RoktArrowLeft,
+  // ... existing exports ...
+  RoktYourNewIcon, // Add here
 } from './icons'
 ```
-
-**Note:** This step is optional. If skipped, users can still import from `'@aquarium/icons'` path.
 
 ### Step 4: Verify the Icon
 
 Check your icon works correctly in your component:
 
 ```tsx
-import { Icon } from '@aquarium/components'
-import { UUIYourIcon } from '@aquarium/components' // or from '@aquarium/icons'
+import { Icon, RoktYourNewIcon } from '@aquarium/components'
 
 // In your component
-<Icon name={UUIYourIcon} size="sm" color="primary" />
+<Icon name={RoktYourNewIcon} size="sm" color="primary" />
 ```
 
 ## Naming Conventions
 
-### Alias Prefixes
-- **UUI prefix**: For general Untitled UI icons (e.g., `UUIHelp`, `UUIPlus`)
-- **Rokt prefix**: For Rokt-specific icons that may conflict with existing names (e.g., `RoktCheck`, `RoktZoomIn`)
-- **No prefix**: For Rokt icons with unique names (e.g., `AlertCircle`, `ChevronDown`)
+### Always Use Rokt Prefix
+**ALL** Rokt/Untitled UI icons use the `Rokt` prefix for consistency:
+- ✅ `HelpCircle as RoktHelpCircle`
+- ✅ `Plus as RoktPlus`
+- ✅ `Clock as RoktClock`
+- ✅ `Edit02 as RoktEdit` (drop the number for cleaner names)
+- ✅ `Trash01 as RoktTrash` (drop the number for cleaner names)
 
-### When to Use Aliases
-- Use `UUI` prefix for general-purpose Untitled UI icons
-- Use `Rokt` prefix when the icon name conflicts with existing mParticle icons
-- Use no prefix for unique icon names that won't conflict
+### Why Rokt Prefix?
+1. **Avoids conflicts** with existing mParticle SVG icons (e.g., `HelpIcon`, `CheckIcon`, `InfoIcon`)
+2. **Clear origin** - Easy to identify they're from Rokt/Untitled UI package
+3. **Consistency** - All icons follow the same pattern
+4. **No duplicates** - Each icon imported once with one clear name
+
+### Handling Numbered Icons
+When the original icon has a number suffix (e.g., `Edit02`, `Trash01`), you can optionally drop it for cleaner names:
+- `Edit02 as RoktEdit`
+- `Trash01 as RoktTrash`
+- `Tag01 as RoktTag`
+
+Keep the number only if you need multiple variants of the same icon.
 
 ## Important Notes
 
-⚠️ **DO NOT** add Untitled UI icon names to:
+⚠️ **DO NOT** add Rokt/Untitled UI icon names to:
 - `src/types/icons.ts` - This is only for mParticle SVG icons used as strings
 - `src/constants/Icons.ts` - This is only for local SVG icon mappings
 
-✅ **DO** add Untitled UI icons to:
-- `src/components/icons/index.ts` - Import and export the component
-- `src/components/index.ts` - (Optional) Re-export for convenience
+✅ **DO** add Rokt/Untitled UI icons to (in this order):
+1. `src/components/icons/index.ts` - Import with Rokt prefix and export
+2. `src/components/index.ts` - Re-export from icons (REQUIRED for discoverability)
+3. Update documentation in `docs/Foundations/Icons/Rokt Icons.mdx` if the icon should be showcased
 
 ## Complete Example
 
-Let's say you want to add the `Download` icon from Untitled UI:
+Let's say you want to add the `Download04` icon from Untitled UI:
 
 **1. Update `src/components/icons/index.ts`:**
 
 ```typescript
-// In the Untitled UI Icons section
+// In the Rokt icons section (around line 143)
 import {
-  HelpCircle as UUIHelp,
-  Plus as UUIPlus,
-  SearchSm as UUISearch,
-  Edit02 as UUIEdit,
-  Trash04 as UUITrash,
-  CheckCircle as UUICheckCircle,
-  ArrowLeft as UUIArrowLeft,
-  ArrowRight as UUIArrowRight,
-  Tag01 as UUITag,
-  Download as UUIDownload, // NEW
+  HelpCircle as RoktHelpCircle,
+  Plus as RoktPlus,
+  SearchSm as RoktSearchSm,
+  CheckCircle as RoktCheckCircle,
+  // ... existing imports ...
+  Download04 as RoktDownload, // NEW - with Rokt prefix
 } from '@untitledui/icons'
 
-// In the exports section
+// At the end of the exports section (before closing brace)
 export {
-  // ... existing exports ...
-  UUIHelp,
-  UUIPlus,
-  UUISearch,
-  UUIEdit,
-  UUITrash,
-  UUICheckCircle,
-  UUIArrowLeft,
-  UUIArrowRight,
-  UUITag,
-  UUIDownload, // NEW
-  // ... rest of exports ...
+  // ... all existing mParticle icons ...
+  MoveToTop,
+  // Rokt icons from @untitledui/icons
+  RoktHelpCircle,
+  RoktPlus,
+  RoktSearchSm,
+  RoktCheckCircle,
+  // ... existing Rokt exports ...
+  RoktDownload, // NEW
 }
 ```
 
-**2. (Optional) Update `src/components/index.ts`:**
+**2. Update `src/components/index.ts`:**
 
 ```typescript
-// Export Untitled UI Icons
-export { 
-  UUIHelp, 
-  UUIPlus, 
-  UUISearch, 
-  UUIEdit, 
-  UUITrash, 
-  UUICheckCircle,
-  UUIDownload, // NEW
+// Export Rokt icons from @untitledui/icons
+export {
+  RoktHelpCircle,
+  RoktPlus,
+  RoktSearchSm,
+  RoktCheckCircle,
+  // ... existing exports ...
+  RoktDownload, // NEW
 } from './icons'
 ```
 
 **3. Use in your code:**
 
 ```tsx
-import { Icon, UUIDownload } from '@aquarium/components'
+import { Icon, RoktDownload } from '@aquarium/components'
 
 function MyComponent() {
   return (
-    <Button icon={<Icon name={UUIDownload} size="sm" />}>
+    <Button icon={<Icon name={RoktDownload} size="sm" />}>
       Download File
     </Button>
   )
@@ -211,16 +185,225 @@ function MyComponent() {
 
 **Icon not found when importing:**
 - Verify the icon name exists in `@untitledui/icons` package
-- Check that you've exported it from `src/components/icons/index.ts`
+- Check that you've exported it from BOTH `src/components/icons/index.ts` AND `src/components/index.ts`
 - Check for typos in the import/export statements
+- Ensure you're using the Rokt prefix (e.g., `RoktDownload` not `Download04`)
 
 **TypeScript errors:**
-- The Icon component accepts `React.ComponentType<{ className?: string; size?: number; color?: string }>` for Untitled UI icons
+- The Icon component accepts `React.ComponentType<{ className?: string; size?: number; color?: string }>` for Rokt/Untitled UI icons
 - No type updates needed - TypeScript will infer the correct type
 
 **Icon not displaying:**
-- Untitled UI icons use `currentColor` for their color, so they inherit from CSS classes
-- Ensure you're passing the component reference, not a string: `name={UUIIcon}` not `name="UUIIcon"`
+- Rokt/Untitled UI icons use `currentColor` for their color, so they inherit from CSS classes
+- Ensure you're passing the component reference, not a string: `name={RoktIcon}` not `name="RoktIcon"`
+- Check the Storybook documentation to verify the icon is properly showcased
+
+## Reference Files
+- Icon component implementation: `src/components/general/Icon/Icon.tsx`
+- Icon types: `src/types/icons.ts` (for mParticle icons only)
+- Icons index: `src/components/icons/index.ts`
+- Components index: `src/components/index.ts`
+- Icon documentation: `docs/Foundations/Icons/Rokt Icons.mdx`
+- SVG icons guide: `.cursor/rules/add-new-icon.mdc`
+
+## Step-by-Step Guide
+
+### Step 1: Find the Icon
+1. Browse the Untitled UI icons package documentation or source
+2. Identify the exact icon name (e.g., `HelpCircle`, `Plus`, `SearchSm`, `Edit02`, `Trash04`)
+3. Note: Icon names in the package use PascalCase
+
+### Step 2: Update `src/components/icons/index.ts`
+
+Add the import and export in the Rokt icons section (around lines 142-194):
+
+**Import the icon** (add to the import block starting at line 143):
+```typescript
+// Rokt icons (from @untitledui/icons)
+import {
+  HelpCircle,
+  Plus,
+  SearchSm,
+  Trash04 as TrashRokt,
+  CheckCircle,
+  ArrowLeft,
+  ArrowRight,
+  Tag01 as RoktTag,
+  AlertCircle,
+  // ... existing imports ...
+  YourNewIcon, // Add without alias if unique name
+  // Or with alias to avoid conflicts:
+  YourIcon as RoktYourIcon,
+} from '@untitledui/icons'
+```
+
+**Export the icon** (add to the export block before the closing brace around line 336):
+```typescript
+export {
+  // ... all existing mParticle icon exports ...
+  MoveToTop,
+  // Rokt icons from @untitledui/icons
+  HelpCircle,
+  Plus,
+  SearchSm,
+  TrashRokt,
+  CheckCircle,
+  ArrowLeft,
+  ArrowRight,
+  RoktTag,
+  AlertCircle,
+  // ... existing Rokt icon exports ...
+  YourNewIcon, // Add your new icon here
+  RoktYourIcon, // Or the aliased version
+}
+```
+
+### Step 3: Re-export from `src/components/index.ts`
+
+Add the icon to the Rokt icons export section (around line 170):
+
+```typescript
+// Export Rokt icons from @untitledui/icons
+export {
+  HelpCircle,
+  Plus,
+  SearchSm,
+  TrashRokt,
+  CheckCircle,
+  ArrowLeft,
+  ArrowRight,
+  RoktTag,
+  AlertCircle,
+  // ... existing exports ...
+  YourNewIcon, // Add here
+  RoktYourIcon, // Or the aliased version
+} from './icons'
+```
+
+### Step 4: Verify the Icon
+
+Check your icon works correctly in your component:
+
+```tsx
+import { Icon, YourNewIcon } from '@aquarium/components'
+
+// In your component
+<Icon name={YourNewIcon} size="sm" color="primary" />
+```
+
+## Naming Conventions
+
+### Alias Prefixes
+- **Rokt prefix**: Use when the icon name conflicts with existing mParticle icons (e.g., `Trash04 as TrashRokt`, `Check as RoktCheck`, `ZoomIn as RoktZoomIn`)
+- **Numbered suffix**: Keep the original Untitled UI numbered suffix when aliasing (e.g., `Tag01 as RoktTag`, `Edit02 as RoktEdit02`)
+- **No prefix**: Use the original name for icons with unique names that won't conflict (e.g., `AlertCircle`, `ChevronDown`, `Clock`)
+
+### When to Use Aliases
+- Use `Rokt` prefix when the icon name conflicts with existing mParticle icons
+- Use no prefix/alias for unique icon names that won't conflict
+- Always maintain consistency with the existing naming pattern in the codebase
+
+## Important Notes
+
+⚠️ **DO NOT** add Rokt/Untitled UI icon names to:
+- `src/types/icons.ts` - This is only for mParticle SVG icons used as strings
+- `src/constants/Icons.ts` - This is only for local SVG icon mappings
+
+✅ **DO** add Rokt/Untitled UI icons to (in this order):
+1. `src/components/icons/index.ts` - Import and export the component
+2. `src/components/index.ts` - Re-export from icons (REQUIRED for discoverability)
+3. Update documentation in `docs/Foundations/Icons/Rokt Icons.mdx` if the icon should be showcased
+
+## Complete Example
+
+Let's say you want to add the `Download04` icon from Untitled UI (note: assume this conflicts with an existing mParticle icon, so we'll alias it):
+
+**1. Update `src/components/icons/index.ts`:**
+
+```typescript
+// In the Rokt icons section (around line 143)
+import {
+  HelpCircle,
+  Plus,
+  SearchSm,
+  Trash04 as TrashRokt,
+  CheckCircle,
+  ArrowLeft,
+  ArrowRight,
+  Tag01 as RoktTag,
+  AlertCircle,
+  // ... existing imports ...
+  Download04 as RoktDownload, // NEW - aliased to avoid conflict
+} from '@untitledui/icons'
+
+// At the end of the exports section (before closing brace)
+export {
+  // ... all existing mParticle icons ...
+  MoveToTop,
+  // Rokt icons from @untitledui/icons
+  HelpCircle,
+  Plus,
+  SearchSm,
+  TrashRokt,
+  CheckCircle,
+  ArrowLeft,
+  ArrowRight,
+  RoktTag,
+  AlertCircle,
+  // ... existing Rokt exports ...
+  RoktDownload, // NEW
+}
+```
+
+**2. Update `src/components/index.ts`:**
+
+```typescript
+// Export Rokt icons from @untitledui/icons
+export {
+  HelpCircle,
+  Plus,
+  SearchSm,
+  TrashRokt,
+  CheckCircle,
+  ArrowLeft,
+  ArrowRight,
+  RoktTag,
+  AlertCircle,
+  // ... existing exports ...
+  RoktDownload, // NEW
+} from './icons'
+```
+
+**3. Use in your code:**
+
+```tsx
+import { Icon, RoktDownload } from '@aquarium/components'
+
+function MyComponent() {
+  return (
+    <Button icon={<Icon name={RoktDownload} size="sm" />}>
+      Download File
+    </Button>
+  )
+}
+```
+
+## Troubleshooting
+
+**Icon not found when importing:**
+- Verify the icon name exists in `@untitledui/icons` package
+- Check that you've exported it from BOTH `src/components/icons/index.ts` AND `src/components/index.ts`
+- Check for typos in the import/export statements
+- Ensure you're using the correct alias (e.g., `RoktDownload` not `Download04`)
+
+**TypeScript errors:**
+- The Icon component accepts `React.ComponentType<{ className?: string; size?: number; color?: string }>` for Rokt/Untitled UI icons
+- No type updates needed - TypeScript will infer the correct type
+
+**Icon not displaying:**
+- Rokt/Untitled UI icons use `currentColor` for their color, so they inherit from CSS classes
+- Ensure you're passing the component reference, not a string: `name={RoktIcon}` not `name="RoktIcon"`
+- Check the Storybook documentation to verify the icon is properly showcased
 
 ## Reference Files
 - Icon component implementation: `src/components/general/Icon/Icon.tsx`
