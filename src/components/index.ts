@@ -180,7 +180,7 @@ export {
   RoktChevronDown,
   RoktChevronLeft,
   RoktChevronRight,
-  RoktChevronSelectorVertical,
+  RoktChevronSelector,
   RoktClock,
   RoktCoinsHand,
   RoktCopy,
