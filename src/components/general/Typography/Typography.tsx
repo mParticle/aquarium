@@ -6,7 +6,7 @@ import type { TitleProps as AntTitleProps } from 'antd/es/typography/Title'
 import type { LinkProps as AntLinkProps } from 'antd/es/typography/Link'
 import type { ParagraphProps as AntParagraphProps } from 'antd/es/typography/Paragraph'
 import { getColorFromStyles, type TypographyColor } from './colors'
-import { ColorTextLightSolid } from 'src/styles/style'
+import { ColorText } from 'src/styles/style'
 
 type TypographySize = 'base' | 'sm' | 'lg' | 'xl' | number
 
@@ -60,7 +60,7 @@ const Text = (props: ITextProps) => {
 
   const fontSize = size ? getFontSize(size) : undefined
   const lineHeight = size ? getLineHeight(size) : undefined
-  const fontColor = !type && color ? getColorFromStyles(color) : tooltip ? ColorTextLightSolid : undefined
+  const fontColor = !type && color ? getColorFromStyles(color) : tooltip ? ColorText : undefined
 
   return (
     <ConfigProvider>
@@ -96,14 +96,17 @@ const Link = (props: ILinkProps) => {
 
   const fontSize = size ? getFontSize(size) : undefined
   const lineHeight = size ? getLineHeight(size) : undefined
-  const fontColor = !type && color ? getColorFromStyles(color) : tooltip ? ColorTextLightSolid : undefined
+  const fontColor = !type && color ? getColorFromStyles(color) : tooltip ? ColorText : undefined
+
+  // Force underline when using ColorText to ensure it's recognizable as a link
+  const shouldUnderline = tooltip ?? (color === 'ColorText' ? true : underline)
 
   return (
     <ConfigProvider>
       <AntTypography.Link
         style={{ color: fontColor, fontSize, lineHeight, ...style }}
         type={type}
-        underline={tooltip ?? underline}
+        underline={shouldUnderline}
         {...rest}>
         {children}
       </AntTypography.Link>

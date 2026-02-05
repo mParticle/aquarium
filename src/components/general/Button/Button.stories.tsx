@@ -66,7 +66,7 @@ export const LinkUsageNote: Story = {
               Use the{' '}
               <Typography.Link
                 href="https://mparticle.github.io/aquarium/?path=/story/components-general-typography-link--primary"
-                underline>
+                color="ColorText">
                 Typography.Link
               </Typography.Link>{' '}
               when navigating to a new URL or external page.

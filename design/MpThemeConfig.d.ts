@@ -64,12 +64,30 @@ export type IMpThemeConfig = ThemeConfig & {
   components: {
     Steps: {
       colorPrimary: string
+      colorPrimaryBorder: string
+      colorPrimaryBg: string
+      colorPrimaryHover: string
+    }
+    Slider: {
+      trackHoverBg: string
+      trackBg: string
+      handleColor: string
+      handleActiveColor: string
+      dotActiveBorderColor: string
+      handleActiveOutlineColor: string
     }
     Progress: {
       defaultColor: string
     }
+    Tooltip: {
+      colorTextLightSolid: string
+      colorBgSpotlight: string
+    }
     Button: {
       borderColorDisabled: string
+      colorLink: string
+      colorLinkHover: string
+      colorLinkActive: string
     }
     Input: {
       activeShadow: string
