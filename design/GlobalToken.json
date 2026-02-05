@@ -142,6 +142,7 @@
   "colorLinkActive": { "value": "#640c41" },
   "colorErrorBg": { "value": "#fef3f2" },
   "colorErrorBgHover": { "value": "#fee4e2" },
+  "colorErrorBgActive": { "value": "#fecdca" },
   "colorErrorBorder": { "value": "#fecdca" },
   "colorErrorBorderHover": { "value": "#fda29b" },
   "colorErrorHover": { "value": "#f97066" },
