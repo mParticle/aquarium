@@ -58,7 +58,8 @@ export interface IParagraphProps extends InternalParagraphProps {}
 const Text = (props: ITextProps) => {
   const { size, color, type, tooltip, children, style, ...rest } = props
 
-  const fontSize = size ? getFontSize(size) : undefined
+  // Use smaller font size for tooltip text (12px instead of default 14px)
+  const fontSize = size ? getFontSize(size) : tooltip ? 12 : undefined
   const lineHeight = size ? getLineHeight(size) : undefined
   const fontColor = !type && color ? getColorFromStyles(color) : tooltip ? ColorText : undefined
 
@@ -94,7 +95,8 @@ Typography.Title = Title
 const Link = (props: ILinkProps) => {
   const { size, color, type, tooltip, underline, children, style, ...rest } = props
 
-  const fontSize = size ? getFontSize(size) : undefined
+  // Use smaller font size for tooltip links (12px instead of default 14px)
+  const fontSize = size ? getFontSize(size) : tooltip ? 12 : undefined
   const lineHeight = size ? getLineHeight(size) : undefined
   const fontColor = !type && color ? getColorFromStyles(color) : tooltip ? ColorText : undefined
 
