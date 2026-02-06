@@ -82,12 +82,14 @@ export type IMpThemeConfig = ThemeConfig & {
     Tooltip: {
       colorTextLightSolid: string
       colorBgSpotlight: string
+      fontSize: number
     }
     Button: {
       borderColorDisabled: string
       colorLink: string
       colorLinkHover: string
       colorLinkActive: string
+      primaryShadow: string
     }
     Input: {
       activeShadow: string

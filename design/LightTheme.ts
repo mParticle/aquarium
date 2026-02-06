@@ -145,12 +145,14 @@ export const LightTheme: IMpThemeConfig = {
     Tooltip: {
       colorTextLightSolid: 'rgba(0, 0, 0, 0.88)',
       colorBgSpotlight: '#ffffff',
+      fontSize: 12,
     },
     Button: {
       borderColorDisabled: '#f0f0f0',
       colorLinkHover: '#a10863',
       colorLinkActive: '#640c41',
       colorLink: '#800a51',
+      primaryShadow: 'none',
     },
     Input: {
       activeShadow: '0 0 0 2px rgba(239, 11, 148, 0.1)',

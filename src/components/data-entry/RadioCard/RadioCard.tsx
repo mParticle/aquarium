@@ -15,6 +15,7 @@ import {
   SizeSm,
   SizeXs,
 } from 'src/styles/style'
+import './RadioCard.css'
 
 export interface RadioCardOption<T extends React.Key> {
   value: T
@@ -66,6 +67,7 @@ const RadioCard: React.FC<RadioCardProps> = ({
     <Card
       onClick={handleClick}
       hoverable={!disabled}
+      className="radio-card"
       style={{
         width: '100%',
         height: '100%',

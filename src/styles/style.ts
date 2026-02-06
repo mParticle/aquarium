@@ -430,3 +430,24 @@ export const RoktColorLinkSecondary = 'rgba(0, 0, 0, 0.88)'
 export const RoktColorLinkSecondaryHover = 'rgba(0, 0, 0, 0.65)'
 export const RoktColorLinkSecondaryActive = '#000000'
 export const OpacityLoading = 0.65
+export const BoxShadow =
+  ' 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05) '
+export const BoxShadowSecondary =
+  ' 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05) '
+export const BoxShadowTertiary =
+  ' 0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02) '
+export const BoxShadowPopoverArrow = '2px 2px 5px rgba(0, 0, 0, 0.05)'
+export const BoxShadowCard =
+  ' 0 1px 2px -2px rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.12), 0 5px 12px 4px rgba(0, 0, 0, 0.09) '
+export const BoxShadowDrawerRight =
+  ' -6px 0 16px 0 rgba(0, 0, 0, 0.08), -3px 0 6px -4px rgba(0, 0, 0, 0.12), -9px 0 28px 8px rgba(0, 0, 0, 0.05) '
+export const BoxShadowDrawerLeft =
+  ' 6px 0 16px 0 rgba(0, 0, 0, 0.08), 3px 0 6px -4px rgba(0, 0, 0, 0.12), 9px 0 28px 8px rgba(0, 0, 0, 0.05) '
+export const BoxShadowDrawerUp =
+  ' 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05) '
+export const BoxShadowDrawerDown =
+  ' 0 -6px 16px 0 rgba(0, 0, 0, 0.08), 0 -3px 6px -4px rgba(0, 0, 0, 0.12), 0 -9px 28px 8px rgba(0, 0, 0, 0.05) '
+export const BoxShadowTabsOverflowLeft = 'inset 10px 0 8px -8px rgba(0, 0, 0, 0.08)'
+export const BoxShadowTabsOverflowRight = 'inset -10px 0 8px -8px rgba(0, 0, 0, 0.08)'
+export const BoxShadowTabsOverflowTop = 'inset 0 10px 8px -8px rgba(0, 0, 0, 0.08)'
+export const BoxShadowTabsOverflowBottom = 'inset 0 -10px 8px -8px rgba(0, 0, 0, 0.08)'
