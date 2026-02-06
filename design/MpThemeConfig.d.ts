@@ -90,6 +90,7 @@ export type IMpThemeConfig = ThemeConfig & {
       colorLinkHover: string
       colorLinkActive: string
       primaryShadow: string
+      defaultShadow: string
     }
     Input: {
       activeShadow: string

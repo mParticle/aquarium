@@ -196,6 +196,24 @@ export const TypesOverview: Story = {
   },
 }
 
+export const DarkButton: Story = {
+  render: () => {
+    return (
+      <Flex wrap gap={MarginMd} align="center">
+        <Button color="default" variant="solid">
+          Dark
+        </Button>
+        <Button color="default" variant="solid" icon={<Icon name="add" size="sm" />}>
+          Dark with Icon
+        </Button>
+        <Button color="default" variant="solid" disabled>
+          Dark Disabled
+        </Button>
+      </Flex>
+    )
+  },
+}
+
 export const IconTypesOverview: Story = {
   render: () => {
     return (

@@ -1,3 +1,28 @@
 .ant-btn .ant-btn-icon {
     line-height: 0 !important;
 }
+
+/* Dark button hover and active states */
+.ant-btn-dark {
+    background-color: #000;
+    border-color: #000;
+    color: #fff;
+}
+
+.ant-btn-dark:hover:not(:disabled) {
+    background-color: #333 !important;
+    border-color: #333 !important;
+    color: #fff !important;
+}
+
+.ant-btn-dark:active:not(:disabled) {
+    background-color: #1a1a1a !important;
+    border-color: #1a1a1a !important;
+    color: #fff !important;
+}
+
+.ant-btn-dark:disabled {
+    background-color: rgb(0 0 0 / 4%);
+    border-color: #d9d9d9;
+    color: rgb(0 0 0 / 25%);
+}
