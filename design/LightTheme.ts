@@ -153,8 +153,10 @@ export const LightTheme: IMpThemeConfig = {
       colorLinkHover: '#a10863',
       colorLinkActive: '#640c41',
       colorLink: '#800a51',
-      primaryShadow: 'none',
-      defaultShadow: 'none',
+      colorPrimary: '#c20075',
+      colorPrimaryHover: '#a10863',
+      colorPrimaryActive: '#800a51',
+      primaryShadow: '0 1px 0 rgba(239, 11, 148, 0.1)',
     },
     Input: {
       activeShadow: '0 0 0 2px rgba(239, 11, 148, 0.1)',
