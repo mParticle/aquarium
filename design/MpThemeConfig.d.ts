@@ -83,6 +83,7 @@ export type IMpThemeConfig = ThemeConfig & {
       colorTextLightSolid: string
       colorBgSpotlight: string
       fontSize: number
+      lineHeight: number
     }
     Button: {
       borderColorDisabled: string

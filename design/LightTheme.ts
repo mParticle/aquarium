@@ -146,6 +146,7 @@ export const LightTheme: IMpThemeConfig = {
       colorTextLightSolid: 'rgba(0, 0, 0, 0.88)',
       colorBgSpotlight: '#ffffff',
       fontSize: 12,
+      lineHeight: 1.4,
     },
     Button: {
       borderColorDisabled: '#f0f0f0',
