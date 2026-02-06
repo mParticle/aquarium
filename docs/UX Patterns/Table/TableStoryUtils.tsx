@@ -69,8 +69,8 @@ export const tableColumns: TableProps<TableDataType>['columns'] = [
         <Tooltip
           title={
             <>
-              <Typography.Text style={{ color: 'white' }}>Help lorem ipsum. </Typography.Text>
-              <Typography.Link href="/" style={{ color: 'white', textDecoration: 'underline' }}>
+              <Typography.Text tooltip>Help lorem ipsum. </Typography.Text>
+              <Typography.Link href="/" tooltip>
                 Learn More
               </Typography.Link>
             </>

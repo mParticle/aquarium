@@ -154,7 +154,7 @@ export const LightTheme: IMpThemeConfig = {
       colorLinkActive: '#640c41',
       colorLink: '#800a51',
       colorPrimary: '#c20075',
-      colorPrimaryHover: '#a10863',
+      colorPrimaryHover: '#ef0b94',
       colorPrimaryActive: '#800a51',
       primaryShadow: '0 1px 0 rgba(239, 11, 148, 0.1)',
     },
