@@ -245,7 +245,7 @@
   "lineHeightHeading3": { "value": 1.3333333333333333 },
   "lineHeightHeading4": { "value": 1.4 },
   "lineHeightHeading5": { "value": 1.5 },
-  "fontWeightStrong": { "value": 600 },
+  "fontWeightStrong": { "value": 500 },
   "fontWeightNormal": { "value": 400 },
   "lineWidth": { "value": "1px" },
   "lineWidthBold": { "value": "2px" },
