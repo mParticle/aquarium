@@ -32,7 +32,9 @@ type Story = StoryObj<typeof Card>
 
 export const Primary: Story = {
   args: {
-    title: <Button>Any React Component</Button>,
+    title: 'Card Title',
+    extra: <Button>Any React Component</Button>,
+    style: { width: '400px' },
   },
 }
 

@@ -2,6 +2,7 @@ import React from 'react'
 import { Empty as AntEmpty } from 'antd'
 import { type EmptyProps as AntEmptyProps } from 'antd'
 import { ConfigProvider, Button, Space, Icon, Typography, Flex } from 'src/components'
+import type { IButtonProps } from 'src/components'
 import './empty.css'
 import { Margin } from 'src/styles/style'
 
@@ -22,16 +23,12 @@ export interface IEmptyProps extends Omit<AntEmptyProps, 'description'> {
     icon?: React.ReactNode
   }
   /** Primary button configuration */
-  primaryButton?: {
+  primaryButton?: Omit<IButtonProps, 'children'> & {
     text: string
-    onClick: () => void
-    icon?: React.ReactNode
   }
   /** Default button configuration */
-  defaultButton?: {
+  defaultButton?: Omit<IButtonProps, 'children'> & {
     text: string
-    onClick: () => void
-    icon?: React.ReactNode
   }
 }
 
@@ -72,17 +69,19 @@ export const Empty = (props: IEmptyProps) => {
       const buttons = []
 
       if (defaultButton) {
+        const { text, ...buttonProps } = defaultButton
         buttons.push(
-          <Button key="default" type="default" onClick={defaultButton.onClick} icon={defaultButton.icon}>
-            {defaultButton.text}
+          <Button key="default" type="default" {...buttonProps}>
+            {text}
           </Button>,
         )
       }
 
       if (primaryButton) {
+        const { text, ...buttonProps } = primaryButton
         buttons.push(
-          <Button key="primary" type="primary" onClick={primaryButton.onClick} icon={primaryButton.icon}>
-            {primaryButton.text}
+          <Button key="primary" type="primary" {...buttonProps}>
+            {text}
           </Button>,
         )
       }
