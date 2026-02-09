@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/blocks'
+import { Meta, Canvas, Story } from '@storybook/blocks'
 
 import * as CardStories from '../../../../src/components/data-display/Card/Card.stories'
 
@@ -18,13 +18,44 @@ The **Card** component is a flexible container for displaying content related to
 - **Responsive Layouts** Grid support for displaying multiple cards in a responsive and organized format.
 - **Inner Card**The Inner Card is a specialized type of card designed for use within a parent card. It allows you to organize nested or related content, providing a clear hierarchy within the layout.
 
+## Examples
+
+### Basic Card
+
+<Canvas of={CardStories.Primary} />
+
+### Hoverable Card
+
+<Canvas of={CardStories.Hoverable} />
+
+### Card with Inner Card
+
+<Canvas of={CardStories.WithInnerCard} />
+
+## Important: Button Placement
+
+When adding buttons to a Card, use the `extra` prop instead of including buttons in the `title` prop. Buttons placed in the `title` prop will have their focus/active shadows clipped by the card header's overflow settings.
+
+```tsx
+// ✅ Correct - Button in extra prop
+<Card
+  title="Card Title"
+  extra={<Button>Action</Button>}
+>
+  Card content
+</Card>
+
+// ❌ Incorrect - Button in title will clip shadows
+<Card
+  title={<Button>Action</Button>}
+>
+  Card content
+</Card>
+```
+
 #### Related Links
 
 | Type  | Resource                                                                                                                                               |
 | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Eames | [Card Component](https://www.figma.com/design/veXnmignQnJz8StIq10VJ5/Eames-2.0---Foundations-%26-Components?node-id=403-0&node-type=canvas&t=B6HJWqqDsUOypZQj-0) |
 | AntD | [Card Component](https://ant.design/components/card) |
-
-
-
-<Story of={CardStories.Primary} />
