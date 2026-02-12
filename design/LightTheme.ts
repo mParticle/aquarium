@@ -142,6 +142,9 @@ export const LightTheme: IMpThemeConfig = {
     Progress: {
       defaultColor: 'rgba(0, 0, 0, 0.85)',
     },
+    Table: {
+      borderRadius: 4,
+    },
     Tooltip: {
       colorTextLightSolid: 'rgba(0, 0, 0, 0.88)',
       colorBgSpotlight: '#ffffff',
@@ -155,8 +158,8 @@ export const LightTheme: IMpThemeConfig = {
       colorLink: '#800a51',
       colorPrimary: '#c20075',
       colorPrimaryHover: '#ef0b94',
-      colorPrimaryActive: '#800a51',
-      primaryShadow: '0 1px 0 rgba(239, 11, 148, 0.1)',
+      colorPrimaryActive: '#a10863',
+      primaryShadow: 'none',
     },
     Input: {
       activeShadow: '0 0 0 2px rgba(239, 11, 148, 0.1)',

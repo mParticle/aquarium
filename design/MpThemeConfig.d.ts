@@ -79,6 +79,9 @@ export type IMpThemeConfig = ThemeConfig & {
     Progress: {
       defaultColor: string
     }
+    Table: {
+      borderRadius: number
+    }
     Tooltip: {
       colorTextLightSolid: string
       colorBgSpotlight: string
