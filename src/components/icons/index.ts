@@ -185,6 +185,7 @@ import {
   Image03 as RoktImage,
   MessageChatSquare as RoktMessageChatSquare,
   UserCheck01 as RoktUserCheck,
+  Clipboard as RoktClipboard,
 } from '@untitledui/icons'
 
 export {
@@ -373,4 +374,5 @@ export {
   RoktImage,
   RoktMessageChatSquare,
   RoktUserCheck,
+  RoktClipboard,
 }
