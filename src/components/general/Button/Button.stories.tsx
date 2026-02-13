@@ -5,7 +5,7 @@ import { Alert, Dropdown, Flex, Icon, Typography, Tooltip } from 'src/components
 import React from 'react'
 import type { MenuProps } from 'antd'
 import { BorderRadiusLg, ColorBorderSecondary, ColorWhite, MarginMd, SizeXs } from 'src/styles/style'
-import { UUIPlus, UUISearch, UUIEdit, UUITrash } from 'src/components/icons'
+import { RoktPlus, RoktSearchSm, RoktEdit, RoktTrash } from 'src/components/icons'
 
 const meta: Meta<typeof Button> = {
   title: 'Components/General/Button',
@@ -335,18 +335,18 @@ export const ButtonsWithLocalIcons: Story = {
   },
 }
 
-// Buttons with Untitled UI icons
+// Buttons with Rokt/Untitled UI icons
 export const ButtonsWithUntitledUIIcons: Story = {
   render: () => {
     return (
       <Flex gap="middle" align="center" wrap="wrap">
-        <Button type="primary" icon={<Icon name={UUIPlus} size="sm" />}>
+        <Button type="primary" icon={<Icon name={RoktPlus} size="sm" />}>
           Add Item
         </Button>
-        <Button type="default" icon={<Icon name={UUIEdit} size="sm" />}>
+        <Button type="default" icon={<Icon name={RoktEdit} size="sm" />}>
           Edit
         </Button>
-        <Button type="default" danger icon={<Icon name={UUITrash} size="sm" />}>
+        <Button type="default" danger icon={<Icon name={RoktTrash} size="sm" />}>
           Delete
         </Button>
       </Flex>
@@ -354,28 +354,28 @@ export const ButtonsWithUntitledUIIcons: Story = {
   },
 }
 
-// Untitled UI Icons Integration Demo
+// Rokt/Untitled UI Icons Integration Demo
 export const WithUntitledUIIcons: Story = {
   render: () => {
     return (
       <Flex vertical gap="large">
         <div>
-          <Typography.Title level={4}>Buttons with Untitled UI Icons</Typography.Title>
+          <Typography.Title level={4}>Buttons with Rokt/Untitled UI Icons</Typography.Title>
         </div>
 
         <div>
           <Typography.Title level={5}>Action Buttons</Typography.Title>
           <Flex wrap gap={MarginMd} align="center">
-            <Button type="primary" icon={<Icon name={UUIPlus} size="sm" />}>
+            <Button type="primary" icon={<Icon name={RoktPlus} size="sm" />}>
               Add Item
             </Button>
-            <Button type="default" icon={<Icon name={UUISearch} size="sm" />}>
+            <Button type="default" icon={<Icon name={RoktSearchSm} size="sm" />}>
               Search
             </Button>
-            <Button type="default" icon={<Icon name={UUIEdit} size="sm" />}>
+            <Button type="default" icon={<Icon name={RoktEdit} size="sm" />}>
               Edit
             </Button>
-            <Button type="default" danger icon={<Icon name={UUITrash} size="sm" />}>
+            <Button type="default" danger icon={<Icon name={RoktTrash} size="sm" />}>
               Delete
             </Button>
           </Flex>
@@ -385,16 +385,16 @@ export const WithUntitledUIIcons: Story = {
           <Typography.Title level={5}>Icon-Only Buttons</Typography.Title>
           <Flex wrap gap={MarginMd} align="center">
             <Tooltip title="Add new item">
-              <Button type="primary" icon={<Icon name={UUIPlus} size="sm" />} />
+              <Button type="primary" icon={<Icon name={RoktPlus} size="sm" />} />
             </Tooltip>
             <Tooltip title="Search">
-              <Button type="default" icon={<Icon name={UUISearch} size="sm" />} />
+              <Button type="default" icon={<Icon name={RoktSearchSm} size="sm" />} />
             </Tooltip>
             <Tooltip title="Edit">
-              <Button type="default" icon={<Icon name={UUIEdit} size="sm" />} />
+              <Button type="default" icon={<Icon name={RoktEdit} size="sm" />} />
             </Tooltip>
             <Tooltip title="Delete">
-              <Button type="default" danger icon={<Icon name={UUITrash} size="sm" />} />
+              <Button type="default" danger icon={<Icon name={RoktTrash} size="sm" />} />
             </Tooltip>
           </Flex>
         </div>
