@@ -66,7 +66,7 @@ export const LinkUsageNote: Story = {
               Use the{' '}
               <Typography.Link
                 href="https://mparticle.github.io/aquarium/?path=/story/components-general-typography-link--primary"
-                underline>
+                color="ColorText">
                 Typography.Link
               </Typography.Link>{' '}
               when navigating to a new URL or external page.
@@ -191,6 +191,24 @@ export const TypesOverview: Story = {
         <Button type="dashed">Tertiary</Button>
         <Button type="text">Text</Button>
         <Button type="link">Link</Button>
+      </Flex>
+    )
+  },
+}
+
+export const DarkButton: Story = {
+  render: () => {
+    return (
+      <Flex wrap gap={MarginMd} align="center">
+        <Button color="default" variant="solid">
+          Dark
+        </Button>
+        <Button color="default" variant="solid" icon={<Icon name="add" size="sm" />}>
+          Dark with Icon
+        </Button>
+        <Button color="default" variant="solid" disabled>
+          Dark Disabled
+        </Button>
       </Flex>
     )
   },

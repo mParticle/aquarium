@@ -1,5 +1,5 @@
 import { type Options } from 'highcharts'
-const ChartFontFamily = "'GT America', Helvetica, Arial, sans-serif"
+const ChartFontFamily = "'Inter', -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
 
 export const ChartAxisStyle = {
   'font-family': ChartFontFamily,

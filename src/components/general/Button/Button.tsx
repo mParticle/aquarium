@@ -7,24 +7,14 @@ import { ConfigProvider } from 'src/components/other/ConfigProvider/ConfigProvid
 import { type ReactNode } from 'react'
 import './button.css'
 
-export interface IButtonProps extends Omit<AntButtonProps, 'variant' | 'color'> {
-  /**
-   * @deprecated This variant is a temporary fix for new icons.
-   * Use this variant only with new icons to align the icon and text centered.
-   * This will be removed once all icons are updated.
-   */
-  variant?: 'with-new-icon'
+export interface IButtonProps extends AntButtonProps {
   icon?: ReactNode
   /**
-   * Color of the button text. Use 'inherit' to inherit from parent element.
+   * Text color inheritance from parent element.
    */
-  color?: 'inherit' | string
+  textColor?: 'inherit'
 }
 export const Button = (props: IButtonProps) => {
-  const classMap = {
-    'with-new-icon': 'u-display-flex u-align-items-center u-justify-center',
-  }
-
   const buttonIcon =
     React.isValidElement<IIconProps>(props.icon) && props.icon.type === Icon ? (
       <Icon {...props.icon.props} color={props.icon.props.color ?? 'inherit'} />
@@ -32,11 +22,9 @@ export const Button = (props: IButtonProps) => {
       props.icon
     )
 
-  const extraClass = props.variant === 'with-new-icon' ? classMap['with-new-icon'] : ''
+  const { variant, textColor, style, ...restProps } = props
 
-  const { variant, color, style, ...restProps } = props
-
-  const buttonStyle = color ? { ...style, color } : style
+  const buttonStyle = textColor === 'inherit' ? { ...style, color: 'inherit' } : style
 
   return (
     <ConfigProvider>
@@ -44,7 +32,8 @@ export const Button = (props: IButtonProps) => {
         {...restProps}
         icon={buttonIcon}
         style={buttonStyle}
-        className={`${props.className ?? ''} ${extraClass}`}>
+        variant={variant}
+        className={`${props.className ?? ''}`}>
         {props.children}
       </AntButton>
     </ConfigProvider>
