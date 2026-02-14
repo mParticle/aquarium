@@ -212,4 +212,5 @@ export {
   RoktImage,
   RoktMessageChatSquare,
   RoktUserCheck,
+  RoktClipboard,
 } from './icons'
