@@ -93,9 +93,9 @@ export type IMpThemeConfig = ThemeConfig & {
       colorLink: string
       colorLinkHover: string
       colorLinkActive: string
-      colorPrimary: string
-      colorPrimaryHover: string
-      colorPrimaryActive: string
+      colorPrimary?: string
+      colorPrimaryHover?: string
+      colorPrimaryActive?: string
       primaryShadow: string
     }
     Input: {

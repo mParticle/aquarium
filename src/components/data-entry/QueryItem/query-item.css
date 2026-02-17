@@ -55,8 +55,12 @@
 }
 
 .query-item.query-item--action {
-  /* color: var(--color-link) !important; */
+  color: var(--mp-query-item-action-primary-color) !important;
   gap: var(--margin-xxs);
+}
+
+.query-item.query-item--action > span {
+  color: inherit !important;
 }
 
 .query-item.query-item--secondary {
