@@ -167,7 +167,7 @@ export {
 export {
   RoktHelpCircle,
   RoktPlus,
-  RoktSearchSm,
+  RoktSearch,
   RoktCheckCircle,
   RoktArrowLeft,
   RoktArrowRight,
@@ -192,6 +192,7 @@ export {
   RoktLightbulb,
   RoktMail,
   RoktMonitor,
+  RoktPauseCircle,
   RoktPhoneIncoming,
   RoktRefreshCw,
   RoktSearchLg,
@@ -209,4 +210,5 @@ export {
   RoktImage,
   RoktMessageChatSquare,
   RoktUserCheck,
+  RoktClipboard,
 } from './icons'

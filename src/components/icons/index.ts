@@ -143,7 +143,7 @@ import MoveToTop from 'src/assets/svg/mp_act_lt_move-to-top.svg?react'
 import {
   HelpCircle as RoktHelpCircle,
   Plus as RoktPlus,
-  SearchSm as RoktSearchSm,
+  SearchSm as RoktSearch,
   CheckCircle as RoktCheckCircle,
   ArrowLeft as RoktArrowLeft,
   ArrowRight as RoktArrowRight,
@@ -168,6 +168,7 @@ import {
   Lightbulb02 as RoktLightbulb,
   Mail01 as RoktMail,
   Monitor01 as RoktMonitor,
+  PauseCircle as RoktPauseCircle,
   PhoneIncoming01 as RoktPhoneIncoming,
   RefreshCw02 as RoktRefreshCw,
   SearchLg as RoktSearchLg,
@@ -332,7 +333,7 @@ export {
   // Rokt icons from @untitledui/icons
   RoktHelpCircle,
   RoktPlus,
-  RoktSearchSm,
+  RoktSearch,
   RoktCheckCircle,
   RoktArrowLeft,
   RoktArrowRight,
@@ -357,6 +358,7 @@ export {
   RoktLightbulb,
   RoktMail,
   RoktMonitor,
+  RoktPauseCircle,
   RoktPhoneIncoming,
   RoktRefreshCw,
   RoktSearchLg,

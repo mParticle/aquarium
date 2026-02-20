@@ -5,7 +5,7 @@ import { Alert, Dropdown, Flex, Icon, Typography, Tooltip } from 'src/components
 import React from 'react'
 import type { MenuProps } from 'antd'
 import { BorderRadiusLg, ColorBorderSecondary, ColorWhite, MarginMd, SizeXs } from 'src/styles/style'
-import { RoktPlus, RoktSearchSm, RoktEdit, RoktTrash } from 'src/components/icons'
+import { RoktPlus, RoktSearch, RoktEdit, RoktTrash } from 'src/components/icons'
 
 const meta: Meta<typeof Button> = {
   title: 'Components/General/Button',
@@ -351,7 +351,7 @@ export const WithUntitledUIIcons: Story = {
             <Button type="primary" icon={<Icon name={RoktPlus} size="sm" />}>
               Add Item
             </Button>
-            <Button type="default" icon={<Icon name={RoktSearchSm} size="sm" />}>
+            <Button type="default" icon={<Icon name={RoktSearch} size="sm" />}>
               Search
             </Button>
             <Button type="default" icon={<Icon name={RoktEdit} size="sm" />}>
@@ -370,7 +370,7 @@ export const WithUntitledUIIcons: Story = {
               <Button type="primary" icon={<Icon name={RoktPlus} size="sm" />} />
             </Tooltip>
             <Tooltip title="Search">
-              <Button type="default" icon={<Icon name={RoktSearchSm} size="sm" />} />
+              <Button type="default" icon={<Icon name={RoktSearch} size="sm" />} />
             </Tooltip>
             <Tooltip title="Edit">
               <Button type="default" icon={<Icon name={RoktEdit} size="sm" />} />
