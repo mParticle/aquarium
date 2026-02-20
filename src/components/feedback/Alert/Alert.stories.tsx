@@ -48,7 +48,7 @@ export const StorybookNote: Story = {
             <Typography.Text size="xl">💡</Typography.Text>
             <Typography.Text size="base">
               Use the{' '}
-              <Typography.Link href="?path=/docs/components-feedback-message--docs" underline>
+              <Typography.Link href="?path=/docs/components-feedback-message--docs" color="ColorText">
                 Message component
               </Typography.Link>{' '}
               if the notification should dismiss automatically.
