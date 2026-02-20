@@ -1,3 +1,13 @@
+# [1.64.0](https://github.com/mParticle/aquarium/compare/v1.63.1...v1.64.0) (2026-02-20)
+
+### Bug Fixes
+
+- empty state buttons and card docs update ([#728](https://github.com/mParticle/aquarium/issues/728)) ([5da9d5d](https://github.com/mParticle/aquarium/commit/5da9d5d992b428dda26dcbe0a669e0142d174cb5))
+
+### Features
+
+- branding update! ([#727](https://github.com/mParticle/aquarium/issues/727)) ([26609df](https://github.com/mParticle/aquarium/commit/26609dfaeca485a4f39be7ea5b57b75fc4da8492))
+
 ## [1.63.1](https://github.com/mParticle/aquarium/compare/v1.63.0...v1.63.1) (2026-01-29)
 
 ### Bug Fixes
