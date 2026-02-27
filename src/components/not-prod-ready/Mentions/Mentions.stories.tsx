@@ -236,7 +236,7 @@ export const ExampleForm: Story = {
     }
 
     const checkMention = async (_: unknown, value: string) => {
-      const mentions = Mentions.getMentions(value)
+      const mentions = Mentions.getMentions(value) as string[]
 
       if (mentions.length < 2) {
         throw new Error('More than one must be selected!')

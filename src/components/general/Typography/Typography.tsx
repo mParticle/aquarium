@@ -6,7 +6,7 @@ import type { TitleProps as AntTitleProps } from 'antd/es/typography/Title'
 import type { LinkProps as AntLinkProps } from 'antd/es/typography/Link'
 import type { ParagraphProps as AntParagraphProps } from 'antd/es/typography/Paragraph'
 import { getColorFromStyles, type TypographyColor } from './colors'
-import { ColorTextLightSolid } from 'src/styles/style'
+import { ColorText } from 'src/styles/style'
 
 type TypographySize = 'base' | 'sm' | 'lg' | 'xl' | number
 
@@ -46,21 +46,21 @@ export interface ITextProps extends InternalTextProps {
   tooltip?: boolean
 }
 
-export interface ITitleProps extends InternalTitleProps {}
+export type ITitleProps = InternalTitleProps
 
 export interface ILinkProps extends InternalLinkProps {
   tooltip?: boolean
 }
 
-export interface IParagraphProps extends InternalParagraphProps {}
+export type IParagraphProps = InternalParagraphProps
 
 // Tried generalizing into a higher order component but couldn't do it type-safely, so just repeated the code
 const Text = (props: ITextProps) => {
   const { size, color, type, tooltip, children, style, ...rest } = props
 
-  const fontSize = size ? getFontSize(size) : undefined
-  const lineHeight = size ? getLineHeight(size) : undefined
-  const fontColor = !type && color ? getColorFromStyles(color) : tooltip ? ColorTextLightSolid : undefined
+  const fontSize = size ? getFontSize(size) : tooltip ? 12 : undefined
+  const lineHeight = size ? getLineHeight(size) : tooltip ? 1.4 : undefined
+  const fontColor = !type && color ? getColorFromStyles(color) : tooltip ? ColorText : undefined
 
   return (
     <ConfigProvider>
@@ -94,16 +94,19 @@ Typography.Title = Title
 const Link = (props: ILinkProps) => {
   const { size, color, type, tooltip, underline, children, style, ...rest } = props
 
-  const fontSize = size ? getFontSize(size) : undefined
-  const lineHeight = size ? getLineHeight(size) : undefined
-  const fontColor = !type && color ? getColorFromStyles(color) : tooltip ? ColorTextLightSolid : undefined
+  const fontSize = size ? getFontSize(size) : tooltip ? 12 : undefined
+  const lineHeight = size ? getLineHeight(size) : tooltip ? 1.4 : undefined
+  const fontColor = !type && color ? getColorFromStyles(color) : tooltip ? ColorText : undefined
+
+  // Force underline when using ColorText to ensure it's recognizable as a link
+  const shouldUnderline = tooltip ?? (color === 'ColorText' ? true : underline)
 
   return (
     <ConfigProvider>
       <AntTypography.Link
         style={{ color: fontColor, fontSize, lineHeight, ...style }}
         type={type}
-        underline={tooltip ?? underline}
+        underline={shouldUnderline}
         {...rest}>
         {children}
       </AntTypography.Link>

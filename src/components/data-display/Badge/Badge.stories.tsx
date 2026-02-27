@@ -1,7 +1,7 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { Badge } from 'src/components/data-display/Badge/Badge'
 import { Space } from 'src/components'
-import { ColorPrimary, ColorSuccess, ColorWarning, ColorError, ColorBorderSecondary } from 'src/styles/style'
+import { ColorInfo, ColorSuccess, ColorWarning, ColorError, ColorBorderSecondary } from 'src/styles/style'
 
 const meta: Meta<typeof Badge> = {
   title: 'Components/Data Display/Badge',
@@ -14,7 +14,7 @@ type Story = StoryObj<typeof Badge>
 export const DotBadge: Story = {
   render: () => {
     const colors = [
-      { label: 'Primary', value: ColorPrimary },
+      { label: 'Primary', value: ColorInfo },
       { label: 'Success', value: ColorSuccess },
       { label: 'Warning', value: ColorWarning },
       { label: 'Error', value: ColorError },

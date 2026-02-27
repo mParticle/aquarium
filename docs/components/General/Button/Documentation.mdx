@@ -24,6 +24,12 @@ The **Button** component is used to trigger actions or navigate the interface. I
 
 <Story of={ButtonStories.LinkUsageNote} />
 
+### Dark Button
+
+The **Dark** button provides a bold, high-contrast option with a black background and white text. Use `color="default"` with `variant="solid"` to achieve this style.
+
+<Canvas of={ButtonStories.DarkButton} />
+
 ### Button sizes
 
 Buttons ship in three heights to support different layouts. The default is `middle`, shown alongside the smaller and larger options below.
@@ -41,6 +47,22 @@ The icon-enabled variants mirror the same hierarchy while reinforcing meaning wi
 Icon-only buttons provide compact controls for toolbars and quick actions where text isn’t necessary.
 
 <Canvas of={ButtonStories.IconOnly} />
+
+### Icon Comparison: Local vs Untitled UI
+
+Aquarium supports both local in-house icons and Untitled UI icons. Compare the two implementations below.
+
+#### Buttons with Local Icons
+
+Local icons use the `Icon` component with icon names from the Aquarium library.
+
+<Canvas of={ButtonStories.ButtonsWithLocalIcons} />
+
+#### Buttons with Untitled UI Icons
+
+Untitled UI icons use the same `Icon` component, but pass the imported icon component instead of a string name.
+
+<Canvas of={ButtonStories.ButtonsWithUntitledUIIcons} />
 
 ### Loading state
 

@@ -10,3 +10,6 @@ declare module '*.css' {
   const content: Record<string, string>
   export default content
 }
+
+declare module '@fontsource/inter'
+declare module '@fontsource/courier-prime'

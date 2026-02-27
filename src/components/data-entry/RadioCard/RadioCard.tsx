@@ -9,11 +9,13 @@ import {
   ColorPrimary,
   LineType,
   LineWidth,
-  SizeXs,
   Size,
   OpacityLoading,
   Padding,
+  SizeSm,
+  SizeXs,
 } from 'src/styles/style'
+import './RadioCard.css'
 
 export interface RadioCardOption<T extends React.Key> {
   value: T
@@ -42,6 +44,7 @@ interface RadioCardProps {
   checked?: boolean
   onChange?: (value: string) => void
   radioAlign?: 'start' | 'center'
+  orientation?: 'vertical' | 'horizontal'
 }
 
 const RadioCard: React.FC<RadioCardProps> = ({
@@ -50,6 +53,7 @@ const RadioCard: React.FC<RadioCardProps> = ({
   value,
   checked = false,
   onChange,
+  orientation = 'vertical',
   radioAlign = 'start',
   disabled = false,
 }) => {
@@ -63,6 +67,7 @@ const RadioCard: React.FC<RadioCardProps> = ({
     <Card
       onClick={handleClick}
       hoverable={!disabled}
+      className="radio-card"
       style={{
         width: '100%',
         height: '100%',
@@ -78,10 +83,7 @@ const RadioCard: React.FC<RadioCardProps> = ({
           cursor: disabled ? 'not-allowed' : 'pointer',
         },
       }}>
-      <Flex
-        align={radioAlign === 'center' ? 'center' : 'flex-start'}
-        gap={SizeXs}
-        style={{ width: '100%', height: '100%' }}>
+      <Flex align={radioAlign === 'center' ? 'center' : 'flex-start'} style={{ width: '100%', height: '100%' }}>
         <Radio
           value={value}
           checked={checked}
@@ -89,6 +91,7 @@ const RadioCard: React.FC<RadioCardProps> = ({
           style={{
             pointerEvents: 'none',
             marginTop: radioAlign === 'center' ? undefined : '2px',
+            marginRight: orientation === 'horizontal' ? SizeSm : SizeXs,
           }}
         />
         <Flex vertical style={{ flex: 1 }}>
@@ -123,6 +126,7 @@ export const RadioCards = <T extends React.Key>({
             checked={isSelected}
             onChange={() => onChange?.(option.value)}
             radioAlign={radioAlign}
+            orientation={orientation}
             disabled={isDisabled}
           />
         )

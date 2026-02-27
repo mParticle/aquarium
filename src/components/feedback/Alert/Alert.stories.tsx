@@ -16,7 +16,7 @@ const meta: Meta<typeof Alert> = {
     banner: false,
     showIcon: false,
     type: 'info',
-    onClose: e => {
+    onClose: _e => {
       alert('Alert On Close')
     },
     afterClose: () => {
@@ -48,7 +48,7 @@ export const StorybookNote: Story = {
             <Typography.Text size="xl">💡</Typography.Text>
             <Typography.Text size="base">
               Use the{' '}
-              <Typography.Link href="?path=/docs/components-feedback-message--docs" underline>
+              <Typography.Link href="?path=/docs/components-feedback-message--docs" color="ColorText">
                 Message component
               </Typography.Link>{' '}
               if the notification should dismiss automatically.

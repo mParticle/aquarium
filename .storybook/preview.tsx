@@ -17,13 +17,11 @@ const preview: Preview = {
     layout: 'centered',
     options: {
       storySort: {
-        method: 'alphabetical',
-        includeNames: true,
         order: [
           'About',
           ['Introduction', 'Changelog', 'Feedback', 'Component Process'],
           'Foundations',
-          ['Typography', 'Icons', 'Color Palette'],
+          ['Typography', ['Icons', ['Rokt Icons', 'Special Icons', 'mParticle Icons']], 'Color Palette'],
           'UI Copy Styleguide',
           ['Documentation'],
           'Components',

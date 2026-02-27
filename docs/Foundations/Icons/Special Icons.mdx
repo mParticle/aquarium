@@ -1,0 +1,30 @@
+import { ErrorStateIcon, SuccessStateIcon, WarningStateIcon } from '../../../src/components'
+
+# Special Icons
+
+These are standalone “state” icons (not part of the general `Icon` name/variant set).
+
+<div
+  style={{
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+    gap: '24px',
+    alignItems: 'center',
+    justifyItems: 'center',
+    paddingTop: '12px',
+    maxWidth: '900px',
+  }}>
+  <div style={{ textAlign: 'center' }}>
+    <ErrorStateIcon size="lg" />
+    <p style={{ fontFamily: 'monospace', textAlign: 'center' }}>ErrorStateIcon</p>
+  </div>
+  <div style={{ textAlign: 'center' }}>
+    <WarningStateIcon size="lg" />
+    <p style={{ fontFamily: 'monospace', textAlign: 'center' }}>WarningStateIcon</p>
+  </div>
+  <div style={{ textAlign: 'center' }}>
+    <SuccessStateIcon size="lg" />
+    <p style={{ fontFamily: 'monospace', textAlign: 'center' }}>SuccessStateIcon</p>
+  </div>
+</div>
+

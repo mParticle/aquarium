@@ -1,3 +1,26 @@
+# [1.64.0](https://github.com/mParticle/aquarium/compare/v1.63.1...v1.64.0) (2026-02-20)
+
+### Bug Fixes
+
+- empty state buttons and card docs update ([#728](https://github.com/mParticle/aquarium/issues/728)) ([5da9d5d](https://github.com/mParticle/aquarium/commit/5da9d5d992b428dda26dcbe0a669e0142d174cb5))
+
+### Features
+
+- branding update! ([#727](https://github.com/mParticle/aquarium/issues/727)) ([26609df](https://github.com/mParticle/aquarium/commit/26609dfaeca485a4f39be7ea5b57b75fc4da8492))
+
+## [1.63.1](https://github.com/mParticle/aquarium/compare/v1.63.0...v1.63.1) (2026-01-29)
+
+### Bug Fixes
+
+- rokt icons missed export ([#723](https://github.com/mParticle/aquarium/issues/723)) ([99a3432](https://github.com/mParticle/aquarium/commit/99a3432563867e7d484ed0535168a8be52e9b103))
+
+# [1.63.0](https://github.com/mParticle/aquarium/compare/v1.62.0...v1.63.0) (2026-01-27)
+
+### Features
+
+- add filled badge ([#716](https://github.com/mParticle/aquarium/issues/716)) ([1be2481](https://github.com/mParticle/aquarium/commit/1be2481f9847df90958896d4893195af6ee91769))
+- Untitled UI Icons ([#719](https://github.com/mParticle/aquarium/issues/719)) ([748d36f](https://github.com/mParticle/aquarium/commit/748d36f7b90d730580d8b6e5dc4e5bd705f78bad))
+
 # [1.62.0](https://github.com/mParticle/aquarium/compare/v1.61.0...v1.62.0) (2026-01-15)
 
 ### Bug Fixes
