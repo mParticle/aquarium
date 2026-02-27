@@ -1,8 +1,9 @@
 import { FloatButton as AntFloatButton } from 'antd'
 import { type FloatButtonProps as AntFloatButtonProps } from 'antd'
 import { ConfigProvider } from 'src/components'
+import './float-button.css'
 
-export interface IFloatButtonProps extends AntFloatButtonProps {}
+export type IFloatButtonProps = AntFloatButtonProps
 
 export const FloatButton = (props: IFloatButtonProps) => {
   return (

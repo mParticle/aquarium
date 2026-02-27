@@ -32,7 +32,7 @@ describe('Testing utils', () => {
       const navigatorOverride: Partial<Navigator> = {
         userAgent: 'Windows',
       }
-      global.navigator = { ...global.navigator, ...navigatorOverride }
+      globalThis.navigator = { ...globalThis.navigator, ...navigatorOverride }
 
       // act
       const actualOS = getOS()
@@ -46,7 +46,7 @@ describe('Testing utils', () => {
       const navigatorOverride: Partial<Navigator> = {
         userAgent: 'Macintosh',
       }
-      global.navigator = { ...global.navigator, ...navigatorOverride }
+      globalThis.navigator = { ...globalThis.navigator, ...navigatorOverride }
 
       // act
       const actualOS = getOS()

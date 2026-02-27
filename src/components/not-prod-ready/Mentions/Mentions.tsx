@@ -1,16 +1,25 @@
+import React from 'react'
 import { Mentions as AntMentions } from 'antd'
 import { type MentionProps as AntMentionProps } from 'antd'
 import { ConfigProvider } from 'src/components'
 
-export interface IMentionsProps extends AntMentionProps {}
+export type IMentionsProps = AntMentionProps
 
-export const Mentions = (props: IMentionsProps) => {
-  return (
-    <ConfigProvider>
-      <AntMentions {...props} />
-    </ConfigProvider>
-  )
+interface MentionsComponent extends React.FC<IMentionsProps> {
+  getMentions: (typeof AntMentions)['getMentions']
+  Option: (typeof AntMentions)['Option']
 }
 
-Mentions.getMentions = AntMentions.getMentions
-Mentions.Option = AntMentions.Option
+export const Mentions: MentionsComponent = Object.assign(
+  (props: IMentionsProps) => {
+    return (
+      <ConfigProvider>
+        <AntMentions {...props} />
+      </ConfigProvider>
+    )
+  },
+  {
+    getMentions: AntMentions.getMentions,
+    Option: AntMentions.Option,
+  },
+)

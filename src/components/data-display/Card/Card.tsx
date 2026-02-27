@@ -3,7 +3,7 @@ import { type CardProps as AntCardProps } from 'antd'
 import { ConfigProvider } from 'src/components/other/ConfigProvider/ConfigProvider'
 import './card.css'
 
-export interface ICardProps extends AntCardProps {}
+export type ICardProps = AntCardProps
 
 export const Card = (props: ICardProps) => {
   return (
