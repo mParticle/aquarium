@@ -17,13 +17,22 @@ A contextual help indicator that displays a tooltip when hovered. Use `IconWithT
 ### Usage
 
 ```tsx
-import { IconWithTooltip } from '@mparticle/aquarium'
+import { Flex, Icon, Tooltip } from '@mparticle/aquarium'
 import { RoktHelpCircle } from '@mparticle/aquarium/icons'
 
-<IconWithTooltip
-  title="Helpful context about this field"
-  iconProps={{ name: RoktHelpCircle }}
-/>
+<Tooltip title="Helpful context about this field">
+  <Flex align="center" justify="center">
+    <Icon name={RoktHelpCircle} size="sm" color="default" />
+  </Flex>
+</Tooltip>
+```
+
+For the legacy string-based help icon, you can also use `IconWithTooltip` which defaults to `help`:
+
+```tsx
+import { IconWithTooltip } from '@mparticle/aquarium'
+
+<IconWithTooltip title="Helpful context about this field" />
 ```
 
 ### Examples
