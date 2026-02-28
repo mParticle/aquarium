@@ -1,0 +1,47 @@
+import { Meta, Canvas } from '@storybook/blocks';
+
+import * as TooltipStories from '../../../../src/components/data-display/Tooltip/Tooltip.stories';
+
+<Meta title="Patterns/Help Icon" />
+
+# Help Icon
+
+### Overview
+A contextual help indicator that displays a tooltip when hovered. Use `IconWithTooltip` with the `RoktHelpCircle` icon to create this pattern.
+
+### When to use:
+- To provide inline contextual help next to labels, form fields, or settings.
+- To explain technical terms or metrics without cluttering the interface.
+- To offer tips or guidance that users can discover on hover.
+
+### Usage
+
+```tsx
+import { Flex, Icon, Tooltip } from '@mparticle/aquarium'
+import { RoktHelpCircle } from '@mparticle/aquarium/icons'
+
+<Tooltip title="Helpful context about this field">
+  <Flex align="center" justify="center">
+    <Icon name={RoktHelpCircle} size="sm" color="default" />
+  </Flex>
+</Tooltip>
+```
+
+For the legacy string-based help icon, you can also use `IconWithTooltip` which defaults to `help`:
+
+```tsx
+import { IconWithTooltip } from '@mparticle/aquarium'
+
+<IconWithTooltip title="Helpful context about this field" />
+```
+
+### Examples
+
+<Canvas of={TooltipStories.HelpIcon} />
+
+#### Related Links
+| Type   | Resource |
+| ------ | -------- |
+| Tooltip | [Tooltip Component](/docs/components-data-display-tooltip--docs) |
+| IconWithTooltip | [IconWithTooltip](/docs/components-data-display-tooltip--text-with-icon) |
+| Eames  | [Tooltip Component](https://www.figma.com/design/veXnmignQnJz8StIq10VJ5/Eames-2.0---Foundations-%26-Components?node-id=413-13162&t=5iHsAw2QyK8Lx8zt-4) |
