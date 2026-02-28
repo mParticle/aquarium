@@ -1,29 +1,38 @@
 import { Meta, Canvas } from '@storybook/blocks';
 
-import * as HelpIconStories from '../../../../src/components/data-display/Tooltip/HelpIcon.stories';
+import * as TooltipStories from '../../../../src/components/data-display/Tooltip/Tooltip.stories';
 
-<Meta of={HelpIconStories} />
+<Meta title="Patterns/Help Icon" />
 
-# HelpIcon
+# Help Icon
 
 ### Overview
-The HelpIcon is a contextual help indicator that displays a tooltip with additional information when hovered. It combines the RoktHelpCircle icon with a Tooltip into a single, easy-to-use component.
+A contextual help indicator that displays a tooltip when hovered. Use `IconWithTooltip` with the `RoktHelpCircle` icon to create this pattern.
 
 ### When to use:
 - To provide inline contextual help next to labels, form fields, or settings.
 - To explain technical terms or metrics without cluttering the interface.
 - To offer tips or guidance that users can discover on hover.
 
-### Differences from IconWithTooltip
-- **HelpIcon** is a simplified, opinionated component specifically for help/contextual info. It always uses the RoktHelpCircle icon.
-- **IconWithTooltip** is more flexible and allows any icon to be paired with a tooltip.
+### Usage
 
-Use `HelpIcon` when you need a standard help indicator. Use `IconWithTooltip` when you need a different icon.
+```tsx
+import { IconWithTooltip } from '@mparticle/aquarium'
+import { RoktHelpCircle } from '@mparticle/aquarium/icons'
+
+<IconWithTooltip
+  title="Helpful context about this field"
+  iconProps={{ name: RoktHelpCircle }}
+/>
+```
+
+### Examples
+
+<Canvas of={TooltipStories.HelpIcon} />
 
 #### Related Links
 | Type   | Resource |
 | ------ | -------- |
 | Tooltip | [Tooltip Component](/docs/components-data-display-tooltip--docs) |
 | IconWithTooltip | [IconWithTooltip](/docs/components-data-display-tooltip--text-with-icon) |
-
-<Canvas meta={HelpIconStories.default} />
+| Eames  | [Tooltip Component](https://www.figma.com/design/veXnmignQnJz8StIq10VJ5/Eames-2.0---Foundations-%26-Components?node-id=413-13162&t=5iHsAw2QyK8Lx8zt-4) |
