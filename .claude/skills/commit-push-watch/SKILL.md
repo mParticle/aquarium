@@ -25,12 +25,12 @@ origin, and monitor CI until a terminal state.
 
 ## Context
 
-Rokt codebase environment:
+Aquarium component library:
 
-- **Languages**: Go, Python, TypeScript
+- **Language**: TypeScript (React + Ant Design + Storybook)
 - **CI/CD**: Buildkite, GitHub Actions
 - **Commit Format**: Conventional Commits (`type(scope): description`)
-- **Branch Naming**: `type/category-description/TICKET`
+- **Branch Naming**: `<type>/<description>-<TICKET>` (e.g., `feat/add-tooltip-MPD-59`)
 
 ## The Process
 

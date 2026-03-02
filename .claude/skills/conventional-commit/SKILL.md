@@ -26,12 +26,12 @@ commit type and scope, and ensure each commit is atomic and descriptive.
 
 ## Context
 
-Rokt codebase environment:
+Aquarium component library:
 
-- **Languages**: Go, Python, TypeScript
+- **Language**: TypeScript (React + Ant Design + Storybook)
 - **Commit Format**: Conventional Commits (`type(scope): description`)
 - **PR Size**: < 400 lines preferred
-- **Branch Naming**: `type/category-description/TICKET`
+- **Branch Naming**: `<type>/<description>-<TICKET>` (e.g., `feat/add-tooltip-MPD-59`)
 
 ## The Process
 

@@ -28,9 +28,9 @@ decision.
 
 ## Context
 
-Rokt codebase environment:
+Aquarium component library:
 
-- **Languages**: Go, Python, TypeScript
+- **Language**: TypeScript (React + Ant Design + Storybook)
 - **Testing**: pytest (Python), go test (Go), Jest/Playwright (TypeScript)
 - **PR Size**: < 400 lines preferred
 - **Ownership Model**: E2E Ownership -- engineers own Design through On-Call

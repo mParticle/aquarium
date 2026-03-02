@@ -26,10 +26,10 @@ description ready for submission.
 
 ## Context
 
-Rokt codebase environment:
+Aquarium component library:
 
-- **Languages**: Go, Python, TypeScript
-- **Branch Naming**: `type/category-description/TICKET`
+- **Language**: TypeScript (React + Ant Design + Storybook)
+- **Branch Naming**: `<type>/<description>-<TICKET>` (e.g., `feat/add-tooltip-MPD-59`)
 - **PR Size**: < 400 lines preferred
 - **Jira Instance**: rokt.atlassian.net
 
@@ -74,24 +74,24 @@ Use `git --no-pager diff main...HEAD` for deeper analysis if needed.
 
 Parse the branch name following this convention:
 
-**Branch Format:** `type/category-description/TICKET`
+**Branch Format:** `<type>/<description>-<TICKET>`
 
-**Title Format:** `[Category] Description - TICKET`
+**Title Format:** `<type>(scope): description - TICKET`
 
 **Rules:**
 
-- First dash-separated segment becomes the category tag (capitalized)
+- Use conventional commit format for the title
 - Generate concise description from commits and changes (not the branch name
   verbatim)
-- Append ticket ID from the last segment of the branch name
+- Extract ticket ID from branch name (last hyphenated segment matching PROJ-NNN)
 - Keep title under 80 characters
 
 **Examples:**
 
-- `bug/datapoint-null_check_violations/CORECDP-1785`
-  - `[Datapoint] Fix null reference in violations summary - CORECDP-1785`
-- `feature/ui-journeys-remove_modal/UI3DM-2116`
-  - `[UI][Journeys] Skip confirmation dialogs - UI3DM-2116`
+- `feat/add-tooltip-MPD-59`
+  - `feat(tooltip): add help icon pattern with RoktHelpCircle - MPD-59`
+- `fix/button-hover-state-MPD-100`
+  - `fix(button): correct hover state color on disabled buttons - MPD-100`
 
 ### Step 6: Generate PR Description
 

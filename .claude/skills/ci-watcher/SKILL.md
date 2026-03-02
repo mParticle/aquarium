@@ -29,9 +29,9 @@ with automatic failure classification and resolution attempts.
 
 ## Context
 
-Rokt codebase environment:
+Aquarium component library:
 
-- **Languages**: Go, Python, TypeScript
+- **Language**: TypeScript (React + Ant Design + Storybook)
 - **CI/CD**: Buildkite, GitHub Actions
 - **Observability**: Datadog (metrics, logs, monitors, dashboards)
 - **Ownership Model**: E2E Ownership -- engineers own Design through On-Call

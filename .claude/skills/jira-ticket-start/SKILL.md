@@ -15,35 +15,42 @@ full context.
 
 - "Start work on PROJ-123"
 - "Pick up this ticket"
-- "Begin working on CORECDP-456"
+- "Begin working on MPD-456"
 - When starting a new development task from Jira
 - At the beginning of a sprint task
 
 **Not for:**
 
 - General Jira operations (use jira-cli)
-- Creating tickets from meeting notes (use meeting-to-jira)
 - Planning multi-PR implementations (use task-planner after initial investigation)
 
 ## Context
 
-Rokt codebase environment:
+Aquarium component library:
 
-- **Languages**: Go, Python, TypeScript
+- **Language**: TypeScript (React + Ant Design + Storybook)
 - **Jira Instance**: rokt.atlassian.net
-- **CLI Tool**: `acli` (Atlassian CLI)
-- **MCP**: Use rokt-code-guru for codebase-specific guidance
-- **Branch Naming**: `type/category-description/TICKET`
-- **Ownership Model**: E2E Ownership -- engineers own Design through On-Call
+- **Jira Tool**: Atlassian MCP (`mcp__claude_ai_Atlassian__*`)
+- **Atlassian Cloud ID**: `1e01021f-8d40-42e1-a0e2-693df8252edd`
+- **Branch Naming**: `<type>/<short-description>-<TICKET>` (e.g., `feat/add-tooltip-MPD-59`)
+- **Branch Types**: `feat/`, `fix/`, `chore/` only
 
 ## The Process
 
-### Step 1: Fetch Jira Ticket Details
+### Step 1: Read Repo Conventions
 
-Retrieve ticket information:
+Before doing anything, read `CLAUDE.md` and `CONTRIBUTING.md` for repo-specific
+rules that override defaults below.
 
-```bash
-acli jira --action getIssue --issue PROJ-123
+### Step 2: Fetch Jira Ticket Details
+
+Use the Atlassian MCP to retrieve ticket information:
+
+```
+mcp__claude_ai_Atlassian__getJiraIssue(
+  cloudId: "1e01021f-8d40-42e1-a0e2-693df8252edd",
+  issueIdOrKey: "PROJ-123"
+)
 ```
 
 Extract and display:
@@ -54,58 +61,46 @@ Extract and display:
 - **Status**: Current workflow state
 - **Priority**: Ticket priority level
 
-### Step 2: Determine Branch Base
+### Step 3: Determine Branch Base
 
-Check if the user specified a base branch.
+Default to `main`. Pull latest before branching.
 
-**If user specified a branch:** Use that branch.
+### Step 4: Create Feature Branch
 
-**If not specified:** Show recent branches and ask:
+**Branch naming rules (from CLAUDE.md):**
 
-```bash
-git for-each-ref --sort=-committerdate refs/heads --format='%(refname:short)' | head -5
-```
+Format: `<type>/<short-description>-<TICKET>`
 
-Number the branches and ask the user to select one (or default to main).
-
-### Step 3: Create Feature Branch
-
-**Branch naming rules:**
-
-Format: `type/category-description/TICKET`
-
-| Component       | Rules                                                                      |
-| --------------- | -------------------------------------------------------------------------- |
-| **Type**        | `feature/` (default), `bug/` (for bugs), `sql/` (for migrations)           |
-| **Category**    | 1-2 lowercase words, underscore-joined if compound                         |
-| **Description** | 3-4 lowercase words max, underscore-joined, hyphen-separated from category |
-| **Ticket**      | Exact ticket ID, separated by `/`                                          |
+| Component       | Rules                                                        |
+| --------------- | ------------------------------------------------------------ |
+| **Type**        | `feat/` (default), `fix/` (for bugs), `chore/` (maintenance) |
+| **Description** | kebab-case, concise                                          |
+| **Ticket**      | Jira ticket ID appended with hyphen                          |
 
 **Examples:**
 
-- `feature/config-base_cursor_rules/UI3DM-2085`
-- `bug/datapoint-fix_null_check/CORECDP-1785`
-- `feature/api_gateway-add_rate_limiting/UI3DM-2087`
+- `feat/add-tooltip-MPD-59`
+- `fix/button-hover-state-MPD-100`
+- `chore/update-dependencies-MPD-42`
 
 ```bash
-git checkout <base_branch>
+git checkout main
 git pull
-git checkout -b type/category-description/TICKET
+git checkout -b <type>/<description>-<TICKET>
 ```
 
 **HARD BLOCKER:** Do not proceed with any implementation work until the branch is
 created.
 
-### Step 4: Begin Investigation
+### Step 5: Begin Investigation
 
 Once the branch exists:
 
 1. **Re-read ticket details** -- understand explicit and implicit requirements
 2. **Search codebase** -- find related files, patterns, and integration points
-3. **Consult rokt-code-guru MCP** -- for Rokt-specific guidance on the component
-4. **Ask clarifying questions** -- if anything is ambiguous
+3. **Ask clarifying questions** -- if anything is ambiguous
 
-### Step 5: Assess Complexity
+### Step 6: Assess Complexity
 
 | Complexity  | LOC Estimate | Action                                          |
 | ----------- | ------------ | ----------------------------------------------- |
@@ -113,22 +108,23 @@ Once the branch exists:
 | **Medium**  | 100-300      | Create 2-3 step plan, ask permission            |
 | **Complex** | > 300        | Create detailed plan document, discuss approach |
 
-**Stop words (use these when complexity warrants it):**
+### Step 7: Transition Ticket Status
 
-- "This will be over 100 lines -- let me show you the plan first"
-- "I should ask permission before implementing this"
-- "Let me pause here and get your input"
+Attempt to move the Jira ticket to "In Progress" via MCP:
 
-### Step 6: Transition Ticket Status
-
-Move the Jira ticket to "In Progress":
-
-```bash
-acli jira --action transitionIssue --issue PROJ-123 --transition "In Progress"
 ```
+mcp__claude_ai_Atlassian__transitionJiraIssue(
+  cloudId: "1e01021f-8d40-42e1-a0e2-693df8252edd",
+  issueIdOrKey: "PROJ-123",
+  transition: { id: "<transition_id>" }
+)
+```
+
+First get available transitions, then use the appropriate ID.
 
 ## Constraints
 
+- **DO** read CLAUDE.md and CONTRIBUTING.md first
 - **DO** create the branch BEFORE any implementation work
 - **DO** fetch and display ticket details before branching
 - **DO** assess complexity before diving into implementation
