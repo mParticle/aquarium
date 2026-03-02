@@ -7,3 +7,12 @@
     margin-top: var(--margin-xxs);
   }
 
+.ant-alert-default.ant-alert-info {
+  background: var(--rokt-gray-1);
+  border-color: var(--rokt-gray-4);
+}
+
+.ant-alert-default.ant-alert-info .ant-alert-icon {
+  color: var(--rokt-gray-6);
+}
+
