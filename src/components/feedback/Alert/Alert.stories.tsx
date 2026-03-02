@@ -384,7 +384,7 @@ export const DefaultWithLink: Story = {
         </Typography.Link>
       </Typography.Text>
     ),
-    showIcon: true,
+    showIcon: false,
     style: { marginBottom: 0, width: '860px' },
   },
 }
