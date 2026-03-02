@@ -12,7 +12,7 @@ import {
   ColorSuccess,
   ColorWarning,
   ColorInfo,
-  ColorDefault,
+  RoktGray6,
   MarginXxs,
   SizeXs,
 } from 'src/styles/style'
@@ -38,7 +38,7 @@ const getIconByType = (type?: AlertType) => {
     case 'warning':
       return <ExclamationCircleFilled {...iconProps} style={{ ...iconProps.style, color: ColorWarning }} />
     case 'default':
-      return <InfoCircleFilled {...iconProps} style={{ ...iconProps.style, color: ColorDefault }} />
+      return <InfoCircleFilled {...iconProps} style={{ ...iconProps.style, color: RoktGray6 }} />
     case 'info':
     default:
       return <InfoCircleFilled {...iconProps} style={{ ...iconProps.style, color: ColorInfo }} />
