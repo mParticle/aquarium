@@ -19,7 +19,15 @@ This overrides the `jira-ticket-start` skill's default branch naming. Use this r
 
 ## Designer Workflow (Non-Technical Contributors)
 
-Designers and non-technical contributors can use these slash commands to contribute:
+### One command (recommended)
+
+```
+/implement-ticket MPD-74
+```
+
+This handles everything end-to-end: fetches Jira ticket, creates branch, implements changes, verifies build, commits, pushes, and creates a PR.
+
+### Step-by-step (manual control)
 
 1. `/getting-started` — Understand the repo structure and how to work in it
 2. `/start-jira-ticket <TICKET-ID>` — Fetch ticket details and create a branch
@@ -27,9 +35,10 @@ Designers and non-technical contributors can use these slash commands to contrib
 4. `/commit` — Stage and commit with a proper message
 5. `/publish-branch` — Push and create a PR with Jira link
 
-For Jira operations without git:
+### Other useful commands
 
 - `/jira-cli` — View, search, create, update tickets via natural language
+- `/handle-reviews` — Address PR review feedback automatically
 
 ## Styling Guidelines
 

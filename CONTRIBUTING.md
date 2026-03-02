@@ -119,7 +119,28 @@ If you're a designer or non-technical contributor, you can use Claude Code's AI-
 - Repository cloned and `npm install` completed
 - Atlassian (Jira) MCP connected in Claude Code
 
-### Step-by-Step Workflow
+### One-Command Workflow (Recommended)
+
+For design system changes (new component variants, icons, tokens, stories), use the single end-to-end command:
+
+```
+/implement-ticket MPD-74
+```
+
+This handles **everything** autonomously:
+
+1. Fetches the Jira ticket details
+2. Creates a branch from latest `main`
+3. Investigates the codebase and plans the changes
+4. Implements the code changes
+5. Runs build + type verification
+6. Commits, pushes, and creates a PR with Jira link
+
+You'll be shown the plan before implementation and can approve or adjust.
+
+### Step-by-Step Workflow (Manual Control)
+
+If you prefer more control over each step:
 
 #### 1. Onboard to the repo (first time only)
 
@@ -178,6 +199,7 @@ If reviewers leave comments, this classifies each comment (code change, question
 
 | Command              | What it does                                                         |
 | -------------------- | -------------------------------------------------------------------- |
+| `/implement-ticket`  | **End-to-end**: Jira ticket to PR in one command                     |
 | `/jira-cli`          | View, search, create, and update Jira tickets using natural language |
 | `/commit-push-watch` | Commit + push + monitor CI in one step                               |
 | `/monitor-ci`        | Watch CI pipeline and auto-diagnose failures                         |
