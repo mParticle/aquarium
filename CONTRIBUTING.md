@@ -53,6 +53,7 @@ We use semantic-release for releasing new versions of the library. You can use t
 ## Commit conventions and PR titles
 
 - We use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) to help automating the release process. Both PR titles and commit messages should follow this convention.
+- **PR titles must match the branch type**: `feat/` branch → `feat:` or `feat(scope):` title, `fix/` → `fix:`, `chore/` → `chore:`, etc.
 - [This repo is commitizen friendly](https://github.com/commitizen/cz-cli?tab=readme-ov-file#using-the-command-line-tool) so we can use `git cz` to commit changes.
   `npx cz` is also available if you don't have commitizen installed globally.
 - We also have a [commitlint](https://commitlint.js.org/) setup to enforce the commit message format.

@@ -91,6 +91,7 @@ wrong file. Add them to `design/GlobalToken.json` and rebuild.
    ```
 3. **Push**: `git push -u origin <branch>`
 4. **Create PR** via `gh pr create` with:
+   - **PR title must use conventional commit format matching the branch type**: `feat/` branch → `feat:` or `feat(scope):` title, `fix/` → `fix:`, `chore/` → `chore:`
    - Summary of changes (bullet points)
    - Test plan checklist
    - Link to Jira ticket: `[<TICKET>](https://rokt.atlassian.net/browse/<TICKET>)`
