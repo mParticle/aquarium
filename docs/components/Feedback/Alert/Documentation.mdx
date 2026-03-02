@@ -16,8 +16,6 @@ Alerts are persistent UI components used to communicate important information to
 
 Five alert types are supported, each with distinct visual styling to convey the message's intent and importance: default, success, info, warning, and error.
 
-<Canvas of={AlertStories.DefaultWithoutIcon} />
-
 <Canvas of={AlertStories.Success} />
 
 <Canvas of={AlertStories.Info} />
@@ -25,6 +23,8 @@ Five alert types are supported, each with distinct visual styling to convey the 
 <Canvas of={AlertStories.Warning} />
 
 <Canvas of={AlertStories.Error} />
+
+<Canvas of={AlertStories.DefaultWithoutIcon} />
 
 ### Closable Alerts
 
@@ -35,8 +35,6 @@ Alerts can be closable or not, depending on whether users need to dismiss them.
 ### Alerts with Links
 
 Alerts can include links within the message text. Links should be styled with text color and underlined to maintain consistency with the alert's visual design.
-
-<Canvas of={AlertStories.DefaultWithLink} />
 
 <Canvas of={AlertStories.SuccessWithLink} />
 
