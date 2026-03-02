@@ -1,6 +1,36 @@
 - start all new branches with either fix/ feat/ chore/
 - Always read CONTRIBUTING.md before executing any git action
 
+## Branch Naming Convention
+
+Branch format: `<type>/<short-description>`
+
+- **type**: `feat/`, `fix/`, or `chore/` (required prefix)
+- **description**: kebab-case, concise (e.g., `feat/add-tooltip-component`, `fix/button-hover-state`)
+- If working from a Jira ticket, append the ticket ID: `feat/add-tooltip-AQUA-123`
+
+This overrides the `jira-ticket-start` skill's default branch naming. Use this repo's convention instead.
+
+## Jira Integration
+
+- **Atlassian MCP cloud ID**: `1e01021f-8d40-42e1-a0e2-693df8252edd` (rokt.atlassian.net)
+- Use the Atlassian MCP tools (`mcp__claude_ai_Atlassian__*`) for Jira operations
+- When starting from a Jira ticket, create branches using the convention above
+
+## Designer Workflow (Non-Technical Contributors)
+
+Designers and non-technical contributors can use these slash commands to contribute:
+
+1. `/getting-started` — Understand the repo structure and how to work in it
+2. `/start-jira-ticket <TICKET-ID>` — Fetch ticket details and create a branch
+3. Make your changes (update docs, icons, styles, etc.)
+4. `/commit` — Stage and commit with a proper message
+5. `/publish-branch` — Push and create a PR with Jira link
+
+For Jira operations without git:
+
+- `/jira-cli` — View, search, create, update tickets via natural language
+
 ## Styling Guidelines
 
 ### Use Component Library Components
@@ -19,8 +49,17 @@ Always use design tokens from `src/styles/style.ts` or `src/styles/_variables.cs
 - ✅ `style={{ color: ColorPrimary }}` instead of `color: '#3600d1'`
 - ✅ `style={{ borderRadius: BorderRadiusLg }}` instead of `borderRadius: '8px'`
 - ✅ `style={{ margin: MarginMd }}` instead of `margin: '20px'`
+- ✅ `<Flex gap={SizeSm}>` instead of `<Flex gap="12px">` — use tokens in JSX props too, not just inline styles
 
 Import tokens: `import { PaddingLg, ColorPrimary, BorderRadiusLg } from 'src/styles/style'`
+
+### Comments
+
+Only add comments for non-obvious logic, business context, or to help other engineers/LLMs understand intent. Do not add comments that restate what the code already says:
+
+- ✅ `// Portal renders outside component tree, so we query document.body instead`
+- ❌ `/** Tooltip content displayed on hover */ title: ReactNode`
+- ❌ `/** Icon size */ size?: IconSize`
 
 ## Adding Icons
 

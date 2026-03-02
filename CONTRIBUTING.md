@@ -109,6 +109,80 @@ After settings both variables locally, run the following locally:
 npx semantic-release --dry-run
 ```
 
+## Designer / Non-Technical Contributor Workflow
+
+If you're a designer or non-technical contributor, you can use Claude Code's AI-powered slash commands to contribute without deep git knowledge. This workflow handles branching, commits, and PRs for you.
+
+### Prerequisites
+
+- [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code) installed
+- Repository cloned and `npm install` completed
+- Atlassian (Jira) MCP connected in Claude Code
+
+### Step-by-Step Workflow
+
+#### 1. Onboard to the repo (first time only)
+
+```
+/getting-started
+```
+
+This analyzes the repo and explains how it's organized, how to build/test, and key conventions.
+
+#### 2. Start from a Jira ticket
+
+```
+/start-jira-ticket AQUA-123
+```
+
+This will:
+
+- Fetch the Jira ticket details (title, description, acceptance criteria)
+- Create a properly named branch (e.g., `feat/add-tooltip-AQUA-123`)
+- Begin investigating related files in the codebase
+
+#### 3. Make your changes
+
+Edit files as needed — update documentation, icons, styles, component props, etc. Ask Claude Code for help with any changes.
+
+#### 4. Commit your changes
+
+```
+/commit
+```
+
+This analyzes your changes and creates a properly formatted [conventional commit](https://www.conventionalcommits.org/) message automatically.
+
+#### 5. Create a Pull Request
+
+```
+/publish-branch
+```
+
+This will:
+
+- Push your branch to GitHub
+- Generate a PR title and description from your commits
+- Include a link to the Jira ticket
+- Create the PR for review
+
+#### 6. Handle PR review feedback
+
+```
+/handle-reviews
+```
+
+If reviewers leave comments, this classifies each comment (code change, question, nit) and helps you address them.
+
+### Other Useful Commands
+
+| Command              | What it does                                                         |
+| -------------------- | -------------------------------------------------------------------- |
+| `/jira-cli`          | View, search, create, and update Jira tickets using natural language |
+| `/commit-push-watch` | Commit + push + monitor CI in one step                               |
+| `/monitor-ci`        | Watch CI pipeline and auto-diagnose failures                         |
+| `/skill-tour`        | See all available AI-powered commands                                |
+
 ## Additional readings:
 
 - [Semantic Release Workflow Configuration](https://github.com/semantic-release/semantic-release/blob/master/docs/usage/workflow-configuration.md#workflow-configuration)
