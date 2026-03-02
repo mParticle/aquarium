@@ -45,7 +45,7 @@ Aquarium is a React + Ant Design + Storybook component library.
    - Adding/updating design tokens
    - Adding/updating stories or documentation
    - Bug fix
-5. **Load the relevant reference** from `references/component-patterns.md`
+5. **Read the target component** to understand existing patterns before making changes
 
 ### Phase 2: Branch
 
