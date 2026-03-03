@@ -1,7 +1,8 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { Flex, Tooltip, Typography, IconWithTooltip } from 'src/components'
+import { Flex, Icon, Tooltip, Typography, IconWithTooltip } from 'src/components'
+import { RoktHelpCircle } from 'src/components/icons'
 import { Button } from 'src/components'
-import { MarginXxs } from 'src/styles/style'
+import { MarginXxs, SizeSm } from 'src/styles/style'
 
 const meta: Meta<typeof Tooltip> = {
   title: 'Components/Data Display/Tooltip',
@@ -76,6 +77,39 @@ export const TextWithIcon: Story = {
       <Flex align="center" gap={MarginXxs}>
         <Typography.Text style={{ wordBreak: 'initial' }}>Strength</Typography.Text>
         <IconWithTooltip title="This is helpful information about strength" />
+      </Flex>
+    )
+  },
+}
+
+export const HelpIcon: Story = {
+  render: () => {
+    return (
+      <Flex align="center" gap={SizeSm}>
+        <Flex align="center" gap={MarginXxs}>
+          <Typography.Text style={{ wordBreak: 'initial' }}>Audience Size</Typography.Text>
+          <Tooltip title="The total number of users who match the targeting criteria for this segment.">
+            <Flex align="center" justify="center">
+              <Icon name={RoktHelpCircle} size="sm" color="default" />
+            </Flex>
+          </Tooltip>
+        </Flex>
+        <Flex align="center" gap={MarginXxs}>
+          <Typography.Text style={{ wordBreak: 'initial' }}>Conversion Rate</Typography.Text>
+          <Tooltip
+            title={
+              <Typography.Text tooltip>
+                The percentage of users who completed the desired action.{' '}
+                <Typography.Link href="/" tooltip>
+                  Learn More
+                </Typography.Link>
+              </Typography.Text>
+            }>
+            <Flex align="center" justify="center">
+              <Icon name={RoktHelpCircle} size="sm" color="default" />
+            </Flex>
+          </Tooltip>
+        </Flex>
       </Flex>
     )
   },
