@@ -66,6 +66,8 @@ const Cascader = (props: IQueryItemCascaderProps) => {
         setIsLoading(true)
         try {
           await props.loadData('')
+        } catch (error) {
+          console.error('QueryItem Cascader: initial loadData failed', error)
         } finally {
           setIsLoading(false)
         }
@@ -93,7 +95,9 @@ const Cascader = (props: IQueryItemCascaderProps) => {
   const debouncedLoadData = useCallback(
     props.loadData
       ? debounce((value: string) => {
-          void props.loadData?.(value)
+          props.loadData?.(value).catch((error: unknown) => {
+            console.error('QueryItem Cascader: search loadData failed', error)
+          })
         }, 500)
       : () => {},
     [props.loadData],
@@ -160,7 +164,9 @@ const Cascader = (props: IQueryItemCascaderProps) => {
   if (isOpen) inputClasses += ' query-item--open'
   if (selectedValue && selectedValue.length !== 0) inputClasses += ' query-item--selected'
   if (props.errorMessage) inputClasses += ' query-item--error'
-  const displayValue = (selectedOption ? getSearchValue(selectedOption) : selectedValue.slice(-1)) as string
+  const displayValue = selectedOption
+    ? getSearchValue(selectedOption)
+    : String(selectedValue[selectedValue.length - 1] ?? '')
 
   return (
     <>
