@@ -14,6 +14,7 @@ import {
 } from 'src/components'
 import { type Icons } from 'src/constants/Icons'
 import { useMount } from 'src/hooks/useMount'
+import { ColorBgContainer } from 'src/styles/style'
 import { debounce } from 'src/utils/utils'
 
 export interface ICascaderOption extends DefaultOptionType {
@@ -63,8 +64,11 @@ const Cascader = (props: IQueryItemCascaderProps) => {
     async function init(): Promise<void> {
       if (props.loadData && !items?.length) {
         setIsLoading(true)
-        await props.loadData('')
-        setIsLoading(false)
+        try {
+          await props.loadData('')
+        } finally {
+          setIsLoading(false)
+        }
       }
     }
 
@@ -103,11 +107,10 @@ const Cascader = (props: IQueryItemCascaderProps) => {
     value: selectedValue,
     defaultOpen: props.defaultOpen,
     placement: props.placement ?? 'bottomLeft',
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    onChange: async (values: Array<number | string>, selectedOptions: any) => {
+    onChange: async (values: Array<number | string>, selectedOptions: ICascaderOption[]) => {
       setSelectedValue(values as string[])
       setSelectedOption(selectedOptions.slice(-1)[0])
-      await props.onChange?.(values, selectedOptions)
+      await props.onChange?.(values, selectedOptions as IQueryItemCascaderProps['options'])
     },
     popupRender: (menu: ReactNode) => (
       <div className="query-item__dropdown">
@@ -126,7 +129,7 @@ const Cascader = (props: IQueryItemCascaderProps) => {
                 onSearch(a)
               }}
             />
-            <Flex justify="center" style={{ backgroundColor: 'white' }}>
+            <Flex justify="center" style={{ backgroundColor: ColorBgContainer }}>
               {menu}
             </Flex>
           </>

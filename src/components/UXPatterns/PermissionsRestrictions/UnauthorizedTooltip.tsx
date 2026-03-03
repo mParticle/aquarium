@@ -23,7 +23,7 @@ export const UnauthorizedTooltip: React.FC<IUnauthorizedTooltipProps> = ({
     container: {
       maxWidth,
       textAlign: 'center' as const,
-      ...(typeof styles === 'object' && styles?.container ? styles.container : {}),
+      ...(typeof styles === 'object' ? styles?.container : {}),
     },
   }
 
