@@ -66,6 +66,35 @@ const CheckboxStatesExample = () => {
   )
 }
 
+const VerticalCheckboxGroupExample = () => {
+  const [selectedOptions, setSelectedOptions] = useState<CheckboxValueType[]>(['feature-a', 'feature-c'])
+
+  const allValues = featureOptions.map(option => option.value)
+  const isAllSelected = selectedOptions.length === featureOptions.length
+  const isIndeterminate = selectedOptions.length > 0 && !isAllSelected
+
+  return (
+    <Flex vertical gap={SizeXs} style={{ maxWidth: '448px' }}>
+      <Checkbox
+        indeterminate={isIndeterminate}
+        checked={isAllSelected}
+        onChange={event => {
+          setSelectedOptions(event.target.checked ? allValues : [])
+        }}>
+        Check all
+      </Checkbox>
+      <Checkbox.Group
+        options={featureOptions}
+        value={selectedOptions}
+        style={{ display: 'flex', flexDirection: 'column', gap: SizeXs }}
+        onChange={(values: CheckboxValueType[]) => {
+          setSelectedOptions(values)
+        }}
+      />
+    </Flex>
+  )
+}
+
 const CheckboxGroupExample = () => {
   const [selectedOptions, setSelectedOptions] = useState<CheckboxValueType[]>(['feature-a', 'feature-c'])
 
@@ -149,6 +178,63 @@ const CheckboxListExample = () => {
   )
 }
 
+const settingsOptions = [
+  {
+    label: 'Email notifications',
+    value: 'email-notifications',
+    line1: 'Receive updates about account activity and security alerts.',
+    line2: 'You can customize frequency in your notification preferences.',
+  },
+  {
+    label: 'Usage analytics',
+    value: 'usage-analytics',
+    line1: 'Share anonymous usage data to help improve the product.',
+    line2: 'No personally identifiable information is collected or shared.',
+  },
+  {
+    label: 'Beta features',
+    value: 'beta-features',
+    line1: 'Get early access to new features before they are generally available.',
+    line2: 'Beta features may change or be removed without prior notice.',
+  },
+]
+
+const CheckboxWithTitleAndTwoLinesExample = () => {
+  const [selectedValues, setSelectedValues] = useState<CheckboxValueType[]>(['email-notifications'])
+
+  const toggleValue = (value: CheckboxValueType, shouldSelect: boolean) => {
+    setSelectedValues(previousValues => {
+      if (shouldSelect) {
+        return previousValues.includes(value) ? previousValues : [...previousValues, value]
+      }
+
+      return previousValues.filter(existingValue => existingValue !== value)
+    })
+  }
+
+  return (
+    <div style={{ display: 'grid', gap: SizeSm, maxWidth: '512px' }}>
+      {settingsOptions.map(option => {
+        const isChecked = selectedValues.includes(option.value)
+        return (
+          <Checkbox
+            key={option.value}
+            checked={isChecked}
+            onChange={event => {
+              toggleValue(option.value, event.target.checked)
+            }}>
+            <Flex vertical>
+              <Typography.Text strong>{option.label}</Typography.Text>
+              <Typography.Text type="secondary">{option.line1}</Typography.Text>
+              <Typography.Text type="secondary">{option.line2}</Typography.Text>
+            </Flex>
+          </Checkbox>
+        )
+      })}
+    </div>
+  )
+}
+
 const LongLegalCopyExample = () => {
   const [checked, setChecked] = useState(true)
 
@@ -219,7 +305,20 @@ export const GroupSelection: Story = {
     docs: {
       description: {
         story:
-          'Use `Checkbox.Group` to render related choices. Combine it with a single Checkbox to create a “Select all” control when needed.',
+          'Use `Checkbox.Group` to render related choices. Combine it with a single Checkbox to create a "Select all" control when needed.',
+      },
+    },
+  },
+}
+
+export const VerticalGroup: Story = {
+  name: 'Vertical group',
+  render: () => <VerticalCheckboxGroupExample />,
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Combine a "Check all" control with a vertically stacked `Checkbox.Group`. The leading checkbox reflects the indeterminate state when only some options are selected.',
       },
     },
   },
@@ -233,6 +332,19 @@ export const MultipleOptions: Story = {
       description: {
         story:
           'Stack individual checkboxes to present detailed choices. Each checkbox can include supporting text to clarify what opting in entails.',
+      },
+    },
+  },
+}
+
+export const TitleWithTwoLines: Story = {
+  name: 'Title with two lines of text',
+  render: () => <CheckboxWithTitleAndTwoLinesExample />,
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Use a bold title with two lines of secondary text to give users enough context about each option. This pattern works well for settings and preference panels.',
       },
     },
   },
