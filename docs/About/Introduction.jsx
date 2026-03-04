@@ -21,6 +21,18 @@ function getDocsPath(categoryName, componentName) {
   return `?path=/docs/components-${categorySlug}-${componentSlug}--documentation`
 }
 
+function getBaseUrl() {
+  if (typeof window === 'undefined') return '/'
+  const hostname = window.top.location.hostname
+  if (hostname === 'localhost' || hostname.startsWith('127.')) {
+    return `${window.top.location.origin}/`
+  }
+  if (hostname.includes('mparticle.github.io')) {
+    return `${window.top.location.origin}/aquarium/`
+  }
+  return `${window.top.location.origin}/`
+}
+
 const previewContainerStyle = {
   background: '#F5F5F5',
   borderRadius: 8,
@@ -35,10 +47,7 @@ const previewContainerStyle = {
 
 function ComponentCard({ component, categoryName }) {
   const queryPath = getDocsPath(categoryName, component.name)
-  const fullUrl =
-    typeof window !== 'undefined'
-      ? `${window.top.location.origin}/${queryPath}`
-      : `/${queryPath}`
+  const fullUrl = getBaseUrl() + queryPath
 
   function handleClick(e) {
     e.preventDefault()
