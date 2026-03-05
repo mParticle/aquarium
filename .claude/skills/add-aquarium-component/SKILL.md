@@ -1,6 +1,6 @@
 ---
 name: add-aquarium-component
-description: Scaffold a new Aquarium component with all required files following Aquarium 2 conventions (Ant Design 6, React 19, Storybook 8). Generates the component, Storybook story with interaction tests, MDX docs stub, and wires up the export chain. Triggers on add component, new component, scaffold component, create component, aquarium component.
+description: Scaffold a new Aquarium component with all required files following Aquarium 2 conventions (Ant Design 6, React 19, Storybook 10). Generates the component, Storybook story with interaction tests, MDX docs stub, and wires up the export chain. Triggers on add component, new component, scaffold component, create component, aquarium component.
 group: aquarium
 ---
 
@@ -13,7 +13,7 @@ Scaffold a production-ready Aquarium component following all Aquarium 2 conventi
 Creates all required files and wires them into the export chain:
 
 1. `src/components/<category>/<Name>/<Name>.tsx` — wraps antd, custom props interface
-2. `src/components/<category>/<Name>/<Name>.stories.tsx` — Storybook 8 with interaction tests
+2. `src/components/<category>/<Name>/<Name>.stories.tsx` — Storybook 10 with interaction tests
 3. `docs/components/<Category>/<Name>/Documentation.mdx` — MDX doc stub
 4. Updates `src/components/index.ts` — adds named export
 
@@ -106,7 +106,7 @@ export const Interactive: Story = {
 }
 ```
 
-**Storybook 8 rules:**
+**Storybook 10 rules:**
 
 - Import from `storybook/test` (not `@storybook/testing-library`)
 - Use `userEvent` from `storybook/test`

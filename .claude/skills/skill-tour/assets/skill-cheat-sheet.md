@@ -12,7 +12,7 @@ Compact reference card of all available skills organized by category.
 | `/even-better-if`  | Radical candor feedback on anything |
 | `/skill-tour`      | Interactive tour of all skills      |
 
-## Aquarium (Repo-Specific)
+## Aquarium
 
 | Command                   | Purpose                                       |
 | ------------------------- | --------------------------------------------- |
