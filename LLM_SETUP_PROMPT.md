@@ -4,7 +4,7 @@
 
 - Repository: https://github.com/mParticle/aquarium
 - npm Package: `@mparticle/aquarium`
-- Base Framework: Ant Design (antd) v5
+- Base Framework: Ant Design (antd) v6
 
 **Required Dependencies:**
 
@@ -12,7 +12,7 @@
 | Package | Required | Purpose |
 |---------|----------|---------|
 | `@mparticle/aquarium` | ✅ Yes | Main Aquarium component library |
-| `antd` | ✅ Yes | Peer dependency (6.1.x) - Ant Design UI framework |
+| `antd` | ✅ Yes | Peer dependency (6.2.x) - Ant Design UI framework |
 | `dayjs` | ✅ Yes | Peer dependency (1.11.x) - Date handling for DatePicker, Calendar, etc. |
 | `react` | ✅ Yes | Peer dependency (>=19.0.2) |
 | `react-dom` | ✅ Yes | Peer dependency (>=19.0.0) |
