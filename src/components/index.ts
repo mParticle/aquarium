@@ -74,7 +74,7 @@ export { Popconfirm, type IPopconfirmProps } from './feedback/Popconfirm/Popconf
 export { Drawer, type IDrawerProps } from './feedback/Drawer/Drawer'
 export { Modal, type IModalProps } from './feedback/Modal/Modal'
 export { Notification, type INotificationProps, notification } from './feedback/Notification/Notification'
-export { Alert, type IAlertProps } from './feedback/Alert/Alert'
+export { Alert, type IAlertProps, type AlertType } from './feedback/Alert/Alert'
 export { Message, type IMessageProps, message } from './feedback/Message/Message'
 export { LoadingModal, type ILoadingModalProps } from './feedback/LoadingModal/LoadingModal'
 export {

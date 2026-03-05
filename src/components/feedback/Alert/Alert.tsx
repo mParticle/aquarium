@@ -5,16 +5,29 @@ import { CloseCircleFilled, InfoCircleFilled, CheckCircleFilled, ExclamationCirc
 import { ConfigProvider } from 'src/components'
 import { Flex } from 'src/components/layout/Flex/Flex'
 import { Typography } from 'src/components/general/Typography/Typography'
-import { Size, FontSize, ColorError, ColorSuccess, ColorWarning, ColorInfo, MarginXxs, SizeXs } from 'src/styles/style'
+import {
+  Size,
+  FontSize,
+  ColorError,
+  ColorSuccess,
+  ColorWarning,
+  ColorInfo,
+  RoktGray6,
+  MarginXxs,
+  SizeXs,
+} from 'src/styles/style'
 import './alert.css'
 
-export interface IAlertProps extends Omit<AntAlertProps, 'message'> {
+export type AlertType = 'success' | 'info' | 'warning' | 'error' | 'default'
+
+export interface IAlertProps extends Omit<AntAlertProps, 'message' | 'type'> {
   message?: ReactNode
   expandable?: boolean
   expandableContent?: ReactNode
+  type?: AlertType
 }
 
-const getIconByType = (type?: 'success' | 'info' | 'warning' | 'error') => {
+const getIconByType = (type?: AlertType) => {
   const iconProps = { style: { fontSize: FontSize, marginTop: MarginXxs } }
 
   switch (type) {
@@ -24,6 +37,8 @@ const getIconByType = (type?: 'success' | 'info' | 'warning' | 'error') => {
       return <CheckCircleFilled {...iconProps} style={{ ...iconProps.style, color: ColorSuccess }} />
     case 'warning':
       return <ExclamationCircleFilled {...iconProps} style={{ ...iconProps.style, color: ColorWarning }} />
+    case 'default':
+      return <InfoCircleFilled {...iconProps} style={{ ...iconProps.style, color: RoktGray6 }} />
     case 'info':
     default:
       return <InfoCircleFilled {...iconProps} style={{ ...iconProps.style, color: ColorInfo }} />
@@ -33,6 +48,9 @@ const getIconByType = (type?: 'success' | 'info' | 'warning' | 'error') => {
 export const Alert = (props: IAlertProps) => {
   const { expandable, expandableContent, message, type, className, ...restProps } = props
   const [isExpanded, setIsExpanded] = useState(false)
+  const isDefault = type === 'default'
+  const antType = isDefault ? 'info' : type
+  const defaultClass = isDefault ? 'ant-alert-default' : ''
 
   const toggleExpand = () => {
     setIsExpanded(!isExpanded)
@@ -67,10 +85,10 @@ export const Alert = (props: IAlertProps) => {
       <ConfigProvider>
         <AntAlert
           {...restProps}
-          type={type}
+          type={antType}
           message={expandableMessage}
           showIcon={false}
-          className={`alert-expandable ${className ?? ''}`}
+          className={`alert-expandable ${defaultClass} ${className ?? ''}`.trim()}
         />
       </ConfigProvider>
     )
@@ -78,7 +96,12 @@ export const Alert = (props: IAlertProps) => {
 
   return (
     <ConfigProvider>
-      <AntAlert {...restProps} type={type} message={message} className={className} />
+      <AntAlert
+        {...restProps}
+        type={antType}
+        message={message}
+        className={`${defaultClass} ${className ?? ''}`.trim()}
+      />
     </ConfigProvider>
   )
 }

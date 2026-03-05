@@ -26,7 +26,7 @@ const meta: Meta<typeof Alert> = {
   argTypes: {
     type: {
       control: 'select',
-      options: ['success', 'info', 'warning', 'error'],
+      options: ['success', 'info', 'warning', 'error', 'default'],
     },
   },
 }
@@ -342,6 +342,50 @@ export const ErrorInModal: Story = {
         </Modal>
       </>
     )
+  },
+}
+
+export const Default: Story = {
+  args: {
+    type: 'default',
+    message: 'This is a general informational message.',
+    showIcon: true,
+    style: { marginBottom: 0, width: '860px' },
+  },
+}
+
+export const DefaultWithoutIcon: Story = {
+  args: {
+    type: 'default',
+    message: 'This is a general informational message.',
+    showIcon: false,
+    style: { marginBottom: 0, width: '860px' },
+  },
+}
+
+export const DefaultWithCloseButton: Story = {
+  args: {
+    type: 'default',
+    message: 'This is a general informational message.',
+    showIcon: true,
+    closable: true,
+    style: { marginBottom: 0, width: '860px' },
+  },
+}
+
+export const DefaultWithLink: Story = {
+  args: {
+    type: 'default',
+    message: (
+      <Typography.Text size="base">
+        This is a general informational message.{' '}
+        <Typography.Link color="ColorText" underline href="#">
+          Learn more
+        </Typography.Link>
+      </Typography.Text>
+    ),
+    showIcon: false,
+    style: { marginBottom: 0, width: '860px' },
   },
 }
 
