@@ -1,0 +1,1 @@
+import{aZ as a,by as e}from"./iframe-CEdf4E2i.js";import"./preload-helper-PPVm8Dsz.js";const t={title:"Components/Not Prod Ready/Calendar",component:e,args:{value:a("1/2/2024")}},r={};r.parameters={...r.parameters,docs:{...r.parameters?.docs,source:{originalSource:"{}",...r.parameters?.docs?.source}}};const m=["Primary"];export{r as Primary,m as __namedExportsOrder,t as default};
