@@ -388,11 +388,11 @@
   --mp-query-item-border-width: 0 0 1px 0;
   --mp-query-item-border-width-active: 0 0 1px 0;
   --mp-query-item-border-radius: 2;
-  --mp-query-item-border-color: #d9d9d9;
-  --mp-query-item-border-color-focus: #a10863;
-  --mp-query-item-border-color-hover: #a10863;
-  --mp-query-item-border-color-active: #a10863;
-  --mp-query-item-border-color-disabled: #d9d9d9;
+  --mp-query-item-border-color: #D9D9D9;
+  --mp-query-item-border-color-focus: #A10863;
+  --mp-query-item-border-color-hover: #A10863;
+  --mp-query-item-border-color-active: #A10863;
+  --mp-query-item-border-color-disabled: #D9D9D9;
   --mp-query-item-border-color-error: #f04438;
   --mp-query-item-bg-color: #ffffff;
   --mp-query-item-bg-color-hover: #ffffff;
@@ -404,7 +404,7 @@
   --mp-query-item-shadow-active: 0 0 0 2px rgba(239, 11, 148, 0.1);
   --mp-query-item-value-selector-font-weight: 500;
   --mp-query-item-value-selector-color: rgba(0, 0, 0, 0.88);
-  --mp-query-item-action-primary-color: #800a51;
+  --mp-query-item-action-primary-color: #800A51;
   --mp-query-item-action-secondary-color: rgba(0, 0, 0, 0.88);
   --mp-query-item-action-font-weight: 400;
   --rokt-brand-1: #fcf3f8;
