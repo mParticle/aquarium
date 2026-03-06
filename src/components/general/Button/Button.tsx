@@ -9,12 +9,16 @@ import './button.css'
 
 export interface IButtonProps extends AntButtonProps {
   icon?: ReactNode
-  /**
-   * Text color inheritance from parent element.
-   */
   textColor?: 'inherit'
 }
-export const Button = (props: IButtonProps) => {
+
+interface ButtonComponent extends React.ForwardRefExoticComponent<
+  IButtonProps & React.RefAttributes<HTMLButtonElement | HTMLAnchorElement>
+> {
+  Group: typeof AntButton.Group
+}
+
+export const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, IButtonProps>((props, ref) => {
   const buttonIcon =
     React.isValidElement<IIconProps>(props.icon) && props.icon.type === Icon ? (
       <Icon {...props.icon.props} color={props.icon.props.color ?? 'inherit'} />
@@ -30,6 +34,7 @@ export const Button = (props: IButtonProps) => {
     <ConfigProvider>
       <AntButton
         {...restProps}
+        ref={ref}
         icon={buttonIcon}
         style={buttonStyle}
         variant={variant}
@@ -38,6 +43,8 @@ export const Button = (props: IButtonProps) => {
       </AntButton>
     </ConfigProvider>
   )
-}
+}) as ButtonComponent
+
+Button.displayName = 'Button'
 
 Button.Group = AntButton.Group

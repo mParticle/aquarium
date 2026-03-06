@@ -3,22 +3,26 @@ import { type InputProps as AntInputProps } from 'antd'
 import { type SearchProps } from 'antd/es/input'
 import { ConfigProvider } from 'src/components'
 import { type InputRef } from 'antd'
-import { forwardRef, type ForwardRefExoticComponent, type Ref, type RefAttributes } from 'react'
+import { type Ref, type JSX } from 'react'
 
 export { Input, type InputRef, type IInputProps }
 
-interface IInputProps extends AntInputProps {}
+interface IInputProps extends AntInputProps {
+  ref?: Ref<InputRef>
+}
 
-interface ISearchProps extends SearchProps {}
+interface ISearchProps extends SearchProps {
+  ref?: Ref<InputRef>
+}
 
-type CompoundedComponent = ForwardRefExoticComponent<IInputProps & RefAttributes<InputRef>> & {
+type CompoundedComponent = ((props: IInputProps) => JSX.Element) & {
   Group: typeof AntInput.Group
   Search: typeof AntInput.Search
   TextArea: typeof AntInput.TextArea
   Password: typeof AntInput.Password
 }
 
-const InternalInput = (props: IInputProps, ref: Ref<InputRef>) => {
+const InternalInput = ({ ref, ...props }: IInputProps) => {
   return (
     <ConfigProvider>
       <AntInput {...props} ref={ref} />
@@ -26,16 +30,14 @@ const InternalInput = (props: IInputProps, ref: Ref<InputRef>) => {
   )
 }
 
-const InternalInputWithRef = forwardRef(InternalInput)
-const Input = InternalInputWithRef as CompoundedComponent
+const Input = InternalInput as CompoundedComponent
 
-const InternalSearch = (props: ISearchProps, ref: Ref<InputRef>) => (
+const InternalSearch = ({ ref, ...props }: ISearchProps) => (
   <ConfigProvider>
     <AntInput.Search ref={ref} {...props} />
   </ConfigProvider>
 )
-const InternalSearchWithRef = forwardRef(InternalSearch)
-const Search = InternalSearchWithRef as CompoundedComponent
+const Search = InternalSearch as CompoundedComponent['Search']
 
 Input.Search = Search
 Input.Group = AntInput.Group

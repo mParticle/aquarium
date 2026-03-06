@@ -4,13 +4,45 @@ Compact reference card of all available skills organized by category.
 
 ## Headlines
 
-| Command            | Purpose                          |
-| ------------------ | -------------------------------- |
-| `/dev-workflow`    | Full 8-phase developer lifecycle |
-| `/investigation`   | Evidence-based codebase research |
-| `/swarm`           | Parallel agent orchestration     |
-| `/doc-writer`      | Track 2 documentation generator  |
-| `/getting-started` | Repo onboarding guide            |
+| Command            | Purpose                             |
+| ------------------ | ----------------------------------- |
+| `/swarm`           | Parallel agent orchestration        |
+| `/investigation`   | Evidence-based codebase research    |
+| `/getting-started` | Repo onboarding guide               |
+| `/even-better-if`  | Radical candor feedback on anything |
+| `/skill-tour`      | Interactive tour of all skills      |
+
+## Aquarium
+
+| Command                   | Purpose                                       |
+| ------------------------- | --------------------------------------------- |
+| `/add-aquarium-component` | Scaffold new component (Ant6 + React19 + SB8) |
+| `/storybook-play-tests`   | Generate Storybook interaction play tests     |
+| `/aquarium-to-figma`      | Export components to Figma via Storybook      |
+
+## Workflow
+
+| Command              | Purpose                             |
+| -------------------- | ----------------------------------- |
+| `/implement-ticket`  | Jira ticket → PR end-to-end         |
+| `/jira-cli`          | Jira operations (view, create, etc) |
+| `/start-jira-ticket` | Fetch ticket + create branch        |
+| `/commit`            | Conventional commit message         |
+| `/publish-branch`    | Push + generate PR content          |
+| `/commit-push-watch` | Commit + push + monitor CI          |
+| `/monitor-ci`        | Watch CI with auto-diagnosis        |
+| `/handle-reviews`    | Address PR review comments          |
+| `/handoff`           | Generate session transfer document  |
+| `/kickstart`         | Resume from a handoff document      |
+| `/task-planner`      | Decompose tasks into PR plans       |
+
+## Quality & Review
+
+| Command           | Purpose                               |
+| ----------------- | ------------------------------------- |
+| `/even-better-if` | EBI feedback on code, PRs, plans      |
+| `/exec-summary`   | Executive summary of changes/findings |
+| `/code-optimizer` | Performance analysis + optimization   |
 
 ## Debugging
 
@@ -20,38 +52,16 @@ Compact reference card of all available skills organized by category.
 | `/debug-playwright` | E2E Playwright test debugging     |
 | `/debug-api`        | HTTP, CORS, auth issue diagnosis  |
 | `/debug-build`      | TypeScript/build error resolution |
-| `/dev-monitor`      | Dev environment issue detection   |
 
 ## Orchestration
 
-| Command              | Purpose                                |
-| -------------------- | -------------------------------------- |
-| `/swarm`             | Parallel agent orchestration           |
-| `/skill-forge`       | Create new skills                      |
-| `/agent-forge`       | Create specialized subagents           |
-| `/agent-optimizer`   | Optimize prompts and few-shot examples |
-| `/prompt-decomposer` | Break messy requests into tasks        |
-
-## Quality
-
-| Command           | Purpose                               |
-| ----------------- | ------------------------------------- |
-| `/test-maker`     | Generate tests (70/20/10 pyramid)     |
-| `/code-verifier`  | Pre-PR quality gate (5 dimensions)    |
-| `/code-optimizer` | Performance analysis and optimization |
-
-## Workflow
-
-| Command                 | Purpose                             |
-| ----------------------- | ----------------------------------- |
-| `/ci-watcher`           | Monitor CI with auto-diagnosis      |
-| `/session-recap`        | Context restoration after breaks    |
-| `/handoff`              | Generate session transfer documents |
-| `/kickstart`            | Resume from a handoff document      |
-| `/jira-cli`             | Jira ticket operations              |
-| `/task-planner`         | Decompose tasks into PR plans       |
-| `/experience-amplifier` | Build HTML presentations            |
-| `/graphite-stacked-prs` | Create stacked PRs via Graphite     |
+| Command              | Purpose                         |
+| -------------------- | ------------------------------- |
+| `/swarm`             | Parallel agent orchestration    |
+| `/skill-forge`       | Create new skills               |
+| `/agent-forge`       | Create specialized subagents    |
+| `/prompt-optimizer`  | Optimize LLM prompts            |
+| `/prompt-decomposer` | Break messy requests into tasks |
 
 ## Integrations
 

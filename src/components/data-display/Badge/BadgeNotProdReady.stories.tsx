@@ -172,7 +172,7 @@ export const ExampleDynamic: Story = {
 
     return (
       <ExampleStory title="The count will be animated as it changes.">
-        <Space direction="vertical">
+        <Space orientation="vertical">
           <Space size="large">
             <Badge count={count}>
               <Avatar shape="square" size="large" />
@@ -211,7 +211,7 @@ export const ExampleRibbon: Story = {
   render: () => {
     return (
       <ExampleStory title="Use ribbon badge.">
-        <Space direction="vertical" size="middle" style={{ width: '200px' }}>
+        <Space orientation="vertical" size="middle" style={{ width: '200px' }}>
           <Badge.Ribbon text="Ribbon">
             <Card title="Card Title" size="small">
               Card Inner text
@@ -256,14 +256,14 @@ export const ExampleColors: Story = {
     ]
     return (
       <ExampleStory title="We preset a series of colorful Badge styles for use in different situations. You can also set it to a hex color string for custom color.">
-        <Divider orientation="left">Presets</Divider>
-        <Space direction="vertical">
+        <Divider titlePlacement="left">Presets</Divider>
+        <Space orientation="vertical">
           {colors.map(color => (
             <Badge key={color} color={color} text={color} />
           ))}
         </Space>
-        <Divider orientation="left">Custom</Divider>
-        <Space direction="vertical">
+        <Divider titlePlacement="left">Custom</Divider>
+        <Space orientation="vertical">
           <Badge color="#f50" text="#f50" />
           <Badge color="rgb(45, 183, 245)" text="rgb(45, 183, 245)" />
           <Badge color="hsl(102, 53%, 61%)" text="hsl(102, 53%, 61%)" />

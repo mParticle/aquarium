@@ -1,5 +1,5 @@
 import { type IWorkspaceSelectorDisplayItem, List } from 'src/components'
-import VirtualList from 'rc-virtual-list'
+import VirtualList from '@rc-component/virtual-list'
 
 type WorkspaceSelectorContentItemsProps = {
   menuItems: IWorkspaceSelectorDisplayItem[]

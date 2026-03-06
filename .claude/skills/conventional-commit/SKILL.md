@@ -92,6 +92,8 @@ Follow Conventional Commits format:
 | `style`    | Formatting changes                      |
 | `perf`     | Performance improvements                |
 | `ci`       | CI/CD configuration changes             |
+| `revert`   | Revert a previous commit                |
+| `build`    | Build system or dependency changes      |
 
 **Examples:**
 
