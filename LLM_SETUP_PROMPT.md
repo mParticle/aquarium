@@ -12,7 +12,7 @@
 | Package | Required | Purpose |
 |---------|----------|---------|
 | `@mparticle/aquarium` | ✅ Yes | Main Aquarium component library |
-| `antd` | ✅ Yes | Peer dependency (6.2.x) - Ant Design UI framework |
+| `antd` | ✅ Yes | Peer dependency (6.3.1) - Ant Design UI framework |
 | `dayjs` | ✅ Yes | Peer dependency (1.11.x) - Date handling for DatePicker, Calendar, etc. |
 | `react` | ✅ Yes | Peer dependency (>=19.0.2) |
 | `react-dom` | ✅ Yes | Peer dependency (>=19.0.0) |

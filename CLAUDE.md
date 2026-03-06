@@ -35,7 +35,7 @@ This overrides the `jira-ticket-start` skill's default branch naming. Use this r
 ## Jira Integration
 
 - Use `/jira-cli` skill for all Jira operations (view, search, create, update, comment, transition)
-- Fallback only: Atlassian MCP (`mcp__claude_ai_Atlassian__*`) cloud ID `1e01021f-8d40-42e1-a0e2-693df8252edd`
+- Fallback only: Atlassian MCP
 - When starting from a Jira ticket, create branches using the convention above
 
 ## Designer Workflow (Non-Technical Contributors)
