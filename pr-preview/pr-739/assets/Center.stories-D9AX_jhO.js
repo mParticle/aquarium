@@ -1,1 +1,0 @@
-import{b1 as e}from"./iframe-B2IgzVuz.js";import"./preload-helper-PPVm8Dsz.js";const a={title:"Components/Layout/Center",component:e,args:{}},r={};r.parameters={...r.parameters,docs:{...r.parameters?.docs,source:{originalSource:"{}",...r.parameters?.docs?.source}}};const s=["Primary"];export{r as Primary,s as __namedExportsOrder,a as default};
