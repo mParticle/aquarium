@@ -76,7 +76,7 @@ Parse the branch name following this convention:
 
 **Branch Format:** `<type>/<description>-<TICKET>`
 
-**Title Format:** `<type>(scope): description - TICKET`
+**Title Format:** `<type>(scope): description`
 
 **Rules:**
 
@@ -89,9 +89,9 @@ Parse the branch name following this convention:
 **Examples:**
 
 - `feat/add-tooltip-MPD-59`
-  - `feat(tooltip): add help icon pattern with RoktHelpCircle - MPD-59`
+  - `feat(tooltip): add help icon pattern with RoktHelpCircle`
 - `fix/button-hover-state-MPD-100`
-  - `fix(button): correct hover state color on disabled buttons - MPD-100`
+  - `fix(button): correct hover state color on disabled buttons`
 
 ### Step 6: Generate PR Description
 
@@ -100,19 +100,12 @@ Use this template:
 ```markdown
 ## Summary
 
-[High-level overview of changes and context for reviewers]
+- {provide a thorough description of the changes}
 
-## Jira Ticket
+## Testing Plan
 
-[TICKET_ID](https://rokt.atlassian.net/browse/TICKET_ID)
-
-## Test Plan
-
-[Testing approach and verification steps]
-
-- [ ] Tested locally
-- [ ] Unit tests pass
-- [ ] Integration tests pass (if applicable)
+- [ ] Was this tested locally? If not, explain why.
+- {explain how this has been tested}
 ```
 
 ### Step 7: Create PR

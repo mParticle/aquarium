@@ -77,7 +77,7 @@ export const SVGPrettifier = () => {
         Upload your SVG files and make them consistent with our styling guidelines.
       </p>
 
-      <Space direction="vertical" size="large" style={{ width: '100%' }}>
+      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
         <Upload
           onChange={handleUpload}
           multiple // Allow multiple files

@@ -33,7 +33,7 @@ export const Primary: Story = {
   },
   render: () => {
     return (
-      <Space direction="vertical">
+      <Space orientation="vertical">
         <Tag color="blue">Prod</Tag>
         <Tag color="purple">Dev</Tag>
         <Tag color="default">Default</Tag>

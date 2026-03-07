@@ -112,7 +112,7 @@ export const ExampleGlobalEmpty: Story = {
           <Switch unCheckedChildren="default" checkedChildren="customize" checked={customize} onChange={setCustomize} />
           <Divider />
           <ConfigProvider renderEmpty={customize ? customizeRenderEmpty : undefined}>
-            <Space direction="vertical" style={{ width: '100%' }}>
+            <Space orientation="vertical" style={{ width: '100%' }}>
               <h4>Select</h4>
               <Select style={style} />
               <h4>TreeSelect</h4>
