@@ -4,7 +4,7 @@
 
 - **Ant Design**: v6 (peer dep)
 - **React**: 19. No `forwardRef`, `propTypes`, or `defaultProps` on function components.
-- **Testing**: Storybook 8 interaction tests (`play` functions with `storybook/test`) — NOT separate Vitest spec files per component.
+- **Testing**: Storybook 10 interaction tests (`play` functions with `storybook/test`) — NOT separate Vitest spec files per component.
 - **Build**: `npm run build` must pass before committing. Output in `dist/`.
 
 ### React 19 — Component Pattern
@@ -18,7 +18,7 @@ export function MyComp({ ref, ...props }: IProps & { ref?: React.Ref<HTMLDivElem
 Use `/add-aquarium-component` to scaffold. Files required:
 
 1. `src/components/<category>/<Name>/<Name>.tsx` — wraps antd, `I<Name>Props extends Ant<Name>Props`
-2. `src/components/<category>/<Name>/<Name>.stories.tsx` — Storybook 8 `Meta` + `StoryObj` + `play` function
+2. `src/components/<category>/<Name>/<Name>.stories.tsx` — Storybook 10 `Meta` + `StoryObj` + `play` function
 3. `docs/components/<Category>/<Name>/Documentation.mdx` — MDX doc
 4. Add named export to `src/components/index.ts`
 

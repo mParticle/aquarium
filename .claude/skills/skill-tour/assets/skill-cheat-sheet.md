@@ -14,11 +14,11 @@ Compact reference card of all available skills organized by category.
 
 ## Aquarium
 
-| Command                   | Purpose                                       |
-| ------------------------- | --------------------------------------------- |
-| `/add-aquarium-component` | Scaffold new component (Ant6 + React19 + SB8) |
-| `/storybook-play-tests`   | Generate Storybook interaction play tests     |
-| `/aquarium-to-figma`      | Export components to Figma via Storybook      |
+| Command                   | Purpose                                        |
+| ------------------------- | ---------------------------------------------- |
+| `/add-aquarium-component` | Scaffold new component (Ant6 + React19 + SB10) |
+| `/storybook-play-tests`   | Generate Storybook interaction play tests      |
+| `/aquarium-to-figma`      | Export components to Figma via Storybook       |
 
 ## Workflow
 
