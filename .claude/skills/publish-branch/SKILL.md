@@ -107,7 +107,6 @@ Use this template:
 - [ ] Was this tested locally? If not, explain why.
 - {explain how this has been tested}
 
-## Reference Issue (For mParticle employees only. Ignore if outside contributor)
 
 - Closes https://go.mparticle.com/work/TICKET_ID
 ```
