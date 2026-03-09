@@ -1,10 +1,8 @@
-import { Meta, Canvas } from '@storybook/blocks';
+import { Meta, Canvas, Controls } from '@storybook/blocks'
 
-import * as TagStories from '../../../../src/components/data-display/Tag/Tag.stories';
+import * as TagStories from '../../../../src/components/data-display/Tag/Tag.stories'
 
 <Meta of={TagStories} />
-
-{/* Documentation goes here */}
 
 # Tag
 
@@ -41,6 +39,15 @@ The Tags component displays small, labeled elements used to categorize, identify
 ### Environment Tags
 
 <Canvas of={TagStories.EnvironmentTagsExample} />
+
+## Playground
+
+Try it — change any prop below and see the result live.
+
+<Canvas of={TagStories.Playground} sourceState="shown" />
+<Controls of={TagStories.Playground} />
+
+> Full API reference: [Tag — Ant Design](https://ant.design/components/tag)
 
 #### Related Links
 

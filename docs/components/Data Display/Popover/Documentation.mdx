@@ -1,10 +1,8 @@
-import { Meta, Canvas } from '@storybook/blocks'
+import { Meta, Canvas, Controls } from '@storybook/blocks'
 
-import PopoverStories, { Primary as PopoverPrimary } from '../../../../src/components/data-display/Popover/Popover.stories'
+import * as PopoverStories from '../../../../src/components/data-display/Popover/Popover.stories'
 
 <Meta of={PopoverStories} />
-
-{/* Documentation goes here */}
 
 # Popover
 
@@ -18,20 +16,30 @@ Popovers can contain various elements such as buttons, links, and extensive text
 
 Use [Tooltip](https://mparticle.github.io/aquarium/?path=/story/components-data-display-tooltip--primary) for brief, non-interactive text hints or descriptions.
 
-
-
-
 #### Current Usages
 
 **Feature Experience Switch** – The [Feature Experience Switch](Insert link) uses the popover to allow users to toggle between the old and new experience.
 
+### Basic Popover
 
-#### Related Links
+<Canvas of={PopoverStories.Primary} />
+
+### Popover with Links
+
+<Canvas of={PopoverStories.ExampleWithLinks} />
+
+## Playground
+
+Try it — change any prop below and see the result live.
+
+<Canvas of={PopoverStories.Playground} sourceState="shown" />
+<Controls of={PopoverStories.Playground} />
+
+> Full API reference: [Popover — Ant Design](https://ant.design/components/popover)
+
+### Related Links
 
 | Type  | Resource                                                                                                                                               |
 | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Eames | [Popover Component](https://www.figma.com/design/veXnmignQnJz8StIq10VJ5/Eames-2.0---Foundations-%26-Components?node-id=408-12073&node-type=canvas&t=B6HJWqqDsUOypZQj-0) |
 | AntD | [Popover Component](https://ant.design/components/popover) |
-
-
-<Canvas of={PopoverPrimary} />

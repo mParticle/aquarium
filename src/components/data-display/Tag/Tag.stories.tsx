@@ -20,6 +20,40 @@ export default meta
 
 type Story = StoryObj<typeof Tag>
 
+export const Playground: Story = {
+  args: {
+    color: 'default',
+    bordered: true,
+    closable: false,
+    children: 'Tag Label',
+  },
+  argTypes: {
+    color: {
+      control: 'select',
+      options: [
+        'default',
+        'success',
+        'processing',
+        'error',
+        'warning',
+        'magenta',
+        'blue',
+        'cyan',
+        'geekblue',
+        'gold',
+        'green',
+        'lime',
+        'orange',
+        'purple',
+        'red',
+        'volcano',
+      ],
+    },
+    bordered: { control: 'select', options: [false, true] },
+    closable: { control: 'select', options: [false, true] },
+  },
+}
+
 export const Primary: Story = {
   args: {
     color: 'default',

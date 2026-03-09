@@ -1,4 +1,4 @@
-import { Meta, Canvas } from '@storybook/blocks'
+import { Meta, Canvas, Controls } from '@storybook/blocks'
 
 import * as AvatarStories from '../../../../src/components/data-display/Avatar/Avatar.stories'
 
@@ -32,10 +32,18 @@ The default avatar is circular. Switch the `shape` prop to `square` when you nee
 
 <Canvas of={AvatarStories.WithBadge} />
 
+## Playground
+
+Try it — change any prop below and see the result live.
+
+<Canvas of={AvatarStories.Playground} sourceState="shown" />
+<Controls of={AvatarStories.Playground} />
+
+> Full API reference: [Avatar — Ant Design](https://ant.design/components/avatar)
+
 #### Related Links
 
 | Type  | Resource                                                                                                                                               |
 | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Eames | [Avatar Component](https://www.figma.com/design/veXnmignQnJz8StIq10VJ5/Eames-2.0---Foundations-%26-Components?node-id=397-12044&node-type=canvas&t=B6HJWqqDsUOypZQj-0) |
 | AntD | [Avatar Component](https://ant.design/components/avatar) |
-

@@ -18,6 +18,46 @@ export default meta
 
 type Story = StoryObj<typeof Tooltip>
 
+export const Playground: Story = {
+  args: {
+    title: 'Tooltip content',
+    placement: 'top',
+    trigger: 'hover',
+    arrow: true,
+  },
+  argTypes: {
+    placement: {
+      control: 'select',
+      options: [
+        'top',
+        'left',
+        'right',
+        'bottom',
+        'topLeft',
+        'topRight',
+        'bottomLeft',
+        'bottomRight',
+        'leftTop',
+        'leftBottom',
+        'rightTop',
+        'rightBottom',
+      ],
+    },
+    trigger: {
+      control: 'select',
+      options: ['hover', 'focus', 'click', 'contextMenu'],
+    },
+    arrow: { control: 'select', options: [false, true] },
+  },
+  render: args => (
+    <Flex align="center" gap={2}>
+      <Tooltip {...args}>
+        <Button>Hover me</Button>
+      </Tooltip>
+    </Flex>
+  ),
+}
+
 export const Primary: Story = {
   args: {
     title: 'Tooltip content',
