@@ -29,6 +29,21 @@ export default meta
 
 type Story = StoryObj<typeof Empty>
 
+export const Playground: Story = {
+  args: {
+    state: 'empty',
+    title: 'Nothing here yet',
+    description: 'Get started by adding your first item.',
+  },
+  argTypes: {
+    state: {
+      control: 'select',
+      options: ['empty', 'error'],
+    },
+    button: { table: { disable: true } },
+  },
+}
+
 export const EmptyOnboarding: Story = {
   args: {
     state: 'empty',

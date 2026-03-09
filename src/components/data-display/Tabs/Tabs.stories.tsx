@@ -30,6 +30,32 @@ export default meta
 
 type Story = StoryObj<typeof Tabs>
 
+export const Playground: Story = {
+  args: {
+    items,
+    defaultActiveKey: '1',
+    type: 'line',
+    size: 'middle',
+    tabPosition: 'top',
+    centered: false,
+  },
+  argTypes: {
+    type: {
+      control: 'select',
+      options: ['line', 'card', 'editable-card'],
+    },
+    size: {
+      control: 'select',
+      options: ['large', 'middle', 'small'],
+    },
+    tabPosition: {
+      control: 'select',
+      options: ['top', 'right', 'bottom', 'left'],
+    },
+    centered: { control: 'select', options: [false, true] },
+  },
+}
+
 export const Primary: Story = {
   args: {
     items,

@@ -11,6 +11,20 @@ export default meta
 
 type Story = StoryObj<typeof Image>
 
+export const Playground: Story = {
+  args: {
+    src: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
+    preview: false,
+    width: 100,
+    height: 100,
+  },
+  argTypes: {
+    preview: { control: 'select', options: [false, true] },
+    width: { control: 'number' },
+    height: { control: 'number' },
+  },
+}
+
 export const Primary: Story = {
   args: {
     src: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',

@@ -1,4 +1,4 @@
-import { Meta, Canvas } from '@storybook/blocks'
+import { Meta, Canvas, Controls } from '@storybook/blocks'
 
 import * as SegmentedStories from '../../../../src/components/data-display/Segmented/Segmented.stories'
 
@@ -21,6 +21,15 @@ Use the small size when the control sits inside dense layouts such as tables or 
 Use the large size for standalone toggles where the segment labels need more breathing room and legibility.
 
 <Canvas of={SegmentedStories.Large} />
+
+## Playground
+
+Try it — change any prop below and see the result live.
+
+<Canvas of={SegmentedStories.Playground} sourceState="shown" />
+<Controls of={SegmentedStories.Playground} />
+
+> Full API reference: [Segmented — Ant Design](https://ant.design/components/segmented)
 
 #### Related links
 
