@@ -5,27 +5,27 @@
       "components": [
         {
           "name": "Avatar",
-          "variantCount": 18
+          "variantCount": 6
         },
         {
           "name": "Badge",
-          "variantCount": 20
+          "variantCount": 5
         },
         {
           "name": "Card",
-          "variantCount": 17
+          "variantCount": 3
         },
         {
           "name": "Collapse",
-          "variantCount": 18
+          "variantCount": 1
         },
         {
           "name": "Descriptions",
-          "variantCount": 13
+          "variantCount": 1
         },
         {
           "name": "Empty",
-          "variantCount": 14
+          "variantCount": 3
         },
         {
           "name": "Image",
@@ -33,19 +33,11 @@
         },
         {
           "name": "List",
-          "variantCount": 11
+          "variantCount": 1
         },
         {
           "name": "Popover",
-          "variantCount": 4
-        },
-        {
-          "name": "Segmented",
-          "variantCount": 2
-        },
-        {
-          "name": "Table",
-          "variantCount": 0
+          "variantCount": 1
         },
         {
           "name": "Tabs",
@@ -53,15 +45,11 @@
         },
         {
           "name": "Tag",
-          "variantCount": 18
+          "variantCount": 8
         },
         {
           "name": "Tooltip",
-          "variantCount": 16
-        },
-        {
-          "name": "Tour",
-          "variantCount": 3
+          "variantCount": 1
         }
       ]
     },
@@ -69,20 +57,16 @@
       "name": "Data Entry",
       "components": [
         {
-          "name": "AutoComplete",
-          "variantCount": 14
-        },
-        {
-          "name": "Cascader",
-          "variantCount": 15
+          "name": "Auto Complete",
+          "variantCount": 1
         },
         {
           "name": "Checkbox",
-          "variantCount": 11
+          "variantCount": 6
         },
         {
-          "name": "DatePicker",
-          "variantCount": 3
+          "name": "Date Picker",
+          "variantCount": 1
         },
         {
           "name": "Form",
@@ -90,23 +74,19 @@
         },
         {
           "name": "Input",
-          "variantCount": 23
+          "variantCount": 10
         },
         {
           "name": "InputNumber",
-          "variantCount": 14
+          "variantCount": 1
         },
         {
           "name": "QueryItem",
-          "variantCount": 36
+          "variantCount": 1
         },
         {
           "name": "Radio",
-          "variantCount": 11
-        },
-        {
-          "name": "RadioCard",
-          "variantCount": 3
+          "variantCount": 1
         },
         {
           "name": "Select",
@@ -114,11 +94,7 @@
         },
         {
           "name": "Switch",
-          "variantCount": 13
-        },
-        {
-          "name": "TimePicker",
-          "variantCount": 1
+          "variantCount": 4
         },
         {
           "name": "TreeSelect",
@@ -126,7 +102,7 @@
         },
         {
           "name": "Upload",
-          "variantCount": 7
+          "variantCount": 1
         }
       ]
     },
@@ -135,19 +111,7 @@
       "components": [
         {
           "name": "Button",
-          "variantCount": 39
-        },
-        {
-          "name": "FloatButton",
-          "variantCount": 3
-        },
-        {
-          "name": "Icon",
-          "variantCount": 4
-        },
-        {
-          "name": "Typography",
-          "variantCount": 16
+          "variantCount": 10
         }
       ]
     },
@@ -156,27 +120,15 @@
       "components": [
         {
           "name": "Alert",
-          "variantCount": 36
+          "variantCount": 12
         },
         {
           "name": "Drawer",
           "variantCount": 4
         },
         {
-          "name": "LoadingModal",
-          "variantCount": 2
-        },
-        {
           "name": "Message",
-          "variantCount": 4
-        },
-        {
-          "name": "Modal",
-          "variantCount": 5
-        },
-        {
-          "name": "Notification",
-          "variantCount": 6
+          "variantCount": 3
         },
         {
           "name": "Popconfirm",
@@ -184,153 +136,46 @@
         },
         {
           "name": "Progress",
-          "variantCount": 19
-        },
-        {
-          "name": "Result",
-          "variantCount": 4
+          "variantCount": 1
         },
         {
           "name": "Skeleton",
-          "variantCount": 11
+          "variantCount": 1
         },
         {
           "name": "Spin",
-          "variantCount": 15
+          "variantCount": 1
         }
       ]
     },
     {
-      "name": "Layout",
+      "name": "Modal",
       "components": [
         {
-          "name": "Center",
-          "variantCount": 1
+          "name": "DeleteConfirmModal",
+          "variantCount": 1,
+          "parentFolder": "Modal"
         },
         {
-          "name": "Divider",
-          "variantCount": 7
-        },
-        {
-          "name": "Flex",
-          "variantCount": 14
-        },
-        {
-          "name": "Grid",
-          "variantCount": 1
-        },
-        {
-          "name": "Layout",
-          "variantCount": 4
-        },
-        {
-          "name": "Space",
-          "variantCount": 8
-        },
-        {
-          "name": "Splitter",
-          "variantCount": 2
+          "name": "Primary",
+          "variantCount": 1,
+          "parentFolder": "Modal"
         }
-      ]
+      ],
+      "parentCategory": "Feedback"
     },
     {
       "name": "Navigation",
       "components": [
         {
-          "name": "Anchor",
-          "variantCount": 11
-        },
-        {
-          "name": "Breadcrumb",
-          "variantCount": 9
-        },
-        {
-          "name": "Dropdown",
-          "variantCount": 24
-        },
-        {
           "name": "GlobalNavigation",
-          "variantCount": 4
-        },
-        {
-          "name": "Menu",
-          "variantCount": 14
-        },
-        {
-          "name": "Pagination",
-          "variantCount": 19
-        },
-        {
-          "name": "Steps",
-          "variantCount": 22
+          "variantCount": 1
         }
       ]
     },
     {
-      "name": "Other",
-      "components": [
-        {
-          "name": "ConfigProvider",
-          "variantCount": 0
-        }
-      ]
-    },
-    {
-      "name": "Not Prod Ready",
-      "components": [
-        {
-          "name": "Affix",
-          "variantCount": 1
-        },
-        {
-          "name": "Calendar",
-          "variantCount": 1
-        },
-        {
-          "name": "Carousel",
-          "variantCount": 14
-        },
-        {
-          "name": "ColorPicker",
-          "variantCount": 1
-        },
-        {
-          "name": "Mentions",
-          "variantCount": 15
-        },
-        {
-          "name": "QRCode",
-          "variantCount": 1
-        },
-        {
-          "name": "Rate",
-          "variantCount": 1
-        },
-        {
-          "name": "Slider",
-          "variantCount": 1
-        },
-        {
-          "name": "Statistic",
-          "variantCount": 15
-        },
-        {
-          "name": "Timeline",
-          "variantCount": 1
-        },
-        {
-          "name": "Transfer",
-          "variantCount": 1
-        },
-        {
-          "name": "Tree",
-          "variantCount": 1
-        },
-        {
-          "name": "Watermark",
-          "variantCount": 10
-        }
-      ]
+      "name": "UX Patterns",
+      "components": []
     }
   ]
 }

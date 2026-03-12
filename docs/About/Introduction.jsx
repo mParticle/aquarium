@@ -1,5 +1,21 @@
 import React from 'react'
 import categoriesData from './componentCategories.json'
+import { Card } from '../../src/components'
+import './Introduction.css'
+import {
+  ColorBgLayout,
+  BorderRadius,
+  FontSize,
+  FontSizeSm,
+  FontWeightStrong,
+  ColorTextSecondary,
+  ColorTextTertiary,
+  ColorText,
+  Margin,
+  MarginSm,
+  PaddingSm,
+  PaddingXs,
+} from 'src/styles/style'
 
 function toKebab(str) {
   return str.replace(/([A-Z])/g, '-$1').toLowerCase().replace(/^-/, '')
@@ -9,7 +25,7 @@ function categoryToSlug(name) {
   return name.toLowerCase().replace(/\s+/g, '-')
 }
 
-function getDocsPath(categoryName, componentName) {
+function getDocsPath(categoryName, componentName, parentFolder) {
   const categorySlug = categoryToSlug(categoryName)
   const componentSlug =
     categoryName === 'Navigation' && componentName === 'GlobalNavigation'
@@ -17,6 +33,10 @@ function getDocsPath(categoryName, componentName) {
       : toKebab(componentName)
   if (categoryName === 'Layout') {
     return `?path=/story/components-layout-${componentSlug}--primary`
+  }
+  if (parentFolder) {
+    const parentSlug = toKebab(parentFolder)
+    return `?path=/docs/components-${categorySlug}-${parentSlug}-${componentSlug}--documentation`
   }
   return `?path=/docs/components-${categorySlug}-${componentSlug}--documentation`
 }
@@ -34,8 +54,8 @@ function getBaseUrl() {
 }
 
 const previewContainerStyle = {
-  background: '#F5F5F5',
-  borderRadius: 8,
+  background: ColorBgLayout,
+  borderRadius: BorderRadius,
   minHeight: 120,
   maxHeight: 120,
   display: 'flex',
@@ -45,8 +65,9 @@ const previewContainerStyle = {
   overflow: 'hidden',
 }
 
-function ComponentCard({ component, categoryName }) {
-  const queryPath = getDocsPath(categoryName, component.name)
+function ComponentCard({ component, category }) {
+  const linkCategory = category.parentCategory || category.name
+  const queryPath = getDocsPath(linkCategory, component.name, component.parentFolder)
   const fullUrl = getBaseUrl() + queryPath
 
   function handleClick(e) {
@@ -58,25 +79,23 @@ function ComponentCard({ component, categoryName }) {
     <a
       href={fullUrl}
       onClick={handleClick}
-      style={{
-        background: 'white',
-        border: '1px solid #f0f0f0',
-        borderRadius: 10,
-        overflow: 'hidden',
-        display: 'flex',
-        flexDirection: 'column',
-        textDecoration: 'none',
-        color: 'inherit',
-        cursor: 'pointer',
-      }}
+      style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}
     >
-      <div style={previewContainerStyle} />
-      <div style={{ padding: '8px 12px' }}>
-        <div style={{ fontWeight: 600, fontSize: 14 }}>{component.name}</div>
-        <div style={{ fontSize: 12, color: '#888' }}>
-          1 component · {component.variantCount} variants
+      <Card
+        rootClassName="intro-component-card"
+        style={{ overflow: 'hidden', display: 'flex', flexDirection: 'column' }}
+        styles={{ body: { padding: PaddingXs } }}
+      >
+        <div style={previewContainerStyle} />
+        <div style={{ marginTop: MarginSm }}>
+          <div style={{ fontWeight: FontWeightStrong, fontSize: FontSize }}>{component.name}</div>
+          <div style={{ fontSize: FontSizeSm, color: ColorTextTertiary }}>
+            {component.variantCount <= 1
+              ? '1 component'
+              : `1 component · ${component.variantCount} variants`}
+          </div>
         </div>
-      </div>
+      </Card>
     </a>
   )
 }
@@ -89,9 +108,9 @@ function CategorySection({ category }) {
 
   return (
     <section style={{ marginBottom: 40 }}>
-      <h3 style={{ fontSize: 16, fontWeight: 600, marginBottom: 16, color: '#111' }}>
+      <h3 style={{ fontSize: FontSize, fontWeight: FontWeightStrong, marginBottom: Margin, color: ColorText }}>
         {category.name}
-        <span style={{ fontSize: 12, fontWeight: 400, color: '#888', marginLeft: 8 }}>
+        <span style={{ fontSize: FontSizeSm, fontWeight: 400, color: ColorTextTertiary, marginLeft: PaddingXs }}>
           {components.length} components
         </span>
       </h3>
@@ -99,7 +118,7 @@ function CategorySection({ category }) {
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
-          columnGap: 16,
+          columnGap: Margin,
           rowGap: 24,
         }}
       >
@@ -107,7 +126,7 @@ function CategorySection({ category }) {
           <ComponentCard
             key={component.name}
             component={component}
-            categoryName={category.name}
+            category={category}
           />
         ))}
       </div>
@@ -117,20 +136,20 @@ function CategorySection({ category }) {
 
 export default function Introduction() {
   const categories = categoriesData.categories.filter(
-    (cat) => cat.name !== 'Not Prod Ready'
+    (cat) => cat.name !== 'Not Prod Ready' && cat.components.length > 0
   )
 
   return (
     <div>
-      <h1 style={{ fontSize: 24, fontWeight: 600, marginBottom: 12 }}>Introduction - Rokt UI Library</h1>
-      <p style={{ marginBottom: 32, color: 'rgba(0,0,0,0.65)', lineHeight: 1.6 }}>
+      <h1 style={{ fontSize: 24, fontWeight: FontWeightStrong, marginBottom: MarginSm }}>Introduction - Rokt UI Library</h1>
+      <p style={{ marginBottom: 32, color: ColorTextSecondary, lineHeight: 1.6 }}>
         Designed for developers, designers, and product managers, this library makes it easy to create
         intuitive, interactive interfaces for <strong>Rokt applications</strong>.
       </p>
       {categories.map((category) => (
         <CategorySection key={category.name} category={category} />
       ))}
-      <p style={{ marginTop: 32, color: 'rgba(0,0,0,0.65)', lineHeight: 1.6 }}>
+      <p style={{ marginTop: 32, color: ColorTextSecondary, lineHeight: 1.6 }}>
         Simple, flexible, and reliable—this library helps you focus on building great experiences without
         worrying about the basics.
       </p>
