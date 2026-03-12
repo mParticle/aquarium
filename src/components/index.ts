@@ -214,4 +214,11 @@ export {
   RoktMessageChatSquare,
   RoktUserCheck,
   RoktClipboard,
+  RoktType,
+  RoktBold,
+  RoktItalic,
+  RoktUnderline,
+  RoktStrikethrough,
+  RoktDotpoints,
+  RoktStar,
 } from './icons'
