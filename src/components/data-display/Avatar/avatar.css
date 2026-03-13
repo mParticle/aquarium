@@ -1,0 +1,9 @@
+/* Remove transform for dots on circular avatars */
+.ant-badge:has(.ant-avatar-circle) .ant-badge-dot {
+  transform: none;
+}
+
+.ant-badge:has(.ant-avatar-circle) .ant-badge-count:not(.ant-badge-dot) {
+  transform: translate(50%, -50%);
+}
+

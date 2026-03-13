@@ -53,6 +53,7 @@ We use semantic-release for releasing new versions of the library. You can use t
 ## Commit conventions and PR titles
 
 - We use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) to help automating the release process. Both PR titles and commit messages should follow this convention.
+- **PR titles must match the branch type**: `feat/` branch → `feat:` or `feat(scope):` title, `fix/` → `fix:`, `chore/` → `chore:`, etc.
 - [This repo is commitizen friendly](https://github.com/commitizen/cz-cli?tab=readme-ov-file#using-the-command-line-tool) so we can use `git cz` to commit changes.
   `npx cz` is also available if you don't have commitizen installed globally.
 - We also have a [commitlint](https://commitlint.js.org/) setup to enforce the commit message format.
@@ -108,6 +109,102 @@ After settings both variables locally, run the following locally:
 ```
 npx semantic-release --dry-run
 ```
+
+## Designer / Non-Technical Contributor Workflow
+
+If you're a designer or non-technical contributor, you can use Claude Code's AI-powered slash commands to contribute without deep git knowledge. This workflow handles branching, commits, and PRs for you.
+
+### Prerequisites
+
+- [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code) installed
+- Repository cloned and `npm install` completed
+- Atlassian (Jira) MCP connected in Claude Code
+
+### One-Command Workflow (Recommended)
+
+For design system changes (new component variants, icons, tokens, stories), use the single end-to-end command:
+
+```
+/implement-ticket MPD-74
+```
+
+This handles **everything** autonomously:
+
+1. Fetches the Jira ticket details
+2. Creates a branch from latest `main`
+3. Investigates the codebase and plans the changes
+4. Implements the code changes
+5. Runs build + type verification
+6. Commits, pushes, and creates a PR with Jira link
+
+You'll be shown the plan before implementation and can approve or adjust.
+
+### Step-by-Step Workflow (Manual Control)
+
+If you prefer more control over each step:
+
+#### 1. Onboard to the repo (first time only)
+
+```
+/getting-started
+```
+
+This analyzes the repo and explains how it's organized, how to build/test, and key conventions.
+
+#### 2. Start from a Jira ticket
+
+```
+/start-jira-ticket AQUA-123
+```
+
+This will:
+
+- Fetch the Jira ticket details (title, description, acceptance criteria)
+- Create a properly named branch (e.g., `feat/add-tooltip-AQUA-123`)
+- Begin investigating related files in the codebase
+
+#### 3. Make your changes
+
+Edit files as needed — update documentation, icons, styles, component props, etc. Ask Claude Code for help with any changes.
+
+#### 4. Commit your changes
+
+```
+/commit
+```
+
+This analyzes your changes and creates a properly formatted [conventional commit](https://www.conventionalcommits.org/) message automatically.
+
+#### 5. Create a Pull Request
+
+```
+/publish-branch
+```
+
+This will:
+
+- Push your branch to GitHub
+- Generate a PR title and description from your commits
+- Include a link to the Jira ticket
+- Create the PR for review
+
+#### 6. Handle PR review feedback
+
+```
+/handle-reviews
+```
+
+If reviewers leave comments, this classifies each comment (code change, question, nit) and helps you address them.
+
+### Other Useful Commands
+
+| Command              | What it does                                                         |
+| -------------------- | -------------------------------------------------------------------- |
+| `/implement-ticket`  | **End-to-end**: Jira ticket to PR in one command                     |
+| `/jira-cli`          | View, search, create, and update Jira tickets using natural language |
+| `/commit-push-watch` | Commit + push + monitor CI in one step                               |
+| `/monitor-ci`        | Watch CI pipeline and auto-diagnose failures                         |
+| `/skill-tour`        | See all available AI-powered commands                                |
 
 ## Additional readings:
 

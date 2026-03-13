@@ -1,5 +1,10 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { Avatar, Icon } from 'src/components'
+import { Avatar, Badge, Icon, Space, type IIconProps } from 'src/components'
+import { MpBrandSecondary3, MpBrandSecondary4, MpBrandSecondary8, Size } from 'src/styles/style'
+
+const neutralAvatarStyle = { backgroundColor: MpBrandSecondary4, color: MpBrandSecondary8 }
+const neutralIconProps: IIconProps = { name: 'userProfiles', size: 'lg' }
+const spaceSize = parseInt(Size, 10)
 
 const meta: Meta<typeof Avatar> = {
   title: 'Components/Data Display/Avatar',
@@ -14,14 +19,110 @@ type Story = StoryObj<typeof Avatar>
   Customize the stories based on specific requirements.
 */
 
-export const WithInitials: Story = {
-  args: {
-    children: 'mP',
+export const ShapeExamples: Story = {
+  render: () => {
+    return (
+      <Space size={spaceSize}>
+        <Avatar style={neutralAvatarStyle}>MP</Avatar>
+        <Avatar shape="square" style={neutralAvatarStyle}>
+          MP
+        </Avatar>
+      </Space>
+    )
   },
 }
 
-export const WithIcon: Story = {
+export const SizeExamples: Story = {
+  render: () => {
+    return (
+      <Space size={spaceSize}>
+        <Avatar size="small" style={neutralAvatarStyle}>
+          MP
+        </Avatar>
+        <Avatar style={neutralAvatarStyle}>MP</Avatar>
+        <Avatar size="large" style={neutralAvatarStyle}>
+          MP
+        </Avatar>
+      </Space>
+    )
+  },
+}
+
+export const TypePhoto: Story = {
   args: {
-    icon: <Icon name="userProfiles" size="lg" color="white" />,
+    src: 'https://randomuser.me/api/portraits/women/72.jpg',
+    alt: 'Avatar with photo',
+  },
+}
+
+export const TypeIcon: Story = {
+  args: {
+    style: neutralAvatarStyle,
+    icon: <Icon {...neutralIconProps} />,
+  },
+}
+
+export const TypeInitials: Story = {
+  args: {
+    children: 'MP',
+  },
+}
+
+export const WithBadge: Story = {
+  render: () => {
+    return (
+      <Space size={spaceSize}>
+        <Badge count={3} size="small">
+          <Avatar style={neutralAvatarStyle} icon={<Icon {...neutralIconProps} />} />
+        </Badge>
+        <Badge dot>
+          <Avatar style={neutralAvatarStyle}>MP</Avatar>
+        </Badge>
+      </Space>
+    )
+  },
+}
+
+export const WithGroup: Story = {
+  render: () => {
+    const teammates = [
+      {
+        name: 'Chloe Martinez',
+        src: 'https://randomuser.me/api/portraits/women/65.jpg',
+      },
+      {
+        name: 'Ernest Wallace',
+        src: 'https://randomuser.me/api/portraits/men/34.jpg',
+      },
+      {
+        name: 'Priya Patel',
+        initials: 'PP',
+      },
+      {
+        name: 'Lars Ostergaard',
+        initials: 'LO',
+      },
+    ]
+
+    return (
+      <Space direction="vertical" size={spaceSize}>
+        <Avatar.Group
+          max={{
+            count: 3,
+            style: { color: MpBrandSecondary8, backgroundColor: MpBrandSecondary3 },
+            popover: { trigger: 'click', placement: 'bottom' },
+          }}>
+          {teammates.map(teammate => {
+            const style = teammate.initials != null ? neutralAvatarStyle : undefined
+
+            return (
+              <Avatar key={teammate.name} src={teammate.src} alt={teammate.name} style={style}>
+                {teammate.initials}
+              </Avatar>
+            )
+          })}
+        </Avatar.Group>
+      </Space>
+    )
   },
 }

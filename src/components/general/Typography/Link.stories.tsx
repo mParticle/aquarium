@@ -81,9 +81,7 @@ type Story = StoryObj<typeof Typography.Link>
 */
 
 export const Primary: Story = {
-  args: {
-    underline: true,
-  },
+  args: {},
 }
 
 export const InsideTooltip: Story = {
@@ -130,16 +128,21 @@ export const LongDescription: Story = {
 export const WithInlineIcon: Story = {
   render: () => {
     return (
-      <Typography.Link
-        underline
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://docs.mparticle.com/"
-        color="ColorLink">
+      <Typography.Link target="_blank" rel="noopener noreferrer" href="https://docs.mparticle.com/" color="ColorLink">
         <Flex align="center" gap={SizeXs}>
           <span>View documentation</span>
-          <Icon name="openTab" size="sm" color="primary" />
+          <Icon name="openTab" size="sm" color="inherit" />
         </Flex>
+      </Typography.Link>
+    )
+  },
+}
+
+export const WithUnderline: Story = {
+  render: () => {
+    return (
+      <Typography.Link color="ColorText" href="https://docs.mparticle.com/" target="_blank" rel="noopener noreferrer">
+        Example Text
       </Typography.Link>
     )
   },

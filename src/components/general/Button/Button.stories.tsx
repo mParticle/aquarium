@@ -1,9 +1,11 @@
 import { Button } from 'src/components/general/Button/Button'
 import { type Meta, type StoryObj } from '@storybook/react'
 import { userEvent } from '@storybook/test'
-import { Alert, Flex, Icon, Typography, Tooltip } from 'src/components'
+import { Alert, Dropdown, Flex, Icon, Typography, Tooltip } from 'src/components'
 import React from 'react'
+import type { MenuProps } from 'antd'
 import { BorderRadiusLg, ColorBorderSecondary, ColorWhite, MarginMd, SizeXs } from 'src/styles/style'
+import { RoktPlus, RoktSearch, RoktEdit, RoktTrash } from 'src/components/icons'
 
 const meta: Meta<typeof Button> = {
   title: 'Components/General/Button',
@@ -64,7 +66,7 @@ export const LinkUsageNote: Story = {
               Use the{' '}
               <Typography.Link
                 href="https://mparticle.github.io/aquarium/?path=/story/components-general-typography-link--primary"
-                underline>
+                color="ColorText">
                 Typography.Link
               </Typography.Link>{' '}
               when navigating to a new URL or external page.
@@ -194,6 +196,24 @@ export const TypesOverview: Story = {
   },
 }
 
+export const DarkButton: Story = {
+  render: () => {
+    return (
+      <Flex wrap gap={MarginMd} align="center">
+        <Button color="default" variant="solid">
+          Dark
+        </Button>
+        <Button color="default" variant="solid" icon={<Icon name="add" size="sm" />}>
+          Dark with Icon
+        </Button>
+        <Button color="default" variant="solid" disabled>
+          Dark Disabled
+        </Button>
+      </Flex>
+    )
+  },
+}
+
 export const IconTypesOverview: Story = {
   render: () => {
     return (
@@ -264,6 +284,121 @@ export const Refresh: Story = {
           </Tooltip>
         </Flex>
       </>
+    )
+  },
+}
+
+export const With2Options: Story = {
+  render: () => {
+    const refreshMenu: MenuProps = {
+      items: [
+        {
+          key: 'refresh-columns',
+          label: 'Refresh Columns',
+        },
+        {
+          key: 'refresh-values',
+          label: 'Refresh Values',
+        },
+      ],
+      onClick: ({ key }) => {
+        console.log('Selected:', key)
+      },
+    }
+
+    return (
+      <Dropdown menu={refreshMenu}>
+        <Button icon={<Icon name="refresh" size="sm" />}>
+          <Typography.Text>Refresh Now</Typography.Text>
+        </Button>
+      </Dropdown>
+    )
+  },
+}
+
+// Buttons with local icons
+export const ButtonsWithLocalIcons: Story = {
+  render: () => {
+    return (
+      <Flex gap="middle" align="center" wrap="wrap">
+        <Button type="primary" icon={<Icon name="add" size="sm" />}>
+          Add Item
+        </Button>
+        <Button type="default" icon={<Icon name="edit" size="sm" />}>
+          Edit
+        </Button>
+        <Button type="default" danger icon={<Icon name="delete" size="sm" />}>
+          Delete
+        </Button>
+      </Flex>
+    )
+  },
+}
+
+// Buttons with Rokt/Untitled UI icons
+export const ButtonsWithUntitledUIIcons: Story = {
+  render: () => {
+    return (
+      <Flex gap="middle" align="center" wrap="wrap">
+        <Button type="primary" icon={<Icon name={RoktPlus} size="sm" />}>
+          Add Item
+        </Button>
+        <Button type="default" icon={<Icon name={RoktEdit} size="sm" />}>
+          Edit
+        </Button>
+        <Button type="default" danger icon={<Icon name={RoktTrash} size="sm" />}>
+          Delete
+        </Button>
+      </Flex>
+    )
+  },
+}
+
+// Rokt/Untitled UI Icons Integration Demo
+export const WithUntitledUIIcons: Story = {
+  render: () => {
+    return (
+      <Flex vertical gap="large">
+        <div>
+          <Typography.Title level={4}>Buttons with Rokt/Untitled UI Icons</Typography.Title>
+        </div>
+
+        <div>
+          <Typography.Title level={5}>Action Buttons</Typography.Title>
+          <Flex wrap gap={MarginMd} align="center">
+            <Button type="primary" icon={<Icon name={RoktPlus} size="sm" />}>
+              Add Item
+            </Button>
+            <Button type="default" icon={<Icon name={RoktSearch} size="sm" />}>
+              Search
+            </Button>
+            <Button type="default" icon={<Icon name={RoktEdit} size="sm" />}>
+              Edit
+            </Button>
+            <Button type="default" danger icon={<Icon name={RoktTrash} size="sm" />}>
+              Delete
+            </Button>
+          </Flex>
+        </div>
+
+        <div>
+          <Typography.Title level={5}>Icon-Only Buttons</Typography.Title>
+          <Flex wrap gap={MarginMd} align="center">
+            <Tooltip title="Add new item">
+              <Button type="primary" icon={<Icon name={RoktPlus} size="sm" />} />
+            </Tooltip>
+            <Tooltip title="Search">
+              <Button type="default" icon={<Icon name={RoktSearch} size="sm" />} />
+            </Tooltip>
+            <Tooltip title="Edit">
+              <Button type="default" icon={<Icon name={RoktEdit} size="sm" />} />
+            </Tooltip>
+            <Tooltip title="Delete">
+              <Button type="default" danger icon={<Icon name={RoktTrash} size="sm" />} />
+            </Tooltip>
+          </Flex>
+        </div>
+      </Flex>
     )
   },
 }

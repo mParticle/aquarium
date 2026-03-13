@@ -47,7 +47,7 @@ export const StorybookNote: Story = {
               <Typography.Text size="xl">💡</Typography.Text>
               <Typography.Text size="base">
                 Use an{' '}
-                <Typography.Link href="?path=/docs/components-feedback-alert--docs" underline>
+                <Typography.Link href="?path=/docs/components-feedback-alert--docs" color="ColorText">
                   Alert
                 </Typography.Link>{' '}
                 if the message is critical and needs to be persistent until the user dismisses or acts on it.

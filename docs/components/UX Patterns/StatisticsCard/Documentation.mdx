@@ -1,0 +1,23 @@
+import { Meta, Canvas } from '@storybook/blocks'
+
+import StatisticsCardStories, { ModelMetrics } from '../../../../src/components/UXPatterns/StatisticsCard/StatisticsCard.stories'
+
+<Meta of={StatisticsCardStories} />
+
+# Statistics Card
+
+A card component for displaying metric values with optional tooltips, commonly used for model metrics, performance indicators, or key statistics.
+
+## When to Use
+
+- Displaying model performance metrics (accuracy, precision, recall, AUC)
+- Showing key performance indicators (KPIs)
+- Presenting statistical data with contextual help
+- Creating metric dashboards or summary cards
+
+## Model Metrics Example
+
+A common pattern showing multiple metrics in a grid layout:
+
+<Canvas of={ModelMetrics} />
+
