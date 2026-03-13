@@ -187,6 +187,13 @@ import {
   MessageChatSquare as RoktMessageChatSquare,
   UserCheck01 as RoktUserCheck,
   Clipboard as RoktClipboard,
+  Type01 as RoktType,
+  Bold01 as RoktBold,
+  Italic01 as RoktItalic,
+  Underline01 as RoktUnderline,
+  Strikethrough01 as RoktStrikethrough,
+  Dotpoints01 as RoktDotpoints,
+  Star01 as RoktStar,
 } from '@untitledui/icons'
 
 export {
@@ -377,4 +384,11 @@ export {
   RoktMessageChatSquare,
   RoktUserCheck,
   RoktClipboard,
+  RoktType,
+  RoktBold,
+  RoktItalic,
+  RoktUnderline,
+  RoktStrikethrough,
+  RoktDotpoints,
+  RoktStar,
 }
