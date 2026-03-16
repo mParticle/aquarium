@@ -1,0 +1,16 @@
+var h=Object.defineProperty,m=Object.defineProperties;var x=Object.getOwnPropertyDescriptors;var i=Object.getOwnPropertySymbols;var j=Object.prototype.hasOwnProperty,u=Object.prototype.propertyIsEnumerable;var d=(n,t,o)=>t in n?h(n,t,{enumerable:!0,configurable:!0,writable:!0,value:o}):n[t]=o,r=(n,t)=>{for(var o in t||(t={}))j.call(t,o)&&d(n,o,t[o]);if(i)for(var o of i(t))u.call(t,o)&&d(n,o,t[o]);return n},a=(n,t)=>m(n,x(t));import{j as e}from"./jsx-runtime-C9TrHvcC.js";import{useMDXComponents as c}from"./index-CkQzTg6q.js";import{ae as f,ag as s,ah as y}from"./index-DtlTUaaV.js";import{D as g,P as D,a as l,m as w}from"./Descriptions.stories-DOCqMqBR.js";import"./index-3OP4wdng.js";import"./iframe-DsRKK5ec.js";import"../sb-preview/runtime.js";import"./index-DA79H6I3.js";import"./index-Cu4lwwaE.js";import"./extends-CF3RwP-h.js";import"./isNativeReflectConstruct-CWIsGhkf.js";import"./_baseClone-DwBCp-Ss.js";import"./index-dQMQm6Vu.js";import"./index-DrFu-skq.js";import"./UnauthorizedTooltip-DHdUhx7D.js";import"./ErrorStateIcon-8BB9p4tv.js";import"./style-DU2SNM1h.js";import"./WarningFilled-D6ijQqgK.js";import"./AntdIcon-DRQs8XP6.js";import"./presets-CQzyf-6F.js";import"./Context-R5ee3nrF.js";import"./SuccessStateIcon-fN8ivNoK.js";import"./WarningStateIcon-DpS0_2CM.js";import"./LightTheme-5-ZTbvef.js";import"./row-DlEJUZa0.js";import"./useToken-BIYN7ogo.js";function p(n){const t=r(r({a:"a",blockquote:"blockquote",h1:"h1",h2:"h2",h3:"h3",h4:"h4",p:"p",table:"table",tbody:"tbody",td:"td",th:"th",thead:"thead",tr:"tr"},c()),n.components);return e.jsxs(e.Fragment,{children:[e.jsx(f,{of:g}),`
+`,e.jsx(t.h1,{id:"descriptions",children:"Descriptions"}),`
+`,e.jsx(t.h4,{id:"overview",children:"Overview"}),`
+`,e.jsx(t.p,{children:"Display multiple read-only fields grouped together, commonly used on details pages to organize information in a structured way."}),`
+`,e.jsx(t.h3,{id:"basic-descriptions",children:"Basic Descriptions"}),`
+`,e.jsx(s,{of:D}),`
+`,e.jsx(t.h2,{id:"playground",children:"Playground"}),`
+`,e.jsx(t.p,{children:"Try it — change any prop below and see the result live."}),`
+`,e.jsx(s,{of:l,sourceState:"shown"}),`
+`,e.jsx(y,{of:l}),`
+`,e.jsxs(t.blockquote,{children:[`
+`,e.jsxs(t.p,{children:["Full API reference: ",e.jsx(t.a,{href:"https://ant.design/components/descriptions",rel:"nofollow",children:"Descriptions — Ant Design"})]}),`
+`]}),`
+`,e.jsx(s,{meta:w}),`
+`,e.jsx(t.h4,{id:"related-links",children:"Related Links"}),`
+`,e.jsxs(t.table,{children:[e.jsx(t.thead,{children:e.jsxs(t.tr,{children:[e.jsx(t.th,{children:"Type"}),e.jsx(t.th,{children:"Resource"})]})}),e.jsxs(t.tbody,{children:[e.jsxs(t.tr,{children:[e.jsx(t.td,{children:"Eames"}),e.jsx(t.td,{children:e.jsx(t.a,{href:"https://www.figma.com/design/veXnmignQnJz8StIq10VJ5/Eames-2.0---Foundations-%26-Components?node-id=407-297&node-type=canvas&t=B6HJWqqDsUOypZQj-0",rel:"nofollow",children:"Descriptions Component"})})]}),e.jsxs(t.tr,{children:[e.jsx(t.td,{children:"AntD"}),e.jsx(t.td,{children:e.jsx(t.a,{href:"https://ant.design/components/descriptions",rel:"nofollow",children:"Descriptions Component"})})]})]})]})]})}function G(n={}){const{wrapper:t}=r(r({},c()),n.components);return t?e.jsx(t,a(r({},n),{children:e.jsx(p,r({},n))})):p(n)}export{G as default};
