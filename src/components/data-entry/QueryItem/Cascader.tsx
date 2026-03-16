@@ -171,6 +171,7 @@ const Cascader = (props: IQueryItemCascaderProps) => {
   return (
     <>
       <BaseCascader {...baseProps}>
+        {/* Plain div required — React 19 passes a ref to this child for dropdown positioning; Flex breaks it */}
         <div>
           <Input
             disabled={props.disabled}

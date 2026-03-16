@@ -7,10 +7,10 @@ const meta: Meta<typeof FloatButton> = {
   component: FloatButton,
 
   args: {
-    description: 'Float Button',
-    tooltip: 'Tooltip Text',
+    tooltip: { title: 'Help', placement: 'left' },
     type: 'primary',
-    shape: 'circle',
+    shape: 'square',
+    icon: <QuestionCircleOutlined style={{ color: 'white' }} />,
   },
 
   argTypes: {
@@ -23,6 +23,15 @@ const meta: Meta<typeof FloatButton> = {
       options: ['default', 'primary'],
     },
   },
+
+  parameters: {
+    docs: {
+      story: {
+        inline: true,
+        iframeHeight: 150,
+      },
+    },
+  },
 }
 export default meta
 
@@ -33,8 +42,8 @@ export const Primary: Story = {}
 export const Group: Story = {
   render: () => (
     <FloatButton.Group shape="circle" style={{ insetInlineEnd: 24 }}>
-      <FloatButton icon={<QuestionCircleOutlined />} tooltip="Help" type="primary" />
-      <FloatButton icon={<CustomerServiceOutlined />} tooltip="Support" />
+      <FloatButton icon={<QuestionCircleOutlined />} tooltip={{ title: 'Help', placement: 'left' }} />
+      <FloatButton icon={<CustomerServiceOutlined />} tooltip={{ title: 'Support', placement: 'left' }} />
     </FloatButton.Group>
   ),
 }
