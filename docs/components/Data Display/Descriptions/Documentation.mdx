@@ -1,10 +1,8 @@
-import { Meta, Canvas } from '@storybook/blocks'
+import { Meta, Canvas, Controls } from '@storybook/blocks'
 
 import * as DescriptionsStories from '../../../../src/components/data-display/Descriptions/Descriptions.stories'
 
 <Meta of={DescriptionsStories} />
-
-{/* Documentation goes here */}
 
 # Descriptions
 
@@ -12,8 +10,18 @@ import * as DescriptionsStories from '../../../../src/components/data-display/De
 
 Display multiple read-only fields grouped together, commonly used on details pages to organize information in a structured way.
 
+### Basic Descriptions
 
-<Canvas meta={DescriptionsStories.default} />
+<Canvas of={DescriptionsStories.Primary} />
+
+## Playground
+
+Try it — change any prop below and see the result live.
+
+<Canvas of={DescriptionsStories.Playground} sourceState="shown" />
+<Controls of={DescriptionsStories.Playground} />
+
+> Full API reference: [Descriptions — Ant Design](https://ant.design/components/descriptions)
 
 #### Related Links
 

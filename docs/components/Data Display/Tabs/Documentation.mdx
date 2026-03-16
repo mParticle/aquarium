@@ -1,21 +1,29 @@
-import { Meta, Canvas } from '@storybook/blocks'
+import { Meta, Canvas, Controls } from '@storybook/blocks'
 
 import * as TabsStories from '../../../../src/components/data-display/Tabs/Tabs.stories'
 
 <Meta of={TabsStories} />
 
-{/* Documentation goes here */}
-
 # Tabs
 
 ### Overview
+
 The **Tabs** component organizes content into multiple sections within a single view, allowing users to switch between sections without navigating away from the page.
 
-{/* Documentation goes here */}
+### Basic Tabs
 
-<Canvas meta={TabsStories.default} />
+<Canvas of={TabsStories.Primary} />
 
-#### Related Links
+## Playground
+
+Try it — change any prop below and see the result live.
+
+<Canvas of={TabsStories.Playground} sourceState="shown" />
+<Controls of={TabsStories.Playground} />
+
+> Full API reference: [Tabs — Ant Design](https://ant.design/components/tabs)
+
+### Related Links
 
 | Type  | Resource                                                                                                                                               |
 | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |

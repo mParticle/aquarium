@@ -1,9 +1,8 @@
-import { Meta, Canvas } from '@storybook/blocks'
+import { Meta, Canvas, Controls } from '@storybook/blocks'
 
 import * as CollapseStories from '../../../../src/components/data-display/Collapse/Collapse.stories'
 
 <Meta of={CollapseStories} />
-
 
 # Collapse
 
@@ -17,10 +16,20 @@ In a complex input form within a modal, certain fields or options can be hidden 
 
 We use expand/collapse in [Table Filters](https://mparticle.github.io/aquarium/?path=/story/ux-patterns-table-filters--with-complex-filters). Initially, only the main categories are shown, while detailed options are hidden under expandable sections.
 
+### Ghost Collapse
 
 <Canvas of={CollapseStories.GhostCollapse} />
 
-#### Related Links
+## Playground
+
+Try it — change any prop below and see the result live.
+
+<Canvas of={CollapseStories.Playground} sourceState="shown" />
+<Controls of={CollapseStories.Playground} />
+
+> Full API reference: [Collapse — Ant Design](https://ant.design/components/collapse)
+
+### Related Links
 
 | Type  | Resource                                                                                                                                               |
 | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
