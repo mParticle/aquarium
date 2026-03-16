@@ -1,10 +1,8 @@
-import { Meta, Canvas } from '@storybook/addon-docs/blocks'
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
 
 import * as EmptyStories from '../../../../src/components/data-display/Empty/Empty.stories'
 
 <Meta of={EmptyStories} />
-
-{/* Documentation goes here */}
 
 # Empty
 
@@ -20,9 +18,9 @@ Use Empty State – Onboarding when a user visits a section for the first time o
 
 #### Content Guidelines
 
-**Title:** You don't have any [X] yet (e.g., "You don't have any audiences yet.")  
-**Description:** Highlight the benefit of creating something new. (e.g., "Start targeting the customers who matter most and run smarter, more effective campaigns.")  
-**Primary Action:** "+ Create [X]"  
+**Title:** You don't have any [X] yet (e.g., "You don't have any audiences yet.")
+**Description:** Highlight the benefit of creating something new. (e.g., "Start targeting the customers who matter most and run smarter, more effective campaigns.")
+**Primary Action:** "+ Create [X]"
 **Secondary Action (optional):** "Learn more"
 
 <Canvas of={EmptyStories.ExampleEmptyOnboarding} />
@@ -35,8 +33,8 @@ Use Empty State – No Results when a user action leads to an empty result and n
 
 #### Content Guidelines
 
-**Title:** No [X] found (e.g., "No results found" or "No items match these filters.")  
-**Description:** Guide the user toward adjusting or refining their input. (e.g., "Try adjusting your filters or using different keywords.")  
+**Title:** No [X] found (e.g., "No results found" or "No items match these filters.")
+**Description:** Guide the user toward adjusting or refining their input. (e.g., "Try adjusting your filters or using different keywords.")
 **Primary Action:** "Clear filters" / "Adjust search"
 
 <Canvas of={EmptyStories.ExampleNoResultsEmptyState} />
@@ -49,26 +47,24 @@ Use Error State when something prevents content from loading (e.g., server error
 
 #### Content Guidelines
 
-**Title:** Something went wrong (e.g., "Error loading [X]" if additional context is helpful)  
-**Description:** Provide context and clear next steps.  
-**Example phrasing:** "We couldn't load [X]. Please try again."  
+**Title:** Something went wrong (e.g., "Error loading [X]" if additional context is helpful)
+**Description:** Provide context and clear next steps.
+**Example phrasing:** "We couldn't load [X]. Please try again."
 **Primary Action:** "Try again" / "Reload"
 
 <Canvas of={EmptyStories.ExampleErrorApiFailure} />
 
+## Playground
+
+Try it — change any prop below and see the result live.
+
+<Canvas of={EmptyStories.Playground} sourceState="shown" />
+<Controls of={EmptyStories.Playground} />
+
+> Full API reference: [Empty — Ant Design](https://ant.design/components/empty)
+
 #### Related Links
 
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Resource</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AntD</td>
-      <td><a href="https://ant.design/components/empty">Empty Component</a></td>
-    </tr>
-  </tbody>
-</table>
+| Type  | Resource                                                                                                                                               |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| AntD | [Empty Component](https://ant.design/components/empty) |

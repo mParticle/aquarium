@@ -1,10 +1,8 @@
-import { Meta, Canvas } from '@storybook/addon-docs/blocks'
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
 
 import * as ListStories from '../../../../src/components/data-display/List/List.stories'
 
 <Meta of={ListStories} />
-
-
 
 # List
 
@@ -13,6 +11,7 @@ import * as ListStories from '../../../../src/components/data-display/List/List.
 The **List** component is a simple, versatile container for displaying multiple items in a single view. List can hold various types of content, providing a clean and organized way to present information.
 
 ### When to Use
+
 - To display a collection of data in a structured format.
 - When presenting lists of settings
 
@@ -20,31 +19,31 @@ The **List** component is a simple, versatile container for displaying multiple 
 
 - **Customizable Headers and Footers:** Add headers and footers to provide context or summary for the list.
 - **Flexible List Item Structure:** Layouts can include text, images, and actions, offering versatility in content presentation.
-- **Pagination:**  Built-in support for pagination to efficiently manage large data sets.
-- **Load More:**  An optional "Load More" button for dynamically loading additional items.
-- **Grid Support:**  Display list items in grid layouts for a more visual and organized presentation.
-- **Interactive Elements:**  Integrate buttons, links, or select into each list item
+- **Pagination:** Built-in support for pagination to efficiently manage large data sets.
+- **Load More:** An optional "Load More" button for dynamically loading additional items.
+- **Grid Support:** Display list items in grid layouts for a more visual and organized presentation.
+- **Interactive Elements:** Integrate buttons, links, or select into each list item
+
+### Basic List
+
+<Canvas of={ListStories.Primary} />
+
+### List with Meta Items
+
+<Canvas of={ListStories.WithMetaItems} />
+
+## Playground
+
+Try it — change any prop below and see the result live.
+
+<Canvas of={ListStories.Playground} sourceState="shown" />
+<Controls of={ListStories.Playground} />
+
+> Full API reference: [List — Ant Design](https://ant.design/components/list)
 
 #### Related Links
 
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Resource</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Eames</td>
-      <td><a href="https://www.figma.com/design/veXnmignQnJz8StIq10VJ5/Eames-2.0---Foundations-%26-Components?node-id=407-405&node-type=canvas&t=B6HJWqqDsUOypZQj-0">List Component</a></td>
-    </tr>
-    <tr>
-      <td>AntD</td>
-      <td><a href="https://ant.design/components/list">List Component</a></td>
-    </tr>
-  </tbody>
-</table>
-
-
-<Canvas meta={ListStories.default} />
+| Type  | Resource                                                                                                                                               |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Eames | [List Component](https://www.figma.com/design/veXnmignQnJz8StIq10VJ5/Eames-2.0---Foundations-%26-Components?node-id=407-405&node-type=canvas&t=B6HJWqqDsUOypZQj-0) |
+| AntD | [List Component](https://ant.design/components/list) |

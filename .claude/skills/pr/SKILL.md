@@ -34,7 +34,8 @@ git log main..HEAD --oneline
 
 - Confirm there are commits ahead of the base branch
 - If on `main` directly, stop and ask the user to create a feature branch first
-- Branch prefix must be `feat/`, `fix/`, or `chore/` — no other prefixes
+- Branch prefix should match the change type: `feat/`, `fix/`, `chore/`, `ci/`, `docs/`, `test/`, `refactor/`
+- Use `no-jira/` or `no-ticket/` when there is no associated issue
 
 ## Step 3: Push Branch
 
@@ -46,9 +47,14 @@ Always use the explicit branch name (not `HEAD`).
 
 ## Step 4: Build PR Title
 
-Use Conventional Commits format: `<type>(scope): <description>`
+Use Conventional Commits format — **NO scopes in parentheses**. CI rejects
+`feat(scope):`, only `feat:` is valid.
 
-Types: `feat`, `fix`, `chore`, `docs`, `refactor`, `test`, `perf`, `ci`, `revert`, `build`, `style`
+```
+<type>: <description>
+```
+
+Types: `feat`, `fix`, `docs`, `chore`, `refactor`, `test`, `perf`, `ci`
 
 ## Step 5: Build PR Description
 
