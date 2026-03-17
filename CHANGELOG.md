@@ -1,3 +1,9 @@
+# [1.66.0](https://github.com/mParticle/aquarium/compare/v1.65.0...v1.66.0) (2026-03-17)
+
+### Features
+
+- add mpGroup icon ([#755](https://github.com/mParticle/aquarium/issues/755)) ([eef9c16](https://github.com/mParticle/aquarium/commit/eef9c16dc88469cd723a789dd9bc30f972971028))
+
 # [1.65.0](https://github.com/mParticle/aquarium/compare/v1.64.0...v1.65.0) (2026-03-16)
 
 ### Bug Fixes
