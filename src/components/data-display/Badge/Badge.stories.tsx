@@ -1,7 +1,7 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { Badge } from 'src/components/data-display/Badge/Badge'
 import { Space } from 'src/components'
-import { ColorInfo, ColorSuccess, ColorWarning, ColorError, ColorBorderSecondary } from 'src/styles/style'
+import { ColorInfo, ColorSuccess, ColorWarning, ColorError, ColorTextPlaceholder } from 'src/styles/style'
 
 const meta: Meta<typeof Badge> = {
   title: 'Components/Data Display/Badge',
@@ -51,7 +51,7 @@ export const DotBadge: Story = {
       { label: 'Success', value: ColorSuccess },
       { label: 'Warning', value: ColorWarning },
       { label: 'Error', value: ColorError },
-      { label: 'Paused', value: ColorBorderSecondary },
+      { label: 'Paused', value: ColorTextPlaceholder },
     ] as const
 
     return (
