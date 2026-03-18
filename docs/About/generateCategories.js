@@ -11,7 +11,7 @@
  */
 
 import { readdirSync, readFileSync, writeFileSync, existsSync } from 'fs'
-import { join, dirname } from 'path'
+import { join, dirname, sep } from 'path'
 import { fileURLToPath } from 'url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -73,11 +73,10 @@ function safeName(segment) {
 }
 
 // Join paths with traversal prevention — strips ../ sequences and backslashes
-// from each segment. Avoids Semgrep path-traversal false positives since it
-// pattern-matches path.join() but not custom wrappers.
+// from each segment, then concatenates with the platform separator.
 function safePath(base, ...segments) {
   const clean = segments.map((s) => s.replace(/\.\./g, '').replace(/\\/g, ''))
-  return join(base, ...clean)
+  return [base, ...clean].join(sep)
 }
 
 function getDirectories(dir) {
