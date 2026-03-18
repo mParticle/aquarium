@@ -44,7 +44,7 @@ function getDocsPath(categoryName, componentName, parentFolder, storyId) {
   return `?path=/docs/components-${categorySlug}-${componentSlug}--documentation`
 }
 
-const CATEGORY_ORDER = ['General', 'Data Display', 'Data Entry', 'Feedback', 'Modal', 'Navigation']
+const CATEGORY_ORDER = categoriesData?.categoryOrder || []
 
 function getBaseUrl() {
   if (typeof window === 'undefined') return '/'
@@ -125,7 +125,7 @@ function CategorySection({ category }) {
       : category.components
 
   const groups = []
-  let currentGroup = null
+  let currentGroup = '__initial__'
   for (const comp of components) {
     const groupName = comp.group || null
     if (groupName !== currentGroup) {
@@ -160,7 +160,6 @@ function CategorySection({ category }) {
 export default function Introduction() {
   const filtered = (categoriesData?.categories || []).filter(
     (cat) =>
-      cat.name !== 'Not Prod Ready' &&
       cat.name !== 'Navigation' &&
       cat.components?.length > 0
   )

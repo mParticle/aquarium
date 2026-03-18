@@ -1,4 +1,5 @@
 {
+  "categoryOrder": ["General", "Data Display", "Data Entry", "Feedback", "Modal", "Navigation"],
   "categories": [
     {
       "name": "General",
@@ -228,10 +229,6 @@
           "variantCount": 1
         }
       ]
-    },
-    {
-      "name": "UX Patterns",
-      "components": []
     }
   ]
 }
