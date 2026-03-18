@@ -67,7 +67,7 @@ export const Primary: Story = {
   },
   render: () => {
     return (
-      <Space direction="vertical">
+      <Space orientation="vertical">
         <Tag color="blue">Prod</Tag>
         <Tag color="purple">Dev</Tag>
         <Tag color="default">Default</Tag>
@@ -138,11 +138,11 @@ export const TagOverviewCards: Story = {
   },
 }
 
-export const BorderlessTagExample: Story = {
+export const OutlinedTagExample: Story = {
   render: () => {
     return (
-      <Tag color="default" bordered={false}>
-        Borderless Tag
+      <Tag color="default" variant="outlined">
+        Outlined Tag
       </Tag>
     )
   },

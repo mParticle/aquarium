@@ -1,4 +1,5 @@
 import { type Meta, type StoryObj } from '@storybook/react'
+import { expect, screen, userEvent, within } from 'storybook/test'
 import { useState } from 'react'
 import { Drawer } from 'src/components/feedback/Drawer/Drawer'
 import { Button, Icon, Tooltip } from 'src/components'
@@ -15,6 +16,7 @@ import {
 const meta: Meta<typeof Drawer> = {
   title: 'Components/Feedback/Drawer',
   component: Drawer,
+  tags: ['play-test-validation'],
   parameters: {
     docs: {
       description: {
@@ -36,7 +38,7 @@ export const Primary: Story = {
     return (
       <>
         <Button onClick={() => setOpen(true)}>Open Drawer</Button>
-        <Drawer title="Drawer Title" open={open} onClose={() => setOpen(false)} >
+        <Drawer title="Drawer Title" open={open} onClose={() => setOpen(false)}>
           <Flex
             style={{
               width: '100%',
@@ -53,6 +55,18 @@ export const Primary: Story = {
         </Drawer>
       </>
     )
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    const openButton = canvas.getByRole('button', { name: 'Open Drawer' })
+    await userEvent.click(openButton)
+
+    const drawerContent = await screen.findByText('Content')
+    await expect(drawerContent).toBeVisible()
+
+    const closeButton = screen.getByLabelText('Close')
+    await userEvent.click(closeButton)
   },
   parameters: {
     docs: {
@@ -71,7 +85,7 @@ export const LargeDrawer: Story = {
     return (
       <>
         <Button onClick={() => setOpen(true)}>Open Drawer</Button>
-        <Drawer title="Drawer Title" open={open} onClose={() => setOpen(false)} width='large' placement="right">
+        <Drawer title="Drawer Title" open={open} onClose={() => setOpen(false)} width="large" placement="right">
           <Flex
             style={{
               width: '100%',
