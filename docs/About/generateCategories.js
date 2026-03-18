@@ -44,7 +44,7 @@ const EXCLUDE_COMPONENTS = {
   'UX Patterns': new Set(['PermissionsRestrictions', 'StatisticsCard', 'Steps']),
 }
 
-const CATEGORY_ORDER = ['General', 'Icons', 'Typography', 'Data Display', 'Data Entry', 'Feedback', 'Navigation']
+const CATEGORY_ORDER = ['General', 'Data Display', 'Data Entry', 'Feedback', 'Navigation']
 
 const TYPOGRAPHY_COMPONENTS = ['Text', 'Title', 'Paragraph', 'Link']
 
@@ -176,43 +176,23 @@ function main() {
     components.sort((a, b) => a.name.localeCompare(b.name))
 
     if (categoryName === 'General') {
-      const hasIcons = components.some((c) => c.name === 'Icons')
-      if (!hasIcons) {
-        const iconStoriesPath = join(SRC_COMPONENTS, 'general', 'Icon', 'Icon.stories.tsx')
-        const iconStoryId = getFirstStoryId(iconStoriesPath)
-        if (iconStoryId) {
-          components.push({ name: 'Icons', variantCount: 1, storyId: iconStoryId })
-          components.sort((a, b) => a.name.localeCompare(b.name))
-        }
+      components.push(
+        { name: 'Rokt Icons', variantCount: 1, storyId: 'foundations-icons-rokt-icons--documentation' },
+        { name: 'Special Icons', variantCount: 1, storyId: 'foundations-icons-special-icons--documentation' },
+        { name: 'mParticle Icons', variantCount: 1, storyId: 'foundations-icons-mparticle-icons--documentation' },
+      )
+      const generalPath = join(DOCS_COMPONENTS, 'General')
+      for (const compName of TYPOGRAPHY_COMPONENTS) {
+        const mdxPath = compName === 'Link'
+          ? join(generalPath, 'Link', 'Documentation.mdx')
+          : join(generalPath, 'Typography', compName, 'Documentation.mdx')
+        const entry = buildComponentEntry(compName, mdxPath, getStoriesPath('General', compName, 'Typography'), 'Typography')
+        if (entry) components.push(entry)
       }
     }
 
     categories.push({ name: categoryName, components })
   }
-
-  const generalPath = join(DOCS_COMPONENTS, 'General')
-  const typographyComponents = TYPOGRAPHY_COMPONENTS
-    .map((compName) => {
-      const mdxPath = compName === 'Link'
-        ? join(generalPath, 'Link', 'Documentation.mdx')
-        : join(generalPath, 'Typography', compName, 'Documentation.mdx')
-      return buildComponentEntry(compName, mdxPath, getStoriesPath('General', compName, 'Typography'), 'Typography')
-    })
-    .filter(Boolean)
-  categories.push({
-    name: 'Typography',
-    components: typographyComponents,
-    parentCategory: 'General',
-  })
-
-  categories.push({
-    name: 'Icons',
-    components: [
-      { name: 'Rokt Icons', variantCount: 1, storyId: 'foundations-icons-rokt-icons--documentation' },
-      { name: 'Special Icons', variantCount: 1, storyId: 'foundations-icons-special-icons--documentation' },
-      { name: 'mParticle Icons', variantCount: 1, storyId: 'foundations-icons-mparticle-icons--documentation' },
-    ],
-  })
 
   categories.sort((a, b) => {
     const aParent = a.parentCategory

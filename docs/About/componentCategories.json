@@ -8,15 +8,20 @@
           "variantCount": 13
         },
         {
-          "name": "Icons",
+          "name": "Rokt Icons",
           "variantCount": 1,
-          "storyId": "components-general-icons--icon-table"
-        }
-      ]
-    },
-    {
-      "name": "Typography",
-      "components": [
+          "storyId": "foundations-icons-rokt-icons--documentation"
+        },
+        {
+          "name": "Special Icons",
+          "variantCount": 1,
+          "storyId": "foundations-icons-special-icons--documentation"
+        },
+        {
+          "name": "mParticle Icons",
+          "variantCount": 1,
+          "storyId": "foundations-icons-mparticle-icons--documentation"
+        },
         {
           "name": "Text",
           "variantCount": 1,
@@ -39,27 +44,6 @@
           "name": "Link",
           "variantCount": 6,
           "parentFolder": "Typography"
-        }
-      ],
-      "parentCategory": "General"
-    },
-    {
-      "name": "Icons",
-      "components": [
-        {
-          "name": "Rokt Icons",
-          "variantCount": 1,
-          "storyId": "foundations-icons-rokt-icons--documentation"
-        },
-        {
-          "name": "Special Icons",
-          "variantCount": 1,
-          "storyId": "foundations-icons-special-icons--documentation"
-        },
-        {
-          "name": "mParticle Icons",
-          "variantCount": 1,
-          "storyId": "foundations-icons-mparticle-icons--documentation"
         }
       ]
     },
