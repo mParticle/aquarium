@@ -60,18 +60,21 @@ function countCanvasOf(content) {
   return matches ? matches.length : 0
 }
 
+function safeName(segment) {
+  return segment.replace(/[./\\]/g, '')
+}
+
 function getStoriesPath(categoryName, componentName, parentFolder) {
-  const catSlug = toKebab(categoryName)
+  const catSlug = safeName(toKebab(categoryName))
+  const comp = safeName(componentName)
+  const storiesFile = `${comp}.stories.tsx`
   if (parentFolder) {
-    // nosemgrep: javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal
-    const flatPath = join(SRC_COMPONENTS, catSlug, parentFolder, `${componentName}.stories.tsx`)
+    const parent = safeName(parentFolder)
+    const flatPath = join(SRC_COMPONENTS, catSlug, parent, storiesFile)
     if (existsSync(flatPath)) return flatPath
-    // nosemgrep: javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal
-    const nestedPath = join(SRC_COMPONENTS, catSlug, parentFolder, componentName, `${componentName}.stories.tsx`)
-    return nestedPath
+    return join(SRC_COMPONENTS, catSlug, parent, comp, storiesFile)
   }
-  // nosemgrep: javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal
-  return join(SRC_COMPONENTS, catSlug, componentName, `${componentName}.stories.tsx`)
+  return join(SRC_COMPONENTS, catSlug, comp, storiesFile)
 }
 
 function getFirstStoryId(storiesPath) {
