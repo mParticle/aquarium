@@ -1,3 +1,9 @@
+# [1.67.0](https://github.com/mParticle/aquarium/compare/v1.66.0...v1.67.0) (2026-03-18)
+
+### Features
+
+- aquarium 2.0 — package upgdades: antd v6, react 19 ([#739](https://github.com/mParticle/aquarium/issues/739)) ([0c5741c](https://github.com/mParticle/aquarium/commit/0c5741c6525518984eae2217fda5dcabc255508c))
+
 # [1.66.0](https://github.com/mParticle/aquarium/compare/v1.65.0...v1.66.0) (2026-03-17)
 
 ### Features
