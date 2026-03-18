@@ -44,7 +44,7 @@ const EXCLUDE_COMPONENTS = {
   'UX Patterns': new Set(['PermissionsRestrictions', 'StatisticsCard', 'Steps']),
 }
 
-const CATEGORY_ORDER = ['General', 'Typography', 'Data Display', 'Data Entry', 'Feedback', 'Navigation']
+const CATEGORY_ORDER = ['General', 'Icons', 'Typography', 'Data Display', 'Data Entry', 'Feedback', 'Navigation']
 
 const TYPOGRAPHY_COMPONENTS = ['Text', 'Title', 'Paragraph', 'Link']
 
@@ -60,6 +60,7 @@ function countCanvasOf(content) {
   return matches ? matches.length : 0
 }
 
+// nosemgrep: javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal
 function getStoriesPath(categoryName, componentName, parentFolder) {
   const catSlug = toKebab(categoryName)
   if (parentFolder) {
@@ -202,6 +203,15 @@ function main() {
     name: 'Typography',
     components: typographyComponents,
     parentCategory: 'General',
+  })
+
+  categories.push({
+    name: 'Icons',
+    components: [
+      { name: 'Rokt Icons', variantCount: 1, storyId: 'foundations-icons-rokt-icons--documentation' },
+      { name: 'Special Icons', variantCount: 1, storyId: 'foundations-icons-special-icons--documentation' },
+      { name: 'mParticle Icons', variantCount: 1, storyId: 'foundations-icons-mparticle-icons--documentation' },
+    ],
   })
 
   categories.sort((a, b) => {

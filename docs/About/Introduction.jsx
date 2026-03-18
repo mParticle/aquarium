@@ -44,7 +44,7 @@ function getDocsPath(categoryName, componentName, parentFolder, storyId) {
   return `?path=/docs/components-${categorySlug}-${componentSlug}--documentation`
 }
 
-const CATEGORY_ORDER = ['General', 'Typography', 'Data Display', 'Data Entry', 'Feedback', 'Modal', 'Navigation']
+const CATEGORY_ORDER = ['General', 'Icons', 'Typography', 'Data Display', 'Data Entry', 'Feedback', 'Modal', 'Navigation']
 
 function getBaseUrl() {
   if (typeof window === 'undefined') return '/'

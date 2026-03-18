@@ -44,6 +44,26 @@
       "parentCategory": "General"
     },
     {
+      "name": "Icons",
+      "components": [
+        {
+          "name": "Rokt Icons",
+          "variantCount": 1,
+          "storyId": "foundations-icons-rokt-icons--documentation"
+        },
+        {
+          "name": "Special Icons",
+          "variantCount": 1,
+          "storyId": "foundations-icons-special-icons--documentation"
+        },
+        {
+          "name": "mParticle Icons",
+          "variantCount": 1,
+          "storyId": "foundations-icons-mparticle-icons--documentation"
+        }
+      ]
+    },
+    {
       "name": "Data Display",
       "components": [
         {
