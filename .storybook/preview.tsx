@@ -1,6 +1,18 @@
 import type { Preview } from '@storybook/react'
+import React from 'react'
+import { ConfigProvider } from '../src/components'
+import { FontFamily } from '../src/styles/style'
 
 const preview: Preview = {
+  decorators: [
+    Story => (
+      <ConfigProvider>
+        <div style={{ fontFamily: FontFamily }}>
+          <Story />
+        </div>
+      </ConfigProvider>
+    ),
+  ],
   parameters: {
     layout: 'centered',
     options: {

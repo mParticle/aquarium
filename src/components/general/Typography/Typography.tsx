@@ -46,13 +46,13 @@ export interface ITextProps extends InternalTextProps {
   tooltip?: boolean
 }
 
-export interface ITitleProps extends InternalTitleProps {}
+export type ITitleProps = InternalTitleProps
 
 export interface ILinkProps extends InternalLinkProps {
   tooltip?: boolean
 }
 
-export interface IParagraphProps extends InternalParagraphProps {}
+export type IParagraphProps = InternalParagraphProps
 
 // Tried generalizing into a higher order component but couldn't do it type-safely, so just repeated the code
 const Text = (props: ITextProps) => {

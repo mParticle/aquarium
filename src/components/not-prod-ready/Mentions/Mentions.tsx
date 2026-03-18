@@ -1,8 +1,9 @@
+import React from 'react'
 import { Mentions as AntMentions } from 'antd'
 import type { MentionProps as AntMentionProps } from 'antd'
 import { ConfigProvider } from 'src/components'
 
-export interface IMentionsProps extends AntMentionProps {}
+export type IMentionsProps = AntMentionProps
 
 const MentionsBase = (props: IMentionsProps) => {
   return (

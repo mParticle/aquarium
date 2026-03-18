@@ -4,7 +4,7 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { ExampleStory } from 'src/utils/ExampleStory'
 import { useRef } from 'react'
 import { Space } from 'src/components'
-import { expect, userEvent } from '@storybook/test'
+import { expect, userEvent } from 'storybook/test'
 
 const meta: Meta<typeof Input> = {
   title: 'Components/Not Prod Ready/Data Entry/Input',
@@ -147,7 +147,7 @@ export const WithFocusManagement: Story = {
 
     return (
       <ExampleStory title={meta.name}>
-        <Space direction="vertical" style={{ width: '100%' }}>
+        <Space orientation="vertical" style={{ width: '100%' }}>
           <Space wrap>
             <Button
               onClick={() => {

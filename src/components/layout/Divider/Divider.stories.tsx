@@ -15,19 +15,18 @@ const meta: Meta<typeof Divider> = {
   args: {
     children: 'Divider Title',
     dashed: false,
-    orientation: 'center',
-    orientationMargin: undefined,
+    titlePlacement: 'center',
     plain: true,
     style: undefined,
-    type: 'horizontal',
+    orientation: 'horizontal',
   },
 
   argTypes: {
-    orientation: {
+    titlePlacement: {
       control: 'select',
       options: ['left', 'right', 'center'],
     },
-    type: {
+    orientation: {
       control: 'select',
       options: ['vertical', 'horizontal'],
     },
@@ -52,14 +51,13 @@ export const Dashed: Story = {
 
 export const WithOrientation: Story = {
   args: {
-    orientation: 'right',
+    titlePlacement: 'right',
   },
 }
 
 export const WithOrientationMargin: Story = {
   args: {
-    orientation: 'left',
-    orientationMargin: '20px',
+    titlePlacement: 'left',
   },
 }
 
@@ -77,6 +75,6 @@ export const WithStyle: Story = {
 
 export const VerticalDivider: Story = {
   args: {
-    type: 'vertical',
+    orientation: 'vertical',
   },
 }

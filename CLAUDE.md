@@ -1,5 +1,17 @@
-- start all new branches with either fix/ feat/ chore/
 - Always read CONTRIBUTING.md before executing any git action
+
+## Tech Stack
+
+- **Ant Design**: v6 (peer dep)
+- **React**: 19. No `forwardRef`, `propTypes`, or `defaultProps` on function components.
+- **Testing**: Storybook 10 interaction tests (`play` functions with `storybook/test`) — NOT separate Vitest spec files per component.
+- **Build**: `npm run build` must pass before committing. Output in `dist/`.
+
+### React 19 — Component Pattern
+
+```tsx
+export function MyComp({ ref, ...props }: IProps & { ref?: React.Ref<HTMLDivElement> }) { ... }
+```
 
 ## Branch Naming Convention
 
@@ -13,8 +25,8 @@ This overrides the `jira-ticket-start` skill's default branch naming. Use this r
 
 ## Jira Integration
 
-- **Atlassian MCP cloud ID**: `1e01021f-8d40-42e1-a0e2-693df8252edd` (rokt.atlassian.net)
-- Use the Atlassian MCP tools (`mcp__claude_ai_Atlassian__*`) for Jira operations
+- Use `/jira-cli` skill for all Jira operations (view, search, create, update, comment, transition)
+- Fallback only: Atlassian MCP
 - When starting from a Jira ticket, create branches using the convention above
 
 ## Designer Workflow (Non-Technical Contributors)
@@ -47,7 +59,7 @@ This handles everything end-to-end: fetches Jira ticket, creates branch, impleme
 Always prefer Aquarium components over semantic HTML with inline styles:
 
 - ✅ `<Flex gap="md">` instead of `<div style={{ display: 'flex', gap: '20px' }}>`
-- ✅ `<Space direction="vertical">` instead of `<div style={{ display: 'flex', flexDirection: 'column' }}>`
+- ✅ `<Flex vertical>` instead of `<div style={{ display: 'flex', flexDirection: 'column' }}>`
 - ✅ `<Center>` instead of `<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>`
 
 ### Use Design Tokens

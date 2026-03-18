@@ -13,3 +13,15 @@ updates:
       day: 'monday'
       time: '15:00'
     target-branch: 'chore/dependabot'
+
+  - commit-message:
+      prefix: 'ci'
+    directory: '/'
+    labels: ['dependabot', 'github-actions']
+    open-pull-requests-limit: 3
+    package-ecosystem: 'github-actions'
+    schedule:
+      interval: 'weekly'
+      day: 'monday'
+      time: '15:00'
+    target-branch: 'chore/dependabot'

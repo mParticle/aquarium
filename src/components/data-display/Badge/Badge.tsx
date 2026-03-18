@@ -33,9 +33,11 @@ export const Badge = ({ variant = 'default', size = 'md', shape = 'pill', ...pro
     )
   }
 
+  const antSize = size === 'small' || size === 'sm' ? 'small' : 'default'
+
   return (
     <ConfigProvider>
-      <AntBadge {...props} size={size as 'default' | 'small'} />
+      <AntBadge {...props} size={antSize} />
     </ConfigProvider>
   )
 }

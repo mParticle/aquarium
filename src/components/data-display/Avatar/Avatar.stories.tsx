@@ -118,7 +118,7 @@ export const WithGroup: Story = {
     ]
 
     return (
-      <Space direction="vertical" size={spaceSize}>
+      <Space orientation="vertical" size={spaceSize}>
         <Avatar.Group
           max={{
             count: 3,
