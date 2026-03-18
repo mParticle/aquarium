@@ -46,7 +46,7 @@ const EXCLUDE_COMPONENTS = {
 
 const CATEGORY_ORDER = ['General', 'Typography', 'Data Display', 'Data Entry', 'Feedback', 'Navigation']
 
-const TYPOGRAPHY_COMPONENTS = ['Link', 'Paragraph', 'Text', 'Title']
+const TYPOGRAPHY_COMPONENTS = ['Text', 'Title', 'Paragraph', 'Link']
 
 function getDirectories(dir) {
   if (!existsSync(dir)) return []
@@ -83,6 +83,31 @@ function getFirstStoryId(storiesPath) {
   return storyId
 }
 
+function readVariantCount(mdxPath) {
+  const raw = countCanvasOf(readFileSync(mdxPath, 'utf8'))
+  return raw === 0 ? 1 : raw
+}
+
+function buildComponentEntry(name, mdxPath, storiesPath, parentFolder) {
+  if (existsSync(mdxPath)) {
+    const entry = { name, variantCount: readVariantCount(mdxPath) }
+    if (parentFolder) entry.parentFolder = parentFolder
+    return entry
+  }
+  const storyId = getFirstStoryId(storiesPath)
+  if (!storyId) return null
+  const entry = { name, variantCount: 1 }
+  if (parentFolder) entry.parentFolder = parentFolder
+  entry.storyId = storyId
+  return entry
+}
+
+function resolveFolderStoryId(categoryName, folderName, subfolders) {
+  const direct = getFirstStoryId(getStoriesPath(categoryName, folderName, null))
+  if (direct || subfolders.length === 0) return direct
+  return getFirstStoryId(getStoriesPath(categoryName, subfolders[0], folderName))
+}
+
 function main() {
   const categoryFolders = getDirectories(DOCS_COMPONENTS).filter(
     (name) => !SKIP_CATEGORIES.has(name)
@@ -102,20 +127,10 @@ function main() {
       const subfolders = getDirectories(itemPath)
 
       if (existsSync(mdxPath)) {
-        const content = readFileSync(mdxPath, 'utf8')
-        const rawCount = countCanvasOf(content)
-        const variantCount = rawCount === 0 ? 1 : rawCount
-        components.push({ name: itemName, variantCount })
+        components.push({ name: itemName, variantCount: readVariantCount(mdxPath) })
       } else if (subfolders.length > 0) {
-        const folderAsComponent = {
-          name: itemName,
-          variantCount: subfolders.length,
-        }
-        let folderStoryId = getFirstStoryId(getStoriesPath(categoryName, itemName, null))
-        if (!folderStoryId && subfolders.length > 0) {
-          const firstSub = subfolders[0]
-          folderStoryId = getFirstStoryId(getStoriesPath(categoryName, firstSub, itemName))
-        }
+        const folderAsComponent = { name: itemName, variantCount: subfolders.length }
+        const folderStoryId = resolveFolderStoryId(categoryName, itemName, subfolders)
         if (folderStoryId) folderAsComponent.storyId = folderStoryId
         components.push(folderAsComponent)
 
@@ -123,37 +138,27 @@ function main() {
         const addedNames = new Set()
         for (const subName of subfolders) {
           if (excluded?.has(subName)) continue
-          const subMdxPath = join(itemPath, subName, 'Documentation.mdx')
-          let variantCount = 1
-          let storyId = null
-          if (existsSync(subMdxPath)) {
-            const content = readFileSync(subMdxPath, 'utf8')
-            const rawCount = countCanvasOf(content)
-            variantCount = rawCount === 0 ? 1 : rawCount
-          } else {
-            const storiesPath = getStoriesPath(categoryName, subName, itemName)
-            storyId = getFirstStoryId(storiesPath)
-            if (!storyId) continue
-          }
-          const comp = { name: subName, variantCount, parentFolder: itemName }
-          if (storyId) comp.storyId = storyId
-          groupComponents.push(comp)
+          const entry = buildComponentEntry(
+            subName,
+            join(itemPath, subName, 'Documentation.mdx'),
+            getStoriesPath(categoryName, subName, itemName),
+            itemName
+          )
+          if (!entry) continue
+          groupComponents.push(entry)
           addedNames.add(subName)
         }
         const srcParentPath = join(SRC_COMPONENTS, toKebab(categoryName), itemName)
         if (existsSync(srcParentPath)) {
-          const srcSubfolders = getDirectories(srcParentPath)
-          for (const srcSubName of srcSubfolders) {
+          for (const srcSubName of getDirectories(srcParentPath)) {
             if (addedNames.has(srcSubName) || excluded?.has(srcSubName)) continue
-            const storyPath = getStoriesPath(categoryName, srcSubName, itemName)
-            const storyId = getFirstStoryId(storyPath)
-            if (!storyId) continue
-            groupComponents.push({
-              name: srcSubName,
-              variantCount: 1,
-              parentFolder: itemName,
-              storyId,
-            })
+            const entry = buildComponentEntry(
+              srcSubName,
+              join(srcParentPath, srcSubName, 'Documentation.mdx'),
+              getStoriesPath(categoryName, srcSubName, itemName),
+              itemName
+            )
+            if (entry) groupComponents.push(entry)
           }
         }
         if (groupComponents.length > 0) {
@@ -184,31 +189,15 @@ function main() {
     categories.push({ name: categoryName, components })
   }
 
-  const typographyComponents = []
   const generalPath = join(DOCS_COMPONENTS, 'General')
-  for (const compName of TYPOGRAPHY_COMPONENTS) {
-    const linkDocPath = join(generalPath, 'Link', 'Documentation.mdx')
-    const typographyDocPath = join(generalPath, 'Typography', compName, 'Documentation.mdx')
-    const mdxPath = compName === 'Link' ? linkDocPath : typographyDocPath
-    let variantCount = 1
-    let storyId = null
-    if (existsSync(mdxPath)) {
-      const content = readFileSync(mdxPath, 'utf8')
-      const rawCount = countCanvasOf(content)
-      variantCount = rawCount === 0 ? 1 : rawCount
-    } else {
-      const storiesPath = getStoriesPath('General', compName, 'Typography')
-      storyId = getFirstStoryId(storiesPath)
-    }
-    const comp = {
-      name: compName,
-      variantCount,
-      parentFolder: 'Typography',
-    }
-    if (storyId) comp.storyId = storyId
-    typographyComponents.push(comp)
-  }
-  typographyComponents.sort((a, b) => a.name.localeCompare(b.name))
+  const typographyComponents = TYPOGRAPHY_COMPONENTS
+    .map((compName) => {
+      const mdxPath = compName === 'Link'
+        ? join(generalPath, 'Link', 'Documentation.mdx')
+        : join(generalPath, 'Typography', compName, 'Documentation.mdx')
+      return buildComponentEntry(compName, mdxPath, getStoriesPath('General', compName, 'Typography'), 'Typography')
+    })
+    .filter(Boolean)
   categories.push({
     name: 'Typography',
     components: typographyComponents,

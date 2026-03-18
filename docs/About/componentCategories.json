@@ -5,7 +5,7 @@
       "components": [
         {
           "name": "Button",
-          "variantCount": 10
+          "variantCount": 13
         },
         {
           "name": "Icons",
@@ -18,17 +18,6 @@
       "name": "Typography",
       "components": [
         {
-          "name": "Link",
-          "variantCount": 6,
-          "parentFolder": "Typography"
-        },
-        {
-          "name": "Paragraph",
-          "variantCount": 1,
-          "parentFolder": "Typography",
-          "storyId": "components-general-typography-paragraph--primary"
-        },
-        {
           "name": "Text",
           "variantCount": 1,
           "parentFolder": "Typography",
@@ -39,6 +28,17 @@
           "variantCount": 1,
           "parentFolder": "Typography",
           "storyId": "components-general-typography-title--primary"
+        },
+        {
+          "name": "Paragraph",
+          "variantCount": 1,
+          "parentFolder": "Typography",
+          "storyId": "components-general-typography-paragraph--primary"
+        },
+        {
+          "name": "Link",
+          "variantCount": 6,
+          "parentFolder": "Typography"
         }
       ],
       "parentCategory": "General"
@@ -48,51 +48,51 @@
       "components": [
         {
           "name": "Avatar",
-          "variantCount": 6
-        },
-        {
-          "name": "Badge",
-          "variantCount": 5
-        },
-        {
-          "name": "Card",
-          "variantCount": 3
-        },
-        {
-          "name": "Collapse",
-          "variantCount": 1
-        },
-        {
-          "name": "Descriptions",
-          "variantCount": 1
-        },
-        {
-          "name": "Empty",
-          "variantCount": 3
-        },
-        {
-          "name": "Image",
-          "variantCount": 1
-        },
-        {
-          "name": "List",
-          "variantCount": 1
-        },
-        {
-          "name": "Popover",
-          "variantCount": 1
-        },
-        {
-          "name": "Tabs",
-          "variantCount": 1
-        },
-        {
-          "name": "Tag",
           "variantCount": 8
         },
         {
+          "name": "Badge",
+          "variantCount": 6
+        },
+        {
+          "name": "Card",
+          "variantCount": 4
+        },
+        {
+          "name": "Collapse",
+          "variantCount": 2
+        },
+        {
+          "name": "Descriptions",
+          "variantCount": 2
+        },
+        {
+          "name": "Empty",
+          "variantCount": 4
+        },
+        {
+          "name": "Image",
+          "variantCount": 2
+        },
+        {
+          "name": "List",
+          "variantCount": 3
+        },
+        {
+          "name": "Popover",
+          "variantCount": 3
+        },
+        {
+          "name": "Tabs",
+          "variantCount": 2
+        },
+        {
+          "name": "Tag",
+          "variantCount": 9
+        },
+        {
           "name": "Tooltip",
-          "variantCount": 1
+          "variantCount": 5
         }
       ]
     },
