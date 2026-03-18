@@ -1,0 +1,18 @@
+/* Override Ant Design Card body padding (matches PaddingXs token: 8px) */
+.intro-component-card .ant-card-body {
+  padding: 8px !important;
+}
+
+/* Favorite icon in footer (MpBrandPrimary7: #c20075), aligned with text */
+.intro-footer-heart {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  color: #c20075 !important;
+}
+
+.intro-footer-heart path,
+.intro-footer-heart svg {
+  color: #c20075 !important;
+  fill: #c20075 !important;
+}

@@ -1,0 +1,226 @@
+{
+  "categories": [
+    {
+      "name": "General",
+      "components": [
+        {
+          "name": "Button",
+          "variantCount": 10
+        },
+        {
+          "name": "Icons",
+          "variantCount": 1,
+          "storyId": "components-general-icons--icon-table"
+        }
+      ]
+    },
+    {
+      "name": "Typography",
+      "components": [
+        {
+          "name": "Link",
+          "variantCount": 6,
+          "parentFolder": "Typography"
+        },
+        {
+          "name": "Paragraph",
+          "variantCount": 1,
+          "parentFolder": "Typography",
+          "storyId": "components-general-typography-paragraph--primary"
+        },
+        {
+          "name": "Text",
+          "variantCount": 1,
+          "parentFolder": "Typography",
+          "storyId": "components-general-typography-text--primary"
+        },
+        {
+          "name": "Title",
+          "variantCount": 1,
+          "parentFolder": "Typography",
+          "storyId": "components-general-typography-title--primary"
+        }
+      ],
+      "parentCategory": "General"
+    },
+    {
+      "name": "Data Display",
+      "components": [
+        {
+          "name": "Avatar",
+          "variantCount": 6
+        },
+        {
+          "name": "Badge",
+          "variantCount": 5
+        },
+        {
+          "name": "Card",
+          "variantCount": 3
+        },
+        {
+          "name": "Collapse",
+          "variantCount": 1
+        },
+        {
+          "name": "Descriptions",
+          "variantCount": 1
+        },
+        {
+          "name": "Empty",
+          "variantCount": 3
+        },
+        {
+          "name": "Image",
+          "variantCount": 1
+        },
+        {
+          "name": "List",
+          "variantCount": 1
+        },
+        {
+          "name": "Popover",
+          "variantCount": 1
+        },
+        {
+          "name": "Tabs",
+          "variantCount": 1
+        },
+        {
+          "name": "Tag",
+          "variantCount": 8
+        },
+        {
+          "name": "Tooltip",
+          "variantCount": 1
+        }
+      ]
+    },
+    {
+      "name": "Data Entry",
+      "components": [
+        {
+          "name": "Auto Complete",
+          "variantCount": 1
+        },
+        {
+          "name": "Checkbox",
+          "variantCount": 6
+        },
+        {
+          "name": "Date Picker",
+          "variantCount": 1
+        },
+        {
+          "name": "Form",
+          "variantCount": 1
+        },
+        {
+          "name": "Input",
+          "variantCount": 10
+        },
+        {
+          "name": "InputNumber",
+          "variantCount": 1
+        },
+        {
+          "name": "QueryItem",
+          "variantCount": 1
+        },
+        {
+          "name": "Radio",
+          "variantCount": 1
+        },
+        {
+          "name": "Select",
+          "variantCount": 1
+        },
+        {
+          "name": "Switch",
+          "variantCount": 4
+        },
+        {
+          "name": "TreeSelect",
+          "variantCount": 1
+        },
+        {
+          "name": "Upload",
+          "variantCount": 1
+        }
+      ]
+    },
+    {
+      "name": "Feedback",
+      "components": [
+        {
+          "name": "Alert",
+          "variantCount": 12
+        },
+        {
+          "name": "Drawer",
+          "variantCount": 4
+        },
+        {
+          "name": "Message",
+          "variantCount": 3
+        },
+        {
+          "name": "Modal",
+          "variantCount": 2,
+          "storyId": "components-feedback-modal-delete-confirm-modal--u-x-flow"
+        },
+        {
+          "name": "Popconfirm",
+          "variantCount": 1
+        },
+        {
+          "name": "Progress",
+          "variantCount": 1
+        },
+        {
+          "name": "Skeleton",
+          "variantCount": 1
+        },
+        {
+          "name": "Spin",
+          "variantCount": 1
+        }
+      ]
+    },
+    {
+      "name": "Modal",
+      "components": [
+        {
+          "name": "DeleteConfirmModal",
+          "variantCount": 1,
+          "parentFolder": "Modal"
+        },
+        {
+          "name": "ErrorModal",
+          "variantCount": 1,
+          "parentFolder": "Modal",
+          "storyId": "components-feedback-modal-error-modal--default"
+        },
+        {
+          "name": "Primary",
+          "variantCount": 1,
+          "parentFolder": "Modal"
+        }
+      ],
+      "parentCategory": "Feedback"
+    },
+    {
+      "name": "Navigation",
+      "components": [
+        {
+          "name": "GlobalNavigation",
+          "variantCount": 1
+        }
+      ]
+    },
+    {
+      "name": "UX Patterns",
+      "components": []
+    }
+  ]
+}
