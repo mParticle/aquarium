@@ -138,11 +138,11 @@ export const TagOverviewCards: Story = {
   },
 }
 
-export const BorderlessTagExample: Story = {
+export const OutlinedTagExample: Story = {
   render: () => {
     return (
-      <Tag color="default" bordered={false}>
-        Borderless Tag
+      <Tag color="default" variant="outlined">
+        Outlined Tag
       </Tag>
     )
   },

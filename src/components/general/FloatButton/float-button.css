@@ -1,5 +1,0 @@
-/* Fix FloatButton height stretching in flex containers (antd 6 height: auto) */
-.ant-float-btn {
-    flex-shrink: 0;
-    align-self: flex-start;
-}

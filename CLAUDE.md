@@ -13,15 +13,6 @@
 export function MyComp({ ref, ...props }: IProps & { ref?: React.Ref<HTMLDivElement> }) { ... }
 ```
 
-### New Component Checklist
-
-Use `/add-aquarium-component` to scaffold. Files required:
-
-1. `src/components/<category>/<Name>/<Name>.tsx` — wraps antd, `I<Name>Props extends Ant<Name>Props`
-2. `src/components/<category>/<Name>/<Name>.stories.tsx` — Storybook 10 `Meta` + `StoryObj` + `play` function
-3. `docs/components/<Category>/<Name>/Documentation.mdx` — MDX doc
-4. Add named export to `src/components/index.ts`
-
 ## Branch Naming Convention
 
 Branch format: `<type>/<short-description>`

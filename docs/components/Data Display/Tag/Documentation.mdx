@@ -1,4 +1,4 @@
-import { Meta, Canvas, Controls } from '@storybook/blocks'
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
 
 import * as TagStories from '../../../../src/components/data-display/Tag/Tag.stories'
 
@@ -12,9 +12,11 @@ The Tags component displays small, labeled elements used to categorize, identify
 
 <Canvas of={TagStories.TagOverviewCards} />
 
-### Borderless Tag
+### Outlined Tag
 
-<Canvas of={TagStories.BorderlessTagExample} />
+Tags are borderless by default in antd 6. Use `variant="outlined"` to add a border.
+
+<Canvas of={TagStories.OutlinedTagExample} />
 
 ### Tag With Icon
 
@@ -51,7 +53,21 @@ Try it — change any prop below and see the result live.
 
 #### Related Links
 
-| Type  | Resource                                                                                                                                               |
-| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Eames | [Tag Component](https://www.figma.com/design/veXnmignQnJz8StIq10VJ5/Eames-2.0---Foundations-%26-Components?m=auto&node-id=412-13377&t=BQax0YEp3gD4PyU6-1) |
-| AntD | [Tag Component](https://ant.design/components/tag) |
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Resource</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Eames</td>
+      <td><a href="https://www.figma.com/design/veXnmignQnJz8StIq10VJ5/Eames-2.0---Foundations-%26-Components?m=auto&node-id=412-13377&t=BQax0YEp3gD4PyU6-1">Tag Component</a></td>
+    </tr>
+    <tr>
+      <td>AntD</td>
+      <td><a href="https://ant.design/components/tag">Tag Component</a></td>
+    </tr>
+  </tbody>
+</table>
