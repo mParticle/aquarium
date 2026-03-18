@@ -118,6 +118,7 @@ function ComponentGrid({ components, category }) {
 }
 
 function CategorySection({ category }) {
+  if (!category?.components) return null
   const components =
     category.name === 'Navigation'
       ? category.components.filter((c) => c.name === 'GlobalNavigation')
