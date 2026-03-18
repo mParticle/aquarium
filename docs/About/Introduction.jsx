@@ -158,11 +158,11 @@ function CategorySection({ category }) {
 }
 
 export default function Introduction() {
-  const filtered = categoriesData.categories.filter(
+  const filtered = (categoriesData?.categories || []).filter(
     (cat) =>
       cat.name !== 'Not Prod Ready' &&
       cat.name !== 'Navigation' &&
-      cat.components.length > 0
+      cat.components?.length > 0
   )
   const categories = [...filtered].sort((a, b) => {
     const i = CATEGORY_ORDER.indexOf(a.name)
