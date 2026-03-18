@@ -10,40 +10,47 @@
         {
           "name": "Rokt Icons",
           "variantCount": 1,
+          "group": "Icons",
           "storyId": "foundations-icons-rokt-icons--documentation"
         },
         {
           "name": "Special Icons",
           "variantCount": 1,
+          "group": "Icons",
           "storyId": "foundations-icons-special-icons--documentation"
         },
         {
           "name": "mParticle Icons",
           "variantCount": 1,
+          "group": "Icons",
           "storyId": "foundations-icons-mparticle-icons--documentation"
         },
         {
           "name": "Text",
           "variantCount": 1,
           "parentFolder": "Typography",
-          "storyId": "components-general-typography-text--primary"
+          "storyId": "components-general-typography-text--primary",
+          "group": "Typography"
         },
         {
           "name": "Title",
           "variantCount": 1,
           "parentFolder": "Typography",
-          "storyId": "components-general-typography-title--primary"
+          "storyId": "components-general-typography-title--primary",
+          "group": "Typography"
         },
         {
           "name": "Paragraph",
           "variantCount": 1,
           "parentFolder": "Typography",
-          "storyId": "components-general-typography-paragraph--primary"
+          "storyId": "components-general-typography-paragraph--primary",
+          "group": "Typography"
         },
         {
           "name": "Link",
           "variantCount": 6,
-          "parentFolder": "Typography"
+          "parentFolder": "Typography",
+          "group": "Typography"
         }
       ]
     },

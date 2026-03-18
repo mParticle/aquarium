@@ -179,9 +179,9 @@ function main() {
 
     if (categoryName === 'General') {
       components.push(
-        { name: 'Rokt Icons', variantCount: 1, storyId: 'foundations-icons-rokt-icons--documentation' },
-        { name: 'Special Icons', variantCount: 1, storyId: 'foundations-icons-special-icons--documentation' },
-        { name: 'mParticle Icons', variantCount: 1, storyId: 'foundations-icons-mparticle-icons--documentation' },
+        { name: 'Rokt Icons', variantCount: 1, group: 'Icons', storyId: 'foundations-icons-rokt-icons--documentation' },
+        { name: 'Special Icons', variantCount: 1, group: 'Icons', storyId: 'foundations-icons-special-icons--documentation' },
+        { name: 'mParticle Icons', variantCount: 1, group: 'Icons', storyId: 'foundations-icons-mparticle-icons--documentation' },
       )
       const generalPath = join(DOCS_COMPONENTS, 'General')
       for (const compName of TYPOGRAPHY_COMPONENTS) {
@@ -189,7 +189,10 @@ function main() {
           ? join(generalPath, 'Link', 'Documentation.mdx')
           : join(generalPath, 'Typography', compName, 'Documentation.mdx')
         const entry = buildComponentEntry(compName, mdxPath, getStoriesPath('General', compName, 'Typography'), 'Typography')
-        if (entry) components.push(entry)
+        if (entry) {
+          entry.group = 'Typography'
+          components.push(entry)
+        }
       }
     }
 

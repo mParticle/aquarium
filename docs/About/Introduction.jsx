@@ -100,11 +100,39 @@ function ComponentCard({ component, category }) {
   )
 }
 
+const cardGridStyle = {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+  columnGap: Margin,
+  rowGap: 24,
+}
+
+function ComponentGrid({ components, category }) {
+  return (
+    <div style={cardGridStyle}>
+      {components.map((component) => (
+        <ComponentCard key={component.name} component={component} category={category} />
+      ))}
+    </div>
+  )
+}
+
 function CategorySection({ category }) {
   const components =
     category.name === 'Navigation'
       ? category.components.filter((c) => c.name === 'GlobalNavigation')
       : category.components
+
+  const groups = []
+  let currentGroup = null
+  for (const comp of components) {
+    const groupName = comp.group || null
+    if (groupName !== currentGroup) {
+      groups.push({ name: groupName, components: [] })
+      currentGroup = groupName
+    }
+    groups[groups.length - 1].components.push(comp)
+  }
 
   return (
     <section style={{ marginBottom: 40 }}>
@@ -114,22 +142,16 @@ function CategorySection({ category }) {
           {components.length} components
         </span>
       </h3>
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
-          columnGap: Margin,
-          rowGap: 24,
-        }}
-      >
-        {components.map((component) => (
-          <ComponentCard
-            key={component.name}
-            component={component}
-            category={category}
-          />
-        ))}
-      </div>
+      {groups.map((group) => (
+        <div key={group.name || '_default'} style={{ marginBottom: Margin }}>
+          {group.name && (
+            <div style={{ fontSize: FontSizeSm, color: ColorTextSecondary, marginBottom: MarginSm }}>
+              {group.name}
+            </div>
+          )}
+          <ComponentGrid components={group.components} category={category} />
+        </div>
+      ))}
     </section>
   )
 }
