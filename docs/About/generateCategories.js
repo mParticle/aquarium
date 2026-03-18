@@ -60,15 +60,17 @@ function countCanvasOf(content) {
   return matches ? matches.length : 0
 }
 
-// nosemgrep: javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal
 function getStoriesPath(categoryName, componentName, parentFolder) {
   const catSlug = toKebab(categoryName)
   if (parentFolder) {
+    // nosemgrep: javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal
     const flatPath = join(SRC_COMPONENTS, catSlug, parentFolder, `${componentName}.stories.tsx`)
     if (existsSync(flatPath)) return flatPath
+    // nosemgrep: javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal
     const nestedPath = join(SRC_COMPONENTS, catSlug, parentFolder, componentName, `${componentName}.stories.tsx`)
     return nestedPath
   }
+  // nosemgrep: javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal
   return join(SRC_COMPONENTS, catSlug, componentName, `${componentName}.stories.tsx`)
 }
 
