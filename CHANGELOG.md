@@ -1,3 +1,21 @@
+# [1.66.0](https://github.com/mParticle/aquarium/compare/v1.65.0...v1.66.0) (2026-03-17)
+
+### Features
+
+- add mpGroup icon ([#755](https://github.com/mParticle/aquarium/issues/755)) ([eef9c16](https://github.com/mParticle/aquarium/commit/eef9c16dc88469cd723a789dd9bc30f972971028))
+
+# [1.65.0](https://github.com/mParticle/aquarium/compare/v1.64.0...v1.65.0) (2026-03-16)
+
+### Bug Fixes
+
+- top-align default icon when text wraps ([#747](https://github.com/mParticle/aquarium/issues/747)) ([8a345dc](https://github.com/mParticle/aquarium/commit/8a345dcd3d63cc854a4ad035539cddfe9d420c01))
+
+### Features
+
+- add default (gray) alert type + implement-ticket skill ([#736](https://github.com/mParticle/aquarium/issues/736)) ([a9b5f95](https://github.com/mParticle/aquarium/commit/a9b5f95e6c9d494c75e8f213cb2a5ca817857d63))
+- add dry-code-reviewer skill ([#745](https://github.com/mParticle/aquarium/issues/745)) ([1f9af33](https://github.com/mParticle/aquarium/commit/1f9af336ff98486635f4a712c9434d1dc4acae7e))
+- help icon tooltip mpd 59 ([#734](https://github.com/mParticle/aquarium/issues/734)) ([9c9cb88](https://github.com/mParticle/aquarium/commit/9c9cb888459df5c608e2d158adcd85d8c1aa0737))
+
 # [1.64.0](https://github.com/mParticle/aquarium/compare/v1.63.1...v1.64.0) (2026-02-20)
 
 ### Bug Fixes

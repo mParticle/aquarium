@@ -11,6 +11,39 @@ export default meta
 
 type Story = StoryObj<typeof Badge>
 
+export const Playground: Story = {
+  args: {
+    status: 'success',
+    text: 'Active',
+    dot: false,
+    variant: 'default',
+    shape: 'pill',
+    size: 'md',
+  },
+  argTypes: {
+    status: {
+      control: 'select',
+      options: ['success', 'processing', 'default', 'error', 'warning'],
+    },
+    dot: { control: 'select', options: [false, true] },
+    variant: {
+      control: 'select',
+      options: ['default', 'filled'],
+    },
+    shape: {
+      control: 'select',
+      options: ['pill', 'square'],
+    },
+    size: {
+      control: 'select',
+      options: ['sm', 'md', 'lg'],
+    },
+  },
+  parameters: {
+    controls: { exclude: /^(?!status|text|dot|variant|shape|size)/ },
+  },
+}
+
 export const DotBadge: Story = {
   render: () => {
     const colors = [
