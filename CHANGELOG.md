@@ -1,3 +1,11 @@
+# [2.0.0](https://github.com/mParticle/aquarium/compare/v1.67.0...v2.0.0) (2026-03-18)
+
+- feat!: aquarium 2.0 — major version bump ([13115ca](https://github.com/mParticle/aquarium/commit/13115ca99647073cd38c55254ca3378ab72dfd37))
+
+### BREAKING CHANGES
+
+- requires antd >=6.2.1 and react >=19.0.0 as peer dependencies. Entire src/shared directory removed. Build target changed to esnext. react-dom and dayjs externalized.
+
 # [1.67.0](https://github.com/mParticle/aquarium/compare/v1.66.0...v1.67.0) (2026-03-18)
 
 ### Features
