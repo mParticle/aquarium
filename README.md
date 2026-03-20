@@ -17,20 +17,20 @@ _Components That Scale_
 
 | Dependency | Version     | Notes                    |
 | ---------- | ----------- | ------------------------ |
-| React      | `>=17.0.2`  | React 17 or 18           |
-| React DOM  | `>=17.0.2`  | Must match React version |
+| React      | `>=19.0.0`  | React 19+                |
+| React DOM  | `>=19.0.0`  | Must match React version |
 | Node.js    | `>=24.12.0` | For development          |
 
 ### Quick Start
 
 ```bash
-yarn add @mparticle/aquarium antd@5 dayjs@1
+yarn add @mparticle/aquarium antd@6 dayjs@1
 ```
 
 Or with npm:
 
 ```bash
-npm install @mparticle/aquarium antd@5 dayjs@1
+npm install @mparticle/aquarium antd@6 dayjs@1
 ```
 
 ### Setup

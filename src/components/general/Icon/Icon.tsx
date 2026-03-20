@@ -49,7 +49,12 @@ export const Icon: React.FC<IIconProps> = ({
   // Local SVG icons
   const iconData: IconOptions = Icons[name]
 
-  if (iconData?.deprecated) {
+  if (!iconData) {
+    console.error(`Icon with name "${name}" not found.`)
+    return null
+  }
+
+  if (iconData.deprecated) {
     if (typeof iconData.deprecated === 'string') {
       console.warn(`Icon with name "${name}" is deprecated. Please use "${iconData.deprecated}" instead.`)
     } else {

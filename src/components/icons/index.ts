@@ -48,6 +48,7 @@ import JumpToIcon from 'src/assets/svg/mp_act_lt_jump-to.svg?react'
 import LightBulbIcon from 'src/assets/svg/lightbulb.svg?react'
 import LiveStreamIcon from 'src/assets/svg/mp_pm_lt_live-stream.svg?react'
 import MessageQuestionIcon from 'src/assets/svg/message-question.svg?react'
+import MpGroupIcon from 'src/assets/svg/mp_info_lt_mp-group.svg?react'
 import MpLogoIcon from 'src/assets/svg/mpLogo.svg?react'
 import ObservabilityIcon from 'src/assets/svg/mp_pm_lt_observability.svg?react'
 import OversightIcon from 'src/assets/svg/mp_pm_lt_oversight.svg?react'
@@ -274,6 +275,7 @@ export {
   LockIcon,
   MessageQuestionIcon,
   MoreActions,
+  MpGroupIcon,
   MpLogoIcon,
   NextIcon,
   NotificationIcon,
