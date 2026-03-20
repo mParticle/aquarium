@@ -90,7 +90,7 @@ function ComponentCard({ component, category }: { component: ComponentEntry; cat
         }}
       />
       <div style={{ padding: `0 ${PaddingSm} ${PaddingXs} ${PaddingSm}` }}>
-        <Typography.Text strong style={{ display: 'block', marginTop: MarginSm }}>
+        <Typography.Text size="base" style={{ display: 'block', marginTop: MarginSm }}>
           {component.name}
         </Typography.Text>
       </div>
@@ -135,7 +135,7 @@ function CategorySection({ category }: { category: Category }) {
   return (
     <section style={{ marginBottom: MarginXl }}>
       <Flex align="baseline" gap={PaddingXs} style={{ marginBottom: Margin }}>
-        <Typography.Title level={4} style={{ margin: 0 }}>
+        <Typography.Title level={5} style={{ margin: 0 }}>
           {category.name}
         </Typography.Title>
         <Typography.Text type="secondary" size="sm">
@@ -145,7 +145,11 @@ function CategorySection({ category }: { category: Category }) {
       {groups.map(group => (
         <div key={group.name || '_default'} style={{ marginBottom: Margin }}>
           {group.name && (
-            <Typography.Text type="secondary" size="sm" style={{ display: 'block', marginBottom: MarginSm }}>
+            <Typography.Text
+              type="secondary"
+              size="base"
+              strong
+              style={{ display: 'block', paddingTop: PaddingXs, marginBottom: MarginSm }}>
               {group.name}
             </Typography.Text>
           )}
