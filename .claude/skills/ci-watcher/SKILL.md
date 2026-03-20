@@ -32,11 +32,8 @@ with automatic failure classification and resolution attempts.
 Aquarium component library:
 
 - **Language**: TypeScript (React + Ant Design + Storybook)
-- **CI/CD**: Buildkite, GitHub Actions
-- **Observability**: Datadog (metrics, logs, monitors, dashboards)
-- **Ownership Model**: E2E Ownership -- engineers own Design through On-Call
-- **External Checks**: atlantis/plan, Cursor Bugbot (may stall; never poll
-  indefinitely for these)
+- **CI/CD**: GitHub Actions
+- **External Checks**: Cursor Bugbot (may stall; never poll indefinitely)
 
 ## The Process
 

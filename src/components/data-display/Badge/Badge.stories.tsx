@@ -73,7 +73,7 @@ export const StatusBadge: Story = {
   },
   render: () => {
     return (
-      <Space direction="horizontal" wrap size="large">
+      <Space orientation="horizontal" wrap size="large">
         <Badge status="success" text="Success" />
         <Badge status="error" text="Error" />
         <Badge status="default" text="Paused" />
@@ -131,7 +131,7 @@ export const FilledSizes: Story = {
     ]
 
     return (
-      <Space direction="vertical" size="large">
+      <Space orientation="vertical" size="large">
         {statuses.map(({ status }) => (
           <Space key={status} wrap size="middle" align="start">
             <Badge status={status} text="Small" variant="filled" size="sm" />

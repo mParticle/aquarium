@@ -6,5 +6,6 @@
 
 .ant-checkbox {
     align-self: flex-start;
+    flex-shrink: 0;
     margin-top: var(--margin-xxs);
 }

@@ -94,6 +94,7 @@ export type IconNames =
   | 'logout'
   | 'messageQuestion'
   | 'moreActions'
+  | 'mpGroup'
   | 'mpLogo'
   | 'myHub'
   | 'next'
