@@ -1,4 +1,5 @@
 import { type Meta, type StoryObj } from '@storybook/react'
+import { expect, screen, userEvent, within } from 'storybook/test'
 import { useState } from 'react'
 import { Drawer } from 'src/components/feedback/Drawer/Drawer'
 import { Button, Icon, Tooltip } from 'src/components'
@@ -15,6 +16,7 @@ import {
 const meta: Meta<typeof Drawer> = {
   title: 'Components/Feedback/Drawer',
   component: Drawer,
+  tags: ['play-test-validation'],
   parameters: {
     docs: {
       description: {
@@ -53,6 +55,18 @@ export const Primary: Story = {
         </Drawer>
       </>
     )
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    const openButton = canvas.getByRole('button', { name: 'Open Drawer' })
+    await userEvent.click(openButton)
+
+    const drawerContent = await screen.findByText('Content')
+    await expect(drawerContent).toBeVisible()
+
+    const closeButton = screen.getByLabelText('Close')
+    await userEvent.click(closeButton)
   },
   parameters: {
     docs: {

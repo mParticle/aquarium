@@ -15,6 +15,32 @@ export default meta
 
 type Story = StoryObj<typeof Popover>
 
+export const Playground: Story = {
+  args: {
+    title: 'Popover Title',
+    content: 'Popover content goes here',
+    trigger: 'click',
+    placement: 'top',
+    arrow: true,
+  },
+  argTypes: {
+    trigger: {
+      control: 'select',
+      options: ['click', 'hover', 'focus'],
+    },
+    placement: {
+      control: 'select',
+      options: ['top', 'left', 'right', 'bottom', 'topLeft', 'topRight', 'bottomLeft', 'bottomRight'],
+    },
+    arrow: { control: 'select', options: [false, true] },
+  },
+  render: args => (
+    <Popover {...args}>
+      <Button>Click me</Button>
+    </Popover>
+  ),
+}
+
 const PrimaryTemplate = (args: IPopoverProps) => {
   const content = (
     <div>

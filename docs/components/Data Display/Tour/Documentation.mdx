@@ -1,28 +1,45 @@
-import { Meta, Canvas } from '@storybook/blocks'
+import { Meta, Canvas } from '@storybook/addon-docs/blocks'
 
 import * as TourStories from '../../../../src/components/data-display/Tour/Tour.stories'
 
 <Meta of={TourStories} />
 
-{/* Documentation goes here */}
-
 # Tour
 
 ### Overview
-The **Tour** component is a popup  designed to guide users through different areas or features of a product. It provides step-by-step instructions or highlights to help users understand key elements and functionality.
+
+The **Tour** component is a popup designed to guide users through different areas or features of a product. It provides step-by-step instructions or highlights to help users understand key elements and functionality.
 
 ### When to Use
+
 Use the Tour component when:
 - You want to onboard new users by introducing them to important features.
 - Highlighting new or updated features for existing users.
 - Offering guidance for complex workflows or multi-step processes.
-{/* Documentation goes here */}
 
-<Canvas meta={TourStories.default} />
+### Example
+
+<Canvas of={TourStories.ExampleNavLogo} />
+
+> Full API reference: [Tour — Ant Design](https://ant.design/components/tour)
 
 #### Related Links
 
-| Type  | Resource                                                                                                                                               |
-| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Eames | [Tour Component](https://www.figma.com/design/veXnmignQnJz8StIq10VJ5/Eames-2.0---Foundations-%26-Components?node-id=1721-40337&node-type=canvas&t=gOAJGJ8C9ev7N7lt-0) |
-| AntD | [Tour Component](https://ant.design/components/tour) |
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Resource</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Eames</td>
+      <td><a href="https://www.figma.com/design/veXnmignQnJz8StIq10VJ5/Eames-2.0---Foundations-%26-Components?node-id=1721-40337&node-type=canvas&t=gOAJGJ8C9ev7N7lt-0">Tour Component</a></td>
+    </tr>
+    <tr>
+      <td>AntD</td>
+      <td><a href="https://ant.design/components/tour">Tour Component</a></td>
+    </tr>
+  </tbody>
+</table>
