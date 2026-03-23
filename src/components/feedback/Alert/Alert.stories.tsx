@@ -16,7 +16,7 @@ const meta: Meta<typeof Alert> = {
     banner: false,
     showIcon: false,
     type: 'info',
-    onClose: e => {
+    onClose: _e => {
       alert('Alert On Close')
     },
     afterClose: () => {

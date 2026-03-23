@@ -1,3 +1,35 @@
+# [2.0.0](https://github.com/mParticle/aquarium/compare/v1.67.0...v2.0.0) (2026-03-18)
+
+- feat!: aquarium 2.0 — major version bump ([13115ca](https://github.com/mParticle/aquarium/commit/13115ca99647073cd38c55254ca3378ab72dfd37))
+
+### BREAKING CHANGES
+
+- requires antd >=6.2.1 and react >=19.0.0 as peer dependencies. Entire src/shared directory removed. Build target changed to esnext. react-dom and dayjs externalized.
+
+# [1.67.0](https://github.com/mParticle/aquarium/compare/v1.66.0...v1.67.0) (2026-03-18)
+
+### Features
+
+- aquarium 2.0 — package upgdades: antd v6, react 19 ([#739](https://github.com/mParticle/aquarium/issues/739)) ([0c5741c](https://github.com/mParticle/aquarium/commit/0c5741c6525518984eae2217fda5dcabc255508c))
+
+# [1.66.0](https://github.com/mParticle/aquarium/compare/v1.65.0...v1.66.0) (2026-03-17)
+
+### Features
+
+- add mpGroup icon ([#755](https://github.com/mParticle/aquarium/issues/755)) ([eef9c16](https://github.com/mParticle/aquarium/commit/eef9c16dc88469cd723a789dd9bc30f972971028))
+
+# [1.65.0](https://github.com/mParticle/aquarium/compare/v1.64.0...v1.65.0) (2026-03-16)
+
+### Bug Fixes
+
+- top-align default icon when text wraps ([#747](https://github.com/mParticle/aquarium/issues/747)) ([8a345dc](https://github.com/mParticle/aquarium/commit/8a345dcd3d63cc854a4ad035539cddfe9d420c01))
+
+### Features
+
+- add default (gray) alert type + implement-ticket skill ([#736](https://github.com/mParticle/aquarium/issues/736)) ([a9b5f95](https://github.com/mParticle/aquarium/commit/a9b5f95e6c9d494c75e8f213cb2a5ca817857d63))
+- add dry-code-reviewer skill ([#745](https://github.com/mParticle/aquarium/issues/745)) ([1f9af33](https://github.com/mParticle/aquarium/commit/1f9af336ff98486635f4a712c9434d1dc4acae7e))
+- help icon tooltip mpd 59 ([#734](https://github.com/mParticle/aquarium/issues/734)) ([9c9cb88](https://github.com/mParticle/aquarium/commit/9c9cb888459df5c608e2d158adcd85d8c1aa0737))
+
 # [1.64.0](https://github.com/mParticle/aquarium/compare/v1.63.1...v1.64.0) (2026-02-20)
 
 ### Bug Fixes

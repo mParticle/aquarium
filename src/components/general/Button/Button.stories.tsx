@@ -1,6 +1,6 @@
 import { Button } from 'src/components/general/Button/Button'
 import { type Meta, type StoryObj } from '@storybook/react'
-import { userEvent } from '@storybook/test'
+import { userEvent } from 'storybook/test'
 import { Alert, Dropdown, Flex, Icon, Typography, Tooltip } from 'src/components'
 import React from 'react'
 import type { MenuProps } from 'antd'
@@ -9,9 +9,10 @@ import { RoktPlus, RoktSearch, RoktEdit, RoktTrash } from 'src/components/icons'
 
 const meta: Meta<typeof Button> = {
   title: 'Components/General/Button',
-  component: props => <Button {...props}>{props.children ?? 'Button Label'}</Button>,
+  component: Button,
 
   args: {
+    children: 'Button Label',
     danger: false,
     disabled: false,
     ghost: false,
@@ -39,6 +40,51 @@ const meta: Meta<typeof Button> = {
 export default meta
 
 type Story = StoryObj<typeof Button>
+
+const iconOptions: Record<string, React.ReactElement | undefined> = {
+  none: undefined,
+  plus: <Icon name={RoktPlus} size="sm" />,
+  edit: <Icon name={RoktEdit} size="sm" />,
+  delete: <Icon name={RoktTrash} size="sm" />,
+}
+
+export const Playground: Story = {
+  args: {
+    type: 'primary',
+    size: 'middle',
+    shape: 'default',
+    danger: false,
+    disabled: false,
+    loading: false,
+    ghost: false,
+    children: 'Button Label',
+    icon: undefined,
+  },
+  argTypes: {
+    type: {
+      control: 'select',
+      options: ['primary', 'default', 'dashed', 'text', 'link'],
+    },
+    size: {
+      control: 'select',
+      options: ['small', 'middle', 'large'],
+    },
+    shape: {
+      control: 'select',
+      options: ['default', 'circle', 'round'],
+    },
+    danger: { control: 'select', options: [false, true] },
+    disabled: { control: 'select', options: [false, true] },
+    loading: { control: 'select', options: [false, true] },
+    ghost: { control: 'select', options: [false, true] },
+    icon: {
+      control: 'select',
+      options: Object.keys(iconOptions),
+      mapping: iconOptions,
+    },
+  },
+}
+
 export const LinkUsageNote: Story = {
   parameters: {
     docs: {
@@ -316,7 +362,6 @@ export const With2Options: Story = {
   },
 }
 
-// Buttons with local icons
 export const ButtonsWithLocalIcons: Story = {
   render: () => {
     return (
@@ -335,7 +380,6 @@ export const ButtonsWithLocalIcons: Story = {
   },
 }
 
-// Buttons with Rokt/Untitled UI icons
 export const ButtonsWithUntitledUIIcons: Story = {
   render: () => {
     return (
@@ -354,7 +398,6 @@ export const ButtonsWithUntitledUIIcons: Story = {
   },
 }
 
-// Rokt/Untitled UI Icons Integration Demo
 export const WithUntitledUIIcons: Story = {
   render: () => {
     return (

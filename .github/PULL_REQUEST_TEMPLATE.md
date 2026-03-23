@@ -1,4 +1,5 @@
 ## Instructions
+
 > No need to keep instructions in the final PR description
 
 1. PR target branch should be against `main`
@@ -13,7 +14,3 @@
 
 - [ ] Was this tested locally? If not, explain why.
 - {explain how this has been tested, and what, if any, additional testing should be done}
-
-## Reference Issue (For mParticle employees only. Ignore if you are an outside contributor)
-
-- Closes https://go.mparticle.com/work/REPLACEME

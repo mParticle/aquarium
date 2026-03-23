@@ -1,4 +1,4 @@
-import { Meta, Canvas, Story } from '@storybook/blocks'
+import { Meta, Canvas, Story, Controls } from '@storybook/addon-docs/blocks'
 
 import * as ButtonStories from '../../../../src/components/general/Button/Button.stories'
 
@@ -30,21 +30,21 @@ The **Dark** button provides a bold, high-contrast option with a black backgroun
 
 <Canvas of={ButtonStories.DarkButton} />
 
-### Button sizes
+### Button Sizes
 
 Buttons ship in three heights to support different layouts. The default is `middle`, shown alongside the smaller and larger options below.
 
 <Canvas of={ButtonStories.SizeExamples} />
 
-### Buttons with icons
+### Buttons with Icons
 
 The icon-enabled variants mirror the same hierarchy while reinforcing meaning with glyphs.
 
 <Canvas of={ButtonStories.IconTypesOverview} />
 
-#### Icon-only buttons
+#### Icon-Only Buttons
 
-Icon-only buttons provide compact controls for toolbars and quick actions where text isn’t necessary.
+Icon-only buttons provide compact controls for toolbars and quick actions where text isn't necessary.
 
 <Canvas of={ButtonStories.IconOnly} />
 
@@ -64,27 +64,58 @@ Untitled UI icons use the same `Icon` component, but pass the imported icon comp
 
 <Canvas of={ButtonStories.ButtonsWithUntitledUIIcons} />
 
-### Loading state
+### Loading State
 
 The loading variant keeps the user informed while an action finishes processing. Use concise labels that set expectations.
 
 <Canvas of={ButtonStories.Loading} />
 
-### Loading text button
+### Loading Text Button
 
-Use the text treatment for subtle “load more” affordances that need to display progress without taking extra visual weight.
+Use the text treatment for subtle "load more" affordances that need to display progress without taking extra visual weight.
 
 <Canvas of={ButtonStories.LoadingText} />
 
-### Destructive action
+### Destructive Action
 
 Use the danger style to signal irreversible steps such as deletions. Pair it with clear language so users understand the impact.
 
 <Canvas of={ButtonStories.Danger} />
 
+### Refresh Button
+
+<Canvas of={ButtonStories.Refresh} />
+
+### Button with Dropdown
+
+<Canvas of={ButtonStories.With2Options} />
+
+## Playground
+
+Try it — change any prop below and see the result live.
+
+<Canvas of={ButtonStories.Playground} sourceState="shown" />
+<Controls of={ButtonStories.Playground} />
+
+> Full API reference: [Button — Ant Design](https://ant.design/components/button)
+
 ### Related Links
 
-| Type  | Resource                                                                                                                                               |
-| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Eames | [Button Component](https://www.figma.com/design/veXnmignQnJz8StIq10VJ5/Eames-2.0---Foundations-%26-Components?node-id=368-430&p=f&t=1Pi9thxrLJt7TsHN-0) |
-| AntD | [Button Component](https://ant.design/components/button) |
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Resource</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Eames</td>
+      <td><a href="https://www.figma.com/design/veXnmignQnJz8StIq10VJ5/Eames-2.0---Foundations-%26-Components?node-id=368-430&p=f&t=1Pi9thxrLJt7TsHN-0">Button Component</a></td>
+    </tr>
+    <tr>
+      <td>AntD</td>
+      <td><a href="https://ant.design/components/button">Button Component</a></td>
+    </tr>
+  </tbody>
+</table>
