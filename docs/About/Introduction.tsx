@@ -1,16 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import categoriesData from './componentCategories.json'
 import { Card, Flex, Icon, Typography } from '../../src/components'
-import {
-  BorderRadius,
-  ColorBgLayout,
-  PaddingXxs,
-  Margin,
-  MarginSm,
-  MarginXl,
-  PaddingXs,
-  PaddingSm,
-} from 'src/styles/style'
+import { ColorBgLayout, PaddingXxs, Margin, MarginSm, MarginXl, PaddingXs, PaddingSm } from 'src/styles/style'
 
 interface ComponentEntry {
   name: string
@@ -56,6 +47,31 @@ function getDocsPath(categoryName: string, componentName: string, parentFolder?:
 
 const CATEGORY_ORDER = categoriesData?.categoryOrder || []
 
+const cardBannerImageStyle: React.CSSProperties = {
+  width: '100%',
+  height: 134,
+  objectFit: 'cover',
+  borderRadius: '8px 8px 0 0',
+}
+
+/** Vite resolves these URLs so images work in Storybook dev/build without relying on staticDirs or window.top. */
+const bannerAssetUrls = import.meta.glob('./banners/*.png', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+}) as Record<string, string>
+
+/** Matches banner files like `rokticons.png` for display names such as "Rokt Icons" (lowercase, no spaces). */
+function bannerFileBasenameFromComponentName(componentName: string) {
+  return componentName.toLowerCase().replace(/\s+/g, '')
+}
+
+function getBannerAssetUrl(componentName: string): string | undefined {
+  const suffix = `${bannerFileBasenameFromComponentName(componentName)}.png`
+  const entry = Object.entries(bannerAssetUrls).find(([path]) => path.replace(/\\/g, '/').endsWith(`/${suffix}`))
+  return entry?.[1]
+}
+
 function getBaseUrl() {
   if (typeof window === 'undefined') return '/'
   const hostname = window.top?.location.hostname ?? ''
@@ -66,6 +82,34 @@ function getBaseUrl() {
     return `${window.top!.location.origin}/aquarium/`
   }
   return `${window.top!.location.origin}/`
+}
+
+function CardBannerPreview({ componentName }: { componentName: string }) {
+  const [imageFailed, setImageFailed] = useState(false)
+  const src = getBannerAssetUrl(componentName)
+
+  if (!src || imageFailed) {
+    return (
+      <div
+        style={{
+          background: ColorBgLayout,
+          width: '100%',
+          height: 134,
+          borderRadius: '8px 8px 0 0',
+          pointerEvents: 'none',
+        }}
+      />
+    )
+  }
+
+  return (
+    <img
+      src={src}
+      alt=""
+      onError={() => setImageFailed(true)}
+      style={{ ...cardBannerImageStyle, pointerEvents: 'none' }}
+    />
+  )
 }
 
 function ComponentCard({ component, category }: { component: ComponentEntry; category: Category }) {
@@ -79,16 +123,7 @@ function ComponentCard({ component, category }: { component: ComponentEntry; cat
 
   return (
     <Card hoverable onClick={handleClick} styles={{ body: { padding: PaddingXxs } }}>
-      {/* Image placeholder */}
-      <div
-        style={{
-          background: ColorBgLayout,
-          borderRadius: BorderRadius,
-          width: '100%',
-          height: 130,
-          pointerEvents: 'none',
-        }}
-      />
+      <CardBannerPreview componentName={component.name} />
       <div style={{ padding: `0 ${PaddingSm} ${PaddingXs} ${PaddingSm}` }}>
         <Typography.Text size="base" style={{ display: 'block', marginTop: MarginSm }}>
           {component.name}

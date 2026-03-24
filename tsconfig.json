@@ -24,7 +24,7 @@
     "strict": true,
     "noUncheckedSideEffectImports": true,
 
-    "types": ["vitest/globals", "node"]
+    "types": ["vitest/globals", "node", "vite/client"]
   },
   "include": [
     "src/**/*.ts",
