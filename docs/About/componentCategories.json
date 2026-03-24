@@ -1,5 +1,5 @@
 {
-  "categoryOrder": ["General", "Data Display", "Data Entry", "Feedback", "Modal", "Navigation"],
+  "categoryOrder": ["General", "Data Display", "Data Entry", "Feedback", "Navigation"],
   "categories": [
     {
       "name": "General",
@@ -136,10 +136,6 @@
           "variantCount": 1
         },
         {
-          "name": "QueryItem",
-          "variantCount": 1
-        },
-        {
           "name": "Radio",
           "variantCount": 1
         },
@@ -153,7 +149,8 @@
         },
         {
           "name": "TreeSelect",
-          "variantCount": 1
+          "variantCount": 1,
+          "storyId": "components-data-entry-treeselect--primary"
         },
         {
           "name": "Upload",
@@ -177,11 +174,6 @@
           "variantCount": 3
         },
         {
-          "name": "Modal",
-          "variantCount": 2,
-          "storyId": "components-feedback-modal-delete-confirm-modal--u-x-flow"
-        },
-        {
           "name": "Popconfirm",
           "variantCount": 1
         },
@@ -196,30 +188,33 @@
         {
           "name": "Spin",
           "variantCount": 1
-        }
-      ]
-    },
-    {
-      "name": "Modal",
-      "components": [
+        },
+        {
+          "name": "Modal",
+          "variantCount": 2,
+          "storyId": "components-feedback-modal-delete-confirm-modal--u-x-flow",
+          "group": "Modals"
+        },
         {
           "name": "DeleteConfirmModal",
           "variantCount": 1,
-          "parentFolder": "Modal"
+          "parentFolder": "Modal",
+          "group": "Modals"
         },
         {
           "name": "ErrorModal",
           "variantCount": 1,
           "parentFolder": "Modal",
-          "storyId": "components-feedback-modal-error-modal--default"
+          "storyId": "components-feedback-modal-error-modal--default",
+          "group": "Modals"
         },
         {
           "name": "Primary",
           "variantCount": 1,
-          "parentFolder": "Modal"
+          "parentFolder": "Modal",
+          "group": "Modals"
         }
-      ],
-      "parentCategory": "Feedback"
+      ]
     },
     {
       "name": "Navigation",
