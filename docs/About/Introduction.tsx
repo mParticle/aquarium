@@ -118,7 +118,7 @@ function ComponentCard({ component, category }: { component: ComponentEntry; cat
   const fullUrl = getBaseUrl() + queryPath
 
   function handleClick() {
-    window.top!.location.href = fullUrl
+    window.open(fullUrl, '_blank', 'noopener')
   }
 
   return (

@@ -191,8 +191,9 @@
         },
         {
           "name": "Modal",
-          "variantCount": 2,
-          "storyId": "components-feedback-modal-delete-confirm-modal--u-x-flow",
+          "variantCount": 1,
+          "parentFolder": "Modal",
+          "storyId": "components-feedback-modal-primary--primary",
           "group": "Modals"
         },
         {
@@ -206,12 +207,6 @@
           "variantCount": 1,
           "parentFolder": "Modal",
           "storyId": "components-feedback-modal-error-modal--default",
-          "group": "Modals"
-        },
-        {
-          "name": "Primary",
-          "variantCount": 1,
-          "parentFolder": "Modal",
           "group": "Modals"
         }
       ]
