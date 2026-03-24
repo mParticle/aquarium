@@ -30,24 +30,7 @@ export const Playground: Story = {
   argTypes: {
     color: {
       control: 'select',
-      options: [
-        'default',
-        'success',
-        'processing',
-        'error',
-        'warning',
-        'magenta',
-        'blue',
-        'cyan',
-        'geekblue',
-        'gold',
-        'green',
-        'lime',
-        'orange',
-        'purple',
-        'red',
-        'volcano',
-      ],
+      options: ['default', 'success', 'processing', 'error', 'warning', 'blue', 'gold', 'purple'],
     },
     bordered: { control: 'select', options: [false, true] },
     closable: { control: 'select', options: [false, true] },
@@ -113,17 +96,9 @@ export const TagOverviewCards: Story = {
   render: () => {
     const tags = [
       { color: 'default', label: 'Default' },
-      { color: 'magenta', label: 'Magenta' },
       { color: 'blue', label: 'Blue' },
-      { color: 'cyan', label: 'Cyan' },
-      { color: 'geekblue', label: 'Geekblue' },
       { color: 'gold', label: 'Gold' },
-      { color: 'green', label: 'Green' },
-      { color: 'lime', label: 'Lime' },
-      { color: 'orange', label: 'Orange' },
       { color: 'purple', label: 'Purple' },
-      { color: 'red', label: 'Red' },
-      { color: 'volcano', label: 'Volcano' },
     ] as const
 
     return (
