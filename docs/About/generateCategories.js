@@ -25,7 +25,7 @@ const OUT_FILE = join(__dirname, 'componentCategories.json')
 const CONFIG = {
   skipCategories: new Set(['Not Prod Ready', 'Layout', 'UX Patterns']),
 
-  categoryOrder: ['General', 'Data Display', 'Data Entry', 'Feedback', 'Modal', 'Navigation'],
+  categoryOrder: ['General', 'Data Display', 'Data Entry', 'Feedback', 'Navigation'],
 
   excludeTitlePatterns: [
     (title) => title.includes('Not Prod Ready'),
@@ -33,7 +33,15 @@ const CONFIG = {
   ],
 
   // Components with no .stories.tsx that can't be auto-detected
-  excludeComponents: new Set(['HelpIcon']),
+  excludeComponents: new Set(['HelpIcon', 'QueryItem', 'Primary']),
+
+  // Folders with subfolders that should be inlined into their parent category
+  // as a group instead of creating a separate category with parentCategory.
+  // Key = folder name, value = group label used in the JSON output.
+  inlineGroups: { Modal: 'Modals' },
+
+  // Components whose auto-generated storyId is wrong (e.g. kebab mismatch).
+  storyIdOverrides: { TreeSelect: 'components-data-entry-treeselect--primary' },
 
   manualEntries: {
     General: {
@@ -263,15 +271,20 @@ function transformCategories(enrichedCategories) {
       if (manualSet.has(item.name)) continue
 
       if (item.hasMdx) {
-        components.push({ name: item.name, variantCount: item.variantCount })
+        const entry = { name: item.name, variantCount: item.variantCount }
+        if (CONFIG.storyIdOverrides[item.name]) entry.storyId = CONFIG.storyIdOverrides[item.name]
+        components.push(entry)
       } else if (item.subfolders.length > 0) {
+        const inlineGroup = CONFIG.inlineGroups[item.name]
+
         // Grouped folder (e.g. Modal, Icons, Typography)
         const folderAsComponent = { name: item.name, variantCount: item.subfolders.length }
         const folderStoryId = resolveFolderStoryId(category.name, item.name, item.subfolders)
         if (folderStoryId) folderAsComponent.storyId = folderStoryId
+        if (inlineGroup) folderAsComponent.group = inlineGroup
         components.push(folderAsComponent)
 
-        // Build sub-category
+        // Build sub-entries
         const groupComponents = []
         const addedNames = new Set()
         for (const sub of item.enrichedSubfolders) {
@@ -284,6 +297,7 @@ function transformCategories(enrichedCategories) {
             item.name,
           )
           if (!entry) continue
+          if (inlineGroup) entry.group = inlineGroup
           groupComponents.push(entry)
           addedNames.add(sub.name)
         }
@@ -302,17 +316,25 @@ function transformCategories(enrichedCategories) {
               srcStoriesPath,
               item.name,
             )
-            if (entry) groupComponents.push(entry)
+            if (entry) {
+              if (inlineGroup) entry.group = inlineGroup
+              groupComponents.push(entry)
+            }
           }
         }
 
         if (groupComponents.length > 0) {
           groupComponents.sort((a, b) => a.name.localeCompare(b.name))
-          categories.push({
-            name: item.name,
-            components: groupComponents,
-            parentCategory: category.name,
-          })
+          if (inlineGroup) {
+            // Inline sub-entries into the parent category with group labels
+            components.push(...groupComponents)
+          } else {
+            categories.push({
+              name: item.name,
+              components: groupComponents,
+              parentCategory: category.name,
+            })
+          }
         }
       }
     }

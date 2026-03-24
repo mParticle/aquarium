@@ -60,7 +60,7 @@
       "components": [
         {
           "name": "Avatar",
-          "variantCount": 8
+          "variantCount": 7
         },
         {
           "name": "Badge",
@@ -166,12 +166,35 @@
           "variantCount": 12
         },
         {
+          "name": "DeleteConfirmModal",
+          "variantCount": 1,
+          "parentFolder": "Modal",
+          "group": "Modals"
+        },
+        {
           "name": "Drawer",
           "variantCount": 4
         },
         {
+          "name": "ErrorModal",
+          "variantCount": 1,
+          "parentFolder": "Modal",
+          "storyId": "components-feedback-modal-error-modal--default",
+          "group": "Modals"
+        },
+        {
           "name": "Message",
           "variantCount": 3
+        },
+        {
+          "name": "Modal",
+          "variantCount": 2,
+          "storyId": "components-feedback-modal-delete-confirm-modal--u-x-flow",
+          "group": "Modals"
+        },
+        {
+          "name": "Notification",
+          "variantCount": 1
         },
         {
           "name": "Popconfirm",
@@ -188,26 +211,6 @@
         {
           "name": "Spin",
           "variantCount": 1
-        },
-        {
-          "name": "Modal",
-          "variantCount": 1,
-          "parentFolder": "Modal",
-          "storyId": "components-feedback-modal-primary--primary",
-          "group": "Modals"
-        },
-        {
-          "name": "DeleteConfirmModal",
-          "variantCount": 1,
-          "parentFolder": "Modal",
-          "group": "Modals"
-        },
-        {
-          "name": "ErrorModal",
-          "variantCount": 1,
-          "parentFolder": "Modal",
-          "storyId": "components-feedback-modal-error-modal--default",
-          "group": "Modals"
         }
       ]
     },
