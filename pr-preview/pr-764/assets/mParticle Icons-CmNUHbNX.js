@@ -1,4 +1,0 @@
-import{j as e}from"./iframe-BkdniA3M.js";import{useMDXComponents as s}from"./index-CtRS_b02.js";import{S as r}from"./blocks-Cvc7T57k.js";import{IconTable as i}from"./Icon.stories-CQTxwi2U.js";import"./preload-helper-PPVm8Dsz.js";function t(o){const n={a:"a",h1:"h1",h3:"h3",p:"p",...s(),...o.components};return e.jsxs(e.Fragment,{children:[e.jsx(n.h1,{id:"mparticle-icons",children:"mParticle Icons"}),`
-`,e.jsx(n.h3,{id:"overview",children:"Overview"}),`
-`,e.jsxs(n.p,{children:["mParticle icon library is mP icons, a carefully curated collection based on ",e.jsx(n.a,{href:"https://fontawesome.com/search?o=r&s=light",rel:"nofollow",children:"FontAwesome"}),". Our design team has selected icons specifically for mParticle use cases, defined the semantic layer, and applied customizations as needed."]}),`
-`,e.jsx(r,{of:i})]})}function h(o={}){const{wrapper:n}={...s(),...o.components};return n?e.jsx(n,{...o,children:e.jsx(t,{...o})}):t(o)}export{h as default};
