@@ -118,7 +118,7 @@ function ComponentCard({ component, category }: { component: ComponentEntry; cat
   const fullUrl = getBaseUrl() + queryPath
 
   return (
-    <a href={fullUrl} style={{ textDecoration: 'none', color: 'inherit' }}>
+    <a href={fullUrl} target="_top" style={{ textDecoration: 'none', color: 'inherit' }}>
       <Card hoverable styles={{ body: { padding: PaddingXxs } }}>
         <CardBannerPreview componentName={component.name} />
         <div style={{ padding: `0 ${PaddingSm} ${PaddingXs} ${PaddingSm}` }}>
