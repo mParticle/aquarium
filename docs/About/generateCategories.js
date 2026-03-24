@@ -339,7 +339,13 @@ function transformCategories(enrichedCategories) {
       }
     }
 
-    components.sort((a, b) => a.name.localeCompare(b.name))
+    // Sort ungrouped items alphabetically; grouped items stay contiguous at the end
+    // so the renderer's consecutive-group logic produces a single subcategory heading.
+    const ungrouped = components.filter((c) => !c.group)
+    const grouped = components.filter((c) => c.group)
+    ungrouped.sort((a, b) => a.name.localeCompare(b.name))
+    components.length = 0
+    components.push(...ungrouped, ...grouped)
     buildManualEntries(category.name, components)
     categories.push({ name: category.name, components })
   }
