@@ -68,7 +68,7 @@ Read `src/components/icons/index.ts` and check if any of the requested icons are
 
 ## Register New Icons
 
-For each new icon, you need to update **2 files** (and optionally a 3rd for docs):
+For each new icon, you **must** update **3 files**:
 
 ### Naming Convention
 
@@ -102,7 +102,7 @@ For numbered icons (e.g., `Truck01`, `Edit02`), drop the number in the alias unl
   RoktTruck,
 ```
 
-### File 3 (optional): `docs/Foundations/Icons/Rokt Icons.mdx`
+### File 3 (REQUIRED): `docs/Foundations/Icons/Rokt Icons.mdx`
 
 Add the import at the top and a display entry in the grid. Follow the existing pattern:
 
@@ -144,7 +144,6 @@ And remind the user how to use them:
 
 ```tsx
 import { Icon, RoktTruck } from '@mparticle/aquarium'
-
 ;<Icon name={RoktTruck} size="sm" />
 ```
 
