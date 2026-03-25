@@ -1,0 +1,1 @@
+import{c1 as e}from"./iframe-BZcwTarD.js";import"./preload-helper-PPVm8Dsz.js";const t={title:"Components/Not Prod Ready/Timeline",component:e,args:{}},r={};r.parameters={...r.parameters,docs:{...r.parameters?.docs,source:{originalSource:"{}",...r.parameters?.docs?.source}}};const s=["Primary"];export{r as Primary,s as __namedExportsOrder,t as default};
