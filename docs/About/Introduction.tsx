@@ -117,19 +117,17 @@ function ComponentCard({ component, category }: { component: ComponentEntry; cat
   const queryPath = getDocsPath(linkCategory, component.name, component.parentFolder, component.storyId)
   const fullUrl = getBaseUrl() + queryPath
 
-  function handleClick() {
-    window.top!.location.href = fullUrl
-  }
-
   return (
-    <Card hoverable onClick={handleClick} styles={{ body: { padding: PaddingXxs } }}>
-      <CardBannerPreview componentName={component.name} />
-      <div style={{ padding: `0 ${PaddingSm} ${PaddingXs} ${PaddingSm}` }}>
-        <Typography.Text size="base" style={{ display: 'block', marginTop: MarginSm }}>
-          {component.name}
-        </Typography.Text>
-      </div>
-    </Card>
+    <a href={fullUrl} target="_top" style={{ textDecoration: 'none', color: 'inherit' }}>
+      <Card hoverable styles={{ body: { padding: PaddingXxs } }}>
+        <CardBannerPreview componentName={component.name} />
+        <div style={{ padding: `0 ${PaddingSm} ${PaddingXs} ${PaddingSm}` }}>
+          <Typography.Text size="base" style={{ display: 'block', marginTop: MarginSm }}>
+            {component.name}
+          </Typography.Text>
+        </div>
+      </Card>
+    </a>
   )
 }
 
