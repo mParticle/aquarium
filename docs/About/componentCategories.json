@@ -95,6 +95,10 @@
           "variantCount": 3
         },
         {
+          "name": "Segmented",
+          "variantCount": 3
+        },
+        {
           "name": "Tabs",
           "variantCount": 2
         },
