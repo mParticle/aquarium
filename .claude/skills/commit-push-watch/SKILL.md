@@ -28,7 +28,7 @@ origin, and monitor CI until a terminal state.
 Aquarium component library:
 
 - **Language**: TypeScript (React + Ant Design + Storybook)
-- **CI/CD**: Buildkite, GitHub Actions
+- **CI/CD**: GitHub Actions
 - **Commit Format**: Conventional Commits (`type(scope): description`)
 - **Branch Naming**: `<type>/<description>-<TICKET>` (e.g., `feat/add-tooltip-MPD-59`)
 

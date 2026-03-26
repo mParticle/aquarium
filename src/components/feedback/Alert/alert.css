@@ -1,3 +1,15 @@
+.ant-alert {
+  align-items: flex-start;
+}
+
+.ant-alert .ant-alert-icon {
+  margin-top: var(--margin-xxs);
+}
+
+.ant-alert .ant-alert-close-icon {
+  margin-top: var(--margin-xxs);
+}
+
 .alert-expandable {
   align-items: flex-start;
   padding: var(--padding-xs) var(--padding-sm);

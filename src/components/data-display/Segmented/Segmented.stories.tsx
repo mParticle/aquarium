@@ -8,7 +8,7 @@ const segmentedOptions = [
 ]
 
 const meta: Meta<typeof Segmented> = {
-  title: 'Components/Not Prod Ready/Data Display/Segmented',
+  title: 'Components/Data Display/Segmented',
   component: Segmented,
 
   args: {
@@ -23,6 +23,26 @@ const meta: Meta<typeof Segmented> = {
 export default meta
 
 type Story = StoryObj<typeof Segmented>
+
+export const Playground: Story = {
+  args: {
+    size: 'middle',
+    block: false,
+    disabled: false,
+    options: segmentedOptions,
+    defaultValue: segmentedOptions[0]?.value,
+  },
+  argTypes: {
+    size: {
+      control: 'select',
+      options: ['small', 'middle', 'large'],
+    },
+    block: { control: 'select', options: [false, true] },
+    disabled: { control: 'select', options: [false, true] },
+    options: { table: { disable: true } },
+    defaultValue: { table: { disable: true } },
+  },
+}
 
 export const Small: Story = {
   args: {

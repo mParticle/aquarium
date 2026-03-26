@@ -16,7 +16,7 @@ const meta: Meta<typeof Alert> = {
     banner: false,
     showIcon: false,
     type: 'info',
-    onClose: e => {
+    onClose: _e => {
       alert('Alert On Close')
     },
     afterClose: () => {
@@ -205,6 +205,27 @@ export const ErrorWithCloseButton: Story = {
     showIcon: true,
     closable: true,
     style: { marginBottom: 0, width: '860px' },
+  },
+}
+
+export const LongMessageWithIcon: Story = {
+  args: {
+    type: 'info',
+    message:
+      'This is a long informational message that wraps onto multiple lines to demonstrate that the icon remains top-aligned rather than centered vertically.',
+    showIcon: true,
+    style: { marginBottom: 0, width: '400px' },
+  },
+}
+
+export const LongMessageWithIconAndClose: Story = {
+  args: {
+    type: 'warning',
+    message:
+      'This is a long warning message that wraps onto multiple lines to demonstrate that both the icon and close button remain top-aligned rather than centered vertically.',
+    showIcon: true,
+    closable: true,
+    style: { marginBottom: 0, width: '400px' },
   },
 }
 

@@ -54,6 +54,7 @@ import {
   LightBulbIcon,
   LiveStreamIcon,
   MessageQuestionIcon,
+  MpGroupIcon,
   MpLogoIcon,
   ObservabilityIcon,
   OversightIcon,
@@ -463,6 +464,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   moreActions: {
     light: MoreActions,
+    default: 'light',
+  },
+  mpGroup: {
+    light: MpGroupIcon,
     default: 'light',
   },
   mpLogo: {

@@ -47,16 +47,11 @@ Always use the explicit branch name (not `HEAD`).
 
 ## Step 4: Build PR Title
 
-Use Conventional Commits format. If the branch name contains a ticket number, prefix it:
+Use Conventional Commits format — **NO scopes in parentheses**. CI rejects
+`feat(scope):`, only `feat:` is valid.
 
 ```
-[TICKET-123] <type>(scope): <description>
-```
-
-Without a ticket:
-
-```
-<type>(scope): <description>
+<type>: <description>
 ```
 
 Types: `feat`, `fix`, `docs`, `chore`, `refactor`, `test`, `perf`, `ci`

@@ -1,7 +1,7 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { Badge } from 'src/components/data-display/Badge/Badge'
 import { Space } from 'src/components'
-import { ColorInfo, ColorSuccess, ColorWarning, ColorError, ColorBorderSecondary } from 'src/styles/style'
+import { ColorInfo, ColorSuccess, ColorWarning, ColorError, ColorTextPlaceholder } from 'src/styles/style'
 
 const meta: Meta<typeof Badge> = {
   title: 'Components/Data Display/Badge',
@@ -11,6 +11,39 @@ export default meta
 
 type Story = StoryObj<typeof Badge>
 
+export const Playground: Story = {
+  args: {
+    status: 'success',
+    text: 'Active',
+    dot: false,
+    variant: 'default',
+    shape: 'pill',
+    size: 'md',
+  },
+  argTypes: {
+    status: {
+      control: 'select',
+      options: ['success', 'processing', 'default', 'error', 'warning'],
+    },
+    dot: { control: 'select', options: [false, true] },
+    variant: {
+      control: 'select',
+      options: ['default', 'filled'],
+    },
+    shape: {
+      control: 'select',
+      options: ['pill', 'square'],
+    },
+    size: {
+      control: 'select',
+      options: ['sm', 'md', 'lg'],
+    },
+  },
+  parameters: {
+    controls: { exclude: /^(?!status|text|dot|variant|shape|size)/ },
+  },
+}
+
 export const DotBadge: Story = {
   render: () => {
     const colors = [
@@ -18,7 +51,7 @@ export const DotBadge: Story = {
       { label: 'Success', value: ColorSuccess },
       { label: 'Warning', value: ColorWarning },
       { label: 'Error', value: ColorError },
-      { label: 'Paused', value: ColorBorderSecondary },
+      { label: 'Paused', value: ColorTextPlaceholder },
     ] as const
 
     return (
@@ -40,7 +73,7 @@ export const StatusBadge: Story = {
   },
   render: () => {
     return (
-      <Space direction="horizontal" wrap size="large">
+      <Space orientation="horizontal" wrap size="large">
         <Badge status="success" text="Success" />
         <Badge status="error" text="Error" />
         <Badge status="default" text="Paused" />
@@ -98,7 +131,7 @@ export const FilledSizes: Story = {
     ]
 
     return (
-      <Space direction="vertical" size="large">
+      <Space orientation="vertical" size="large">
         {statuses.map(({ status }) => (
           <Space key={status} wrap size="middle" align="start">
             <Badge status={status} text="Small" variant="filled" size="sm" />

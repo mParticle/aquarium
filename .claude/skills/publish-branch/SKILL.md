@@ -76,22 +76,22 @@ Parse the branch name following this convention:
 
 **Branch Format:** `<type>/<description>-<TICKET>`
 
-**Title Format:** `<type>(scope): description - TICKET`
+**Title Format:** `<type>: description`
 
 **Rules:**
 
 - Use conventional commit format for the title
+- **NO scopes in parentheses** — CI rejects `feat(scope):`, only `feat:` is valid
 - Generate concise description from commits and changes (not the branch name
   verbatim)
-- Extract ticket ID from branch name (last hyphenated segment matching PROJ-NNN)
 - Keep title under 80 characters
 
 **Examples:**
 
 - `feat/add-tooltip-MPD-59`
-  - `feat(tooltip): add help icon pattern with RoktHelpCircle - MPD-59`
+  - `feat: add help icon tooltip pattern with RoktHelpCircle`
 - `fix/button-hover-state-MPD-100`
-  - `fix(button): correct hover state color on disabled buttons - MPD-100`
+  - `fix: correct hover state color on disabled buttons`
 
 ### Step 6: Generate PR Description
 
