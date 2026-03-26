@@ -2,6 +2,8 @@
 name: dry-code-reviewer
 description: Detects deeply nested loops with duplicated inline logic and recommends extracting into small, named functions. Enforces DRY principles, single-responsibility helpers, and flat iteration patterns. Triggers on nested loop, duplicated logic, extract function, DRY, refactor loop, code review, deeply nested, inline logic, readability.
 group: code-quality
+context: fork
+agent: Explore
 ---
 
 # DRY Code Reviewer
