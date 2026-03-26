@@ -8,7 +8,7 @@ const segmentedOptions = [
 ]
 
 const meta: Meta<typeof Segmented> = {
-  title: 'Components/Not Prod Ready/Data Display/Segmented',
+  title: 'Components/Data Display/Segmented',
   component: Segmented,
 
   args: {
