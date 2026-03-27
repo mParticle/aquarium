@@ -195,6 +195,11 @@ import {
   Strikethrough01 as RoktStrikethrough,
   Dotpoints01 as RoktDotpoints,
   Star01 as RoktStar,
+  Truck01 as RoktTruck,
+  PackageSearch as RoktPackageSearch,
+  XCircle as RoktXCircle,
+  ReverseLeft as RoktReverseLeft,
+  MessageDotsCircle as RoktMessageDotsCircle,
 } from '@untitledui/icons'
 
 export {
@@ -393,4 +398,9 @@ export {
   RoktStrikethrough,
   RoktDotpoints,
   RoktStar,
+  RoktTruck,
+  RoktPackageSearch,
+  RoktXCircle,
+  RoktReverseLeft,
+  RoktMessageDotsCircle,
 }

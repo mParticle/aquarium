@@ -221,4 +221,9 @@ export {
   RoktStrikethrough,
   RoktDotpoints,
   RoktStar,
+  RoktTruck,
+  RoktPackageSearch,
+  RoktXCircle,
+  RoktReverseLeft,
+  RoktMessageDotsCircle,
 } from './icons'
