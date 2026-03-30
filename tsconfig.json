@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
       "src/*": ["./src/*"],
-      "docs/*": ["./docs/*"]
+      "docs/*": ["./docs/*"],
+      "design/*": ["./design/*"]
     },
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
