@@ -1,0 +1,25 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Components/AI/Documentation" />
+
+# AI Components
+
+Aquarium wraps [@ant-design/x](https://x.ant.design/) to provide AI-focused components for building chat interfaces, prompt templates, and other AI-powered experiences.
+
+## Available Components
+
+- **Bubble** — Chat message bubbles. Use `Bubble.List` for conversations.
+- **Conversations** — Conversation list sidebar for managing multiple chats.
+- **Sender** — Message input with send button. Use `Sender.Header` for toolbar.
+- **Suggestion** — AI suggestion chips.
+- **Prompts** — Prompt template cards.
+- **Attachments** — File attachment handling for chat inputs.
+- **Actions** — Action buttons (copy, like, dislike, etc.) for messages.
+
+## Usage
+
+```tsx
+import { Bubble, Sender, Suggestion } from '@mparticle/aquarium'
+```
+
+All components are thin wrappers around `@ant-design/x` with Aquarium's `ConfigProvider` applied. Refer to the [Ant Design X docs](https://x.ant.design/) for full API details.
