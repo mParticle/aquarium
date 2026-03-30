@@ -1,1 +1,0 @@
-import{c3 as e}from"./iframe-DSmzp_4t.js";import"./preload-helper-PPVm8Dsz.js";const t={title:"Components/Not Prod Ready/Tree",component:e,args:{}},r={};r.parameters={...r.parameters,docs:{...r.parameters?.docs,source:{originalSource:"{}",...r.parameters?.docs?.source}}};const s=["Primary"];export{r as Primary,s as __namedExportsOrder,t as default};
