@@ -7,6 +7,10 @@ import { type ISelectProps, Select } from 'src/components'
 
 export type IQueryItemQualifierOption = DefaultOptionType
 
+/**
+ * @deprecated The QueryItem component group is deprecated and will not receive further updates.
+ * Avoid using it in new implementations.
+ */
 export interface IQueryItemQualifierProps {
   options: IQueryItemQualifierOption[]
   disabled?: boolean
