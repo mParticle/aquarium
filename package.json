@@ -32,6 +32,11 @@
     "react": ">=19.0.0",
     "react-dom": ">=19.0.0"
   },
+  "peerDependenciesMeta": {
+    "@ant-design/x": {
+      "optional": true
+    }
+  },
   "devDependencies": {
     "@ant-design/x": "2.4.0",
     "@commitlint/cli": "20.3.1",
