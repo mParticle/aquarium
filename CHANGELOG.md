@@ -1,3 +1,20 @@
+# [2.1.0](https://github.com/mParticle/aquarium/compare/v2.0.0...v2.1.0) (2026-03-30)
+
+### Bug Fixes
+
+- **ci:** use project-local tsc instead of global ([0d6a905](https://github.com/mParticle/aquarium/commit/0d6a905b8b11f478f34a76fbd7c2bf88923a3769))
+- remove extra tag color presets from docs to match Figma ([#753](https://github.com/mParticle/aquarium/issues/753)) ([0e821b7](https://github.com/mParticle/aquarium/commit/0e821b7d26b03c6ab2b73ae825677b3a3f6d7c71))
+- use correct gray for default Badge dot color ([#754](https://github.com/mParticle/aquarium/issues/754)) ([04d2a09](https://github.com/mParticle/aquarium/commit/04d2a0943403e8b56704a6fcc8f228faa5f404d6))
+- use size prop instead of width for large drawer story ([#751](https://github.com/mParticle/aquarium/issues/751)) ([713ad5d](https://github.com/mParticle/aquarium/commit/713ad5dc7804a23b71ac7ec19ddfe0504f912138))
+
+### Features
+
+- add checkbox examples with title, two-line text, and vertical group (MPD-65) ([#737](https://github.com/mParticle/aquarium/issues/737)) ([5bc063b](https://github.com/mParticle/aquarium/commit/5bc063b97616a2924e669558162d206152e1d9d7))
+- add Notifications examples ([#748](https://github.com/mParticle/aquarium/issues/748)) ([c9e8d62](https://github.com/mParticle/aquarium/commit/c9e8d62d2cc1cf32319bda0ab888117e52b82227))
+- add Rokt icons for SLA page ([#765](https://github.com/mParticle/aquarium/issues/765)) ([2e52139](https://github.com/mParticle/aquarium/commit/2e52139a72f58b41d87bcc8e5948ff4c4b1bed4e))
+- redesign intro page with updated banner images ([#770](https://github.com/mParticle/aquarium/issues/770)) ([0489cc9](https://github.com/mParticle/aquarium/commit/0489cc940dff58675d1b1131bb28f64986783ccf))
+- redesign introduction page ([#741](https://github.com/mParticle/aquarium/issues/741)) ([1da34d2](https://github.com/mParticle/aquarium/commit/1da34d21cf98227092e0721f95931bba10859ac2))
+
 # [2.0.0](https://github.com/mParticle/aquarium/compare/v1.67.0...v2.0.0) (2026-03-18)
 
 - feat!: aquarium 2.0 — major version bump ([13115ca](https://github.com/mParticle/aquarium/commit/13115ca99647073cd38c55254ca3378ab72dfd37))
