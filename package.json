@@ -26,7 +26,7 @@
     "dist/src"
   ],
   "peerDependencies": {
-    "antd": ">=6.3.1",
+    "antd": ">=6.3",
     "dayjs": "1.11.x",
     "react": ">=19.0.0",
     "react-dom": ">=19.0.0"
@@ -48,7 +48,7 @@
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "5.1.2",
     "@vitest/coverage-v8": "4.0.17",
-    "antd": "6.3.1",
+    "antd": "6.3.4",
     "concurrently": "9.2.1",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "9.39.2",
