@@ -410,6 +410,76 @@ export const DefaultWithLink: Story = {
   },
 }
 
+export const InfoWithButton: Story = {
+  args: {
+    type: 'info',
+    message: 'This is an informational message.',
+    showIcon: true,
+    action: (
+      <Button size="small" type="primary">
+        Learn More
+      </Button>
+    ),
+    style: { marginBottom: 0, width: '860px' },
+  },
+}
+
+export const SuccessWithButton: Story = {
+  args: {
+    type: 'success',
+    message: 'Your changes have been saved successfully.',
+    showIcon: true,
+    action: (
+      <Button size="small" type="text">
+        Undo
+      </Button>
+    ),
+    style: { marginBottom: 0, width: '860px' },
+  },
+}
+
+export const WarningWithButton: Story = {
+  args: {
+    type: 'warning',
+    message: 'This action requires additional permissions.',
+    showIcon: true,
+    action: (
+      <Button size="small" type="default">
+        Review
+      </Button>
+    ),
+    style: { marginBottom: 0, width: '860px' },
+  },
+}
+
+export const ErrorWithButton: Story = {
+  args: {
+    type: 'error',
+    message: 'An error occurred processing your request.',
+    showIcon: true,
+    action: (
+      <Button size="small" danger>
+        Retry
+      </Button>
+    ),
+    style: { marginBottom: 0, width: '860px' },
+  },
+}
+
+export const DefaultWithButton: Story = {
+  args: {
+    type: 'default',
+    message: 'This is a general informational message.',
+    showIcon: true,
+    action: (
+      <Button size="small" type="default">
+        Details
+      </Button>
+    ),
+    style: { marginBottom: 0, width: '860px' },
+  },
+}
+
 export const ErrorAfterSaveInModal: Story = {
   render: () => {
     const [isModalOpen, setIsModalOpen] = useState(false)
