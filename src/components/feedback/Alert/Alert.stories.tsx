@@ -416,7 +416,7 @@ export const InfoWithButton: Story = {
     message: 'This is an informational message.',
     showIcon: true,
     action: (
-      <Button size="small" type="primary">
+      <Button size="small" type="default">
         Learn More
       </Button>
     ),
@@ -430,7 +430,7 @@ export const SuccessWithButton: Story = {
     message: 'Your changes have been saved successfully.',
     showIcon: true,
     action: (
-      <Button size="small" type="text">
+      <Button size="small" type="default">
         Undo
       </Button>
     ),
