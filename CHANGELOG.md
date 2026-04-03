@@ -1,3 +1,9 @@
+# [2.2.0](https://github.com/mParticle/aquarium/compare/v2.1.0...v2.2.0) (2026-04-03)
+
+### Features
+
+- add Git icons for Spirit of Australia project ([#782](https://github.com/mParticle/aquarium/issues/782)) ([9f88e04](https://github.com/mParticle/aquarium/commit/9f88e0414ef8a81cd67a42b4fbeae0dd29104d37))
+
 # [2.1.0](https://github.com/mParticle/aquarium/compare/v2.0.0...v2.1.0) (2026-03-30)
 
 ### Bug Fixes
