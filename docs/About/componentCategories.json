@@ -121,7 +121,7 @@
         },
         {
           "name": "Checkbox",
-          "variantCount": 6
+          "variantCount": 8
         },
         {
           "name": "Date Picker",
@@ -142,6 +142,11 @@
         {
           "name": "Radio",
           "variantCount": 1
+        },
+        {
+          "name": "RadioCard",
+          "variantCount": 1,
+          "storyId": "components-data-entry-radio-card--vertical"
         },
         {
           "name": "Select",
