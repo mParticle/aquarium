@@ -1,0 +1,47 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks'
+
+import * as RadioCardStories from '../../../../src/components/data-entry/RadioCard/RadioCard.stories'
+
+<Meta of={RadioCardStories} />
+
+# RadioCard
+
+#### Overview
+
+The **RadioCard** component wraps radio selection in a card layout, giving each option more visual weight and space for descriptive content. It supports vertical and horizontal orientations and handles disabled states at both the individual option and group level.
+
+### When to Use
+
+Use **RadioCard** when:
+- Users choose exactly one option from a set and each option benefits from a title and supporting description.
+- The choice is consequential enough to warrant a more prominent layout than a standard radio button.
+- You want to visually differentiate options side by side (horizontal) or stacked (vertical).
+
+### Vertical layout
+
+Stack cards vertically when options need multiline descriptions or when the list is longer than two or three items. The example below shows default (unselected), selected, and disabled states.
+
+<Canvas of={RadioCardStories.VerticalStates} />
+
+### Horizontal layout
+
+Arrange cards side by side for compact comparisons between two or three options. The example below shows default (unselected), selected, and disabled states.
+
+<Canvas of={RadioCardStories.HorizontalStates} />
+
+#### Related Links
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Resource</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Eames</td>
+      <td><a href="https://www.figma.com/design/veXnmignQnJz8StIq10VJ5/Eames-2.0---Foundations-%26-Components?node-id=395-10973&p=f&t=zURbLpG60aM6aJiH-0">Radio Component</a></td>
+    </tr>
+  </tbody>
+</table>
