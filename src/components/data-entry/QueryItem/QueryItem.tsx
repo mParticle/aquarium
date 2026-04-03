@@ -5,13 +5,17 @@ import Action from 'src/components/data-entry/QueryItem/Action'
 import Text from 'src/components/data-entry/QueryItem/Text'
 import Qualifier from 'src/components/data-entry/QueryItem/Qualifier'
 
+/**
+ * @deprecated The QueryItem component group is deprecated and will not receive further updates.
+ * Avoid using it in new implementations.
+ */
 export const QueryItem = () => {
   return (
     <Center>
       <Typography.Text>
-        Component Candidate: Under Review
+        Deprecated
         <br />
-        This component is pending review and should not be used at this time.
+        This component is deprecated and will not receive further updates. Avoid using it in new implementations.
       </Typography.Text>
     </Center>
   )

@@ -2,6 +2,10 @@ import './query-item.css'
 import { Input } from 'src/components'
 import { Typography } from 'src/components/general/Typography/Typography'
 
+/**
+ * @deprecated The QueryItem component group is deprecated and will not receive further updates.
+ * Avoid using it in new implementations.
+ */
 export interface ITextInputProps {
   value?: string
   disabled?: boolean
