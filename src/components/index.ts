@@ -226,4 +226,8 @@ export {
   RoktXCircle,
   RoktReverseLeft,
   RoktMessageDotsCircle,
+  RoktGitBranch,
+  RoktGitMerge,
+  RoktGitCommit,
+  RoktGitPullRequest,
 } from './icons'
