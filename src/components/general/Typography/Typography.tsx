@@ -1,6 +1,6 @@
 import { Typography as AntTypography } from 'antd'
 import { ConfigProvider } from 'src/components'
-import type { ReactNode } from 'react'
+import { useId, type ReactNode } from 'react'
 import type { TextProps as AntTextProps } from 'antd/es/typography/Text'
 import type { TitleProps as AntTitleProps } from 'antd/es/typography/Title'
 import type { LinkProps as AntLinkProps } from 'antd/es/typography/Link'
@@ -50,6 +50,7 @@ export type ITitleProps = InternalTitleProps
 
 export interface ILinkProps extends InternalLinkProps {
   tooltip?: boolean
+  hoverColor?: TypographyColor
 }
 
 export type IParagraphProps = InternalParagraphProps
@@ -92,7 +93,8 @@ const Title = (props: ITitleProps) => {
 Typography.Title = Title
 
 const Link = (props: ILinkProps) => {
-  const { size, color, type, tooltip, underline, children, style, ...rest } = props
+  const { size, color, type, tooltip, hoverColor, underline, children, style, className, ...rest } = props
+  const id = useId()
 
   const fontSize = size ? getFontSize(size) : tooltip ? 12 : undefined
   const lineHeight = size ? getLineHeight(size) : tooltip ? 1.4 : undefined
@@ -101,9 +103,16 @@ const Link = (props: ILinkProps) => {
   // Force underline when using ColorText to ensure it's recognizable as a link
   const shouldUnderline = tooltip ?? (color === 'ColorText' ? true : underline)
 
+  const hoverClassName = hoverColor ? `aq-link-hover-${CSS.escape(id)}` : undefined
+  const resolvedHoverColor = hoverColor ? getColorFromStyles(hoverColor) : undefined
+
   return (
     <ConfigProvider>
+      {resolvedHoverColor && hoverClassName && (
+        <style>{`.${hoverClassName}:hover { color: ${resolvedHoverColor} !important; }`}</style>
+      )}
       <AntTypography.Link
+        className={[className, hoverClassName].filter(Boolean).join(' ') || undefined}
         style={{ color: fontColor, fontSize, lineHeight, ...style }}
         type={type}
         underline={shouldUnderline}
