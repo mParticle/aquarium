@@ -146,7 +146,7 @@
         {
           "name": "RadioCard",
           "variantCount": 1,
-          "storyId": "components-data-entry-radio-card--vertical"
+          "storyId": "components-data-entry-radiocard--documentation"
         },
         {
           "name": "Select",
