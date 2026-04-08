@@ -17,29 +17,6 @@ export default meta
 
 type Story = StoryObj<typeof Radio.Group>
 
-export const WithEnvOptions: Story = {
-  args: {
-    options: [
-      { label: 'Production', value: 'production' },
-      { label: 'Development', value: 'development' },
-      { label: 'Production & Development', value: 'unknown' },
-    ],
-    defaultValue: 'development',
-    optionType: 'default',
-  },
-}
-
-export const WithButtonOptionsType: Story = {
-  args: {
-    options: [
-      { label: 'Overview', value: 'overview' },
-      { label: 'Connections', value: 'connections' },
-    ],
-    defaultValue: 'overview',
-    optionType: 'button',
-  },
-}
-
 export const GroupDefault: Story = {
   name: 'Radio group',
   args: {
