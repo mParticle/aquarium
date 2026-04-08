@@ -12,6 +12,42 @@ const meta: Meta<typeof RadioCards> = {
 export default meta
 type Story = StoryObj<typeof RadioCards>
 
+export const Playground: Story = {
+  tags: ['!dev'],
+  args: {
+    value: 'basic',
+    orientation: 'vertical',
+    radioAlign: 'start',
+    options: [
+      {
+        value: 'basic',
+        title: 'Basic plan $10/month',
+        description: 'Includes up to 10 users, 20 GB individual data and access to all features.',
+      },
+      {
+        value: 'business',
+        title: 'Business plan $20/month',
+        description: 'Includes up to 20 users, 40 GB individual data and access to all features.',
+      },
+      {
+        value: 'enterprise',
+        title: 'Enterprise plan $40/month',
+        description: 'Unlimited users, unlimited individual data and access to all features.',
+      },
+    ],
+  },
+  argTypes: {
+    orientation: {
+      control: 'select',
+      options: ['vertical', 'horizontal'],
+    },
+    radioAlign: {
+      control: 'select',
+      options: ['start', 'center'],
+    },
+  },
+}
+
 export const VerticalStates: Story = {
   name: 'Vertical states',
   tags: ['!dev'],

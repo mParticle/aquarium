@@ -1,4 +1,4 @@
-import { Meta, Canvas } from '@storybook/addon-docs/blocks'
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
 
 import * as RadioCardStories from '../../../../src/components/data-entry/RadioCard/RadioCard.stories'
 
@@ -28,6 +28,13 @@ Stack cards vertically when options need multiline descriptions or when the list
 Arrange cards side by side for compact comparisons between two or three options. The example below shows default (unselected), selected, and disabled states.
 
 <Canvas of={RadioCardStories.HorizontalStates} />
+
+## Playground
+
+Try it — change any prop below and see the result live.
+
+<Canvas of={RadioCardStories.Playground} sourceState="shown" />
+<Controls of={RadioCardStories.Playground} />
 
 #### Related Links
 
