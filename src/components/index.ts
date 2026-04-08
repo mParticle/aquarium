@@ -226,6 +226,10 @@ export {
   RoktXCircle,
   RoktReverseLeft,
   RoktMessageDotsCircle,
+  RoktGitBranch,
+  RoktGitMerge,
+  RoktGitCommit,
+  RoktGitPullRequest,
 } from './icons'
 
 // AI components (@ant-design/x)

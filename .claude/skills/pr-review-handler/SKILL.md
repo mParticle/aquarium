@@ -2,6 +2,7 @@
 name: pr-review-handler
 description: Monitor PR review comments and automatically classify and address reviewer feedback including code changes, questions, and nits. Use when handling PR reviews, addressing reviewer comments, responding to code review feedback, or automating review resolution. Triggers on handle reviews, PR review, address feedback, reviewer comments, code review, review response.
 group: git-pr
+context: fork
 ---
 
 # PR Review Handler
