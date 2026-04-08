@@ -4,10 +4,12 @@ import { QueryItem } from 'src/components'
 const meta: Meta<typeof QueryItem.Text> = {
   title: 'Components/Data Entry/QueryItem/Text',
   component: QueryItem.Text,
+  tags: ['deprecated'],
   parameters: {
     docs: {
       description: {
-        component: 'This is the "Text" component of the QueryItem component group.',
+        component:
+          '⚠️ **Deprecated** — The QueryItem component group is deprecated and will not receive further updates. Avoid using it in new implementations.',
       },
     },
   },

@@ -4,10 +4,12 @@ import { QueryItem } from 'src/components'
 const meta: Meta<typeof QueryItem.ValueSelector.NumberInput> = {
   title: 'Components/Data Entry/QueryItem/ValueSelector/NumberInput',
   component: QueryItem.ValueSelector.NumberInput,
+  tags: ['deprecated'],
   parameters: {
     docs: {
       description: {
-        component: 'This is the "Number Input" component of the QueryItem/ValueSelector component group.',
+        component:
+          '⚠️ **Deprecated** — The QueryItem component group is deprecated and will not receive further updates. Avoid using it in new implementations.',
       },
     },
   },
