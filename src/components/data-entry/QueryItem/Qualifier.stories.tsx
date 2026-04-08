@@ -7,6 +7,15 @@ type Story = StoryObj<typeof QueryItem.Qualifier>
 const meta: Meta<typeof QueryItem.Qualifier> = {
   title: 'Components/Data Entry/QueryItem/Qualifier',
   component: QueryItem.Qualifier,
+  tags: ['deprecated'],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          '⚠️ **Deprecated** — The QueryItem component group is deprecated and will not receive further updates. Avoid using it in new implementations.',
+      },
+    },
+  },
   args: {},
 }
 export default meta
