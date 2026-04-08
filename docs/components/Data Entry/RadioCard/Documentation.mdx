@@ -1,4 +1,4 @@
-import { Meta, Canvas } from '@storybook/addon-docs/blocks'
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
 
 import * as RadioCardStories from '../../../../src/components/data-entry/RadioCard/RadioCard.stories'
 
@@ -6,29 +6,37 @@ import * as RadioCardStories from '../../../../src/components/data-entry/RadioCa
 
 # RadioCard
 
-### Overview
+#### Overview
 
-RadioCards present a set of mutually exclusive options as selectable cards, each with a title, optional description, and a radio indicator. Use them when choices need more context than a standard radio group can provide.
+The **RadioCard** component wraps radio selection in a card layout, giving each option more visual weight and space for descriptive content. It supports vertical and horizontal orientations and handles disabled states at both the individual option and group level.
 
-### Vertical Layout
+### When to Use
 
-Stack cards vertically when each option has a longer description or when screen width is limited.
+Use **RadioCard** when:
+- Users choose exactly one option from a set and each option benefits from a title and supporting description.
+- The choice is consequential enough to warrant a more prominent layout than a standard radio button.
+- You want to visually differentiate options side by side (horizontal) or stacked (vertical).
 
-<Canvas of={RadioCardStories.Vertical} />
+### Vertical layout
 
-### Horizontal Layout
+Stack cards vertically when options need multiline descriptions or when the list is longer than two or three items. The example below shows default (unselected), selected, and disabled states.
 
-Arrange cards side-by-side for compact option sets with shorter labels.
+<Canvas of={RadioCardStories.VerticalStates} />
 
-<Canvas of={RadioCardStories.Horizontal} />
+### Horizontal layout
 
-### Disabled Options
+Arrange cards side by side for compact comparisons between two or three options. The example below shows default (unselected), selected, and disabled states.
 
-Individual options can be disabled with an optional tooltip explaining why.
+<Canvas of={RadioCardStories.HorizontalStates} />
 
-<Canvas of={RadioCardStories.Disabled} />
+## Playground
 
-### Related Links
+Try it — change any prop below and see the result live.
+
+<Canvas of={RadioCardStories.Playground} sourceState="shown" />
+<Controls of={RadioCardStories.Playground} />
+
+#### Related Links
 
 <table>
   <thead>
@@ -38,6 +46,10 @@ Individual options can be disabled with an optional tooltip explaining why.
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>Eames</td>
+      <td><a href="https://www.figma.com/design/veXnmignQnJz8StIq10VJ5/Eames-2.0---Foundations-%26-Components?node-id=395-10973&p=f&t=zURbLpG60aM6aJiH-0">Radio Component</a></td>
+    </tr>
     <tr>
       <td>AntD</td>
       <td><a href="https://ant.design/components/radio">Radio Component</a></td>
