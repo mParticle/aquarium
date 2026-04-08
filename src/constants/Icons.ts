@@ -137,6 +137,7 @@ import {
   Boost,
   Clone,
   Reorder,
+  RegenerateIcon,
   RefreshIcon,
   StringIcon,
   TimestampIcon,
@@ -609,6 +610,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   reorder: {
     light: Reorder,
+    default: 'light',
+  },
+  regenerate: {
+    light: RegenerateIcon,
     default: 'light',
   },
   remove: {

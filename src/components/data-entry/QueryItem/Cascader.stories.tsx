@@ -57,11 +57,12 @@ const options: IQueryItemCascaderProps['options'] = [
 const meta: Meta<typeof QueryItem.ValueSelector.Cascader> = {
   title: 'Components/Data Entry/QueryItem/ValueSelector/Cascader',
   component: QueryItem.ValueSelector.Cascader,
+  tags: ['deprecated'],
   parameters: {
     docs: {
       description: {
         component:
-          'This is the "Action" component of the QueryItem component group. This component is currently meant to trigger a single action, but will eventually support a list of actions via a dropdown list interface.',
+          '⚠️ **Deprecated** — The QueryItem component group is deprecated and will not receive further updates. Avoid using it in new implementations.',
       },
     },
   },
@@ -148,8 +149,8 @@ export const Loading: Story = {
   args: {
     placeholder: 'Loading Story',
     options: undefined,
-    loadData: async (value: string) => {
-      await new Promise((resolve, reject) => {
+    loadData: async (_value: string) => {
+      await new Promise((resolve, _reject) => {
         setTimeout(() => {
           resolve(options)
         }, 3000)

@@ -4,10 +4,12 @@ import { QueryItem } from 'src/components'
 const meta: Meta<typeof QueryItem.ValueSelector.TextInput> = {
   title: 'Components/Data Entry/QueryItem/ValueSelector/TextInput',
   component: QueryItem.ValueSelector.TextInput,
+  tags: ['deprecated'],
   parameters: {
     docs: {
       description: {
-        component: 'This is the "Text Input" component of the QueryItem/ValueSelector component group.',
+        component:
+          '⚠️ **Deprecated** — The QueryItem component group is deprecated and will not receive further updates. Avoid using it in new implementations.',
       },
     },
   },

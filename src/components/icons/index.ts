@@ -139,6 +139,7 @@ import StringIcon from 'src/assets/svg/mp_data_dt_string.svg?react'
 import TimestampIcon from 'src/assets/svg/mp_data_dt_timestamp.svg?react'
 import ToggleLogicBlocks from 'src/assets/svg/mp_act_lt_toggle-logic-blocks.svg?react'
 import MoveToTop from 'src/assets/svg/mp_act_lt_move-to-top.svg?react'
+import RegenerateIcon from 'src/assets/svg/mp_act_lt_regenerate.svg?react'
 
 // Rokt icons (from @untitledui/icons)
 import {
@@ -200,6 +201,10 @@ import {
   XCircle as RoktXCircle,
   ReverseLeft as RoktReverseLeft,
   MessageDotsCircle as RoktMessageDotsCircle,
+  GitBranch01 as RoktGitBranch,
+  GitMerge as RoktGitMerge,
+  GitCommit as RoktGitCommit,
+  GitPullRequest as RoktGitPullRequest,
 } from '@untitledui/icons'
 
 export {
@@ -306,6 +311,7 @@ export {
   Privileges,
   RefreshFrequency,
   Reorder,
+  RegenerateIcon,
   RemoveIcon,
   ScheduledReport,
   SearchIcon,
@@ -403,4 +409,8 @@ export {
   RoktXCircle,
   RoktReverseLeft,
   RoktMessageDotsCircle,
+  RoktGitBranch,
+  RoktGitMerge,
+  RoktGitCommit,
+  RoktGitPullRequest,
 }
