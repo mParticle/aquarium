@@ -1,0 +1,91 @@
+name: "\U0001F9E9 Component Request"
+description: Request a new component or a significant enhancement to an existing one
+labels: ['component-request', 'enhancement']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Request a Component
+
+        Before submitting, please check:
+        - [Storybook](https://mparticle.github.io/aquarium/) — does a similar component already exist?
+        - [Ant Design](https://ant.design/components/overview/) — can an existing Ant Design component be configured for your use case?
+
+  - type: input
+    id: component-name
+    attributes:
+      label: Component Name
+      description: What should this component be called?
+      placeholder: e.g., DataGrid, StatusBadge, FilterBar
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case
+      description: What problem does this component solve? Which product(s) need it?
+      placeholder: |
+        We need a filterable data grid for the Audiences page in [product].
+        Currently we're using a raw antd Table with custom filter logic duplicated across 3 views.
+    validations:
+      required: true
+
+  - type: input
+    id: figma-link
+    attributes:
+      label: Figma Link
+      description: Link to the Figma design (if available)
+      placeholder: https://www.figma.com/design/...
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How urgently does your team need this?
+      options:
+        - 'Nice to have — no deadline'
+        - 'Upcoming sprint — needed within 2 weeks'
+        - "Blocking — can't ship without it"
+    validations:
+      required: true
+
+  - type: input
+    id: team
+    attributes:
+      label: Team / Product
+      description: Which team or product is requesting this?
+      placeholder: e.g., Audiences, Connections, Data Platform
+    validations:
+      required: true
+
+  - type: textarea
+    id: existing-workaround
+    attributes:
+      label: Current Workaround
+      description: How are you solving this today? (raw antd, custom code, another library?)
+      placeholder: We're importing directly from antd and wrapping it in a custom component in our repo.
+
+  - type: textarea
+    id: api-sketch
+    attributes:
+      label: Proposed API (optional)
+      description: If you have ideas on the component API, sketch it here
+      placeholder: |
+        <DataGrid
+          columns={columns}
+          dataSource={data}
+          filterable
+          sortable
+          onFilterChange={handleFilter}
+        />
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-submission checklist
+      options:
+        - label: I've checked that no existing Aquarium component covers this use case
+          required: true
+        - label: I've checked that this can't be achieved by configuring an existing Ant Design component
+          required: true

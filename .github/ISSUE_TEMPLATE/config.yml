@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Storybook Documentation
+    url: https://mparticle.github.io/aquarium/
+    about: Browse available components and their documentation
