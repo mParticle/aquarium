@@ -7,7 +7,7 @@ body:
       value: |
         ## Question or Discussion
 
-        For quick questions, you can also reach us in the [Aquarium GChat space](https://chat.google.com/room/AAQADRm8Au8?cls=7).
+        For quick questions, you can also reach us in the internal Aquarium GChat space.
 
   - type: textarea
     id: question

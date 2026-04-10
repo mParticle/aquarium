@@ -101,8 +101,8 @@ Please make sure any new or updated components are present, tested and verified 
 
 ## Support
 
-- [Aquarium GChat Space](https://chat.google.com/room/AAQADRm8Au8?cls=7) — weekly updates and discussions
-- [GitHub Issues](https://github.com/mParticle/aquarium/issues/new/choose) — component requests, bug reports, questions
+- **Internal**: Join the Aquarium GChat space for weekly updates and discussions
+- **Public**: [GitHub Issues](https://github.com/mParticle/aquarium/issues/new/choose) — component requests, bug reports, questions
 
 ## License
 

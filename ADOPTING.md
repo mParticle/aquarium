@@ -86,7 +86,7 @@ Requests are triaged automatically and prioritized by impact across teams.
 
 ## Step 5: Stay Connected
 
-- **GChat**: [Aquarium space](https://chat.google.com/room/AAQADRm8Au8?cls=7) for weekly updates
+- **GChat**: Join the internal Aquarium space for weekly updates
 - **GitHub Issues**: [Request components](https://github.com/mParticle/aquarium/issues/new/choose), report bugs, ask questions
 - **Storybook**: [Browse docs](https://mparticle.github.io/aquarium/) for API references and live examples
 
