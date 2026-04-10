@@ -1,0 +1,70 @@
+name: "\U0001F41B Bug Report"
+description: Report a bug in an Aquarium component
+labels: ['bug']
+body:
+  - type: input
+    id: component
+    attributes:
+      label: Component
+      description: Which component is affected?
+      placeholder: e.g., Select, Table, DatePicker
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Aquarium Version
+      description: Which version of @mparticle/aquarium are you using?
+      placeholder: e.g., 2.2.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: What happened? What did you expect to happen?
+      placeholder: |
+        **What happened:** The Select dropdown doesn't close when clicking outside.
+        **Expected:** It should close on outside click, matching standard Ant Design behavior.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Minimal steps to reproduce the issue
+      placeholder: |
+        1. Render a `<Select>` with `mode="multiple"`
+        2. Open the dropdown
+        3. Click outside the component
+        4. Observe the dropdown stays open
+    validations:
+      required: true
+
+  - type: input
+    id: storybook-link
+    attributes:
+      label: Storybook Link (if applicable)
+      description: Link to the relevant Storybook story
+      placeholder: https://mparticle.github.io/aquarium/?path=/story/...
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots / Recordings
+      description: Drag and drop any screenshots or screen recordings here
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - 'Low — cosmetic issue'
+        - 'Medium — workaround available'
+        - 'High — broken functionality, no workaround'
+        - 'Critical — blocks production'
+    validations:
+      required: true

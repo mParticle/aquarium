@@ -1,0 +1,42 @@
+name: "\U00002753 Question / Discussion"
+description: Ask a question about Aquarium usage, patterns, or adoption
+labels: ['question']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Question or Discussion
+
+        For quick questions, you can also reach us in the [Aquarium GChat space](https://chat.google.com/room/AAQADRm8Au8?cls=7).
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: What would you like to know?
+      placeholder: |
+        How should I handle custom theming when my product uses a different primary color?
+        Is there a recommended pattern for form validation with Aquarium components?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - 'How to use a component'
+        - 'Migration from raw antd to Aquarium'
+        - 'Design tokens / theming'
+        - 'Setting up Aquarium in a new project'
+        - 'AI tooling integration (Claude Code, Cursor, etc.)'
+        - 'Other'
+    validations:
+      required: true
+
+  - type: input
+    id: team
+    attributes:
+      label: Team / Product (optional)
+      description: Which team is asking?
+      placeholder: e.g., Audiences, Connections

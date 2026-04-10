@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Aquarium Weekly Updates
+    url: https://chat.google.com/room/AAQADRm8Au8?cls=7
+    about: Join the Aquarium GChat space for weekly updates and discussions
+  - name: Storybook Documentation
+    url: https://mparticle.github.io/aquarium/
+    about: Browse available components and their documentation
