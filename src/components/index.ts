@@ -231,3 +231,12 @@ export {
   RoktGitCommit,
   RoktGitPullRequest,
 } from './icons'
+
+// AI components (@ant-design/x)
+export { Bubble, type IBubbleProps } from './ai/Bubble'
+export { Conversations, type IConversationsProps } from './ai/Conversations'
+export { Prompts, type IPromptsProps } from './ai/Prompts'
+export { Sender, type ISenderProps } from './ai/Sender'
+export { Suggestion, type ISuggestionProps } from './ai/Suggestion'
+export { Attachments, type IAttachmentsProps } from './ai/Attachments'
+export { Actions, type IActionsProps } from './ai/Actions'
