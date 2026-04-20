@@ -230,7 +230,6 @@ export {
   RoktGitMerge,
   RoktGitCommit,
   RoktGitPullRequest,
-  // General
   RoktActivity,
   RoktArchive,
   RoktAtSign,
@@ -275,7 +274,6 @@ export {
   RoktSettings04,
   RoktShare,
   RoktDownload,
-  // Arrows
   RoktArrowDownLeft,
   RoktArrowDownRight,
   RoktArrowNarrowDown,
@@ -321,7 +319,6 @@ export {
   RoktSwitchHorizontal02,
   RoktSwitchVertical01,
   RoktSwitchVertical02,
-  // Charts
   RoktBarChart,
   RoktLineChartDown,
   RoktLineChartUp01,
@@ -330,7 +327,6 @@ export {
   RoktTrendDown,
   RoktTrendUp,
   RoktTranslate,
-  // Users
   RoktUserRight,
   RoktFaceFrown,
   RoktUserCircle,
@@ -339,7 +335,6 @@ export {
   RoktUserMinus,
   RoktUsers,
   RoktUserPlus,
-  // Communication
   RoktInbox,
   RoktMessageCircle,
   RoktSend,
@@ -350,7 +345,6 @@ export {
   RoktAnnotation,
   RoktPhoneHangUp,
   RoktMessageChatCircle,
-  // Layout
   RoktAlignBottom,
   RoktAlignHorizontalCentre,
   RoktAlignLeft02,
@@ -377,7 +371,6 @@ export {
   RoktSpacingWidth01,
   RoktSpacingWidth02,
   RoktTable,
-  // Alerts & feedback
   RoktAlertTriangle,
   RoktCube,
   RoktCubeOutline,
@@ -386,7 +379,6 @@ export {
   RoktNotificationMessage,
   RoktThumbsDown,
   RoktThumbsUp,
-  // Media & devices
   RoktLaptop,
   RoktLightbulb01,
   RoktPlay,
@@ -422,10 +414,8 @@ export {
   RoktPhone01,
   RoktSliders,
   RoktYoutube,
-  // Shapes
   RoktStars02,
   RoktStars03,
-  // Development
   RoktBrackets,
   RoktBracketsCheck,
   RoktBracketsEllipses,
@@ -454,14 +444,12 @@ export {
   RoktDataflow04,
   RoktFileCode,
   RoktPuzzlePiece,
-  // Files
   RoktFile04,
   RoktFile05,
   RoktFileSearch,
   RoktFolder,
   RoktPaperclip,
   RoktFileCheck,
-  // Security
   RoktFaceId,
   RoktFingerprint,
   RoktKey,
@@ -473,7 +461,6 @@ export {
   RoktShieldOff,
   RoktShieldTick,
   RoktShield,
-  // Finance & eCommerce
   RoktBank,
   RoktBankNote,
   RoktCreditCardLock,
@@ -503,13 +490,11 @@ export {
   RoktReceiptCheck,
   RoktSafe,
   RoktWallet,
-  // Images
   RoktCamera,
   RoktCameraOff,
   RoktFlashOff,
   RoktImage01,
   RoktFlash,
-  // Editor
   RoktAlignCenter,
   RoktAlignJustify,
   RoktAlignLeft,
@@ -548,7 +533,6 @@ export {
   RoktLeftIndent02,
   RoktRightIndent01,
   RoktZoomOut,
-  // Maps & travel
   RoktBus,
   RoktCar,
   RoktRocket,
@@ -567,7 +551,6 @@ export {
   RoktMark,
   RoktPassport,
   RoktPlane,
-  // Time
   RoktAlarmClock,
   RoktHourglass,
   RoktCalendar,
