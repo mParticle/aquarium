@@ -33,7 +33,7 @@ const CONFIG = {
   ],
 
   // Components with no .stories.tsx that can't be auto-detected
-  excludeComponents: new Set(['HelpIcon', 'QueryItem', 'Primary']),
+  excludeComponents: new Set(['HelpIcon', 'QueryItem', 'Primary', 'Icon']),
 
   // Folders with subfolders that should be inlined into their parent category
   // as a group instead of creating a separate category with parentCategory.
@@ -65,6 +65,12 @@ const CONFIG = {
 }
 
 // ── Utility functions ──────────────────────────────────────────────────
+
+// Normalises a component display name for deduplication comparisons —
+// e.g. "Auto Complete" and "AutoComplete" both become "autocomplete".
+function normalizeCompName(name) {
+  return name.toLowerCase().replace(/[\s\-]/g, '')
+}
 
 function toKebab(str) {
   return str
@@ -160,6 +166,19 @@ function scanCategories() {
       const subfolders = getDirectories(itemPath)
       return { name: itemName, mdxPath, subfolders }
     })
+
+    // Also pick up src-only top-level components that have no docs folder.
+    // Uses normalised name comparison so "Auto Complete" ↔ "AutoComplete" don't duplicate.
+    const docNamesNorm = new Set(items.map((i) => normalizeCompName(i.name)))
+    const srcCategoryPath = safePath(SRC_COMPONENTS, toKebab(categoryName))
+    if (existsSync(srcCategoryPath)) {
+      for (const srcName of getDirectories(srcCategoryPath)) {
+        if (docNamesNorm.has(normalizeCompName(srcName))) continue
+        const fakeMdxPath = safePath(srcCategoryPath, srcName, 'Documentation.mdx')
+        items.push({ name: srcName, mdxPath: fakeMdxPath, subfolders: [] })
+      }
+    }
+
     return { name: categoryName, path: safePath(DOCS_COMPONENTS, categoryName), items }
   })
 }
@@ -273,6 +292,11 @@ function transformCategories(enrichedCategories) {
       if (item.hasMdx) {
         const entry = { name: item.name, variantCount: item.variantCount }
         if (CONFIG.storyIdOverrides[item.name]) entry.storyId = CONFIG.storyIdOverrides[item.name]
+        components.push(entry)
+      } else if (item.storyId) {
+        // src-only component: no docs folder, no subfolders — link directly to its first story
+        const entry = { name: item.name, variantCount: item.variantCount }
+        entry.storyId = CONFIG.storyIdOverrides[item.name] || item.storyId
         components.push(entry)
       } else if (item.subfolders.length > 0) {
         const inlineGroup = CONFIG.inlineGroups[item.name]

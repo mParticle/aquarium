@@ -1,5 +1,9 @@
 import { Typography } from 'src/components/general/Typography/Typography'
 
+/**
+ * @deprecated The QueryItem component group is deprecated and will not receive further updates.
+ * Avoid using it in new implementations.
+ */
 export interface ITextProps {
   disabled?: boolean
   text: string

@@ -1,0 +1,57 @@
+name: "\U0001F3A8 Icon Request"
+description: Request a new icon to be added to the library
+labels: ['icon-request', 'enhancement']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Request an Icon
+
+        Aquarium supports two icon systems:
+        - **Rokt Icons** (from @untitledui/icons) — used via `<Icon name={RoktIconName} />`
+        - **mParticle Icons** (local SVGs) — used via `<Icon name="icon-name" />`
+
+        Check [existing icons in Storybook](https://mparticle.github.io/aquarium/?path=/docs/foundations-icons-rokt-icons--documentation) before requesting.
+
+  - type: input
+    id: icon-name
+    attributes:
+      label: Icon Name
+      description: What should the icon be called?
+      placeholder: e.g., PauseCircle, ChartBar, UserPlus
+    validations:
+      required: true
+
+  - type: dropdown
+    id: icon-source
+    attributes:
+      label: Icon Source
+      description: Where does this icon come from?
+      options:
+        - 'Untitled UI / Rokt icon set (preferred)'
+        - 'Custom SVG from Figma'
+        - 'Other / not sure'
+    validations:
+      required: true
+
+  - type: input
+    id: figma-link
+    attributes:
+      label: Figma Link
+      description: Link to the icon in Figma (if available)
+      placeholder: https://www.figma.com/design/...
+
+  - type: textarea
+    id: svg-file
+    attributes:
+      label: SVG File (if custom)
+      description: Paste the SVG markup or drag-and-drop the SVG file
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Where will this icon be used?
+      description: Which product/feature needs this icon?
+      placeholder: e.g., Navigation sidebar in Audiences, action button in Connections table
+    validations:
+      required: true

@@ -4,11 +4,12 @@ import { QueryItem } from 'src/components'
 const meta: Meta<typeof QueryItem.Action> = {
   title: 'Components/Data Entry/QueryItem/Action',
   component: QueryItem.Action,
+  tags: ['deprecated'],
   parameters: {
     docs: {
       description: {
         component:
-          'This is the "Action" component of the QueryItem component group. This component is currently meant to trigger a single action, but will eventually support a list of actions via a dropdown list interface.',
+          '⚠️ **Deprecated** — The QueryItem component group is deprecated and will not receive further updates. Avoid using it in new implementations.',
       },
     },
   },
