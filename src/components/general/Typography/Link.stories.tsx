@@ -42,6 +42,10 @@ const meta: Meta<typeof Typography.Link> = {
       control: 'select',
       options: TypographyColors,
     },
+    hoverColor: {
+      control: 'select',
+      options: TypographyColors,
+    },
     copyable: {
       control: 'boolean',
     },
@@ -144,6 +148,26 @@ export const WithUnderline: Story = {
       <Typography.Link color="ColorText" href="https://docs.mparticle.com/" target="_blank" rel="noopener noreferrer">
         Example Text
       </Typography.Link>
+    )
+  },
+}
+
+export const InheritedColorWithHover: Story = {
+  render: () => {
+    return (
+      <Typography.Text color="ColorTextSecondary">
+        This is secondary text with an{' '}
+        <Typography.Link
+          href="https://mparticle.com/docs"
+          color="inherit"
+          hoverColor="ColorPrimaryText"
+          underline
+          target="_blank"
+          rel="noopener noreferrer">
+          inline link
+        </Typography.Link>{' '}
+        that turns primary on hover.
+      </Typography.Text>
     )
   },
 }
