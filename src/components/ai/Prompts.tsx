@@ -1,5 +1,5 @@
 import { Prompts as AntPrompts, type PromptsProps as AntPromptsProps } from '@ant-design/x'
-import { ConfigProvider } from 'src/components'
+import { ConfigProvider } from 'src/components/other/ConfigProvider/ConfigProvider'
 
 export type IPromptsProps = AntPromptsProps
 

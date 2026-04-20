@@ -1,6 +1,6 @@
 import { Bubble as AntBubble, type BubbleProps as AntBubbleProps } from '@ant-design/x'
 import { type ComponentProps } from 'react'
-import { ConfigProvider } from 'src/components'
+import { ConfigProvider } from 'src/components/other/ConfigProvider/ConfigProvider'
 
 export type IBubbleProps = AntBubbleProps
 

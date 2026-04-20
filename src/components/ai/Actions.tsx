@@ -1,5 +1,5 @@
 import { Actions as AntActions, type ActionsProps as AntActionsProps } from '@ant-design/x'
-import { ConfigProvider } from 'src/components'
+import { ConfigProvider } from 'src/components/other/ConfigProvider/ConfigProvider'
 
 export type IActionsProps = AntActionsProps
 

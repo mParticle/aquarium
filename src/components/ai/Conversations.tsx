@@ -1,5 +1,5 @@
 import { Conversations as AntConversations, type ConversationsProps as AntConversationsProps } from '@ant-design/x'
-import { ConfigProvider } from 'src/components'
+import { ConfigProvider } from 'src/components/other/ConfigProvider/ConfigProvider'
 
 export type IConversationsProps = AntConversationsProps
 
