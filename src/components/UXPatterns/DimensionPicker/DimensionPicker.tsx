@@ -53,8 +53,8 @@ export interface IDimensionPickerProps {
   showClearAllButton?: boolean
   showDescriptionPanel?: boolean
   size?: 'default' | 'compact'
-  /** Custom render for each item row. Receives the item and its checked state. */
-  renderItem?: (item: IDimensionItem, checked: boolean) => ReactNode
+  /** Custom render for each item row. Receives the item, its checked state, and a toggle callback. */
+  renderItem?: (item: IDimensionItem, checked: boolean, onToggle: () => void) => ReactNode
   /** Custom render for each category row. Receives the category and its selected state. */
   renderCategory?: (category: IDimensionCategory, selected: boolean) => ReactNode
   /** Custom render for the description panel content. Receives the currently hovered item or null. */
@@ -139,14 +139,15 @@ export const DimensionPicker = ({
     onSearch?.(query)
   }
 
+  const isControlledSearch = searchValue !== undefined
   const filteredItems = useMemo(() => {
     let filtered = items.filter(item => item.categoryKey === selectedCategory)
-    if (effectiveSearchQuery) {
-      const query = effectiveSearchQuery.toLowerCase()
+    if (!isControlledSearch && internalSearchQuery) {
+      const query = internalSearchQuery.toLowerCase()
       filtered = filtered.filter(item => item.label.toLowerCase().includes(query))
     }
     return filtered
-  }, [items, selectedCategory, effectiveSearchQuery])
+  }, [items, selectedCategory, isControlledSearch, internalSearchQuery])
 
   const handleItemToggle = (itemKey: string) => {
     const newSelected = selectedKeys.includes(itemKey)
@@ -243,7 +244,13 @@ export const DimensionPicker = ({
             </ul>
           </Flex>
 
-          <div style={{ flex: 1, overflowY: 'auto', borderRight: `${LineWidth} solid ${RoktGray3}`, minWidth: 280 }}>
+          <div
+            style={{
+              flex: 1,
+              overflowY: 'auto',
+              borderRight: showDescriptionPanel ? `${LineWidth} solid ${RoktGray3}` : undefined,
+              minWidth: 280,
+            }}>
             {loading ? (
               <Center style={{ height: '100%', padding: '40px 20px' }}>
                 <Typography.Text type="secondary">Loading...</Typography.Text>
@@ -267,7 +274,7 @@ export const DimensionPicker = ({
                       onMouseEnter={() => setHoveredItem(item)}
                       onMouseLeave={() => setHoveredItem(null)}>
                       {renderItem ? (
-                        renderItem(item, isChecked)
+                        renderItem(item, isChecked, () => handleItemToggle(item.key))
                       ) : (
                         <Checkbox
                           checked={isChecked}

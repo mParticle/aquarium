@@ -27,7 +27,7 @@ export {
   type IDimensionPickerProps,
   type IDimensionCategory,
   type IDimensionItem,
-} from './data-entry/DimensionPicker/DimensionPicker'
+} from './UXPatterns/DimensionPicker/DimensionPicker'
 export { DatePicker, type IDatePickerProps } from './data-entry/DatePicker/DatePicker'
 export { Checkbox, type ICheckboxProps } from './data-entry/Checkbox/Checkbox'
 export { Input, type IInputProps, type InputRef } from './data-entry/Input/Input'

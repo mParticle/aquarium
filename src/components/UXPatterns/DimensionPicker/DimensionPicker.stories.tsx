@@ -80,7 +80,7 @@ const sampleItems: IDimensionItem[] = [
 ]
 
 const meta: Meta<typeof DimensionPicker> = {
-  title: 'Components/Data Entry/DimensionPicker',
+  title: 'UX Patterns/DimensionPicker',
   component: DimensionPicker,
   parameters: {
     layout: 'centered',
