@@ -1,9 +1,17 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { Conversations } from 'src/components/ai/Conversations'
+import { Conversations } from '@ant-design/x'
+import { ConfigProvider } from 'src/components'
 
 const meta: Meta<typeof Conversations> = {
   title: 'Components/AI/Conversations',
   component: Conversations,
+  decorators: [
+    Story => (
+      <ConfigProvider>
+        <Story />
+      </ConfigProvider>
+    ),
+  ],
 }
 export default meta
 

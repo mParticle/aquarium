@@ -1,9 +1,17 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { Attachments } from 'src/components/ai/Attachments'
+import { Attachments } from '@ant-design/x'
+import { ConfigProvider } from 'src/components'
 
 const meta: Meta<typeof Attachments> = {
   title: 'Components/AI/Attachments',
   component: Attachments,
+  decorators: [
+    Story => (
+      <ConfigProvider>
+        <Story />
+      </ConfigProvider>
+    ),
+  ],
 }
 export default meta
 

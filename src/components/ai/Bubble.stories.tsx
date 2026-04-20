@@ -1,10 +1,18 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { Bubble } from 'src/components/ai/Bubble'
+import { Bubble } from '@ant-design/x'
+import { ConfigProvider } from 'src/components'
 import { Flex } from 'src/components/layout/Flex/Flex'
 
 const meta: Meta<typeof Bubble> = {
   title: 'Components/AI/Bubble',
   component: Bubble,
+  decorators: [
+    Story => (
+      <ConfigProvider>
+        <Story />
+      </ConfigProvider>
+    ),
+  ],
 }
 export default meta
 

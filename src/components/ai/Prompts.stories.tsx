@@ -1,9 +1,17 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { Prompts } from 'src/components/ai/Prompts'
+import { Prompts } from '@ant-design/x'
+import { ConfigProvider } from 'src/components'
 
 const meta: Meta<typeof Prompts> = {
   title: 'Components/AI/Prompts',
   component: Prompts,
+  decorators: [
+    Story => (
+      <ConfigProvider>
+        <Story />
+      </ConfigProvider>
+    ),
+  ],
 }
 export default meta
 

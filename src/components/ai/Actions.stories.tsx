@@ -1,9 +1,17 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { Actions } from 'src/components/ai/Actions'
+import { Actions } from '@ant-design/x'
+import { ConfigProvider } from 'src/components'
 
 const meta: Meta<typeof Actions> = {
   title: 'Components/AI/Actions',
   component: Actions,
+  decorators: [
+    Story => (
+      <ConfigProvider>
+        <Story />
+      </ConfigProvider>
+    ),
+  ],
 }
 export default meta
 

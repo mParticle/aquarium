@@ -1,11 +1,18 @@
 import { type Meta, type StoryObj } from '@storybook/react'
+import { Sender, Suggestion } from '@ant-design/x'
 import { useState } from 'react'
-import { Sender } from 'src/components/ai/Sender'
-import { Suggestion } from 'src/components/ai/Suggestion'
+import { ConfigProvider } from 'src/components'
 
 const meta: Meta<typeof Suggestion> = {
   title: 'Components/AI/Suggestion',
   component: Suggestion,
+  decorators: [
+    Story => (
+      <ConfigProvider>
+        <Story />
+      </ConfigProvider>
+    ),
+  ],
 }
 export default meta
 
