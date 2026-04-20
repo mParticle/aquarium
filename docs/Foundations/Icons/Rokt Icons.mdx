@@ -62,6 +62,330 @@ import {
   RoktGitMerge,
   RoktGitCommit,
   RoktGitPullRequest,
+  RoktActivity,
+  RoktArchive,
+  RoktAtSign,
+  RoktBookmark,
+  RoktBookmarkAdd,
+  RoktBookmarkCheck,
+  RoktBookmarkMinus,
+  RoktBuilding01,
+  RoktBuilding02,
+  RoktBuilding04,
+  RoktEqual,
+  RoktEqualNot,
+  RoktEyeOff,
+  RoktFilterFunnel,
+  RoktHash,
+  RoktHeart,
+  RoktLinkExternal02,
+  RoktLoading,
+  RoktLogIn,
+  RoktLogOut,
+  RoktMinus,
+  RoktSlashCircle,
+  RoktSpeedometer,
+  RoktTarget,
+  RoktTool,
+  RoktCheckSquare,
+  RoktPercent,
+  RoktCheckVerified01,
+  RoktCheckVerified02,
+  RoktHome,
+  RoktPin,
+  RoktTrash03,
+  RoktUpload,
+  RoktCloudBlank,
+  RoktSearchMd,
+  RoktSettings,
+  RoktZap,
+  RoktDotsGrid,
+  RoktDotsHorizontal,
+  RoktMenu,
+  RoktLink,
+  RoktSettings04,
+  RoktShare,
+  RoktDownload,
+  RoktArrowDownLeft,
+  RoktArrowDownRight,
+  RoktArrowNarrowDown,
+  RoktArrowNarrowDownLeft,
+  RoktArrowNarrowDownRight,
+  RoktArrowNarrowLeft,
+  RoktArrowNarrowRight,
+  RoktArrowNarrowUp,
+  RoktArrowNarrowUpLeft,
+  RoktArrowNarrowUpRight,
+  RoktArrowUp,
+  RoktArrowUpLeft,
+  RoktArrowUpRight,
+  RoktArrowsDown,
+  RoktArrowsLeft,
+  RoktArrowsRight,
+  RoktArrowsTriangle,
+  RoktArrowsUp,
+  RoktChevronDownDouble,
+  RoktChevronLeftDouble,
+  RoktChevronRightDouble,
+  RoktChevronSelectorHorizontal,
+  RoktChevronUp,
+  RoktChevronUpDouble,
+  RoktCornerDownLeft,
+  RoktCornerDownRight,
+  RoktCornerLeftDown,
+  RoktCornerLeftUp,
+  RoktCornerRightDown,
+  RoktCornerRightUp,
+  RoktCornerUpLeft,
+  RoktCornerUpRight,
+  RoktExpand01,
+  RoktExpand06,
+  RoktFlipBackward,
+  RoktFlipForward,
+  RoktInfinity,
+  RoktRefreshCcw01,
+  RoktRefreshCcw02,
+  RoktRefreshCcw03,
+  RoktReverseRight,
+  RoktSwitchHorizontal01,
+  RoktSwitchHorizontal02,
+  RoktSwitchVertical01,
+  RoktSwitchVertical02,
+  RoktBarChart,
+  RoktLineChartDown,
+  RoktLineChartUp01,
+  RoktLineChartUp02,
+  RoktPieChart,
+  RoktTrendDown,
+  RoktTrendUp,
+  RoktTranslate,
+  RoktUserRight,
+  RoktFaceFrown,
+  RoktUserCircle,
+  RoktFaceNeutral,
+  RoktFaceSmile,
+  RoktUserMinus,
+  RoktUsers,
+  RoktUserPlus,
+  RoktInbox,
+  RoktMessageCircle,
+  RoktSend,
+  RoktMail02,
+  RoktMail04,
+  RoktMail05,
+  RoktPhone,
+  RoktAnnotation,
+  RoktPhoneHangUp,
+  RoktMessageChatCircle,
+  RoktAlignBottom,
+  RoktAlignHorizontalCentre,
+  RoktAlignLeft02,
+  RoktDistributeSpacingVertical,
+  RoktGrid,
+  RoktIntersectCircle,
+  RoktLayerSingle,
+  RoktLayersThree,
+  RoktLayersTwo,
+  RoktLayoutRight,
+  RoktLayoutTop,
+  RoktList,
+  RoktMaximize,
+  RoktMinimize,
+  RoktAlignRight02,
+  RoktRows,
+  RoktAlignVerticalCenter,
+  RoktColumns,
+  RoktDistributeSpacingHorizontal,
+  RoktLayoutGrid,
+  RoktLayoutLeft,
+  RoktSpacingHeight01,
+  RoktSpacingHeight02,
+  RoktSpacingWidth01,
+  RoktSpacingWidth02,
+  RoktTable,
+  RoktAlertTriangle,
+  RoktCube,
+  RoktCubeOutline,
+  RoktBell,
+  RoktBellOff,
+  RoktNotificationMessage,
+  RoktThumbsDown,
+  RoktThumbsUp,
+  RoktLaptop,
+  RoktLightbulb01,
+  RoktPlay,
+  RoktPlayCircle,
+  RoktPower,
+  RoktStopCircle,
+  RoktPrinter,
+  RoktMicrophone,
+  RoktRecording,
+  RoktFastBackward,
+  RoktFastForward,
+  RoktGamingPad01,
+  RoktGamingPad02,
+  RoktMicrophoneOff,
+  RoktMouse,
+  RoktMusicNote,
+  RoktRepeat,
+  RoktRss,
+  RoktShuffle,
+  RoktTv,
+  RoktVideoRecorder,
+  RoktVideoRecorderOff,
+  RoktVoicemail,
+  RoktVolumeMax,
+  RoktVolumeMin,
+  RoktVolumeMinus,
+  RoktVolumePlus,
+  RoktVolumeX,
+  RoktHeadphones,
+  RoktSkipBack,
+  RoktSkipForward,
+  RoktWifi,
+  RoktPhone01,
+  RoktSliders,
+  RoktYoutube,
+  RoktStars02,
+  RoktStars03,
+  RoktBrackets,
+  RoktBracketsCheck,
+  RoktBracketsEllipses,
+  RoktBracketsMinus,
+  RoktBracketsPlus,
+  RoktBracketsSlash,
+  RoktBracketsX,
+  RoktBrowser,
+  RoktCodepen,
+  RoktContainer,
+  RoktCpuChip,
+  RoktDatabase01,
+  RoktDatabase02,
+  RoktFolderX,
+  RoktPackage,
+  RoktQrCode,
+  RoktServer,
+  RoktTerminal,
+  RoktTerminalBrowser,
+  RoktCode,
+  RoktCodeBrowser,
+  RoktDataflow01,
+  RoktDataflow02,
+  RoktTerminalSquare,
+  RoktVariable,
+  RoktDataflow04,
+  RoktFileCode,
+  RoktPuzzlePiece,
+  RoktFile04,
+  RoktFile05,
+  RoktFileSearch,
+  RoktFolder,
+  RoktPaperclip,
+  RoktFileCheck,
+  RoktFaceId,
+  RoktFingerprint,
+  RoktKey,
+  RoktLock,
+  RoktLockUnlocked01,
+  RoktLockUnlocked02,
+  RoktPasscodeLock,
+  RoktShieldDollar,
+  RoktShieldOff,
+  RoktShieldTick,
+  RoktShield,
+  RoktBank,
+  RoktBankNote,
+  RoktCreditCardLock,
+  RoktCreditCardMinus,
+  RoktCreditCardPlus,
+  RoktCurrencyEuro,
+  RoktCurrencyPound,
+  RoktCurrencyRuble,
+  RoktSale,
+  RoktScales,
+  RoktCoins,
+  RoktCoinsStacked,
+  RoktCreditCardShield,
+  RoktCurrencyRupee,
+  RoktCurrencyYen,
+  RoktDiamond,
+  RoktShoppingBag02,
+  RoktShoppingBag03,
+  RoktGift,
+  RoktTag03,
+  RoktCreditCard02,
+  RoktCreditCardCheck,
+  RoktCreditCardDown,
+  RoktCurrencyDollar,
+  RoktPiggyBank,
+  RoktReceipt,
+  RoktReceiptCheck,
+  RoktSafe,
+  RoktWallet,
+  RoktCamera,
+  RoktCameraOff,
+  RoktFlashOff,
+  RoktImage01,
+  RoktFlash,
+  RoktAlignCenter,
+  RoktAlignJustify,
+  RoktAlignLeft,
+  RoktAlignRight,
+  RoktAttachment,
+  RoktLetterSpacing,
+  RoktLineHeight,
+  RoktMagicWand,
+  RoktRightIndent02,
+  RoktMove,
+  RoktDelete,
+  RoktDropper,
+  RoktEraser,
+  RoktPaintPour,
+  RoktPalette,
+  RoktParagraphSpacing,
+  RoktParagraphWrap,
+  RoktPenTool,
+  RoktScissors,
+  RoktSkew,
+  RoktBrush,
+  RoktFigma,
+  RoktSubscript,
+  RoktCodeSnippet,
+  RoktHand,
+  RoktHeading,
+  RoktPerspective,
+  RoktImageIndentLeft,
+  RoktImageIndentRight,
+  RoktPilcrow,
+  RoktTypeStrikethrough,
+  RoktCrop01,
+  RoktCrop02,
+  RoktCursor,
+  RoktLeftIndent01,
+  RoktLeftIndent02,
+  RoktRightIndent01,
+  RoktZoomOut,
+  RoktBus,
+  RoktCar,
+  RoktRocket,
+  RoktRoute,
+  RoktTicket,
+  RoktCompass,
+  RoktFlag02,
+  RoktGlobe06,
+  RoktLuggage01,
+  RoktLuggage02,
+  RoktNavigationPointer01,
+  RoktTrain,
+  RoktNavigationPointerOff,
+  RoktMap01,
+  RoktMap02,
+  RoktMark,
+  RoktPassport,
+  RoktPlane,
+  RoktAlarmClock,
+  RoktHourglass,
+  RoktCalendar,
 } from '../../../src/components/icons'
 
 # Rokt Icons
@@ -321,5 +645,1301 @@ import {
   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
     <Icon name={RoktGitPullRequest} size="sm" color="black" />
     <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktGitPullRequest</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktActivity} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktActivity</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktArchive} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktArchive</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktAtSign} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktAtSign</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktBookmark} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktBookmark</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktBookmarkAdd} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktBookmarkAdd</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktBookmarkCheck} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktBookmarkCheck</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktBookmarkMinus} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktBookmarkMinus</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktBuilding01} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktBuilding01</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktBuilding02} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktBuilding02</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktBuilding04} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktBuilding04</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktEqual} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktEqual</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktEqualNot} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktEqualNot</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktEyeOff} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktEyeOff</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktFilterFunnel} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktFilterFunnel</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktHash} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktHash</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktHeart} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktHeart</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktLinkExternal02} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktLinkExternal02</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktLoading} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktLoading</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktLogIn} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktLogIn</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktLogOut} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktLogOut</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktMinus} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktMinus</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktSlashCircle} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktSlashCircle</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktSpeedometer} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktSpeedometer</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktTarget} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktTarget</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktTool} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktTool</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCheckSquare} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCheckSquare</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktPercent} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktPercent</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCheckVerified01} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCheckVerified01</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCheckVerified02} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCheckVerified02</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktHome} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktHome</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktPin} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktPin</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktTrash03} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktTrash03</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktUpload} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktUpload</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCloudBlank} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCloudBlank</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktSearchMd} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktSearchMd</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktSettings} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktSettings</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktZap} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktZap</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktDotsGrid} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktDotsGrid</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktDotsHorizontal} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktDotsHorizontal</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktMenu} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktMenu</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktLink} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktLink</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktSettings04} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktSettings04</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktShare} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktShare</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktDownload} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktDownload</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktArrowDownLeft} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktArrowDownLeft</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktArrowDownRight} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktArrowDownRight</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktArrowNarrowDown} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktArrowNarrowDown</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktArrowNarrowDownLeft} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktArrowNarrowDownLeft</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktArrowNarrowDownRight} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktArrowNarrowDownRight</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktArrowNarrowLeft} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktArrowNarrowLeft</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktArrowNarrowRight} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktArrowNarrowRight</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktArrowNarrowUp} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktArrowNarrowUp</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktArrowNarrowUpLeft} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktArrowNarrowUpLeft</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktArrowNarrowUpRight} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktArrowNarrowUpRight</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktArrowUp} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktArrowUp</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktArrowUpLeft} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktArrowUpLeft</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktArrowUpRight} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktArrowUpRight</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktArrowsDown} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktArrowsDown</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktArrowsLeft} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktArrowsLeft</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktArrowsRight} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktArrowsRight</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktArrowsTriangle} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktArrowsTriangle</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktArrowsUp} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktArrowsUp</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktChevronDownDouble} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktChevronDownDouble</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktChevronLeftDouble} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktChevronLeftDouble</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktChevronRightDouble} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktChevronRightDouble</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktChevronSelectorHorizontal} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktChevronSelectorHorizontal</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktChevronUp} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktChevronUp</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktChevronUpDouble} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktChevronUpDouble</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCornerDownLeft} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCornerDownLeft</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCornerDownRight} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCornerDownRight</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCornerLeftDown} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCornerLeftDown</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCornerLeftUp} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCornerLeftUp</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCornerRightDown} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCornerRightDown</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCornerRightUp} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCornerRightUp</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCornerUpLeft} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCornerUpLeft</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCornerUpRight} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCornerUpRight</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktExpand01} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktExpand01</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktExpand06} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktExpand06</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktFlipBackward} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktFlipBackward</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktFlipForward} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktFlipForward</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktInfinity} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktInfinity</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktRefreshCcw01} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktRefreshCcw01</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktRefreshCcw02} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktRefreshCcw02</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktRefreshCcw03} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktRefreshCcw03</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktReverseRight} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktReverseRight</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktSwitchHorizontal01} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktSwitchHorizontal01</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktSwitchHorizontal02} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktSwitchHorizontal02</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktSwitchVertical01} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktSwitchVertical01</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktSwitchVertical02} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktSwitchVertical02</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktBarChart} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktBarChart</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktLineChartDown} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktLineChartDown</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktLineChartUp01} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktLineChartUp01</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktLineChartUp02} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktLineChartUp02</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktPieChart} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktPieChart</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktTrendDown} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktTrendDown</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktTrendUp} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktTrendUp</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktTranslate} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktTranslate</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktUserRight} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktUserRight</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktFaceFrown} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktFaceFrown</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktUserCircle} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktUserCircle</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktFaceNeutral} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktFaceNeutral</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktFaceSmile} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktFaceSmile</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktUserMinus} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktUserMinus</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktUsers} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktUsers</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktUserPlus} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktUserPlus</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktInbox} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktInbox</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktMessageCircle} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktMessageCircle</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktSend} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktSend</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktMail02} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktMail02</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktMail04} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktMail04</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktMail05} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktMail05</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktPhone} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktPhone</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktAnnotation} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktAnnotation</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktPhoneHangUp} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktPhoneHangUp</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktMessageChatCircle} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktMessageChatCircle</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktAlignBottom} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktAlignBottom</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktAlignHorizontalCentre} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktAlignHorizontalCentre</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktAlignLeft02} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktAlignLeft02</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktDistributeSpacingVertical} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktDistributeSpacingVertical</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktGrid} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktGrid</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktIntersectCircle} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktIntersectCircle</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktLayerSingle} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktLayerSingle</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktLayersThree} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktLayersThree</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktLayersTwo} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktLayersTwo</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktLayoutRight} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktLayoutRight</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktLayoutTop} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktLayoutTop</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktList} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktList</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktMaximize} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktMaximize</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktMinimize} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktMinimize</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktAlignRight02} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktAlignRight02</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktRows} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktRows</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktAlignVerticalCenter} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktAlignVerticalCenter</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktColumns} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktColumns</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktDistributeSpacingHorizontal} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktDistributeSpacingHorizontal</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktLayoutGrid} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktLayoutGrid</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktLayoutLeft} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktLayoutLeft</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktSpacingHeight01} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktSpacingHeight01</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktSpacingHeight02} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktSpacingHeight02</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktSpacingWidth01} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktSpacingWidth01</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktSpacingWidth02} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktSpacingWidth02</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktTable} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktTable</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktAlertTriangle} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktAlertTriangle</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCube} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCube</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCubeOutline} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCubeOutline</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktBell} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktBell</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktBellOff} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktBellOff</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktNotificationMessage} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktNotificationMessage</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktThumbsDown} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktThumbsDown</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktThumbsUp} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktThumbsUp</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktLaptop} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktLaptop</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktLightbulb01} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktLightbulb01</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktPlay} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktPlay</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktPlayCircle} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktPlayCircle</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktPower} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktPower</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktStopCircle} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktStopCircle</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktPrinter} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktPrinter</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktMicrophone} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktMicrophone</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktRecording} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktRecording</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktFastBackward} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktFastBackward</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktFastForward} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktFastForward</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktGamingPad01} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktGamingPad01</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktGamingPad02} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktGamingPad02</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktMicrophoneOff} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktMicrophoneOff</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktMouse} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktMouse</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktMusicNote} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktMusicNote</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktRepeat} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktRepeat</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktRss} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktRss</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktShuffle} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktShuffle</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktTv} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktTv</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktVideoRecorder} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktVideoRecorder</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktVideoRecorderOff} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktVideoRecorderOff</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktVoicemail} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktVoicemail</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktVolumeMax} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktVolumeMax</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktVolumeMin} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktVolumeMin</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktVolumeMinus} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktVolumeMinus</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktVolumePlus} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktVolumePlus</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktVolumeX} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktVolumeX</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktHeadphones} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktHeadphones</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktSkipBack} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktSkipBack</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktSkipForward} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktSkipForward</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktWifi} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktWifi</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktPhone01} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktPhone01</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktSliders} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktSliders</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktYoutube} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktYoutube</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktStars02} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktStars02</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktStars03} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktStars03</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktBrackets} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktBrackets</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktBracketsCheck} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktBracketsCheck</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktBracketsEllipses} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktBracketsEllipses</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktBracketsMinus} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktBracketsMinus</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktBracketsPlus} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktBracketsPlus</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktBracketsSlash} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktBracketsSlash</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktBracketsX} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktBracketsX</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktBrowser} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktBrowser</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCodepen} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCodepen</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktContainer} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktContainer</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCpuChip} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCpuChip</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktDatabase01} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktDatabase01</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktDatabase02} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktDatabase02</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktFolderX} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktFolderX</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktPackage} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktPackage</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktQrCode} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktQrCode</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktServer} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktServer</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktTerminal} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktTerminal</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktTerminalBrowser} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktTerminalBrowser</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCode} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCode</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCodeBrowser} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCodeBrowser</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktDataflow01} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktDataflow01</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktDataflow02} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktDataflow02</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktTerminalSquare} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktTerminalSquare</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktVariable} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktVariable</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktDataflow04} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktDataflow04</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktFileCode} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktFileCode</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktPuzzlePiece} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktPuzzlePiece</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktFile04} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktFile04</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktFile05} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktFile05</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktFileSearch} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktFileSearch</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktFolder} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktFolder</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktPaperclip} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktPaperclip</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktFileCheck} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktFileCheck</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktFaceId} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktFaceId</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktFingerprint} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktFingerprint</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktKey} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktKey</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktLock} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktLock</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktLockUnlocked01} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktLockUnlocked01</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktLockUnlocked02} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktLockUnlocked02</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktPasscodeLock} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktPasscodeLock</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktShieldDollar} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktShieldDollar</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktShieldOff} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktShieldOff</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktShieldTick} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktShieldTick</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktShield} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktShield</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktBank} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktBank</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktBankNote} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktBankNote</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCreditCardLock} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCreditCardLock</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCreditCardMinus} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCreditCardMinus</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCreditCardPlus} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCreditCardPlus</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCurrencyEuro} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCurrencyEuro</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCurrencyPound} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCurrencyPound</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCurrencyRuble} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCurrencyRuble</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktSale} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktSale</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktScales} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktScales</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCoins} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCoins</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCoinsStacked} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCoinsStacked</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCreditCardShield} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCreditCardShield</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCurrencyRupee} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCurrencyRupee</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCurrencyYen} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCurrencyYen</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktDiamond} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktDiamond</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktShoppingBag02} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktShoppingBag02</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktShoppingBag03} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktShoppingBag03</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktGift} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktGift</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktTag03} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktTag03</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCreditCard02} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCreditCard02</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCreditCardCheck} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCreditCardCheck</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCreditCardDown} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCreditCardDown</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCurrencyDollar} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCurrencyDollar</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktPiggyBank} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktPiggyBank</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktReceipt} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktReceipt</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktReceiptCheck} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktReceiptCheck</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktSafe} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktSafe</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktWallet} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktWallet</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCamera} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCamera</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCameraOff} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCameraOff</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktFlashOff} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktFlashOff</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktImage01} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktImage01</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktFlash} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktFlash</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktAlignCenter} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktAlignCenter</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktAlignJustify} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktAlignJustify</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktAlignLeft} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktAlignLeft</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktAlignRight} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktAlignRight</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktAttachment} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktAttachment</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktLetterSpacing} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktLetterSpacing</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktLineHeight} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktLineHeight</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktMagicWand} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktMagicWand</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktRightIndent02} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktRightIndent02</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktMove} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktMove</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktDelete} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktDelete</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktDropper} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktDropper</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktEraser} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktEraser</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktPaintPour} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktPaintPour</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktPalette} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktPalette</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktParagraphSpacing} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktParagraphSpacing</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktParagraphWrap} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktParagraphWrap</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktPenTool} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktPenTool</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktScissors} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktScissors</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktSkew} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktSkew</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktBrush} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktBrush</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktFigma} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktFigma</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktSubscript} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktSubscript</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCodeSnippet} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCodeSnippet</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktHand} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktHand</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktHeading} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktHeading</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktPerspective} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktPerspective</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktImageIndentLeft} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktImageIndentLeft</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktImageIndentRight} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktImageIndentRight</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktPilcrow} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktPilcrow</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktTypeStrikethrough} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktTypeStrikethrough</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCrop01} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCrop01</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCrop02} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCrop02</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCursor} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCursor</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktLeftIndent01} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktLeftIndent01</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktLeftIndent02} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktLeftIndent02</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktRightIndent01} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktRightIndent01</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktZoomOut} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktZoomOut</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktBus} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktBus</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCar} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCar</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktRocket} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktRocket</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktRoute} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktRoute</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktTicket} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktTicket</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCompass} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCompass</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktFlag02} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktFlag02</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktGlobe06} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktGlobe06</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktLuggage01} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktLuggage01</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktLuggage02} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktLuggage02</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktNavigationPointer01} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktNavigationPointer01</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktTrain} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktTrain</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktNavigationPointerOff} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktNavigationPointerOff</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktMap01} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktMap01</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktMap02} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktMap02</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktMark} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktMark</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktPassport} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktPassport</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktPlane} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktPlane</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktAlarmClock} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktAlarmClock</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktHourglass} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktHourglass</p>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <Icon name={RoktCalendar} size="sm" color="black" />
+    <p style={{ fontFamily: 'monospace', fontSize: '12px', textAlign: 'center', margin: 0, wordBreak: 'break-word' }}>RoktCalendar</p>
   </div>
 </div>
