@@ -205,6 +205,8 @@ import {
   GitMerge as RoktGitMerge,
   GitCommit as RoktGitCommit,
   GitPullRequest as RoktGitPullRequest,
+  Rocket02 as RoktRocket,
+  Users01 as RoktUsers,
 } from '@untitledui/icons'
 
 export {
@@ -413,4 +415,6 @@ export {
   RoktGitMerge,
   RoktGitCommit,
   RoktGitPullRequest,
+  RoktRocket,
+  RoktUsers,
 }

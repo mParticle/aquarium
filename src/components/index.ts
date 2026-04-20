@@ -230,4 +230,6 @@ export {
   RoktGitMerge,
   RoktGitCommit,
   RoktGitPullRequest,
+  RoktRocket,
+  RoktUsers,
 } from './icons'
