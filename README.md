@@ -3,9 +3,9 @@
 <a href="https://mparticle.github.io/aquarium/" target="_blank"><img src="https://raw.githubusercontent.com/storybooks/brand/master/badge/badge-storybook.svg"></a>
 &nbsp;&nbsp;
 
-# mParticle Aquarium
+# Aquarium — Rokt UI Library
 
-mParticle Component Library built on top of [Ant Design](https://ant.design/).
+Component library for Rokt applications, built on top of [Ant Design](https://ant.design/).
 
 _Components That Scale_
 
@@ -63,6 +63,14 @@ export const MyComponent = () => {
 }
 ```
 
+## Adopting Aquarium
+
+New to Aquarium? See [ADOPTING.md](ADOPTING.md) for a step-by-step onboarding guide.
+
+## Requesting Components
+
+Need a component that doesn't exist yet? [Open a Component Request](https://github.com/mParticle/aquarium/issues/new?template=component-request.yml) on GitHub Issues.
+
 ## Development
 
 Clone the repository and install dependencies:
@@ -93,8 +101,9 @@ Please make sure any new or updated components are present, tested and verified 
 
 ## Support
 
-<support@mparticle.com>
+- **Internal**: Join the Aquarium GChat space for weekly updates and discussions
+- **Public**: [GitHub Issues](https://github.com/mParticle/aquarium/issues/new/choose) — component requests, bug reports, questions
 
 ## License
 
-mParticle's Aquarium is available under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0). See the LICENSE file for more info.
+Aquarium is available under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0). See the LICENSE file for more info.

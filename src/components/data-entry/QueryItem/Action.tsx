@@ -1,6 +1,10 @@
 import { Icon, Button, type IButtonProps } from 'src/components'
 import './query-item.css'
 
+/**
+ * @deprecated The QueryItem component group is deprecated and will not receive further updates.
+ * Avoid using it in new implementations.
+ */
 export interface IActionProps {
   type?: 'disabled' | 'primary' | 'default'
   text?: string

@@ -1,6 +1,7 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks'
 
 import * as RadioStories from '../../../../src/components/data-entry/Radio/Radio.stories'
+import * as RadioGroupStories from '../../../../src/components/data-entry/Radio/RadioGroup.stories'
 
 <Meta of={RadioStories} />
 
@@ -16,7 +17,41 @@ Used to select a single state from multiple options.
 - Unlike **[select](https://mparticle.github.io/aquarium/?path=/story/components-data-entry-select--primary)**, **Radio** is always visible, helping users easily compare choices.
 - Use **Radio** when there are few options to avoid overwhelming the user.
 
+### Default radio
+
+Start with a single `Radio` for a simple on/off or yes/no choice.
+
 <Canvas of={RadioStories.Primary} />
+
+### Disabled
+
+A radio in the disabled state prevents interaction.
+
+<Canvas of={RadioStories.Disabled} />
+
+### Radio group
+
+Use `Radio.Group` with the `options` prop to render a set of mutually exclusive choices.
+
+<Canvas of={RadioGroupStories.GroupDefault} />
+
+### Button group
+
+Set `optionType="button"` to render the group as a segmented button row. Use this for compact tab-like navigation between views.
+
+<Canvas of={RadioGroupStories.GroupButton} />
+
+### Solid button group
+
+Add `buttonStyle="solid"` to fill the selected button with the primary color for stronger visual emphasis.
+
+<Canvas of={RadioGroupStories.GroupButtonSolid} />
+
+### Disabled group
+
+Set `disabled` on `Radio.Group` to lock every option in the group at once.
+
+<Canvas of={RadioGroupStories.GroupDisabled} />
 
 #### Related Links
 

@@ -25,6 +25,10 @@ export interface ICascaderOption extends DefaultOptionType {
   disabled?: boolean
 }
 
+/**
+ * @deprecated The QueryItem component group is deprecated and will not receive further updates.
+ * Avoid using it in new implementations.
+ */
 export interface IQueryItemCascaderProps {
   options: ICascaderOption[]
   icon?: keyof Pick<typeof Icons, 'empty' | 'event' | 'userAttribute' | 'eventAttribute'>

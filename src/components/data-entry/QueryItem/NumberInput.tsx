@@ -3,6 +3,10 @@ import type { ReactNode } from 'react'
 import { InputNumber } from 'src/components'
 import { Typography } from 'src/components/general/Typography/Typography'
 
+/**
+ * @deprecated The QueryItem component group is deprecated and will not receive further updates.
+ * Avoid using it in new implementations.
+ */
 export interface INumberInputProps {
   value?: number | undefined
   disabled?: boolean
@@ -24,7 +28,8 @@ const NumberInput = (props: INumberInputProps) => {
 
   const handleOnChange = (value: string | number | null | undefined) => {
     const floatValue = parseFloat(value as string)
-    isNaN(floatValue) ? props.onChange?.(undefined) : props.onChange?.(floatValue)
+    if (isNaN(floatValue)) props.onChange?.(undefined)
+    else props.onChange?.(floatValue)
   }
 
   return (
