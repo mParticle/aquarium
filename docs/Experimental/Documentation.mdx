@@ -1,0 +1,22 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Experimental/Documentation" />
+
+# Experimental
+
+Components in this section are **not part of the production-supported set**. They exist for exploration, design review, and occasional reference, but should not be relied on in shipped product surfaces.
+
+## What "experimental" means here
+
+- **Implemented but unvetted** — the component works, but hasn't been through the full design, accessibility, and API review that production components go through.
+- **API may change** — props, naming, and behavior may shift without notice.
+- **Limited or no coverage** — interaction tests and edge-case handling are not guaranteed.
+- **Not exported from the library's production index** — or if exported, expect instability.
+
+## Why keep them?
+
+They let the design team prototype patterns, evaluate Ant Design components before adopting them, and park work-in-progress ideas alongside the rest of the system — without cluttering the production catalog.
+
+## If you need one in production
+
+Open a ticket to promote it: the component needs design sign-off, accessibility review, interaction tests, and a stable API before moving into the main `Components` section.

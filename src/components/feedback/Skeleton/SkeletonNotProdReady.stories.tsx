@@ -7,10 +7,9 @@ import { List, type RadioChangeEvent } from 'antd'
 import { Space } from 'src/components'
 import { Form } from 'src/components'
 import { Divider } from 'src/components'
-import { createElement } from 'react'
 
 const meta: Meta<typeof Skeleton> = {
-  title: 'Components/Not Prod Ready/Feedback/Skeleton',
+  title: 'Experimental/Feedback/Skeleton',
   component: props => <Skeleton {...props} style={{ height: '200px', width: '200px' }}></Skeleton>,
 
   args: {
@@ -209,7 +208,7 @@ export const ExampleSubComponent: Story = {
 export const ExampleList: Story = {
   render: () => {
     interface IconTextProps {
-      icon: any
+      icon: React.ReactNode
       text: React.ReactNode
     }
 
@@ -222,9 +221,9 @@ export const ExampleList: Story = {
         'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
     }))
 
-    const IconText: React.FC<IconTextProps> = ({ icon, text }: { icon: any; text: any }) => (
+    const IconText: React.FC<IconTextProps> = ({ icon, text }: IconTextProps) => (
       <>
-        {createElement(icon, { style: { marginRight: 8 } })}
+        <span style={{ marginRight: 8 }}>{icon}</span>
         {text}
       </>
     )

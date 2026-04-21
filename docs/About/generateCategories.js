@@ -23,12 +23,12 @@ const OUT_FILE = join(__dirname, 'componentCategories.json')
 // ── 1. Declarative Config ──────────────────────────────────────────────
 
 const CONFIG = {
-  skipCategories: new Set(['Not Prod Ready', 'Layout', 'UX Patterns']),
+  skipCategories: new Set(['Layout', 'UX Patterns']),
 
   categoryOrder: ['General', 'Data Display', 'Data Entry', 'Feedback', 'Navigation'],
 
   excludeTitlePatterns: [
-    (title) => title.includes('Not Prod Ready'),
+    (title) => title.startsWith('Experimental/'),
     (title) => title.startsWith('Patterns/') || title.startsWith('UX Patterns/'),
   ],
 
@@ -46,9 +46,9 @@ const CONFIG = {
   manualEntries: {
     General: {
       Icons: [
-        { name: 'Rokt Icons', variantCount: 1, group: 'Icons', storyId: 'foundations-icons-rokt-icons--documentation' },
-        { name: 'Special Icons', variantCount: 1, group: 'Icons', storyId: 'foundations-icons-special-icons--documentation' },
-        { name: 'mParticle Icons', variantCount: 1, group: 'Icons', storyId: 'foundations-icons-mparticle-icons--documentation' },
+        { name: 'Rokt Icons', variantCount: 1, group: 'Icons', storyId: 'components-general-icons-rokt-icons--documentation' },
+        { name: 'Special Icons', variantCount: 1, group: 'Icons', storyId: 'components-general-icons-special-icons--documentation' },
+        { name: 'mParticle Icons', variantCount: 1, group: 'Icons', storyId: 'components-general-icons-mparticle-icons--documentation' },
       ],
       Typography: {
         componentNames: ['Text', 'Title', 'Paragraph', 'Link'],

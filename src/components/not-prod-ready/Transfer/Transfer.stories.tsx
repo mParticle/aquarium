@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Transfer } from 'src/components/not-prod-ready/Transfer/Transfer'
 
 const meta: Meta<typeof Transfer> = {
-  title: 'Components/Not Prod Ready/Transfer',
+  title: 'Experimental/Transfer',
   component: Transfer,
 
   args: {},

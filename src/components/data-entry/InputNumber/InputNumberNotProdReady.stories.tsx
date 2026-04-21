@@ -2,7 +2,7 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { InputNumber } from 'src/components/data-entry/InputNumber/InputNumber'
 
 const meta: Meta<typeof InputNumber> = {
-  title: 'Components/Not Prod Ready/Data Entry/InputNumber',
+  title: 'Experimental/Data Entry/InputNumber',
   component: InputNumber,
 
   args: {
@@ -127,7 +127,7 @@ export const DecimalSeparatorComma: Story = {
 
 export const WithFormatter: Story = {
   args: {
-    formatter: (value, info) => `$${value}`,
+    formatter: (value, _info) => `$${value}`,
   },
 }
 

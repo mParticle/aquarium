@@ -76,7 +76,7 @@ import {
 } from 'src/styles/style'
 
 const meta: Meta = {
-  title: 'EOY Cleanup/Color Palette',
+  title: 'Design Tokens/Color Palette',
 }
 
 export default meta

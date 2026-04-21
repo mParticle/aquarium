@@ -42,7 +42,7 @@ const options: ICascaderProps['options'] = [
 ]
 
 const meta: Meta<typeof Cascader> = {
-  title: 'Components/Not Prod Ready/Data Entry/Cascader',
+  title: 'Experimental/Data Entry/Cascader',
   component: Cascader,
 
   args: {

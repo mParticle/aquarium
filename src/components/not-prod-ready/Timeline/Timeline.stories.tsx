@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Timeline } from 'src/components/not-prod-ready/Timeline/Timeline'
 
 const meta: Meta<typeof Timeline> = {
-  title: 'Components/Not Prod Ready/Timeline',
+  title: 'Experimental/Timeline',
   component: Timeline,
 
   args: {},

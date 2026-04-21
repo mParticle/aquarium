@@ -7,7 +7,7 @@ import { useState } from 'react'
 import { Tooltip } from 'src/components'
 
 const meta: Meta<typeof Progress> = {
-  title: 'Components/Not Prod Ready/Feedback/Progress',
+  title: 'Experimental/Feedback/Progress',
   component: Progress,
 
   args: {

@@ -11,7 +11,7 @@ import { Skeleton } from 'src/components'
 import { Icon } from 'src/components'
 
 const meta: Meta<typeof Card> = {
-  title: 'Components/Not Prod Ready/Data Display/Card',
+  title: 'Experimental/Data Display/Card',
   component: props => <Card {...props}>{props.children}</Card>,
 
   args: {
