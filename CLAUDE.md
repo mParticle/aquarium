@@ -96,6 +96,10 @@ Only add comments for non-obvious logic, business context, or to help other engi
 - ❌ `/** Tooltip content displayed on hover */ title: ReactNode`
 - ❌ `/** Icon size */ size?: IconSize`
 
+## Component & Icon Changes
+
+When adding new icons, components, or promoting component status, ALWAYS update the corresponding documentation page (e.g., homepage `componentCategories.json`, docs pages, icon index files) as part of the same change. Do not consider the task complete until docs are updated.
+
 ## Adding Icons
 
 ### Rokt/Untitled UI Icons
