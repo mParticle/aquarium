@@ -1,1 +1,0 @@
-import{cu as n}from"./iframe-CWmmeg14.js";var r={},o;function s(){if(o)return r;o=1,Object.defineProperty(r,"__esModule",{value:!0}),r.default=i;function i(a,t){const e=Object.assign({},a);return Array.isArray(t)&&t.forEach(u=>{delete e[u]}),e}return r}var c=s();const f=n(c);export{f as o};
