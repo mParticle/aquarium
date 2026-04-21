@@ -5,7 +5,7 @@ import { ConfigProvider, Divider, Flex, Icon, Typography } from 'src/components'
 import { MarginLg, MarginMd, MarginXl, SizeSm } from 'src/styles/style'
 
 const meta: Meta = {
-  title: 'Components/AI/Showcase/Empty State',
+  title: 'UX Patterns/AI Copilot/Empty State',
   parameters: { layout: 'fullscreen' },
   decorators: [
     Story => (
