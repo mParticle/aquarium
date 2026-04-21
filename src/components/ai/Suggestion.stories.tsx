@@ -28,7 +28,7 @@ export const Basic: Story = {
             value={value}
             onChange={nextValue => {
               setValue(nextValue)
-              onTrigger(nextValue === '/')
+              onTrigger(nextValue.startsWith('/') ? nextValue : false)
             }}
             onKeyDown={onKeyDown}
             placeholder='Type "/" to trigger suggestions'
