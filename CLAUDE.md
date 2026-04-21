@@ -5,7 +5,21 @@
 - **Ant Design**: v6 (peer dep)
 - **React**: 19. No `forwardRef`, `propTypes`, or `defaultProps` on function components.
 - **Testing**: Storybook 10 interaction tests (`play` functions with `storybook/test`) — NOT separate Vitest spec files per component.
+- **Ant Design X**: AI components via `@ant-design/x` (peer dep)
 - **Build**: `npm run build` must pass before committing. Output in `dist/`.
+
+### Dependencies
+
+- **Pin exact versions** in devDependencies (e.g., `"2.4.0"` not `"^2.4.0"`). Use `npm install --save-exact` or manually remove `^`/`~`.
+- peerDependencies use ranges (`>=2.4.0`) since consumers control their versions.
+
+### Build — Style Token Files
+
+`npm run build` regenerates `src/styles/style.ts` and `src/styles/_variables.css` via style-dictionary. If you didn't change tokens, restore them before committing:
+
+```sh
+git checkout -- src/styles/style.ts src/styles/_variables.css
+```
 
 ### React 19 — Component Pattern
 

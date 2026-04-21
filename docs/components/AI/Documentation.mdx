@@ -1,0 +1,36 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Components/AI/Documentation" />
+
+# AI Components
+
+These stories demonstrate how [@ant-design/x](https://x.ant.design/) components look and behave inside Aquarium's `ConfigProvider`. They are **not** exported from `@mparticle/aquarium` — consumers install `@ant-design/x` themselves and wrap it with Aquarium theming.
+
+## Featured Examples
+
+- **Bubble** — Chat message bubbles, with `Bubble.List` for conversations.
+- **Conversations** — Conversation list sidebar for managing multiple chats.
+- **Sender** — Message input with send button. `Sender.Header` provides a toolbar slot.
+- **Suggestion** — AI suggestion chips triggered from an input.
+- **Prompts** — Prompt template cards.
+- **Attachments** — File attachment handling for chat inputs.
+- **Actions** — Action buttons (copy, like, dislike, etc.) for messages.
+
+## Usage
+
+Install `@ant-design/x` in your project, then wrap it with Aquarium's `ConfigProvider` so it inherits the theme:
+
+```tsx
+import { Bubble } from '@ant-design/x'
+import { ConfigProvider } from '@mparticle/aquarium'
+
+export function ChatMessage() {
+  return (
+    <ConfigProvider>
+      <Bubble content="Hello!" />
+    </ConfigProvider>
+  )
+}
+```
+
+Refer to the [Ant Design X docs](https://x.ant.design/) for the full component API.
