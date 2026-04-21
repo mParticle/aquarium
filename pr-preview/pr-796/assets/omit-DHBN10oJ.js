@@ -1,1 +1,0 @@
-import{cF as u}from"./iframe-B82bSDB8.js";var r={},o;function s(){if(o)return r;o=1,Object.defineProperty(r,"__esModule",{value:!0}),r.default=i;function i(a,t){const e=Object.assign({},a);return Array.isArray(t)&&t.forEach(n=>{delete e[n]}),e}return r}var c=s();const f=u(c);export{f as o};
