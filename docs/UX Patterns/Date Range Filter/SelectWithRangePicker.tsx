@@ -8,12 +8,11 @@ import type { SelectBaseOptionType, SelectDefaultOptionType } from 'src/componen
 
 export type SelectWithRangePickerValue<ValueType> = ValueType | [string, string] | null
 
-interface SelectWithRangePickerProps<ValueType, OptionType>
-  extends Omit<
-    // @ts-expect-error only used in stories as an example
-    ISelectProps<SelectWithRangePickerValue<ValueType>, OptionType>,
-    'open' | 'value' | 'dropdownRender' | 'defaultValue' | 'mode'
-  > {
+interface SelectWithRangePickerProps<ValueType, OptionType> extends Omit<
+  // @ts-expect-error only used in stories as an example
+  ISelectProps<SelectWithRangePickerValue<ValueType>, OptionType>,
+  'open' | 'value' | 'dropdownRender' | 'defaultValue' | 'mode'
+> {
   value: SelectWithRangePickerValue<ValueType>
   rangePickerProps?: Omit<IRangePickerProps, 'value' | 'onChange'>
   rangePickerLabel?: React.ReactNode
@@ -33,6 +32,7 @@ export const SelectWithRangePicker = <
   ...rest
 }: SelectWithRangePickerProps<ValueType, OptionType>) => {
   const [open, setOpen] = useState(undefined)
+  const rangePickerValue = useMemo(() => (Array.isArray(value) ? value.map(dayjs) : undefined), [value])
 
   return (
     <Select<SelectWithRangePickerValue<ValueType>, OptionType>
@@ -55,7 +55,7 @@ export const SelectWithRangePicker = <
               {rangePickerLabel}
               <DatePicker.RangePicker
                 // @ts-expect-error only used in stories as an example
-                value={useMemo(() => (Array.isArray(value) ? value.map(dayjs) : undefined), [value])}
+                value={rangePickerValue}
                 onOpenChange={isOpen => {
                   rangePickerProps?.onOpenChange?.(isOpen)
                   // @ts-expect-error only used in stories as an example

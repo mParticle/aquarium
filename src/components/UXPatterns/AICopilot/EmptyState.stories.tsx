@@ -2,7 +2,7 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { Conversations, Prompts, Sender } from '@ant-design/x'
 import { useState } from 'react'
 import { ConfigProvider, Divider, Flex, Icon, Typography } from 'src/components'
-import { MarginLg, MarginMd, MarginXl, SizeSm } from 'src/styles/style'
+import { ColorBgLayout, MarginLg, MarginMd, MarginXl, SizeSm } from 'src/styles/style'
 
 const meta: Meta = {
   title: 'UX Patterns/AI Copilot/Empty State',
@@ -53,7 +53,11 @@ function EmptyStateShowcase() {
   const [value, setValue] = useState('')
 
   return (
-    <Flex vertical align="center" gap={MarginXl} style={{ padding: MarginXl, minHeight: '100vh' }}>
+    <Flex
+      vertical
+      align="center"
+      gap={MarginXl}
+      style={{ padding: MarginXl, minHeight: '100vh', backgroundColor: ColorBgLayout }}>
       <Flex vertical align="center" gap={MarginLg} style={{ width: '100%', maxWidth: 640 }}>
         <Icon name="agentCopilot" size="xxl" color="brand" />
 
