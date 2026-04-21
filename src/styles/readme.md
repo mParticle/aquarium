@@ -6,7 +6,7 @@ The plugin should be run with settings - version 5.15, Use Ant Design Algorithm 
 
 Paste that into [LightTheme.ts](https://github.com/mParticle/aquarium/blob/main/design/LightTheme.ts) to update our existing theme
 
-Then open the story `GetGlobalToken` to retrieve the latest global design token. The script in [GetGlobalToken.tsx](https://github.com/mParticle/aquarium/blob/main/src/utils/GetGlobalToken.ts) is used to create the content of `GlobalTokens.json`
+Then open the `GetGlobalToken` story at `?path=/story/contributing-tooling-getglobaltoken--primary` (hidden from the sidebar but still reachable via URL). The script in [GetGlobalToken.tsx](https://github.com/mParticle/aquarium/blob/main/src/utils/GetGlobalToken.ts) is used to create the content of `GlobalTokens.json`
 
 Then paste that into [GlobalToken.json](https://github.com/mParticle/aquarium/blob/main/design/GlobalToken.json)
 

@@ -1,8 +1,6 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { Flex, Table, Typography } from 'src/components'
 import {
-  FontFamilyCode,
-  FontSizeSm,
   MpBrandPrimary6,
   Size,
   SizeLg,
@@ -33,6 +31,7 @@ import {
   BorderRadiusSm,
   BorderRadiusXs,
 } from 'src/styles/style'
+import { CopyableToken } from '../_shared/CopyableToken'
 
 const meta: Meta = {
   title: 'Design Tokens/Spacing',
@@ -72,14 +71,14 @@ const RadiusSwatch = ({ radius }: { radius: number | string }) => (
 )
 
 const tokenColumns = [
-  { title: 'Preview', dataIndex: 'preview', key: 'preview', width: '30%' },
-  { title: 'Name', dataIndex: 'name', key: 'name', width: '25%' },
+  { title: 'Preview', dataIndex: 'preview', key: 'preview', width: '25%' },
+  { title: 'Name', dataIndex: 'name', key: 'name', width: '20%' },
   {
     title: 'Token',
     dataIndex: 'token',
     key: 'token',
-    width: '25%',
-    render: (token: string) => <code style={{ fontFamily: FontFamilyCode, fontSize: FontSizeSm }}>{token}</code>,
+    width: '35%',
+    render: (token: string) => <CopyableToken name={token} />,
   },
   { title: 'Value', dataIndex: 'value', key: 'value', width: '20%' },
 ]
@@ -140,8 +139,7 @@ export const Sizes: Story = {
   ),
 }
 
-export const Margin_: Story = {
-  name: 'Margins',
+export const Margins: Story = {
   render: () => (
     <Flex vertical gap={24}>
       <Typography.Title level={3}>Margins</Typography.Title>
@@ -150,8 +148,7 @@ export const Margin_: Story = {
   ),
 }
 
-export const Padding_: Story = {
-  name: 'Paddings',
+export const Paddings: Story = {
   render: () => (
     <Flex vertical gap={24}>
       <Typography.Title level={3}>Paddings</Typography.Title>
@@ -160,10 +157,11 @@ export const Padding_: Story = {
   ),
 }
 
-export const Radii: Story = {
+export const Radius: Story = {
+  name: 'Border Radius',
   render: () => (
     <Flex vertical gap={24}>
-      <Typography.Title level={3}>Border Radii</Typography.Title>
+      <Typography.Title level={3}>Border Radius</Typography.Title>
       <Table columns={tokenColumns} dataSource={radiusRows} pagination={false} size="middle" />
     </Flex>
   ),

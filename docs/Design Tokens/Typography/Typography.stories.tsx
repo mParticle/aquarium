@@ -24,6 +24,7 @@ import {
   LineHeightHeading4,
   LineHeightHeading5,
 } from 'src/styles/style'
+import { CopyableToken } from '../_shared/CopyableToken'
 
 const meta: Meta = {
   title: 'Design Tokens/Typography',
@@ -41,14 +42,14 @@ interface TokenRow {
 }
 
 const tokenColumns = [
-  { title: 'Preview', dataIndex: 'preview', key: 'preview', width: '30%' },
-  { title: 'Name', dataIndex: 'name', key: 'name', width: '25%' },
+  { title: 'Preview', dataIndex: 'preview', key: 'preview', width: '25%' },
+  { title: 'Name', dataIndex: 'name', key: 'name', width: '20%' },
   {
     title: 'Token',
     dataIndex: 'token',
     key: 'token',
-    width: '25%',
-    render: (token: string) => <code style={{ fontFamily: FontFamilyCode, fontSize: FontSizeSm }}>{token}</code>,
+    width: '35%',
+    render: (token: string) => <CopyableToken name={token} />,
   },
   { title: 'Value', dataIndex: 'value', key: 'value', width: '20%' },
 ]

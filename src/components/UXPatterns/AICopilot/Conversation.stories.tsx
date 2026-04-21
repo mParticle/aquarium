@@ -5,7 +5,7 @@ import { Button, Card, ConfigProvider, Flex, Icon, Typography } from 'src/compon
 import { ColorFillSecondary, Margin, MarginLg, MarginMd, MarginXl, PaddingXs, SizeSm } from 'src/styles/style'
 
 const meta: Meta = {
-  title: 'UX Patterns/AI Copilot/Conversation',
+  title: 'UX Patterns/Flows/AI Copilot/Conversation',
   parameters: { layout: 'fullscreen' },
   decorators: [
     Story => (

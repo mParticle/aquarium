@@ -1,0 +1,30 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks'
+
+import * as SpaceStories from '../../../../src/components/layout/Space/Space.stories'
+
+<Meta of={SpaceStories} />
+
+# Space
+
+`Space` sets consistent gaps between adjacent elements without forcing a flex container. Useful when you want breathing room between a handful of inline items (e.g. a button group, a row of chips) but don't need the full power of `Flex`.
+
+## When to use
+
+- A small cluster of inline elements that need a uniform gap.
+- A vertical stack of cards or form fields.
+- Splitting groups with a visual separator (`split` prop).
+
+## When not to use
+
+- Complex layouts with wrapping and alignment → use **Flex**.
+- Centering a single element inside its container → use **Center**.
+
+## Examples
+
+<Canvas of={SpaceStories.Primary} />
+
+<Canvas of={SpaceStories.VerticalSpace} />
+
+<Canvas of={SpaceStories.WrappedSpace} />
+
+<Canvas of={SpaceStories.SplitSpace} />

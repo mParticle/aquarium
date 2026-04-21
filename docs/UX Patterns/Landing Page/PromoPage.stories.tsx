@@ -3,66 +3,58 @@ import { PromoPage } from './PromoPage'
 import { PromoPageHero } from './components/PromoPageHero'
 import { PromoPageBenefits } from './components/PromoPageBenefits'
 import { PromoPageCard } from './components/PromoPageCard'
+import zeroCopyImg from './assets/zero-copy-activation.png'
+import warehouseSyncImg from './assets/warehouse-sync.png'
+import architecturalFlexibilityImg from './assets/architectural-flexibility.png'
 
 const meta: Meta<typeof PromoPage> = {
-  title: 'UX Patterns/Landing Page/Promo Page',
+  title: 'UX Patterns/Flows/Landing Page',
   component: PromoPage,
+  parameters: {
+    layout: 'fullscreen',
+  },
 }
 
 export default meta
 
 type Story = StoryObj<typeof PromoPage>
 
-export const DefaultPromoPage: Story = {
-  render: function Render() {
-    return (
-      <PromoPage>
-        <PromoPageHero
-          headline="Create your new feature"
-          description="Transform your workflow with our innovative solution designed to boost productivity and streamline your processes."
-          buttons={{
-            defaultButton: {
-              label: 'Read Docs',
-              onClick: () => console.log('Read Docs clicked!'),
-            },
-            primaryButton: {
-              label: 'Create new feature',
-              iconName: 'add',
-              onClick: () => console.log('Create new feature clicked!'),
-            },
-          }}
-        />
+export const FeatureLandingPage: Story = {
+  name: 'Feature Landing Page',
+  render: () => (
+    <PromoPage>
+      <PromoPageHero
+        headline="Connect to your data warehouse"
+        description="Activate directly from your warehouse with a zero-copy setup, or enrich your customer data with scheduled event syncs."
+        buttons={{
+          defaultButton: {
+            label: 'Read Docs',
+            onClick: () => console.log('Read docs'),
+          },
+          primaryButton: {
+            label: 'Get Started',
+            onClick: () => console.log('Get started'),
+          },
+        }}
+      />
 
-        <PromoPageBenefits title="Key Benefits">
-          <PromoPageCard
-            title="Value #1"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce semper velit eu ipsum vestibulum, non porta tellus rutrum. Nulla nisl odio, tincidunt non nisl at, sodales feugiat sapien."
-            displayOptions={{
-              type: 'link',
-              src: '#',
-              text: 'Button',
-            }}
-          />
-          <PromoPageCard
-            title="Value #2"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce semper velit eu ipsum vestibulum, non porta tellus rutrum. Nulla nisl odio, tincidunt non nisl at, sodales feugiat sapien."
-            displayOptions={{
-              type: 'link',
-              src: '#',
-              text: 'Button',
-            }}
-          />
-          <PromoPageCard
-            title="Value #3"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce semper velit eu ipsum vestibulum, non porta tellus rutrum. Nulla nisl odio, tincidunt non nisl at, sodales feugiat sapien."
-            displayOptions={{
-              type: 'link',
-              src: '#',
-              text: 'Button',
-            }}
-          />
-        </PromoPageBenefits>
-      </PromoPage>
-    )
-  },
+      <PromoPageBenefits title="Key Benefits">
+        <PromoPageCard
+          title="Zero-Copy Activation"
+          description="Activate directly from your warehouse. Compute runs in your environment, so you maintain full control over governance, performance, and cost."
+          displayOptions={{ src: zeroCopyImg, text: 'Zero-Copy Activation', type: 'img' }}
+        />
+        <PromoPageCard
+          title="Warehouse Sync"
+          description="Ingest events from your warehouse on a schedule. Combine them with other event streams to unify, enrich, and activate everywhere."
+          displayOptions={{ src: warehouseSyncImg, text: 'Warehouse Sync', type: 'img' }}
+        />
+        <PromoPageCard
+          title="Architectural Flexibility"
+          description="Use zero-copy activation and warehouse sync in the same environment. Start with the model that fits today, and adapt as your stack and strategy evolve."
+          displayOptions={{ src: architecturalFlexibilityImg, text: 'Architectural Flexibility', type: 'img' }}
+        />
+      </PromoPageBenefits>
+    </PromoPage>
+  ),
 }

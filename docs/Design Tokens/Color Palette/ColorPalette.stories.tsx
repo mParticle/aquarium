@@ -1,10 +1,7 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { useState } from 'react'
 import {
   FontFamily,
-  FontFamilyCode,
   FontSize,
-  FontSizeSm,
   MpBrandPrimary1,
   MpBrandPrimary2,
   MpBrandPrimary3,
@@ -74,6 +71,7 @@ import {
   MpColorIconStrong,
   MpColorBorderDisabled,
 } from 'src/styles/style'
+import { CopyableToken } from '../_shared/CopyableToken'
 
 const meta: Meta = {
   title: 'Design Tokens/Color Palette',
@@ -115,83 +113,6 @@ const ColorSwatch = ({ value }: { value: string }) => {
           }}
         />
       )}
-    </div>
-  )
-}
-
-const CopyableName = ({ name, tokenName }: { name: string; tokenName: string }) => {
-  const [showTooltip, setShowTooltip] = useState(false)
-  const [copied, setCopied] = useState(false)
-
-  const handleCopy = async (e: React.MouseEvent) => {
-    e.preventDefault()
-    e.stopPropagation()
-    try {
-      await navigator.clipboard.writeText(tokenName)
-      setCopied(true)
-      setShowTooltip(true)
-      setTimeout(() => {
-        setCopied(false)
-        setShowTooltip(false)
-      }, 2000)
-    } catch (err) {
-      console.error('Failed to copy:', err)
-    }
-  }
-
-  return (
-    <div style={{ position: 'relative', display: 'inline-block' }}>
-      <span
-        onClick={e => {
-          void handleCopy(e)
-        }}
-        onMouseEnter={() => !copied && setShowTooltip(true)}
-        onMouseLeave={() => !copied && setShowTooltip(false)}
-        style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '6px',
-          backgroundColor: '#f5f5f5',
-          padding: '4px 8px',
-          borderRadius: '4px',
-          fontSize: FontSizeSm,
-          fontFamily: FontFamilyCode,
-          cursor: 'pointer',
-          position: 'relative',
-        }}>
-        {name}
-        {showTooltip && (
-          <div
-            style={{
-              position: 'absolute',
-              bottom: '100%',
-              left: '50%',
-              transform: 'translateX(-50%)',
-              marginBottom: '8px',
-              backgroundColor: '#333',
-              color: '#fff',
-              padding: '6px 10px',
-              borderRadius: '4px',
-              fontSize: '12px',
-              whiteSpace: 'nowrap',
-              zIndex: 1000,
-              pointerEvents: 'none',
-            }}>
-            {copied ? 'Copied!' : 'Copy to clipboard'}
-            <div
-              style={{
-                position: 'absolute',
-                top: '100%',
-                left: '50%',
-                transform: 'translateX(-50%)',
-                borderLeft: '6px solid transparent',
-                borderRight: '6px solid transparent',
-                borderTop: '6px solid #333',
-              }}
-            />
-          </div>
-        )}
-      </span>
     </div>
   )
 }
@@ -240,7 +161,7 @@ const ColorRow = ({
           color: 'rgba(0, 0, 0, 0.88)',
           fontFamily: FontFamily,
         }}>
-        <CopyableName name={tokenName} tokenName={tokenName} />
+        <CopyableToken name={tokenName} />
       </td>
       <td
         style={{

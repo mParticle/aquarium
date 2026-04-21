@@ -38,7 +38,7 @@ const fixedColumns = tableColumns?.map((col, i) => {
 })
 
 const meta: Meta<typeof Table> = {
-  title: 'UX Patterns/Table/Table',
+  title: 'UX Patterns/Data Exploration/Table',
   component: Table,
 
   args: {},

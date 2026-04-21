@@ -1,0 +1,22 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks'
+
+import * as CenterStories from '../../../../src/components/layout/Center/Center.stories'
+
+<Meta of={CenterStories} />
+
+# Center
+
+A single-purpose container that centers its children both horizontally and vertically. Prefer `Center` over hand-rolling a flex container every time you need dead-center alignment.
+
+## When to use
+
+- Centering an empty state, loading spinner, or modal content.
+- Centering a single element inside any container.
+
+## When not to use
+
+- Aligning multiple elements → reach for **Flex** with `justify` / `align`.
+
+## Example
+
+<Canvas of={CenterStories.Primary} />
