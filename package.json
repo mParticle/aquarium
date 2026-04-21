@@ -26,12 +26,13 @@
     "dist/src"
   ],
   "peerDependencies": {
-    "antd": ">=6.3",
+    "antd": ">=6.3.1",
     "dayjs": "1.11.x",
     "react": ">=19.0.0",
     "react-dom": ">=19.0.0"
   },
   "devDependencies": {
+    "@ant-design/x": "2.4.0",
     "@commitlint/cli": "20.3.1",
     "@commitlint/config-conventional": "20.3.1",
     "@faker-js/faker": "10.2.0",
