@@ -292,14 +292,14 @@ function makeMockPerformanceData(): INbaPerformanceData {
 const mockData = makeMockPerformanceData()
 
 const meta: Meta<typeof NBAChartDemo> = {
-  title: 'Components/Charts/NBAChart',
+  title: 'Components/Charts/Stacked Area Chart',
   component: NBAChartDemo,
   parameters: {
     layout: 'padded',
     docs: {
       description: {
         component:
-          'Cortex Next Best Action chart — stacked area series per action by decile, overlaid with a predicted CVR line. Hover to see action and CVR details; the selected percentile is highlighted with a plotBand.',
+          'Stacked area chart with one series per category, overlaid with a line series on a secondary axis. Hover to see per-series details; a plotBand can highlight a selected range.',
       },
     },
   },

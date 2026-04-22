@@ -4,19 +4,13 @@ import { Meta } from '@storybook/addon-docs/blocks'
 
 # Charts
 
-These stories document chart examples built with [Highcharts](https://www.highcharts.com/) and show how Aquarium's `ChartConfig` / `ChartColors` defaults can be applied to real-world chart patterns. The `HighChart` wrapper and `ChartTooltip` helper used here live alongside the stories as reference implementations — they are **not** exported from `@mparticle/aquarium`. Consumers install `highcharts` themselves and copy/adapt the patterns shown below.
+A few examples of different Highcharts chart types used by mParticle Predictions.
 
-## Example stories
+- **Column Chart** — columns with an overlaid line and optional selection plotBand.
+- **Stacked Area Chart** — stacked area series with an overlaid line on a secondary axis.
+- **Area Chart** — filled background bands with an overlaid line and optional selection plotBand.
 
-- **FutureEventsChart** — percentile bins as columns, predicted CVR line with lift badges.
-- **NBAChart** — stacked area by action with a secondary CVR line.
-- **SimilarCustomersChart** — background similarity bands + predicted similarity multiplier line.
-
-Each story ports the corresponding Cortex chart and replaces the live pipeline response with inline mock data so the visual behavior can be inspected without a server.
-
-## Usage
-
-Install `highcharts` in your project and reuse Aquarium's shared `ChartConfig` defaults when building chart options:
+Highcharts is not exported from Aquarium — consumers install `highcharts` themselves and can reuse Aquarium's shared `ChartConfig` defaults.
 
 ```tsx
 import Highcharts, { type Options } from 'highcharts'
@@ -30,5 +24,3 @@ const options: Options = {
 
 Highcharts.chart('my-container', options)
 ```
-
-Refer to the [Highcharts docs](https://api.highcharts.com/highcharts/) for the full options API.

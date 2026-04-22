@@ -373,14 +373,14 @@ function makeMockData(): IFutureEventsMockData {
 const mockData = makeMockData()
 
 const meta: Meta<typeof FutureEventsChartDemo> = {
-  title: 'Components/Charts/FutureEventsChart',
+  title: 'Components/Charts/Column Chart',
   component: FutureEventsChartDemo,
   parameters: {
     layout: 'padded',
     docs: {
       description: {
         component:
-          'Cortex Future Events chart — columns represent equally sized user bins, the magenta line shows predicted CVR per bin with lift badges, and the purple plotBand highlights a selected percentile range.',
+          'Column chart with an overlaid line series. Columns represent equally sized bins, the line shows a per-bin metric with lift badges, and a plotBand highlights a selected range.',
       },
     },
   },

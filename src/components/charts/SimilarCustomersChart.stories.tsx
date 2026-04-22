@@ -391,14 +391,14 @@ function makeMockData(): ISimilarCustomersMockData {
 const mockData = makeMockData()
 
 const meta: Meta<typeof SimilarCustomersChartDemo> = {
-  title: 'Components/Charts/SimilarCustomersChart',
+  title: 'Components/Charts/Area Chart',
   component: SimilarCustomersChartDemo,
   parameters: {
     layout: 'padded',
     docs: {
       description: {
         component:
-          'Cortex Similar Customers chart — horizontal bands highlight dissimilar / moderately similar / most similar user groups, with a predicted similarity multiplier line and an optional purple plotBand for the selected range.',
+          'Area chart using filled background bands to group ranges, overlaid with a line series. An optional plotBand highlights a selected range.',
       },
     },
   },
