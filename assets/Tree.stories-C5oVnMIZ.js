@@ -1,1 +1,0 @@
-import{cG as e}from"./iframe-CSmb4P-3.js";import"./preload-helper-PPVm8Dsz.js";const t={title:"Experimental/Tree",component:e,args:{}},r={};r.parameters={...r.parameters,docs:{...r.parameters?.docs,source:{originalSource:"{}",...r.parameters?.docs?.source}}};const s=["Primary"];export{r as Primary,s as __namedExportsOrder,t as default};
