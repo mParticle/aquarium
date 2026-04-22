@@ -1,0 +1,4 @@
+import{j as t}from"./iframe-C5_iV81x.js";import{useMDXComponents as s}from"./index-D-Bg14sb.js";import{M as r,C as a}from"./blocks-B9nqxp1B.js";import i,{UXPatternExample as c}from"./Steps.stories-Brlj2Cr4.js";import"./preload-helper-PPVm8Dsz.js";function o(e){const n={h1:"h1",p:"p",...s(),...e.components};return t.jsxs(t.Fragment,{children:[t.jsx(r,{of:i}),`
+`,t.jsx(n.h1,{id:"steps-progress-indicator",children:"Steps Progress Indicator"}),`
+`,t.jsx(n.p,{children:"Steps help communicate the current state of multistep flows. The following UX pattern centers the vertical label placement version inside its container so it feels like a dashboard callout."}),`
+`,t.jsx(a,{of:c})]})}function h(e={}){const{wrapper:n}={...s(),...e.components};return n?t.jsx(n,{...e,children:t.jsx(o,{...e})}):o(e)}export{h as default};
