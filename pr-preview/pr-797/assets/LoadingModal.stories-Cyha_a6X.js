@@ -1,5 +1,0 @@
-import{cl as c,G as u,j as e,i as g}from"./iframe-CcEJbbNh.js";import"./preload-helper-PPVm8Dsz.js";const j={title:"Experimental/Feedback/Loading Modal",component:c,args:{}},i=(r,a)=>{const[o,n]=u.useState(!1),l=()=>{n(!0)},d=()=>{n(!1)},m=()=>{n(!1)};return e.jsxs(e.Fragment,{children:[e.jsx(g,{type:"primary",onClick:l,children:"Open Loading Modal"}),o&&e.jsx(c,{fetchData:a,title:"Loading Modal",open:!0,onOk:d,onCancel:m,children:p=>e.jsxs(e.Fragment,{children:["Data resolved with - ",p+""]})})]})},x=r=>i(r,async()=>await new Promise((a,o)=>{setTimeout(()=>{a(!0)},1e3)})),y=r=>i(r,async()=>await new Promise((a,o)=>{setTimeout(()=>{o(new Error)},1e3)})),s={render:x},t={render:y};s.parameters={...s.parameters,docs:{...s.parameters?.docs,source:{originalSource:`{
-  render: PrimaryTemplate
-}`,...s.parameters?.docs?.source}}};t.parameters={...t.parameters,docs:{...t.parameters?.docs,source:{originalSource:`{
-  render: ErrorTemplate
-}`,...t.parameters?.docs?.source}}};const w=["Primary","ErrorStory"];export{t as ErrorStory,s as Primary,w as __namedExportsOrder,j as default};
