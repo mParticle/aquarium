@@ -8,7 +8,7 @@ import { useState } from 'react'
 import { useRef } from 'react'
 
 const meta: Meta<typeof Anchor> = {
-  title: 'Components/Not Prod Ready/Navigation/Anchor',
+  title: 'Experimental/Navigation/Anchor',
   component: Anchor,
 
   args: {
@@ -35,7 +35,7 @@ const meta: Meta<typeof Anchor> = {
         children: [],
       },
     ],
-    onClick: (e: React.MouseEvent, link: object) => {
+    onClick: (_e: React.MouseEvent, _link: object) => {
       alert('Anchor Click')
     },
     // onChange: (currentActiveLink: string) => { alert('Anchor Change') },

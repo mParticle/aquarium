@@ -1,0 +1,34 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks'
+
+import * as FlexStories from '../../../../src/components/layout/Flex/Flex.stories'
+
+<Meta of={FlexStories} />
+
+# Flex
+
+A flexible container built on CSS flexbox. Use `Flex` instead of raw `<div style={{ display: 'flex' }}>` so direction, gap, alignment, and wrapping all flow through the same API — and spacing always lands on a design token.
+
+## When to use
+
+- Arranging elements in a row or column with consistent gap.
+- Centering, end-aligning, or distributing content along either axis.
+- Wrapping rows of items without writing custom media queries.
+
+## Props at a glance
+
+- `vertical` — switches to a column layout.
+- `gap` — accepts any size token (`SizeSm`, `SizeLg`, …) or number.
+- `justify` / `align` — all standard flex values.
+- `wrap` — lets children flow to the next line when space runs out.
+
+## Examples
+
+<Canvas of={FlexStories.Primary} />
+
+<Canvas of={FlexStories.VerticalFlex} />
+
+<Canvas of={FlexStories.JustifyCenter} />
+
+<Canvas of={FlexStories.ExampleWrap} />
+
+<Canvas of={FlexStories.ExampleNesting} />

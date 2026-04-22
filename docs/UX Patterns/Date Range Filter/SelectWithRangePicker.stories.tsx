@@ -4,7 +4,7 @@ import { fn } from 'storybook/test'
 import { useArgs } from 'storybook/preview-api'
 
 const meta: Meta<typeof Component> = {
-  title: 'UX Patterns/Date Range Filter',
+  title: 'UX Patterns/Data Exploration/Date Range Filter',
   component: Component,
 }
 export default meta

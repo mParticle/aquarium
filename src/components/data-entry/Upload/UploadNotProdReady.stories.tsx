@@ -4,7 +4,7 @@ import { Upload } from 'src/components/data-entry/Upload/Upload'
 import { Button } from 'src/components/general/Button/Button'
 
 const meta: Meta<typeof Upload> = {
-  title: 'Components/Not Prod Ready/Data Entry/Upload',
+  title: 'Experimental/Data Entry/Upload',
   component: props => (
     <Upload {...props}>
       <Button icon={<Icon name="mpLogo" />}>Click to Upload</Button>
@@ -14,7 +14,7 @@ const meta: Meta<typeof Upload> = {
   args: {
     accept: '.jpg,.png,.gif',
     action: '/upload',
-    beforeUpload: (file, fileList) => {
+    beforeUpload: (_file, _fileList) => {
       alert('Before Upload:')
       // Customize before upload logic
       return true
@@ -43,19 +43,19 @@ const meta: Meta<typeof Upload> = {
     progress: { strokeWidth: 2, showInfo: false },
     showUploadList: true,
     withCredentials: false,
-    onChange: info => {
+    onChange: _info => {
       alert('Upload Change:')
     },
-    onDrop: event => {
+    onDrop: _event => {
       alert('File Drop:')
     },
-    onDownload: file => {
+    onDownload: _file => {
       alert('Download:')
     },
-    onPreview: file => {
+    onPreview: _file => {
       alert('Preview:')
     },
-    onRemove: file => {
+    onRemove: _file => {
       alert('Remove:')
       // Customize remove logic
       return true
@@ -81,7 +81,7 @@ export const CustomListType: Story = {
 
 export const DragAndDropUpload: Story = {
   args: {
-    onDrop: event => {
+    onDrop: _event => {
       alert('File Drop:')
     },
   },

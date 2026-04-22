@@ -1,20 +1,18 @@
 import type { ReactNode } from 'react'
+import { Flex } from 'src/components'
+import { PaddingXl, SizeXxl } from 'src/styles/style'
 
 export interface PromoPageProps {
   children: ReactNode
 }
 
-export const PromoPage = ({ children }: PromoPageProps) => {
-  return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 48,
-        padding: '48px 32px 64px',
-        backgroundColor: '#ffffff',
-      }}>
-      {children}
-    </div>
-  )
-}
+export const PromoPage = ({ children }: PromoPageProps) => (
+  <Flex
+    vertical
+    align="center"
+    justify="center"
+    gap={SizeXxl}
+    style={{ padding: `${SizeXxl} ${PaddingXl}`, minHeight: '100%' }}>
+    {children}
+  </Flex>
+)

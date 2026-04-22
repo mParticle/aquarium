@@ -4,6 +4,7 @@ import { GetGlobalToken } from 'src/utils/GetGlobalToken'
 const meta: Meta<typeof GetGlobalToken> = {
   title: 'Contributing/Tooling/GetGlobalToken',
   component: GetGlobalToken,
+  tags: ['!dev', '!autodocs'],
 
   args: {},
 }

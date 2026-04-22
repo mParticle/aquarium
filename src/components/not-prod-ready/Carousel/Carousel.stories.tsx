@@ -16,7 +16,7 @@ const contentStyle: React.CSSProperties = {
 }
 
 const meta: Meta<typeof Carousel> = {
-  title: 'Components/Not Prod Ready/Carousel',
+  title: 'Experimental/Carousel',
   component: props => (
     <Carousel {...props} style={{ maxWidth: '800px' }}>
       <div>

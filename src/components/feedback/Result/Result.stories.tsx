@@ -3,7 +3,7 @@ import { Button, Icon, Typography } from 'src/components'
 import { Result } from 'src/components/feedback/Result/Result'
 
 const meta: Meta<typeof Result> = {
-  title: 'Components/Not Prod Ready/Feedback/Result',
+  title: 'Experimental/Feedback/Result',
   component: Result,
 
   args: {},

@@ -4,7 +4,7 @@ import { Avatar, Badge, Button, Icon, Space } from 'src/components'
 import { ExampleStory } from 'src/utils/ExampleStory'
 
 const meta: Meta<typeof Avatar> = {
-  title: 'Components/Not Prod Ready/Data Display/Avatar',
+  title: 'Experimental/Data Display/Avatar',
   component: Avatar,
 
   args: {

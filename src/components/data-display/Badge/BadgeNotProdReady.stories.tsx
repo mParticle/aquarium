@@ -10,7 +10,7 @@ import { useState } from 'react'
 import { Icon } from 'src/components'
 
 const meta: Meta<typeof Badge> = {
-  title: 'Components/Not Prod Ready/Data Display/Badge',
+  title: 'Experimental/Data Display/Badge',
   component: Badge,
 
   args: {

@@ -9,7 +9,7 @@ import { type RadioChangeEvent } from 'antd'
 import { Radio } from 'src/components'
 
 const meta: Meta<typeof Descriptions> = {
-  title: 'Components/Not Prod Ready/Data Display/Descriptions',
+  title: 'Experimental/Data Display/Descriptions',
   component: Descriptions,
 
   args: {

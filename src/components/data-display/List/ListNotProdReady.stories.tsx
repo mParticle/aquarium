@@ -2,7 +2,7 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { List } from 'src/components/data-display/List/List'
 
 const meta: Meta<typeof List> = {
-  title: 'Components/Not Prod Ready/Data Display/List',
+  title: 'Experimental/Data Display/List',
   component: props => <List {...props}></List>,
 
   args: {

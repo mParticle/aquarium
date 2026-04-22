@@ -7,7 +7,7 @@ import { useState } from 'react'
 import { Button } from 'src/components'
 
 const meta: Meta<typeof Alert> = {
-  title: 'Components/Not Prod Ready/Feedback/Alert',
+  title: 'Experimental/Feedback/Alert',
   component: Alert,
 
   args: {
@@ -19,7 +19,7 @@ const meta: Meta<typeof Alert> = {
     message: 'This is a simple alert message',
     showIcon: false,
     type: 'info',
-    onClose: e => {
+    onClose: _e => {
       alert('Alert On Close')
     },
     afterClose: () => {
@@ -108,7 +108,7 @@ export const ExampleClosable: Story = {
               message="Warning Text Warning Text Warning TextW arning Text Warning Text Warning TextWarning Text"
               type="warning"
               closable
-              onClose={e => {
+              onClose={_e => {
                 alert('closed')
               }}
             />
@@ -117,7 +117,7 @@ export const ExampleClosable: Story = {
               description="Error Description Error Description Error Description Error Description Error Description Error Description"
               type="error"
               closable
-              onClose={e => {
+              onClose={_e => {
                 alert('closed')
               }}
             />
