@@ -2,26 +2,26 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import {
   FontFamily,
   FontSize,
-  MpBrandPrimary1,
-  MpBrandPrimary2,
-  MpBrandPrimary3,
-  MpBrandPrimary4,
-  MpBrandPrimary5,
-  MpBrandPrimary6,
-  MpBrandPrimary7,
-  MpBrandPrimary8,
-  MpBrandPrimary9,
-  MpBrandPrimary10,
-  MpBrandSecondary1,
-  MpBrandSecondary2,
-  MpBrandSecondary3,
-  MpBrandSecondary4,
-  MpBrandSecondary5,
-  MpBrandSecondary6,
-  MpBrandSecondary7,
-  MpBrandSecondary8,
-  MpBrandSecondary9,
-  MpBrandSecondary10,
+  RoktBrand1,
+  RoktBrand2,
+  RoktBrand3,
+  RoktBrand4,
+  RoktBrand5,
+  RoktBrand6,
+  RoktBrand7,
+  RoktBrand8,
+  RoktBrand9,
+  RoktBrand10,
+  RoktGray1,
+  RoktGray2,
+  RoktGray3,
+  RoktGray4,
+  RoktGray5,
+  RoktGray6,
+  RoktGray7,
+  RoktGray8,
+  RoktGray9,
+  RoktGray10,
   ColorPrimary,
   ColorSuccess,
   ColorWarning,
@@ -67,9 +67,6 @@ import {
   ColorWarningTextActive,
   ColorBorder,
   ColorBorderSecondary,
-  MpColorIconBrand,
-  MpColorIconStrong,
-  MpColorBorderDisabled,
 } from 'src/styles/style'
 import { CopyableToken } from '../_shared/CopyableToken'
 
@@ -200,7 +197,7 @@ export const Primary: Story = {
     return (
       <>
         <h2>Brand Colors</h2>
-        <h3>Primary</h3>
+        <h3>Brand</h3>
         <table style={{ width: '100%', borderCollapse: 'collapse' }}>
           <thead>
             <tr style={{ backgroundColor: '#fafafa' }}>
@@ -263,25 +260,20 @@ export const Primary: Story = {
             </tr>
           </thead>
           <tbody>
-            <ColorRow swatch={MpBrandPrimary1} name="Primary 1" tokenName="MpBrandPrimary1" value={MpBrandPrimary1} />
-            <ColorRow swatch={MpBrandPrimary2} name="Primary 2" tokenName="MpBrandPrimary2" value={MpBrandPrimary2} />
-            <ColorRow swatch={MpBrandPrimary3} name="Primary 3" tokenName="MpBrandPrimary3" value={MpBrandPrimary3} />
-            <ColorRow swatch={MpBrandPrimary4} name="Primary 4" tokenName="MpBrandPrimary4" value={MpBrandPrimary4} />
-            <ColorRow swatch={MpBrandPrimary5} name="Primary 5" tokenName="MpBrandPrimary5" value={MpBrandPrimary5} />
-            <ColorRow swatch={MpBrandPrimary6} name="Primary 6" tokenName="MpBrandPrimary6" value={MpBrandPrimary6} />
-            <ColorRow swatch={MpBrandPrimary7} name="Primary 7" tokenName="MpBrandPrimary7" value={MpBrandPrimary7} />
-            <ColorRow swatch={MpBrandPrimary8} name="Primary 8" tokenName="MpBrandPrimary8" value={MpBrandPrimary8} />
-            <ColorRow swatch={MpBrandPrimary9} name="Primary 9" tokenName="MpBrandPrimary9" value={MpBrandPrimary9} />
-            <ColorRow
-              swatch={MpBrandPrimary10}
-              name="Primary 10"
-              tokenName="MpBrandPrimary10"
-              value={MpBrandPrimary10}
-            />
+            <ColorRow swatch={RoktBrand1} name="Brand 1" tokenName="RoktBrand1" value={RoktBrand1} />
+            <ColorRow swatch={RoktBrand2} name="Brand 2" tokenName="RoktBrand2" value={RoktBrand2} />
+            <ColorRow swatch={RoktBrand3} name="Brand 3" tokenName="RoktBrand3" value={RoktBrand3} />
+            <ColorRow swatch={RoktBrand4} name="Brand 4" tokenName="RoktBrand4" value={RoktBrand4} />
+            <ColorRow swatch={RoktBrand5} name="Brand 5" tokenName="RoktBrand5" value={RoktBrand5} />
+            <ColorRow swatch={RoktBrand6} name="Brand 6" tokenName="RoktBrand6" value={RoktBrand6} />
+            <ColorRow swatch={RoktBrand7} name="Brand 7" tokenName="RoktBrand7" value={RoktBrand7} />
+            <ColorRow swatch={RoktBrand8} name="Brand 8" tokenName="RoktBrand8" value={RoktBrand8} />
+            <ColorRow swatch={RoktBrand9} name="Brand 9" tokenName="RoktBrand9" value={RoktBrand9} />
+            <ColorRow swatch={RoktBrand10} name="Brand 10" tokenName="RoktBrand10" value={RoktBrand10} />
           </tbody>
         </table>
 
-        <h3 style={{ marginTop: '32px' }}>Secondary</h3>
+        <h3 style={{ marginTop: '32px' }}>Gray</h3>
         <table style={{ width: '100%', borderCollapse: 'collapse' }}>
           <thead>
             <tr style={{ backgroundColor: '#fafafa' }}>
@@ -344,66 +336,16 @@ export const Primary: Story = {
             </tr>
           </thead>
           <tbody>
-            <ColorRow
-              swatch={MpBrandSecondary1}
-              name="Secondary 1"
-              tokenName="MpBrandSecondary1"
-              value={MpBrandSecondary1}
-            />
-            <ColorRow
-              swatch={MpBrandSecondary2}
-              name="Secondary 2"
-              tokenName="MpBrandSecondary2"
-              value={MpBrandSecondary2}
-            />
-            <ColorRow
-              swatch={MpBrandSecondary3}
-              name="Secondary 3"
-              tokenName="MpBrandSecondary3"
-              value={MpBrandSecondary3}
-            />
-            <ColorRow
-              swatch={MpBrandSecondary4}
-              name="Secondary 4"
-              tokenName="MpBrandSecondary4"
-              value={MpBrandSecondary4}
-            />
-            <ColorRow
-              swatch={MpBrandSecondary5}
-              name="Secondary 5"
-              tokenName="MpBrandSecondary5"
-              value={MpBrandSecondary5}
-            />
-            <ColorRow
-              swatch={MpBrandSecondary6}
-              name="Secondary 6"
-              tokenName="MpBrandSecondary6"
-              value={MpBrandSecondary6}
-            />
-            <ColorRow
-              swatch={MpBrandSecondary7}
-              name="Secondary 7"
-              tokenName="MpBrandSecondary7"
-              value={MpBrandSecondary7}
-            />
-            <ColorRow
-              swatch={MpBrandSecondary8}
-              name="Secondary 8"
-              tokenName="MpBrandSecondary8"
-              value={MpBrandSecondary8}
-            />
-            <ColorRow
-              swatch={MpBrandSecondary9}
-              name="Secondary 9"
-              tokenName="MpBrandSecondary9"
-              value={MpBrandSecondary9}
-            />
-            <ColorRow
-              swatch={MpBrandSecondary10}
-              name="Secondary 10"
-              tokenName="MpBrandSecondary10"
-              value={MpBrandSecondary10}
-            />
+            <ColorRow swatch={RoktGray1} name="Gray 1" tokenName="RoktGray1" value={RoktGray1} />
+            <ColorRow swatch={RoktGray2} name="Gray 2" tokenName="RoktGray2" value={RoktGray2} />
+            <ColorRow swatch={RoktGray3} name="Gray 3" tokenName="RoktGray3" value={RoktGray3} />
+            <ColorRow swatch={RoktGray4} name="Gray 4" tokenName="RoktGray4" value={RoktGray4} />
+            <ColorRow swatch={RoktGray5} name="Gray 5" tokenName="RoktGray5" value={RoktGray5} />
+            <ColorRow swatch={RoktGray6} name="Gray 6" tokenName="RoktGray6" value={RoktGray6} />
+            <ColorRow swatch={RoktGray7} name="Gray 7" tokenName="RoktGray7" value={RoktGray7} />
+            <ColorRow swatch={RoktGray8} name="Gray 8" tokenName="RoktGray8" value={RoktGray8} />
+            <ColorRow swatch={RoktGray9} name="Gray 9" tokenName="RoktGray9" value={RoktGray9} />
+            <ColorRow swatch={RoktGray10} name="Gray 10" tokenName="RoktGray10" value={RoktGray10} />
           </tbody>
         </table>
       </>
@@ -749,92 +691,6 @@ export const Text: Story = {
   },
 }
 
-export const Icons: Story = {
-  render: () => {
-    return (
-      <>
-        <h2>Icon Colors</h2>
-        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-          <thead>
-            <tr style={{ backgroundColor: '#fafafa' }}>
-              <th
-                style={{
-                  width: '25%',
-                  textAlign: 'left',
-                  padding: '12px 16px',
-                  borderBottom: '1px solid #f0f0f0',
-                  fontWeight: 600,
-                  fontSize: FontSize,
-                  color: 'rgba(0, 0, 0, 0.88)',
-                  background: '#fafafa',
-                  fontFamily: FontFamily,
-                }}>
-                Example
-              </th>
-              <th
-                style={{
-                  width: '25%',
-                  textAlign: 'left',
-                  padding: '12px 16px',
-                  borderBottom: '1px solid #f0f0f0',
-                  fontWeight: 600,
-                  fontSize: FontSize,
-                  color: 'rgba(0, 0, 0, 0.88)',
-                  background: '#fafafa',
-                  fontFamily: FontFamily,
-                }}>
-                Name
-              </th>
-              <th
-                style={{
-                  width: '25%',
-                  textAlign: 'left',
-                  padding: '12px 16px',
-                  borderBottom: '1px solid #f0f0f0',
-                  fontWeight: 600,
-                  fontSize: FontSize,
-                  color: 'rgba(0, 0, 0, 0.88)',
-                  background: '#fafafa',
-                  fontFamily: FontFamily,
-                }}>
-                Token name
-              </th>
-              <th
-                style={{
-                  width: '25%',
-                  textAlign: 'left',
-                  padding: '12px 16px',
-                  borderBottom: '1px solid #f0f0f0',
-                  fontWeight: 600,
-                  fontSize: FontSize,
-                  color: 'rgba(0, 0, 0, 0.88)',
-                  background: '#fafafa',
-                  fontFamily: FontFamily,
-                }}>
-                Value
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <ColorRow
-              swatch={MpColorIconStrong}
-              name="Icon Strong"
-              tokenName="MpColorIconStrong"
-              value={MpColorIconStrong}
-            />
-            <ColorRow
-              swatch={MpColorIconBrand}
-              name="Icon Brand"
-              tokenName="MpColorIconBrand"
-              value={MpColorIconBrand}
-            />
-          </tbody>
-        </table>
-      </>
-    )
-  },
-}
-
 export const Borders: Story = {
   render: () => {
     return (
@@ -908,12 +764,6 @@ export const Borders: Story = {
               name="Border Secondary"
               tokenName="ColorBorderSecondary"
               value={ColorBorderSecondary}
-            />
-            <ColorRow
-              swatch={MpColorBorderDisabled}
-              name="Border Disabled"
-              tokenName="MpColorBorderDisabled"
-              value={MpColorBorderDisabled}
             />
           </tbody>
         </table>
