@@ -50,6 +50,8 @@ const preview: Preview = {
             'Navigation',
             'Other',
             'AI',
+            'Charts',
+            ['Documentation', '*'],
           ],
           'UX Patterns',
           [
