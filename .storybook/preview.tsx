@@ -16,9 +16,10 @@ const preview: Preview = {
   parameters: {
     layout: 'centered',
     options: {
-      storySort: (a: { title: string; name?: string }, b: { title: string; name?: string }) => {
+      // @ts-expect-error Storybook 10 statically parses this function inline via eval, so TS type annotations would break it.
+      storySort: (a, b) => {
         const TOP = ['About', 'Components', 'UX Patterns', 'Contributing', 'Design Tokens', 'Experimental']
-        const SUB: Record<string, string[]> = {
+        const SUB = {
           About: ['Introduction', 'Changelog', 'Feedback', 'Component Process'],
           Components: [
             'Data Display',
@@ -52,12 +53,14 @@ const preview: Preview = {
           Experimental: ['Documentation', 'General', 'Data Display', 'Data Entry', 'Feedback', 'Navigation'],
         }
 
-        const rank = (parent: string, segment: string, depth: number): number => {
+        // @ts-expect-error Types omitted so Storybook's eval-based parser doesn't choke on TS syntax.
+        const rank = (parent, segment, depth) => {
           if (segment === 'Documentation') return -1
           if (depth === 0) {
             const i = TOP.indexOf(segment)
             return i === -1 ? TOP.length : i
           }
+          // @ts-expect-error SUB is keyed by known paths; parent is any due to the eval constraint above.
           const explicit = SUB[parent]
           if (explicit) {
             const i = explicit.indexOf(segment)
