@@ -17,6 +17,7 @@ const preview: Preview = {
     layout: 'centered',
     options: {
       storySort: {
+        method: 'alphabetical',
         order: [
           'About',
           ['Introduction', 'Changelog', 'Feedback', 'Component Process'],
@@ -25,8 +26,6 @@ const preview: Preview = {
             'Data Display',
             'Data Entry',
             [
-              'QueryItem',
-              ['Documentation'],
               'Input',
               [
                 'Documentation',
@@ -41,16 +40,10 @@ const preview: Preview = {
                 'Optional Text Input',
                 'Text Input with Help Tooltip',
               ],
+              '*',
+              'QueryItem',
             ],
             'General',
-            [
-              'Button',
-              ['Documentation'],
-              'Typography',
-              ['Documentation', 'Title', 'Paragraph', 'Text', 'Link'],
-              'Icons',
-              ['Rokt Icons', 'Special Icons', 'mParticle Icons'],
-            ],
             'Feedback',
             'Layout',
             ['Flex', 'Space', 'Grid', 'Center', 'Divider', 'Layout', 'Splitter'],
