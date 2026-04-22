@@ -301,16 +301,16 @@ function SimilarCustomersChartDemo({
                 ]}
               />
             )
-          } else if (xValue >= (percentileLower ?? 0.9)) {
-            const usersInRange = estimateUsersInRange(maxUsers, percentileLower ?? 0.9, 1.0)
-            const selectedY = rawPoints.filter(p => p.x >= (percentileLower ?? 0.9) && p.x <= 1.0).map(p => p.y)
+          } else if (percentileLower !== null && percentileLower !== undefined && xValue >= percentileLower) {
+            const usersInRange = estimateUsersInRange(maxUsers, percentileLower, 1.0)
+            const selectedY = rawPoints.filter(p => p.x >= percentileLower && p.x <= 1.0).map(p => p.y)
             const avgRaw = getAverage(selectedY)
             const multiplier = overallAvg > 0 ? avgRaw / overallAvg : 0
             tooltipComponent = (
               <ChartTooltip
                 title="Selected Range"
                 items={[
-                  { label: 'Percentile', value: `${(percentileLower ?? 0.9).toFixed(2)} to 1.00` },
+                  { label: 'Percentile', value: `${percentileLower.toFixed(2)} to 1.00` },
                   { label: 'Number of users', value: formatUsers(usersInRange) },
                   { label: 'Predicted Similarity', value: `${multiplier.toFixed(1)}×` },
                 ]}
