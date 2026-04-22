@@ -1,15 +1,29 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks'
+
+import * as PromoPageStories from './PromoPage.stories'
+
+<Meta of={PromoPageStories} />
+
 # Landing Page
 
-#### Overview
-TBD
+A composed pattern for feature-promo and onboarding entry pages: a centered hero with primary/default CTAs, followed by a benefits strip of illustrated cards. Use when a product surface needs a short, opinionated intro before a user sees the real UI.
 
-## Current usages
+The example below is drawn from the real pattern shipping in production — a warehouse-connection landing page with a centered hero and three illustrated benefit cards.
 
-<ul>
-  <li>
-    <div style={{ display: 'flex', alignItems: 'center' }}>
-      <img src="https://badgen.net/badge/icon/GitHub?icon=github&label" alt="Repo" style={{ marginRight: 8 }}/>
-      <a href="https://github.com/mparticle-by-rokt/mPServer/blob/main/src/UI/MP.UI.Web.Nancy/Assets/private/aurelia/src/patterns/promo-page/PromoPage.stories.tsx" target="_top" rel="nofollow" className="sbdocs sbdocs-a">Nancy Platform Examples</a>
-    </div>
-  </li>
-</ul>
+## When to use
+
+- First-time entry into a new feature.
+- Upsell or promo for a capability the workspace hasn't enabled yet.
+- Empty states for a feature that needs more narrative context than a single `Empty` component can carry.
+
+## Composition
+
+- `PromoPage` — centered flex container that stacks the hero and benefits.
+- `PromoPageHero` — headline, description, and two CTAs. Accepts either the structured `buttons` prop (`defaultButton` + `primaryButton`) or arbitrary `children` for cases where the primary CTA is a custom control (e.g. a provider dropdown).
+- `PromoPageBenefits` — section wrapper with an optional title; children flow in a responsive row.
+- `PromoPageCard` — illustrated card with title, description, and either an image (`type: 'img'`) or a trailing link button (`type: 'link'`).
+- `PromoPageButton` — standardized button with optional tooltip and external-link handling.
+
+## Example
+
+<Canvas of={PromoPageStories.FeatureLandingPage} />

@@ -44,6 +44,20 @@ Alerts can include links within the message text. Links should be styled with te
 
 <Canvas of={AlertStories.ErrorWithLink} />
 
+### Alerts with Buttons
+
+Alerts can include an action button using the `action` prop. Use `type="default"` buttons to avoid competing with the alert's visual hierarchy. For error alerts, a `danger` button may be appropriate.
+
+<Canvas of={AlertStories.InfoWithButton} />
+
+<Canvas of={AlertStories.SuccessWithButton} />
+
+<Canvas of={AlertStories.WarningWithButton} />
+
+<Canvas of={AlertStories.ErrorWithButton} />
+
+<Canvas of={AlertStories.DefaultWithButton} />
+
 ### Placement in Modals
 
 Alerts can be placed inside modals to communicate important information that users need to be aware of. This is particularly useful for warnings about settings that cannot be changed once saved, or other important contextual information.

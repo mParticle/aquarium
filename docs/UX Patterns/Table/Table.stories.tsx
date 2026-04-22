@@ -22,7 +22,7 @@ import {
 } from 'src/components'
 import { DatePickerWithDisabledYears } from 'src/components/data-entry/DatePicker/DatePicker.stories'
 import { tableColumns, tableData, type TableDataType } from './TableStoryUtils'
-import { SelectWithRangePicker } from 'docs/Candidate Components/Directory/Date Range Filter/SelectWithRangePicker'
+import { SelectWithRangePicker } from 'docs/UX Patterns/Date Range Filter/SelectWithRangePicker'
 import { useState } from 'react'
 import { ColorTextDescription } from 'src/styles/style'
 import { faker } from '@faker-js/faker'
@@ -38,7 +38,7 @@ const fixedColumns = tableColumns?.map((col, i) => {
 })
 
 const meta: Meta<typeof Table> = {
-  title: 'UX Patterns/Table/Table',
+  title: 'UX Patterns/Data Exploration/Table',
   component: Table,
 
   args: {},

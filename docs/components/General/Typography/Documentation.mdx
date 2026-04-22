@@ -1,0 +1,29 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Components/General/Typography/Documentation" />
+
+# Typography
+
+A set of four primitives for every piece of written content in a Rokt product surface.
+
+## The four primitives
+
+- **Title** — section headings, `level={1–5}`. Always use `Title` for hierarchy — never style a `<div>` to look like a heading.
+- **Paragraph** — blocks of body copy. Supports ellipsis, copyable, and editable variants.
+- **Text** — inline prose, labels, inline code. Has semantic variants (`type="secondary"` / `"success"` / `"warning"` / `"danger"`) so you never hardcode a text color.
+- **Link** — anchor elements with built-in hover and focus states, and an optional `hoverColor` prop for contexts where the default brand hover doesn't belong (e.g. inside an error alert).
+
+## Rules of thumb
+
+- Don't pick a `fontSize` — pick a component. The size comes from the type scale in [Design Tokens / Typography](?path=/docs/design-tokens-typography--documentation).
+- Don't hand-roll a heading out of styled text. Use `Title` so tools (screen readers, outline views) can read the page structure.
+- Don't use a raw `<a>` tag. Use `Typography.Link` so every link looks and behaves the same.
+
+## Where to look next
+
+- [Design Tokens → Typography](?path=/docs/design-tokens-typography--documentation) for the raw font sizes, weights, line heights, and families.
+- Individual component pages for prop-by-prop detail and every variant:
+  - [Title](?path=/docs/components-general-typography-title--primary)
+  - [Paragraph](?path=/docs/components-general-typography-paragraph--primary)
+  - [Text](?path=/docs/components-general-typography-text--primary)
+  - [Link](?path=/docs/components-general-typography-link--primary)

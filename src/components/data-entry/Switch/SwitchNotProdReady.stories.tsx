@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { Button } from 'src/components'
 
 const meta: Meta<typeof Switch> = {
-  title: 'Components/Not Prod Ready/Data Entry/Switch',
+  title: 'Experimental/Data Entry/Switch',
   component: Switch,
 
   args: {
@@ -21,8 +21,8 @@ const meta: Meta<typeof Switch> = {
     size: 'default',
     unCheckedChildren: 'Off',
     value: false, // Alias for checked
-    onClick: (checked, event) => {},
-    onChange: (checked, event) => {
+    onClick: (_checked, _event) => {},
+    onChange: (checked, _event) => {
       alert(`Switch changed: ${checked}`)
     },
   },

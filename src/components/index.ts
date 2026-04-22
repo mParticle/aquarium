@@ -22,6 +22,12 @@ export { RadioCards, type RadioCardsProps, type RadioCardOption } from './data-e
 export { ColorPicker, type IColorPickerProps } from './not-prod-ready/ColorPicker/ColorPicker'
 export { Slider, type ISliderProps } from './not-prod-ready/Slider/Slider'
 export { Cascader, type ICascaderProps } from './data-entry/Cascader/Cascader'
+export {
+  DimensionPicker,
+  type IDimensionPickerProps,
+  type IDimensionCategory,
+  type IDimensionItem,
+} from './UXPatterns/DimensionPicker/DimensionPicker'
 export { DatePicker, type IDatePickerProps } from './data-entry/DatePicker/DatePicker'
 export { Checkbox, type ICheckboxProps } from './data-entry/Checkbox/Checkbox'
 export { Input, type IInputProps, type InputRef } from './data-entry/Input/Input'
@@ -226,4 +232,10 @@ export {
   RoktXCircle,
   RoktReverseLeft,
   RoktMessageDotsCircle,
+  RoktGitBranch,
+  RoktGitMerge,
+  RoktGitCommit,
+  RoktGitPullRequest,
+  RoktRocket,
+  RoktUsers,
 } from './icons'

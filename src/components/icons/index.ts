@@ -202,6 +202,12 @@ import {
   XCircle as RoktXCircle,
   ReverseLeft as RoktReverseLeft,
   MessageDotsCircle as RoktMessageDotsCircle,
+  GitBranch01 as RoktGitBranch,
+  GitMerge as RoktGitMerge,
+  GitCommit as RoktGitCommit,
+  GitPullRequest as RoktGitPullRequest,
+  Rocket02 as RoktRocket,
+  Users01 as RoktUsers,
 } from '@untitledui/icons'
 
 export {
@@ -407,4 +413,10 @@ export {
   RoktXCircle,
   RoktReverseLeft,
   RoktMessageDotsCircle,
+  RoktGitBranch,
+  RoktGitMerge,
+  RoktGitCommit,
+  RoktGitPullRequest,
+  RoktRocket,
+  RoktUsers,
 }

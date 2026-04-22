@@ -9,7 +9,7 @@ import { expect } from 'storybook/test'
 import { Icon } from 'src/components'
 
 const meta: Meta<typeof Tag> = {
-  title: 'Components/Not Prod Ready/Data Display/Tag',
+  title: 'Experimental/Data Display/Tag',
   component: props => <Tag {...props}>Tag</Tag>,
 
   args: {

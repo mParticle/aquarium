@@ -5,7 +5,7 @@ import { Icon } from 'src/components'
 import React from 'react'
 
 const meta: Meta<typeof Button> = {
-  title: 'Components/Not Prod Ready/General/Button',
+  title: 'Experimental/General/Button',
   component: props => <Button {...props}>{props.children ?? 'Button Label'}</Button>,
 
   args: {

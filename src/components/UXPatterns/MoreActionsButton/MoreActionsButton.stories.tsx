@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { MoreActionsButton } from 'src/components/UXPatterns/MoreActionsButton/MoreActionsButton'
 
 const meta: Meta<typeof MoreActionsButton> = {
-  title: 'UX Patterns/MoreActionsButton',
+  title: 'UX Patterns/Inline Controls/More Actions Button',
   component: MoreActionsButton,
   parameters: {
     layout: 'centered',

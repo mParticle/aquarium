@@ -18,7 +18,7 @@ const items = [
 ]
 
 const meta: Meta<typeof Steps> = {
-  title: 'UX Patterns/Steps',
+  title: 'UX Patterns/Flows/Steps',
   component: Steps,
   parameters: {
     layout: 'centered',

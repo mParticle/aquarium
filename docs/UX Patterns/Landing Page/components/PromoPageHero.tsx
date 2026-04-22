@@ -1,70 +1,50 @@
-import { Button, Flex, Space, Typography, Icon } from 'src/components'
-import type { IconNames } from 'src/types/icons'
+import type { ReactNode } from 'react'
+import React from 'react'
+import { Flex, Typography } from 'src/components'
+import { Size } from 'src/styles/style'
+import { PromoPageButton, type IPromoPageButtonProps } from './PromoPageButton'
 
-export interface PromoPageHeroButton {
-  label: string
-  onClick?: () => void
-  iconName?: IconNames
+export interface PromoPageHeroButtons {
+  defaultButton?: Omit<IPromoPageButtonProps, 'type'>
+  primaryButton: Omit<IPromoPageButtonProps, 'type'> | ReactNode
 }
 
 export interface PromoPageHeroProps {
   headline: string
   description: string
-  buttons?: {
-    defaultButton?: PromoPageHeroButton
-    primaryButton?: PromoPageHeroButton
-  }
+  buttons?: PromoPageHeroButtons
+  children?: ReactNode
 }
 
-export const PromoPageHero = ({ headline, description, buttons }: PromoPageHeroProps) => {
-  const renderButtonIcon = (iconName?: IconNames) => {
-    if (!iconName) {
-      return undefined
-    }
+export const PromoPageHero = ({ headline, description, buttons, children }: PromoPageHeroProps) => (
+  <Flex vertical align="center" justify="center">
+    <Flex vertical align="center" gap={Size}>
+      <Typography.Title level={3} style={{ margin: 0, fontWeight: 600 }}>
+        {headline}
+      </Typography.Title>
 
-    return <Icon name={iconName} size="sm" />
-  }
+      <Typography.Paragraph color="ColorTextDescription" style={{ margin: 0, textAlign: 'center' }}>
+        {description}
+      </Typography.Paragraph>
+
+      <Flex align="center" justify="center" gap={Size}>
+        {buttons ? renderButtons(buttons) : children}
+      </Flex>
+    </Flex>
+  </Flex>
+)
+
+function renderButtons(buttons: PromoPageHeroButtons): ReactNode {
+  const { defaultButton, primaryButton } = buttons
 
   return (
-    <header
-      style={{
-        padding: '48px',
-        borderRadius: 24,
-        background:
-          'linear-gradient(135deg, rgba(86,104,255,0.16) 0%, rgba(159,102,255,0.24) 50%, rgba(255,137,171,0.16) 100%)',
-      }}>
-      <Flex vertical gap={24}>
-        <Space direction="vertical" size={12}>
-          <Typography.Title level={2} style={{ margin: 0 }}>
-            {headline}
-          </Typography.Title>
-          <Typography.Paragraph size="lg" style={{ margin: 0 }}>
-            {description}
-          </Typography.Paragraph>
-        </Space>
-
-        {buttons ? (
-          <Space size={12} wrap>
-            {buttons.primaryButton ? (
-              <Button
-                type="primary"
-                size="large"
-                icon={renderButtonIcon(buttons.primaryButton.iconName)}
-                onClick={buttons.primaryButton.onClick}>
-                {buttons.primaryButton.label}
-              </Button>
-            ) : null}
-            {buttons.defaultButton ? (
-              <Button
-                size="large"
-                icon={renderButtonIcon(buttons.defaultButton.iconName)}
-                onClick={buttons.defaultButton.onClick}>
-                {buttons.defaultButton.label}
-              </Button>
-            ) : null}
-          </Space>
-        ) : null}
-      </Flex>
-    </header>
+    <>
+      {defaultButton && <PromoPageButton {...defaultButton} type="default" />}
+      {React.isValidElement(primaryButton) ? (
+        primaryButton
+      ) : (
+        <PromoPageButton type="primary" {...(primaryButton as Omit<IPromoPageButtonProps, 'type'>)} />
+      )}
+    </>
   )
 }

@@ -6,7 +6,7 @@ import { type IPaginationProps } from 'src/components/navigation/Pagination/Pagi
 import { useState } from 'react'
 
 const meta: Meta<typeof Pagination> = {
-  title: 'Components/Not Prod Ready/Navigation/Pagination',
+  title: 'Experimental/Navigation/Pagination',
   component: Pagination,
 
   args: {

@@ -2,7 +2,7 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { Radio } from 'src/components/data-entry/Radio/Radio'
 
 const meta: Meta<typeof Radio.Group> = {
-  title: 'Components/Not Prod Ready/Data Entry/Radio/RadioGroup',
+  title: 'Experimental/Data Entry/Radio/RadioGroup',
   component: Radio.Group,
 
   args: {

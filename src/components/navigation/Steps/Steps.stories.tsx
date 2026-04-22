@@ -22,7 +22,7 @@ const items = [
 ]
 
 const meta: Meta<typeof Steps> = {
-  title: 'Components/Not Prod Ready/Navigation/Steps',
+  title: 'Experimental/Navigation/Steps',
   component: Steps,
 
   args: {
@@ -95,7 +95,7 @@ export const ProgressDot: Story = {
 
 export const CustomProgressDot: Story = {
   args: {
-    progressDot: (iconDot, { index, status, title, description }) => {
+    progressDot: (iconDot, { index }) => {
       return <span>{'Custom Dot: ' + index}</span>
     },
   },

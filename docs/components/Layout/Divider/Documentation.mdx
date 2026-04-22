@@ -1,0 +1,30 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks'
+
+import * as DividerStories from '../../../../src/components/layout/Divider/Divider.stories'
+
+<Meta of={DividerStories} />
+
+# Divider
+
+A thin line that separates content vertically or horizontally. Use `Divider` when two sections share a container but should feel distinct — typically inside cards, drawers, and long forms.
+
+## When to use
+
+- Separating groups of related content within the same container.
+- Breaking up a long vertical list of items (e.g. a settings panel).
+- Splitting inline elements in a toolbar (`type="vertical"`).
+
+## When not to use
+
+- Creating visual margin → use spacing tokens with **Flex** or **Space**.
+- Separating top-level page regions → rely on layout structure instead.
+
+## Examples
+
+<Canvas of={DividerStories.Primary} />
+
+<Canvas of={DividerStories.Dashed} />
+
+<Canvas of={DividerStories.WithOrientation} />
+
+<Canvas of={DividerStories.VerticalDivider} />

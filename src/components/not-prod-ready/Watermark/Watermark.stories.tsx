@@ -16,7 +16,7 @@ import { Modal } from 'src/components'
 import { Drawer } from 'src/components'
 
 const meta: Meta<typeof Watermark> = {
-  title: 'Components/Not Prod Ready/Watermark',
+  title: 'Experimental/Watermark',
   component: props => (
     <Watermark {...props}>
       <div style={{ height: 500, width: 500 }} />
