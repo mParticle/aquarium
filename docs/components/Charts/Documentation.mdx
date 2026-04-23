@@ -1,0 +1,26 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Components/Charts/Documentation" />
+
+# Charts
+
+A few examples of different Highcharts chart types used by mParticle Predictions.
+
+- **Column Chart** — columns with an overlaid line and optional selection plotBand.
+- **Stacked Area Chart** — stacked area series with an overlaid line on a secondary axis.
+- **Area Chart** — filled background bands with an overlaid line and optional selection plotBand.
+
+Highcharts is not exported from Aquarium — consumers install `highcharts` themselves and can reuse Aquarium's shared `ChartConfig` defaults.
+
+```tsx
+import Highcharts, { type Options } from 'highcharts'
+import { ChartConfig } from '@mparticle/aquarium'
+
+const options: Options = {
+  ...ChartConfig,
+  chart: { type: 'line' },
+  series: [{ type: 'line', data: [1, 2, 3] }],
+}
+
+Highcharts.chart('my-container', options)
+```
