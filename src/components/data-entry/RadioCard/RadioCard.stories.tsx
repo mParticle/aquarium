@@ -1,5 +1,15 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { RadioCards } from './RadioCard'
+import { Avatar } from 'src/components/data-display/Avatar/Avatar'
+import { Icon } from 'src/components/general/Icon/Icon'
+import { RoktRocket, RoktTrendUp, RoktUsers } from 'src/components/icons'
+import { ColorBgBase, ColorBorderSecondary, ColorTextBase } from 'src/styles/style'
+
+const avatarStyle = {
+  backgroundColor: ColorBgBase,
+  border: `1px solid ${ColorBorderSecondary}`,
+  color: ColorTextBase,
+}
 
 const meta: Meta<typeof RadioCards> = {
   title: 'Components/Data Entry/RadioCard',
@@ -45,6 +55,41 @@ export const Playground: Story = {
       control: 'select',
       options: ['start', 'center'],
     },
+    radioPosition: {
+      control: 'select',
+      options: ['start', 'end'],
+    },
+  },
+}
+
+export const WithIconRadioEnd: Story = {
+  name: 'With avatar and radio on the end',
+  tags: ['!dev'],
+  args: {
+    value: 'grow',
+    orientation: 'vertical',
+    radioAlign: 'start',
+    radioPosition: 'end',
+    options: [
+      {
+        value: 'grow',
+        title: 'Grow Sales',
+        description: 'Reach all customers',
+        icon: <Avatar size={32} style={avatarStyle} icon={<Icon name={RoktRocket} size="sm" color="inherit" />} />,
+      },
+      {
+        value: 'retain',
+        title: 'Retain Customers',
+        description: 'Re-engage existing shoppers',
+        icon: <Avatar size={32} style={avatarStyle} icon={<Icon name={RoktUsers} size="sm" color="inherit" />} />,
+      },
+      {
+        value: 'convert',
+        title: 'Increase Conversion',
+        description: 'Lift checkout performance',
+        icon: <Avatar size={32} style={avatarStyle} icon={<Icon name={RoktTrendUp} size="sm" color="inherit" />} />,
+      },
+    ],
   },
 }
 

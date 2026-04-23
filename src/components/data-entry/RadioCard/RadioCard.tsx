@@ -21,6 +21,7 @@ export interface RadioCardOption<T extends React.Key> {
   value: T
   title: React.ReactNode
   description?: React.ReactNode
+  icon?: React.ReactNode
   disabled?: boolean
   tooltipTitle?: React.ReactNode
   testId?: string
@@ -33,6 +34,7 @@ export interface RadioCardsProps<T extends React.Key> {
   disabled?: boolean
   orientation?: 'vertical' | 'horizontal'
   radioAlign?: 'start' | 'center'
+  radioPosition?: 'start' | 'end'
   gap?: number | string
 }
 
@@ -40,21 +42,25 @@ interface RadioCardProps {
   value: string
   title: React.ReactNode
   description?: React.ReactNode
+  icon?: React.ReactNode
   disabled?: boolean
   checked?: boolean
   onChange?: (value: string) => void
   radioAlign?: 'start' | 'center'
+  radioPosition?: 'start' | 'end'
   orientation?: 'vertical' | 'horizontal'
 }
 
 const RadioCard: React.FC<RadioCardProps> = ({
   title,
   description,
+  icon,
   value,
   checked = false,
   onChange,
   orientation = 'vertical',
   radioAlign = 'start',
+  radioPosition = 'start',
   disabled = false,
 }) => {
   const handleClick = () => {
@@ -62,6 +68,29 @@ const RadioCard: React.FC<RadioCardProps> = ({
       onChange(value)
     }
   }
+
+  const radioGap = orientation === 'horizontal' ? SizeSm : SizeXs
+  const radioMarginTop = radioAlign === 'center' ? undefined : '2px'
+
+  const radio = (
+    <Radio
+      value={value}
+      checked={checked}
+      disabled={disabled}
+      style={{
+        pointerEvents: 'none',
+        marginTop: radioMarginTop,
+        marginRight: radioPosition === 'start' ? radioGap : 0,
+        marginLeft: radioPosition === 'end' ? radioGap : 0,
+      }}
+    />
+  )
+
+  const iconNode = icon ? (
+    <Flex align={radioAlign === 'center' ? 'center' : 'flex-start'} style={{ marginRight: SizeXs }}>
+      {icon}
+    </Flex>
+  ) : null
 
   return (
     <Card
@@ -84,20 +113,13 @@ const RadioCard: React.FC<RadioCardProps> = ({
         },
       }}>
       <Flex align={radioAlign === 'center' ? 'center' : 'flex-start'} style={{ width: '100%', height: '100%' }}>
-        <Radio
-          value={value}
-          checked={checked}
-          disabled={disabled}
-          style={{
-            pointerEvents: 'none',
-            marginTop: radioAlign === 'center' ? undefined : '2px',
-            marginRight: orientation === 'horizontal' ? SizeSm : SizeXs,
-          }}
-        />
+        {radioPosition === 'start' && radio}
+        {iconNode}
         <Flex vertical style={{ flex: 1 }}>
           <Typography.Text size="lg">{title}</Typography.Text>
           <Typography.Text color="ColorTextDescription">{description}</Typography.Text>
         </Flex>
+        {radioPosition === 'end' && radio}
       </Flex>
     </Card>
   )
@@ -110,6 +132,7 @@ export const RadioCards = <T extends React.Key>({
   disabled = false,
   orientation = 'vertical',
   radioAlign = 'start',
+  radioPosition = 'start',
   gap = Size,
 }: RadioCardsProps<T>) => {
   return (
@@ -126,6 +149,7 @@ export const RadioCards = <T extends React.Key>({
             checked={isSelected}
             onChange={() => onChange?.(option.value)}
             radioAlign={radioAlign}
+            radioPosition={radioPosition}
             orientation={orientation}
             disabled={isDisabled}
           />
