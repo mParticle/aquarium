@@ -1,72 +1,44 @@
-import { Card, Button, Typography, Icon } from 'src/components'
-import type { IconNames } from 'src/types/icons'
-import type { MouseEventHandler } from 'react'
+import { Button, Flex, Typography } from 'src/components'
+import { MarginXs, Size } from 'src/styles/style'
 
-type PromoPageCardLink = {
-  type: 'link'
+export interface PromoPageCardDisplayOptions {
   src: string
   text: string
+  type: 'link' | 'img'
 }
-
-type PromoPageCardButton = {
-  type: 'button'
-  text: string
-  onClick?: MouseEventHandler<HTMLButtonElement>
-  iconName?: IconNames
-  variant?: 'primary' | 'default'
-}
-
-export type PromoPageCardDisplayOptions = PromoPageCardLink | PromoPageCardButton
 
 export interface PromoPageCardProps {
   title: string
   description: string
-  displayOptions?: PromoPageCardDisplayOptions
+  displayOptions: PromoPageCardDisplayOptions
 }
 
 export const PromoPageCard = ({ title, description, displayOptions }: PromoPageCardProps) => {
-  const renderDisplayOption = () => {
-    if (!displayOptions) {
-      return null
-    }
-
-    if (displayOptions.type === 'link') {
-      return (
-        <Typography.Link href={displayOptions.src} target="_blank" rel="noreferrer">
-          {displayOptions.text}
-        </Typography.Link>
-      )
-    }
-
-    return (
-      <Button
-        type={displayOptions.variant ?? 'default'}
-        icon={displayOptions.iconName ? <Icon name={displayOptions.iconName} size="sm" /> : undefined}
-        onClick={displayOptions.onClick}>
-        {displayOptions.text}
-      </Button>
-    )
-  }
+  const { type, src, text } = displayOptions
 
   return (
-    <Card
-      style={{
-        borderRadius: 16,
-        minHeight: 220,
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 16,
-        padding: 24,
-      }}>
-      <div>
-        <Typography.Title level={4} style={{ margin: 0 }}>
+    <Flex vertical gap={Size} style={{ maxWidth: 320 }}>
+      {type === 'img' && (
+        <img src={src} alt={text} style={{ width: '100%', height: 'auto', borderRadius: 8, display: 'block' }} />
+      )}
+
+      <Flex vertical align="center">
+        <Typography.Text strong size="lg">
           {title}
-        </Typography.Title>
-        <Typography.Paragraph size="lg" style={{ marginTop: 12 }}>
+        </Typography.Text>
+
+        <Typography.Paragraph
+          color="ColorTextDescription"
+          style={{ margin: 0, marginBottom: MarginXs, textAlign: 'center' }}>
           {description}
         </Typography.Paragraph>
-      </div>
-      <div style={{ marginTop: 'auto' }}>{renderDisplayOption()}</div>
-    </Card>
+
+        {type === 'link' && (
+          <Button type="link" href={src} target="_blank" rel="noopener noreferrer">
+            {text}
+          </Button>
+        )}
+      </Flex>
+    </Flex>
   )
 }

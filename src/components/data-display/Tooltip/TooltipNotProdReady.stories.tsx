@@ -7,7 +7,7 @@ import { Space } from 'src/components'
 import { useEffect } from 'react'
 
 const meta: Meta<typeof Tooltip> = {
-  title: 'Components/Not Prod Ready/Data Display/Tooltip',
+  title: 'Experimental/Data Display/Tooltip',
   component: props => (
     <Tooltip {...props}>
       <Button>Tooltip element</Button>

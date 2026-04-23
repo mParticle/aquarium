@@ -32,7 +32,7 @@ const items: ICollapseProps['items'] = [
 ]
 
 const meta: Meta<typeof Collapse> = {
-  title: 'Components/Not Prod Ready/Data Display/Collapse',
+  title: 'Experimental/Data Display/Collapse',
   component: props => <Collapse items={items} {...props} />,
 
   args: {

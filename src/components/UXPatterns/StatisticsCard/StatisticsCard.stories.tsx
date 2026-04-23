@@ -3,7 +3,7 @@ import { StatisticsCard } from './StatisticsCard'
 import { Row, Col } from 'src/components'
 
 const meta: Meta<typeof StatisticsCard> = {
-  title: 'UX Patterns/StatisticsCard',
+  title: 'UX Patterns/Data Exploration/Statistics Card',
   component: StatisticsCard,
   parameters: {
     layout: 'centered',

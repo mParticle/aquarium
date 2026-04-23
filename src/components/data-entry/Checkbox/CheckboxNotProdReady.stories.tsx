@@ -10,7 +10,7 @@ import { expect } from 'storybook/test'
 export type CheckboxValueType = string | number | boolean
 
 const meta: Meta<typeof Checkbox> = {
-  title: 'Components/Not Prod Ready/Data Entry/Checkbox',
+  title: 'Experimental/Data Entry/Checkbox',
   component: props => {
     const [checked, setChecked] = useState<boolean>(props.checked ?? props.defaultChecked ?? false)
     return (

@@ -4,7 +4,7 @@ import { Button } from 'src/components/general/Button/Button'
 import { LoadingModal, type ILoadingModalProps } from 'src/components/feedback/LoadingModal/LoadingModal'
 
 const meta: Meta<typeof LoadingModal> = {
-  title: 'Components/Not Prod Ready/Feedback/Loading Modal',
+  title: 'Experimental/Feedback/Loading Modal',
   component: LoadingModal,
 
   args: {},
@@ -50,7 +50,7 @@ const PrimaryTemplate = (args: ILoadingModalProps<unknown>) =>
   BaseTemplate(
     args,
     async () =>
-      await new Promise<boolean>((resolve, reject) => {
+      await new Promise<boolean>((resolve, _reject) => {
         setTimeout(() => {
           resolve(true)
         }, 1000)

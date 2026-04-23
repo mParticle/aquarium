@@ -56,7 +56,7 @@ const items: IMenuProps['items'] = [
 ]
 
 const meta: Meta<typeof Menu> = {
-  title: 'Components/Not Prod Ready/Navigation/Menu',
+  title: 'Experimental/Navigation/Menu',
   component: props => (
     <>
       {' '}
@@ -84,16 +84,16 @@ const meta: Meta<typeof Menu> = {
     subMenuOpenDelay: 0,
     theme: 'light',
     triggerSubMenuAction: 'hover',
-    onClick: ({ item, key, keyPath, domEvent }) => {
+    onClick: ({ item }) => {
       alert(`Clicked on ${String(item)}`)
     },
-    onDeselect: ({ item, key, keyPath, selectedKeys, domEvent }) => {
+    onDeselect: ({ item }) => {
       alert(`Deselected ${String(item)}`)
     },
     onOpenChange: (openKeys: string[]) => {
       console.log(`Opened or Closed Sub-menus: ${openKeys.join(', ')}`)
     },
-    onSelect: ({ item, key, keyPath, selectedKeys, domEvent }) => {
+    onSelect: ({ item }) => {
       alert(`Selected ${String(item)}`)
     },
   },
@@ -144,7 +144,7 @@ export const MultipleSelection: Story = {
 
 export const CustomExpandIcon: Story = {
   args: {
-    expandIcon: props => <Icon name="alicorn" />,
+    expandIcon: _props => <Icon name="alicorn" />,
   },
 }
 

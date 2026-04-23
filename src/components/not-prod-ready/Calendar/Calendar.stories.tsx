@@ -3,7 +3,7 @@ import { Calendar } from 'src/components/not-prod-ready/Calendar/Calendar'
 import dayjs from 'dayjs'
 
 const meta: Meta<typeof Calendar> = {
-  title: 'Components/Not Prod Ready/Calendar',
+  title: 'Experimental/Calendar',
   component: Calendar,
 
   args: {

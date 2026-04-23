@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Affix } from 'src/components/not-prod-ready/Affix/Affix'
 
 const meta: Meta<typeof Affix> = {
-  title: 'Components/Not Prod Ready/Affix',
+  title: 'Experimental/Affix',
   component: Affix,
 
   args: {},

@@ -1,0 +1,23 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks'
+
+import * as GridStories from '../../../../src/components/layout/Grid/Grid.stories'
+
+<Meta of={GridStories} />
+
+# Grid
+
+A 24-column responsive grid system for page-level layouts. Compose with `Row` and `Col`, and let `xs` / `sm` / `md` / `lg` / `xl` / `xxl` props handle breakpoint behavior.
+
+## When to use
+
+- Page-level structural layouts with responsive column counts.
+- Dashboards and card grids that need to reflow on smaller screens.
+
+## When not to use
+
+- Aligning a handful of inline elements → use **Flex** or **Space**.
+- Centering content → use **Center**.
+
+## Example
+
+<Canvas of={GridStories.Primary} />
