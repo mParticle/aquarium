@@ -1,36 +1,44 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks'
+import { Meta } from '@storybook/addon-docs/blocks'
 
-import * as TableStories from './Table.stories'
+<Meta title="UX Patterns/Data Exploration/Table/Patterns/Filters Overview" />
 
-<Meta of={TableStories} />
+# Filter patterns
 
-# Filters
+Two patterns are documented for filtering tables. **Reach for the Inline Toolbar by default.** Use Modal Filters only as an escape hatch when there are too many filter dimensions to fit inline.
 
-<br />
+## Inline Toolbar — recommended
 
-_Note: This section covers filters specifically for tables. For query-related filters, please refer to the [Analytics Filters - Coming Soon](#coming)._
+A toolbar above the table holds: search on the right, 1–3 high-value filters on the left (Segmented for status, Select for environment, etc.), and an active-filter chip row that shows what is currently applied with x-to-remove.
 
-#### Filter Search
+**Why this is the default**
 
-Located above the table on the right, the search filter allows users to quickly find specific data within the table by entering keywords.
+- Applied state is always visible. Users don't have to open anything to see what is filtered.
+- One-click toggles for the most common filters (status, environment).
+- No Apply-button ambiguity. Filters update the table as the user changes them.
+- Composes naturally with sort (per-column header) and search (separate input).
 
-#### **Simple Filters**
+See **Patterns / Inline Toolbar Filters**.
 
-Simple filters are ideal when there are only a few filter options. These are straightforward and quick to use and appearing as dropdowns above the table. For examples, refer to the [Select Component](https://mparticle.github.io/aquarium/?path=/docs/components-data-entry-select--documentation).
+## Modal Filters — escape hatch
 
-#### **Filters with Apply Button**
+A "Sort & Filters" button opens a modal that collects sort direction plus many filter dimensions behind an Apply button. The modal is paired with visible filter chips beneath the toolbar so users can see what is currently applied without re-opening it.
 
-Complex filters provide more advanced filtering options, allowing users to apply multiple criteria at once. These filters often include dropdowns, checkboxes, and text fields. Complex filters are particularly useful when multiple filters need to be applied simultaneously or when load times might be a concern.
+**When to use**
 
-Example:
+- 5+ filter dimensions where an inline toolbar would be too crowded
+- Power-user surfaces where filters change rarely once set
+- Tables embedded in narrow layouts where a toolbar can't fit
 
-<Story of={TableStories.WithComplexFilters} />
+**Tradeoffs to be aware of**
 
-#### **Date Range Filters**
+- Applied state is hidden inside the modal — chips below the toolbar are required, not optional.
+- Apply-button semantics imply form validation; users hesitate, lose changes when they cancel.
+- Combining sort + filter in one modal couples two distinct mental models; consider keeping sort on column headers if possible.
 
-Date range filters allow users to specify a range of dates to narrow down the data displayed in the table. Typically, these filters include a start date and an end date, with options for common ranges like “Last 7 days” or “Last 30 days.” User presets are also available for frequently used date ranges.
+See **Patterns / Modal Filters**.
 
-Examples:
+## Other filter primitives
 
-- [Basic Date Picker](https://mparticle.github.io/aquarium/?path=/docs/components-data-entry-date-picker--documentation)
-- [Date Range Filter with Presets](https://mparticle.github.io/aquarium/?path=/docs/candidate-components-directory-date-range-filter--documentation)
+- **Date range filters** — see [Date Range Filter](/?path=/docs/ux-patterns-data-exploration-date-range-filter--documentation) for the time-window pattern (presets + custom range).
+- **Search** — `Input` with a search icon prefix and `allowClear`. Both filter patterns above include search as a separate input.
+- **Per-column filters** — for filters tightly bound to one column (e.g. column-level multi-select), use Ant Design's column `filters` + `onFilter` props rather than a toolbar entry.

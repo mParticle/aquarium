@@ -5,7 +5,7 @@ import { FontWeightStrong, ColorErrorText, Margin } from 'src/styles/style'
 import { DeleteConfirmModal } from './DeleteConfirmModal'
 
 const meta: Meta = {
-  title: 'Components/feedback/Modal/Delete Confirm Modal',
+  title: 'Components/Feedback/Modal/Delete Confirm Modal',
   component: DeleteConfirmModal,
   args: {},
 }
