@@ -25,9 +25,6 @@ import {
   BoxShadowTertiary,
   ColorBgBase,
   ColorSplit,
-  ColorTextTertiary,
-  FontSizeSm,
-  FontWeightStrong,
   Margin,
   MarginXl,
   MarginXs,
@@ -78,44 +75,38 @@ function CustomCard({
 }: ICustomCardProps) {
   const IconComponent = iconOptions[icon]
   return (
-    <div
+    <Flex
+      vertical
+      gap={Margin}
       style={{
         background: ColorBgBase,
         padding: MarginXl,
-        display: 'flex',
-        flexDirection: 'column',
-        gap: Margin,
         borderRadius: BorderRadiusLg,
         boxShadow: BoxShadowTertiary,
         border: `1px solid ${ColorSplit}`,
         width: 250,
       }}>
-      <div
+      <Flex
+        align="center"
         style={{
           background: Blue1,
           padding: Margin,
           borderRadius: BorderRadius,
-          display: 'flex',
           alignSelf: 'flex-start',
-          alignItems: 'center',
         }}>
         <Icon name={IconComponent} color="info" />
-      </div>
+      </Flex>
 
       <Flex vertical gap={MarginXxs}>
-        <Typography.Text
-          style={{
-            fontSize: FontSizeSm,
-            color: ColorTextTertiary,
-            fontWeight: FontWeightStrong,
-            textTransform: 'uppercase',
-          }}>
+        <Typography.Text size="sm" color="ColorTextTertiary" strong style={{ textTransform: 'uppercase' }}>
           {eyebrow}
         </Typography.Text>
         <Typography.Title level={4} style={{ margin: 0 }}>
           {title}
         </Typography.Title>
-        <Typography.Text style={{ fontSize: FontSizeSm, color: ColorTextTertiary }}>{secondaryText}</Typography.Text>
+        <Typography.Text size="sm" color="ColorTextTertiary">
+          {secondaryText}
+        </Typography.Text>
       </Flex>
 
       {showButtons && (
@@ -124,7 +115,7 @@ function CustomCard({
           <Button>{defaultButtonLabel}</Button>
         </Flex>
       )}
-    </div>
+    </Flex>
   )
 }
 
@@ -170,7 +161,7 @@ export const Basic: Story = {
 
 export const WithButtons: Story = {
   args: {
-    primaryButtonLabel: 'Primary\n',
+    primaryButtonLabel: 'Primary',
     defaultButtonLabel: 'Secondary',
     showButtons: true,
   },
