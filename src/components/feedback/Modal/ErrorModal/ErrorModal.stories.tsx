@@ -4,7 +4,7 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { ErrorModal } from './ErrorModal'
 
 const meta: Meta = {
-  title: 'Components/feedback/Modal/Error Modal',
+  title: 'Components/Feedback/Modal/Error Modal',
   component: ErrorModal,
   args: {},
 }

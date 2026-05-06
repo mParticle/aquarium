@@ -6,58 +6,26 @@ import * as TableStories from './Table.stories'
 
 # Table
 
-Bug in More Actions
-Move Header, Pagination and Cell Types to the top
+Tables present and organize data in a structured, readable format. Aquarium ships an opinionated `Table` built on Ant Design — these docs cover the **patterns** that get layered on top: the cell rendering vocabulary, empty/error/loading states, filters, and pagination.
 
-<br />
+## When to use
 
-### Overview
+- Read-list pages where each row maps to a navigable record (data models, pipelines, audit logs)
+- Configurable surfaces where users sort, filter, and act on rows
+- Any place a structured list with multiple attributes per item is more scannable than cards
 
-Tables present and organize data in a structured, readable format, ranging from basic displays to complex interfaces that support queries and data manipulation. You can configure tables using the following elements as needed for your specific use case. mParticle Tables supports multiple cell formats for clear data display. See detailed cell guidelines [here.](#link)
+For dashboards, summary tiles, or single-attribute lists, prefer `Card`, `StatisticsCard`, or `List`.
 
-### Header
+## What's documented
 
-A typical table header contains column titles that describe the data in each column. It includes functionality for sorting columns and may feature help icons with tooltips to provide additional information on each column’s purpose.
+- **Cell Types** — rendering vocabulary for individual cells (text, link, status, tag, actions). Mix and match per column.
+- **Patterns** — table-level behavior (empty / error / loading states, filters, sticky columns, server pagination). The recommended filter pattern is the **Inline Toolbar**; see Modal Filters only when there are too many dimensions to fit inline.
+- **Examples** — end-to-end real-world tables (Data Models, etc.) showing how cells + patterns compose.
 
-### Cell Types
+## Default
 
-mParticle Tables support multiple cell formats for clear data display. See detailed cell guidelines [here.](https://mparticle.github.io/aquarium/?path=/docs/ux-patterns-table-table--cell-text)
+<Story of={TableStories.Default} />
 
-### Expandable Row
+## Related
 
-A table row with expand and collapse functionality, allowing users to toggle additional details or nested content directly within the table.
-
--> Insert Example
-
-### Pagination
-
-Use pagination in tables to improve performance and reduce load times by fetching only the data needed for the current page.
-
--> Insert Example
-
-### Filters
-
-Filters help users narrow down large datasets within tables. Learn more about the variety of filter types available in the mParticle table [here.](https://mparticle.github.io/aquarium/?path=/docs/ux-patterns-table-filters--documentation)
-
-### Table Example
-
-<br />
-
-<Story of={TableStories.Primary} />
-
-### Related Links
-
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Resource</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Eames</td>
-      <td><a href="https://www.figma.com/design/yCPszaTtkCFxRHaSkkJFR9/Eames-Templates-%5BInternal%5D?node-id=2114-9632&node-type=frame&t=Aa9XxcKyme3ud4cb-0">Figma Templates</a></td>
-    </tr>
-  </tbody>
-</table>
+- Designs: [Eames Templates](https://www.figma.com/design/yCPszaTtkCFxRHaSkkJFR9/Eames-Templates-%5BInternal%5D?node-id=2114-9632&node-type=frame&t=Aa9XxcKyme3ud4cb-0)
