@@ -1,1 +1,0 @@
-import{ad as e}from"./iframe-DXvP0_8C.js";import"./preload-helper-PPVm8Dsz.js";const t={title:"Experimental/Slider",component:e,args:{}},r={};r.parameters={...r.parameters,docs:{...r.parameters?.docs,source:{originalSource:"{}",...r.parameters?.docs?.source}}};const s=["Primary"];export{r as Primary,s as __namedExportsOrder,t as default};
