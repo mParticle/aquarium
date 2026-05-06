@@ -1,1 +1,0 @@
-import{cB as e}from"./iframe-CJHsXdCQ.js";import"./preload-helper-PPVm8Dsz.js";const o={title:"Experimental/Rate",component:e,args:{}},r={};r.parameters={...r.parameters,docs:{...r.parameters?.docs,source:{originalSource:"{}",...r.parameters?.docs?.source}}};const s=["Primary"];export{r as Primary,s as __namedExportsOrder,o as default};
