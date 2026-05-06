@@ -1,0 +1,1 @@
+import{X as o}from"./iframe-TPzgAJbn.js";function i(r,n){return o.useImperativeHandle(r,()=>{const e=n(),{nativeElement:a}=e;return new Proxy(a,{get(u,t){return e[t]?e[t]:Reflect.get(u,t)}})})}export{i as u};
