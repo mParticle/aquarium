@@ -8,7 +8,7 @@ export interface IFormProps<Values = any> extends AntFormProps<Values> {
   children: ReactNode
 }
 
-export const Form = <Values = any,>(props: IFormProps<Values>) => {
+const InternalForm = <Values = any,>(props: IFormProps<Values>) => {
   return (
     <ConfigProvider>
       <AntForm {...props}>{props.children}</AntForm>
@@ -16,11 +16,22 @@ export const Form = <Values = any,>(props: IFormProps<Values>) => {
   )
 }
 
-Form.useForm = AntForm.useForm
-Form.useWatch = AntForm.useWatch
-Form.useFormInstance = AntForm.useFormInstance
+type FormComponent = typeof InternalForm & {
+  useForm: typeof AntForm.useForm
+  useWatch: typeof AntForm.useWatch
+  useFormInstance: typeof AntForm.useFormInstance
+  Item: typeof AntForm.Item
+  List: typeof AntForm.List
+  Provider: typeof AntForm.Provider
+  ErrorList: typeof AntForm.ErrorList
+}
 
-Form.Item = AntForm.Item
-Form.List = AntForm.List
-Form.Provider = AntForm.Provider
-Form.ErrorList = AntForm.ErrorList
+export const Form: FormComponent = Object.assign(InternalForm, {
+  useForm: AntForm.useForm,
+  useWatch: AntForm.useWatch,
+  useFormInstance: AntForm.useFormInstance,
+  Item: AntForm.Item,
+  List: AntForm.List,
+  Provider: AntForm.Provider,
+  ErrorList: AntForm.ErrorList,
+})

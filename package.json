@@ -1,6 +1,6 @@
 {
   "name": "@mparticle/aquarium",
-  "version": "2.3.0",
+  "version": "2.4.0-fix-form-static-member-types.1",
   "description": "mParticle Component Library",
   "license": "Apache-2.0",
   "keywords": [
