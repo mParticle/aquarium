@@ -1,0 +1,7 @@
+import{j as n}from"./iframe-D96v7dCn.js";import{useMDXComponents as e}from"./index-D_UDyPvl.js";import{M as i,S as t}from"./blocks-C-Bp6gUe.js";import{S as a,a as c,M as m,P as d,R as p}from"./Spacing.stories-63IsDVNG.js";import"./preload-helper-PPVm8Dsz.js";import"./CopyableToken-DVzbFS4P.js";import"./Copy01-2LfNI66S.js";function r(s){const o={code:"code",h1:"h1",p:"p",...e(),...s.components};return n.jsxs(n.Fragment,{children:[n.jsx(i,{of:a}),`
+`,n.jsx(o.h1,{id:"spacing",children:"Spacing"}),`
+`,n.jsxs(o.p,{children:["Spacing, margin, padding, and radius tokens. Import from ",n.jsx(o.code,{children:"src/styles/style"}),"."]}),`
+`,n.jsx(t,{of:c}),`
+`,n.jsx(t,{of:m}),`
+`,n.jsx(t,{of:d}),`
+`,n.jsx(t,{of:p})]})}function M(s={}){const{wrapper:o}={...e(),...s.components};return o?n.jsx(o,{...s,children:n.jsx(r,{...s})}):r(s)}export{M as default};

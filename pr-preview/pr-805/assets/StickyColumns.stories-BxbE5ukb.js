@@ -1,0 +1,9 @@
+import{ar as n,j as a}from"./iframe-D96v7dCn.js";import"./preload-helper-PPVm8Dsz.js";const d=Array.from({length:8}).map((r,t)=>({key:`${t+1}`,name:`Pipeline ${t+1}`,type:t%2===0?"Journey":"Campaign",owner:`user${t+1}@example.com`,environment:t%3===0?"Production":"Development",status:t%2===0?"Active":"Paused",createdAt:`2026-04-${String(t+1).padStart(2,"0")}`,updatedAt:`2026-05-${String(t+1).padStart(2,"0")}`,mpId:`mp-${1e3+t}`})),o=[{title:"Name",dataIndex:"name",key:"name",fixed:"left",width:160},{title:"Type",dataIndex:"type",key:"type",width:140},{title:"Owner",dataIndex:"owner",key:"owner",width:220},{title:"Environment",dataIndex:"environment",key:"environment",width:160},{title:"Status",dataIndex:"status",key:"status",width:140},{title:"Created",dataIndex:"createdAt",key:"createdAt",width:140},{title:"Updated",dataIndex:"updatedAt",key:"updatedAt",width:140},{title:"mPID",dataIndex:"mpId",key:"mpId",width:140},{title:"Actions",key:"actions",fixed:"right",width:100,render:()=>"⋯"}],m={title:"UX Patterns/Data Exploration/Table/Patterns/Sticky Columns",component:n,parameters:{docs:{description:{component:'Pin the Name column to the left and the Actions column to the right when the table has more columns than fit on screen. Use `fixed: "left" | "right"` on the column and `scroll={{ x: "max-content" }}` on the Table.'}}}},e={render:()=>a.jsx("div",{style:{maxWidth:800},children:a.jsx(n,{columns:o,dataSource:d,scroll:{x:"max-content"},sticky:!0,pagination:!1})})};e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:`{
+  render: () => <div style={{
+    maxWidth: 800
+  }}>
+      <Table<Row> columns={columns} dataSource={data} scroll={{
+      x: 'max-content'
+    }} sticky pagination={false} />
+    </div>
+}`,...e.parameters?.docs?.source}}};const l=["Default"];export{e as Default,l as __namedExportsOrder,m as default};
