@@ -1,362 +1,42 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import type { ColumnsType } from 'antd/es/table'
-import type { Dayjs } from 'dayjs'
-import {
-  Flex,
-  Icon,
-  Input,
-  Table,
-  Space,
-  Button,
-  Checkbox,
-  Collapse,
-  ConfigProvider,
-  Divider,
-  type ICollapseProps,
-  Modal,
-  Select,
-  Typography,
-  TreeSelect,
-  Row,
-  Col,
-} from 'src/components'
-import { DatePickerWithDisabledYears } from 'src/components/data-entry/DatePicker/DatePicker.stories'
-import { tableColumns, tableData, type TableDataType } from './TableStoryUtils'
-import { SelectWithRangePicker } from 'docs/UX Patterns/Date Range Filter/SelectWithRangePicker'
-import { useState } from 'react'
-import { ColorTextDescription } from 'src/styles/style'
-import { faker } from '@faker-js/faker'
+import { Table, type ColumnsType } from 'src/components'
 
-const fixedColumns = tableColumns?.map((col, i) => {
-  if (i === 0 || i === (tableColumns?.length ?? 0) - 1) {
-    return {
-      ...col,
-      fixed: i === 0 ? 'left' : 'right',
-    }
-  }
-  return col
-})
+interface Row {
+  key: string
+  name: string
+  type: string
+  owner: string
+}
+
+const data: Row[] = [
+  { key: '1', name: 'Welcome Series', type: 'Journey', owner: 'jane.doe@example.com' },
+  { key: '2', name: 'Black Friday', type: 'Campaign', owner: 'john.smith@example.com' },
+  { key: '3', name: 'Onboarding Quiz', type: 'Form', owner: 'jane.doe@example.com' },
+  { key: '4', name: 'Cortex Pipeline', type: 'Pipeline', owner: 'data-team@example.com' },
+]
+
+const columns: ColumnsType<Row> = [
+  { title: 'Name', dataIndex: 'name', key: 'name' },
+  { title: 'Type', dataIndex: 'type', key: 'type' },
+  { title: 'Owner', dataIndex: 'owner', key: 'owner' },
+]
 
 const meta: Meta<typeof Table> = {
   title: 'UX Patterns/Data Exploration/Table',
   component: Table,
-
-  args: {},
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'Tables present and organize data in a structured, readable format. See **Cell Types** for the column rendering vocabulary, and **Patterns** for empty/error/loading states, filters, and pagination.',
+      },
+    },
+  },
 }
 
 export default meta
-
 type Story = StoryObj<typeof Table>
 
-export const Primary: Story = {
-  render: () => (
-    <Space orientation="vertical" style={{ width: '100%' }}>
-      <Space orientation="vertical" style={{ width: '100%' }}>
-        <Flex align={'center'} justify={'space-between'}>
-          <Flex gap={10}>
-            <DatePickerWithDisabledYears />
-          </Flex>
-          <Input
-            allowClear
-            prefix={<Icon size="sm" color="brand" name="search" />}
-            placeholder="Search"
-            style={{ width: '240px' }}
-          />
-        </Flex>
-      </Space>
-      <Table<TableDataType> columns={tableColumns} dataSource={tableData} scroll={{ x: 'max-content' }} />
-    </Space>
-  ),
-}
-
-export const FixedHeaderAndStickyColumns: Story = {
-  render: () => (
-    <Space orientation="vertical" style={{ width: '750px' }}>
-      <Table<TableDataType>
-        columns={fixedColumns as ColumnsType<TableDataType>}
-        dataSource={tableData}
-        scroll={{ x: 'max-content' }}
-        sticky
-        pagination={false}
-        tableLayout="auto"
-      />
-    </Space>
-  ),
-}
-
-const TIME_OPTIONS = [
-  {
-    value: 'last12hours',
-    label: 'Last 12 hours',
-  } as const,
-  {
-    value: 'last7days',
-    label: 'Last 7 days',
-  } as const,
-  {
-    value: 'last14days',
-    label: 'Last 14 days',
-  } as const,
-]
-
-const FormSectionHeader = ({ label }: { label: string }) => (
-  <Typography.Text
-    style={{
-      marginBottom: '10px',
-      display: 'block',
-      color: ColorTextDescription,
-    }}
-    size="sm"
-    strong>
-    {label}
-  </Typography.Text>
-)
-
-interface IMultipleCheckboxItem {
-  name: string
-  value: unknown
-}
-
-interface IMultipleCheckboxesProps {
-  label: string
-  fieldName: string
-  items: IMultipleCheckboxItem[]
-}
-
-type ICollapsibleFormSectionProps = NonNullable<ICollapseProps['items']>[0]
-
-const CollapsibleSection = ({ ...item }: ICollapsibleFormSectionProps): React.JSX.Element => {
-  return (
-    <ConfigProvider
-      theme={{
-        components: {
-          Collapse: {
-            headerPadding: '2px 0',
-            contentPadding: '0 24px',
-          },
-        },
-      }}>
-      <Collapse ghost items={[{ ...item, key: 'item' }]} />
-    </ConfigProvider>
-  )
-}
-
-const MultipleCheckboxes = ({ label, items }: IMultipleCheckboxesProps) => (
-  <CollapsibleSection
-    label={label}
-    extra={
-      <Typography.Text style={{ cursor: 'text' }} disabled>
-        1 selected
-      </Typography.Text>
-    }>
-    <Space orientation="vertical">
-      {items.map(({ name, value: _value }) => (
-        <Checkbox key={name}>{name}</Checkbox>
-      ))}
-    </Space>
-  </CollapsibleSection>
-)
-
-function useModal(): [() => void, React.ReactElement] {
-  const [open, setOpen] = useState(false)
-
-  const context = (
-    <Modal
-      open={open}
-      destroyOnClose
-      onCancel={() => {
-        setOpen(false)
-      }}
-      cancelText={'Cancel'}
-      onOk={() => setOpen(false)}
-      okText={'Apply'}
-      width={'580px'}
-      style={{ maxHeight: '80vh' }}
-      closable
-      title={
-        <Typography.Text strong={false} size="xl">
-          Sort & Filters
-        </Typography.Text>
-      }>
-      <Flex vertical style={{ overflow: 'auto', maxHeight: '80vh' }}>
-        <FormSectionHeader label="Sorting" />
-        <Row>
-          <Col span={12}>
-            <Typography.Text>Order</Typography.Text>
-          </Col>
-          <Col span={12}>
-            <Select style={{ width: '100%' }}>
-              <Select.Option value={'false'}>Recent first</Select.Option>
-              <Select.Option value={'true'}>Oldest first</Select.Option>
-            </Select>
-          </Col>
-        </Row>
-        <Divider style={{ margin: '4px 0' }} />
-        <CollapsibleSection label="Name">
-          <Select
-            showSearch
-            style={{ width: '100%' }}
-            placeholder="Select name"
-            filterOption={(input, option) =>
-              typeof option?.label === 'string' && option.label.toLowerCase().includes(input.toLowerCase())
-            }
-            options={Array.from({ length: 6 }, () => {
-              const companyName = faker.company.name()
-              return { value: companyName, label: companyName }
-            })}
-          />
-        </CollapsibleSection>
-        <Divider style={{ margin: '4px 0' }} />
-        <CollapsibleSection label="Environment">
-          <Select
-            style={{ width: '100%' }}
-            options={[
-              { value: 'development', label: 'Development' },
-              { value: 'production', label: 'Production' },
-            ]}
-          />
-        </CollapsibleSection>
-        <Divider style={{ margin: '4px 0' }} />
-        <MultipleCheckboxes
-          fieldName="statuses"
-          label={'Status'}
-          items={[
-            { name: 'Draft', value: 'draft' },
-            { name: 'Error', value: 'error' },
-            { name: 'Production', value: 'production' },
-          ]}
-        />
-        <Divider style={{ margin: '4px 0' }} />
-        <CollapsibleSection label={'mPID'}>
-          <Input placeholder="mPID" allowClear />
-        </CollapsibleSection>
-        <Divider style={{ margin: '4px 0' }} />
-        <CollapsibleSection label={'Inputs'}>
-          <Select
-            mode="tags"
-            style={{ width: '100%' }}
-            options={[
-              { value: 'Braze', label: 'Braze' },
-              { value: 'mP Analytics', label: 'mP Analytics' },
-              { value: 'Cortex', label: 'Cortex' },
-              { value: 'Applytics', label: 'Applytics' },
-              { value: 'Google Analytics', label: 'Google Analytics' },
-            ]}
-          />
-        </CollapsibleSection>
-        <Divider style={{ margin: '4px 0' }} />
-        <CollapsibleSection label={'Outputs'}>
-          <TreeSelect
-            style={{ width: '100%' }}
-            treeCheckable
-            treeData={[
-              {
-                value: 'Braze',
-                title: 'Braze',
-                key: 'Braze',
-                children: [
-                  {
-                    value: 'Braze-1',
-                    title: 'Braze 1',
-                    key: 'Braze-1',
-                    children: [
-                      { value: 'Braze-1-1', title: 'Braze 1-1', key: 'Braze-1-1' },
-                      { value: 'Braze-1-2', title: 'Braze 1-2', key: 'Braze-1-2' },
-                      { value: 'Braze-1-3', title: 'Braze 1-3', key: 'Braze-1-3' },
-                    ],
-                  },
-                ],
-              },
-              {
-                value: 'mP Analytics',
-                title: 'mP Analytics',
-                key: 'mP Analytics',
-                children: [
-                  {
-                    value: 'mP Analytics-1',
-                    title: 'mP Analytics 1',
-                    key: 'mP Analytics-1',
-                    children: [
-                      { value: 'mP Analytics-1-1', title: 'mP Analytics 1-1', key: 'mP Analytics-1-1' },
-                      { value: 'mP Analytics-1-2', title: 'mP Analytics 1-2', key: 'mP Analytics-1-2' },
-                      { value: 'mP Analytics-1-3', title: 'mP Analytics 1-3', key: 'mP Analytics-1-3' },
-                    ],
-                  },
-                ],
-              },
-              { value: 'Cortex', title: 'Cortex', key: 'Cortex' },
-              { value: 'Applytics', title: 'Applytics', key: 'Applytics' },
-              { value: 'Google Analytics', title: 'Google Analytics', key: 'Google Analytics' },
-            ]}
-          />
-        </CollapsibleSection>
-      </Flex>
-    </Modal>
-  )
-
-  const showModal = (): void => {
-    setOpen(true)
-  }
-
-  return [showModal, context] as const
-}
-
-export const WithComplexFilters: Story = {
-  name: 'Complex',
-  render: () => {
-    const [showModal, context] = useModal()
-
-    return (
-      <>
-        {context}
-        <Space orientation="vertical" style={{ width: '100%' }}>
-          <Space orientation="vertical" style={{ width: '100%' }}>
-            <Flex align={'center'} justify={'space-between'}>
-              <Flex gap={10}>
-                <SelectWithRangePicker
-                  value={'last14days'}
-                  placeholder={'Choose Time'}
-                  options={TIME_OPTIONS}
-                  formatOptions={{
-                    dateStyle: 'short',
-                    timeStyle: 'short',
-                    hour12: false,
-                  }}
-                  dropdownStyle={{ minWidth: 400 }}
-                  rangePickerProps={{
-                    showTime: true,
-                    showHour: true,
-                    showMinute: true,
-                    showSecond: false,
-                    disabledDate: (antdDayJS: Dayjs) => {
-                      const fourteenDaysInMs = 14 * 24 * 60 * 60 * 1000
-                      return antdDayJS.isBefore(new Date(Date.now() - fourteenDaysInMs))
-                    },
-                  }}
-                />
-                <Button onClick={() => showModal()}>
-                  <Flex align="center" gap={5}>
-                    <Icon color="inherit" name={'filter'} size="sm" />
-                    <span>Sort & Filters</span>
-                    <Icon color="inherit" name={'dropdownOpen'} size="sm" />
-                  </Flex>
-                </Button>
-              </Flex>
-              <Input
-                allowClear
-                prefix={<Icon size="sm" color="brand" name="search" />}
-                placeholder="Search"
-                style={{ width: '240px' }}
-              />
-            </Flex>
-          </Space>
-          <Table<TableDataType>
-            columns={tableColumns}
-            dataSource={tableData.slice(0, 2)}
-            scroll={{ x: 'max-content' }}
-          />
-        </Space>
-      </>
-    )
-  },
+export const Default: Story = {
+  render: () => <Table<Row> columns={columns} dataSource={data} pagination={false} />,
 }

@@ -1,3 +1,24 @@
+# [2.3.0](https://github.com/mParticle/aquarium/compare/v2.2.0...v2.3.0) (2026-04-23)
+
+### Bug Fixes
+
+- update RadioCard intro link to point to documentation page ([#786](https://github.com/mParticle/aquarium/issues/786)) ([7018a7d](https://github.com/mParticle/aquarium/commit/7018a7d5f12e5f2ab8899cf99b64540e8236c101))
+
+### Features
+
+- add AI components from @ant-design/x (MPD-89) ([#771](https://github.com/mParticle/aquarium/issues/771)) ([5210e1e](https://github.com/mParticle/aquarium/commit/5210e1ec1d17c66de66c63e9e51ee9ce51ab98a9))
+- add AI Copilot showcase stories ([#796](https://github.com/mParticle/aquarium/issues/796)) ([3c2eb57](https://github.com/mParticle/aquarium/commit/3c2eb5756adb3c52d5292801cdf68ff08bcc39c8))
+- add Alert examples with button action (MPD-88) ([#775](https://github.com/mParticle/aquarium/issues/775)) ([b022c86](https://github.com/mParticle/aquarium/commit/b022c86274667070c7b540fcb48d4f08f5648a4a))
+- add bulk Rokt/Untitled UI icon set ([#793](https://github.com/mParticle/aquarium/issues/793)) ([e2d95b4](https://github.com/mParticle/aquarium/commit/e2d95b4bf3f9c4d47c7d3f2ef2bf2d1f25e498d6))
+- add Charts storybook section with Cortex chart examples ([#800](https://github.com/mParticle/aquarium/issues/800)) ([c3a38a2](https://github.com/mParticle/aquarium/commit/c3a38a24abc24309124a05685df050f4f5b890ba))
+- add DimensionPicker component ([#777](https://github.com/mParticle/aquarium/issues/777)) ([6e20eaf](https://github.com/mParticle/aquarium/commit/6e20eaf1c7edd5b00bf409d28b56ce4146a2c674))
+- add GitHub issue templates, ADOPTING.md, and rebrand to Rokt ([#789](https://github.com/mParticle/aquarium/issues/789)) ([64f0063](https://github.com/mParticle/aquarium/commit/64f00638c36a428c553614572157dc4d62c777f6))
+- add hoverColor prop to Typography.Link ([#785](https://github.com/mParticle/aquarium/issues/785)) ([9ddfb87](https://github.com/mParticle/aquarium/commit/9ddfb870cde7986a0bd5ff35cefcac803c1ff078))
+- add mpHousehold icon ([#799](https://github.com/mParticle/aquarium/issues/799)) ([b71be80](https://github.com/mParticle/aquarium/commit/b71be807a91f553fcd44eecd421cf99396309f45))
+- add Radio documentation examples ([#779](https://github.com/mParticle/aquarium/issues/779)) ([a45c456](https://github.com/mParticle/aquarium/commit/a45c4563366bde39cc8ff700336634e07b92f2b8))
+- add RadioCard to homepage and fix src-only component discovery ([#773](https://github.com/mParticle/aquarium/issues/773)) ([e66bf2d](https://github.com/mParticle/aquarium/commit/e66bf2d7d623dee792e11eb7e6466364c559a0bf))
+- add RoktRocket and RoktUsers icons ([#783](https://github.com/mParticle/aquarium/issues/783)) ([8b7259f](https://github.com/mParticle/aquarium/commit/8b7259f1e5044a51c252f0ae34ee480433ff8928))
+
 # [2.2.0](https://github.com/mParticle/aquarium/compare/v2.1.0...v2.2.0) (2026-04-03)
 
 ### Features
