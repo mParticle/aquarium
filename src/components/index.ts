@@ -165,6 +165,11 @@ export {
   UnauthorizedTooltip,
   type IUnauthorizedTooltipProps,
 } from './UXPatterns/PermissionsRestrictions/UnauthorizedTooltip'
+export {
+  CustomDropdown,
+  type ICustomDropdownProps,
+  type ICustomDropdownOption,
+} from './UXPatterns/CustomDropdown/CustomDropdown'
 
 // Export Rokt icons from @untitledui/icons
 export {
