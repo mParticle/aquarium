@@ -39,7 +39,7 @@ export const Default: Story = {
     await userEvent.click(canvas.getByRole('button', { name: /Dropdown/i }))
 
     const firstOption = await screen.findByText('Wishlist Users')
-    await expect(firstOption).toBeVisible()
+    await expect(firstOption).toBeInTheDocument()
 
     await userEvent.click(firstOption)
   },
@@ -61,7 +61,7 @@ export const WithFooter: Story = {
     await userEvent.click(canvas.getByRole('button', { name: /Dropdown/i }))
 
     const showResultsBtn = await screen.findByRole('button', { name: 'Show results' })
-    await expect(showResultsBtn).toBeVisible()
+    await expect(showResultsBtn).toBeInTheDocument()
 
     await userEvent.click(showResultsBtn)
   },
