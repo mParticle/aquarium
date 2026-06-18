@@ -1,1 +1,0 @@
-import{cl as e}from"./iframe-C1l6F3-R.js";import"./preload-helper-PPVm8Dsz.js";const o={title:"Experimental/Transfer",component:e,args:{}},r={};r.parameters={...r.parameters,docs:{...r.parameters?.docs,source:{originalSource:"{}",...r.parameters?.docs?.source}}};const t=["Primary"];export{r as Primary,t as __namedExportsOrder,o as default};
