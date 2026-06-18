@@ -80,6 +80,7 @@ export function CustomDropdown({
                   <Button
                     type="text"
                     onClick={() => {
+                      onChange?.([])
                       onCancel?.()
                       setOpen(false)
                     }}>
@@ -99,7 +100,7 @@ export function CustomDropdown({
           </Flex>
         </div>
       )}>
-      <Button>
+      <Button disabled={disabled}>
         <Space>
           {label}
           <Icon name="dropdownOpen" size="sm" color="inherit" />
