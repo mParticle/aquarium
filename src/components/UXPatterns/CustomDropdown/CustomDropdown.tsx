@@ -52,7 +52,7 @@ export function CustomDropdown({
 
   const handleCheck = (optionValue: string, checked: boolean) => {
     if (showFooter) {
-      setDraft(checked ? [...draft, optionValue] : draft.filter(v => v !== optionValue))
+      setDraft(prev => (checked ? [...prev, optionValue] : prev.filter(v => v !== optionValue)))
     } else {
       onChange?.(checked ? [...value, optionValue] : value.filter(v => v !== optionValue))
     }
@@ -102,6 +102,7 @@ export function CustomDropdown({
                   <Button
                     type="primary"
                     onClick={() => {
+                      committedValue.current = draft
                       onChange?.(draft)
                       onApply?.()
                       setOpen(false)
