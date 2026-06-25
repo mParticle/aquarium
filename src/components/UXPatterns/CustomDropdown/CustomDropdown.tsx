@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Button, Checkbox, Divider, Dropdown, Flex, Icon, Space } from 'src/components'
+import { useRef, useState } from 'react'
+import { Button, Checkbox, Divider, Dropdown, Flex, Icon } from 'src/components'
 import {
   BorderRadiusLg,
   BoxShadowSecondary,
@@ -39,15 +39,29 @@ export function CustomDropdown({
   disabled,
 }: ICustomDropdownProps) {
   const [open, setOpen] = useState(false)
+  const committedValue = useRef<string[]>(value)
+  const [draft, setDraft] = useState<string[]>(value)
+
+  const handleOpenChange = (nextOpen: boolean) => {
+    if (nextOpen) {
+      committedValue.current = value
+      setDraft(value)
+    }
+    setOpen(nextOpen)
+  }
 
   const handleCheck = (optionValue: string, checked: boolean) => {
-    onChange?.(checked ? [...value, optionValue] : value.filter(v => v !== optionValue))
+    if (showFooter) {
+      setDraft(checked ? [...draft, optionValue] : draft.filter(v => v !== optionValue))
+    } else {
+      onChange?.(checked ? [...value, optionValue] : value.filter(v => v !== optionValue))
+    }
   }
 
   return (
     <Dropdown
       open={open}
-      onOpenChange={setOpen}
+      onOpenChange={handleOpenChange}
       trigger={['click']}
       disabled={disabled}
       dropdownRender={() => (
@@ -61,9 +75,9 @@ export function CustomDropdown({
           }}>
           <Flex vertical>
             {options.map(option => (
-              <div key={option.value} style={{ padding: `${MarginXxs} ${Padding} ${MarginXxs} ${PaddingSm}` }}>
+              <div key={option.value} style={{ padding: `${MarginXxs} ${Padding} 0 ${PaddingSm}` }}>
                 <Checkbox
-                  checked={value.includes(option.value)}
+                  checked={(showFooter ? draft : value).includes(option.value)}
                   disabled={option.disabled}
                   onChange={e => handleCheck(option.value, e.target.checked)}>
                   {option.label}
@@ -80,7 +94,6 @@ export function CustomDropdown({
                   <Button
                     type="text"
                     onClick={() => {
-                      onChange?.([])
                       onCancel?.()
                       setOpen(false)
                     }}>
@@ -89,6 +102,7 @@ export function CustomDropdown({
                   <Button
                     type="primary"
                     onClick={() => {
+                      onChange?.(draft)
                       onApply?.()
                       setOpen(false)
                     }}>
@@ -101,10 +115,10 @@ export function CustomDropdown({
         </div>
       )}>
       <Button disabled={disabled}>
-        <Space>
+        <Flex align="center" gap={SizeSm}>
           {label}
           <Icon name="dropdownOpen" size="sm" color="inherit" />
-        </Space>
+        </Flex>
       </Button>
     </Dropdown>
   )
