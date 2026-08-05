@@ -14,6 +14,7 @@ import {
   type ReactNode,
   type SetStateAction,
   useCallback,
+  useEffect,
   useMemo,
   useState,
 } from 'react'
@@ -89,6 +90,14 @@ export const FilterControl = <TValue,>({
     setDraftValue(value)
     setIsOpen(false)
   }, [value])
+
+  useEffect(() => {
+    if (!disabled || !isOpen) return
+
+    // Disabling an open control should behave like closing it, including discarding draft state.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    close()
+  }, [close, disabled, isOpen])
 
   const handleOpenChange = useCallback(
     (nextOpen: boolean) => {
