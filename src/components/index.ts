@@ -166,6 +166,12 @@ export {
   type IMoreActionsButtonProps,
   type IMoreActionsButtonItem,
 } from './UXPatterns/MoreActionsButton/MoreActionsButton'
+export {
+  FilterControl,
+  type IFilterControlButtonContentArgs,
+  type IFilterControlContentArgs,
+  type IFilterControlProps,
+} from './UXPatterns/FilterControl/FilterControl'
 export { StatisticsCard, type IStatisticsCardProps } from './UXPatterns/StatisticsCard/StatisticsCard'
 export {
   UnauthorizedTooltip,
