@@ -17,6 +17,7 @@ import CriteriaGroupIcon from 'src/assets/svg/mp_info_lt_criteria-group.svg?reac
 import CatalogIcon from 'src/assets/svg/mp_pm_lt_catalog.svg?react'
 import ChartColumnIcon from 'src/assets/svg/chart-column.svg?react'
 import ChartLineIcon from 'src/assets/svg/chart-line.svg?react'
+import ChartSimpleIcon from 'src/assets/svg/chart-simple.svg?react'
 import CheckIcon from 'src/assets/svg/check.svg?react'
 import CircleNodesIcon from 'src/assets/svg/circle-nodes.svg?react'
 import CloudIcon from 'src/assets/svg/cloud.svg?react'
@@ -576,6 +577,7 @@ export {
   CatalogIcon,
   ChartColumnIcon,
   ChartLineIcon,
+  ChartSimpleIcon,
   CheckIcon,
   CircleNodesIcon,
   CloudIcon,
