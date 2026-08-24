@@ -38,6 +38,7 @@ export type IconNames =
   | 'catalog'
   | 'chartColumn'
   | 'chartLine'
+  | 'chartSimple'
   | 'check'
   | 'circleNodes'
   | 'close'

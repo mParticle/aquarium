@@ -21,6 +21,7 @@ import {
   CatalogIcon,
   ChartColumnIcon,
   ChartLineIcon,
+  ChartSimpleIcon,
   CheckIcon,
   CircleNodesIcon,
   CloudIcon,
@@ -227,6 +228,10 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: ChartLineIcon,
     default: 'light',
     deprecated: 'trends',
+  },
+  chartSimple: {
+    light: ChartSimpleIcon,
+    default: 'light',
   },
   check: {
     light: CheckIcon,
