@@ -1,3 +1,15 @@
+# [2.4.0](https://github.com/mParticle/aquarium/compare/v2.3.0...v2.4.0) (2026-08-25)
+
+### Bug Fixes
+
+- form component to preserve static member types in declarations ([#805](https://github.com/mParticle/aquarium/issues/805)) ([80c16fb](https://github.com/mParticle/aquarium/commit/80c16fbc881cdac7e0a0bec81030604c9422aaf1))
+
+### Features
+
+- add chart-simple icon ([#817](https://github.com/mParticle/aquarium/issues/817)) ([4a356ee](https://github.com/mParticle/aquarium/commit/4a356ee55b9339c2baa7623fa5f83c2fdf0acb90))
+- add radioPosition and icon props to RadioCard (MPD-164) ([#801](https://github.com/mParticle/aquarium/issues/801)) ([2789685](https://github.com/mParticle/aquarium/commit/27896850432647fa02015c071c9a6c2d79d25c75))
+- rebuild Table docs with cell types, patterns, and example ([#802](https://github.com/mParticle/aquarium/issues/802)) ([389d6fc](https://github.com/mParticle/aquarium/commit/389d6fcea2b568b5342be3d4eff87974cc6d0100))
+
 # [2.3.0](https://github.com/mParticle/aquarium/compare/v2.2.0...v2.3.0) (2026-04-23)
 
 ### Bug Fixes
