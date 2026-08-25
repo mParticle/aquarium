@@ -55,7 +55,7 @@ jobs:
         run: npm run build-dist
 
       - name: Ensure npm CLI supports OIDC
-        run: npm install -g npm@latest
+        run: npm install -g npm@11
 
       - name: Release
         run: |
