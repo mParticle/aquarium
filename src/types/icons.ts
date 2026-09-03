@@ -143,6 +143,7 @@ export type IconNames =
   | 'siteMap'
   | 'sparkles'
   | 'split'
+  | 'splitView'
   | 'string'
   | 'support'
   | 'systemAlerts'
