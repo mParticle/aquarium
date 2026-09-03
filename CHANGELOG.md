@@ -1,3 +1,9 @@
+# [2.5.0](https://github.com/mParticle/aquarium/compare/v2.4.0...v2.5.0) (2026-09-03)
+
+### Features
+
+- add split view icon ([#821](https://github.com/mParticle/aquarium/issues/821)) ([97de905](https://github.com/mParticle/aquarium/commit/97de905e512999b5abe79604e9cdede5cdd5f35a))
+
 # [2.4.0](https://github.com/mParticle/aquarium/compare/v2.3.0...v2.4.0) (2026-08-25)
 
 ### Bug Fixes
