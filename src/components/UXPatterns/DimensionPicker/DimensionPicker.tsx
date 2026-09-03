@@ -325,7 +325,7 @@ export const DimensionPicker = ({
               padding: `${PaddingXs} ${PaddingSm}`,
               borderTop: `${LineWidth} solid ${RoktGray3}`,
               backgroundColor: ColorBgContainer,
-              borderRadius: `0 0 ${BorderRadius}px ${BorderRadius}px`,
+              borderRadius: `0 0 ${BorderRadius} ${BorderRadius}`,
             }}>
             {footerContent && <Flex style={{ flex: 1 }}>{footerContent}</Flex>}
             {showClearAllButton && (
