@@ -121,6 +121,7 @@ import Edit from 'src/assets/svg/mp_act_lt_edit.svg?react'
 import Copy from 'src/assets/svg/mp_act_lt_copy.svg?react'
 import MoreActions from 'src/assets/svg/mp_act_lt_more-actions.svg?react'
 import AbSplit from 'src/assets/svg/mp_info_lt_ab-split.svg?react'
+import SplitViewIcon from 'src/assets/svg/mp_info_lt_split-view.svg?react'
 import ArrayIcon from 'src/assets/svg/mp_data_dt_array.svg?react'
 import BannerFreemium from 'src/assets/svg/mp_info_dt_sampled.svg?react'
 import BooleanIcon from 'src/assets/svg/mp_data_lt_boolean.svg?react'
@@ -665,6 +666,7 @@ export {
   ShieldKeyholeIcon,
   SignoutIcon,
   SplitIcon,
+  SplitViewIcon,
   SubmitFeedback,
   SystemAlertsIcon,
   TextWidget,

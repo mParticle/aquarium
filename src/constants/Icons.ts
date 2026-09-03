@@ -70,6 +70,7 @@ import {
   ShieldKeyholeIcon,
   SignoutIcon,
   SplitIcon,
+  SplitViewIcon,
   SystemAlertsIcon,
   TransformationsIcon,
   UploadIcon,
@@ -688,6 +689,10 @@ export const Icons: Record<IconNames, IconOptions> = {
     light: SplitIcon,
     default: 'light',
     deprecated: 'journeys',
+  },
+  splitView: {
+    light: SplitViewIcon,
+    default: 'light',
   },
   string: {
     light: StringIcon,
