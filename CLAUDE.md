@@ -58,8 +58,9 @@ This handles everything end-to-end: fetches Jira ticket, creates branch, impleme
 1. `/getting-started` — Understand the repo structure and how to work in it
 2. `/start-jira-ticket <TICKET-ID>` — Fetch ticket details and create a branch
 3. Make your changes (update docs, icons, styles, etc.)
-4. `/commit` — Stage and commit with a proper message
-5. `/publish-branch` — Push and create a PR with Jira link
+4. `/simplify` — Polish pass; catches `<div style={{display:'flex'}}>` that should be `<Flex>`, Typography style overrides that should be props, paste artifacts in story args. Read **Styling Guidelines** below before this step so you understand what it's enforcing.
+5. `/commit` — Stage and commit with a proper message
+6. `/publish-branch` — Push and create a PR with Jira link
 
 ### Other useful commands
 
@@ -75,6 +76,43 @@ Always prefer Aquarium components over semantic HTML with inline styles:
 - ✅ `<Flex gap="md">` instead of `<div style={{ display: 'flex', gap: '20px' }}>`
 - ✅ `<Flex vertical>` instead of `<div style={{ display: 'flex', flexDirection: 'column' }}>`
 - ✅ `<Center>` instead of `<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>`
+
+A `<div>` that exists only to apply flex layout is always wrong. Map inline styles to `<Flex>` props:
+
+| Inline style               | `<Flex>` prop        |
+| -------------------------- | -------------------- |
+| `display: 'flex'`          | (implicit)           |
+| `flexDirection: 'column'`  | `vertical`           |
+| `gap: <token>`             | `gap={<token>}`      |
+| `justifyContent: 'center'` | `justify="center"`   |
+| `alignItems: 'center'`     | `align="center"`     |
+| `alignItems: 'flex-start'` | `align="flex-start"` |
+
+Visual styles (`background`, `padding`, `border*`, `boxShadow`, `width`, `alignSelf`) are not Flex props — keep those in `style={{}}` on the `Flex`.
+
+### Typography — use props, not inline styles
+
+`Typography.Text` / `Title` / `Paragraph` / `Link` accept these directly. Don't override them with `style`:
+
+| Inline style                      | Use prop                    |
+| --------------------------------- | --------------------------- |
+| `fontSize: FontSizeSm`            | `size="sm"`                 |
+| `fontSize: FontSizeLg`            | `size="lg"`                 |
+| `fontWeight: FontWeightStrong`    | `strong`                    |
+| `fontStyle: 'italic'`             | `italic`                    |
+| `textDecoration: 'underline'`     | `underline`                 |
+| `textDecoration: 'line-through'`  | `delete`                    |
+| `color: ColorTextTertiary` (etc.) | `color="ColorTextTertiary"` |
+
+The `color` prop takes the **token name as a string** (see `src/components/general/Typography/colors.ts`) — don't import the token and pass it through `style`. `textTransform`, `letterSpacing`, and `margin: 0` (to strip antd's default Title margin) legitimately stay in `style`.
+
+### Story args hygiene
+
+When writing Storybook `args` / `defaultArgs`, watch for paste artifacts in string literals — they render but look broken:
+
+- ❌ `'Primary\n'` — trailing newline (almost always unintentional)
+- ❌ `' Submit'` / `'Submit '` — leading/trailing whitespace
+- ❌ `'don't'` (smart quote) where straight quotes are expected
 
 ### Use Design Tokens
 
