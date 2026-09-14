@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import categoriesData from './componentCategories.json'
-import { Card, Flex, Icon, Typography } from '../../src/components'
+import { Card, Empty, Flex, Icon, Input, Typography } from '../../src/components'
 import { ColorBgLayout, PaddingXxs, Margin, MarginSm, MarginXl, PaddingXs, PaddingSm } from 'src/styles/style'
 
 interface ComponentEntry {
@@ -194,17 +194,34 @@ function CategorySection({ category }: { category: Category }) {
 }
 
 export default function Introduction() {
-  const filtered = (categoriesData?.categories || []).filter(
-    cat => cat.name !== 'Navigation' && cat.components?.length > 0,
-  )
-  const categories = [...filtered].sort((a, b) => {
-    const i = CATEGORY_ORDER.indexOf(a.name)
-    const j = CATEGORY_ORDER.indexOf(b.name)
-    if (i !== -1 && j !== -1) return i - j
-    if (i !== -1) return -1
-    if (j !== -1) return 1
-    return a.name.localeCompare(b.name)
-  })
+  const [searchQuery, setSearchQuery] = useState('')
+
+  const allCategories = useMemo(() => {
+    const filtered = (categoriesData?.categories || []).filter(
+      cat => cat.name !== 'Navigation' && cat.components?.length > 0,
+    )
+    return [...filtered].sort((a, b) => {
+      const i = CATEGORY_ORDER.indexOf(a.name)
+      const j = CATEGORY_ORDER.indexOf(b.name)
+      if (i !== -1 && j !== -1) return i - j
+      if (i !== -1) return -1
+      if (j !== -1) return 1
+      return a.name.localeCompare(b.name)
+    })
+  }, [])
+
+  const categories = useMemo(() => {
+    if (!searchQuery.trim()) return allCategories
+    const query = searchQuery.toLowerCase()
+    return allCategories
+      .map(cat => ({
+        ...cat,
+        components: cat.components?.filter(c => c.name.toLowerCase().includes(query)),
+      }))
+      .filter(cat => cat.components && cat.components.length > 0)
+  }, [allCategories, searchQuery])
+
+  const totalComponents = allCategories.reduce((sum, cat) => sum + (cat.components?.length || 0), 0)
 
   return (
     <Flex vertical>
@@ -213,6 +230,27 @@ export default function Introduction() {
         Designed for developers, designers, and product managers, this library makes it easy to create intuitive,
         interactive interfaces for <strong>Rokt applications</strong>.
       </Typography.Paragraph>
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+          columnGap: Margin,
+          marginBottom: MarginXl,
+        }}>
+        <Input
+          prefix={<Icon name="search" size="sm" />}
+          placeholder={`Search ${totalComponents} components...`}
+          allowClear
+          onChange={e => setSearchQuery(e.target.value)}
+          value={searchQuery}
+          style={{ gridColumn: 'span 2' }}
+        />
+      </div>
+      {categories.length === 0 && searchQuery.trim() && (
+        <Flex align="center" justify="center" style={{ minHeight: 300 }}>
+          <Empty title="No components found" description={`Nothing matches "${searchQuery}"`} />
+        </Flex>
+      )}
       {categories.map(category => (
         <CategorySection key={category.name} category={category} />
       ))}
