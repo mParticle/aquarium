@@ -63,6 +63,7 @@ import {
   OversightIconDt,
   PrecisionIcon,
   PredictionsIconDt,
+  PredictionModelIcon,
   PredictionsIcon,
   RemoveIcon,
   SearchIcon,
@@ -566,6 +567,10 @@ export const Icons: Record<IconNames, IconOptions> = {
   },
   precision: {
     light: PrecisionIcon,
+    default: 'light',
+  },
+  predictionModel: {
+    light: PredictionModelIcon,
     default: 'light',
   },
   predictions: {

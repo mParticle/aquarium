@@ -56,6 +56,7 @@ import ObservabilityIcon from 'src/assets/svg/mp_pm_lt_observability.svg?react'
 import OversightIcon from 'src/assets/svg/mp_pm_lt_oversight.svg?react'
 import OversightIconDt from 'src/assets/svg/mp_pm_dt_oversight.svg?react'
 import PrecisionIcon from 'src/assets/svg/precision.svg?react'
+import PredictionModelIcon from 'src/assets/svg/mp_pm_lt_prediction-model.svg?react'
 import PredictionsIcon from 'src/assets/svg/mp_pm_lt_predictions.svg?react'
 import PredictionsIconDt from 'src/assets/svg/mp_pm_dt_predictions.svg?react'
 import RemoveIcon from 'src/assets/svg/remove.svg?react'
@@ -649,6 +650,7 @@ export {
   Placeholder,
   PlayIcon,
   PrecisionIcon,
+  PredictionModelIcon,
   PredictionsIcon,
   PredictionsIconDt,
   PremiumIcon,
