@@ -117,6 +117,7 @@ export type IconNames =
   | 'placeholder'
   | 'play'
   | 'precision'
+  | 'predictionModel'
   | 'predictions'
   | 'premium'
   | 'premiumDt'
