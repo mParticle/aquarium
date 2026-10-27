@@ -1,3 +1,9 @@
+## [2.5.2](https://github.com/mParticle/aquarium/compare/v2.5.1...v2.5.2) (2026-10-27)
+
+### Bug Fixes
+
+- sync antd theme tokens with css variables ([#823](https://github.com/mParticle/aquarium/issues/823)) ([a94e318](https://github.com/mParticle/aquarium/commit/a94e318189cebeacdc85908fac369a16d701cf96))
+
 ## [2.5.1](https://github.com/mParticle/aquarium/compare/v2.5.0...v2.5.1) (2026-10-13)
 
 # [2.5.0](https://github.com/mParticle/aquarium/compare/v2.4.0...v2.5.0) (2026-09-03)
