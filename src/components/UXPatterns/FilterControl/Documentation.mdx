@@ -1,0 +1,31 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks'
+
+import * as FilterControlStories from './FilterControl.stories'
+
+<Meta of={FilterControlStories} />
+
+# FilterControl
+
+FilterControl is an opinionated shell for filters that open from a compact trigger, collect draft changes in a popover, and commit only when the user applies them.
+
+## When to use
+
+- A table or dense data surface needs a compact filter entry point, but the filter UI is too involved for a simple inline `Select`.
+- Users should be able to stage multiple changes before updating the applied table state.
+- Closing the popover should discard uncommitted changes, while `Clear` should reset only the draft filter value.
+- Consumers need to own the filter value shape and content rendering while Aquarium owns the trigger, popover structure, and footer actions.
+
+Rokt Catalog uses this pattern in feed management table filters, including the product set filter, where Catalog owns the product-set selection model and labels while Aquarium provides the reusable button, popover, draft state, and clear/apply behavior.
+
+## Related solutions
+
+- Use [Inline Toolbar Filters](/?path=/story/ux-patterns-data-exploration-table-patterns-inline-toolbar-filters--default) when the table has a few high-value filters that can stay visible and update immediately.
+- Use [Modal Filters](/?path=/story/ux-patterns-data-exploration-table-patterns-modal-filters--default) for larger table filter sets that need a dedicated panel. This is the same family of solutions as a `Filters` button that opens a modal or aside with multiple filter dimensions.
+- Use [Date Range Filter](/?path=/docs/ux-patterns-data-exploration-date-range-filter--documentation) for time-window filtering with presets and custom ranges.
+- See the [table filter overview](/?path=/docs/ux-patterns-data-exploration-table-patterns-filters-overview--documentation) for guidance on choosing between inline, popover, and full-panel table filtering patterns.
+
+## Examples
+
+<Canvas of={FilterControlStories.ProductSetValue} />
+
+<Canvas of={FilterControlStories.ObjectValue} />
