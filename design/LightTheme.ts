@@ -282,6 +282,9 @@ export const LightTheme: IMpThemeConfig = {
     },
     Table: {
       borderRadius: 4,
+      // Opaque equivalents of controlItemBgActive(Hover) on white, so fixed columns hide scrolled cells.
+      rowSelectedBg: '#f5f5f5',
+      rowSelectedHoverBg: '#f0f0f0',
     },
     Tooltip: {
       colorTextLightSolid: 'rgba(0, 0, 0, 0.88)',
